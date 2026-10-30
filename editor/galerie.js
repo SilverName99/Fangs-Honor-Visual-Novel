@@ -1,0 +1,200 @@
+import { api } from './api.js';
+import { imaginiCerute } from '../src/lume.js';
+import { urlImagine, uitaLipsurile } from '../src/imagini.js';
+
+const CATEGORII = [
+  ['map', 'Harta'],
+  ['map/piese', 'Piese pe hartă'],
+  ['locations', 'Zone și locuri'],
+  ['sprites', 'Sprite-uri'],
+  ['portraits', 'Portrete'],
+  ['combat', 'Luptă'],
+  ['items', 'Obiecte'],
+  ['ui', 'Interfață'],
+];
+const NUME_OK = /^[a-z0-9]+(?:_[a-z0-9]+)*\.png$/;
+
+const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+
+// „Vale Supărat.PNG” devine „vale_suparat.png”: autorul nu trebuie să țină minte regulile de nume
+export function numeCorect(nume) {
+  const baza = nume
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\.(png|jpe?g|webp)$/, '')
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+  return `${baza || 'imagine'}.png`;
+}
+
+export function creeazaGalerie(container, comun, reincarcaImagini) {
+  const asteptare = [];
+  let cerute = imaginiCerute(comun.date, comun.lume);
+  const cerutePeCale = () => new Map(cerute.map((c) => [c.cale, c]));
+
+  function ghicesteCategoria(nume) {
+    const potrivire = cerute.find((c) => c.cale.endsWith(`/${nume}`));
+    if (potrivire) return potrivire.categorie;
+    if (nume.startsWith('ui_')) return 'ui';
+    return '';
+  }
+
+  function adaugaFisiere(fisiere) {
+    const respinse = [];
+    for (const f of fisiere) {
+      if (f.type !== 'image/png' && !f.name.toLowerCase().endsWith('.png')) {
+        respinse.push(f.name);
+        continue;
+      }
+      const nume = numeCorect(f.name);
+      asteptare.push({ fisier: f, nume, categorie: ghicesteCategoria(nume), url: URL.createObjectURL(f) });
+    }
+    if (respinse.length) alert(`Doar fișiere PNG. Nu am adăugat:\n${respinse.join('\n')}`);
+    arata();
+  }
+
+  function verificaRand(r) {
+    const cale = `${r.categorie}/${r.nume}`;
+    if (!NUME_OK.test(r.nume)) return { ok: false, text: 'Nume invalid: doar litere mici, cifre și _ (fără diacritice), terminat în .png' };
+    if (!r.categorie) return { ok: false, text: 'Alege categoria.' };
+    const c = cerutePeCale().get(cale);
+    const exista = comun.imagini.has(cale);
+    const parti = [];
+    if (c) parti.push(`<span class="bine">✓ ${esc(c.scop)}</span>`);
+    else parti.push('<span class="avertisment">Jocul nu cere încă acest nume (verifică dacă e scris bine).</span>');
+    if (exista) parti.push('<span class="avertisment">Înlocuiește imaginea existentă.</span>');
+    return { ok: true, text: parti.join(' ') };
+  }
+
+  async function incarcaToate(buton) {
+    buton.disabled = true;
+    const erori = [];
+    for (const r of [...asteptare]) {
+      if (!verificaRand(r).ok) continue;
+      try {
+        await api(`imagini/${r.categorie}/${r.nume}`, { method: 'PUT', body: r.fisier });
+        URL.revokeObjectURL(r.url);
+        asteptare.splice(asteptare.indexOf(r), 1);
+      } catch (e) {
+        erori.push(`${r.nume}: ${e.message}`);
+      }
+    }
+    await reincarcaImagini();
+    uitaLipsurile();
+    arata();
+    if (erori.length) alert(`Unele imagini nu s-au încărcat:\n${erori.join('\n')}`);
+  }
+
+  function arata() {
+    cerute = imaginiCerute(comun.date, comun.lume);
+    const obligatorii = cerute.filter((c) => !c.optional);
+    const lipsaObl = obligatorii.filter((c) => !comun.imagini.has(c.cale));
+    const lipsaOpt = cerute.filter((c) => c.optional && !comun.imagini.has(c.cale));
+    const cerutSet = cerutePeCale();
+    const incarcate = [...comun.imagini.keys()].sort();
+
+    const tabelLipsa = (lista) =>
+      CATEGORII.map(([cat, eticheta]) => {
+        const din = lista.filter((c) => c.categorie === cat);
+        if (!din.length) return '';
+        return `<h3>${esc(eticheta)} (${din.length})</h3><table>${din
+          .map((c) => `<tr><td class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}" title="Click: copiază numele">${esc(c.cale)}</a></td><td>${esc(c.scop)}</td></tr>`)
+          .join('')}</table>`;
+      }).join('');
+
+    container.innerHTML = `
+      <h2>Încarcă imagini</h2>
+      <div class="zona-drop">Trage aici fișierele PNG sau apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _).</small></div>
+      <input type="file" multiple accept="image/png" hidden>
+      ${
+        asteptare.length
+          ? `<table class="asteptare"><tr><th></th><th>Nume</th><th>Categorie</th><th></th><th></th></tr>${asteptare
+              .map((r, i) => {
+                const v = verificaRand(r);
+                return `<tr data-i="${i}">
+                  <td><img class="miniatura" src="${r.url}"></td>
+                  <td><input type="text" class="nume" value="${esc(r.nume)}"></td>
+                  <td><select class="categorie"><option value="">Alege...</option>${CATEGORII.map(([c, e]) => `<option value="${c}" ${c === r.categorie ? 'selected' : ''}>${esc(e)}</option>`).join('')}</select></td>
+                  <td class="${v.ok ? '' : 'greseala'}">${v.text}</td>
+                  <td><button class="btn scoate">✕</button></td></tr>`;
+              })
+              .join('')}</table>
+            <div class="salvare"><button class="btn principal incarca">Încarcă ${asteptare.length === 1 ? 'imaginea' : `toate (${asteptare.length})`}</button><button class="btn goleste">Golește lista</button></div>`
+          : ''
+      }
+
+      <h2>Lipsă</h2>
+      <p class="sumar">${obligatorii.length - lipsaObl.length} din ${obligatorii.length} imagini obligatorii sunt încărcate. Click pe un nume ca să-l copiezi.</p>
+      ${lipsaObl.length ? tabelLipsa(lipsaObl) : '<p class="bine">Toate imaginile obligatorii sunt încărcate.</p>'}
+      <details><summary>Opționale lipsă: ${lipsaOpt.length} (variante de noapte etc., stări de portret în plus, interfață). Fără ele, jocul folosește imaginea de bază sau stilul implicit.</summary>${tabelLipsa(lipsaOpt)}</details>
+
+      <h2>Încărcate (${incarcate.length})</h2>
+      <div class="grila">${incarcate
+        .map(
+          (cale) => `<div class="card">
+            <img loading="lazy" src="${urlImagine(cale)}?v=${comun.imagini.get(cale)}">
+            <div class="cale">${esc(cale)}</div>
+            <div class="actiuni">${cerutSet.has(cale) ? '<span></span>' : '<span class="eticheta-mica" title="Niciun loc din joc nu cere încă acest nume">nefolosită</span>'}<button class="btn pericol sterge" data-cale="${esc(cale)}">Șterge</button></div>
+          </div>`,
+        )
+        .join('')}</div>`;
+
+    const drop = container.querySelector('.zona-drop');
+    const input = container.querySelector('input[type=file]');
+    drop.onclick = () => input.click();
+    input.onchange = () => adaugaFisiere([...input.files]);
+    drop.ondragover = (e) => {
+      e.preventDefault();
+      drop.classList.add('peste');
+    };
+    drop.ondragleave = () => drop.classList.remove('peste');
+    drop.ondrop = (e) => {
+      e.preventDefault();
+      drop.classList.remove('peste');
+      adaugaFisiere([...e.dataTransfer.files]);
+    };
+
+    for (const tr of container.querySelectorAll('table.asteptare tr[data-i]')) {
+      const r = asteptare[Number(tr.dataset.i)];
+      tr.querySelector('.nume').onchange = (e) => {
+        r.nume = numeCorect(e.target.value);
+        // Un nume cerut de joc știe unde îi e locul, deci categoria se corectează odată cu numele
+        r.categorie = ghicesteCategoria(r.nume) || r.categorie;
+        arata();
+      };
+      tr.querySelector('.categorie').onchange = (e) => {
+        r.categorie = e.target.value;
+        arata();
+      };
+      tr.querySelector('.scoate').onclick = () => {
+        URL.revokeObjectURL(r.url);
+        asteptare.splice(asteptare.indexOf(r), 1);
+        arata();
+      };
+    }
+    container.querySelector('.incarca')?.addEventListener('click', (e) => incarcaToate(e.currentTarget));
+    container.querySelector('.goleste')?.addEventListener('click', () => {
+      asteptare.splice(0).forEach((r) => URL.revokeObjectURL(r.url));
+      arata();
+    });
+    for (const a of container.querySelectorAll('.copiaza')) {
+      a.onclick = async (e) => {
+        e.preventDefault();
+        await navigator.clipboard?.writeText(a.dataset.nume).catch(() => {});
+        a.textContent = `${a.textContent.replace(/ ✓ copiat$/, '')} ✓ copiat`;
+      };
+    }
+    for (const b of container.querySelectorAll('.sterge')) {
+      b.onclick = async () => {
+        if (!confirm(`Ștergi ${b.dataset.cale}?\n(Fișierul se mută în coșul de pe server, nu se pierde de tot.)`)) return;
+        await api(`imagini/${b.dataset.cale}`, { method: 'DELETE' });
+        await reincarcaImagini();
+        uitaLipsurile();
+        arata();
+      };
+    }
+  }
+
+  return { arata };
+}

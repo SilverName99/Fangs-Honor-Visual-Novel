@@ -1,0 +1,22 @@
+{
+  "start": { "scena": "harta", "zi": 1, "ora": "07:00" },
+  "uiImagini": [
+    "ui/ui_dialog.png",
+    "ui/ui_nume.png",
+    "ui/ui_buton.png",
+    "ui/ui_buton_hover.png",
+    "ui/ui_buton_apasat.png",
+    "ui/ui_panou.png",
+    "ui/ui_slot.png",
+    "ui/ui_slot_hover.png",
+    "ui/ui_bara_rama.png",
+    "ui/ui_bara_viata.png",
+    "ui/ui_bara_stamina.png",
+    "ui/ui_bara_foame.png",
+    "ui/ui_bara_sete.png",
+    "ui/ui_cursor.png",
+    "ui/ui_cursor_click.png",
+    "ui/ui_vale_apoza.png",
+    "ui/ui_meniu_fundal.png"
+  ]
+}

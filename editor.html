@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editor: Fangs&amp;Honor</title>
+  </head>
+  <body class="editor">
+    <header class="bara">
+      <strong class="sigla">Fangs&amp;Honor · Editor</strong>
+      <nav class="taburi">
+        <button data-tab="galerie" class="activ">Galerie</button>
+        <button data-tab="aranjare">Aranjare</button>
+      </nav>
+      <span class="spatiu"></span>
+      <span id="stare-sincronizare" class="stare"></span>
+      <a class="btn" href="index.html" target="_blank">Deschide jocul</a>
+      <button class="btn" id="actualizeaza">Actualizează jocul</button>
+      <a class="btn" href="api/backup">Descarcă backup</a>
+    </header>
+    <main>
+      <section id="galerie" class="tab activ"></section>
+      <section id="aranjare" class="tab"></section>
+    </main>
+    <script type="module" src="./editor/editor.js"></script>
+  </body>
+</html>

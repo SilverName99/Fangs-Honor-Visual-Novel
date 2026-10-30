@@ -1,0 +1,8 @@
+node_modules/
+dist/
+# Imaginile stau doar pe VPS (prea mari pentru GitHub)
+assets/
+.env
+*.log
+cos/
+.dist-nou/
