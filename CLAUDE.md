@@ -56,6 +56,7 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
   - salvează datele scrise de editor (secțiunea 5) și le trimite pe GitHub (commit + push, cu o cheie de deploy);
   - are un buton **„Actualizează jocul”**, care face `git pull` și rebuild când Claude a publicat cod nou.
 - VPS-ul urmărește ramura `main`.
+- **Nimic secret în repo:** parola site-ului, cheia de deploy și orice alt secret stau doar pe VPS, în fișiere din afara repo-ului.
 - Instalarea se face **o singură dată**, cu un script din `tools/vps/`, lipit în *Web console* din panoul Hostinger. Firewall-ul se configurează doar după ce se verifică ce porturi folosește jocul principal, ca să nu fie blocat.
 
 ### Imaginile NU intră în GitHub
@@ -425,7 +426,11 @@ Unele personaje vin din jocul *Fangs&Honor*. Numele recruților și motivul pers
 
 Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să începi următoarea.
 
-1. **v0.1:** scaffold Vite; încărcare JSON; motorul de scene cu 3 niveluri; poligoane și highlight; ceasul și momentele zilei; barele de nevoi ale lui Vale, cu leșinul; casa ca scene clicabile; dialogul cu portrete și stări; evaluatorul de condiții și registrul de efecte; 3-5 evenimente de test; salvare plus export/import; placeholdere și stilul UI implicit; modul debug. **Editorul** (galerie, aranjare, testare) și **serverul de pe VPS**, cu scriptul de instalare, parola și backup-ul.
+1. **v0.1**, făcută în două etape, ca autorul să poată încărca imagini cât mai repede:
+   - **Etapa A (prima):** scaffold Vite; motorul de scene cu 3 niveluri și **tot arborele de locuri** din secțiunea 7, cu placeholdere; poligoane și highlight; editorul (galerie și aranjare); serverul Node; scriptul de instalare pe VPS (nginx, HTTPS, parolă, cheie de deploy, backup, „Actualizează jocul”) cu pași de copiat pentru autor.
+   - **Etapa B:** restul listei de mai jos.
+
+   Lista completă v0.1: scaffold Vite; încărcare JSON; motorul de scene cu 3 niveluri; poligoane și highlight; ceasul și momentele zilei; barele de nevoi ale lui Vale, cu leșinul; casa ca scene clicabile; dialogul cu portrete și stări; evaluatorul de condiții și registrul de efecte; 3-5 evenimente de test; salvare plus export/import; placeholdere și stilul UI implicit; modul debug. **Editorul** (galerie, aranjare, testare) și **serverul de pe VPS**, cu scriptul de instalare, parola și backup-ul.
 2. **v0.2:** bani și muncă; inventarul cu sloturi, stive și cufăr; ecranul de echipament; acțiunile de supraviețuire (mâncat, băut, dormit); reparațiile casei și misiunea acoperișului; rutinele personajelor; taxa cu orcul colector; grafica UI încărcabilă (9-slice, cursor).
 3. **v0.3:** lupta pe ture (formație, bara de acțiune, acțiuni, armură, abilități, căderea); primele lupte: vânătoare, bătaie la tavernă.
 4. **v0.4:** relații; recrutarea; questline-ul vânătoarei; Camp site; misiunea și cheia fierarului.
