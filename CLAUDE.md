@@ -45,8 +45,10 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
 ### Ce rulează pe VPS
 
 - **VPS Hostinger, Ubuntu 24.04.** Nu pune IP-ul în repo.
-- **Adresa:** un subdomeniu al `fangs-and-honor.com` (numele e `TODO`, de exemplu `vn.fangs-and-honor.com`), cu o înregistrare DNS de tip A către VPS.
-- **Pe același VPS rulează deja jocul principal, `fangs-and-honor.com`. Nu are voie să fie stricat.** Scriptul de instalare folosește serverul web care există deja (de verificat ce e: nginx, Apache, Caddy sau Docker) și doar adaugă subdomeniul. Nu instalează un al doilea server pe porturile 80/443.
+- **Adresa:** `visual-novel.fangs-and-honor.com`, cu o înregistrare DNS de tip A către VPS.
+- **Pe același VPS rulează deja alte site-uri** (printre ele jocul principal, `fangs-and-honor.com`). **Nu au voie să fie stricate.**
+- Serverul web existent e **nginx** (porturile 80/443, fără Docker). Scriptul de instalare doar **adaugă un fișier nou** în `sites-available` / `sites-enabled` pentru subdomeniu, rulează `nginx -t` și face reload numai dacă testul trece. Nu modifică fișierele celorlalte site-uri și nu instalează un al doilea server web.
+- Serverul Node ascultă doar pe `127.0.0.1`, iar nginx îi trimite cererile (reverse proxy).
 - **HTTPS** pe subdomeniu și **parolă pe tot subdomeniul**, pentru că jocul e o surpriză.
 - **Un server Node mic** care:
   - servește jocul (build-ul) și editorul;
@@ -450,7 +452,6 @@ Pune `TODO` în date și întreabă când e nevoie:
 - Ce pierde Vale la leșin.
 - Dacă piața rămâne două scene sau una singură.
 - Prologul și povestea despre dragoni de la tavernă.
-- Numele subdomeniului pentru joc.
 
 ## 20. Primul pas
 
