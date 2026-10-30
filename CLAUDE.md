@@ -44,15 +44,17 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
 
 ### Ce rulează pe VPS
 
-- **VPS Hostinger, Ubuntu 24.04.** Adresa e hostname-ul VPS-ului din panoul Hostinger (sau un domeniu, dacă se adaugă unul). Nu pune IP-ul sau hostname-ul în repo.
-- **Caddy** în față: HTTPS automat și **parolă pe tot site-ul**, pentru că jocul e o surpriză.
+- **VPS Hostinger, Ubuntu 24.04.** Nu pune IP-ul în repo.
+- **Adresa:** un subdomeniu al `fangs-and-honor.com` (numele e `TODO`, de exemplu `vn.fangs-and-honor.com`), cu o înregistrare DNS de tip A către VPS.
+- **Pe același VPS rulează deja jocul principal, `fangs-and-honor.com`. Nu are voie să fie stricat.** Scriptul de instalare folosește serverul web care există deja (de verificat ce e: nginx, Apache, Caddy sau Docker) și doar adaugă subdomeniul. Nu instalează un al doilea server pe porturile 80/443.
+- **HTTPS** pe subdomeniu și **parolă pe tot subdomeniul**, pentru că jocul e o surpriză.
 - **Un server Node mic** care:
   - servește jocul (build-ul) și editorul;
   - primește imagini încărcate și le salvează în folderul de imagini;
   - salvează datele scrise de editor (secțiunea 5) și le trimite pe GitHub (commit + push, cu o cheie de deploy);
   - are un buton **„Actualizează jocul”**, care face `git pull` și rebuild când Claude a publicat cod nou.
 - VPS-ul urmărește ramura `main`.
-- Instalarea se face **o singură dată**, cu un script din `tools/vps/`, lipit în *Web console* din panoul Hostinger. Scriptul pune și firewall-ul (22, 80, 443).
+- Instalarea se face **o singură dată**, cu un script din `tools/vps/`, lipit în *Web console* din panoul Hostinger. Firewall-ul se configurează doar după ce se verifică ce porturi folosește jocul principal, ca să nu fie blocat.
 
 ### Imaginile NU intră în GitHub
 
@@ -355,14 +357,19 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 | Acțiune | Ce face |
 |---|---|
-| **Atac** | Daunele vin din **arma echipată**: un număr la întâmplare între minimul și maximul ei (de exemplu sabie 11-13). Arma spune și tipul: apropiat sau distanță. Fără armă: pumni, 1-3. Recruții au arma lor în `npcs.json`. |
+| **Atac** | Daunele vin din **arma echipată**: un număr întreg la întâmplare între minimul și maximul ei, inclusiv capetele (de exemplu sabie 11-13 dă 11, 12 sau 13). Arma spune și tipul: apropiat sau distanță. Fără armă: pumni, 1-3. Recruții au arma lor în `npcs.json`. |
 | **Apărare** | Până la tura următoare a personajului, daunele primite scad cu procentul de **blocare**: 50% implicit, iar cu scut cât spune scutul (de exemplu 70%). |
 | **Obiect** | Inventarul lui Vale e **comun în luptă**: orice aliat îl poate folosi în tura lui (de exemplu o poțiune de viață). Consumă tura. |
 | **Schimbă locul** | Se mută pe un loc liber sau face schimb cu cel de pe aceeași linie (față ↔ spate). Consumă tura. |
 | **Abilitate** | Doar personajele care au abilități (de exemplu preotul: vindecare, **golește bara de stamina a unui inamic**). Efectele folosesc registrul din secțiunea 13. |
 | **Fugi** | Doar în luptele unde e permis. Reușește sigur (alegere simplă, se poate schimba). |
 
-**Armura:** fiecare piesă de echipament poate avea puncte de armură. Daunele primite = daunele atacului − armura totală, **minimum 1**. Blocarea din *Apărare* se aplică după armură. Toate cifrele stau în `config.json` și `items.json`.
+**Armura:**
+- Fiecare piesă de echipament poate avea **puncte de armură** și o **rezistență** (câte lovituri suportă, de exemplu 5).
+- Daunele primite = daunele atacului − armura pieselor întregi, **minimum 1**. Blocarea din *Apărare* se aplică după armură.
+- **Fiecare lovitură primită** scade cu 1 rezistența fiecărei piese întregi. La 0, piesa **crapă**: până la sfârșitul luptei nu mai dă armură. Pe ecran se vede că s-a crăpat.
+- După luptă, piesele crăpate revin la normal singure (alegere simplă; se poate schimba, de exemplu reparat la fierar).
+- Toate cifrele stau în `config.json` și `items.json`.
 
 **Căderea:** la viață 0, personajul **cade**, dar nu moare. După luptă se ridică: recruții cu viața plină, Vale cu puțină viață (`TODO` cât).
 
@@ -372,7 +379,18 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 Fiecare personaj are **4 poze**: `idle`, `atac`, `aparare`, `ranit`. Codul adaugă mișcarea (se aruncă înainte la atac, tremură la lovitură). **Căderea** folosește poza `ranit` plus un efect din cod (se înclină și pălește).
 
-- **Vale** are câte un set de 4 poze **pentru fiecare tip de armă** (nu pentru fiecare armă): `vale_<tipArma>_<poza>.png`, de exemplu `vale_sabie_atac.png`. Tipurile de armă sunt `TODO` (de exemplu sabie, topor cu două mâini, arc, pumni).
+- **Vale** are câte un set de 4 poze **pentru fiecare tip de armă** (nu pentru fiecare armă): `vale_<tipArma>_<poza>.png`, de exemplu `vale_sabie_atac.png`. Tipurile de armă (6 seturi, deci 24 de poze):
+
+  | `tipArma` | Când |
+  |---|---|
+  | `pumni` | fără armă |
+  | `sabie` | sabie într-o mână, fără scut |
+  | `sabie_scut` | sabie într-o mână și scut în mâna a doua |
+  | `sabie_doua_maini` | sabie mare, cu două mâini |
+  | `topor_doua_maini` | topor mare, cu două mâini |
+  | `arc` | arc (ocupă ambele mâini) |
+
+  Setul se alege din arma primară, plus dacă în mâna a doua e un scut.
 - **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_ranit.png`.
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
 - Abilitățile folosesc poza `atac` plus un efect din cod (strălucire).
@@ -430,9 +448,9 @@ Pune `TODO` în date și întreabă când e nevoie:
 - Treptele pentru taxa ratată: ce obiect iau orcii, care e pedeapsa a doua.
 - Ce efect are reputația în sat.
 - Ce pierde Vale la leșin.
-- Tipurile de armă (pentru pozele de luptă ale lui Vale).
 - Dacă piața rămâne două scene sau una singură.
 - Prologul și povestea despre dragoni de la tavernă.
+- Numele subdomeniului pentru joc.
 
 ## 20. Primul pas
 
