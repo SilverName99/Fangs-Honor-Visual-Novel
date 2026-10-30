@@ -1,5 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// import.meta.dirname nu există pe Node 18 (cel din Ubuntu 24.04)
+const radacina = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   // Căi relative, ca build-ul să meargă și sub file:// în versiunea .exe
@@ -11,8 +15,8 @@ export default defineConfig({
     assetsDir: 'build',
     rollupOptions: {
       input: {
-        joc: resolve(import.meta.dirname, 'index.html'),
-        editor: resolve(import.meta.dirname, 'editor.html'),
+        joc: resolve(radacina, 'index.html'),
+        editor: resolve(radacina, 'editor.html'),
       },
     },
   },

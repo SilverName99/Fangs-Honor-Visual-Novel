@@ -5,8 +5,9 @@ import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const APP = path.resolve(process.env.APP_DIR || path.join(import.meta.dirname, '..'));
+const APP = path.resolve(process.env.APP_DIR || fileURLToPath(new URL('..', import.meta.url)));
 const ASSETS = path.resolve(process.env.ASSETS_DIR || path.join(APP, 'assets'));
 // Imaginile șterse ajung aici, nu dispar: o ștergere din greșeală se poate repara de pe VPS
 const COS = path.join(path.dirname(ASSETS), 'cos');

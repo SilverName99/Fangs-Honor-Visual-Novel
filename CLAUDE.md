@@ -57,7 +57,7 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
   - are un buton **„Actualizează jocul”**, care face `git pull` și rebuild când Claude a publicat cod nou.
 - VPS-ul urmărește ramura `main`.
 - **Nimic secret în repo:** parola site-ului, cheia de deploy și orice alt secret stau doar pe VPS, în fișiere din afara repo-ului.
-- Instalarea se face **o singură dată**, cu un script din `tools/vps/`, lipit în *Web console* din panoul Hostinger. Firewall-ul se configurează doar după ce se verifică ce porturi folosește jocul principal, ca să nu fie blocat.
+- Instalarea se face **o singură dată**, cu un script din `tools/vps/`, lipit în *Web console* din panoul Hostinger. Scriptul **nu atinge firewall-ul**: serverul Node ascultă doar local, deci nu are nevoie de porturi noi.
 
 ### Imaginile NU intră în GitHub
 
@@ -169,7 +169,7 @@ Piața poate deveni o singură scenă (`TODO`). Scenele acceptă oricâte sprite
 
 La **toate celelalte scene**, seara și noaptea vin dintr-un **filtru făcut din cod**: portocaliu seara, întunecat și albăstrui noaptea. Filtrul se aplică și pe sprite-uri.
 
-**2. Sprite-uri.** Personajele cu nume sunt PNG-uri cu fundal transparent, puse **peste** fundal doar când rutina lor le aduce acolo. Un sprite per personaj și per loc.
+**2. Sprite-uri.** Personajele cu nume sunt PNG-uri cu fundal transparent, puse **peste** fundal doar când rutina lor le aduce acolo. Un sprite per personaj și per loc: `sprites/<personaj>_<zona>_<loc>.png` (de exemplu `fierar_fierar_interior.png`). Locurile unde un personaj are sprite sunt în `npcs.json`, la `locuriSprite`.
 - Sprite-urile sunt decupate strâns pe conturul personajului.
 - **`y` înseamnă locul unde îi sunt picioarele** (ancorare jos-centru), ca personajele să stea pe podea indiferent de înălțime.
 - Au highlight la hover și se pot apăsa pentru dialog.
