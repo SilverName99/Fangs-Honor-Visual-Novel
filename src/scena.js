@@ -60,7 +60,7 @@ export function pozitieImplicita(index, tip) {
 }
 
 export function pozitie(aranjare, obiect, index) {
-  return aranjare?.obiecte?.[obiect.id] || pozitieImplicita(index, obiect.tip);
+  return aranjare?.obiecte?.[obiect.id] || obiect.implicit || pozitieImplicita(index, obiect.tip);
 }
 
 export function aplicaPozitie(el, p) {

@@ -1,0 +1,28 @@
+{
+  "_nota": "Inamicii și luptele. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
+  "inamici": {
+    "lup": { "nume": "Lup", "viata": 30, "staminaMax": 115, "atac": { "min": 4, "max": 7, "tip": "apropiat" }, "armura": 0 },
+    "betiv": { "nume": "Bețiv", "viata": 22, "staminaMax": 80, "atac": { "min": 2, "max": 5, "tip": "apropiat" }, "armura": 0 }
+  },
+  "lupte": {
+    "vanatoare_lup": {
+      "nume": "Vânătoare",
+      "fundal": "padure.interior",
+      "fuga": true,
+      "inamici": [{ "id": "lup", "linie": 1, "rand": "fata" }],
+      "victorie": { "text": "Ai doborât lupul.", "efecte": { "obiect": ["carne", "piele"] } },
+      "infrangere": { "text": "(TODO) Lupul te-a rănit și a fugit în pădure.", "efecte": {} }
+    },
+    "bataie_taverna": {
+      "nume": "Bătaie la tavernă",
+      "fundal": "taverna.parter",
+      "fuga": false,
+      "inamici": [
+        { "id": "betiv", "linie": 0, "rand": "fata" },
+        { "id": "betiv", "linie": 2, "rand": "fata" }
+      ],
+      "victorie": { "text": "(TODO) Bețivii se potolesc.", "efecte": { "reputatie": 1 } },
+      "infrangere": { "text": "(TODO) Te trezești pe podeaua tavernei.", "efecte": {} }
+    }
+  }
+}

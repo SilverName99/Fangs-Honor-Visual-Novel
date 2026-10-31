@@ -1,4 +1,6 @@
 import { verifica } from './conditii.js';
+import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
+import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Transformă arborele din locations.json într-o listă plată de scene, cu care lucrează și jocul, și editorul
 export function construiesteLumea(date) {
@@ -55,8 +57,33 @@ export function construiesteLumea(date) {
       });
     }
   }
+  // Ecranul de echipament se aranjează în editor ca o scenă: figura lui Vale și sloturile peste ea
+  scene.set('echipament', {
+    id: 'echipament',
+    tip: 'ecran',
+    titlu: 'Ecranul de echipament',
+    imagine: fisierUi('inventar_fundal'),
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      { id: 'figura', tip: 'figura', nume: 'Vale (A-pose)', imagine: fisierUi('vale_apoza'), variante: [], implicit: { x: 0.27, y: 0.96, scara: 0.86 } },
+      ...SLOTURI.map((sl, i) => ({ id: sl, tip: 'slot', nume: NUME_SLOTURI[sl], imagine: fisierUi('slot'), variante: [], implicit: POZITII_SLOTURI[sl] })),
+    ],
+  });
   return scene;
 }
+
+const POZITII_SLOTURI = {
+  cap: { x: 0.27, y: 0.2, scara: 0.1 },
+  haina: { x: 0.27, y: 0.42, scara: 0.1 },
+  manusi: { x: 0.13, y: 0.55, scara: 0.1 },
+  pantaloni: { x: 0.27, y: 0.66, scara: 0.1 },
+  bocanci: { x: 0.27, y: 0.9, scara: 0.1 },
+  arma_primara: { x: 0.42, y: 0.55, scara: 0.1 },
+  arma_secundara: { x: 0.13, y: 0.72, scara: 0.1 },
+  rucsac: { x: 0.42, y: 0.3, scara: 0.1 },
+};
 
 // Lista de imagini încearcă întâi combinația de variante, apoi câte una, apoi imaginea de bază,
 // ca să nu fie nevoie de o imagine pentru fiecare combinație (de exemplu reparată + noapte)
@@ -86,6 +113,7 @@ export function imaginiCerute(date, scene) {
   };
 
   for (const s of scene.values()) {
+    if (s.tip === 'ecran') continue;
     const tipScena = { harta: 'Harta', zona: 'Zona', loc: 'Loc' }[s.tip];
     cuVariante(s.imagine, s.variante, `${tipScena}: ${s.titlu}`);
     for (const o of s.obiecte) {
@@ -104,6 +132,14 @@ export function imaginiCerute(date, scene) {
     adauga(`portraits/${ev.vorbitor}_normal.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (eveniment)`);
     if (ev.emotie && ev.emotie !== 'normal') adauga(`portraits/${ev.vorbitor}_${ev.emotie}.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (${ev.emotie})`, true);
   }
-  for (const ui of date.config.uiImagini || []) adauga(ui, 'Interfață', true);
+  // Pozele de luptă: Vale are câte un set pentru fiecare tip de armă; ceilalți câte unul
+  const POZE = ['idle', 'atac', 'aparare', 'ranit'];
+  for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
+    for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');
+  }
+  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).map(([id, x]) => [id, x.nume])];
+  for (const [id, nume] of luptatori) for (const p of POZE) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
+  for (const el of ELEMENTE_UI) adauga(fisierUi(el.id), `Interfață: ${el.nume} (${el.marime})`, true);
   return [...rezultat.values()];
 }

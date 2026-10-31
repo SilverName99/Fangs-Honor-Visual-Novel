@@ -3,50 +3,155 @@
   "evenimente": [
     {
       "id": "om_ranit_padure_01",
-      "conditii": { "loc": "padure/interior", "moment": ["amiaza", "seara"], "sansa": 0.2 },
+      "conditii": {
+        "loc": "padure/interior",
+        "moment": [
+          "amiaza",
+          "seara"
+        ],
+        "sansa": 0.2
+      },
       "repetare": "o_data",
       "vorbitor": "calator_ranit",
       "numeVorbitor": "Călător rănit",
       "emotie": "ranit",
       "text": "Un străin rănit îți cere ajutorul.",
       "alegeri": [
-        { "text": "Îl ajuți", "efecte": { "timp": 60, "reputatie": 2, "obiect": "pansament" } },
-        { "text": "Mergi mai departe", "efecte": { "reputatie": -1 } }
+        {
+          "text": "Îl ajuți",
+          "efecte": {
+            "timp": 60,
+            "reputatie": 2,
+            "obiect": "pansament"
+          }
+        },
+        {
+          "text": "Mergi mai departe",
+          "efecte": {
+            "reputatie": -1
+          }
+        }
       ]
     },
     {
       "id": "test_barfa_taverna",
-      "conditii": { "loc": "taverna/parter", "moment": ["seara"], "sansa": 0.5 },
-      "repetare": { "pauzaZile": 3 },
+      "conditii": {
+        "loc": "taverna/parter",
+        "moment": [
+          "seara"
+        ],
+        "sansa": 0.5
+      },
+      "repetare": {
+        "pauzaZile": 3
+      },
       "vorbitor": "hangita",
       "emotie": "normal",
       "text": "(TODO) Ai auzit? Se zice că orcii au mai luat o căruță de grâne de la moară...",
       "alegeri": [
-        { "text": "(TODO) Mai spune-mi.", "efecte": { "timp": 20, "relatie": { "hangita": 1 } } },
-        { "text": "(TODO) Nu am timp de bârfe.", "efecte": {} }
+        {
+          "text": "(TODO) Mai spune-mi.",
+          "efecte": {
+            "timp": 20,
+            "relatie": {
+              "hangita": 1
+            }
+          }
+        },
+        {
+          "text": "(TODO) Nu am timp de bârfe.",
+          "efecte": {}
+        }
       ]
     },
     {
       "id": "test_saci_piata",
-      "conditii": { "loc": "piata/tarabe", "moment": ["dimineata", "amiaza"], "sansa": 0.3 },
-      "repetare": { "pauzaZile": 2 },
+      "conditii": {
+        "loc": "piata/tarabe",
+        "moment": [
+          "dimineata",
+          "amiaza"
+        ],
+        "sansa": 0.3
+      },
+      "repetare": {
+        "pauzaZile": 2
+      },
       "vorbitor": "negustor",
       "emotie": "normal",
       "text": "(TODO) Hei, tinere! Mă ajuți să car sacii ăștia? Îți dau câteva monede.",
       "alegeri": [
-        { "text": "(TODO) Te ajut.", "efecte": { "timp": 60, "bani": 5, "nevoi": { "stamina": -10 } } },
-        { "text": "(TODO) Altă dată.", "efecte": {} }
+        {
+          "text": "(TODO) Te ajut.",
+          "efecte": {
+            "timp": 60,
+            "bani": 5,
+            "nevoi": {
+              "stamina": -10
+            }
+          }
+        },
+        {
+          "text": "(TODO) Altă dată.",
+          "efecte": {}
+        }
       ]
     },
     {
       "id": "test_mama_dimineata",
-      "conditii": { "loc": "casa/bucatarie", "moment": ["dimineata"] },
+      "conditii": {
+        "loc": "casa/bucatarie",
+        "moment": [
+          "dimineata"
+        ]
+      },
       "repetare": "o_data",
       "vorbitor": "miriam",
       "emotie": "normal",
       "text": "(TODO) Ți-am lăsat niște supă pe masă. Mănâncă până nu se răcește.",
       "alegeri": [
-        { "text": "(TODO) Mulțumesc, mamă.", "efecte": { "timp": 15, "nevoi": { "foame": 30 }, "relatie": { "miriam": 1 } } }
+        {
+          "text": "(TODO) Mulțumesc, mamă.",
+          "efecte": {
+            "timp": 15,
+            "nevoi": {
+              "foame": 30
+            },
+            "relatie": {
+              "miriam": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "test_betiv_taverna",
+      "conditii": {
+        "loc": "taverna/parter",
+        "moment": [
+          "seara",
+          "noaptea"
+        ],
+        "sansa": 0.25
+      },
+      "repetare": {
+        "pauzaZile": 2
+      },
+      "vorbitor": "betiv",
+      "numeVorbitor": "Bețiv",
+      "emotie": "suparat",
+      "text": "(TODO) Ce te holbezi așa, mă? Vrei să-ți arăt eu ceva?",
+      "alegeri": [
+        {
+          "text": "(TODO) Hai, dacă ai curaj.",
+          "efecte": {
+            "lupta": "bataie_taverna"
+          }
+        },
+        {
+          "text": "(TODO) Las-o baltă, prietene.",
+          "efecte": {}
+        }
       ]
     }
   ]

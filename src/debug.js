@@ -36,7 +36,7 @@ export function creeazaDebug(parinte, joc) {
   function arata() {
     if (el.hidden) return;
     const s = joc.stare;
-    const optiuniScene = [...joc.lume.values()].map((d) => `<option value="${d.id}" ${d.id === s.scena ? 'selected' : ''}>${d.titlu} (${d.id})</option>`).join('');
+    const optiuniScene = [...joc.lume.values()].filter((d) => d.tip !== 'ecran').map((d) => `<option value="${d.id}" ${d.id === s.scena ? 'selected' : ''}>${d.titlu} (${d.id})</option>`).join('');
     el.innerHTML = `
       <h4>Debug <small>(F2 închide)</small></h4>
       <div class="rand-d"><b>Timp</b>
@@ -53,8 +53,11 @@ export function creeazaDebug(parinte, joc) {
         )
         .join('')}
       <label class="rand-d"><span>Mergi la</span><select class="scena">${optiuniScene}</select></label>
-      <label class="rand-d"><span>Eveniment</span><select class="eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></label>
-      <div class="rand-d"><span>Obiecte: ${s.obiecte.join(', ') || '—'}</span></div>
+      <div class="rand-d"><span>Eveniment</span><select class="eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></div>
+      <div class="rand-d"><span>Obiect</span><select class="obiect">${Object.entries(joc.date.items.obiecte).map(([id, o]) => `<option value="${id}">${o.nume}</option>`).join('')}</select><button class="adauga-ob">Primește</button></div>
+      <div class="rand-d"><span>Luptă</span><select class="lupta">${Object.entries(joc.date.lupte.lupte).map(([id, l]) => `<option value="${id}">${l.nume}</option>`).join('')}</select><button class="porneste-lupta">Pornește</button></div>
+      <div class="rand-d"><span>Grup</span>${joc.date.npcs.personaje.filter((p) => p.lupta).map((p) => `<label><input type="checkbox" data-grup="${p.id}" ${s.grup.includes(p.id) ? 'checked' : ''}> ${p.id}</label>`).join(' ')}</div>
+      <div class="rand-d"><span>Taxă: ziua ${s.taxa.zi}, ${s.taxa.platita ? 'plătită' : 'neplătită'}, ratări ${s.taxa.ratari}</span></div>
       <div class="rand-d"><span>Relații: ${Object.entries(s.relatii).map(([k, v]) => `${k} ${v}`).join(', ') || '—'} · reputație ${s.reputatie}</span></div>
       <div class="rand-d"><button class="joc-nou">Joc nou</button></div>`;
 
@@ -84,6 +87,18 @@ export function creeazaDebug(parinte, joc) {
     });
     el.querySelector('.scena').onchange = (e) => joc.mergi(e.target.value, { faraTimp: true });
     el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.eveniment').value);
+    el.querySelector('.adauga-ob').onclick = () => {
+      joc.primeste(el.querySelector('.obiect').value, 1);
+      joc.dupaSchimbare(true);
+    };
+    el.querySelector('.porneste-lupta').onclick = () => joc.pornesteLupta(el.querySelector('.lupta').value);
+    el.querySelectorAll('[data-grup]').forEach((c) => {
+      c.onchange = () => {
+        const id = c.dataset.grup;
+        s.grup = c.checked ? [...new Set([...s.grup, id])].slice(0, 6) : s.grup.filter((x) => x !== id);
+        joc.dupaSchimbare(false);
+      };
+    });
     el.querySelector('.joc-nou').onclick = () => confirm('Începi un joc nou? Salvarea curentă se pierde.') && joc.jocNou();
   }
 

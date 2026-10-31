@@ -95,7 +95,8 @@ data/
   npcs.json             personaje, rutine, relații, recrutare, statistici de luptă
   items.json            obiecte (tip, stivă, sloturi ocupate, statistici)
   events.json           evenimente
-  lupte.json            luptele (participanți, recompense, înfrângere)
+  dialoguri.json        dialogurile (noduri cu vorbitor, emoție, text, alegeri)
+  lupte.json            inamicii și luptele (participanți, recompense, înfrângere)
   aranjare/             SCRIS DE EDITOR: poziții, poligoane, sloturi, margini UI
 src/                    codul jocului
 editor/                 editorul (galerie, aranjare, testare)
@@ -435,6 +436,10 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 3. **v0.3:** lupta pe ture (formație, bara de acțiune, acțiuni, armură, abilități, căderea); primele lupte: vânătoare, bătaie la tavernă.
 4. **v0.4:** relații; recrutarea; questline-ul vânătoarei; Camp site; misiunea și cheia fierarului.
 5. **v0.5:** adunarea secretă; lupta finală; finalul demo-ului; build-ul `.exe` cu Electron.
+
+**Stadiu:** v0.1 gata. Din v0.2 și v0.3 e făcută **baza** (inventar, echipament, muncă, somn, magazin, rutine, taxa cu colectorul, grafica UI, lupta). Autorul a cerut ca misiunile (acoperișul, fierarul, vânătoarea) și consecințele (taxa ratată, înfrângerea) să aștepte: rămân `TODO`.
+
+**Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de echipament se aranjează în editor ca „scena” `echipament`.
 
 **Nu face în demo:** managementul grupului (somn, mâncare, băutură pentru recruți), schimbul de inventar cu recruții, mana și magia (în afară de abilitățile preotului), amuletele și inelele, dragonii (în afară de indicii), harta mare, fortăreața.
 

@@ -1,5 +1,5 @@
 {
-  "_nota": "locuriSprite = locurile unde personajul are sprite (fișier sprites/<id>_<zona>_<loc>.png). dialog = id din dialoguri.json (fără el: replică TODO). Rutinele vin în v0.2. Numele sunt TODO unde nu sunt stabilite.",
+  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite.",
   "stariPortret": [
     "normal",
     "suparat",
@@ -25,35 +25,133 @@
       "nume": "Soldatul (TODO nume)",
       "locuriSprite": [
         "taverna/parter"
-      ]
+      ],
+      "lupta": {
+        "viata": 75,
+        "staminaMax": 95,
+        "atac": {
+          "min": 9,
+          "max": 12,
+          "tip": "apropiat"
+        },
+        "armura": 2,
+        "rezistenta": 6
+      }
     },
     {
       "id": "fierar",
       "nume": "Fierarul (TODO nume)",
       "locuriSprite": [
-        "fierar/interior"
-      ]
+        "fierar/interior",
+        "taverna/parter",
+        "fierar/camera"
+      ],
+      "lupta": {
+        "viata": 110,
+        "staminaMax": 75,
+        "atac": {
+          "min": 6,
+          "max": 9,
+          "tip": "apropiat"
+        },
+        "armura": 4,
+        "rezistenta": 8
+      },
+      "rutina": {
+        "dimineata": {
+          "loc": "fierar/interior",
+          "sansaAbatere": 0.1,
+          "abatere": [
+            "piata/tarabe"
+          ]
+        },
+        "amiaza": {
+          "loc": "fierar/interior",
+          "sansaAbatere": 0.1,
+          "abatere": [
+            "taverna/parter"
+          ]
+        },
+        "seara": {
+          "loc": "taverna/parter",
+          "sansaAbatere": 0.2,
+          "abatere": [
+            "fierar/interior"
+          ]
+        },
+        "noaptea": {
+          "loc": "fierar/camera",
+          "sansaAbatere": 0.0
+        }
+      }
     },
     {
       "id": "hot",
       "nume": "Hoțul (TODO nume)",
       "locuriSprite": [
         "piata/pedeapsa"
-      ]
+      ],
+      "lupta": {
+        "viata": 50,
+        "staminaMax": 130,
+        "atac": {
+          "min": 5,
+          "max": 9,
+          "tip": "apropiat"
+        },
+        "armura": 0
+      }
     },
     {
       "id": "vanatoare",
       "nume": "Vânătoarea (TODO nume)",
       "locuriSprite": [
         "padure/margine"
-      ]
+      ],
+      "lupta": {
+        "viata": 55,
+        "staminaMax": 105,
+        "atac": {
+          "min": 8,
+          "max": 12,
+          "tip": "distanta"
+        },
+        "armura": 1,
+        "rezistenta": 4
+      }
     },
     {
       "id": "mag",
       "nume": "Preotul (TODO nume)",
       "locuriSprite": [
         "biserica/interior"
-      ]
+      ],
+      "lupta": {
+        "viata": 45,
+        "staminaMax": 90,
+        "atac": {
+          "min": 3,
+          "max": 5,
+          "tip": "distanta"
+        },
+        "armura": 0,
+        "abilitati": [
+          {
+            "id": "vindecare",
+            "nume": "Vindecare",
+            "tinta": "aliat",
+            "min": 12,
+            "max": 18,
+            "cost": 30
+          },
+          {
+            "id": "golesteBara",
+            "nume": "Lumină orbitoare (TODO nume)",
+            "tinta": "inamic",
+            "cost": 60
+          }
+        ]
+      }
     },
     {
       "id": "hangita",

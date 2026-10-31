@@ -5,6 +5,7 @@ import { normalizeaza } from '../src/date.js';
 import { construiesteLumea } from '../src/lume.js';
 import { creeazaGalerie } from './galerie.js';
 import { creeazaAranjare } from './aranjare.js';
+import { creeazaInterfata } from './interfata.js';
 
 // Editorul citește datele de la server (nu din bundle), ca să vadă imediat ce s-a salvat
 const brut = await api('date');
@@ -21,6 +22,7 @@ await reincarcaImagini();
 
 const galerie = creeazaGalerie(document.getElementById('galerie'), comun, reincarcaImagini);
 const aranjare = creeazaAranjare(document.getElementById('aranjare'), comun, verificaSincronizarea);
+const interfata = creeazaInterfata(document.getElementById('interfata'), comun, reincarcaImagini, verificaSincronizarea);
 
 for (const b of document.querySelectorAll('.taburi button')) {
   b.onclick = () => {
@@ -29,6 +31,7 @@ for (const b of document.querySelectorAll('.taburi button')) {
     if (b.dataset.tab === 'aranjare') return aranjare.arata();
     aranjare.ascunde();
     if (b.dataset.tab === 'galerie') galerie.arata();
+    if (b.dataset.tab === 'interfata') interfata.arata();
     // Jocul de test se încarcă abia când e deschis tab-ul, ca să pornească mereu de la ultima variantă
     if (b.dataset.tab === 'testare') incarcaTestul();
   };

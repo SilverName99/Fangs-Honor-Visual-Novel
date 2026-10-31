@@ -1,8 +1,29 @@
 import { VERSIUNE_SALVARE } from './stare.js';
 
-// Fiecare migrare duce o salvare de la versiunea n la n+1. Exemplu, când va fi nevoie:
-//   1: (s) => ({ ...s, inventar: { sloturi: [] }, versiuneSalvare: 2 }),
-const migrari = {};
+// Fiecare migrare duce o salvare de la versiunea n la n+1, ca un joc început mai demult să meargă mai departe
+const migrari = {
+  // v0.2: lista simplă „obiecte” devine inventar cu stive; apar echipamentul, cufărul, taxa și grupul
+  1: (s) => {
+    const inventar = [];
+    for (const id of s.obiecte || []) {
+      const stiva = inventar.find((x) => x.id === id);
+      if (stiva) stiva.n++;
+      else inventar.push({ id, n: 1 });
+    }
+    const { obiecte, ...rest } = s;
+    return {
+      ...rest,
+      inventar,
+      echipat: {},
+      cufar: [],
+      poveste: [],
+      taxa: { zi: 7, platita: false, ratari: 0, colectorZi: 0 },
+      grup: ['vale'],
+      formatie: { vale: { linie: 1, rand: 'fata' } },
+      versiuneSalvare: 2,
+    };
+  },
+};
 
 export function cheieSalvare(test) {
   // Testarea din editor are salvarea ei, ca să nu strice jocul obișnuit

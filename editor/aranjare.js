@@ -67,6 +67,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       html += rand(z.id, 1);
       for (const l of z.locuri) if (!l.actiune) html += rand(`${z.id}.${l.id}`, 2);
     }
+    html += '<div class="titlu-grup">Ecrane</div>' + rand('echipament', 0);
     elLista.innerHTML = html;
     for (const b of elLista.querySelectorAll('button')) b.onclick = () => deschide(b.dataset.id);
   }
@@ -317,7 +318,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   function arataPanou() {
     const d = descriere();
-    const tip = { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului' }[d.tip];
+    const tip = { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)' }[d.tip];
     let html = `<h3>${esc(d.titlu)}</h3><div class="sumar">${tip} · <span class="cale">${esc(d.imagine)}</span></div>
       <div class="salvare">
         <button class="btn principal salveaza">Salvează</button>
@@ -351,12 +352,12 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           .join('')}`;
       }
       if (d.obiecte.length) {
-        html += `<h3>${d.tip === 'harta' ? 'Piese pe hartă' : 'Personaje (sprite-uri)'}</h3>${d.obiecte
+        html += `<h3>${{ harta: 'Piese pe hartă', ecran: 'Figura și sloturile' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
             const aranjat = !!lucru.obiecte[o.id];
             return `<div class="rand ${sel ? 'selectat' : ''}" data-obiect="${esc(o.id)}">
-              <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'sprite' ? o.nume : o.id)}</span>
+              <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}</span>
             </div>${
               sel
                 ? `<div class="numeric">

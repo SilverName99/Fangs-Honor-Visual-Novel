@@ -6,11 +6,18 @@ import { verifica } from './conditii.js';
 import { preincarca } from './imagini.js';
 import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
+import { inMinute } from './timp.js';
 import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog } from './evenimente.js';
 import * as salvare from './salvare.js';
 import { creeazaDialog } from './dialog.js';
 import { creeazaDebug } from './debug.js';
+import { creeazaInventar } from './inventar.js';
+import { creeazaEcranInventar } from './ecranInventar.js';
+import { creeazaActiuni } from './actiuni.js';
+import { creeazaLupta } from './lupta.js';
+import { undeEste } from './rutine.js';
+import { aplicaGraficaUi } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
@@ -43,13 +50,15 @@ const colt = div('colt-stanga');
 const titlu = div('titlu-scena');
 const hud = div('hud');
 const navigare = div('navigare-rezerva');
-ui.append(colt, titlu, hud, navigare);
+const baraActiuni = div('bara-actiuni');
+ui.append(colt, titlu, hud, navigare, baraActiuni);
+aplicaGraficaUi(date.aranjare.ui);
 
 let stare = salvare.citeste(CHEIE) || stareNoua(cfg);
 if (!lume.has(stare.scena)) stare.scena = cfg.start.scena;
 // Editorul deschide jocul direct într-o scenă, ca autorul să-și testeze aranjarea
 const scenaCeruta = parametri.get('scena');
-if (scenaCeruta && lume.has(scenaCeruta)) stare.scena = scenaCeruta;
+if (scenaCeruta && lume.has(scenaCeruta) && lume.get(scenaCeruta).tip !== 'ecran') stare.scena = scenaCeruta;
 
 // ---------- interfața de bază ----------
 
@@ -88,8 +97,14 @@ function actualizeazaHud() {
       rand.append(div('eticheta', eticheta), cale, div('valoare', String(v)));
       return rand;
     }),
-    div('monede', `Monede: ${stare.bani}`),
+    div('monede', `Monede: ${stare.bani} · ${textTaxa()}`),
   );
+}
+
+function textTaxa() {
+  if (stare.taxa.platita) return 'taxa plătită';
+  const zile = stare.taxa.zi - ziua(stare);
+  return zile <= 0 ? `taxa (${cfg.taxa.suma}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}`;
 }
 
 // ---------- timp, nevoi, leșin ----------
@@ -98,10 +113,64 @@ function salveaza() {
   salvare.scrie(CHEIE, stare);
 }
 
-function avanseaza(minute) {
-  const r = avanseazaStare(stare, minute, cfg.nevoi);
+// Întoarce true dacă Vale a leșinat (atunci acțiunea care a cerut timpul se oprește)
+function avanseaza(minute, factorNevoi = 1) {
+  const r = avanseazaStare(stare, minute, cfg.nevoi, factorNevoi);
+  verificaTaxa();
   if (r.lesin) lesin();
   actualizeazaHud();
+  return r.lesin;
+}
+
+// ---------- taxa ----------
+
+// Când trece ziua taxei: dacă e plătită, începe un ciclu nou; dacă nu, se notează ratarea
+function verificaTaxa() {
+  const t = stare.taxa;
+  while (ziua(stare) > t.zi) {
+    if (!t.platita) {
+      t.ratari++;
+      anunt(cfg.taxa.textRatare);
+    }
+    t.zi += cfg.taxa.intervalZile;
+    t.platita = false;
+  }
+}
+
+function platesteTaxa() {
+  const t = stare.taxa;
+  if (t.platita) return mesaj('Taxa e deja plătită pentru săptămâna asta.');
+  if (stare.bani < cfg.taxa.suma) return mesaj(`Îți trebuie ${cfg.taxa.suma} monede.`);
+  stare.bani -= cfg.taxa.suma;
+  t.platita = true;
+  salveaza();
+  actualizeazaHud();
+  mesaj(`Ai plătit taxa (${cfg.taxa.suma} monede).`);
+}
+
+// În ziua taxei, de la ora colectorului, orcul vine la casa lui Vale (o singură dată pe zi)
+function verificaColectorul() {
+  const t = stare.taxa;
+  const ctx = context(stare);
+  if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !stare.scena.startsWith('casa')) return false;
+  if (ctx.minuteZi < inMinute(cfg.taxa.oraColector)) return false;
+  t.colectorZi = ctx.zi;
+  dialog.porneste({
+    partener: 'orc_colector',
+    start: 'c',
+    noduri: {
+      c: {
+        vorbitor: 'orc_colector',
+        emotie: 'normal',
+        text: cfg.taxa.textColector,
+        alegeri: [
+          { text: `Plătește (${cfg.taxa.suma} monede)`, conditii: { bani: { min: cfg.taxa.suma } }, efecte: { plataTaxa: true }, spre: null },
+          { text: 'Nu am bani acum.', spre: null },
+        ],
+      },
+    },
+  });
+  return true;
 }
 
 function lesin() {
@@ -127,12 +196,11 @@ function mergi(id, { faraTimp = false } = {}) {
   stare.scena = id;
   // Doar coborârea (spre o zonă sau un loc) costă timp; „Înapoi” e gratuit
   if (!faraTimp && spre.parinte === de.id) {
-    const r = avanseazaStare(stare, costTimp(stare, spre.tip === 'zona' ? cfg.timp.spreZona : cfg.timp.spreLoc, cfg.nevoi), cfg.nevoi);
-    if (r.lesin) return lesin();
+    if (avanseaza(costTimp(stare, spre.tip === 'zona' ? cfg.timp.spreZona : cfg.timp.spreLoc, cfg.nevoi))) return;
   }
   salveaza();
   afiseaza();
-  if (!faraTimp) verificaEvenimente();
+  if (!faraTimp && !verificaColectorul()) verificaEvenimente();
 }
 
 function verificaEvenimente() {
@@ -150,7 +218,7 @@ function pornesteEveniment(id) {
 
 function activeaza(tinta, ctx) {
   if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return mesaj(tinta.incuiat.mesaj || 'E încuiat.');
-  if (tinta.actiune) return mesaj(`${tinta.nume}: munca vine în v0.2.`);
+  if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
 }
 
@@ -179,14 +247,56 @@ const joc = {
   mesaj,
   mergi,
   pornesteEveniment,
+  salveaza,
+  actualizeazaHud,
+  platesteTaxa,
+  get inventar() {
+    return inventar;
+  },
+  // Primește un obiect; dacă nu încape, întreabă ce face (aruncă ceva sau îl lasă)
+  primeste(id, n = 1) {
+    const rest = inventar.adauga(id, n);
+    if (rest > 0) inventarPlin(id, rest);
+  },
+  folosesteObiect(index) {
+    const x = stare.inventar[index];
+    const d = inventar.def(x.id);
+    inventar.scoate(x.id, 1);
+    aplicaEfecte(d.efecte, joc);
+    if (d.minute) avanseaza(d.minute);
+    return null;
+  },
+  deschideInventarul: (opt) => ecranInventar.deschide(opt),
+  dupaInventar() {
+    salveaza();
+    afiseaza();
+  },
+  dupaActiune(text) {
+    salveaza();
+    afiseaza();
+    if (text) mesaj(text);
+  },
+  pornesteLupta(id) {
+    dialog.inchide();
+    lupta.porneste(id);
+  },
+  dupaLupta(efecte, minute) {
+    aplicaEfecte(efecte, joc);
+    if (!avanseaza(minute)) {
+      salveaza();
+      afiseaza();
+    }
+  },
   // Schimbări din panoul debug: unele cer redesenarea scenei (ora, stări), altele doar HUD-ul
   dupaSchimbare(reafiseaza) {
+    verificaTaxa();
     salveaza();
     if (reafiseaza) afiseaza();
     else actualizeazaHud();
   },
   jocNou() {
     stare = stareNoua(cfg);
+    ecranInventar.inchide();
     dialog.inchide();
     salveaza();
     afiseaza();
@@ -207,7 +317,23 @@ const dialog = creeazaDialog(ui, {
   },
 });
 
+const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
+const ecranInventar = creeazaEcranInventar(ui, joc);
+const actiuni = creeazaActiuni(ui, joc);
+const lupta = creeazaLupta(ui, joc);
+
+function inventarPlin(id, n) {
+  const fundal = div('acoperitor');
+  const panou = div('panou-anunt');
+  panou.append(
+    div('text-anunt', `N-ai loc pentru: ${inventar.def(id).nume}${n > 1 ? ` ×${n}` : ''}.`),
+    buton('Aruncă ceva', '', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
+    buton('Lasă-l', '', () => fundal.remove()),
+  );
+  fundal.append(panou);
+  ui.append(fundal);
+}
 
 // ---------- meniul ----------
 
@@ -274,6 +400,13 @@ stratLume.addEventListener('pointermove', (ev) => seteazaSubMouse(interactivLa(e
 stratLume.addEventListener('pointerleave', () => seteazaSubMouse(null));
 stratLume.addEventListener('click', (ev) => interactivLa(ev)?.clic());
 
+// Datele brute ale unui loc (acțiunile stau în locations.json, nu în descrierea scenei)
+function locDate(d) {
+  if (d.tip !== 'loc') return null;
+  const [z, l] = d.id.split('.');
+  return date.locations.zone.find((x) => x.id === z)?.locuri.find((x) => x.id === l);
+}
+
 function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
@@ -317,12 +450,23 @@ function afiseaza() {
     }
   }
 
+  // Personajele apar doar când rutina lor le aduce aici, la ora asta
   for (const o of d.obiecte.filter((o) => o.tip === 'sprite')) {
     const el = r.obiecte.get(o.id);
+    if (undeEste(personaje.get(o.id), ctx) !== ctx.loc) {
+      el.remove();
+      continue;
+    }
     interactive.push({ el, grup: [el], clic: () => vorbesteCu(o.id) });
   }
 
-  colt.replaceChildren(...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []), buton('☰ Meniu', '', deschideMeniul));
+  baraActiuni.replaceChildren(...(locDate(d)?.actiuni || []).map((a) => buton(a.nume, '', () => actiuni.executa(a))));
+
+  colt.replaceChildren(
+    ...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []),
+    buton('🎒 Inventar', '', () => ecranInventar.deschide({ cufar: false })),
+    buton('☰ Meniu', '', deschideMeniul),
+  );
   titlu.textContent = d.titlu;
 
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
@@ -345,9 +489,12 @@ addEventListener('keydown', (e) => {
     e.preventDefault();
     return debug.comuta();
   }
+  if (lupta.activa()) return;
+  if ((e.key === 'i' || e.key === 'I') && !dialog.activ()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
   if (e.key !== 'Escape') return;
   const acoperitor = ui.querySelector('.acoperitor');
   if (acoperitor) return acoperitor.remove();
+  if (ecranInventar.deschis()) return ecranInventar.inchide();
   const d = lume.get(stare.scena);
   if (!dialog.activ() && d.parinte) mergi(d.parinte);
 });

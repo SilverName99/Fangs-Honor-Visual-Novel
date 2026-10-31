@@ -17,7 +17,7 @@ export function urlImagine(cale) {
 
 // Încearcă pe rând fiecare candidat; dacă niciunul nu există, pune un placeholder cu numele fișierului,
 // ca lipsa artei să nu blocheze nimic
-export function elementImagine(candidati, { clasa = '', raport = 1, fundal = false } = {}) {
+export function elementImagine(candidati, { clasa = '', raport = 1, fundal = false, eticheta } = {}) {
   const el = document.createElement('div');
   el.className = `imagine ${clasa}`;
   if (!fundal) el.style.aspectRatio = raport;
@@ -27,7 +27,7 @@ export function elementImagine(candidati, { clasa = '', raport = 1, fundal = fal
     el.classList.add('lipsa');
     el.style.background = culoare(candidati.at(-1));
     const text = document.createElement('span');
-    text.textContent = candidati.at(-1);
+    text.textContent = eticheta ?? candidati.at(-1);
     el.replaceChildren(text);
   };
 

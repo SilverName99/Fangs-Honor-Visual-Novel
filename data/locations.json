@@ -3,7 +3,14 @@
     "nume": "Satul",
     "imagine": "map/sat_harta.png",
     "variante": [
-      { "sufix": "_noapte", "conditii": { "moment": ["noaptea"] } }
+      {
+        "sufix": "_noapte",
+        "conditii": {
+          "moment": [
+            "noaptea"
+          ]
+        }
+      }
     ]
   },
   "zone": [
@@ -14,79 +21,255 @@
         {
           "id": "casa",
           "imagine": "map/piese/casa.png",
-          "variante": [{ "sufix": "_reparata", "conditii": { "stare": { "acoperis": "reparat" } } }]
+          "variante": [
+            {
+              "sufix": "_reparata",
+              "conditii": {
+                "stare": {
+                  "acoperis": "reparat"
+                }
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/casa_zona.png",
       "variante": [
-        { "sufix": "_reparata", "conditii": { "stare": { "acoperis": "reparat" } } },
-        { "sufix": "_noapte", "conditii": { "moment": ["noaptea"] } }
+        {
+          "sufix": "_reparata",
+          "conditii": {
+            "stare": {
+              "acoperis": "reparat"
+            }
+          }
+        },
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
       ],
       "locuri": [
-        { "id": "camera_vale", "nume": "Camera lui Vale", "imagine": "locations/casa_camera_vale.png" },
-        { "id": "camera_mama", "nume": "Camera mamei", "imagine": "locations/casa_camera_mama.png" },
-        { "id": "bucatarie", "nume": "Bucătăria", "imagine": "locations/casa_bucatarie.png" }
+        {
+          "id": "camera_vale",
+          "nume": "Camera lui Vale",
+          "imagine": "locations/casa_camera_vale.png",
+          "actiuni": [
+            {
+              "tip": "dormi",
+              "nume": "Dormi"
+            },
+            {
+              "tip": "cufar",
+              "nume": "Cufărul"
+            }
+          ]
+        },
+        {
+          "id": "camera_mama",
+          "nume": "Camera mamei",
+          "imagine": "locations/casa_camera_mama.png"
+        },
+        {
+          "id": "bucatarie",
+          "nume": "Bucătăria",
+          "imagine": "locations/casa_bucatarie.png",
+          "actiuni": [
+            {
+              "tip": "obtine",
+              "nume": "Ia apă de la fântână",
+              "obiect": "apa",
+              "n": 1,
+              "minute": 5
+            }
+          ]
+        }
       ]
     },
     {
       "id": "fierar",
       "nume": "Fierăria",
-      "piese": [{ "id": "fierar", "imagine": "map/piese/fierar.png" }],
+      "piese": [
+        {
+          "id": "fierar",
+          "imagine": "map/piese/fierar.png"
+        }
+      ],
       "imagine": "locations/fierar_zona.png",
       "locuri": [
-        { "id": "interior", "nume": "Magazinul", "imagine": "locations/fierar_interior.png" },
+        {
+          "id": "interior",
+          "nume": "Magazinul",
+          "imagine": "locations/fierar_interior.png",
+          "actiuni": [
+            {
+              "tip": "magazin",
+              "nume": "Magazinul fierarului",
+              "vinde": [
+                "sabie",
+                "scut_lemn",
+                "sabie_mare",
+                "topor_mare",
+                "arc",
+                "gluga",
+                "vesta_piele",
+                "manusi_piele",
+                "pantaloni_panza",
+                "bocanci",
+                "rucsac_piele"
+              ],
+              "cumpara": [
+                "piele"
+              ]
+            }
+          ]
+        },
         {
           "id": "camera",
           "nume": "Camera fierarului",
           "imagine": "locations/fierar_camera.png",
-          "incuiat": { "conditii": { "areObiect": "cheie_fierar" }, "mesaj": "Ușa e încuiată." }
+          "incuiat": {
+            "conditii": {
+              "areObiect": "cheie_fierar"
+            },
+            "mesaj": "Ușa e încuiată."
+          }
         }
       ]
     },
     {
       "id": "taverna",
       "nume": "Taverna",
-      "piese": [{ "id": "taverna", "imagine": "map/piese/taverna.png" }],
+      "piese": [
+        {
+          "id": "taverna",
+          "imagine": "map/piese/taverna.png"
+        }
+      ],
       "imagine": "locations/taverna_zona.png",
       "locuri": [
         {
           "id": "parter",
           "nume": "Sala tavernei",
           "imagine": "locations/taverna_parter.png",
-          "variante": [{ "sufix": "_plin", "conditii": { "ora": { "min": "17:30" } } }]
+          "variante": [
+            {
+              "sufix": "_plin",
+              "conditii": {
+                "ora": {
+                  "min": "17:30"
+                }
+              }
+            }
+          ]
         },
-        { "id": "etaj", "nume": "Etajul", "imagine": "locations/taverna_etaj.png" }
+        {
+          "id": "etaj",
+          "nume": "Etajul",
+          "imagine": "locations/taverna_etaj.png",
+          "actiuni": [
+            {
+              "tip": "dormi",
+              "nume": "Dormi (5 monede)",
+              "cost": 5
+            }
+          ]
+        }
       ]
     },
     {
       "id": "piata",
       "nume": "Piața",
-      "piese": [{ "id": "piata", "imagine": "map/piese/piata.png" }],
+      "piese": [
+        {
+          "id": "piata",
+          "imagine": "map/piese/piata.png"
+        }
+      ],
       "imagine": "locations/piata_zona.png",
       "locuri": [
         {
           "id": "tarabe",
           "nume": "Tarabele",
           "imagine": "locations/piata_tarabe.png",
-          "variante": [{ "sufix": "_noapte", "conditii": { "moment": ["noaptea"] } }]
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ],
+          "actiuni": [
+            {
+              "tip": "magazin",
+              "nume": "Cumpără / vinde",
+              "vinde": [
+                "paine",
+                "apa",
+                "pansament",
+                "potiune_viata",
+                "rucsac_panza"
+              ],
+              "cumpara": [
+                "carne",
+                "piele",
+                "lemn"
+              ]
+            }
+          ]
         },
-        { "id": "pedeapsa", "nume": "Butucul", "imagine": "locations/piata_pedeapsa.png" }
+        {
+          "id": "pedeapsa",
+          "nume": "Butucul",
+          "imagine": "locations/piata_pedeapsa.png"
+        }
       ]
     },
     {
       "id": "campuri",
       "nume": "Câmpurile",
       "piese": [
-        { "id": "ferma", "imagine": "map/piese/ferma.png" },
-        { "id": "moara", "imagine": "map/piese/moara.png" },
-        { "id": "culturi", "imagine": "map/piese/culturi.png" }
+        {
+          "id": "ferma",
+          "imagine": "map/piese/ferma.png"
+        },
+        {
+          "id": "moara",
+          "imagine": "map/piese/moara.png"
+        },
+        {
+          "id": "culturi",
+          "imagine": "map/piese/culturi.png"
+        }
       ],
       "imagine": "locations/campuri_zona.png",
       "locuri": [
-        { "id": "arat", "nume": "Câmpul de arat", "actiune": "munca_arat" },
-        { "id": "porci", "nume": "Ferma de porci", "actiune": "munca_porci" },
-        { "id": "vaci", "nume": "Ferma de vaci", "actiune": "munca_vaci" },
-        { "id": "moara", "nume": "Moara", "actiune": "munca_moara" }
+        {
+          "id": "arat",
+          "nume": "Câmpul de arat",
+          "actiune": "munca_arat"
+        },
+        {
+          "id": "porci",
+          "nume": "Ferma de porci",
+          "actiune": "munca_porci"
+        },
+        {
+          "id": "vaci",
+          "nume": "Ferma de vaci",
+          "actiune": "munca_vaci"
+        },
+        {
+          "id": "moara",
+          "nume": "Moara",
+          "actiune": "munca_moara"
+        }
       ]
     },
     {
@@ -95,38 +278,119 @@
       "piese": [],
       "imagine": "locations/padure_zona.png",
       "locuri": [
-        { "id": "margine", "nume": "Marginea pădurii", "imagine": "locations/padure_margine.png" },
-        { "id": "interior", "nume": "Adâncul pădurii", "imagine": "locations/padure_interior.png" },
+        {
+          "id": "margine",
+          "nume": "Marginea pădurii",
+          "imagine": "locations/padure_margine.png"
+        },
+        {
+          "id": "interior",
+          "nume": "Adâncul pădurii",
+          "imagine": "locations/padure_interior.png",
+          "actiuni": [
+            {
+              "tip": "lupta",
+              "nume": "Vânează",
+              "lupta": "vanatoare_lup",
+              "minute": 60
+            },
+            {
+              "tip": "obtine",
+              "nume": "Adună lemne (1 oră)",
+              "obiect": "lemn",
+              "n": 3,
+              "minute": 60,
+              "stamina": 10
+            }
+          ]
+        },
         {
           "id": "campsite",
           "nume": "Camp site",
           "imagine": "locations/padure_campsite.png",
-          "variante": [{ "sufix": "_seara", "conditii": { "stare": { "adunare": "acum" } } }],
-          "ascuns": { "conditii": { "misiune": { "vanatoare": "terminata" } } }
+          "variante": [
+            {
+              "sufix": "_seara",
+              "conditii": {
+                "stare": {
+                  "adunare": "acum"
+                }
+              }
+            }
+          ],
+          "ascuns": {
+            "conditii": {
+              "misiune": {
+                "vanatoare": "terminata"
+              }
+            }
+          }
         }
       ]
     },
     {
       "id": "poarta",
       "nume": "Poarta",
-      "piese": [{ "id": "poarta", "imagine": "map/piese/poarta.png" }],
+      "piese": [
+        {
+          "id": "poarta",
+          "imagine": "map/piese/poarta.png"
+        }
+      ],
       "imagine": "locations/poarta_zona.png",
       "variante": [
-        { "sufix": "_liberata", "conditii": { "stare": { "sat": "liberat" } } },
-        { "sufix": "_noapte", "conditii": { "moment": ["noaptea"] } }
+        {
+          "sufix": "_liberata",
+          "conditii": {
+            "stare": {
+              "sat": "liberat"
+            }
+          }
+        },
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
       ],
       "locuri": [
-        { "id": "exterior", "nume": "Paznicii", "imagine": "locations/poarta_exterior.png" },
-        { "id": "taxa", "nume": "Locul de plată", "imagine": "locations/poarta_taxa.png" }
+        {
+          "id": "exterior",
+          "nume": "Paznicii",
+          "imagine": "locations/poarta_exterior.png"
+        },
+        {
+          "id": "taxa",
+          "nume": "Locul de plată",
+          "imagine": "locations/poarta_taxa.png",
+          "actiuni": [
+            {
+              "tip": "taxa",
+              "nume": "Plătește taxa"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "biserica",
       "nume": "Biserica",
-      "piese": [{ "id": "biserica", "imagine": "map/piese/biserica.png" }],
+      "piese": [
+        {
+          "id": "biserica",
+          "imagine": "map/piese/biserica.png"
+        }
+      ],
       "imagine": "locations/biserica_zona.png",
       "locuri": [
-        { "id": "interior", "nume": "Interiorul bisericii", "imagine": "locations/biserica_interior.png" }
+        {
+          "id": "interior",
+          "nume": "Interiorul bisericii",
+          "imagine": "locations/biserica_interior.png"
+        }
       ]
     }
   ]

@@ -6,27 +6,21 @@
     "bani": 0,
     "stari": {
       "acoperis": "stricat"
+    },
+    "inventar": [
+      {
+        "id": "paine",
+        "n": 2
+      },
+      {
+        "id": "apa",
+        "n": 2
+      }
+    ],
+    "echipat": {
+      "pantaloni": "pantaloni_panza"
     }
   },
-  "uiImagini": [
-    "ui/ui_dialog.png",
-    "ui/ui_nume.png",
-    "ui/ui_buton.png",
-    "ui/ui_buton_hover.png",
-    "ui/ui_buton_apasat.png",
-    "ui/ui_panou.png",
-    "ui/ui_slot.png",
-    "ui/ui_slot_hover.png",
-    "ui/ui_bara_rama.png",
-    "ui/ui_bara_viata.png",
-    "ui/ui_bara_stamina.png",
-    "ui/ui_bara_foame.png",
-    "ui/ui_bara_sete.png",
-    "ui/ui_cursor.png",
-    "ui/ui_cursor_click.png",
-    "ui/ui_vale_apoza.png",
-    "ui/ui_meniu_fundal.png"
-  ],
   "timp": {
     "_nota": "Minute consumate la mutare. Întoarcerea la nivelul de deasupra nu consumă timp.",
     "spreZona": 15,
@@ -54,5 +48,66 @@
     "seteDupa": 30,
     "pierdereBaniProcent": 0,
     "text": "(TODO text) Totul se întunecă. Te trezești în patul tău; mama te-a găsit și te-a adus acasă. A trecut o jumătate de zi."
+  },
+  "inventar": {
+    "_nota": "Sloturi fără rucsac; rucsacul dă capacitatea lui. Cufărul de acasă (TODO cifre).",
+    "faraRucsac": 8,
+    "cufar": 40
+  },
+  "munca": {
+    "_nota": "Muncile de la câmpuri: monede și stamina pe oră (TODO echilibru).",
+    "munca_arat": {
+      "nume": "Arat",
+      "monedePeOra": 3,
+      "staminaPeOra": 12
+    },
+    "munca_porci": {
+      "nume": "Ferma de porci",
+      "monedePeOra": 3,
+      "staminaPeOra": 10
+    },
+    "munca_vaci": {
+      "nume": "Ferma de vaci",
+      "monedePeOra": 3,
+      "staminaPeOra": 10
+    },
+    "munca_moara": {
+      "nume": "Moara",
+      "monedePeOra": 4,
+      "staminaPeOra": 14
+    }
+  },
+  "somn": {
+    "_nota": "Somnul ține până dimineață. Stamina pe oră; cu foamea sub prag se reface la jumătate. Nevoile scad mai încet cât dormi.",
+    "oraTrezire": "07:00",
+    "staminaPeOra": 15,
+    "nevoiInSomn": 0.5
+  },
+  "magazin": {
+    "_nota": "Când vinzi, primești o parte din preț.",
+    "procentVanzare": 50
+  },
+  "taxa": {
+    "suma": 50,
+    "intervalZile": 7,
+    "oraColector": "10:00",
+    "textColector": "(TODO) Orcul colector bate la ușă: a venit vremea taxei.",
+    "textRatare": "(TODO) N-ai plătit taxa. Orcii o să-și amintească asta (consecințele vin mai târziu)."
+  },
+  "lupta": {
+    "_nota": "viteza: cât de repede se umple bara (staminaMax × viteza pe secundă). Cifre de pornire (TODO).",
+    "viteza": 0.4,
+    "blocareImplicita": 0.5,
+    "pumni": {
+      "min": 1,
+      "max": 3,
+      "tip": "apropiat"
+    },
+    "vale": {
+      "staminaMax": 100
+    },
+    "viataDupaCadere": 10,
+    "staminaConsumata": 15,
+    "minute": 30
   }
 }

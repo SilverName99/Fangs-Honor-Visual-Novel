@@ -8,16 +8,13 @@ const efecte = {
   nevoi: (v, joc) => Object.entries(v).forEach(([k, cu]) => schimbaNevoie(joc.stare, k, cu)),
   reputatie: (v, joc) => (joc.stare.reputatie += v),
   relatie: (v, joc) => Object.entries(v).forEach(([id, cu]) => (joc.stare.relatii[id] = (joc.stare.relatii[id] || 0) + cu)),
-  obiect: (v, joc) => [].concat(v).forEach((id) => joc.stare.obiecte.push(id)),
-  daObiect: (v, joc) =>
-    [].concat(v).forEach((id) => {
-      const i = joc.stare.obiecte.indexOf(id);
-      if (i >= 0) joc.stare.obiecte.splice(i, 1);
-    }),
+  obiect: (v, joc) => [].concat(v).forEach((id) => joc.primeste(id, 1)),
+  daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   stare: (v, joc) => Object.assign(joc.stare.stari, v),
   deblocheaza: (v, joc) => [].concat(v).forEach((loc) => joc.stare.deblocate.includes(loc) || joc.stare.deblocate.push(loc)),
   misiune: (v, joc) => Object.assign(joc.stare.misiuni, v),
-  lupta: (v, joc) => joc.mesaj(`Lupta „${v}” vine în v0.3.`),
+  lupta: (v, joc) => joc.pornesteLupta(v),
+  plataTaxa: (v, joc) => joc.platesteTaxa(),
 };
 
 export function registreazaEfect(nume, functie) {
