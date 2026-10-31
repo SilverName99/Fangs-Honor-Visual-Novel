@@ -100,7 +100,7 @@ svg.zone {
 }
 /* Zonele fără piesă (uși, cărări) strălucesc puțin și fără mouse, ca să se știe că se poate da click */
 .zona-clic.vizibila {
-  stroke-opacity: 0.23;
+  stroke-opacity: 0.2;
 }
 .zona-clic.evidentiat-poligon {
   stroke-opacity: 1;
