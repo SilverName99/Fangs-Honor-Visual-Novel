@@ -1,5 +1,5 @@
 {
-  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă (de exemplu hoțul dispare după ce e eliberat).",
+  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă. Personajele pictate direct în fundal (prizonierul și negustorul din piață) nu au sprite: se vorbește cu ele printr-o zonă desenată (personajeFundal în locations.json).",
   "stariPortret": [
     "normal",
     "suparat",
@@ -88,9 +88,7 @@
     {
       "id": "hot",
       "nume": "Hoțul (TODO nume)",
-      "locuriSprite": [
-        "piata"
-      ],
+      "locuriSprite": [],
       "lupta": {
         "viata": 50,
         "staminaMax": 130,
@@ -100,11 +98,6 @@
           "tip": "apropiat"
         },
         "armura": 0
-      },
-      "apare": {
-        "nuStare": {
-          "hot": "eliberat"
-        }
       }
     },
     {
@@ -168,9 +161,7 @@
     {
       "id": "negustor",
       "nume": "Negustorul",
-      "locuriSprite": [
-        "piata"
-      ]
+      "locuriSprite": []
     },
     {
       "id": "orc_colector",
