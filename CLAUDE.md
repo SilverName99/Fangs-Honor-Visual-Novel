@@ -145,7 +145,7 @@ Reguli:
 | `casa` | `casa.png` (+ `casa_reparata.png`) | `casa_zona.png` (+ `casa_zona_reparata.png`) | `camera_vale`, `camera_mama`, `bucatarie` (cufărul de acasă e aici sau în camera lui Vale) |
 | `fierar` | `fierar.png` | `fierar_zona.png` | `interior` (magazin), `camera` (la etaj, **încuiată**, cu cufăr) |
 | `taverna` | `taverna.png` | `taverna_zona.png` | `parter`, `etaj` (dormit) |
-| `piata` | `piata.png` | `piata_zona.png` | `tarabe`, `pedeapsa` (hoțul legat) |
+| `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
 | `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `margine` (cabana vânătoarei), `interior` (vânat), `campsite` (**ascuns** până la questline-ul vânătoarei) |
 | `poarta` | `poarta.png` | `poarta_zona.png` | `exterior` (orcii), `taxa` (locul de plată) |
@@ -153,7 +153,7 @@ Reguli:
 
 Fișierele scenelor: `<zona>_<loc>.png` (de exemplu `casa_camera_vale.png`, `padure_campsite.png`).
 
-Piața poate deveni o singură scenă (`TODO`). Scenele acceptă oricâte sprite-uri clicabile, deci merge oricum.
+Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și acțiunile stau direct pe imaginea zonei. După eliberarea hoțului (`hot: eliberat`) se folosesc imaginile „fără prizonier”, iar hoțul nu mai apare.
 
 ## 8. Straturi vizuale
 
@@ -162,7 +162,6 @@ Piața poate deveni o singură scenă (`TODO`). Scenele acceptă oricâte sprite
 | Scenă | Variantă | Condiție |
 |---|---|---|
 | `taverna_parter` | `_plin` (plină de oameni) | ora ≥ 17:30 |
-| `piata_tarabe` | `_noapte` | noaptea |
 | `padure_campsite` | `_seara` (foc aprins) | adunarea secretă |
 | `sat_harta` | `_noapte` | noaptea |
 | `casa_zona` | `_noapte`, `_reparata` | noaptea / `acoperis = reparat` |
@@ -239,7 +238,7 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 ```json
 "fierar": {
   "rutina": {
-    "dimineata": { "loc": "fierar/interior", "sansaAbatere": 0.1, "abatere": ["piata/tarabe"] },
+    "dimineata": { "loc": "fierar/interior", "sansaAbatere": 0.1, "abatere": ["piata"] },
     "amiaza":    { "loc": "fierar/interior", "sansaAbatere": 0.1, "abatere": ["taverna/parter"] },
     "seara":     { "loc": "taverna/parter",  "sansaAbatere": 0.2, "abatere": ["fierar/interior"] },
     "noaptea":   { "loc": "fierar/camera",   "sansaAbatere": 0.0 }
@@ -460,7 +459,6 @@ Pune `TODO` în date și întreabă când e nevoie:
 - Treptele pentru taxa ratată: ce obiect iau orcii, care e pedeapsa a doua.
 - Ce efect are reputația în sat.
 - Ce pierde Vale la leșin.
-- Dacă piața rămâne două scene sau una singură.
 - Prologul și povestea despre dragoni de la tavernă.
 
 ## 20. Primul pas

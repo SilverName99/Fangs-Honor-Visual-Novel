@@ -300,45 +300,35 @@
         }
       ],
       "imagine": "locations/piata_zona.png",
-      "locuri": [
+      "locuri": [],
+      "actiuni": [
         {
-          "id": "tarabe",
-          "nume": "Tarabele",
-          "imagine": "locations/piata_tarabe.png",
-          "variante": [
-            {
-              "sufix": "_noapte",
-              "conditii": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
-            }
+          "id": "magazin",
+          "tip": "magazin",
+          "nume": "Cumpără / vinde",
+          "vinde": [
+            "paine",
+            "apa",
+            "pansament",
+            "potiune_viata",
+            "rucsac_panza"
           ],
-          "actiuni": [
-            {
-              "id": "magazin",
-              "tip": "magazin",
-              "nume": "Cumpără / vinde",
-              "vinde": [
-                "paine",
-                "apa",
-                "pansament",
-                "potiune_viata",
-                "rucsac_panza"
-              ],
-              "cumpara": [
-                "carne",
-                "piele",
-                "lemn"
-              ]
-            }
+          "cumpara": [
+            "carne",
+            "piele",
+            "lemn"
           ]
-        },
+        }
+      ],
+      "variante": [
         {
-          "id": "pedeapsa",
-          "nume": "Butucul",
-          "imagine": "locations/piata_pedeapsa.png"
+          "imagine": "locations/piata_zona_fara_prizonier.png",
+          "nume": "fără prizonier",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          }
         }
       ]
     },

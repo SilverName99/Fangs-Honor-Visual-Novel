@@ -6,6 +6,7 @@ const tipuri = {
   ora: (v, c) => (!v.min || c.minuteZi >= inMinute(v.min)) && (!v.max || c.minuteZi <= inMinute(v.max)),
   loc: (v, c) => c.loc === v,
   stare: (v, c) => Object.entries(v).every(([k, val]) => c.stari?.[k] === val),
+  nuStare: (v, c) => Object.entries(v).every(([k, val]) => c.stari?.[k] !== val),
   areObiect: (v, c) => (c.obiecte || []).includes(v),
   misiune: (v, c) => Object.entries(v).every(([k, val]) => c.misiuni?.[k] === val),
   relatie: (v, c) =>

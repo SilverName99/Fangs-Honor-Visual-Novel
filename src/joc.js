@@ -445,7 +445,8 @@ function afiseaza() {
   // Personajele apar doar când rutina lor le aduce aici, la ora asta
   for (const o of d.obiecte.filter((o) => o.tip === 'sprite')) {
     const el = r.obiecte.get(o.id);
-    if (undeEste(personaje.get(o.id), ctx) !== ctx.loc) {
+    const pers = personaje.get(o.id);
+    if (undeEste(pers, ctx) !== ctx.loc || !verifica(pers.apare, ctx)) {
       el.remove();
       continue;
     }

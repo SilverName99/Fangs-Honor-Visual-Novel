@@ -67,7 +67,7 @@
     {
       "id": "test_saci_piata",
       "conditii": {
-        "loc": "piata/tarabe",
+        "loc": "piata",
         "moment": [
           "dimineata",
           "amiaza"

@@ -21,6 +21,13 @@ export function construiesteLumea(date) {
     ),
   });
 
+  // Personajele care au sprite într-un loc (cheie „zona/loc”) sau direct într-o zonă (cheie „zona”, ca piața)
+  const spriteuri = (cheie, fisier) =>
+    personaje
+      .filter((p) => (p.locuriSprite || []).includes(cheie))
+      .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: [], tinta: null }));
+  const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a }));
+
   for (const z of zone) {
     scene.set(z.id, {
       id: z.id,
@@ -29,15 +36,19 @@ export function construiesteLumea(date) {
       imagine: z.imagine,
       variante: z.variante || [],
       parinte: 'harta',
-      tinte: z.locuri.map((l) => ({
-        id: l.id,
-        nume: l.nume,
-        spre: l.actiune ? null : `${z.id}.${l.id}`,
-        actiune: l.actiune || null,
-        incuiat: l.incuiat || null,
-        ascuns: l.ascuns || null,
-      })),
-      obiecte: [],
+      tinte: [
+        ...z.locuri.map((l) => ({
+          id: l.id,
+          nume: l.nume,
+          spre: l.actiune ? null : `${z.id}.${l.id}`,
+          actiune: l.actiune || null,
+          incuiat: l.incuiat || null,
+          ascuns: l.ascuns || null,
+        })),
+        // O zonă fără locuri (piața) e ea însăși scena: acțiunile și personajele stau direct pe ea
+        ...actiuniCaTinte(z.actiuni),
+      ],
+      obiecte: spriteuri(z.id, z.id),
     });
 
     for (const l of z.locuri) {
@@ -51,10 +62,8 @@ export function construiesteLumea(date) {
         variante: l.variante || [],
         parinte: z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
-        tinte: (l.actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a })),
-        obiecte: personaje
-          .filter((p) => (p.locuriSprite || []).includes(cheieLoc))
-          .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${z.id}_${l.id}.png`, variante: [], tinta: null })),
+        tinte: actiuniCaTinte(l.actiuni),
+        obiecte: spriteuri(cheieLoc, `${z.id}_${l.id}`),
       });
     }
   }
