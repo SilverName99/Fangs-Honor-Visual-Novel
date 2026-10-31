@@ -153,7 +153,7 @@ Reguli:
 
 Fișierele scenelor: `<zona>_<loc>.png` (de exemplu `casa_camera_vale.png`, `padure_campsite.png`).
 
-Piața e o singură scenă (decis). Prizonierul și negustorul sunt **pictați în fundal**, fără sprite: se vorbește cu ei printr-o **zonă desenată** în jurul lor (`personajeFundal` în `locations.json`), la fel ca magazinul. După eliberarea hoțului (`hot: eliberat`) se folosesc imaginile „fără prizonier”, iar zona prizonierului dispare.
+Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și acțiunile stau direct pe imaginea zonei. După eliberarea hoțului (`hot: eliberat`) se folosesc imaginile „fără prizonier”, iar hoțul nu mai apare.
 
 ## 8. Straturi vizuale
 

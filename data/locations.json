@@ -350,23 +350,6 @@
             ]
           }
         }
-      ],
-      "personajeFundal": [
-        {
-          "personaj": "hot",
-          "nume": "Prizonierul",
-          "ascuns": {
-            "conditii": {
-              "nuStare": {
-                "hot": "eliberat"
-              }
-            }
-          }
-        },
-        {
-          "personaj": "negustor",
-          "nume": "Negustorul"
-        }
       ]
     },
     {

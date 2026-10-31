@@ -219,7 +219,6 @@ function pornesteEveniment(id) {
 function activeaza(tinta, ctx) {
   if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return mesaj(tinta.incuiat.mesaj || 'E încuiat.');
   if (tinta.act) return actiuni.executa(tinta.act);
-  if (tinta.personaj) return vorbesteCu(tinta.personaj);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
 }
@@ -439,7 +438,7 @@ function afiseaza() {
       for (const p of piese) interactive.push({ el: p, grup: piese, clic });
     } else {
       // Acțiunile fără zonă desenată rămân butoane jos, ca înainte; locurile merg la „Fără zonă desenată”
-      (t.act || t.personaj ? actiuniFaraZona : faraZona).push({ t, clic });
+      (t.act ? actiuniFaraZona : faraZona).push({ t, clic });
     }
   }
 

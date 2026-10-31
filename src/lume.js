@@ -27,9 +27,6 @@ export function construiesteLumea(date) {
       .filter((p) => (p.locuriSprite || []).includes(cheie))
       .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: [], tinta: null }));
   const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a }));
-  // Personaje desenate direct în imaginea de fundal (fără sprite): se vorbește cu ele printr-o zonă desenată
-  const personajeCaTinte = (lista) =>
-    (lista || []).map((p) => ({ id: `personaj_${p.personaj}`, nume: p.nume, personaj: p.personaj, ascuns: p.ascuns || null }));
 
   for (const z of zone) {
     scene.set(z.id, {
@@ -50,7 +47,6 @@ export function construiesteLumea(date) {
         })),
         // O zonă fără locuri (piața) e ea însăși scena: acțiunile și personajele stau direct pe ea
         ...actiuniCaTinte(z.actiuni),
-        ...personajeCaTinte(z.personajeFundal),
       ],
       obiecte: spriteuri(z.id, z.id),
     });
@@ -66,7 +62,7 @@ export function construiesteLumea(date) {
         variante: l.variante || [],
         parinte: z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
-        tinte: [...actiuniCaTinte(l.actiuni), ...personajeCaTinte(l.personajeFundal)],
+        tinte: actiuniCaTinte(l.actiuni),
         obiecte: spriteuri(cheieLoc, `${z.id}_${l.id}`),
       });
     }
