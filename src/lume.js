@@ -145,6 +145,21 @@ export function categorie(cale) {
   return cale.includes('/') ? cale.slice(0, cale.lastIndexOf('/')) : '';
 }
 
+const ZILE_SCURT = { luni: 'L', marti: 'Ma', miercuri: 'Mi', joi: 'J', vineri: 'V', sambata: 'S', duminica: 'D' };
+const MOMENTE = { dimineata: 'dimineața', amiaza: 'amiaza', seara: 'seara', noaptea: 'noaptea' };
+
+// Când e personajul în locul ăsta cu sprite-ul dat (null = cel de bază), pe scurt: „09:00–12:00 (S,D) pregătește taverna”
+function candApare(p, cheie, sprite) {
+  if (p?.program) {
+    return p.program
+      .filter((x) => x.loc === cheie && (x.sprite || null) === sprite)
+      .map((x) => `${x.de}–${x.pana}${x.zile ? ` (${x.zile.map((z) => ZILE_SCURT[z]).join(',')})` : ''}${x.ce ? ` ${x.ce}` : ''}`)
+      .join('; ');
+  }
+  if (p?.rutina && !sprite) return Object.entries(p.rutina).filter(([, r]) => r.loc === cheie).map(([m]) => MOMENTE[m] || m).join(', ');
+  return '';
+}
+
 // Tot ce cere jocul, pentru lista „lipsă” din galerie. Variantele și stările în plus sunt opționale (au rezervă)
 export function imaginiCerute(date, scene) {
   const rezultat = new Map();
@@ -169,7 +184,19 @@ export function imaginiCerute(date, scene) {
     for (const o of s.obiecte) {
       // Piesa de pe hartă stă la zona ei (casa la Casa), nu la Harta
       if (o.tip === 'piesa') grup = o.nume;
-      cuVariante(o.imagine, o.variante, o.tip === 'piesa' ? `Piesă pe hartă: ${o.id}` : `Sprite: ${o.nume} în ${s.titlu}`);
+      if (o.tip !== 'sprite') {
+        cuVariante(o.imagine, o.variante, o.tip === 'piesa' ? `Piesă pe hartă: ${o.id}` : o.nume);
+        continue;
+      }
+      // La sprite-uri scrie și orele, ca autorul să știe ce face personajul în poza aceea
+      const p = date.npcs.personaje.find((x) => x.id === o.id);
+      const cheie = s.id.replace('.', '/');
+      const cand = (sprite) => {
+        const ore = candApare(p, cheie, sprite);
+        return ore ? ` · ${ore}` : '';
+      };
+      adauga(o.imagine, `Sprite: ${o.nume} în ${s.titlu}${cand(null)}`);
+      for (const v of o.variante) adauga(v.imagine, `Sprite: ${o.nume} în ${s.titlu} (varianta ${v.nume})${cand(v.nume)}`, true);
     }
   }
   // Imaginile evenimentelor (scenele derulate), grupate pe eveniment: tot ce ține de el se încarcă într-un loc
