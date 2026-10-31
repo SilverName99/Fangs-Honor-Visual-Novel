@@ -4,7 +4,8 @@ import { candidati } from './lume.js';
 export const LATIME = 1920;
 export const INALTIME = 1080;
 
-// Scena e mereu 1920×1080 și doar se scalează; toate pozițiile din date rămân valabile la orice ecran
+// Scena e mereu 1920×1080 și doar se scalează; toate pozițiile din date rămân valabile la orice ecran.
+// Editorul poate adăuga zoom și deplasare (vedere), jocul rămâne mereu „potrivit în fereastră”.
 export function creeazaEcran(parinte) {
   const ecran = document.createElement('div');
   ecran.className = 'ecran';
@@ -16,14 +17,40 @@ export function creeazaEcran(parinte) {
   ecran.append(scena);
   parinte.append(ecran);
 
-  const ajusteaza = () => {
+  const vedere = { zoom: 1, x: 0, y: 0 };
+  const potrivire = () => {
     const r = ecran.getBoundingClientRect();
-    const s = Math.min(r.width / LATIME, r.height / INALTIME) || 1;
-    scena.style.transform = `translate(-50%, -50%) scale(${s})`;
+    return Math.min(r.width / LATIME, r.height / INALTIME) || 1;
+  };
+  const ajusteaza = () => {
+    scena.style.transform = `translate(-50%, -50%) translate(${vedere.x}px, ${vedere.y}px) scale(${potrivire() * vedere.zoom})`;
   };
   new ResizeObserver(ajusteaza).observe(ecran);
   ajusteaza();
-  return { ecran, scena, lume };
+
+  // Zoom în jurul unui punct de pe ecran: punctul de sub mouse rămâne pe loc
+  function zoomLa(zoomNou, clientX, clientY) {
+    const r = ecran.getBoundingClientRect();
+    const cx = clientX - (r.left + r.width / 2);
+    const cy = clientY - (r.top + r.height / 2);
+    const sVechi = potrivire() * vedere.zoom;
+    vedere.zoom = Math.min(8, Math.max(1, zoomNou));
+    const sNou = potrivire() * vedere.zoom;
+    vedere.x = cx - ((cx - vedere.x) / sVechi) * sNou;
+    vedere.y = cy - ((cy - vedere.y) / sVechi) * sNou;
+    if (vedere.zoom === 1) vedere.x = vedere.y = 0;
+    ajusteaza();
+  }
+  function muta(dx, dy) {
+    vedere.x += dx;
+    vedere.y += dy;
+    ajusteaza();
+  }
+  function reseteaza() {
+    Object.assign(vedere, { zoom: 1, x: 0, y: 0 });
+    ajusteaza();
+  }
+  return { ecran, scena, lume, vedere, zoomLa, muta, reseteaza };
 }
 
 export function pozitieImplicita(index, tip) {

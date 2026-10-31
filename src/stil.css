@@ -171,3 +171,7 @@ svg.zone {
 .mesaj.vizibil {
   opacity: 1;
 }
+/* Evenimentele de mouse le prinde stratul, care verifică pixelul; imaginile doar se văd */
+.strat-lume .obiect {
+  pointer-events: none;
+}

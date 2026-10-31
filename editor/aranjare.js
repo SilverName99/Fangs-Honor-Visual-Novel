@@ -1,4 +1,5 @@
 import { api } from './api.js';
+import { elementLaPunct } from '../src/lovire.js';
 import { creeazaEcran, randeaza, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
@@ -14,7 +15,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   container.innerHTML = '<div class="aranjare"><div class="lista-scene"></div><div class="scena-editor"></div><div class="panou"></div></div>';
   const elLista = container.querySelector('.lista-scene');
   const elPanou = container.querySelector('.panou');
-  const { scena, lume: strat } = creeazaEcran(container.querySelector('.scena-editor'));
+  const ecranul = creeazaEcran(container.querySelector('.scena-editor'));
+  const { scena, lume: strat } = ecranul;
 
   const suprapunere = document.createElementNS(SVG, 'svg');
   suprapunere.setAttribute('class', 'editor-zone');
@@ -30,6 +32,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   let desen = null;
   let elemente = new Map();
   let activ = false;
+  let spatiuApasat = false;
 
   const descriere = () => lume.get(idScena);
 
@@ -92,47 +95,94 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function legaObiect(o, el) {
     el.dataset.nume = o.id;
     el.classList.toggle('selectat', selectie?.tip === 'obiect' && selectie.id === o.id);
+  }
 
-    el.addEventListener('pointerdown', (ev) => {
-      if (desen || ev.button !== 0) return;
-      ev.preventDefault();
+  // Obiectul se alege după pixelul de sub mouse (ca în joc), nu după dreptunghi:
+  // piesele suprapuse se pot apuca fiecare de partea ei vizibilă
+  function obiectLa(ev) {
+    const el = elementLaPunct(elemente.values(), ev);
+    return el ? descriere().obiecte.find((o) => o.id === el.dataset.id) : null;
+  }
+
+  function incepeMutarea(o, ev) {
+    const el = elemente.get(o.id);
+    selecteaza({ tip: 'obiect', id: o.id });
+    const start = punctNormalizat(scena, ev);
+    const poz = pozitieObiect(o.id);
+    const x0 = poz.x;
+    const y0 = poz.y;
+    let mutat = false;
+    urmaresteTragerea(ev, (e) => {
+      const p = punctNormalizat(scena, e);
+      poz.x = rotunjeste(limiteaza(x0 + p[0] - start[0], 0, 1));
+      poz.y = rotunjeste(limiteaza(y0 + p[1] - start[1], 0, 1.5));
+      lucru.obiecte[o.id] = { ...poz };
+      aplicaPozitie(el, poz);
+      mutat = true;
+      actualizeazaNumerice();
+    }, () => mutat && marcheaza());
+  }
+
+  function incepeDeplasarea(ev) {
+    let ultim = [ev.clientX, ev.clientY];
+    ecranul.ecran.style.cursor = 'grabbing';
+    urmaresteTragerea(ev, (e) => {
+      ecranul.muta(e.clientX - ultim[0], e.clientY - ultim[1]);
+      ultim = [e.clientX, e.clientY];
+    }, () => (ecranul.ecran.style.cursor = ''));
+  }
+
+  function urmaresteTragerea(ev, laMiscare, laFinal) {
+    ev.preventDefault();
+    const sus = () => {
+      removeEventListener('pointermove', laMiscare);
+      removeEventListener('pointerup', sus);
+      laFinal?.();
+    };
+    addEventListener('pointermove', laMiscare);
+    addEventListener('pointerup', sus);
+  }
+
+  ecranul.ecran.addEventListener('contextmenu', (e) => e.preventDefault());
+  ecranul.ecran.addEventListener('pointerdown', (ev) => {
+    if (ev.target.closest?.('.ez-varf')) return;
+    // Click dreapta, rotița apăsată sau Space + click mută vederea (util când e mărită)
+    if (ev.button === 2 || ev.button === 1 || (ev.button === 0 && spatiuApasat)) return incepeDeplasarea(ev);
+    if (ev.button !== 0 || desen) return;
+    const o = obiectLa(ev);
+    if (o) return incepeMutarea(o, ev);
+    if (ecranul.vedere.zoom > 1) return incepeDeplasarea(ev);
+    selecteaza(null);
+  });
+  ecranul.ecran.addEventListener('pointermove', (ev) => {
+    if (desen || ev.buttons) return;
+    ecranul.ecran.style.cursor = obiectLa(ev) ? 'grab' : '';
+  });
+  ecranul.ecran.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault();
+      const o = !desen && !e.ctrlKey ? obiectLa(e) : null;
+      if (!o) {
+        // Rotița pe fundal (sau Ctrl + rotița oriunde) mărește vederea, ca zonele să se deseneze precis
+        ecranul.zoomLa(ecranul.vedere.zoom * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY);
+        arataZoom();
+        return;
+      }
       selecteaza({ tip: 'obiect', id: o.id });
-      const start = punctNormalizat(scena, ev);
       const poz = pozitieObiect(o.id);
-      const x0 = poz.x;
-      const y0 = poz.y;
-      let mutat = false;
-      el.setPointerCapture(ev.pointerId);
-      el.onpointermove = (e) => {
-        const p = punctNormalizat(scena, e);
-        poz.x = rotunjeste(limiteaza(x0 + p[0] - start[0], 0, 1));
-        poz.y = rotunjeste(limiteaza(y0 + p[1] - start[1], 0, 1.5));
-        lucru.obiecte[o.id] = { ...poz };
-        aplicaPozitie(el, poz);
-        mutat = true;
-        actualizeazaNumerice();
-      };
-      el.onpointerup = () => {
-        el.onpointermove = null;
-        if (mutat) marcheaza();
-      };
-    });
+      poz.scara = rotunjeste(limiteaza(poz.scara * (e.deltaY < 0 ? 1.05 : 1 / 1.05), 0.02, 3));
+      lucru.obiecte[o.id] = poz;
+      aplicaPozitie(elemente.get(o.id), poz);
+      actualizeazaNumerice();
+      marcheaza();
+    },
+    { passive: false },
+  );
 
-    el.addEventListener(
-      'wheel',
-      (e) => {
-        e.preventDefault();
-        if (desen) return;
-        selecteaza({ tip: 'obiect', id: o.id });
-        const poz = pozitieObiect(o.id);
-        poz.scara = rotunjeste(limiteaza(poz.scara * (e.deltaY < 0 ? 1.05 : 1 / 1.05), 0.02, 3));
-        lucru.obiecte[o.id] = poz;
-        aplicaPozitie(el, poz);
-        actualizeazaNumerice();
-        marcheaza();
-      },
-      { passive: false },
-    );
+  function arataZoom() {
+    const el = elPanou.querySelector('.zoom-procent');
+    if (el) el.textContent = `${Math.round(ecranul.vedere.zoom * 100)}%`;
   }
 
   function selecteaza(s) {
@@ -213,7 +263,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   }
 
   suprapunere.addEventListener('pointerdown', (ev) => {
-    if (!desen || ev.button !== 0) return;
+    if (!desen || ev.button !== 0 || spatiuApasat) return;
     ev.preventDefault();
     const [x, y] = punctNormalizat(scena, ev);
     const primul = desen.puncte[0];
@@ -273,7 +323,9 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <button class="btn principal salveaza">Salvează</button>
         <button class="btn renunta" title="Revine la ultima variantă salvată a acestei scene">Renunță</button>
         <a class="btn" href="index.html?scena=${encodeURIComponent(d.id)}" target="_blank" title="Arată ultima variantă salvată">Testează în joc</a>
-      </div>`;
+      </div>
+      <div class="salvare">Zoom: <b class="zoom-procent">${Math.round(ecranul.vedere.zoom * 100)}%</b>
+        <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>`;
 
     if (desen) {
       const t = d.tinte.find((x) => x.id === desen.id);
@@ -287,8 +339,11 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           .map((t) => {
             const are = (lucru.zone[t.id] || []).length >= 3;
             const sel = selectie?.tip === 'zona' && selectie.id === t.id;
+            // O zonă cu piesă pe hartă nu are nevoie de desen: jocul folosește forma piesei
+            const automat = !are && d.obiecte.some((o) => o.tinta === t.id);
+            const semn = are ? '✓' : automat ? '<span class="bine" title="Se folosește forma piesei">✓ auto</span>' : '<span class="avertisment">○</span>';
             return `<div class="rand ${sel ? 'selectat' : ''}" data-zona="${esc(t.id)}">
-              <span class="nume">${are ? '✓' : '<span class="avertisment">○</span>'} ${esc(t.nume)}</span>
+              <span class="nume">${semn} ${esc(t.nume)}</span>
               <button class="btn deseneaza">${are ? 'Redesenează' : 'Desenează'}</button>
               ${are ? '<button class="btn pericol sterge-zona">✕</button>' : ''}
             </div>`;
@@ -316,14 +371,22 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       }
       if (!d.tinte.length && !d.obiecte.length) html += '<p class="sumar">În scena asta nu e nimic de aranjat încă.</p>';
       html += `<div class="ajutor">
-        <b>Obiecte:</b> trage-le cu mouse-ul; rotița le mărește sau micșorează; săgețile le mută fin (cu Shift, mai mult).<br>
-        <b>Zone:</b> apasă „Desenează” și dă click pe colțuri. La o zonă aleasă, colțurile se pot trage; click dreapta pe un colț îl șterge.<br>
+        <b>Obiecte:</b> trage-le cu mouse-ul; rotița pe obiect îl mărește sau micșorează; săgețile îl mută fin (cu Shift, mai mult).<br>
+        <b>Vederea:</b> rotița pe fundal (sau Ctrl + rotița) face zoom; click dreapta + tras (sau Space + tras) mută imaginea.<br>
+        <b>Zone:</b> piesele de pe hartă nu au nevoie de zonă desenată („✓ auto”: se folosește forma piesei). Desenezi doar unde nu e piesă: apasă „Desenează” și dă click pe colțuri. La o zonă aleasă, colțurile se pot trage; click dreapta pe un colț îl șterge.<br>
         <b>Ctrl+S</b> salvează. ○ = încă nearanjat.
       </div>`;
     }
     elPanou.innerHTML = html;
 
     elPanou.querySelector('.salveaza').onclick = salveaza;
+    const centru = () => {
+      const r = ecranul.ecran.getBoundingClientRect();
+      return [r.left + r.width / 2, r.top + r.height / 2];
+    };
+    elPanou.querySelector('.zoom-plus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom * 1.5, ...centru()), arataZoom());
+    elPanou.querySelector('.zoom-minus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom / 1.5, ...centru()), arataZoom());
+    elPanou.querySelector('.zoom-reset').onclick = () => (ecranul.reseteaza(), arataZoom());
     elPanou.querySelector('.renunta').onclick = () => {
       if (!confirm('Renunți la modificările nesalvate din această scenă?')) return;
       modificate.delete(idScena);
@@ -390,8 +453,16 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   }
 
   // ---------- tastatura ----------
+  addEventListener('keyup', (e) => {
+    if (e.code === 'Space') spatiuApasat = false;
+  });
   addEventListener('keydown', (e) => {
     if (!activ || ['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+    if (e.code === 'Space') {
+      e.preventDefault();
+      spatiuApasat = true;
+      return;
+    }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
       e.preventDefault();
       salveaza();

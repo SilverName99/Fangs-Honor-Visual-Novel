@@ -171,6 +171,13 @@ td select {
   font-family: ui-monospace, monospace;
   font-size: 13px;
 }
+.copiaza {
+  color: #d9d2c3;
+  text-decoration: underline dotted #777;
+}
+.copiaza:hover {
+  color: #fff;
+}
 .sumar {
   color: #aaa;
 }
@@ -363,9 +370,6 @@ svg.editor-zone.desen {
   stroke: #000;
   stroke-width: 5px;
   pointer-events: none;
-}
-.scena-editor .obiect {
-  cursor: grab;
 }
 .scena-editor .obiect.selectat {
   outline: 3px solid #ffd36b;

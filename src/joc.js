@@ -5,6 +5,7 @@ import { creeazaEcran, randeaza } from './scena.js';
 import { verifica } from './conditii.js';
 import { inMinute, momentZi, MINUTE_ZI } from './timp.js';
 import { preincarca } from './imagini.js';
+import { elementLaPunct } from './lovire.js';
 
 const lume = construiesteLumea(date);
 const { scena, lume: stratLume } = creeazaEcran(document.getElementById('joc'));
@@ -63,11 +64,37 @@ function legaEvidentiere(declansator, elemente, clasa = 'evidentiat') {
   declansator.addEventListener('mouseleave', () => elemente.forEach((e) => e.classList.remove(clasa)));
 }
 
+// Piesele și personajele se verifică pe pixel (transparența PNG-ului), nu pe dreptunghi:
+// așa două clădiri apropiate nu se fură una pe alta la click
+let interactive = [];
+let subMouse = null;
+
+function seteazaSubMouse(element) {
+  if (subMouse === element) return;
+  if (subMouse) subMouse.grup.forEach((e) => e.classList.remove('evidentiat'));
+  subMouse = element;
+  if (subMouse) subMouse.grup.forEach((e) => e.classList.add('evidentiat'));
+  stratLume.classList.toggle('clicabil', !!subMouse);
+}
+
+function interactivLa(ev) {
+  if (ev.target.closest?.('.zona-clic')) return null;
+  const el = elementLaPunct(interactive.map((i) => i.el), ev);
+  return interactive.find((i) => i.el === el) || null;
+}
+
+stratLume.addEventListener('pointermove', (ev) => seteazaSubMouse(interactivLa(ev)));
+stratLume.addEventListener('pointerleave', () => seteazaSubMouse(null));
+stratLume.addEventListener('click', (ev) => interactivLa(ev)?.clic());
+
 function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context();
   const r = randeaza(stratLume, d, date.aranjare[d.id], ctx);
   const faraZona = [];
+  interactive = [];
+  subMouse = null;
+  stratLume.classList.remove('clicabil');
 
   for (const t of d.tinte) {
     if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) continue;
@@ -76,17 +103,12 @@ function afiseaza() {
     const clic = () => activeaza(t, ctx);
 
     if (poligon) {
-      // Cu piesă, se luminează clădirea; fără piesă (pădurea), se luminează chiar zona desenată
+      // O zonă desenată de mână are prioritate; cu piesă, se luminează clădirea, fără piesă chiar zona
       if (piese.length) legaEvidentiere(poligon, piese);
       else legaEvidentiere(poligon, [poligon], 'evidentiat-poligon');
       poligon.addEventListener('click', clic);
     } else if (piese.length) {
-      // Până se desenează zona, piesa întreagă e clicabilă, ca jocul să fie navigabil de la început
-      for (const p of piese) {
-        p.classList.add('clicabil');
-        legaEvidentiere(p, piese);
-        p.addEventListener('click', clic);
-      }
+      for (const p of piese) interactive.push({ el: p, grup: piese, clic });
     } else {
       faraZona.push({ t, clic });
     }
@@ -94,9 +116,7 @@ function afiseaza() {
 
   for (const o of d.obiecte.filter((o) => o.tip === 'sprite')) {
     const el = r.obiecte.get(o.id);
-    el.classList.add('clicabil');
-    legaEvidentiere(el, [el]);
-    el.addEventListener('click', () => mesaj(`${o.nume}: dialogurile vin în Etapa B.`));
+    interactive.push({ el, grup: [el], clic: () => mesaj(`${o.nume}: dialogurile vin în Etapa B.`) });
   }
 
   ui.replaceChildren();
