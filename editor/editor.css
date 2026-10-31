@@ -556,9 +556,9 @@ svg.editor-zone.desen {
   flex-wrap: wrap;
   margin: 8px 0 12px;
 }
-.ora-editor input[type='range'] {
-  flex: 1;
-  min-width: 100px;
+.ora-editor .btn {
+  padding: 2px 12px;
+  font-size: 16px;
 }
 .ora-editor select {
   background: #121317;

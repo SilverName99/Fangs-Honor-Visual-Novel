@@ -424,8 +424,10 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>
       <div class="ora-editor">
         <select class="zi-ed">${ZILE.map((z) => `<option value="${z}" ${z === vedere.zi ? 'selected' : ''}>${NUME_ZILE[z]}</option>`).join('')}</select>
-        <input type="range" class="ora-ed" min="0" max="23" value="${vedere.ora}">
-        <b>${String(vedere.ora).padStart(2, '0')}:00</b> <span class="sumar">${MOMENTE[context().moment]}</span>
+        <button class="btn ora-minus" title="O oră înapoi">−</button>
+        <b>${String(vedere.ora).padStart(2, '0')}:00</b>
+        <button class="btn ora-plus" title="O oră înainte">+</button>
+        <span class="sumar">${MOMENTE[context().moment]}</span>
       </div>`;
 
     if (desen) {
@@ -495,14 +497,13 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       vedere.zi = e.target.value;
       arataScena();
     };
-    // În timpul tragerii se schimbă doar eticheta; scena se redesenează la eliberare (altfel glisorul s-ar pierde)
-    elPanou.querySelector('.ora-ed').oninput = (e) => {
-      e.target.nextElementSibling.textContent = `${String(e.target.value).padStart(2, '0')}:00`;
-    };
-    elPanou.querySelector('.ora-ed').onchange = (e) => {
-      vedere.ora = Number(e.target.value);
+    // Ora trece peste miezul nopții în ambele sensuri (23 → 0 și 0 → 23)
+    const schimbaOra = (cu) => {
+      vedere.ora = (vedere.ora + cu + 24) % 24;
       arataScena();
     };
+    elPanou.querySelector('.ora-minus').onclick = () => schimbaOra(-1);
+    elPanou.querySelector('.ora-plus').onclick = () => schimbaOra(1);
     elPanou.querySelector('.zoom-reset').onclick = () => (ecranul.reseteaza(), arataZoom());
     elPanou.querySelector('.renunta').onclick = () => {
       if (!confirm('Renunți la modificările nesalvate din această scenă?')) return;
