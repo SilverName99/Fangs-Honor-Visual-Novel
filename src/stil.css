@@ -845,3 +845,13 @@ svg.zone {
 .locuri-lupta .loc-liber:hover {
   background: rgba(140, 220, 160, 0.25);
 }
+
+/* Piesele cu imagine proprie de noapte nu primesc filtrul de întunecare */
+.strat-lume .obiect.varianta-moment,
+.strat-lume.umbrit .obiect.varianta-moment {
+  filter: none;
+}
+.strat-lume .obiect.varianta-moment.evidentiat,
+.strat-lume.umbrit .obiect.varianta-moment.evidentiat {
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+}

@@ -29,6 +29,14 @@
                   "acoperis": "reparat"
                 }
               }
+            },
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
             }
           ]
         }
@@ -95,7 +103,17 @@
       "piese": [
         {
           "id": "fierar",
-          "imagine": "map/piese/fierar.png"
+          "imagine": "map/piese/fierar.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/fierar_zona.png",
@@ -146,7 +164,17 @@
       "piese": [
         {
           "id": "taverna",
-          "imagine": "map/piese/taverna.png"
+          "imagine": "map/piese/taverna.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/taverna_zona.png",
@@ -186,7 +214,17 @@
       "piese": [
         {
           "id": "piata",
-          "imagine": "map/piese/piata.png"
+          "imagine": "map/piese/piata.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/piata_zona.png",
@@ -237,15 +275,45 @@
       "piese": [
         {
           "id": "ferma",
-          "imagine": "map/piese/ferma.png"
+          "imagine": "map/piese/ferma.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         },
         {
           "id": "moara",
-          "imagine": "map/piese/moara.png"
+          "imagine": "map/piese/moara.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         },
         {
           "id": "culturi",
-          "imagine": "map/piese/culturi.png"
+          "imagine": "map/piese/culturi.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/campuri_zona.png",
@@ -334,7 +402,17 @@
       "piese": [
         {
           "id": "poarta",
-          "imagine": "map/piese/poarta.png"
+          "imagine": "map/piese/poarta.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/poarta_zona.png",
@@ -381,7 +459,17 @@
       "piese": [
         {
           "id": "biserica",
-          "imagine": "map/piese/biserica.png"
+          "imagine": "map/piese/biserica.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/biserica_zona.png",

@@ -430,6 +430,17 @@ function afiseaza() {
         }
       });
     }
+    // O piesă cu imagine proprie pentru momentul ăsta nu se mai întunecă din cod și stă peste tentă
+    for (const o of d.obiecte) {
+      const sufixeO = o.variante.filter((v) => v.conditii?.moment?.includes(ctx.moment)).map((v) => v.sufix);
+      if (!sufixeO.length) continue;
+      const el = r.obiecte.get(o.id);
+      el.addEventListener('incarcat', (e) => {
+        if (!sufixeO.some((s) => e.detail.includes(s))) return;
+        el.classList.add('varianta-moment');
+        el.style.zIndex = String(Number(el.style.zIndex) + 4100);
+      });
+    }
   }
 
   for (const t of d.tinte) {
