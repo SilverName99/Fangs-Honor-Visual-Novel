@@ -50,7 +50,8 @@ export function construiesteLumea(date) {
         imagine: l.imagine,
         variante: l.variante || [],
         parinte: z.id,
-        tinte: [],
+        // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
+        tinte: (l.actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a })),
         obiecte: personaje
           .filter((p) => (p.locuriSprite || []).includes(cheieLoc))
           .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${z.id}_${l.id}.png`, variante: [], tinta: null })),

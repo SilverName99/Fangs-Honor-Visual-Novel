@@ -64,7 +64,9 @@ export function creeazaActiuni(parinte, joc) {
     };
     const pana = (inMinute(cfg.somn.oraTrezire) - minuteInZi(s) + MINUTE_ZI) % MINUTE_ZI || MINUTE_ZI;
     panou(a.nume || 'Dormi', (inchide) => [
-      buton(`Dormi până dimineață (${Math.round(pana / 60)} ore)`, () => (inchide(), somn(pana))),
+      // Ziua, „până dimineață” ar însemna aproape o zi întreagă, deci apare doar seara și noaptea
+      ...(pana <= 14 * 60 ? [buton(`Dormi până dimineață (${Math.round(pana / 60)} ore)`, () => (inchide(), somn(pana)))] : []),
+      buton('Dormi 6 ore', () => (inchide(), somn(360))),
       buton('Odihnește-te 2 ore', () => (inchide(), somn(120))),
     ]);
   }

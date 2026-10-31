@@ -79,10 +79,12 @@
           "imagine": "locations/casa_camera_vale.png",
           "actiuni": [
             {
+              "id": "dormi",
               "tip": "dormi",
               "nume": "Dormi"
             },
             {
+              "id": "cufar",
               "tip": "cufar",
               "nume": "Cufărul"
             }
@@ -110,6 +112,7 @@
           "imagine": "locations/casa_bucatarie.png",
           "actiuni": [
             {
+              "id": "apa",
               "tip": "obtine",
               "nume": "Ia apă de la fântână",
               "obiect": "apa",
@@ -158,6 +161,7 @@
           "imagine": "locations/fierar_interior.png",
           "actiuni": [
             {
+              "id": "magazin",
               "tip": "magazin",
               "nume": "Magazinul fierarului",
               "vinde": [
@@ -234,6 +238,7 @@
           "imagine": "locations/taverna_etaj.png",
           "actiuni": [
             {
+              "id": "dormi",
               "tip": "dormi",
               "nume": "Dormi (5 monede)",
               "cost": 5
@@ -279,6 +284,7 @@
           ],
           "actiuni": [
             {
+              "id": "magazin",
               "tip": "magazin",
               "nume": "Cumpără / vinde",
               "vinde": [
@@ -391,12 +397,14 @@
           "imagine": "locations/padure_interior.png",
           "actiuni": [
             {
+              "id": "vaneaza",
               "tip": "lupta",
               "nume": "Vânează",
               "lupta": "vanatoare_lup",
               "minute": 60
             },
             {
+              "id": "lemne",
               "tip": "obtine",
               "nume": "Adună lemne (1 oră)",
               "obiect": "lemn",
@@ -480,6 +488,7 @@
           "imagine": "locations/poarta_taxa.png",
           "actiuni": [
             {
+              "id": "taxa",
               "tip": "taxa",
               "nume": "Plătește taxa"
             }

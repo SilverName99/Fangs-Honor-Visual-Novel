@@ -218,6 +218,7 @@ function pornesteEveniment(id) {
 
 function activeaza(tinta, ctx) {
   if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return mesaj(tinta.incuiat.mesaj || 'E încuiat.');
+  if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
 }
@@ -407,18 +408,12 @@ function comutaEcranComplet() {
 }
 document.addEventListener('fullscreenchange', () => afiseaza());
 
-// Datele brute ale unui loc (acțiunile stau în locations.json, nu în descrierea scenei)
-function locDate(d) {
-  if (d.tip !== 'loc') return null;
-  const [z, l] = d.id.split('.');
-  return date.locations.zone.find((x) => x.id === z)?.locuri.find((x) => x.id === l);
-}
-
 function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
   const r = randeaza(stratLume, d, date.aranjare[d.id], ctx);
   const faraZona = [];
+  const actiuniFaraZona = [];
   interactive = [];
   subMouse = null;
   stratLume.classList.remove('clicabil', 'umbrit');
@@ -442,7 +437,8 @@ function afiseaza() {
     } else if (piese.length) {
       for (const p of piese) interactive.push({ el: p, grup: piese, clic });
     } else {
-      faraZona.push({ t, clic });
+      // Acțiunile fără zonă desenată rămân butoane jos, ca înainte; locurile merg la „Fără zonă desenată”
+      (t.act ? actiuniFaraZona : faraZona).push({ t, clic });
     }
   }
 
@@ -456,7 +452,7 @@ function afiseaza() {
     interactive.push({ el, grup: [el], clic: () => vorbesteCu(o.id) });
   }
 
-  baraActiuni.replaceChildren(...(locDate(d)?.actiuni || []).map((a) => buton(a.nume, '', () => actiuni.executa(a))));
+  baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));
 
   colt.replaceChildren(
     ...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []),
