@@ -317,7 +317,16 @@
             "carne",
             "piele",
             "lemn"
-          ]
+          ],
+          "ascuns": {
+            "conditii": {
+              "moment": [
+                "dimineata",
+                "amiaza",
+                "seara"
+              ]
+            }
+          }
         }
       ],
       "variante": [

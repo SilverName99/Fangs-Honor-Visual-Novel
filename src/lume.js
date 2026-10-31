@@ -32,7 +32,7 @@ export function construiesteLumea(date) {
   const neclicabili = new Set(personaje.filter((p) => p.clicabil === false).map((p) => p.id));
   const zonePersonaje = (obiecte) =>
     obiecte.filter((o) => !neclicabili.has(o.id)).map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
-  const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a }));
+  const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a, ascuns: a.ascuns || null }));
 
   for (const z of zone) {
     scene.set(z.id, {
