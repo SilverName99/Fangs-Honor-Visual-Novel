@@ -1,14 +1,15 @@
 import { api } from './api.js';
 import { elementLaPunct } from '../src/lovire.js';
-import { creeazaEcran, randeaza, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
+import { creeazaEcran, randeaza, aplicaMoment, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 const rotunjeste = (n) => Math.round(n * 10000) / 10000;
 const limiteaza = (n, min, max) => Math.min(max, Math.max(min, n));
 
-// Editorul arată varianta de zi, de bază; variantele (noapte, reparat) se văd în joc
-const CONTEXT = { moment: 'amiaza', minuteZi: 720, stari: {}, obiecte: [], misiuni: {}, relatii: {} };
+// Editorul arată ziua sau noaptea (comutator în panou); variantele după stări (de exemplu reparat) se văd în Testare
+const ZI = { moment: 'amiaza', minuteZi: 720, stari: {}, obiecte: [], misiuni: {}, relatii: {} };
+const NOAPTE = { ...ZI, moment: 'noaptea', minuteZi: 1410 };
 
 export function creeazaAranjare(container, comun, dupaSalvare) {
   const { date, lume } = comun;
@@ -33,6 +34,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   let elemente = new Map();
   let activ = false;
   let spatiuApasat = false;
+  // Vederea de noapte arată variantele de noapte (sau tenta din cod), exact ca în joc
+  let noapte = false;
 
   const descriere = () => lume.get(idScena);
 
@@ -84,7 +87,9 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   // ---------- scena: obiecte trase cu mouse-ul ----------
   function arataScena() {
     const d = descriere();
-    const r = randeaza(strat, d, lucru, CONTEXT);
+    const ctx = noapte ? NOAPTE : ZI;
+    const r = randeaza(strat, d, lucru, ctx);
+    aplicaMoment(strat, r, d, ctx);
     // Zonele jocului se ascund: editorul își desenează propriile zone, cu colțuri care se pot trage
     r.svg.remove();
     elemente = r.obiecte;
@@ -326,7 +331,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <a class="btn" href="index.html?scena=${encodeURIComponent(d.id)}" target="_blank" title="Arată ultima variantă salvată">Testează în joc</a>
       </div>
       <div class="salvare">Zoom: <b class="zoom-procent">${Math.round(ecranul.vedere.zoom * 100)}%</b>
-        <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>`;
+        <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>
+      <div class="salvare"><button class="btn zi-noapte">${noapte ? '☀ Arată ziua' : '🌙 Arată noaptea'}</button></div>`;
 
     if (desen) {
       const t = d.tinte.find((x) => x.id === desen.id);
@@ -387,6 +393,10 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     };
     elPanou.querySelector('.zoom-plus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom * 1.5, ...centru()), arataZoom());
     elPanou.querySelector('.zoom-minus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom / 1.5, ...centru()), arataZoom());
+    elPanou.querySelector('.zi-noapte').onclick = () => {
+      noapte = !noapte;
+      arataScena();
+    };
     elPanou.querySelector('.zoom-reset').onclick = () => (ecranul.reseteaza(), arataZoom());
     elPanou.querySelector('.renunta').onclick = () => {
       if (!confirm('Renunți la modificările nesalvate din această scenă?')) return;

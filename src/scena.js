@@ -121,3 +121,37 @@ export function punctNormalizat(scena, ev) {
   const r = scena.getBoundingClientRect();
   return [(ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.height];
 }
+
+// Folosită și de joc, și de editor (comutatorul zi/noapte), ca amândouă să arate la fel
+export function aplicaMoment(strat, r, d, ctx) {
+  strat.classList.remove('umbrit');
+  // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
+  if (ctx.moment === 'seara' || ctx.moment === 'noaptea') {
+    const tenta = Object.assign(document.createElement('div'), { className: `tenta ${ctx.moment}` });
+    strat.append(tenta);
+    // O variantă e „de moment” dacă e pentru ora asta; se recunoaște după sufix sau după numele exact al imaginii
+    const deMoment = (variante) => variante.filter((v) => v.conditii?.moment?.includes(ctx.moment));
+    const eVariantaMoment = (variante, cale) => variante.some((v) => (v.imagine ? cale === v.imagine : cale.includes(v.sufix)));
+    const variante = deMoment(d.variante);
+    if (variante.length) {
+      r.fundal.addEventListener('incarcat', (e) => {
+        if (eVariantaMoment(variante, e.detail)) {
+          tenta.remove();
+          // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească
+          strat.classList.add('umbrit');
+        }
+      });
+    }
+    // O piesă cu imagine proprie pentru momentul ăsta nu se mai întunecă din cod și stă peste tentă
+    for (const o of d.obiecte) {
+      const varianteO = deMoment(o.variante);
+      if (!varianteO.length) continue;
+      const el = r.obiecte.get(o.id);
+      el.addEventListener('incarcat', (e) => {
+        if (!eVariantaMoment(varianteO, e.detail)) return;
+        el.classList.add('varianta-moment');
+        el.style.zIndex = String(Number(el.style.zIndex) + 4100);
+      });
+    }
+  }
+}

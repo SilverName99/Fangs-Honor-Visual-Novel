@@ -1,7 +1,7 @@
 import './stil.css';
 import { dateBundle as date } from './date.js';
 import { construiesteLumea, candidati } from './lume.js';
-import { creeazaEcran, randeaza } from './scena.js';
+import { creeazaEcran, randeaza, aplicaMoment } from './scena.js';
 import { verifica } from './conditii.js';
 import { preincarca } from './imagini.js';
 import { elementLaPunct } from './lovire.js';
@@ -423,35 +423,7 @@ function afiseaza() {
   subMouse = null;
   stratLume.classList.remove('clicabil', 'umbrit');
 
-  // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
-  if (ctx.moment === 'seara' || ctx.moment === 'noaptea') {
-    const tenta = div(`tenta ${ctx.moment}`);
-    stratLume.append(tenta);
-    // O variantă e „de moment” dacă e pentru ora asta; se recunoaște după sufix sau după numele exact al imaginii
-    const deMoment = (variante) => variante.filter((v) => v.conditii?.moment?.includes(ctx.moment));
-    const eVariantaMoment = (variante, cale) => variante.some((v) => (v.imagine ? cale === v.imagine : cale.includes(v.sufix)));
-    const variante = deMoment(d.variante);
-    if (variante.length) {
-      r.fundal.addEventListener('incarcat', (e) => {
-        if (eVariantaMoment(variante, e.detail)) {
-          tenta.remove();
-          // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească
-          stratLume.classList.add('umbrit');
-        }
-      });
-    }
-    // O piesă cu imagine proprie pentru momentul ăsta nu se mai întunecă din cod și stă peste tentă
-    for (const o of d.obiecte) {
-      const varianteO = deMoment(o.variante);
-      if (!varianteO.length) continue;
-      const el = r.obiecte.get(o.id);
-      el.addEventListener('incarcat', (e) => {
-        if (!eVariantaMoment(varianteO, e.detail)) return;
-        el.classList.add('varianta-moment');
-        el.style.zIndex = String(Number(el.style.zIndex) + 4100);
-      });
-    }
-  }
+  aplicaMoment(stratLume, r, d, ctx);
 
   for (const t of d.tinte) {
     if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) continue;
