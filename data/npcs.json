@@ -123,8 +123,11 @@
       "id": "fierar",
       "nume": "Fierarul (TODO nume)",
       "locuriSprite": [
+        "fierar",
         "fierar/interior",
         "taverna/parter",
+        "biserica/interior",
+        "campuri",
         "fierar/camera"
       ],
       "lupta": {
@@ -138,33 +141,83 @@
         "armura": 4,
         "rezistenta": 8
       },
-      "rutina": {
-        "dimineata": {
-          "loc": "fierar/interior",
-          "sansaAbatere": 0.1,
-          "abatere": [
-            "piata"
-          ]
+      "program": [
+        {
+          "de": "05:00",
+          "pana": "08:00",
+          "loc": "biserica/interior",
+          "zile": [
+            "sambata",
+            "duminica"
+          ],
+          "ce": "se roagă (weekend)"
         },
-        "amiaza": {
-          "loc": "fierar/interior",
-          "sansaAbatere": 0.1,
-          "abatere": [
-            "taverna/parter"
-          ]
+        {
+          "de": "08:00",
+          "pana": "12:00",
+          "loc": "fierar",
+          "zile": [
+            "sambata",
+            "duminica"
+          ],
+          "ce": "lucrează afară (după biserică)"
         },
-        "seara": {
+        {
+          "de": "06:00",
+          "pana": "12:00",
+          "loc": "fierar",
+          "zile": [
+            "luni",
+            "marti",
+            "miercuri",
+            "joi",
+            "vineri"
+          ],
+          "ce": "lucrează afară"
+        },
+        {
+          "de": "12:00",
+          "pana": "14:00",
           "loc": "taverna/parter",
-          "sansaAbatere": 0.2,
-          "abatere": [
-            "fierar/interior"
-          ]
+          "ce": "prânzul"
         },
-        "noaptea": {
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "fierar",
+          "zile": [
+            "luni",
+            "marti",
+            "miercuri",
+            "joi",
+            "vineri"
+          ],
+          "ce": "lucrează afară"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "campuri",
+          "zile": [
+            "sambata",
+            "duminica"
+          ],
+          "ce": "dă o mână de ajutor la fermă"
+        },
+        {
+          "de": "18:00",
+          "pana": "22:00",
+          "loc": "fierar/interior",
+          "ce": "lucrează înăuntru"
+        },
+        {
+          "de": "22:00",
+          "pana": "06:00",
           "loc": "fierar/camera",
-          "sansaAbatere": 0.0
+          "doarme": true,
+          "ce": "doarme (camera e încuiată)"
         }
-      }
+      ]
     },
     {
       "id": "hot",

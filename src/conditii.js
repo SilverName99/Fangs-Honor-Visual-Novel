@@ -19,6 +19,8 @@ const tipuri = {
   zileSaptamana: (v, c) => v.includes(c.ziSaptamana),
   zi: (v, c) => (v.min == null || c.zi >= v.min) && (v.max == null || c.zi <= v.max),
   sansa: (v, c) => (c.aleator ?? Math.random)() < v,
+  // SAU: e destul ca una dintre condiții să fie îndeplinită (de exemplu fierarul e acasă SAU ai cheia)
+  oricare: (v, c) => v.some((cond) => verifica(cond, c)),
 };
 
 export function registreazaConditie(nume, functie) {

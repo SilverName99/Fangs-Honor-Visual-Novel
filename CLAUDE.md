@@ -249,6 +249,8 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 
 **Program pe ore** (decis pentru Miriam): în loc de rutina pe momente, un personaj poate avea `program` cu intervale exacte (`de`, `pana`, `loc`, opțional `zile` și `doarme`). Miriam: în timpul săptămânii doarme până la 07 și e în bucătărie 07–11 (micul dejun); sâmbăta și duminica e 05–08 la biserică (se roagă) și în bucătărie 08–11; 11–14 camera ei (coase), 14–18 piața (la tarabe; are dialogul ei acolo), 18–23 bucătărie (cina, alt sprite), 23–05 camera ei (doarme). Cât doarme, camera ei e încuiată (gândul lui Vale). **Zilele săptămânii:** ziua 1 e luni; se văd în HUD.
 
+**Programul fierarului** (decis): luni–vineri 06–12 lucrează afară (zona fierăriei), 12–14 prânzul la tavernă, 14–18 afară, 18–22 lucrează înăuntru (magazinul), 22–06 doarme în camera lui. Sâmbăta și duminica: 05–08 la biserică (se roagă), 08–12 afară, 12–14 tavernă, 14–18 ajută la fermă (câmpurile), 18–22 înăuntru, 22–06 doarme. **Magazinul e închis când fierarul nu e acasă** (afară sau înăuntru, treaz); se poate deschide doar cu cheia fierarului, primită după o misiune (`TODO` care). Gândul lui Vale la ușa închisă e `TODO`.
+
 ### Bani
 
 O singură monedă: **monede**. Cifrele de pornire sunt în `config.json`.

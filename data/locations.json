@@ -199,7 +199,25 @@
                 "piele"
               ]
             }
-          ]
+          ],
+          "incuiat": {
+            "conditii": {
+              "oricare": [
+                {
+                  "personajIn": {
+                    "fierar": [
+                      "fierar",
+                      "fierar/interior"
+                    ]
+                  }
+                },
+                {
+                  "areObiect": "cheie_fierar"
+                }
+              ]
+            },
+            "mesaj": "(TODO) Fierăria e închisă. Fierarul nu e aici acum."
+          }
         },
         {
           "id": "camera",

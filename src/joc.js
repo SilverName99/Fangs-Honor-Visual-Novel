@@ -27,6 +27,13 @@ const lume = construiesteLumea(date);
 // „nuDoarme: miriam” = personajul nu doarme acum, după programul lui (camera mamei e încuiată cât doarme)
 registreazaConditie('nuDoarme', (id, c) => !intrareProgram(date.npcs.personaje.find((p) => p.id === id), c)?.doarme);
 // „prezent: miriam” = personajul e, după programul lui, chiar în locul ăsta acum (de exemplu evenimentul cu supa)
+// „personajIn: { fierar: [locuri] }” = personajul e acum într-unul din locuri și nu doarme (fierăria e deschisă cât e el acasă)
+registreazaConditie('personajIn', (v, c) =>
+  Object.entries(v).every(([id, locuri]) => {
+    const p = date.npcs.personaje.find((x) => x.id === id);
+    return locuri.includes(undeEste(p, c)) && !intrareProgram(p, c)?.doarme;
+  }),
+);
 registreazaConditie('prezent', (id, c) => undeEste(date.npcs.personaje.find((p) => p.id === id), c) === c.loc);
 const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
 const evenimente = date.events?.evenimente || [];
