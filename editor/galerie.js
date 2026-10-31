@@ -86,22 +86,48 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     if (erori.length) alert(`Unele imagini nu s-au încărcat:\n${erori.join('\n')}`);
   }
 
+  const deschise = new Set();
   function arata() {
     cerute = imaginiCerute(comun.date, comun.lume);
     const obligatorii = cerute.filter((c) => !c.optional);
     const lipsaObl = obligatorii.filter((c) => !comun.imagini.has(c.cale));
-    const lipsaOpt = cerute.filter((c) => c.optional && !comun.imagini.has(c.cale));
     const cerutSet = cerutePeCale();
     const incarcate = [...comun.imagini.keys()].sort();
 
-    const tabelLipsa = (lista) =>
-      CATEGORII.map(([cat, eticheta]) => {
-        const din = lista.filter((c) => c.categorie === cat);
-        if (!din.length) return '';
-        return `<h3>${esc(eticheta)} (${din.length})</h3><table>${din
-          .map((c) => `<tr><td class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}" title="Click: copiază numele">${esc(c.cale)}</a></td><td>${esc(c.scop)}</td></tr>`)
-          .join('')}</table>`;
-      }).join('');
+    // Grupurile în ordinea jocului: harta, zonele, apoi restul; zonele stau deschise, listele lungi închise
+    const grupuri = [...new Set(cerute.map((c) => c.grup))];
+    const inchiseImplicit = new Set(['Portrete', 'Luptă', 'Obiecte', 'Interfață']);
+    const carduri = (lista) =>
+      lista
+        .map((c) =>
+          comun.imagini.has(c.cale)
+            ? `<div class="card" title="${esc(c.scop)}">
+                <img loading="lazy" src="${urlImagine(c.cale)}?v=${comun.imagini.get(c.cale)}">
+                <div class="cale">${esc(c.cale)}</div>
+                <div class="actiuni"><span class="sumar">${esc(c.scop)}</span><button class="btn pericol sterge" data-cale="${esc(c.cale)}">Șterge</button></div>
+              </div>`
+            : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" title="Click pe nume: îl copiezi">
+                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}</div>
+                <div class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}">${esc(c.cale)}</a></div>
+                <div class="sumar">${esc(c.scop)}</div>
+              </div>`,
+        )
+        .join('');
+    const sectiuneGrup = (g) => {
+      // Încărcate primele, apoi ce lipsește (obligatoriile înaintea opționalelor)
+      const lista = cerute
+        .filter((c) => c.grup === g)
+        .sort((a, b) => Number(!comun.imagini.has(a.cale)) - Number(!comun.imagini.has(b.cale)) || Number(a.optional) - Number(b.optional));
+      const obl = lista.filter((c) => !c.optional);
+      const gataObl = obl.filter((c) => comun.imagini.has(c.cale)).length;
+      const gataOpt = lista.filter((c) => c.optional && comun.imagini.has(c.cale)).length;
+      const complet = gataObl === obl.length;
+      return `<details class="grup-galerie" data-grup="${esc(g)}" ${inchiseImplicit.has(g) && !deschise.has(g) ? '' : 'open'}>
+        <summary><b>${esc(g)}</b> <span class="${complet ? 'bine' : 'avertisment'}">${gataObl} / ${obl.length} obligatorii</span>
+        <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span></summary>
+        <div class="grila">${carduri(lista)}</div></details>`;
+    };
+    const nefolosite = incarcate.filter((c) => !cerutSet.has(c));
 
     container.innerHTML = `
       <h2>Încarcă imagini</h2>
@@ -124,22 +150,24 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
           : ''
       }
 
-      <h2>Lipsă</h2>
-      <p class="sumar">${obligatorii.length - lipsaObl.length} din ${obligatorii.length} imagini obligatorii sunt încărcate. Click pe un nume ca să-l copiezi.</p>
-      ${lipsaObl.length ? tabelLipsa(lipsaObl) : '<p class="bine">Toate imaginile obligatorii sunt încărcate.</p>'}
-      <details><summary>Opționale lipsă: ${lipsaOpt.length} (variante de noapte etc., stări de portret în plus, interfață). Fără ele, jocul folosește imaginea de bază sau stilul implicit.</summary>${tabelLipsa(lipsaOpt)}</details>
+      <h2>Imagini pe zone</h2>
+      <p class="sumar">${obligatorii.length - lipsaObl.length} din ${obligatorii.length} imagini obligatorii sunt încărcate. Opționalele (variante de noapte, stări de portret, interfață) au rezervă: fără ele jocul folosește imaginea de bază sau stilul implicit. Click pe un nume lipsă ca să-l copiezi.</p>
+      ${grupuri.map(sectiuneGrup).join('')}
+      ${
+        nefolosite.length
+          ? `<details class="grup-galerie" open><summary><b>Nefolosite</b> <span class="sumar">· ${nefolosite.length} încărcate, dar niciun loc din joc nu le cere (verifică numele)</span></summary>
+            <div class="grila">${nefolosite
+              .map(
+                (cale) => `<div class="card"><img loading="lazy" src="${urlImagine(cale)}?v=${comun.imagini.get(cale)}"><div class="cale">${esc(cale)}</div>
+                <div class="actiuni"><span class="eticheta-mica">nefolosită</span><button class="btn pericol sterge" data-cale="${esc(cale)}">Șterge</button></div></div>`,
+              )
+              .join('')}</div></details>`
+          : ''
+      }`;
 
-      <h2>Încărcate (${incarcate.length})</h2>
-      <div class="grila">${incarcate
-        .map(
-          (cale) => `<div class="card">
-            <img loading="lazy" src="${urlImagine(cale)}?v=${comun.imagini.get(cale)}">
-            <div class="cale">${esc(cale)}</div>
-            <div class="actiuni">${cerutSet.has(cale) ? '<span></span>' : '<span class="eticheta-mica" title="Niciun loc din joc nu cere încă acest nume">nefolosită</span>'}<button class="btn pericol sterge" data-cale="${esc(cale)}">Șterge</button></div>
-          </div>`,
-        )
-        .join('')}</div>`;
-
+    for (const d of container.querySelectorAll('.grup-galerie[data-grup]')) {
+      d.ontoggle = () => (d.open ? deschise.add(d.dataset.grup) : deschise.delete(d.dataset.grup));
+    }
     const drop = container.querySelector('.zona-drop');
     const input = container.querySelector('input[type=file]');
     drop.onclick = () => input.click();

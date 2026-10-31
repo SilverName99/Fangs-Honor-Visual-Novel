@@ -451,3 +451,42 @@ svg.editor-zone.desen {
   color: #888;
   text-transform: uppercase;
 }
+
+/* ----- Galeria pe zone ----- */
+.grup-galerie {
+  margin: 10px 0;
+  padding: 6px 12px 12px;
+  background: #1f2128;
+  border-radius: 8px;
+}
+.grup-galerie summary {
+  font-size: 16px;
+  padding: 6px 0;
+}
+.card .actiuni .sumar {
+  font-size: 11px;
+  margin-right: 6px;
+}
+.card-lipsa {
+  border: 2px dashed #555c70;
+  background: #1b1d22;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-lipsa.optional {
+  opacity: 0.6;
+}
+.loc-lipsa {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff9a8a;
+  font-size: 14px;
+  background: repeating-linear-gradient(45deg, #22252c 0 10px, #1d1f25 10px 20px);
+  border-radius: 4px;
+}
+.card-lipsa.optional .loc-lipsa {
+  color: #aaa;
+}

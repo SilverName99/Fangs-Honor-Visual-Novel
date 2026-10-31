@@ -107,8 +107,10 @@ export function categorie(cale) {
 // Tot ce cere jocul, pentru lista „lipsă” din galerie. Variantele și stările în plus sunt opționale (au rezervă)
 export function imaginiCerute(date, scene) {
   const rezultat = new Map();
+  // grup = unde apare imaginea în galerie (Harta, Casa, Piața..., Portrete, Luptă...), ca autorul să vadă pe zone ce mai lipsește
+  let grup = '';
   const adauga = (cale, scop, optional = false) => {
-    if (!rezultat.has(cale)) rezultat.set(cale, { cale, categorie: categorie(cale), scop, optional });
+    if (!rezultat.has(cale)) rezultat.set(cale, { cale, categorie: categorie(cale), scop, optional, grup });
   };
   const cuVariante = (imagine, variante, scop) => {
     adauga(imagine, scop);
@@ -121,11 +123,15 @@ export function imaginiCerute(date, scene) {
   for (const s of scene.values()) {
     if (s.tip === 'ecran') continue;
     const tipScena = { harta: 'Harta', zona: 'Zona', loc: 'Loc' }[s.tip];
+    grup = s.tip === 'harta' ? 'Harta' : s.tip === 'zona' ? s.titlu : scene.get(s.parinte).titlu;
     cuVariante(s.imagine, s.variante, `${tipScena}: ${s.titlu}`);
     for (const o of s.obiecte) {
+      // Piesa de pe hartă stă la zona ei (casa la Casa), nu la Harta
+      if (o.tip === 'piesa') grup = o.nume;
       cuVariante(o.imagine, o.variante, o.tip === 'piesa' ? `Piesă pe hartă: ${o.id}` : `Sprite: ${o.nume} în ${s.titlu}`);
     }
   }
+  grup = 'Portrete';
   for (const p of date.npcs.personaje) {
     for (const st of date.npcs.stariPortret) {
       adauga(`portraits/${p.id}_${st}.png`, `Portret: ${p.nume} (${st})`, st !== 'normal');
@@ -140,12 +146,15 @@ export function imaginiCerute(date, scene) {
   }
   // Pozele de luptă: Vale are câte un set pentru fiecare tip de armă; ceilalți câte unul
   const POZE = ['idle', 'atac', 'aparare', 'ranit'];
+  grup = 'Luptă';
   for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
     for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');
   }
   const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).map(([id, x]) => [id, x.nume])];
   for (const [id, nume] of luptatori) for (const p of POZE) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
+  grup = 'Interfață';
   for (const el of ELEMENTE_UI) adauga(fisierUi(el.id), `Interfață: ${el.nume} (${el.marime})`, true);
   return [...rezultat.values()];
 }
