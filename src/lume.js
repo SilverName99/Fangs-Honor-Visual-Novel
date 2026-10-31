@@ -85,12 +85,14 @@ const POZITII_SLOTURI = {
   rucsac: { x: 0.42, y: 0.3, scara: 0.1 },
 };
 
-// Lista de imagini încearcă întâi combinația de variante, apoi câte una, apoi imaginea de bază,
-// ca să nu fie nevoie de o imagine pentru fiecare combinație (de exemplu reparată + noapte)
+// Lista de imagini încearcă întâi variantele cu nume exact (de exemplu casa_reparata_zona_noapte.png),
+// apoi combinația de sufixe, apoi câte unul, apoi imaginea de bază,
+// ca să nu fie nevoie de o imagine pentru fiecare combinație
 export function candidati(imagine, variante, context) {
-  const potrivite = (variante || []).filter((v) => verifica(v.conditii, context)).map((v) => v.sufix);
+  const toate = (variante || []).filter((v) => verifica(v.conditii, context));
+  const potrivite = toate.filter((v) => v.sufix).map((v) => v.sufix);
   const baza = imagine.replace(/\.png$/, '');
-  const lista = [];
+  const lista = toate.filter((v) => v.imagine).map((v) => v.imagine);
   if (potrivite.length > 1) lista.push(`${baza}${potrivite.join('')}.png`);
   for (const s of potrivite) lista.push(`${baza}${s}.png`);
   lista.push(imagine);
@@ -109,7 +111,10 @@ export function imaginiCerute(date, scene) {
   };
   const cuVariante = (imagine, variante, scop) => {
     adauga(imagine, scop);
-    for (const v of variante || []) adauga(imagine.replace(/\.png$/, `${v.sufix}.png`), `${scop} (varianta ${v.sufix.slice(1)})`, true);
+    for (const v of variante || []) {
+      if (v.imagine) adauga(v.imagine, `${scop} (varianta ${v.nume || 'specială'})`, true);
+      else adauga(imagine.replace(/\.png$/, `${v.sufix}.png`), `${scop} (varianta ${v.sufix.slice(1)})`, true);
+    }
   };
 
   for (const s of scene.values()) {

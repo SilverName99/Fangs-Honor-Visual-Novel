@@ -420,10 +420,13 @@ function afiseaza() {
   if (ctx.moment === 'seara' || ctx.moment === 'noaptea') {
     const tenta = div(`tenta ${ctx.moment}`);
     stratLume.append(tenta);
-    const sufixe = d.variante.filter((v) => v.conditii?.moment?.includes(ctx.moment)).map((v) => v.sufix);
-    if (sufixe.length) {
+    // O variantă e „de moment” dacă e pentru ora asta; se recunoaște după sufix sau după numele exact al imaginii
+    const deMoment = (variante) => variante.filter((v) => v.conditii?.moment?.includes(ctx.moment));
+    const eVariantaMoment = (variante, cale) => variante.some((v) => (v.imagine ? cale === v.imagine : cale.includes(v.sufix)));
+    const variante = deMoment(d.variante);
+    if (variante.length) {
       r.fundal.addEventListener('incarcat', (e) => {
-        if (sufixe.some((s) => e.detail.includes(s))) {
+        if (eVariantaMoment(variante, e.detail)) {
           tenta.remove();
           // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească
           stratLume.classList.add('umbrit');
@@ -432,11 +435,11 @@ function afiseaza() {
     }
     // O piesă cu imagine proprie pentru momentul ăsta nu se mai întunecă din cod și stă peste tentă
     for (const o of d.obiecte) {
-      const sufixeO = o.variante.filter((v) => v.conditii?.moment?.includes(ctx.moment)).map((v) => v.sufix);
-      if (!sufixeO.length) continue;
+      const varianteO = deMoment(o.variante);
+      if (!varianteO.length) continue;
       const el = r.obiecte.get(o.id);
       el.addEventListener('incarcat', (e) => {
-        if (!sufixeO.some((s) => e.detail.includes(s))) return;
+        if (!eVariantaMoment(varianteO, e.detail)) return;
         el.classList.add('varianta-moment');
         el.style.zIndex = String(Number(el.style.zIndex) + 4100);
       });

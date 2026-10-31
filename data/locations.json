@@ -44,6 +44,18 @@
       "imagine": "locations/casa_zona.png",
       "variante": [
         {
+          "imagine": "locations/casa_reparata_zona_noapte.png",
+          "nume": "reparată, noaptea",
+          "conditii": {
+            "stare": {
+              "acoperis": "reparat"
+            },
+            "moment": [
+              "noaptea"
+            ]
+          }
+        },
+        {
           "sufix": "_reparata",
           "conditii": {
             "stare": {
