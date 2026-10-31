@@ -23,6 +23,18 @@
           "imagine": "map/piese/casa.png",
           "variante": [
             {
+              "imagine": "map/piese/casa_reparata_noapte.png",
+              "nume": "reparată, noaptea",
+              "conditii": {
+                "stare": {
+                  "acoperis": "reparat"
+                },
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            },
+            {
               "sufix": "_reparata",
               "conditii": {
                 "stare": {
