@@ -870,18 +870,25 @@ svg.zone {
   filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
 
-/* Personajele (sprite-urile) strălucesc ușor și fără mouse, ca zonele desenate, ca să se știe că se poate vorbi cu ele */
+/* Personajele fără zonă desenată primesc automat același contur ca zonele desenate de autor
+   (filtrele „contur-sprite-*” din scena.js). Piesele de pe hartă rămân cum erau. */
 .strat-lume .obiect.sprite {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, var(--lumina-repaus))) drop-shadow(0 0 14px rgba(255, 214, 120, var(--lumina-repaus)));
+  filter: url(#contur-sprite-zi);
+}
+.strat-lume.e-noapte .obiect.sprite {
+  filter: url(#contur-sprite-noapte);
 }
 .strat-lume.umbrit .obiect.sprite {
-  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px rgba(255, 255, 255, var(--lumina-repaus))) drop-shadow(0 0 14px rgba(255, 214, 120, var(--lumina-repaus)));
+  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-zi);
+}
+.strat-lume.umbrit.e-noapte .obiect.sprite {
+  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-noapte);
 }
 .strat-lume .obiect.sprite.evidentiat {
-  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+  filter: url(#contur-sprite-plin);
 }
 .strat-lume.umbrit .obiect.sprite.evidentiat {
-  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-plin);
 }
 
 /* Personaj cu zonă desenată: strălucirea o dă zona, nu conturul imaginii */
