@@ -237,6 +237,7 @@
         {
           "id": "camera",
           "nume": "Camera fierarului",
+          "din": "interior",
           "imagine": "locations/fierar_camera.png",
           "incuiat": {
             "conditii": {

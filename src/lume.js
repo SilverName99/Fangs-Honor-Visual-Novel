@@ -52,6 +52,14 @@ export function construiesteLumea(date) {
   const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a, ascuns: a.ascuns || null }));
 
   for (const z of zone) {
+    const tintaLoc = (l) => ({
+      id: l.id,
+      nume: l.nume,
+      spre: l.actiune ? null : `${z.id}.${l.id}`,
+      actiune: l.actiune || null,
+      incuiat: l.incuiat || null,
+      ascuns: l.ascuns || null,
+    });
     scene.set(z.id, {
       id: z.id,
       tip: 'zona',
@@ -60,14 +68,7 @@ export function construiesteLumea(date) {
       variante: z.variante || [],
       parinte: 'harta',
       tinte: [
-        ...z.locuri.map((l) => ({
-          id: l.id,
-          nume: l.nume,
-          spre: l.actiune ? null : `${z.id}.${l.id}`,
-          actiune: l.actiune || null,
-          incuiat: l.incuiat || null,
-          ascuns: l.ascuns || null,
-        })),
+        ...z.locuri.filter((l) => !l.din).map(tintaLoc),
         // O zonă fără locuri (piața) e ea însăși scena: acțiunile și personajele stau direct pe ea
         ...actiuniCaTinte(z.actiuni),
         ...zonePersonaje(spriteuri(z.id, z.id)),
@@ -84,12 +85,15 @@ export function construiesteLumea(date) {
         titlu: l.nume,
         imagine: l.imagine,
         variante: l.variante || [],
-        parinte: z.id,
+        // „din”: locul se deschide din alt loc al zonei, nu din imaginea zonei (camera fierarului e prin magazin)
+        parinte: l.din ? `${z.id}.${l.din}` : z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
         tinte: [...actiuniCaTinte(l.actiuni), ...zonePersonaje(spriteuri(cheieLoc, `${z.id}_${l.id}`))],
         obiecte: spriteuri(cheieLoc, `${z.id}_${l.id}`),
       });
     }
+    // Ușa spre un loc „din” alt loc devine o țintă (zonă de desenat) în scena acelui loc
+    for (const l of z.locuri.filter((x) => x.din)) scene.get(`${z.id}.${l.din}`)?.tinte.push(tintaLoc(l));
   }
   // Ecranul de echipament se aranjează în editor ca o scenă: figura lui Vale și sloturile peste ea
   scene.set('echipament', {

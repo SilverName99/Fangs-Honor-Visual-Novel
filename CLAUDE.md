@@ -144,7 +144,7 @@ Reguli:
 | Zonă (`id`) | Piesă pe hartă | Imagine de zonă | Locuri |
 |---|---|---|---|
 | `casa` | `casa.png` (+ `casa_reparata.png`) | `casa_zona.png` (+ `casa_zona_reparata.png`) | `camera_vale`, `camera_mama`, `bucatarie` (cufărul de acasă e aici sau în camera lui Vale) |
-| `fierar` | `fierar.png` | `fierar_zona.png` | `interior` (magazin), `camera` (la etaj, **încuiată**, cu cufăr) |
+| `fierar` | `fierar.png` | `fierar_zona.png` | `interior` (magazin), `camera` (la etaj, **încuiată**, cu cufăr; se intră doar din magazin, `"din": "interior"`) |
 | `taverna` | `taverna.png` | `taverna_zona.png` | `parter`, `etaj` (dormit) |
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
