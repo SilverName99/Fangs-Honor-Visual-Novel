@@ -219,6 +219,7 @@ function pornesteEveniment(id) {
 function activeaza(tinta, ctx) {
   if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return mesaj(tinta.incuiat.mesaj || 'E încuiat.');
   if (tinta.act) return actiuni.executa(tinta.act);
+  if (tinta.personaj) return vorbesteCu(tinta.personaj);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
 }
@@ -423,9 +424,33 @@ function afiseaza() {
 
   aplicaMoment(stratLume, r, d, ctx);
 
+  // Personajele apar doar când rutina lor le aduce aici, la ora asta
+  const prezenti = new Set(
+    d.obiecte
+      .filter((o) => o.tip === 'sprite')
+      .filter((o) => {
+        const pers = personaje.get(o.id);
+        return undeEste(pers, ctx) === ctx.loc && verifica(pers.apare, ctx);
+      })
+      .map((o) => o.id),
+  );
+  const cuZona = new Set();
+
   for (const t of d.tinte) {
-    if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) continue;
     const poligon = r.poligoane.get(t.id);
+    if (t.personaj) {
+      // Zona unui personaj contează doar cât timp el e în scenă
+      if (!prezenti.has(t.personaj)) {
+        poligon?.remove();
+        continue;
+      }
+      if (!poligon) continue;
+      cuZona.add(t.personaj);
+    }
+    if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) {
+      poligon?.remove();
+      continue;
+    }
     const piese = d.obiecte.filter((o) => o.tinta === t.id).map((o) => r.obiecte.get(o.id));
     const clic = () => activeaza(t, ctx);
 
@@ -445,12 +470,15 @@ function afiseaza() {
     }
   }
 
-  // Personajele apar doar când rutina lor le aduce aici, la ora asta
   for (const o of d.obiecte.filter((o) => o.tip === 'sprite')) {
     const el = r.obiecte.get(o.id);
-    const pers = personaje.get(o.id);
-    if (undeEste(pers, ctx) !== ctx.loc || !verifica(pers.apare, ctx)) {
+    if (!prezenti.has(o.id)) {
       el.remove();
+      continue;
+    }
+    // Cu zonă desenată, strălucirea și click-ul vin din zonă; fără ea, personajul răspunde pe forma lui
+    if (cuZona.has(o.id)) {
+      el.classList.add('cu-zona');
       continue;
     }
     interactive.push({ el, grup: [el], clic: () => vorbesteCu(o.id) });

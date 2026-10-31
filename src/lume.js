@@ -26,6 +26,9 @@ export function construiesteLumea(date) {
     personaje
       .filter((p) => (p.locuriSprite || []).includes(cheie))
       .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: [], tinta: null }));
+  // Regula autorului: tot ce e clicabil (în afară de piesele de pe hartă) are o zonă desenată de el.
+  // Fiecare personaj dintr-o scenă primește deci și o zonă; până e desenată, personajul răspunde pe forma lui.
+  const zonePersonaje = (obiecte) => obiecte.map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
   const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a }));
 
   for (const z of zone) {
@@ -47,6 +50,7 @@ export function construiesteLumea(date) {
         })),
         // O zonă fără locuri (piața) e ea însăși scena: acțiunile și personajele stau direct pe ea
         ...actiuniCaTinte(z.actiuni),
+        ...zonePersonaje(spriteuri(z.id, z.id)),
       ],
       obiecte: spriteuri(z.id, z.id),
     });
@@ -62,7 +66,7 @@ export function construiesteLumea(date) {
         variante: l.variante || [],
         parinte: z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
-        tinte: actiuniCaTinte(l.actiuni),
+        tinte: [...actiuniCaTinte(l.actiuni), ...zonePersonaje(spriteuri(cheieLoc, `${z.id}_${l.id}`))],
         obiecte: spriteuri(cheieLoc, `${z.id}_${l.id}`),
       });
     }

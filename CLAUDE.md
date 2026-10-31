@@ -133,7 +133,8 @@ Lumea e un arbore de imagini, cu trei niveluri:
 
 Reguli:
 - **Highlight la hover** pe piese și sprite-uri: contur discret făcut din CSS (`filter: drop-shadow(...)`, care urmează transparența PNG-ului). Pentru zonele fără piesă (pădurea), highlight pe poligon.
-- **Zonele clicabile sunt poligoane**, desenate în editor.
+- **Zonele clicabile sunt poligoane**, desenate în editor. **Regula autorului:** tot ce e clicabil (locuri, acțiuni, personaje) are o zonă desenată de el; **excepție: piesele de pe hartă**, care răspund automat pe forma lor. Până e desenată zona, acțiunile apar ca butoane, iar personajele răspund pe forma sprite-ului.
+- **Strălucirea în repaus** (ca să se vadă ce e clicabil): 30% ziua, 20% noaptea; completă cu mouse-ul deasupra.
 - **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide.
 - **Locuri ascunse:** apar pe imagine doar după o condiție (de exemplu Camp site).
 - Buton de **înapoi** pe fiecare nivel. Mutarea între locuri **consumă timp** (configurabil). Întoarcerea la nivelul de deasupra nu consumă timp.

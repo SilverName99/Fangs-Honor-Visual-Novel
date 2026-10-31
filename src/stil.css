@@ -883,3 +883,11 @@ svg.zone {
 .strat-lume.umbrit .obiect.sprite.evidentiat {
   filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
+
+/* Personaj cu zonă desenată: strălucirea o dă zona, nu conturul imaginii */
+.strat-lume .obiect.sprite.cu-zona {
+  filter: none;
+}
+.strat-lume.umbrit .obiect.sprite.cu-zona {
+  filter: brightness(0.6) saturate(0.8);
+}
