@@ -125,6 +125,7 @@ export function punctNormalizat(scena, ev) {
 // Folosită și de joc, și de editor (comutatorul zi/noapte), ca amândouă să arate la fel
 export function aplicaMoment(strat, r, d, ctx) {
   strat.classList.remove('umbrit');
+  strat.classList.toggle('e-noapte', ctx.moment === 'noaptea');
   // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
   if (ctx.moment === 'seara' || ctx.moment === 'noaptea') {
     const tenta = Object.assign(document.createElement('div'), { className: `tenta ${ctx.moment}` });

@@ -100,7 +100,14 @@ svg.zone {
 }
 /* Zonele fără piesă (uși, cărări) strălucesc puțin și fără mouse, ca să se știe că se poate da click */
 .zona-clic.vizibila {
-  stroke-opacity: 0.2;
+  stroke-opacity: var(--lumina-repaus);
+}
+/* Strălucirea în repaus (zone și personaje): mai vizibilă ziua, mai discretă noaptea */
+.strat-lume {
+  --lumina-repaus: 0.3;
+}
+.strat-lume.e-noapte {
+  --lumina-repaus: 0.2;
 }
 .zona-clic.evidentiat-poligon {
   stroke-opacity: 1;
@@ -865,10 +872,10 @@ svg.zone {
 
 /* Personajele (sprite-urile) strălucesc ușor și fără mouse, ca zonele desenate, ca să se știe că se poate vorbi cu ele */
 .strat-lume .obiect.sprite {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 14px rgba(255, 214, 120, 0.2));
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, var(--lumina-repaus))) drop-shadow(0 0 14px rgba(255, 214, 120, var(--lumina-repaus)));
 }
 .strat-lume.umbrit .obiect.sprite {
-  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 14px rgba(255, 214, 120, 0.2));
+  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px rgba(255, 255, 255, var(--lumina-repaus))) drop-shadow(0 0 14px rgba(255, 214, 120, var(--lumina-repaus)));
 }
 .strat-lume .obiect.sprite.evidentiat {
   filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
