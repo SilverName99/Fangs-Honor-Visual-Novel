@@ -8,7 +8,7 @@ export const INALTIME = 1080;
 // Scena e mereu 1920×1080 și doar se scalează; toate pozițiile din date rămân valabile la orice ecran.
 // Editorul poate adăuga zoom și deplasare (vedere), jocul rămâne mereu „potrivit în fereastră”.
 // Conturul automat al personajelor fără zonă desenată: aceeași bandă aurie estompată ca la zonele desenate
-// (linie de ~7px pe margine, blur 5), dar construită din forma sprite-ului. Trei intensități: zi, noapte, mouse deasupra.
+// (linie de ~7px pe margine, blur 5), dar construită din forma sprite-ului. Trei intensități: zi, noapte, mouse deasupra (60%, ca la zone).
 function adaugaFiltreContur() {
   if (document.getElementById('contur-sprite-zi')) return;
   const filtru = (id, opacitate) =>
@@ -24,7 +24,7 @@ function adaugaFiltreContur() {
   svg.setAttribute('width', '0');
   svg.setAttribute('height', '0');
   svg.style.position = 'absolute';
-  svg.innerHTML = `<defs>${filtru('contur-sprite-zi', 0.95 * 0.3)}${filtru('contur-sprite-noapte', 0.95 * 0.2)}${filtru('contur-sprite-plin', 0.95)}</defs>`;
+  svg.innerHTML = `<defs>${filtru('contur-sprite-zi', 0.95 * 0.3)}${filtru('contur-sprite-noapte', 0.95 * 0.2)}${filtru('contur-sprite-plin', 0.95 * 0.6)}</defs>`;
   document.body.append(svg);
 }
 

@@ -110,7 +110,7 @@ svg.zone {
   --lumina-repaus: 0.2;
 }
 .zona-clic.evidentiat-poligon {
-  stroke-opacity: 1;
+  stroke-opacity: 0.6;
 }
 
 /* Interfața jocului (stil implicit, până vine grafica autorului) */
