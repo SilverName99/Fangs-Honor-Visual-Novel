@@ -17,7 +17,7 @@ const PORT = Number(process.env.PORT) || 3217;
 const HOST = process.env.HOST || '127.0.0.1';
 const GIT_SYNC = process.env.GIT_SYNC === '1';
 
-const CATEGORII = ['map', 'map/piese', 'locations', 'portraits', 'sprites', 'combat', 'items', 'ui'];
+const CATEGORII = ['map', 'map/piese', 'locations', 'events', 'portraits', 'sprites', 'combat', 'items', 'ui'];
 const NUME_IMAGINE = /^[a-z0-9]+(?:_[a-z0-9]+)*\.png$/;
 const ID_SCENA = /^[a-z0-9_]+(?:\.[a-z0-9_]+)?$/;
 const MAX_IMAGINE = 40 * 1024 * 1024;

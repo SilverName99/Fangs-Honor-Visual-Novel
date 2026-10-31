@@ -1,7 +1,8 @@
 {
-  "_nota": "Inamicii și luptele. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
+  "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
   "inamici": {
     "lup": { "nume": "Lup", "viata": 30, "staminaMax": 115, "atac": { "min": 4, "max": 7, "tip": "apropiat" }, "armura": 0 },
+    "orc_taverna": { "nume": "Orc", "poze": "paznic_orc_1", "viata": 28, "staminaMax": 85, "atac": { "min": 3, "max": 6, "tip": "apropiat" }, "armura": 0 },
     "betiv": { "nume": "Bețiv", "viata": 22, "staminaMax": 80, "atac": { "min": 2, "max": 5, "tip": "apropiat" }, "armura": 0 }
   },
   "lupte": {
@@ -12,6 +13,18 @@
       "inamici": [{ "id": "lup", "linie": 1, "rand": "fata" }],
       "victorie": { "text": "Ai doborât lupul.", "efecte": { "obiect": ["carne", "piele"] } },
       "infrangere": { "text": "(TODO) Lupul te-a rănit și a fugit în pădure.", "efecte": {} }
+    },
+    "scandal_taverna": {
+      "nume": "Scandal în tavernă",
+      "fundal": "taverna.parter",
+      "fuga": false,
+      "aliati": [{ "id": "soldat", "linie": 0, "rand": "fata" }],
+      "inamici": [
+        { "id": "orc_taverna", "linie": 0, "rand": "fata" },
+        { "id": "orc_taverna", "linie": 1, "rand": "fata" }
+      ],
+      "victorie": { "text": "(TODO) Orcii fug spre ieșire.", "efecte": { "eveniment": "taverna_scandal_victorie" } },
+      "infrangere": { "text": "(TODO) Orcii râd de tine și pleacă.", "efecte": { "eveniment": "taverna_scandal_infrangere" } }
     },
     "bataie_taverna": {
       "nume": "Bătaie la tavernă",

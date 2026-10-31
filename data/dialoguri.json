@@ -1,5 +1,5 @@
 {
-  "_nota": "Dialog de test, ca să se vadă cum merg portretele, emoțiile și alegerile. Textele reale le scrie autorul (TODO).",
+  "_nota": "Dialog de test, ca să se vadă cum merg portretele, emoțiile și alegerile. Textele reale le scrie autorul (TODO). start poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire = prezentare).",
   "test_miriam": {
     "partener": "miriam",
     "start": "salut",
@@ -72,6 +72,152 @@
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Mulțumesc! Sunt aproape să ajung la cel mai bun preț pentru acești cartofi minunați."
+      }
+    }
+  },
+  "soldat": {
+    "partener": "soldat",
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_soldat": "da"
+          }
+        }
+      },
+      "meniu"
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "(TODO) Prezentarea lui Roderick.",
+        "efecte": {
+          "stare": {
+            "cunoscut_soldat": "da"
+          }
+        },
+        "alegeri": [
+          {
+            "text": "(TODO) Replica lui Vale la prima întâlnire.",
+            "spre": null
+          }
+        ]
+      },
+      "meniu": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "(TODO) Ce mai e, nepoate?",
+        "alegeri": [
+          {
+            "text": "(TODO) Replica despre orci, care pornește scandalul.",
+            "conditii": {
+              "loc": "taverna/parter",
+              "prezent": "hangita",
+              "nu": {
+                "existaStare": "scandal_taverna"
+              }
+            },
+            "efecte": {
+              "eveniment": "taverna_scandal"
+            },
+            "spre": null
+          },
+          {
+            "text": "(TODO) La revedere.",
+            "spre": null
+          }
+        ]
+      }
+    }
+  },
+  "soldat_dupa_refuz": {
+    "partener": "soldat",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "(TODO) Roderick, bătut, îi vorbește lui Vale după ce orcii au plecat."
+      }
+    }
+  },
+  "hangita": {
+    "partener": "hangita",
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_hangita": "da"
+          }
+        }
+      },
+      "meniu"
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "(TODO) Prezentarea lui Agnes.",
+        "efecte": {
+          "stare": {
+            "cunoscut_hangita": "da"
+          }
+        },
+        "alegeri": [
+          {
+            "text": "(TODO) Replica lui Vale la prima întâlnire.",
+            "spre": null
+          },
+          {
+            "text": "Cumpără",
+            "efecte": {
+              "magazin": "hangita"
+            },
+            "spre": null
+          }
+        ]
+      },
+      "meniu": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "(TODO) Cu ce te servesc?",
+        "alegeri": [
+          {
+            "text": "Cumpără",
+            "efecte": {
+              "magazin": "hangita"
+            },
+            "spre": null
+          },
+          {
+            "text": "Închiriază o cameră (5 monede)",
+            "conditii": {
+              "bani": {
+                "min": 5
+              },
+              "nu": {
+                "inchiriat": "taverna"
+              }
+            },
+            "efecte": {
+              "bani": -5,
+              "inchiriaza": "taverna"
+            },
+            "spre": "camera"
+          },
+          {
+            "text": "(TODO) La revedere.",
+            "spre": null
+          }
+        ]
+      },
+      "camera": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "(TODO) Camera e sus, la etaj. E a ta până mâine la prânz."
       }
     }
   }

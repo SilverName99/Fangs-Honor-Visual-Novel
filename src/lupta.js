@@ -80,7 +80,8 @@ export function creeazaLupta(parinte, joc) {
       blocare: x.blocare ?? cfg.blocareImplicita,
       abilitati: x.abilitati || [],
       bara: intre(0, 30),
-      poze: (p) => [`combat/${id}_${p}.png`, `combat/${id}_idle.png`],
+      // „poze”: inamicul folosește pozele altcuiva (orcii din tavernă arată ca paznicii de la poartă)
+      poze: (p) => [`combat/${x.poze || id}_${p}.png`, `combat/${x.poze || id}_idle.png`],
     };
   }
 
@@ -349,14 +350,19 @@ export function creeazaLupta(parinte, joc) {
       .filter(Boolean);
     // Locurile libere se dau pe rând celor care nu au încă loc în formație
     const ocupate = new Set();
-    for (const f of aliati) {
-      const loc = s.formatie[f.id];
-      if (loc && !ocupate.has(`${loc.linie}${loc.rand}`)) Object.assign(f, loc);
-      else {
-        const liber = [1, 0, 2].flatMap((l) => ['fata', 'spate'].map((r) => ({ linie: l, rand: r }))).find((x) => !ocupate.has(`${x.linie}${x.rand}`));
-        Object.assign(f, liber);
-      }
+    const asaza = (f, loc) => {
+      if (loc && !ocupate.has(`${loc.linie}${loc.rand}`)) Object.assign(f, { linie: loc.linie, rand: loc.rand });
+      else Object.assign(f, [1, 0, 2].flatMap((l) => ['fata', 'spate'].map((r) => ({ linie: l, rand: r }))).find((x) => !ocupate.has(`${x.linie}${x.rand}`)));
       ocupate.add(`${f.linie}${f.rand}`);
+    };
+    for (const f of aliati) asaza(f, s.formatie[f.id]);
+    // Aliații de o singură luptă (unchiul în scandalul din tavernă) nu intră în grup și nu-și salvează locul
+    for (const x of def.aliati || []) {
+      const p = personaje.get(x.id);
+      if (!p?.lupta || aliati.some((f) => f.id === x.id)) continue;
+      const f = { ...luptatorDinDate(x.id, p.lupta, p.nume), temporar: true };
+      asaza(f, x);
+      aliati.push(f);
     }
     const numarari = {};
     const inamici = def.inamici.map((x) => {
@@ -445,7 +451,7 @@ export function creeazaLupta(parinte, joc) {
     const s = joc.stare;
     const vale = L.toti.find((f) => f.id === 'vale');
     // Formația rămâne salvată pentru lupta următoare
-    for (const f of L.toti.filter((x) => x.tabara === 'aliat')) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
+    for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
     const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : null;
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
     L.elMeniu.hidden = false;

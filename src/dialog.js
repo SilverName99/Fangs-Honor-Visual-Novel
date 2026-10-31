@@ -103,7 +103,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       activ = { dialog, emotiePartener: 'normal', alegeri: [] };
       el.hidden = false;
       parinte.classList.add('in-dialog');
-      arataNod(dialog.start);
+      // „start” poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire cu un personaj e o prezentare)
+      const start = [].concat(dialog.start).find((s) => typeof s === 'string' || verificaConditii(s.conditii));
+      arataNod(typeof start === 'string' ? start : start?.nod);
     },
     inchide,
     activ: () => !!activ,

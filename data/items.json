@@ -2,6 +2,7 @@
   "_nota": "Obiectele jocului. Cifrele (prețuri, daune, armură) sunt valori de pornire, de echilibrat (TODO). Iconița: assets/items/<id>.png. sloturi = câte locuri ocupă în inventar (implicit 1).",
   "obiecte": {
     "paine": { "nume": "Pâine", "tip": "consumabil", "stiva": 5, "pret": 2, "minute": 10, "efecte": { "nevoi": { "foame": 25 } } },
+    "bere": { "nume": "Bere", "tip": "consumabil", "stiva": 3, "pret": 3, "minute": 10, "efecte": { "nevoi": { "sete": 20, "stamina": 10 } } },
     "apa": { "nume": "Sticlă cu apă", "tip": "consumabil", "stiva": 3, "pret": 1, "minute": 5, "efecte": { "nevoi": { "sete": 35 } } },
     "pansament": { "nume": "Pansament", "tip": "consumabil", "stiva": 5, "pret": 3, "minute": 5, "inLupta": true, "efecte": { "nevoi": { "viata": 15 } } },
     "potiune_viata": { "nume": "Poțiune de viață", "tip": "consumabil", "stiva": 3, "pret": 15, "minute": 1, "inLupta": true, "efecte": { "nevoi": { "viata": 40 } } },

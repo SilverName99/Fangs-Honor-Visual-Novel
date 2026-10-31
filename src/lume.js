@@ -16,7 +16,11 @@ function varianteDinProgram(p, cheie, fisier) {
     .map((x) => ({
       imagine: `sprites/${p.id}_${fisier}_${x.sprite}.png`,
       nume: x.sprite,
-      conditii: { ora: { min: x.de, max: minusUnMinut(x.pana) }, ...(x.zile ? { zileSaptamana: x.zile } : {}) },
+      // Un interval peste miezul nopții (18:00 → 02:00) e „după 18:00 SAU până la 01:59”
+      conditii: {
+        ...(x.de < x.pana ? { ora: { min: x.de, max: minusUnMinut(x.pana) } } : { oricare: [{ ora: { min: x.de } }, { ora: { max: minusUnMinut(x.pana) } }] }),
+        ...(x.zile ? { zileSaptamana: x.zile } : {}),
+      },
     }));
 }
 
@@ -168,6 +172,12 @@ export function imaginiCerute(date, scene) {
       cuVariante(o.imagine, o.variante, o.tip === 'piesa' ? `Piesă pe hartă: ${o.id}` : `Sprite: ${o.nume} în ${s.titlu}`);
     }
   }
+  // Imaginile evenimentelor (scenele derulate), grupate pe eveniment: tot ce ține de el se încarcă într-un loc
+  for (const ev of date.events?.evenimente || []) {
+    if (!ev.imagini?.length) continue;
+    grup = `Eveniment: ${ev.grup || ev.nume || ev.id}`;
+    ev.imagini.forEach((cale, i) => adauga(cale, `${ev.nume || ev.id}: imaginea ${i + 1}`));
+  }
   grup = 'Portrete';
   for (const p of date.npcs.personaje) {
     for (const st of date.npcs.stariPortret) {
@@ -181,13 +191,13 @@ export function imaginiCerute(date, scene) {
     adauga(`portraits/${ev.vorbitor}_normal.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (eveniment)`);
     if (ev.emotie && ev.emotie !== 'normal') adauga(`portraits/${ev.vorbitor}_${ev.emotie}.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (${ev.emotie})`, true);
   }
-  // Pozele de luptă: Vale are câte un set pentru fiecare tip de armă; ceilalți câte unul
+  // Pozele de luptă: Vale are câte un set pentru fiecare tip de armă; ceilalți câte unul (un inamic cu „poze” le refolosește pe ale altuia)
   const POZE = ['idle', 'atac', 'aparare', 'ranit'];
   grup = 'Luptă';
   for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
     for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');
   }
-  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).map(([id, x]) => [id, x.nume])];
+  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume])];
   for (const [id, nume] of luptatori) for (const p of POZE) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);

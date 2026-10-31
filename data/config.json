@@ -80,6 +80,7 @@
   "somn": {
     "_nota": "Somnul ține până dimineață. Stamina pe oră; cu foamea sub prag se reface la jumătate. Nevoile scad mai încet cât dormi.",
     "oraTrezire": "07:00",
+    "cameraPanaLa": "12:00",
     "staminaPeOra": 15,
     "nevoiInSomn": 0.5
   },

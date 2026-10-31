@@ -6,6 +6,7 @@ const CATEGORII = [
   ['map', 'Harta'],
   ['map/piese', 'Piese pe hartă'],
   ['locations', 'Zone și locuri'],
+  ['events', 'Evenimente'],
   ['sprites', 'Sprite-uri'],
   ['portraits', 'Portrete'],
   ['combat', 'Luptă'],

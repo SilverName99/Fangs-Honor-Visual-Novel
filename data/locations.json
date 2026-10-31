@@ -282,20 +282,42 @@
                 }
               }
             }
-          ]
+          ],
+          "incuiat": {
+            "conditii": {
+              "oricare": [
+                {
+                  "ora": {
+                    "min": "09:00"
+                  }
+                },
+                {
+                  "ora": {
+                    "max": "01:59"
+                  }
+                }
+              ]
+            },
+            "mesaj": "(TODO) Taverna e închisă la ora asta."
+          }
         },
         {
           "id": "etaj",
-          "nume": "Etajul",
+          "nume": "Camera de la etaj",
           "imagine": "locations/taverna_etaj.png",
           "actiuni": [
             {
               "id": "dormi",
               "tip": "dormi",
-              "nume": "Dormi (5 monede)",
-              "cost": 5
+              "nume": "Dormi"
             }
-          ]
+          ],
+          "incuiat": {
+            "conditii": {
+              "inchiriat": "taverna"
+            },
+            "mesaj": "(TODO) N-am plătit o cameră. Trebuie să vorbesc cu Agnes."
+          }
         }
       ]
     },

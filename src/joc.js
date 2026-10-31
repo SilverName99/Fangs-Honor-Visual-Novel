@@ -12,6 +12,7 @@ import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog } from './evenimente.js';
 import * as salvare from './salvare.js';
 import { creeazaDialog } from './dialog.js';
+import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
@@ -121,7 +122,7 @@ function actualizeazaHud() {
 function textTaxa() {
   if (stare.taxa.platita) return 'taxa plătită';
   const zile = stare.taxa.zi - ziua(stare);
-  return zile <= 0 ? `taxa (${cfg.taxa.suma}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}`;
+  return zile <= 0 ? `taxa (${sumaTaxa()}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}`;
 }
 
 // ---------- timp, nevoi, leșin ----------
@@ -141,6 +142,11 @@ function avanseaza(minute, factorNevoi = 1) {
 
 // ---------- taxa ----------
 
+// Taxa de bază plus ce au adăugat orcii între timp (de exemplu după bătaia din tavernă)
+function sumaTaxa() {
+  return cfg.taxa.suma + (stare.taxa.extra || 0);
+}
+
 // Când trece ziua taxei: dacă e plătită, începe un ciclu nou; dacă nu, se notează ratarea
 function verificaTaxa() {
   const t = stare.taxa;
@@ -157,12 +163,12 @@ function verificaTaxa() {
 function platesteTaxa() {
   const t = stare.taxa;
   if (t.platita) return mesaj('Taxa e deja plătită pentru săptămâna asta.');
-  if (stare.bani < cfg.taxa.suma) return mesaj(`Îți trebuie ${cfg.taxa.suma} monede.`);
-  stare.bani -= cfg.taxa.suma;
+  if (stare.bani < sumaTaxa()) return mesaj(`Îți trebuie ${sumaTaxa()} monede.`);
+  stare.bani -= sumaTaxa();
   t.platita = true;
   salveaza();
   actualizeazaHud();
-  mesaj(`Ai plătit taxa (${cfg.taxa.suma} monede).`);
+  mesaj(`Ai plătit taxa (${sumaTaxa()} monede).`);
 }
 
 // În ziua taxei, de la ora colectorului, orcul vine la casa lui Vale (o singură dată pe zi)
@@ -181,7 +187,7 @@ function verificaColectorul() {
         emotie: 'normal',
         text: cfg.taxa.textColector,
         alegeri: [
-          { text: `Plătește (${cfg.taxa.suma} monede)`, conditii: { bani: { min: cfg.taxa.suma } }, efecte: { plataTaxa: true }, spre: null },
+          { text: `Plătește (${sumaTaxa()} monede)`, conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
           { text: 'Nu am bani acum.', spre: null },
         ],
       },
@@ -228,9 +234,27 @@ function verificaEvenimente() {
 
 function pornesteEveniment(id) {
   const ev = evenimente.find((e) => e.id === id);
-  if (!ev || dialog.activ()) return;
+  if (!ev || dialog.activ() || secventa.activa()) return;
   noteazaEveniment(stare, ev, ziua(stare));
-  dialog.porneste(caDialog(ev));
+  salveaza();
+  // Întâi imaginile (dacă are), apoi textul cu alegeri sau un dialog întreg;
+  // un eveniment fără text (de exemplu după înfrângere) doar își aplică efectele
+  secventa.arata(ev.imagini, () => {
+    if (ev.dialog) {
+      aplicaEfecte(ev.efecte, joc);
+      actualizeazaHud();
+      return vorbesteCu(null, ev.dialog);
+    }
+    if (ev.text || ev.alegeri?.length) return dialog.porneste(caDialog(ev));
+    aplicaEfecte(ev.efecte, joc);
+    salveaza();
+    afiseaza();
+  });
+}
+
+// Pornit dintr-un efect: așteaptă să se închidă dialogul sau lupta din care a venit
+function pornesteEvenimentDupa(id) {
+  setTimeout(() => pornesteEveniment(id), 0);
 }
 
 function activeaza(tinta, ctx) {
@@ -246,7 +270,8 @@ function gand(text) {
   dialog.porneste({ partener: null, start: 'g', noduri: { g: { vorbitor: 'vale', emotie: 'normal', gand: true, text } } });
 }
 
-function vorbesteCu(id) {
+function vorbesteCu(id, idDialog) {
+  if (idDialog) return dialog.porneste(dialoguri[idDialog] || { partener: null, start: 'a', noduri: { a: { text: `(TODO) Dialogul „${idDialog}” nu există.` } } });
   // Uneori răspunde altcineva: cât timp prizonierul e legat, discuția e cu cel care trebuie plătit
   const r = personaje.get(id)?.cineRaspunde;
   if (r && verifica(r.conditii, context(stare))) id = r.personaj;
@@ -275,6 +300,14 @@ const joc = {
   mesaj,
   mergi,
   pornesteEveniment,
+  pornesteEvenimentDupa,
+  sumaTaxa,
+  // Magazinul unui personaj (npcs.json, „magazin”), deschis după ce se închide dialogul
+  deschideMagazin(id) {
+    const p = personaje.get(id);
+    if (!p?.magazin) return mesaj(`${p?.nume || id} nu are magazin.`);
+    setTimeout(() => actiuni.executa({ tip: 'magazin', nume: `${p.nume}`, ...p.magazin }), 0);
+  },
   salveaza,
   actualizeazaHud,
   platesteTaxa,
@@ -345,6 +378,7 @@ const dialog = creeazaDialog(ui, {
   },
 });
 
+const secventa = creeazaSecventa(ui);
 const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);

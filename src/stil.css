@@ -913,3 +913,24 @@ svg.zone {
   z-index: 3000;
   pointer-events: none;
 }
+
+/* ----- Secvența de imagini a unui eveniment ----- */
+.secventa {
+  position: absolute;
+  inset: 0;
+  z-index: 14;
+  pointer-events: auto;
+  cursor: pointer;
+  background: #000;
+  animation: intuneca-fundal 0.3s ease-out;
+}
+.indicator-secventa {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #e8dcc0;
+  font-size: 22px;
+}

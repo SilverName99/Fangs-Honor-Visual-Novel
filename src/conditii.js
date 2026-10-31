@@ -23,6 +23,19 @@ const tipuri = {
   oricare: (v, c) => v.some((cond) => verifica(cond, c)),
   // NU: îndeplinită când condițiile din ea nu sunt (de exemplu nicovala goală se vede cât fierarul nu e afară)
   nu: (v, c) => !verifica(v, c),
+  // „existaStare: scandal_taverna” = s-a întâmplat deja, oricum s-ar fi terminat
+  existaStare: (v, c) => c.stari?.[v] != null,
+  // „trecut: { soldat_ranit: { subZile: 2 } }” = marcajul (pus de efectul „marcheaza”) e mai nou de 2 zile.
+  // Fără marcaj, condiția nu e îndeplinită (lucrul nu s-a întâmplat)
+  trecut: (v, c) =>
+    Object.entries(v).every(([k, lim]) => {
+      const la = c.marcaje?.[k];
+      if (la == null || c.minute == null) return false;
+      const zile = (c.minute - la) / 1440;
+      return (lim.subZile == null || zile < lim.subZile) && (lim.pesteZile == null || zile >= lim.pesteZile);
+    }),
+  // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)
+  inchiriat: (v, c) => (c.inchirieri?.[v] ?? -1) > (c.minute ?? 0),
 };
 
 export function registreazaConditie(nume, functie) {

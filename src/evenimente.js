@@ -11,7 +11,7 @@ function poateReveni(ev, istoric, zi) {
 
 // Primul eveniment ale cărui condiții sunt îndeplinite acum (ordinea din events.json e prioritatea)
 export function alegeEveniment(lista, stare, ctx) {
-  return lista.find((ev) => poateReveni(ev, stare.evenimente[ev.id], ctx.zi) && verifica(ev.conditii, ctx)) || null;
+  return lista.find((ev) => !ev.manual && poateReveni(ev, stare.evenimente[ev.id], ctx.zi) && verifica(ev.conditii, ctx)) || null;
 }
 
 export function noteazaEveniment(stare, ev, zi) {
@@ -30,6 +30,7 @@ export function caDialog(ev) {
         vorbitor: ev.vorbitor,
         emotie: ev.emotie,
         text: ev.text,
+        efecte: ev.efecte,
         alegeri: (ev.alegeri || []).map((a) => ({ ...a, spre: null })),
       },
     },

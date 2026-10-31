@@ -1,4 +1,5 @@
 import { schimbaNevoie } from './stare.js';
+import { MINUTE_ZI, inMinute } from './timp.js';
 
 // Registru de efecte: evenimentele, dialogurile (și mai târziu abilitățile din luptă) folosesc aceleași funcții.
 // Un efect nou = o funcție nouă aici, fără să atingi restul codului.
@@ -15,6 +16,24 @@ const efecte = {
   misiune: (v, joc) => Object.assign(joc.stare.misiuni, v),
   lupta: (v, joc) => joc.pornesteLupta(v),
   plataTaxa: (v, joc) => joc.platesteTaxa(),
+  // Pune o nevoie la o valoare fixă (de exemplu viața 10 după bătaie, foamea plină după masa de la Agnes)
+  seteazaNevoi: (v, joc) => Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(0, Math.min(100, val)))),
+  // Ține minte când s-a întâmplat ceva, pentru condiția „trecut” (unchiul lipsește 2 zile după bătaie)
+  marcheaza: (v, joc) => [].concat(v).forEach((k) => ((joc.stare.marcaje ||= {})[k] = joc.stare.minute)),
+  // Camera de la tavernă ține până la prânzul de după noaptea pentru care ai plătit-o:
+  // plătită seara sau după miezul nopții, tot în dimineața următoare expiră
+  inchiriaza: (v, joc) => {
+    const peste = joc.stare.minute + 10 * 60;
+    let pana = Math.floor(peste / MINUTE_ZI) * MINUTE_ZI + inMinute(joc.date.config.somn.cameraPanaLa || '12:00');
+    if (pana <= peste) pana += MINUTE_ZI;
+    (joc.stare.inchirieri ||= {})[v] = pana;
+  },
+  // Taxa crește de acum înainte (orcii țin minte cine s-a bătut cu ei)
+  taxaCrestere: (v, joc) => (joc.stare.taxa.extra = (joc.stare.taxa.extra || 0) + v),
+  // Alt eveniment, după ce se închide ce e acum pe ecran (dialogul sau lupta)
+  eveniment: (v, joc) => joc.pornesteEvenimentDupa(v),
+  // Magazinul unui personaj, deschis din dialog (Agnes: „Cumpără”)
+  magazin: (v, joc) => joc.deschideMagazin(v),
 };
 
 export function registreazaEfect(nume, functie) {

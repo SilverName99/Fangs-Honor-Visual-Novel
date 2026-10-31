@@ -1,5 +1,5 @@
 {
-  "_nota": "3-4 evenimente de test pentru sistem. Textele marcate (TODO) se înlocuiesc cu cele scrise de autor.",
+  "_nota": "3-4 evenimente de test pentru sistem. Textele marcate (TODO) se înlocuiesc cu cele scrise de autor. manual: true = evenimentul nu pornește singur, ci doar dintr-un efect („eveniment”: id), de exemplu dintr-un dialog sau după o luptă. imagini = scenele arătate pe tot ecranul înainte (fără text). dialog = după imagini pornește un dialog din dialoguri.json. efecte = se aplică la eveniment (fără alegeri). grup = secțiunea din galerie unde stau imaginile.",
   "evenimente": [
     {
       "id": "om_ranit_padure_01",
@@ -134,7 +134,8 @@
           "seara",
           "noaptea"
         ],
-        "sansa": 0.25
+        "sansa": 0.25,
+        "existaStare": "scandal_taverna"
       },
       "repetare": {
         "pauzaZile": 2
@@ -155,6 +156,102 @@
           "efecte": {}
         }
       ]
+    },
+    {
+      "id": "taverna_scandal",
+      "manual": true,
+      "grup": "Scandalul din tavernă",
+      "nume": "Scandalul: orcii intră în tavernă",
+      "imagini": [
+        "events/taverna_scandal_1.png",
+        "events/taverna_scandal_2.png",
+        "events/taverna_scandal_3.png"
+      ],
+      "vorbitor": "soldat",
+      "emotie": "suparat",
+      "text": "(TODO) Roderick se ridică în fața orcilor.",
+      "alegeri": [
+        {
+          "text": "(TODO) Îl ajuți pe Roderick.",
+          "efecte": {
+            "stare": {
+              "scandal_taverna": "ajutat"
+            },
+            "lupta": "scandal_taverna"
+          }
+        },
+        {
+          "text": "(TODO) Nu te bagi.",
+          "efecte": {
+            "stare": {
+              "scandal_taverna": "refuzat"
+            },
+            "eveniment": "taverna_scandal_refuz"
+          }
+        }
+      ]
+    },
+    {
+      "id": "taverna_scandal_victorie",
+      "manual": true,
+      "grup": "Scandalul din tavernă",
+      "nume": "Scandalul: victorie",
+      "imagini": [
+        "events/taverna_scandal_victorie.png"
+      ],
+      "vorbitor": "hangita",
+      "emotie": "normal",
+      "text": "(TODO) Agnes te servește cu o masă și îți dă pâine și bere. (Orcii vor cere de acum 10 monede în plus la taxă.)",
+      "efecte": {
+        "seteazaNevoi": {
+          "foame": 100,
+          "sete": 100
+        },
+        "obiect": [
+          "paine",
+          "paine",
+          "paine",
+          "bere",
+          "bere"
+        ],
+        "taxaCrestere": 10,
+        "stare": {
+          "scandal_lupta": "castigata"
+        }
+      }
+    },
+    {
+      "id": "taverna_scandal_infrangere",
+      "manual": true,
+      "grup": "Scandalul din tavernă",
+      "nume": "Scandalul: înfrângere",
+      "imagini": [
+        "events/taverna_scandal_infrangere.png"
+      ],
+      "efecte": {
+        "seteazaNevoi": {
+          "viata": 10
+        },
+        "timp": 120,
+        "stare": {
+          "scandal_lupta": "pierduta"
+        }
+      }
+    },
+    {
+      "id": "taverna_scandal_refuz",
+      "manual": true,
+      "grup": "Scandalul din tavernă",
+      "nume": "Scandalul: Vale nu se bagă",
+      "imagini": [
+        "events/taverna_scandal_refuz_1.png",
+        "events/taverna_scandal_refuz_2.png",
+        "events/taverna_scandal_refuz_3.png"
+      ],
+      "dialog": "soldat_dupa_refuz",
+      "efecte": {
+        "marcheaza": "soldat_ranit"
+      }
     }
   ]
 }

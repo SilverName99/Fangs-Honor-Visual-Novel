@@ -84,6 +84,7 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
 assets/                 (doar pe VPS, nu în git)
   map/                  sat_harta.png (+ _noapte), piese/ (clădirile decupate)
   locations/            imaginile de zonă și scenele locurilor
+  events/               imaginile evenimentelor (scenele derulate, fără text), grupate în galerie pe eveniment
   portraits/            portrete de dialog (cu stări)
   sprites/              personaje în scene, fundal transparent
   combat/               pozele de luptă (secțiunea 15)
@@ -145,7 +146,7 @@ Reguli:
 |---|---|---|---|
 | `casa` | `casa.png` (+ `casa_reparata.png`) | `casa_zona.png` (+ `casa_zona_reparata.png`) | `camera_vale`, `camera_mama`, `bucatarie` (cufărul de acasă e aici sau în camera lui Vale) |
 | `fierar` | `fierar.png` | `fierar_zona.png` | `interior` (magazin), `camera` (la etaj, **încuiată**, cu cufăr; se intră doar din magazin, `"din": "interior"`) |
-| `taverna` | `taverna.png` | `taverna_zona.png` | `parter`, `etaj` (dormit) |
+| `taverna` | `taverna.png` | `taverna_zona.png` | `parter` (deschis 09:00–02:00), `etaj` (camera plătită la Agnes, cu patul de dormit) |
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
 | `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `margine` (cabana vânătoarei), `interior` (vânat), `campsite` (**ascuns** până la questline-ul vânătoarei) |
@@ -249,6 +250,8 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 
 **Program pe ore** (decis pentru Miriam): în loc de rutina pe momente, un personaj poate avea `program` cu intervale exacte (`de`, `pana`, `loc`, opțional `zile` și `doarme`). Miriam: în timpul săptămânii doarme până la 07 și e în bucătărie 07–11 (micul dejun); sâmbăta și duminica e 05–08 la biserică (se roagă) și în bucătărie 08–11; 11–14 camera ei (coase), 14–18 piața (la tarabe; are dialogul ei acolo), 18–23 bucătărie (cina, alt sprite), 23–05 camera ei (doarme). Cât doarme, camera ei e încuiată (gândul lui Vale). **Zilele săptămânii:** ziua 1 e luni; se văd în HUD.
 
+**Taverna** (decis): deschisă 09:00–02:00 (închisă: gândul lui Vale, `TODO`). **Agnes** (hangița): 02–09 doarme, 09–12 în tavernă (`TODO` ce face, sprite `_dimineata`), 12–16 servește afară (sprite pe imaginea zonei), 16–02 la tejghea. **Roderick**: 02–10 doarme, 10–14 la biserică (se roagă pentru fratele lui), 14–18 în tavernă, 18–02 în tavernă cu alt sprite (`_seara`). Fără program separat de weekend. **Camera de la tavernă** se închiriază de la Agnes (5 monede) și ține până la prânzul de după noaptea plătită; poți dormi și după ce se închide taverna.
+
 **Programul fierarului** (decis): luni–vineri 06–12 lucrează afară (zona fierăriei), 12–14 prânzul la tavernă, 14–18 afară, 18–22 lucrează înăuntru (magazinul), 22–06 doarme în camera lui. Sâmbăta și duminica: 05–08 la biserică (se roagă), 08–12 afară, 12–14 tavernă, 14–18 ajută la fermă (câmpurile), 18–22 înăuntru, 22–06 doarme. **Magazinul e închis când fierarul nu e acasă** (afară sau înăuntru, treaz); se poate deschide doar cu cheia fierarului, primită după o misiune (`TODO` care). Gândul lui Vale la ușa închisă e `TODO`.
 
 ### Bani
@@ -312,6 +315,14 @@ Un eveniment e o scenă cu imagine sau portret, text și 2-3 alegeri, declanșat
 - `"o_data"` (implicit): apare o singură dată în tot jocul, de exemplu omul rănit;
 - `"mereu"`: poate reveni oricând, de exemplu vânatul;
 - `{ "pauzaZile": 3 }`: poate reveni, dar nu mai des de o dată la 3 zile, de exemplu bârfele de la tavernă.
+
+**Evenimente cu imagini** (decis): un eveniment poate avea `imagini` (scene pe tot ecranul, fără text, derulate cu click), apoi text cu alegeri sau un `dialog` întreg. `manual: true` = pornește doar dintr-un efect (`"eveniment": id`), din dialog sau după o luptă (`victorie`/`infrangere` din `lupte.json`). Imaginile stau în `assets/events/`, iar galeria le grupează pe eveniment (`grup`).
+
+**Scandalul din tavernă** (decis, o singură dată): o replică din dialogul cu Roderick (doar când Agnes e în tavernă, deci 16–02) pornește 3 imagini cu orcii care intră, o agresează pe Agnes și fac dezordine. Alegi:
+- **îl ajuți:** luptă Vale + Roderick contra 2 orci slabi, fără fugă (pozele paznicilor de la poartă). **Victorie:** o imagine, Agnes te hrănește (foame și sete pline), îți dă 3 pâini și 2 beri, iar taxa crește cu 10 de atunci încolo. **Înfrângere:** o imagine, rămâi cu 10 viață și trec 2 ore. În ambele cazuri Roderick devine recrutabil (cum: `TODO`).
+- **refuzi:** 3 imagini cu Roderick bătut și orcii plecând râzând, apoi un dialog cu el (rănit). Lipsește 2 zile din tavernă și **nu mai poate fi recrutat**.
+
+Bețivul care te provoacă la bătaie apare doar după scandal. **Prima discuție** cu fiecare personaj e o prezentare, cu o singură replică (la Agnes și „Cumpără”).
 
 **Efecte posibile:** timp, bani, nevoi, reputație, relație cu un personaj, obiect primit/dat, schimbare de stare, deblocare de loc, pornire de misiune, pornire de luptă. Efectele stau într-un **registru de funcții** (nu un `switch` uriaș). Același registru e folosit și de abilitățile din luptă.
 
@@ -399,7 +410,8 @@ Fiecare personaj are **4 poze**: `idle`, `atac`, `aparare`, `ranit`. Codul adaug
   | `arc` | arc (ocupă ambele mâini) |
 
   Setul se alege din arma primară, plus dacă în mâna a doua e un scut.
-- **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_ranit.png`.
+- **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_ranit.png`. Un inamic poate refolosi pozele altuia (`poze` în `lupte.json`).
+- O luptă poate avea **aliați de o singură luptă** (`aliati` în `lupte.json`), de exemplu Roderick în scandal, fără să fie recrutat.
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
 - Abilitățile folosesc poza `atac` plus un efect din cod (strălucire).
 
@@ -409,15 +421,16 @@ Fiecare personaj are **4 poze**: `idle`, `atac`, `aparare`, `ranit`. Codul adaug
 |---|---|---|---|
 | `vale` | Protagonist | – | – |
 | `miriam` | Mama | Casă | nu se recrutează |
-| `soldat` | Fost soldat, camarad cu tatăl; luptă apropiat | Taverna (sprijinit de perete) | relație suficientă |
+| `soldat` | **Roderick Lightfinder**, unchiul lui Vale (fratele tatălui), fost soldat, în hainele lui vechi de soldat; luptă apropiat | Taverna, biserica dimineața | doar dacă l-ai ajutat în scandalul din tavernă; cum anume, `TODO` |
 | `fierar` | Tank | Fierăria | relație suficientă |
 | `hot` | Tânărul hoț, legat la butuc | Piața | plătești o sumă unui negustor ca să-l elibereze |
 | `vanatoare` | Atac de la distanță; are cabană la marginea pădurii | Marginea pădurii | **questline** care deblochează Camp site |
 | `mag` | Preotul-mag al luminii; vindecare și abilități de control, slab la început | Biserica | relație suficientă; orcii nu știu de el |
-| `hangita`, `negustor` | Personaje minore | Taverna, piața | – |
+| `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
+| `negustor` | Personaj minor | Piața | – |
 | `orc_colector`, `paznic_orc_1`, `paznic_orc_2` | Orcii | Poarta, casa lui Vale (colectorul) | – |
 
-Unele personaje vin din jocul *Fangs&Honor*. Numele recruților și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.
+Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.
 
 **Relații:** un număr per personaj și un prag pentru recrutare. În demo nu există schimb de inventar cu recruții.
 
