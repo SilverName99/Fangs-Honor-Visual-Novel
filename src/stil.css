@@ -878,28 +878,7 @@ svg.zone {
   filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
 
-/* Personajele fără zonă desenată primesc automat același contur ca zonele desenate de autor
-   (filtrele „contur-sprite-*” din scena.js). Piesele de pe hartă rămân cum erau. */
-.strat-lume .obiect.sprite {
-  filter: url(#contur-sprite-zi);
-}
-.strat-lume.e-noapte .obiect.sprite {
-  filter: url(#contur-sprite-noapte);
-}
-.strat-lume.umbrit .obiect.sprite {
-  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-zi);
-}
-.strat-lume.umbrit.e-noapte .obiect.sprite {
-  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-noapte);
-}
-.strat-lume .obiect.sprite.evidentiat {
-  filter: url(#contur-sprite-plin);
-}
-.strat-lume.umbrit .obiect.sprite.evidentiat {
-  filter: brightness(0.6) saturate(0.8) url(#contur-sprite-plin);
-}
-
-/* Personaj cu zonă desenată: strălucirea o dă zona, nu conturul imaginii */
+/* Personajele nu strălucesc ele însele: strălucirea vine mereu dintr-o zonă (desenată de autor sau făcută automat din forma lor) */
 .strat-lume .obiect.sprite.cu-zona {
   filter: none;
 }

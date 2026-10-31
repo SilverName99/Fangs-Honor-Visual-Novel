@@ -7,29 +7,7 @@ export const INALTIME = 1080;
 
 // Scena e mereu 1920×1080 și doar se scalează; toate pozițiile din date rămân valabile la orice ecran.
 // Editorul poate adăuga zoom și deplasare (vedere), jocul rămâne mereu „potrivit în fereastră”.
-// Conturul automat al personajelor fără zonă desenată: aceeași bandă aurie estompată ca la zonele desenate
-// (linie de ~7px pe margine, blur 5), dar construită din forma sprite-ului. Trei intensități: zi, noapte, mouse deasupra (60%, ca la zone).
-function adaugaFiltreContur() {
-  if (document.getElementById('contur-sprite-zi')) return;
-  const filtru = (id, opacitate) =>
-    `<filter id="${id}" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">` +
-    '<feMorphology in="SourceAlpha" operator="dilate" radius="3.5" result="d"/>' +
-    '<feMorphology in="SourceAlpha" operator="erode" radius="3.5" result="e"/>' +
-    '<feComposite in="d" in2="e" operator="out" result="inel"/>' +
-    `<feFlood flood-color="rgb(255,225,150)" flood-opacity="${opacitate}"/>` +
-    '<feComposite in2="inel" operator="in" result="inelColorat"/>' +
-    '<feGaussianBlur in="inelColorat" stdDeviation="5" result="b"/>' +
-    '<feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="b"/><feMergeNode in="b"/></feMerge></filter>';
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('width', '0');
-  svg.setAttribute('height', '0');
-  svg.style.position = 'absolute';
-  svg.innerHTML = `<defs>${filtru('contur-sprite-zi', 0.95 * 0.3)}${filtru('contur-sprite-noapte', 0.95 * 0.2)}${filtru('contur-sprite-plin', 0.95 * 0.6)}</defs>`;
-  document.body.append(svg);
-}
-
 export function creeazaEcran(parinte) {
-  adaugaFiltreContur();
   const ecran = document.createElement('div');
   ecran.className = 'ecran';
   const scena = document.createElement('div');

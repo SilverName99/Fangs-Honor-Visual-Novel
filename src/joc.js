@@ -1,7 +1,8 @@
 import './stil.css';
 import { dateBundle as date } from './date.js';
 import { construiesteLumea, candidati } from './lume.js';
-import { creeazaEcran, randeaza, aplicaMoment } from './scena.js';
+import { creeazaEcran, randeaza, aplicaMoment, puncteSvg } from './scena.js';
+import { conturImagine } from './contur.js';
 import { verifica, registreazaConditie } from './conditii.js';
 import { preincarca } from './imagini.js';
 import { elementLaPunct } from './lovire.js';
@@ -506,7 +507,27 @@ function afiseaza() {
       el.classList.add('cu-zona');
       continue;
     }
-    interactive.push({ el, grup: [el], clic: () => vorbesteCu(o.id) });
+    // Fără zonă desenată: zona se face automat din forma sprite-ului și arată exact ca una desenată
+    el.classList.add('cu-zona');
+    const puneZona = () => {
+      if (el.zonaAuto || !el.isConnected) return;
+      const sc = scena.getBoundingClientRect();
+      const b = el.getBoundingClientRect();
+      if (!b.width || !sc.width) return;
+      const puncte = conturImagine(el.querySelector('img')).map(([u, v]) => [(b.left - sc.left + u * b.width) / sc.width, (b.top - sc.top + v * b.height) / sc.height]);
+      const p = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      p.setAttribute('points', puncteSvg(puncte));
+      p.setAttribute('class', 'zona-clic vizibila');
+      p.setAttribute('filter', 'url(#contur-moale)');
+      legaEvidentiere(p, [p], 'evidentiat-poligon');
+      p.addEventListener('click', () => vorbesteCu(o.id));
+      r.svg.append(p);
+      el.zonaAuto = p;
+    };
+    if (el.querySelector('img')?.complete) puneZona();
+    el.addEventListener('incarcat', puneZona);
+    // Imagine lipsă (placeholder): zona e dreptunghiul lui
+    setTimeout(() => el.classList.contains('lipsa') && puneZona(), 600);
   }
 
   baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));

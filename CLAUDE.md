@@ -132,7 +132,7 @@ Lumea e un arbore de imagini, cu trei niveluri:
 3. **Scena locului:** interiorul sau locul propriu-zis. Aici apar personajele.
 
 Reguli:
-- **Highlight la hover** pe piese și sprite-uri: contur discret făcut din CSS (`filter: drop-shadow(...)`, care urmează transparența PNG-ului). Pentru zonele fără piesă (pădurea), highlight pe poligon.
+- **Strălucirea (decis de autor):** **doar piesele de pe hartă** au strălucirea lor (CSS `drop-shadow` pe forma PNG-ului). **Tot restul** (locuri, acțiuni, personaje) folosește strălucirea zonelor desenate: o bandă aurie estompată pe conturul zonei. Un personaj fără zonă desenată primește automat o zonă trasată din forma sprite-ului (`src/contur.js`), afișată exact ca una desenată.
 - **Zonele clicabile sunt poligoane**, desenate în editor. **Regula autorului:** tot ce e clicabil (locuri, acțiuni, personaje) are o zonă desenată de el; **excepție: piesele de pe hartă**, care răspund automat pe forma lor. Până e desenată zona, acțiunile apar ca butoane, iar personajele răspund pe forma sprite-ului.
 - **Strălucirea în repaus** (ca să se vadă ce e clicabil): 30% ziua, 20% noaptea; completă cu mouse-ul deasupra.
 - **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide.
