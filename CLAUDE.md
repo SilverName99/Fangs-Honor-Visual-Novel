@@ -247,6 +247,8 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 }
 ```
 
+**Program pe ore** (decis pentru Miriam): în loc de rutina pe momente, un personaj poate avea `program` cu intervale exacte (`de`, `pana`, `loc`). Miriam: 05–10 bucătărie (micul dejun), 10–14 camera ei (coase), 14–18 piața (la tarabe), 18–23 bucătărie (cina), 23–05 camera ei, încuiată (doarme). În piață are dialogul ei (`dialoguriPeLoc`).
+
 ### Bani
 
 O singură monedă: **monede**. Cifrele de pornire sunt în `config.json`.

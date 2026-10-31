@@ -234,7 +234,8 @@ function vorbesteCu(id) {
   const r = personaje.get(id)?.cineRaspunde;
   if (r && verifica(r.conditii, context(stare))) id = r.personaj;
   const p = personaje.get(id);
-  const d = dialoguri[p?.dialog];
+  // Un personaj poate avea alt dialog în funcție de locul unde îl găsești (Miriam în piață)
+  const d = dialoguri[p?.dialoguriPeLoc?.[context(stare).loc] ?? p?.dialog];
   dialog.porneste(
     d || {
       partener: id,
