@@ -96,11 +96,11 @@ export function randeaza(strat, descriere, aranjare, context) {
   svg.setAttribute('class', 'zone');
   svg.setAttribute('viewBox', `0 0 ${LATIME} ${INALTIME}`);
   svg.setAttribute('preserveAspectRatio', 'none');
-  // Conturul zonelor e estompat (blur), ca strălucirea pieselor, nu o linie tăioasă
+  // Din contur rămâne doar strălucirea (linia însăși nu se desenează), ca la piese
   svg.innerHTML =
     '<defs><filter id="contur-moale" x="-10%" y="-10%" width="120%" height="120%">' +
     '<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>' +
-    '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
+    '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/></feMerge></filter></defs>';
   const poligoane = new Map();
   for (const t of descriere.tinte) {
     const poligon = aranjare?.zone?.[t.id];

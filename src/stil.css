@@ -91,7 +91,7 @@ svg.zone {
 .zona-clic {
   fill: transparent;
   stroke: rgba(255, 225, 150, 0.95);
-  stroke-width: 4;
+  stroke-width: 7;
   stroke-linejoin: round;
   stroke-opacity: 0;
   pointer-events: all;
@@ -104,7 +104,6 @@ svg.zone {
 }
 .zona-clic.evidentiat-poligon {
   stroke-opacity: 1;
-  fill: rgba(255, 220, 140, 0.07);
 }
 
 /* Interfața jocului (stil implicit, până vine grafica autorului) */
