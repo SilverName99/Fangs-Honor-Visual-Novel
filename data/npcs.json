@@ -35,7 +35,7 @@
         },
         {
           "de": "05:00",
-          "pana": "08:00",
+          "pana": "07:00",
           "loc": "casa/camera_mama",
           "zile": [
             "luni",
@@ -48,10 +48,27 @@
           "ce": "încă doarme (în timpul săptămânii)"
         },
         {
+          "de": "07:00",
+          "pana": "11:00",
+          "loc": "casa/bucatarie",
+          "zile": [
+            "luni",
+            "marti",
+            "miercuri",
+            "joi",
+            "vineri"
+          ],
+          "ce": "face micul dejun"
+        },
+        {
           "de": "08:00",
           "pana": "11:00",
           "loc": "casa/bucatarie",
-          "ce": "face micul dejun"
+          "zile": [
+            "sambata",
+            "duminica"
+          ],
+          "ce": "face micul dejun (după biserică)"
         },
         {
           "de": "11:00",
