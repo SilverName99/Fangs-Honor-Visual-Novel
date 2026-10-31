@@ -45,6 +45,39 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     return { zone: a.zone || {}, obiecte: a.obiecte || {} };
   }
 
+  // Istoric pentru Ctrl+Z, per scenă: o copie a aranjării înainte de fiecare modificare.
+  // Modificările repetate rapid (rotița, săgețile) se adună într-un singur pas.
+  const istoric = new Map();
+  let ultimaRetinere = { tip: null, la: 0 };
+  function retine(tip = null) {
+    const acum = Date.now();
+    if (tip && ultimaRetinere.tip === tip && acum - ultimaRetinere.la < 700) {
+      ultimaRetinere.la = acum;
+      return;
+    }
+    ultimaRetinere = { tip, la: acum };
+    const stiva = istoric.get(idScena) || [];
+    const copie = JSON.stringify(lucru);
+    if (stiva.at(-1) !== copie) stiva.push(copie);
+    if (stiva.length > 100) stiva.shift();
+    istoric.set(idScena, stiva);
+  }
+
+  function anuleaza() {
+    if (desen) {
+      desen.puncte.pop();
+      arataSuprapunere();
+      arataPanou();
+      return;
+    }
+    const stiva = istoric.get(idScena);
+    if (!stiva?.length) return;
+    lucru = JSON.parse(stiva.pop());
+    ultimaRetinere = { tip: null, la: 0 };
+    marcheaza();
+    arataScena();
+  }
+
   function marcheaza() {
     modificate.set(idScena, lucru);
     arataLista();
@@ -120,6 +153,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     let mutat = false;
     urmaresteTragerea(ev, (e) => {
       const p = punctNormalizat(scena, e);
+      if (!mutat) retine();
       poz.x = rotunjeste(limiteaza(x0 + p[0] - start[0], 0, 1));
       poz.y = rotunjeste(limiteaza(y0 + p[1] - start[1], 0, 1.5));
       lucru.obiecte[o.id] = { ...poz };
@@ -177,6 +211,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       }
       selecteaza({ tip: 'obiect', id: o.id });
       const poz = pozitieObiect(o.id);
+      retine(`scara:${o.id}`);
       poz.scara = rotunjeste(limiteaza(poz.scara * (e.deltaY < 0 ? 1.05 : 1 / 1.05), 0.02, 3));
       lucru.obiecte[o.id] = poz;
       aplicaPozitie(elemente.get(o.id), poz);
@@ -230,7 +265,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       const linie = element('polyline', { points: puncteSvg(desen.puncte), class: 'ez-linie' });
       suprapunere.append(linie);
       desen.puncte.forEach(([x, y], i) => {
-        suprapunere.append(element('circle', { cx: x * LATIME, cy: y * INALTIME, r: i === 0 ? 14 : 9, class: 'ez-varf' }));
+        const c = element('circle', { cx: x * LATIME, cy: y * INALTIME, r: i === 0 ? 14 : 9, class: 'ez-varf' });
+        // Click dreapta pe o bulină o șterge, chiar în timpul desenului
+        c.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          desen.puncte.splice(i, 1);
+          arataSuprapunere();
+          arataPanou();
+        });
+        suprapunere.append(c);
       });
     }
   }
@@ -243,7 +286,10 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         if (ev.button !== 0) return;
         ev.preventDefault();
         c.setPointerCapture(ev.pointerId);
+        let mutat = false;
         c.onpointermove = (e) => {
+          if (!mutat) retine();
+          mutat = true;
           const [x, y] = punctNormalizat(scena, e);
           puncte[k] = [rotunjeste(limiteaza(x, 0, 1)), rotunjeste(limiteaza(y, 0, 1))];
           c.setAttribute('cx', puncte[k][0] * LATIME);
@@ -252,6 +298,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         };
         c.onpointerup = () => {
           c.onpointermove = null;
+          if (!mutat) return;
           marcheaza();
           arataSuprapunere();
         };
@@ -260,6 +307,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       c.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         if (puncte.length <= 3) return;
+        retine();
         puncte.splice(k, 1);
         marcheaza();
         arataSuprapunere();
@@ -289,6 +337,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   function terminaDesenul() {
     if (desen.puncte.length >= 3) {
+      retine();
       lucru.zone[desen.id] = desen.puncte;
       marcheaza();
     }
@@ -339,7 +388,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       html += `<h3>Desenezi zona: ${esc(t.nume)}</h3>
         <p>Dă click pe colțurile zonei, unul după altul (${desen.puncte.length} puse).</p>
         <div class="salvare"><button class="btn principal gata" ${desen.puncte.length < 3 ? 'disabled' : ''}>Gata</button><button class="btn anuleaza">Renunță</button></div>
-        <div class="ajutor">Click pe primul punct sau Enter = gata.<br>Backspace = șterge ultimul punct.<br>Esc = renunță.</div>`;
+        <div class="ajutor">Click pe primul punct sau Enter = gata.<br>Click dreapta pe o bulină = o șterge.<br>Ctrl+Z sau Backspace = șterge ultimul punct.<br>Esc = renunță.</div>`;
     } else {
       if (d.tinte.length) {
         html += `<h3>Zone clicabile</h3>${d.tinte
@@ -381,7 +430,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <b>Obiecte:</b> trage-le cu mouse-ul; rotița pe obiect îl mărește sau micșorează; săgețile îl mută fin (cu Shift, mai mult).<br>
         <b>Vederea:</b> rotița pe fundal (sau Ctrl + rotița) face zoom; click dreapta + tras (sau Space + tras) mută imaginea.<br>
         <b>Zone:</b> piesele de pe hartă nu au nevoie de zonă desenată („✓ auto”: se folosește forma piesei). Desenezi doar unde nu e piesă: apasă „Desenează” și dă click pe colțuri. La o zonă aleasă, colțurile se pot trage; click dreapta pe un colț îl șterge.<br>
-        <b>Ctrl+S</b> salvează. ○ = încă nearanjat.
+        <b>Ctrl+Z</b> anulează ultima modificare. <b>Ctrl+S</b> salvează. ○ = încă nearanjat.
       </div>`;
     }
     elPanou.innerHTML = html;
@@ -411,6 +460,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       r.querySelector('.deseneaza').onclick = () => incepeDesenul(id);
       r.querySelector('.sterge-zona')?.addEventListener('click', () => {
         if (!confirm('Ștergi zona desenată?')) return;
+        retine();
         delete lucru.zone[id];
         marcheaza();
         selecteaza(null);
@@ -423,6 +473,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       input.onchange = () => {
         const v = Number(input.value);
         if (!Number.isFinite(v)) return;
+        retine();
         const poz = pozitieObiect(selectie.id);
         poz[input.dataset.k] = rotunjeste(v);
         lucru.obiecte[selectie.id] = poz;
@@ -431,6 +482,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       };
     }
     elPanou.querySelector('.implicit')?.addEventListener('click', () => {
+      retine();
       const d2 = descriere();
       const i = d2.obiecte.findIndex((o) => o.id === selectie.id);
       delete lucru.obiecte[selectie.id];
@@ -474,6 +526,11 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       spatiuApasat = true;
       return;
     }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+      e.preventDefault();
+      anuleaza();
+      return;
+    }
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
       e.preventDefault();
       salveaza();
@@ -494,6 +551,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     if (pasi && selectie?.tip === 'obiect') {
       e.preventDefault();
       const pas = e.shiftKey ? 0.01 : 0.002;
+      retine(`sageti:${selectie.id}`);
       const poz = pozitieObiect(selectie.id);
       poz.x = rotunjeste(poz.x + pasi[0] * pas);
       poz.y = rotunjeste(poz.y + pasi[1] * pas);
