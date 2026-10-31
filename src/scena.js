@@ -1,5 +1,6 @@
 import { elementImagine } from './imagini.js';
 import { candidati } from './lume.js';
+import { verifica } from './conditii.js';
 
 export const LATIME = 1920;
 export const INALTIME = 1080;
@@ -59,8 +60,17 @@ export function pozitieImplicita(index, tip) {
   return { x: 0.1 + (index % 6) * 0.16, y: 0.4 + Math.floor(index / 6) * 0.35, scara: 0.2 };
 }
 
-export function pozitie(aranjare, obiect, index) {
-  return aranjare?.obiecte?.[obiect.id] || obiect.implicit || pozitieImplicita(index, obiect.tip);
+// Un sprite cu variantă „cu nume” (Miriam la cină) are poziția și zona lui, salvate sub „id@nume”;
+// cât timp nu sunt aranjate, le moștenește pe cele de bază
+export function sufixVarianta(descriere, idObiect, context) {
+  const o = descriere.obiecte.find((x) => x.id === idObiect);
+  if (o?.tip !== 'sprite') return '';
+  const v = (o.variante || []).find((x) => x.nume && verifica(x.conditii, context));
+  return v ? `@${v.nume}` : '';
+}
+
+export function pozitie(aranjare, obiect, index, sufix = '') {
+  return (sufix && aranjare?.obiecte?.[obiect.id + sufix]) || aranjare?.obiecte?.[obiect.id] || obiect.implicit || pozitieImplicita(index, obiect.tip);
 }
 
 export function aplicaPozitie(el, p) {
@@ -87,7 +97,7 @@ export function randeaza(strat, descriere, aranjare, context) {
       raport: o.tip === 'sprite' ? 0.45 : 1.2,
     });
     el.dataset.id = o.id;
-    aplicaPozitie(el, pozitie(aranjare, o, i));
+    aplicaPozitie(el, pozitie(aranjare, o, i, sufixVarianta(descriere, o.id, context)));
     strat.append(el);
     obiecte.set(o.id, el);
   });
@@ -103,7 +113,8 @@ export function randeaza(strat, descriere, aranjare, context) {
     '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/></feMerge></filter></defs>';
   const poligoane = new Map();
   for (const t of descriere.tinte) {
-    const poligon = aranjare?.zone?.[t.id];
+    const sufix = t.personaj ? sufixVarianta(descriere, t.personaj, context) : '';
+    const poligon = (sufix && aranjare?.zone?.[t.id + sufix]) || aranjare?.zone?.[t.id];
     if (!poligon || poligon.length < 3) continue;
     const p = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
     p.setAttribute('points', puncteSvg(poligon));

@@ -1,15 +1,19 @@
 import { api } from './api.js';
 import { elementLaPunct } from '../src/lovire.js';
-import { creeazaEcran, randeaza, aplicaMoment, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
+import { undeEste } from '../src/rutine.js';
+import { verifica } from '../src/conditii.js';
+import { ZILE, NUME_ZILE, momentZi } from '../src/timp.js';
+
+const MOMENTE = { dimineata: 'Dimineața', amiaza: 'Amiaza', seara: 'Seara', noaptea: 'Noaptea' };
+import { creeazaEcran, randeaza, aplicaMoment, sufixVarianta, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 const rotunjeste = (n) => Math.round(n * 10000) / 10000;
 const limiteaza = (n, min, max) => Math.min(max, Math.max(min, n));
 
-// Editorul arată ziua sau noaptea (comutator în panou); variantele după stări (de exemplu reparat) se văd în Testare
-const ZI = { moment: 'amiaza', minuteZi: 720, stari: {}, obiecte: [], misiuni: {}, relatii: {} };
-const NOAPTE = { ...ZI, moment: 'noaptea', minuteZi: 1410 };
+// Editorul arată scena la ziua și ora alese în panou; variantele după stări (de exemplu reparat) se văd în Testare
+const ZILE_SCURT = { luni: 'L', marti: 'Ma', miercuri: 'Mi', joi: 'J', vineri: 'V', sambata: 'S', duminica: 'D' };
 
 export function creeazaAranjare(container, comun, dupaSalvare) {
   const { date, lume } = comun;
@@ -34,8 +38,37 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   let elemente = new Map();
   let activ = false;
   let spatiuApasat = false;
-  // Vederea de noapte arată variantele de noapte (sau tenta din cod), exact ca în joc
-  let noapte = false;
+  // Ziua și ora la care se uită editorul: scena arată exact ce e în joc atunci
+  // (personajele prezente, sprite-ul lor de la ora aceea, variantele de noapte)
+  const vedere = { zi: 'luni', ora: 12 };
+  const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
+  const context = () => {
+    const minuteZi = vedere.ora * 60;
+    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [] };
+  };
+  const locScena = () => idScena.replace('.', '/');
+  const prezent = (idPers) => {
+    const p = personaje.get(idPers);
+    return !!p && undeEste(p, context()) === locScena() && verifica(p.apare, context());
+  };
+  // Cheile sub care se salvează poziția și zona: cu „@cina” când e activă o variantă cu nume
+  const ko = (id) => id + sufixVarianta(descriere(), id, context());
+  const kz = (id) => {
+    const t = descriere().tinte.find((x) => x.id === id);
+    return t?.personaj ? id + sufixVarianta(descriere(), t.personaj, context()) : id;
+  };
+  // Când apare un personaj în scena asta, pe scurt (pentru panou)
+  function candEAici(p) {
+    const loc = locScena();
+    if (p.program) {
+      return p.program
+        .filter((x) => x.loc === loc)
+        .map((x) => `${x.de}–${x.pana}${x.zile ? ` (${x.zile.map((z) => ZILE_SCURT[z]).join(',')})` : ''}${x.sprite ? ` [${x.sprite}]` : ''}`)
+        .join(', ');
+    }
+    if (p.rutina) return Object.entries(p.rutina).filter(([, r]) => r.loc === loc).map(([m]) => m).join(', ');
+    return 'mereu';
+  }
 
   const descriere = () => lume.get(idScena);
 
@@ -87,7 +120,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function pozitieObiect(id) {
     const d = descriere();
     const i = d.obiecte.findIndex((o) => o.id === id);
-    return { ...pozitie(lucru, d.obiecte[i], i) };
+    return { ...pozitie(lucru, d.obiecte[i], i, sufixVarianta(d, id, context())) };
   }
 
   // ---------- lista de scene ----------
@@ -120,13 +153,20 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   // ---------- scena: obiecte trase cu mouse-ul ----------
   function arataScena() {
     const d = descriere();
-    const ctx = noapte ? NOAPTE : ZI;
+    const ctx = context();
     const r = randeaza(strat, d, lucru, ctx);
     aplicaMoment(strat, r, d, ctx);
     // Zonele jocului se ascund: editorul își desenează propriile zone, cu colțuri care se pot trage
     r.svg.remove();
+    // Personajele care nu sunt aici la ora aleasă nu se văd (ca în joc)
+    for (const o of d.obiecte) {
+      if (o.tip === 'sprite' && !prezent(o.id)) {
+        r.obiecte.get(o.id).remove();
+        r.obiecte.delete(o.id);
+      }
+    }
     elemente = r.obiecte;
-    for (const o of d.obiecte) legaObiect(o, elemente.get(o.id));
+    for (const o of d.obiecte) if (elemente.has(o.id)) legaObiect(o, elemente.get(o.id));
     arataSuprapunere();
     arataPanou();
   }
@@ -156,7 +196,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       if (!mutat) retine();
       poz.x = rotunjeste(limiteaza(x0 + p[0] - start[0], 0, 1));
       poz.y = rotunjeste(limiteaza(y0 + p[1] - start[1], 0, 1.5));
-      lucru.obiecte[o.id] = { ...poz };
+      lucru.obiecte[ko(o.id)] = { ...poz };
       aplicaPozitie(el, poz);
       mutat = true;
       actualizeazaNumerice();
@@ -213,7 +253,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       const poz = pozitieObiect(o.id);
       retine(`scara:${o.id}`);
       poz.scara = rotunjeste(limiteaza(poz.scara * (e.deltaY < 0 ? 1.05 : 1 / 1.05), 0.02, 3));
-      lucru.obiecte[o.id] = poz;
+      lucru.obiecte[ko(o.id)] = poz;
       aplicaPozitie(elemente.get(o.id), poz);
       actualizeazaNumerice();
       marcheaza();
@@ -246,7 +286,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     const d = descriere();
 
     for (const t of d.tinte) {
-      const poligon = lucru.zone[t.id];
+      if (t.personaj && !prezent(t.personaj)) continue;
+      const poligon = lucru.zone[kz(t.id)];
       if (!poligon || poligon.length < 3 || desen?.id === t.id) continue;
       const selectat = selectie?.tip === 'zona' && selectie.id === t.id;
       const p = element('polygon', { points: puncteSvg(poligon), class: `ez-poligon ${selectat ? 'selectat' : ''}` });
@@ -279,7 +320,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   }
 
   function adaugaVarfuri(idTinta, poligonEl) {
-    const puncte = lucru.zone[idTinta];
+    const puncte = lucru.zone[kz(idTinta)];
     puncte.forEach((pt, k) => {
       const c = element('circle', { cx: pt[0] * LATIME, cy: pt[1] * INALTIME, r: 4.4, class: 'ez-varf' });
       c.addEventListener('pointerdown', (ev) => {
@@ -338,7 +379,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function terminaDesenul() {
     if (desen.puncte.length >= 3) {
       retine();
-      lucru.zone[desen.id] = desen.puncte;
+      lucru.zone[kz(desen.id)] = desen.puncte;
       marcheaza();
     }
     desen = null;
@@ -381,7 +422,11 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       </div>
       <div class="salvare">Zoom: <b class="zoom-procent">${Math.round(ecranul.vedere.zoom * 100)}%</b>
         <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>
-      <div class="salvare"><button class="btn zi-noapte">${noapte ? '☀ Arată ziua' : '🌙 Arată noaptea'}</button></div>`;
+      <div class="ora-editor">
+        <select class="zi-ed">${ZILE.map((z) => `<option value="${z}" ${z === vedere.zi ? 'selected' : ''}>${NUME_ZILE[z]}</option>`).join('')}</select>
+        <input type="range" class="ora-ed" min="0" max="23" value="${vedere.ora}">
+        <b>${String(vedere.ora).padStart(2, '0')}:00</b> <span class="sumar">${MOMENTE[context().moment]}</span>
+      </div>`;
 
     if (desen) {
       const t = d.tinte.find((x) => x.id === desen.id);
@@ -393,14 +438,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       if (d.tinte.length) {
         html += `<h3>Zone clicabile</h3>${d.tinte
           .map((t) => {
-            const are = (lucru.zone[t.id] || []).length >= 3;
+            const absent = t.personaj && !prezent(t.personaj);
+            const are = (lucru.zone[kz(t.id)] || []).length >= 3;
             const sel = selectie?.tip === 'zona' && selectie.id === t.id;
             // O zonă cu piesă pe hartă nu are nevoie de desen: jocul folosește forma piesei
             const automat = !are && d.obiecte.some((o) => o.tinta === t.id);
             const semn = are ? '✓' : automat ? '<span class="bine" title="Se folosește forma piesei">✓ auto</span>' : '<span class="avertisment">○</span>';
             return `<div class="rand ${sel ? 'selectat' : ''}" data-zona="${esc(t.id)}">
-              <span class="nume">${semn} ${esc(t.nume)}</span>
-              <button class="btn deseneaza">${are ? 'Redesenează' : 'Desenează'}</button>
+              <span class="nume">${semn} ${esc(t.nume)}${kz(t.id) !== t.id ? ` <span class="sumar">(${esc(kz(t.id).split('@')[1])})</span>` : ''}${absent ? ' <span class="sumar">(nu e aici acum)</span>' : ''}</span>
+              <button class="btn deseneaza" ${absent ? 'disabled' : ''}>${are ? 'Redesenează' : 'Desenează'}</button>
               ${are ? '<button class="btn pericol sterge-zona">✕</button>' : ''}
             </div>`;
           })
@@ -410,11 +456,14 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         html += `<h3>${{ harta: 'Piese pe hartă', ecran: 'Figura și sloturile' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
-            const aranjat = !!lucru.obiecte[o.id];
-            return `<div class="rand ${sel ? 'selectat' : ''}" data-obiect="${esc(o.id)}">
-              <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}</span>
+            const aranjat = !!lucru.obiecte[ko(o.id)];
+            const absent = o.tip === 'sprite' && !prezent(o.id);
+            const varianta = ko(o.id) !== o.id ? ` <span class="sumar">(${esc(ko(o.id).split('@')[1])})</span>` : '';
+            return `<div class="rand ${sel ? 'selectat' : ''} ${absent ? 'absent' : ''}" data-obiect="${esc(o.id)}">
+              <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}${varianta}
+              ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${esc(candEAici(personaje.get(o.id)))}${absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
             </div>${
-              sel
+              sel && !absent
                 ? `<div class="numeric">
                     <label>x</label><input type="number" step="0.005" data-k="x">
                     <label>y (picioarele)</label><input type="number" step="0.005" data-k="y">
@@ -442,8 +491,16 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     };
     elPanou.querySelector('.zoom-plus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom * 1.5, ...centru()), arataZoom());
     elPanou.querySelector('.zoom-minus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom / 1.5, ...centru()), arataZoom());
-    elPanou.querySelector('.zi-noapte').onclick = () => {
-      noapte = !noapte;
+    elPanou.querySelector('.zi-ed').onchange = (e) => {
+      vedere.zi = e.target.value;
+      arataScena();
+    };
+    // În timpul tragerii se schimbă doar eticheta; scena se redesenează la eliberare (altfel glisorul s-ar pierde)
+    elPanou.querySelector('.ora-ed').oninput = (e) => {
+      e.target.nextElementSibling.textContent = `${String(e.target.value).padStart(2, '0')}:00`;
+    };
+    elPanou.querySelector('.ora-ed').onchange = (e) => {
+      vedere.ora = Number(e.target.value);
       arataScena();
     };
     elPanou.querySelector('.zoom-reset').onclick = () => (ecranul.reseteaza(), arataZoom());
@@ -461,7 +518,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       r.querySelector('.sterge-zona')?.addEventListener('click', () => {
         if (!confirm('Ștergi zona desenată?')) return;
         retine();
-        delete lucru.zone[id];
+        delete lucru.zone[kz(id)];
         marcheaza();
         selecteaza(null);
       });
@@ -476,7 +533,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         retine();
         const poz = pozitieObiect(selectie.id);
         poz[input.dataset.k] = rotunjeste(v);
-        lucru.obiecte[selectie.id] = poz;
+        lucru.obiecte[ko(selectie.id)] = poz;
         aplicaPozitie(elemente.get(selectie.id), poz);
         marcheaza();
       };
@@ -485,7 +542,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       retine();
       const d2 = descriere();
       const i = d2.obiecte.findIndex((o) => o.id === selectie.id);
-      delete lucru.obiecte[selectie.id];
+      delete lucru.obiecte[ko(selectie.id)];
       aplicaPozitie(elemente.get(selectie.id), pozitieImplicita(i, d2.obiecte[i].tip));
       marcheaza();
       arataPanou();
@@ -555,7 +612,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       const poz = pozitieObiect(selectie.id);
       poz.x = rotunjeste(poz.x + pasi[0] * pas);
       poz.y = rotunjeste(poz.y + pasi[1] * pas);
-      lucru.obiecte[selectie.id] = poz;
+      lucru.obiecte[ko(selectie.id)] = poz;
       aplicaPozitie(elemente.get(selectie.id), poz);
       actualizeazaNumerice();
       marcheaza();
