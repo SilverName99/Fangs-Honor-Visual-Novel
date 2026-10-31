@@ -104,7 +104,12 @@
       "apare": {
         "nuStare": {
           "hot": "eliberat"
-        }
+        },
+        "moment": [
+          "dimineata",
+          "amiaza",
+          "seara"
+        ]
       },
       "cineRaspunde": {
         "personaj": "negustor",
@@ -179,7 +184,14 @@
       "locuriSprite": [
         "piata"
       ],
-      "clicabil": false
+      "clicabil": false,
+      "apare": {
+        "moment": [
+          "dimineata",
+          "amiaza",
+          "seara"
+        ]
+      }
     },
     {
       "id": "orc_colector",
