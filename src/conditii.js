@@ -21,6 +21,8 @@ const tipuri = {
   sansa: (v, c) => (c.aleator ?? Math.random)() < v,
   // SAU: e destul ca una dintre condiții să fie îndeplinită (de exemplu fierarul e acasă SAU ai cheia)
   oricare: (v, c) => v.some((cond) => verifica(cond, c)),
+  // NU: îndeplinită când condițiile din ea nu sunt (de exemplu nicovala goală se vede cât fierarul nu e afară)
+  nu: (v, c) => !verifica(v, c),
 };
 
 export function registreazaConditie(nume, functie) {

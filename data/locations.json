@@ -175,12 +175,14 @@
       "variante": [
         {
           "imagine": "locations/fierar_zona_cu_nicovala.png",
-          "nume": "cu nicovală (fierarul lucrează afară)",
+          "nume": "cu nicovală (fierarul nu e afară)",
           "conditii": {
-            "personajIn": {
-              "fierar": [
-                "fierar"
-              ]
+            "nu": {
+              "personajIn": {
+                "fierar": [
+                  "fierar"
+                ]
+              }
             }
           }
         }
