@@ -28,7 +28,10 @@ export function construiesteLumea(date) {
       .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: [], tinta: null }));
   // Regula autorului: tot ce e clicabil (în afară de piesele de pe hartă) are o zonă desenată de el.
   // Fiecare personaj dintr-o scenă primește deci și o zonă; până e desenată, personajul răspunde pe forma lui.
-  const zonePersonaje = (obiecte) => obiecte.map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
+  // Personajele marcate „clicabil: false” (de exemplu negustorul din piață) doar se văd, nu primesc zonă
+  const neclicabili = new Set(personaje.filter((p) => p.clicabil === false).map((p) => p.id));
+  const zonePersonaje = (obiecte) =>
+    obiecte.filter((o) => !neclicabili.has(o.id)).map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
   const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a }));
 
   for (const z of zone) {

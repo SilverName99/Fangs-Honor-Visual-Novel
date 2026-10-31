@@ -477,7 +477,7 @@ function afiseaza() {
       continue;
     }
     // Cu zonă desenată, strălucirea și click-ul vin din zonă; fără ea, personajul răspunde pe forma lui
-    if (cuZona.has(o.id)) {
+    if (cuZona.has(o.id) || personaje.get(o.id).clicabil === false) {
       el.classList.add('cu-zona');
       continue;
     }
