@@ -129,6 +129,8 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     };
     const nefolosite = incarcate.filter((c) => !cerutSet.has(c));
 
+    // Reafișarea (după încărcare sau ștergere) păstrează locul din pagină, nu sare înapoi sus
+    const derulare = container.scrollTop;
     container.innerHTML = `
       <h2>Încarcă imagini</h2>
       <div class="zona-drop">Trage aici fișierele PNG sau apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _).</small></div>
@@ -165,6 +167,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
           : ''
       }`;
 
+    container.scrollTop = derulare;
     for (const d of container.querySelectorAll('.grup-galerie[data-grup]')) {
       d.ontoggle = () => (d.open ? deschise.add(d.dataset.grup) : deschise.delete(d.dataset.grup));
     }
