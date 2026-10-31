@@ -265,7 +265,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       const linie = element('polyline', { points: puncteSvg(desen.puncte), class: 'ez-linie' });
       suprapunere.append(linie);
       desen.puncte.forEach(([x, y], i) => {
-        const c = element('circle', { cx: x * LATIME, cy: y * INALTIME, r: i === 0 ? 14 : 9, class: 'ez-varf' });
+        const c = element('circle', { cx: x * LATIME, cy: y * INALTIME, r: i === 0 ? 5.5 : 3.6, class: 'ez-varf' });
         // Click dreapta pe o bulină o șterge, chiar în timpul desenului
         c.addEventListener('contextmenu', (e) => {
           e.preventDefault();
@@ -281,7 +281,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function adaugaVarfuri(idTinta, poligonEl) {
     const puncte = lucru.zone[idTinta];
     puncte.forEach((pt, k) => {
-      const c = element('circle', { cx: pt[0] * LATIME, cy: pt[1] * INALTIME, r: 11, class: 'ez-varf' });
+      const c = element('circle', { cx: pt[0] * LATIME, cy: pt[1] * INALTIME, r: 4.4, class: 'ez-varf' });
       c.addEventListener('pointerdown', (ev) => {
         if (ev.button !== 0) return;
         ev.preventDefault();

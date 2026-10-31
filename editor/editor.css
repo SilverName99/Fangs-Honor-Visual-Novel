@@ -415,8 +415,9 @@ svg.editor-zone.desen {
 }
 .ez-varf {
   fill: #ffd36b;
-  stroke: #000;
-  stroke-width: 2;
+  /* Bulina se vede mică, dar marginea transparentă lată o face ușor de apucat cu mouse-ul */
+  stroke: transparent;
+  stroke-width: 14;
   pointer-events: all;
   cursor: move;
 }
