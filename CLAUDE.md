@@ -247,7 +247,7 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 }
 ```
 
-**Program pe ore** (decis pentru Miriam): în loc de rutina pe momente, un personaj poate avea `program` cu intervale exacte (`de`, `pana`, `loc`, opțional `zile` și `doarme`). Miriam: 05–08 la biserică, se roagă (doar sâmbăta și duminica; în timpul săptămânii încă doarme), 08–11 bucătărie (micul dejun), 11–18 camera ei (coase), 18–23 bucătărie (cina), 23–05 camera ei (doarme). Cât doarme, camera ei e încuiată (gândul lui Vale). **Zilele săptămânii:** ziua 1 e luni; se văd în HUD.
+**Program pe ore** (decis pentru Miriam): în loc de rutina pe momente, un personaj poate avea `program` cu intervale exacte (`de`, `pana`, `loc`, opțional `zile` și `doarme`). Miriam: 05–08 la biserică, se roagă (doar sâmbăta și duminica; în timpul săptămânii încă doarme), 08–11 bucătărie (micul dejun), 11–14 camera ei (coase), 14–18 piața (la tarabe; are dialogul ei acolo), 18–23 bucătărie (cina, alt sprite), 23–05 camera ei (doarme). Cât doarme, camera ei e încuiată (gândul lui Vale). **Zilele săptămânii:** ziua 1 e luni; se văd în HUD.
 
 ### Bani
 

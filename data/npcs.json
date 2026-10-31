@@ -18,7 +18,8 @@
       "locuriSprite": [
         "casa/bucatarie",
         "casa/camera_mama",
-        "biserica/interior"
+        "biserica/interior",
+        "piata"
       ],
       "dialog": "test_miriam",
       "program": [
@@ -54,9 +55,15 @@
         },
         {
           "de": "11:00",
-          "pana": "18:00",
+          "pana": "14:00",
           "loc": "casa/camera_mama",
           "ce": "coase"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "piata",
+          "ce": "se uită la tarabe"
         },
         {
           "de": "18:00",
@@ -72,7 +79,10 @@
           "doarme": true,
           "ce": "doarme (camera e încuiată)"
         }
-      ]
+      ],
+      "dialoguriPeLoc": {
+        "piata": "miriam_piata"
+      }
     },
     {
       "id": "soldat",
