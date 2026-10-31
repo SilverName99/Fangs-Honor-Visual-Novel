@@ -126,7 +126,7 @@
           "de": "02:00",
           "pana": "10:00",
           "doarme": true,
-          "ce": "doarme (TODO unde)"
+          "ce": "doarme (nimeni nu știe unde)"
         },
         {
           "de": "10:00",
@@ -364,7 +364,7 @@
           "pana": "12:00",
           "loc": "taverna/parter",
           "sprite": "dimineata",
-          "ce": "(TODO ce face)"
+          "ce": "pregătește taverna"
         },
         {
           "de": "12:00",

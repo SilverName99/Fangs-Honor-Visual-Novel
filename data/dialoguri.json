@@ -92,26 +92,31 @@
       "prezentare": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "(TODO) Prezentarea lui Roderick.",
         "efecte": {
           "stare": {
             "cunoscut_soldat": "da"
           }
         },
+        "text": "Vale. Ia te uită... băiatul fratelui meu, crescut cât ușa. Stai jos, dacă nu te sperie mirosul de bere și de soldat bătrân.",
         "alegeri": [
           {
-            "text": "(TODO) Replica lui Vale la prima întâlnire.",
-            "spre": null
+            "text": "Bună, unchiule Roderick. Mama întreabă de tine. Zice că nu mai treci pe la noi.",
+            "spre": "prezentare_final"
           }
         ]
+      },
+      "prezentare_final": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Spune-i că sunt bine. Și că n-are de ce să-și facă griji pentru un bătrân încăpățânat."
       },
       "meniu": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "(TODO) Ce mai e, nepoate?",
+        "text": "Ce-i, băiete? Hai, spune.",
         "alegeri": [
           {
-            "text": "(TODO) Replica despre orci, care pornește scandalul.",
+            "text": "Orcii ăștia beau pe datorie și râd de noi. Până când îi mai lăsăm, unchiule?",
             "conditii": {
               "loc": "taverna/parter",
               "prezent": "hangita",
@@ -125,7 +130,7 @@
             "spre": null
           },
           {
-            "text": "(TODO) La revedere.",
+            "text": "Ai grijă de tine, unchiule.",
             "spre": null
           }
         ]
@@ -139,7 +144,19 @@
       "a": {
         "vorbitor": "soldat",
         "emotie": "ranit",
-        "text": "(TODO) Roderick, bătut, îi vorbește lui Vale după ce orcii au plecat."
+        "text": "Nu-ți cer socoteală, băiete... Dar fratele meu n-ar fi stat deoparte.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, eu...",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Lasă. Du-te acasă. Rănile astea mi le ling singur."
       }
     }
   },
@@ -160,7 +177,7 @@
       "prezentare": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "(TODO) Prezentarea lui Agnes.",
+        "text": "Ia te uită, Vale Lightfinder! De când n-ai mai trecut pragul meu? Stai jos, că aici nu mușcă nimeni... în afară de bere, poate.",
         "efecte": {
           "stare": {
             "cunoscut_hangita": "da"
@@ -168,8 +185,8 @@
         },
         "alegeri": [
           {
-            "text": "(TODO) Replica lui Vale la prima întâlnire.",
-            "spre": null
+            "text": "Bună, Agnes. Am auzit că tot la tine e cea mai bună pâine din sat.",
+            "spre": "prezentare_final"
           },
           {
             "text": "Cumpără",
@@ -183,7 +200,7 @@
       "meniu": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "(TODO) Cu ce te servesc?",
+        "text": "Cu ce te servesc, Vale?",
         "alegeri": [
           {
             "text": "Cumpără",
@@ -209,7 +226,7 @@
             "spre": "camera"
           },
           {
-            "text": "(TODO) La revedere.",
+            "text": "Mulțumesc, Agnes. Pe curând.",
             "spre": null
           }
         ]
@@ -217,7 +234,12 @@
       "camera": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "(TODO) Camera e sus, la etaj. E a ta până mâine la prânz."
+        "text": "Camera de sus e a ta până mâine la prânz. Cearșafurile sunt curate și ușa se încuie. Odihnește-te."
+      },
+      "prezentare_final": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Cu lingușeli nu primești reducere. Dar zâmbetul ți-l primesc."
       }
     }
   }

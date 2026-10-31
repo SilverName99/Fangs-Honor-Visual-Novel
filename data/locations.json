@@ -298,7 +298,7 @@
                 }
               ]
             },
-            "mesaj": "(TODO) Taverna e închisă la ora asta."
+            "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mâine dimineață."
           }
         },
         {
@@ -316,7 +316,7 @@
             "conditii": {
               "inchiriat": "taverna"
             },
-            "mesaj": "(TODO) N-am plătit o cameră. Trebuie să vorbesc cu Agnes."
+            "mesaj": "Nu pot urca așa, fără să plătesc. Mai întâi vorbesc cu Agnes."
           }
         }
       ]
