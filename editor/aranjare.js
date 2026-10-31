@@ -75,7 +75,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function copieDeLucru(id) {
     if (modificate.has(id)) return modificate.get(id);
     const a = structuredClone(date.aranjare[id] || {});
-    return { zone: a.zone || {}, obiecte: a.obiecte || {} };
+    return { zone: a.zone || {}, obiecte: a.obiecte || {}, primPlan: a.primPlan || [] };
   }
 
   // Istoric pentru Ctrl+Z, per scenă: o copie a aranjării înainte de fiecare modificare.
@@ -285,6 +285,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     suprapunere.classList.toggle('desen', !!desen);
     const d = descriere();
 
+    lucru.primPlan.forEach((poligon, i) => {
+      suprapunere.append(element('polygon', { points: puncteSvg(poligon), class: 'ez-primplan' }));
+      const cx = poligon.reduce((s2, q) => s2 + q[0], 0) / poligon.length;
+      const cy = poligon.reduce((s2, q) => s2 + q[1], 0) / poligon.length;
+      const et = element('text', { x: cx * LATIME, y: cy * INALTIME, 'text-anchor': 'middle', class: 'ez-eticheta' });
+      et.textContent = `prim-plan ${i + 1}`;
+      suprapunere.append(et);
+    });
+
     for (const t of d.tinte) {
       if (t.personaj && !prezent(t.personaj)) continue;
       const poligon = lucru.zone[kz(t.id)];
@@ -369,9 +378,12 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     arataPanou();
   });
 
+  // Prim-planul se desenează la fel ca o zonă, dar se adaugă în lista primPlan (id-ul special „__primplan”)
+  const PRIM_PLAN = '__primplan';
+
   function incepeDesenul(id) {
     desen = { id, puncte: [] };
-    selectie = { tip: 'zona', id };
+    selectie = id === PRIM_PLAN ? null : { tip: 'zona', id };
     arataSuprapunere();
     arataPanou();
   }
@@ -379,8 +391,14 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function terminaDesenul() {
     if (desen.puncte.length >= 3) {
       retine();
-      lucru.zone[kz(desen.id)] = desen.puncte;
+      if (desen.id === PRIM_PLAN) lucru.primPlan.push(desen.puncte);
+      else lucru.zone[kz(desen.id)] = desen.puncte;
       marcheaza();
+      if (desen.id === PRIM_PLAN) {
+        desen = null;
+        // Scena se redesenează, ca prim-planul nou să acopere imediat personajele
+        return arataScena();
+      }
     }
     desen = null;
     arataSuprapunere();
@@ -431,7 +449,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       </div>`;
 
     if (desen) {
-      const t = d.tinte.find((x) => x.id === desen.id);
+      const t = desen.id === PRIM_PLAN ? { nume: 'prim-plan (ce stă în fața personajelor)' } : d.tinte.find((x) => x.id === desen.id);
       html += `<h3>Desenezi zona: ${esc(t.nume)}</h3>
         <p>Dă click pe colțurile zonei, unul după altul (${desen.puncte.length} puse).</p>
         <div class="salvare"><button class="btn principal gata" ${desen.puncte.length < 3 ? 'disabled' : ''}>Gata</button><button class="btn anuleaza">Renunță</button></div>
@@ -476,7 +494,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           })
           .join('')}`;
       }
-      if (!d.tinte.length && !d.obiecte.length) html += '<p class="sumar">În scena asta nu e nimic de aranjat încă.</p>';
+      if (d.tip !== 'ecran') {
+        html += `<h3>Prim-plan</h3>
+          <div class="sumar">Conturează ce trebuie să stea <b>în fața</b> personajelor (de exemplu zidul fântânii). Bucata aceea din fundal se pune peste ele, ca să pară în spatele ei.</div>
+          ${lucru.primPlan
+            .map((_, i) => `<div class="rand" data-primplan="${i}"><span class="nume">✓ Prim-plan ${i + 1}</span><button class="btn pericol sterge-primplan">✕</button></div>`)
+            .join('')}
+          <div class="salvare"><button class="btn adauga-primplan">+ Desenează prim-plan</button></div>`;
+      }
+      if (!d.tinte.length && !d.obiecte.length && d.tip === 'ecran') html += '<p class="sumar">În scena asta nu e nimic de aranjat încă.</p>';
       html += `<div class="ajutor">
         <b>Obiecte:</b> trage-le cu mouse-ul; rotița pe obiect îl mărește sau micșorează; săgețile îl mută fin (cu Shift, mai mult).<br>
         <b>Vederea:</b> rotița pe fundal (sau Ctrl + rotița) face zoom; click dreapta + tras (sau Space + tras) mută imaginea.<br>
@@ -523,6 +549,16 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         marcheaza();
         selecteaza(null);
       });
+    }
+    elPanou.querySelector('.adauga-primplan')?.addEventListener('click', () => incepeDesenul(PRIM_PLAN));
+    for (const r of elPanou.querySelectorAll('[data-primplan]')) {
+      r.querySelector('.sterge-primplan').onclick = () => {
+        if (!confirm('Ștergi acest prim-plan?')) return;
+        retine();
+        lucru.primPlan.splice(Number(r.dataset.primplan), 1);
+        marcheaza();
+        arataScena();
+      };
     }
     for (const r of elPanou.querySelectorAll('[data-obiect]')) {
       r.querySelector('.nume').onclick = () => selecteaza({ tip: 'obiect', id: r.dataset.obiect });

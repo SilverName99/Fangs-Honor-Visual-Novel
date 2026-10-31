@@ -570,3 +570,11 @@ svg.editor-zone.desen {
 .rand.absent .nume {
   opacity: 0.55;
 }
+
+.ez-primplan {
+  fill: none;
+  stroke: rgba(120, 230, 150, 0.85);
+  stroke-width: 3;
+  stroke-dasharray: 12 8;
+  pointer-events: none;
+}

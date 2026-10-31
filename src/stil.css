@@ -920,3 +920,9 @@ svg.zone {
 .ui.in-dialog .ceas-rapid {
   visibility: hidden;
 }
+
+/* Prim-planul stă peste personaje, dar sub tenta de seară/noapte și sub zonele clicabile */
+.strat-lume .prim-plan {
+  z-index: 3000;
+  pointer-events: none;
+}

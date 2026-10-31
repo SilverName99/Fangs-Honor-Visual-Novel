@@ -112,6 +112,15 @@ export function randeaza(strat, descriere, aranjare, context) {
   const fundal = elementImagine(candidati(descriere.imagine, descriere.variante, context), { clasa: 'fundal', fundal: true });
   strat.append(fundal);
 
+  // Prim-planul: bucăți din fundal (de exemplu zidul fântânii) desenate din nou PESTE personaje,
+  // ca acestea să pară în spatele lor. Nu se taie nimic din sprite-uri, deci merge oriunde ar fi mutate.
+  for (const poligon of aranjare?.primPlan || []) {
+    if (poligon.length < 3) continue;
+    const pp = elementImagine(candidati(descriere.imagine, descriere.variante, context), { clasa: 'fundal prim-plan', fundal: true });
+    pp.style.clipPath = `polygon(${poligon.map(([x, y]) => `${x * 100}% ${y * 100}%`).join(', ')})`;
+    strat.append(pp);
+  }
+
   const obiecte = new Map();
   descriere.obiecte.forEach((o, i) => {
     const el = elementImagine(candidati(o.imagine, o.variante, context), {
