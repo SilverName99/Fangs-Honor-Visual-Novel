@@ -891,3 +891,9 @@ svg.zone {
 .strat-lume.umbrit .obiect.sprite.cu-zona {
   filter: brightness(0.6) saturate(0.8);
 }
+
+/* Gândurile lui Vale (uși încuiate etc.): italic, mai estompat decât o replică spusă cu voce tare */
+.caseta.gand .text-dialog {
+  font-style: italic;
+  color: #d8ccb2;
+}

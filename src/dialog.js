@@ -51,6 +51,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     nume.textContent = nod.vorbitor ? numeVorbitor(nod.vorbitor, activ.dialog) : '';
     nume.hidden = !nod.vorbitor;
     text.textContent = nod.text || '';
+    caseta.classList.toggle('gand', !!nod.gand);
 
     const vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));
     alegeri.replaceChildren(

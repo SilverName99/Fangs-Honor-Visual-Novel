@@ -217,11 +217,16 @@ function pornesteEveniment(id) {
 }
 
 function activeaza(tinta, ctx) {
-  if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return mesaj(tinta.incuiat.mesaj || 'E încuiat.');
+  if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return gand(tinta.incuiat.mesaj || 'E încuiat.');
   if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.personaj) return vorbesteCu(tinta.personaj);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
+}
+
+// Vale „gândește” (de exemplu la o ușă încuiată): dialog doar cu el, cu textul în italic
+function gand(text) {
+  dialog.porneste({ partener: null, start: 'g', noduri: { g: { vorbitor: 'vale', emotie: 'normal', gand: true, text } } });
 }
 
 function vorbesteCu(id) {
