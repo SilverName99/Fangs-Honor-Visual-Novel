@@ -287,6 +287,14 @@ svg.zone {
   inset: 0;
   z-index: 10;
   pointer-events: auto;
+  /* Scena din spate se întunecă puțin, ca atenția să rămână pe dialog */
+  background: rgba(0, 0, 0, 0.45);
+  animation: intuneca-fundal 0.25s ease-out;
+}
+@keyframes intuneca-fundal {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
 }
 .loc-portret {
   position: absolute;
