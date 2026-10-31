@@ -897,3 +897,19 @@ svg.zone {
   font-style: italic;
   color: #d8ccb2;
 }
+
+/* TEMPORAR: butoanele de schimbat ora (config.ceasRapid), sub HUD */
+.ceas-rapid {
+  position: absolute;
+  right: 30px;
+  top: 268px;
+  display: flex;
+  gap: 6px;
+}
+.buton.mic {
+  font-size: 18px;
+  padding: 4px 10px;
+}
+.ui.in-dialog .ceas-rapid {
+  visibility: hidden;
+}

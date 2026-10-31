@@ -54,6 +54,21 @@ const hud = div('hud');
 const navigare = div('navigare-rezerva');
 const baraActiuni = div('bara-actiuni');
 ui.append(colt, titlu, hud, navigare, baraActiuni);
+
+// TEMPORAR (pentru testare, se scoate la final, config.ceasRapid): butoane sub ceas ca să muți ora repede.
+// Schimbă direct ceasul, fără să consume foame sau sete.
+if (cfg.ceasRapid) {
+  const rapid = div('ceas-rapid');
+  const muta = (minute) => {
+    stare.minute = Math.max(0, stare.minute + minute);
+    joc.dupaSchimbare(true);
+  };
+  for (const [text, minute] of [['−1 oră', -60], ['+15 min', 15], ['+1 oră', 60], ['+1 zi', 1440]]) {
+    const b = buton(text, 'mic', () => muta(minute));
+    rapid.append(b);
+  }
+  ui.append(rapid);
+}
 aplicaGraficaUi(date.aranjare.ui);
 
 let stare = salvare.citeste(CHEIE) || stareNoua(cfg);

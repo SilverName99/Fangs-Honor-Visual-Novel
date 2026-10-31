@@ -109,5 +109,7 @@
     "viataDupaCadere": 10,
     "staminaConsumata": 15,
     "minute": 30
-  }
+  },
+  "ceasRapid": true,
+  "_ceasRapid": "TEMPORAR: butoanele de schimbat ora din joc, pentru testare. La final se pune false (sau se scoate)."
 }

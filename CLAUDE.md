@@ -441,6 +441,8 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 
 **Stadiu:** v0.1 gata. Din v0.2 și v0.3 e făcută **baza** (inventar, echipament, muncă, somn, magazin, rutine, taxa cu colectorul, grafica UI, lupta). Autorul a cerut ca misiunile (acoperișul, fierarul, vânătoarea) și consecințele (taxa ratată, înfrângerea) să aștepte: rămân `TODO`.
 
+**De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare.
+
 **Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de echipament se aranjează în editor ca „scena” `echipament`.
 
 **Nu face în demo:** managementul grupului (somn, mâncare, băutură pentru recruți), schimbul de inventar cu recruții, mana și magia (în afară de abilitățile preotului), amuletele și inelele, dragonii (în afară de indicii), harta mare, fortăreața.
