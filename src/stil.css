@@ -295,10 +295,10 @@ svg.zone {
   transition: filter 0.2s;
 }
 .loc-portret.stanga {
-  left: 60px;
+  left: 0;
 }
 .loc-portret.dreapta {
-  right: 60px;
+  right: 0;
 }
 .loc-portret.tacut {
   filter: brightness(0.55);
