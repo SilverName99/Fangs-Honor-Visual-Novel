@@ -862,3 +862,17 @@ svg.zone {
 .strat-lume.umbrit .obiect.varianta-moment.evidentiat {
   filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
+
+/* Personajele (sprite-urile) strălucesc ușor și fără mouse, ca zonele desenate, ca să se știe că se poate vorbi cu ele */
+.strat-lume .obiect.sprite {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 14px rgba(255, 214, 120, 0.2));
+}
+.strat-lume.umbrit .obiect.sprite {
+  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 14px rgba(255, 214, 120, 0.2));
+}
+.strat-lume .obiect.sprite.evidentiat {
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+}
+.strat-lume.umbrit .obiect.sprite.evidentiat {
+  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+}
