@@ -1,0 +1,41 @@
+{
+  "_nota": "Dialog de test, ca să se vadă cum merg portretele, emoțiile și alegerile. Textele reale le scrie autorul (TODO).",
+  "test_miriam": {
+    "partener": "miriam",
+    "start": "salut",
+    "noduri": {
+      "salut": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "(TODO) Bună dimineața, Vale. Ai dormit bine?",
+        "urmator": "raspuns"
+      },
+      "raspuns": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "(TODO) Destul de bine. Ce s-a întâmplat?",
+        "urmator": "griji"
+      },
+      "griji": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "(TODO) Acoperișul iar lasă apa să intre. Și orcii vin după taxă peste câteva zile...",
+        "alegeri": [
+          { "text": "(TODO) Mă ocup eu de acoperiș.", "efecte": { "relatie": { "miriam": 2 } }, "spre": "multumesc" },
+          { "text": "(TODO) Nu acum, mamă.", "efecte": { "relatie": { "miriam": -1 } }, "spre": "suparata" }
+        ]
+      },
+      "multumesc": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "(TODO) Mulțumesc, dragul meu. Ia măcar o bucată de pâine înainte să pleci.",
+        "efecte": { "nevoi": { "foame": 15 } }
+      },
+      "suparata": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "(TODO) Tatăl tău nu ar fi amânat."
+      }
+    }
+  }
+}

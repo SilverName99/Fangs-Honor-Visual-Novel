@@ -1,5 +1,13 @@
 {
-  "start": { "scena": "harta", "zi": 1, "ora": "07:00" },
+  "start": {
+    "scena": "casa.camera_vale",
+    "zi": 1,
+    "ora": "07:00",
+    "bani": 0,
+    "stari": {
+      "acoperis": "stricat"
+    }
+  },
   "uiImagini": [
     "ui/ui_dialog.png",
     "ui/ui_nume.png",
@@ -18,5 +26,33 @@
     "ui/ui_cursor_click.png",
     "ui/ui_vale_apoza.png",
     "ui/ui_meniu_fundal.png"
-  ]
+  ],
+  "timp": {
+    "_nota": "Minute consumate la mutare. Întoarcerea la nivelul de deasupra nu consumă timp.",
+    "spreZona": 15,
+    "spreLoc": 2
+  },
+  "nevoi": {
+    "start": {
+      "viata": 100,
+      "stamina": 100,
+      "foame": 100,
+      "sete": 100
+    },
+    "foamePeOra": 1,
+    "setePeOra": 1.5,
+    "prag": 30,
+    "viataPeOraFaraMancare": 2,
+    "viataPeOraFaraApa": 3,
+    "durataCandESete": 1.25
+  },
+  "lesin": {
+    "scena": "casa.camera_vale",
+    "orePierdute": 12,
+    "viataDupa": 30,
+    "foameDupa": 30,
+    "seteDupa": 30,
+    "pierdereBaniProcent": 0,
+    "text": "(TODO text) Totul se întunecă. Te trezești în patul tău; mama te-a găsit și te-a adus acasă. A trecut o jumătate de zi."
+  }
 }

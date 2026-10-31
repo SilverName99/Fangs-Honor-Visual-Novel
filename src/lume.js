@@ -97,6 +97,13 @@ export function imaginiCerute(date, scene) {
       adauga(`portraits/${p.id}_${st}.png`, `Portret: ${p.nume} (${st})`, st !== 'normal');
     }
   }
+  // Personajele care apar doar în evenimente (de exemplu călătorul rănit) au și ele nevoie de portret
+  const cunoscute = new Set(date.npcs.personaje.map((p) => p.id));
+  for (const ev of date.events?.evenimente || []) {
+    if (!ev.vorbitor || cunoscute.has(ev.vorbitor)) continue;
+    adauga(`portraits/${ev.vorbitor}_normal.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (eveniment)`);
+    if (ev.emotie && ev.emotie !== 'normal') adauga(`portraits/${ev.vorbitor}_${ev.emotie}.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (${ev.emotie})`, true);
+  }
   for (const ui of date.config.uiImagini || []) adauga(ui, 'Interfață', true);
   return [...rezultat.values()];
 }

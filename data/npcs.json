@@ -1,18 +1,94 @@
 {
-  "_nota": "locuriSprite = locurile unde personajul are sprite (fișier sprites/<id>_<zona>_<loc>.png). Rutinele vin în v0.2. Numele sunt TODO unde nu sunt stabilite.",
-  "stariPortret": ["normal", "suparat", "speriat", "ranit"],
+  "_nota": "locuriSprite = locurile unde personajul are sprite (fișier sprites/<id>_<zona>_<loc>.png). dialog = id din dialoguri.json (fără el: replică TODO). Rutinele vin în v0.2. Numele sunt TODO unde nu sunt stabilite.",
+  "stariPortret": [
+    "normal",
+    "suparat",
+    "speriat",
+    "ranit"
+  ],
   "personaje": [
-    { "id": "vale", "nume": "Vale", "locuriSprite": [] },
-    { "id": "miriam", "nume": "Miriam", "locuriSprite": ["casa/bucatarie"] },
-    { "id": "soldat", "nume": "Soldatul (TODO nume)", "locuriSprite": ["taverna/parter"] },
-    { "id": "fierar", "nume": "Fierarul (TODO nume)", "locuriSprite": ["fierar/interior"] },
-    { "id": "hot", "nume": "Hoțul (TODO nume)", "locuriSprite": ["piata/pedeapsa"] },
-    { "id": "vanatoare", "nume": "Vânătoarea (TODO nume)", "locuriSprite": ["padure/margine"] },
-    { "id": "mag", "nume": "Preotul (TODO nume)", "locuriSprite": ["biserica/interior"] },
-    { "id": "hangita", "nume": "Hangița", "locuriSprite": ["taverna/parter"] },
-    { "id": "negustor", "nume": "Negustorul", "locuriSprite": ["piata/tarabe"] },
-    { "id": "orc_colector", "nume": "Orcul colector", "locuriSprite": ["poarta/taxa"] },
-    { "id": "paznic_orc_1", "nume": "Paznic orc", "locuriSprite": ["poarta/exterior"] },
-    { "id": "paznic_orc_2", "nume": "Paznic orc", "locuriSprite": ["poarta/exterior"] }
+    {
+      "id": "vale",
+      "nume": "Vale",
+      "locuriSprite": []
+    },
+    {
+      "id": "miriam",
+      "nume": "Miriam",
+      "locuriSprite": [
+        "casa/bucatarie"
+      ],
+      "dialog": "test_miriam"
+    },
+    {
+      "id": "soldat",
+      "nume": "Soldatul (TODO nume)",
+      "locuriSprite": [
+        "taverna/parter"
+      ]
+    },
+    {
+      "id": "fierar",
+      "nume": "Fierarul (TODO nume)",
+      "locuriSprite": [
+        "fierar/interior"
+      ]
+    },
+    {
+      "id": "hot",
+      "nume": "Hoțul (TODO nume)",
+      "locuriSprite": [
+        "piata/pedeapsa"
+      ]
+    },
+    {
+      "id": "vanatoare",
+      "nume": "Vânătoarea (TODO nume)",
+      "locuriSprite": [
+        "padure/margine"
+      ]
+    },
+    {
+      "id": "mag",
+      "nume": "Preotul (TODO nume)",
+      "locuriSprite": [
+        "biserica/interior"
+      ]
+    },
+    {
+      "id": "hangita",
+      "nume": "Hangița",
+      "locuriSprite": [
+        "taverna/parter"
+      ]
+    },
+    {
+      "id": "negustor",
+      "nume": "Negustorul",
+      "locuriSprite": [
+        "piata/tarabe"
+      ]
+    },
+    {
+      "id": "orc_colector",
+      "nume": "Orcul colector",
+      "locuriSprite": [
+        "poarta/taxa"
+      ]
+    },
+    {
+      "id": "paznic_orc_1",
+      "nume": "Paznic orc",
+      "locuriSprite": [
+        "poarta/exterior"
+      ]
+    },
+    {
+      "id": "paznic_orc_2",
+      "nume": "Paznic orc",
+      "locuriSprite": [
+        "poarta/exterior"
+      ]
+    }
   ]
 }

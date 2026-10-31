@@ -123,10 +123,12 @@ svg.zone {
   background: linear-gradient(#4a3824, #2e2013);
   border-color: #e0bd7a;
 }
-.inapoi {
+.colt-stanga {
   position: absolute;
   left: 30px;
   top: 30px;
+  display: flex;
+  gap: 14px;
 }
 .titlu-scena {
   position: absolute;
@@ -174,4 +176,258 @@ svg.zone {
 /* Evenimentele de mouse le prinde stratul, care verifică pixelul; imaginile doar se văd */
 .strat-lume .obiect {
   pointer-events: none;
+}
+
+/* ----- Seara și noaptea ----- */
+.tenta {
+  position: absolute;
+  inset: 0;
+  z-index: 4000;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.tenta.seara {
+  background: rgba(255, 150, 80, 0.38);
+}
+.tenta.noaptea {
+  background: rgba(40, 60, 135, 0.65);
+}
+.strat-lume.umbrit .obiect {
+  filter: brightness(0.6) saturate(0.8);
+}
+.strat-lume.umbrit .obiect.evidentiat {
+  filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+}
+
+/* ----- HUD: ceasul și nevoile ----- */
+.hud {
+  position: absolute;
+  right: 30px;
+  top: 24px;
+  width: 360px;
+  padding: 14px 18px;
+  background: rgba(20, 14, 8, 0.78);
+  border: 2px solid #a7854f;
+  border-radius: 10px;
+  color: #f3e6c8;
+  font-size: 22px;
+  pointer-events: none;
+}
+.ceas {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.bara-nevoie {
+  display: grid;
+  grid-template-columns: 92px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 19px;
+}
+.bara-nevoie .cale {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.bara-nevoie .umplere {
+  height: 100%;
+  border-radius: 7px;
+  transition: width 0.4s;
+}
+.bara-nevoie .valoare {
+  text-align: right;
+}
+.viata .umplere {
+  background: #c94a3f;
+}
+.stamina .umplere {
+  background: #d9b44a;
+}
+.foame .umplere {
+  background: #a8743b;
+}
+.sete .umplere {
+  background: #4a8fd1;
+}
+.bara-nevoie.scazut .eticheta,
+.bara-nevoie.scazut .valoare {
+  color: #ff8a7a;
+  animation: pulseaza 1.2s ease-in-out infinite;
+}
+@keyframes pulseaza {
+  50% {
+    opacity: 0.45;
+  }
+}
+.monede {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ----- Dialog ----- */
+.dialog {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: auto;
+}
+.loc-portret {
+  position: absolute;
+  bottom: 0;
+  height: 88%;
+  transition: filter 0.2s;
+}
+.loc-portret.stanga {
+  left: 60px;
+}
+.loc-portret.dreapta {
+  right: 60px;
+}
+.loc-portret.tacut {
+  filter: brightness(0.55);
+}
+.portret {
+  position: relative;
+  height: 100%;
+}
+.portret.lipsa {
+  width: auto;
+}
+.caseta {
+  position: absolute;
+  left: 140px;
+  right: 140px;
+  bottom: 30px;
+  min-height: 230px;
+  padding: 44px 50px 26px;
+  box-sizing: border-box;
+  background: rgba(18, 12, 7, 0.93);
+  border: 2px solid #a7854f;
+  border-radius: 12px;
+  color: #f3e6c8;
+  font-size: 32px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.nume-vorbitor {
+  position: absolute;
+  left: 36px;
+  top: -26px;
+  padding: 6px 22px;
+  font-size: 28px;
+  font-weight: 600;
+  background: #3a2c1d;
+  border: 2px solid #a7854f;
+  border-radius: 8px;
+}
+.alegeri {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+.alegere {
+  text-align: left;
+  font: 28px Georgia, serif;
+  color: #f3e6c8;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(167, 133, 79, 0.6);
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.alegere:hover {
+  background: rgba(167, 133, 79, 0.3);
+}
+.continua {
+  position: absolute;
+  right: 26px;
+  bottom: 14px;
+  font-size: 30px;
+  animation: pulseaza 1.2s ease-in-out infinite;
+}
+
+/* ----- Meniu, anunțuri ----- */
+.acoperitor {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+.panou-meniu,
+.panou-anunt {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 520px;
+  max-width: 1000px;
+  padding: 40px 50px;
+  background: rgba(20, 14, 8, 0.96);
+  border: 2px solid #a7854f;
+  border-radius: 14px;
+  color: #f3e6c8;
+}
+.titlu-meniu {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.text-anunt {
+  font-size: 32px;
+  line-height: 1.45;
+}
+
+/* ----- Panoul debug ----- */
+.debug {
+  position: absolute;
+  right: 30px;
+  top: 330px;
+  bottom: 30px;
+  width: 560px;
+  z-index: 30;
+  overflow: auto;
+  padding: 16px 20px;
+  background: rgba(10, 12, 18, 0.94);
+  border: 2px solid #4a6fa5;
+  border-radius: 10px;
+  color: #dde;
+  font: 20px system-ui, sans-serif;
+}
+.debug h4 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+.debug .rand-d {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.debug .rand-d > span:first-child {
+  min-width: 110px;
+}
+.debug button,
+.debug select,
+.debug input {
+  font: inherit;
+  font-size: 18px;
+}
+.debug input[type='range'] {
+  flex: 1;
+}
+
+/* În dialog, butoanele de navigare dispar; ceasul și nevoile rămân la vedere, deasupra portretelor */
+.ui.in-dialog .colt-stanga,
+.ui.in-dialog .navigare-rezerva {
+  visibility: hidden;
+}
+.ui.in-dialog .hud {
+  z-index: 11;
 }

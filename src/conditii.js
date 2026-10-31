@@ -13,6 +13,8 @@ const tipuri = {
       const r = c.relatii?.[k] ?? 0;
       return (lim.min == null || r >= lim.min) && (lim.max == null || r <= lim.max);
     }),
+  deblocat: (v, c) => (c.deblocate || []).includes(v),
+  zi: (v, c) => (v.min == null || c.zi >= v.min) && (v.max == null || c.zi <= v.max),
   sansa: (v, c) => (c.aleator ?? Math.random)() < v,
 };
 

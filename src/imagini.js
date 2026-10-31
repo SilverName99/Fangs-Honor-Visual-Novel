@@ -39,6 +39,8 @@ export function elementImagine(candidati, { clasa = '', raport = 1, fundal = fal
     img.onload = () => {
       if (!fundal) el.style.aspectRatio = img.naturalWidth / img.naturalHeight;
       el.replaceChildren(img);
+      // Jocul vrea să știe ce variantă s-a încărcat (de exemplu, dacă scena are deja imagine de noapte)
+      el.dispatchEvent(new CustomEvent('incarcat', { detail: deIncercat[i] }));
     };
     img.onerror = () => {
       lipsa.add(deIncercat[i]);

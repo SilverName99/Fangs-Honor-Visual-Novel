@@ -388,3 +388,20 @@ svg.editor-zone.desen {
   white-space: nowrap;
   pointer-events: none;
 }
+
+/* ----- Testare ----- */
+#testare.activ {
+  display: flex;
+  flex-direction: column;
+}
+.bara-testare {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 14px;
+}
+#cadru-test {
+  flex: 1;
+  border: 0;
+  background: #000;
+}
