@@ -322,12 +322,32 @@
       ],
       "variante": [
         {
+          "imagine": "locations/piata_zona_noapte_fara_prizonier.png",
+          "nume": "fără prizonier, noaptea",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "moment": [
+              "noaptea"
+            ]
+          }
+        },
+        {
           "imagine": "locations/piata_zona_fara_prizonier.png",
           "nume": "fără prizonier",
           "conditii": {
             "stare": {
               "hot": "eliberat"
             }
+          }
+        },
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
           }
         }
       ]
