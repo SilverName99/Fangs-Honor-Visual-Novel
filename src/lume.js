@@ -3,6 +3,23 @@ import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Transformă arborele din locations.json într-o listă plată de scene, cu care lucrează și jocul, și editorul
+// Un interval din programul unui personaj poate cere alt sprite în același loc (Miriam la cină):
+// devine o variantă a sprite-ului, activă doar în orele acelea
+function varianteDinProgram(p, cheie, fisier) {
+  const minusUnMinut = (hhmm) => {
+    const [h, m] = hhmm.split(':').map(Number);
+    const t = (h * 60 + m + 1439) % 1440;
+    return `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`;
+  };
+  return (p.program || [])
+    .filter((x) => x.sprite && x.loc === cheie)
+    .map((x) => ({
+      imagine: `sprites/${p.id}_${fisier}_${x.sprite}.png`,
+      nume: x.sprite,
+      conditii: { ora: { min: x.de, max: minusUnMinut(x.pana) }, ...(x.zile ? { zileSaptamana: x.zile } : {}) },
+    }));
+}
+
 export function construiesteLumea(date) {
   const scene = new Map();
   const { harta, zone } = date.locations;
@@ -25,7 +42,7 @@ export function construiesteLumea(date) {
   const spriteuri = (cheie, fisier) =>
     personaje
       .filter((p) => (p.locuriSprite || []).includes(cheie))
-      .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: [], tinta: null }));
+      .map((p) => ({ id: p.id, tip: 'sprite', nume: p.nume, imagine: `sprites/${p.id}_${fisier}.png`, variante: varianteDinProgram(p, cheie, fisier), tinta: null }));
   // Regula autorului: tot ce e clicabil (în afară de piesele de pe hartă) are o zonă desenată de el.
   // Fiecare personaj dintr-o scenă primește deci și o zonă; până e desenată, personajul răspunde pe forma lui.
   // Personajele marcate „clicabil: false” (de exemplu negustorul din piață) doar se văd, nu primesc zonă
