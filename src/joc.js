@@ -400,6 +400,13 @@ stratLume.addEventListener('pointermove', (ev) => seteazaSubMouse(interactivLa(e
 stratLume.addEventListener('pointerleave', () => seteazaSubMouse(null));
 stratLume.addEventListener('click', (ev) => interactivLa(ev)?.clic());
 
+function comutaEcranComplet() {
+  // Browserul cere ca ecranul complet să pornească dintr-un click; F11 merge și el
+  if (document.fullscreenElement) document.exitFullscreen?.();
+  else document.documentElement.requestFullscreen?.().catch(() => mesaj('Browserul nu permite ecran complet aici. Încearcă F11.'));
+}
+document.addEventListener('fullscreenchange', () => afiseaza());
+
 // Datele brute ale unui loc (acțiunile stau în locations.json, nu în descrierea scenei)
 function locDate(d) {
   if (d.tip !== 'loc') return null;
@@ -455,7 +462,10 @@ function afiseaza() {
     if (poligon) {
       // O zonă desenată de mână are prioritate; cu piesă, se luminează clădirea, fără piesă chiar zona
       if (piese.length) legaEvidentiere(poligon, piese);
-      else legaEvidentiere(poligon, [poligon], 'evidentiat-poligon');
+      else {
+        poligon.classList.add('vizibila');
+        legaEvidentiere(poligon, [poligon], 'evidentiat-poligon');
+      }
       poligon.addEventListener('click', clic);
     } else if (piese.length) {
       for (const p of piese) interactive.push({ el: p, grup: piese, clic });
@@ -480,6 +490,7 @@ function afiseaza() {
     ...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []),
     buton('🎒 Inventar', '', () => ecranInventar.deschide({ cufar: false })),
     buton('☰ Meniu', '', deschideMeniul),
+    buton(document.fullscreenElement ? '⛶ Ieși din ecran complet' : '⛶ Ecran complet', '', comutaEcranComplet),
   );
   titlu.textContent = d.titlu;
 

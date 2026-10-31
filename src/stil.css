@@ -90,13 +90,21 @@ svg.zone {
 }
 .zona-clic {
   fill: transparent;
+  stroke: rgba(255, 225, 150, 0.95);
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-opacity: 0;
   pointer-events: all;
   cursor: pointer;
+  transition: stroke-opacity 0.25s, fill 0.25s;
+}
+/* Zonele fără piesă (uși, cărări) se văd puțin și fără mouse, ca să se știe că se poate da click */
+.zona-clic.vizibila {
+  stroke-opacity: 0.2;
 }
 .zona-clic.evidentiat-poligon {
-  fill: rgba(255, 220, 140, 0.16);
-  stroke: rgba(255, 220, 140, 0.9);
-  stroke-width: 4;
+  stroke-opacity: 1;
+  fill: rgba(255, 220, 140, 0.07);
 }
 
 /* Interfața jocului (stil implicit, până vine grafica autorului) */
