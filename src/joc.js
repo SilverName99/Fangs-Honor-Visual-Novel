@@ -2,11 +2,11 @@ import './stil.css';
 import { dateBundle as date } from './date.js';
 import { construiesteLumea, candidati } from './lume.js';
 import { creeazaEcran, randeaza, aplicaMoment } from './scena.js';
-import { verifica } from './conditii.js';
+import { verifica, registreazaConditie } from './conditii.js';
 import { preincarca } from './imagini.js';
 import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
-import { inMinute } from './timp.js';
+import { inMinute, NUME_ZILE } from './timp.js';
 import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog } from './evenimente.js';
 import * as salvare from './salvare.js';
@@ -16,13 +16,15 @@ import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
-import { undeEste } from './rutine.js';
+import { undeEste, intrareProgram } from './rutine.js';
 import { aplicaGraficaUi } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
 const cfg = date.config;
 const lume = construiesteLumea(date);
+// „nuDoarme: miriam” = personajul nu doarme acum, după programul lui (camera mamei e încuiată cât doarme)
+registreazaConditie('nuDoarme', (id, c) => !intrareProgram(date.npcs.personaje.find((p) => p.id === id), c)?.doarme);
 const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
 const evenimente = date.events?.evenimente || [];
 const dialoguri = date.dialoguri || {};
@@ -86,7 +88,7 @@ function anunt(text) {
 function actualizeazaHud() {
   const ctx = context(stare);
   hud.replaceChildren(
-    div('ceas', `Ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`),
+    div('ceas', `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`),
     ...NEVOI.map(([cheie, eticheta]) => {
       const v = Math.round(stare.nevoi[cheie]);
       const rand = div(`bara-nevoie ${cheie} ${v < cfg.nevoi.prag ? 'scazut' : ''}`);

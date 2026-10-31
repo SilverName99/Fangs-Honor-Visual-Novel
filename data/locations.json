@@ -119,11 +119,7 @@
           "imagine": "locations/casa_camera_mama.png",
           "incuiat": {
             "conditii": {
-              "moment": [
-                "dimineata",
-                "amiaza",
-                "seara"
-              ]
+              "nuDoarme": "miriam"
             },
             "mesaj": "Nu o deranjez pe mama mea la ora asta. Trebuie să se odihnească."
           }

@@ -8,21 +8,24 @@ function aleatorFix(text) {
 
 // Programul pe ore („de”/„pana”), pentru personajele cu orar exact (de exemplu Miriam).
 // Un interval care trece de miezul nopții (23:00 → 05:00) se citește peste zi.
-function dinProgram(program, minuteZi) {
+// „zile” limitează intervalul la anumite zile ale săptămânii (de exemplu biserica doar în weekend).
+export function intrareProgram(personaj, ctx) {
+  if (!personaj?.program) return null;
+  const minuteZi = ctx.minuteZi;
   const min = (hhmm) => {
     const [h, m] = hhmm.split(':').map(Number);
     return h * 60 + m;
   };
-  const r = program.find((p) => {
+  return personaj.program.find((p) => {
+    if (p.zile && !p.zile.includes(ctx.ziSaptamana)) return false;
     const de = min(p.de);
     const pana = min(p.pana);
     return de < pana ? minuteZi >= de && minuteZi < pana : minuteZi >= de || minuteZi < pana;
-  });
-  return r?.loc ?? null;
+  }) || null;
 }
 
 export function undeEste(personaj, ctx) {
-  if (personaj.program) return dinProgram(personaj.program, ctx.minuteZi);
+  if (personaj.program) return intrareProgram(personaj, ctx)?.loc ?? null;
   if (!personaj.rutina) return personaj.locuriSprite?.[0] ?? null;
   const r = personaj.rutina[ctx.moment];
   if (!r) return null;

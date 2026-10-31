@@ -1,4 +1,4 @@
-import { MINUTE_ZI, inMinute, momentZi } from './timp.js';
+import { MINUTE_ZI, inMinute, momentZi, ziSaptamana } from './timp.js';
 
 // Crește doar când se schimbă forma salvării; atunci se adaugă și o migrare în salvare.js
 export const VERSIUNE_SALVARE = 2;
@@ -44,7 +44,8 @@ export function obiecteDetinute(stare) {
 
 export function context(stare) {
   const m = minuteInZi(stare);
-  return { ...stare, obiecte: obiecteDetinute(stare), minuteZi: m, moment: momentZi(m), zi: ziua(stare), loc: stare.scena.replace('.', '/') };
+  const zi = ziua(stare);
+  return { ...stare, obiecte: obiecteDetinute(stare), minuteZi: m, moment: momentZi(m), zi, ziSaptamana: ziSaptamana(zi), loc: stare.scena.replace('.', '/') };
 }
 
 const limiteaza = (v) => Math.max(0, Math.min(100, v));

@@ -16,6 +16,7 @@ const tipuri = {
     }),
   bani: (v, c) => (v.min == null || c.bani >= v.min) && (v.max == null || c.bani <= v.max),
   deblocat: (v, c) => (c.deblocate || []).includes(v),
+  zileSaptamana: (v, c) => v.includes(c.ziSaptamana),
   zi: (v, c) => (v.min == null || c.zi >= v.min) && (v.max == null || c.zi <= v.max),
   sansa: (v, c) => (c.aleator ?? Math.random)() < v,
 };

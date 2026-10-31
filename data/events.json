@@ -101,9 +101,10 @@
       "id": "test_mama_dimineata",
       "conditii": {
         "loc": "casa/bucatarie",
-        "moment": [
-          "dimineata"
-        ]
+        "ora": {
+          "min": "08:00",
+          "max": "10:59"
+        }
       },
       "repetare": "o_data",
       "vorbitor": "miriam",

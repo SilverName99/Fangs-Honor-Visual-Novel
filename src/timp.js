@@ -11,3 +11,8 @@ export function momentZi(minuteZi) {
   if (minuteZi >= 1080 && minuteZi < 1380) return 'seara';
   return 'noaptea';
 }
+
+// Zilele săptămânii: ziua 1 a jocului e luni (alegere simplă), deci weekendul cade în zilele 6-7, 13-14...
+export const ZILE = ['luni', 'marti', 'miercuri', 'joi', 'vineri', 'sambata', 'duminica'];
+export const NUME_ZILE = { luni: 'Luni', marti: 'Marți', miercuri: 'Miercuri', joi: 'Joi', vineri: 'Vineri', sambata: 'Sâmbătă', duminica: 'Duminică' };
+export const ziSaptamana = (zi) => ZILE[(zi - 1) % 7];
