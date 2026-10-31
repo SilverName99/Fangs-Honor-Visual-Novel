@@ -224,6 +224,9 @@ function activeaza(tinta, ctx) {
 }
 
 function vorbesteCu(id) {
+  // Uneori răspunde altcineva: cât timp prizonierul e legat, discuția e cu cel care trebuie plătit
+  const r = personaje.get(id)?.cineRaspunde;
+  if (r && verifica(r.conditii, context(stare))) id = r.personaj;
   const p = personaje.get(id);
   const d = dialoguri[p?.dialog];
   dialog.porneste(

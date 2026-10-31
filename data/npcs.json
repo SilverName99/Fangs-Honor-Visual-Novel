@@ -1,5 +1,5 @@
 {
-  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă (de exemplu hoțul dispare după ce e eliberat).",
+  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă (de exemplu hoțul dispare după ce e eliberat). cineRaspunde = cine vorbește când dai click pe personaj, cât timp condițiile sunt îndeplinite (prizonierul legat → cel care trebuie plătit).",
   "stariPortret": [
     "normal",
     "suparat",
@@ -104,6 +104,14 @@
       "apare": {
         "nuStare": {
           "hot": "eliberat"
+        }
+      },
+      "cineRaspunde": {
+        "personaj": "negustor",
+        "conditii": {
+          "nuStare": {
+            "hot": "eliberat"
+          }
         }
       }
     },
