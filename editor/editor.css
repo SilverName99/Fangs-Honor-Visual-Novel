@@ -94,10 +94,67 @@ main {
 .tab.activ {
   display: block;
 }
-#galerie {
+#galerie.activ {
+  overflow: hidden;
+}
+/* Încărcarea stă fixă în stânga; doar lista de zone se derulează */
+.galerie-impartita {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  height: 100%;
+}
+.coloana-incarcare,
+.coloana-zone {
   overflow: auto;
   padding: 16px 20px 60px;
   box-sizing: border-box;
+}
+.coloana-incarcare {
+  background: #16181d;
+  border-right: 1px solid #2c2f38;
+}
+.coloana-incarcare h2:first-child,
+.coloana-zone h2:first-child {
+  margin-top: 0;
+}
+.rand-asteptare {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 8px;
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: 1px solid #2c2f38;
+  font-size: 13px;
+}
+.campuri-asteptare {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.campuri-asteptare input,
+.campuri-asteptare select {
+  background: #121317;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+.card-lipsa.peste {
+  border-color: #8fb3ff;
+  background: #22283a;
+  opacity: 1;
+}
+.loc-lipsa small {
+  color: #888;
+}
+.loc-lipsa {
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+.alege-aici {
+  font-size: 11px;
+  padding: 2px 8px;
 }
 h2 {
   font-size: 17px;

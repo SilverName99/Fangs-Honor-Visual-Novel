@@ -67,6 +67,19 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     return { ok: true, text: parti.join(' ') };
   }
 
+  async function incarcaDirect(cale, fisier) {
+    if (!fisier) return;
+    if (fisier.type !== 'image/png' && !fisier.name.toLowerCase().endsWith('.png')) return alert('Doar fișiere PNG.');
+    try {
+      await api(`imagini/${cale}`, { method: 'PUT', body: fisier });
+    } catch (e) {
+      alert(`Nu s-a încărcat: ${e.message}`);
+    }
+    await reincarcaImagini();
+    uitaLipsurile();
+    arata();
+  }
+
   async function incarcaToate(buton) {
     buton.disabled = true;
     const erori = [];
@@ -106,8 +119,8 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
                 <div class="cale">${esc(c.cale)}</div>
                 <div class="actiuni"><span class="sumar">${esc(c.scop)}</span><button class="btn pericol sterge" data-cale="${esc(c.cale)}">Șterge</button></div>
               </div>`
-            : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" title="Click pe nume: îl copiezi">
-                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}</div>
+            : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" data-cale="${esc(c.cale)}" title="Trage un PNG aici: se încarcă direct cu numele ăsta">
+                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage PNG-ul aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
                 <div class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}">${esc(c.cale)}</a></div>
                 <div class="sumar">${esc(c.scop)}</div>
               </div>`,
@@ -130,30 +143,37 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const nefolosite = incarcate.filter((c) => !cerutSet.has(c));
 
     // Reafișarea (după încărcare sau ștergere) păstrează locul din pagină, nu sare înapoi sus
-    const derulare = container.scrollTop;
+    const zone = container.querySelector('.coloana-zone');
+    const derulare = zone ? zone.scrollTop : 0;
     container.innerHTML = `
+      <div class="galerie-impartita"><aside class="coloana-incarcare">
       <h2>Încarcă imagini</h2>
       <div class="zona-drop">Trage aici fișierele PNG sau apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _).</small></div>
       <input type="file" multiple accept="image/png" hidden>
       ${
         asteptare.length
-          ? `<table class="asteptare"><tr><th></th><th>Nume</th><th>Categorie</th><th></th><th></th></tr>${asteptare
+          ? `<div class="asteptare">${asteptare
               .map((r, i) => {
                 const v = verificaRand(r);
-                return `<tr data-i="${i}">
-                  <td><img class="miniatura" src="${r.url}"></td>
-                  <td><input type="text" class="nume" value="${esc(r.nume)}"></td>
-                  <td><select class="categorie"><option value="">Alege...</option>${CATEGORII.map(([c, e]) => `<option value="${c}" ${c === r.categorie ? 'selected' : ''}>${esc(e)}</option>`).join('')}</select></td>
-                  <td class="${v.ok ? '' : 'greseala'}">${v.text}</td>
-                  <td><button class="btn scoate">✕</button></td></tr>`;
+                return `<div class="rand-asteptare" data-i="${i}">
+                  <img class="miniatura" src="${r.url}">
+                  <div class="campuri-asteptare">
+                    <input type="text" class="nume" value="${esc(r.nume)}">
+                    <select class="categorie"><option value="">Alege categoria...</option>${CATEGORII.map(([c, e]) => `<option value="${c}" ${c === r.categorie ? 'selected' : ''}>${esc(e)}</option>`).join('')}</select>
+                    <div class="${v.ok ? '' : 'greseala'}">${v.text}</div>
+                  </div>
+                  <button class="btn scoate">✕</button></div>`;
               })
-              .join('')}</table>
+              .join('')}</div>
             <div class="salvare"><button class="btn principal incarca">Încarcă ${asteptare.length === 1 ? 'imaginea' : `toate (${asteptare.length})`}</button><button class="btn goleste">Golește lista</button></div>`
           : ''
       }
 
+      <p class="sumar">${obligatorii.length - lipsaObl.length} din ${obligatorii.length} imagini obligatorii sunt încărcate.</p>
+      <p class="sumar">Opționalele (variante de noapte, stări de portret, interfață) au rezervă: fără ele jocul folosește imaginea de bază sau stilul implicit.</p>
+      <p class="sumar">Mai simplu: trage un PNG direct pe cartonașul lipsă din dreapta și se încarcă cu numele potrivit.</p>
+      </aside><div class="coloana-zone">
       <h2>Imagini pe zone</h2>
-      <p class="sumar">${obligatorii.length - lipsaObl.length} din ${obligatorii.length} imagini obligatorii sunt încărcate. Opționalele (variante de noapte, stări de portret, interfață) au rezervă: fără ele jocul folosește imaginea de bază sau stilul implicit. Click pe un nume lipsă ca să-l copiezi.</p>
       ${grupuri.map(sectiuneGrup).join('')}
       ${
         nefolosite.length
@@ -165,9 +185,30 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
               )
               .join('')}</div></details>`
           : ''
-      }`;
+      }</div></div>`;
 
-    container.scrollTop = derulare;
+    container.querySelector('.coloana-zone').scrollTop = derulare;
+    // Un PNG tras pe un cartonaș lipsă se încarcă direct cu numele lui (fără redenumire, fără categorie)
+    for (const card of container.querySelectorAll('.card-lipsa')) {
+      const cale = card.dataset.cale;
+      card.ondragover = (e) => {
+        e.preventDefault();
+        card.classList.add('peste');
+      };
+      card.ondragleave = () => card.classList.remove('peste');
+      card.ondrop = (e) => {
+        e.preventDefault();
+        card.classList.remove('peste');
+        incarcaDirect(cale, e.dataTransfer.files[0]);
+      };
+      card.querySelector('.alege-aici').onclick = () => {
+        const i = document.createElement('input');
+        i.type = 'file';
+        i.accept = 'image/png';
+        i.onchange = () => incarcaDirect(cale, i.files[0]);
+        i.click();
+      };
+    }
     for (const d of container.querySelectorAll('.grup-galerie[data-grup]')) {
       d.ontoggle = () => (d.open ? deschise.add(d.dataset.grup) : deschise.delete(d.dataset.grup));
     }
@@ -186,7 +227,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       adaugaFisiere([...e.dataTransfer.files]);
     };
 
-    for (const tr of container.querySelectorAll('table.asteptare tr[data-i]')) {
+    for (const tr of container.querySelectorAll('.rand-asteptare[data-i]')) {
       const r = asteptare[Number(tr.dataset.i)];
       tr.querySelector('.nume').onchange = (e) => {
         r.nume = numeCorect(e.target.value);
