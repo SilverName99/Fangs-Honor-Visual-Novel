@@ -35,3 +35,20 @@ export function undeEste(personaj, ctx) {
   }
   return r.loc;
 }
+
+// Condițiile care depind de unde e un personaj, înregistrate dintr-un singur loc,
+// ca jocul și editorul să aleagă la fel variantele (de exemplu nicovala fierarului)
+export function registreazaConditiiPersonaje(personaje, registreaza) {
+  const gaseste = (id) => personaje.find((p) => p.id === id);
+  // „nuDoarme: miriam” = personajul nu doarme acum, după programul lui (camera mamei e încuiată cât doarme)
+  registreaza('nuDoarme', (id, c) => !intrareProgram(gaseste(id), c)?.doarme);
+  // „personajIn: { fierar: [locuri] }” = personajul e acum într-unul din locuri și nu doarme
+  registreaza('personajIn', (v, c) =>
+    Object.entries(v).every(([id, locuri]) => {
+      const p = gaseste(id);
+      return locuri.includes(undeEste(p, c)) && !intrareProgram(p, c)?.doarme;
+    }),
+  );
+  // „prezent: miriam” = personajul e, după programul lui, chiar în locul ăsta acum (de exemplu evenimentul cu supa)
+  registreaza('prezent', (id, c) => undeEste(gaseste(id), c) === c.loc);
+}

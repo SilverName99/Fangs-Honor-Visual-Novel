@@ -1,7 +1,7 @@
 import { api } from './api.js';
 import { elementLaPunct } from '../src/lovire.js';
-import { undeEste } from '../src/rutine.js';
-import { verifica } from '../src/conditii.js';
+import { undeEste, registreazaConditiiPersonaje } from '../src/rutine.js';
+import { verifica, registreazaConditie } from '../src/conditii.js';
 import { ZILE, NUME_ZILE, momentZi } from '../src/timp.js';
 
 const MOMENTE = { dimineata: 'Dimineața', amiaza: 'Amiaza', seara: 'Seara', noaptea: 'Noaptea' };
@@ -17,6 +17,7 @@ const ZILE_SCURT = { luni: 'L', marti: 'Ma', miercuri: 'Mi', joi: 'J', vineri: '
 
 export function creeazaAranjare(container, comun, dupaSalvare) {
   const { date, lume } = comun;
+  registreazaConditiiPersonaje(date.npcs.personaje, registreazaConditie);
   container.innerHTML = '<div class="aranjare"><div class="lista-scene"></div><div class="scena-editor"></div><div class="panou"></div></div>';
   const elLista = container.querySelector('.lista-scene');
   const elPanou = container.querySelector('.panou');

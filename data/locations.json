@@ -172,6 +172,19 @@
         }
       ],
       "imagine": "locations/fierar_zona.png",
+      "variante": [
+        {
+          "imagine": "locations/fierar_zona_cu_nicovala.png",
+          "nume": "cu nicovală (fierarul lucrează afară)",
+          "conditii": {
+            "personajIn": {
+              "fierar": [
+                "fierar"
+              ]
+            }
+          }
+        }
+      ],
       "locuri": [
         {
           "id": "interior",
