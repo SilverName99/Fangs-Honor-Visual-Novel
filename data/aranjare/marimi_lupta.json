@@ -2,5 +2,8 @@
   "marimi": {
     "combat/fierar_atac.png": 115,
     "combat/fierar_lovit.png": 105
+  },
+  "harti": {
+    "lupta_taverna_parter": 130
   }
 }
