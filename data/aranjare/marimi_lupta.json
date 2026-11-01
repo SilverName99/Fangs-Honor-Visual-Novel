@@ -15,7 +15,7 @@
   },
   "harti": {
     "lupta_taverna_parter": 135,
-    "lupta_padure_interior": 135
+    "lupta_padure_interior": 138
   },
   "personajeHarti": {
     "lupta_taverna_parter": {
@@ -39,12 +39,20 @@
       "lupta_padure_interior": 130
     },
     "combat/vanatoare_idle.png": {
-      "lupta_taverna_parter": 102,
-      "lupta_padure_interior": 102
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110
     },
     "combat/vanatoare_atac.png": {
-      "lupta_taverna_parter": 102,
-      "lupta_padure_interior": 102
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110
+    },
+    "combat/vanatoare_aparare.png": {
+      "lupta_taverna_parter": 85,
+      "lupta_padure_interior": 85
+    },
+    "combat/vanatoare_lovit.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110
     }
   }
 }
