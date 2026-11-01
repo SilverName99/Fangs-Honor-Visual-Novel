@@ -315,9 +315,6 @@
         "locuri": 2
       },
       "dialog": "vanatoare",
-      "apare": {
-        "deblocat": "padure/campsite"
-      },
       "program": [
         {
           "de": "05:00",
