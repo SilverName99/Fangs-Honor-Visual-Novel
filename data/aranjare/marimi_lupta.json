@@ -24,7 +24,10 @@
   },
   "imaginiHarti": {
     "combat/fierar_idle.png": {
-      "lupta_taverna_parter": 132
+      "lupta_taverna_parter": 125
+    },
+    "combat/fierar_atac.png": {
+      "lupta_taverna_parter": 125
     }
   }
 }
