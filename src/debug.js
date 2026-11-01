@@ -110,9 +110,11 @@ export function creeazaDebug(parinte, joc) {
   // ---------- Testare luptă: fundal, arma lui Vale, aliați și inamici aleși de mână ----------
   function optiuniTest() {
     const s = joc.stare;
-    const fundal = test.fundal || s.scena;
+    // Doar zonele de luptă (hărțile din „harti”, lupte.json), nu toate locurile
+    const harti = joc.date.lupte?.harti || [];
+    if (!harti.includes(test.fundal)) test.fundal = harti[0] || s.scena;
     return {
-      scene: [...joc.lume.values()].filter((d) => d.tip === 'loc' || d.tip === 'zona').map((d) => `<option value="${d.id}" ${d.id === fundal ? 'selected' : ''}>${d.titlu} (${d.id})</option>`).join(''),
+      scene: harti.map((id) => `<option value="${id}" ${id === test.fundal ? 'selected' : ''}>${joc.lume.get(id)?.titlu || id}</option>`).join(''),
       arme: Object.entries(joc.date.items.obiecte).filter(([, o]) => o.slot === 'arma_primara').map(([id, o]) => `<option value="${id}" ${test.arma === id ? 'selected' : ''}>${o.nume}</option>`).join(''),
     };
   }
@@ -121,7 +123,7 @@ export function creeazaDebug(parinte, joc) {
     const recruti = joc.date.npcs.personaje.filter((p) => p.lupta);
     const inamici = Object.entries(joc.date.lupte.inamici || {});
     return `<details class="test-lupta" ${test.deschis ? 'open' : ''}><summary><b>Testare luptă</b></summary>
-      <label class="rand-d"><span>Fundal</span><select class="tl-fundal">${scene}</select></label>
+      <label class="rand-d"><span>Zona de luptă</span><select class="tl-fundal">${scene}</select></label>
       <div class="rand-d"><span>Arma lui Vale</span><select class="tl-arma">
         <option value="__echipat" ${test.arma === '__echipat' ? 'selected' : ''}>ce are echipat</option>
         <option value="" ${test.arma === '' ? 'selected' : ''}>pumni</option>${arme}</select>
