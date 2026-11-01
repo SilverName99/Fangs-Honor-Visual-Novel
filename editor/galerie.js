@@ -119,13 +119,16 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const inchiseImplicit = new Set(['Portrete', 'Luptă', 'Obiecte', 'Interfață']);
     // Pozele de luptă au mărimea lor în procente; hărțile de luptă au butonul spre locurile luptătorilor
     const marimi = comun.date.aranjare?.marimi_lupta?.marimi || {};
+    const marimiHarti = comun.date.aranjare?.marimi_lupta?.harti || {};
     const extraCard = (c) => {
       if (c.cale.startsWith('combat/'))
         return `<label class="marime-lupta" title="Cât de mare se vede poza în luptă (100% = normal)">Mărime în luptă
           <input type="number" min="20" max="300" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
       if (c.grup === 'Hărți de luptă') {
         const id = c.cale.split('/').pop().replace(/\.png$/, '');
-        return `<button class="btn locuri-lupta" data-scena="${esc(id)}">Aranjează locurile luptătorilor</button>`;
+        return `<label class="marime-lupta" title="Cât de mari se văd toți luptătorii pe harta asta (100% = normal)">Mărimea personajelor aici
+            <input type="number" min="20" max="300" step="5" data-marime-harta="${esc(id)}" value="${marimiHarti[id] ?? 100}">%</label>
+          <button class="btn locuri-lupta" data-scena="${esc(id)}">Aranjează locurile luptătorilor</button>`;
       }
       return '';
     };
@@ -281,13 +284,16 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     for (const b of container.querySelectorAll('.locuri-lupta')) {
       b.onclick = () => document.dispatchEvent(new CustomEvent('deschide-aranjare', { detail: b.dataset.scena }));
     }
-    for (const i of container.querySelectorAll('[data-marime]')) {
+    // Mărimea unei poze („marimi”) și a tuturor luptătorilor de pe o hartă („harti”) stau în același fișier
+    for (const i of container.querySelectorAll('[data-marime], [data-marime-harta]')) {
       i.onchange = async () => {
         const v = Math.max(20, Math.min(300, Math.round(Number(i.value) || 100)));
         i.value = v;
-        const a = structuredClone(comun.date.aranjare.marimi_lupta || { marimi: {} });
-        if (v === 100) delete a.marimi[i.dataset.marime];
-        else a.marimi[i.dataset.marime] = v;
+        const a = structuredClone(comun.date.aranjare.marimi_lupta || {});
+        const lista = (a[i.dataset.marime ? 'marimi' : 'harti'] ||= {});
+        const cheie = i.dataset.marime || i.dataset.marimeHarta;
+        if (v === 100) delete lista[cheie];
+        else lista[cheie] = v;
         i.disabled = true;
         try {
           await api('aranjare/marimi_lupta', { method: 'PUT', body: JSON.stringify(a), headers: { 'Content-Type': 'application/json' } });
