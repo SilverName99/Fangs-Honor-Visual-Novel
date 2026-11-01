@@ -128,7 +128,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function arataLista() {
     const rand = (id, nivel) => {
       const d = lume.get(id);
-      const areFundal = comun.imagini.has(d.imagine);
+      const areFundal = comun.imagini.has(d.harta || d.imagine);
       return `<button data-id="${esc(id)}" class="n${nivel} ${id === idScena ? 'activ' : ''}" title="${areFundal ? '' : 'Fundal neîncărcat'}">
         <span class="punct ${areFundal ? '' : 'fara'}"></span>${esc(d.titlu)}${modificate.has(id) ? ' •' : ''}</button>`;
     };
@@ -137,6 +137,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       html += rand(z.id, 1);
       for (const l of z.locuri) if (!l.actiune) html += rand(`${z.id}.${l.id}`, 2);
     }
+    const harti = [...lume.values()].filter((d) => d.tip === 'lupta');
+    if (harti.length) html += '<div class="titlu-grup">Hărți de luptă</div>' + harti.map((d) => rand(d.id, 0)).join('');
     html += '<div class="titlu-grup">Ecrane</div>' + rand('echipament', 0);
     elLista.innerHTML = html;
     for (const b of elLista.querySelectorAll('button')) b.onclick = () => deschide(b.dataset.id);
@@ -432,12 +434,12 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   function arataPanou() {
     const d = descriere();
-    const tip = { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)' }[d.tip];
-    let html = `<h3>${esc(d.titlu)}</h3><div class="sumar">${tip} · <span class="cale">${esc(d.imagine)}</span></div>
+    const tip = { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)', lupta: 'Hartă de luptă' }[d.tip];
+    let html = `<h3>${esc(d.titlu)}</h3><div class="sumar">${tip} · <span class="cale">${esc(d.harta || d.imagine)}</span></div>
       <div class="salvare">
         <button class="btn principal salveaza">Salvează</button>
         <button class="btn renunta" title="Revine la ultima variantă salvată a acestei scene">Renunță</button>
-        <a class="btn" href="index.html?scena=${encodeURIComponent(d.id)}" target="_blank" title="Arată ultima variantă salvată">Testează în joc</a>
+        ${d.tip === 'lupta' ? '' : `<a class="btn" href="index.html?scena=${encodeURIComponent(d.id)}" target="_blank" title="Arată ultima variantă salvată">Testează în joc</a>`}
       </div>
       <div class="salvare">Zoom: <b class="zoom-procent">${Math.round(ecranul.vedere.zoom * 100)}%</b>
         <button class="btn zoom-plus">+</button><button class="btn zoom-minus">−</button><button class="btn zoom-reset">Potrivește</button></div>
@@ -474,7 +476,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           .join('')}`;
       }
       if (d.obiecte.length) {
-        html += `<h3>${{ harta: 'Piese pe hartă', ecran: 'Figura și sloturile' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
+        if (d.tip === 'lupta') html += '<div class="sumar">Trage fiecare loc acolo unde trebuie să stea picioarele luptătorului; rotița îl mărește. Aliații sunt în stânga, inamicii în dreapta. Testezi din Testare (F2) → Testare luptă.</div>';
+        html += `<h3>${{ harta: 'Piese pe hartă', ecran: 'Figura și sloturile', lupta: 'Locurile luptătorilor' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
             const aranjat = !!lucru.obiecte[ko(o.id)];
@@ -495,7 +498,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           })
           .join('')}`;
       }
-      if (d.tip !== 'ecran') {
+      if (d.tip !== 'ecran' && d.tip !== 'lupta') {
         html += `<h3>Prim-plan</h3>
           <div class="sumar">Conturează ce trebuie să stea <b>în fața</b> personajelor (de exemplu zidul fântânii). Bucata aceea din fundal se pune peste ele, ca să pară în spatele ei.</div>
           ${lucru.primPlan
@@ -658,6 +661,11 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   });
 
   return {
+    // Din galerie: „Aranjează locurile” la o hartă de luptă deschide direct scena ei
+    deschideScena(id) {
+      activ = true;
+      if (lume.has(id)) deschide(id);
+    },
     arata() {
       activ = true;
       if (!lucru) deschide(idScena);

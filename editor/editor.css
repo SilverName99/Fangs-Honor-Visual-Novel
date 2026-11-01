@@ -578,3 +578,20 @@ svg.editor-zone.desen {
   stroke-dasharray: 12 8;
   pointer-events: none;
 }
+
+/* Mărimea pozelor de luptă și butonul spre locurile de pe harta de luptă, în cardurile din galerie */
+.marime-lupta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #b9c0cc;
+}
+.marime-lupta input {
+  width: 64px;
+}
+.card .locuri-lupta {
+  margin-top: 6px;
+  width: 100%;
+}

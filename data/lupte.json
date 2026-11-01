@@ -1,5 +1,6 @@
 {
-  "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
+  "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. harti = locurile care au hartă de luptă separată (locations/lupta_<zona>_<loc>.png), cu locurile luptătorilor mutate în editor; celelalte lupte folosesc imaginea locului. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
+  "harti": ["taverna.parter", "padure.interior"],
   "inamici": {
     "lup": { "nume": "Lup", "viata": 30, "staminaMax": 115, "atac": { "min": 4, "max": 7, "tip": "apropiat" }, "armura": 0 },
     "orc_taverna": { "nume": "Orc", "poze": "paznic_orc_1", "viata": 28, "staminaMax": 85, "atac": { "min": 3, "max": 6, "tip": "apropiat" }, "armura": 0 },

@@ -22,6 +22,11 @@ await reincarcaImagini();
 
 const galerie = creeazaGalerie(document.getElementById('galerie'), comun, reincarcaImagini);
 const aranjare = creeazaAranjare(document.getElementById('aranjare'), comun, verificaSincronizarea);
+// Galeria cere deschiderea unei scene în Aranjare (de exemplu locurile de pe harta de luptă)
+document.addEventListener('deschide-aranjare', (e) => {
+  document.querySelector('.taburi button[data-tab="aranjare"]').click();
+  aranjare.deschideScena(e.detail);
+});
 const interfata = creeazaInterfata(document.getElementById('interfata'), comun, reincarcaImagini, verificaSincronizarea);
 
 for (const b of document.querySelectorAll('.taburi button')) {

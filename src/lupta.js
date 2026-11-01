@@ -1,5 +1,5 @@
 import { elementImagine } from './imagini.js';
-import { candidati } from './lume.js';
+import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { context } from './stare.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
@@ -18,9 +18,6 @@ const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
 const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'lovit'] : [p]);
 
 // Unde stă fiecare loc pe ecran (picioarele): fața e spre mijloc, spatele spre margine
-const X = { aliat: { fata: 0.29, spate: 0.12 }, inamic: { fata: 0.71, spate: 0.88 } };
-const Y = [0.5, 0.72, 0.94];
-const INALTIME = 0.25;
 
 // Abilitățile au nevoie de o țintă, deci au registrul lor; efectele fără țintă folosesc registrul general
 const abilitati = {
@@ -111,10 +108,17 @@ export function creeazaLupta(parinte, joc) {
   const poateAtaca = (f) => !(f.atac.tip === 'apropiat' && f.rand === 'spate');
 
   // ---------- desenare ----------
+  // Unde stă un loc pe harta luptei: cum l-a mutat autorul în editor, altfel poziția implicită
+  function locPeHarta(tabara, linie, rand) {
+    const id = `${tabara}_${linie}_${rand}`;
+    return joc.date.aranjare?.[L.harta]?.obiecte?.[id] || LOCURI_LUPTA.find((x) => x.id === id);
+  }
+
   function aseaza(f) {
-    f.el.style.left = `${X[f.tabara][f.rand] * 100}%`;
-    f.el.style.top = `${Y[f.linie] * 100}%`;
-    f.el.style.height = `${INALTIME * 100}%`;
+    const p = locPeHarta(f.tabara, f.linie, f.rand);
+    f.el.style.left = `${p.x * 100}%`;
+    f.el.style.top = `${p.y * 100}%`;
+    f.el.style.height = `${p.scara * 100}%`;
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
 
@@ -122,6 +126,12 @@ export function creeazaLupta(parinte, joc) {
     f.cache ||= new Map();
     if (!f.cache.has(p)) {
       const img = elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
+      // Mărimea fiecărei poze se reglează din galerie (în procente), pentru poze generate puțin mai mari sau mai mici
+      img.addEventListener('incarcat', (e) => {
+        const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[e.detail] ?? 100;
+        img.style.transform = procent === 100 ? '' : `scale(${procent / 100})`;
+        img.style.transformOrigin = 'bottom center';
+      });
       // Cu poza lui de răpus, personajul nu se mai înclină din cod: poza arată deja căderea
       if (p === 'cazut') img.addEventListener('incarcat', (e) => f.el.classList.toggle('poza-cazut', e.detail.endsWith('_cazut.png')));
       f.cache.set(p, img);
@@ -291,8 +301,9 @@ export function creeazaLupta(parinte, joc) {
         const ok = ocupant ? ocupant !== f && linie === f.linie : true;
         if (!ok) continue;
         const loc = div('loc-liber');
-        loc.style.left = `${X.aliat[rand] * 100}%`;
-        loc.style.top = `${Y[linie] * 100}%`;
+        const p = locPeHarta('aliat', linie, rand);
+        loc.style.left = `${p.x * 100}%`;
+        loc.style.top = `${p.y * 100}%`;
         loc.onclick = () => executa(f, { tip: 'muta', linie, rand });
         L.elLocuri.append(loc);
       }
@@ -389,10 +400,12 @@ export function creeazaLupta(parinte, joc) {
 
     el.replaceChildren();
     el.hidden = false;
-    const scena = joc.lume.get(def.fundal);
+    // Harta de luptă a locului (imagine separată); până e încărcată, se vede scena locului
+    const scena = joc.lume.get(idHartaLupta(def.fundal || '')) || joc.lume.get(def.fundal);
     if (scena) el.append(elementImagine(candidati(scena.imagine, scena.variante, context(s)), { clasa: 'fundal fundal-lupta', fundal: true }));
     L = {
       def,
+      harta: idHartaLupta(def.fundal || ''),
       id: idLupta,
       toti: [...aliati.map((f) => ({ ...f, tabara: 'aliat' })), ...inamici.map((f) => ({ ...f, tabara: 'inamic' }))],
       pauza: true,
@@ -428,8 +441,9 @@ export function creeazaLupta(parinte, joc) {
       for (const linie of [0, 1, 2]) {
         for (const rand of ['fata', 'spate']) {
           const loc = div('loc-liber');
-          loc.style.left = `${X.aliat[rand] * 100}%`;
-          loc.style.top = `${Y[linie] * 100}%`;
+          const p = locPeHarta('aliat', linie, rand);
+          loc.style.left = `${p.x * 100}%`;
+          loc.style.top = `${p.y * 100}%`;
           loc.onclick = () => {
             const altul = laLoc('aliat', linie, rand);
             if (altul) Object.assign(altul, { linie: ales.linie, rand: ales.rand });

@@ -101,6 +101,34 @@ export function construiesteLumea(date) {
     // Ușa spre un loc „din” alt loc devine o țintă (zonă de desenat) în scena acelui loc
     for (const l of z.locuri.filter((x) => x.din)) scene.get(`${z.id}.${l.din}`)?.tinte.push(tintaLoc(l));
   }
+  // Hărțile de luptă: câte una pentru locurile din „harti” (lupte.json); deocamdată sala tavernei și adâncul pădurii.
+  // Imaginea e separată (locations/lupta_<zona>_<loc>.png); până e încărcată, se vede scena locului.
+  // Cele 12 locuri ale luptătorilor (6 aliați, 6 inamici) se mută în editor, peste imagine.
+  // Doar locurile din lista „harti” din lupte.json au hartă separată; celelalte lupte folosesc scena locului
+  for (const fundal of date.lupte?.harti || []) {
+    const loc = scene.get(fundal);
+    if (!loc) continue;
+    const id = idHartaLupta(fundal);
+    scene.set(id, {
+      id,
+      tip: 'lupta',
+      titlu: `Luptă: ${loc.titlu}`,
+      imagine: loc.imagine,
+      harta: `locations/${id}.png`,
+      variante: [{ imagine: `locations/${id}.png`, nume: 'harta de luptă' }],
+      parinte: null,
+      tinte: [],
+      obiecte: LOCURI_LUPTA.map((l) => ({
+        id: l.id,
+        tip: 'loc-lupta',
+        nume: l.nume,
+        eticheta: l.nume,
+        imagine: l.tabara === 'aliat' ? 'combat/vale_pumni_idle.png' : 'combat/paznic_orc_1_idle.png',
+        variante: [],
+        implicit: { x: l.x, y: l.y, scara: l.scara },
+      })),
+    });
+  }
   // Ecranul de echipament se aranjează în editor ca o scenă: figura lui Vale și sloturile peste ea
   scene.set('echipament', {
     id: 'echipament',
@@ -117,6 +145,25 @@ export function construiesteLumea(date) {
   });
   return scene;
 }
+
+// Locurile din luptă: 3 linii (sus, mijloc, jos), câte un loc în față și unul în spate, pe fiecare tabără.
+// Fața e spre mijlocul ecranului, spatele spre margine. Pozițiile sunt cele implicite, până le mută autorul.
+const NUME_LINII = ['sus', 'mijloc', 'jos'];
+export const LOCURI_LUPTA = ['aliat', 'inamic'].flatMap((tabara) =>
+  [0, 1, 2].flatMap((linie) =>
+    ['fata', 'spate'].map((rand) => ({
+      id: `${tabara}_${linie}_${rand}`,
+      tabara,
+      linie,
+      rand,
+      nume: `${tabara === 'aliat' ? 'Aliat' : 'Inamic'} · ${NUME_LINII[linie]} · ${rand === 'fata' ? 'față' : 'spate'}`,
+      x: { aliat: { fata: 0.29, spate: 0.12 }, inamic: { fata: 0.71, spate: 0.88 } }[tabara][rand],
+      y: [0.5, 0.72, 0.94][linie],
+      scara: 0.25,
+    })),
+  ),
+);
+export const idHartaLupta = (fundal) => `lupta_${fundal.replace('.', '_')}`;
 
 const POZITII_SLOTURI = {
   cap: { x: 0.27, y: 0.2, scara: 0.1 },
@@ -180,6 +227,11 @@ export function imaginiCerute(date, scene) {
 
   for (const s of scene.values()) {
     if (s.tip === 'ecran') continue;
+    if (s.tip === 'lupta') {
+      grup = 'Hărți de luptă';
+      adauga(s.harta, `Hartă de luptă: ${s.titlu.replace('Luptă: ', '')} (până o încarci, se vede scena locului)`);
+      continue;
+    }
     const tipScena = { harta: 'Harta', zona: 'Zona', loc: 'Loc' }[s.tip];
     grup = s.tip === 'harta' ? 'Harta' : s.tip === 'zona' ? s.titlu : scene.get(s.parinte).titlu;
     cuVariante(s.imagine, s.variante, `${tipScena}: ${s.titlu}`);

@@ -117,6 +117,18 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     // Grupurile în ordinea jocului: harta, zonele, apoi restul; zonele stau deschise, listele lungi închise
     const grupuri = [...new Set(cerute.map((c) => c.grup))];
     const inchiseImplicit = new Set(['Portrete', 'Luptă', 'Obiecte', 'Interfață']);
+    // Pozele de luptă au mărimea lor în procente; hărțile de luptă au butonul spre locurile luptătorilor
+    const marimi = comun.date.aranjare?.marimi_lupta?.marimi || {};
+    const extraCard = (c) => {
+      if (c.cale.startsWith('combat/'))
+        return `<label class="marime-lupta" title="Cât de mare se vede poza în luptă (100% = normal)">Mărime în luptă
+          <input type="number" min="20" max="300" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
+      if (c.grup === 'Hărți de luptă') {
+        const id = c.cale.split('/').pop().replace(/\.png$/, '');
+        return `<button class="btn locuri-lupta" data-scena="${esc(id)}">Aranjează locurile luptătorilor</button>`;
+      }
+      return '';
+    };
     const carduri = (lista) =>
       lista
         .map((c) =>
@@ -125,11 +137,13 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
                 <img loading="lazy" src="${urlImagine(c.cale)}?v=${comun.imagini.get(c.cale)}">
                 <div class="cale">${esc(c.cale)}</div>
                 <div class="actiuni"><span class="sumar">${esc(c.scop)}</span><button class="btn pericol sterge" data-cale="${esc(c.cale)}">Șterge</button></div>
+                ${extraCard(c)}
               </div>`
             : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" data-cale="${esc(c.cale)}" title="Trage un PNG aici: se încarcă direct cu numele ăsta">
                 <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage PNG-ul aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
                 <div class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}">${esc(c.cale)}</a></div>
                 <div class="sumar">${esc(c.scop)}</div>
+                ${c.grup === 'Hărți de luptă' ? extraCard(c) : ''}
               </div>`,
         )
         .join('');
@@ -262,6 +276,26 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
         e.preventDefault();
         await navigator.clipboard?.writeText(a.dataset.nume).catch(() => {});
         a.textContent = `${a.textContent.replace(/ ✓ copiat$/, '')} ✓ copiat`;
+      };
+    }
+    for (const b of container.querySelectorAll('.locuri-lupta')) {
+      b.onclick = () => document.dispatchEvent(new CustomEvent('deschide-aranjare', { detail: b.dataset.scena }));
+    }
+    for (const i of container.querySelectorAll('[data-marime]')) {
+      i.onchange = async () => {
+        const v = Math.max(20, Math.min(300, Math.round(Number(i.value) || 100)));
+        i.value = v;
+        const a = structuredClone(comun.date.aranjare.marimi_lupta || { marimi: {} });
+        if (v === 100) delete a.marimi[i.dataset.marime];
+        else a.marimi[i.dataset.marime] = v;
+        i.disabled = true;
+        try {
+          await api('aranjare/marimi_lupta', { method: 'PUT', body: JSON.stringify(a), headers: { 'Content-Type': 'application/json' } });
+          comun.date.aranjare.marimi_lupta = a;
+        } catch (e) {
+          alert(`Nu s-a salvat mărimea:\n${e.message}`);
+        }
+        i.disabled = false;
       };
     }
     for (const b of container.querySelectorAll('.sterge')) {

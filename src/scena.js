@@ -106,7 +106,8 @@ export function randeaza(strat, descriere, aranjare, context) {
   descriere.obiecte.forEach((o, i) => {
     const el = elementImagine(candidati(o.imagine, o.variante, context), {
       clasa: `obiect ${o.tip}`,
-      raport: o.tip === 'sprite' ? 0.45 : 1.2,
+      raport: o.tip === 'sprite' ? 0.45 : o.tip === 'loc-lupta' ? 0.6 : 1.2,
+      eticheta: o.eticheta,
     });
     el.dataset.id = o.id;
     aplicaPozitie(el, pozitie(aranjare, o, i, sufixVarianta(descriere, o.id, context)));
