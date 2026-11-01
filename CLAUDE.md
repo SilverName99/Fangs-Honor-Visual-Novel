@@ -413,7 +413,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 - **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_lovit.png`. Un inamic poate refolosi pozele altuia (`poze` în `lupte.json`).
 - O luptă poate avea **aliați de o singură luptă** (`aliati` în `lupte.json`), de exemplu Roderick în scandal, fără să fie recrutat.
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
-- **Mărimea fiecărei poze** se reglează în galerie, în procente (`data/aranjare/marimi_lupta.json`, `marimi`), pentru poze generate puțin mai mari sau mai mici. La fel, **fiecare hartă de luptă** are mărimea personajelor de pe ea (`harti`).
+- **Mărimea fiecărei poze** se reglează în galerie, în procente (`data/aranjare/marimi_lupta.json`, `marimi`), pentru poze generate puțin mai mari sau mai mici. La fel, **fiecare hartă de luptă** are mărimea tuturor personajelor de pe ea (`harti`) și mărimea fiecărui personaj în parte pe harta aceea (`personajeHarti`). Procentele se înmulțesc.
 - **Hărțile de luptă** (decis): imagini separate, `locations/lupta_<zona>_<loc>.png`, doar pentru locurile din `harti` în `lupte.json` (acum sala tavernei și adâncul pădurii). Până e încărcată, se vede scena locului. Cele 12 locuri ale luptătorilor (6 aliați, 6 inamici) se mută în editor, la Aranjare → Hărți de luptă (sau din galerie, „Aranjează locurile luptătorilor”).
 - Abilitățile folosesc poza `atac` plus un efect din cod (strălucire).
 

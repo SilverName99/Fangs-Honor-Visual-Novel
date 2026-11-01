@@ -595,3 +595,15 @@ svg.editor-zone.desen {
   margin-top: 6px;
   width: 100%;
 }
+
+.marimi-personaje {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.marimi-personaje summary {
+  cursor: pointer;
+  color: #b9c0cc;
+}
+.marimi-personaje .marime-lupta {
+  justify-content: space-between;
+}

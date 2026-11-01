@@ -119,7 +119,9 @@ export function creeazaLupta(parinte, joc) {
     f.el.style.left = `${p.x * 100}%`;
     f.el.style.top = `${p.y * 100}%`;
     // Pe unele hărți luptătorii trebuie să pară mai mari sau mai mici (camera e mai aproape sau mai departe)
-    const factor = (joc.date.aranjare?.marimi_lupta?.harti?.[L.harta] ?? 100) / 100;
+    // plus mărimea fiecărui personaj pe harta asta (de exemplu fierarul prea mic doar în pădure)
+    const m = joc.date.aranjare?.marimi_lupta;
+    const factor = ((m?.harti?.[L.harta] ?? 100) / 100) * ((m?.personajeHarti?.[L.harta]?.[f.id] ?? 100) / 100);
     f.el.style.height = `${p.scara * factor * 100}%`;
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
