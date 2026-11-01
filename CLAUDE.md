@@ -419,6 +419,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
 - **Mărimea fiecărei poze** se reglează în galerie, în procente (`data/aranjare/marimi_lupta.json`, `marimi`), pentru poze generate puțin mai mari sau mai mici. La fel, **fiecare hartă de luptă** are mărimea tuturor personajelor de pe ea (`harti`) și mărimea fiecărui personaj în parte pe harta aceea (`personajeHarti`). Procentele se înmulțesc.
 - **Hărțile de luptă** (decis): imagini separate, `locations/lupta_<zona>_<loc>.png`, doar pentru locurile din `harti` în `lupte.json` (acum sala tavernei și adâncul pădurii). Până e încărcată, se vede scena locului. Cele 12 locuri ale luptătorilor (6 aliați, 6 inamici) se mută în editor, la Aranjare → Hărți de luptă (sau din galerie, „Aranjează locurile luptătorilor”).
+- **Armă aruncată** (`proiectil` la atac, de exemplu glaive-ul Kaiei, aceeași imagine ca decorul de la campsite): în poza `atac` mâna e goală, iar arma zboară rotindu-se la fiecare țintă (ricoșeul) și se întoarce. Mărimea ei în luptă se reglează în galerie, pe cardul imaginii.
 - Abilitățile folosesc poza `atac` plus un efect din cod (strălucire).
 
 ## 16. Personaje

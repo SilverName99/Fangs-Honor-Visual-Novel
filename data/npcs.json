@@ -301,14 +301,15 @@
         "padure/campsite"
       ],
       "lupta": {
-        "_nota": "TODO echilibru. locuri: 2 = ține toată linia. ricoseu: 3 = lovește până la 3 inamici.",
+        "_nota": "TODO echilibru. locuri: 2 = ține toată linia. ricoseu: 3 = lovește până la 3 inamici. proiectil = imaginea armei aruncate, care zboară la ținte și se întoarce.",
         "viata": 75,
         "staminaMax": 100,
         "atac": {
           "min": 6,
           "max": 9,
           "tip": "distanta",
-          "ricoseu": 3
+          "ricoseu": 3,
+          "proiectil": "sprites/glaive_padure_campsite.png"
         },
         "armura": 1,
         "rezistenta": 5,

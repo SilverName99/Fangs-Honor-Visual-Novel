@@ -966,3 +966,17 @@ svg.zone {
 .strat-lume.e-noapte.umbrit-seara .obiect.decor {
   filter: brightness(0.6) saturate(0.8);
 }
+
+/* Arma aruncată (glaive-ul Kaiei) în zbor, deasupra luptătorilor, sub meniu */
+.proiectil {
+  position: absolute;
+  z-index: 150;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+}
+
+/* „display: flex” de mai sus ar anula atributul hidden: meniul trebuie să dispară cât se execută o acțiune */
+.lupta-meniu[hidden] {
+  display: none;
+}

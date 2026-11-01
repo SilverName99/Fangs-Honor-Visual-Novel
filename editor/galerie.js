@@ -127,7 +127,12 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       ...comun.date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]),
       ...Object.entries(comun.date.lupte?.inamici || {}).map(([id, x]) => [id, x.nume]),
     ];
+    // Imaginile folosite și ca armă aruncată în luptă (glaive-ul Kaiei) au și ele mărimea lor în luptă
+    const proiectile = new Set(comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil).filter(Boolean));
     const extraCard = (c) => {
+      if (proiectile.has(c.cale))
+        return `<label class="marime-lupta" title="Cât de mare se vede arma aruncată în luptă (100% = normal)">Mărime în luptă (aruncat)
+          <input type="number" min="20" max="400" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
       if (c.cale.startsWith('combat/'))
         return `<label class="marime-lupta" title="Cât de mare se vede poza în luptă (100% = normal)">Mărime în luptă
           <input type="number" min="20" max="300" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
@@ -303,7 +308,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     // pe o hartă („personajeHarti”) stau în același fișier
     for (const i of container.querySelectorAll('[data-marime], [data-marime-harta], [data-marime-personaj]')) {
       i.onchange = async () => {
-        const v = Math.max(20, Math.min(300, Math.round(Number(i.value) || 100)));
+        const v = Math.max(20, Math.min(400, Math.round(Number(i.value) || 100)));
         i.value = v;
         const a = structuredClone(comun.date.aranjare.marimi_lupta || {});
         let lista;

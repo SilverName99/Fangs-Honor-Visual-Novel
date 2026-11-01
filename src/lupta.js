@@ -211,6 +211,64 @@ export function creeazaLupta(parinte, joc) {
     poza(sursa, 'atac');
     sursa.corp.classList.add(sursa.tabara === 'aliat' ? 'ataca-dreapta' : 'ataca-stanga');
     await asteapta(250);
+    const d = aplicaLovitura(sursa, tinta);
+    await asteapta(450);
+    sursa.corp.classList.remove('ataca-dreapta', 'ataca-stanga');
+    tinta.corp.classList.remove('lovit');
+    poza(sursa, 'idle');
+    if (!tinta.cazut && !tinta.apara) poza(tinta, 'idle');
+    return d;
+  }
+
+  // Centrul unui luptător, în pixeli, față de scena luptei (pentru proiectil)
+  function centru(f) {
+    const s = L.scena.getBoundingClientRect();
+    const r = f.corp.getBoundingClientRect();
+    return { x: r.left - s.left + r.width / 2, y: r.top - s.top + r.height / 2 };
+  }
+
+  async function zboara(el, de, la, ms) {
+    const a = el.animate(
+      [
+        { left: `${de.x}px`, top: `${de.y}px`, transform: 'translate(-50%, -50%) rotate(0deg)' },
+        { left: `${la.x}px`, top: `${la.y}px`, transform: 'translate(-50%, -50%) rotate(900deg)' },
+      ],
+      { duration: ms, easing: 'linear', fill: 'forwards' },
+    );
+    await a.finished.catch(() => {});
+  }
+
+  // Arma aruncată (glaive-ul Kaiei): zboară rotindu-se la fiecare țintă pe rând, apoi se întoarce în mâna ei.
+  // Mărimea proiectilului se reglează din galerie, ca la poze (procent pe imagine)
+  async function atacCuProiectil(sursa, tinte) {
+    poza(sursa, 'atac');
+    const cale = sursa.atac.proiectil;
+    const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[cale] ?? 100;
+    const p = elementImagine([cale], { clasa: 'proiectil', raport: 1, eticheta: 'glaive' });
+    p.style.height = `${8 * (procent / 100)}%`;
+    L.scena.append(p);
+    const daune = [];
+    let de = centru(sursa);
+    for (const t of tinte) {
+      const la = centru(t);
+      await zboara(p, de, la, 260);
+      if (!L) return daune;
+      daune.push(aplicaLovitura(sursa, t));
+      de = la;
+    }
+    await zboara(p, de, centru(sursa), 320);
+    p.remove();
+    if (!L) return daune;
+    poza(sursa, 'idle');
+    for (const t of tinte) {
+      t.corp.classList.remove('lovit');
+      if (!t.cazut && !t.apara) poza(t, 'idle');
+    }
+    return daune;
+  }
+
+  // Lovitura propriu-zisă: daune, armură, poza „lovit”, căderea
+  function aplicaLovitura(sursa, tinta) {
     let d = Math.max(1, intre(sursa.atac.min, sursa.atac.max) - armuraIntreaga(tinta));
     if (tinta.apara) d = Math.max(1, Math.round(d * (1 - tinta.blocare)));
     tinta.viata -= d;
@@ -230,11 +288,6 @@ export function creeazaLupta(parinte, joc) {
       poza(tinta, 'cazut');
     }
     actualizeazaBare();
-    await asteapta(450);
-    sursa.corp.classList.remove('ataca-dreapta', 'ataca-stanga');
-    tinta.corp.classList.remove('lovit');
-    poza(sursa, 'idle');
-    if (!tinta.cazut && !tinta.apara) poza(tinta, 'idle');
     return d;
   }
 
@@ -242,7 +295,16 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = true;
     ascundeMeniul();
     sursa.apara = false;
-    if (actiune.tip === 'atac') {
+    if (actiune.tip === 'atac' && sursa.atac.proiectil) {
+      // Ținta aleasă, apoi (cu „ricoseu”) încă doi inamici la întâmplare; arma zboară pe la toți
+      const altii = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat').filter((t) => t !== actiune.tinta);
+      const tinte = [actiune.tinta];
+      while (tinte.length < (sursa.atac.ricoseu || 1) && altii.length) tinte.push(altii.splice(Math.floor(Math.random() * altii.length), 1)[0]);
+      const daune = await atacCuProiectil(sursa, tinte);
+      if (!L) return;
+      jurnal(tinte.length > 1 ? `${sursa.nume}: glaive-ul ricoșează! ${tinte.map((t, i) => `${t.nume} (${daune[i]})`).join(', ')}.` : `${sursa.nume} îl lovește pe ${tinte[0].nume}: ${daune[0]} daune.`);
+      sursa.bara = 0;
+    } else if (actiune.tip === 'atac') {
       const d = await loveste(sursa, actiune.tinta);
       if (!L) return;
       if (!L.elJurnal.textContent.includes('crăpat')) jurnal(`${sursa.nume} îl lovește pe ${actiune.tinta.nume}: ${d} daune.`);
@@ -475,6 +537,7 @@ export function creeazaLupta(parinte, joc) {
     L.elMeniu = div('lupta-meniu');
     L.elLocuri = div('locuri-lupta');
     const scenaLupta = div('scena-lupta');
+    L.scena = scenaLupta;
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));
     scenaLupta.append(L.elLocuri);
     el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu);
