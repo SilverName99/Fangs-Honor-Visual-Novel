@@ -980,3 +980,9 @@ svg.zone {
 .lupta-meniu[hidden] {
   display: none;
 }
+
+/* Cât se alege un loc (formația, „Schimbă locul”), meniul urcă sub jurnal, ca să nu acopere locurile de jos */
+.lupta-meniu.sus {
+  bottom: auto;
+  top: 130px;
+}

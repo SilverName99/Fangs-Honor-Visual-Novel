@@ -411,6 +411,8 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function alegeLoc(f) {
+    // Cât alegi un loc, meniul urcă sus, ca să nu acopere locurile de jos ale hărții
+    L.elMeniu.classList.add('sus');
     L.elLocuri.replaceChildren();
     if (f.lat) {
       // Personajul lat se mută doar pe o linie întreagă liberă
@@ -436,6 +438,7 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function meniu(f) {
+    L.elMeniu.classList.remove('sus');
     L.activ = f;
     L.elLocuri.replaceChildren();
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
@@ -565,12 +568,15 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function start() {
+    L.elMeniu.classList.remove('sus');
     L.elMeniu.hidden = true;
     L.pauza = false;
     requestAnimationFrame(bucla);
   }
 
   function pregatire() {
+    // Formația: meniul stă sus, ca toate cele 6 locuri de jos să se poată apăsa
+    L.elMeniu.classList.add('sus');
     let ales = null;
     const gata = () => {
       L.toti.forEach(aseaza);
@@ -637,6 +643,7 @@ export function creeazaLupta(parinte, joc) {
     if (!L.def.test) for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
     const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : null;
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
+    L.elMeniu.classList.remove('sus');
     L.elMeniu.hidden = false;
     L.elMeniu.replaceChildren(
       div('titlu-meniu-lupta', titlu),
