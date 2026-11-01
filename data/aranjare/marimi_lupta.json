@@ -13,10 +13,7 @@
     "combat/vanatoare_lovit.png": 102,
     "combat/vanatoare_atac.png": 102
   },
-  "harti": {
-    "lupta_taverna_parter": 135,
-    "lupta_padure_interior": 135
-  },
+  "harti": {},
   "personajeHarti": {
     "lupta_taverna_parter": {
       "vale": 98
