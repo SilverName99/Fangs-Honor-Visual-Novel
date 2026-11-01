@@ -26,6 +26,9 @@ export function creeazaDebug(parinte, joc) {
   el.hidden = true;
   parinte.append(el);
   const stari = stariCunoscute(joc.date);
+  // Alegerile din „Testare luptă” rămân ținute minte cât e pagina deschisă (panoul se redesenează des)
+  const test = { deschis: false, fundal: null, arma: '__echipat', scut: false, aliati: new Set(), inamici: {} };
+  const LOCURI = [1, 0, 2].map((l) => ({ linie: l, rand: 'fata' })).concat([1, 0, 2].map((l) => ({ linie: l, rand: 'spate' })));
 
   function laOra(hhmm) {
     const s = joc.stare;
@@ -43,7 +46,7 @@ export function creeazaDebug(parinte, joc) {
         <button data-plus="10">+10 min</button><button data-plus="60">+1 oră</button><button data-plus="360">+6 ore</button></div>
       <div class="rand-d"><button data-ora="07:00">Dimineață</button><button data-ora="12:00">Amiază</button><button data-ora="19:00">Seară</button><button data-ora="23:30">Noapte</button><button class="zi-noua">Ziua următoare</button></div>
       ${NEVOI.map((n) => `<label class="rand-d"><span>${n}</span><input type="range" min="0" max="100" data-nevoie="${n}" value="${Math.round(s.nevoi[n])}"><span>${Math.round(s.nevoi[n])}</span></label>`).join('')}
-      <label class="rand-d"><span>monede</span><input type="number" class="bani" value="${s.bani}"></label>
+      <label class="rand-d"><span>monede</span><input type="number" class="d-bani" value="${s.bani}"></label>
       <div class="rand-d"><b>Stări</b></div>
       ${Object.entries(stari)
         .map(
@@ -52,11 +55,12 @@ export function creeazaDebug(parinte, joc) {
             .join('')}</select></label>`,
         )
         .join('')}
-      <label class="rand-d"><span>Mergi la</span><select class="scena">${optiuniScene}</select></label>
-      <div class="rand-d"><span>Eveniment</span><select class="eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></div>
-      <div class="rand-d"><span>Obiect</span><select class="obiect">${Object.entries(joc.date.items.obiecte).map(([id, o]) => `<option value="${id}">${o.nume}</option>`).join('')}</select><button class="adauga-ob">Primește</button></div>
-      <div class="rand-d"><span>Luptă</span><select class="lupta">${Object.entries(joc.date.lupte.lupte).map(([id, l]) => `<option value="${id}">${l.nume}</option>`).join('')}</select><button class="porneste-lupta">Pornește</button></div>
+      <label class="rand-d"><span>Mergi la</span><select class="d-scena">${optiuniScene}</select></label>
+      <div class="rand-d"><span>Eveniment</span><select class="d-eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></div>
+      <div class="rand-d"><span>Obiect</span><select class="d-obiect">${Object.entries(joc.date.items.obiecte).map(([id, o]) => `<option value="${id}">${o.nume}</option>`).join('')}</select><button class="adauga-ob">Primește</button></div>
+      <div class="rand-d"><span>Luptă</span><select class="d-alege-lupta">${Object.entries(joc.date.lupte.lupte).map(([id, l]) => `<option value="${id}">${l.nume}</option>`).join('')}</select><button class="porneste-lupta">Pornește</button></div>
       <div class="rand-d"><span>Grup</span>${joc.date.npcs.personaje.filter((p) => p.lupta).map((p) => `<label><input type="checkbox" data-grup="${p.id}" ${s.grup.includes(p.id) ? 'checked' : ''}> ${p.id}</label>`).join(' ')}</div>
+      ${testareLupta(optiuniTest())}
       <div class="rand-d"><span>Taxă: ziua ${s.taxa.zi}, ${s.taxa.platita ? 'plătită' : 'neplătită'}, ratări ${s.taxa.ratari}</span></div>
       <div class="rand-d"><span>Relații: ${Object.entries(s.relatii).map(([k, v]) => `${k} ${v}`).join(', ') || '—'} · reputație ${s.reputatie}</span></div>
       <div class="rand-d"><button class="joc-nou">Joc nou</button></div>`;
@@ -74,7 +78,7 @@ export function creeazaDebug(parinte, joc) {
         joc.dupaSchimbare(false);
       };
     });
-    el.querySelector('.bani').onchange = (e) => {
+    el.querySelector('.d-bani').onchange = (e) => {
       s.bani = Math.max(0, Number(e.target.value) || 0);
       joc.dupaSchimbare(false);
     };
@@ -85,13 +89,14 @@ export function creeazaDebug(parinte, joc) {
         joc.dupaSchimbare(true);
       };
     });
-    el.querySelector('.scena').onchange = (e) => joc.mergi(e.target.value, { faraTimp: true });
-    el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.eveniment').value);
+    el.querySelector('.d-scena').onchange = (e) => joc.mergi(e.target.value, { faraTimp: true });
+    el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.d-eveniment').value);
     el.querySelector('.adauga-ob').onclick = () => {
-      joc.primeste(el.querySelector('.obiect').value, 1);
+      joc.primeste(el.querySelector('.d-obiect').value, 1);
       joc.dupaSchimbare(true);
     };
-    el.querySelector('.porneste-lupta').onclick = () => joc.pornesteLupta(el.querySelector('.lupta').value);
+    el.querySelector('.porneste-lupta').onclick = () => joc.pornesteLupta(el.querySelector('.d-alege-lupta').value);
+    legaTestareLupta();
     el.querySelectorAll('[data-grup]').forEach((c) => {
       c.onchange = () => {
         const id = c.dataset.grup;
@@ -100,6 +105,61 @@ export function creeazaDebug(parinte, joc) {
       };
     });
     el.querySelector('.joc-nou').onclick = () => confirm('Începi un joc nou? Salvarea curentă se pierde.') && joc.jocNou();
+  }
+
+  // ---------- Testare luptă: fundal, arma lui Vale, aliați și inamici aleși de mână ----------
+  function optiuniTest() {
+    const s = joc.stare;
+    const fundal = test.fundal || s.scena;
+    return {
+      scene: [...joc.lume.values()].filter((d) => d.tip === 'loc' || d.tip === 'zona').map((d) => `<option value="${d.id}" ${d.id === fundal ? 'selected' : ''}>${d.titlu} (${d.id})</option>`).join(''),
+      arme: Object.entries(joc.date.items.obiecte).filter(([, o]) => o.slot === 'arma_primara').map(([id, o]) => `<option value="${id}" ${test.arma === id ? 'selected' : ''}>${o.nume}</option>`).join(''),
+    };
+  }
+
+  function testareLupta({ scene, arme }) {
+    const recruti = joc.date.npcs.personaje.filter((p) => p.lupta);
+    const inamici = Object.entries(joc.date.lupte.inamici || {});
+    return `<details class="test-lupta" ${test.deschis ? 'open' : ''}><summary><b>Testare luptă</b></summary>
+      <label class="rand-d"><span>Fundal</span><select class="tl-fundal">${scene}</select></label>
+      <div class="rand-d"><span>Arma lui Vale</span><select class="tl-arma">
+        <option value="__echipat" ${test.arma === '__echipat' ? 'selected' : ''}>ce are echipat</option>
+        <option value="" ${test.arma === '' ? 'selected' : ''}>pumni</option>${arme}</select>
+        <label><input type="checkbox" class="tl-scut" ${test.scut ? 'checked' : ''}> cu scut</label></div>
+      <div class="rand-d"><span>Aliați</span>${recruti.map((p) => `<label><input type="checkbox" data-tl-aliat="${p.id}" ${test.aliati.has(p.id) ? 'checked' : ''}> ${p.nume}</label>`).join(' ')}</div>
+      <div class="rand-d"><span>Inamici</span>${inamici
+        .map(([id, x]) => `<label>${x.nume} <input type="number" min="0" max="6" style="width:52px" data-tl-inamic="${id}" value="${test.inamici[id] || 0}"></label>`)
+        .join(' ')}</div>
+      <div class="rand-d"><button class="tl-porneste">Pornește lupta de test</button> <small>(nu schimbă viața, timpul sau echipamentul)</small></div>
+    </details>`;
+  }
+
+  function legaTestareLupta() {
+    const d = el.querySelector('.test-lupta');
+    d.ontoggle = () => (test.deschis = d.open);
+    el.querySelector('.tl-fundal').onchange = (e) => (test.fundal = e.target.value);
+    el.querySelector('.tl-arma').onchange = (e) => (test.arma = e.target.value);
+    el.querySelector('.tl-scut').onchange = (e) => (test.scut = e.target.checked);
+    el.querySelectorAll('[data-tl-aliat]').forEach((c) => (c.onchange = () => (c.checked ? test.aliati.add(c.dataset.tlAliat) : test.aliati.delete(c.dataset.tlAliat))));
+    el.querySelectorAll('[data-tl-inamic]').forEach((i) => (i.onchange = () => (test.inamici[i.dataset.tlInamic] = Math.max(0, Math.min(6, Number(i.value) || 0)))));
+    el.querySelector('.tl-porneste').onclick = () => {
+      // Inamicii iau locurile pe rând: întâi rândul din față (mijloc, sus, jos), apoi spatele; maximum 6
+      const inamici = Object.entries(test.inamici).flatMap(([id, n]) => Array(n).fill(id)).slice(0, 6).map((id, i) => ({ id, ...LOCURI[i] }));
+      if (!inamici.length) return joc.mesaj('Alege măcar un inamic.');
+      el.hidden = true;
+      joc.pornesteLupta({
+        nume: 'Luptă de test',
+        test: true,
+        fundal: test.fundal || joc.stare.scena,
+        fuga: true,
+        armaVale: test.arma === '__echipat' ? undefined : test.arma,
+        scutVale: test.scut,
+        aliati: [...test.aliati].slice(0, 5).map((id) => ({ id })),
+        inamici,
+        victorie: { text: 'Lupta de test s-a terminat.' },
+        infrangere: { text: 'Lupta de test s-a terminat.' },
+      });
+    };
   }
 
   return {

@@ -46,16 +46,21 @@ export function creeazaLupta(parinte, joc) {
     return listaPiese.filter((p) => p.armura > 0).map((p) => ({ nume: p.nume, armura: p.armura, ramas: p.rezistenta ?? 99 }));
   }
 
-  function luptatorVale() {
+  function luptatorVale(def) {
     const s = joc.stare;
     const piese = Object.values(s.echipat).filter(Boolean).map((id) => inv.def(id));
-    const arma = s.echipat.arma_primara ? inv.def(s.echipat.arma_primara) : null;
-    const scut = s.echipat.arma_secundara ? inv.def(s.echipat.arma_secundara) : null;
-    const tipArma = inv.tipArmaVale();
+    // În lupta de test, arma lui Vale se alege din panou (ca să se vadă fiecare set de poze), fără să-i schimbe echipamentul
+    const deTest = def?.test && def.armaVale !== undefined;
+    const idArma = deTest ? def.armaVale : s.echipat.arma_primara;
+    const arma = idArma ? inv.def(idArma) : null;
+    const idScut = deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
+    const scut = idScut ? inv.def(idScut) : null;
+    const tipDeBaza = arma?.tipArma || 'pumni';
+    const tipArma = deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
       id: 'vale',
       nume: 'Vale',
-      viata: Math.round(s.nevoi.viata),
+      viata: def?.test ? 100 : Math.round(s.nevoi.viata),
       viataMax: 100,
       staminaMax: cfg.vale.staminaMax,
       atac: arma?.atac || cfg.pumni,
@@ -340,18 +345,20 @@ export function creeazaLupta(parinte, joc) {
   }
 
   // ---------- pornire și final ----------
+  // Primește id-ul unei lupte din lupte.json sau direct o luptă (cea de test, alcătuită în panoul debug)
   function porneste(idLupta) {
-    const def = joc.date.lupte?.lupte?.[idLupta];
+    const def = typeof idLupta === 'object' ? idLupta : joc.date.lupte?.lupte?.[idLupta];
     if (!def) return joc.mesaj(`Lupta „${idLupta}” nu există.`);
     const s = joc.stare;
     const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
-    const aliati = s.grup
-      .map((id) => (id === 'vale' ? luptatorVale() : personaje.get(id)?.lupta && luptatorDinDate(id, personaje.get(id).lupta, personaje.get(id).nume)))
+    // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
+    const aliati = (def.test ? ['vale'] : s.grup)
+      .map((id) => (id === 'vale' ? luptatorVale(def) : personaje.get(id)?.lupta && luptatorDinDate(id, personaje.get(id).lupta, personaje.get(id).nume)))
       .filter(Boolean);
     // Locurile libere se dau pe rând celor care nu au încă loc în formație
     const ocupate = new Set();
     const asaza = (f, loc) => {
-      if (loc && !ocupate.has(`${loc.linie}${loc.rand}`)) Object.assign(f, { linie: loc.linie, rand: loc.rand });
+      if (loc?.linie != null && !ocupate.has(`${loc.linie}${loc.rand}`)) Object.assign(f, { linie: loc.linie, rand: loc.rand });
       else Object.assign(f, [1, 0, 2].flatMap((l) => ['fata', 'spate'].map((r) => ({ linie: l, rand: r }))).find((x) => !ocupate.has(`${x.linie}${x.rand}`)));
       ocupate.add(`${f.linie}${f.rand}`);
     };
@@ -451,7 +458,7 @@ export function creeazaLupta(parinte, joc) {
     const s = joc.stare;
     const vale = L.toti.find((f) => f.id === 'vale');
     // Formația rămâne salvată pentru lupta următoare
-    for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
+    if (!L.def.test) for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
     const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : null;
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
     L.elMeniu.hidden = false;
@@ -459,6 +466,13 @@ export function creeazaLupta(parinte, joc) {
       div('titlu-meniu-lupta', titlu),
       ...(parte?.text ? [div('text-rezultat', parte.text)] : []),
       buton('Continuă', () => {
+        // Lupta de test nu lasă urme: nici viață pierdută, nici timp trecut
+        if (L.def.test) {
+          el.hidden = true;
+          el.replaceChildren();
+          L = null;
+          return joc.dupaLupta(null, 0);
+        }
         if (vale) s.nevoi.viata = vale.cazut ? cfg.viataDupaCadere : Math.max(1, vale.viata);
         s.nevoi.stamina = Math.max(0, s.nevoi.stamina - cfg.staminaConsumata);
         el.hidden = true;
