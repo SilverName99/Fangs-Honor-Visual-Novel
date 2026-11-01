@@ -221,10 +221,24 @@ export function creeazaLupta(parinte, joc) {
   }
 
   // Centrul unui luptător, în pixeli, față de scena luptei (pentru proiectil)
+  // Scena e micșorată ca să încapă în fereastră: pixelii de pe ecran se împart la scară,
+  // altfel glaive-ul s-ar opri înaintea țintei
   function centru(f) {
     const s = L.scena.getBoundingClientRect();
     const r = f.corp.getBoundingClientRect();
-    return { x: r.left - s.left + r.width / 2, y: r.top - s.top + r.height / 2 };
+    const k = s.width / L.scena.offsetWidth || 1;
+    return { x: (r.left - s.left + r.width / 2) / k, y: (r.top - s.top + r.height * 0.55) / k, latime: r.width / k };
+  }
+
+  // Punctul în care glaive-ul „intră” în țintă: trece de centrul ei, pe direcția din care vine,
+  // ca să pară că o lovește, nu că se oprește în fața ei
+  function inTinta(de, f) {
+    const c = centru(f);
+    const dx = c.x - de.x;
+    const dy = c.y - de.y;
+    const d = Math.hypot(dx, dy) || 1;
+    const adanc = c.latime * 0.35;
+    return { x: c.x + (dx / d) * adanc, y: c.y + (dy / d) * adanc };
   }
 
   async function zboara(el, de, la, ms) {
@@ -250,10 +264,12 @@ export function creeazaLupta(parinte, joc) {
     const daune = [];
     let de = centru(sursa);
     for (const t of tinte) {
-      const la = centru(t);
-      await zboara(p, de, la, 260);
+      const la = inTinta(de, t);
+      await zboara(p, de, la, 280);
       if (!L) return daune;
       daune.push(aplicaLovitura(sursa, t));
+      // O clipă înfipt în țintă, apoi ricoșează mai departe
+      await asteapta(90);
       de = la;
     }
     await zboara(p, de, centru(sursa), 320);
