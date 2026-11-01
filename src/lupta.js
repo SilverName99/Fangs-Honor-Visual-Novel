@@ -399,7 +399,11 @@ export function creeazaLupta(parinte, joc) {
       const d = joc.date.lupte.inamici[x.id];
       numarari[x.id] = (numarari[x.id] || 0) + 1;
       const multi = def.inamici.filter((y) => y.id === x.id).length > 1;
-      return { ...luptatorDinDate(x.id, d, multi ? `${d.nume} ${numarari[x.id]}` : d.nume), linie: x.linie, rand: x.rand };
+      const f = { ...luptatorDinDate(x.id, d, multi ? `${d.nume} ${numarari[x.id]}` : d.nume), linie: x.linie, rand: x.rand };
+      // Doar în lupta de test: inamici care dărâmă repede (pentru poza „cazut” a aliaților) sau care cad dintr-o lovitură
+      if (def.test && def.inamiciPuternici) f.atac = { ...f.atac, min: f.atac.min * 10, max: f.atac.max * 10 };
+      if (def.test && def.inamiciSlabi) f.viata = f.viataMax = 1;
+      return f;
     });
 
     el.replaceChildren();

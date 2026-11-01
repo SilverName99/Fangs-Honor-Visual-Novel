@@ -27,7 +27,7 @@ export function creeazaDebug(parinte, joc) {
   parinte.append(el);
   const stari = stariCunoscute(joc.date);
   // Alegerile din „Testare luptă” rămân ținute minte cât e pagina deschisă (panoul se redesenează des)
-  const test = { deschis: false, fundal: null, arma: '__echipat', scut: false, aliati: new Set(), inamici: {} };
+  const test = { deschis: false, fundal: null, arma: '__echipat', scut: false, aliati: new Set(), inamici: {}, puternici: false, slabi: false };
   const LOCURI = [1, 0, 2].map((l) => ({ linie: l, rand: 'fata' })).concat([1, 0, 2].map((l) => ({ linie: l, rand: 'spate' })));
 
   function laOra(hhmm) {
@@ -132,6 +132,8 @@ export function creeazaDebug(parinte, joc) {
       <div class="rand-d"><span>Inamici</span>${inamici
         .map(([id, x]) => `<label>${x.nume} <input type="number" min="0" max="6" style="width:52px" data-tl-inamic="${id}" value="${test.inamici[id] || 0}"></label>`)
         .join(' ')}</div>
+      <div class="rand-d"><label><input type="checkbox" class="tl-puternici" ${test.puternici ? 'checked' : ''}> Inamici foarte puternici (lovesc de 10 ori mai tare)</label></div>
+      <div class="rand-d"><label><input type="checkbox" class="tl-slabi" ${test.slabi ? 'checked' : ''}> Inamici foarte slabi (cad dintr-o lovitură)</label></div>
       <div class="rand-d"><button class="tl-porneste">Pornește lupta de test</button> <small>(nu schimbă viața, timpul sau echipamentul)</small></div>
     </details>`;
   }
@@ -142,6 +144,8 @@ export function creeazaDebug(parinte, joc) {
     el.querySelector('.tl-fundal').onchange = (e) => (test.fundal = e.target.value);
     el.querySelector('.tl-arma').onchange = (e) => (test.arma = e.target.value);
     el.querySelector('.tl-scut').onchange = (e) => (test.scut = e.target.checked);
+    el.querySelector('.tl-puternici').onchange = (e) => (test.puternici = e.target.checked);
+    el.querySelector('.tl-slabi').onchange = (e) => (test.slabi = e.target.checked);
     el.querySelectorAll('[data-tl-aliat]').forEach((c) => (c.onchange = () => (c.checked ? test.aliati.add(c.dataset.tlAliat) : test.aliati.delete(c.dataset.tlAliat))));
     el.querySelectorAll('[data-tl-inamic]').forEach((i) => (i.onchange = () => (test.inamici[i.dataset.tlInamic] = Math.max(0, Math.min(6, Number(i.value) || 0)))));
     el.querySelector('.tl-porneste').onclick = () => {
@@ -156,6 +160,8 @@ export function creeazaDebug(parinte, joc) {
         fuga: true,
         armaVale: test.arma === '__echipat' ? undefined : test.arma,
         scutVale: test.scut,
+        inamiciPuternici: test.puternici,
+        inamiciSlabi: test.slabi,
         aliati: [...test.aliati].slice(0, 5).map((id) => ({ id })),
         inamici,
         victorie: { text: 'Lupta de test s-a terminat.' },
