@@ -47,8 +47,8 @@
       "lupta_padure_interior": 110
     },
     "combat/vanatoare_aparare.png": {
-      "lupta_taverna_parter": 85,
-      "lupta_padure_interior": 85
+      "lupta_taverna_parter": 90,
+      "lupta_padure_interior": 90
     },
     "combat/vanatoare_lovit.png": {
       "lupta_taverna_parter": 105,
