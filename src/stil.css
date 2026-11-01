@@ -939,3 +939,11 @@ svg.zone {
   color: #e8dcc0;
   font-size: 22px;
 }
+
+/* Meniul luptei, ordinea și jurnalul stau peste luptători: un personaj așezat jos sau mărit
+   nu are voie să acopere butoanele */
+.lupta-meniu,
+.ordine-lupta,
+.jurnal-lupta {
+  z-index: 200;
+}
