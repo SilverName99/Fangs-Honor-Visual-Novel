@@ -961,3 +961,8 @@ svg.zone {
 .strat-lume.umbrit-seara .obiect.evidentiat {
   filter: brightness(0.85) sepia(0.2) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
+
+/* Decorul (glaive-ul de la campsite) noaptea: și pe imaginea cu focul rămâne în umbra nopții */
+.strat-lume.e-noapte.umbrit-seara .obiect.decor {
+  filter: brightness(0.6) saturate(0.8);
+}

@@ -687,7 +687,14 @@
               "deblocat": "padure/campsite"
             }
           },
-          "_nota": "Campsite-ul vânătoarei: apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului."
+          "_nota": "Campsite-ul vânătoarei: apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului.",
+          "decor": [
+            {
+              "id": "glaive",
+              "nume": "Glaive-ul Kaiei (decor)",
+              "imagine": "sprites/glaive_padure_campsite.png"
+            }
+          ]
         }
       ],
       "actiuni": [

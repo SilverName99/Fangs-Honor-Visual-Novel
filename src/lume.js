@@ -97,7 +97,12 @@ export function construiesteLumea(date) {
         parinte: l.din ? `${z.id}.${l.din}` : z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
         tinte: [...actiuniCaTinte(l.actiuni), ...zonePersonaje(spriteuri(cheieLoc, `${z.id}_${l.id}`))],
-        obiecte: spriteuri(cheieLoc, `${z.id}_${l.id}`),
+        // „decor”: obiecte puse peste fundal, mereu acolo și neclicabile (glaive-ul Kaiei la campsite);
+        // se aranjează în editor ca sprite-urile și primesc filtrul de seară/noapte ca restul scenei
+        obiecte: [
+          ...spriteuri(cheieLoc, `${z.id}_${l.id}`),
+          ...(l.decor || []).map((x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [] })),
+        ],
       });
     }
     // Ușa spre un loc „din” alt loc devine o țintă (zonă de desenat) în scena acelui loc
