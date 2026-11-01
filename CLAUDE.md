@@ -396,9 +396,9 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 ### Imaginile de luptă (`assets/combat/`)
 
-Fiecare personaj are **4 poze**: `idle`, `atac`, `aparare`, `ranit`. Codul adaugă mișcarea (se aruncă înainte la atac, tremură la lovitură). **Căderea** folosește poza `ranit` plus un efect din cod (se înclină și pălește).
+Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `ranit` (reacția scurtă la o lovitură) și `cazut` (răpus, rămâne așa până la sfârșitul luptei). Toate pe aceeași pânză 2:3 și la aceeași mărime. Codul adaugă mișcarea (se aruncă înainte la atac, tremură la lovitură). Dacă `cazut` lipsește, căderea folosește `ranit`, înclinată și pălită din cod.
 
-- **Vale** are câte un set de 4 poze **pentru fiecare tip de armă** (nu pentru fiecare armă): `vale_<tipArma>_<poza>.png`, de exemplu `vale_sabie_atac.png`. Tipurile de armă (6 seturi, deci 24 de poze):
+- **Vale** are câte un set de 5 poze **pentru fiecare tip de armă** (nu pentru fiecare armă): `vale_<tipArma>_<poza>.png`, de exemplu `vale_sabie_atac.png`. Tipurile de armă (6 seturi, deci 30 de poze):
 
   | `tipArma` | Când |
   |---|---|

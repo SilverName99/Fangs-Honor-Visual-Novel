@@ -13,6 +13,8 @@ function buton(text, clic, dezactivat = false, titlu = '') {
 }
 const intre = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
+// Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „ranit”, înclinată din cod
+const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'ranit'] : [p]);
 
 // Unde stă fiecare loc pe ecran (picioarele): fața e spre mijloc, spatele spre margine
 const X = { aliat: { fata: 0.29, spate: 0.12 }, inamic: { fata: 0.71, spate: 0.88 } };
@@ -69,7 +71,7 @@ export function creeazaLupta(parinte, joc) {
       abilitati: [],
       // Vale obosit pornește cu bara goală, odihnit cu ea pe jumătate
       bara: s.nevoi.stamina < joc.date.config.nevoi.prag ? 0 : 50,
-      poze: (p) => [`combat/vale_${tipArma}_${p}.png`, `combat/vale_${tipArma}_idle.png`, `combat/vale_pumni_idle.png`],
+      poze: (p) => [...cuRezerva(p).map((x) => `combat/vale_${tipArma}_${x}.png`), `combat/vale_${tipArma}_idle.png`, `combat/vale_pumni_idle.png`],
     };
   }
 
@@ -86,7 +88,7 @@ export function creeazaLupta(parinte, joc) {
       abilitati: x.abilitati || [],
       bara: intre(0, 30),
       // „poze”: inamicul folosește pozele altcuiva (orcii din tavernă arată ca paznicii de la poartă)
-      poze: (p) => [`combat/${x.poze || id}_${p}.png`, `combat/${x.poze || id}_idle.png`],
+      poze: (p) => [...cuRezerva(p).map((y) => `combat/${x.poze || id}_${y}.png`), `combat/${x.poze || id}_idle.png`],
     };
   }
 
@@ -117,7 +119,12 @@ export function creeazaLupta(parinte, joc) {
 
   function poza(f, p) {
     f.cache ||= new Map();
-    if (!f.cache.has(p)) f.cache.set(p, elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` }));
+    if (!f.cache.has(p)) {
+      const img = elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
+      // Cu poza lui de răpus, personajul nu se mai înclină din cod: poza arată deja căderea
+      if (p === 'cazut') img.addEventListener('incarcat', (e) => f.el.classList.toggle('poza-cazut', e.detail.endsWith('_cazut.png')));
+      f.cache.set(p, img);
+    }
     f.corp.replaceChildren(f.cache.get(p));
   }
 
@@ -192,7 +199,7 @@ export function creeazaLupta(parinte, joc) {
       tinta.viata = 0;
       tinta.cazut = true;
       tinta.el.classList.add('cazut');
-      poza(tinta, 'ranit');
+      poza(tinta, 'cazut');
     }
     actualizeazaBare();
     await asteapta(450);

@@ -221,7 +221,7 @@ export function imaginiCerute(date, scene) {
     if (ev.emotie && ev.emotie !== 'normal') adauga(`portraits/${ev.vorbitor}_${ev.emotie}.png`, `Portret: ${ev.numeVorbitor || ev.vorbitor} (${ev.emotie})`, true);
   }
   // Pozele de luptă: Vale are câte un set pentru fiecare tip de armă; ceilalți câte unul (un inamic cu „poze” le refolosește pe ale altuia)
-  const POZE = ['idle', 'atac', 'aparare', 'ranit'];
+  const POZE = ['idle', 'atac', 'aparare', 'ranit', 'cazut'];
   grup = 'Luptă';
   for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
     for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');

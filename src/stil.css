@@ -766,6 +766,11 @@ svg.zone {
 .luptator.inamic.cazut .corp {
   transform: rotate(80deg) translate(30%, 20%);
 }
+.luptator.cazut.poza-cazut .corp {
+  transform: none;
+  filter: grayscale(0.5) brightness(0.8);
+  opacity: 0.85;
+}
 .numar-lupta {
   position: absolute;
   left: 50%;
