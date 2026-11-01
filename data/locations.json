@@ -275,11 +275,41 @@
           "imagine": "locations/taverna_parter.png",
           "variante": [
             {
-              "sufix": "_plin",
+              "imagine": "locations/taverna_parter_pranz.png",
+              "nume": "prânz (12–14)",
               "conditii": {
                 "ora": {
-                  "min": "17:30"
+                  "min": "12:00",
+                  "max": "13:59"
                 }
+              }
+            },
+            {
+              "imagine": "locations/taverna_parter_dupa_amiaza.png",
+              "nume": "după-amiază (14–18)",
+              "conditii": {
+                "ora": {
+                  "min": "14:00",
+                  "max": "17:59"
+                }
+              }
+            },
+            {
+              "imagine": "locations/taverna_parter_plin.png",
+              "nume": "plină (18–02)",
+              "conditii": {
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "18:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "01:59"
+                    }
+                  }
+                ]
               }
             }
           ],

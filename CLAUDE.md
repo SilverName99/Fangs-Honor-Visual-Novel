@@ -163,7 +163,7 @@ Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și a
 
 | Scenă | Variantă | Condiție |
 |---|---|---|
-| `taverna_parter` | `_plin` (plină de oameni) | ora ≥ 17:30 |
+| `taverna_parter` | de bază 09–12; `_pranz`; `_dupa_amiaza`; `_plin` (plină de oameni) | 12–14 / 14–18 / 18–02 |
 | `padure_campsite` | `_seara` (foc aprins) | adunarea secretă |
 | `sat_harta` | `_noapte` | noaptea |
 | `casa_zona` | `_noapte`, `_reparata` | noaptea / `acoperis = reparat` |
