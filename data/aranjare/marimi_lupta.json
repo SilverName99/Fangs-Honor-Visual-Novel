@@ -28,6 +28,10 @@
     },
     "combat/fierar_atac.png": {
       "lupta_taverna_parter": 130
+    },
+    "combat/vale_pumni_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     }
   }
 }
