@@ -273,6 +273,27 @@
           "imagine": "map/piese/taverna.png",
           "variante": [
             {
+              "imagine": "map/piese/taverna_noapte_luminata.png",
+              "nume": "noaptea, deschisă (geamuri luminate)",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ],
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "01:59"
+                    }
+                  }
+                ]
+              }
+            },
+            {
               "sufix": "_noapte",
               "conditii": {
                 "moment": [
