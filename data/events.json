@@ -2,38 +2,6 @@
   "_nota": "3-4 evenimente de test pentru sistem. Textele marcate (TODO) se înlocuiesc cu cele scrise de autor. manual: true = evenimentul nu pornește singur, ci doar dintr-un efect („eveniment”: id), de exemplu dintr-un dialog sau după o luptă. imagini = scenele arătate pe tot ecranul înainte (fără text). dialog = după imagini pornește un dialog din dialoguri.json. efecte = se aplică la eveniment (fără alegeri). grup = secțiunea din galerie unde stau imaginile.",
   "evenimente": [
     {
-      "id": "om_ranit_padure_01",
-      "conditii": {
-        "loc": "padure/interior",
-        "moment": [
-          "amiaza",
-          "seara"
-        ],
-        "sansa": 0.2
-      },
-      "repetare": "o_data",
-      "vorbitor": "calator_ranit",
-      "numeVorbitor": "Călător rănit",
-      "emotie": "ranit",
-      "text": "Un străin rănit îți cere ajutorul.",
-      "alegeri": [
-        {
-          "text": "Îl ajuți",
-          "efecte": {
-            "timp": 60,
-            "reputatie": 2,
-            "obiect": "pansament"
-          }
-        },
-        {
-          "text": "Mergi mai departe",
-          "efecte": {
-            "reputatie": -1
-          }
-        }
-      ]
-    },
-    {
       "id": "test_barfa_taverna",
       "conditii": {
         "loc": "taverna/parter",

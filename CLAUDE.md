@@ -298,21 +298,21 @@ Un eveniment e o scenă cu imagine sau portret, text și 2-3 alegeri, declanșat
 
 ```json
 {
-  "id": "om_ranit_padure_01",
-  "conditii": { "loc": "padure/interior", "moment": ["amiaza", "seara"], "sansa": 0.2 },
-  "repetare": "o_data",
-  "vorbitor": "calator_ranit",
-  "emotie": "ranit",
-  "text": "Un străin rănit îți cere ajutorul.",
+  "id": "barfa_taverna",
+  "conditii": { "loc": "taverna/parter", "moment": ["seara"], "sansa": 0.5 },
+  "repetare": { "pauzaZile": 3 },
+  "vorbitor": "hangita",
+  "emotie": "normal",
+  "text": "Ai auzit ce s-a întâmplat la moară?",
   "alegeri": [
-    { "text": "Îl ajuți", "efecte": { "timp": 60, "reputatie": 2, "obiect": "pansament" } },
-    { "text": "Mergi mai departe", "efecte": { "reputatie": -1 } }
+    { "text": "Mai spune-mi.", "efecte": { "timp": 20, "relatie": { "hangita": 1 } } },
+    { "text": "Altă dată.", "efecte": {} }
   ]
 }
 ```
 
 **`repetare`** spune dacă evenimentul poate reveni:
-- `"o_data"` (implicit): apare o singură dată în tot jocul, de exemplu omul rănit;
+- `"o_data"` (implicit): apare o singură dată în tot jocul, de exemplu scandalul din tavernă;
 - `"mereu"`: poate reveni oricând, de exemplu vânatul;
 - `{ "pauzaZile": 3 }`: poate reveni, dar nu mai des de o dată la 3 zile, de exemplu bârfele de la tavernă.
 
@@ -411,6 +411,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 
   Setul se alege din arma primară, plus dacă în mâna a doua e un scut.
 - **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_lovit.png`. Un inamic poate refolosi pozele altuia (`poze` în `lupte.json`).
+- **Personaje late** (`locuri: 2` la statisticile de luptă, de exemplu vânătoarea pe tigru): țin toată linia (față și spate), stau pe mijlocul ei și au pozele de luptă **late, 3:2** (1536×1024), nu 2:3. Se mută doar pe o linie întreagă liberă.
 - O luptă poate avea **aliați de o singură luptă** (`aliati` în `lupte.json`), de exemplu Roderick în scandal, fără să fie recrutat.
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
 - **Mărimea fiecărei poze** se reglează în galerie, în procente (`data/aranjare/marimi_lupta.json`, `marimi`), pentru poze generate puțin mai mari sau mai mici. La fel, **fiecare hartă de luptă** are mărimea tuturor personajelor de pe ea (`harti`) și mărimea fiecărui personaj în parte pe harta aceea (`personajeHarti`). Procentele se înmulțesc.
@@ -426,7 +427,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 | `soldat` | **Roderick Lightfinder**, unchiul lui Vale (fratele tatălui), fost soldat, în hainele lui vechi de soldat; luptă apropiat | Taverna, biserica dimineața | doar dacă l-ai ajutat în scandalul din tavernă; cum anume, `TODO` |
 | `fierar` | Tank | Fierăria | relație suficientă |
 | `hot` | Tânărul hoț, legat la butuc | Piața | plătești o sumă unui negustor ca să-l elibereze |
-| `vanatoare` | Atac de la distanță; are cabană la marginea pădurii | Marginea pădurii | **questline** care deblochează Camp site |
+| `vanatoare` | **Vânătoarea** (Huntress în *Fangs&Honor*), călare pe un tigru: „Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse.” Atac de la distanță care lovește până la 3 inamici (`ricoseu: 3`); **în luptă ține două locuri** (față și spate pe aceeași linie, `locuri: 2`); are cabană la marginea pădurii | Marginea pădurii | **questline** care deblochează Camp site |
 | `mag` | Preotul-mag al luminii; vindecare și abilități de control, slab la început | Biserica | relație suficientă; orcii nu știu de el |
 | `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
 | `negustor` | Personaj minor | Piața | – |

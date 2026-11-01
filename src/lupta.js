@@ -84,6 +84,8 @@ export function creeazaLupta(parinte, joc) {
       armuri: armuriDin([{ nume: 'Armura', armura: x.armura || 0, rezistenta: x.rezistenta }]),
       blocare: x.blocare ?? cfg.blocareImplicita,
       abilitati: x.abilitati || [],
+      // „locuri: 2”: personaj mare (vânătoarea pe tigru) care ține toată linia, față și spate
+      lat: x.locuri === 2,
       bara: intre(0, 30),
       // „poze”: inamicul folosește pozele altcuiva (orcii din tavernă arată ca paznicii de la poartă)
       poze: (p) => [...cuRezerva(p).map((y) => `combat/${x.poze || id}_${y}.png`), `combat/${x.poze || id}_idle.png`],
@@ -92,7 +94,9 @@ export function creeazaLupta(parinte, joc) {
 
   // ---------- reguli ----------
   const vii = (tabara) => L.toti.filter((f) => f.tabara === tabara && !f.cazut);
-  const laLoc = (tabara, linie, rand) => L.toti.find((f) => f.tabara === tabara && f.linie === linie && f.rand === rand);
+  // Un personaj lat ocupă ambele locuri ale liniei lui (stă oficial „în față”)
+  const laLoc = (tabara, linie, rand) => L.toti.find((f) => f.tabara === tabara && f.linie === linie && (f.rand === rand || f.lat));
+  const linieGoala = (tabara, linie, faraCine) => !L.toti.some((f) => f !== faraCine && f.tabara === tabara && f.linie === linie);
   const armuraIntreaga = (f) => f.armuri.filter((a) => a.ramas > 0).reduce((s, a) => s + a.armura, 0);
 
   // Apropiat: doar fața; spatele doar dacă locul din fața lui, pe aceeași linie, e gol sau personajul de acolo a căzut
@@ -115,7 +119,13 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function aseaza(f) {
-    const p = locPeHarta(f.tabara, f.linie, f.rand);
+    let p = locPeHarta(f.tabara, f.linie, f.rand);
+    if (f.lat) {
+      // Pe mijlocul dintre locul din față și cel din spate al liniei
+      const s = locPeHarta(f.tabara, f.linie, 'spate');
+      p = { x: (p.x + s.x) / 2, y: (p.y + s.y) / 2, scara: p.scara };
+    }
+    f.el.classList.toggle('lat', !!f.lat);
     f.el.style.left = `${p.x * 100}%`;
     f.el.style.top = `${p.y * 100}%`;
     // Pe unele hărți luptătorii trebuie să pară mai mari sau mai mici (camera e mai aproape sau mai departe)
@@ -232,6 +242,16 @@ export function creeazaLupta(parinte, joc) {
     if (actiune.tip === 'atac') {
       const d = await loveste(sursa, actiune.tinta);
       if (!L.elJurnal.textContent.includes('crăpat')) jurnal(`${sursa.nume} îl lovește pe ${actiune.tinta.nume}: ${d} daune.`);
+      // „ricoseu: 3”: arma (glaive-ul vânătoarei) sare la încă doi inamici aleși la întâmplare
+      if (sursa.atac.ricoseu > 1) {
+        const altii = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat').filter((t) => t !== actiune.tinta);
+        const loviti = [`${actiune.tinta.nume} (${d})`];
+        for (let i = 1; i < sursa.atac.ricoseu && altii.length; i++) {
+          const t = altii.splice(Math.floor(Math.random() * altii.length), 1)[0];
+          loviti.push(`${t.nume} (${await loveste(sursa, t)})`);
+        }
+        if (loviti.length > 1) jurnal(`${sursa.nume}: glaive-ul ricoșează! ${loviti.join(', ')}.`);
+      }
       sursa.bara = 0;
     } else if (actiune.tip === 'aparare') {
       sursa.apara = true;
@@ -296,13 +316,30 @@ export function creeazaLupta(parinte, joc) {
     L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege ținta'), buton('Înapoi', () => meniu(L.activ)));
   }
 
+  // Marcajul pentru o linie întreagă (unde poate merge un personaj lat)
+  function marcajLinie(linie, clic) {
+    const a = locPeHarta('aliat', linie, 'fata');
+    const b = locPeHarta('aliat', linie, 'spate');
+    const loc = div('loc-liber');
+    loc.style.left = `${((a.x + b.x) / 2) * 100}%`;
+    loc.style.top = `${((a.y + b.y) / 2) * 100}%`;
+    loc.onclick = clic;
+    L.elLocuri.append(loc);
+  }
+
   function alegeLoc(f) {
     L.elLocuri.replaceChildren();
+    if (f.lat) {
+      // Personajul lat se mută doar pe o linie întreagă liberă
+      for (const linie of [0, 1, 2]) if (linie !== f.linie && linieGoala('aliat', linie, f)) marcajLinie(linie, () => executa(f, { tip: 'muta', linie, rand: 'fata' }));
+      L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege linia'), buton('Înapoi', () => meniu(f)));
+      return;
+    }
     for (const linie of [0, 1, 2]) {
       for (const rand of ['fata', 'spate']) {
         const ocupant = laLoc('aliat', linie, rand);
-        // Pe un loc liber oricând; cu cineva doar pe aceeași linie (față ↔ spate)
-        const ok = ocupant ? ocupant !== f && linie === f.linie : true;
+        // Pe un loc liber oricând; cu cineva doar pe aceeași linie (față ↔ spate); nu peste un personaj lat
+        const ok = ocupant ? ocupant !== f && !ocupant.lat && linie === f.linie : true;
         if (!ok) continue;
         const loc = div('loc-liber');
         const p = locPeHarta('aliat', linie, rand);
@@ -381,6 +418,14 @@ export function creeazaLupta(parinte, joc) {
     // Locurile libere se dau pe rând celor care nu au încă loc în formație
     const ocupate = new Set();
     const asaza = (f, loc) => {
+      if (f.lat) {
+        // Cel lat are nevoie de o linie întreagă liberă
+        const libera = (l) => !ocupate.has(`${l}fata`) && !ocupate.has(`${l}spate`);
+        const linie = loc?.linie != null && libera(loc.linie) ? loc.linie : [1, 0, 2].find(libera) ?? 2;
+        Object.assign(f, { linie, rand: 'fata' });
+        ocupate.add(`${linie}fata`).add(`${linie}spate`);
+        return;
+      }
       if (loc?.linie != null && !ocupate.has(`${loc.linie}${loc.rand}`)) Object.assign(f, { linie: loc.linie, rand: loc.rand });
       else Object.assign(f, [1, 0, 2].flatMap((l) => ['fata', 'spate'].map((r) => ({ linie: l, rand: r }))).find((x) => !ocupate.has(`${x.linie}${x.rand}`)));
       ocupate.add(`${f.linie}${f.rand}`);
@@ -443,23 +488,40 @@ export function creeazaLupta(parinte, joc) {
 
   function pregatire() {
     let ales = null;
+    const gata = () => {
+      L.toti.forEach(aseaza);
+      ales.el.classList.remove('la-rand');
+      ales = null;
+      arataLocuri();
+    };
     const arataLocuri = () => {
       L.elLocuri.replaceChildren();
       if (!ales) return;
+      if (ales.lat) {
+        // Personajul lat schimbă linia întreagă cu cei de pe linia aleasă
+        for (const linie of [0, 1, 2]) {
+          if (linie === ales.linie) continue;
+          marcajLinie(linie, () => {
+            for (const o of L.toti.filter((x) => x.tabara === 'aliat' && x.linie === linie)) o.linie = ales.linie;
+            ales.linie = linie;
+            gata();
+          });
+        }
+        return;
+      }
       for (const linie of [0, 1, 2]) {
         for (const rand of ['fata', 'spate']) {
           const loc = div('loc-liber');
           const p = locPeHarta('aliat', linie, rand);
           loc.style.left = `${p.x * 100}%`;
           loc.style.top = `${p.y * 100}%`;
+          const altul = laLoc('aliat', linie, rand);
+          // Peste un personaj lat nu se poate pune cineva (el ține toată linia)
+          if (altul?.lat) continue;
           loc.onclick = () => {
-            const altul = laLoc('aliat', linie, rand);
             if (altul) Object.assign(altul, { linie: ales.linie, rand: ales.rand });
             Object.assign(ales, { linie, rand });
-            L.toti.forEach(aseaza);
-            ales.el.classList.remove('la-rand');
-            ales = null;
-            arataLocuri();
+            gata();
           };
           L.elLocuri.append(loc);
         }

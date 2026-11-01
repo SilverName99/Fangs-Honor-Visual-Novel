@@ -947,3 +947,8 @@ svg.zone {
 .jurnal-lupta {
   z-index: 200;
 }
+
+/* Personaj care ține două locuri (vânătoarea pe tigru): poza e lată */
+.luptator.lat {
+  aspect-ratio: 1.5;
+}

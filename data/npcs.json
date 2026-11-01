@@ -296,19 +296,23 @@
     {
       "id": "vanatoare",
       "nume": "Vânătoarea (TODO nume)",
+      "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie).",
       "locuriSprite": [
         "padure/margine"
       ],
       "lupta": {
-        "viata": 55,
-        "staminaMax": 105,
+        "_nota": "TODO echilibru. locuri: 2 = ține toată linia. ricoseu: 3 = lovește până la 3 inamici.",
+        "viata": 75,
+        "staminaMax": 100,
         "atac": {
-          "min": 8,
-          "max": 12,
-          "tip": "distanta"
+          "min": 6,
+          "max": 9,
+          "tip": "distanta",
+          "ricoseu": 3
         },
         "armura": 1,
-        "rezistenta": 4
+        "rezistenta": 5,
+        "locuri": 2
       }
     },
     {
