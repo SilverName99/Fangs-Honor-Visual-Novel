@@ -34,8 +34,12 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
   let cerute = imaginiCerute(comun.date, comun.lume);
   const cerutePeCale = () => new Map(cerute.map((c) => [c.cale, c]));
 
+  // Același nume poate fi cerut în două categorii (fierar_ranit.png: portret și poză de luptă);
+  // se alege întâi cea încă neîncărcată, ca să nu se înlocuiască din greșeală imaginea care există deja
+  const potriviri = (nume) => cerute.filter((c) => c.cale.endsWith(`/${nume}`));
   function ghicesteCategoria(nume) {
-    const potrivire = cerute.find((c) => c.cale.endsWith(`/${nume}`));
+    const toate = potriviri(nume);
+    const potrivire = toate.find((c) => !comun.imagini.has(c.cale)) || toate[0];
     if (potrivire) return potrivire.categorie;
     if (nume.startsWith('ui_')) return 'ui';
     return '';
@@ -64,7 +68,9 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const parti = [];
     if (c) parti.push(`<span class="bine">✓ ${esc(c.scop)}</span>`);
     else parti.push('<span class="avertisment">Jocul nu cere încă acest nume (verifică dacă e scris bine).</span>');
-    if (exista) parti.push('<span class="avertisment">Înlocuiește imaginea existentă.</span>');
+    const altele = potriviri(r.nume).filter((x) => x.categorie !== r.categorie);
+    if (altele.length) parti.push(`<span class="avertisment">Numele ăsta e cerut și la: ${altele.map((x) => esc(x.scop)).join(', ')}. Verifică categoria!</span>`);
+    if (exista) parti.push('<span class="avertisment">Înlocuiește imaginea existentă (cea veche se mută în coș, pe server).</span>');
     return { ok: true, text: parti.join(' ') };
   }
 

@@ -239,6 +239,11 @@ async function api(req, res, ruta) {
     const corp = await citesteCorp(req, MAX_IMAGINE);
     if (!corp.subarray(0, 8).equals(SEMNATURA_PNG)) return eroare(res, 400, 'Fișierul nu e un PNG adevărat.');
     await fsp.mkdir(path.dirname(c.absolut), { recursive: true });
+    // O imagine înlocuită nu se pierde: varianta veche merge în coș, ca la ștergere
+    if (fs.existsSync(c.absolut)) {
+      await fsp.mkdir(COS, { recursive: true });
+      await fsp.copyFile(c.absolut, path.join(COS, `${Date.now()}_${c.relativ.replaceAll('/', '__')}`)).catch(() => {});
+    }
     const temporar = `${c.absolut}.incarcare`;
     await fsp.writeFile(temporar, corp);
     await fsp.rename(temporar, c.absolut);
