@@ -20,6 +20,9 @@
   "personajeHarti": {
     "lupta_taverna_parter": {
       "vale": 98
+    },
+    "lupta_padure_interior": {
+      "vanatoare": 200
     }
   }
 }
