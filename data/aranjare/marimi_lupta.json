@@ -1,9 +1,11 @@
 {
   "marimi": {
-    "combat/fierar_atac.png": 115,
-    "combat/fierar_lovit.png": 105,
+    "combat/fierar_atac.png": 135,
+    "combat/fierar_lovit.png": 125,
     "combat/vale_pumni_cazut.png": 80,
-    "combat/fierar_cazut.png": 90
+    "combat/fierar_cazut.png": 90,
+    "combat/fierar_idle.png": 120,
+    "combat/fierar_aparare.png": 120
   },
   "harti": {
     "lupta_taverna_parter": 135
