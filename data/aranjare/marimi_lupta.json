@@ -53,6 +53,9 @@
     "combat/vanatoare_lovit.png": {
       "lupta_taverna_parter": 105,
       "lupta_padure_interior": 105
+    },
+    "combat/vale_pumni_aparare.png": {
+      "lupta_padure_interior": 105
     }
   }
 }
