@@ -49,6 +49,9 @@ export function registreazaConditiiPersonaje(personaje, registreaza) {
       return locuri.includes(undeEste(p, c)) && !intrareProgram(p, c)?.doarme;
     }),
   );
+  // „personajLa: { vanatoare: [locuri] }” = personajul e acum într-unul din locuri, treaz sau adormit
+  // (glaive-ul Kaiei stă la campsite cât e și ea acolo)
+  registreaza('personajLa', (v, c) => Object.entries(v).every(([id, locuri]) => locuri.includes(undeEste(gaseste(id), c))));
   // „prezent: miriam” = personajul e, după programul lui, chiar în locul ăsta acum (de exemplu evenimentul cu supa)
   registreaza('prezent', (id, c) => undeEste(gaseste(id), c) === c.loc);
 }

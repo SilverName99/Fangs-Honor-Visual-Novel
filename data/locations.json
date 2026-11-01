@@ -692,7 +692,14 @@
             {
               "id": "glaive",
               "nume": "Glaive-ul Kaiei (decor)",
-              "imagine": "sprites/glaive_padure_campsite.png"
+              "imagine": "sprites/glaive_padure_campsite.png",
+              "apare": {
+                "personajLa": {
+                  "vanatoare": [
+                    "padure/campsite"
+                  ]
+                }
+              }
             }
           ]
         }

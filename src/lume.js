@@ -101,7 +101,7 @@ export function construiesteLumea(date) {
         // se aranjează în editor ca sprite-urile și primesc filtrul de seară/noapte ca restul scenei
         obiecte: [
           ...spriteuri(cheieLoc, `${z.id}_${l.id}`),
-          ...(l.decor || []).map((x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [] })),
+          ...(l.decor || []).map((x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [], apare: x.apare || null })),
         ],
       });
     }

@@ -565,6 +565,8 @@ function afiseaza() {
     }
   }
 
+  // Decorul cu „apare” se vede doar cât condițiile sunt îndeplinite (glaive-ul, cât Kaia e la campsite)
+  for (const o of d.obiecte.filter((o) => o.tip === 'decor' && !verifica(o.apare, ctx))) r.obiecte.get(o.id)?.remove();
   for (const o of d.obiecte.filter((o) => o.tip === 'sprite')) {
     const el = r.obiecte.get(o.id);
     if (!prezenti.has(o.id)) {

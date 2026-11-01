@@ -163,7 +163,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     r.svg.remove();
     // Personajele care nu sunt aici la ora aleasă nu se văd (ca în joc)
     for (const o of d.obiecte) {
-      if (o.tip === 'sprite' && !prezent(o.id)) {
+      if ((o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !verifica(o.apare, context()))) {
         r.obiecte.get(o.id).remove();
         r.obiecte.delete(o.id);
       }
@@ -481,7 +481,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
             const aranjat = !!lucru.obiecte[ko(o.id)];
-            const absent = o.tip === 'sprite' && !prezent(o.id);
+            const absent = (o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !verifica(o.apare, context()));
             const varianta = ko(o.id) !== o.id ? ` <span class="sumar">(${esc(ko(o.id).split('@')[1])})</span>` : '';
             return `<div class="rand ${sel ? 'selectat' : ''} ${absent ? 'absent' : ''}" data-obiect="${esc(o.id)}">
               <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}${varianta}
