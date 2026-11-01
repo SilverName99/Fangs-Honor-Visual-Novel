@@ -59,8 +59,10 @@ export function construiesteLumea(date) {
     const tintaLoc = (l) => ({
       id: l.id,
       nume: l.nume,
-      spre: l.actiune ? null : `${z.id}.${l.id}`,
+      // Un loc de vânătoare nu se deschide: arată imaginea lui câteva secunde și pornește lupta
+      spre: l.actiune || l.vanatoare ? null : `${z.id}.${l.id}`,
       actiune: l.actiune || null,
+      vanatoare: l.vanatoare ? { ...l.vanatoare, imagine: l.imagine } : null,
       incuiat: l.incuiat || null,
       ascuns: l.ascuns || null,
     });

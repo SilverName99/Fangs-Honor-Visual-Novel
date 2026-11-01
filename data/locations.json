@@ -286,6 +286,27 @@
       "imagine": "locations/taverna_zona.png",
       "variante": [
         {
+          "imagine": "locations/taverna_zona_noaptea_luminata.png",
+          "nume": "noaptea, deschisă (geamuri luminate)",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ],
+            "oricare": [
+              {
+                "ora": {
+                  "min": "23:00"
+                }
+              },
+              {
+                "ora": {
+                  "max": "01:59"
+                }
+              }
+            ]
+          }
+        },
+        {
           "imagine": "locations/taverna_zona_noaptea.png",
           "nume": "noaptea",
           "conditii": {
@@ -590,26 +611,18 @@
       "locuri": [
         {
           "id": "interior",
-          "nume": "Adâncul pădurii",
+          "nume": "Adâncul pădurii (vânătoare)",
           "imagine": "locations/padure_interior.png",
-          "actiuni": [
-            {
-              "id": "vaneaza",
-              "tip": "lupta",
-              "nume": "Vânează",
-              "lupta": "vanatoare_lup",
-              "minute": 60
-            },
-            {
-              "id": "lemne",
-              "tip": "obtine",
-              "nume": "Adună lemne (1 oră)",
-              "obiect": "lemn",
-              "n": 3,
-              "minute": 60,
-              "stamina": 10
-            }
-          ]
+          "_nota": "Nu e un loc în care stai: imaginea apare câteva secunde (ecran de încărcare), apoi pornește o luptă de vânătoare aleasă la întâmplare.",
+          "vanatoare": {
+            "lupte": [
+              "vanatoare_lup",
+              "vanatoare_mistret"
+            ],
+            "minute": 60,
+            "secunde": 3,
+            "text": "Cauți urme de vânat..."
+          }
         },
         {
           "id": "campsite",
@@ -631,6 +644,17 @@
             }
           },
           "_nota": "Campsite-ul vânătoarei: apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului."
+        }
+      ],
+      "actiuni": [
+        {
+          "id": "lemne",
+          "tip": "obtine",
+          "nume": "Adună lemne (1 oră)",
+          "obiect": "lemn",
+          "n": 3,
+          "minute": 60,
+          "stamina": 10
         }
       ]
     },

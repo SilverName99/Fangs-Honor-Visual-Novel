@@ -149,7 +149,7 @@ Reguli:
 | `taverna` | `taverna.png` | `taverna_zona.png` | `parter` (deschis 09:00–02:00), `etaj` (camera plătită la Agnes, cu patul de dormit) |
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
-| `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `interior` (vânat), `campsite` (**ascuns** până la întâlnirea cu vânătoarea; e campsite-ul ei) |
+| `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `interior` (**vânătoarea**: nu e un loc în care stai; `padure_interior.png` apare câteva secunde ca ecran de încărcare, apoi pornește lupta cu un animal la întâmplare, lup sau mistreț, pe `lupta_padure_interior.png`), `campsite` (**ascuns** până la întâlnirea cu vânătoarea; e campsite-ul ei). Acțiunea „Adună lemne” e pe imaginea zonei |
 | `poarta` | `poarta.png` | `poarta_zona.png` | `exterior` (orcii), `taxa` (locul de plată) |
 | `biserica` | `biserica.png` | `biserica_zona.png` | `interior` (preotul) |
 
@@ -164,6 +164,7 @@ Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și a
 | Scenă | Variantă | Condiție |
 |---|---|---|
 | `taverna_parter` | de bază 09–12; `_pranz`; `_dupa_amiaza`; `_plin` (plină de oameni) | 12–14 / 14–18 / 18–02 |
+| `taverna_zona` | `_noaptea_luminata` (geamuri luminate), `_noaptea` | 23–02 (deschisă) / 02–05 |
 | `padure_campsite` | `_seara` (foc aprins) | adunarea secretă |
 | `sat_harta` | `_noapte` | noaptea |
 | `casa_zona` | `_noapte`, `_reparata` | noaptea / `acoperis = reparat` |

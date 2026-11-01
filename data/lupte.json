@@ -38,6 +38,17 @@
         "tip": "apropiat"
       },
       "armura": 0
+    },
+    "mistret": {
+      "nume": "Mistreț",
+      "viata": 45,
+      "staminaMax": 85,
+      "atac": {
+        "min": 6,
+        "max": 10,
+        "tip": "apropiat"
+      },
+      "armura": 1
     }
   },
   "lupte": {
@@ -130,6 +141,35 @@
       "infrangere": {
         "text": "(TODO) Te trezești pe podeaua tavernei.",
         "efecte": {}
+      }
+    },
+    "vanatoare_mistret": {
+      "nume": "Vânătoare",
+      "fundal": "padure.interior",
+      "fuga": true,
+      "inamici": [
+        {
+          "id": "mistret",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Ai doborât mistrețul.",
+        "efecte": {
+          "obiect": [
+            "carne",
+            "carne",
+            "piele"
+          ],
+          "eveniment": "intalnire_vanatoare"
+        }
+      },
+      "infrangere": {
+        "text": "(TODO) Mistrețul te-a trântit și a fugit în desiș.",
+        "efecte": {
+          "eveniment": "intalnire_vanatoare"
+        }
       }
     }
   }

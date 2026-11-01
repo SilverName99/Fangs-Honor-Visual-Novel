@@ -263,9 +263,20 @@ function pornesteEvenimentDupa(id) {
 function activeaza(tinta, ctx) {
   if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return gand(tinta.incuiat.mesaj || 'E încuiat.');
   if (tinta.act) return actiuni.executa(tinta.act);
+  if (tinta.vanatoare) return vaneaza(tinta.vanatoare);
   if (tinta.personaj) return vorbesteCu(tinta.personaj);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
+}
+
+// Vânătoarea: trece timpul, imaginea locului stă câteva secunde ca ecran de încărcare („cauți urme”),
+// apoi pornește lupta cu un animal ales la întâmplare din lista locului
+function vaneaza(v) {
+  if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
+  salveaza();
+  afiseaza();
+  const lupta = v.lupte[Math.floor(Math.random() * v.lupte.length)];
+  secventa.arata([v.imagine], () => joc.pornesteLupta(lupta), { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' });
 }
 
 // Vale „gândește” (de exemplu la o ușă încuiată): dialog doar cu el, cu textul în italic

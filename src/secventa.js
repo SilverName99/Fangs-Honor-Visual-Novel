@@ -11,8 +11,11 @@ export function creeazaSecventa(parinte) {
   let activ = null;
 
   function deseneaza() {
-    const { imagini, i } = activ;
-    el.replaceChildren(elementImagine([imagini[i]], { clasa: 'fundal', fundal: true }), div('indicator-secventa', `${i + 1} / ${imagini.length} ▸`));
+    const { imagini, i, opt } = activ;
+    el.replaceChildren(elementImagine([imagini[i]], { clasa: 'fundal', fundal: true }), div('indicator-secventa', opt.text || `${i + 1} / ${imagini.length} ▸`));
+    // Ca ecran de încărcare (vânătoarea), imaginea trece singură după câteva secunde
+    clearTimeout(activ.temporizator);
+    if (opt.automat) activ.temporizator = setTimeout(inainte, opt.automat);
     // Următoarea se încarcă din timp, ca trecerea să fie instantanee
     if (imagini[i + 1]) preincarca(imagini[i + 1]);
   }
@@ -22,6 +25,7 @@ export function creeazaSecventa(parinte) {
     activ.i++;
     if (activ.i < activ.imagini.length) return deseneaza();
     const gata = activ.gata;
+    clearTimeout(activ.temporizator);
     activ = null;
     el.hidden = true;
     el.replaceChildren();
@@ -36,9 +40,10 @@ export function creeazaSecventa(parinte) {
   });
 
   return {
-    arata(imagini, gata) {
+    // opt.automat = câte milisecunde stă fiecare imagine; opt.text = ce scrie în colț în loc de „1 / 3”
+    arata(imagini, gata, opt = {}) {
       if (!imagini?.length) return gata();
-      activ = { imagini, i: 0, gata };
+      activ = { imagini, i: 0, gata, opt };
       el.hidden = false;
       deseneaza();
     },
