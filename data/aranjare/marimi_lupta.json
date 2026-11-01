@@ -36,6 +36,10 @@
     "combat/fierar_cazut.png": {
       "lupta_taverna_parter": 130,
       "lupta_padure_interior": 130
+    },
+    "combat/vanatoare_idle.png": {
+      "lupta_taverna_parter": 102,
+      "lupta_padure_interior": 102
     }
   }
 }
