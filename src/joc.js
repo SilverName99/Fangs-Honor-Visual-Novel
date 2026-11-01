@@ -272,12 +272,29 @@ function activeaza(tinta, ctx) {
 // Vânătoarea: trece timpul, imaginea locului stă câteva secunde ca ecran de încărcare („cauți urme”),
 // apoi pornește lupta cu un animal ales la întâmplare din lista locului
 function vaneaza(v) {
+  // „insotitor”: cineva care vânează și el în aceeași perioadă (Kaia, 10–14) te poate găsi și luptă cu tine.
+  // Se verifică la ora la care pleci la vânătoare, înainte să treacă timpul
+  const i = v.insotitor;
+  const cuInsotitor = i && verifica(i.conditii, context(stare)) && Math.random() < (i.sansa ?? 0);
   if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
   salveaza();
   afiseaza();
-  const lupta = v.lupte[Math.floor(Math.random() * v.lupte.length)];
-  secventa.arata([v.imagine], () => joc.pornesteLupta(lupta), { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' });
+  const id = v.lupte[Math.floor(Math.random() * v.lupte.length)];
+  const def = date.lupte.lupte[id];
+  const lupta = cuInsotitor ? { ...def, aliati: [...(def.aliati || []), { id: i.personaj }] } : id;
+  secventa.arata(
+    [v.imagine],
+    () => {
+      if (!cuInsotitor || !dialoguri[i.dialog]) return joc.pornesteLupta(lupta);
+      // Întâi discuția dintre ei, apoi lupta împreună
+      dupaDialog = () => joc.pornesteLupta(lupta);
+      dialog.porneste(dialoguri[i.dialog]);
+    },
+    { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' },
+  );
 }
+// Ce urmează după ce se închide dialogul curent (de exemplu lupta cu Kaia după discuția de la vânătoare)
+let dupaDialog = null;
 
 // Vale „gândește” (de exemplu la o ușă încuiată): dialog doar cu el, cu textul în italic
 function gand(text) {
@@ -391,6 +408,11 @@ const dialog = creeazaDialog(ui, {
   laFinal: () => {
     salveaza();
     afiseaza();
+    if (dupaDialog) {
+      const f = dupaDialog;
+      dupaDialog = null;
+      setTimeout(f, 0);
+    }
   },
 });
 

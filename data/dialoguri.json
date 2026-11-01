@@ -301,5 +301,40 @@
         ]
       }
     }
+  },
+  "kaia_la_vanatoare": {
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ia uite cine-mi sperie vânatul. Pășești ca un urs cu cizme noi, Vale.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia! Credeam că ești în cealaltă parte a pădurii.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eram. Până te-am auzit pe tine. Urma e proaspătă: tu din față, eu din spate.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Încă îmi dai ordine, după atâția ani?",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Cineva trebuie s-o facă. Hai, înainte să ne miroasă."
+      }
+    }
   }
 }

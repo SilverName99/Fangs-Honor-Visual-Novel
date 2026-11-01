@@ -642,7 +642,19 @@
             ],
             "minute": 60,
             "secunde": 3,
-            "text": "Cauți urme de vânat..."
+            "text": "Cauți urme de vânat...",
+            "insotitor": {
+              "personaj": "vanatoare",
+              "sansa": 0.1,
+              "dialog": "kaia_la_vanatoare",
+              "conditii": {
+                "ora": {
+                  "min": "10:00",
+                  "max": "13:59"
+                },
+                "deblocat": "padure/campsite"
+              }
+            }
           }
         },
         {

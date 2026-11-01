@@ -321,9 +321,21 @@
       "program": [
         {
           "de": "05:00",
+          "pana": "10:00",
+          "loc": "padure/campsite",
+          "ce": "dimineața la campsite"
+        },
+        {
+          "de": "10:00",
+          "pana": "14:00",
+          "ce": "plecată la vânătoare (nu e nicăieri; 10% șanse s-o întâlnești dacă vânezi atunci)"
+        },
+        {
+          "de": "14:00",
           "pana": "23:00",
           "loc": "padure/campsite",
-          "ce": "treaz la campsite"
+          "sprite": "dupa_amiaza",
+          "ce": "după-amiaza și seara la campsite"
         },
         {
           "de": "23:00",
