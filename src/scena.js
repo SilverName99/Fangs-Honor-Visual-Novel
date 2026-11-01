@@ -167,7 +167,9 @@ export function aplicaMoment(strat, r, d, ctx) {
   strat.classList.remove('umbrit');
   strat.classList.toggle('e-noapte', ctx.moment === 'noaptea');
   // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
-  if (ctx.moment === 'seara' || ctx.moment === 'noaptea') {
+  // „faraFiltru”: scena e luminată de ea însăși (taverna deschisă noaptea, cu lămpile aprinse), deci fără tentă
+  const luminata = d.faraFiltru && verifica(d.faraFiltru.conditii, ctx);
+  if ((ctx.moment === 'seara' || ctx.moment === 'noaptea') && !luminata) {
     const tenta = Object.assign(document.createElement('div'), { className: `tenta ${ctx.moment}` });
     strat.append(tenta);
     // O variantă e „de moment” dacă e pentru ora asta; se recunoaște după sufix sau după numele exact al imaginii

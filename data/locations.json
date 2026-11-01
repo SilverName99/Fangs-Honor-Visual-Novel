@@ -313,6 +313,26 @@
               }
             }
           ],
+          "faraFiltru": {
+            "_nota": "Fără filtrul de noapte cât e taverna deschisă (până la 02:00).",
+            "conditii": {
+              "moment": [
+                "noaptea"
+              ],
+              "oricare": [
+                {
+                  "ora": {
+                    "min": "09:00"
+                  }
+                },
+                {
+                  "ora": {
+                    "max": "01:59"
+                  }
+                }
+              ]
+            }
+          },
           "incuiat": {
             "conditii": {
               "oricare": [

@@ -123,7 +123,7 @@
       "dialog": "soldat",
       "program": [
         {
-          "de": "02:00",
+          "de": "00:00",
           "pana": "10:00",
           "doarme": true,
           "ce": "doarme (nimeni nu știe unde)"
@@ -142,7 +142,7 @@
         },
         {
           "de": "18:00",
-          "pana": "02:00",
+          "pana": "00:00",
           "loc": "taverna/parter",
           "sprite": "seara",
           "ce": "în tavernă, seara"

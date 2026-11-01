@@ -16,9 +16,9 @@ function varianteDinProgram(p, cheie, fisier) {
     .map((x) => ({
       imagine: `sprites/${p.id}_${fisier}_${x.sprite}.png`,
       nume: x.sprite,
-      // Un interval peste miezul nopții (18:00 → 02:00) e „după 18:00 SAU până la 01:59”
+      // Un interval peste miezul nopții (18:00 → 02:00) e „după 18:00 SAU până la 01:59”; unul care se oprește fix la 00:00 nu trece peste
       conditii: {
-        ...(x.de < x.pana ? { ora: { min: x.de, max: minusUnMinut(x.pana) } } : { oricare: [{ ora: { min: x.de } }, { ora: { max: minusUnMinut(x.pana) } }] }),
+        ...(x.de < x.pana || x.pana === '00:00' ? { ora: { min: x.de, max: minusUnMinut(x.pana) } } : { oricare: [{ ora: { min: x.de } }, { ora: { max: minusUnMinut(x.pana) } }] }),
         ...(x.zile ? { zileSaptamana: x.zile } : {}),
       },
     }));
@@ -70,6 +70,7 @@ export function construiesteLumea(date) {
       titlu: z.nume,
       imagine: z.imagine,
       variante: z.variante || [],
+      faraFiltru: z.faraFiltru || null,
       parinte: 'harta',
       tinte: [
         ...z.locuri.filter((l) => !l.din).map(tintaLoc),
@@ -89,6 +90,7 @@ export function construiesteLumea(date) {
         titlu: l.nume,
         imagine: l.imagine,
         variante: l.variante || [],
+        faraFiltru: l.faraFiltru || null,
         // „din”: locul se deschide din alt loc al zonei, nu din imaginea zonei (camera fierarului e prin magazin)
         parinte: l.din ? `${z.id}.${l.din}` : z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
