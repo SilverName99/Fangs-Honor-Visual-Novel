@@ -290,6 +290,8 @@ function vorbesteCu(id, idDialog) {
   const r = personaje.get(id)?.cineRaspunde;
   if (r && verifica(r.conditii, context(stare))) id = r.personaj;
   const p = personaje.get(id);
+  // Cine doarme nu e trezit: Vale doar se gândește (Kaia noaptea, la campsite)
+  if (p?.gandDoarme && intrareProgram(p, context(stare))?.doarme) return gand(p.gandDoarme);
   // Un personaj poate avea alt dialog în funcție de locul unde îl găsești (Miriam în piață)
   const d = dialoguri[p?.dialoguriPeLoc?.[context(stare).loc] ?? p?.dialog];
   dialog.porneste(
