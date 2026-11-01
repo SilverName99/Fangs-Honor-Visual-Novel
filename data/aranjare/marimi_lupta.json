@@ -14,7 +14,8 @@
     "combat/vanatoare_cazut.png": 110
   },
   "harti": {
-    "lupta_taverna_parter": 135
+    "lupta_taverna_parter": 135,
+    "lupta_padure_interior": 115
   },
   "personajeHarti": {
     "lupta_taverna_parter": {
