@@ -167,7 +167,7 @@ export function punctNormalizat(scena, ev) {
 export function aplicaMoment(strat, r, d, ctx) {
   // „filtruSeara”: scena păstrează tenta de seară și după 23:00 (taverna, cât e lume în ea, până la închidere)
   const moment = ctx.moment === 'noaptea' && d.filtruSeara && verifica(d.filtruSeara.conditii, ctx) ? 'seara' : ctx.moment;
-  strat.classList.remove('umbrit');
+  strat.classList.remove('umbrit', 'umbrit-seara');
   strat.classList.toggle('e-noapte', moment === 'noaptea');
   // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
   if (moment === 'seara' || moment === 'noaptea') {
@@ -182,7 +182,8 @@ export function aplicaMoment(strat, r, d, ctx) {
         if (eVariantaMoment(variante, e.detail)) {
           tenta.remove();
           // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească
-          strat.classList.add('umbrit');
+          // Noaptea personajele se întunecă mult; seara (focul de la campsite) doar puțin și mai cald
+          strat.classList.add(moment === 'noaptea' ? 'umbrit' : 'umbrit-seara');
         }
       });
     }

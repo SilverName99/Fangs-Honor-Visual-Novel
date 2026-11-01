@@ -663,7 +663,17 @@
           "imagine": "locations/padure_campsite.png",
           "variante": [
             {
-              "sufix": "_seara",
+              "imagine": "locations/padure_campsite_seara.png",
+              "nume": "seara (foc aprins)",
+              "conditii": {
+                "moment": [
+                  "seara"
+                ]
+              }
+            },
+            {
+              "imagine": "locations/padure_campsite_seara.png",
+              "nume": "adunarea secretă",
               "conditii": {
                 "stare": {
                   "adunare": "acum"

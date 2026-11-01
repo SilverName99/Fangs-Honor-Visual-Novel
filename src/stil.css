@@ -952,3 +952,12 @@ svg.zone {
 .luptator.lat {
   aspect-ratio: 1.5;
 }
+
+/* Seara, pe o imagine proprie de seară (campsite-ul cu focul aprins): personajele doar puțin mai calde și mai întunecate */
+.strat-lume.umbrit-seara .obiect,
+.strat-lume.umbrit-seara .obiect.sprite.cu-zona {
+  filter: brightness(0.85) sepia(0.2) saturate(1.05);
+}
+.strat-lume.umbrit-seara .obiect.evidentiat {
+  filter: brightness(0.85) sepia(0.2) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
+}
