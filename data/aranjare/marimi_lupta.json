@@ -6,7 +6,8 @@
     "combat/fierar_cazut.png": 90,
     "combat/fierar_idle.png": 120,
     "combat/fierar_aparare.png": 120,
-    "combat/vale_pumni_aparare.png": 102
+    "combat/vale_pumni_aparare.png": 102,
+    "combat/vale_pumni_atac.png": 110
   },
   "harti": {
     "lupta_taverna_parter": 135
