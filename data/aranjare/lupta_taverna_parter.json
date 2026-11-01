@@ -1,0 +1,66 @@
+{
+  "zone": {},
+  "obiecte": {
+    "aliat_2_fata": {
+      "x": 0.35,
+      "y": 1,
+      "scara": 0.25
+    },
+    "aliat_1_fata": {
+      "x": 0.35,
+      "y": 0.8,
+      "scara": 0.25
+    },
+    "aliat_0_fata": {
+      "x": 0.35,
+      "y": 0.65,
+      "scara": 0.25
+    },
+    "aliat_2_spate": {
+      "x": 0.22,
+      "y": 1,
+      "scara": 0.25
+    },
+    "aliat_1_spate": {
+      "x": 0.22,
+      "y": 0.8,
+      "scara": 0.25
+    },
+    "aliat_0_spate": {
+      "x": 0.22,
+      "y": 0.65,
+      "scara": 0.25
+    },
+    "inamic_2_fata": {
+      "x": 0.68,
+      "y": 1,
+      "scara": 0.25
+    },
+    "inamic_1_fata": {
+      "x": 0.68,
+      "y": 0.8,
+      "scara": 0.25
+    },
+    "inamic_0_fata": {
+      "x": 0.68,
+      "y": 0.65,
+      "scara": 0.25
+    },
+    "inamic_2_spate": {
+      "x": 0.82,
+      "y": 1,
+      "scara": 0.25
+    },
+    "inamic_1_spate": {
+      "x": 0.82,
+      "y": 0.8,
+      "scara": 0.25
+    },
+    "inamic_0_spate": {
+      "x": 0.82,
+      "y": 0.65,
+      "scara": 0.25
+    }
+  },
+  "primPlan": []
+}
