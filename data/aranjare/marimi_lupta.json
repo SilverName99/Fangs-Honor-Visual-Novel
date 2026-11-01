@@ -51,8 +51,8 @@
       "lupta_padure_interior": 85
     },
     "combat/vanatoare_lovit.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
     }
   }
 }
