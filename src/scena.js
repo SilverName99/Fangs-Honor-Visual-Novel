@@ -179,11 +179,12 @@ export function aplicaMoment(strat, r, d, ctx) {
     const variante = deMoment(d.variante);
     if (variante.length) {
       r.fundal.addEventListener('incarcat', (e) => {
-        if (eVariantaMoment(variante, e.detail)) {
+        const v = variante.find((x) => eVariantaMoment([x], e.detail));
+        if (v) {
           tenta.remove();
-          // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească
-          // Noaptea personajele se întunecă mult; seara (focul de la campsite) doar puțin și mai cald
-          strat.classList.add(moment === 'noaptea' ? 'umbrit' : 'umbrit-seara');
+          // Imaginea de noapte e deja întunecată; doar piesele și personajele se întunecă puțin, ca să se potrivească.
+          // Noaptea mult; seara, sau o scenă luminată de foc („umbrire: usoara”, campsite-ul), doar puțin și mai cald
+          strat.classList.add(moment === 'noaptea' && v.umbrire !== 'usoara' ? 'umbrit' : 'umbrit-seara');
         }
       });
     }

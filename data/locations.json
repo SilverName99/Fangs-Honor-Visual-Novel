@@ -664,10 +664,11 @@
           "variante": [
             {
               "imagine": "locations/padure_campsite_seara.png",
-              "nume": "seara (foc aprins)",
+              "nume": "noaptea (foc aprins)",
+              "umbrire": "usoara",
               "conditii": {
                 "moment": [
-                  "seara"
+                  "noaptea"
                 ]
               }
             },
