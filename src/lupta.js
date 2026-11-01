@@ -129,9 +129,8 @@ export function creeazaLupta(parinte, joc) {
     f.el.style.left = `${p.x * 100}%`;
     f.el.style.top = `${p.y * 100}%`;
     // Pe unele hărți luptătorii trebuie să pară mai mari sau mai mici (camera e mai aproape sau mai departe)
-    // plus mărimea fiecărui personaj pe harta asta (de exemplu fierarul prea mic doar în pădure)
     const m = joc.date.aranjare?.marimi_lupta;
-    const factor = ((m?.harti?.[L.harta] ?? 100) / 100) * ((m?.personajeHarti?.[L.harta]?.[f.id] ?? 100) / 100);
+    const factor = (m?.harti?.[L.harta] ?? 100) / 100;
     f.el.style.height = `${p.scara * factor * 100}%`;
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
@@ -142,7 +141,9 @@ export function creeazaLupta(parinte, joc) {
       const img = elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
       // Mărimea fiecărei poze se reglează din galerie (în procente), pentru poze generate puțin mai mari sau mai mici
       img.addEventListener('incarcat', (e) => {
-        const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[e.detail] ?? 100;
+        // Mărimea pozei pe zona de luptă de acum; dacă nu e setată, mărimea ei generală (mai veche)
+        const m = joc.date.aranjare?.marimi_lupta;
+        const procent = m?.imaginiHarti?.[e.detail]?.[L?.harta] ?? m?.marimi?.[e.detail] ?? 100;
         img.style.transform = procent === 100 ? '' : `scale(${procent / 100})`;
         img.style.transformOrigin = 'bottom center';
       });

@@ -120,34 +120,27 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     // Pozele de luptă au mărimea lor în procente; hărțile de luptă au butonul spre locurile luptătorilor
     const marimi = comun.date.aranjare?.marimi_lupta?.marimi || {};
     const marimiHarti = comun.date.aranjare?.marimi_lupta?.harti || {};
-    const marimiPersonaje = comun.date.aranjare?.marimi_lupta?.personajeHarti || {};
-    // Toți cei care pot apărea într-o luptă: Vale, recruții și inamicii
-    const luptatori = [
-      ['vale', 'Vale'],
-      ...comun.date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]),
-      ...Object.entries(comun.date.lupte?.inamici || {}).map(([id, x]) => [id, x.nume]),
-    ];
+    const marimiImaginiHarti = comun.date.aranjare?.marimi_lupta?.imaginiHarti || {};
+    // Zonele de luptă (hărțile): fiecare poză de luptă are mărimea ei pe fiecare zonă
+    const zoneLupta = [...comun.lume.values()].filter((d) => d.tip === 'lupta').map((d) => [d.id, d.titlu.replace('Luptă: ', '')]);
     // Imaginile folosite și ca armă aruncată în luptă (glaive-ul Kaiei) au și ele mărimea lor în luptă
     const proiectile = new Set(comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil).filter(Boolean));
     const extraCard = (c) => {
       if (proiectile.has(c.cale))
         return `<label class="marime-lupta" title="Cât de mare se vede arma aruncată în luptă (100% = normal)">Mărime în luptă (aruncat)
           <input type="number" min="20" max="400" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
+      // Pe fiecare zonă de luptă, cât de mare se vede poza (implicit, mărimea ei veche, generală)
       if (c.cale.startsWith('combat/'))
-        return `<label class="marime-lupta" title="Cât de mare se vede poza în luptă (100% = normal)">Mărime în luptă
-          <input type="number" min="20" max="300" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
+        return zoneLupta
+          .map(
+            ([id, nume]) => `<label class="marime-lupta" title="Cât de mare se vede poza în luptă pe zona asta (100% = normal)">${esc(nume)}
+              <input type="number" min="20" max="400" step="5" data-marime-img-harta="${esc(c.cale)}|${esc(id)}" value="${marimiImaginiHarti[c.cale]?.[id] ?? marimi[c.cale] ?? 100}">%</label>`,
+          )
+          .join('');
       if (c.grup === 'Hărți de luptă') {
         const id = c.cale.split('/').pop().replace(/\.png$/, '');
         return `<label class="marime-lupta" title="Cât de mari se văd toți luptătorii pe harta asta (100% = normal)">Mărimea personajelor aici
             <input type="number" min="20" max="300" step="5" data-marime-harta="${esc(id)}" value="${marimiHarti[id] ?? 100}">%</label>
-          <details class="marimi-personaje"><summary>Mărimea fiecărui personaj aici</summary>
-            ${luptatori
-              .map(
-                ([idP, nume]) => `<label class="marime-lupta">${esc(nume)}
-                  <input type="number" min="20" max="300" step="5" data-marime-personaj="${esc(id)}|${esc(idP)}" value="${marimiPersonaje[id]?.[idP] ?? 100}">%</label>`,
-              )
-              .join('')}
-          </details>
           <button class="btn locuri-lupta" data-scena="${esc(id)}">Aranjează locurile luptătorilor</button>`;
       }
       return '';
@@ -304,25 +297,23 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     for (const b of container.querySelectorAll('.locuri-lupta')) {
       b.onclick = () => document.dispatchEvent(new CustomEvent('deschide-aranjare', { detail: b.dataset.scena }));
     }
-    // Mărimea unei poze („marimi”), a tuturor luptătorilor de pe o hartă („harti”) și a fiecărui personaj
-    // pe o hartă („personajeHarti”) stau în același fișier
-    for (const i of container.querySelectorAll('[data-marime], [data-marime-harta], [data-marime-personaj]')) {
+    // Mărimea armei aruncate („marimi”), a tuturor luptătorilor de pe o hartă („harti”) și a fiecărei poze
+    // de luptă pe fiecare zonă („imaginiHarti”) stau în același fișier
+    for (const i of container.querySelectorAll('[data-marime], [data-marime-harta], [data-marime-img-harta]')) {
       i.onchange = async () => {
         const v = Math.max(20, Math.min(400, Math.round(Number(i.value) || 100)));
         i.value = v;
         const a = structuredClone(comun.date.aranjare.marimi_lupta || {});
-        let lista;
-        let cheie;
-        if (i.dataset.marimePersonaj) {
-          const [harta, personaj] = i.dataset.marimePersonaj.split('|');
-          lista = ((a.personajeHarti ||= {})[harta] ||= {});
-          cheie = personaj;
+        if (i.dataset.marimeImgHarta) {
+          // Se ține mereu valoarea (și 100), ca să bată mărimea veche, generală, a pozei
+          const [cale, harta] = i.dataset.marimeImgHarta.split('|');
+          ((a.imaginiHarti ||= {})[cale] ||= {})[harta] = v;
         } else {
-          lista = a[i.dataset.marime ? 'marimi' : 'harti'] ||= {};
-          cheie = i.dataset.marime || i.dataset.marimeHarta;
+          const lista = (a[i.dataset.marime ? 'marimi' : 'harti'] ||= {});
+          const cheie = i.dataset.marime || i.dataset.marimeHarta;
+          if (v === 100) delete lista[cheie];
+          else lista[cheie] = v;
         }
-        if (v === 100) delete lista[cheie];
-        else lista[cheie] = v;
         i.disabled = true;
         try {
           await api('aranjare/marimi_lupta', { method: 'PUT', body: JSON.stringify(a), headers: { 'Content-Type': 'application/json' } });
