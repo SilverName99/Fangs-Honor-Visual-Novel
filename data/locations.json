@@ -551,11 +551,6 @@
       "imagine": "locations/padure_zona.png",
       "locuri": [
         {
-          "id": "margine",
-          "nume": "Marginea pădurii",
-          "imagine": "locations/padure_margine.png"
-        },
-        {
           "id": "interior",
           "nume": "Adâncul pădurii",
           "imagine": "locations/padure_interior.png",
@@ -594,11 +589,10 @@
           ],
           "ascuns": {
             "conditii": {
-              "misiune": {
-                "vanatoare": "terminata"
-              }
+              "deblocat": "padure/campsite"
             }
-          }
+          },
+          "_nota": "Campsite-ul vânătoarei: apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului."
         }
       ]
     },

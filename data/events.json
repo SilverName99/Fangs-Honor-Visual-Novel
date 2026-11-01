@@ -220,6 +220,13 @@
       "efecte": {
         "marcheaza": "soldat_ranit"
       }
+    },
+    {
+      "id": "intalnire_vanatoare",
+      "manual": true,
+      "nume": "Întâlnirea cu vânătoarea",
+      "repetare": "o_data",
+      "dialog": "vanatoare_intalnire"
     }
   ]
 }

@@ -149,7 +149,7 @@ Reguli:
 | `taverna` | `taverna.png` | `taverna_zona.png` | `parter` (deschis 09:00–02:00), `etaj` (camera plătită la Agnes, cu patul de dormit) |
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
-| `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `margine` (cabana vânătoarei), `interior` (vânat), `campsite` (**ascuns** până la questline-ul vânătoarei) |
+| `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `interior` (vânat), `campsite` (**ascuns** până la întâlnirea cu vânătoarea; e campsite-ul ei) |
 | `poarta` | `poarta.png` | `poarta_zona.png` | `exterior` (orcii), `taxa` (locul de plată) |
 | `biserica` | `biserica.png` | `biserica_zona.png` | `interior` (preotul) |
 
@@ -427,7 +427,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 | `soldat` | **Roderick Lightfinder**, unchiul lui Vale (fratele tatălui), fost soldat, în hainele lui vechi de soldat; luptă apropiat | Taverna, biserica dimineața | doar dacă l-ai ajutat în scandalul din tavernă; cum anume, `TODO` |
 | `fierar` | Tank | Fierăria | relație suficientă |
 | `hot` | Tânărul hoț, legat la butuc | Piața | plătești o sumă unui negustor ca să-l elibereze |
-| `vanatoare` | **Vânătoarea** (Huntress în *Fangs&Honor*), călare pe un tigru: „Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse.” Atac de la distanță care lovește până la 3 inamici (`ricoseu: 3`); **în luptă ține două locuri** (față și spate pe aceeași linie, `locuri: 2`); are cabană la marginea pădurii | Marginea pădurii | **questline** care deblochează Camp site |
+| `vanatoare` | **Vânătoarea** (Huntress în *Fangs&Honor*), călare pe un tigru: „Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse.” Atac de la distanță care lovește până la 3 inamici (`ricoseu: 3`); **în luptă ține două locuri** (față și spate pe aceeași linie, `locuri: 2`). **Povestea** (decis): era o prietenă bună a sătenilor, venea rar prin sat; s-a strecurat prin pădure și îl găsește pe Vale la vânătoare (după prima vânătoare, evenimentul `intalnire_vanatoare`). El o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la micul ei campsite, care devine **Camp site**, locul ascuns al grupului | Camp site-ul din pădure | `TODO` (încă nedecis) |
 | `mag` | Preotul-mag al luminii; vindecare și abilități de control, slab la început | Biserica | relație suficientă; orcii nu știu de el |
 | `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
 | `negustor` | Personaj minor | Piața | – |
@@ -439,7 +439,7 @@ Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și mot
 
 **Recrutarea și finalul:**
 1. Fiecare om se alătură pe drumul lui (relație, questline sau plată).
-2. Questline-ul vânătoarei deblochează **Camp site**, locul unde se întâlnește grupul.
+2. Întâlnirea cu vânătoarea deblochează **Camp site** (campsite-ul ei din pădure), locul unde se întâlnește grupul.
 3. **Adunarea secretă:** ora 19:30, cu minimum 3 recruți și relație suficientă cu fiecare. Fiecare spune cum se simte, în scene de dialog. Apoi apare opțiunea „Recuperarea satului nostru!".
 4. **Lupta finală:** la poartă, grupul lui Vale împotriva orcilor. Victorie înseamnă sat liber și finalul demo-ului. Înfrângerea e `TODO`.
 

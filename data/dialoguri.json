@@ -242,5 +242,64 @@
         "text": "Cu lingușeli nu primești reducere. Dar zâmbetul ți-l primesc."
       }
     }
+  },
+  "vanatoare_intalnire": {
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "(TODO) Vânătoarea iese dintre copaci, călare pe tigru, și îl găsește pe Vale la vânătoare.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "(TODO) Vale o recunoaște.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "(TODO) Ea întreabă ce s-a întâmplat cu satul.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "(TODO) Vale îi povestește: orcii, taxa, satul ocupat.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "(TODO) Ea îl ia cu ea la micul campsite pe care și l-a pregătit în pădure.",
+        "efecte": {
+          "deblocheaza": "padure/campsite",
+          "stare": {
+            "cunoscut_vanatoare": "da"
+          },
+          "mergi": "padure.campsite"
+        }
+      }
+    }
+  },
+  "vanatoare": {
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "(TODO) Ce mai e nou în sat, Vale?",
+        "alegeri": [
+          {
+            "text": "(TODO) La revedere.",
+            "spre": null
+          }
+        ]
+      }
+    }
   }
 }

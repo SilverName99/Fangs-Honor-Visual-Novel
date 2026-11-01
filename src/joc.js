@@ -9,7 +9,7 @@ import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
 import { inMinute, NUME_ZILE } from './timp.js';
 import { aplicaEfecte } from './efecte.js';
-import { alegeEveniment, noteazaEveniment, caDialog } from './evenimente.js';
+import { alegeEveniment, noteazaEveniment, caDialog, poateReveni } from './evenimente.js';
 import * as salvare from './salvare.js';
 import { creeazaDialog } from './dialog.js';
 import { creeazaSecventa } from './secventa.js';
@@ -232,9 +232,12 @@ function verificaEvenimente() {
   if (ev) pornesteEveniment(ev.id);
 }
 
-function pornesteEveniment(id) {
+// „fortat” (din panoul debug): pornește și un eveniment care s-a întâmplat deja
+function pornesteEveniment(id, fortat = false) {
   const ev = evenimente.find((e) => e.id === id);
   if (!ev || dialog.activ() || secventa.activa()) return;
+  // Și un eveniment pornit dintr-un efect respectă „repetare” (întâlnirea cu vânătoarea e o singură dată)
+  if (!fortat && !poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) return;
   noteazaEveniment(stare, ev, ziua(stare));
   salveaza();
   // Întâi imaginile (dacă are), apoi textul cu alegeri sau un dialog întreg;

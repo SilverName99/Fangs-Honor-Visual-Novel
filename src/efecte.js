@@ -32,6 +32,8 @@ const efecte = {
   taxaCrestere: (v, joc) => (joc.stare.taxa.extra = (joc.stare.taxa.extra || 0) + v),
   // Alt eveniment, după ce se închide ce e acum pe ecran (dialogul sau lupta)
   eveniment: (v, joc) => joc.pornesteEvenimentDupa(v),
+  // Vale e dus altundeva, după ce se închide dialogul (vânătoarea îl duce la campsite-ul ei)
+  mergi: (v, joc) => setTimeout(() => joc.mergi(v, { faraTimp: true }), 0),
   // Magazinul unui personaj, deschis din dialog (Agnes: „Cumpără”)
   magazin: (v, joc) => joc.deschideMagazin(v),
 };

@@ -1,6 +1,6 @@
 import { verifica } from './conditii.js';
 
-function poateReveni(ev, istoric, zi) {
+export function poateReveni(ev, istoric, zi) {
   if (!istoric) return true;
   const r = ev.repetare ?? 'o_data';
   if (r === 'mereu') return true;

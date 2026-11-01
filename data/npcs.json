@@ -296,9 +296,9 @@
     {
       "id": "vanatoare",
       "nume": "Vânătoarea (TODO nume)",
-      "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie).",
+      "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la campsite-ul ei din pădure, care devine locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
-        "padure/margine"
+        "padure/campsite"
       ],
       "lupta": {
         "_nota": "TODO echilibru. locuri: 2 = ține toată linia. ricoseu: 3 = lovește până la 3 inamici.",
@@ -313,6 +313,10 @@
         "armura": 1,
         "rezistenta": 5,
         "locuri": 2
+      },
+      "dialog": "vanatoare",
+      "apare": {
+        "deblocat": "padure/campsite"
       }
     },
     {

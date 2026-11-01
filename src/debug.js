@@ -90,7 +90,7 @@ export function creeazaDebug(parinte, joc) {
       };
     });
     el.querySelector('.d-scena').onchange = (e) => joc.mergi(e.target.value, { faraTimp: true });
-    el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.d-eveniment').value);
+    el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.d-eveniment').value, true);
     el.querySelector('.adauga-ob').onclick = () => {
       joc.primeste(el.querySelector('.d-obiect').value, 1);
       joc.dupaSchimbare(true);

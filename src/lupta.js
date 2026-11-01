@@ -172,7 +172,9 @@ export function creeazaLupta(parinte, joc) {
     return f.el;
   }
 
+  // Lupta se poate închide cât o animație încă rulează: atunci nu mai e nimic de desenat
   function actualizeazaBare() {
+    if (!L) return;
     for (const f of L.toti) {
       f.elViata.style.width = `${Math.max(0, (f.viata / f.viataMax) * 100)}%`;
       f.elBara.style.width = `${Math.max(0, Math.min(100, f.bara))}%`;
@@ -183,6 +185,7 @@ export function creeazaLupta(parinte, joc) {
 
   // Ordinea următoare: cine își umple primul bara, presupunând că nimeni nu face nimic special
   function arataOrdinea() {
+    if (!L) return;
     const rate = (f) => f.staminaMax * cfg.viteza;
     const urm = [];
     for (const f of L.toti.filter((x) => !x.cazut)) {
@@ -194,7 +197,7 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function jurnal(text) {
-    L.elJurnal.textContent = text;
+    if (L) L.elJurnal.textContent = text;
   }
 
   function numar(f, text, clasa = '') {
@@ -241,6 +244,7 @@ export function creeazaLupta(parinte, joc) {
     sursa.apara = false;
     if (actiune.tip === 'atac') {
       const d = await loveste(sursa, actiune.tinta);
+      if (!L) return;
       if (!L.elJurnal.textContent.includes('crăpat')) jurnal(`${sursa.nume} îl lovește pe ${actiune.tinta.nume}: ${d} daune.`);
       // „ricoseu: 3”: arma (glaive-ul vânătoarei) sare la încă doi inamici aleși la întâmplare
       if (sursa.atac.ricoseu > 1) {
@@ -289,6 +293,7 @@ export function creeazaLupta(parinte, joc) {
     }
     actualizeazaBare();
     await asteapta(250);
+    if (!L) return;
     if (!vii('inamic').length) return termina('victorie');
     if (!vii('aliat').length) return termina('infrangere');
     L.pauza = false;
