@@ -32,6 +32,10 @@
     "combat/vale_pumni_atac.png": {
       "lupta_taverna_parter": 115,
       "lupta_padure_interior": 115
+    },
+    "combat/fierar_cazut.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     }
   }
 }
