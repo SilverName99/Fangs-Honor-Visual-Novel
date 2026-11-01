@@ -13,8 +13,9 @@ function buton(text, clic, dezactivat = false, titlu = '') {
 }
 const intre = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
-// Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „ranit”, înclinată din cod
-const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'ranit'] : [p]);
+// Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „lovit”, înclinată din cod.
+// „lovit”, nu „ranit”: altfel numele s-ar fi bătut cu portretul rănit (fierar_ranit.png) în galerie
+const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'lovit'] : [p]);
 
 // Unde stă fiecare loc pe ecran (picioarele): fața e spre mijloc, spatele spre margine
 const X = { aliat: { fata: 0.29, spate: 0.12 }, inamic: { fata: 0.71, spate: 0.88 } };
@@ -193,7 +194,7 @@ export function creeazaLupta(parinte, joc) {
       if (a.ramas === 0) jurnal(`${a.nume} lui ${tinta.nume} s-a crăpat!`);
     }
     numar(tinta, `−${d}`);
-    if (!tinta.apara) poza(tinta, 'ranit');
+    if (!tinta.apara) poza(tinta, 'lovit');
     tinta.corp.classList.add('lovit');
     if (tinta.viata <= 0) {
       tinta.viata = 0;

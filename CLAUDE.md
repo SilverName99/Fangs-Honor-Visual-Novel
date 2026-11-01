@@ -396,7 +396,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 ### Imaginile de luptă (`assets/combat/`)
 
-Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `ranit` (reacția scurtă la o lovitură) și `cazut` (răpus, rămâne așa până la sfârșitul luptei). Toate pe aceeași pânză 2:3 și la aceeași mărime. Codul adaugă mișcarea (se aruncă înainte la atac, tremură la lovitură). Dacă `cazut` lipsește, căderea folosește `ranit`, înclinată și pălită din cod.
+Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția scurtă la o lovitură) și `cazut` (răpus, rămâne așa până la sfârșitul luptei). Poza de luptă e `lovit`, nu `ranit`, ca să nu se confunde cu portretul rănit (`<id>_ranit.png`). Toate pe aceeași pânză 2:3 și la aceeași mărime. Codul adaugă mișcarea (se aruncă înainte la atac, tremură la lovitură). Dacă `cazut` lipsește, căderea folosește `lovit`, înclinată și pălită din cod.
 
 - **Vale** are câte un set de 5 poze **pentru fiecare tip de armă** (nu pentru fiecare armă): `vale_<tipArma>_<poza>.png`, de exemplu `vale_sabie_atac.png`. Tipurile de armă (6 seturi, deci 30 de poze):
 
@@ -410,7 +410,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `ranit` (reacția sc
   | `arc` | arc (ocupă ambele mâini) |
 
   Setul se alege din arma primară, plus dacă în mâna a doua e un scut.
-- **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_ranit.png`. Un inamic poate refolosi pozele altuia (`poze` în `lupte.json`).
+- **Restul personajelor:** `<id>_<poza>.png`, de exemplu `fierar_atac.png`, `paznic_orc_1_lovit.png`. Un inamic poate refolosi pozele altuia (`poze` în `lupte.json`).
 - O luptă poate avea **aliați de o singură luptă** (`aliati` în `lupte.json`), de exemplu Roderick în scandal, fără să fie recrutat.
 - **Aliații privesc spre dreapta, inamicii spre stânga.**
 - Abilitățile folosesc poza `atac` plus un efect din cod (strălucire).
