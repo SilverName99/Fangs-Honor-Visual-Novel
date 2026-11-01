@@ -131,9 +131,11 @@ export function randeaza(strat, descriere, aranjare, context) {
     masca = `fara-prim-plan-${++numarMasca}`;
     svg.querySelector('defs').insertAdjacentHTML(
       'beforeend',
-      `<mask id="${masca}" maskUnits="userSpaceOnUse" x="0" y="0" width="${LATIME}" height="${INALTIME}">` +
+      // Marginea măștii e estompată: strălucirea se stinge treptat spre prim-plan, nu se taie brusc
+      `<filter id="${masca}-moale" filterUnits="userSpaceOnUse" x="0" y="0" width="${LATIME}" height="${INALTIME}"><feGaussianBlur stdDeviation="7"/></filter>` +
+        `<mask id="${masca}" maskUnits="userSpaceOnUse" x="0" y="0" width="${LATIME}" height="${INALTIME}">` +
         `<rect width="${LATIME}" height="${INALTIME}" fill="white"/>` +
-        primPlan.map((p) => `<polygon fill="black" points="${puncteSvg(p)}"/>`).join('') +
+        `<g filter="url(#${masca}-moale)">${primPlan.map((p) => `<polygon fill="black" points="${puncteSvg(p)}"/>`).join('')}</g>` +
         '</mask>',
     );
   }
