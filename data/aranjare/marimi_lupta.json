@@ -9,5 +9,10 @@
   },
   "harti": {
     "lupta_taverna_parter": 135
+  },
+  "personajeHarti": {
+    "lupta_taverna_parter": {
+      "vale": 95
+    }
   }
 }
