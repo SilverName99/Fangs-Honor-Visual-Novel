@@ -241,11 +241,18 @@ export function creeazaLupta(parinte, joc) {
     return { x: c.x + (dx / d) * adanc, y: c.y + (dy / d) * adanc };
   }
 
-  async function zboara(el, de, la, ms) {
+  // Viteză și rotire constante pe tot drumul (și între ținte): durata depinde de distanță, iar unghiul continuă
+  // de unde a rămas, ca glaive-ul să nu pară că se oprește sau că sare la fiecare inamic
+  const VITEZA = 2.6; // pixeli de scenă pe milisecundă
+  const ROTIRE = 1.6; // grade pe milisecundă
+  async function zboara(el, de, la) {
+    const ms = Math.max(120, Math.hypot(la.x - de.x, la.y - de.y) / VITEZA);
+    const unghi = el.unghi || 0;
+    el.unghi = unghi + ms * ROTIRE;
     const a = el.animate(
       [
-        { left: `${de.x}px`, top: `${de.y}px`, transform: 'translate(-50%, -50%) rotate(0deg)' },
-        { left: `${la.x}px`, top: `${la.y}px`, transform: 'translate(-50%, -50%) rotate(900deg)' },
+        { left: `${de.x}px`, top: `${de.y}px`, transform: `translate(-50%, -50%) rotate(${unghi}deg)` },
+        { left: `${la.x}px`, top: `${la.y}px`, transform: `translate(-50%, -50%) rotate(${el.unghi}deg)` },
       ],
       { duration: ms, easing: 'linear', fill: 'forwards' },
     );
@@ -265,14 +272,12 @@ export function creeazaLupta(parinte, joc) {
     let de = centru(sursa);
     for (const t of tinte) {
       const la = inTinta(de, t);
-      await zboara(p, de, la, 280);
+      await zboara(p, de, la);
       if (!L) return daune;
       daune.push(aplicaLovitura(sursa, t));
-      // O clipă înfipt în țintă, apoi ricoșează mai departe
-      await asteapta(90);
       de = la;
     }
-    await zboara(p, de, centru(sursa), 320);
+    await zboara(p, de, centru(sursa));
     p.remove();
     if (!L) return daune;
     poza(sursa, 'idle');
