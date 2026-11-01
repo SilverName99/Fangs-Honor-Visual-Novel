@@ -85,6 +85,9 @@ export function puncteSvg(poligon) {
   return poligon.map(([x, y]) => `${x * LATIME},${y * INALTIME}`).join(' ');
 }
 
+// Fiecare desenare are masca ei, ca o scenă veche rămasă în pagină să nu împrumute forma prim-planului alteia
+let numarMasca = 0;
+
 export function randeaza(strat, descriere, aranjare, context) {
   strat.replaceChildren();
   const fundal = elementImagine(candidati(descriere.imagine, descriere.variante, context), { clasa: 'fundal', fundal: true });
@@ -120,6 +123,20 @@ export function randeaza(strat, descriere, aranjare, context) {
     '<defs><filter id="contur-moale" x="-10%" y="-10%" width="120%" height="120%">' +
     '<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>' +
     '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/></feMerge></filter></defs>';
+  // Strălucirea personajelor se oprește la prim-plan: dacă Agnes stă după tejghea, conturul ei nu trece peste tejghea.
+  // Doar la personaje, pentru că ele sunt cele din spatele prim-planului; ușile și acțiunile se văd întregi
+  let masca = null;
+  const primPlan = (aranjare?.primPlan || []).filter((p) => p.length >= 3);
+  if (primPlan.length) {
+    masca = `fara-prim-plan-${++numarMasca}`;
+    svg.querySelector('defs').insertAdjacentHTML(
+      'beforeend',
+      `<mask id="${masca}" maskUnits="userSpaceOnUse" x="0" y="0" width="${LATIME}" height="${INALTIME}">` +
+        `<rect width="${LATIME}" height="${INALTIME}" fill="white"/>` +
+        primPlan.map((p) => `<polygon fill="black" points="${puncteSvg(p)}"/>`).join('') +
+        '</mask>',
+    );
+  }
   const poligoane = new Map();
   for (const t of descriere.tinte) {
     const sufix = t.personaj ? sufixVarianta(descriere, t.personaj, context) : '';
@@ -129,11 +146,12 @@ export function randeaza(strat, descriere, aranjare, context) {
     p.setAttribute('points', puncteSvg(poligon));
     p.setAttribute('class', 'zona-clic');
     p.setAttribute('filter', 'url(#contur-moale)');
+    if (t.personaj && masca) p.setAttribute('mask', `url(#${masca})`);
     svg.append(p);
     poligoane.set(t.id, p);
   }
   strat.append(svg);
-  return { fundal, obiecte, poligoane, svg };
+  return { fundal, obiecte, poligoane, svg, masca };
 }
 
 // Coordonate 0-1 față de scenă, indiferent de cât e scalată pe ecran

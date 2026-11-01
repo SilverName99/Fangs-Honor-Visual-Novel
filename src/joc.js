@@ -550,6 +550,7 @@ function afiseaza() {
       p.setAttribute('points', puncteSvg(puncte));
       p.setAttribute('class', 'zona-clic vizibila');
       p.setAttribute('filter', 'url(#contur-moale)');
+      if (r.masca) p.setAttribute('mask', `url(#${r.masca})`);
       legaEvidentiere(p, [p], 'evidentiat-poligon');
       p.addEventListener('click', () => vorbesteCu(o.id));
       r.svg.append(p);
