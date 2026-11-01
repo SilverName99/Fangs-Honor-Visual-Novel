@@ -70,7 +70,7 @@ export function construiesteLumea(date) {
       titlu: z.nume,
       imagine: z.imagine,
       variante: z.variante || [],
-      faraFiltru: z.faraFiltru || null,
+      filtruSeara: z.filtruSeara || null,
       parinte: 'harta',
       tinte: [
         ...z.locuri.filter((l) => !l.din).map(tintaLoc),
@@ -90,7 +90,7 @@ export function construiesteLumea(date) {
         titlu: l.nume,
         imagine: l.imagine,
         variante: l.variante || [],
-        faraFiltru: l.faraFiltru || null,
+        filtruSeara: l.filtruSeara || null,
         // „din”: locul se deschide din alt loc al zonei, nu din imaginea zonei (camera fierarului e prin magazin)
         parinte: l.din ? `${z.id}.${l.din}` : z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine

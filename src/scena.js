@@ -164,16 +164,16 @@ export function punctNormalizat(scena, ev) {
 
 // Folosită și de joc, și de editor (comutatorul zi/noapte), ca amândouă să arate la fel
 export function aplicaMoment(strat, r, d, ctx) {
+  // „filtruSeara”: scena păstrează tenta de seară și după 23:00 (taverna, cât e lume în ea, până la închidere)
+  const moment = ctx.moment === 'noaptea' && d.filtruSeara && verifica(d.filtruSeara.conditii, ctx) ? 'seara' : ctx.moment;
   strat.classList.remove('umbrit');
-  strat.classList.toggle('e-noapte', ctx.moment === 'noaptea');
+  strat.classList.toggle('e-noapte', moment === 'noaptea');
   // Seara și noaptea: o tentă de culoare din cod, în afară de scenele care au imagine proprie pentru momentul ăsta
-  // „faraFiltru”: scena e luminată de ea însăși (taverna deschisă noaptea, cu lămpile aprinse), deci fără tentă
-  const luminata = d.faraFiltru && verifica(d.faraFiltru.conditii, ctx);
-  if ((ctx.moment === 'seara' || ctx.moment === 'noaptea') && !luminata) {
-    const tenta = Object.assign(document.createElement('div'), { className: `tenta ${ctx.moment}` });
+  if (moment === 'seara' || moment === 'noaptea') {
+    const tenta = Object.assign(document.createElement('div'), { className: `tenta ${moment}` });
     strat.append(tenta);
     // O variantă e „de moment” dacă e pentru ora asta; se recunoaște după sufix sau după numele exact al imaginii
-    const deMoment = (variante) => variante.filter((v) => v.conditii?.moment?.includes(ctx.moment));
+    const deMoment = (variante) => variante.filter((v) => v.conditii?.moment?.includes(moment));
     const eVariantaMoment = (variante, cale) => variante.some((v) => (v.imagine ? cale === v.imagine : cale.includes(v.sufix)));
     const variante = deMoment(d.variante);
     if (variante.length) {

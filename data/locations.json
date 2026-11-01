@@ -313,8 +313,8 @@
               }
             }
           ],
-          "faraFiltru": {
-            "_nota": "Fără filtrul de noapte cât e taverna deschisă (până la 02:00).",
+          "filtruSeara": {
+            "_nota": "Și după 23:00 rămâne tenta de seară, până se închide taverna (02:00).",
             "conditii": {
               "moment": [
                 "noaptea"
