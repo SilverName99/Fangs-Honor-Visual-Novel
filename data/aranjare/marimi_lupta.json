@@ -8,10 +8,10 @@
     "combat/vale_pumni_atac.png": 111,
     "combat/fierar_cazut.png": 120,
     "combat/vanatoare_aparare.png": 80,
-    "combat/vanatoare_idle.png": 95,
-    "combat/vanatoare_atac.png": 95,
-    "combat/vanatoare_lovit.png": 95,
-    "combat/vanatoare_cazut.png": 90
+    "combat/vanatoare_idle.png": 97,
+    "combat/vanatoare_atac.png": 97,
+    "combat/vanatoare_lovit.png": 97,
+    "combat/vanatoare_cazut.png": 92
   },
   "harti": {
     "lupta_taverna_parter": 135,
