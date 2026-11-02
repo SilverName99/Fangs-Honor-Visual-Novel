@@ -81,6 +81,9 @@
     "combat/soldat_cazut.png": {
       "lupta_taverna_parter": 130,
       "lupta_padure_interior": 130
+    },
+    "combat/mag_idle.png": {
+      "lupta_taverna_parter": 120
     }
   }
 }
