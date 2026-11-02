@@ -421,7 +421,7 @@
       ],
       "gandDoarme": "Doarme. Nu vreau să-l trezesc acum.",
       "lupta": {
-        "_nota": "TODO echilibru. faraAtac: preotul nu atacă normal, doar cu puterile lui. scutLumina: aliatul ignoră următoarea lovitură; imaginea scutului se încarcă în galerie, la Luptă.",
+        "_nota": "TODO echilibru. faraAtac: preotul nu atacă normal, doar cu puterile lui. scutLumina: aliatul ignoră următoarea lovitură; imaginea scutului se încarcă în galerie, la Luptă. poza: fiecare putere are poza ei de luptă (combat/mag_<poza>.png); până e încărcată, se folosește poza atac.",
         "viata": 45,
         "staminaMax": 90,
         "faraAtac": true,
@@ -433,20 +433,23 @@
             "tinta": "aliat",
             "min": 12,
             "max": 18,
-            "cost": 30
+            "cost": 30,
+            "poza": "vindecare"
           },
           {
             "id": "golesteBara",
             "nume": "Lumină orbitoare (TODO nume)",
             "tinta": "inamic",
-            "cost": 60
+            "cost": 60,
+            "poza": "goleste_bara"
           },
           {
             "id": "scutLumina",
             "nume": "Scut de lumină",
             "tinta": "aliat",
             "cost": 40,
-            "imagine": "combat/scut_lumina.png"
+            "imagine": "combat/scut_lumina.png",
+            "poza": "scut_lumina"
           }
         ]
       }

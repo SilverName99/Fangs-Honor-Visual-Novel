@@ -15,7 +15,9 @@ const intre = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
 // Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „lovit”, înclinată din cod.
 // „lovit”, nu „ranit”: altfel numele s-ar fi bătut cu portretul rănit (fierar_ranit.png) în galerie
-const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'lovit'] : [p]);
+// O putere cu poza ei (preotul: vindecare, scut...) cade pe poza „atac” până e încărcată
+const POZE_DE_BAZA = ['idle', 'atac', 'aparare', 'lovit', 'cazut'];
+const cuRezerva = (p) => (p === 'cazut' ? ['cazut', 'lovit'] : POZE_DE_BAZA.includes(p) ? [p] : [p, 'atac']);
 
 // Unde stă fiecare loc pe ecran (picioarele): fața e spre mijloc, spatele spre margine
 
@@ -398,7 +400,7 @@ export function creeazaLupta(parinte, joc) {
     } else if (actiune.tip === 'abilitate') {
       const a = actiune.abilitate;
       sursa.corp.classList.add('abilitate');
-      poza(sursa, 'atac');
+      poza(sursa, a.poza || 'atac');
       await asteapta(300);
       abilitati[a.id]?.(sursa, actiune.tinta, a, L);
       await asteapta(400);
