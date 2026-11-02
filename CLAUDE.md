@@ -136,7 +136,7 @@ Reguli:
 - **Strălucirea (decis de autor):** **doar piesele de pe hartă** au strălucirea lor (CSS `drop-shadow` pe forma PNG-ului). **Tot restul** (locuri, acțiuni, personaje) folosește strălucirea zonelor desenate: o bandă aurie estompată pe conturul zonei. Un personaj fără zonă desenată primește automat o zonă trasată din forma sprite-ului (`src/contur.js`), afișată exact ca una desenată.
 - **Zonele clicabile sunt poligoane**, desenate în editor. **Regula autorului:** tot ce e clicabil (locuri, acțiuni, personaje) are o zonă desenată de el; **excepție: piesele de pe hartă**, care răspund automat pe forma lor. Până e desenată zona, acțiunile apar ca butoane, iar personajele răspund pe forma sprite-ului.
 - **Strălucirea în repaus** (ca să se vadă ce e clicabil): 30% ziua, 20% noaptea; completă cu mouse-ul deasupra.
-- **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide.
+- **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide. `incuiat` poate fi și o listă de lacăte, fiecare cu mesajul lui (camera fierarului: fără cheie / fierarul doarme).
 - **Locuri ascunse:** apar pe imagine doar după o condiție (de exemplu Camp site).
 - Buton de **înapoi** pe fiecare nivel. Mutarea între locuri **consumă timp** (configurabil). Întoarcerea la nivelul de deasupra nu consumă timp.
 
@@ -257,7 +257,7 @@ Fiecare personaj cu nume are în `npcs.json` câte un loc pentru fiecare moment 
 
 **Taverna** (decis): deschisă 09:00–02:00 (închisă: gândul lui Vale, `TODO`). **Agnes** (hangița): 02–09 doarme, 09–12 pregătește taverna (sprite `_dimineata`), 12–16 servește afară (sprite pe imaginea zonei), 16–02 la tejghea. **Roderick**: 00–10 doarme (nimeni nu știe unde; poate, după recrutare, la Camp site), 10–14 la biserică (se roagă pentru fratele lui), 14–18 în tavernă, 18–00 în tavernă cu alt sprite (`_seara`). **Sala tavernei păstrează filtrul de seară până se închide** (23:00–02:00, în loc de cel de noapte), `filtruSeara` în `locations.json`. Fără program separat de weekend. **Camera de la tavernă** se închiriază de la Agnes (5 monede) și ține până la prânzul de după noaptea plătită; poți dormi și după ce se închide taverna.
 
-**Programul fierarului** (decis): luni–vineri 06–12 lucrează afară (zona fierăriei), 12–14 prânzul la tavernă, 14–18 afară, 18–22 lucrează înăuntru (magazinul), 22–06 doarme în camera lui. Sâmbăta și duminica: 05–08 la biserică (se roagă), 08–12 afară, 12–14 tavernă, 14–18 ajută la fermă (câmpurile), 18–22 înăuntru, 22–06 doarme. **Magazinul e închis când fierarul nu e acasă** (afară sau înăuntru, treaz); se poate deschide doar cu cheia fierarului, primită după o misiune (`TODO` care). Gândul lui Vale la ușa închisă e `TODO`.
+**Programul fierarului** (decis): luni–vineri 06–12 lucrează afară (zona fierăriei), 12–14 prânzul la tavernă, 14–18 afară, 18–22 lucrează înăuntru (magazinul), 22–06 doarme în camera lui (fără sprite acolo: cât doarme, Vale nu intră nici cu cheia, se gândește că nu vrea să-l deranjeze; ziua camera e goală). Sâmbăta și duminica: 05–08 la biserică (se roagă), 08–12 afară, 12–14 tavernă, 14–18 ajută la fermă (câmpurile), 18–22 înăuntru, 22–06 doarme. **Magazinul e închis când fierarul nu e acasă** (afară sau înăuntru, treaz); se poate deschide doar cu cheia fierarului, primită după o misiune (`TODO` care). Gândul lui Vale la ușa închisă e `TODO`.
 
 ### Bani
 

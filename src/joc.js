@@ -261,7 +261,10 @@ function pornesteEvenimentDupa(id) {
 }
 
 function activeaza(tinta, ctx) {
-  if (tinta.incuiat && !verifica(tinta.incuiat.conditii, ctx)) return gand(tinta.incuiat.mesaj || 'E încuiat.');
+  // Un loc poate avea mai multe lacăte, fiecare cu gândul lui (camera fierarului: fără cheie / el doarme);
+  // primul care nu e îndeplinit spune de ce nu se intră
+  const lacat = [].concat(tinta.incuiat || []).find((l) => !verifica(l.conditii, ctx));
+  if (lacat) return gand(lacat.mesaj || 'E încuiat.');
   if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.vanatoare) return vaneaza(tinta.vanatoare);
   if (tinta.personaj) return vorbesteCu(tinta.personaj);

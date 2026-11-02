@@ -166,8 +166,7 @@
         "fierar/interior",
         "taverna/parter",
         "biserica/interior",
-        "campuri",
-        "fierar/camera"
+        "campuri"
       ],
       "lupta": {
         "viata": 110,
@@ -254,7 +253,7 @@
           "pana": "06:00",
           "loc": "fierar/camera",
           "doarme": true,
-          "ce": "doarme (camera e încuiată)"
+          "ce": "doarme în camera lui (fără sprite: Vale nu intră cât doarme)"
         }
       ]
     },

@@ -255,12 +255,20 @@
           "nume": "Camera fierarului",
           "din": "interior",
           "imagine": "locations/fierar_camera.png",
-          "incuiat": {
-            "conditii": {
-              "areObiect": "cheie_fierar"
+          "incuiat": [
+            {
+              "conditii": {
+                "areObiect": "cheie_fierar"
+              },
+              "mesaj": "Ușa e încuiată."
             },
-            "mesaj": "Ușa e încuiată."
-          }
+            {
+              "conditii": {
+                "nuDoarme": "fierar"
+              },
+              "mesaj": "Fierarul doarme. Nu vreau să-l deranjez acum."
+            }
+          ]
         }
       ]
     },
