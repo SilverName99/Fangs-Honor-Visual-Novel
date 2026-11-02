@@ -794,6 +794,17 @@
         }
       ],
       "imagine": "locations/biserica_zona.png",
+      "variante": [
+        {
+          "imagine": "locations/biserica_zona_noaptea.png",
+          "nume": "noaptea",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
       "locuri": [
         {
           "id": "interior",
