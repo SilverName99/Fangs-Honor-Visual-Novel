@@ -403,12 +403,10 @@ export function creeazaLupta(parinte, joc) {
       sursa.bara = 0;
     } else if (actiune.tip === 'abilitate') {
       const a = actiune.abilitate;
-      sursa.corp.classList.add('abilitate');
       poza(sursa, a.poza || 'atac');
       await asteapta(300);
       abilitati[a.id]?.(sursa, actiune.tinta, a, L);
       await asteapta(400);
-      sursa.corp.classList.remove('abilitate');
       poza(sursa, 'idle');
       // După o putere, personajul așteaptă mai mult până la mișcarea următoare: bara pornește de la 0,
       // dar se umple mai încet (cât ar fi durat de la −cost), ca jucătorul să vadă că se încarcă, nu că s-a blocat
