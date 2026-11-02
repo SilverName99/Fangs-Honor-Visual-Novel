@@ -100,8 +100,8 @@
       "lupta_padure_interior": 125
     },
     "combat/mag_goleste_bara.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
     },
     "combat/mag_vindecare.png": {
       "lupta_taverna_parter": 113,
