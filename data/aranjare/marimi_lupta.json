@@ -79,8 +79,8 @@
       "lupta_padure_interior": 120
     },
     "combat/soldat_cazut.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130
     }
   }
 }
