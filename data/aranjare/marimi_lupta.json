@@ -11,7 +11,8 @@
     "combat/vanatoare_cazut.png": 90,
     "combat/vanatoare_idle.png": 202,
     "combat/vanatoare_lovit.png": 102,
-    "combat/vanatoare_atac.png": 102
+    "combat/vanatoare_atac.png": 102,
+    "combat/scut_lumina.png": 200
   },
   "harti": {
     "lupta_taverna_parter": 135,
@@ -95,7 +96,7 @@
       "lupta_padure_interior": 120
     },
     "combat/mag_scut_lumina.png": {
-      "lupta_taverna_parter": 120,
+      "lupta_taverna_parter": 140,
       "lupta_padure_interior": 120
     },
     "combat/mag_goleste_bara.png": {
