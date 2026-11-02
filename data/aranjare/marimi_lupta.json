@@ -67,7 +67,16 @@
       "lupta_padure_interior": 120
     },
     "combat/soldat_aparare.png": {
-      "lupta_taverna_parter": 120
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
+    },
+    "combat/soldat_atac.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
+    },
+    "combat/soldat_lovit.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
     }
   }
 }
