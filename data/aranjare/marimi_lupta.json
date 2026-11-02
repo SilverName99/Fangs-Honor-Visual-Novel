@@ -61,6 +61,10 @@
     "combat/vanatoare_cazut.png": {
       "lupta_padure_interior": 92,
       "lupta_taverna_parter": 92
+    },
+    "combat/soldat_idle.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     }
   }
 }
