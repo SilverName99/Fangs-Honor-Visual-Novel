@@ -104,8 +104,8 @@
       "lupta_padure_interior": 140
     },
     "combat/mag_vindecare.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110
     }
   }
 }
