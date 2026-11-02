@@ -97,15 +97,15 @@
     },
     "combat/mag_scut_lumina.png": {
       "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 120
+      "lupta_padure_interior": 140
     },
     "combat/mag_goleste_bara.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 140,
+      "lupta_padure_interior": 140
     },
     "combat/mag_vindecare.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 140,
+      "lupta_padure_interior": 140
     }
   }
 }
