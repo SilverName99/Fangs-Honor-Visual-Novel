@@ -88,8 +88,8 @@
       "lupta_padure_interior": 115
     },
     "combat/mag_aparare.png": {
-      "lupta_taverna_parter": 100,
-      "lupta_padure_interior": 100
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     },
     "combat/mag_lovit.png": {
       "lupta_taverna_parter": 140,
