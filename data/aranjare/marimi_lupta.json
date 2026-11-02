@@ -83,7 +83,8 @@
       "lupta_padure_interior": 130
     },
     "combat/mag_idle.png": {
-      "lupta_taverna_parter": 120
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
     }
   }
 }
