@@ -31,6 +31,11 @@ const abilitati = {
     tinta.bara = 0;
     L.jurnal(`${sursa.nume}: ${a.nume}! Bara lui ${tinta.nume} se golește.`);
   },
+  // Scutul rămâne până primește o lovitură (nu expiră cu timpul), ca jucătorul să-l poată pune din timp
+  scutLumina: (sursa, tinta, a, L) => {
+    L.puneScut(tinta, a.imagine);
+    L.jurnal(`${sursa.nume}: ${a.nume} în fața lui ${tinta.nume}. Următoarea lovitură nu-l atinge.`);
+  },
 };
 
 export function creeazaLupta(parinte, joc) {
@@ -80,7 +85,9 @@ export function creeazaLupta(parinte, joc) {
       viata: x.viata,
       viataMax: x.viata,
       staminaMax: x.staminaMax,
-      atac: x.atac,
+      // Preotul nu atacă normal („faraAtac”): are doar puterile lui; pumnii stau ca rezervă, să nu crape codul
+      atac: x.atac || cfg.pumni,
+      faraAtac: !!x.faraAtac,
       armuri: armuriDin([{ nume: 'Armura', armura: x.armura || 0, rezistenta: x.rezistenta }]),
       blocare: x.blocare ?? cfg.blocareImplicita,
       abilitati: x.abilitati || [],
@@ -289,8 +296,33 @@ export function creeazaLupta(parinte, joc) {
     return daune;
   }
 
+  // Scutul de lumină: imaginea stă în fața aliatului (spre inamici); mărimea se reglează din galerie, ca la glaive
+  function puneScut(f, cale) {
+    f.elScut?.remove();
+    const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[cale] ?? 100;
+    const s = elementImagine([cale], { clasa: 'scut-lumina', raport: 1, eticheta: 'scut de lumină' });
+    s.style.height = `${55 * (procent / 100)}%`;
+    f.el.append(s);
+    f.elScut = s;
+    f.scut = true;
+  }
+
+  function spargeScut(f) {
+    f.scut = false;
+    const s = f.elScut;
+    f.elScut = null;
+    s?.classList.add('sparge');
+    setTimeout(() => s?.remove(), 450);
+  }
+
   // Lovitura propriu-zisă: daune, armură, poza „lovit”, căderea
+  // Cu scutul de lumină, lovitura se oprește în scut: fără daune și fără uzura armurii (întoarce 0)
   function aplicaLovitura(sursa, tinta) {
+    if (tinta.scut) {
+      spargeScut(tinta);
+      numar(tinta, 'blocat', 'scut');
+      return 0;
+    }
     let d = Math.max(1, intre(sursa.atac.min, sursa.atac.max) - armuraIntreaga(tinta));
     if (tinta.apara) d = Math.max(1, Math.round(d * (1 - tinta.blocare)));
     tinta.viata -= d;
@@ -324,19 +356,21 @@ export function creeazaLupta(parinte, joc) {
       while (tinte.length < (sursa.atac.ricoseu || 1) && altii.length) tinte.push(altii.splice(Math.floor(Math.random() * altii.length), 1)[0]);
       const daune = await atacCuProiectil(sursa, tinte);
       if (!L) return;
-      jurnal(tinte.length > 1 ? `${sursa.nume}: glaive-ul ricoșează! ${tinte.map((t, i) => `${t.nume} (${daune[i]})`).join(', ')}.` : `${sursa.nume} îl lovește pe ${tinte[0].nume}: ${daune[0]} daune.`);
+      const cat = (i) => (daune[i] ? daune[i] : 'oprit de scut');
+      jurnal(tinte.length > 1 ? `${sursa.nume}: glaive-ul ricoșează! ${tinte.map((t, i) => `${t.nume} (${cat(i)})`).join(', ')}.` : daune[0] ? `${sursa.nume} îl lovește pe ${tinte[0].nume}: ${daune[0]} daune.` : `Scutul de lumină al lui ${tinte[0].nume} oprește lovitura.`);
       sursa.bara = 0;
     } else if (actiune.tip === 'atac') {
       const d = await loveste(sursa, actiune.tinta);
       if (!L) return;
-      if (!L.elJurnal.textContent.includes('crăpat')) jurnal(`${sursa.nume} îl lovește pe ${actiune.tinta.nume}: ${d} daune.`);
+      if (!d) jurnal(`Scutul de lumină al lui ${actiune.tinta.nume} oprește lovitura.`);
+      else if (!L.elJurnal.textContent.includes('crăpat')) jurnal(`${sursa.nume} îl lovește pe ${actiune.tinta.nume}: ${d} daune.`);
       // „ricoseu: 3”: arma (glaive-ul vânătoarei) sare la încă doi inamici aleși la întâmplare
       if (sursa.atac.ricoseu > 1) {
         const altii = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat').filter((t) => t !== actiune.tinta);
         const loviti = [`${actiune.tinta.nume} (${d})`];
         for (let i = 1; i < sursa.atac.ricoseu && altii.length; i++) {
           const t = altii.splice(Math.floor(Math.random() * altii.length), 1)[0];
-          loviti.push(`${t.nume} (${await loveste(sursa, t)})`);
+          loviti.push(`${t.nume} (${(await loveste(sursa, t)) || 'oprit de scut'})`);
         }
         if (loviti.length > 1) jurnal(`${sursa.nume}: glaive-ul ricoșează! ${loviti.join(', ')}.`);
       }
@@ -455,7 +489,7 @@ export function creeazaLupta(parinte, joc) {
     m.hidden = false;
     m.replaceChildren(
       div('titlu-meniu-lupta', `Rândul lui ${f.nume}`),
-      buton('Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f), poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat'),
+      ...(f.faraAtac ? [] : [buton('Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f), poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
       buton('Apărare', () => executa(f, { tip: 'aparare' })),
       buton('Obiect', () => {
         m.replaceChildren(
@@ -556,6 +590,7 @@ export function creeazaLupta(parinte, joc) {
       pauza: true,
       jurnal,
       numar,
+      puneScut,
     };
     L.elOrdine = div('ordine-lupta');
     L.elJurnal = div('jurnal-lupta', def.nume);

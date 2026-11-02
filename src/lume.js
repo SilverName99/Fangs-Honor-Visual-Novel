@@ -288,6 +288,8 @@ export function imaginiCerute(date, scene) {
   }
   const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume])];
   for (const [id, nume] of luptatori) for (const p of POZE) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  // Efectele puterilor cu imagine proprie (scutul de lumină al preotului)
+  for (const p of date.npcs.personaje) for (const ab of p.lupta?.abilitati || []) if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';

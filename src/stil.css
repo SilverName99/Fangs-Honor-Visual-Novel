@@ -976,6 +976,44 @@ svg.zone {
   filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
 }
 
+/* Scutul de lumină: în fața personajului (spre inamici), pulsează ușor cât e activ și se sparge la lovitură */
+.scut-lumina {
+  position: absolute;
+  bottom: 12%;
+  left: 78%;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateX(-50%);
+  opacity: 0.9;
+  filter: drop-shadow(0 0 14px rgba(255, 236, 160, 0.9));
+  animation: scut-pulseaza 1.8s ease-in-out infinite;
+}
+.luptator.inamic .scut-lumina {
+  left: 22%;
+}
+.luptator.lat .scut-lumina {
+  left: 85%;
+}
+.scut-lumina.sparge {
+  animation: scut-sparge 0.45s forwards;
+}
+@keyframes scut-pulseaza {
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 22px rgba(255, 236, 160, 1));
+  }
+}
+@keyframes scut-sparge {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.4);
+    filter: drop-shadow(0 0 30px rgba(255, 255, 220, 1)) brightness(2);
+  }
+}
+.numar-lupta.scut {
+  color: #ffe9a0;
+}
+
 /* „display: flex” de mai sus ar anula atributul hidden: meniul trebuie să dispară cât se execută o acțiune */
 .lupta-meniu[hidden] {
   display: none;

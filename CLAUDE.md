@@ -385,7 +385,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 | **Apărare** | Până la tura următoare a personajului, daunele primite scad cu procentul de **blocare**: 50% implicit, iar cu scut cât spune scutul (de exemplu 70%). |
 | **Obiect** | Inventarul lui Vale e **comun în luptă**: orice aliat îl poate folosi în tura lui (de exemplu o poțiune de viață). Consumă tura. |
 | **Schimbă locul** | Se mută pe un loc liber sau face schimb cu cel de pe aceeași linie (față ↔ spate). Consumă tura. |
-| **Abilitate** | Doar personajele care au abilități (de exemplu preotul: vindecare, **golește bara de stamina a unui inamic**). Efectele folosesc registrul din secțiunea 13. |
+| **Abilitate** | Doar personajele care au abilități. **Preotul nu atacă normal** (`faraAtac`), are doar 3 puteri: vindecare, **golește bara de stamina a unui inamic** și **scutul de lumină** (pus în fața unui aliat, oprește complet următoarea lovitură, fără daune și fără uzura armurii; rămâne până e lovit). Imaginea scutului: `combat/scut_lumina.png`, cu mărimea reglabilă în galerie. Efectele folosesc registrul din secțiunea 13. |
 | **Fugi** | Doar în luptele unde e permis. Reușește sigur (alegere simplă, se poate schimba). |
 
 **Armura:**

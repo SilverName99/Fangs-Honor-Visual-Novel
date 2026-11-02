@@ -125,9 +125,14 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const zoneLupta = [...comun.lume.values()].filter((d) => d.tip === 'lupta').map((d) => [d.id, d.titlu.replace('Luptă: ', '')]);
     // Imaginile folosite și ca armă aruncată în luptă (glaive-ul Kaiei) au și ele mărimea lor în luptă
     const proiectile = new Set(comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil).filter(Boolean));
+    // La fel efectele puterilor (scutul de lumină)
+    const efecte = new Set(comun.date.npcs.personaje.flatMap((p) => (p.lupta?.abilitati || []).map((a) => a.imagine)).filter(Boolean));
     const extraCard = (c) => {
       if (proiectile.has(c.cale))
         return `<label class="marime-lupta" title="Cât de mare se vede arma aruncată în luptă (100% = normal)">Mărime în luptă (aruncat)
+          <input type="number" min="20" max="400" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
+      if (efecte.has(c.cale))
+        return `<label class="marime-lupta" title="Cât de mare se vede efectul în luptă, față de personaj (100% = normal)">Mărime în luptă
           <input type="number" min="20" max="400" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
       // Pe fiecare zonă de luptă, cât de mare se vede poza (implicit, mărimea ei veche, generală)
       if (c.cale.startsWith('combat/'))
