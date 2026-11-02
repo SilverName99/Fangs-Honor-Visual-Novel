@@ -812,6 +812,16 @@
           "imagine": "locations/biserica_interior.png",
           "variante": [
             {
+              "imagine": "locations/biserica_interior_dimineata.png",
+              "nume": "dimineața (05–08)",
+              "conditii": {
+                "ora": {
+                  "min": "05:00",
+                  "max": "07:59"
+                }
+              }
+            },
+            {
               "imagine": "locations/biserica_interior_noaptea.png",
               "nume": "noaptea",
               "conditii": {
