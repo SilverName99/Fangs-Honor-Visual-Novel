@@ -200,7 +200,8 @@ export function creeazaLupta(parinte, joc) {
     const rate = (f) => f.staminaMax * cfg.viteza;
     const urm = [];
     for (const f of L.toti.filter((x) => !x.cazut)) {
-      const t0 = Math.max(0, 100 - f.bara) / rate(f);
+      // Bara curentă se umple cu încetinirea de după o putere; următoarele, normal
+      const t0 = Math.max(0, 100 - f.bara) / (rate(f) * (f.incetinire ?? 1));
       for (let k = 0; k < 3; k++) urm.push({ f, t: t0 + (k * 100) / rate(f) });
     }
     urm.sort((a, b) => a.t - b.t);
@@ -352,6 +353,8 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = true;
     ascundeMeniul();
     sursa.apara = false;
+    // Încetinirea de după o putere ține doar până la mișcarea următoare
+    sursa.incetinire = 1;
     if (actiune.tip === 'atac' && sursa.atac.proiectil) {
       // Ținta aleasă, apoi (cu „ricoseu”) încă doi inamici la întâmplare; arma zboară pe la toți
       const altii = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat').filter((t) => t !== actiune.tinta);
@@ -407,8 +410,10 @@ export function creeazaLupta(parinte, joc) {
       await asteapta(400);
       sursa.corp.classList.remove('abilitate');
       poza(sursa, 'idle');
-      // Abilitățile grele golesc bara sub zero: personajul așteaptă mai mult până la mișcarea următoare
-      sursa.bara = -(a.cost || 0);
+      // După o putere, personajul așteaptă mai mult până la mișcarea următoare: bara pornește de la 0,
+      // dar se umple mai încet (cât ar fi durat de la −cost), ca jucătorul să vadă că se încarcă, nu că s-a blocat
+      sursa.bara = 0;
+      sursa.incetinire = 100 / (100 + (a.cost || 0));
     } else if (actiune.tip === 'fuga') {
       return termina('fuga');
     }
@@ -517,7 +522,7 @@ export function creeazaLupta(parinte, joc) {
     const dt = Math.min(0.1, (acum - (L.ultim || acum)) / 1000);
     L.ultim = acum;
     if (!L.pauza) {
-      for (const f of L.toti) if (!f.cazut) f.bara += f.staminaMax * cfg.viteza * dt;
+      for (const f of L.toti) if (!f.cazut) f.bara += f.staminaMax * cfg.viteza * (f.incetinire ?? 1) * dt;
       const gata = L.toti.filter((f) => !f.cazut && f.bara >= 100).sort((a, b) => b.bara - a.bara)[0];
       if (gata) {
         gata.bara = 100;

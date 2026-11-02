@@ -371,7 +371,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 - Se umple în timp, de la 0 la 100. **Cu cât `staminaMax` e mai mare, cu atât se umple mai repede**, iar personajul acționează mai des.
 - Când bara e plină, personajul acționează și bara se golește.
-- **Abilitățile grele** golesc bara **sub zero** (costul e per abilitate), deci personajul așteaptă mai mult până la mișcarea următoare.
+- **Abilitățile grele** fac bara să se umple **mai încet** până la mișcarea următoare (costul e per abilitate: durează cât ar fi durat de la −cost la 100), deci personajul așteaptă mai mult. Bara pornește de la 0 și se vede cum urcă.
 - Când un personaj al jucătorului e gata, **timpul se oprește** până se alege acțiunea.
 - Sus pe ecran se vede **ordinea următoare**: portrete mici, în ordinea în care vor acționa.
 - Vale obosit (stamina din nevoi sub 30) pornește lupta cu bara goală, iar Vale odihnit o pornește pe jumătate plină.
