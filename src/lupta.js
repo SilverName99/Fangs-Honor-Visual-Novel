@@ -97,7 +97,8 @@ export function creeazaLupta(parinte, joc) {
       lat: x.locuri === 2,
       bara: intre(0, 30),
       // „poze”: inamicul folosește pozele altcuiva (orcii din tavernă arată ca paznicii de la poartă)
-      poze: (p) => [...cuRezerva(p).map((y) => `combat/${x.poze || id}_${y}.png`), `combat/${x.poze || id}_idle.png`],
+      // Fără atac normal (preotul), o putere fără poza ei cade direct pe idle, nu pe o poză „atac” care nu există
+      poze: (p) => [...cuRezerva(p).filter((y) => !(x.faraAtac && y === 'atac')).map((y) => `combat/${x.poze || id}_${y}.png`), `combat/${x.poze || id}_idle.png`],
     };
   }
 

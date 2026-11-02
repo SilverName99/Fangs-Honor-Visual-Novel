@@ -286,8 +286,9 @@ export function imaginiCerute(date, scene) {
   for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
     for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');
   }
-  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume])];
-  for (const [id, nume] of luptatori) for (const p of POZE) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  // Cine nu atacă normal (preotul, doar puteri) nu are nevoie de poza „atac”
+  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume, p.lupta.faraAtac]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume, x.faraAtac])];
+  for (const [id, nume, faraAtac] of luptatori) for (const p of POZE) if (!(faraAtac && p === 'atac')) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
   // Puterile: poza personajului când o folosește (altfel „atac”) și, unde e cazul, imaginea efectului (scutul de lumină)
   for (const p of date.npcs.personaje) {
     for (const ab of p.lupta?.abilitati || []) {
