@@ -151,7 +151,7 @@ Reguli:
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
 | `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `interior` (**vânătoarea**: nu e un loc în care stai; `padure_interior.png` apare câteva secunde ca ecran de încărcare, apoi pornește lupta cu un animal la întâmplare, lup sau mistreț, pe `lupta_padure_interior.png`), `campsite` (**ascuns** până la întâlnirea cu vânătoarea; e campsite-ul ei). Acțiunea „Adună lemne” e pe imaginea zonei |
 | `poarta` | `poarta.png` | `poarta_zona.png` | `exterior` (orcii), `taxa` (locul de plată) |
-| `biserica` | `biserica.png` | `biserica_zona.png` | `interior` (preotul) |
+| `biserica` | `biserica.png` | `biserica_zona.png` | `interior` (preotul; 14–23 citește afară, pe scări, pe imaginea zonei) |
 
 Fișierele scenelor: `<zona>_<loc>.png` (de exemplu `casa_camera_vale.png`, `padure_campsite.png`).
 
@@ -435,7 +435,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 | `hot` | Tânărul hoț, legat la butuc | Piața | plătești o sumă unui negustor ca să-l elibereze |
 | `vanatoare` | **Kaia, vânătoarea** (Huntress în *Fangs&Honor*; numele tigrului: `TODO`), călare pe un tigru: „Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse.” Programul ei: 05–10 la campsite, 10–14 plecată la vânătoare (nu e nicăieri; dacă vânezi atunci, 10% șanse s-o întâlnești: o scurtă discuție, apoi luptă alături de tine), 14–23 la campsite (alt sprite, `_dupa_amiaza`), 23–05 doarme (sprite `_doarme`); dacă apeși pe ea cât doarme, Vale se gândește că nu vrea s-o trezească. Atac de la distanță care lovește până la 3 inamici (`ricoseu: 3`); **în luptă ține două locuri** (față și spate pe aceeași linie, `locuri: 2`). **Povestea** (decis): era o prietenă bună a sătenilor, venea rar prin sat; s-a strecurat prin pădure și îl găsește pe Vale la vânătoare (după prima vânătoare, evenimentul `intalnire_vanatoare`). El o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la micul ei campsite, care devine **Camp site**, locul ascuns al grupului | Camp site-ul din pădure | `TODO` (încă nedecis) |
 | `tigru` | Tigrul cu colți de sabie al Kaiei (nume `TODO`); la campsite în aceleași ore ca ea (3 sprite-uri: dimineața, `_dupa_amiaza`, `_doarme`); se vede, dar nu se apasă; fără portrete | Camp site-ul din pădure | – |
-| `mag` | Preotul-mag al luminii; vindecare și abilități de control, slab la început | Biserica | relație suficientă; orcii nu știu de el |
+| `mag` | Preotul-mag al luminii; vindecare și abilități de control, slab la început. Programul lui: 05–08 tămâie în biserică (sprite `_dimineata`), 08–14 pe bancă, privește altarul, 14–23 citește pe scări, afară (sprite pe imaginea zonei), 23–05 doarme pe o bancă în biserică (sprite `_doarme`; apăsat, Vale nu vrea să-l trezească) | Biserica | relație suficientă; orcii nu știu de el |
 | `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
 | `negustor` | Personaj minor | Piața | – |
 | `orc_colector`, `paznic_orc_1`, `paznic_orc_2` | Orcii | Poarta, casa lui Vale (colectorul) | – |

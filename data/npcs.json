@@ -387,8 +387,39 @@
       "id": "mag",
       "nume": "Preotul (TODO nume)",
       "locuriSprite": [
-        "biserica/interior"
+        "biserica/interior",
+        "biserica"
       ],
+      "program": [
+        {
+          "de": "05:00",
+          "pana": "08:00",
+          "loc": "biserica/interior",
+          "sprite": "dimineata",
+          "ce": "tămâie în biserică"
+        },
+        {
+          "de": "08:00",
+          "pana": "14:00",
+          "loc": "biserica/interior",
+          "ce": "stă pe bancă, privește altarul"
+        },
+        {
+          "de": "14:00",
+          "pana": "23:00",
+          "loc": "biserica",
+          "ce": "citește pe scări, afară"
+        },
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "biserica/interior",
+          "doarme": true,
+          "sprite": "doarme",
+          "ce": "doarme pe o bancă din biserică"
+        }
+      ],
+      "gandDoarme": "Doarme. Nu vreau să-l trezesc acum.",
       "lupta": {
         "viata": 45,
         "staminaMax": 90,
