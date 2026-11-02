@@ -755,8 +755,9 @@ svg.zone {
     transform: translateX(10px);
   }
 }
+/* Strălucirea la o putere: discretă (30% din cea veche), ca să nu acopere poza de cast */
 .corp.abilitate {
-  filter: drop-shadow(0 0 24px rgba(255, 240, 160, 1)) brightness(1.3);
+  filter: drop-shadow(0 0 24px rgba(255, 240, 160, 0.3)) brightness(1.09);
 }
 .luptator.cazut .corp {
   transform: rotate(-80deg) translate(-30%, 20%);
