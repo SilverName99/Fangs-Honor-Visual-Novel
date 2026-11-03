@@ -166,6 +166,21 @@
     "combat/mistret_atac.png": {
       "lupta_taverna_parter": 125,
       "lupta_padure_interior": 125
+    },
+    "combat/mistret_aparare.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
+    },
+    "combat/mistret_lovit.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
+    },
+    "combat/mistret_cazut.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
+    },
+    "combat/mistret_idle.png": {
+      "lupta_taverna_parter": 125
     }
   }
 }
