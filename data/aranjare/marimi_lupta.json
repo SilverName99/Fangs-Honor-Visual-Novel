@@ -180,8 +180,8 @@
       "lupta_padure_interior": 125
     },
     "combat/mistret_idle.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_taverna_parter": 140,
+      "lupta_padure_interior": 140
     }
   }
 }
