@@ -732,7 +732,8 @@ svg.zone {
 .scena-lupta.peste-tinta {
   cursor: pointer;
 }
-.luptator.tinta-valida .corp {
+/* Inamicii care pot fi atacați se aprind roșu doar cu mouse-ul deasupra (decis de autor) */
+.luptator.inamic.tinta-valida.sub-mouse .corp {
   filter: drop-shadow(0 0 12px rgba(255, 90, 70, 0.95));
 }
 .luptator.aliat.tinta-valida .corp {

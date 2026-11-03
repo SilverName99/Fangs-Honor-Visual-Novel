@@ -658,11 +658,16 @@ export function creeazaLupta(parinte, joc) {
       const f = subMouse(e);
       if (f) L.laClic(f);
     });
+    // Cine e sub mouse primește clasa „sub-mouse”: strălucirea roșie a inamicilor apare doar atunci
+    const marcheazaSubMouse = (f) => {
+      L?.toti.forEach((x) => x.el.classList.toggle('sub-mouse', x === f));
+      scenaLupta.classList.toggle('peste-tinta', !!f && (f.el.classList.contains('tinta-valida') || f.tabara === 'aliat'));
+    };
     scenaLupta.addEventListener('mousemove', (e) => {
       if (!L) return;
-      const f = L.laClic ? subMouse(e) : null;
-      scenaLupta.classList.toggle('peste-tinta', !!f && (f.el.classList.contains('tinta-valida') || f.tabara === 'aliat'));
+      marcheazaSubMouse(L.laClic ? subMouse(e) : null);
     });
+    scenaLupta.addEventListener('mouseleave', () => marcheazaSubMouse(null));
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));
     scenaLupta.append(L.elLocuri);
     el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu);
