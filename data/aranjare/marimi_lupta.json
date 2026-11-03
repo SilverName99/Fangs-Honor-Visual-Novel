@@ -126,6 +126,21 @@
     "combat/paznic_orc_1_idle.png": {
       "lupta_taverna_parter": 115,
       "lupta_padure_interior": 115
+    },
+    "combat/orc_colector_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/orc_colector_lovit.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/orc_colector_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/orc_colector_idle.png": {
+      "lupta_taverna_parter": 115
     }
   }
 }
