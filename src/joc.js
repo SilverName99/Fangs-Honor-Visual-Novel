@@ -178,22 +178,25 @@ function verificaColectorul() {
   if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !stare.scena.startsWith('casa')) return false;
   if (ctx.minuteZi < inMinute(cfg.taxa.oraColector)) return false;
   t.colectorZi = ctx.zi;
-  dialog.porneste({
-    partener: 'orc_colector',
-    start: 'c',
-    noduri: {
-      c: {
+  dialogTaxa(cfg.taxa.textColector);
+  return true;
+}
+
+// Discuția cu colectorul: acasă (în ziua taxei) și la poartă (când îl apeși). Suma se scrie din cod,
+// pentru că poate crește (de exemplu după bătaia din tavernă)
+function dialogTaxa(text) {
+  const nod = stare.taxa.platita
+    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit }
+    : {
         vorbitor: 'orc_colector',
         emotie: 'normal',
-        text: cfg.taxa.textColector,
+        text,
         alegeri: [
           { text: `Plătește (${sumaTaxa()} monede)`, conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
           { text: 'Nu am bani acum.', spre: null },
         ],
-      },
-    },
-  });
-  return true;
+      };
+  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { c: nod } });
 }
 
 function lesin() {
@@ -312,6 +315,8 @@ function vorbesteCu(id, idDialog) {
   const p = personaje.get(id);
   // Cine doarme nu e trezit: Vale doar se gândește (Kaia noaptea, la campsite)
   if (p?.gandDoarme && intrareProgram(p, context(stare))?.doarme) return gand(p.gandDoarme);
+  // Colectorul de la poartă nu are un dialog scris: cere taxa
+  if (p?.dialogTaxa) return dialogTaxa(cfg.taxa.textColectorPoarta);
   // Un personaj poate avea alt dialog în funcție de locul unde îl găsești (Miriam în piață)
   const d = dialoguri[p?.dialoguriPeLoc?.[context(stare).loc] ?? p?.dialog];
   dialog.porneste(

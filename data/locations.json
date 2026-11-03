@@ -762,25 +762,7 @@
           }
         }
       ],
-      "locuri": [
-        {
-          "id": "exterior",
-          "nume": "Paznicii",
-          "imagine": "locations/poarta_exterior.png"
-        },
-        {
-          "id": "taxa",
-          "nume": "Locul de plată",
-          "imagine": "locations/poarta_taxa.png",
-          "actiuni": [
-            {
-              "id": "taxa",
-              "tip": "taxa",
-              "nume": "Plătește taxa"
-            }
-          ]
-        }
-      ]
+      "locuri": []
     },
     {
       "id": "biserica",

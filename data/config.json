@@ -93,6 +93,8 @@
     "intervalZile": 7,
     "oraColector": "10:00",
     "textColector": "(TODO) Orcul colector bate la ușă: a venit vremea taxei.",
+    "textColectorPoarta": "(TODO) Orcul colector te măsoară din cap până-n picioare: ai venit să plătești?",
+    "textColectorPlatit": "(TODO) Orcul colector: ai plătit deja săptămâna asta. Cară-te.",
     "textRatare": "(TODO) N-ai plătit taxa. Orcii o să-și amintească asta (consecințele vin mai târziu)."
   },
   "lupta": {

@@ -150,7 +150,7 @@ Reguli:
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `ferma.png`, `moara.png`, `culturi.png` | `campuri_zona.png` | 4 zone care dau **acțiuni de muncă**, nu scene: câmp de arat, fermă de porci, fermă de vaci, moară |
 | `padure` | fără piesă (poligon pe hartă) | `padure_zona.png` | `interior` (**vânătoarea**: nu e un loc în care stai; `padure_interior.png` apare câteva secunde ca ecran de încărcare, apoi pornește lupta cu un animal la întâmplare, lup sau mistreț, pe `lupta_padure_interior.png`), `campsite` (**ascuns** până la întâlnirea cu vânătoarea; e campsite-ul ei). Acțiunea „Adună lemne” e pe imaginea zonei |
-| `poarta` | `poarta.png` | `poarta_zona.png` | `exterior` (orcii), `taxa` (locul de plată) |
+| `poarta` | `poarta.png` | `poarta_zona.png` | **fără locuri** (decis): zona e chiar scena, ca piața. Pe ea stau orcul colector (apeși pe el și plătești taxa), paznicul (`paznic_orc_1`, se poate vorbi cu el) și al doilea paznic (`paznic_orc_2`, doar se vede, nu se apasă) |
 | `biserica` | `biserica.png` | `biserica_zona.png` | `interior` (preotul; 14–23 citește afară, pe scări, pe imaginea zonei) |
 
 Fișierele scenelor: `<zona>_<loc>.png` (de exemplu `casa_camera_vale.png`, `padure_campsite.png`).
@@ -270,7 +270,7 @@ O singură monedă: **monede**. Cifrele de pornire sunt în `config.json`.
 ### Taxa orcilor
 
 - `taxa.suma`: 50 de monede, `taxa.interval`: 7 zile.
-- Se plătește la poartă (`poarta/taxa`) **sau** când orcul colector vine la casa lui Vale, la fiecare 7 zile.
+- Se plătește la poartă (apeși pe orcul colector, `dialogTaxa` în `npcs.json`) **sau** când orcul colector vine la casa lui Vale, la fiecare 7 zile. Replicile lui sunt `TODO` în `config.json` (`taxa.textColector`, `textColectorPoarta`, `textColectorPlatit`).
 - **Ratările au trepte** (`TODO`, propunere de pornire):
   1. orcii iau un obiect (`TODO`: care) și scade reputația în sat;
   2. o pedeapsă mai grea (`TODO`);
@@ -438,7 +438,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 | `mag` | **Fratele Elian**, preotul-mag al luminii; vindecare și abilități de control, slab la început. Programul lui: 05–08 tămâie în biserică (sprite `_dimineata`), 08–14 pe bancă, privește altarul, 14–23 citește pe scări, afară (sprite pe imaginea zonei), 23–05 doarme pe o bancă în biserică (sprite `_doarme`; apăsat, Vale nu vrea să-l trezească) | Biserica | relație suficientă; orcii nu știu de el |
 | `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
 | `negustor` | Personaj minor | Piața | – |
-| `orc_colector`, `paznic_orc_1` | Orcii: **doi deocamdată** (decis), colectorul și orcul normal (paznicul). **Orice orc generic** (de exemplu cei din tavernă) folosește portretele, sprite-ul și pozele de luptă ale lui `paznic_orc_1` | Poarta, casa lui Vale (colectorul) | – |
+| `orc_colector`, `paznic_orc_1`, `paznic_orc_2` | Orcii: **doi deocamdată** (decis), colectorul și orcul normal (paznicul); `paznic_orc_2` e doar un al doilea paznic care se vede la poartă (sprite, fără portrete, nu se apasă). **Orice orc generic** (de exemplu cei din tavernă) folosește portretele, sprite-ul și pozele de luptă ale lui `paznic_orc_1` | Poarta, casa lui Vale (colectorul) | – |
 
 Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.
 
