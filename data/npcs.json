@@ -525,16 +525,7 @@
     {
       "id": "paznic_orc_1",
       "nume": "Paznic orc",
-      "locuriSprite": [
-        "poarta/exterior"
-      ],
-      "stariExtra": [
-        "rade"
-      ]
-    },
-    {
-      "id": "paznic_orc_2",
-      "nume": "Paznic orc",
+      "_despre": "Orcul normal (generic): paznicul de la poartă. Orice alt orc fără nume (de exemplu cei din scandalul de la tavernă) folosește portretele, sprite-ul și pozele lui de luptă.",
       "locuriSprite": [
         "poarta/exterior"
       ],
