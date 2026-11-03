@@ -538,8 +538,15 @@
         },
         {
           "de": "14:00",
+          "pana": "18:00",
+          "ce": "plecat (nu e la poartă)"
+        },
+        {
+          "de": "18:00",
           "pana": "06:00",
-          "ce": "plecat (nu e la poartă; taxa se plătește la poartă doar 06–14)"
+          "loc": "poarta",
+          "sprite": "noaptea",
+          "ce": "de pază cu o torță (în locul celui de-al doilea paznic)"
         }
       ]
     },
@@ -617,9 +624,7 @@
         {
           "de": "18:00",
           "pana": "06:00",
-          "loc": "poarta",
-          "sprite": "noaptea",
-          "ce": "de pază, cu o torță (noaptea e singurul treaz)"
+          "ce": "plecat (noaptea stă colectorul de pază, cu torța)"
         }
       ]
     }
