@@ -182,7 +182,7 @@ La **toate celelalte scene**, seara și noaptea vin dintr-un **filtru făcut din
 - Oamenii anonimi (de exemplu clienții din taverna plină) rămân în fundal și nu se pot apăsa.
 - **Decor** (`decor` la un loc, în `locations.json`): obiecte puse peste fundal, mereu acolo și neclicabile (de exemplu glaive-ul Kaiei la campsite, `sprites/glaive_padure_campsite.png`, care se vede doar cât e și Kaia acolo; `apare` cu `personajLa`). Se aranjează în editor ca sprite-urile și primesc filtrul de seară/noapte; noaptea, pe imaginea cu focul, decorul se întunecă.
 
-**3. Portrete de dialog.** Bust, raport 4:5 (de exemplu 1024×1280), fundal transparent. Câte unul per **stare**: `normal`, `suparat`, `speriat`, `ranit`. „Normal" e o expresie ușor prietenoasă. Fișiere: `<personaj>_<stare>.png`. Dacă lipsește starea cerută, se folosește `normal`, fără să se strice nimic.
+**3. Portrete de dialog.** Bust, raport 4:5 (de exemplu 1024×1280), fundal transparent. Câte unul per **stare**: `normal`, `suparat`, `speriat`, `ranit`. „Normal" e o expresie ușor prietenoasă. Fișiere: `<personaj>_<stare>.png`. Dacă lipsește starea cerută, se folosește `normal`, fără să se strice nimic. Un personaj poate avea stări în plus (`stariExtra` în `npcs.json`): **orcii** au și `rade` (râde zeflemitor, îl ia în derâdere pe Vale), `<id>_rade.png`. Portretele orcilor privesc spre stânga.
 
 ## 9. Grafica interfeței (UI)
 

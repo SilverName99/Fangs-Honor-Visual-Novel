@@ -269,7 +269,8 @@ export function imaginiCerute(date, scene) {
   grup = 'Portrete';
   for (const p of date.npcs.personaje) {
     if (p.faraPortret) continue;
-    for (const st of date.npcs.stariPortret) {
+    // Unele personaje au stări în plus (orcii râd zeflemitor), doar pentru ele
+    for (const st of [...date.npcs.stariPortret, ...(p.stariExtra || [])]) {
       adauga(`portraits/${p.id}_${st}.png`, `Portret: ${p.nume} (${st})`, st !== 'normal');
     }
   }

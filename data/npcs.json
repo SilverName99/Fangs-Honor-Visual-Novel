@@ -1,5 +1,5 @@
 {
-  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă (de exemplu hoțul dispare după ce e eliberat). cineRaspunde = cine vorbește când dai click pe personaj, cât timp condițiile sunt îndeplinite (prizonierul legat → cel care trebuie plătit). clicabil: false = personajul se vede în scenă, dar nu se poate apăsa (negustorul din piață: cu el vorbești dând click pe prizonier). program = orar exact pe ore (de/pana/loc), are prioritate față de rutina pe momente. zile = intervalul e doar în acele zile ale săptămânii; doarme = camera ei e încuiată atunci. sprite = alt sprite în același loc pentru intervalul acela (sprites/<id>_<loc>_<sprite>.png). dialoguriPeLoc = alt dialog în funcție de loc. magazin = ce vinde personajul când alegi „Cumpără” în dialogul lui. Un interval din program poate trece de miezul nopții (18:00 → 02:00). gandDoarme = ce gândește Vale dacă apasă pe personaj cât doarme (în loc de dialog). faraPortret = nu are portrete de dialog (de exemplu tigrul Kaiei).",
+  "_nota": "locuriSprite = locurile unde personajul are sprite (sprites/<id>_<zona>_<loc>.png, sau sprites/<id>_<zona>.png pentru o zonă fără locuri, ca piața). rutina = unde stă pe momente ale zilei; fără rutină, stă mereu în primul loc din locuriSprite. dialog = id din dialoguri.json. lupta = statistici de luptă (TODO echilibru). Numele sunt TODO unde nu sunt stabilite. apare = condiții ca personajul să fie în scenă (de exemplu hoțul dispare după ce e eliberat). cineRaspunde = cine vorbește când dai click pe personaj, cât timp condițiile sunt îndeplinite (prizonierul legat → cel care trebuie plătit). clicabil: false = personajul se vede în scenă, dar nu se poate apăsa (negustorul din piață: cu el vorbești dând click pe prizonier). program = orar exact pe ore (de/pana/loc), are prioritate față de rutina pe momente. zile = intervalul e doar în acele zile ale săptămânii; doarme = camera ei e încuiată atunci. sprite = alt sprite în același loc pentru intervalul acela (sprites/<id>_<loc>_<sprite>.png). dialoguriPeLoc = alt dialog în funcție de loc. magazin = ce vinde personajul când alegi „Cumpără” în dialogul lui. Un interval din program poate trece de miezul nopții (18:00 → 02:00). gandDoarme = ce gândește Vale dacă apasă pe personaj cât doarme (în loc de dialog). faraPortret = nu are portrete de dialog (de exemplu tigrul Kaiei). stariExtra = stări de portret în plus doar pentru personajul acela (orcii: rade = râde zeflemitor; în dialog, \"emotie\": \"rade\").",
   "stariPortret": [
     "normal",
     "suparat",
@@ -517,6 +517,9 @@
       "nume": "Orcul colector",
       "locuriSprite": [
         "poarta/taxa"
+      ],
+      "stariExtra": [
+        "rade"
       ]
     },
     {
@@ -524,6 +527,9 @@
       "nume": "Paznic orc",
       "locuriSprite": [
         "poarta/exterior"
+      ],
+      "stariExtra": [
+        "rade"
       ]
     },
     {
@@ -531,6 +537,9 @@
       "nume": "Paznic orc",
       "locuriSprite": [
         "poarta/exterior"
+      ],
+      "stariExtra": [
+        "rade"
       ]
     }
   ]
