@@ -156,7 +156,16 @@
       "lupta_padure_interior": 115
     },
     "combat/lup_lovit.png": {
-      "lupta_taverna_parter": 115
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/lup_cazut.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/mistret_atac.png": {
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     }
   }
 }
