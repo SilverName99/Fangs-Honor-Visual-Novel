@@ -40,6 +40,41 @@ const abilitati = {
   },
 };
 
+// Clicul pe luptători se verifică pe forma pozei (pixelii neopaci), nu pe dreptunghiul ei: pozele au mult
+// spațiu transparent și se suprapun, iar cel din față (mistrețul) acoperea clicul pe cel din spate (lupul)
+const alfaCache = new Map();
+function alfa(img) {
+  if (!alfaCache.has(img.src)) {
+    let a = null;
+    try {
+      const c = document.createElement('canvas');
+      c.width = img.naturalWidth;
+      c.height = img.naturalHeight;
+      const x = c.getContext('2d', { willReadFrequently: true });
+      x.drawImage(img, 0, 0);
+      a = { w: c.width, h: c.height, date: x.getImageData(0, 0, c.width, c.height).data };
+    } catch {
+      // O imagine care nu se poate citi (de exemplu din alt loc) răspunde pe tot dreptunghiul
+    }
+    alfaCache.set(img.src, a);
+  }
+  return alfaCache.get(img.src);
+}
+
+// Poza e desenată „contain”, lipită jos: se calculează ce pixel din imagine e sub mouse
+function atinge(f, x, y) {
+  const img = f.corp.querySelector('img');
+  const r = (img || f.corp).getBoundingClientRect();
+  if (x < r.left || x > r.right || y < r.top || y > r.bottom) return false;
+  const a = img?.naturalWidth ? alfa(img) : null;
+  if (!a) return true;
+  const s = Math.min(r.width / a.w, r.height / a.h);
+  const px = Math.floor((x - r.left - (r.width - a.w * s) / 2) / s);
+  const py = Math.floor((y - r.top - (r.height - a.h * s)) / s);
+  if (px < 0 || py < 0 || px >= a.w || py >= a.h) return false;
+  return a.date[(py * a.w + px) * 4 + 3] > 40;
+}
+
 export function creeazaLupta(parinte, joc) {
   const cfg = joc.date.config.lupta;
   const inv = joc.inventar;
@@ -179,7 +214,6 @@ export function creeazaLupta(parinte, joc) {
     f.el.append(bare, f.corp);
     poza(f, 'idle');
     aseaza(f);
-    f.el.onclick = () => L.laClic?.(f);
     return f.el;
   }
 
@@ -604,6 +638,31 @@ export function creeazaLupta(parinte, joc) {
     L.elLocuri = div('locuri-lupta');
     const scenaLupta = div('scena-lupta');
     L.scena = scenaLupta;
+    // Cine e sub mouse: întâi cei din față (z-index mai mare), pe forma pozei; dacă nu, numele și barele de deasupra.
+    // Dintre cei atinși, o țintă valabilă are întâietate, ca un aliat suprapus să nu „fure” clicul pe un inamic
+    const subMouse = (e) => {
+      const ordine = [...L.toti].sort((a, b) => Number(b.el.style.zIndex) - Number(a.el.style.zIndex));
+      const atinsi = ordine.filter((f) => !f.cazut && atinge(f, e.clientX, e.clientY));
+      if (!atinsi.length) {
+        const peBare = ordine.find((f) => {
+          const r = f.el.querySelector('.bare-luptator').getBoundingClientRect();
+          return e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        });
+        return peBare || null;
+      }
+      return atinsi.find((f) => f.el.classList.contains('tinta-valida')) || atinsi[0];
+    };
+    scenaLupta.addEventListener('click', (e) => {
+      // Marcajele de loc (formația, „Schimbă locul”) au clicul lor
+      if (!L?.laClic || e.target.closest('.loc-liber')) return;
+      const f = subMouse(e);
+      if (f) L.laClic(f);
+    });
+    scenaLupta.addEventListener('mousemove', (e) => {
+      if (!L) return;
+      const f = L.laClic ? subMouse(e) : null;
+      scenaLupta.classList.toggle('peste-tinta', !!f && (f.el.classList.contains('tinta-valida') || f.tabara === 'aliat'));
+    });
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));
     scenaLupta.append(L.elLocuri);
     el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu);
