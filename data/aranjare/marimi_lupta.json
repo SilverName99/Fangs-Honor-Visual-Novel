@@ -106,6 +106,26 @@
     "combat/mag_vindecare.png": {
       "lupta_taverna_parter": 113,
       "lupta_padure_interior": 113
+    },
+    "combat/paznic_orc_1_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/paznic_orc_1_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/paznic_orc_1_lovit.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/paznic_orc_1_cazut.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/paznic_orc_1_idle.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     }
   }
 }
