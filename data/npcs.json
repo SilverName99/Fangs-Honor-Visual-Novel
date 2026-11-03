@@ -617,9 +617,14 @@
       "program": [
         {
           "de": "06:00",
-          "pana": "14:00",
+          "pana": "12:00",
           "loc": "poarta",
           "ce": "de pază, sprijinit de poartă"
+        },
+        {
+          "de": "12:00",
+          "pana": "14:00",
+          "ce": "plecat cât mănâncă ceilalți"
         },
         {
           "de": "14:00",
