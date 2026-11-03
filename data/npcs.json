@@ -538,14 +538,8 @@
         },
         {
           "de": "14:00",
-          "pana": "18:00",
-          "loc": "poarta",
-          "ce": "la masa taxei"
-        },
-        {
-          "de": "18:00",
           "pana": "06:00",
-          "ce": "plecat (nu e la poartă; taxa se plătește doar ziua)"
+          "ce": "plecat (nu e la poartă; taxa se plătește la poartă doar 06–14)"
         }
       ]
     },
