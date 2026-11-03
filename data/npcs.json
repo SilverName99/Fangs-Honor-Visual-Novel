@@ -580,7 +580,7 @@
           "pana": "18:00",
           "loc": "poarta",
           "sprite": "zaruri",
-          "ce": "joacă zaruri pe un butoi"
+          "ce": "joacă zaruri pe un butuc cu al doilea paznic (amândoi în același sprite)"
         },
         {
           "de": "18:00",
@@ -618,9 +618,7 @@
         {
           "de": "14:00",
           "pana": "18:00",
-          "loc": "poarta",
-          "sprite": "zaruri",
-          "ce": "joacă zaruri cu paznicul"
+          "ce": "joacă zaruri cu paznicul: amândoi sunt în sprite-ul paznicului (paznic_orc_1_poarta_zaruri.png)"
         },
         {
           "de": "18:00",
