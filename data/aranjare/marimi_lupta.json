@@ -148,36 +148,36 @@
       "lupta_padure_interior": 120
     },
     "combat/lup_atac.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130
     },
     "combat/lup_aparare.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
     },
     "combat/lup_lovit.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
     },
     "combat/lup_cazut.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120
     },
     "combat/mistret_atac.png": {
       "lupta_taverna_parter": 145,
       "lupta_padure_interior": 145
     },
     "combat/mistret_aparare.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_taverna_parter": 145,
+      "lupta_padure_interior": 145
     },
     "combat/mistret_lovit.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_taverna_parter": 145,
+      "lupta_padure_interior": 145
     },
     "combat/mistret_cazut.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_taverna_parter": 145,
+      "lupta_padure_interior": 145
     },
     "combat/mistret_idle.png": {
       "lupta_taverna_parter": 145,
