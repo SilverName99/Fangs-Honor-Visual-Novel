@@ -288,6 +288,11 @@ export function imaginiCerute(date, scene) {
   }
   // Cine nu atacă normal (preotul, doar puteri) nu are nevoie de poza „atac”
   const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume, p.lupta.faraAtac]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume, x.faraAtac])];
+  // Pozele refolosite (orcii din tavernă arată ca paznicul de la poartă) trebuie cerute și ele, o singură dată
+  for (const x of Object.values(date.lupte?.inamici || {})) {
+    if (!x.poze || luptatori.some(([id]) => id === x.poze)) continue;
+    luptatori.push([x.poze, date.npcs.personaje.find((p) => p.id === x.poze)?.nume || x.poze, false]);
+  }
   for (const [id, nume, faraAtac] of luptatori) for (const p of POZE) if (!(faraAtac && p === 'atac')) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
   // Puterile: poza personajului când o folosește (altfel „atac”) și, unde e cazul, imaginea efectului (scutul de lumină)
   for (const p of date.npcs.personaje) {
