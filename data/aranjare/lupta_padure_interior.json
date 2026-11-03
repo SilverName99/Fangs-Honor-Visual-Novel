@@ -4,12 +4,12 @@
     "aliat_2_fata": {
       "x": 0.35,
       "y": 0.9,
-      "scara": 0.25
+      "scara": 0.29
     },
     "aliat_1_fata": {
       "x": 0.35,
       "y": 0.7,
-      "scara": 0.25
+      "scara": 0.27
     },
     "aliat_0_fata": {
       "x": 0.35,
@@ -24,17 +24,17 @@
     "aliat_1_spate": {
       "x": 0.2,
       "y": 0.7,
-      "scara": 0.25
+      "scara": 0.27
     },
     "aliat_2_spate": {
       "x": 0.2,
       "y": 0.9,
-      "scara": 0.25
+      "scara": 0.29
     },
     "inamic_2_fata": {
       "x": 0.62,
       "y": 0.9,
-      "scara": 0.25
+      "scara": 0.29
     },
     "inamic_0_fata": {
       "x": 0.62,
@@ -44,7 +44,7 @@
     "inamic_1_fata": {
       "x": 0.62,
       "y": 0.7,
-      "scara": 0.25
+      "scara": 0.27
     },
     "inamic_0_spate": {
       "x": 0.77,
@@ -54,12 +54,12 @@
     "inamic_1_spate": {
       "x": 0.77,
       "y": 0.7,
-      "scara": 0.25
+      "scara": 0.27
     },
     "inamic_2_spate": {
       "x": 0.77,
       "y": 0.9,
-      "scara": 0.25
+      "scara": 0.29
     }
   },
   "primPlan": []
