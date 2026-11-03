@@ -142,6 +142,10 @@
     "combat/orc_colector_idle.png": {
       "lupta_taverna_parter": 115,
       "lupta_padure_interior": 115
+    },
+    "combat/lup_idle.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     }
   }
 }
