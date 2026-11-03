@@ -144,24 +144,24 @@
       "lupta_padure_interior": 115
     },
     "combat/lup_idle.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/lup_atac.png": {
-      "lupta_taverna_parter": 130,
-      "lupta_padure_interior": 130
+      "lupta_taverna_parter": 140,
+      "lupta_padure_interior": 140
     },
     "combat/lup_aparare.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/lup_lovit.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/lup_cazut.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/mistret_atac.png": {
       "lupta_taverna_parter": 155,
