@@ -543,10 +543,15 @@
         },
         {
           "de": "18:00",
-          "pana": "06:00",
+          "pana": "23:00",
           "loc": "poarta",
           "sprite": "noaptea",
           "ce": "de pază cu o torță (în locul celui de-al doilea paznic)"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "ce": "plecat (doarme în altă parte)"
         }
       ]
     },
