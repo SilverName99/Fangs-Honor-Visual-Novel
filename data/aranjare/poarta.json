@@ -25,6 +25,21 @@
       "x": 0.1363,
       "y": 0.8776,
       "scara": 0.3207
+    },
+    "paznic_orc_1@zaruri": {
+      "x": 0.5786,
+      "y": 0.8344,
+      "scara": 0.2392
+    },
+    "orc_colector@noaptea": {
+      "x": 0.5886,
+      "y": 0.7938,
+      "scara": 0.3207
+    },
+    "paznic_orc_1@seara": {
+      "x": 0.2164,
+      "y": 0.8496,
+      "scara": 0.2393
     }
   },
   "primPlan": [
