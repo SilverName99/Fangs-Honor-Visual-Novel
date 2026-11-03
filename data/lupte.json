@@ -49,6 +49,19 @@
         "tip": "apropiat"
       },
       "armura": 1
+    },
+    "orc_colector": {
+      "_nota": "TODO echilibru. Colectorul de taxe; mai greu decât paznicii, cu bâta. Pozele lui: combat/orc_colector_*.png.",
+      "nume": "Orcul colector",
+      "viata": 45,
+      "staminaMax": 80,
+      "atac": {
+        "min": 5,
+        "max": 8,
+        "tip": "apropiat"
+      },
+      "armura": 1,
+      "rezistenta": 5
     }
   },
   "lupte": {
