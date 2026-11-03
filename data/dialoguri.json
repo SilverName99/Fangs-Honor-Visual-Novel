@@ -336,5 +336,95 @@
         "text": "Cineva trebuie s-o facă. Hai, înainte să ne miroasă."
       }
     }
+  },
+  "paznic_orc": {
+    "_nota": "CIORNĂ (scrisă de Claude, de schimbat de autor). La fiecare click, paznicul spune o singură replică: întâi cele legate de context (cu o șansă), altfel una la întâmplare.",
+    "partener": "paznic_orc_1",
+    "start": [
+      {
+        "nod": "seara",
+        "conditii": {
+          "moment": [
+            "seara"
+          ],
+          "sansa": 0.5
+        }
+      },
+      {
+        "nod": "dupa_scandal_ajutat",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "ajutat"
+          },
+          "sansa": 0.4
+        }
+      },
+      {
+        "nod": "dupa_scandal_refuzat",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "refuzat"
+          },
+          "sansa": 0.4
+        }
+      },
+      {
+        "nod": "taxa_ratata",
+        "conditii": {
+          "taxaRatata": true,
+          "sansa": 0.5
+        }
+      },
+      {
+        "aleator": [
+          "g1",
+          "g2",
+          "g3",
+          "g4"
+        ]
+      }
+    ],
+    "noduri": {
+      "g1": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Ia uite cine-a venit! Puiul de om. Ai adus taxa sau doar te-ai rătăcit?"
+      },
+      "g2": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Ce te holbezi? Poarta e închisă. Pentru tine, mereu închisă."
+      },
+      "g3": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Mai sapă, mai cară, mai plătește. Așa-mi place un sătean cuminte."
+      },
+      "g4": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "normal",
+        "text": "Hrr. Mișcă de-aici, până nu-mi aduc aminte că mi-e foame."
+      },
+      "seara": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Ce cauți la poartă la ora asta? Du-te la culcare, până nu te culc eu."
+      },
+      "dupa_scandal_ajutat": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Tu ești ăla care s-a băgat la tavernă? Mai vino tu pe-aici... când nu te vede nimeni."
+      },
+      "dupa_scandal_refuzat": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Am auzit că ți-ai lăsat unchiul să mănânce bătaie. Deștept băiat. Așa rămâi întreg."
+      },
+      "taxa_ratata": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "N-ai plătit, hă? Colectorul a ținut minte. Și noi la fel."
+      }
+    }
   }
 }

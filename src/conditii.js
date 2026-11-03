@@ -35,6 +35,8 @@ const tipuri = {
       return (lim.subZile == null || zile < lim.subZile) && (lim.pesteZile == null || zile >= lim.pesteZile);
     }),
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)
+  // „taxaRatata: true” = Vale a rămas dator cel puțin o dată (paznicul îi aduce aminte)
+  taxaRatata: (v, c) => ((c.taxa?.ratari || 0) > 0) === v,
   inchiriat: (v, c) => (c.inchirieri?.[v] ?? -1) > (c.minute ?? 0),
 };
 

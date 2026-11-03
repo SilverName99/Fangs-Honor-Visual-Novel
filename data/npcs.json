@@ -521,7 +521,33 @@
       "stariExtra": [
         "rade"
       ],
-      "dialogTaxa": true
+      "dialogTaxa": true,
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "12:00",
+          "loc": "poarta",
+          "ce": "la masa taxei, numără monedele"
+        },
+        {
+          "de": "12:00",
+          "pana": "14:00",
+          "loc": "poarta",
+          "sprite": "pranz",
+          "ce": "mănâncă la masa taxei"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "poarta",
+          "ce": "la masa taxei"
+        },
+        {
+          "de": "18:00",
+          "pana": "06:00",
+          "ce": "plecat (nu e la poartă; taxa se plătește doar ziua)"
+        }
+      ]
     },
     {
       "id": "paznic_orc_1",
@@ -532,6 +558,45 @@
       ],
       "stariExtra": [
         "rade"
+      ],
+      "dialog": "paznic_orc",
+      "gandDoarme": "Doarme sprijinit de zid. Mai bine nu-l trezesc.",
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "12:00",
+          "loc": "poarta",
+          "ce": "de pază, cu toporul"
+        },
+        {
+          "de": "12:00",
+          "pana": "14:00",
+          "loc": "poarta",
+          "sprite": "pranz",
+          "ce": "mănâncă lângă foc"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "poarta",
+          "sprite": "zaruri",
+          "ce": "joacă zaruri pe un butoi"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
+          "loc": "poarta",
+          "sprite": "seara",
+          "ce": "lângă foc, ascute toporul"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "loc": "poarta",
+          "sprite": "doarme",
+          "doarme": true,
+          "ce": "doarme sprijinit de zid"
+        }
       ]
     },
     {
@@ -542,7 +607,29 @@
         "poarta"
       ],
       "clicabil": false,
-      "faraPortret": true
+      "faraPortret": true,
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "14:00",
+          "loc": "poarta",
+          "ce": "de pază, sprijinit de poartă"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "poarta",
+          "sprite": "zaruri",
+          "ce": "joacă zaruri cu paznicul"
+        },
+        {
+          "de": "18:00",
+          "pana": "06:00",
+          "loc": "poarta",
+          "sprite": "noaptea",
+          "ce": "de pază, cu o torță (noaptea e singurul treaz)"
+        }
+      ]
     }
   ]
 }

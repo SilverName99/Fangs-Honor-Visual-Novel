@@ -104,8 +104,10 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       el.hidden = false;
       parinte.classList.add('in-dialog');
       // „start” poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire cu un personaj e o prezentare)
+      // „aleator”: un nod ales la întâmplare din listă (replicile paznicului de la poartă), ca discuția să nu fie mereu aceeași
       const start = [].concat(dialog.start).find((s) => typeof s === 'string' || verificaConditii(s.conditii));
-      arataNod(typeof start === 'string' ? start : start?.nod);
+      const nod = typeof start === 'string' ? start : start?.aleator ? start.aleator[Math.floor(Math.random() * start.aleator.length)] : start?.nod;
+      arataNod(nod);
     },
     inchide,
     activ: () => !!activ,
