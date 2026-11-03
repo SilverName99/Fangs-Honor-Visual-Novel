@@ -152,6 +152,10 @@
       "lupta_padure_interior": 125
     },
     "combat/lup_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/lup_lovit.png": {
       "lupta_taverna_parter": 115
     }
   }
