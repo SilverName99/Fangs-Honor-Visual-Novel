@@ -146,6 +146,10 @@
     "combat/lup_idle.png": {
       "lupta_taverna_parter": 115,
       "lupta_padure_interior": 115
+    },
+    "combat/lup_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     }
   }
 }
