@@ -128,16 +128,16 @@
       "lupta_padure_interior": 115
     },
     "combat/orc_colector_aparare.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/orc_colector_lovit.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/orc_colector_atac.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125
     },
     "combat/orc_colector_idle.png": {
       "lupta_taverna_parter": 125,
@@ -182,6 +182,10 @@
     "combat/mistret_idle.png": {
       "lupta_taverna_parter": 145,
       "lupta_padure_interior": 145
+    },
+    "combat/orc_colector_cazut.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110
     }
   }
 }
