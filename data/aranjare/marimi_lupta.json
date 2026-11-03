@@ -52,8 +52,8 @@
       "lupta_padure_interior": 85
     },
     "combat/vanatoare_lovit.png": {
-      "lupta_taverna_parter": 100,
-      "lupta_padure_interior": 102
+      "lupta_taverna_parter": 97,
+      "lupta_padure_interior": 97
     },
     "combat/vale_pumni_aparare.png": {
       "lupta_padure_interior": 105,
@@ -61,7 +61,7 @@
     },
     "combat/vanatoare_cazut.png": {
       "lupta_padure_interior": 92,
-      "lupta_taverna_parter": 92
+      "lupta_taverna_parter": 87
     },
     "combat/soldat_idle.png": {
       "lupta_taverna_parter": 120,
