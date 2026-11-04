@@ -200,12 +200,12 @@
       "lupta_padure_interior": 115
     },
     "combat/betiv_cazut.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 112,
+      "lupta_padure_interior": 112
     },
     "combat/betiv_idle.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_taverna_parter": 112,
+      "lupta_padure_interior": 112
     }
   }
 }
