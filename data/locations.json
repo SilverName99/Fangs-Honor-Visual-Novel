@@ -621,6 +621,7 @@
         {
           "id": "moara",
           "imagine": "map/piese/moara.png",
+          "deasupra": true,
           "variante": [
             {
               "sufix": "_noapte",

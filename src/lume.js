@@ -39,7 +39,7 @@ export function construiesteLumea(date) {
     parinte: null,
     tinte: zone.map((z) => ({ id: z.id, nume: z.nume, spre: z.id })),
     obiecte: zone.flatMap((z) =>
-      (z.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: z.nume, imagine: p.imagine, variante: p.variante || [], tinta: z.id })),
+      (z.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: z.nume, imagine: p.imagine, variante: p.variante || [], tinta: z.id, deasupra: !!p.deasupra })),
     ),
   });
 

@@ -111,6 +111,9 @@ export function randeaza(strat, descriere, aranjare, context) {
     });
     el.dataset.id = o.id;
     aplicaPozitie(el, pozitie(aranjare, o, i, sufixVarianta(descriere, o.id, context)));
+    // „deasupra”: piesa stă peste celelalte chiar dacă e mai sus pe hartă (moara peste câmpurile de lângă ea);
+    // rămâne sub tenta de seară/noapte (4000), ca să se întunece la fel
+    if (o.deasupra) el.style.zIndex = String(Number(el.style.zIndex) + 2000);
     strat.append(el);
     obiecte.set(o.id, el);
   });
