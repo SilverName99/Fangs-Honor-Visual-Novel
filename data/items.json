@@ -8,6 +8,7 @@
     "potiune_viata": { "nume": "Poțiune de viață", "tip": "consumabil", "stiva": 3, "pret": 15, "minute": 1, "inLupta": true, "efecte": { "nevoi": { "viata": 40 } } },
     "carne": { "nume": "Carne", "tip": "material", "stiva": 5, "pret": 4 },
     "piele": { "nume": "Piele de animal", "tip": "material", "stiva": 3, "sloturi": 2, "pret": 6 },
+    "blana_lup": { "nume": "Blană de lup", "tip": "material", "stiva": 3, "sloturi": 2, "pret": 8 },
     "lemn": { "nume": "Lemn", "tip": "material", "stiva": 10, "pret": 1 },
     "sageti": { "nume": "Săgeți", "tip": "material", "stiva": 20, "pret": 1 },
 

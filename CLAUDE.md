@@ -279,6 +279,12 @@ O singură monedă: **monede**. Cifrele de pornire sunt în `config.json`.
 
 **Reputația** în sat e un număr. Efectul ei (prețuri, relații, evenimente) e `TODO`.
 
+### Orcii care fac dezordine (decis)
+
+- **Evenimente** (categoria `orci` în `events.json`, texte ciornă de Claude): colectorul, în rondul lui de după-amiază (14–18), la piață (ia marfa negustorului), la tavernă (bere gratis de la Agnes, 16–18) sau la câmpuri (ia grâul fermierilor); patrula de orci (orcul normal) care răstoarnă taraba (08–14), bate la ușa casei (08–21) sau o îmbrâncește pe Miriam în piață; **interdicția de noapte** (afară, noaptea: amendă, fugi cu 50% șanse sau te bați). La fiecare poți interveni (reputație, relație, dar riști pedeapsa sau o bătaie fără fugă), plăti tu sau tăcea (reputația scade).
+- **Ritmul** (decis: „să nu se învârtă jocul doar în jurul lor”): cel mult un eveniment cu orci pe zi, apoi o pauză de 2 zile; în ~40% din zile nu se întâmplă nimic (`categoriiEvenimente` în `config.json`); fiecare eveniment revine abia după 6 zile.
+- **Pedepsele** (`pedepse` în `config.json`): cu o șansă (35%), orcii sunt „binevoitori” și te lasă să alegi; altfel aleg ei: **biciuire** (−25 viață, minimum 5), **taxa crește** cu 10, **predai un obiect** (îl alegi tu sau îl iau ei la întâmplare), **3 blăni de lup în 3 zile** la colector (altfel **taxa următoare e dublă**). Blana de lup (`blana_lup`) vine de la vânătoarea de lupi; datoria se vede în HUD.
+
 ## 12. Condiții
 
 Jocul verifică condiții în **patru locuri**: evenimente, locuri încuiate, locuri ascunse și variante de imagine. Toate folosesc **același format** și sunt verificate de **o singură funcție**:

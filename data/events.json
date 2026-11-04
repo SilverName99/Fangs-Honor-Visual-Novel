@@ -126,6 +126,367 @@
       ]
     },
     {
+      "id": "orci_colector_piata",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "piata",
+        "ora": {
+          "min": "14:00",
+          "max": "17:59"
+        },
+        "sansa": 0.5
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "orc_colector",
+      "emotie": "rade",
+      "text": "Colectorul înșfacă un sac de mere de pe taraba negustorului și pleacă fără să plătească. Negustorul tace, cu ochii în pământ.",
+      "alegeri": [
+        {
+          "text": "Pune sacul la loc!",
+          "efecte": {
+            "reputatie": 2,
+            "relatie": {
+              "negustor": 2
+            },
+            "pedeapsa": "orc_colector"
+          }
+        },
+        {
+          "text": "Plătesc eu marfa. (8 monede)",
+          "conditii": {
+            "bani": {
+              "min": 8
+            }
+          },
+          "efecte": {
+            "bani": -8,
+            "relatie": {
+              "negustor": 3
+            },
+            "reputatie": 1
+          }
+        },
+        {
+          "text": "Mă fac că nu văd.",
+          "efecte": {
+            "reputatie": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_colector_taverna",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "taverna/parter",
+        "ora": {
+          "min": "16:00",
+          "max": "17:59"
+        },
+        "prezent": "hangita",
+        "sansa": 0.5
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "orc_colector",
+      "emotie": "rade",
+      "text": "Colectorul se trântește la masă și îi cere lui Agnes bere. Pe gratis, ca de obicei. Agnes strânge din dinți.",
+      "alegeri": [
+        {
+          "text": "Las-o în pace și plătește ca toată lumea.",
+          "efecte": {
+            "reputatie": 2,
+            "relatie": {
+              "hangita": 3
+            },
+            "pedeapsa": "orc_colector"
+          }
+        },
+        {
+          "text": "Pune berea pe socoteala mea. (3 monede)",
+          "conditii": {
+            "bani": {
+              "min": 3
+            }
+          },
+          "efecte": {
+            "bani": -3,
+            "relatie": {
+              "hangita": 2
+            }
+          }
+        },
+        {
+          "text": "Tac și-mi văd de-ale mele.",
+          "efecte": {
+            "reputatie": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_colector_campuri",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "campuri",
+        "ora": {
+          "min": "14:00",
+          "max": "17:59"
+        },
+        "sansa": 0.5
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "orc_colector",
+      "emotie": "rade",
+      "text": "Colectorul răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "alegeri": [
+        {
+          "text": "Lasă grâul, nu e al tău!",
+          "efecte": {
+            "reputatie": 2,
+            "relatie": {
+              "fermier": 3
+            },
+            "pedeapsa": "orc_colector"
+          }
+        },
+        {
+          "text": "Îl ajut pe fermier să strângă ce a rămas.",
+          "efecte": {
+            "timp": 30,
+            "relatie": {
+              "fermier": 2
+            }
+          }
+        },
+        {
+          "text": "Plec mai departe.",
+          "efecte": {
+            "reputatie": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_patrula_taraba",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "piata",
+        "ora": {
+          "min": "08:00",
+          "max": "13:59"
+        },
+        "sansa": 0.35
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "paznic_orc_1",
+      "emotie": "rade",
+      "text": "Un orc răstoarnă dintr-o lovitură taraba negustorului și râde de merele care se rostogolesc prin noroi.",
+      "alegeri": [
+        {
+          "text": "Ia-ți labele de pe taraba lui!",
+          "efecte": {
+            "lupta": "bataie_orc_taraba"
+          }
+        },
+        {
+          "text": "Ajut la strâns marfa.",
+          "efecte": {
+            "timp": 30,
+            "relatie": {
+              "negustor": 2
+            }
+          }
+        },
+        {
+          "text": "Trec mai departe.",
+          "efecte": {
+            "reputatie": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_patrula_casa",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "casa",
+        "ora": {
+          "min": "08:00",
+          "max": "20:59"
+        },
+        "sansa": 0.3
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "paznic_orc_1",
+      "emotie": "suparat",
+      "text": "Un orc bate cu pumnul în ușa casei. „Deschide! Vreau să văd ce ascundeți acolo.”",
+      "alegeri": [
+        {
+          "text": "Îl las să caute.",
+          "efecte": {
+            "pedeapsa": {
+              "cine": "paznic_orc_1",
+              "tip": "obiect"
+            }
+          }
+        },
+        {
+          "text": "Îi dau 5 monede să plece. (5 monede)",
+          "conditii": {
+            "bani": {
+              "min": 5
+            }
+          },
+          "efecte": {
+            "bani": -5
+          }
+        },
+        {
+          "text": "Îi închid ușa în nas.",
+          "efecte": {
+            "reputatie": 1,
+            "pedeapsa": "paznic_orc_1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_patrula_miriam",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "loc": "piata",
+        "prezent": "miriam",
+        "sansa": 0.5
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "paznic_orc_1",
+      "emotie": "rade",
+      "text": "Un orc o îmbrâncește pe mama ta lângă tarabe și îi răstoarnă coșul. Miriam se uită speriată la tine.",
+      "alegeri": [
+        {
+          "text": "Mai pune o dată mâna pe ea și vezi!",
+          "efecte": {
+            "lupta": "bataie_orc_miriam"
+          }
+        },
+        {
+          "text": "O iau pe mama de braț și plecăm.",
+          "efecte": {
+            "relatie": {
+              "miriam": 1
+            }
+          }
+        },
+        {
+          "text": "Nu fac nimic.",
+          "efecte": {
+            "relatie": {
+              "miriam": -3
+            },
+            "reputatie": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "orci_interdictie_noapte",
+      "categorie": "orci",
+      "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
+      "conditii": {
+        "moment": [
+          "noaptea"
+        ],
+        "oricare": [
+          {
+            "loc": "piata"
+          },
+          {
+            "loc": "campuri"
+          },
+          {
+            "loc": "moara"
+          },
+          {
+            "loc": "fierar"
+          },
+          {
+            "loc": "biserica"
+          },
+          {
+            "loc": "padure"
+          },
+          {
+            "loc": "taverna"
+          }
+        ],
+        "sansa": 0.35
+      },
+      "repetare": {
+        "pauzaZile": 6
+      },
+      "vorbitor": "paznic_orc_1",
+      "emotie": "suparat",
+      "text": "O patrulă de orci te prinde pe drum în miez de noapte. „Ce cauți afară la ora asta, șobolane?”",
+      "alegeri": [
+        {
+          "text": "Plătesc amenda. (10 monede)",
+          "conditii": {
+            "bani": {
+              "min": 10
+            }
+          },
+          "efecte": {
+            "bani": -10
+          }
+        },
+        {
+          "text": "Fug!",
+          "efecte": {
+            "laIntamplare": [
+              {
+                "sansa": 0.5,
+                "efecte": {
+                  "timp": 20,
+                  "mesaj": "Ai scăpat pe o ulicioară întunecată."
+                }
+              },
+              {
+                "sansa": 0.5,
+                "efecte": {
+                  "mesaj": "Te-au prins.",
+                  "pedeapsa": "paznic_orc_1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "Mă bat cu el.",
+          "efecte": {
+            "lupta": "bataie_orc_noapte"
+          }
+        }
+      ]
+    },
+    {
       "id": "taverna_scandal",
       "manual": true,
       "grup": "Scandalul din tavernă",

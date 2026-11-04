@@ -227,7 +227,8 @@
                 "rucsac_piele"
               ],
               "cumpara": [
-                "piele"
+                "piele",
+                "blana_lup"
               ]
             }
           ],
@@ -505,6 +506,7 @@
           "cumpara": [
             "carne",
             "piele",
+            "blana_lup",
             "lemn"
           ],
           "ascuns": {

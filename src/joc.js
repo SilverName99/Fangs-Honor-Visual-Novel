@@ -120,9 +120,11 @@ function actualizeazaHud() {
 }
 
 function textTaxa() {
-  if (stare.taxa.platita) return 'taxa plătită';
+  const d = stare.datorieBlanuri;
+  const blanuri = d ? ` · orcii vor ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural} până în ziua ${d.panaLaZiua}` : '';
+  if (stare.taxa.platita) return `taxa plătită${blanuri}`;
   const zile = stare.taxa.zi - ziua(stare);
-  return zile <= 0 ? `taxa (${sumaTaxa()}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}`;
+  return (zile <= 0 ? `taxa (${sumaTaxa()}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}${stare.taxa.dubla ? ' (dublă!)' : ''}`) + blanuri;
 }
 
 // ---------- timp, nevoi, leșin ----------
@@ -144,7 +146,8 @@ function avanseaza(minute, factorNevoi = 1) {
 
 // Taxa de bază plus ce au adăugat orcii între timp (de exemplu după bătaia din tavernă)
 function sumaTaxa() {
-  return cfg.taxa.suma + (stare.taxa.extra || 0);
+  // Pedeapsa „blănurile”: dacă nu le-ai adus la timp, următoarea taxă e dublă
+  return (cfg.taxa.suma + (stare.taxa.extra || 0)) * (stare.taxa.dubla ? 2 : 1);
 }
 
 // Când trece ziua taxei: dacă e plătită, începe un ciclu nou; dacă nu, se notează ratarea
@@ -158,6 +161,13 @@ function verificaTaxa() {
     t.zi += cfg.taxa.intervalZile;
     t.platita = false;
   }
+  // Blănurile cerute de orci: dacă a trecut termenul și nu le-ai adus, taxa următoare se dublează
+  const d = stare.datorieBlanuri;
+  if (d && ziua(stare) > d.panaLaZiua) {
+    stare.datorieBlanuri = null;
+    t.dubla = true;
+    anunt(cfg.pedepse.tipuri.blanuri.textRatat);
+  }
 }
 
 function platesteTaxa() {
@@ -166,6 +176,7 @@ function platesteTaxa() {
   if (stare.bani < sumaTaxa()) return mesaj(`Îți trebuie ${sumaTaxa()} monede.`);
   stare.bani -= sumaTaxa();
   t.platita = true;
+  t.dubla = false;
   salveaza();
   actualizeazaHud();
   mesaj(`Ai plătit taxa (${sumaTaxa()} monede).`);
@@ -185,6 +196,26 @@ function verificaColectorul() {
 // Discuția cu colectorul: acasă (în ziua taxei) și la poartă (când îl apeși). Suma se scrie din cod,
 // pentru că poate crește (de exemplu după bătaia din tavernă)
 function dialogTaxa(text) {
+  // Dacă orcii așteaptă blănurile și Vale le are, colectorul le ia întâi
+  const d = stare.datorieBlanuri;
+  if (d && inventar.numar(stare.inventar, d.obiect) >= d.cate) {
+    return dialog.porneste({
+      partener: 'orc_colector',
+      start: 'b',
+      noduri: {
+        b: {
+          vorbitor: 'orc_colector',
+          emotie: 'normal',
+          text: cfg.pedepse.tipuri.blanuri.textColector,
+          alegeri: [
+            { text: `Predă ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural}`, efecte: { predaBlanuri: true }, spre: 'gata' },
+            { text: 'Nu acum.', spre: null },
+          ],
+        },
+        gata: { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.pedepse.tipuri.blanuri.textPredat },
+      },
+    });
+  }
   const nod = stare.taxa.platita
     ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit }
     : {
@@ -197,6 +228,76 @@ function dialogTaxa(text) {
         ],
       };
   dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { c: nod } });
+}
+
+// ---------- pedepsele orcilor ----------
+// Când Vale le stă în cale, orcii îl pedepsesc. Dacă azi „sunt binevoitori” (o șansă), îl lasă să-și aleagă
+// pedeapsa; altfel o aleg ei, la întâmplare dintre cele care se pot aplica acum (config.json, „pedepse”)
+function obiecteDePredat() {
+  return [...new Set(stare.inventar.map((x) => x.id))].filter((id) => inventar.def(id).tip !== 'poveste');
+}
+
+function pedepsePosibile() {
+  return Object.entries(cfg.pedepse.tipuri)
+    .filter(([id]) => (id !== 'obiect' || obiecteDePredat().length) && (id !== 'blanuri' || !stare.datorieBlanuri))
+    .map(([id, t]) => ({ id, ...t }));
+}
+
+function aplicaPedeapsa(id, obiect) {
+  const t = cfg.pedepse.tipuri;
+  if (id === 'biciuire') {
+    stare.nevoi.viata = Math.max(t.biciuire.viataMinima, stare.nevoi.viata - t.biciuire.viata);
+    stare.minute += t.biciuire.minute || 0;
+  }
+  if (id === 'taxa') stare.taxa.extra = (stare.taxa.extra || 0) + t.taxa.cresteCu;
+  if (id === 'obiect' && obiect) inventar.scoateOriunde(obiect, 1);
+  if (id === 'blanuri') stare.datorieBlanuri = { obiect: t.blanuri.obiect, cate: t.blanuri.cate, panaLaZiua: ziua(stare) + t.blanuri.zile };
+  salveaza();
+  actualizeazaHud();
+}
+
+function dialogPedeapsa(cine, tip) {
+  const p = cfg.pedepse;
+  const posibile = pedepsePosibile();
+  const nod = (text, extra = {}) => ({ vorbitor: cine, emotie: 'suparat', text, ...extra });
+  const noduri = {};
+  // Noduri pentru fiecare pedeapsă: textul ei; „obiect” cere să alegi ce predai
+  for (const t of posibile) {
+    if (t.id === 'obiect') {
+      noduri.obiect = nod(t.textAlege, {
+        alegeri: obiecteDePredat()
+          .slice(0, 8)
+          .map((id) => ({ text: inventar.def(id).nume, efecte: { pedeapsaAplicata: { id: 'obiect', obiect: id } }, spre: null })),
+      });
+    } else noduri[t.id] = nod(t.text, { efecte: { pedeapsaAplicata: { id: t.id } } });
+  }
+  let start;
+  if (!tip && Math.random() < p.sansaAlegi) {
+    noduri.alege = nod(p.textAlegi, { emotie: 'rade', alegeri: posibile.map((t) => ({ text: t.alegere, spre: t.id })) });
+    start = 'alege';
+  } else {
+    // „tip”: pedeapsa e impusă de eveniment (orcul care scotocește prin casă ia un obiect)
+    const t = posibile.find((x) => x.id === tip) || posibile[Math.floor(Math.random() * posibile.length)];
+    start = t.id;
+    // Când aleg ei obiectul, iau unul la întâmplare
+    if (t.id === 'obiect') {
+      const obiecte = obiecteDePredat();
+      const ales = obiecte[Math.floor(Math.random() * obiecte.length)];
+      noduri.obiect = nod(t.textIau.replace('{obiect}', inventar.def(ales).nume.toLowerCase()), { efecte: { pedeapsaAplicata: { id: 'obiect', obiect: ales } } });
+    }
+  }
+  dialog.porneste({ partener: cine, start, noduri });
+}
+
+// Pornită dintr-un efect (o alegere din dialog sau o luptă pierdută): așteaptă să se închidă ce e pe ecran
+function pedeapsa(cine) {
+  const incearca = () => {
+    if (dialog.activ() || secventa.activa() || lupta.activa()) return setTimeout(incearca, 150);
+    // Valoarea efectului: true / id-ul orcului / { cine, tip }
+    const o = typeof cine === 'object' && cine ? cine : { cine };
+    dialogPedeapsa(o.cine === true || !o.cine ? 'paznic_orc_1' : o.cine, o.tip);
+  };
+  setTimeout(incearca, 0);
 }
 
 function lesin() {
@@ -231,7 +332,7 @@ function mergi(id, { faraTimp = false } = {}) {
 
 function verificaEvenimente() {
   const ctx = context(stare);
-  const ev = alegeEveniment(evenimente, stare, ctx);
+  const ev = alegeEveniment(evenimente, stare, ctx, cfg.categoriiEvenimente);
   if (ev) pornesteEveniment(ev.id);
 }
 
@@ -386,6 +487,8 @@ const joc = {
     afiseaza();
     if (text) mesaj(text);
   },
+  pedeapsa,
+  aplicaPedeapsa,
   pornesteLupta(id) {
     dialog.inchide();
     lupta.porneste(id);

@@ -36,6 +36,24 @@ const efecte = {
   mergi: (v, joc) => setTimeout(() => joc.mergi(v, { faraTimp: true }), 0),
   // Magazinul unui personaj, deschis din dialog (Agnes: „Cumpără”)
   magazin: (v, joc) => joc.deschideMagazin(v),
+  // Orcii îl pedepsesc pe Vale (după ce se închide ce e pe ecran); valoarea e orcul care vorbește
+  pedeapsa: (v, joc) => joc.pedeapsa(v),
+  // Un rând scurt pe ecran (de exemplu „Ai scăpat!”)
+  mesaj: (v, joc) => joc.mesaj(v),
+  pedeapsaAplicata: (v, joc) => joc.aplicaPedeapsa(v.id, v.obiect),
+  // Blănurile cerute de orci, predate colectorului
+  predaBlanuri: (v, joc) => {
+    const d = joc.stare.datorieBlanuri;
+    if (!d) return;
+    joc.inventar.scoateOriunde(d.obiect, d.cate);
+    joc.stare.datorieBlanuri = null;
+  },
+  // Un rezultat la întâmplare: [{ sansa, efecte }] (fuga de patrula de noapte: uneori scapi, alteori nu)
+  laIntamplare: (v, joc) => {
+    let z = Math.random() * v.reduce((s, x) => s + (x.sansa ?? 1), 0);
+    const ales = v.find((x) => (z -= x.sansa ?? 1) < 0) || v.at(-1);
+    aplicaEfecte(ales.efecte, joc);
+  },
 };
 
 export function registreazaEfect(nume, functie) {
