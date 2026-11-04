@@ -1059,8 +1059,8 @@ svg.zone {
   position: relative;
   flex: 1;
   box-sizing: border-box;
-  padding: 70px 80px 60px;
-  color: #2e2116;
+  padding: 90px 104px 60px 136px;
+  color: #141010;
   background: linear-gradient(90deg, #e9dcc0, #f3e9d2 60%, #ecdfc4);
   overflow: hidden;
 }
@@ -1069,6 +1069,8 @@ svg.zone {
   box-shadow: inset -30px 0 40px -20px rgba(70, 45, 20, 0.45);
 }
 .carte .pagina.dreapta {
+  /* Mai mult loc în dreapta: în imaginea cărții acolo se văd marginile foilor, deci hârtia e mai la stânga */
+  padding: 90px 150px 80px 50px;
   border-radius: 0 6px 6px 0;
   box-shadow: inset 30px 0 40px -20px rgba(70, 45, 20, 0.45);
   display: flex;
@@ -1078,7 +1080,7 @@ svg.zone {
 .nume-carte {
   font: 600 76px 'Dancing Script', cursive;
   line-height: 1.1;
-  color: #3a2412;
+  color: #141010;
   margin-bottom: 28px;
 }
 .incredere {
@@ -1087,7 +1089,7 @@ svg.zone {
   gap: 18px;
   margin-bottom: 40px;
   font: 500 34px Caveat, cursive;
-  color: #5a3d22;
+  color: #141010;
 }
 .romburi {
   display: flex;
@@ -1097,16 +1099,15 @@ svg.zone {
   width: 22px;
   height: 22px;
   transform: rotate(45deg);
-  border: 2px solid #6b4826;
+  border: 2px solid #141010;
   box-sizing: border-box;
 }
 .romb.plin {
-  background: #8a2f1c;
-  border-color: #5e1d10;
+  background: #141010;
 }
 .descriere-carte {
   font: 500 40px/1.35 Caveat, cursive;
-  color: #2e2116;
+  color: #141010;
 }
 .carte .schita {
   max-width: 100%;
@@ -1122,11 +1123,11 @@ svg.zone {
 .numar-pagina {
   position: absolute;
   bottom: 22px;
-  left: 0;
-  right: 0;
+  left: 50px;
+  right: 150px;
   text-align: center;
   font: 500 28px Caveat, cursive;
-  color: #6b4f33;
+  color: #141010;
 }
 .inapoi-carte,
 .inainte-carte {
