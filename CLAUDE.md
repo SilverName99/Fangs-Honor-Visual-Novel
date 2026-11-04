@@ -475,6 +475,8 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 
 **Stadiu:** v0.1 gata. Din v0.2 și v0.3 e făcută **baza** (inventar, echipament, muncă, somn, magazin, rutine, taxa cu colectorul, grafica UI, lupta). Autorul a cerut ca misiunile (acoperișul, fierarul, vânătoarea) și consecințele (taxa ratată, înfrângerea) să aștepte: rămân `TODO`.
 
+**De făcut după ce terminăm câmpurile și moara** (cerut de autor): un **joc de zaruri** pe care îl poți juca **cu orcii** (la poartă, unde paznicii joacă zaruri 14–18) și un joc pe care îl poți juca **în tavernă**. Regulile și mizele le stabilim atunci.
+
 **De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare.
 
 **Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de echipament se aranjează în editor ca „scena” `echipament`.
