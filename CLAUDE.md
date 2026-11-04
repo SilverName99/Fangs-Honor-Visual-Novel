@@ -204,6 +204,7 @@ Elemente (lista poate crește):
 | Cursorul | `ui_cursor.png`, `ui_cursor_click.png` | **maximum 64×64**, ideal 32×32 (browserele refuză cursoare mari) |
 | Figura lui Vale pentru echipament | `ui_vale_apoza.png` | A-pose, fundal transparent |
 | Fundalul meniului principal | `ui_meniu_fundal.png` | 1920×1080 |
+| Cartea personajelor (deschisă, pagini goale) | `ui_carte.png` | 1600×1000 |
 
 **9-slice:** colțurile ramei rămân neschimbate, iar mijlocul se întinde. Așa un singur chenar merge la orice mărime. Marginile (cât de lat e colțul) se setează în editor, la Aranjare.
 
@@ -283,7 +284,7 @@ O singură monedă: **monede**. Cifrele de pornire sunt în `config.json`.
 
 ### Orcii care fac dezordine (decis)
 
-- **Evenimente** (categoria `orci` în `events.json`, texte ciornă de Claude): colectorul, în rondul lui de după-amiază (14–18), la piață (ia marfa negustorului), la tavernă (bere gratis de la Agnes, 16–18); patrula de orci (orcul normal) care ia grâul fermierilor la câmpuri (08–13), răstoarnă taraba (08–14), bate la ușa casei (08–21) sau îi cere lui Bram să-i ascută toporul pe gratis, la fierărie (cât Bram lucrează afară); **interdicția de noapte** (afară, noaptea: amendă, fugi cu 50% șanse sau te bați). La fiecare poți interveni (reputație, relație, dar riști pedeapsa sau o bătaie fără fugă), plăti tu sau tăcea (reputația scade). Fiecare are **o imagine** pe tot ecranul înainte de text, `events/<id>.png` (în galerie: „Eveniment: Orcii prin sat”).
+- **Evenimente** (categoria `orci` în `events.json`, texte ciornă de Claude): colectorul, în rondul lui de după-amiază (14–18), la piață (ia marfa negustorului), la tavernă (bere gratis de la Agnes, 16–18); patrula de orci (orcul normal) care ia grâul fermierilor la câmpuri (08–13), răstoarnă taraba (08–14; doi orci, lupta e cu amândoi), bate la ușa casei (08–21) sau îi cere lui Bram să-i ascută toporul pe gratis, la fierărie (cât Bram lucrează afară; dacă intervii, te bați cu orcul alături de Bram); **interdicția de noapte** (afară, noaptea: amendă, fugi cu 50% șanse sau te bați). La fiecare poți interveni (reputație, relație, dar riști pedeapsa sau o bătaie fără fugă), plăti tu sau tăcea (reputația scade). Fiecare are **o imagine** pe tot ecranul înainte de text, `events/<id>.png` (în galerie: „Eveniment: Orcii prin sat”).
 - **Ritmul** (decis: „să nu se învârtă jocul doar în jurul lor”): cel mult un eveniment cu orci pe zi, **fără pauză obligatorie**, și **niciunul în prima săptămână** (încep din ziua 8, `dinZiua`). În fiecare zi e o șansă (40%); după o zi cu eveniment scade la jumătate (20%), după două zile la rând încă la jumătate (10%), iar fiecare zi liniștită o ridică cu 15%, până la 70% (`categoriiEvenimente` în `config.json`). Fiecare eveniment în parte revine abia după 6 zile.
 - **Pedepsele** (`pedepse` în `config.json`): cu o șansă (35%), orcii sunt „binevoitori” și te lasă să alegi; altfel aleg ei: **biciuire** (−25 viață, minimum 5), **taxa crește** cu 10, **predai un obiect** (îl alegi tu sau îl iau ei la întâmplare), **3 blăni de lup în 3 zile** la colector (altfel **taxa următoare e dublă**). Blana de lup (`blana_lup`) vine de la vânătoarea de lupi; datoria se vede în HUD.
 
@@ -451,7 +452,9 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 
 Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.
 
-**Relații:** un număr per personaj și un prag pentru recrutare. În demo nu există schimb de inventar cu recruții.
+**Încrederea (decis):** fiecare personaj important are o încredere de la 0 la 10 (`relatie` în efecte și condiții, `incredere.max` în `config.json`; nu iese din scară). La 10 apare în dialog misiunea de recrutare (`TODO`, condiția `"relatie": { "<id>": { "min": 10 } }`). În demo nu există schimb de inventar cu recruții.
+
+**Cartea personajelor (decis):** butonul „📖 Personaje” din HUD (sau tasta P). O carte cu pagini care se întorc, câte un personaj pe fiecare două pagini: în stânga numele, încrederea (10 romburi, „x/10”) și o descriere scurtă, în vocea lui Vale, cu font de scris de mână (Dancing Script și Caveat, incluse în build, merg offline); în dreapta schița lui, `ui/carte_<id>.png` (desen în cerneală sau cărbune, 4:5, fundal transparent; în galerie la „Cartea personajelor”). Cartea deschisă poate primi o imagine, `ui/ui_carte.png` (1600×1000, două pagini goale). Un personaj intră în carte după prima discuție cu el, în ordinea în care i-a cunoscut Vale; Miriam e acolo de la început (`start.cunoscuti`). În carte: Miriam, Roderick, Bram, Kaia, Elian, Agnes, fermierul, hoțul (`carte` în `npcs.json`; descrierile sunt ciorne de Claude).
 
 **Recrutarea și finalul:**
 1. Fiecare om se alătură pe drumul lui (relație, questline sau plată).

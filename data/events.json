@@ -308,10 +308,10 @@
       "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
-      "text": "Un orc răstoarnă dintr-o lovitură taraba negustorului și râde de merele care se rostogolesc prin noroi.",
+      "text": "Doi orci răstoarnă dintr-o lovitură taraba negustorului și râd de merele care se rostogolesc prin noroi.",
       "alegeri": [
         {
-          "text": "Ia-ți labele de pe taraba lui!",
+          "text": "Luați-vă labele de pe taraba lui!",
           "efecte": {
             "lupta": "bataie_orc_taraba"
           }

@@ -15,6 +15,11 @@
     {
       "id": "miriam",
       "nume": "Miriam",
+      "carte": {
+        "nume": "Miriam Lightfinder",
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Coase la amiază, gătește seara și nu se culcă până nu mă știe acasă. În zilele de odihnă se roagă dis-de-dimineață la biserică."
+      },
       "locuriSprite": [
         "casa/bucatarie",
         "casa/camera_mama",
@@ -104,6 +109,11 @@
     {
       "id": "soldat",
       "nume": "Roderick",
+      "carte": {
+        "nume": "Roderick Lightfinder",
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă."
+      },
       "locuriSprite": [
         "taverna/parter",
         "biserica/interior"
@@ -161,6 +171,10 @@
     {
       "id": "fierar",
       "nume": "Bram Emberforge",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Fierarul satului. Lucrează de dimineața până seara, afară, la nicovală, iar orcii îi aduc topoarele să le ascută pe gratis. Vorbește puțin, dar ce face, face temeinic."
+      },
       "locuriSprite": [
         "fierar",
         "fierar/interior",
@@ -242,6 +256,10 @@
     {
       "id": "hot",
       "nume": "Hoțul (TODO nume)",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Un tânăr hoț, legat la butucul din piață. Negustorul cere bani ca să-l elibereze. Nu știu încă ce a furat și nici dacă merită ajutat."
+      },
       "locuriSprite": [
         "piata"
       ],
@@ -277,6 +295,10 @@
     {
       "id": "vanatoare",
       "nume": "Kaia",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Vânătoarea de la hotar. Venea rar prin sat, dar toată lumea o știa. Călărește un tigru cu colți de sabie, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Campsite-ul ei din pădure e acum locul nostru ascuns."
+      },
       "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la campsite-ul ei din pădure, care devine locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
         "padure/campsite"
@@ -367,6 +389,10 @@
     {
       "id": "mag",
       "nume": "Fratele Elian",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Preotul satului. Dimineața aprinde tămâia, ziua privește altarul de pe bancă, iar după-amiaza citește pe treptele bisericii. Pare doar un bătrân blând."
+      },
       "locuriSprite": [
         "biserica/interior",
         "biserica"
@@ -438,6 +464,10 @@
     {
       "id": "hangita",
       "nume": "Agnes",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti."
+      },
       "locuriSprite": [
         "taverna/parter",
         "taverna"
@@ -623,6 +653,10 @@
     {
       "id": "fermier",
       "nume": "Fermierul (TODO nume)",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Fermierul. Ară câmpul de grâu de la ivirea zorilor până la prânz, împreună cu ceilalți săteni. Orcii îi iau o parte din recoltă când le vine cheful."
+      },
       "_despre": "Fermierul cu care poți vorbi; va avea misiuni (TODO). Lucrează la câmpuri 06–13; ceilalți săteni la muncă sunt desenați în imaginea zonei pentru orele acelea (campuri_zona_lucru.png).",
       "locuriSprite": [
         "campuri"

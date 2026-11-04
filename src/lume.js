@@ -1,5 +1,6 @@
 import { verifica } from './conditii.js';
 import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
+import { fisierCarte } from './carte.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Transformă arborele din locations.json într-o listă plată de scene, cu care lucrează și jocul, și editorul
@@ -303,6 +304,9 @@ export function imaginiCerute(date, scene) {
       if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
     }
   }
+  // Schițele din cartea personajelor (pagina din dreapta)
+  grup = 'Cartea personajelor';
+  for (const p of date.npcs.personaje) if (p.carte) adauga(fisierCarte(p.id), `Carte: ${p.nume} (schiță în cerneală sau cărbune, 4:5, de exemplu 1024 × 1280, fundal transparent)`);
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';

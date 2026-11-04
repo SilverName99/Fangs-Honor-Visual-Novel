@@ -1030,3 +1030,168 @@ svg.zone {
   bottom: auto;
   top: 130px;
 }
+
+/* ----- Cartea personajelor ----- */
+.ecran-carte {
+  position: absolute;
+  inset: 0;
+  z-index: 13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, rgba(40, 28, 16, 0.85) 0%, rgba(8, 5, 2, 0.95) 75%);
+  pointer-events: auto;
+}
+/* Cartea deschisă; până se încarcă ui_carte.png, coperta e din CSS (piele) și paginile din gradient (hârtie veche) */
+.carte {
+  position: relative;
+  width: 1600px;
+  height: 1000px;
+  display: flex;
+  padding: 34px 40px;
+  box-sizing: border-box;
+  background: #4a2a17;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 0 0 4px #2b170b;
+  perspective: 5000px;
+}
+.carte .pagina {
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 70px 80px 60px;
+  color: #2e2116;
+  background: linear-gradient(90deg, #e9dcc0, #f3e9d2 60%, #ecdfc4);
+  overflow: hidden;
+}
+.carte .pagina.stanga {
+  border-radius: 6px 0 0 6px;
+  box-shadow: inset -30px 0 40px -20px rgba(70, 45, 20, 0.45);
+}
+.carte .pagina.dreapta {
+  border-radius: 0 6px 6px 0;
+  box-shadow: inset 30px 0 40px -20px rgba(70, 45, 20, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nume-carte {
+  font: 600 76px 'Dancing Script', cursive;
+  line-height: 1.1;
+  color: #3a2412;
+  margin-bottom: 28px;
+}
+.incredere {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  font: 500 34px Caveat, cursive;
+  color: #5a3d22;
+}
+.romburi {
+  display: flex;
+  gap: 8px;
+}
+.romb {
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  border: 2px solid #6b4826;
+  box-sizing: border-box;
+}
+.romb.plin {
+  background: #8a2f1c;
+  border-color: #5e1d10;
+}
+.descriere-carte {
+  font: 500 40px/1.35 Caveat, cursive;
+  color: #2e2116;
+}
+.carte .schita {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+.carte .schita img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.numar-pagina {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: 500 28px Caveat, cursive;
+  color: #6b4f33;
+}
+.inapoi-carte,
+.inainte-carte {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 34px;
+  padding: 18px 26px;
+}
+.inapoi-carte {
+  left: 50px;
+}
+.inainte-carte {
+  right: 50px;
+}
+.inapoi-carte:disabled,
+.inainte-carte:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+.inchide-carte {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+}
+/* Foaia care se întoarce: se rotește în jurul cotorului, cu fața (pagina de acum) și spatele (pagina nouă) */
+.foaie {
+  position: absolute;
+  top: 34px;
+  bottom: 34px;
+  width: calc(50% - 40px);
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+.foaie.spre-stanga {
+  left: 50%;
+  transform-origin: left center;
+  animation: foaie-stanga 0.75s ease-in-out forwards;
+}
+.foaie.spre-dreapta {
+  right: 50%;
+  transform-origin: right center;
+  animation: foaie-dreapta 0.75s ease-in-out forwards;
+}
+.fata-foaie,
+.spate-foaie {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  backface-visibility: hidden;
+}
+.spate-foaie {
+  transform: rotateY(180deg);
+}
+.fata-foaie > .pagina,
+.spate-foaie > .pagina {
+  flex: 1;
+}
+@keyframes foaie-stanga {
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes foaie-dreapta {
+  to {
+    transform: rotateY(180deg);
+  }
+}

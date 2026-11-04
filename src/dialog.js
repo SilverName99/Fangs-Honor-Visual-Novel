@@ -83,8 +83,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!activ) return;
     el.hidden = true;
     parinte.classList.remove('in-dialog');
+    const { dialog } = activ;
     activ = null;
-    laFinal();
+    laFinal(dialog);
   }
 
   caseta.addEventListener('click', continua);

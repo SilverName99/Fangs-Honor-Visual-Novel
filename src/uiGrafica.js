@@ -21,6 +21,7 @@ export const ELEMENTE_UI = [
   { id: 'cursor_click', nume: 'Cursorul, cât timp apeși', marime: '32 × 32 px (maximum 64 × 64)', tip: 'cursor', apasat: true },
   { id: 'vale_apoza', nume: 'Vale în A-pose (ecranul de echipament)', marime: '700 × 1000 px, fundal transparent', tip: 'imagine' },
   { id: 'meniu_fundal', nume: 'Fundalul meniului și al ferestrelor', marime: '1920 × 1080 px', tip: 'fundal', selector: '.acoperitor' },
+  { id: 'carte', nume: 'Cartea personajelor (cartea deschisă, două pagini goale)', marime: '1600 × 1000 px', tip: 'fundal', selector: '.carte', extra: '.carte{box-shadow:none;border-radius:0}.carte .pagina{background:none;box-shadow:none}.carte .foaie .pagina{background:linear-gradient(90deg,#e9dcc0,#f3e9d2)}' },
   { id: 'inventar_fundal', nume: 'Fundalul ecranului de inventar', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar' },
 ];
 
@@ -54,7 +55,8 @@ export function aplicaGraficaUi(aranjareUi = {}) {
     img.onload = () => {
       const baza = el.ca ? ELEMENTE_UI.find((x) => x.id === el.ca) : el;
       const margine = aranjareUi.margini?.[baza.id] ?? baza.margine ?? 0;
-      reguli.set(el.id, regula(el, img.src, margine));
+      // „extra”: ce se mai schimbă când există imaginea (paginile cărții devin transparente, ca să se vadă hârtia din ea)
+      reguli.set(el.id, regula(el, img.src, margine) + (el.extra || ''));
       // Ordinea contează (hover după bază), deci regulile se scriu în ordinea din listă
       stil.textContent = ELEMENTE_UI.map((x) => reguli.get(x.id) || '').join('\n');
     };

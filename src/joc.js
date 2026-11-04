@@ -16,6 +16,10 @@ import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
+import { creeazaCarte } from './carte.js';
+// Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
+import '@fontsource/dancing-script/600.css';
+import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
@@ -74,6 +78,8 @@ aplicaGraficaUi(date.aranjare.ui);
 
 let stare = salvare.citeste(CHEIE) || stareNoua(cfg);
 if (!lume.has(stare.scena)) stare.scena = cfg.start.scena;
+// Salvările de dinainte de cartea personajelor n-au lista celor cunoscuți: pornesc cu cei cunoscuți de la început (Miriam)
+stare.cunoscuti ??= [...(cfg.start.cunoscuti || [])];
 // Editorul deschide jocul direct într-o scenă, ca autorul să-și testeze aranjarea
 const scenaCeruta = parametri.get('scena');
 if (scenaCeruta && lume.has(scenaCeruta) && lume.get(scenaCeruta).tip !== 'ecran') stare.scena = scenaCeruta;
@@ -416,9 +422,16 @@ function gand(text) {
   dialog.porneste({ partener: null, start: 'g', noduri: { g: { vorbitor: 'vale', emotie: 'normal', gand: true, text } } });
 }
 
+// Cine intră în cartea personajelor după dialogul de acum (cel apăsat, chiar dacă răspunde altcineva în locul lui)
+let deCunoscut = [];
+function cunoaste(id) {
+  if (id && personaje.get(id)?.carte && !stare.cunoscuti.includes(id)) stare.cunoscuti.push(id);
+}
+
 function vorbesteCu(id, idDialog) {
   if (idDialog) return dialog.porneste(dialoguri[idDialog] || { partener: null, start: 'a', noduri: { a: { text: `(TODO) Dialogul „${idDialog}” nu există.` } } });
   // Uneori răspunde altcineva: cât timp prizonierul e legat, discuția e cu cel care trebuie plătit
+  const apasat = id;
   const r = personaje.get(id)?.cineRaspunde;
   if (r && verifica(r.conditii, context(stare))) id = r.personaj;
   const p = personaje.get(id);
@@ -426,6 +439,7 @@ function vorbesteCu(id, idDialog) {
   if (p?.gandDoarme && intrareProgram(p, context(stare))?.doarme) return gand(p.gandDoarme);
   // Colectorul de la poartă nu are un dialog scris: cere taxa
   if (p?.dialogTaxa) return dialogTaxa(cfg.taxa.textColectorPoarta);
+  deCunoscut = [...new Set([apasat, id])];
   // Un personaj poate avea alt dialog în funcție de locul unde îl găsești (Miriam în piață)
   const d = dialoguri[p?.dialoguriPeLoc?.[context(stare).loc] ?? p?.dialog];
   dialog.porneste(
@@ -524,7 +538,10 @@ const dialog = creeazaDialog(ui, {
     aplicaEfecte(e, joc);
     actualizeazaHud();
   },
-  laFinal: () => {
+  laFinal: (d) => {
+    // Un personaj intră în carte după prima discuție cu el (și după un eveniment în care vorbește el)
+    for (const id of [...deCunoscut, d?.partener]) cunoaste(id);
+    deCunoscut = [];
     salveaza();
     afiseaza();
     if (dupaDialog) {
@@ -539,6 +556,7 @@ const secventa = creeazaSecventa(ui);
 const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);
+const carte = creeazaCarte(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
 
@@ -726,6 +744,7 @@ function afiseaza() {
   colt.replaceChildren(
     ...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []),
     buton('🎒 Inventar', '', () => ecranInventar.deschide({ cufar: false })),
+    buton('📖 Personaje', '', () => carte.deschide()),
     buton('☰ Meniu', '', deschideMeniul),
     buton(document.fullscreenElement ? '⛶ Ieși din ecran complet' : '⛶ Ecran complet', '', comutaEcranComplet),
   );
@@ -752,6 +771,10 @@ addEventListener('keydown', (e) => {
     return debug.comuta();
   }
   if (lupta.activa()) return;
+  // Literele scrise într-un câmp (panoul debug) nu deschid inventarul sau cartea
+  if (e.target.closest?.('input, textarea, select')) return;
+  if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() ? carte.inchide() : carte.deschide();
+  if (carte.deschisa()) return e.key === 'Escape' && carte.inchide();
   if ((e.key === 'i' || e.key === 'I') && !dialog.activ()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
   if (e.key !== 'Escape') return;
   const acoperitor = ui.querySelector('.acoperitor');

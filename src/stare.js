@@ -22,7 +22,10 @@ export function stareNoua(config) {
     grup: ['vale'],
     formatie: { vale: { linie: 1, rand: 'fata' } },
     misiuni: {},
+    // Încrederea fiecărui personaj, 0-10 (config.incredere.max); la maxim apare misiunea de recrutare
     relatii: {},
+    // Cine e în cartea personajelor, în ordinea în care i-a cunoscut Vale
+    cunoscuti: [...(s.cunoscuti || [])],
     deblocate: [],
     // Istoricul evenimentelor: de câte ori și în ce zi au apărut ultima dată (pentru „repetare”)
     evenimente: {},

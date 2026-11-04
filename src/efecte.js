@@ -8,7 +8,9 @@ const efecte = {
   bani: (v, joc) => (joc.stare.bani = Math.max(0, joc.stare.bani + v)),
   nevoi: (v, joc) => Object.entries(v).forEach(([k, cu]) => schimbaNevoie(joc.stare, k, cu)),
   reputatie: (v, joc) => (joc.stare.reputatie += v),
-  relatie: (v, joc) => Object.entries(v).forEach(([id, cu]) => (joc.stare.relatii[id] = (joc.stare.relatii[id] || 0) + cu)),
+  // Încrederea stă între 0 și maxim (10), ca bara din cartea personajelor să nu iasă din scară
+  relatie: (v, joc) =>
+    Object.entries(v).forEach(([id, cu]) => (joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, (joc.stare.relatii[id] || 0) + cu)))),
   obiect: (v, joc) => [].concat(v).forEach((id) => joc.primeste(id, 1)),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   stare: (v, joc) => Object.assign(joc.stare.stari, v),

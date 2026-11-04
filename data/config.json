@@ -19,7 +19,10 @@
     ],
     "echipat": {
       "pantaloni": "pantaloni_panza"
-    }
+    },
+    "cunoscuti": [
+      "miriam"
+    ]
   },
   "timp": {
     "_nota": "Minute consumate la mutare. Întoarcerea la nivelul de deasupra nu consumă timp.",
@@ -112,6 +115,10 @@
     "viataDupaCadere": 10,
     "staminaConsumata": 15,
     "minute": 30
+  },
+  "incredere": {
+    "_nota": "Încrederea fiecărui personaj (relatie în efecte și condiții), de la 0 la max; se vede în cartea personajelor. La max apare misiunea de recrutare (TODO).",
+    "max": 10
   },
   "ceasRapid": true,
   "_ceasRapid": "TEMPORAR: butoanele de schimbat ora din joc, pentru testare. La final se pune false (sau se scoate).",

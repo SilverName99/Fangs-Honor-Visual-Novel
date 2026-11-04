@@ -300,18 +300,23 @@
       }
     },
     "bataie_orc_taraba": {
-      "nume": "Bătaie cu un orc",
+      "nume": "Bătaie cu doi orci",
       "fundal": "piata",
       "fuga": false,
       "inamici": [
         {
           "id": "orc_taverna",
-          "linie": 1,
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "orc_taverna",
+          "linie": 2,
           "rand": "fata"
         }
       ],
       "victorie": {
-        "text": "(ciornă) Orcul fuge înjurând. Negustorul îți strânge mâna.",
+        "text": "(ciornă) Orcii fug înjurând. Negustorul îți strânge mâna.",
         "efecte": {
           "reputatie": 3,
           "relatie": {
@@ -320,7 +325,7 @@
         }
       },
       "infrangere": {
-        "text": "(ciornă) Orcul te trântește în noroi. Vin și alții să vadă ce s-a întâmplat.",
+        "text": "(ciornă) Orcii te trântesc în noroi. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -354,6 +359,13 @@
       "nume": "Bătaie cu un orc",
       "fundal": "fierar",
       "fuga": false,
+      "aliati": [
+        {
+          "id": "fierar",
+          "linie": 0,
+          "rand": "fata"
+        }
+      ],
       "inamici": [
         {
           "id": "orc_taverna",
@@ -362,16 +374,16 @@
         }
       ],
       "victorie": {
-        "text": "(ciornă) Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine.",
+        "text": "(ciornă) Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine: „N-o să uit asta.”",
         "efecte": {
           "reputatie": 3,
           "relatie": {
-            "fierar": 5
+            "fierar": 3
           }
         }
       },
       "infrangere": {
-        "text": "(ciornă) Orcul te trântește lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
+        "text": "(ciornă) Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
