@@ -447,7 +447,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 | `tigru` | Tigrul cu colți de sabie al Kaiei (nume `TODO`); la campsite în aceleași ore ca ea (3 sprite-uri: dimineața, `_dupa_amiaza`, `_doarme`); se vede, dar nu se apasă; fără portrete | Camp site-ul din pădure | – |
 | `mag` | **Fratele Elian**, preotul-mag al luminii; vindecare și abilități de control, slab la început. Programul lui: 05–08 tămâie în biserică (sprite `_dimineata`), 08–14 pe bancă, privește altarul, 14–23 citește pe scări, afară (sprite pe imaginea zonei), 23–05 doarme pe o bancă în biserică (sprite `_doarme`; apăsat, Vale nu vrea să-l trezească) | Biserica | relație suficientă; orcii nu știu de el |
 | `hangita` | **Agnes**, hangița; vinde mâncare și băutură, închiriază camera | Taverna | – |
-| `negustor` | Personaj minor | Piața | – |
+| `negustor` | Personaj minor; **fără sprite** (decis): apare doar în dialog, când apeși pe hoțul legat; doar portretul `normal` | Piața | – |
 | `orc_colector`, `paznic_orc_1`, `paznic_orc_2` | Orcii: **doi deocamdată** (decis), colectorul și orcul normal (paznicul); `paznic_orc_2` e doar un al doilea paznic care se vede la poartă (sprite, fără portrete, nu se apasă). **Orice orc generic** (de exemplu cei din tavernă) folosește portretele, sprite-ul și pozele de luptă ale lui `paznic_orc_1` | Poarta, casa lui Vale (colectorul) | – |
 
 Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.

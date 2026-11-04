@@ -503,20 +503,10 @@
     {
       "id": "negustor",
       "nume": "Negustorul",
+      "_despre": "Fără sprite (decis): apare doar în dialog, când apeși pe hoțul legat (cineRaspunde la hot).",
       "stariPortret": [
         "normal"
-      ],
-      "locuriSprite": [
-        "piata"
-      ],
-      "clicabil": false,
-      "apare": {
-        "moment": [
-          "dimineata",
-          "amiaza",
-          "seara"
-        ]
-      }
+      ]
     },
     {
       "id": "orc_colector",
