@@ -611,6 +611,14 @@
               "max": "12:59"
             }
           }
+        },
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
         }
       ],
       "locuri": [
