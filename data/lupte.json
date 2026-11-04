@@ -326,33 +326,6 @@
         }
       }
     },
-    "bataie_orc_miriam": {
-      "nume": "Bătaie cu un orc",
-      "fundal": "piata",
-      "fuga": false,
-      "inamici": [
-        {
-          "id": "orc_taverna",
-          "linie": 1,
-          "rand": "fata"
-        }
-      ],
-      "victorie": {
-        "text": "(ciornă) Orcul pleacă șchiopătând. Mama te strânge în brațe.",
-        "efecte": {
-          "reputatie": 3,
-          "relatie": {
-            "miriam": 5
-          }
-        }
-      },
-      "infrangere": {
-        "text": "(ciornă) Orcul te trântește la picioarele mamei. Vin și alții.",
-        "efecte": {
-          "pedeapsa": "paznic_orc_1"
-        }
-      }
-    },
     "bataie_orc_noapte": {
       "nume": "Bătaie cu patrula",
       "fundal": "piata",
@@ -372,6 +345,33 @@
       },
       "infrangere": {
         "text": "(ciornă) Patrula te prinde și te târăște până la poartă.",
+        "efecte": {
+          "pedeapsa": "paznic_orc_1"
+        }
+      }
+    },
+    "bataie_orc_fierar": {
+      "nume": "Bătaie cu un orc",
+      "fundal": "fierar",
+      "fuga": false,
+      "inamici": [
+        {
+          "id": "orc_taverna",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "(ciornă) Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine.",
+        "efecte": {
+          "reputatie": 3,
+          "relatie": {
+            "fierar": 5
+          }
+        }
+      },
+      "infrangere": {
+        "text": "(ciornă) Orcul te trântește lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
