@@ -17,6 +17,8 @@ const efecte = {
   deblocheaza: (v, joc) => [].concat(v).forEach((loc) => joc.stare.deblocate.includes(loc) || joc.stare.deblocate.push(loc)),
   misiune: (v, joc) => Object.assign(joc.stare.misiuni, v),
   lupta: (v, joc) => joc.pornesteLupta(v),
+  // Jocul de zaruri cu paznicii pornește după ce se închide dialogul (ca să nu stea peste el)
+  zaruri: (v, joc) => setTimeout(() => joc.pornesteZaruri(), 0),
   plataTaxa: (v, joc) => joc.platesteTaxa(),
   // Pune o nevoie la o valoare fixă (de exemplu viața 10 după bătaie, foamea plină după masa de la Agnes)
   seteazaNevoi: (v, joc) => Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(0, Math.min(100, val)))),

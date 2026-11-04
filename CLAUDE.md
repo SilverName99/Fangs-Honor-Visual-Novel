@@ -156,7 +156,7 @@ Reguli:
 
 Fișierele scenelor: `<zona>_<loc>.png` (de exemplu `casa_camera_vale.png`, `padure_campsite.png`).
 
-Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și acțiunile stau direct pe imaginea zonei. După eliberarea hoțului (`hot: eliberat`) se folosesc imaginile „fără prizonier”, iar hoțul nu mai apare.
+Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și acțiunile stau direct pe imaginea zonei. Taraba negustorului e decor (`sprites/negustor_piata.png`, se vede ziua, nu se apasă). După eliberarea hoțului (`hot: eliberat`) se folosesc imaginile „fără prizonier”, iar hoțul nu mai apare.
 
 ## 8. Straturi vizuale
 
@@ -205,6 +205,7 @@ Elemente (lista poate crește):
 | Figura lui Vale pentru echipament | `ui_vale_apoza.png` | A-pose, fundal transparent |
 | Fundalul meniului principal | `ui_meniu_fundal.png` | 1920×1080 |
 | Cartea personajelor (deschisă, pagini goale) | `ui_carte.png` | 1600×1000 |
+| Paharul și zarurile (jocul de zaruri) | `ui_pahar_zaruri.png`, `ui_zar_1.png` … `ui_zar_6.png` | 256×256 / 128×128, fundal transparent |
 
 **9-slice:** colțurile ramei rămân neschimbate, iar mijlocul se întinde. Așa un singur chenar merge la orice mărime. Marginile (cât de lat e colțul) se setează în editor, la Aranjare.
 
@@ -478,7 +479,9 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 
 **Stadiu:** v0.1 gata. Din v0.2 și v0.3 e făcută **baza** (inventar, echipament, muncă, somn, magazin, rutine, taxa cu colectorul, grafica UI, lupta). Autorul a cerut ca misiunile (acoperișul, fierarul, vânătoarea) și consecințele (taxa ratată, înfrângerea) să aștepte: rămân `TODO`.
 
-**De făcut după ce terminăm câmpurile și moara** (cerut de autor): un **joc de zaruri** pe care îl poți juca **cu orcii** (la poartă, unde paznicii joacă zaruri 14–18) și un joc pe care îl poți juca **în tavernă**. Regulile și mizele le stabilim atunci.
+**Jocul de zaruri cu orcii** (decis, `src/zaruri.js`, `jocZaruri` în `config.json`): la poartă, 14–18, apeși pe paznicii care joacă zaruri și te cheamă la masă. Un fel de *Liar's Dice*: Vale și cei doi paznici, **fiecare pe cont propriu, câștigă doar unul**; câte **3 zaruri** sub pahar; se licitează câte zaruri cu o față sunt pe toată masa (mai multe zaruri, sau tot atâtea cu o față mai mare), iar următorul licitează mai sus sau strigă „Mincinosule!”; cine greșește pierde un zar; fără regula sumei la final. Se termină când Vale rămâne fără zaruri (pierde) sau rămâne singurul cu zaruri (câștigă). **Miza:** Vale pune monede (2/5/10), **orcii pun lucruri** (`premii`, `TODO` de ales); un obiect luat de orci la o pedeapsă (`confiscate` în salvare) are întâietate și se poate câștiga înapoi (miza = jumătate din preț). Câștigi: primești lucrul și îți iei banii înapoi. O partidă durează 30 de minute. **După două câștiguri într-o zi nu te mai lasă la masă.** Orcii joacă normal (nu trișează), se gândesc 1.5–4.5 secunde înainte să spună. **Puterea de la hoț:** după o misiune a hoțului (`TODO`, pune starea `zaruri_hot: da`), o dată pe joc te uiți sub paharul unui orc fără să-și dea seama. Replicile orcilor sunt ciornă. **Imaginile:** `locations/zaruri_masa.png` (privirea lui Vale, buturuga în față, fără orci), peste ea fiecare orc cu 3 sprite-uri, `sprites/zaruri_<id>.png`, `_amesteca`, `_gandeste` (galeria: „Jocul de zaruri”), plus paharul `ui/ui_pahar_zaruri.png` și zarurile `ui/ui_zar_1.png`…`ui_zar_6.png` (până se încarcă, zarurile și paharul sunt desenate din cod). Orcii și paharele se aranjează în editor, la Aranjare → „Jocul de zaruri (la poartă)”.
+
+**Jocul din tavernă:** altul decât zarurile, îl stabilim mai târziu.
 
 **De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare.
 

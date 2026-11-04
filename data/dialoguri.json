@@ -342,6 +342,15 @@
     "partener": "paznic_orc_1",
     "start": [
       {
+        "nod": "zaruri",
+        "conditii": {
+          "ora": {
+            "min": "14:00",
+            "max": "17:59"
+          }
+        }
+      },
+      {
         "nod": "seara",
         "conditii": {
           "moment": [
@@ -399,6 +408,23 @@
         "vorbitor": "paznic_orc_1",
         "emotie": "rade",
         "text": "Mai sapă, mai cară, mai plătește. Așa-mi place un sătean cuminte."
+      },
+      "zaruri": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Ce te uiți la zaruri, pui de om? Vrei să joci cu noi?",
+        "alegeri": [
+          {
+            "text": "Joc.",
+            "efecte": {
+              "zaruri": true
+            }
+          },
+          {
+            "text": "Altă dată.",
+            "spre": null
+          }
+        ]
       },
       "g4": {
         "vorbitor": "paznic_orc_1",

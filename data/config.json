@@ -116,6 +116,86 @@
     "staminaConsumata": 15,
     "minute": 30
   },
+  "jocZaruri": {
+    "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",
+    "zaruri": 3,
+    "minute": 30,
+    "maxCastiguriPeZi": 2,
+    "jucatori": [
+      {
+        "id": "paznic_orc_1",
+        "nume": "Paznic orc"
+      },
+      {
+        "id": "paznic_orc_2",
+        "nume": "Al doilea paznic"
+      }
+    ],
+    "mize": [
+      2,
+      5,
+      10
+    ],
+    "premii": {
+      "2": [
+        "paine",
+        "bere",
+        "pansament"
+      ],
+      "5": [
+        "carne",
+        "piele",
+        "blana_lup"
+      ],
+      "10": [
+        "potiune_viata",
+        "scut_lemn",
+        "bocanci",
+        "gluga"
+      ]
+    },
+    "bluf": 0.2,
+    "_ritm": "amestecare = cât amestecă orcii zarurile la începutul rundei; gandire = cât se gândește un orc înainte să spună (secunde, la întâmplare între min și max).",
+    "amestecare": 1.6,
+    "gandire": {
+      "min": 1.5,
+      "max": 4.5
+    },
+    "putere": {
+      "_nota": "Puterea de la hoț: o dată pe joc, Vale se uită sub paharul unui orc fără ca el să-și dea seama. Se primește după misiunea hoțului (TODO), care pune starea de mai jos.",
+      "conditii": {
+        "stare": {
+          "zaruri_hot": "da"
+        }
+      }
+    },
+    "replici": {
+      "oferta": "Ce vrei, pui de om? Știi să minți la zaruri? Pune banii pe masă și vedem.",
+      "refuz": "Ajunge! Azi ne-ai luat destul. Cară-te până nu ne supărăm de-a binelea.",
+      "faraBani": "Fără bani nu stai la masa noastră. Hai, valea!",
+      "licitatie": [
+        "{licitatie}.",
+        "Zic {licitatie}.",
+        "{licitatie}. Hai, mai sus, dacă ai curaj.",
+        "Hrr... {licitatie}."
+      ],
+      "mincinos": [
+        "Minți! Ridică paharul!",
+        "Mincinosule!",
+        "Nu te cred. Arată!"
+      ],
+      "castigaRunda": [
+        "Ha! Știam eu.",
+        "Mai ai multe de învățat."
+      ],
+      "pierdeRunda": [
+        "Grrr...",
+        "Noroc chior."
+      ],
+      "valeCastiga": "Hrr... noroc chior. Ia-ți lucrul și cară-te.",
+      "valePierde": "Banii tăi sunt acum ai noștri. Mai vino, puiule de om!"
+    }
+  },
   "incredere": {
     "_nota": "Încrederea fiecărui personaj (relatie în efecte și condiții), de la 0 la max; se vede în cartea personajelor. La max apare misiunea de recrutare (TODO).",
     "max": 10

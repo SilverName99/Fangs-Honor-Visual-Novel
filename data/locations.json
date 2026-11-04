@@ -467,6 +467,21 @@
     {
       "id": "piata",
       "nume": "Piața",
+      "decor": [
+        {
+          "id": "negustor",
+          "_nota": "Taraba negustorului: se vede, dar nu se apasă (negustorul vorbește doar când apeși pe hoțul legat). Id-ul „negustor” păstrează poziția aranjată în editor.",
+          "nume": "Taraba negustorului (decor)",
+          "imagine": "sprites/negustor_piata.png",
+          "apare": {
+            "moment": [
+              "dimineata",
+              "amiaza",
+              "seara"
+            ]
+          }
+        }
+      ],
       "piese": [
         {
           "id": "piata",

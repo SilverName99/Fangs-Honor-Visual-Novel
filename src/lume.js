@@ -57,6 +57,7 @@ export function construiesteLumea(date) {
     obiecte.filter((o) => !neclicabili.has(o.id)).map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
   const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a, ascuns: a.ascuns || null }));
 
+  const decor = (x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [], apare: x.apare || null });
   for (const z of zone) {
     const tintaLoc = (l) => ({
       id: l.id,
@@ -82,7 +83,8 @@ export function construiesteLumea(date) {
         ...actiuniCaTinte(z.actiuni),
         ...zonePersonaje(spriteuri(z.id, z.id)),
       ],
-      obiecte: spriteuri(z.id, z.id),
+      // Și o zonă care e ea însăși scena poate avea decor (taraba negustorului din piață)
+      obiecte: [...spriteuri(z.id, z.id), ...(z.decor || []).map(decor)],
     });
 
     for (const l of z.locuri) {
@@ -103,7 +105,7 @@ export function construiesteLumea(date) {
         // se aranjează în editor ca sprite-urile și primesc filtrul de seară/noapte ca restul scenei
         obiecte: [
           ...spriteuri(cheieLoc, `${z.id}_${l.id}`),
-          ...(l.decor || []).map((x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [], apare: x.apare || null })),
+          ...(l.decor || []).map(decor),
         ],
       });
     }
@@ -150,6 +152,35 @@ export function construiesteLumea(date) {
     obiecte: [
       { id: 'figura', tip: 'figura', nume: 'Vale (A-pose)', imagine: fisierUi('vale_apoza'), variante: [], implicit: { x: 0.27, y: 0.96, scara: 0.86 } },
       ...SLOTURI.map((sl, i) => ({ id: sl, tip: 'slot', nume: NUME_SLOTURI[sl], imagine: fisierUi('slot'), variante: [], implicit: POZITII_SLOTURI[sl] })),
+    ],
+  });
+  // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor
+  scene.set('zaruri', {
+    id: 'zaruri',
+    tip: 'ecran',
+    titlu: 'Jocul de zaruri (la poartă)',
+    imagine: 'locations/zaruri_masa.png',
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      ...(date.config.jocZaruri?.jucatori || []).map((j, i) => ({
+        id: j.id,
+        tip: 'figura',
+        nume: `${j.nume} la masă`,
+        imagine: `sprites/zaruri_${j.id}.png`,
+        variante: [],
+        implicit: { x: i ? 0.8 : 0.2, y: 0.72, scara: 0.6 },
+      })),
+      ...(date.config.jocZaruri?.jucatori || []).map((j, i) => ({
+        id: `pahar_${j.id}`,
+        tip: 'pahar',
+        pentru: j.id,
+        nume: `Paharul: ${j.nume}`,
+        imagine: fisierUi('pahar_zaruri'),
+        variante: [],
+        implicit: { x: i ? 0.66 : 0.34, y: 0.64, scara: 0.12 },
+      })),
     ],
   });
   return scene;
@@ -308,6 +339,14 @@ export function imaginiCerute(date, scene) {
   // Schițele din cartea personajelor (pagina din dreapta)
   grup = 'Cartea personajelor';
   for (const p of date.npcs.personaje) if (p.carte) adauga(fisierCarte(p.id), `Carte: ${p.nume} (schiță în cerneală sau cărbune, 4:5, de exemplu 1024 × 1280, fundal transparent)`);
+  // Jocul de zaruri: fundalul cu buturuga și orcii la masă (stă, amestecă zarurile, se gândește)
+  grup = 'Jocul de zaruri';
+  adauga('locations/zaruri_masa.png', 'Zaruri: masa văzută prin ochii lui Vale, cu buturuga în față, fără orci (1920 × 1080)');
+  for (const j of date.config.jocZaruri?.jucatori || []) {
+    adauga(`sprites/zaruri_${j.id}.png`, `Zaruri: ${j.nume}, stă la masă (fundal transparent)`);
+    adauga(`sprites/zaruri_${j.id}_amesteca.png`, `Zaruri: ${j.nume}, amestecă zarurile în pahar`, true);
+    adauga(`sprites/zaruri_${j.id}_gandeste.png`, `Zaruri: ${j.nume}, se gândește`, true);
+  }
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';

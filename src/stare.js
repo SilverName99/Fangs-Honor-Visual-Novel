@@ -26,6 +26,8 @@ export function stareNoua(config) {
     relatii: {},
     // Cine e în cartea personajelor, în ordinea în care i-a cunoscut Vale
     cunoscuti: [...(s.cunoscuti || [])],
+    // Ce au luat orcii de la Vale la pedepse (se poate câștiga înapoi la zaruri)
+    confiscate: [],
     deblocate: [],
     // Istoricul evenimentelor: de câte ori și în ce zi au apărut ultima dată (pentru „repetare”)
     evenimente: {},

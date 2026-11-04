@@ -28,6 +28,16 @@ export const ELEMENTE_UI = [
       `.foaie.spre-stanga .fata-foaie .pagina,.foaie.spre-dreapta .spate-foaie .pagina{background-position:-800px -34px}` +
       `.foaie.spre-stanga .spate-foaie .pagina,.foaie.spre-dreapta .fata-foaie .pagina{background-position:-40px -34px}`,
   },
+  { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar', extra: '.pahar{border:none;border-radius:0;box-shadow:none}' },
+  ...[1, 2, 3, 4, 5, 6].map((f) => ({
+    id: `zar_${f}`,
+    nume: `Zarul cu fața ${f}`,
+    marime: '128 × 128 px, fundal transparent',
+    tip: 'fundal',
+    selector: `.zar[data-f="${f}"]`,
+    // Cu imaginea încărcată, punctele desenate din cod nu se mai văd
+    extra: `.zar[data-f="${f}"]{border:none;border-radius:0;box-shadow:none}.zar[data-f="${f}"] .punct{display:none}`,
+  })),
   { id: 'inventar_fundal', nume: 'Fundalul ecranului de inventar', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar' },
 ];
 

@@ -17,6 +17,7 @@ import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaCarte } from './carte.js';
+import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
 import '@fontsource/caveat/500.css';
@@ -80,6 +81,8 @@ let stare = salvare.citeste(CHEIE) || stareNoua(cfg);
 if (!lume.has(stare.scena)) stare.scena = cfg.start.scena;
 // Salvările de dinainte de cartea personajelor n-au lista celor cunoscuți: pornesc cu cei cunoscuți de la început (Miriam)
 stare.cunoscuti ??= [...(cfg.start.cunoscuti || [])];
+// La fel pentru lucrurile luate de orci la pedepse (se pot câștiga înapoi la zaruri)
+stare.confiscate ??= [];
 // Editorul deschide jocul direct într-o scenă, ca autorul să-și testeze aranjarea
 const scenaCeruta = parametri.get('scena');
 if (scenaCeruta && lume.has(scenaCeruta) && lume.get(scenaCeruta).tip !== 'ecran') stare.scena = scenaCeruta;
@@ -256,7 +259,11 @@ function aplicaPedeapsa(id, obiect) {
     stare.minute += t.biciuire.minute || 0;
   }
   if (id === 'taxa') stare.taxa.extra = (stare.taxa.extra || 0) + t.taxa.cresteCu;
-  if (id === 'obiect' && obiect) inventar.scoateOriunde(obiect, 1);
+  if (id === 'obiect' && obiect) {
+    inventar.scoateOriunde(obiect, 1);
+    // Orcii țin minte ce au luat: la masa de zaruri îl pun pe el ca miză, ca Vale să-l poată câștiga înapoi
+    stare.confiscate.push(obiect);
+  }
   if (id === 'blanuri') stare.datorieBlanuri = { obiect: t.blanuri.obiect, cate: t.blanuri.cate, panaLaZiua: ziua(stare) + t.blanuri.zile };
   salveaza();
   actualizeazaHud();
@@ -507,6 +514,19 @@ const joc = {
     dialog.inchide();
     lupta.porneste(id);
   },
+  pornesteZaruri: () => zaruri.porneste(),
+  conditii: (c) => verifica(c, context(stare)),
+  // O singură replică a unui personaj, ca un dialog scurt (orcii de la masa de zaruri)
+  replica(cine, emotie, text) {
+    dialog.porneste({ partener: cine, start: 'r', noduri: { r: { vorbitor: cine, emotie, text } } });
+  },
+  // După masa de zaruri: trece timpul, apoi orcul spune ce crede despre rezultat
+  dupaZaruri(text, aCastigat, minute) {
+    if (avanseaza(minute)) return;
+    salveaza();
+    afiseaza();
+    joc.replica('paznic_orc_1', aCastigat ? 'suparat' : 'rade', text);
+  },
   dupaLupta(efecte, minute) {
     aplicaEfecte(efecte, joc);
     if (!avanseaza(minute)) {
@@ -557,6 +577,7 @@ const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);
 const carte = creeazaCarte(ui, joc);
+const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
 
@@ -770,7 +791,7 @@ addEventListener('keydown', (e) => {
     e.preventDefault();
     return debug.comuta();
   }
-  if (lupta.activa()) return;
+  if (lupta.activa() || zaruri.activ()) return;
   // Literele scrise într-un câmp (panoul debug) nu deschid inventarul sau cartea
   if (e.target.closest?.('input, textarea, select')) return;
   if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() ? carte.inchide() : carte.deschide();

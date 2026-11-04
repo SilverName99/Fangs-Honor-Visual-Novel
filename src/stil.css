@@ -1200,3 +1200,317 @@ svg.zone {
     transform: rotateY(180deg);
   }
 }
+
+/* ----- Jocul de zaruri ----- */
+.ecran-zaruri {
+  position: absolute;
+  inset: 0;
+  z-index: 13;
+  background: #120c07;
+  pointer-events: auto;
+  overflow: hidden;
+}
+.masa-zaruri {
+  position: absolute;
+  inset: 0;
+}
+.masa-zaruri .fundal-zaruri {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.masa-zaruri .fundal-zaruri img {
+  object-fit: cover;
+}
+/* Orcul: imaginile stărilor stau una peste alta, în același loc; se vede doar starea de acum */
+.orc-zaruri {
+  position: absolute;
+  display: grid;
+}
+.orc-zaruri .imagine-stare {
+  position: relative;
+  grid-area: 1 / 1;
+  height: 100%;
+}
+.orc-zaruri.stare-normal .imagine-stare:not(.normal),
+.orc-zaruri.stare-amesteca .imagine-stare:not(.amesteca),
+.orc-zaruri.stare-gandeste .imagine-stare:not(.gandeste) {
+  visibility: hidden;
+}
+.orc-zaruri.stare-amesteca {
+  animation: amesteca 0.25s ease-in-out infinite alternate;
+}
+@keyframes amesteca {
+  from {
+    transform: translate(-50%, -100%) rotate(-0.6deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(0.6deg);
+  }
+}
+.pahar-zaruri {
+  position: absolute;
+}
+.pahar {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 35% 30%, #8a5a33, #4a2c16 70%);
+  border: 4px solid #2d1a0c;
+  border-radius: 38% 38% 14% 14% / 30% 30% 12% 12%;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  transition: transform 0.5s ease-out;
+}
+.pahar-zaruri.ascuns {
+  visibility: hidden;
+}
+.pahar-zaruri.ridicat .pahar {
+  transform: translateY(-95%) rotate(-10deg);
+}
+.pahar-zaruri.de-ales {
+  cursor: pointer;
+  filter: drop-shadow(0 0 14px #ffd36a);
+}
+.strat-ui-zaruri {
+  position: absolute;
+  inset: 0;
+  z-index: 3000;
+  pointer-events: none;
+}
+.strat-ui-zaruri > * {
+  pointer-events: auto;
+}
+.zar {
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 9px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  background: linear-gradient(145deg, #f8f1de, #d9ccb0);
+  border: 2px solid #8b7a5c;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.zar .punct {
+  width: 76%;
+  height: 76%;
+  margin: auto;
+  border-radius: 50%;
+  background: #2a1a10;
+}
+.zar.potrivit {
+  box-shadow: 0 0 0 4px #ffd36a, 0 0 22px #ffd36a;
+}
+.zar.rostogolire {
+  animation: rostogolire 0.4s linear infinite;
+}
+@keyframes rostogolire {
+  50% {
+    transform: rotate(180deg) scale(0.85);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rand-zaruri {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.rand-zaruri.pe-masa {
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+.rand-zaruri.pe-masa .zar {
+  width: 52px;
+  height: 52px;
+  padding: 7px;
+}
+.balon,
+.nota-privit,
+.placa-jucator {
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+.balon {
+  max-width: 380px;
+  padding: 14px 20px;
+  background: #f3e9d2;
+  color: #1d140c;
+  border-radius: 18px;
+  font: 600 24px Georgia, serif;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+.balon.gand {
+  font-style: italic;
+  letter-spacing: 4px;
+}
+.nota-privit {
+  font: italic 18px Georgia, serif;
+  color: #ffd36a;
+  text-shadow: 0 2px 4px #000;
+  white-space: nowrap;
+}
+.placa-jucator {
+  transform: translate(-50%, -100%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  background: rgba(20, 14, 8, 0.85);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: #f3e9d2;
+  font: 600 20px Georgia, serif;
+  white-space: nowrap;
+}
+.placa-jucator.la-rand {
+  border-color: #ffd36a;
+  box-shadow: 0 0 16px rgba(255, 211, 106, 0.6);
+}
+.placa-jucator.iesit {
+  opacity: 0.5;
+}
+.zaruri-ramase {
+  display: flex;
+  gap: 5px;
+}
+.zar-ramas {
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid #f3e9d2;
+  opacity: 0.4;
+}
+.zar-ramas.plin {
+  background: #f3e9d2;
+  opacity: 1;
+}
+.zona-vale {
+  position: absolute;
+  left: 50%;
+  bottom: 320px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.zona-vale .placa-jucator {
+  position: static;
+  transform: none;
+}
+.zona-vale .zar {
+  width: 84px;
+  height: 84px;
+  padding: 12px;
+}
+.centru-zaruri {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #f3e9d2;
+  text-shadow: 0 2px 6px #000;
+}
+.licitatie-curenta {
+  font: 600 40px Georgia, serif;
+}
+.istoric-zaruri {
+  margin-top: 8px;
+  font: 20px Georgia, serif;
+  opacity: 0.85;
+}
+.panou-zaruri,
+.panou-zaruri-miza {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  width: 1150px;
+  box-sizing: border-box;
+  padding: 22px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: rgba(20, 14, 8, 0.92);
+  border: 2px solid #6b4a2a;
+  border-radius: 14px;
+  color: #f3e9d2;
+}
+.panou-zaruri-miza {
+  bottom: auto;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+}
+.titlu-zaruri {
+  font: 600 38px Georgia, serif;
+}
+.text-zaruri {
+  font: 24px Georgia, serif;
+  text-align: center;
+}
+.text-zaruri.mare {
+  font-size: 28px;
+}
+.panou-zaruri-miza .buton {
+  width: 100%;
+}
+.alegere-cantitate,
+.alegere-fata,
+.butoane-zaruri {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.alegere-cantitate .cantitate {
+  min-width: 220px;
+  text-align: center;
+  font: 600 28px Georgia, serif;
+}
+.alegere-cantitate .de {
+  font: 24px Georgia, serif;
+}
+.alegere-fata .zar {
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  padding: 8px;
+  opacity: 0.6;
+}
+.alegere-fata .zar.ales {
+  opacity: 1;
+  box-shadow: 0 0 0 4px #ffd36a;
+}
+.butoane-zaruri .mincinos {
+  background: #7a1f12;
+}
+.nota-zaruri {
+  font: italic 18px Georgia, serif;
+  color: #e0b080;
+}
+.ajutor-zaruri {
+  font: 18px/1.4 Georgia, serif;
+  color: #d8c8a8;
+}
+.buton-reguli {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.ajutor-zaruri.mic {
+  position: absolute;
+  top: 80px;
+  left: 24px;
+  width: 400px;
+  padding: 12px 16px;
+  font-size: 15px;
+  background: rgba(20, 14, 8, 0.7);
+  border-radius: 10px;
+}
