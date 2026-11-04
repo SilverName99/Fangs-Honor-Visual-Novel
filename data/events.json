@@ -126,6 +126,25 @@
       ]
     },
     {
+      "id": "betiv_dupa_lupta",
+      "_nota": "CIORNĂ (Claude): după ce Vale îi bate pe bețivi în tavernă; textele se pot schimba.",
+      "manual": true,
+      "vorbitor": "betiv",
+      "numeVorbitor": "Bețiv",
+      "emotie": "ranit",
+      "text": "Gata, gata... ajunge! Mi-ai tras-o bine, băiete. Berea m-a făcut viteaz, nu eu.",
+      "alegeri": [
+        {
+          "text": "Du-te acasă și dormi.",
+          "efecte": {}
+        },
+        {
+          "text": "Data viitoare gândește-te de două ori.",
+          "efecte": {}
+        }
+      ]
+    },
+    {
       "id": "orci_colector_piata",
       "categorie": "orci",
       "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",

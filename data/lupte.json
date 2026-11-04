@@ -291,7 +291,8 @@
       "victorie": {
         "text": "(TODO) Bețivii se potolesc.",
         "efecte": {
-          "reputatie": 1
+          "reputatie": 1,
+          "eveniment": "betiv_dupa_lupta"
         }
       },
       "infrangere": {
