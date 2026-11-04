@@ -518,6 +518,11 @@
     {
       "id": "orc_colector",
       "nume": "Orcul colector",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor. faraIncredere: orcii n-au bara de încredere în carte.",
+        "faraIncredere": true,
+        "descriere": "Orcul care strânge taxa de la fiecare casă, în fiecare săptămână. Dimineața stă la masa taxei, lângă poartă, iar seara face de pază cu o torță. După-amiaza dă târcoale prin sat și ia ce-i place."
+      },
       "locuriSprite": [
         "poarta"
       ],
@@ -561,6 +566,11 @@
     {
       "id": "paznic_orc_1",
       "nume": "Paznic orc",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor. faraIncredere: orcii n-au bara de încredere în carte.",
+        "faraIncredere": true,
+        "descriere": "Paznicul de la poartă. Ziua păzește ieșirea din sat, după-amiaza joacă zaruri cu celălalt paznic, iar seara își ascute toporul lângă foc. Noaptea doarme sprijinit de zid. Orcii ca el patrulează prin sat și iau ce vor."
+      },
       "_despre": "Orcul normal (generic): paznicul de la poartă. Orice alt orc fără nume (de exemplu cei din scandalul de la tavernă) folosește portretele, sprite-ul și pozele lui de luptă.",
       "locuriSprite": [
         "poarta"

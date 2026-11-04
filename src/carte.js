@@ -38,7 +38,8 @@ export function creeazaCarte(parinte, joc) {
     const romburi = div('romburi');
     for (let i = 0; i < max(); i++) romburi.append(div(i < n ? 'romb plin' : 'romb'));
     bara.append(romburi, div('cifra-incredere', `${n}/${max()}`));
-    pag.append(div('nume-carte', p.carte.nume || p.nume), bara, div('descriere-carte', p.carte.descriere || ''));
+    // Orcii sunt în carte, dar nu au încredere (nu se recrutează)
+    pag.append(div('nume-carte', p.carte.nume || p.nume), ...(p.carte.faraIncredere ? [] : [bara]), div('descriere-carte', p.carte.descriere || ''));
     return pag;
   }
 
