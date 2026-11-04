@@ -37,6 +37,8 @@ export function sansaCategorie(c, istoric, zi) {
 export function categoriePermite(ev, stare, zi, categorii = {}) {
   const c = ev.categorie && categorii[ev.categorie];
   if (!c) return true;
+  // „dinZiua”: în primele zile categoria tace (orcii lasă jucătorul să se obișnuiască cu satul)
+  if (zi < (c.dinZiua ?? 1)) return false;
   const ist = istoricCategorie(stare, ev.categorie);
   if (ist?.ultimaZi === zi) return false;
   return aleatorFix(`${ev.categorie}|${zi}`) < sansaCategorie(c, ist, zi);
