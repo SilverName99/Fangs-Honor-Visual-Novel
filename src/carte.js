@@ -63,7 +63,6 @@ export function creeazaCarte(parinte, joc) {
     const lista = personajeCunoscute(joc.date, joc.stare);
     const noua = pagina + dir;
     if (animatie || noua < 0 || noua >= lista.length) return;
-    animatie = true;
     const carte = el.querySelector('.carte');
     const [stanga, dreapta] = carte.children;
     const p = lista[noua];
@@ -81,8 +80,11 @@ export function creeazaCarte(parinte, joc) {
     }
     foaie.append(fata, spate);
     carte.append(foaie);
+    // Fiecare întoarcere are semnul ei: plasa de siguranță a unei foi vechi nu încheie foaia de acum (dădea pagina greșită la răsfoit repede)
+    const semn = {};
+    animatie = semn;
     const gata = () => {
-      if (!animatie) return;
+      if (animatie !== semn) return;
       animatie = false;
       pagina = noua;
       if (el) arata();
