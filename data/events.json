@@ -140,6 +140,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_colector_piata.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "orc_colector",
       "emotie": "rade",
       "text": "Colectorul înșfacă un sac de mere de pe taraba negustorului și pleacă fără să plătească. Negustorul tace, cu ochii în pământ.",
@@ -193,6 +197,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_colector_taverna.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "orc_colector",
       "emotie": "rade",
       "text": "Colectorul se trântește la masă și îi cere lui Agnes bere. Pe gratis, ca de obicei. Agnes strânge din dinți.",
@@ -244,6 +252,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_patrula_campuri.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
@@ -290,6 +302,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_patrula_taraba.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc răstoarnă dintr-o lovitură taraba negustorului și râde de merele care se rostogolesc prin noroi.",
@@ -332,6 +348,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_patrula_casa.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "suparat",
       "text": "Un orc bate cu pumnul în ușa casei. „Deschide! Vreau să văd ce ascundeți acolo.”",
@@ -377,6 +397,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_patrula_miriam.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc o îmbrâncește pe mama ta lângă tarabe și îi răstoarnă coșul. Miriam se uită speriată la tine.",
@@ -442,6 +466,10 @@
       "repetare": {
         "pauzaZile": 6
       },
+      "imagini": [
+        "events/orci_interdictie_noapte.png"
+      ],
+      "grup": "Orcii prin sat",
       "vorbitor": "paznic_orc_1",
       "emotie": "suparat",
       "text": "O patrulă de orci te prinde pe drum în miez de noapte. „Ce cauți afară la ora asta, șobolane?”",
