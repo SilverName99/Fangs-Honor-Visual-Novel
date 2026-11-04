@@ -186,6 +186,25 @@
     "combat/orc_colector_cazut.png": {
       "lupta_taverna_parter": 105,
       "lupta_padure_interior": 105
+    },
+    "combat/betiv_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/betiv_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/betiv_lovit.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/betiv_cazut.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
+    },
+    "combat/betiv_idle.png": {
+      "lupta_taverna_parter": 115
     }
   }
 }
