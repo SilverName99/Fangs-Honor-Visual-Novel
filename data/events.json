@@ -230,23 +230,23 @@
       ]
     },
     {
-      "id": "orci_colector_campuri",
+      "id": "orci_patrula_campuri",
       "categorie": "orci",
       "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
       "conditii": {
         "loc": "campuri",
         "ora": {
-          "min": "14:00",
-          "max": "17:59"
+          "min": "08:00",
+          "max": "12:59"
         },
         "sansa": 0.5
       },
       "repetare": {
         "pauzaZile": 6
       },
-      "vorbitor": "orc_colector",
+      "vorbitor": "paznic_orc_1",
       "emotie": "rade",
-      "text": "Colectorul răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
       "alegeri": [
         {
           "text": "Lasă grâul, nu e al tău!",
@@ -255,7 +255,7 @@
             "relatie": {
               "fermier": 3
             },
-            "pedeapsa": "orc_colector"
+            "pedeapsa": "paznic_orc_1"
           }
         },
         {

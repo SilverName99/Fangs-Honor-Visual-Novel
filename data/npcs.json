@@ -165,8 +165,7 @@
         "fierar",
         "fierar/interior",
         "taverna/parter",
-        "biserica/interior",
-        "campuri"
+        "biserica/interior"
       ],
       "lupta": {
         "viata": 110,
@@ -223,24 +222,7 @@
           "de": "14:00",
           "pana": "18:00",
           "loc": "fierar",
-          "zile": [
-            "luni",
-            "marti",
-            "miercuri",
-            "joi",
-            "vineri"
-          ],
-          "ce": "lucrează afară"
-        },
-        {
-          "de": "14:00",
-          "pana": "18:00",
-          "loc": "campuri",
-          "zile": [
-            "sambata",
-            "duminica"
-          ],
-          "ce": "dă o mână de ajutor la fermă"
+          "ce": "lucrează afară (în fiecare zi)"
         },
         {
           "de": "18:00",
@@ -641,7 +623,7 @@
     {
       "id": "fermier",
       "nume": "Fermierul (TODO nume)",
-      "_despre": "Fermierul cu care poți vorbi; va avea misiuni (TODO). Lucrează la câmpuri ziua.",
+      "_despre": "Fermierul cu care poți vorbi; va avea misiuni (TODO). Lucrează la câmpuri 06–13; ceilalți săteni la muncă sunt desenați în imaginea zonei pentru orele acelea (campuri_zona_lucru.png).",
       "locuriSprite": [
         "campuri"
       ],
@@ -649,37 +631,14 @@
       "program": [
         {
           "de": "06:00",
-          "pana": "18:00",
+          "pana": "13:00",
           "loc": "campuri",
           "ce": "lucrează la câmpuri"
         },
         {
-          "de": "18:00",
+          "de": "13:00",
           "pana": "06:00",
-          "ce": "acasă (nu e la câmpuri)"
-        }
-      ]
-    },
-    {
-      "id": "fermieri",
-      "nume": "Fermierii",
-      "_despre": "Sătenii care muncesc la câmpuri ziua: doar se văd (nu se apasă, fără portrete).",
-      "locuriSprite": [
-        "campuri"
-      ],
-      "clicabil": false,
-      "faraPortret": true,
-      "program": [
-        {
-          "de": "06:00",
-          "pana": "18:00",
-          "loc": "campuri",
-          "ce": "muncesc la câmpuri"
-        },
-        {
-          "de": "18:00",
-          "pana": "06:00",
-          "ce": "acasă"
+          "ce": "acasă (după 13:00 nu mai lucrează nimeni la câmpuri)"
         }
       ]
     }

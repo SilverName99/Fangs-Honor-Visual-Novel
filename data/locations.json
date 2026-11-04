@@ -601,6 +601,18 @@
         }
       ],
       "imagine": "locations/campuri_zona.png",
+      "variante": [
+        {
+          "imagine": "locations/campuri_zona_lucru.png",
+          "nume": "cu sătenii la muncă (06–13)",
+          "conditii": {
+            "ora": {
+              "min": "06:00",
+              "max": "12:59"
+            }
+          }
+        }
+      ],
       "locuri": [
         {
           "id": "arat",
@@ -635,6 +647,16 @@
         }
       ],
       "imagine": "locations/moara_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
       "locuri": [
         {
           "id": "moara",
