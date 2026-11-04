@@ -11,6 +11,21 @@
           ]
         }
       }
+    ],
+    "_notaEstompare": "Estomparea de jos a hărții (ca în imagine), aplicată și peste piese: de la „de” (0 = sus, 1 = jos) în jos, cu „blur” pixeli. Mai multe benzi = trecere mai lină.",
+    "estompare": [
+      {
+        "de": 0.7,
+        "blur": 1.5
+      },
+      {
+        "de": 0.8,
+        "blur": 3
+      },
+      {
+        "de": 0.9,
+        "blur": 5
+      }
     ]
   },
   "zone": [

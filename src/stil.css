@@ -193,6 +193,13 @@ svg.zone {
 }
 
 /* ----- Seara și noaptea ----- */
+/* Estomparea de adâncime de jos a hărții: peste piese, sub strălucirea zonelor; nu oprește clicurile */
+.estompare {
+  position: absolute;
+  inset: 0;
+  z-index: 5500;
+  pointer-events: none;
+}
 .tenta {
   position: absolute;
   inset: 0;

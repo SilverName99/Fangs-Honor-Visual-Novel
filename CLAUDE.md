@@ -174,6 +174,8 @@ Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și a
 | `casa_zona` | `_noapte`, `_reparata` | noaptea / `acoperis = reparat` |
 | `poarta_zona` | `_noapte`, `_liberata` | noaptea / satul eliberat |
 
+**Estomparea hărții** (decis): imaginea hărții e estompată jos, ca o fotografie cu focus; codul estompează și piesele în aceleași benzi (de la 70% din înălțime în jos, tot mai mult), ca să se potrivească. Benzile se reglează în `locations.json`, la `harta.estompare`.
+
 La **toate celelalte scene**, seara și noaptea vin dintr-un **filtru făcut din cod**: portocaliu seara, întunecat și albăstrui noaptea. Filtrul se aplică și pe sprite-uri.
 
 **2. Sprite-uri.** Personajele cu nume sunt PNG-uri cu fundal transparent, puse **peste** fundal doar când rutina lor le aduce acolo. Un sprite per personaj și per loc: `sprites/<personaj>_<zona>_<loc>.png` (de exemplu `fierar_fierar_interior.png`). Locurile unde un personaj are sprite sunt în `npcs.json`, la `locuriSprite`.

@@ -35,6 +35,7 @@ export function construiesteLumea(date) {
     titlu: harta.nume,
     imagine: harta.imagine,
     variante: harta.variante || [],
+    estompare: harta.estompare || [],
     parinte: null,
     tinte: zone.map((z) => ({ id: z.id, nume: z.nume, spre: z.id })),
     obiecte: zone.flatMap((z) =>

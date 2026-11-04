@@ -115,6 +115,19 @@ export function randeaza(strat, descriere, aranjare, context) {
     obiecte.set(o.id, el);
   });
 
+  // Harta are jos o estompare de adâncime (ca o fotografie cu focus); piesele de pe ea sunt clare,
+  // așa că se estompează și ele în aceleași benzi, ca să se potrivească. Câteva straturi cu tot mai mult
+  // blur, fiecare cu marginea de sus în degrade, ca trecerea să fie lină
+  for (const b of descriere.estompare || []) {
+    const e = document.createElement('div');
+    e.className = 'estompare';
+    e.style.backdropFilter = `blur(${b.blur}px)`;
+    const de = b.de * 100;
+    const pana = Math.min(100, de + (b.tranzitie ?? 0.08) * 100);
+    e.style.maskImage = `linear-gradient(to bottom, transparent ${de}%, black ${pana}%)`;
+    strat.append(e);
+  }
+
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('class', 'zone');
   svg.setAttribute('viewBox', `0 0 ${LATIME} ${INALTIME}`);
