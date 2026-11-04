@@ -116,10 +116,12 @@
   "ceasRapid": true,
   "_ceasRapid": "TEMPORAR: butoanele de schimbat ora din joc, pentru testare. La final se pune false (sau se scoate).",
   "categoriiEvenimente": {
-    "_nota": "Evenimentele cu orci (categoria „orci”) nu vin unul după altul: cel mult unul pe zi, apoi o pauză de „pauzaZile” zile; „sansaZi” = în ce parte din zile se poate întâmpla ceva (restul sunt zile liniștite). TODO echilibru.",
+    "_nota": "Evenimentele cu orci (categoria „orci”): cel mult unul pe zi, fără pauză obligatorie. „sansaZi” = șansa obișnuită pe zi; după o zi cu eveniment se înmulțește cu „scadereDupa” (după două zile la rând, de două ori); fiecare zi liniștită adaugă „crestereZiLinistita”, până la „sansaMax”. TODO echilibru.",
     "orci": {
-      "sansaZi": 0.6,
-      "pauzaZile": 2
+      "sansaZi": 0.4,
+      "scadereDupa": 0.5,
+      "crestereZiLinistita": 0.15,
+      "sansaMax": 0.7
     }
   },
   "pedepse": {
