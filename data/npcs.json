@@ -503,6 +503,9 @@
     {
       "id": "negustor",
       "nume": "Negustorul",
+      "stariPortret": [
+        "normal"
+      ],
       "locuriSprite": [
         "piata"
       ],
