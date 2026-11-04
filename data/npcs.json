@@ -263,16 +263,7 @@
       "locuriSprite": [
         "piata"
       ],
-      "lupta": {
-        "viata": 50,
-        "staminaMax": 130,
-        "atac": {
-          "min": 5,
-          "max": 9,
-          "tip": "apropiat"
-        },
-        "armura": 0
-      },
+      "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
       "apare": {
         "nuStare": {
           "hot": "eliberat"
