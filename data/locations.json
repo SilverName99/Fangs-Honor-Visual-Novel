@@ -569,6 +569,20 @@
               }
             }
           ]
+        },
+        {
+          "id": "ferma",
+          "imagine": "map/piese/ferma.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
         }
       ],
       "imagine": "locations/campuri_zona.png",
@@ -577,11 +591,6 @@
           "id": "arat",
           "nume": "Câmpul de arat",
           "actiune": "munca_arat"
-        },
-        {
-          "id": "porci",
-          "nume": "Ferma de porci",
-          "actiune": "munca_porci"
         },
         {
           "id": "vaci",
