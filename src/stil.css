@@ -1057,7 +1057,10 @@ svg.zone {
 }
 .carte .pagina {
   position: relative;
-  flex: 1;
+  /* Fiecare pagină e fix jumătate: altfel un nume sau un rând mai lung lărgea pagina stângă și schița din dreapta se micșora */
+  flex: none;
+  width: 50%;
+  min-width: 0;
   box-sizing: border-box;
   padding: 90px 104px 60px 136px;
   color: #141010;
@@ -1185,7 +1188,7 @@ svg.zone {
 }
 .fata-foaie > .pagina,
 .spate-foaie > .pagina {
-  flex: 1;
+  width: 100%;
 }
 @keyframes foaie-stanga {
   to {

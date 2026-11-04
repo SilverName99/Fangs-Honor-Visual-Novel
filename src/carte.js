@@ -55,8 +55,12 @@ export function creeazaCarte(parinte, joc) {
     pagina = Math.max(0, Math.min(pagina, lista.length - 1));
     const carte = el.querySelector('.carte');
     carte.replaceChildren(paginaStanga(lista[pagina]), paginaDreapta(lista[pagina], pagina, lista.length));
+    butoane(lista.length);
+  }
+
+  function butoane(total) {
     el.querySelector('.inapoi-carte').disabled = pagina <= 0;
-    el.querySelector('.inainte-carte').disabled = pagina >= lista.length - 1;
+    el.querySelector('.inainte-carte').disabled = pagina >= total - 1;
   }
 
   // Foaia care se întoarce: fața e pagina de acum, spatele e pagina care vine; dedesubt se vede deja pagina nouă
@@ -88,7 +92,11 @@ export function creeazaCarte(parinte, joc) {
       if (animatie !== semn) return;
       animatie = false;
       pagina = noua;
-      if (el) arata();
+      if (!el) return;
+      // Pagina de pe spatele foii se mută la locul ei (nu se mai desenează din nou), ca schița să nu clipească la final
+      carte.replaceChild(spate.firstChild, dir > 0 ? stanga : dreapta);
+      foaie.remove();
+      butoane(lista.length);
     };
     foaie.addEventListener('animationend', gata);
     // Dacă animația nu pornește (tab ascuns), cartea nu rămâne blocată
