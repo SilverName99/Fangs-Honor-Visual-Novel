@@ -131,6 +131,9 @@ export function creeazaLupta(parinte, joc) {
       // „locuri: 2”: personaj mare (vânătoarea pe tigru) care ține toată linia, față și spate
       lat: x.locuri === 2,
       bara: intre(0, 30),
+      // Pozele refolosite pot arăta altfel: lupul negru = pozele lupului, întunecate și puțin mai mari
+      filtru: x.filtru || '',
+      marime: (x.marime ?? 100) / 100,
       // „poze”: inamicul folosește pozele altcuiva (orcii din tavernă arată ca paznicii de la poartă)
       // Fără atac normal (preotul), o putere fără poza ei cade direct pe idle, nu pe o poză „atac” care nu există
       poze: (p) => [...cuRezerva(p).filter((y) => !(x.faraAtac && y === 'atac')).map((y) => `combat/${x.poze || id}_${y}.png`), `combat/${x.poze || id}_idle.png`],
@@ -176,7 +179,7 @@ export function creeazaLupta(parinte, joc) {
     // Pe unele hărți luptătorii trebuie să pară mai mari sau mai mici (camera e mai aproape sau mai departe)
     const m = joc.date.aranjare?.marimi_lupta;
     const factor = (m?.harti?.[L.harta] ?? 100) / 100;
-    f.el.style.height = `${p.scara * factor * 100}%`;
+    f.el.style.height = `${p.scara * factor * (f.marime ?? 1) * 100}%`;
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
 
@@ -184,6 +187,7 @@ export function creeazaLupta(parinte, joc) {
     f.cache ||= new Map();
     if (!f.cache.has(p)) {
       const img = elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
+      if (f.filtru) img.style.filter = f.filtru;
       // Mărimea fiecărei poze se reglează din galerie (în procente), pentru poze generate puțin mai mari sau mai mici
       img.addEventListener('incarcat', (e) => {
         // Mărimea pozei pe zona de luptă de acum; dacă nu e setată, mărimea ei generală (mai veche)

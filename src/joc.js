@@ -277,6 +277,14 @@ function activeaza(tinta, ctx) {
 
 // Vânătoarea: trece timpul, imaginea locului stă câteva secunde ca ecran de încărcare („cauți urme”),
 // apoi pornește lupta cu un animal ales la întâmplare din lista locului
+// Lista de lupte poate avea șanse („sansa” la fiecare); fără șanse, toate au aceleași
+function alegeCuSanse(lista) {
+  const cu = lista.map((x) => (typeof x === 'string' ? { id: x, sansa: 1 } : { sansa: 1, ...x }));
+  let z = Math.random() * cu.reduce((s, x) => s + x.sansa, 0);
+  for (const x of cu) if ((z -= x.sansa) < 0) return x.id;
+  return cu.at(-1).id;
+}
+
 function vaneaza(v) {
   // „insotitor”: cineva care vânează și el în aceeași perioadă (Kaia, 10–14) te poate găsi și luptă cu tine.
   // Se verifică la ora la care pleci la vânătoare, înainte să treacă timpul
@@ -285,7 +293,7 @@ function vaneaza(v) {
   if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
   salveaza();
   afiseaza();
-  const id = v.lupte[Math.floor(Math.random() * v.lupte.length)];
+  const id = alegeCuSanse(v.lupte);
   const def = date.lupte.lupte[id];
   const lupta = cuInsotitor ? { ...def, aliati: [...(def.aliati || []), { id: i.personaj }] } : id;
   secventa.arata(

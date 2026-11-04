@@ -426,5 +426,16 @@
         "text": "N-ai plătit, hă? Colectorul a ținut minte. Și noi la fel."
       }
     }
+  },
+  "fermier": {
+    "partener": "fermier",
+    "noduri": {
+      "a": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "(TODO) Fermierul își șterge fruntea și se uită la tine. (Aici vin misiunile lui.)"
+      }
+    },
+    "start": "a"
   }
 }

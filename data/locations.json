@@ -555,34 +555,6 @@
       "nume": "Câmpurile",
       "piese": [
         {
-          "id": "ferma",
-          "imagine": "map/piese/ferma.png",
-          "variante": [
-            {
-              "sufix": "_noapte",
-              "conditii": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "id": "moara",
-          "imagine": "map/piese/moara.png",
-          "variante": [
-            {
-              "sufix": "_noapte",
-              "conditii": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
-            }
-          ]
-        },
-        {
           "id": "culturi",
           "imagine": "map/piese/culturi.png",
           "variante": [
@@ -613,7 +585,30 @@
           "id": "vaci",
           "nume": "Ferma de vaci",
           "actiune": "munca_vaci"
-        },
+        }
+      ]
+    },
+    {
+      "id": "moara",
+      "nume": "Moara",
+      "piese": [
+        {
+          "id": "moara",
+          "imagine": "map/piese/moara.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/moara_zona.png",
+      "locuri": [
         {
           "id": "moara",
           "nume": "Moara",
@@ -645,8 +640,22 @@
           "_nota": "Nu e un loc în care stai: imaginea apare câteva secunde (ecran de încărcare), apoi pornește o luptă de vânătoare aleasă la întâmplare.",
           "vanatoare": {
             "lupte": [
-              "vanatoare_lup",
-              "vanatoare_mistret"
+              {
+                "id": "vanatoare_lupi_2",
+                "sansa": 0.35
+              },
+              {
+                "id": "vanatoare_lupi_3",
+                "sansa": 0.25
+              },
+              {
+                "id": "vanatoare_lupi_4",
+                "sansa": 0.15
+              },
+              {
+                "id": "vanatoare_mistret",
+                "sansa": 0.25
+              }
             ],
             "minute": 60,
             "secunde": 3,
@@ -662,7 +671,8 @@
                 },
                 "deblocat": "padure/campsite"
               }
-            }
+            },
+            "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru cu lupul negru, 25% mistrețul."
           }
         },
         {

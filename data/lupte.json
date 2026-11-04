@@ -1,5 +1,5 @@
 {
-  "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. harti = locurile care au hartă de luptă separată (locations/lupta_<zona>_<loc>.png), cu locurile luptătorilor mutate în editor; celelalte lupte folosesc imaginea locului. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit).",
+  "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. harti = locurile care au hartă de luptă separată (locations/lupta_<zona>_<loc>.png), cu locurile luptătorilor mutate în editor; celelalte lupte folosesc imaginea locului. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit). La un inamic, „filtru” (CSS) și „marime” (%) schimbă cum arată pozele refolosite (lupul negru = pozele lupului, întunecate și mai mari).",
   "harti": [
     "taverna.parter",
     "padure.interior"
@@ -15,6 +15,22 @@
         "tip": "apropiat"
       },
       "armura": 0
+    },
+    "lup_alfa": {
+      "_nota": "TODO echilibru. Liderul haitei: folosește pozele lupului, întunecate (filtru) și puțin mai mari (marime, %).",
+      "nume": "Lupul negru",
+      "poze": "lup",
+      "filtru": "brightness(0.35) saturate(0.3)",
+      "marime": 120,
+      "viata": 50,
+      "staminaMax": 110,
+      "atac": {
+        "min": 6,
+        "max": 10,
+        "tip": "apropiat"
+      },
+      "armura": 1,
+      "rezistenta": 5
     },
     "orc_taverna": {
       "nume": "Orc",
@@ -65,21 +81,148 @@
     }
   },
   "lupte": {
-    "vanatoare_lup": {
+    "vanatoare_lupi_2": {
       "nume": "Vânătoare",
       "fundal": "padure.interior",
       "fuga": true,
       "inamici": [
         {
           "id": "lup",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 2,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Ai doborât cei doi lupi.",
+        "efecte": {
+          "obiect": [
+            "carne",
+            "carne",
+            "piele",
+            "piele"
+          ],
+          "eveniment": "intalnire_vanatoare"
+        }
+      },
+      "infrangere": {
+        "text": "(TODO) Lupii te-au rănit și au fugit în pădure.",
+        "efecte": {
+          "eveniment": "intalnire_vanatoare"
+        }
+      }
+    },
+    "vanatoare_lupi_3": {
+      "nume": "Vânătoare",
+      "fundal": "padure.interior",
+      "fuga": true,
+      "inamici": [
+        {
+          "id": "lup",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 1,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 2,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Ai doborât haita de lupi.",
+        "efecte": {
+          "obiect": [
+            "carne",
+            "carne",
+            "carne",
+            "piele",
+            "piele",
+            "piele"
+          ],
+          "eveniment": "intalnire_vanatoare"
+        }
+      },
+      "infrangere": {
+        "text": "(TODO) Haita te-a încolțit; ai scăpat cu greu.",
+        "efecte": {
+          "eveniment": "intalnire_vanatoare"
+        }
+      }
+    },
+    "vanatoare_lupi_4": {
+      "nume": "Vânătoare",
+      "fundal": "padure.interior",
+      "fuga": true,
+      "inamici": [
+        {
+          "id": "lup_alfa",
+          "linie": 1,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 2,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 1,
+          "rand": "spate"
+        }
+      ],
+      "victorie": {
+        "text": "Ai doborât haita și pe lupul negru care o conducea.",
+        "efecte": {
+          "obiect": [
+            "carne",
+            "carne",
+            "carne",
+            "carne",
+            "piele",
+            "piele",
+            "piele",
+            "piele"
+          ],
+          "eveniment": "intalnire_vanatoare"
+        }
+      },
+      "infrangere": {
+        "text": "(TODO) Lupul negru și haita lui te-au doborât.",
+        "efecte": {
+          "eveniment": "intalnire_vanatoare"
+        }
+      }
+    },
+    "vanatoare_mistret": {
+      "nume": "Vânătoare",
+      "fundal": "padure.interior",
+      "fuga": true,
+      "inamici": [
+        {
+          "id": "mistret",
           "linie": 1,
           "rand": "fata"
         }
       ],
       "victorie": {
-        "text": "Ai doborât lupul.",
+        "text": "Ai doborât mistrețul.",
         "efecte": {
           "obiect": [
+            "carne",
             "carne",
             "piele"
           ],
@@ -87,7 +230,7 @@
         }
       },
       "infrangere": {
-        "text": "(TODO) Lupul te-a rănit și a fugit în pădure.",
+        "text": "(TODO) Mistrețul te-a trântit și a fugit în desiș.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -154,35 +297,6 @@
       "infrangere": {
         "text": "(TODO) Te trezești pe podeaua tavernei.",
         "efecte": {}
-      }
-    },
-    "vanatoare_mistret": {
-      "nume": "Vânătoare",
-      "fundal": "padure.interior",
-      "fuga": true,
-      "inamici": [
-        {
-          "id": "mistret",
-          "linie": 1,
-          "rand": "fata"
-        }
-      ],
-      "victorie": {
-        "text": "Ai doborât mistrețul.",
-        "efecte": {
-          "obiect": [
-            "carne",
-            "carne",
-            "piele"
-          ],
-          "eveniment": "intalnire_vanatoare"
-        }
-      },
-      "infrangere": {
-        "text": "(TODO) Mistrețul te-a trântit și a fugit în desiș.",
-        "efecte": {
-          "eveniment": "intalnire_vanatoare"
-        }
       }
     }
   }
