@@ -415,28 +415,24 @@ svg.zone {
   border-radius: 999px;
   transition: width 0.4s;
 }
-/* Numele și cifra: peste bară, la capete; ascunse până treci cu mouse-ul */
+/* Numele și cifra: mereu vizibile peste bară (decis de autor), mai mici și mai spre interior, ca să intre în ramă */
 .bara-nevoie .eticheta,
 .bara-nevoie .valoare {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 15px;
+  line-height: 1;
   color: #fff3d6;
   font-weight: 700;
   text-shadow: 0 1px 3px #000, 0 0 2px #000;
-  opacity: 0;
-  transition: opacity 0.15s;
   pointer-events: none;
 }
 .bara-nevoie .eticheta {
-  left: 14px;
+  left: 30px;
 }
 .bara-nevoie .valoare {
-  right: 14px;
-}
-.bara-nevoie:hover .eticheta,
-.bara-nevoie:hover .valoare {
-  opacity: 1;
+  right: 30px;
 }
 .viata .umplere {
   background: #c94a3f;

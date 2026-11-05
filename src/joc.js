@@ -155,9 +155,8 @@ function actualizeazaHud() {
       umplere.style.width = `${v}%`;
       const cale = div('cale');
       cale.append(umplere);
-      // Numele și cifra stau peste bară și apar doar la hover (sau când nevoia e scăzută), ca bara să fie lungă și curată
+      // Numele și cifra stau peste bară, ca bara să fie lungă
       rand.append(cale, div('eticheta', eticheta), div('valoare', String(v)));
-      rand.title = `${eticheta}: ${v}`;
       return rand;
     }),
     bani,
