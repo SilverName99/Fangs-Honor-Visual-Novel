@@ -11,7 +11,9 @@ export const ELEMENTE_UI = [
   { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active, .lupta-meniu button:active' },
   { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
-  { id: 'hud_panou', nume: 'Panoul lui Vale (stânga-sus), gol', marime: '900 × 600 px', tip: '9-slice', margine: 60, selector: '.hud' },
+  // Marginea implicită 0: panoul are o mărime aproape fixă, iar cu ramă tăiată în 9 bucăți apăreau linii fine între ele
+  // (scena e scalată să încapă în fereastră și bucățile nu se mai lipesc perfect)
+  { id: 'hud_panou', nume: 'Panoul lui Vale (stânga-sus), gol', marime: '900 × 600 px', tip: '9-slice', margine: 0, selector: '.hud' },
   { id: 'hud_nume', nume: 'Plăcuța cu numele lui Vale, goală', marime: '600 × 120 px', tip: '9-slice', margine: 30, selector: '.nume-hud' },
   { id: 'hud_ceas', nume: 'Banda de sus, la mijloc (numele locului), goală', marime: '1200 × 140 px', tip: '9-slice', margine: 60, selector: '.titlu-scena' },
   // Butonul pătrat e o ramă cu margine (0 = imaginea întinsă întreagă). Hover-ul are marginea lui: cu minus, imaginea
@@ -27,7 +29,6 @@ export const ELEMENTE_UI = [
     ['meniu', 'Iconița Meniu'],
     ['ecran', 'Iconița Ecran complet'],
     ['monede', 'Iconița monedelor'],
-    ['locatie', 'Iconița locului (pin)'],
     ['inapoi', 'Iconița Înapoi (săgeată)'],
   ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.${id}`, extra: `.icon-hud.${id}{color:transparent}` })),
   { id: 'slot', nume: 'Slot de inventar / echipament', marime: '128 × 128 px', tip: 'fundal', selector: '.slot, .celula' },
@@ -85,7 +86,18 @@ function regula(el, url, margine) {
 }
 
 // Încarcă grafica existentă și o aplică peste stilul implicit; ce lipsește rămâne cum e
+// Barele colorate din panoul lui Vale: cât de groasă e umplerea și cât spațiu lasă față de ramă (din editor)
+export const BARE_IMPLICIT = { grosime: 24, sus: 0, lateral: 0 };
+export function aplicaBare(bare = {}) {
+  const b = { ...BARE_IMPLICIT, ...bare };
+  const r = document.documentElement.style;
+  r.setProperty('--bara-grosime', `${b.grosime}px`);
+  r.setProperty('--bara-sus', `${b.sus}px`);
+  r.setProperty('--bara-lateral', `${b.lateral}px`);
+}
+
 export function aplicaGraficaUi(aranjareUi = {}) {
+  aplicaBare(aranjareUi.bare);
   const stil = document.createElement('style');
   document.head.append(stil);
   const reguli = new Map();

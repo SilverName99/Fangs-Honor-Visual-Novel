@@ -614,3 +614,21 @@ svg.editor-zone.desen {
   margin: 0 6px;
   min-width: 32px;
 }
+
+/* Reglajul barelor colorate (pe cartonașul ramei barelor) */
+.reglaj-bare {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #3a3f4b;
+  border-radius: 8px;
+}
+.reglaj-bare .valoare-bara {
+  display: inline-block;
+  min-width: 48px;
+  text-align: center;
+}
+.reglaj-bare .exemplu-bara {
+  margin: 10px 0;
+  width: 280px;
+  box-sizing: content-box;
+}

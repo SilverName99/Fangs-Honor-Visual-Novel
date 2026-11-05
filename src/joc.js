@@ -141,7 +141,7 @@ function actualizeazaHud() {
   // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
   const zileTaxa = stare.taxa.zi - ziua(stare);
   const grav = NEVOI.some(([cheie]) => stare.nevoi[cheie] < cfg.nevoi.prag) || (!stare.taxa.platita && zileTaxa <= 0);
-  const b = butonHud('vale', '👤', 'Vale', comutaPanoul, true);
+  const b = butonHud('vale', '👤', 'Vale', comutaPanoul);
   b.classList.toggle('apasat', panouDeschis);
   b.classList.toggle('avertizare', grav && !panouDeschis);
   butonVale.replaceChildren(b);
@@ -810,7 +810,8 @@ function afiseaza() {
     b.append(iconita('inapoi', '↩'), div('', 'Înapoi'));
     inapoi.append(b);
   }
-  titlu.replaceChildren(iconita('locatie', '📍'), div('', d.titlu));
+  // Doar numele locului, fără iconiță (decis de autor)
+  titlu.replaceChildren(div('', d.titlu));
 
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
   navigare.replaceChildren();

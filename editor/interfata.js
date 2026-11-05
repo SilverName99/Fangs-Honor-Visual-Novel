@@ -1,5 +1,5 @@
 import { api } from './api.js';
-import { ELEMENTE_UI, fisierUi } from '../src/uiGrafica.js';
+import { ELEMENTE_UI, fisierUi, BARE_IMPLICIT } from '../src/uiGrafica.js';
 import { urlImagine, uitaLipsurile } from '../src/imagini.js';
 
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -30,6 +30,8 @@ function stilExemplu(url, m) {
 
 export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare) {
   const margini = { ...(comun.date.aranjare.ui?.margini || {}) };
+  // Barele colorate din panoul lui Vale: grosimea umplerii și spațiul ei față de ramă
+  const bare = { ...BARE_IMPLICIT, ...(comun.date.aranjare.ui?.bare || {}) };
   let modificat = false;
 
   async function incarca(id, fisier) {
@@ -42,6 +44,30 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
       alert(`Nu s-a încărcat: ${e.message}`);
     }
     arata();
+  }
+
+  // Reglajul barelor colorate: trei valori cu − / +, plus un exemplu cu rama și umplerea de viață, ca în joc
+  const RANDURI_BARE = [
+    ['grosime', 'Grosimea umplerii', 2],
+    ['sus', 'Spațiu sus și jos (față de ramă)', 0],
+    ['lateral', 'Spațiu stânga și dreapta (față de ramă)', 0],
+  ];
+  function stilExempluBara(urlRama, m) {
+    const rama = urlRama ? stilExemplu(urlRama, m) : 'border:2px solid #2a1a0e;background:#3a2817';
+    return `${rama};height:${bare.grosime}px;padding:${bare.sus}px ${bare.lateral}px;border-radius:${urlRama ? 0 : 999}px;overflow:hidden`;
+  }
+  function stilUmplere() {
+    const cale = fisierUi('bara_viata');
+    const url = comun.imagini.has(cale) ? `${urlImagine(cale)}?v=${comun.imagini.get(cale)}` : '';
+    return `width:60%;height:100%;border-radius:999px;${url ? `background:url('${url}') repeat-x;background-size:auto 100%` : 'background:#c94a3f'}`;
+  }
+  function reglajBare(urlRama, m) {
+    return `<div class="reglaj-bare"><b>Barele colorate din panoul lui Vale</b>
+      ${RANDURI_BARE.map(([k, nume]) => `<div class="rand">${esc(nume)}: <button class="btn mic" data-bara="${k}" data-pas="-1">−</button><span class="valoare-bara" data-k="${k}">${bare[k]}px</span><button class="btn mic" data-bara="${k}" data-pas="1">+</button></div>`).join('')}
+      <div class="exemplu-bara" data-url="${urlRama}" data-m="${m}" style="${stilExempluBara(urlRama, m)}"><div class="umplere-exemplu" style="${stilUmplere()}"></div></div>
+      <div class="sumar">Exemplul arată bara de viață pe jumătate plină.</div>
+      <div class="salvare"><button class="btn principal salveaza-margini" ${modificat ? '' : 'disabled'}>Salvează barele</button></div>
+    </div>`;
   }
 
   function arata() {
@@ -67,6 +93,7 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
                  <div class="salvare"><button class="btn principal salveaza-margini" ${modificat ? '' : 'disabled'}>Salvează marginea</button></div>`
               : ''
           }
+          ${el.id === 'bara_rama' ? reglajBare(url, m) : ''}
           <div class="salvare"><label class="btn">${are ? 'Înlocuiește' : 'Încarcă'}<input type="file" accept="image/png" hidden></label>
           ${are ? '<button class="btn pericol sterge-ui">Șterge</button>' : ''}</div>
         </div>`;
@@ -103,9 +130,21 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
         card.querySelector('.plus-margine').onclick = () => pas(1);
       }
     }
+    for (const b of container.querySelectorAll('[data-bara]')) {
+      b.onclick = () => {
+        const k = b.dataset.bara;
+        const min = RANDURI_BARE.find(([x]) => x === k)[2];
+        bare[k] = Math.max(min, bare[k] + Number(b.dataset.pas));
+        modificat = true;
+        container.querySelector(`.valoare-bara[data-k="${k}"]`).textContent = `${bare[k]}px`;
+        const ex = container.querySelector('.exemplu-bara');
+        ex.style.cssText = stilExempluBara(ex.dataset.url, Number(margini.bara_rama ?? ex.dataset.m));
+        for (const s of container.querySelectorAll('.salveaza-margini')) s.disabled = false;
+      };
+    }
     const salveaza = async () => {
-      await api('aranjare/ui', { method: 'PUT', body: JSON.stringify({ margini }), headers: { 'Content-Type': 'application/json' } });
-      comun.date.aranjare.ui = { margini: { ...margini } };
+      await api('aranjare/ui', { method: 'PUT', body: JSON.stringify({ margini, bare }), headers: { 'Content-Type': 'application/json' } });
+      comun.date.aranjare.ui = { margini: { ...margini }, bare: { ...bare } };
       modificat = false;
       arata();
       dupaSalvare();

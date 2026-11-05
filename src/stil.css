@@ -198,7 +198,11 @@ svg.zone {
   position: absolute;
   left: 24px;
   bottom: 22px;
-  padding: 0 34px;
+  /* Mai mică decât plăcuța „Înapoi” (decis de autor): rama cu ~45% mai mică, textul cu 60% mai mic */
+  min-width: 165px;
+  height: 42px;
+  padding: 0 19px;
+  font-size: 12px;
   pointer-events: none;
   white-space: nowrap;
 }
@@ -346,7 +350,7 @@ svg.zone {
   /* Primește mouse-ul, ca numele și cifra barelor să apară la hover */
   pointer-events: auto;
 }
-/* Plăcuța cu numele: plată și lungă (decis de autor), cu numele scris de mână, ca în cartea personajelor */
+/* Plăcuța cu numele: plată și lungă (decis de autor), cu același font ca butoanele */
 .nume-hud {
   position: absolute;
   left: 50%;
@@ -358,7 +362,7 @@ svg.zone {
   text-align: center;
   line-height: 1.15;
   white-space: nowrap;
-  font: 600 32px 'Dancing Script', cursive;
+  font: 600 26px Georgia, serif;
   color: #f3e6c8;
   background: linear-gradient(#7a1f16, #4e120c);
   border: 3px solid #2a1a0e;
@@ -397,7 +401,9 @@ svg.zone {
   font-size: 19px;
 }
 .bara-nevoie .cale {
-  height: 24px;
+  /* Reglate de autor în editor (Interfață → Rama barelor): grosimea umplerii și spațiul ei față de ramă */
+  height: var(--bara-grosime, 24px);
+  padding: var(--bara-sus, 0px) var(--bara-lateral, 0px);
   background: #3a2817;
   border: 2px solid #2a1a0e;
   border-radius: 999px;
@@ -1081,7 +1087,7 @@ svg.zone {
 .ceas-rapid {
   position: absolute;
   left: 24px;
-  bottom: 110px;
+  bottom: 74px;
   display: flex;
   gap: 6px;
 }
