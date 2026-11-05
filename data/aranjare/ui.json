@@ -8,8 +8,8 @@
     "hud_panou": 22
   },
   "bare": {
-    "grosime": 24,
-    "sus": 0,
-    "lateral": 0
+    "grosime": 25,
+    "sus": 8,
+    "lateral": 13
   }
 }
