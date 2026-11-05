@@ -136,7 +136,7 @@ function actualizeazaHud() {
   const ctx = context(stare);
   ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;
   const bani = div('rand-monede');
-  bani.append(iconita('monede', '🪙'), div('', `Monede: ${stare.bani}`), div('despartitor'), div('taxa-hud', textTaxa()));
+  bani.append(iconita('monede', '🪙'), Object.assign(div('bani-hud', String(stare.bani)), { title: 'Monede' }), div('despartitor'), div('taxa-hud', textTaxa()));
   const d = stare.datorieBlanuri;
   // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
   const zileTaxa = stare.taxa.zi - ziua(stare);
@@ -155,7 +155,9 @@ function actualizeazaHud() {
       umplere.style.width = `${v}%`;
       const cale = div('cale');
       cale.append(umplere);
-      rand.append(div('eticheta', eticheta), cale, div('valoare', String(v)));
+      // Numele și cifra stau peste bară și apar doar la hover (sau când nevoia e scăzută), ca bara să fie lungă și curată
+      rand.append(cale, div('eticheta', eticheta), div('valoare', String(v)));
+      rand.title = `${eticheta}: ${v}`;
       return rand;
     }),
     bani,
