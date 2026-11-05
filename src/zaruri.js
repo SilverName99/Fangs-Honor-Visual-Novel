@@ -192,16 +192,28 @@ export function creeazaZaruri(parinte, joc) {
     seteazaStare(j.id, 'normal');
     const d = decizieOrc(j.zaruri, s.licitatie, total(), cfg().bluf);
     if (d.mincinos) {
-      s.baloane = { [j.id]: alege(cfg().replici.mincinos) };
+      if (!(await spune(j, alege(cfg().replici.mincinos)))) return;
       return verifica(j);
     }
     liciteaza(j, d);
   }
 
-  function liciteaza(j, l) {
+  // Un orc spune ceva și jocul așteaptă puțin, ca jucătorul să apuce să citească înainte să vorbească următorul
+  async function spune(j, text) {
+    s.baloane = { ...s.baloane, [j.id]: text };
+    s.citire = { nume: j.nume, text };
+    deseneaza();
+    await asteapta((cfg().citire ?? 2.5) * 1000);
+    if (!el) return false;
+    s.citire = null;
+    return true;
+  }
+
+  async function liciteaza(j, l) {
     s.licitatie = { ...l, cine: j.id };
     s.istoric.push({ nume: j.nume, text: textLicitatie(l) });
-    s.baloane = j.id === 'vale' ? {} : { [j.id]: alege(cfg().replici.licitatie).replace('{licitatie}', textLicitatie(l)) };
+    // Baloanele celorlalți rămân pe ecran până la runda următoare, ca să se vadă ce a spus fiecare
+    if (j.id !== 'vale' && !(await spune(j, alege(cfg().replici.licitatie).replace('{licitatie}', textLicitatie(l))))) return;
     s.rand = urmatorul(s.rand);
     tura();
   }
@@ -393,6 +405,10 @@ export function creeazaZaruri(parinte, joc) {
       return p;
     }
     const j = s.jucatori[s.rand];
+    if (s.citire) {
+      p.append(div('text-zaruri mare', `${s.citire.nume}: „${s.citire.text}”`));
+      return p;
+    }
     if (j.id !== 'vale' || s.aruncare) {
       p.append(div('text-zaruri', s.aruncare ? 'Se aruncă zarurile...' : `${j.nume} se gândește...`));
       return p;

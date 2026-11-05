@@ -155,8 +155,9 @@
       ]
     },
     "bluf": 0.2,
-    "_ritm": "amestecare = cât amestecă orcii zarurile la începutul rundei; gandire = cât se gândește un orc înainte să spună (secunde, la întâmplare între min și max).",
+    "_ritm": "amestecare = cât amestecă orcii zarurile la începutul rundei; gandire = cât se gândește un orc înainte să spună (secunde, la întâmplare între min și max); citire = cât stă replica unui orc pe ecran până vorbește următorul.",
     "amestecare": 1.6,
+    "citire": 3,
     "gandire": {
       "min": 1.5,
       "max": 4.5
