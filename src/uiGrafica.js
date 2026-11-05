@@ -10,6 +10,23 @@ export const ELEMENTE_UI = [
   { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover, .lupta-meniu button:hover' },
   { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active, .lupta-meniu button:active' },
   { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
+  // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
+  { id: 'hud_panou', nume: 'Panoul lui Vale (stânga-sus), gol', marime: '900 × 600 px', tip: '9-slice', margine: 60, selector: '.hud' },
+  { id: 'hud_nume', nume: 'Plăcuța cu numele lui Vale, goală', marime: '600 × 120 px', tip: '9-slice', margine: 30, selector: '.nume-hud' },
+  { id: 'hud_ceas', nume: 'Banda ceasului (sus, la mijloc), goală', marime: '1200 × 140 px', tip: '9-slice', margine: 60, selector: '.ceas-hud' },
+  { id: 'hud_buton', nume: 'Butonul pătrat din dreapta-sus, gol', marime: '256 × 256 px', tip: 'fundal', selector: '.buton.buton-hud', extra: '.buton.buton-hud{border:none;border-image:none;border-radius:0;box-shadow:none}' },
+  { id: 'hud_buton_hover', nume: 'Butonul pătrat, cu mouse-ul deasupra', marime: '256 × 256 px', tip: 'fundal', selector: '.buton.buton-hud:hover' },
+  { id: 'hud_placuta', nume: 'Plăcuța de jos (locul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.titlu-scena, .buton.placuta-hud' },
+  // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
+  ...[
+    ['inventar', 'Iconița Inventar (rucsac)'],
+    ['personaje', 'Iconița Personaje (carte)'],
+    ['meniu', 'Iconița Meniu'],
+    ['ecran', 'Iconița Ecran complet'],
+    ['monede', 'Iconița monedelor'],
+    ['locatie', 'Iconița locului (pin)'],
+    ['inapoi', 'Iconița Înapoi (săgeată)'],
+  ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.${id}`, extra: `.icon-hud.${id}{color:transparent}` })),
   { id: 'slot', nume: 'Slot de inventar / echipament', marime: '128 × 128 px', tip: 'fundal', selector: '.slot, .celula' },
   { id: 'slot_hover', nume: 'Slot, cu mouse-ul deasupra', marime: '128 × 128 px', tip: 'fundal', selector: '.slot:hover, .celula:hover, .celula.selectata' },
   { id: 'bara_rama', nume: 'Rama barelor (viață, stamina...)', marime: '300 × 24 px', tip: '9-slice', margine: 8, selector: '.bara-nevoie .cale, .bara-lupta' },

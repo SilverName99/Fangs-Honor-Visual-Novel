@@ -54,12 +54,25 @@ function buton(text, clasa, clic) {
 const { scena, lume: stratLume } = creeazaEcran(document.getElementById('joc'));
 const ui = div('ui');
 scena.append(ui);
-const colt = div('colt-stanga');
+// Interfața de pe ecran (decisă de autor): panoul lui Vale stânga-sus, ceasul sus la mijloc, butoanele dreapta-sus,
+// locul unde ești stânga-jos și „Înapoi” dreapta-jos. Centrul rămâne liber pentru ilustrație.
+const butoaneHud = div('butoane-hud');
 const titlu = div('titlu-scena');
+const inapoi = div('inapoi-hud');
 const hud = div('hud');
+const ceasHud = div('ceas-hud');
 const navigare = div('navigare-rezerva');
 const baraActiuni = div('bara-actiuni');
-ui.append(colt, titlu, hud, navigare, baraActiuni);
+ui.append(butoaneHud, titlu, inapoi, hud, ceasHud, navigare, baraActiuni);
+
+// Iconița unui buton: până se încarcă imaginea ei (ui_icon_<id>.png) rămâne simbolul din text
+const iconita = (id, simbol) => Object.assign(div(`icon-hud ${id}`), { textContent: simbol });
+function butonHud(id, simbol, eticheta, clic) {
+  const b = buton('', 'buton-hud', clic);
+  b.append(iconita(id, simbol), div('eticheta-hud', eticheta));
+  b.title = eticheta;
+  return b;
+}
 
 // TEMPORAR (pentru testare, se scoate la final, config.ceasRapid): butoane sub ceas ca să muți ora repede.
 // Schimbă direct ceasul, fără să consume foame sau sete.
@@ -112,8 +125,12 @@ function anunt(text) {
 
 function actualizeazaHud() {
   const ctx = context(stare);
+  ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;
+  const bani = div('rand-monede');
+  bani.append(iconita('monede', '🪙'), div('', `Monede: ${stare.bani}`), div('despartitor'), div('taxa-hud', textTaxa()));
+  const d = stare.datorieBlanuri;
   hud.replaceChildren(
-    div('ceas', `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`),
+    div('nume-hud', 'Vale'),
     ...NEVOI.map(([cheie, eticheta]) => {
       const v = Math.round(stare.nevoi[cheie]);
       const rand = div(`bara-nevoie ${cheie} ${v < cfg.nevoi.prag ? 'scazut' : ''}`);
@@ -124,16 +141,16 @@ function actualizeazaHud() {
       rand.append(div('eticheta', eticheta), cale, div('valoare', String(v)));
       return rand;
     }),
-    div('monede', `Monede: ${stare.bani} · ${textTaxa()}`),
+    bani,
+    // Datoria de blăni (pedeapsa orcilor) are rândul ei, ca să nu se piardă printre celelalte
+    ...(d ? [div('datorie-hud', `Orcii vor ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural} până în ziua ${d.panaLaZiua}`)] : []),
   );
 }
 
 function textTaxa() {
-  const d = stare.datorieBlanuri;
-  const blanuri = d ? ` · orcii vor ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural} până în ziua ${d.panaLaZiua}` : '';
-  if (stare.taxa.platita) return `taxa plătită${blanuri}`;
+  if (stare.taxa.platita) return 'Taxa e plătită';
   const zile = stare.taxa.zi - ziua(stare);
-  return (zile <= 0 ? `taxa (${sumaTaxa()}) e azi!` : `taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}${stare.taxa.dubla ? ' (dublă!)' : ''}`) + blanuri;
+  return zile <= 0 ? `Taxa (${sumaTaxa()}) e azi!` : `Taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}${stare.taxa.dubla ? ' (dublă!)' : ''}`;
 }
 
 // ---------- timp, nevoi, leșin ----------
@@ -762,14 +779,19 @@ function afiseaza() {
 
   baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));
 
-  colt.replaceChildren(
-    ...(d.parinte ? [buton('← Înapoi', '', () => mergi(d.parinte))] : []),
-    buton('🎒 Inventar', '', () => ecranInventar.deschide({ cufar: false })),
-    buton('📖 Personaje', '', () => carte.deschide()),
-    buton('☰ Meniu', '', deschideMeniul),
-    buton(document.fullscreenElement ? '⛶ Ieși din ecran complet' : '⛶ Ecran complet', '', comutaEcranComplet),
+  butoaneHud.replaceChildren(
+    butonHud('inventar', '🎒', 'Inventar', () => ecranInventar.deschide({ cufar: false })),
+    butonHud('personaje', '📖', 'Personaje', () => carte.deschide()),
+    butonHud('meniu', '☰', 'Meniu', deschideMeniul),
+    butonHud('ecran', '⤢', document.fullscreenElement ? 'Ieși' : 'Ecran complet', comutaEcranComplet),
   );
-  titlu.textContent = d.titlu;
+  inapoi.replaceChildren();
+  if (d.parinte) {
+    const b = buton('', 'placuta-hud', () => mergi(d.parinte));
+    b.append(iconita('inapoi', '↩'), div('', 'Înapoi'));
+    inapoi.append(b);
+  }
+  titlu.replaceChildren(iconita('locatie', '📍'), div('', d.titlu));
 
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
   navigare.replaceChildren();

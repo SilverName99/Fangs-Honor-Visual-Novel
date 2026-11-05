@@ -137,27 +137,110 @@ svg.zone {
   background: linear-gradient(#4a3824, #2e2013);
   border-color: #e0bd7a;
 }
-.colt-stanga {
+/* ----- Interfața de pe ecran (după designul autorului) ----- */
+/* Ramele de lemn și fier sunt din CSS până se încarcă piesele din galerie (ui_hud_*.png) */
+.butoane-hud {
   position: absolute;
-  left: 30px;
-  top: 30px;
+  right: 24px;
+  top: 22px;
   display: flex;
+  gap: 12px;
+}
+.buton.buton-hud {
+  min-width: 128px;
+  height: 128px;
+  padding: 10px 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 3px solid #6b4a2a;
+  border-radius: 10px;
+  background: linear-gradient(#3a2817, #20150b);
+  box-shadow: inset 0 0 0 2px #1a0f07, 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+.buton.buton-hud:hover {
+  border-color: #e0bd7a;
+  box-shadow: inset 0 0 0 2px #1a0f07, 0 0 18px rgba(255, 210, 120, 0.55);
+}
+.icon-hud {
+  width: 64px;
+  height: 64px;
+  font-size: 46px;
+  line-height: 64px;
+  text-align: center;
+  flex: none;
+}
+.eticheta-hud {
+  font: 600 19px Georgia, serif;
+  color: #f3e6c8;
+  white-space: nowrap;
+}
+/* Plăcuțele de jos: locul unde ești (stânga) și „Înapoi” (dreapta) */
+.titlu-scena,
+.buton.placuta-hud {
+  display: flex;
+  align-items: center;
   gap: 14px;
+  min-width: 300px;
+  height: 76px;
+  box-sizing: border-box;
+  padding: 0 34px 0 22px;
+  font: 600 32px Georgia, serif;
+  color: #f3e6c8;
+  background: linear-gradient(#3a2817, #20150b);
+  border: 3px solid #6b4a2a;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 2px #1a0f07, 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 .titlu-scena {
   position: absolute;
-  left: 50%;
-  top: 30px;
-  transform: translateX(-50%);
-  font-size: 34px;
-  color: #f3e6c8;
-  text-shadow: 0 2px 6px #000, 0 0 2px #000;
+  left: 24px;
+  bottom: 22px;
   pointer-events: none;
+}
+.titlu-scena .icon-hud,
+.placuta-hud .icon-hud {
+  width: 44px;
+  height: 44px;
+  font-size: 32px;
+  line-height: 44px;
+}
+.inapoi-hud {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+}
+.buton.placuta-hud {
+  justify-content: center;
+}
+.buton.placuta-hud:hover {
+  border-color: #e0bd7a;
+}
+/* Ceasul: banda de pergament de sus, la mijloc */
+.ceas-hud {
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  min-width: 560px;
+  padding: 14px 60px;
+  box-sizing: border-box;
+  text-align: center;
+  font: 600 30px Georgia, serif;
+  color: #2a1a0e;
+  background: linear-gradient(#efe0bd, #d9c393);
+  border: 3px solid #6b4a2a;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
 }
 .navigare-rezerva {
   position: absolute;
-  right: 30px;
-  bottom: 30px;
+  right: 24px;
+  bottom: 120px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -220,24 +303,63 @@ svg.zone {
   filter: brightness(0.6) saturate(0.8) drop-shadow(0 0 2px #fff) drop-shadow(0 0 14px rgba(255, 214, 120, 0.95));
 }
 
-/* ----- HUD: ceasul și nevoile ----- */
+/* ----- Panoul lui Vale: numele, nevoile, banii, taxa ----- */
 .hud {
   position: absolute;
-  right: 30px;
-  top: 24px;
-  width: 360px;
-  padding: 14px 18px;
-  background: rgba(20, 14, 8, 0.78);
-  border: 2px solid #a7854f;
-  border-radius: 10px;
-  color: #f3e6c8;
-  font-size: 22px;
+  left: 24px;
+  top: 22px;
+  width: 440px;
+  box-sizing: border-box;
+  padding: 44px 30px 22px;
+  background: linear-gradient(#efe0bd, #d9c393);
+  border: 4px solid #6b4a2a;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 3px #3a2817, 0 8px 18px rgba(0, 0, 0, 0.6);
+  color: #2a1a0e;
+  font: 600 22px Georgia, serif;
   pointer-events: none;
 }
-.ceas {
-  font-size: 24px;
-  margin-bottom: 10px;
+.nume-hud {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  transform: translateX(-50%);
+  min-width: 220px;
+  padding: 8px 40px;
+  box-sizing: border-box;
   text-align: center;
+  font: 700 30px Georgia, serif;
+  color: #f3e6c8;
+  background: linear-gradient(#7a1f16, #4e120c);
+  border: 3px solid #2a1a0e;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.rand-monede {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid rgba(90, 60, 30, 0.35);
+  font-size: 21px;
+}
+.rand-monede .icon-hud {
+  width: 38px;
+  height: 38px;
+  font-size: 28px;
+  line-height: 38px;
+}
+.rand-monede .despartitor {
+  width: 2px;
+  align-self: stretch;
+  background: rgba(90, 60, 30, 0.45);
+  margin: 0 6px;
+}
+.datorie-hud {
+  margin-top: 6px;
+  font-size: 18px;
+  color: #7a1f16;
 }
 .bara-nevoie {
   display: grid;
@@ -248,9 +370,10 @@ svg.zone {
   font-size: 19px;
 }
 .bara-nevoie .cale {
-  height: 14px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 7px;
+  height: 18px;
+  background: #3a2817;
+  border: 2px solid #2a1a0e;
+  border-radius: 9px;
   overflow: hidden;
 }
 .bara-nevoie .umplere {
@@ -275,17 +398,13 @@ svg.zone {
 }
 .bara-nevoie.scazut .eticheta,
 .bara-nevoie.scazut .valoare {
-  color: #ff8a7a;
+  color: #b3261a;
   animation: pulseaza 1.2s ease-in-out infinite;
 }
 @keyframes pulseaza {
   50% {
     opacity: 0.45;
   }
-}
-.monede {
-  margin-top: 10px;
-  text-align: center;
 }
 
 /* ----- Dialog ----- */
@@ -452,12 +571,15 @@ svg.zone {
   flex: 1;
 }
 
-/* În dialog, butoanele de navigare dispar; ceasul și nevoile rămân la vedere, deasupra portretelor */
-.ui.in-dialog .colt-stanga,
+/* În dialog, butoanele și plăcuțele dispar; panoul lui Vale și ceasul rămân la vedere, deasupra portretelor */
+.ui.in-dialog .butoane-hud,
+.ui.in-dialog .inapoi-hud,
+.ui.in-dialog .titlu-scena,
 .ui.in-dialog .navigare-rezerva {
   visibility: hidden;
 }
-.ui.in-dialog .hud {
+.ui.in-dialog .hud,
+.ui.in-dialog .ceas-hud {
   z-index: 11;
 }
 
@@ -903,11 +1025,12 @@ svg.zone {
   color: #d8ccb2;
 }
 
-/* TEMPORAR: butoanele de schimbat ora (config.ceasRapid), sub HUD */
+/* TEMPORAR: butoanele de schimbat ora (config.ceasRapid), sub ceas */
 .ceas-rapid {
   position: absolute;
-  right: 30px;
-  top: 268px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
   display: flex;
   gap: 6px;
 }
