@@ -23,8 +23,8 @@ export const ELEMENTE_UI = [
   { id: 'hud_placuta', nume: 'Plăcuța de jos (ceasul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.ceas-hud, .buton.placuta-hud' },
   // Meniul: tabla atârnată (cu banda titlului goală) și butoanele de pergament; textul îl scrie jocul
   { id: 'meniu_panou', nume: 'Meniul: tabla de lemn cu lanțuri, lampa, steagul și banda titlului (goală)', marime: '1600 × 1000 px, fundal transparent', tip: 'fundal', selector: '.panou-meniu-nou', extra: '.panou-meniu-nou{border:none;border-radius:0;box-shadow:none}.panou-meniu-nou .titlu-meniu-nou{background:none;border:none}' },
-  { id: 'meniu_buton', nume: 'Meniul: butonul de pergament, gol', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu', extra: '.buton.buton-meniu,.buton.buton-meniu:hover{border:none;border-image:none;border-radius:0;box-shadow:none}' },
-  { id: 'meniu_buton_hover', nume: 'Meniul: butonul de pergament, cu mouse-ul deasupra', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu:hover' },
+  { id: 'meniu_buton', nume: 'Meniul: butonul de pergament, gol', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu, .buton.buton-mic-meniu', extra: '.buton.buton-meniu,.buton.buton-meniu:hover,.buton.buton-mic-meniu,.buton.buton-mic-meniu:hover{border:none;border-image:none;border-radius:0;box-shadow:none}' },
+  { id: 'meniu_buton_hover', nume: 'Meniul: butonul de pergament, cu mouse-ul deasupra', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu:hover, .buton.buton-mic-meniu:hover, .buton.buton-mic-meniu.ales' },
   // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
   ...[
     ['vale', 'Iconița lui Vale (butonul care deschide panoul lui)'],

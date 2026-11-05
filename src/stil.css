@@ -1831,9 +1831,20 @@ svg.zone {
   display: flex;
   gap: 12px;
 }
-.alegeri-optiune .buton.ales {
+/* Butoanele mici din Galerie și Opțiuni: același pergament ca butoanele mari (decis de autor) */
+.buton.buton-mic-meniu {
+  min-width: 110px;
+  padding: 16px 40px;
+  font: 700 28px Georgia, serif;
+  color: #2a1a0e;
+  background: linear-gradient(#efe0bd, #d9c393);
+  border: 3px solid #6b4a2a;
+  border-radius: 10px;
+}
+.buton.buton-mic-meniu:hover,
+.buton.buton-mic-meniu.ales {
   border-color: #e0bd7a;
-  box-shadow: 0 0 14px rgba(255, 210, 120, 0.6);
+  box-shadow: 0 0 16px rgba(255, 210, 120, 0.7);
 }
 .buton.inapoi-meniu {
   align-self: center;

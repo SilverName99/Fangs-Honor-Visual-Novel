@@ -669,7 +669,8 @@ function deschideMeniul() {
     );
     panou.replaceChildren(div('titlu-meniu-nou', 'Meniu'), grila);
   };
-  const butonInapoi = () => buton('← Înapoi', 'inapoi-meniu', arataMeniul);
+  // Butoanele mici din Galerie și Opțiuni folosesc același pergament ca butoanele mari ale meniului
+  const butonInapoi = () => buton('← Înapoi', 'buton-mic-meniu inapoi-meniu', arataMeniul);
 
   // Galeria: ilustrațiile evenimentelor pe care Vale le-a văzut deja, pe eveniment; un clic le arată mari
   function arataGaleria() {
@@ -703,7 +704,7 @@ function deschideMeniul() {
     randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri)'));
     const alegeri = div('alegeri-optiune');
     for (const x of VITEZE) {
-      const b = buton(`×${x}`, x === viteza() ? 'ales' : '', () => {
+      const b = buton(`×${x}`, `buton-mic-meniu${x === viteza() ? ' ales' : ''}`, () => {
         seteazaViteza(x);
         arataOptiunile();
       });
@@ -713,7 +714,7 @@ function deschideMeniul() {
     const randEcran = div('rand-optiune');
     randEcran.append(
       div('nume-optiune', 'Ecran complet'),
-      buton(document.fullscreenElement ? 'Ieși din ecran complet' : 'Pornește', '', () => {
+      buton(document.fullscreenElement ? 'Ieși din ecran complet' : 'Pornește', 'buton-mic-meniu', () => {
         comutaEcranComplet();
         setTimeout(arataOptiunile, 300);
       }),
