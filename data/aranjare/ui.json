@@ -2,7 +2,7 @@
   "margini": {
     "hud_nume": 0,
     "hud_ceas": 0,
-    "hud_buton": -100,
+    "hud_buton": 0,
     "hud_buton_hover": 0,
     "hud_placuta": 0
   }
