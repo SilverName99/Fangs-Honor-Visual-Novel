@@ -792,6 +792,8 @@ function afiseaza() {
     inapoi.append(b);
   }
   titlu.replaceChildren(iconita('locatie', '📍'), div('', d.titlu));
+  // Pe hartă, panoul lui Vale stă ascuns (decis de autor): ocupă prea mult din hartă
+  ui.classList.toggle('pe-harta', d.tip === 'harta');
 
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
   navigare.replaceChildren();

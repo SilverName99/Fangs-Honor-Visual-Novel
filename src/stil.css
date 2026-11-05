@@ -571,6 +571,11 @@ svg.zone {
   flex: 1;
 }
 
+/* Pe harta satului, panoul lui Vale nu se vede, ca să nu acopere harta */
+.ui.pe-harta .hud {
+  display: none;
+}
+
 /* În dialog, butoanele și plăcuțele dispar; panoul lui Vale și ceasul rămân la vedere, deasupra portretelor */
 .ui.in-dialog .butoane-hud,
 .ui.in-dialog .inapoi-hud,
