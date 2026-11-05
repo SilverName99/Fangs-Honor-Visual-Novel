@@ -209,7 +209,7 @@ Elemente (lista poate crește):
 
 **Interfața de pe ecran** (decis, după designul autorului): panoul lui Vale stânga-sus (plăcuța cu numele, cele 4 bare, monedele, taxa, datoria de blăni), ceasul sus la mijloc, cele 4 butoane pătrate cu iconițe dreapta-sus (Inventar, Personaje, Meniu, Ecran complet), locul unde ești stânga-jos și „Înapoi” dreapta-jos; centrul rămâne liber. Piesele, fără text (textul îl scrie jocul): `ui_hud_panou.png`, `ui_hud_nume.png`, `ui_hud_ceas.png`, `ui_hud_buton.png` (+ `_hover`), `ui_hud_placuta.png`, iconițele `ui_icon_inventar/personaje/meniu/ecran/monede/locatie/inapoi.png`; barele folosesc `ui_bara_rama.png` și `ui_bara_<tip>.png`. Până se încarcă, ramele sunt din CSS și iconițele sunt simboluri.
 
-**9-slice:** colțurile ramei rămân neschimbate, iar mijlocul se întinde. Așa un singur chenar merge la orice mărime. Marginile (cât de lat e colțul) se setează în editor, la Aranjare.
+**9-slice:** colțurile ramei rămân neschimbate, iar mijlocul se întinde. Așa un singur chenar merge la orice mărime. Marginile (cât de lat e colțul) se setează în editor, la Aranjare. Marginea poate fi și **0** (imaginea se întinde întreagă) sau **cu minus** (se întinde întreagă și iese în afara elementului cu atâția pixeli; așa stă hover-ul butoanelor pătrate, a cărui imagine are spațiu pentru strălucire în jur). Fiecare ramă are butonul ei „Salvează marginea”.
 
 ## 10. Dialog
 

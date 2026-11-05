@@ -5,7 +5,7 @@ import { urlImagine, uitaLipsurile } from '../src/imagini.js';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 const EXPLICATII = {
-  '9-slice': 'Ramă care se întinde: colțurile rămân neschimbate, doar mijlocul se întinde. „Margine” = cât de lat e colțul, în pixeli; la 0, imaginea se întinde întreagă.',
+  '9-slice': 'Ramă care se întinde: colțurile rămân neschimbate, doar mijlocul se întinde. „Margine” = cât de lat e colțul, în pixeli; la 0, imaginea se întinde întreagă; cu minus, se întinde întreagă și iese în afară cu atâția pixeli.',
   fundal: 'Se întinde pe tot elementul.',
   textura: 'Se repetă pe orizontală, deci capetele trebuie să se continue fără cusătură.',
   cursor: 'Vârful săgeții trebuie să fie în colțul din stânga-sus al imaginii.',
@@ -20,6 +20,13 @@ const ALTE_MARIMI = [
   ['Pozele de luptă', '~600 × 1000 px, fundal transparent; aliații privesc spre dreapta, inamicii spre stânga'],
   ['Iconițele obiectelor', '128 × 128 px, fundal transparent'],
 ];
+
+// Exemplul din cartonaș arată rama la fel ca în joc: margine pozitivă = colțuri fixe, 0 = întinsă întreagă,
+// minus = întinsă întreagă și ieșită în afară (de aceea exemplul primește și spațiu în jur, ca să se vadă)
+function stilExemplu(url, m) {
+  if (m < 0) return `border-width:0;border-style:solid;border-image:url('${url}') 0 fill / 0 / ${-m}px stretch;margin:${-m}px`;
+  return `border-width:${m}px;border-style:solid;border-image:url('${url}') ${m} fill / ${m}px stretch`;
+}
 
 export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare) {
   const margini = { ...(comun.date.aranjare.ui?.margini || {}) };
@@ -55,8 +62,8 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           ${are ? `<img class="previzualizare" src="${url}">` : ''}
           ${
             are && el.tip === '9-slice' && !el.ca
-              ? `<label class="rand">Margine: <input type="range" min="0" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
-                 <div class="exemplu-9" style="border-width:${m}px;border-image:url('${url}') ${m} fill / ${m}px stretch">Exemplu întins</div>
+              ? `<label class="rand">Margine: <input type="range" min="-100" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
+                 <div class="exemplu-9" data-url="${url}" style="${stilExemplu(url, m)}">Exemplu întins</div>
                  <div class="salvare"><button class="btn principal salveaza-margini" ${modificat ? '' : 'disabled'}>Salvează marginea</button></div>`
               : ''
           }
@@ -83,9 +90,7 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           modificat = true;
           r.nextElementSibling.textContent = `${r.value}px`;
           const ex = card.querySelector('.exemplu-9');
-          ex.style.borderWidth = `${r.value}px`;
-          ex.style.borderImageSlice = `${r.value} fill`;
-          ex.style.borderImageWidth = `${r.value}px`;
+          ex.style.cssText = stilExemplu(ex.dataset.url, Number(r.value));
           // Fiecare ramă are butonul ei de salvare (cel de sus nu se vede când ești jos pe pagină)
           for (const b of container.querySelectorAll('.salveaza-margini')) b.disabled = false;
         };

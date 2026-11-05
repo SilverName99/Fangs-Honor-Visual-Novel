@@ -14,8 +14,10 @@ export const ELEMENTE_UI = [
   { id: 'hud_panou', nume: 'Panoul lui Vale (stânga-sus), gol', marime: '900 × 600 px', tip: '9-slice', margine: 60, selector: '.hud' },
   { id: 'hud_nume', nume: 'Plăcuța cu numele lui Vale, goală', marime: '600 × 120 px', tip: '9-slice', margine: 30, selector: '.nume-hud' },
   { id: 'hud_ceas', nume: 'Banda ceasului (sus, la mijloc), goală', marime: '1200 × 140 px', tip: '9-slice', margine: 60, selector: '.ceas-hud' },
-  { id: 'hud_buton', nume: 'Butonul pătrat din dreapta-sus, gol', marime: '256 × 256 px', tip: 'fundal', selector: '.buton.buton-hud', extra: '.buton.buton-hud{border:none;border-image:none;border-radius:0;box-shadow:none}' },
-  { id: 'hud_buton_hover', nume: 'Butonul pătrat, cu mouse-ul deasupra', marime: '256 × 256 px', tip: 'fundal', selector: '.buton.buton-hud:hover' },
+  // Butonul pătrat e o ramă cu margine (0 = imaginea întinsă întreagă). Hover-ul are marginea lui: cu minus, imaginea
+  // iese în afara butonului, ca rama din imaginea cu strălucire (care are spațiu gol în jur) să rămână cât cea normală
+  { id: 'hud_buton', nume: 'Butonul pătrat din dreapta-sus, gol', marime: '256 × 256 px', tip: '9-slice', margine: 0, selector: '.buton.buton-hud', extra: '.buton.buton-hud,.buton.buton-hud:hover{box-shadow:none;border-radius:0}' },
+  { id: 'hud_buton_hover', nume: 'Butonul pătrat, cu mouse-ul deasupra', marime: '256 × 256 px', tip: '9-slice', margine: -10, selector: '.buton.buton-hud:hover' },
   { id: 'hud_placuta', nume: 'Plăcuța de jos (locul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.titlu-scena, .buton.placuta-hud' },
   // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
   ...[
@@ -65,6 +67,10 @@ function regula(el, url, margine) {
     case '9-slice':
       // Varianta (hover, apăsat) schimbă doar imaginea; rama și marginile rămân ale butonului de bază
       if (el.ca) return `${el.selector}{border-image-source:url("${url}");}`;
+      // Margine cu minus: imaginea se întinde întreagă și iese în afara elementului cu atâția pixeli
+      // (când imaginea are spațiu gol în jur și rama ar părea prea mică pe lângă text)
+      if (margine < 0)
+        return `${el.selector}{border-style:solid;border-color:transparent;border-width:0;border-image:url("${url}") 0 fill / 0 / ${-margine}px stretch;background:none;border-radius:0;box-shadow:none;}`;
       return `${el.selector}{border-style:solid;border-color:transparent;border-width:${margine}px;border-image:url("${url}") ${margine} fill / ${margine}px stretch;background:none;border-radius:0;box-shadow:none;}`;
     case 'fundal':
       return `${el.selector}{background:url("${url}") center / 100% 100% no-repeat;border-color:transparent;}`;
