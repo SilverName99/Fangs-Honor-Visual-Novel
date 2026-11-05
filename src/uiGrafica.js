@@ -13,12 +13,12 @@ export const ELEMENTE_UI = [
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
   { id: 'hud_panou', nume: 'Panoul lui Vale (stânga-sus), gol', marime: '900 × 600 px', tip: '9-slice', margine: 60, selector: '.hud' },
   { id: 'hud_nume', nume: 'Plăcuța cu numele lui Vale, goală', marime: '600 × 120 px', tip: '9-slice', margine: 30, selector: '.nume-hud' },
-  { id: 'hud_ceas', nume: 'Banda ceasului (sus, la mijloc), goală', marime: '1200 × 140 px', tip: '9-slice', margine: 60, selector: '.ceas-hud' },
+  { id: 'hud_ceas', nume: 'Banda de sus, la mijloc (numele locului), goală', marime: '1200 × 140 px', tip: '9-slice', margine: 60, selector: '.titlu-scena' },
   // Butonul pătrat e o ramă cu margine (0 = imaginea întinsă întreagă). Hover-ul are marginea lui: cu minus, imaginea
   // iese în afara butonului, ca rama din imaginea cu strălucire (care are spațiu gol în jur) să rămână cât cea normală
   { id: 'hud_buton', nume: 'Butonul pătrat din dreapta-sus, gol', marime: '256 × 256 px', tip: '9-slice', margine: 0, selector: '.buton.buton-hud', extra: '.buton.buton-hud,.buton.buton-hud:hover{box-shadow:none;border-radius:0}' },
   { id: 'hud_buton_hover', nume: 'Butonul pătrat, cu mouse-ul deasupra', marime: '256 × 256 px', tip: '9-slice', margine: -10, selector: '.buton.buton-hud:hover' },
-  { id: 'hud_placuta', nume: 'Plăcuța de jos (locul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.titlu-scena, .buton.placuta-hud' },
+  { id: 'hud_placuta', nume: 'Plăcuța de jos (ceasul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.ceas-hud, .buton.placuta-hud' },
   // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
   ...[
     ['vale', 'Iconița lui Vale (butonul care deschide panoul lui)'],

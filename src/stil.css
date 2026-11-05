@@ -177,8 +177,8 @@ svg.zone {
   color: #f3e6c8;
   white-space: nowrap;
 }
-/* Plăcuțele de jos: locul unde ești (stânga) și „Înapoi” (dreapta) */
-.titlu-scena,
+/* Plăcuțele de jos: ceasul (stânga) și „Înapoi” (dreapta) (decis de autor: ceasul jos, locul sus) */
+.ceas-hud,
 .buton.placuta-hud {
   display: flex;
   align-items: center;
@@ -187,18 +187,20 @@ svg.zone {
   height: 76px;
   box-sizing: border-box;
   padding: 0 34px 0 22px;
-  font: 600 32px Georgia, serif;
+  font: 600 30px Georgia, serif;
   color: #f3e6c8;
   background: linear-gradient(#3a2817, #20150b);
   border: 3px solid #6b4a2a;
   border-radius: 12px;
   box-shadow: inset 0 0 0 2px #1a0f07, 0 6px 14px rgba(0, 0, 0, 0.6);
 }
-.titlu-scena {
+.ceas-hud {
   position: absolute;
   left: 24px;
   bottom: 22px;
+  padding: 0 34px;
   pointer-events: none;
+  white-space: nowrap;
 }
 .titlu-scena .icon-hud,
 .placuta-hud .icon-hud {
@@ -218,17 +220,20 @@ svg.zone {
 .buton.placuta-hud:hover {
   border-color: #e0bd7a;
 }
-/* Ceasul: banda de pergament de sus, la mijloc */
-.ceas-hud {
+/* Locul unde ești: banda de pergament de sus, la mijloc */
+.titlu-scena {
   position: absolute;
   left: 50%;
   top: 22px;
   transform: translateX(-50%);
-  min-width: 560px;
-  padding: 14px 60px;
+  min-width: 460px;
+  padding: 10px 60px;
   box-sizing: border-box;
-  text-align: center;
-  font: 600 30px Georgia, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: 600 34px Georgia, serif;
   color: #2a1a0e;
   background: linear-gradient(#efe0bd, #d9c393);
   border: 3px solid #6b4a2a;
@@ -592,16 +597,17 @@ svg.zone {
   flex: 1;
 }
 
-/* În dialog, butoanele și plăcuțele dispar; panoul lui Vale și ceasul rămân la vedere, deasupra portretelor */
+/* În dialog, butoanele și plăcuțele de jos dispar (ar sta sub chenarul de dialog);
+   panoul lui Vale și numele locului rămân la vedere, deasupra portretelor */
 .ui.in-dialog .butoane-hud,
 .ui.in-dialog .buton-vale-loc,
 .ui.in-dialog .inapoi-hud,
-.ui.in-dialog .titlu-scena,
+.ui.in-dialog .ceas-hud,
 .ui.in-dialog .navigare-rezerva {
   visibility: hidden;
 }
 .ui.in-dialog .hud,
-.ui.in-dialog .ceas-hud {
+.ui.in-dialog .titlu-scena {
   z-index: 11;
 }
 
@@ -1047,12 +1053,11 @@ svg.zone {
   color: #d8ccb2;
 }
 
-/* TEMPORAR: butoanele de schimbat ora (config.ceasRapid), sub ceas */
+/* TEMPORAR: butoanele de schimbat ora (config.ceasRapid), deasupra ceasului */
 .ceas-rapid {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 100px;
+  left: 24px;
+  bottom: 110px;
   display: flex;
   gap: 6px;
 }
@@ -1662,4 +1667,12 @@ svg.zone {
   min-width: 84px;
   font: 700 26px Georgia, serif;
   pointer-events: auto;
+}
+
+/* Butoanele doar cu iconiță: iconița poate fi mai mare, că nu mai are text sub ea */
+.buton.buton-hud .icon-hud:only-child {
+  width: 84px;
+  height: 84px;
+  font-size: 60px;
+  line-height: 84px;
 }

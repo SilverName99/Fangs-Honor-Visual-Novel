@@ -75,9 +75,10 @@ function comutaPanoul() {
   actualizeazaHud();
 }
 
-function butonHud(id, simbol, eticheta, clic) {
+// Butoanele din dreapta-sus au doar iconița (decis de autor: se înțelege din ea); numele apare la hover
+function butonHud(id, simbol, eticheta, clic, cuText = false) {
   const b = buton('', 'buton-hud', clic);
-  b.append(iconita(id, simbol), div('eticheta-hud', eticheta));
+  b.append(iconita(id, simbol), ...(cuText ? [div('eticheta-hud', eticheta)] : []));
   b.title = eticheta;
   return b;
 }
@@ -140,7 +141,7 @@ function actualizeazaHud() {
   // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
   const zileTaxa = stare.taxa.zi - ziua(stare);
   const grav = NEVOI.some(([cheie]) => stare.nevoi[cheie] < cfg.nevoi.prag) || (!stare.taxa.platita && zileTaxa <= 0);
-  const b = butonHud('vale', '👤', 'Vale', comutaPanoul);
+  const b = butonHud('vale', '👤', 'Vale', comutaPanoul, true);
   b.classList.toggle('apasat', panouDeschis);
   b.classList.toggle('avertizare', grav && !panouDeschis);
   butonVale.replaceChildren(b);
