@@ -1715,7 +1715,7 @@ svg.zone {
   width: var(--meniu-latime, 1728px);
   height: var(--meniu-inaltime, 1080px);
   box-sizing: border-box;
-  padding: var(--meniu-sus, 242px) var(--meniu-lateral, 250px) var(--meniu-jos, 127px);
+  padding: var(--meniu-sus, 300px) var(--meniu-lateral, 250px) var(--meniu-jos, 127px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1728,7 +1728,7 @@ svg.zone {
 .titlu-meniu-nou {
   position: absolute;
   left: 50%;
-  top: var(--meniu-titluSus, 96px);
+  top: var(--meniu-titluSus, 112px);
   transform: translateX(-50%);
   min-width: 560px;
   padding: 14px 60px;

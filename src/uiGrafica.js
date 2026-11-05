@@ -111,7 +111,7 @@ export function aplicaBare(bare = {}) {
 export const REGLAJE_MENIU = [
   ['latime', 'Lățimea tablei', 1728, 10],
   ['inaltime', 'Înălțimea tablei', 1080, 10],
-  ['sus', 'Unde încep butoanele (de sus)', 242, 5],
+  ['sus', 'Unde încep butoanele (de sus)', 300, 5],
   ['jos', 'Spațiu jos', 127, 5],
   ['lateral', 'Spațiu stânga și dreapta', 250, 5],
   ['butonInaltime', 'Înălțimea butoanelor', 165, 5],
@@ -120,7 +120,7 @@ export const REGLAJE_MENIU = [
   ['spatiuColoane', 'Distanța dintre coloane', 46, 2],
   ['iconita', 'Mărimea iconițelor', 115, 5],
   ['text', 'Mărimea textului din butoane', 34, 1],
-  ['titluSus', 'Poziția titlului (de sus)', 96, 2],
+  ['titluSus', 'Poziția titlului (de sus)', 112, 2],
   ['titlu', 'Mărimea titlului', 74, 2],
 ];
 export function aplicaMeniu(meniu = {}) {
