@@ -56,7 +56,8 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           ${
             are && el.tip === '9-slice' && !el.ca
               ? `<label class="rand">Margine: <input type="range" min="0" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
-                 <div class="exemplu-9" style="border-width:${m}px;border-image:url('${url}') ${m} fill / ${m}px stretch">Exemplu întins</div>`
+                 <div class="exemplu-9" style="border-width:${m}px;border-image:url('${url}') ${m} fill / ${m}px stretch">Exemplu întins</div>
+                 <div class="salvare"><button class="btn principal salveaza-margini" ${modificat ? '' : 'disabled'}>Salvează marginea</button></div>`
               : ''
           }
           <div class="salvare"><label class="btn">${are ? 'Înlocuiește' : 'Încarcă'}<input type="file" accept="image/png" hidden></label>
@@ -85,17 +86,19 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           ex.style.borderWidth = `${r.value}px`;
           ex.style.borderImageSlice = `${r.value} fill`;
           ex.style.borderImageWidth = `${r.value}px`;
-          container.querySelector('.salveaza-margini').disabled = false;
+          // Fiecare ramă are butonul ei de salvare (cel de sus nu se vede când ești jos pe pagină)
+          for (const b of container.querySelectorAll('.salveaza-margini')) b.disabled = false;
         };
       }
     }
-    container.querySelector('.salveaza-margini').onclick = async () => {
+    const salveaza = async () => {
       await api('aranjare/ui', { method: 'PUT', body: JSON.stringify({ margini }), headers: { 'Content-Type': 'application/json' } });
       comun.date.aranjare.ui = { margini: { ...margini } };
       modificat = false;
       arata();
       dupaSalvare();
     };
+    for (const b of container.querySelectorAll('.salveaza-margini')) b.onclick = salveaza;
   }
 
   return { arata };
