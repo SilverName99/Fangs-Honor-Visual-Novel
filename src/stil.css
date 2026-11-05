@@ -1848,4 +1848,6 @@ svg.zone {
 }
 .buton.inapoi-meniu {
   align-self: center;
+  /* Mai sus de marginea de jos a tablei (decis de autor), ca să nu stea peste ornamentul de jos */
+  margin-bottom: 60px;
 }
