@@ -4,7 +4,8 @@ import { construiesteLumea, candidati } from './lume.js';
 import { creeazaEcran, randeaza, aplicaMoment, puncteSvg } from './scena.js';
 import { conturImagine } from './contur.js';
 import { verifica, registreazaConditie } from './conditii.js';
-import { preincarca } from './imagini.js';
+import { preincarca, elementImagine } from './imagini.js';
+import { VITEZE, viteza, seteazaViteza } from './viteza.js';
 import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
 import { inMinute, NUME_ZILE } from './timp.js';
@@ -68,7 +69,8 @@ const butonVale = div('buton-vale-loc');
 ui.append(butoaneHud, titlu, inapoi, butonVale, hud, ceasHud, navigare, baraActiuni);
 
 // Iconița unui buton: până se încarcă imaginea ei (ui_icon_<id>.png) rămâne simbolul din text
-const iconita = (id, simbol) => Object.assign(div(`icon-hud ${id}`), { textContent: simbol });
+// Clasa are prefixul „icon-”, ca să nu se bată cu alte clase din joc (de exemplu „continua” din dialog, „ecran” din scenă)
+const iconita = (id, simbol) => Object.assign(div(`icon-hud icon-${id}`), { textContent: simbol });
 let panouDeschis = false;
 function comutaPanoul() {
   panouDeschis = !panouDeschis;
@@ -630,31 +632,97 @@ function inventarPlin(id, n) {
 
 // ---------- meniul ----------
 
+// Meniul (decis de autor): o tablă de lemn atârnată, cu 6 butoane de pergament în grilă 2×3, fiecare cu iconița lui.
+// Galeria și Opțiunile se deschid în aceeași fereastră, cu „Înapoi” spre meniu.
 function deschideMeniul() {
-  const fundal = div('acoperitor');
-  const panou = div('panou-meniu');
+  const fundal = div('acoperitor ecran-meniu');
+  const panou = div('panou-meniu-nou');
   const inchide = () => fundal.remove();
-  panou.append(
-    div('titlu-meniu', 'Meniu'),
-    buton('Continuă', '', inchide),
-    buton('Salvează într-un fișier', '', () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
-    buton('Încarcă dintr-un fișier', '', async () => {
-      try {
-        stare = await salvare.importa();
-        salveaza();
+  const optiune = (id, simbol, text, clic) => {
+    const b = buton('', 'buton-meniu', clic);
+    b.append(iconita(id, simbol), div('text-buton-meniu', text));
+    return b;
+  };
+  const arataMeniul = () => {
+    const grila = div('grila-meniu');
+    grila.append(
+      optiune('continua', '🚪', 'Continuă', inchide),
+      optiune('salveaza', '🪶', 'Salvează într-un fișier', () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
+      optiune('incarca', '📜', 'Încarcă dintr-un fișier', async () => {
+        try {
+          stare = await salvare.importa();
+          salveaza();
+          inchide();
+          afiseaza();
+          mesaj('Salvarea a fost încărcată.');
+        } catch (e) {
+          mesaj(e.message);
+        }
+      }),
+      optiune('joc_nou', '🌅', 'Joc nou', () => {
+        if (!confirm('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).')) return;
         inchide();
-        afiseaza();
-        mesaj('Salvarea a fost încărcată.');
-      } catch (e) {
-        mesaj(e.message);
+        joc.jocNou();
+      }),
+      optiune('galerie', '🖼', 'Galerie', arataGaleria),
+      optiune('optiuni', '⚙', 'Opțiuni', arataOptiunile),
+    );
+    panou.replaceChildren(div('titlu-meniu-nou', 'Meniu'), grila);
+  };
+  const butonInapoi = () => buton('← Înapoi', 'inapoi-meniu', arataMeniul);
+
+  // Galeria: ilustrațiile evenimentelor pe care Vale le-a văzut deja, pe eveniment; un clic le arată mari
+  function arataGaleria() {
+    const vazute = evenimente.filter((ev) => ev.imagini?.length && stare.evenimente[ev.id]);
+    const continut = div('continut-meniu galerie-meniu');
+    if (!vazute.length) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
+    for (const ev of vazute) {
+      const grup = div('grup-galerie');
+      grup.append(div('nume-grup-galerie', ev.nume || ev.grup || ev.id));
+      const rand = div('rand-galerie');
+      for (const cale of ev.imagini) {
+        const mic = elementImagine([cale], { clasa: 'miniatura-galerie', raport: 16 / 9, eticheta: cale });
+        mic.onclick = () => {
+          const mare = div('imagine-mare-galerie');
+          mare.append(elementImagine([cale], { clasa: 'imagine-galerie', raport: 16 / 9, eticheta: cale }));
+          mare.onclick = () => mare.remove();
+          fundal.append(mare);
+        };
+        rand.append(mic);
       }
-    }),
-    buton('Joc nou', '', () => {
-      if (!confirm('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).')) return;
-      inchide();
-      joc.jocNou();
-    }),
-  );
+      grup.append(rand);
+      continut.append(grup);
+    }
+    panou.replaceChildren(div('titlu-meniu-nou', 'Galerie'), continut, butonInapoi());
+  }
+
+  // Opțiunile: deocamdată ce există în joc (viteza animațiilor și ecranul complet); sunetul vine mai târziu
+  function arataOptiunile() {
+    const continut = div('continut-meniu optiuni-meniu');
+    const randViteza = div('rand-optiune');
+    randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri)'));
+    const alegeri = div('alegeri-optiune');
+    for (const x of VITEZE) {
+      const b = buton(`×${x}`, x === viteza() ? 'ales' : '', () => {
+        seteazaViteza(x);
+        arataOptiunile();
+      });
+      alegeri.append(b);
+    }
+    randViteza.append(alegeri);
+    const randEcran = div('rand-optiune');
+    randEcran.append(
+      div('nume-optiune', 'Ecran complet'),
+      buton(document.fullscreenElement ? 'Ieși din ecran complet' : 'Pornește', '', () => {
+        comutaEcranComplet();
+        setTimeout(arataOptiunile, 300);
+      }),
+    );
+    continut.append(randViteza, randEcran);
+    panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
+  }
+
+  arataMeniul();
   fundal.append(panou);
   fundal.onclick = (e) => e.target === fundal && inchide();
   ui.append(fundal);
@@ -841,6 +909,9 @@ addEventListener('keydown', (e) => {
   if ((e.key === 'i' || e.key === 'I') && !dialog.activ()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
   if (e.key !== 'Escape') return;
   const acoperitor = ui.querySelector('.acoperitor');
+  // În galeria din meniu, Escape închide întâi imaginea mare, apoi meniul
+  const mare = ui.querySelector('.imagine-mare-galerie');
+  if (mare) return mare.remove();
   if (acoperitor) return acoperitor.remove();
   if (ecranInventar.deschis()) return ecranInventar.inchide();
   const d = lume.get(stare.scena);

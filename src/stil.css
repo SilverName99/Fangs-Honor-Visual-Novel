@@ -1703,3 +1703,137 @@ svg.zone {
   font-size: 48px;
   line-height: 67px;
 }
+
+/* ----- Meniul: tabla de lemn atârnată, cu 6 butoane de pergament (decis de autor) ----- */
+/* Până se încarcă ui_meniu_panou.png, tabla, banda titlului și butoanele sunt din CSS, în aceleași culori */
+.acoperitor.ecran-meniu {
+  backdrop-filter: blur(4px);
+}
+.panou-meniu-nou {
+  position: relative;
+  width: 1500px;
+  height: 940px;
+  box-sizing: border-box;
+  padding: 210px 170px 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(#3a2817, #24170c);
+  border: 14px solid #2a1a0e;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 3px #6b4a2a, 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+.titlu-meniu-nou {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  min-width: 560px;
+  padding: 14px 60px;
+  box-sizing: border-box;
+  text-align: center;
+  font: 700 64px Georgia, serif;
+  color: #f3dfae;
+  text-shadow: 0 3px 6px #000;
+  background: linear-gradient(#2c3f8f, #1b2763);
+  border: 3px solid #c9a24f;
+  border-radius: 12px;
+}
+.grila-meniu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 40px;
+}
+.buton.buton-meniu {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 40px;
+  color: #2a1a0e;
+  background: linear-gradient(#efe0bd, #d9c393);
+  border: 3px solid #6b4a2a;
+  border-radius: 10px;
+}
+.buton.buton-meniu:hover {
+  border-color: #e0bd7a;
+  box-shadow: 0 0 22px rgba(255, 210, 120, 0.7);
+}
+.buton.buton-meniu .icon-hud {
+  width: 130px;
+  height: 130px;
+  font-size: 90px;
+  line-height: 130px;
+}
+.text-buton-meniu {
+  flex: 1;
+  text-align: center;
+  font: 700 40px Georgia, serif;
+}
+.continut-meniu {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  color: #f3e6c8;
+}
+.gol-meniu {
+  margin-top: 80px;
+  text-align: center;
+  font: 28px Georgia, serif;
+  opacity: 0.85;
+}
+.nume-grup-galerie {
+  font: 600 26px Georgia, serif;
+  margin: 10px 0;
+}
+.rand-galerie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.miniatura-galerie {
+  position: relative;
+  width: 260px;
+  cursor: pointer;
+  border: 3px solid #6b4a2a;
+}
+.miniatura-galerie:hover {
+  border-color: #e0bd7a;
+}
+.imagine-mare-galerie {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  cursor: pointer;
+}
+.imagine-mare-galerie .imagine-galerie {
+  position: relative;
+  width: 90%;
+}
+.rand-optiune {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 22px 10px;
+  border-bottom: 1px solid rgba(243, 230, 200, 0.2);
+  font: 28px Georgia, serif;
+}
+.alegeri-optiune {
+  display: flex;
+  gap: 12px;
+}
+.alegeri-optiune .buton.ales {
+  border-color: #e0bd7a;
+  box-shadow: 0 0 14px rgba(255, 210, 120, 0.6);
+}
+.buton.inapoi-meniu {
+  align-self: center;
+}

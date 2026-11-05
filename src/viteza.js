@@ -2,7 +2,7 @@
 // E o preferință a jucătorului, nu ține de salvare, deci stă separat în localStorage (dacă browserul îl permite).
 
 const CHEIE = 'fangs-vn-viteza';
-const VITEZE = [1, 2, 4];
+export const VITEZE = [1, 2, 4];
 
 let v = 1;
 try {
@@ -18,6 +18,18 @@ export const viteza = () => v;
 // O pauză care se scurtează odată cu viteza aleasă
 export const asteapta = (ms) => new Promise((r) => setTimeout(r, ms / v));
 
+// Schimbă viteza (din butonul de jos sau din Opțiuni) și o ține minte; toate butoanele de viteză se actualizează
+export function seteazaViteza(nou) {
+  v = VITEZE.includes(nou) ? nou : 1;
+  document.documentElement.style.setProperty('--viteza', String(v));
+  try {
+    localStorage.setItem(CHEIE, String(v));
+  } catch {
+    // fără localStorage, viteza ține doar până se închide jocul
+  }
+  for (const x of document.querySelectorAll('.viteza-joc')) x.textContent = `×${v}`;
+}
+
 // Butonul din colțul din dreapta-jos: la fiecare apăsare trece la viteza următoare
 export function butonViteza() {
   const b = document.createElement('button');
@@ -26,14 +38,7 @@ export function butonViteza() {
   b.textContent = `×${v}`;
   b.onclick = (e) => {
     e.stopPropagation();
-    v = VITEZE[(VITEZE.indexOf(v) + 1) % VITEZE.length];
-    document.documentElement.style.setProperty('--viteza', String(v));
-    try {
-      localStorage.setItem(CHEIE, String(v));
-    } catch {
-      // fără localStorage, viteza ține doar până se închide jocul
-    }
-    for (const x of document.querySelectorAll('.viteza-joc')) x.textContent = `×${v}`;
+    seteazaViteza(VITEZE[(VITEZE.indexOf(v) + 1) % VITEZE.length]);
   };
   return b;
 }
