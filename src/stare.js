@@ -1,7 +1,7 @@
 import { MINUTE_ZI, inMinute, momentZi, ziSaptamana } from './timp.js';
 
 // Crește doar când se schimbă forma salvării; atunci se adaugă și o migrare în salvare.js
-export const VERSIUNE_SALVARE = 2;
+export const VERSIUNE_SALVARE = 3;
 
 export function stareNoua(config) {
   const s = config.start;

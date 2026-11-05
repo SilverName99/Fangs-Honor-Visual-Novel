@@ -140,18 +140,28 @@ export function construiesteLumea(date) {
       })),
     });
   }
-  // Ecranul de echipament se aranjează în editor ca o scenă: figura lui Vale și sloturile peste ea
+  // Ecranul de inventar (designul autorului) se aranjează în editor ca o scenă: în stânga Vale și sloturile de echipament,
+  // în dreapta foaia de pergament cu inventarul, semnul de carte, titlurile și butonul „Închide”
+  // În editor, tot ce nu e figura sau foaia stă peste ele (ca în joc), ca să poată fi apucat cu mouse-ul
+  const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'foaie'].includes(tip) });
   scene.set('echipament', {
     id: 'echipament',
     tip: 'ecran',
-    titlu: 'Ecranul de echipament',
+    titlu: 'Ecranul de inventar și echipament',
+    titluObiecte: 'Bucățile ecranului',
     imagine: fisierUi('inventar_fundal'),
     variante: [],
     parinte: null,
     tinte: [],
     obiecte: [
-      { id: 'figura', tip: 'figura', nume: 'Vale (A-pose)', imagine: fisierUi('vale_apoza'), variante: [], implicit: { x: 0.27, y: 0.96, scara: 0.86 } },
-      ...SLOTURI.map((sl, i) => ({ id: sl, tip: 'slot', nume: NUME_SLOTURI[sl], imagine: fisierUi('slot'), variante: [], implicit: POZITII_SLOTURI[sl] })),
+      bucata('figura', 'figura', 'Vale (A-pose)', fisierUi('vale_apoza'), 0.7, { x: 0.31, y: 0.8, scara: 0.62 }),
+      ...SLOTURI.map((sl) => bucata(sl, 'slot', `Slotul: ${NUME_SLOTURI[sl]}`, fisierUi('slot_echipament'), 1, POZITII_SLOTURI[sl])),
+      bucata('foaie', 'foaie', 'Foaia de pergament (inventarul)', fisierUi('inventar_foaie'), 0.72, { x: 0.7, y: 0.95, scara: 0.84 }),
+      bucata('semn', 'semn', 'Semnul de carte („Obiecte de poveste”)', fisierUi('inventar_semn'), 0.667, { x: 0.885, y: 0.36, scara: 0.2 }),
+      // Titlurile și butonul sunt scrise de joc; în editor se văd ca dreptunghiuri, doar ca să fie mutate
+      bucata('titlu_echipament', 'titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
+      bucata('titlu_inventar', 'titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
+      bucata('inchide', 'inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
     ],
   });
   // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor
@@ -212,15 +222,14 @@ export const LOCURI_LUPTA = ['aliat', 'inamic'].flatMap((tabara) =>
 );
 export const idHartaLupta = (fundal) => `lupta_${fundal.replace('.', '_')}`;
 
+// Pozițiile de pornire, ca în designul autorului: rucsacul și armele în stânga lui Vale, coiful, armura și jambierele în dreapta
 const POZITII_SLOTURI = {
-  cap: { x: 0.27, y: 0.2, scara: 0.1 },
-  haina: { x: 0.27, y: 0.42, scara: 0.1 },
-  manusi: { x: 0.13, y: 0.55, scara: 0.1 },
-  pantaloni: { x: 0.27, y: 0.66, scara: 0.1 },
-  bocanci: { x: 0.27, y: 0.9, scara: 0.1 },
-  arma_primara: { x: 0.42, y: 0.55, scara: 0.1 },
-  arma_secundara: { x: 0.13, y: 0.72, scara: 0.1 },
-  rucsac: { x: 0.42, y: 0.3, scara: 0.1 },
+  cap: { x: 0.4, y: 0.25, scara: 0.095 },
+  armura: { x: 0.415, y: 0.37, scara: 0.095 },
+  jambiere: { x: 0.42, y: 0.6, scara: 0.095 },
+  arma_primara: { x: 0.19, y: 0.46, scara: 0.095 },
+  arma_secundara: { x: 0.205, y: 0.6, scara: 0.095 },
+  rucsac: { x: 0.205, y: 0.31, scara: 0.095 },
 };
 
 // Lista de imagini încearcă întâi variantele cu nume exact (de exemplu casa_reparata_zona_noapte.png),
@@ -360,6 +369,10 @@ export function imaginiCerute(date, scene) {
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';
-  for (const el of ELEMENTE_UI) adauga(fisierUi(el.id), `Interfață: ${el.nume} (${el.marime})`, true);
+  for (const el of ELEMENTE_UI) {
+    // Piesele inventarului stau împreună, la grupul lor, ca să fie ușor de găsit
+    grup = el.grup || 'Interfață';
+    adauga(fisierUi(el.id), `${el.grup ? '' : 'Interfață: '}${el.nume} (${el.marime})`, true);
+  }
   return [...rezultat.values()];
 }

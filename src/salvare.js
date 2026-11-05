@@ -23,6 +23,29 @@ const migrari = {
       versiuneSalvare: 2,
     };
   },
+  // Sloturile noi de armură (coif, armură, jambiere); mănușile și bocancii nu mai există în demo,
+  // iar pantalonii de pânză au devenit jambierele de piele
+  2: (s) => {
+    const redenumit = { pantaloni_panza: 'jambiere_piele' };
+    const scos = new Set(['manusi_piele', 'bocanci']);
+    const lista = (l = []) => l.filter((x) => !scos.has(x.id)).map((x) => ({ ...x, id: redenumit[x.id] || x.id }));
+    const e = s.echipat || {};
+    const echipat = {};
+    for (const [slot, id] of Object.entries(e)) {
+      if (!id || scos.has(id)) continue;
+      const nou = { haina: 'armura', pantaloni: 'jambiere' }[slot] || slot;
+      if (['manusi', 'bocanci'].includes(nou)) continue;
+      echipat[nou] = redenumit[id] || id;
+    }
+    return {
+      ...s,
+      inventar: lista(s.inventar),
+      cufar: lista(s.cufar),
+      echipat,
+      confiscate: (s.confiscate || []).filter((id) => !scos.has(id)).map((id) => redenumit[id] || id),
+      versiuneSalvare: 3,
+    };
+  },
 };
 
 export function cheieSalvare(test) {

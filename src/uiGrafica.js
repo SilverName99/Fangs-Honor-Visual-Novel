@@ -1,4 +1,5 @@
 import { urlImagine } from './imagini.js';
+import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Toate elementele de interfață care pot primi grafică. Până se încarcă imaginea, rămâne stilul CSS implicit.
 // tip: „9-slice” (ramă care se întinde), „fundal” (imagine întinsă pe tot elementul), „textura” (se repetă pe orizontală),
@@ -41,8 +42,17 @@ export const ELEMENTE_UI = [
     ['galerie', 'Meniu: iconița Galerie (tabloul)'],
     ['optiuni', 'Meniu: iconița Opțiuni (rotițele și cheia)'],
   ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent}` })),
-  { id: 'slot', nume: 'Slot de inventar / echipament', marime: '128 × 128 px', tip: 'fundal', selector: '.slot, .celula' },
-  { id: 'slot_hover', nume: 'Slot, cu mouse-ul deasupra', marime: '128 × 128 px', tip: 'fundal', selector: '.slot:hover, .celula:hover, .celula.selectata' },
+  // Inventarul (designul autorului): în galerie, la grupul „Inventarul”
+  { id: 'inventar_fundal', grup: 'Inventarul', nume: 'Fundalul ecranului de inventar (cu piedestalul lui Vale)', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar' },
+  { id: 'vale_apoza', grup: 'Inventarul', nume: 'Vale în A-pose (ecranul de echipament)', marime: '700 × 1000 px, fundal transparent', tip: 'imagine' },
+  { id: 'inventar_foaie', grup: 'Inventarul', nume: 'Foaia de pergament a inventarului, goală', marime: '900 × 1250 px, fundal transparent', tip: 'fundal', selector: '.foaie-inv', extra: '.foaie-inv{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'inventar_semn', grup: 'Inventarul', nume: 'Semnul de carte („Obiecte de poveste”), gol', marime: '240 × 360 px, fundal transparent', tip: 'fundal', selector: '.semn-inv', extra: '.semn-inv{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'slot_echipament', grup: 'Inventarul', nume: 'Slotul de echipament (rama de lângă Vale)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot', extra: '.slot{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'slot_echipament_hover', grup: 'Inventarul', nume: 'Slotul de echipament, cu mouse-ul deasupra', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot:hover, .slot.selectata' },
+  { id: 'slot', grup: 'Inventarul', nume: 'Căsuța din inventar (pe foaie)', marime: '128 × 128 px', tip: 'fundal', selector: '.celula', extra: '.celula{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'slot_hover', grup: 'Inventarul', nume: 'Căsuța din inventar, cu mouse-ul deasupra', marime: '128 × 128 px', tip: 'fundal', selector: '.celula:hover, .celula.selectata' },
+  // Simbolul din slotul gol (coiful, pieptarul...); până se încarcă, în slot scrie numele lui
+  ...SLOTURI.map((id) => ({ id: `slot_${id}`, grup: 'Inventarul', nume: `Simbolul slotului gol: ${NUME_SLOTURI[id]}`, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.slot-gol.slot-gol-${id}`, extra: `.slot-gol.slot-gol-${id}{color:transparent}` })),
   { id: 'bara_rama', nume: 'Rama barelor (viață, stamina...)', marime: '300 × 24 px', tip: '9-slice', margine: 8, selector: '.bara-nevoie .cale, .bara-lupta' },
   { id: 'bara_viata', nume: 'Umplerea barei de viață', marime: '64 × 16 px, textură care se repetă', tip: 'textura', selector: '.viata .umplere, .bara-lupta.viata .umplere' },
   { id: 'bara_stamina', nume: 'Umplerea barei de stamina', marime: '64 × 16 px, textură care se repetă', tip: 'textura', selector: '.stamina .umplere, .bara-lupta.stamina .umplere' },
@@ -50,7 +60,6 @@ export const ELEMENTE_UI = [
   { id: 'bara_sete', nume: 'Umplerea barei de sete', marime: '64 × 16 px, textură care se repetă', tip: 'textura', selector: '.sete .umplere' },
   { id: 'cursor', nume: 'Cursorul mouse-ului', marime: '32 × 32 px (maximum 64 × 64); vârful săgeții în colțul stânga-sus', tip: 'cursor' },
   { id: 'cursor_click', nume: 'Cursorul, cât timp apeși', marime: '32 × 32 px (maximum 64 × 64)', tip: 'cursor', apasat: true },
-  { id: 'vale_apoza', nume: 'Vale în A-pose (ecranul de echipament)', marime: '700 × 1000 px, fundal transparent', tip: 'imagine' },
   { id: 'meniu_fundal', nume: 'Fundalul meniului și al ferestrelor', marime: '1920 × 1080 px', tip: 'fundal', selector: '.acoperitor' },
   { id: 'carte', nume: 'Cartea personajelor (cartea deschisă, două pagini goale)', marime: '1600 × 1000 px', tip: 'fundal', selector: '.carte', extra: (url) =>
       // Foaia care se întoarce e chiar hârtia din imagine: fiecare față arată bucata din imagine peste care stă (dreapta: de la 800 px, stânga: de la 40 px)
@@ -69,7 +78,6 @@ export const ELEMENTE_UI = [
     // Cu imaginea încărcată, punctele desenate din cod nu se mai văd
     extra: `.zar[data-f="${f}"]{border:none;border-radius:0;box-shadow:none}.zar[data-f="${f}"] .punct{display:none}`,
   })),
-  { id: 'inventar_fundal', nume: 'Fundalul ecranului de inventar', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar' },
 ];
 
 export const fisierUi = (id) => `ui/ui_${id}.png`;

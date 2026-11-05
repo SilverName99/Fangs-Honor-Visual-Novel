@@ -199,7 +199,7 @@ Elemente (lista poate crește):
 | Plăcuța cu numele vorbitorului | `ui_nume.png` | 9-slice |
 | Butoane | `ui_buton.png`, `ui_buton_hover.png`, `ui_buton_apasat.png` | 9-slice |
 | Panouri (inventar, meniu, echipament) | `ui_panou.png` | 9-slice |
-| Slot de inventar sau echipament | `ui_slot.png`, `ui_slot_hover.png` | |
+| Slot de inventar / de echipament | `ui_slot.png`, `ui_slot_hover.png` / `ui_slot_echipament.png` (+ `_hover`) | căsuța de pe foaie / rama de lângă Vale |
 | Bare (viață, stamina, foame, sete) | `ui_bara_rama.png`, `ui_bara_<tip>.png` | rama + umplutura |
 | Cursorul | `ui_cursor.png`, `ui_cursor_click.png` | **maximum 64×64**, ideal 32×32 (browserele refuză cursoare mari) |
 | Figura lui Vale pentru echipament | `ui_vale_apoza.png` | A-pose, fundal transparent |
@@ -361,12 +361,14 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 - **Inventar plin:** apare mesajul „N-ai loc pentru X”, cu butoanele *Aruncă ceva* și *Lasă-l*.
 - **Rucsac mai mic:** se poate echipa doar dacă încap obiectele. Altfel apare mesajul „Golește mai întâi N sloturi”.
 
-### Ecranul de echipament
+### Ecranul de inventar și echipament (decis, după designul autorului)
 
-- **Stânga:** figura lui Vale în A-pose (`ui_vale_apoza.png`), cu sloturile de echipament puse peste ea. Pozițiile sloturilor se aranjează în editor. Figura nu se schimbă după echipament; în sloturi apar **iconițele** obiectelor.
-- **Dreapta:** inventarul.
-- **Drag & drop** din inventar în sloturi și înapoi. Un slot nepotrivit refuză obiectul (de exemplu bocanci pe cap).
-- **Sloturi:** cap, haină, mănuși, pantaloni, bocanci, armă primară, armă secundară, rucsac. **Armele cu două mâini ocupă ambele sloturi de armă.**
+- **Stânga, „Echipament”:** figura lui Vale în A-pose (`ui_vale_apoza.png`), pe piedestalul din fundal (`ui_inventar_fundal.png`), cu sloturile în jur, **legate de corp cu linii aurii desenate din cod**. Figura nu se schimbă după echipament; în sloturi apar **iconițele** obiectelor, iar un slot gol arată simbolul lui (`ui_slot_<slot>.png`; până se încarcă, numele slotului).
+- **Dreapta, „Inventar”:** o foaie de pergament (`ui_inventar_foaie.png`, 900×1250) cu rucsacul (grilă de 4 coloane, „Rucsac x / N”) și, jos, caseta obiectului ales (iconiță, nume, ce face, butoane de pergament: Mănâncă/Bea, Echipează, În cufăr, Aruncă, Dă jos). **Semnul de carte** (`ui_inventar_semn.png`) comută foaia pe **obiectele de poveste**. Butonul „Închide” e pergamentul din meniu.
+- **La cufăr** (camera lui Vale): în stânga apare a doua foaie, cufărul (40 de locuri, 8 pe rând), în locul lui Vale.
+- Toate bucățile (figura, sloturile, foaia, semnul, titlurile, „Închide”) se mută și se măresc în editor, la Aranjare → „Ecranul de inventar și echipament”. Piesele se încarcă în galerie, la grupul **Inventarul** (`ui_slot_echipament.png` + `_hover` pentru ramele de lângă Vale, `ui_slot.png` + `_hover` pentru căsuțele de pe foaie).
+- **Drag & drop** din inventar în sloturi și înapoi (și între rucsac și cufăr). Un slot nepotrivit refuză obiectul (de exemplu jambierele pe cap).
+- **Sloturi** (decis: fără mănuși și bocanci): `cap` (Coif), `armura` (Armură, pentru tors), `jambiere` (Jambiere), `arma_primara`, `arma_secundara`, `rucsac`. **Armele cu două mâini ocupă ambele sloturi de armă.** Salvarea e la versiunea 3: migrarea mută haina pe `armura`, pantalonii pe `jambiere` și scoate mănușile și bocancii.
 - Fiecare obiect are o **iconiță** (`assets/items/<id>.png`).
 
 ## 15. Lupta pe ture
@@ -493,7 +495,7 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 
 **De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare.
 
-**Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de echipament se aranjează în editor ca „scena” `echipament`.
+**Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de inventar și echipament se aranjează în editor ca „scena” `echipament`.
 
 **Nu face în demo:** managementul grupului (somn, mâncare, băutură pentru recruți), schimbul de inventar cu recruții, mana și magia (în afară de abilitățile preotului), amuletele și inelele, dragonii (în afară de indicii), harta mare, fortăreața.
 

@@ -1,5 +1,5 @@
 import { elementImagine } from './imagini.js';
-import { pozitie, aplicaPozitie } from './scena.js';
+import { pozitie, aplicaPozitie, LATIME, INALTIME } from './scena.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 import { fisierUi } from './uiGrafica.js';
 
@@ -48,6 +48,7 @@ export function creeazaEcranInventar(parinte, joc) {
   function deschide(opt = {}) {
     optiuni = opt;
     selectat = null;
+    vedere = 'rucsac';
     if (!el) {
       el = div('ecran-inventar');
       parinte.append(el);
@@ -138,101 +139,210 @@ export function creeazaEcranInventar(parinte, joc) {
     return g;
   }
 
-  function arata() {
-    const s = joc.stare;
-    const aranjare = joc.date.aranjare.echipament;
-    const ecran = joc.lume.get('echipament');
-    el.replaceChildren();
+  // Unde se leagă fiecare slot de corpul lui Vale (linia aurie), ca fracție din figura lui: x de la stânga, y de sus
+  const PUNCTE_CORP = {
+    cap: [0.5, 0.07],
+    armura: [0.5, 0.32],
+    jambiere: [0.5, 0.62],
+    arma_primara: [0.14, 0.5],
+    arma_secundara: [0.3, 0.55],
+    rucsac: [0.36, 0.22],
+  };
 
-    // Stânga: Vale și sloturile, așezate din editor (Aranjare → Ecranul de echipament)
-    ecran.obiecte.forEach((o, i) => {
-      const poz = pozitie(aranjare, o, i);
-      if (o.tip === 'figura') {
-        const f = elementImagine([fisierUi('vale_apoza')], { clasa: 'obiect figura-vale', raport: 0.7, eticheta: 'ui_vale_apoza.png' });
-        aplicaPozitie(f, poz);
-        return el.append(f);
-      }
-      const slot = div('slot obiect');
-      aplicaPozitie(slot, poz);
-      slot.style.aspectRatio = '1';
-      // Sloturile stau mereu peste figură, oricât de mare ar fi ea
-      slot.style.zIndex = String(2000 + i);
-      slot.dataset.tinta = `slot:${o.id}`;
-      const id = s.echipat[o.id];
-      if (id) {
-        slot.append(iconita(inv, id));
-        tragere(slot, { din: 'slot', slot: o.id }, id);
-      } else {
-        slot.append(div('eticheta-slot', NUME_SLOTURI[o.id]));
-        slot.onclick = () => ((selectat = null), arata());
-      }
-      if (selectat?.din === 'slot' && selectat.slot === o.id) slot.classList.add('selectata');
-      slot.title = NUME_SLOTURI[o.id];
-      el.append(slot);
-    });
+  // Ce se vede pe foaie: rucsacul sau obiectele de poveste (semnul de carte comută între ele)
+  let vedere = 'rucsac';
 
-    // Dreapta: inventarul, cufărul (acasă), obiectele de poveste, detaliile
-    const panou = div('panou-inv');
-    const cap = div('cap-inv');
-    cap.append(div('titlu-inv', `Inventar · ${inv.ocupate(s.inventar)} / ${inv.capacitate()} sloturi`), buton('✕ Închide', inchide));
-    panou.append(cap);
+  // O bucată de ecran pusă unde a așezat-o autorul în editor (Aranjare → Ecranul de inventar)
+  function asaza(elem, o, i, z) {
+    aplicaPozitie(elem, pozitie(joc.date.aranjare.echipament, o, i));
+    elem.classList.add('obiect');
+    if (z) elem.style.zIndex = String(z);
+    el.append(elem);
+    return elem;
+  }
 
-    if (optiuni.deLuat) {
-      const { id, n } = optiuni.deLuat;
-      const b = div('de-luat');
-      b.append(div('', `N-ai loc pentru: ${inv.def(id).nume}${n > 1 ? ` ×${n}` : ''}. Aruncă sau mută ceva, apoi ia-l.`));
-      const ia = buton('Ia-l', () => {
-        const rest = inv.adauga(id, n);
-        optiuni.deLuat = rest ? { id, n: rest } : null;
-        ruleaza(rest ? 'Tot nu e loc.' : null);
-      });
-      ia.disabled = !inv.incape(id, 1);
-      b.append(ia, buton('Lasă-l', () => ((optiuni.deLuat = null), arata())));
-      panou.append(b);
-    }
+  // Foaia are un design fix de 900 × 1250, micșorat cât e foaia pe ecran, ca textele și căsuțele să stea mereu la locul lor
+  function foaie(o, i, clasa) {
+    const f = div(`foaie-inv ${clasa}`);
+    asaza(f, o, i, 1000);
+    const p = pozitie(joc.date.aranjare.echipament, o, i);
+    const c = div('continut-foaie');
+    c.style.transform = `scale(${(p.scara * INALTIME) / 1250})`;
+    f.append(c);
+    return c;
+  }
 
-    panou.append(grila(s.inventar, inv.capacitate(), 'inventar'));
-    if (optiuni.cufar) {
-      panou.append(div('titlu-inv', `Cufărul de acasă · ${inv.ocupate(s.cufar)} / ${joc.date.config.inventar.cufar}`));
-      panou.append(grila(s.cufar, joc.date.config.inventar.cufar, 'cufar'));
-    }
-    if (s.poveste.length) {
-      panou.append(div('titlu-inv', 'Obiecte de poveste'));
-      const p = div('poveste-inv');
-      for (const id of s.poveste) p.append(div('obiect-poveste', inv.def(id).nume));
-      panou.append(p);
-    }
+  function capFoaie(text, ocupate, total) {
+    const cap = div('cap-foaie');
+    cap.append(div('titlu-foaie', text));
+    if (total != null) cap.append(div('numar-foaie', `${ocupate} / ${total}`));
+    return cap;
+  }
 
+  function detaliiObiect(s) {
     const id = obiectSelectat();
     const detalii = div('detalii-inv');
-    if (id) {
-      const d = inv.def(id);
-      detalii.append(div('nume-obiect', d.nume), div('descriere-obiect', descriere(inv, id)));
-      const actiuni = div('actiuni-inv');
-      if (selectat.din === 'inventar') {
-        if (d.tip === 'consumabil') {
-          const verb = d.efecte?.nevoi?.sete ? 'Bea' : d.efecte?.nevoi?.foame ? 'Mănâncă' : 'Folosește';
-          actiuni.append(buton(verb, () => ruleaza(joc.folosesteObiect(selectat.index))));
-        }
-        if (d.tip === 'echipament') actiuni.append(buton('Echipează', () => ruleaza(inv.echipeaza(selectat.index))));
-        if (optiuni.cufar) actiuni.append(buton('Pune în cufăr', () => ruleaza(inv.spreCufar(selectat.index))));
-        actiuni.append(
-          buton('Aruncă', () => {
-            const x = s.inventar[selectat.index];
-            if (!confirm(`Arunci ${d.nume}${x.n > 1 ? ` (toate ${x.n})` : ''}? Nu se mai poate recupera.`)) return;
-            s.inventar.splice(selectat.index, 1);
-            ruleaza();
-          }),
-        );
-      }
-      if (selectat.din === 'cufar') actiuni.append(buton('Ia în inventar', () => ruleaza(inv.dinCufar(selectat.index))));
-      if (selectat.din === 'slot') actiuni.append(buton('Dă jos', () => ruleaza(inv.dezechipeaza(selectat.slot))));
-      detalii.append(actiuni);
-    } else {
-      detalii.append(div('ajutor-inv', 'Click pe un obiect ca să vezi ce face. Trage obiectele pe sloturile din stânga ca să le echipezi.'));
+    if (!id) {
+      detalii.append(div('ajutor-inv', optiuni.cufar ? 'Apasă pe un obiect ca să vezi ce face. Trage obiectele între rucsac și cufăr.' : 'Apasă pe un obiect ca să vezi ce face. Trage-l pe un slot din stânga ca să-l echipezi.'));
+      return detalii;
     }
-    panou.append(detalii);
-    el.append(panou);
+    const d = inv.def(id);
+    const ic = div('iconita-detalii');
+    ic.append(iconita(inv, id));
+    const text = div('text-detalii');
+    text.append(div('nume-obiect', d.nume), div('descriere-obiect', descriere(inv, id)));
+    const actiuni = div('actiuni-inv');
+    const b = (t, clic) => actiuni.append(buton(t, clic, 'buton-mic-meniu'));
+    if (selectat.din === 'inventar') {
+      if (d.tip === 'consumabil') b(d.efecte?.nevoi?.sete ? 'Bea' : d.efecte?.nevoi?.foame ? 'Mănâncă' : 'Folosește', () => ruleaza(joc.folosesteObiect(selectat.index)));
+      if (d.tip === 'echipament') b('Echipează', () => ruleaza(inv.echipeaza(selectat.index)));
+      if (optiuni.cufar) b('În cufăr', () => ruleaza(inv.spreCufar(selectat.index)));
+      b('Aruncă', () => {
+        const x = s.inventar[selectat.index];
+        if (!confirm(`Arunci ${d.nume}${x.n > 1 ? ` (toate ${x.n})` : ''}? Nu se mai poate recupera.`)) return;
+        s.inventar.splice(selectat.index, 1);
+        ruleaza();
+      });
+    }
+    if (selectat.din === 'cufar') b('Ia în inventar', () => ruleaza(inv.dinCufar(selectat.index)));
+    if (selectat.din === 'slot') b('Dă jos', () => ruleaza(inv.dezechipeaza(selectat.slot)));
+    text.append(actiuni);
+    detalii.append(ic, text);
+    return detalii;
+  }
+
+  // Liniile aurii dintre sloturi și corpul lui Vale, desenate din cod (urmează figura și sloturile oriunde ar fi mutate)
+  function linii(ecran) {
+    const aranjare = joc.date.aranjare.echipament;
+    const iF = ecran.obiecte.findIndex((o) => o.id === 'figura');
+    const pf = pozitie(aranjare, ecran.obiecte[iF], iF);
+    const h = pf.scara * INALTIME;
+    const w = h * 0.7;
+    const stanga = pf.x * LATIME - w / 2;
+    const sus = pf.y * INALTIME - h;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'linii-inv');
+    svg.setAttribute('viewBox', `0 0 ${LATIME} ${INALTIME}`);
+    let desen = '';
+    ecran.obiecte.forEach((o, i) => {
+      if (o.tip !== 'slot' || !PUNCTE_CORP[o.id]) return;
+      const p = pozitie(aranjare, o, i);
+      const l = p.scara * INALTIME;
+      const cx = p.x * LATIME;
+      const cy = p.y * INALTIME - l / 2;
+      const tx = stanga + PUNCTE_CORP[o.id][0] * w;
+      const ty = sus + PUNCTE_CORP[o.id][1] * h;
+      // Linia pleacă de pe marginea slotului, nu din mijlocul lui
+      const t = l / 2 / Math.max(Math.abs(tx - cx), Math.abs(ty - cy), 1);
+      if (t >= 1) return;
+      const sx = cx + (tx - cx) * t;
+      const sy = cy + (ty - cy) * t;
+      desen += `<line x1="${sx}" y1="${sy}" x2="${tx}" y2="${ty}"/><circle cx="${tx}" cy="${ty}" r="5"/><circle cx="${sx}" cy="${sy}" r="3.5"/>`;
+    });
+    svg.innerHTML = desen;
+    svg.style.zIndex = '1500';
+    return svg;
+  }
+
+  function arata() {
+    const s = joc.stare;
+    const ecran = joc.lume.get('echipament');
+    el.replaceChildren();
+    const cuCufar = !!optiuni.cufar;
+
+    ecran.obiecte.forEach((o, i) => {
+      // Lângă cufăr, în stânga stă cufărul în locul lui Vale (echiparea merge și de acolo, din butonul „Echipează”)
+      if (cuCufar && ['figura', 'slot'].includes(o.tip)) return;
+      if (o.tip === 'figura') {
+        const f = elementImagine([fisierUi('vale_apoza')], { clasa: 'figura-vale', raport: 0.7, eticheta: 'ui_vale_apoza.png' });
+        return asaza(f, o, i);
+      }
+      if (o.tip === 'slot') {
+        const slot = div('slot');
+        slot.style.aspectRatio = '1';
+        asaza(slot, o, i, 2000 + i);
+        slot.dataset.tinta = `slot:${o.id}`;
+        const id = s.echipat[o.id];
+        if (id) {
+          slot.append(iconita(inv, id));
+          tragere(slot, { din: 'slot', slot: o.id }, id);
+        } else {
+          slot.append(div(`slot-gol slot-gol-${o.id}`, NUME_SLOTURI[o.id]));
+          slot.onclick = () => ((selectat = null), arata());
+        }
+        if (selectat?.din === 'slot' && selectat.slot === o.id) slot.classList.add('selectata');
+        slot.title = NUME_SLOTURI[o.id];
+        return;
+      }
+      if (o.tip === 'titlu') {
+        const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
+        const t = div('titlu-ecran-inv', text);
+        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8}px`;
+        return asaza(t, o, i, 1700);
+      }
+      if (o.tip === 'inchide') {
+        const b = buton('Închide', inchide, 'buton-mic-meniu inchide-inv');
+        const p = pozitie(joc.date.aranjare.echipament, o, i);
+        b.style.fontSize = `${p.scara * INALTIME * 0.4}px`;
+        return asaza(b, o, i, 1700);
+      }
+      if (o.tip === 'semn') {
+        const semn = div('semn-inv');
+        semn.append(div('text-semn', vedere === 'poveste' ? 'Înapoi la rucsac' : 'Obiecte de poveste'));
+        semn.classList.toggle('activ', vedere === 'poveste');
+        semn.onclick = () => ((vedere = vedere === 'poveste' ? 'rucsac' : 'poveste'), (selectat = null), arata());
+        const p = pozitie(joc.date.aranjare.echipament, o, i);
+        semn.style.fontSize = `${p.scara * INALTIME * 0.1}px`;
+        return asaza(semn, o, i, 1600);
+      }
+      if (o.tip !== 'foaie') return;
+
+      // Foaia din dreapta: rucsacul (sau obiectele de poveste) și detaliile obiectului ales
+      const c = foaie(o, i, '');
+      c.parentElement.dataset.tinta = 'inventar';
+      if (vedere === 'poveste') {
+        c.append(capFoaie('Obiecte de poveste'));
+        const lista = div('poveste-inv');
+        for (const id of s.poveste) {
+          const r = div('obiect-poveste');
+          const ic = div('iconita-poveste');
+          ic.append(iconita(inv, id));
+          r.append(ic, div('', inv.def(id).nume));
+          lista.append(r);
+        }
+        if (!s.poveste.length) lista.append(div('ajutor-inv', 'Încă nimic. Cheile, scrisorile și celelalte lucruri importante apar aici și nu se pot pierde.'));
+        c.append(lista);
+        return;
+      }
+      c.append(capFoaie('Rucsac', inv.ocupate(s.inventar), inv.capacitate()));
+      if (optiuni.deLuat) {
+        const { id, n } = optiuni.deLuat;
+        const b = div('de-luat');
+        b.append(div('', `N-ai loc pentru: ${inv.def(id).nume}${n > 1 ? ` ×${n}` : ''}. Aruncă sau mută ceva, apoi ia-l.`));
+        const ia = buton('Ia-l', () => {
+          const rest = inv.adauga(id, n);
+          optiuni.deLuat = rest ? { id, n: rest } : null;
+          ruleaza(rest ? 'Tot nu e loc.' : null);
+        }, 'buton-mic-meniu');
+        ia.disabled = !inv.incape(id, 1);
+        b.append(ia, buton('Lasă-l', () => ((optiuni.deLuat = null), arata()), 'buton-mic-meniu'));
+        c.append(b);
+      }
+      c.append(grila(s.inventar, inv.capacitate(), 'inventar'), detaliiObiect(s));
+
+      // Lângă cufăr: a doua foaie, în stânga, oglindită față de prima
+      if (cuCufar) {
+        const p = pozitie(joc.date.aranjare.echipament, o, i);
+        const cc = foaie({ ...o, id: 'foaie_cufar', implicit: { ...p, x: 1 - p.x } }, i, 'foaie-cufar');
+        cc.parentElement.dataset.tinta = 'cufar';
+        const total = joc.date.config.inventar.cufar;
+        cc.append(capFoaie('În cufăr', inv.ocupate(s.cufar), total));
+        const g = grila(s.cufar, total, 'cufar');
+        g.classList.add('grila-cufar');
+        cc.append(g);
+      }
+    });
+    if (!cuCufar) el.append(linii(ecran));
   }
 
   return { deschide, inchide, deschis: () => !!el, reafiseaza: () => el && arata() };

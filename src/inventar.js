@@ -1,11 +1,10 @@
 // Logica inventarului: stive, sloturi, echipament, cufăr. Fără interfață, ca s-o poată folosi și lupta, și magazinul.
-export const SLOTURI = ['cap', 'haina', 'manusi', 'pantaloni', 'bocanci', 'arma_primara', 'arma_secundara', 'rucsac'];
+// Sloturile de echipament (decis de autor): armura se îmbunătățește din coif, armură și jambiere; fără mănuși și bocanci în demo
+export const SLOTURI = ['cap', 'armura', 'jambiere', 'arma_primara', 'arma_secundara', 'rucsac'];
 export const NUME_SLOTURI = {
-  cap: 'Cap',
-  haina: 'Haină',
-  manusi: 'Mănuși',
-  pantaloni: 'Pantaloni',
-  bocanci: 'Bocanci',
+  cap: 'Coif',
+  armura: 'Armură',
+  jambiere: 'Jambiere',
   arma_primara: 'Armă primară',
   arma_secundara: 'Armă secundară',
   rucsac: 'Rucsac',

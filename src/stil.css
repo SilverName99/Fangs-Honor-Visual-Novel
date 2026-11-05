@@ -695,13 +695,17 @@ svg.zone {
   color: #c9b896;
 }
 
-/* ----- Inventar și echipament ----- */
+/* ----- Inventar și echipament (designul autorului: echipamentul în stânga, foaia de pergament în dreapta) ----- */
+/* Până se încarcă piesele (fundalul, foaia, semnul, sloturile), totul e desenat din CSS, în aceleași culori */
 .ecran-inventar {
   position: absolute;
   inset: 0;
   z-index: 12;
-  background: radial-gradient(ellipse at 27% 55%, #3a2c1d 0%, #120c07 70%);
+  background: radial-gradient(ellipse at 31% 60%, #3a2c1d 0%, #120c07 70%);
   pointer-events: auto;
+}
+.ecran-inventar > .obiect {
+  position: absolute;
 }
 .iconita {
   position: relative;
@@ -713,82 +717,164 @@ svg.zone {
   padding: 4px;
   border-width: 2px;
 }
-.slot,
-.celula {
+.figura-vale {
+  pointer-events: none;
+}
+.titlu-ecran-inv {
+  white-space: nowrap;
+  line-height: 1.2;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: #e9c97f;
+  text-shadow: 0 3px 8px #000, 0 0 18px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+.buton.inchide-inv {
+  padding: 0 1.6em;
+  min-width: 0;
+  white-space: nowrap;
+}
+/* Liniile aurii dintre sloturi și corpul lui Vale */
+.linii-inv {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  stroke: #d9b45a;
+  stroke-width: 2.5;
+  fill: #f0d27e;
+  filter: drop-shadow(0 0 4px rgba(255, 205, 110, 0.7));
+}
+
+/* Sloturile de echipament (lângă Vale) */
+.slot {
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.45);
-  border: 2px solid #6d5634;
-  border-radius: 8px;
-  padding: 8px;
+  background: radial-gradient(circle, #2a2117 0%, #120d08 75%);
+  border: 3px solid #b38b4a;
+  border-radius: 10px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
-.slot:hover,
-.celula:hover,
-.celula.selectata,
-.slot.selectata {
-  border-color: #e0bd7a;
+/* Iconița și simbolul stau în interiorul ramei (procentele din padding ar fi luate din lățimea ecranului, nu a slotului) */
+.slot > * {
+  position: absolute;
+  inset: 14%;
+  width: auto;
+  height: auto;
 }
-.slot .eticheta-slot {
-  height: 100%;
+.slot:hover,
+.slot.selectata {
+  border-color: #f0d27e;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 210, 120, 0.6);
+}
+.slot-gol {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 18px;
+  font: 17px Georgia, serif;
   color: #a7926c;
 }
-.figura-vale {
-  pointer-events: none;
+.slot-gol[class*='slot-gol-'] {
+  background-size: 100% 100%;
 }
-.ecran-inventar .slot {
-  position: absolute;
+
+/* Foaia de pergament: conținutul are mărimea designului (900 × 1250) și se micșorează din cod cât e foaia */
+.foaie-inv {
+  aspect-ratio: 900 / 1250;
+  background: linear-gradient(#efe0bd, #d9c393);
+  border: 3px solid #6b4a2a;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
-.panou-inv {
+.continut-foaie {
   position: absolute;
-  left: 52%;
-  right: 4%;
-  top: 5%;
-  bottom: 5%;
+  left: 0;
+  top: 0;
+  width: 900px;
+  height: 1250px;
+  box-sizing: border-box;
+  padding: 120px 100px 110px;
+  transform-origin: 0 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 26px 30px;
-  overflow: auto;
-  box-sizing: border-box;
-  background: rgba(20, 14, 8, 0.92);
-  border: 2px solid #a7854f;
-  border-radius: 14px;
-  color: #f3e6c8;
+  gap: 22px;
+  color: #2a1a0e;
+  font-family: Georgia, serif;
 }
-.cap-inv {
+.cap-foaie {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(90, 60, 30, 0.45);
 }
-.titlu-inv {
-  font-size: 28px;
+.titlu-foaie {
+  font: 700 46px Georgia, serif;
+  font-variant: small-caps;
+}
+.numar-foaie {
+  font-size: 34px;
+  opacity: 0.8;
 }
 .grila-inv {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 110px);
-  grid-auto-rows: 110px;
-  gap: 10px;
-  min-height: 110px;
+  grid-template-columns: repeat(4, 160px);
+  grid-auto-rows: 160px;
+  gap: 16px;
+  justify-content: center;
+  min-height: 160px;
+}
+/* Cufărul are 40 de locuri: căsuțe mai mici, 8 pe rând */
+.grila-cufar {
+  grid-template-columns: repeat(8, 76px);
+  grid-auto-rows: 76px;
+  gap: 8px;
+  overflow-y: auto;
 }
 .celula {
   position: relative;
+  box-sizing: border-box;
+  padding: 12px;
+  background: rgba(70, 45, 20, 0.16);
+  border: 3px solid #8a6a3e;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(70, 45, 20, 0.3);
+  cursor: pointer;
+}
+.grila-cufar .celula {
+  padding: 5px;
+  border-width: 2px;
+}
+.celula:hover,
+.celula.selectata {
+  border-color: #c9962f;
+  box-shadow: inset 0 0 10px rgba(70, 45, 20, 0.3), 0 0 14px rgba(201, 150, 47, 0.7);
 }
 .celula.goala {
   cursor: default;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+.celula.goala:hover {
+  border-color: #8a6a3e;
+  box-shadow: inset 0 0 10px rgba(70, 45, 20, 0.3);
 }
 .celula .numar {
   position: absolute;
-  right: 6px;
+  right: 8px;
   bottom: 2px;
-  font-size: 22px;
-  font-weight: 600;
-  text-shadow: 0 1px 3px #000;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+.grila-cufar .celula .numar {
+  font-size: 20px;
+  right: 4px;
 }
 .fantoma {
   position: fixed;
@@ -801,44 +887,104 @@ svg.zone {
 }
 .de-luat {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   align-items: center;
   flex-wrap: wrap;
-  padding: 12px 16px;
-  border: 2px dashed #e0bd7a;
+  padding: 14px 18px;
+  border: 2px dashed #8a6a3e;
   border-radius: 10px;
-  font-size: 22px;
+  font-size: 26px;
 }
-.poveste-inv {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.obiect-poveste {
-  padding: 6px 14px;
-  border: 1px solid #a7854f;
-  border-radius: 20px;
-  font-size: 20px;
-}
+/* Detaliile obiectului ales, jos pe foaie */
 .detalii-inv {
   margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid #6d5634;
-  min-height: 130px;
+  min-height: 250px;
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgba(90, 60, 30, 0.5);
+  border-radius: 12px;
+  background: rgba(255, 245, 220, 0.25);
+}
+.iconita-detalii {
+  flex: none;
+  width: 130px;
+  height: 130px;
+}
+.text-detalii {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .nume-obiect {
-  font-size: 28px;
+  font: 700 36px Georgia, serif;
 }
 .descriere-obiect,
 .ajutor-inv {
-  font-size: 20px;
-  color: #c9b896;
-  margin: 6px 0 12px;
+  font-size: 25px;
+  line-height: 1.35;
+  color: #4a3420;
+  margin: 8px 0 14px;
 }
 .actiuni-inv {
+  margin-top: auto;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+.continut-foaie .buton.buton-mic-meniu {
+  min-width: 0;
+  padding: 12px 26px;
+  font-size: 24px;
+}
+/* Obiectele de poveste (cheile, scrisorile), pe foaia lor */
+.poveste-inv {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+.obiect-poveste {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 30px;
+}
+.iconita-poveste {
+  flex: none;
+  width: 90px;
+  height: 90px;
+}
+/* Semnul de carte: comută foaia între rucsac și obiectele de poveste */
+.semn-inv {
+  aspect-ratio: 240 / 360;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#2c3f8f, #1b2763);
+  border: 3px solid #c9a24f;
+  border-radius: 6px 6px 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  cursor: pointer;
+}
+.semn-inv:hover,
+.semn-inv.activ {
+  filter: brightness(1.25) drop-shadow(0 0 10px rgba(255, 210, 120, 0.8));
+}
+.text-semn {
+  position: absolute;
+  inset: 14% 12% 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: #f3dfae;
+  text-shadow: 0 2px 4px #000;
 }
 
 /* ----- Lupta ----- */

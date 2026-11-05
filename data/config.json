@@ -17,9 +17,7 @@
         "n": 2
       }
     ],
-    "echipat": {
-      "pantaloni": "pantaloni_panza"
-    },
+    "echipat": {},
     "cunoscuti": [
       "miriam"
     ]
@@ -150,7 +148,7 @@
       "10": [
         "potiune_viata",
         "scut_lemn",
-        "bocanci",
+        "jambiere_piele",
         "gluga"
       ]
     },
