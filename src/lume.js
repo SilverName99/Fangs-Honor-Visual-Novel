@@ -161,7 +161,7 @@ export function construiesteLumea(date) {
     titlu: 'Jocul de zaruri (la poartă)',
     titluObiecte: 'Orcii și paharele',
     titluFundal: 'Masa de zaruri, privită de Vale',
-    // Prim-planul (buturuga) taie orcii și paharele; zarurile și baloanele stau peste el
+    // Prim-planul (buturuga) taie doar orcii: paharele stau peste el
     primPlan: true,
     imagine: 'locations/zaruri_masa.png',
     variante: [],
@@ -184,6 +184,7 @@ export function construiesteLumea(date) {
         nume: `Paharul: ${j.nume}`,
         imagine: fisierUi('pahar_zaruri'),
         raport: 1,
+        pestePrimPlan: true,
         variante: [],
         implicit: { x: i ? 0.66 : 0.34, y: 0.64, scara: 0.12 },
       })),

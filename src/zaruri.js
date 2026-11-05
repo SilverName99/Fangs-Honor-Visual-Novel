@@ -290,15 +290,15 @@ export function creeazaZaruri(parinte, joc) {
         const loc = div('obiect pahar-zaruri');
         loc.dataset.orc = o.pentru;
         aplicaPozitie(loc, p);
-        // Paharele stau în fața orcilor, dar sub prim-plan (decis de autor: buturuga le taie și pe ele)
-        loc.style.zIndex = '1200';
+        // Paharele stau pe buturugă, în fața orcilor
+        loc.style.zIndex = '2000';
         loc.style.aspectRatio = '1';
         loc.append(div('pahar-zar'));
         masa.append(loc);
       }
     }
-    // Prim-planul desenat în editor (buturuga): bucata din fundal se pune din nou peste orci și pahare, ca să-i taie;
-    // zarurile și baloanele stau deasupra lui
+    // Prim-planul desenat în editor (buturuga): bucata din fundal se pune din nou peste orci, ca să-i taie;
+    // stă sub pahare, zaruri și baloane, deci taie doar orcii
     for (const poligon of aranjare()?.primPlan || []) {
       if (poligon.length < 3) continue;
       const pp = elementImagine([ecran().imagine], { clasa: 'fundal-zaruri prim-plan-zaruri', fundal: true });
