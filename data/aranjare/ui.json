@@ -4,6 +4,12 @@
     "hud_ceas": 0,
     "hud_buton": 0,
     "hud_buton_hover": -7,
-    "hud_placuta": 0
+    "hud_placuta": 0,
+    "hud_panou": 22
+  },
+  "bare": {
+    "grosime": 24,
+    "sus": 0,
+    "lateral": 0
   }
 }
