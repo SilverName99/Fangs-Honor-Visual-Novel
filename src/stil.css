@@ -198,11 +198,11 @@ svg.zone {
   position: absolute;
   left: 24px;
   bottom: 22px;
-  /* Mai mică decât plăcuța „Înapoi” (decis de autor): rama cu ~45% mai mică, textul cu 60% mai mic */
-  min-width: 165px;
-  height: 42px;
-  padding: 0 19px;
-  font-size: 12px;
+  /* Mai mică decât plăcuța „Înapoi” (reglată de autor: rama 215×55, textul 14px) */
+  min-width: 215px;
+  height: 55px;
+  padding: 0 25px;
+  font-size: 14px;
   pointer-events: none;
   white-space: nowrap;
 }
@@ -1087,7 +1087,7 @@ svg.zone {
 .ceas-rapid {
   position: absolute;
   left: 24px;
-  bottom: 74px;
+  bottom: 87px;
   display: flex;
   gap: 6px;
 }
