@@ -304,9 +304,30 @@ svg.zone {
 }
 
 /* ----- Panoul lui Vale: numele, nevoile, banii, taxa ----- */
-.hud {
+/* Butonul lui Vale (stânga-sus) deschide panoul, care apare lângă el */
+.buton-vale-loc {
   position: absolute;
   left: 24px;
+  top: 22px;
+}
+.buton.buton-hud.apasat {
+  border-color: #e0bd7a;
+}
+/* Ceva grav cu panoul închis (foame, sete, viață scăzută sau taxa de azi): butonul pulsează roșu */
+.buton.buton-hud.avertizare {
+  animation: avertizeaza 1.2s ease-in-out infinite;
+}
+@keyframes avertizeaza {
+  50% {
+    filter: drop-shadow(0 0 14px rgba(230, 60, 40, 0.95));
+  }
+}
+.hud[hidden] {
+  display: none;
+}
+.hud {
+  position: absolute;
+  left: 166px;
   top: 22px;
   width: 440px;
   box-sizing: border-box;
@@ -571,13 +592,9 @@ svg.zone {
   flex: 1;
 }
 
-/* Pe harta satului, panoul lui Vale nu se vede, ca să nu acopere harta */
-.ui.pe-harta .hud {
-  display: none;
-}
-
 /* În dialog, butoanele și plăcuțele dispar; panoul lui Vale și ceasul rămân la vedere, deasupra portretelor */
 .ui.in-dialog .butoane-hud,
+.ui.in-dialog .buton-vale-loc,
 .ui.in-dialog .inapoi-hud,
 .ui.in-dialog .titlu-scena,
 .ui.in-dialog .navigare-rezerva {

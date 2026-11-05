@@ -21,6 +21,7 @@ export const ELEMENTE_UI = [
   { id: 'hud_placuta', nume: 'Plăcuța de jos (locul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.titlu-scena, .buton.placuta-hud' },
   // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
   ...[
+    ['vale', 'Iconița lui Vale (butonul care deschide panoul lui)'],
     ['inventar', 'Iconița Inventar (rucsac)'],
     ['personaje', 'Iconița Personaje (carte)'],
     ['meniu', 'Iconița Meniu'],

@@ -63,10 +63,18 @@ const hud = div('hud');
 const ceasHud = div('ceas-hud');
 const navigare = div('navigare-rezerva');
 const baraActiuni = div('bara-actiuni');
-ui.append(butoaneHud, titlu, inapoi, hud, ceasHud, navigare, baraActiuni);
+// Panoul lui Vale nu stă mereu deschis (decis de autor): un buton cu iconița lui îl deschide și îl închide
+const butonVale = div('buton-vale-loc');
+ui.append(butoaneHud, titlu, inapoi, butonVale, hud, ceasHud, navigare, baraActiuni);
 
 // Iconița unui buton: până se încarcă imaginea ei (ui_icon_<id>.png) rămâne simbolul din text
 const iconita = (id, simbol) => Object.assign(div(`icon-hud ${id}`), { textContent: simbol });
+let panouDeschis = false;
+function comutaPanoul() {
+  panouDeschis = !panouDeschis;
+  actualizeazaHud();
+}
+
 function butonHud(id, simbol, eticheta, clic) {
   const b = buton('', 'buton-hud', clic);
   b.append(iconita(id, simbol), div('eticheta-hud', eticheta));
@@ -129,6 +137,14 @@ function actualizeazaHud() {
   const bani = div('rand-monede');
   bani.append(iconita('monede', '🪙'), div('', `Monede: ${stare.bani}`), div('despartitor'), div('taxa-hud', textTaxa()));
   const d = stare.datorieBlanuri;
+  // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
+  const zileTaxa = stare.taxa.zi - ziua(stare);
+  const grav = NEVOI.some(([cheie]) => stare.nevoi[cheie] < cfg.nevoi.prag) || (!stare.taxa.platita && zileTaxa <= 0);
+  const b = butonHud('vale', '👤', 'Vale', comutaPanoul);
+  b.classList.toggle('apasat', panouDeschis);
+  b.classList.toggle('avertizare', grav && !panouDeschis);
+  butonVale.replaceChildren(b);
+  hud.hidden = !panouDeschis;
   hud.replaceChildren(
     div('nume-hud', 'Vale'),
     ...NEVOI.map(([cheie, eticheta]) => {
@@ -792,8 +808,6 @@ function afiseaza() {
     inapoi.append(b);
   }
   titlu.replaceChildren(iconita('locatie', '📍'), div('', d.titlu));
-  // Pe hartă, panoul lui Vale stă ascuns (decis de autor): ocupă prea mult din hartă
-  ui.classList.toggle('pe-harta', d.tip === 'harta');
 
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
   navigare.replaceChildren();
@@ -818,6 +832,7 @@ addEventListener('keydown', (e) => {
   if (lupta.activa() || zaruri.activ()) return;
   // Literele scrise într-un câmp (panoul debug) nu deschid inventarul sau cartea
   if (e.target.closest?.('input, textarea, select')) return;
+  if ((e.key === 'v' || e.key === 'V') && !dialog.activ()) return comutaPanoul();
   if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() ? carte.inchide() : carte.deschide();
   if (carte.deschisa()) return e.key === 'Escape' && carte.inchide();
   if ((e.key === 'i' || e.key === 'I') && !dialog.activ()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
