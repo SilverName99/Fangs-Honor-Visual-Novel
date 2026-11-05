@@ -1,6 +1,8 @@
 {
   "margini": {
     "hud_nume": 0,
-    "hud_ceas": 0
+    "hud_ceas": 0,
+    "hud_buton": -100,
+    "hud_buton_hover": -100
   }
 }
