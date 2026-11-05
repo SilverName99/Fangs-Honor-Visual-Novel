@@ -607,3 +607,10 @@ svg.editor-zone.desen {
 .marimi-personaje .marime-lupta {
   justify-content: space-between;
 }
+
+/* Butoanele − / + de lângă glisorul marginii (reglaj fin, câte un pixel) */
+.card-ui .rand .btn.mic {
+  padding: 2px 10px;
+  margin: 0 6px;
+  min-width: 32px;
+}

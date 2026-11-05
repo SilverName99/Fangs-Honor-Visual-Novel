@@ -62,7 +62,7 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           ${are ? `<img class="previzualizare" src="${url}">` : ''}
           ${
             are && el.tip === '9-slice' && !el.ca
-              ? `<label class="rand">Margine: <input type="range" min="-100" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
+              ? `<div class="rand">Margine: <button class="btn mic minus-margine" title="−1 px">−</button><input type="range" min="-100" max="200" value="${m}" class="margine"><button class="btn mic plus-margine" title="+1 px">+</button> <span class="valoare-margine">${m}px</span></div>
                  <div class="exemplu-9" data-url="${url}" style="${stilExemplu(url, m)}">Exemplu întins</div>
                  <div class="salvare"><button class="btn principal salveaza-margini" ${modificat ? '' : 'disabled'}>Salvează marginea</button></div>`
               : ''
@@ -88,12 +88,19 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
         r.oninput = () => {
           margini[id] = Number(r.value);
           modificat = true;
-          r.nextElementSibling.textContent = `${r.value}px`;
+          card.querySelector('.valoare-margine').textContent = `${r.value}px`;
           const ex = card.querySelector('.exemplu-9');
           ex.style.cssText = stilExemplu(ex.dataset.url, Number(r.value));
           // Fiecare ramă are butonul ei de salvare (cel de sus nu se vede când ești jos pe pagină)
           for (const b of container.querySelectorAll('.salveaza-margini')) b.disabled = false;
         };
+        // − și + mută marginea câte un pixel, pentru reglaj fin (glisorul sare prea mult)
+        const pas = (cu) => {
+          r.value = String(Number(r.value) + cu);
+          r.oninput();
+        };
+        card.querySelector('.minus-margine').onclick = () => pas(-1);
+        card.querySelector('.plus-margine').onclick = () => pas(1);
       }
     }
     const salveaza = async () => {
