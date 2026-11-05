@@ -15,10 +15,10 @@
       },
       "vorbitor": "hangita",
       "emotie": "normal",
-      "text": "(TODO) Ai auzit? Se zice că orcii au mai luat o căruță de grâne de la moară...",
+      "text": "Ai auzit? Orcii au mai luat o căruță de grâu de la moară. Dacă mai iau una, la iarnă mâncăm scoarță de copac.",
       "alegeri": [
         {
-          "text": "(TODO) Mai spune-mi.",
+          "text": "Mai spune-mi.",
           "efecte": {
             "timp": 20,
             "relatie": {
@@ -27,7 +27,7 @@
           }
         },
         {
-          "text": "(TODO) Nu am timp de bârfe.",
+          "text": "N-am timp de bârfe acum, Agnes.",
           "efecte": {}
         }
       ]
@@ -47,10 +47,10 @@
       },
       "vorbitor": "negustor",
       "emotie": "normal",
-      "text": "(TODO) Hei, tinere! Mă ajuți să car sacii ăștia? Îți dau câteva monede.",
+      "text": "Hei, tinere! Mă ajuți să car sacii ăștia până la tarabă? Îți dau cinci monede, cinstit.",
       "alegeri": [
         {
-          "text": "(TODO) Te ajut.",
+          "text": "Te ajut.",
           "efecte": {
             "timp": 60,
             "bani": 5,
@@ -60,7 +60,7 @@
           }
         },
         {
-          "text": "(TODO) Altă dată.",
+          "text": "Altă dată.",
           "efecte": {}
         }
       ]
@@ -78,10 +78,10 @@
       "repetare": "o_data",
       "vorbitor": "miriam",
       "emotie": "normal",
-      "text": "(TODO) Ți-am lăsat niște supă pe masă. Mănâncă până nu se răcește.",
+      "text": "Ți-am lăsat niște supă pe masă. Mănâncă până nu se răcește, că altfel iar pleci cu burta goală.",
       "alegeri": [
         {
-          "text": "(TODO) Mulțumesc, mamă.",
+          "text": "Mulțumesc, mamă.",
           "efecte": {
             "timp": 15,
             "nevoi": {
@@ -111,16 +111,30 @@
       "vorbitor": "betiv",
       "numeVorbitor": "Bețiv",
       "emotie": "suparat",
-      "text": "(TODO) Ce te holbezi așa, mă? Vrei să-ți arăt eu ceva?",
+      "text": "Ce te holbezi așa, mă? Ai ceva cu mine? Hai să vedem cine-i mai tare!",
       "alegeri": [
         {
-          "text": "(TODO) Hai, dacă ai curaj.",
+          "text": "Hai, dacă ai curaj.",
           "efecte": {
             "lupta": "bataie_taverna"
           }
         },
         {
-          "text": "(TODO) Las-o baltă, prietene.",
+          "text": "Las-o baltă, prietene. Du-te acasă.",
+          "efecte": {}
+        }
+      ]
+    },
+    {
+      "id": "hot_eliberat",
+      "_nota": "CIORNĂ (Claude). Unde merge hoțul după ce e eliberat e TODO.",
+      "manual": true,
+      "vorbitor": "hot",
+      "emotie": "normal",
+      "text": "Nu știu de ce ai făcut asta, dar n-o să uit. Dacă ai vreodată nevoie de cineva care să intre unde nu-l cheamă nimeni... mă găsești tu. Sau te găsesc eu.",
+      "alegeri": [
+        {
+          "text": "Ai grijă de tine. Și lasă pungile altora în pace.",
           "efecte": {}
         }
       ]

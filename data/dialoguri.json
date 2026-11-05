@@ -1,63 +1,5 @@
 {
-  "_nota": "Dialog de test, ca să se vadă cum merg portretele, emoțiile și alegerile. Textele reale le scrie autorul (TODO). start poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire = prezentare).",
-  "test_miriam": {
-    "partener": "miriam",
-    "start": "salut",
-    "noduri": {
-      "salut": {
-        "vorbitor": "miriam",
-        "emotie": "normal",
-        "text": "(TODO) Bună dimineața, Vale. Ai dormit bine?",
-        "urmator": "raspuns"
-      },
-      "raspuns": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "(TODO) Destul de bine. Ce s-a întâmplat?",
-        "urmator": "griji"
-      },
-      "griji": {
-        "vorbitor": "miriam",
-        "emotie": "speriat",
-        "text": "(TODO) Acoperișul iar lasă apa să intre. Și orcii vin după taxă peste câteva zile...",
-        "alegeri": [
-          {
-            "text": "(TODO) Mă ocup eu de acoperiș.",
-            "efecte": {
-              "relatie": {
-                "miriam": 2
-              }
-            },
-            "spre": "multumesc"
-          },
-          {
-            "text": "(TODO) Nu acum, mamă.",
-            "efecte": {
-              "relatie": {
-                "miriam": -1
-              }
-            },
-            "spre": "suparata"
-          }
-        ]
-      },
-      "multumesc": {
-        "vorbitor": "miriam",
-        "emotie": "normal",
-        "text": "(TODO) Mulțumesc, dragul meu. Ia măcar o bucată de pâine înainte să pleci.",
-        "efecte": {
-          "nevoi": {
-            "foame": 15
-          }
-        }
-      },
-      "suparata": {
-        "vorbitor": "miriam",
-        "emotie": "suparat",
-        "text": "(TODO) Tatăl tău nu ar fi amânat."
-      }
-    }
-  },
+  "_nota": "Dialogurile sunt CIORNĂ scrisă de Claude (cerută de autor); autorul spune ce schimbă. start poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire = prezentare); „aleator” alege o replică la întâmplare.",
   "miriam_piata": {
     "partener": "miriam",
     "start": "vale",
@@ -65,13 +7,13 @@
       "vale": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Bună, mamă! Spor la negociere.",
+        "text": "Bună, mamă! Cum merge târguiala?",
         "urmator": "miriam"
       },
       "miriam": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Mulțumesc! Sunt aproape să ajung la cel mai bun preț pentru acești cartofi minunați."
+        "text": "Negustorul cere de două ori cât valorează cartofii ăștia. Dar încă n-a aflat cât de încăpățânată pot să fiu."
       }
     }
   },
@@ -130,10 +72,19 @@
             "spre": null
           },
           {
+            "text": "Cum era tata, când erați tineri?",
+            "spre": "tata"
+          },
+          {
             "text": "Ai grijă de tine, unchiule.",
             "spre": null
           }
         ]
+      },
+      "tata": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mai încăpățânat ca tine. Și mai bun decât mine la toate... mai puțin la băut. Hai, lasă trecutul. Nu-l mai aduce nimeni înapoi."
       }
     }
   },
@@ -226,6 +177,10 @@
             "spre": "camera"
           },
           {
+            "text": "Ce se mai aude prin sat?",
+            "spre": "barfa"
+          },
+          {
             "text": "Mulțumesc, Agnes. Pe curând.",
             "spre": null
           }
@@ -240,6 +195,11 @@
         "vorbitor": "hangita",
         "emotie": "normal",
         "text": "Cu lingușeli nu primești reducere. Dar zâmbetul ți-l primesc."
+      },
+      "barfa": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Orcii beau, sătenii tac, iar eu număr cănile sparte. Ca în fiecare zi. Dacă afli ceva mai vesel, vino și spune-mi și mie."
       }
     }
   },
@@ -250,31 +210,37 @@
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "(TODO) Vânătoarea iese dintre copaci, călare pe tigru, și îl găsește pe Vale la vânătoare.",
+        "text": "Liniște... Nu te întoarce brusc. Nu-i place când oamenii se mișcă repede.",
         "urmator": "b"
       },
       "b": {
         "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "(TODO) Vale o recunoaște.",
+        "emotie": "speriat",
+        "text": "Kaia? Kaia de la hotar? Credeam că n-o să te mai văd niciodată.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "(TODO) Ea întreabă ce s-a întâmplat cu satul.",
+        "text": "Am văzut fum deasupra satului acum câteva luni. Am venit cât de repede am putut, dar drumurile sunt pline de orci. Ce s-a întâmplat, Vale?",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "(TODO) Vale îi povestește: orcii, taxa, satul ocupat.",
+        "emotie": "suparat",
+        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "(TODO) Ea îl ia cu ea la micul campsite pe care și l-a pregătit în pădure.",
+        "text": "Vino cu mine. Am un loc în pădure unde orcii nu ajung. Acolo putem vorbi în liniște.",
         "efecte": {
           "deblocheaza": "padure/campsite",
           "stare": {
@@ -292,13 +258,31 @@
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "(TODO) Ce mai e nou în sat, Vale?",
+        "text": "Ai venit tot singur? Bine. Cu cât știu mai puțini de locul ăsta, cu atât mai bine.",
         "alegeri": [
           {
-            "text": "(TODO) La revedere.",
+            "text": "Cum e vânatul în ultima vreme?",
+            "spre": "vanat"
+          },
+          {
+            "text": "Ce ai de gând să faci cu orcii?",
+            "spre": "orci"
+          },
+          {
+            "text": "Mă întorc în sat. Ai grijă de tine.",
             "spre": null
           }
         ]
+      },
+      "vanat": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Slab. Orcii vânează cu zgomot și sperie tot ce mișcă. Noroc că tigrul meu e mai răbdător decât ei."
+      },
+      "orci": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Singură? Nimic. Sunt prea mulți. Dar dacă satul ar avea câțiva oameni cu inimă... asta ar fi altă poveste."
       }
     }
   },
@@ -454,14 +438,318 @@
     }
   },
   "fermier": {
+    "_nota": "CIORNĂ. Misiunile fermierului sunt TODO; aici vor apărea ca alegeri.",
     "partener": "fermier",
+    "start": "a",
     "noduri": {
       "a": {
         "vorbitor": "fermier",
         "emotie": "normal",
-        "text": "(TODO) Fermierul își șterge fruntea și se uită la tine. (Aici vin misiunile lui.)"
+        "text": "Bună ziua, Vale. Dacă vii după muncă, câmpul nu duce lipsă. Orcii au grijă să nu ne ajungă niciodată grâul.",
+        "alegeri": [
+          {
+            "text": "Cum merg lucrurile pe câmp?",
+            "spre": "b"
+          },
+          {
+            "text": "Spor la treabă.",
+            "spre": null
+          }
+        ]
+      },
+      "b": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Ar merge, dacă n-ar trece patrula în fiecare săptămână să-și ia „partea”. Partea lor e cam jumătate. Și crește."
       }
-    },
-    "start": "a"
+    }
+  },
+  "miriam": {
+    "partener": "miriam",
+    "start": [
+      {
+        "nod": "cina",
+        "conditii": {
+          "ora": {
+            "min": "18:00"
+          }
+        }
+      },
+      {
+        "nod": "acoperis",
+        "conditii": {
+          "stare": {
+            "acoperis": "stricat"
+          },
+          "sansa": 0.5
+        }
+      },
+      {
+        "aleator": [
+          "d1",
+          "d2",
+          "d3"
+        ]
+      }
+    ],
+    "noduri": {
+      "acoperis": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Iar a plouat peste noapte și picură în colțul de lângă vatră. Dacă nu peticim acoperișul până vin ploile mari, o să dormim cu găleata lângă pat.",
+        "alegeri": [
+          {
+            "text": "Mă ocup eu, mamă. Aduc lemn din pădure.",
+            "spre": "multumesc",
+            "efecte": {
+              "relatie": {
+                "miriam": 1
+              }
+            }
+          },
+          {
+            "text": "Nu acum, mamă. Am alte griji.",
+            "spre": "suparata",
+            "efecte": {
+              "relatie": {
+                "miriam": -1
+              }
+            }
+          }
+        ]
+      },
+      "multumesc": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Știam eu că pot conta pe tine. Tatăl tău zicea că lemnul bun e la marginea pădurii, unde bate soarele."
+      },
+      "suparata": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Mereu e „nu acum”. Tatăl tău nu amâna lucrurile care contau."
+      },
+      "d1": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Ai mâncat ceva azi? Ești tras la față, Vale. Nu-mi place când pleci cu burta goală."
+      },
+      "d2": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Am auzit că orcii au mai luat un sac de grâu de la fermier. Te rog, ai grijă cum vorbești cu ei."
+      },
+      "d3": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Când erai mic, te ascundeai sub masa asta de fiecare dată când tuna. Acum abia mai încapi pe ușă."
+      },
+      "cina": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Stai jos, cina e aproape gata. Nu e mult, dar e caldă. Și e a noastră."
+      }
+    }
+  },
+  "fierar": {
+    "partener": "fierar",
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_fierar": "da"
+          }
+        }
+      },
+      "meniu"
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Vale. Te-ai făcut om în toată firea. Ultima oară când ai fost aici, mi-ai scăpat un clește pe picior.",
+        "efecte": {
+          "stare": {
+            "cunoscut_fierar": "da"
+          }
+        },
+        "alegeri": [
+          {
+            "text": "Și n-ai uitat nici acum?",
+            "spre": "prezentare_final"
+          }
+        ]
+      },
+      "prezentare_final": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Fierarii nu uită. Nici fierul, nici oamenii."
+      },
+      "meniu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Spune repede. Fierul nu așteaptă.",
+        "alegeri": [
+          {
+            "text": "Ce mai faci, Bram?",
+            "spre": "cum"
+          },
+          {
+            "text": "Cum îi suporți pe orci?",
+            "spre": "orci"
+          },
+          {
+            "text": "Te las să lucrezi.",
+            "spre": null
+          }
+        ]
+      },
+      "cum": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ascut topoare pentru cei care ne-au luat satul. Așa că... prost. Dar mâinile trebuie să muncească, altfel o ia mintea razna."
+      },
+      "orci": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Strâng din dinți și bat fierul mai tare. Într-o zi o să-mi ceară să le ascut toporul pentru ultima oară. Atunci o să vadă cât de bine îl ascut."
+      }
+    }
+  },
+  "mag": {
+    "_nota": "CIORNĂ. Elian e tânăr (decis de autor). E mag al luminii sub acoperire: replicile doar sugerează asta, nu o spun.",
+    "partener": "mag",
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_mag": "da"
+          }
+        }
+      },
+      "meniu"
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Vale Lightfinder. Mă bucur să te văd aici. Puțini mai trec pragul bisericii de când au venit orcii.",
+        "efecte": {
+          "stare": {
+            "cunoscut_mag": "da"
+          }
+        },
+        "alegeri": [
+          {
+            "text": "Mama vine în fiecare sâmbătă și duminică.",
+            "spre": "prezentare_final"
+          }
+        ]
+      },
+      "prezentare_final": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Știu. Se roagă pentru tatăl tău. Și pentru tine, cred. Spune-i că lumânarea ei arde mereu cel mai frumos."
+      },
+      "meniu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ce te frământă, Vale?",
+        "alegeri": [
+          {
+            "text": "Crezi că lumina ne mai poate ajuta?",
+            "spre": "lumina"
+          },
+          {
+            "text": "Nu ți-e frică de orci, frate Elian?",
+            "spre": "frica"
+          },
+          {
+            "text": "Am trecut doar să văd ce faci.",
+            "spre": "trecut"
+          }
+        ]
+      },
+      "lumina": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lumina nu se stinge niciodată de tot. Uneori doar așteaptă pe cineva care s-o ducă mai departe."
+      },
+      "frica": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Mi-e frică, desigur. Dar pentru ei sunt doar un preot tânăr care cântă la lumânări. E bine să creadă asta."
+      },
+      "trecut": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Atunci treci mai des. Biserica asta are nevoie de mai mulți oameni care „doar trec”."
+      }
+    }
+  },
+  "negustor": {
+    "_nota": "CIORNĂ. Prețul eliberării (40 de monede) e TODO. Ce a furat hoțul e ciornă.",
+    "partener": "negustor",
+    "start": [
+      {
+        "nod": "liber",
+        "conditii": {
+          "stare": {
+            "hot": "eliberat"
+          }
+        }
+      },
+      "a"
+    ],
+    "noduri": {
+      "a": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Te uiți la el? Hoțul ăsta mi-a șterpelit o pungă întreagă de monede. Stă la butuc până își plătește datoria.",
+        "alegeri": [
+          {
+            "text": "Cât vrei ca să-l eliberezi?",
+            "spre": "pret"
+          },
+          {
+            "text": "Merită ce i se întâmplă.",
+            "spre": null
+          }
+        ]
+      },
+      "pret": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Patruzeci de monede. Atât era în pungă și atât vreau înapoi. Plătești și ți-l dau. Doar să nu-l mai văd pe lângă taraba mea.",
+        "alegeri": [
+          {
+            "text": "Plătesc. (40 de monede)",
+            "spre": null,
+            "conditii": {
+              "bani": {
+                "min": 40
+              }
+            },
+            "efecte": {
+              "bani": -40,
+              "stare": {
+                "hot": "eliberat"
+              },
+              "eveniment": "hot_eliberat"
+            }
+          },
+          {
+            "text": "Nu am atâția bani acum.",
+            "spre": null
+          }
+        ]
+      },
+      "liber": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Ai plătit pentru hoțul ăla, ai dreptul să-l cauți. Dar pe aici nu l-am mai văzut."
+      }
+    }
   }
 }

@@ -26,7 +26,7 @@
         "biserica/interior",
         "piata"
       ],
-      "dialog": "test_miriam",
+      "dialog": "miriam",
       "program": [
         {
           "de": "05:00",
@@ -251,11 +251,12 @@
           "doarme": true,
           "ce": "doarme în camera lui (fără sprite: Vale nu intră cât doarme)"
         }
-      ]
+      ],
+      "dialog": "fierar"
     },
     {
       "id": "hot",
-      "nume": "Hoțul (TODO nume)",
+      "nume": "Hoțul",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Un tânăr hoț, legat la butucul din piață. Negustorul cere bani ca să-l elibereze. Nu știu încă ce a furat și nici dacă merită ajutat."
@@ -281,7 +282,8 @@
             "hot": "eliberat"
           }
         }
-      }
+      },
+      "_numeTODO": "Numele hoțului e TODO (nedecis)."
     },
     {
       "id": "vanatoare",
@@ -382,7 +384,7 @@
       "nume": "Fratele Elian",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Preotul satului. Dimineața aprinde tămâia, ziua privește altarul de pe bancă, iar după-amiaza citește pe treptele bisericii. Pare doar un bătrân blând."
+        "descriere": "Preotul satului, tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Vorbește puțin și ascultă mult. Când e el prin preajmă, lumânările par să ardă mai frumos."
       },
       "locuriSprite": [
         "biserica/interior",
@@ -450,7 +452,8 @@
             "poza": "scut_lumina"
           }
         ]
-      }
+      },
+      "dialog": "mag"
     },
     {
       "id": "hangita",
@@ -506,7 +509,8 @@
       "_despre": "Fără sprite (decis): apare doar în dialog, când apeși pe hoțul legat (cineRaspunde la hot).",
       "stariPortret": [
         "normal"
-      ]
+      ],
+      "dialog": "negustor"
     },
     {
       "id": "orc_colector",
@@ -646,7 +650,7 @@
     },
     {
       "id": "fermier",
-      "nume": "Fermierul (TODO nume)",
+      "nume": "Fermierul",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Fermierul. Ară câmpul de grâu de la ivirea zorilor până la prânz, împreună cu ceilalți săteni. Orcii îi iau o parte din recoltă când le vine cheful."
@@ -668,7 +672,8 @@
           "pana": "06:00",
           "ce": "acasă (după 13:00 nu mai lucrează nimeni la câmpuri)"
         }
-      ]
+      ],
+      "_numeTODO": "Numele fermierului e TODO (nedecis)."
     }
   ]
 }

@@ -50,7 +50,7 @@
     "foameDupa": 30,
     "seteDupa": 30,
     "pierdereBaniProcent": 0,
-    "text": "(TODO text) Totul se întunecă. Te trezești în patul tău; mama te-a găsit și te-a adus acasă. A trecut o jumătate de zi."
+    "text": "Totul se întunecă... Când deschizi ochii, ești în patul tău. Mama stă lângă tine, cu ochii roșii: te-a găsit căzut și te-a adus acasă. A trecut o jumătate de zi."
   },
   "inventar": {
     "_nota": "Sloturi fără rucsac; rucsacul dă capacitatea lui. Cufărul de acasă (TODO cifre).",
@@ -95,10 +95,10 @@
     "suma": 50,
     "intervalZile": 7,
     "oraColector": "10:00",
-    "textColector": "(TODO) Orcul colector bate la ușă: a venit vremea taxei.",
-    "textColectorPoarta": "(TODO) Orcul colector te măsoară din cap până-n picioare: ai venit să plătești?",
-    "textColectorPlatit": "(TODO) Orcul colector: ai plătit deja săptămâna asta. Cară-te.",
-    "textRatare": "(TODO) N-ai plătit taxa. Orcii o să-și amintească asta (consecințele vin mai târziu)."
+    "textColector": "Deschide, sătene! Știi de ce am venit. Taxa, până la ultima monedă.",
+    "textColectorPoarta": "Ia uite, a venit singur la poartă. Ai adus taxa, sau ai venit doar să te uiți la noi?",
+    "textColectorPlatit": "Ai plătit săptămâna asta. Acum cară-te, până nu găsesc un motiv să-ți mai cer o dată.",
+    "textRatare": "N-ai plătit taxa. Colectorul pleacă mormăind ceva despre „data viitoare”. O să se întoarcă."
   },
   "lupta": {
     "_nota": "viteza: cât de repede se umple bara (staminaMax × viteza pe secundă). Cifre de pornire (TODO).",

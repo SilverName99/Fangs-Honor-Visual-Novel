@@ -110,7 +110,7 @@
         }
       },
       "infrangere": {
-        "text": "(TODO) Lupii te-au rănit și au fugit în pădure.",
+        "text": "Lupii te-au mușcat zdravăn și au fugit în pădure. Te întorci șchiopătând.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -152,7 +152,7 @@
         }
       },
       "infrangere": {
-        "text": "(TODO) Haita te-a încolțit; ai scăpat cu greu.",
+        "text": "Haita te-a încolțit. Ai scăpat cu greu, cățărându-te pe un trunchi căzut.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -201,7 +201,7 @@
         }
       },
       "infrangere": {
-        "text": "(TODO) Lupul negru și haita lui te-au doborât.",
+        "text": "Lupul negru te-a doborât, iar haita s-a strâns în jurul tău. Doar norocul te-a scos de acolo.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -230,7 +230,7 @@
         }
       },
       "infrangere": {
-        "text": "(TODO) Mistrețul te-a trântit și a fugit în desiș.",
+        "text": "Mistrețul te-a trântit cu colții și a dispărut în desiș.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -260,13 +260,13 @@
         }
       ],
       "victorie": {
-        "text": "(TODO) Orcii fug spre ieșire.",
+        "text": "Orcii se împleticesc spre ieșire, ținându-se de coaste. Taverna izbucnește în urale.",
         "efecte": {
           "eveniment": "taverna_scandal_victorie"
         }
       },
       "infrangere": {
-        "text": "(TODO) Orcii râd de tine și pleacă.",
+        "text": "Orcii te aruncă peste o masă și pleacă râzând, cu berea neplătită.",
         "efecte": {
           "eveniment": "taverna_scandal_infrangere"
         }
@@ -289,14 +289,14 @@
         }
       ],
       "victorie": {
-        "text": "(TODO) Bețivii se potolesc.",
+        "text": "Bețivii se potolesc și se întorc la cănile lor, mormăind.",
         "efecte": {
           "reputatie": 1,
           "eveniment": "betiv_dupa_lupta"
         }
       },
       "infrangere": {
-        "text": "(TODO) Te trezești pe podeaua tavernei.",
+        "text": "Te trezești pe podeaua tavernei, cu un cucui cât un ou și gust de bere vărsată în gură.",
         "efecte": {}
       }
     },
@@ -317,7 +317,7 @@
         }
       ],
       "victorie": {
-        "text": "(ciornă) Orcii fug înjurând. Negustorul îți strânge mâna.",
+        "text": "Orcii fug înjurând. Negustorul îți strânge mâna.",
         "efecte": {
           "reputatie": 3,
           "relatie": {
@@ -326,7 +326,7 @@
         }
       },
       "infrangere": {
-        "text": "(ciornă) Orcii te trântesc în noroi. Vin și alții să vadă ce s-a întâmplat.",
+        "text": "Orcii te trântesc în noroi. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -344,13 +344,13 @@
         }
       ],
       "victorie": {
-        "text": "(ciornă) Orcul rămâne gemând în noroi, iar tu dispari în întuneric.",
+        "text": "Orcul rămâne gemând în noroi, iar tu dispari în întuneric.",
         "efecte": {
           "reputatie": 2
         }
       },
       "infrangere": {
-        "text": "(ciornă) Patrula te prinde și te târăște până la poartă.",
+        "text": "Patrula te prinde și te târăște până la poartă.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -375,7 +375,7 @@
         }
       ],
       "victorie": {
-        "text": "(ciornă) Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine: „N-o să uit asta.”",
+        "text": "Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine: „N-o să uit asta.”",
         "efecte": {
           "reputatie": 3,
           "relatie": {
@@ -384,7 +384,7 @@
         }
       },
       "infrangere": {
-        "text": "(ciornă) Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
+        "text": "Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
