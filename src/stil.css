@@ -345,16 +345,19 @@ svg.zone {
   font: 600 22px Georgia, serif;
   pointer-events: none;
 }
+/* Plăcuța cu numele: plată și lungă (decis de autor), cu numele scris de mână, ca în cartea personajelor */
 .nume-hud {
   position: absolute;
   left: 50%;
-  top: -18px;
+  top: -14px;
   transform: translateX(-50%);
-  min-width: 220px;
-  padding: 8px 40px;
+  min-width: 300px;
+  padding: 0 90px;
   box-sizing: border-box;
   text-align: center;
-  font: 700 30px Georgia, serif;
+  line-height: 1.15;
+  white-space: nowrap;
+  font: 600 32px 'Dancing Script', cursive;
   color: #f3e6c8;
   background: linear-gradient(#7a1f16, #4e120c);
   border: 3px solid #2a1a0e;
