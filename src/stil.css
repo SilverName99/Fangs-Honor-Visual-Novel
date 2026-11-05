@@ -400,12 +400,13 @@ svg.zone {
   height: 24px;
   background: #3a2817;
   border: 2px solid #2a1a0e;
-  border-radius: 9px;
+  border-radius: 999px;
   overflow: hidden;
 }
 .bara-nevoie .umplere {
   height: 100%;
-  border-radius: 7px;
+  /* Capetele umplerii complet rotunde (decis de autor), ca o pastilă */
+  border-radius: 999px;
   transition: width 0.4s;
 }
 /* Numele și cifra: peste bară, la capete; ascunse până treci cu mouse-ul */
