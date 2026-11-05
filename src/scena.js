@@ -77,8 +77,8 @@ export function aplicaPozitie(el, p) {
   el.style.left = `${p.x * 100}%`;
   el.style.top = `${p.y * 100}%`;
   el.style.height = `${p.scara * 100}%`;
-  // Ce e mai jos pe ecran e mai aproape de privitor, deci stă în față
-  el.style.zIndex = String(Math.round(p.y * 1000));
+  // Ce e mai jos pe ecran e mai aproape de privitor, deci stă în față (afară de obiectele cu strat fix sau ridicat)
+  el.style.zIndex = el.dataset.zFix || String(Math.round(p.y * 1000) + Number(el.dataset.zPeste || 0));
 }
 
 export function puncteSvg(poligon) {
@@ -111,12 +111,13 @@ export function randeaza(strat, descriere, aranjare, context) {
       eticheta: o.eticheta,
     });
     el.dataset.id = o.id;
-    aplicaPozitie(el, pozitie(aranjare, o, i, sufixVarianta(descriere, o.id, context)));
+    // Stratul se ține pe element, ca să rămână același și când obiectul e tras în editor (aplicaPozitie îl recalculează):
     // „deasupra”: piesa stă peste celelalte chiar dacă e mai sus pe hartă (moara peste câmpurile de lângă ea);
-    // rămâne sub tenta de seară/noapte (4000), ca să se întunece la fel
-    if (o.deasupra) el.style.zIndex = String(Number(el.style.zIndex) + 2000);
+    // rămâne sub tenta de seară/noapte (4000), ca să se întunece la fel.
     // „pestePrimPlan”: nu e tăiat de prim-plan (paharele de pe buturugă, în fața orcilor)
-    if (o.pestePrimPlan) el.style.zIndex = '3500';
+    if (o.deasupra) el.dataset.zPeste = '2000';
+    if (o.pestePrimPlan) el.dataset.zFix = '3500';
+    aplicaPozitie(el, pozitie(aranjare, o, i, sufixVarianta(descriere, o.id, context)));
     strat.append(el);
     obiecte.set(o.id, el);
   });
