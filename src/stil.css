@@ -1241,17 +1241,6 @@ svg.zone {
 .orc-zaruri.stare-gandeste .imagine-stare:not(.gandeste) {
   visibility: hidden;
 }
-.orc-zaruri.stare-amesteca {
-  animation: amesteca calc(0.25s / var(--viteza, 1)) ease-in-out infinite alternate;
-}
-@keyframes amesteca {
-  from {
-    transform: translate(-50%, -100%) rotate(-0.6deg);
-  }
-  to {
-    transform: translate(-50%, -100%) rotate(0.6deg);
-  }
-}
 .pahar-zaruri {
   position: absolute;
 }
