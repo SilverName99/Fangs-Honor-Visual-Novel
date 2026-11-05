@@ -500,7 +500,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           })
           .join('')}`;
       }
-      if (d.tip !== 'ecran' && d.tip !== 'lupta') {
+      // Un ecran poate cere și el prim-plan (buturuga de la masa de zaruri, care taie orcii)
+      if (d.tip !== 'lupta' && (d.tip !== 'ecran' || d.primPlan)) {
         html += `<h3>Prim-plan</h3>
           <div class="sumar">Conturează ce trebuie să stea <b>în fața</b> personajelor (de exemplu zidul fântânii). Bucata aceea din fundal se pune peste ele, ca să pară în spatele ei.</div>
           ${lucru.primPlan

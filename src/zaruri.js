@@ -297,6 +297,14 @@ export function creeazaZaruri(parinte, joc) {
         masa.append(loc);
       }
     }
+    // Prim-planul desenat în editor (buturuga): bucata din fundal se pune din nou peste orci, ca să-i taie;
+    // stă sub pahare, zaruri și baloane, deci taie doar orcii
+    for (const poligon of aranjare()?.primPlan || []) {
+      if (poligon.length < 3) continue;
+      const pp = elementImagine([ecran().imagine], { clasa: 'fundal-zaruri prim-plan-zaruri', fundal: true });
+      pp.style.clipPath = `polygon(${poligon.map(([x, y]) => `${x * 100}% ${y * 100}%`).join(', ')})`;
+      masa.append(pp);
+    }
     const strat = div('strat-ui-zaruri');
     masa.append(strat);
     el.replaceChildren(masa);
