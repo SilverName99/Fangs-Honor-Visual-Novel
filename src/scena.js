@@ -106,7 +106,8 @@ export function randeaza(strat, descriere, aranjare, context) {
   descriere.obiecte.forEach((o, i) => {
     const el = elementImagine(candidati(o.imagine, o.variante, context), {
       clasa: `obiect ${o.tip}`,
-      raport: o.tip === 'sprite' ? 0.45 : o.tip === 'loc-lupta' ? 0.6 : 1.2,
+      // Un obiect poate avea raportul lui până se încarcă imaginea (paharul de zaruri e pătrat, orcul de la masă 4:5)
+      raport: o.raport ?? (o.tip === 'sprite' ? 0.45 : o.tip === 'loc-lupta' ? 0.6 : 1.2),
       eticheta: o.eticheta,
     });
     el.dataset.id = o.id;

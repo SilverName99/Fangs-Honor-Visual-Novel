@@ -293,7 +293,7 @@ export function creeazaZaruri(parinte, joc) {
         // Paharele stau pe buturugă, în fața orcilor
         loc.style.zIndex = '2000';
         loc.style.aspectRatio = '1';
-        loc.append(div('pahar'));
+        loc.append(div('pahar-zar'));
         masa.append(loc);
       }
     }

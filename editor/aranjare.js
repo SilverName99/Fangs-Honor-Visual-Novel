@@ -139,7 +139,9 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     }
     const harti = [...lume.values()].filter((d) => d.tip === 'lupta');
     if (harti.length) html += '<div class="titlu-grup">Hărți de luptă</div>' + harti.map((d) => rand(d.id, 0)).join('');
-    html += '<div class="titlu-grup">Ecrane</div>' + rand('echipament', 0);
+    // Toate ecranele care se aranjează (echipamentul, masa de zaruri...), nu doar unul scris de mână
+    const ecrane = [...lume.values()].filter((d) => d.tip === 'ecran');
+    html += '<div class="titlu-grup">Ecrane</div>' + ecrane.map((d) => rand(d.id, 0)).join('');
     elLista.innerHTML = html;
     for (const b of elLista.querySelectorAll('button')) b.onclick = () => deschide(b.dataset.id);
   }
@@ -434,7 +436,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   function arataPanou() {
     const d = descriere();
-    const tip = { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)', lupta: 'Hartă de luptă' }[d.tip];
+    const tip = d.titluFundal || { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)', lupta: 'Hartă de luptă' }[d.tip];
     let html = `<h3>${esc(d.titlu)}</h3><div class="sumar">${tip} · <span class="cale">${esc(d.harta || d.imagine)}</span></div>
       <div class="salvare">
         <button class="btn principal salveaza">Salvează</button>
@@ -477,7 +479,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       }
       if (d.obiecte.length) {
         if (d.tip === 'lupta') html += '<div class="sumar">Trage fiecare loc acolo unde trebuie să stea picioarele luptătorului; rotița îl mărește. Aliații sunt în stânga, inamicii în dreapta. Testezi din Testare (F2) → Testare luptă.</div>';
-        html += `<h3>${{ harta: 'Piese pe hartă', ecran: 'Figura și sloturile', lupta: 'Locurile luptătorilor' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
+        html += `<h3>${d.titluObiecte || { harta: 'Piese pe hartă', ecran: 'Figura și sloturile', lupta: 'Locurile luptătorilor' }[d.tip] || 'Personaje (sprite-uri)'}</h3>${d.obiecte
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
             const aranjat = !!lucru.obiecte[ko(o.id)];
