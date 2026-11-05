@@ -1,6 +1,8 @@
 import { elementImagine } from './imagini.js';
 import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { context } from './stare.js';
+// Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
+import { asteapta, viteza, butonViteza } from './viteza.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, dezactivat = false, titlu = '') {
@@ -12,7 +14,6 @@ function buton(text, clic, dezactivat = false, titlu = '') {
   return b;
 }
 const intre = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
 // Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „lovit”, înclinată din cod.
 // „lovit”, nu „ranit”: altfel numele s-ar fi bătut cu portretul rănit (fierar_ranit.png) în galerie
 // O putere cu poza ei (preotul: vindecare, scut...) cade pe poza „atac” până e încărcată
@@ -253,7 +254,7 @@ export function creeazaLupta(parinte, joc) {
   function numar(f, text, clasa = '') {
     const n = div(`numar-lupta ${clasa}`, text);
     f.el.append(n);
-    setTimeout(() => n.remove(), 1100);
+    setTimeout(() => n.remove(), 1100 / viteza());
   }
 
   // ---------- acțiuni ----------
@@ -304,7 +305,7 @@ export function creeazaLupta(parinte, joc) {
         { left: `${de.x}px`, top: `${de.y}px`, transform: `translate(-50%, -50%) rotate(${unghi}deg)` },
         { left: `${la.x}px`, top: `${la.y}px`, transform: `translate(-50%, -50%) rotate(${el.unghi}deg)` },
       ],
-      { duration: ms, easing: 'linear', fill: 'forwards' },
+      { duration: ms / viteza(), easing: 'linear', fill: 'forwards' },
     );
     await a.finished.catch(() => {});
   }
@@ -354,7 +355,7 @@ export function creeazaLupta(parinte, joc) {
     const s = f.elScut;
     f.elScut = null;
     s?.classList.add('sparge');
-    setTimeout(() => s?.remove(), 450);
+    setTimeout(() => s?.remove(), 450 / viteza());
   }
 
   // Lovitura propriu-zisă: daune, armură, poza „lovit”, căderea
@@ -558,7 +559,7 @@ export function creeazaLupta(parinte, joc) {
     const dt = Math.min(0.1, (acum - (L.ultim || acum)) / 1000);
     L.ultim = acum;
     if (!L.pauza) {
-      for (const f of L.toti) if (!f.cazut) f.bara += f.staminaMax * cfg.viteza * (f.incetinire ?? 1) * dt;
+      for (const f of L.toti) if (!f.cazut) f.bara += f.staminaMax * cfg.viteza * (f.incetinire ?? 1) * dt * viteza();
       const gata = L.toti.filter((f) => !f.cazut && f.bara >= 100).sort((a, b) => b.bara - a.bara)[0];
       if (gata) {
         gata.bara = 100;
@@ -674,7 +675,7 @@ export function creeazaLupta(parinte, joc) {
     scenaLupta.addEventListener('mouseleave', () => marcheazaSubMouse(null));
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));
     scenaLupta.append(L.elLocuri);
-    el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu);
+    el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu, butonViteza());
     actualizeazaBare();
 
     // Cu mai mulți aliați, formația se poate schimba înainte de începere

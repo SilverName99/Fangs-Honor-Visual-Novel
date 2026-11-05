@@ -4,6 +4,8 @@
 
 import { elementImagine } from './imagini.js';
 import { pozitie, aplicaPozitie } from './scena.js';
+// Pauzele (amestecat, gândit, citit) se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
+import { asteapta, butonViteza } from './viteza.js';
 
 // Stările unui orc la masă: stă, amestecă zarurile în pahar, se gândește înainte să liciteze
 const STARI_ORC = ['normal', 'amesteca', 'gandeste'];
@@ -18,7 +20,6 @@ function buton(text, clic, clasa = '') {
   b.onclick = clic;
   return b;
 }
-const asteapta = (ms) => new Promise((r) => setTimeout(r, ms));
 const zarAleator = () => 1 + Math.floor(Math.random() * 6);
 const alege = (lista) => lista[Math.floor(Math.random() * lista.length)];
 
@@ -379,12 +380,10 @@ export function creeazaZaruri(parinte, joc) {
     const randVale = div('rand-zaruri');
     if (vale.ramase > 0) for (const f of vale.zaruri) randVale.append(zar(f, `${s.aruncare ? 'rostogolire' : ''}${s.dezvaluit && f === s.licitatie?.f ? ' potrivit' : ''}`));
     sub.append(randVale);
-    const centru = div('centru-zaruri');
-    centru.append(div('licitatie-curenta', s.licitatie ? `${s.jucatori.find((j) => j.id === s.licitatie.cine).nume}: ${textLicitatie(s.licitatie)}` : 'Nicio licitație încă'));
-    centru.append(div('istoric-zaruri', `${s.istoric.slice(-3).map((x) => `${x.nume}: ${x.text}`).join('  ·  ')}${s.istoric.length ? '  ·  ' : ''}Pe masă sunt ${total()} zaruri.`));
     // Regulile stau ascunse sub un buton, ca să nu acopere orcii
     const ajutor = buton(s.ajutor ? '✕ Regulile' : '? Regulile', () => ((s.ajutor = !s.ajutor), deseneaza()), 'mic buton-reguli');
-    strat.replaceChildren(...elemente, centru, sub, panouVale(), ajutor, ...(s.ajutor ? [Object.assign(div('ajutor-zaruri mic'), { textContent: regulile })] : []));
+    // Fără titlu și istoric sus (decis de autor): licitațiile se văd în baloane, interfața rămâne curată
+    strat.replaceChildren(...elemente, sub, panouVale(), ajutor, butonViteza(), ...(s.ajutor ? [Object.assign(div('ajutor-zaruri mic'), { textContent: regulile })] : []));
   }
 
   function jetoane(j) {
@@ -446,7 +445,8 @@ export function creeazaZaruri(parinte, joc) {
     if (s.putere && !s.putereFolosita) {
       randButoane.append(buton(s.alegePahar ? 'Alege un pahar...' : '👁 Uită-te sub un pahar', () => ((s.alegePahar = !s.alegePahar), deseneaza()), 'putere'));
     }
-    p.append(div('text-zaruri', l ? 'Licitează mai sus sau strigă „Mincinosule!”.' : 'Tu începi. Câte zaruri de o față crezi că sunt pe masă?'), cantitate, fete, randButoane);
+    const ultima = l && `${s.jucatori.find((x) => x.id === l.cine).nume} a spus: ${textLicitatie(l)}. Licitează mai sus sau strigă „Mincinosule!”.`;
+    p.append(div('text-zaruri', ultima || 'Tu începi. Câte zaruri de o față crezi că sunt pe masă?'), cantitate, fete, randButoane);
     if (!ok) p.append(div('nota-zaruri', l ? `Trebuie mai mult decât „${textLicitatie(l)}”.` : ''));
     return p;
   }
