@@ -115,8 +115,6 @@ export function randeaza(strat, descriere, aranjare, context) {
     // „deasupra”: piesa stă peste celelalte chiar dacă e mai sus pe hartă (moara peste câmpurile de lângă ea);
     // rămâne sub tenta de seară/noapte (4000), ca să se întunece la fel
     if (o.deasupra) el.style.zIndex = String(Number(el.style.zIndex) + 2000);
-    // „pestePrimPlan”: nu e tăiat de prim-plan (paharele de pe buturugă, în fața orcilor)
-    if (o.pestePrimPlan) el.style.zIndex = '3500';
     strat.append(el);
     obiecte.set(o.id, el);
   });
