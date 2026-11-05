@@ -147,9 +147,10 @@ svg.zone {
   gap: 12px;
 }
 .buton.buton-hud {
-  min-width: 128px;
-  height: 128px;
-  padding: 10px 6px 8px;
+  /* Cu 20% mai mici decât la început (decis de autor) */
+  min-width: 102px;
+  height: 102px;
+  padding: 8px 5px 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -336,7 +337,7 @@ svg.zone {
 }
 .hud {
   position: absolute;
-  left: 166px;
+  left: 140px;
   top: 22px;
   width: 440px;
   box-sizing: border-box;
@@ -1697,8 +1698,8 @@ svg.zone {
 
 /* Butoanele doar cu iconiță: iconița poate fi mai mare, că nu mai are text sub ea */
 .buton.buton-hud .icon-hud:only-child {
-  width: 84px;
-  height: 84px;
-  font-size: 60px;
-  line-height: 84px;
+  width: 67px;
+  height: 67px;
+  font-size: 48px;
+  line-height: 67px;
 }
