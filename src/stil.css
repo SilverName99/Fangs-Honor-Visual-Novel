@@ -199,10 +199,10 @@ svg.zone {
   position: absolute;
   left: 24px;
   bottom: 22px;
-  /* Reglată de autor: rama 336×86, textul 16.2px */
-  min-width: 336px;
-  height: 86px;
-  padding: 0 40px;
+  /* Reglată de autor: rama 353×90, textul 16.2px */
+  min-width: 353px;
+  height: 90px;
+  padding: 0 42px;
   font-size: 16.2px;
   pointer-events: none;
   white-space: nowrap;
@@ -1084,7 +1084,7 @@ svg.zone {
 .ceas-rapid {
   position: absolute;
   left: 24px;
-  bottom: 118px;
+  bottom: 122px;
   display: flex;
   gap: 6px;
 }
