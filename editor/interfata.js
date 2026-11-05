@@ -5,7 +5,7 @@ import { urlImagine, uitaLipsurile } from '../src/imagini.js';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 const EXPLICATII = {
-  '9-slice': 'Ramă care se întinde: colțurile rămân neschimbate, doar mijlocul se întinde. „Margine” = cât de lat e colțul, în pixeli.',
+  '9-slice': 'Ramă care se întinde: colțurile rămân neschimbate, doar mijlocul se întinde. „Margine” = cât de lat e colțul, în pixeli; la 0, imaginea se întinde întreagă.',
   fundal: 'Se întinde pe tot elementul.',
   textura: 'Se repetă pe orizontală, deci capetele trebuie să se continue fără cusătură.',
   cursor: 'Vârful săgeții trebuie să fie în colțul din stânga-sus al imaginii.',
@@ -55,7 +55,7 @@ export function creeazaInterfata(container, comun, reincarcaImagini, dupaSalvare
           ${are ? `<img class="previzualizare" src="${url}">` : ''}
           ${
             are && el.tip === '9-slice' && !el.ca
-              ? `<label class="rand">Margine: <input type="range" min="2" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
+              ? `<label class="rand">Margine: <input type="range" min="0" max="200" value="${m}" class="margine"> <span>${m}px</span></label>
                  <div class="exemplu-9" style="border-width:${m}px;border-image:url('${url}') ${m} fill / ${m}px stretch">Exemplu întins</div>`
               : ''
           }
