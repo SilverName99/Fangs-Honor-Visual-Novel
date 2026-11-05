@@ -106,8 +106,31 @@ export function aplicaBare(bare = {}) {
   r.setProperty('--bara-lateral', `${b.lateral}px`);
 }
 
+// Mărimile meniului, reglate de autor în editor (Interfață → Meniul): [cheie, nume, valoare implicită în px, pas]
+// Implicit, tabla ține tot ecranul pe înălțime (cerut de autor), cu forma imaginii (1600 × 1000)
+export const REGLAJE_MENIU = [
+  ['latime', 'Lățimea tablei', 1728, 10],
+  ['inaltime', 'Înălțimea tablei', 1080, 10],
+  ['sus', 'Unde încep butoanele (de sus)', 242, 5],
+  ['jos', 'Spațiu jos', 127, 5],
+  ['lateral', 'Spațiu stânga și dreapta', 196, 5],
+  ['butonInaltime', 'Înălțimea butoanelor', 207, 5],
+  ['butonInterior', 'Spațiul din buton (stânga și dreapta)', 46, 2],
+  ['spatiuRanduri', 'Distanța dintre rânduri', 30, 2],
+  ['spatiuColoane', 'Distanța dintre coloane', 46, 2],
+  ['iconita', 'Mărimea iconițelor', 150, 5],
+  ['text', 'Mărimea textului din butoane', 40, 1],
+  ['titluSus', 'Poziția titlului (de sus)', 46, 2],
+  ['titlu', 'Mărimea titlului', 74, 2],
+];
+export function aplicaMeniu(meniu = {}) {
+  const r = document.documentElement.style;
+  for (const [k, , implicit] of REGLAJE_MENIU) r.setProperty(`--meniu-${k}`, `${meniu[k] ?? implicit}px`);
+}
+
 export function aplicaGraficaUi(aranjareUi = {}) {
   aplicaBare(aranjareUi.bare);
+  aplicaMeniu(aranjareUi.meniu);
   const stil = document.createElement('style');
   document.head.append(stil);
   const reguli = new Map();

@@ -1711,10 +1711,11 @@ svg.zone {
 }
 .panou-meniu-nou {
   position: relative;
-  width: 1500px;
-  height: 940px;
+  /* Mărimile vin din editor (Interfață → Meniul) */
+  width: var(--meniu-latime, 1728px);
+  height: var(--meniu-inaltime, 1080px);
   box-sizing: border-box;
-  padding: 210px 170px 110px;
+  padding: var(--meniu-sus, 242px) var(--meniu-lateral, 196px) var(--meniu-jos, 127px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1727,13 +1728,13 @@ svg.zone {
 .titlu-meniu-nou {
   position: absolute;
   left: 50%;
-  top: 40px;
+  top: var(--meniu-titluSus, 40px);
   transform: translateX(-50%);
   min-width: 560px;
   padding: 14px 60px;
   box-sizing: border-box;
   text-align: center;
-  font: 700 64px Georgia, serif;
+  font: 700 var(--meniu-titlu, 64px) Georgia, serif;
   color: #f3dfae;
   text-shadow: 0 3px 6px #000;
   background: linear-gradient(#2c3f8f, #1b2763);
@@ -1744,14 +1745,14 @@ svg.zone {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px 40px;
+  gap: var(--meniu-spatiuRanduri, 26px) var(--meniu-spatiuColoane, 40px);
 }
 .buton.buton-meniu {
-  height: 180px;
+  height: var(--meniu-butonInaltime, 180px);
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 0 40px;
+  padding: 0 var(--meniu-butonInterior, 40px);
   color: #2a1a0e;
   background: linear-gradient(#efe0bd, #d9c393);
   border: 3px solid #6b4a2a;
@@ -1762,15 +1763,15 @@ svg.zone {
   box-shadow: 0 0 22px rgba(255, 210, 120, 0.7);
 }
 .buton.buton-meniu .icon-hud {
-  width: 130px;
-  height: 130px;
-  font-size: 90px;
-  line-height: 130px;
+  width: var(--meniu-iconita, 130px);
+  height: var(--meniu-iconita, 130px);
+  font-size: calc(var(--meniu-iconita, 130px) * 0.7);
+  line-height: var(--meniu-iconita, 130px);
 }
 .text-buton-meniu {
   flex: 1;
   text-align: center;
-  font: 700 40px Georgia, serif;
+  font: 700 var(--meniu-text, 40px) Georgia, serif;
 }
 .continut-meniu {
   width: 100%;

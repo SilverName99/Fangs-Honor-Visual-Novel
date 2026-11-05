@@ -25,7 +25,7 @@ import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
-import { aplicaGraficaUi } from './uiGrafica.js';
+import { aplicaGraficaUi, aplicaMeniu } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
@@ -920,3 +920,9 @@ addEventListener('keydown', (e) => {
 
 afiseaza();
 if (parametri.has('debug')) debug.comuta();
+// Previzualizarea din editor (Interfață → Meniul): jocul pornește cu meniul deschis și primește mărimile pe loc,
+// cât autorul le reglează, fără să le salveze
+if (parametri.has('meniu')) deschideMeniul();
+addEventListener('message', (e) => {
+  if (e.origin === location.origin && e.data?.tip === 'reglaje-meniu') aplicaMeniu(e.data.valori);
+});
