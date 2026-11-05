@@ -354,6 +354,9 @@ export function imaginiCerute(date, scene) {
     adauga(`sprites/zaruri_${j.id}_amesteca.png`, `Zaruri: ${j.nume}, amestecă zarurile în pahar`, true);
     adauga(`sprites/zaruri_${j.id}_gandeste.png`, `Zaruri: ${j.nume}, se gândește`, true);
   }
+  // Paharul și zarurile sunt elemente de interfață, dar stau aici, lângă restul jocului, ca să fie ușor de găsit
+  adauga(fisierUi('pahar_zaruri'), 'Zaruri: paharul, răsturnat cu gura în jos (256 × 256, fundal transparent)', true);
+  for (let f = 1; f <= 6; f++) adauga(fisierUi(`zar_${f}`), `Zaruri: zarul cu fața ${f} (128 × 128, fundal transparent)`, true);
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';
