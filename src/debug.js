@@ -59,6 +59,7 @@ export function creeazaDebug(parinte, joc) {
       <div class="rand-d"><span>Eveniment</span><select class="d-eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></div>
       <div class="rand-d"><span>Obiect</span><select class="d-obiect">${Object.entries(joc.date.items.obiecte).map(([id, o]) => `<option value="${id}">${o.nume}</option>`).join('')}</select><button class="adauga-ob">Primește</button></div>
       <div class="rand-d"><span>Luptă</span><select class="d-alege-lupta">${Object.entries(joc.date.lupte.lupte).map(([id, l]) => `<option value="${id}">${l.nume}</option>`).join('')}</select><button class="porneste-lupta">Pornește</button></div>
+      <div class="rand-d"><span>Zaruri</span><button class="porneste-zaruri">Joacă cu paznicii</button><label><input type="checkbox" class="d-putere-zaruri" ${s.stari.zaruri_hot === 'da' ? 'checked' : ''}> puterea de la hoț</label><span>câștiguri azi: ${s.zaruri?.castiguri ?? 0}</span><button class="reset-zaruri">Golește</button></div>
       <div class="rand-d"><span>Grup</span>${joc.date.npcs.personaje.filter((p) => p.lupta).map((p) => `<label><input type="checkbox" data-grup="${p.id}" ${s.grup.includes(p.id) ? 'checked' : ''}> ${p.id}</label>`).join(' ')}</div>
       ${testareLupta(optiuniTest())}
       <div class="rand-d"><span>Taxă: ziua ${s.taxa.zi}, ${s.taxa.platita ? 'plătită' : 'neplătită'}, ratări ${s.taxa.ratari}</span></div>
@@ -96,6 +97,17 @@ export function creeazaDebug(parinte, joc) {
       joc.dupaSchimbare(true);
     };
     el.querySelector('.porneste-lupta').onclick = () => joc.pornesteLupta(el.querySelector('.d-alege-lupta').value);
+    // Jocul de zaruri pornește de oriunde, fără să mergi la poartă la 14–18 (doar pentru testare)
+    el.querySelector('.porneste-zaruri').onclick = () => joc.pornesteZaruri();
+    el.querySelector('.d-putere-zaruri').onchange = (e) => {
+      if (e.target.checked) joc.stare.stari.zaruri_hot = 'da';
+      else delete joc.stare.stari.zaruri_hot;
+      joc.dupaSchimbare(false);
+    };
+    el.querySelector('.reset-zaruri').onclick = () => {
+      joc.stare.zaruri = null;
+      joc.dupaSchimbare(true);
+    };
     legaTestareLupta();
     el.querySelectorAll('[data-grup]').forEach((c) => {
       c.onchange = () => {
