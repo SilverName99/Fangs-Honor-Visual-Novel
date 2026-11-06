@@ -80,7 +80,8 @@ export const ELEMENTE_UI = [
     ['joc_nou', 'Meniu: iconița Joc nou (răsăritul)'],
     ['galerie', 'Meniu: iconița Galerie (tabloul)'],
     ['optiuni', 'Meniu: iconița Opțiuni (rotițele și cheia)'],
-  ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent}` })),
+  // Cu imaginea încărcată, simbolul din text e transparent; fără umbră, altfel umbra lui rămâne ca o pată neagră
+  ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none}` })),
   // Inventarul (designul autorului): în galerie, la grupul „Inventarul”
   { id: 'inventar_fundal', grup: 'Inventarul', nume: 'Fundalul ecranului de inventar (cu piedestalul lui Vale)', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar',
     // Imaginea are fundal transparent (decis de autor): ecranul stă peste locația în care ești, întunecată și estompată, ca la meniu
