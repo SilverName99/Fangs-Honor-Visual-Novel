@@ -109,7 +109,7 @@ export function creeazaCarte(parinte, joc) {
       const carte = div('carte');
       const inapoi = Object.assign(document.createElement('button'), { className: 'buton inapoi-carte', textContent: '◀' });
       const inainte = Object.assign(document.createElement('button'), { className: 'buton inainte-carte', textContent: '▶' });
-      const inchideB = Object.assign(document.createElement('button'), { className: 'buton inchide-carte', textContent: '✕ Închide' });
+      const inchideB = Object.assign(document.createElement('button'), { className: 'buton buton-mic-meniu inchide-carte', textContent: 'Închide' });
       inapoi.onclick = () => intoarce(-1);
       inainte.onclick = () => intoarce(1);
       inchideB.onclick = inchide;

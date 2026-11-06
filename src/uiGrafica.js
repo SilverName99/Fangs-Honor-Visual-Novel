@@ -71,6 +71,10 @@ export const ELEMENTE_UI = [
       `.foaie.spre-stanga .fata-foaie .pagina,.foaie.spre-dreapta .spate-foaie .pagina{background-position:-800px -34px}` +
       `.foaie.spre-stanga .spate-foaie .pagina,.foaie.spre-dreapta .fata-foaie .pagina{background-position:-40px -34px}`,
   },
+  // Săgețile cărții: o singură imagine, cu vârful spre dreapta; cea din stânga e aceeași, întoarsă din cod
+  { id: 'sageata', nume: 'Săgeata de răsfoit (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte',
+    extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:120px;height:120px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
+      '.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,
