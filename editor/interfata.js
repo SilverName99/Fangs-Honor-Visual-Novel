@@ -10,6 +10,7 @@ const EXPLICATII = {
   textura: 'Se repetă pe orizontală, deci capetele trebuie să se continue fără cusătură.',
   cursor: 'Vârful săgeții trebuie să fie în colțul din stânga-sus al imaginii.',
   imagine: 'Folosită ca atare (fundal transparent).',
+  strat: 'Stă la mărimea ei, centrată peste element (cu strălucirea din jur cu tot).',
 };
 
 const ALTE_MARIMI = [

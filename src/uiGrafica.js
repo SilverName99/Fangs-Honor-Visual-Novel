@@ -1,37 +1,53 @@
 import { urlImagine } from './imagini.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
+// Lățimea chenarului de dialog pe scenă; celelalte piese ale dialogului se micșorează cu același factor ca el
+const LATIME_DIALOG = 1640;
+const marimeDialog = (px) => `calc(${px}px * var(--scala-dialog, 1))`;
+
 // Toate elementele de interfață care pot primi grafică. Până se încarcă imaginea, rămâne stilul CSS implicit.
 // tip: „9-slice” (ramă care se întinde), „fundal” (imagine întinsă pe tot elementul), „textura” (se repetă pe orizontală),
 // „cursor”, „imagine” (folosită direct, de exemplu figura lui Vale)
 export const ELEMENTE_UI = [
-  // Chenarul de dialog (designul autorului): doar rama aurie, cu interiorul transparent; umplerea întunecată și
-  // puțin străvezie e din cod, ca scena să se vadă prin ea
-  // Piesele dialogului stau exact la mărimea imaginii încărcate (decis de autor: le generează la mărimea potrivită),
-  // în pixelii scenei de 1920 × 1080; textul îl scrie jocul peste ele
+  // Piesele dialogului își păstrează proporțiile între ele, cum le-a generat autorul. Toate se micșorează cu același
+  // factor, ales ca chenarul să fie lat de 1640 px pe scena de 1920 × 1080 (--scala-dialog); textul îl scrie jocul.
   // Chenarul: doar rama aurie, cu interiorul transparent; umplerea întunecată și străvezie e din cod. E un strat întins
   // până aproape de linia ramei; ca să stea sub ramă dar peste portrete, portretele coboară un strat (-2) și umplerea
-  // stă între ele și chenar (-1). Rombul și plăcuța numelui stau pe linia de sus a ramei (--margine-dialog)
-  // Marginea nu poate fi cu minus aici: chenarul are deja mărimea imaginii (0 = imaginea întreagă, exact cum e)
-  { id: 'dialog', nume: 'Chenarul de dialog (rama aurie, interiorul transparent)', marime: '1640 × 300 px, fundal transparent', tip: '9-slice', margine: 40, faraMinus: true, selector: '.caseta',
-    extra: (url, margine, img) =>
-      // Centrat fără transform: un transform ar face din chenar un strat separat, iar umplerea ar ajunge peste ramă
-      `.caseta{--margine-dialog:${margine}px;left:calc(50% - ${img.naturalWidth / 2}px);right:auto;width:${img.naturalWidth}px;min-height:${img.naturalHeight}px}` +
-      `.dialog .loc-portret{z-index:-2}.caseta::before{content:'';position:absolute;inset:${6 - margine}px;border-radius:16px;background:rgba(18,12,7,0.72);z-index:-1;pointer-events:none}` },
-  { id: 'dialog_ornament', nume: 'Rombul auriu de pe marginea de sus a chenarului', marime: 'mărimea ei, fundal transparent', tip: 'fundal', selector: '.ornament-dialog',
-    extra: (url, m, img) => `.ornament-dialog{display:block;width:${img.naturalWidth}px;height:${img.naturalHeight}px;top:calc(4px - var(--margine-dialog, 0px))}` },
-  { id: 'nume', nume: 'Plăcuța cu numele vorbitorului (panglica albastră)', marime: '420 × 70 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.nume-vorbitor',
+  // stă între ele și chenar (-1). Rombul și plăcuța numelui stau pe linia de sus a ramei (--margine-dialog).
+  // Marginea nu poate fi cu minus aici (0 = imaginea întreagă)
+  { id: 'dialog', nume: 'Chenarul de dialog (rama aurie, interiorul transparent)', marime: 'lat (de exemplu 1640 × 300 px), fundal transparent', tip: '9-slice', margine: 40, faraMinus: true, selector: '.caseta',
+    extra: (url, margine, img) => {
+      const k = LATIME_DIALOG / img.naturalWidth;
+      const m = margine * k;
+      return (
+        `.dialog{--scala-dialog:${k}}` +
+        // Centrat fără transform: un transform ar face din chenar un strat separat, iar umplerea ar ajunge peste ramă
+        `.caseta{--margine-dialog:${m}px;left:calc(50% - ${LATIME_DIALOG / 2}px);right:auto;width:${LATIME_DIALOG}px;min-height:${img.naturalHeight * k}px;border-width:${m}px;border-image-width:${m}px}` +
+        `.dialog .loc-portret{z-index:-2}.caseta::before{content:'';position:absolute;inset:${6 - m}px;border-radius:16px;background:rgba(18,12,7,0.72);z-index:-1;pointer-events:none}`
+      );
+    } },
+  { id: 'dialog_ornament', nume: 'Rombul auriu de pe marginea de sus a chenarului', marime: 'pe măsura chenarului, fundal transparent', tip: 'fundal', selector: '.ornament-dialog',
+    extra: (url, m, img) => `.ornament-dialog{display:block;width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};top:calc(4px - var(--margine-dialog, 0px))}` },
+  { id: 'nume', nume: 'Plăcuța cu numele vorbitorului (panglica albastră)', marime: 'pe măsura chenarului, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.nume-vorbitor',
     extra: (url, m, img) =>
-      `.nume-vorbitor{width:${img.naturalWidth}px;height:${img.naturalHeight}px;padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;white-space:nowrap}` +
-      `.caseta .nume-vorbitor{top:calc(-1 * var(--margine-dialog, 0px) - ${img.naturalHeight / 2}px)}` },
+      `.nume-vorbitor{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};border-width:${marimeDialog(m)};border-image-width:${marimeDialog(m)};padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;white-space:nowrap}` +
+      `.caseta .nume-vorbitor{top:calc(-1 * var(--margine-dialog, 0px) - ${marimeDialog(img.naturalHeight / 2)})}` },
   { id: 'buton', nume: 'Buton', marime: '320 × 80 px', tip: '9-slice', margine: 20, selector: '.buton, .alegere, .lupta-meniu button' },
   { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover, .lupta-meniu button:hover' },
   { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active, .lupta-meniu button:active' },
   // Alegerile din dialog au rama lor (după butoane, ca să o înlocuiască pe a lor); hover-ul schimbă doar imaginea
   { id: 'alegere', nume: 'Alegerea din dialog (rândul subțire)', marime: '1400 × 64 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.alegere',
-    extra: (url, m, img) => `.alegere{width:${img.naturalWidth}px;height:${img.naturalHeight}px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center}` },
-  { id: 'alegere_hover', nume: 'Alegerea din dialog, cu mouse-ul deasupra (cu strălucire)', marime: '1400 × 64 px (la fel ca alegerea)', tip: '9-slice', ca: 'alegere', selector: '.alegere:hover' },
-  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'mărimea ei, fundal transparent', tip: 'fundal', selector: '.continua', extra: (url, m, img) => `.continua{width:${img.naturalWidth}px;height:${img.naturalHeight}px;color:transparent}` },
+    extra: (url, m, img) =>
+      `.alegere{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};border-width:${marimeDialog(m)};border-image-width:${marimeDialog(m)};padding:0 24px;box-sizing:border-box;display:flex;align-items:center}` },
+  // Hover-ul are mărimea lui (imaginea cu strălucire are de obicei spațiu gol în jur): stă centrat peste alegere,
+  // micșorat cu același factor ca restul dialogului, în loc să fie strâns în cutia alegerii (ar părea mai mic).
+  // E un strat sub text (alegerea devine strat propriu, ca stratul să rămână sub scris, dar peste chenar)
+  { id: 'alegere_hover', nume: 'Alegerea din dialog, cu mouse-ul deasupra (cu strălucire)', marime: 'pe măsura alegerii, fundal transparent', tip: 'strat', selector: '.alegere:hover',
+    extra: (url, m, img) =>
+      `.alegere{position:relative;z-index:0}.alegere:hover{border-image-source:none;background:none;box-shadow:none}` +
+      `.alegere:hover::after{content:'';position:absolute;left:50%;top:50%;width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};` +
+      `transform:translate(-50%,-50%);background:url("${url}") center / 100% 100% no-repeat;z-index:-1;pointer-events:none}` },
+  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'pe măsura chenarului, fundal transparent', tip: 'fundal', selector: '.continua', extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};color:transparent}` },
   { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
   // Marginea implicită 0: panoul are o mărime aproape fixă, iar cu ramă tăiată în 9 bucăți apăreau linii fine între ele

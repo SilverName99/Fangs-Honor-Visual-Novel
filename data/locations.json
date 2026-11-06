@@ -150,7 +150,9 @@
               "nume": "Ia apă de la fântână",
               "obiect": "apa",
               "n": 1,
-              "minute": 5
+              "minute": 5,
+              "maxPeZi": 2,
+              "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine."
             }
           ],
           "variante": [

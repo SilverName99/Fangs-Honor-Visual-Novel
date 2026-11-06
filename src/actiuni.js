@@ -1,6 +1,6 @@
 import { iconita, descriere } from './ecranInventar.js';
 import { inMinute, MINUTE_ZI } from './timp.js';
-import { minuteInZi, schimbaNevoie } from './stare.js';
+import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, dezactivat = false) {
@@ -73,6 +73,18 @@ export function creeazaActiuni(parinte, joc) {
 
   function obtine(a) {
     if (a.stamina && prea_obosit()) return joc.mesaj('Ești prea obosit. Odihnește-te întâi.');
+    // Unele acțiuni merg doar de câteva ori pe zi (apa de la fântână: de două ori, decis de autor);
+    // numărătoarea stă în salvare, pe loc și acțiune, și se ia de la capăt în fiecare zi
+    if (a.maxPeZi) {
+      const s = joc.stare;
+      s.folosiri ||= {};
+      const cheie = `${s.scena}/${a.id}`;
+      const zi = ziua(s);
+      const f = s.folosiri[cheie]?.zi === zi ? s.folosiri[cheie] : { zi, n: 0 };
+      if (f.n >= a.maxPeZi) return joc.mesaj(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+      f.n++;
+      s.folosiri[cheie] = f;
+    }
     if (joc.avanseaza(a.minute || 0)) return;
     if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
     joc.primeste(a.obiect, a.n || 1);
