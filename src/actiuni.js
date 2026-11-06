@@ -52,7 +52,7 @@ export function creeazaActiuni(parinte, joc) {
 
   function dormi(a) {
     const s = joc.stare;
-    if (a.cost && s.bani < a.cost) return joc.mesaj(`Îți trebuie ${a.cost} monede.`);
+    if (a.cost && s.bani < a.cost) return joc.gand(`N-am destui bani. Îmi trebuie ${a.cost} monede.`);
     const somn = (minute) => {
       if (a.cost) s.bani -= a.cost;
       const ore = minute / 60;
@@ -72,7 +72,7 @@ export function creeazaActiuni(parinte, joc) {
   }
 
   function obtine(a) {
-    if (a.stamina && prea_obosit()) return joc.mesaj('Ești prea obosit. Odihnește-te întâi.');
+    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
     // Unele acțiuni merg doar de câteva ori pe zi (apa de la fântână: de două ori, decis de autor);
     // numărătoarea stă în salvare, pe loc și acțiune, și se ia de la capăt în fiecare zi
     if (a.maxPeZi) {
@@ -107,7 +107,7 @@ export function creeazaActiuni(parinte, joc) {
         r.append(iconita(inv, id), div('nume-magazin', `${d.nume} — ${d.pret} monede`), div('descriere-magazin', descriere(inv, id)));
         r.append(
           buton('Cumpără', () => {
-            if (!inv.incape(id)) return joc.mesaj('Nu ai loc în inventar.');
+            if (!inv.incape(id)) return joc.gand('Nu mai am loc în rucsac.');
             s.bani -= d.pret;
             inv.adauga(id, 1);
             joc.salveaza();

@@ -461,6 +461,10 @@ svg.zone {
 }
 
 /* ----- Dialog ----- */
+/* Un gând al lui Vale poate apărea și peste un panou deschis (de exemplu în magazin, „Nu mai am loc în rucsac.”) */
+.dialog:has(> .caseta.gand) {
+  z-index: 30;
+}
 .dialog {
   position: absolute;
   inset: 0;
