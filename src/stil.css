@@ -701,7 +701,9 @@ svg.zone {
   position: absolute;
   inset: 0;
   z-index: 12;
-  background: radial-gradient(ellipse at 31% 60%, #3a2c1d 0%, #120c07 70%);
+  /* Peste locația în care ești, întunecată și estompată, ca la meniu */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
   pointer-events: auto;
 }
 .ecran-inventar > .obiect {

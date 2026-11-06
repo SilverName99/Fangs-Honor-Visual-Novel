@@ -225,7 +225,7 @@ export function creeazaEcranInventar(parinte, joc) {
     svg.setAttribute('viewBox', `0 0 ${LATIME} ${INALTIME}`);
     let desen = '';
     ecran.obiecte.forEach((o, i) => {
-      if (o.tip !== 'slot' || !PUNCTE_CORP[o.id]) return;
+      if (o.tip !== 'inv-slot' || !PUNCTE_CORP[o.id]) return;
       const p = pozitie(aranjare, o, i);
       const l = p.scara * INALTIME;
       const cx = p.x * LATIME;
@@ -252,12 +252,12 @@ export function creeazaEcranInventar(parinte, joc) {
 
     ecran.obiecte.forEach((o, i) => {
       // Lângă cufăr, în stânga stă cufărul în locul lui Vale (echiparea merge și de acolo, din butonul „Echipează”)
-      if (cuCufar && ['figura', 'slot'].includes(o.tip)) return;
+      if (cuCufar && ['figura', 'inv-slot'].includes(o.tip)) return;
       if (o.tip === 'figura') {
         const f = elementImagine([fisierUi('vale_apoza')], { clasa: 'figura-vale', raport: 0.7, eticheta: 'ui_vale_apoza.png' });
         return asaza(f, o, i);
       }
-      if (o.tip === 'slot') {
+      if (o.tip === 'inv-slot') {
         const slot = div('slot');
         slot.style.aspectRatio = '1';
         asaza(slot, o, i, 2000 + i);
@@ -274,19 +274,19 @@ export function creeazaEcranInventar(parinte, joc) {
         slot.title = NUME_SLOTURI[o.id];
         return;
       }
-      if (o.tip === 'titlu') {
+      if (o.tip === 'inv-titlu') {
         const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
         const t = div('titlu-ecran-inv', text);
         t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8}px`;
         return asaza(t, o, i, 1700);
       }
-      if (o.tip === 'inchide') {
+      if (o.tip === 'inv-inchide') {
         const b = buton('Închide', inchide, 'buton-mic-meniu inchide-inv');
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         b.style.fontSize = `${p.scara * INALTIME * 0.4}px`;
         return asaza(b, o, i, 1700);
       }
-      if (o.tip === 'semn') {
+      if (o.tip === 'inv-semn') {
         const semn = div('semn-inv');
         semn.append(div('text-semn', vedere === 'poveste' ? 'Înapoi la rucsac' : 'Obiecte de poveste'));
         semn.classList.toggle('activ', vedere === 'poveste');
@@ -295,7 +295,7 @@ export function creeazaEcranInventar(parinte, joc) {
         semn.style.fontSize = `${p.scara * INALTIME * 0.1}px`;
         return asaza(semn, o, i, 1600);
       }
-      if (o.tip !== 'foaie') return;
+      if (o.tip !== 'inv-foaie') return;
 
       // Foaia din dreapta: rucsacul (sau obiectele de poveste) și detaliile obiectului ales
       const c = foaie(o, i, '');

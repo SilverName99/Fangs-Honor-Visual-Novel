@@ -43,7 +43,9 @@ export const ELEMENTE_UI = [
     ['optiuni', 'Meniu: iconița Opțiuni (rotițele și cheia)'],
   ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent}` })),
   // Inventarul (designul autorului): în galerie, la grupul „Inventarul”
-  { id: 'inventar_fundal', grup: 'Inventarul', nume: 'Fundalul ecranului de inventar (cu piedestalul lui Vale)', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar' },
+  { id: 'inventar_fundal', grup: 'Inventarul', nume: 'Fundalul ecranului de inventar (cu piedestalul lui Vale)', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar',
+    // Imaginea are fundal transparent (decis de autor): ecranul stă peste locația în care ești, întunecată și estompată, ca la meniu
+    extra: (url) => `.ecran-inventar{background:url("${url}") center / 100% 100% no-repeat, rgba(0, 0, 0, 0.6)}` },
   { id: 'vale_apoza', grup: 'Inventarul', nume: 'Vale în A-pose (ecranul de echipament)', marime: '700 × 1000 px, fundal transparent', tip: 'imagine' },
   { id: 'inventar_foaie', grup: 'Inventarul', nume: 'Foaia de pergament a inventarului, goală', marime: '900 × 1250 px, fundal transparent', tip: 'fundal', selector: '.foaie-inv', extra: '.foaie-inv{border:none;border-radius:0;box-shadow:none}' },
   { id: 'inventar_semn', grup: 'Inventarul', nume: 'Semnul de carte („Obiecte de poveste”), gol', marime: '240 × 360 px, fundal transparent', tip: 'fundal', selector: '.semn-inv', extra: '.semn-inv{border:none;border-radius:0;box-shadow:none}' },

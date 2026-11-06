@@ -143,7 +143,7 @@ export function construiesteLumea(date) {
   // Ecranul de inventar (designul autorului) se aranjează în editor ca o scenă: în stânga Vale și sloturile de echipament,
   // în dreapta foaia de pergament cu inventarul, semnul de carte, titlurile și butonul „Închide”
   // În editor, tot ce nu e figura sau foaia stă peste ele (ca în joc), ca să poată fi apucat cu mouse-ul
-  const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'foaie'].includes(tip) });
+  const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'inv-foaie'].includes(tip) });
   scene.set('echipament', {
     id: 'echipament',
     tip: 'ecran',
@@ -155,13 +155,14 @@ export function construiesteLumea(date) {
     tinte: [],
     obiecte: [
       bucata('figura', 'figura', 'Vale (A-pose)', fisierUi('vale_apoza'), 0.7, { x: 0.31, y: 0.8, scara: 0.62 }),
-      ...SLOTURI.map((sl) => bucata(sl, 'slot', `Slotul: ${NUME_SLOTURI[sl]}`, fisierUi('slot_echipament'), 1, POZITII_SLOTURI[sl])),
-      bucata('foaie', 'foaie', 'Foaia de pergament (inventarul)', fisierUi('inventar_foaie'), 0.72, { x: 0.7, y: 0.95, scara: 0.84 }),
-      bucata('semn', 'semn', 'Semnul de carte („Obiecte de poveste”)', fisierUi('inventar_semn'), 0.667, { x: 0.885, y: 0.36, scara: 0.2 }),
+      ...SLOTURI.map((sl) => bucata(sl, 'inv-slot', `Slotul: ${NUME_SLOTURI[sl]}`, fisierUi('slot_echipament'), 1, POZITII_SLOTURI[sl])),
+      bucata('foaie', 'inv-foaie', 'Foaia de pergament (inventarul)', fisierUi('inventar_foaie'), 0.72, { x: 0.7, y: 0.95, scara: 0.84 }),
+      bucata('semn', 'inv-semn', 'Semnul de carte („Obiecte de poveste”)', fisierUi('inventar_semn'), 0.667, { x: 0.885, y: 0.36, scara: 0.2 }),
+      // Tipurile au prefixul „inv-”: în editor tipul devine clasă CSS, iar „slot” și „foaie” sunt deja folosite (ramele din joc, foaia din carte)
       // Titlurile și butonul sunt scrise de joc; în editor se văd ca dreptunghiuri, doar ca să fie mutate
-      bucata('titlu_echipament', 'titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
-      bucata('titlu_inventar', 'titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
-      bucata('inchide', 'inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
+      bucata('titlu_echipament', 'inv-titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
+      bucata('titlu_inventar', 'inv-titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
+      bucata('inchide', 'inv-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
     ],
   });
   // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor
