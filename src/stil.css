@@ -838,11 +838,11 @@ svg.zone {
   justify-content: center;
   min-height: 160px;
 }
-/* Cufărul are 40 de locuri: căsuțe mai mici, 8 pe rând */
+/* Cufărul are 40 de locuri: 6 pe rând, cât să încapă toate pe foaie (7 rânduri) */
 .grila-cufar {
-  grid-template-columns: repeat(8, 76px);
-  grid-auto-rows: 76px;
-  gap: 8px;
+  grid-template-columns: repeat(6, 104px);
+  grid-auto-rows: 104px;
+  gap: 12px;
   overflow-y: auto;
 }
 .celula {
@@ -856,7 +856,7 @@ svg.zone {
   cursor: pointer;
 }
 .grila-cufar .celula {
-  padding: 5px;
+  padding: 8px;
   border-width: 2px;
 }
 .celula:hover,
@@ -882,7 +882,7 @@ svg.zone {
   text-shadow: 0 1px 3px #000, 0 0 6px #000;
 }
 .grila-cufar .celula .numar {
-  font-size: 20px;
+  font-size: 24px;
   right: 4px;
 }
 .fantoma {
