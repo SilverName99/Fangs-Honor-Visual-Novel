@@ -543,6 +543,16 @@ svg.zone {
 .alegere:hover {
   background: rgba(167, 133, 79, 0.3);
 }
+.ornament-dialog {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 .continua {
   position: absolute;
   right: 26px;

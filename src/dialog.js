@@ -15,7 +15,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   const alegeri = div('alegeri');
   const mai = div('continua');
   mai.textContent = '▸';
-  caseta.append(nume, text, alegeri, mai);
+  // Rombul de pe marginea de sus: piesă separată, ca să nu se întindă odată cu chenarul (se vede doar cu imaginea lui)
+  const ornament = div('ornament-dialog');
+  caseta.append(ornament, nume, text, alegeri, mai);
   el.append(stanga, dreapta, caseta);
   parinte.append(el);
 

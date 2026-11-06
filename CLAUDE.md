@@ -195,8 +195,11 @@ Elemente (lista poate crește):
 
 | Element | Fișier | Note |
 |---|---|---|
-| Chenarul de dialog | `ui_dialog.png` | se întinde (9-slice) |
-| Plăcuța cu numele vorbitorului | `ui_nume.png` | 9-slice |
+| Chenarul de dialog | `ui_dialog.png` | doar rama aurie fină, interiorul transparent (umplerea întunecată, străvezie, e din cod); 9-slice (decis, după designul autorului) |
+| Rombul de pe marginea de sus a chenarului | `ui_dialog_ornament.png` | separat, ca să nu se întindă cu rama |
+| Plăcuța cu numele vorbitorului | `ui_nume.png` | panglica albastră, pe linia de sus a ramei; 9-slice |
+| Alegerile din dialog | `ui_alegere.png`, `ui_alegere_hover.png` | rânduri subțiri; 9-slice |
+| Săgeata „continuă” din dialog | `ui_dialog_sageata.png` | 96×96 |
 | Butoane | `ui_buton.png`, `ui_buton_hover.png`, `ui_buton_apasat.png` | 9-slice |
 | Panouri (inventar, meniu, echipament) | `ui_panou.png` | 9-slice |
 | Slot de inventar / de echipament | `ui_slot.png`, `ui_slot_hover.png` / `ui_slot_echipament.png` (+ `_hover`) | căsuța de pe foaie / rama de lângă Vale |
