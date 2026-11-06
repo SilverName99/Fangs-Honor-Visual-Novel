@@ -130,7 +130,7 @@ function mesaj(text) {
 function anunt(text) {
   const fundal = div('acoperitor');
   const panou = div('panou-anunt');
-  panou.append(div('text-anunt', text), buton('Continuă', '', () => fundal.remove()));
+  panou.append(div('text-anunt', text), buton('Continuă', 'buton-mic-meniu', () => fundal.remove()));
   fundal.append(panou);
   ui.append(fundal);
 }
@@ -628,8 +628,8 @@ function inventarPlin(id, n) {
   const panou = div('panou-anunt');
   panou.append(
     div('text-anunt', `N-ai loc pentru: ${inventar.def(id).nume}${n > 1 ? ` ×${n}` : ''}.`),
-    buton('Aruncă ceva', '', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
-    buton('Lasă-l', '', () => fundal.remove()),
+    buton('Aruncă ceva', 'buton-mic-meniu', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
+    buton('Lasă-l', 'buton-mic-meniu', () => fundal.remove()),
   );
   fundal.append(panou);
   ui.append(fundal);

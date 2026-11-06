@@ -3,6 +3,8 @@ import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Lățimea chenarului de dialog pe scenă; celelalte piese ale dialogului se micșorează cu același factor ca el
 const LATIME_DIALOG = 1640;
+// Lățimea maximă a panoului mic pe scenă (dacă imaginea e mai mare, se micșorează cu tot cu proporții)
+const LATIME_PANOU = 860;
 const marimeDialog = (px) => `calc(${px}px * var(--scala-dialog, 1))`;
 
 // Toate elementele de interfață care pot primi grafică. Până se încarcă imaginea, rămâne stilul CSS implicit.
@@ -49,7 +51,23 @@ export const ELEMENTE_UI = [
       `transform:translate(-50%,-50%);background:url("${url}") center / 100% 100% no-repeat;z-index:-1;pointer-events:none}` },
   { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'pe măsura chenarului, fundal transparent', tip: 'fundal', selector: '.continua', // Pe jumătate față de restul pieselor (cerut de autor)
     extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth * 0.5)};height:${marimeDialog(img.naturalHeight * 0.5)};color:transparent}` },
-  { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
+  // Panoul mic (Dormi, Muncă, anunțurile): tabla cu banda titlului, întreagă, cu forma imaginii (fără să se turtească);
+  // titlul stă pe banda albastră, iar butoanele sunt pergamentul din meniu. Restul panourilor îl folosesc ca ramă (9-slice)
+  { id: 'panou', nume: 'Panoul mic (Dormi, Muncă, anunțuri): tabla cu banda titlului, goală', marime: '900 × 700 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-inv, .lupta-meniu, .debug',
+    extra: (url, m, img) => {
+      const k = Math.min(1, LATIME_PANOU / img.naturalWidth);
+      const w = img.naturalWidth * k;
+      const h = img.naturalHeight * k;
+      const p = '.panou-actiune,.panou-anunt';
+      return (
+        `${p}{position:relative;box-sizing:border-box;width:${w}px;min-width:0;max-width:none;min-height:${h}px;max-height:none;overflow:visible;` +
+        `padding:${h * 0.25}px ${w * 0.12}px ${h * 0.12}px;justify-content:center;border:none;border-image:none;border-radius:0;box-shadow:none;` +
+        `background:url("${url}") center / 100% 100% no-repeat;color:#2a1a0e}` +
+        `.panou-actiune .titlu-meniu{position:absolute;left:50%;top:${h * 0.135}px;transform:translate(-50%,-50%);margin:0;white-space:nowrap;font:700 34px Georgia,serif;color:#f3dfae;text-shadow:0 2px 4px #000}` +
+        `.panou-actiune .text-anunt,.panou-anunt .text-anunt{color:#2a1a0e;font-size:28px;text-align:center}` +
+        `${p.split(',').map((x) => `${x} .buton.buton-mic-meniu`).join(',')}{width:100%;padding:12px 30px;font-size:28px}`
+      );
+    } },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
   // Marginea implicită 0: panoul are o mărime aproape fixă, iar cu ramă tăiată în 9 bucăți apăreau linii fine între ele
   // (scena e scalată să încapă în fereastră și bucățile nu se mai lipesc perfect)

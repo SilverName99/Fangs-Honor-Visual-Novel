@@ -4,7 +4,8 @@ import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, dezactivat = false) {
   const b = document.createElement('button');
-  b.className = 'buton';
+  // Pergamentul din meniu (decis de autor), ca butoanele să se potrivească pe panoul mic
+  b.className = 'buton buton-mic-meniu';
   b.textContent = text;
   b.onclick = clic;
   b.disabled = dezactivat;

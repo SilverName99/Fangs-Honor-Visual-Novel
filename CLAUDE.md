@@ -201,7 +201,7 @@ Elemente (lista poate crește):
 | Alegerile din dialog | `ui_alegere.png`, `ui_alegere_hover.png` | rânduri subțiri; 9-slice (hover-ul: strat la mărimea lui) |
 | Săgeata „continuă” din dialog | `ui_dialog_sageata.png` | |
 | Butoane | `ui_buton.png`, `ui_buton_hover.png`, `ui_buton_apasat.png` | 9-slice |
-| Panouri (inventar, meniu, echipament) | `ui_panou.png` | 9-slice |
+| Panoul mic (Dormi, Muncă, anunțuri) | `ui_panou.png` | tabla cu banda titlului (900×700); stă întreagă, cu forma imaginii (lată de cel mult 860 px), titlul pe banda albastră, butoanele de pergament din meniu (decis) |
 | Slot de inventar / de echipament | `ui_slot.png`, `ui_slot_hover.png` / `ui_slot_echipament.png` (+ `_hover`) | căsuța de pe foaie / rama de lângă Vale |
 | Bare (viață, stamina, foame, sete) | `ui_bara_rama.png`, `ui_bara_<tip>.png` | rama + umplutura |
 | Cursorul | `ui_cursor.png`, `ui_cursor_click.png` | **maximum 64×64**, ideal 32×32 (browserele refuză cursoare mari) |
