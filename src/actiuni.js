@@ -1,4 +1,4 @@
-import { inMinute, MINUTE_ZI } from './timp.js';
+import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
@@ -62,12 +62,16 @@ export function creeazaActiuni(parinte, joc) {
       schimbaNevoie(s, 'stamina', refacere);
       joc.dupaActiune('Te-ai odihnit.');
     };
-    const pana = (inMinute(cfg.somn.oraTrezire) - minuteInZi(s) + MINUTE_ZI) % MINUTE_ZI || MINUTE_ZI;
+    // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
+    // (până la ora trezirii) sau „până noaptea” ziua (până la 23:00, când începe noaptea), și „Închide”
+    const acum = minuteInZi(s);
+    const ziua = momentZi(acum) === 'dimineata' || momentZi(acum) === 'amiaza';
+    const tinta = ziua ? inMinute('23:00') : inMinute(cfg.somn.oraTrezire);
+    const pana = (tinta - acum + MINUTE_ZI) % MINUTE_ZI || MINUTE_ZI;
     panou(a.nume || 'Dormi', (inchide) => [
-      // Ziua, „până dimineață” ar însemna aproape o zi întreagă, deci apare doar seara și noaptea
-      ...(pana <= 14 * 60 ? [buton(`Dormi până dimineață (${Math.round(pana / 60)} ore)`, () => (inchide(), somn(pana)))] : []),
+      buton('Dormi 2 ore', () => (inchide(), somn(120))),
       buton('Dormi 6 ore', () => (inchide(), somn(360))),
-      buton('Odihnește-te 2 ore', () => (inchide(), somn(120))),
+      buton(ziua ? 'Dormi până noaptea' : 'Dormi până dimineața', () => (inchide(), somn(pana))),
     ]);
   }
 

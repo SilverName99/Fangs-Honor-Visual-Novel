@@ -251,7 +251,7 @@ Viață, stamina, foame, sete, toate pe scara 0-100. Recruții **nu** consumă n
 | Viață | lupte, foame, sete | portretul lui Vale trece pe `ranit` | **leșin** |
 
 - **Leșinul:** Vale se trezește acasă, iar mama l-a găsit. Pierde o jumătate de zi și o parte din bani sau un obiect (`TODO`: cât și ce). Nu e game over.
-- **Somnul** reface stamina. Se poate dormi acasă (gratis) sau la tavernă (contra cost).
+- **Somnul** reface stamina. Se poate dormi acasă (gratis) sau la tavernă (contra cost). Panoul are mereu 4 butoane (decis): „Dormi 2 ore”, „Dormi 6 ore”, „Dormi până dimineața” (seara și noaptea, până la ora trezirii) sau „Dormi până noaptea” (ziua, până la 23:00), „Închide”.
 - **Apa de la fântână** (bucătăria): cel mult de două ori pe zi (decis; `maxPeZi` la acțiune, numărătoarea în salvare, `folosiri`).
 
 ### Rutinele personajelor
