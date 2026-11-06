@@ -501,6 +501,8 @@ const joc = {
   get stare() {
     return stare;
   },
+  // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
+  gand,
   date,
   lume,
   evenimente,

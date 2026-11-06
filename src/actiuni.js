@@ -81,7 +81,7 @@ export function creeazaActiuni(parinte, joc) {
       const cheie = `${s.scena}/${a.id}`;
       const zi = ziua(s);
       const f = s.folosiri[cheie]?.zi === zi ? s.folosiri[cheie] : { zi, n: 0 };
-      if (f.n >= a.maxPeZi) return joc.mesaj(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+      if (f.n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
       f.n++;
       s.folosiri[cheie] = f;
     }
