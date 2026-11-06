@@ -6,7 +6,7 @@
     "hud_buton_hover": -7,
     "hud_placuta": 0,
     "hud_panou": 22,
-    "dialog": 0
+    "dialog": -100
   },
   "bare": {
     "grosime": 25,
