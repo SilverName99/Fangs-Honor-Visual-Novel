@@ -625,7 +625,7 @@ svg.zone {
 }
 
 /* În dialog, butoanele și plăcuțele de jos dispar (ar sta sub chenarul de dialog);
-   panoul lui Vale și numele locului rămân la vedere, deasupra portretelor */
+   panoul lui Vale rămâne la vedere, deasupra portretelor */
 .ui.in-dialog .butoane-hud,
 .ui.in-dialog .buton-vale-loc,
 .ui.in-dialog .inapoi-hud,
@@ -633,9 +633,13 @@ svg.zone {
 .ui.in-dialog .navigare-rezerva {
   visibility: hidden;
 }
-.ui.in-dialog .hud,
-.ui.in-dialog .titlu-scena {
+.ui.in-dialog .hud {
   z-index: 11;
+}
+/* Numele locului face parte din fundal în dialog (decis de autor): stă în spatele portretelor
+   și se întunecă odată cu scena */
+.ui.in-dialog .titlu-scena {
+  z-index: 5;
 }
 
 /* ----- Acțiunile din loc ----- */
