@@ -268,8 +268,8 @@ export function creeazaEcranInventar(parinte, joc) {
       if (o.tip === 'inv-titlu') {
         const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
         const t = div('titlu-ecran-inv', text);
-        // Textul e cât 80% din înălțimea pusă în editor, minus 4 px (cerut de autor)
-        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 4}px`;
+        // Textul e cât 80% din înălțimea pusă în editor, minus 14 px (cerut de autor)
+        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 14}px`;
         return asaza(t, o, i, 1700);
       }
       if (o.tip === 'inv-inchide') {
@@ -284,7 +284,7 @@ export function creeazaEcranInventar(parinte, joc) {
         semn.classList.toggle('activ', vedere === 'poveste');
         semn.onclick = () => ((vedere = vedere === 'poveste' ? 'rucsac' : 'poveste'), (selectat = null), arata());
         const p = pozitie(joc.date.aranjare.echipament, o, i);
-        semn.style.fontSize = `${p.scara * INALTIME * 0.1}px`;
+        semn.style.fontSize = `${p.scara * INALTIME * 0.075}px`;
         return asaza(semn, o, i, 1600);
       }
       if (o.tip !== 'inv-foaie') return;

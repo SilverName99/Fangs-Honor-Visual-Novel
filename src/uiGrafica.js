@@ -48,7 +48,8 @@ export const ELEMENTE_UI = [
     extra: (url) => `.ecran-inventar{background:url("${url}") center / 100% 100% no-repeat, rgba(0, 0, 0, 0.6)}` },
   { id: 'vale_apoza', grup: 'Inventarul', nume: 'Vale în A-pose (ecranul de echipament)', marime: '700 × 1000 px, fundal transparent', tip: 'imagine' },
   { id: 'inventar_foaie', grup: 'Inventarul', nume: 'Foaia de pergament a inventarului, goală', marime: '900 × 1250 px, fundal transparent', tip: 'fundal', selector: '.foaie-inv', extra: '.foaie-inv{border:none;border-radius:0;box-shadow:none}' },
-  { id: 'inventar_semn', grup: 'Inventarul', nume: 'Semnul de carte („Obiecte de poveste”), gol', marime: '240 × 360 px, fundal transparent', tip: 'fundal', selector: '.semn-inv', extra: '.semn-inv{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'inventar_semn', grup: 'Inventarul', nume: 'Semnul de carte („Obiecte de poveste”), gol', marime: '240 × 360 px, fundal transparent', tip: 'fundal', selector: '.semn-inv', // Forma de panglică din CSS (tăiată jos) e doar pentru când lipsește imaginea; cu imaginea, nu se mai taie nimic
+    extra: '.semn-inv{border:none;border-radius:0;box-shadow:none;clip-path:none}' },
   { id: 'slot_echipament', grup: 'Inventarul', nume: 'Slotul de echipament (rama de lângă Vale)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot', extra: '.slot,.slot:hover,.slot.selectata{border:none;border-radius:0;box-shadow:none}' },
   { id: 'slot_echipament_hover', grup: 'Inventarul', nume: 'Slotul de echipament, cu mouse-ul deasupra', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot:hover, .slot.selectata' },
   { id: 'slot', grup: 'Inventarul', nume: 'Căsuța din inventar (pe foaie)', marime: '128 × 128 px', tip: 'fundal', selector: '.celula', extra: '.celula,.celula:hover,.celula.selectata,.celula.goala:hover{border:none;border-radius:0;box-shadow:none}' },

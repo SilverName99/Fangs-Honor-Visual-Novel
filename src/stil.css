@@ -984,7 +984,8 @@ svg.zone {
 }
 .text-semn {
   position: absolute;
-  inset: 14% 12% 30%;
+  /* Sub sulul de pe semn, deasupra ciucurilor */
+  inset: 40% 12% 28%;
   display: flex;
   align-items: center;
   justify-content: center;
