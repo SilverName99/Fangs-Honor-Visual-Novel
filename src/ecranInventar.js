@@ -268,7 +268,8 @@ export function creeazaEcranInventar(parinte, joc) {
       if (o.tip === 'inv-titlu') {
         const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
         const t = div('titlu-ecran-inv', text);
-        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8}px`;
+        // Textul e cât 80% din înălțimea pusă în editor, minus 4 px (cerut de autor)
+        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 4}px`;
         return asaza(t, o, i, 1700);
       }
       if (o.tip === 'inv-inchide') {
