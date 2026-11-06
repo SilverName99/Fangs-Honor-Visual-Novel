@@ -1,4 +1,3 @@
-import { iconita, descriere } from './ecranInventar.js';
 import { inMinute, MINUTE_ZI } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
 
@@ -91,53 +90,9 @@ export function creeazaActiuni(parinte, joc) {
     joc.dupaActiune(`+${a.n || 1} ${inv.def(a.obiect).nume}`);
   }
 
+  // Magazinul are ecranul lui (src/ecranMagazin.js), ca inventarul
   function magazin(a) {
-    const s = joc.stare;
-    const procent = cfg.magazin.procentVanzare / 100;
-    let inchide;
-    const reface = () => {
-      inchide();
-      magazin(a);
-    };
-    inchide = panou(a.nume || 'Magazin', () => {
-      const cumpara = div('lista-magazin');
-      for (const id of a.vinde || []) {
-        const d = inv.def(id);
-        const r = div('rand-magazin');
-        r.append(iconita(inv, id), div('nume-magazin', `${d.nume} — ${d.pret} monede`), div('descriere-magazin', descriere(inv, id)));
-        r.append(
-          buton('Cumpără', () => {
-            if (!inv.incape(id)) return joc.gand('Nu mai am loc în rucsac.');
-            s.bani -= d.pret;
-            inv.adauga(id, 1);
-            joc.salveaza();
-            joc.actualizeazaHud();
-            reface();
-          }, s.bani < d.pret),
-        );
-        cumpara.append(r);
-      }
-      const vinde = div('lista-magazin');
-      const deVandut = (a.cumpara || []).filter((id) => inv.numar(s.inventar, id) > 0);
-      for (const id of deVandut) {
-        const d = inv.def(id);
-        const pret = Math.max(1, Math.floor(d.pret * procent));
-        const r = div('rand-magazin');
-        r.append(iconita(inv, id), div('nume-magazin', `${d.nume} ×${inv.numar(s.inventar, id)} — ${pret} monede bucata`));
-        r.append(
-          buton('Vinde 1', () => {
-            inv.scoate(id, 1);
-            s.bani += pret;
-            joc.salveaza();
-            joc.actualizeazaHud();
-            reface();
-          }),
-        );
-        vinde.append(r);
-      }
-      if (!deVandut.length) vinde.append(div('descriere-magazin', 'Nu ai nimic ce cumpără negustorul ăsta.'));
-      return [div('text-anunt', `Ai ${s.bani} monede.`), div('titlu-inv', 'De cumpărat'), cumpara, div('titlu-inv', 'De vândut'), vinde];
-    });
+    joc.deschideEcranMagazin(a);
   }
 
   const tipuri = {

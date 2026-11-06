@@ -17,6 +17,7 @@ import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
+import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaCarte } from './carte.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
@@ -538,6 +539,7 @@ const joc = {
     return null;
   },
   deschideInventarul: (opt) => ecranInventar.deschide(opt),
+  deschideEcranMagazin: (a) => ecranMagazin.deschide(a),
   dupaInventar() {
     salveaza();
     afiseaza();
@@ -615,6 +617,7 @@ const secventa = creeazaSecventa(ui);
 const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);
+const ecranMagazin = creeazaEcranMagazin(ui, joc);
 const carte = creeazaCarte(ui, joc);
 const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
@@ -909,7 +912,7 @@ addEventListener('keydown', (e) => {
   if ((e.key === 'v' || e.key === 'V') && !dialog.activ()) return comutaPanoul();
   if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() ? carte.inchide() : carte.deschide();
   if (carte.deschisa()) return e.key === 'Escape' && carte.inchide();
-  if ((e.key === 'i' || e.key === 'I') && !dialog.activ()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
+  if ((e.key === 'i' || e.key === 'I') && !dialog.activ() && !ecranMagazin.deschis()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
   if (e.key !== 'Escape') return;
   const acoperitor = ui.querySelector('.acoperitor');
   // În galeria din meniu, Escape închide întâi imaginea mare, apoi meniul
@@ -917,6 +920,7 @@ addEventListener('keydown', (e) => {
   if (mare) return mare.remove();
   if (acoperitor) return acoperitor.remove();
   if (ecranInventar.deschis()) return ecranInventar.inchide();
+  if (ecranMagazin.deschis()) return ecranMagazin.inchide();
   const d = lume.get(stare.scena);
   if (!dialog.activ() && d.parinte) mergi(d.parinte);
 });

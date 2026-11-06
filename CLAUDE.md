@@ -378,6 +378,11 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 - **Sloturi** (decis: fără mănuși și bocanci): `cap` (Coif), `armura` (Armură, pentru tors), `jambiere` (Jambiere), `arma_primara`, `arma_secundara`, `rucsac`. **Armele cu două mâini ocupă ambele sloturi de armă.** Migrarea la versiunea 3 mută haina pe `armura`, pantalonii pe `jambiere` și scoate mănușile și bocancii.
 - Fiecare obiect are o **iconiță** (`assets/items/<id>.png`).
 
+### Magazinul (decis, după designul inventarului)
+
+- Același ecran la negustorul din piață, la Bram și la Agnes (`src/ecranMagazin.js`): peste scena estompată, cu fundalul lui (`ui_magazin_fundal.png`, 1920×1080, transparent; în galerie la grupul **Magazinul**), două foi de pergament (aceleași piese ca la inventar): **stânga, marfa** („Marfa lui Bram”, „Marfa negustorului”, „Marfa Agnesei”, `titlu` la magazin), cu prețul sub fiecare obiect (roșu dacă n-ai destui bani); **dreapta, rucsacul lui Vale**, cu prețul de vânzare sub ce cumpără negustorul (restul e estompat). Jos, pe foaia obiectului ales, caseta cu „Cumpără · X monede” / „Vinde · X monede”. Sus, monedele lui Vale. Fără bani sau fără loc în rucsac: gândul lui Vale.
+- Bucățile (cele două foi, monedele, „Închide”) se aranjează în editor, la Aranjare → „Magazinul”.
+
 ## 15. Lupta pe ture
 
 Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea cuiva de orci, lupta finală. Fiecare luptă e descrisă în `lupte.json`: participanți, fundal (refolosește scena locului), dacă se poate fugi, recompense și **ce se întâmplă la înfrângere** (diferit de la o luptă la alta).

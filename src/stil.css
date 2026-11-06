@@ -1015,6 +1015,73 @@ svg.zone {
   text-shadow: 0 2px 4px #000;
 }
 
+/* ----- Magazinul: două foi de pergament (marfa și rucsacul), ca inventarul ----- */
+.ecran-magazin {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Peste locația în care ești, întunecată și estompată, ca la meniu */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+.ecran-magazin > .obiect {
+  position: absolute;
+}
+/* Fiecare obiect: căsuța și, sub ea, prețul */
+.grila-marfa {
+  grid-auto-rows: auto;
+  row-gap: 10px;
+}
+.marfa {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+.marfa .celula {
+  height: 160px;
+}
+.marfa.nu-cumpara .celula {
+  opacity: 0.55;
+}
+.pret-marfa {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font: 700 28px Georgia, serif;
+  color: #2a1a0e;
+}
+.pret-marfa.slab {
+  color: #9a3a26;
+}
+.pret-marfa .icon-hud {
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+}
+.monede-magazin {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: #f3dfae;
+  text-shadow: 0 3px 8px #000;
+}
+.monede-magazin .icon-hud {
+  width: 1.3em;
+  height: 1.3em;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+
 /* ----- Lupta ----- */
 .lupta {
   position: absolute;

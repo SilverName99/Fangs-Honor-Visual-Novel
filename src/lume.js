@@ -143,7 +143,7 @@ export function construiesteLumea(date) {
   // Ecranul de inventar (designul autorului) se aranjează în editor ca o scenă: în stânga Vale și sloturile de echipament,
   // în dreapta foaia de pergament cu inventarul, semnul de carte, titlurile și butonul „Închide”
   // În editor, tot ce nu e figura sau foaia stă peste ele (ca în joc), ca să poată fi apucat cu mouse-ul
-  const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'inv-foaie'].includes(tip) });
+  const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'inv-foaie', 'mag-marfa', 'mag-rucsac'].includes(tip) });
   scene.set('echipament', {
     id: 'echipament',
     tip: 'ecran',
@@ -165,6 +165,24 @@ export function construiesteLumea(date) {
       bucata('titlu_echipament', 'inv-titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
       bucata('titlu_inventar', 'inv-titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
       bucata('inchide', 'inv-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
+    ],
+  });
+  // Magazinul (același la negustor, la Bram și la Agnes): două foi de pergament peste scena estompată, ca la inventar.
+  // Tipurile au prefixul „mag-”, ca să nu se ciocnească în editor cu clase CSS existente
+  scene.set('magazin', {
+    id: 'magazin',
+    tip: 'ecran',
+    titlu: 'Magazinul (negustor, Bram, Agnes)',
+    titluObiecte: 'Bucățile magazinului',
+    imagine: fisierUi('magazin_fundal'),
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      bucata('marfa', 'mag-marfa', 'Foaia cu marfa negustorului', fisierUi('inventar_foaie'), 0.72, { x: 0.3, y: 0.95, scara: 0.84 }),
+      bucata('rucsac', 'mag-rucsac', 'Foaia cu rucsacul lui Vale', fisierUi('inventar_foaie'), 0.72, { x: 0.7, y: 0.95, scara: 0.84 }),
+      bucata('monede', 'mag-monede', 'Monedele lui Vale', 'ui/text_monede_magazin.png', 4, { x: 0.5, y: 0.08, scara: 0.06 }),
+      bucata('inchide', 'mag-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
     ],
   });
   // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor

@@ -230,6 +230,7 @@
               "id": "magazin",
               "tip": "magazin",
               "nume": "Magazinul fierarului",
+              "titlu": "Marfa lui Bram",
               "vinde": [
                 "sabie",
                 "scut_lemn",
@@ -551,6 +552,7 @@
           "id": "magazin",
           "tip": "magazin",
           "nume": "Cumpără / vinde",
+          "titlu": "Marfa negustorului",
           "vinde": [
             "paine",
             "apa",
