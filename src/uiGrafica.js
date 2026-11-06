@@ -87,8 +87,10 @@ export const ELEMENTE_UI = [
   // Săgețile cărții: o singură imagine, cu vârful spre dreapta; cea din stânga e aceeași, întoarsă din cod
   // Imaginea își păstrează forma (contain), oricât de lată ar fi generată
   { id: 'sageata', nume: 'Săgeata de răsfoit (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte',
-    extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:150px;height:150px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
-      '.buton.inapoi-carte,.buton.inainte-carte{background-size:contain}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
+    // Săgeata stă exact la mărimea imaginii încărcate (cerut de autor), în pixelii scenei de 1920 × 1080
+    extra: (url, margine, img) =>
+      `.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:${img.naturalWidth}px;height:${img.naturalHeight}px;min-width:0;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}` +
+      '.buton.inapoi-carte,.buton.inainte-carte{background-size:100% 100%}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,
@@ -170,7 +172,7 @@ export function aplicaGraficaUi(aranjareUi = {}) {
       const baza = el.ca ? ELEMENTE_UI.find((x) => x.id === el.ca) : el;
       const margine = aranjareUi.margini?.[baza.id] ?? baza.margine ?? 0;
       // „extra”: ce se mai schimbă când există imaginea (paginile cărții devin transparente, ca să se vadă hârtia din ea)
-      reguli.set(el.id, regula(el, img.src, margine) + (typeof el.extra === 'function' ? el.extra(img.src, margine) : el.extra || ''));
+      reguli.set(el.id, regula(el, img.src, margine) + (typeof el.extra === 'function' ? el.extra(img.src, margine, img) : el.extra || ''));
       // Ordinea contează (hover după bază), deci regulile se scriu în ordinea din listă
       stil.textContent = ELEMENTE_UI.map((x) => reguli.get(x.id) || '').join('\n');
     };
