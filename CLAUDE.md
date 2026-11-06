@@ -199,7 +199,9 @@ Elemente (lista poate crește):
 | Rombul de pe marginea de sus a chenarului | `ui_dialog_ornament.png` | separat, ca să nu se întindă cu rama |
 | Plăcuța cu numele vorbitorului | `ui_nume.png` | panglica albastră, pe linia de sus a ramei; 9-slice |
 | Alegerile din dialog | `ui_alegere.png`, `ui_alegere_hover.png` | rânduri subțiri; 9-slice |
-| Săgeata „continuă” din dialog | `ui_dialog_sageata.png` | 96×96 |
+| Săgeata „continuă” din dialog | `ui_dialog_sageata.png` | |
+
+Piesele dialogului (chenarul, rombul, plăcuța numelui, alegerile, săgeata) **stau exact la mărimea imaginii încărcate** (decis de autor), în pixelii scenei de 1920×1080; la ele marginea nu poate fi cu minus (0 = imaginea întreagă). Chenarul crește în jos doar dacă textul nu încape.
 | Butoane | `ui_buton.png`, `ui_buton_hover.png`, `ui_buton_apasat.png` | 9-slice |
 | Panouri (inventar, meniu, echipament) | `ui_panou.png` | 9-slice |
 | Slot de inventar / de echipament | `ui_slot.png`, `ui_slot_hover.png` / `ui_slot_echipament.png` (+ `_hover`) | căsuța de pe foaie / rama de lângă Vale |
@@ -208,7 +210,7 @@ Elemente (lista poate crește):
 | Figura lui Vale pentru echipament | `ui_vale_apoza.png` | A-pose, fundal transparent |
 | Fundalul meniului principal | `ui_meniu_fundal.png` | 1920×1080 |
 | Cartea personajelor (deschisă, pagini goale) | `ui_carte.png` | 1600×1000; „Închide” e pergamentul din meniu |
-| Săgeata de răsfoit (cartea) | `ui_sageata.png` | vârful spre dreapta; cea spre stânga e aceeași, întoarsă din cod; stă exact la mărimea imaginii încărcate (decis) |
+| Săgeata de răsfoit (cartea) | `ui_sageata.png` | 256×256, vârful spre dreapta; cea spre stânga e aceeași, întoarsă din cod |
 | Paharul și zarurile (jocul de zaruri) | `ui_pahar_zaruri.png`, `ui_zar_1.png` … `ui_zar_6.png` | 256×256 / 128×128, fundal transparent |
 
 **Interfața de pe ecran** (decis, după designul autorului): panoul lui Vale stânga-sus (plăcuța cu numele, cele 4 bare, monedele, taxa, datoria de blăni), **închis la început: se deschide din butonul pătrat cu iconița lui Vale** (`ui_icon_vale.png`, tasta V), care pulsează roșu când ceva e grav (o nevoie scăzută, taxa de azi), numele locului sus la mijloc (pe banda de pergament), cele 4 butoane pătrate dreapta-sus, **doar cu iconițe, fără text** (Inventar, Personaje, Meniu, Ecran complet; numele apare la hover), ceasul stânga-jos și „Înapoi” dreapta-jos (decis de autor); centrul rămâne liber. Piesele, fără text (textul îl scrie jocul): `ui_hud_panou.png`, `ui_hud_nume.png`, `ui_hud_ceas.png`, `ui_hud_buton.png` (+ `_hover`), `ui_hud_placuta.png`, iconițele `ui_icon_vale/inventar/personaje/meniu/ecran/monede/inapoi.png` (numele locului e doar text, fără iconiță); barele folosesc `ui_bara_rama.png` și `ui_bara_<tip>.png`. Până se încarcă, ramele sunt din CSS și iconițele sunt simboluri. Barele colorate (grosimea umplerii, spațiul față de ramă) se reglează în editor, la Interfață → Rama barelor. Ceasul din stânga-jos e mai mic decât plăcuța „Înapoi”.

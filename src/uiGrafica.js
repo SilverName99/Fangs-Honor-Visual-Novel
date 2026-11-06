@@ -7,22 +7,31 @@ import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 export const ELEMENTE_UI = [
   // Chenarul de dialog (designul autorului): doar rama aurie, cu interiorul transparent; umplerea întunecată și
   // puțin străvezie e din cod, ca scena să se vadă prin ea
-  { id: 'dialog', nume: 'Chenarul de dialog (rama aurie, interiorul transparent)', marime: '1640 × 300 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.caseta',
-    // Umplerea e un strat întins până aproape de linia ramei (nu doar în interiorul marginii 9-slice). Ca să stea
-    // sub ramă dar peste portrete, portretele coboară un strat (-2) și umplerea stă între ele și chenar (-1).
-    // Rombul și plăcuța numelui stau pe linia de sus a ramei, adică la marginea de sus a elementului
-    extra: (url, margine) =>
-      `.dialog .loc-portret{z-index:-2}.caseta::before{content:'';position:absolute;inset:${6 - margine}px;border-radius:16px;background:rgba(18,12,7,0.72);z-index:-1;pointer-events:none}` +
-      `.caseta .ornament-dialog{top:${4 - margine}px}.caseta .nume-vorbitor{top:${-margine - 22}px}` },
-  { id: 'dialog_ornament', nume: 'Rombul auriu de pe marginea de sus a chenarului', marime: '96 × 96 px, fundal transparent', tip: 'fundal', selector: '.ornament-dialog', extra: '.ornament-dialog{display:block}' },
-  { id: 'nume', nume: 'Plăcuța cu numele vorbitorului (panglica albastră)', marime: '420 × 70 px, fundal transparent', tip: '9-slice', margine: 16, selector: '.nume-vorbitor' },
+  // Piesele dialogului stau exact la mărimea imaginii încărcate (decis de autor: le generează la mărimea potrivită),
+  // în pixelii scenei de 1920 × 1080; textul îl scrie jocul peste ele
+  // Chenarul: doar rama aurie, cu interiorul transparent; umplerea întunecată și străvezie e din cod. E un strat întins
+  // până aproape de linia ramei; ca să stea sub ramă dar peste portrete, portretele coboară un strat (-2) și umplerea
+  // stă între ele și chenar (-1). Rombul și plăcuța numelui stau pe linia de sus a ramei (--margine-dialog)
+  // Marginea nu poate fi cu minus aici: chenarul are deja mărimea imaginii (0 = imaginea întreagă, exact cum e)
+  { id: 'dialog', nume: 'Chenarul de dialog (rama aurie, interiorul transparent)', marime: '1640 × 300 px, fundal transparent', tip: '9-slice', margine: 40, faraMinus: true, selector: '.caseta',
+    extra: (url, margine, img) =>
+      // Centrat fără transform: un transform ar face din chenar un strat separat, iar umplerea ar ajunge peste ramă
+      `.caseta{--margine-dialog:${margine}px;left:calc(50% - ${img.naturalWidth / 2}px);right:auto;width:${img.naturalWidth}px;min-height:${img.naturalHeight}px}` +
+      `.dialog .loc-portret{z-index:-2}.caseta::before{content:'';position:absolute;inset:${6 - margine}px;border-radius:16px;background:rgba(18,12,7,0.72);z-index:-1;pointer-events:none}` },
+  { id: 'dialog_ornament', nume: 'Rombul auriu de pe marginea de sus a chenarului', marime: 'mărimea ei, fundal transparent', tip: 'fundal', selector: '.ornament-dialog',
+    extra: (url, m, img) => `.ornament-dialog{display:block;width:${img.naturalWidth}px;height:${img.naturalHeight}px;top:calc(4px - var(--margine-dialog, 0px))}` },
+  { id: 'nume', nume: 'Plăcuța cu numele vorbitorului (panglica albastră)', marime: '420 × 70 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.nume-vorbitor',
+    extra: (url, m, img) =>
+      `.nume-vorbitor{width:${img.naturalWidth}px;height:${img.naturalHeight}px;padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;white-space:nowrap}` +
+      `.caseta .nume-vorbitor{top:calc(-1 * var(--margine-dialog, 0px) - ${img.naturalHeight / 2}px)}` },
   { id: 'buton', nume: 'Buton', marime: '320 × 80 px', tip: '9-slice', margine: 20, selector: '.buton, .alegere, .lupta-meniu button' },
   { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover, .lupta-meniu button:hover' },
   { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active, .lupta-meniu button:active' },
   // Alegerile din dialog au rama lor (după butoane, ca să o înlocuiască pe a lor); hover-ul schimbă doar imaginea
-  { id: 'alegere', nume: 'Alegerea din dialog (rândul subțire)', marime: '1400 × 64 px, fundal transparent', tip: '9-slice', margine: 16, selector: '.alegere' },
+  { id: 'alegere', nume: 'Alegerea din dialog (rândul subțire)', marime: '1400 × 64 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.alegere',
+    extra: (url, m, img) => `.alegere{width:${img.naturalWidth}px;height:${img.naturalHeight}px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center}` },
   { id: 'alegere_hover', nume: 'Alegerea din dialog, cu mouse-ul deasupra (cu strălucire)', marime: '1400 × 64 px (la fel ca alegerea)', tip: '9-slice', ca: 'alegere', selector: '.alegere:hover' },
-  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: '96 × 96 px, fundal transparent', tip: 'fundal', selector: '.continua', extra: '.continua{width:44px;height:44px;color:transparent}' },
+  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'mărimea ei, fundal transparent', tip: 'fundal', selector: '.continua', extra: (url, m, img) => `.continua{width:${img.naturalWidth}px;height:${img.naturalHeight}px;color:transparent}` },
   { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
   // Marginea implicită 0: panoul are o mărime aproape fixă, iar cu ramă tăiată în 9 bucăți apăreau linii fine între ele
@@ -87,10 +96,8 @@ export const ELEMENTE_UI = [
   // Săgețile cărții: o singură imagine, cu vârful spre dreapta; cea din stânga e aceeași, întoarsă din cod
   // Imaginea își păstrează forma (contain), oricât de lată ar fi generată
   { id: 'sageata', nume: 'Săgeata de răsfoit (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte',
-    // Săgeata stă exact la mărimea imaginii încărcate (cerut de autor), în pixelii scenei de 1920 × 1080
-    extra: (url, margine, img) =>
-      `.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:${img.naturalWidth}px;height:${img.naturalHeight}px;min-width:0;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}` +
-      '.buton.inapoi-carte,.buton.inainte-carte{background-size:100% 100%}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
+    extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:150px;height:150px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
+      '.buton.inapoi-carte,.buton.inainte-carte{background-size:contain}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,
@@ -170,7 +177,9 @@ export function aplicaGraficaUi(aranjareUi = {}) {
     const img = new Image();
     img.onload = () => {
       const baza = el.ca ? ELEMENTE_UI.find((x) => x.id === el.ca) : el;
-      const margine = aranjareUi.margini?.[baza.id] ?? baza.margine ?? 0;
+      const ales = aranjareUi.margini?.[baza.id] ?? baza.margine ?? 0;
+      // Piesele care stau la mărimea imaginii nu ies în afară (o margine cu minus ar mări rama peste mărimea ei)
+      const margine = baza.faraMinus ? Math.max(0, ales) : ales;
       // „extra”: ce se mai schimbă când există imaginea (paginile cărții devin transparente, ca să se vadă hârtia din ea)
       reguli.set(el.id, regula(el, img.src, margine) + (typeof el.extra === 'function' ? el.extra(img.src, margine, img) : el.extra || ''));
       // Ordinea contează (hover după bază), deci regulile se scriu în ordinea din listă
