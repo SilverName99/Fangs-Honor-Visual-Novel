@@ -47,7 +47,8 @@ export const ELEMENTE_UI = [
       `.alegere{position:relative;z-index:0}.alegere:hover{border-image-source:none;background:none;box-shadow:none}` +
       `.alegere:hover::after{content:'';position:absolute;left:50%;top:50%;width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};` +
       `transform:translate(-50%,-50%);background:url("${url}") center / 100% 100% no-repeat;z-index:-1;pointer-events:none}` },
-  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'pe măsura chenarului, fundal transparent', tip: 'fundal', selector: '.continua', extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};color:transparent}` },
+  { id: 'dialog_sageata', nume: 'Săgeata „continuă” din colțul chenarului de dialog', marime: 'pe măsura chenarului, fundal transparent', tip: 'fundal', selector: '.continua', // Pe jumătate față de restul pieselor (cerut de autor)
+    extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth * 0.5)};height:${marimeDialog(img.naturalHeight * 0.5)};color:transparent}` },
   { id: 'panou', nume: 'Panou (meniu, inventar, HUD, magazin)', marime: '800 × 600 px', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-anunt, .panou-inv, .panou-actiune, .lupta-meniu, .debug' },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
   // Marginea implicită 0: panoul are o mărime aproape fixă, iar cu ramă tăiată în 9 bucăți apăreau linii fine între ele
