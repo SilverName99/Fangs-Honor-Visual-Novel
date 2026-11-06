@@ -3,6 +3,7 @@ const lipsa = new Set();
 
 export function uitaLipsurile() {
   lipsa.clear();
+  incarcate.clear();
 }
 
 function culoare(text) {
@@ -14,6 +15,10 @@ function culoare(text) {
 export function urlImagine(cale) {
   return `assets/${cale}`;
 }
+
+// Ce s-a încărcat deja o dată (cu raportul lui): la o nouă desenare apare pe loc, fără să clipească
+// (de exemplu statuia lui Vale, când inventarul se redesenează la fiecare clic)
+const incarcate = new Map();
 
 // Încearcă pe rând fiecare candidat; dacă niciunul nu există, pune un placeholder cu numele fișierului,
 // ca lipsa artei să nu blocheze nimic
@@ -37,8 +42,9 @@ export function elementImagine(candidati, { clasa = '', raport = 1, fundal = fal
     img.draggable = false;
     img.alt = '';
     img.onload = () => {
+      incarcate.set(deIncercat[i], img.naturalWidth / img.naturalHeight);
       if (!fundal) el.style.aspectRatio = img.naturalWidth / img.naturalHeight;
-      el.replaceChildren(img);
+      if (img.parentNode !== el) el.replaceChildren(img);
       // Jocul vrea să știe ce variantă s-a încărcat (de exemplu, dacă scena are deja imagine de noapte)
       el.dispatchEvent(new CustomEvent('incarcat', { detail: deIncercat[i] }));
     };
@@ -47,6 +53,11 @@ export function elementImagine(candidati, { clasa = '', raport = 1, fundal = fal
       incearca(i + 1);
     };
     img.src = urlImagine(deIncercat[i]);
+    // Deja încărcată: se pune imediat (evenimentul „incarcat” vine tot din onload, după ce jocul îl ascultă)
+    if (incarcate.has(deIncercat[i])) {
+      if (!fundal) el.style.aspectRatio = incarcate.get(deIncercat[i]);
+      el.replaceChildren(img);
+    }
   };
   incearca(0);
   return el;
