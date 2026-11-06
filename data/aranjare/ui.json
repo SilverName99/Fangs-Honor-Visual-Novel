@@ -5,11 +5,27 @@
     "hud_buton": 0,
     "hud_buton_hover": -7,
     "hud_placuta": 0,
-    "hud_panou": 22
+    "hud_panou": 22,
+    "dialog": 0
   },
   "bare": {
     "grosime": 25,
     "sus": 8,
     "lateral": 13
+  },
+  "meniu": {
+    "latime": 1728,
+    "inaltime": 1080,
+    "sus": 305,
+    "jos": 127,
+    "lateral": 250,
+    "butonInaltime": 165,
+    "butonInterior": 46,
+    "spatiuRanduri": 44,
+    "spatiuColoane": 46,
+    "iconita": 115,
+    "text": 34,
+    "titluSus": 107,
+    "titlu": 74
   }
 }
