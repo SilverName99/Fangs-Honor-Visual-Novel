@@ -27,7 +27,7 @@ export function descriere(inv, id) {
   if (d.capacitate) parti.push(`${d.capacitate} sloturi`);
   for (const [k, v] of Object.entries(d.efecte?.nevoi || {})) parti.push(`${k} ${v > 0 ? '+' : ''}${v}`);
   if ((d.sloturi || 1) > 1) parti.push(`ocupă ${d.sloturi} sloturi`);
-  if (d.pret) parti.push(`valoare ${d.pret} monede`);
+  if (d.pret) parti.push(`valoare ${d.pret} ${d.pret === 1 ? 'monedă' : 'monede'}`);
   return parti.join(' · ');
 }
 
@@ -139,16 +139,6 @@ export function creeazaEcranInventar(parinte, joc) {
     return g;
   }
 
-  // Unde se leagă fiecare slot de corpul lui Vale (linia aurie), ca fracție din figura lui: x de la stânga, y de sus
-  const PUNCTE_CORP = {
-    cap: [0.5, 0.07],
-    armura: [0.5, 0.32],
-    jambiere: [0.5, 0.62],
-    arma_primara: [0.14, 0.5],
-    arma_secundara: [0.3, 0.55],
-    rucsac: [0.36, 0.22],
-  };
-
   // Ce se vede pe foaie: rucsacul sau obiectele de poveste (semnul de carte comută între ele)
   let vedere = 'rucsac';
 
@@ -211,27 +201,26 @@ export function creeazaEcranInventar(parinte, joc) {
     return detalii;
   }
 
-  // Liniile aurii dintre sloturi și corpul lui Vale, desenate din cod (urmează figura și sloturile oriunde ar fi mutate)
+  // Liniile aurii dintre sloturi și corpul lui Vale, desenate din cod. Capătul de pe corp e un punct pe care autorul
+  // îl trage în editor (Aranjare → Ecranul de inventar: „Capătul liniei”), pentru fiecare slot
   function linii(ecran) {
     const aranjare = joc.date.aranjare.echipament;
-    const iF = ecran.obiecte.findIndex((o) => o.id === 'figura');
-    const pf = pozitie(aranjare, ecran.obiecte[iF], iF);
-    const h = pf.scara * INALTIME;
-    const w = h * 0.7;
-    const stanga = pf.x * LATIME - w / 2;
-    const sus = pf.y * INALTIME - h;
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'linii-inv');
     svg.setAttribute('viewBox', `0 0 ${LATIME} ${INALTIME}`);
     let desen = '';
     ecran.obiecte.forEach((o, i) => {
-      if (o.tip !== 'inv-slot' || !PUNCTE_CORP[o.id]) return;
+      if (o.tip !== 'inv-slot') return;
+      const iP = ecran.obiecte.findIndex((x) => x.id === `punct_${o.id}`);
+      if (iP < 0) return;
       const p = pozitie(aranjare, o, i);
+      const pp = pozitie(aranjare, ecran.obiecte[iP], iP);
       const l = p.scara * INALTIME;
       const cx = p.x * LATIME;
       const cy = p.y * INALTIME - l / 2;
-      const tx = stanga + PUNCTE_CORP[o.id][0] * w;
-      const ty = sus + PUNCTE_CORP[o.id][1] * h;
+      // Punctul e ancorat jos-centru, ca orice obiect; linia merge în mijlocul lui
+      const tx = pp.x * LATIME;
+      const ty = (pp.y - pp.scara / 2) * INALTIME;
       // Linia pleacă de pe marginea slotului, nu din mijlocul lui
       const t = l / 2 / Math.max(Math.abs(tx - cx), Math.abs(ty - cy), 1);
       if (t >= 1) return;
@@ -253,6 +242,8 @@ export function creeazaEcranInventar(parinte, joc) {
     ecran.obiecte.forEach((o, i) => {
       // Lângă cufăr, în stânga stă cufărul în locul lui Vale (echiparea merge și de acolo, din butonul „Echipează”)
       if (cuCufar && ['figura', 'inv-slot'].includes(o.tip)) return;
+      // Capetele liniilor nu se văd ca obiecte: sunt doar locul unde ajunge linia
+      if (o.tip === 'inv-punct') return;
       if (o.tip === 'figura') {
         const f = elementImagine([fisierUi('vale_apoza')], { clasa: 'figura-vale', raport: 0.7, eticheta: 'ui_vale_apoza.png' });
         return asaza(f, o, i);

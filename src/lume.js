@@ -156,6 +156,8 @@ export function construiesteLumea(date) {
     obiecte: [
       bucata('figura', 'figura', 'Vale (A-pose)', fisierUi('vale_apoza'), 0.7, { x: 0.31, y: 0.8, scara: 0.62 }),
       ...SLOTURI.map((sl) => bucata(sl, 'inv-slot', `Slotul: ${NUME_SLOTURI[sl]}`, fisierUi('slot_echipament'), 1, POZITII_SLOTURI[sl])),
+      // Capătul de pe corp al liniei aurii a fiecărui slot (în joc nu se vede, e doar locul unde ajunge linia)
+      ...SLOTURI.map((sl) => ({ ...bucata(`punct_${sl}`, 'inv-punct', `Capătul liniei: ${NUME_SLOTURI[sl]}`, `ui/text_punct_${sl}.png`, 1, PUNCTE_LINII[sl]), eticheta: '●' })),
       bucata('foaie', 'inv-foaie', 'Foaia de pergament (inventarul)', fisierUi('inventar_foaie'), 0.72, { x: 0.7, y: 0.95, scara: 0.84 }),
       bucata('semn', 'inv-semn', 'Semnul de carte („Obiecte de poveste”)', fisierUi('inventar_semn'), 0.667, { x: 0.885, y: 0.36, scara: 0.2 }),
       // Tipurile au prefixul „inv-”: în editor tipul devine clasă CSS, iar „slot” și „foaie” sunt deja folosite (ramele din joc, foaia din carte)
@@ -232,6 +234,17 @@ const POZITII_SLOTURI = {
   arma_secundara: { x: 0.205, y: 0.6, scara: 0.095 },
   rucsac: { x: 0.205, y: 0.31, scara: 0.095 },
 };
+
+// Unde ajung implicit liniile aurii pe corpul lui Vale (calculat pentru figura în poziția ei implicită: cap, piept, genunchi, mâini, umăr)
+const PUNCTE_LINII = Object.fromEntries(
+  Object.entries({ cap: [0.5, 0.07], armura: [0.5, 0.32], jambiere: [0.5, 0.62], arma_primara: [0.14, 0.5], arma_secundara: [0.3, 0.55], rucsac: [0.36, 0.22] }).map(
+    ([sl, [fx, fy]]) => {
+      const h = 0.62;
+      const w = (h * 0.7 * 1080) / 1920;
+      return [sl, { x: +(0.31 - w / 2 + fx * w).toFixed(4), y: +(0.8 - h + fy * h + 0.0125).toFixed(4), scara: 0.025 }];
+    },
+  ),
+);
 
 // Lista de imagini încearcă întâi variantele cu nume exact (de exemplu casa_reparata_zona_noapte.png),
 // apoi combinația de sufixe, apoi câte unul, apoi imaginea de bază,

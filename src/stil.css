@@ -700,6 +700,9 @@ svg.zone {
 .ecran-inventar {
   position: absolute;
   inset: 0;
+  /* Fără selecție de text când tragi obiectele (altfel numele slotului ascuns ieșea la iveală, albastru) */
+  user-select: none;
+  -webkit-user-select: none;
   z-index: 12;
   /* Peste locația în care ești, întunecată și estompată, ca la meniu */
   background: rgba(0, 0, 0, 0.6);
@@ -763,9 +766,13 @@ svg.zone {
 /* Iconița și simbolul stau în interiorul ramei (procentele din padding ar fi luate din lățimea ecranului, nu a slotului) */
 .slot > * {
   position: absolute;
-  inset: 14%;
+  inset: 22%;
   width: auto;
   height: auto;
+}
+/* Iconițele și simbolurile își păstrează forma (nu se turtesc, oricare ar fi mărimea imaginii) */
+.ecran-inventar .iconita img {
+  object-fit: contain;
 }
 .slot:hover,
 .slot.selectata {
@@ -780,8 +787,8 @@ svg.zone {
   font: 17px Georgia, serif;
   color: #a7926c;
 }
-.slot-gol[class*='slot-gol-'] {
-  background-size: 100% 100%;
+.ecran-inventar .slot-gol {
+  background-size: contain !important;
 }
 
 /* Foaia de pergament: conținutul are mărimea designului (900 × 1250) și se micșorează din cod cât e foaia */
@@ -937,8 +944,8 @@ svg.zone {
 }
 .continut-foaie .buton.buton-mic-meniu {
   min-width: 0;
-  padding: 12px 26px;
-  font-size: 24px;
+  padding: 20px 42px;
+  font-size: 31px;
 }
 /* Obiectele de poveste (cheile, scrisorile), pe foaia lor */
 .poveste-inv {
