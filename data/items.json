@@ -20,7 +20,7 @@
     "gluga": { "nume": "Glugă de piele", "tip": "echipament", "slot": "cap", "armura": 1, "rezistenta": 5, "pret": 8 },
     "vesta_piele": { "nume": "Vestă de piele", "tip": "echipament", "slot": "armura", "armura": 2, "rezistenta": 5, "pret": 20 },
     "jambiere_piele": { "nume": "Jambiere de piele", "tip": "echipament", "slot": "jambiere", "armura": 1, "rezistenta": 4, "pret": 8 },
-    "rucsac_panza": { "nume": "Rucsac de pânză", "tip": "echipament", "slot": "rucsac", "capacitate": 12, "pret": 12 },
+    "rucsac_panza": { "nume": "Rucsac de pânză", "tip": "echipament", "slot": "rucsac", "capacitate": 8, "pret": 12 },
     "rucsac_piele": { "nume": "Rucsac de piele", "tip": "echipament", "slot": "rucsac", "capacitate": 16, "pret": 25 },
 
     "cheie_fierar": { "nume": "Cheia fierarului", "tip": "poveste" }

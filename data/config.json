@@ -18,6 +18,13 @@
       }
     ],
     "echipat": {},
+    "_cufarTODO": "Rucsacul de pânză stă în cufăr deocamdată, ca să fie luat repede (TODO: cum face rost Vale de el)",
+    "cufar": [
+      {
+        "id": "rucsac_panza",
+        "n": 1
+      }
+    ],
     "cunoscuti": [
       "miriam"
     ]
@@ -52,7 +59,7 @@
   },
   "inventar": {
     "_nota": "Sloturi fără rucsac; rucsacul dă capacitatea lui. Cufărul de acasă (TODO cifre).",
-    "faraRucsac": 8,
+    "faraRucsac": 3,
     "cufar": 40
   },
   "munca": {

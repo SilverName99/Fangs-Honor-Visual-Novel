@@ -352,7 +352,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 
 ### Inventarul (sloturi, stive, cufăr)
 
-- Inventarul are un număr de **sloturi**, iar rucsacul îl mărește: fără rucsac 8, rucsacul de pânză 12, cel de piele 16 (`TODO` cifre).
+- Inventarul are un număr de **sloturi**, iar rucsacul îl mărește: fără rucsac 3 (decis), rucsacul de pânză 8 (decis), cel de piele 16 (`TODO`). Rucsacul de pânză stă deocamdată în cufărul de acasă de la începutul jocului (`start.cufar`; `TODO`: cum face rost Vale de el); din cufăr, echipamentul se poate echipa direct (ce se dă jos rămâne în cufăr). Salvarea e la versiunea 4: cine n-are rucsacul îl primește în cufăr.
 - **Stive:** obiectele de același fel stau în același slot, până la o limită per obiect (de exemplu 5 pâini, 3 sticle de apă, 10 bucăți de lemn, 20 de săgeți). Echipamentul nu se stivuiește.
 - **Obiectele mari ocupă 2 sloturi:** armele cu două mâini, pieile mari.
 - **Echipamentul purtat nu ocupă sloturi.**
@@ -368,7 +368,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 - **La cufăr** (camera lui Vale): în stânga apare a doua foaie, cufărul (40 de locuri, 8 pe rând), în locul lui Vale.
 - Toate bucățile (figura, sloturile, foaia, semnul, titlurile, „Închide”) se mută și se măresc în editor, la Aranjare → „Ecranul de inventar și echipament”. Piesele se încarcă în galerie, la grupul **Inventarul** (`ui_slot_echipament.png` + `_hover` pentru ramele de lângă Vale, `ui_slot.png` + `_hover` pentru căsuțele de pe foaie).
 - **Drag & drop** din inventar în sloturi și înapoi (și între rucsac și cufăr). Un slot nepotrivit refuză obiectul (de exemplu jambierele pe cap).
-- **Sloturi** (decis: fără mănuși și bocanci): `cap` (Coif), `armura` (Armură, pentru tors), `jambiere` (Jambiere), `arma_primara`, `arma_secundara`, `rucsac`. **Armele cu două mâini ocupă ambele sloturi de armă.** Salvarea e la versiunea 3: migrarea mută haina pe `armura`, pantalonii pe `jambiere` și scoate mănușile și bocancii.
+- **Sloturi** (decis: fără mănuși și bocanci): `cap` (Coif), `armura` (Armură, pentru tors), `jambiere` (Jambiere), `arma_primara`, `arma_secundara`, `rucsac`. **Armele cu două mâini ocupă ambele sloturi de armă.** Migrarea la versiunea 3 mută haina pe `armura`, pantalonii pe `jambiere` și scoate mănușile și bocancii.
 - Fiecare obiect are o **iconiță** (`assets/items/<id>.png`).
 
 ## 15. Lupta pe ture

@@ -46,6 +46,11 @@ const migrari = {
       versiuneSalvare: 3,
     };
   },
+  // Fără rucsac încap doar 3 sloturi (decis de autor); cine n-are rucsacul de pânză îl găsește în cufărul de acasă
+  3: (s) => {
+    const are = [...(s.inventar || []), ...(s.cufar || [])].some((x) => x.id === 'rucsac_panza') || Object.values(s.echipat || {}).includes('rucsac_panza');
+    return { ...s, cufar: are ? s.cufar || [] : [...(s.cufar || []), { id: 'rucsac_panza', n: 1 }], versiuneSalvare: 4 };
+  },
 };
 
 export function cheieSalvare(test) {

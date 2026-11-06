@@ -1,7 +1,7 @@
 import { MINUTE_ZI, inMinute, momentZi, ziSaptamana } from './timp.js';
 
 // Crește doar când se schimbă forma salvării; atunci se adaugă și o migrare în salvare.js
-export const VERSIUNE_SALVARE = 3;
+export const VERSIUNE_SALVARE = 4;
 
 export function stareNoua(config) {
   const s = config.start;
@@ -16,7 +16,7 @@ export function stareNoua(config) {
     // Inventarul e o listă de stive { id, n }; echipamentul purtat și obiectele de poveste nu ocupă sloturi
     inventar: structuredClone(s.inventar || []),
     echipat: { ...(s.echipat || {}) },
-    cufar: [],
+    cufar: structuredClone(s.cufar || []),
     poveste: [],
     taxa: { zi: config.taxa.intervalZile, platita: false, ratari: 0, colectorZi: 0 },
     grup: ['vale'],

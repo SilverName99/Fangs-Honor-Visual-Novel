@@ -88,6 +88,26 @@ export function creeazaInventar(date, getStare) {
     return null;
   }
 
+  // Echipează direct din cufărul de acasă (de exemplu rucsacul, cât inventarul e plin); ce se dă jos rămâne în cufăr
+  function echipeazaDinCufar(index) {
+    const s = getStare();
+    const x = s.cufar[index];
+    const d = def(x?.id);
+    if (!x || d.tip !== 'echipament') return 'Obiectul ăsta nu se poate echipa.';
+    const slot = d.slot;
+    const josDe = new Set([slot]);
+    if (d.douaMaini) josDe.add('arma_secundara');
+    if (slot === 'arma_secundara' && def(s.echipat.arma_primara).douaMaini) josDe.add('arma_primara');
+    if (slot === 'rucsac' && ocupate(s.inventar) > d.capacitate) return `Rucsacul e prea mic: golește mai întâi ${ocupate(s.inventar) - d.capacitate} sloturi.`;
+    const cufar = structuredClone(s.cufar);
+    if (--cufar[index].n <= 0) cufar.splice(index, 1);
+    for (const id of [...josDe].map((sl) => s.echipat[sl]).filter(Boolean)) if (adaugaIn(cufar, cfg.cufar, id, 1) > 0) return 'Nu e loc în cufăr pentru ce dai jos.';
+    s.cufar = cufar;
+    for (const sl of josDe) delete s.echipat[sl];
+    s.echipat[slot] = x.id;
+    return null;
+  }
+
   function dezechipeaza(slot) {
     const s = getStare();
     const id = s.echipat[slot];
@@ -126,6 +146,7 @@ export function creeazaInventar(date, getStare) {
     spreCufar: (index) => mutaStiva(getStare().inventar, getStare().cufar, cfg.cufar, index),
     dinCufar: (index) => mutaStiva(getStare().cufar, getStare().inventar, capacitate(), index),
     echipeaza,
+    echipeazaDinCufar,
     dezechipeaza,
     // Ce poză de luptă folosește Vale: după arma primară, plus scutul din mâna a doua
     tipArmaVale() {

@@ -194,7 +194,10 @@ export function creeazaEcranInventar(parinte, joc) {
         ruleaza();
       });
     }
-    if (selectat.din === 'cufar') b('Ia în inventar', () => ruleaza(inv.dinCufar(selectat.index)));
+    if (selectat.din === 'cufar') {
+      if (d.tip === 'echipament') b('Echipează', () => ruleaza(inv.echipeazaDinCufar(selectat.index)));
+      b('Ia în inventar', () => ruleaza(inv.dinCufar(selectat.index)));
+    }
     if (selectat.din === 'slot') b('Dă jos', () => ruleaza(inv.dezechipeaza(selectat.slot)));
     text.append(actiuni);
     detalii.append(ic, text);
@@ -268,8 +271,8 @@ export function creeazaEcranInventar(parinte, joc) {
       if (o.tip === 'inv-titlu') {
         const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
         const t = div('titlu-ecran-inv', text);
-        // Textul e cât 80% din înălțimea pusă în editor, minus 14 px (cerut de autor)
-        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 14}px`;
+        // Textul e cât 80% din înălțimea pusă în editor, minus 10 px (cerut de autor)
+        t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 10}px`;
         return asaza(t, o, i, 1700);
       }
       if (o.tip === 'inv-inchide') {
