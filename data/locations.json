@@ -424,23 +424,48 @@
               ]
             }
           },
-          "incuiat": {
-            "conditii": {
-              "oricare": [
-                {
-                  "ora": {
-                    "min": "09:00"
+          "_incuiat": "Închisă 02:00–09:00. Noaptea (02–05): revii mâine dimineață; dimineața (05–09): revii mai târziu (decis de autor)",
+          "incuiat": [
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "09:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "01:59"
+                    }
+                  },
+                  {
+                    "moment": [
+                      "dimineata"
+                    ]
                   }
-                },
-                {
-                  "ora": {
-                    "max": "01:59"
-                  }
-                }
-              ]
+                ]
+              },
+              "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mâine dimineață."
             },
-            "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mâine dimineață."
-          }
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "09:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "01:59"
+                    }
+                  }
+                ]
+              },
+              "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mai târziu."
+            }
+          ]
         },
         {
           "id": "etaj",
