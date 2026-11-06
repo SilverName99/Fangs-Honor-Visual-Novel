@@ -3,6 +3,18 @@ import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
 // Lățimea chenarului de dialog pe scenă; celelalte piese ale dialogului se micșorează cu același factor ca el
 const LATIME_DIALOG = 1640;
+// Butoanele de pe panoul mic: înalte de 72 px, cu capetele imaginii neîntinse (9-slice doar pe orizontală)
+const SELECTOR_BUTON_PANOU = '.panou-actiune .buton.buton-mic-meniu,.panou-anunt .buton.buton-mic-meniu';
+const INALTIME_BUTON_PANOU = 72;
+function butonPanou(url, img) {
+  const capImagine = Math.round(img.naturalWidth * 0.09);
+  const cap = (capImagine * INALTIME_BUTON_PANOU) / img.naturalHeight;
+  return (
+    `${SELECTOR_BUTON_PANOU}{height:${INALTIME_BUTON_PANOU}px;padding:0 ${cap + 10}px;background:none;border-style:solid;border-color:transparent;` +
+    `border-width:0 ${cap}px;border-image:url("${url}") 0 ${capImagine} fill / 0 ${cap}px stretch}`
+  );
+}
+
 // Lățimea maximă a panoului mic pe scenă (dacă imaginea e mai mare, se micșorează cu tot cu proporții)
 const LATIME_PANOU = 860;
 const marimeDialog = (px) => `calc(${px}px * var(--scala-dialog, 1))`;
@@ -63,9 +75,9 @@ export const ELEMENTE_UI = [
         `${p}{position:relative;box-sizing:border-box;width:${w}px;min-width:0;max-width:none;min-height:${h}px;max-height:none;overflow:visible;` +
         `padding:${h * 0.25}px ${w * 0.12}px ${h * 0.12}px;justify-content:center;border:none;border-image:none;border-radius:0;box-shadow:none;` +
         `background:url("${url}") center / 100% 100% no-repeat;color:#2a1a0e}` +
-        `.panou-actiune .titlu-meniu{position:absolute;left:50%;top:${h * 0.135}px;transform:translate(-50%,-50%);margin:0;white-space:nowrap;font:700 34px Georgia,serif;color:#f3dfae;text-shadow:0 2px 4px #000}` +
+        `.panou-actiune .titlu-meniu{position:absolute;left:50%;top:${h * 0.105}px;transform:translate(-50%,-50%);margin:0;white-space:nowrap;font:700 34px Georgia,serif;color:#f3dfae;text-shadow:0 2px 4px #000}` +
         `.panou-actiune .text-anunt,.panou-anunt .text-anunt{color:#2a1a0e;font-size:28px;text-align:center}` +
-        `${p.split(',').map((x) => `${x} .buton.buton-mic-meniu`).join(',')}{width:100%;padding:12px 30px;font-size:28px}`
+        `${p.split(',').map((x) => `${x} .buton.buton-mic-meniu`).join(',')}{width:100%;font-size:28px}`
       );
     } },
   // Interfața de pe ecran (designul autorului). Stau după butoane și panouri, ca să le înlocuiască pe acelea acolo unde sunt amândouă
@@ -81,8 +93,13 @@ export const ELEMENTE_UI = [
   { id: 'hud_placuta', nume: 'Plăcuța de jos (ceasul și „Înapoi”), goală', marime: '700 × 120 px', tip: '9-slice', margine: 40, selector: '.ceas-hud, .buton.placuta-hud' },
   // Meniul: tabla atârnată (cu banda titlului goală) și butoanele de pergament; textul îl scrie jocul
   { id: 'meniu_panou', nume: 'Meniul: tabla de lemn cu lanțuri, lampa, steagul și banda titlului (goală)', marime: '1600 × 1000 px, fundal transparent', tip: 'fundal', selector: '.panou-meniu-nou', extra: '.panou-meniu-nou{border:none;border-radius:0;box-shadow:none}.panou-meniu-nou .titlu-meniu-nou{background:none;border:none}' },
-  { id: 'meniu_buton', nume: 'Meniul: butonul de pergament, gol', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu, .buton.buton-mic-meniu', extra: '.buton.buton-meniu,.buton.buton-meniu:hover,.buton.buton-mic-meniu,.buton.buton-mic-meniu:hover{border:none;border-image:none;border-radius:0;box-shadow:none}' },
-  { id: 'meniu_buton_hover', nume: 'Meniul: butonul de pergament, cu mouse-ul deasupra', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu:hover, .buton.buton-mic-meniu:hover, .buton.buton-mic-meniu.ales' },
+  // Pe panoul mic, butoanele lungi nu se întind cu totul (s-ar turti): capetele de lemn rămân cu forma lor
+  // (câte 9% din lățimea imaginii), doar mijlocul de pergament se lungește
+  { id: 'meniu_buton', nume: 'Meniul: butonul de pergament, gol', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu, .buton.buton-mic-meniu',
+    extra: (url, m, img) =>
+      '.buton.buton-meniu,.buton.buton-meniu:hover,.buton.buton-mic-meniu,.buton.buton-mic-meniu:hover{border:none;border-image:none;border-radius:0;box-shadow:none}' + butonPanou(url, img) },
+  { id: 'meniu_buton_hover', nume: 'Meniul: butonul de pergament, cu mouse-ul deasupra', marime: '700 × 220 px, fundal transparent', tip: 'fundal', selector: '.buton.buton-meniu:hover, .buton.buton-mic-meniu:hover, .buton.buton-mic-meniu.ales',
+    extra: (url) => `${SELECTOR_BUTON_PANOU.split(',').map((x) => `${x}:hover`).join(',')}{border-image-source:url("${url}")}` },
   // Iconițele: până se încarcă, rămâne simbolul din text (care se ascunde când apare imaginea)
   ...[
     ['vale', 'Iconița lui Vale (butonul care deschide panoul lui)'],
