@@ -151,6 +151,7 @@
               "obiect": "apa",
               "n": 1,
               "minute": 5,
+              "sunet": "apa",
               "maxPeZi": 2,
               "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine."
             }
@@ -829,6 +830,7 @@
           "obiect": "lemn",
           "n": 3,
           "minute": 60,
+          "sunet": "lemne",
           "stamina": 10
         }
       ]

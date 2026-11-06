@@ -12,9 +12,11 @@
       "atac": {
         "min": 4,
         "max": 7,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_lovit"
       },
-      "armura": 0
+      "armura": 0,
+      "sunet": "lup"
     },
     "lup_alfa": {
       "_nota": "TODO echilibru. Liderul haitei: folosește pozele lupului, întunecate (filtru) și puțin mai mari (marime, %).",
@@ -27,10 +29,12 @@
       "atac": {
         "min": 6,
         "max": 10,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_lovit"
       },
       "armura": 1,
-      "rezistenta": 5
+      "rezistenta": 5,
+      "sunet": "lup"
     },
     "orc_taverna": {
       "nume": "Orc",
@@ -40,9 +44,11 @@
       "atac": {
         "min": 3,
         "max": 6,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_topor"
       },
-      "armura": 0
+      "armura": 0,
+      "sunet": "orc"
     },
     "betiv": {
       "nume": "Bețiv",
@@ -51,7 +57,8 @@
       "atac": {
         "min": 2,
         "max": 5,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_pumn"
       },
       "armura": 0
     },
@@ -62,9 +69,11 @@
       "atac": {
         "min": 6,
         "max": 10,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_lovit"
       },
-      "armura": 1
+      "armura": 1,
+      "sunet": "mistret"
     },
     "orc_colector": {
       "_nota": "TODO echilibru. Colectorul de taxe; mai greu decât paznicii, cu bâta. Pozele lui: combat/orc_colector_*.png.",
@@ -74,10 +83,12 @@
       "atac": {
         "min": 5,
         "max": 8,
-        "tip": "apropiat"
+        "tip": "apropiat",
+        "sunet": "lupta_topor"
       },
       "armura": 1,
-      "rezistenta": 5
+      "rezistenta": 5,
+      "sunet": "orc"
     }
   },
   "lupte": {
@@ -390,5 +401,6 @@
         }
       }
     }
-  }
+  },
+  "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)"
 }

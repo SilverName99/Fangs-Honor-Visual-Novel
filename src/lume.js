@@ -1,5 +1,6 @@
 import { verifica } from './conditii.js';
 import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
+import { caleSunet } from './sunet.js';
 import { fisierCarte } from './carte.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 
@@ -406,5 +407,13 @@ export function imaginiCerute(date, scene) {
     grup = el.grup || 'Interfață';
     adauga(fisierUi(el.id), `${el.grup ? '' : 'Interfață: '}${el.nume} (${el.marime})`, true);
   }
+  // Sunetele (MP3): toate opționale, fiindcă un sunet lipsă e doar liniște
+  const sunete = date.sunete || {};
+  grup = 'Sunete: locurile';
+  for (const [id, scop] of Object.entries(sunete.fisiereAmbianta || {})) adauga(caleSunet('ambianta', id), `Sunet de fundal: ${scop} (MP3, se repetă)`, true);
+  grup = 'Sunete: efecte';
+  for (const [id, scop] of Object.entries(sunete.efecte || {})) adauga(caleSunet('efecte', id), `Efect: ${scop} (MP3, scurt)`, true);
+  grup = 'Sunete: muzică';
+  for (const [id, scop] of Object.entries(sunete.muzica || {})) adauga(caleSunet('muzica', id), `Muzică: ${scop} (MP3)`, true);
   return [...rezultat.values()];
 }

@@ -110,6 +110,8 @@ export function creeazaLupta(parinte, joc) {
       armuri: armuriDin(piese),
       blocare: scut?.blocare ?? cfg.blocareImplicita,
       abilitati: [],
+      // Sunetul loviturii, după arma din mână
+      sunetAtac: { pumni: 'lupta_pumn', topor_doua_maini: 'lupta_topor', arc: 'lupta_arc' }[tipArma] || 'lupta_sabie',
       // Vale obosit pornește cu bara goală, odihnit cu ea pe jumătate
       bara: s.nevoi.stamina < joc.date.config.nevoi.prag ? 0 : 50,
       poze: (p) => [...cuRezerva(p).map((x) => `combat/vale_${tipArma}_${x}.png`), `combat/vale_${tipArma}_idle.png`, `combat/vale_pumni_idle.png`],
@@ -129,6 +131,9 @@ export function creeazaLupta(parinte, joc) {
       armuri: armuriDin([{ nume: 'Armura', armura: x.armura || 0, rezistenta: x.rezistenta }]),
       blocare: x.blocare ?? cfg.blocareImplicita,
       abilitati: x.abilitati || [],
+      // Strigătul inamicului când atacă (lupul mârâie, orcul răcnește) și sunetul loviturii lui
+      sunet: x.sunet || null,
+      sunetAtac: x.atac?.sunet || (x.atac?.tip === 'distanta' ? 'lupta_arc' : 'lupta_sabie'),
       // „locuri: 2”: personaj mare (vânătoarea pe tigru) care ține toată linia, față și spate
       lat: x.locuri === 2,
       bara: intre(0, 30),
@@ -260,6 +265,8 @@ export function creeazaLupta(parinte, joc) {
   // ---------- acțiuni ----------
   async function loveste(sursa, tinta) {
     poza(sursa, 'atac');
+    if (sursa.sunet) joc.sunet.efect(sursa.sunet);
+    joc.sunet.efect(sursa.sunetAtac);
     sursa.corp.classList.add(sursa.tabara === 'aliat' ? 'ataca-dreapta' : 'ataca-stanga');
     await asteapta(250);
     const d = aplicaLovitura(sursa, tinta);
@@ -323,6 +330,7 @@ export function creeazaLupta(parinte, joc) {
     let de = centru(sursa);
     for (const t of tinte) {
       const la = inTinta(de, t);
+      joc.sunet.efect(sursa.sunetAtac);
       await zboara(p, de, la);
       if (!L) return daune;
       daune.push(aplicaLovitura(sursa, t));
@@ -362,6 +370,7 @@ export function creeazaLupta(parinte, joc) {
   // Cu scutul de lumină, lovitura se oprește în scut: fără daune și fără uzura armurii (întoarce 0)
   function aplicaLovitura(sursa, tinta) {
     if (tinta.scut) {
+      joc.sunet.efect('lupta_scut');
       spargeScut(tinta);
       numar(tinta, 'blocat', 'scut');
       return 0;
@@ -376,11 +385,15 @@ export function creeazaLupta(parinte, joc) {
       if (a.ramas === 0) jurnal(`${a.nume} lui ${tinta.nume} s-a crăpat!`);
     }
     numar(tinta, `−${d}`);
+    // Lovitura se aude în scut când se apără; altfel impactul (dacă sunetul atacului nu e deja chiar impactul)
+    if (tinta.apara) joc.sunet.efect('lupta_scut');
+    else if (sursa.sunetAtac !== 'lupta_lovit') joc.sunet.efect('lupta_lovit');
     if (!tinta.apara) poza(tinta, 'lovit');
     tinta.corp.classList.add('lovit');
     if (tinta.viata <= 0) {
       tinta.viata = 0;
       tinta.cazut = true;
+      joc.sunet.efect('lupta_cazut');
       tinta.el.classList.add('cazut');
       poza(tinta, 'cazut');
     }
@@ -429,6 +442,7 @@ export function creeazaLupta(parinte, joc) {
       const d = inv.def(actiune.id);
       const v = d.efecte?.nevoi?.viata || 0;
       inv.scoate(actiune.id, 1);
+      joc.sunet.efect('baut');
       actiune.tinta.viata = Math.min(actiune.tinta.viataMax, actiune.tinta.viata + v);
       numar(actiune.tinta, `+${v}`, 'vindecare');
       jurnal(`${sursa.nume} folosește ${d.nume} pe ${actiune.tinta.nume}.`);
@@ -443,6 +457,7 @@ export function creeazaLupta(parinte, joc) {
     } else if (actiune.tip === 'abilitate') {
       const a = actiune.abilitate;
       poza(sursa, a.poza || 'atac');
+      joc.sunet.efect(a.sunet || (a.id === 'vindecare' ? 'lupta_vindecare' : 'lupta_magie'));
       await asteapta(300);
       abilitati[a.id]?.(sursa, actiune.tinta, a, L);
       await asteapta(400);
@@ -581,6 +596,8 @@ export function creeazaLupta(parinte, joc) {
     const def = typeof idLupta === 'object' ? idLupta : joc.date.lupte?.lupte?.[idLupta];
     if (!def) return joc.mesaj(`Lupta „${idLupta}” nu există.`);
     const s = joc.stare;
+    // Muzica de luptă ține locul ambianței până se termină lupta
+    joc.sunet.muzica('lupta');
     const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
     // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
     const aliati = (def.test ? ['vale'] : s.grup)
@@ -759,12 +776,16 @@ export function creeazaLupta(parinte, joc) {
     if (!L.def.test) for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
     const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : null;
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
+    // Un jingle scurt la victorie și la înfrângere; la fugă revine direct ambianța
+    if (rezultat === 'fuga') joc.sunet.muzica(null);
+    else joc.sunet.muzica(rezultat, { repetat: false });
     L.elMeniu.classList.remove('sus');
     L.elMeniu.hidden = false;
     L.elMeniu.replaceChildren(
       div('titlu-meniu-lupta', titlu),
       ...(parte?.text ? [div('text-rezultat', parte.text)] : []),
       buton('Continuă', () => {
+        joc.sunet.muzica(null);
         // Lupta de test nu lasă urme: nici viață pierdută, nici timp trecut
         if (L.def.test) {
           el.hidden = true;

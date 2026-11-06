@@ -2068,6 +2068,11 @@ svg.zone {
   border-bottom: 1px solid rgba(243, 230, 200, 0.2);
   font: 28px Georgia, serif;
 }
+/* Glisorul de volum, în culorile meniului */
+.glisor-sunet {
+  width: 420px;
+  accent-color: #c9a24f;
+}
 .alegeri-optiune {
   display: flex;
   gap: 12px;

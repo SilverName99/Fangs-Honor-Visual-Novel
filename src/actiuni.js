@@ -40,6 +40,7 @@ export function creeazaActiuni(parinte, joc) {
       const ore = [1, 2, 4].map((h) =>
         buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, () => {
           inchide();
+          joc.sunet.efect('munca');
           if (joc.avanseaza(h * 60)) return;
           s.bani += h * m.monedePeOra;
           schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
@@ -55,6 +56,7 @@ export function creeazaActiuni(parinte, joc) {
     if (a.cost && s.bani < a.cost) return joc.gand(`N-am destui bani. Îmi trebuie ${a.cost} monede.`);
     const somn = (minute) => {
       if (a.cost) s.bani -= a.cost;
+      joc.sunet.efect('somn');
       const ore = minute / 60;
       // Foamea mare face somnul mai puțin odihnitor (pedeapsă moale)
       const refacere = cfg.somn.staminaPeOra * ore * (s.nevoi.foame < cfg.nevoi.prag ? 0.5 : 1);
@@ -91,6 +93,8 @@ export function creeazaActiuni(parinte, joc) {
     }
     if (joc.avanseaza(a.minute || 0)) return;
     if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
+    // Sunetul acțiunii, dacă are (apa de la fântână, lemnele)
+    if (a.sunet) joc.sunet.efect(a.sunet);
     joc.primeste(a.obiect, a.n || 1);
     joc.dupaActiune(`+${a.n || 1} ${inv.def(a.obiect).nume}`);
   }

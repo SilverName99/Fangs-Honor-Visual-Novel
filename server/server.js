@@ -18,7 +18,10 @@ const HOST = process.env.HOST || '127.0.0.1';
 const GIT_SYNC = process.env.GIT_SYNC === '1';
 
 const CATEGORII = ['map', 'map/piese', 'locations', 'events', 'portraits', 'sprites', 'combat', 'items', 'ui'];
+// Sunetele (MP3) stau lângă imagini, în assets/sunete/, și se încarcă din aceeași galerie
+const CATEGORII_SUNET = ['sunete/ambianta', 'sunete/efecte', 'sunete/muzica'];
 const NUME_IMAGINE = /^[a-z0-9]+(?:_[a-z0-9]+)*\.png$/;
+const NUME_SUNET = /^[a-z0-9]+(?:_[a-z0-9]+)*\.mp3$/;
 const ID_SCENA = /^[a-z0-9_]+(?:\.[a-z0-9_]+)?$/;
 const MAX_IMAGINE = 40 * 1024 * 1024;
 const SEMNATURA_PNG = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
@@ -29,6 +32,7 @@ const TIPURI = {
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
+  '.mp3': 'audio/mpeg',
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
@@ -85,11 +89,13 @@ function caleImagine(relativ) {
   const curat = decodeURIComponent(relativ);
   const categorie = path.posix.dirname(curat);
   const nume = path.posix.basename(curat);
-  if (!CATEGORII.includes(categorie)) return { eroare: `Categorie necunoscută: ${categorie}` };
-  if (!NUME_IMAGINE.test(nume)) return { eroare: `Nume invalid: ${nume} (doar litere mici, cifre și _, terminat în .png)` };
+  const sunet = CATEGORII_SUNET.includes(categorie);
+  if (!sunet && !CATEGORII.includes(categorie)) return { eroare: `Categorie necunoscută: ${categorie}` };
+  if (sunet ? !NUME_SUNET.test(nume) : !NUME_IMAGINE.test(nume))
+    return { eroare: `Nume invalid: ${nume} (doar litere mici, cifre și _, terminat în ${sunet ? '.mp3' : '.png'})` };
   const absolut = path.join(ASSETS, categorie, nume);
   if (!absolut.startsWith(ASSETS + path.sep)) return { eroare: 'Cale invalidă.' };
-  return { absolut, relativ: `${categorie}/${nume}` };
+  return { absolut, relativ: `${categorie}/${nume}`, sunet };
 }
 
 async function listeazaImagini(dir = ASSETS, prefix = '') {
@@ -104,7 +110,7 @@ async function listeazaImagini(dir = ASSETS, prefix = '') {
     if (i.name.startsWith('.')) continue;
     const rel = prefix ? `${prefix}/${i.name}` : i.name;
     if (i.isDirectory()) rezultat.push(...(await listeazaImagini(path.join(dir, i.name), rel)));
-    else if (i.name.endsWith('.png')) {
+    else if (i.name.endsWith('.png') || i.name.endsWith('.mp3')) {
       const st = await fsp.stat(path.join(dir, i.name));
       rezultat.push({ cale: rel, marime: st.size, modificat: st.mtimeMs });
     }
@@ -215,7 +221,20 @@ async function servesteFisier(req, res, absolut, cacheLung = false) {
     res.writeHead(304, antete);
     return res.end();
   }
-  res.writeHead(200, { ...antete, 'Content-Length': st.size });
+  // Bucăți dintr-un fișier (Range): browserul le cere la sunete, ca să le poată derula și repeta
+  const bucata = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+  if (bucata && (bucata[1] || bucata[2])) {
+    let start = bucata[1] ? Number(bucata[1]) : Math.max(0, st.size - Number(bucata[2]));
+    let sfarsit = bucata[1] && bucata[2] ? Number(bucata[2]) : st.size - 1;
+    sfarsit = Math.min(sfarsit, st.size - 1);
+    if (start > sfarsit) {
+      res.writeHead(416, { 'Content-Range': `bytes */${st.size}` });
+      return res.end();
+    }
+    res.writeHead(206, { ...antete, 'Accept-Ranges': 'bytes', 'Content-Range': `bytes ${start}-${sfarsit}/${st.size}`, 'Content-Length': sfarsit - start + 1 });
+    return fs.createReadStream(absolut, { start, end: sfarsit }).pipe(res);
+  }
+  res.writeHead(200, { ...antete, 'Accept-Ranges': 'bytes', 'Content-Length': st.size });
   fs.createReadStream(absolut).pipe(res);
 }
 
@@ -237,7 +256,9 @@ async function api(req, res, ruta) {
       return trimite(res, 200, { ok: true });
     }
     const corp = await citesteCorp(req, MAX_IMAGINE);
-    if (!corp.subarray(0, 8).equals(SEMNATURA_PNG)) return eroare(res, 400, 'Fișierul nu e un PNG adevărat.');
+    // Un MP3 începe cu eticheta „ID3” sau direct cu un cadru audio (0xFF 0xE.); un PNG cu semnătura lui
+    const eMp3 = corp.subarray(0, 3).toString('latin1') === 'ID3' || (corp[0] === 0xff && (corp[1] & 0xe0) === 0xe0);
+    if (c.sunet ? !eMp3 : !corp.subarray(0, 8).equals(SEMNATURA_PNG)) return eroare(res, 400, c.sunet ? 'Fișierul nu e un MP3 adevărat.' : 'Fișierul nu e un PNG adevărat.');
     await fsp.mkdir(path.dirname(c.absolut), { recursive: true });
     // O imagine înlocuită nu se pierde: varianta veche merge în coș, ca la ștergere
     if (fs.existsSync(c.absolut)) {

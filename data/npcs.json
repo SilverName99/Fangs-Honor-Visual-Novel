@@ -187,7 +187,8 @@
         "atac": {
           "min": 6,
           "max": 9,
-          "tip": "apropiat"
+          "tip": "apropiat",
+          "sunet": "lupta_topor"
         },
         "armura": 4,
         "rezistenta": 8
@@ -305,7 +306,8 @@
           "max": 9,
           "tip": "distanta",
           "ricoseu": 3,
-          "proiectil": "sprites/glaive_padure_campsite.png"
+          "proiectil": "sprites/glaive_padure_campsite.png",
+          "sunet": "glaive"
         },
         "armura": 1,
         "rezistenta": 5,

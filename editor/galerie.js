@@ -12,8 +12,17 @@ const CATEGORII = [
   ['combat', 'Luptă'],
   ['items', 'Obiecte'],
   ['ui', 'Interfață'],
+  ['sunete/ambianta', 'Sunete: locurile'],
+  ['sunete/efecte', 'Sunete: efecte'],
+  ['sunete/muzica', 'Sunete: muzică'],
 ];
-const NUME_OK = /^[a-z0-9]+(?:_[a-z0-9]+)*\.png$/;
+const NUME_OK = /^[a-z0-9]+(?:_[a-z0-9]+)*\.(png|mp3)$/;
+// Sunetele se încarcă la fel ca imaginile, dar doar ca MP3 (merg în orice browser și în .exe)
+const eSunet = (nume) => /\.mp3$/i.test(nume);
+const fisierBun = (f) => f.type === 'image/png' || f.type === 'audio/mpeg' || /\.(png|mp3)$/i.test(f.name);
+// Cartonașul: imaginea, sau pentru un sunet butonul de ascultat
+const previzualizare = (cale, v) =>
+  eSunet(cale) ? `<audio class="sunet-card" controls preload="none" src="${urlImagine(cale)}?v=${v}"></audio>` : `<img loading="lazy" src="${urlImagine(cale)}?v=${v}">`;
 
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
@@ -23,10 +32,10 @@ export function numeCorect(nume) {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
-    .replace(/\.(png|jpe?g|webp)$/, '')
+    .replace(/\.(png|jpe?g|webp|mp3)$/, '')
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '');
-  return `${baza || 'imagine'}.png`;
+  return eSunet(nume) ? `${baza || 'sunet'}.mp3` : `${baza || 'imagine'}.png`;
 }
 
 export function creeazaGalerie(container, comun, reincarcaImagini) {
@@ -48,21 +57,22 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
   function adaugaFisiere(fisiere) {
     const respinse = [];
     for (const f of fisiere) {
-      if (f.type !== 'image/png' && !f.name.toLowerCase().endsWith('.png')) {
+      if (!fisierBun(f)) {
         respinse.push(f.name);
         continue;
       }
       const nume = numeCorect(f.name);
       asteptare.push({ fisier: f, nume, categorie: ghicesteCategoria(nume), url: URL.createObjectURL(f) });
     }
-    if (respinse.length) alert(`Doar fișiere PNG. Nu am adăugat:\n${respinse.join('\n')}`);
+    if (respinse.length) alert(`Doar imagini PNG și sunete MP3. Nu am adăugat:\n${respinse.join('\n')}`);
     arata();
   }
 
   function verificaRand(r) {
     const cale = `${r.categorie}/${r.nume}`;
-    if (!NUME_OK.test(r.nume)) return { ok: false, text: 'Nume invalid: doar litere mici, cifre și _ (fără diacritice), terminat în .png' };
+    if (!NUME_OK.test(r.nume)) return { ok: false, text: 'Nume invalid: doar litere mici, cifre și _ (fără diacritice), terminat în .png (sau .mp3 la sunete)' };
     if (!r.categorie) return { ok: false, text: 'Alege categoria.' };
+    if (eSunet(r.nume) !== r.categorie.startsWith('sunete/')) return { ok: false, text: 'Sunetele merg la categoriile „Sunete”, imaginile la celelalte.' };
     const c = cerutePeCale().get(cale);
     const exista = comun.imagini.has(cale);
     const parti = [];
@@ -76,7 +86,8 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
 
   async function incarcaDirect(cale, fisier) {
     if (!fisier) return;
-    if (fisier.type !== 'image/png' && !fisier.name.toLowerCase().endsWith('.png')) return alert('Doar fișiere PNG.');
+    if (eSunet(cale) ? !/\.mp3$/i.test(fisier.name) && fisier.type !== 'audio/mpeg' : fisier.type !== 'image/png' && !fisier.name.toLowerCase().endsWith('.png'))
+      return alert(eSunet(cale) ? 'Aici merge doar un fișier MP3.' : 'Doar fișiere PNG.');
     try {
       await api(`imagini/${cale}`, { method: 'PUT', body: fisier });
     } catch (e) {
@@ -116,7 +127,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
 
     // Grupurile în ordinea jocului: harta, zonele, apoi restul; zonele stau deschise, listele lungi închise
     const grupuri = [...new Set(cerute.map((c) => c.grup))];
-    const inchiseImplicit = new Set(['Portrete', 'Luptă', 'Obiecte', 'Interfață']);
+    const inchiseImplicit = new Set(['Portrete', 'Luptă', 'Obiecte', 'Interfață', 'Sunete: locurile', 'Sunete: efecte', 'Sunete: muzică']);
     // Pozele de luptă au mărimea lor în procente; hărțile de luptă au butonul spre locurile luptătorilor
     const marimi = comun.date.aranjare?.marimi_lupta?.marimi || {};
     const marimiHarti = comun.date.aranjare?.marimi_lupta?.harti || {};
@@ -155,13 +166,13 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
         .map((c) =>
           comun.imagini.has(c.cale)
             ? `<div class="card" title="${esc(c.scop)}">
-                <img loading="lazy" src="${urlImagine(c.cale)}?v=${comun.imagini.get(c.cale)}">
+                ${previzualizare(c.cale, comun.imagini.get(c.cale))}
                 <div class="cale">${esc(c.cale)}</div>
                 <div class="actiuni"><span class="sumar">${esc(c.scop)}</span><button class="btn pericol sterge" data-cale="${esc(c.cale)}">Șterge</button></div>
                 ${extraCard(c)}
               </div>`
             : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" data-cale="${esc(c.cale)}" title="Trage un PNG aici: se încarcă direct cu numele ăsta">
-                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage PNG-ul aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
+                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage ${eSunet(c.cale) ? 'MP3-ul' : 'PNG-ul'} aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
                 <div class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}">${esc(c.cale)}</a></div>
                 <div class="sumar">${esc(c.scop)}</div>
                 ${c.grup === 'Hărți de luptă' ? extraCard(c) : ''}
@@ -189,16 +200,16 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const derulare = zone ? zone.scrollTop : 0;
     container.innerHTML = `
       <div class="galerie-impartita"><aside class="coloana-incarcare">
-      <h2>Încarcă imagini</h2>
-      <div class="zona-drop">Trage aici fișierele PNG sau apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _).</small></div>
-      <input type="file" multiple accept="image/png" hidden>
+      <h2>Încarcă imagini și sunete</h2>
+      <div class="zona-drop">Trage aici fișierele PNG (sau sunetele MP3) ori apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _). Poți trage multe deodată.</small></div>
+      <input type="file" multiple accept="image/png,audio/mpeg,.mp3" hidden>
       ${
         asteptare.length
           ? `<div class="asteptare">${asteptare
               .map((r, i) => {
                 const v = verificaRand(r);
                 return `<div class="rand-asteptare" data-i="${i}">
-                  <img class="miniatura" src="${r.url}">
+                  ${eSunet(r.nume) ? `<audio class="miniatura" controls preload="none" src="${r.url}"></audio>` : `<img class="miniatura" src="${r.url}">`}
                   <div class="campuri-asteptare">
                     <input type="text" class="nume" value="${esc(r.nume)}">
                     <select class="categorie"><option value="">Alege categoria...</option>${CATEGORII.map(([c, e]) => `<option value="${c}" ${c === r.categorie ? 'selected' : ''}>${esc(e)}</option>`).join('')}</select>
@@ -222,7 +233,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
           ? `<details class="grup-galerie" open><summary><b>Nefolosite</b> <span class="sumar">· ${nefolosite.length} încărcate, dar niciun loc din joc nu le cere (verifică numele)</span></summary>
             <div class="grila">${nefolosite
               .map(
-                (cale) => `<div class="card"><img loading="lazy" src="${urlImagine(cale)}?v=${comun.imagini.get(cale)}"><div class="cale">${esc(cale)}</div>
+                (cale) => `<div class="card">${previzualizare(cale, comun.imagini.get(cale))}<div class="cale">${esc(cale)}</div>
                 <div class="actiuni"><span class="eticheta-mica">nefolosită</span><button class="btn pericol sterge" data-cale="${esc(cale)}">Șterge</button></div></div>`,
               )
               .join('')}</div></details>`
@@ -246,7 +257,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       card.querySelector('.alege-aici').onclick = () => {
         const i = document.createElement('input');
         i.type = 'file';
-        i.accept = 'image/png';
+        i.accept = eSunet(cale) ? 'audio/mpeg,.mp3' : 'image/png';
         i.onchange = () => incarcaDirect(cale, i.files[0]);
         i.click();
       };

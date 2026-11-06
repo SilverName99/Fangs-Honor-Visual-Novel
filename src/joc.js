@@ -18,6 +18,7 @@ import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
 import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaEcranMagazin } from './ecranMagazin.js';
+import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
@@ -54,6 +55,7 @@ function buton(text, clasa, clic) {
 }
 
 const { scena, lume: stratLume } = creeazaEcran(document.getElementById('joc'));
+const sunet = creeazaSunet(date);
 const ui = div('ui');
 scena.append(ui);
 // Interfața de pe ecran (decisă de autor): panoul lui Vale stânga-sus, ceasul sus la mijloc, butoanele dreapta-sus,
@@ -222,6 +224,7 @@ function platesteTaxa() {
   if (t.platita) return mesaj('Taxa e deja plătită pentru săptămâna asta.');
   if (stare.bani < sumaTaxa()) return mesaj(`Îți trebuie ${sumaTaxa()} monede.`);
   stare.bani -= sumaTaxa();
+  sunet.efect('monede');
   t.platita = true;
   t.dubla = false;
   salveaza();
@@ -372,6 +375,7 @@ function mergi(id, { faraTimp = false } = {}) {
   const de = lume.get(stare.scena);
   const spre = lume.get(id);
   stare.scena = id;
+  if (spre.parinte === de.id) sunet.efect(spre.tip === 'loc' ? 'usa' : 'pasi');
   // Doar coborârea (spre o zonă sau un loc) costă timp; „Înapoi” e gratuit
   if (!faraTimp && spre.parinte === de.id) {
     if (avanseaza(costTimp(stare, spre.tip === 'zona' ? cfg.timp.spreZona : cfg.timp.spreLoc, cfg.nevoi))) return;
@@ -395,6 +399,7 @@ function pornesteEveniment(id, fortat = false) {
   if (!fortat && !poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) return;
   noteazaEveniment(stare, ev, ziua(stare));
   salveaza();
+  if (ev.imagini?.length) sunet.efect('eveniment');
   // Întâi imaginile (dacă are), apoi textul cu alegeri sau un dialog întreg;
   // un eveniment fără text (de exemplu după înfrângere) doar își aplică efectele
   secventa.arata(ev.imagini, () => {
@@ -419,7 +424,10 @@ function activeaza(tinta, ctx) {
   // Un loc poate avea mai multe lacăte, fiecare cu gândul lui (camera fierarului: fără cheie / el doarme);
   // primul care nu e îndeplinit spune de ce nu se intră
   const lacat = [].concat(tinta.incuiat || []).find((l) => !verifica(l.conditii, ctx));
-  if (lacat) return gand(lacat.mesaj || 'E încuiat.');
+  if (lacat) {
+    if (tinta.spre) sunet.efect('usa_incuiata');
+    return gand(lacat.mesaj || 'E încuiat.');
+  }
   if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.vanatoare) return vaneaza(tinta.vanatoare);
   if (tinta.personaj) return vorbesteCu(tinta.personaj);
@@ -502,6 +510,7 @@ const joc = {
   get stare() {
     return stare;
   },
+  sunet,
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
   date,
@@ -534,6 +543,7 @@ const joc = {
     const x = stare.inventar[index];
     const d = inventar.def(x.id);
     inventar.scoate(x.id, 1);
+    sunet.efect(d.efecte?.nevoi?.sete ? 'baut' : 'mancat');
     aplicaEfecte(d.efecte, joc);
     if (d.minute) avanseaza(d.minute);
     return null;
@@ -618,6 +628,8 @@ const inventar = creeazaInventar(date, () => stare);
 const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);
 const ecranMagazin = creeazaEcranMagazin(ui, joc);
+// Un clic pe orice buton sau alegere are sunetul lui (mic, discret)
+addEventListener('click', (e) => e.target.closest?.('.buton, .alegere') && sunet.efect('clic'), { capture: true });
 const carte = creeazaCarte(ui, joc);
 const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
@@ -642,7 +654,12 @@ function inventarPlin(id, n) {
 function deschideMeniul() {
   const fundal = div('acoperitor ecran-meniu');
   const panou = div('panou-meniu-nou');
-  const inchide = () => fundal.remove();
+  // Meniul are melodia lui; la închidere revine ambianța locului
+  sunet.muzica('meniu');
+  const inchide = () => {
+    fundal.remove();
+    sunet.muzica(null);
+  };
   const optiune = (id, simbol, text, clic) => {
     const b = buton('', 'buton-meniu', clic);
     b.append(iconita(id, simbol), div('text-buton-meniu', text));
@@ -702,9 +719,30 @@ function deschideMeniul() {
     panou.replaceChildren(div('titlu-meniu-nou', 'Galerie'), continut, butonInapoi());
   }
 
-  // Opțiunile: deocamdată ce există în joc (viteza animațiilor și ecranul complet); sunetul vine mai târziu
+  // Opțiunile: viteza animațiilor, sunetul (volume separate) și ecranul complet
   function arataOptiunile() {
     const continut = div('continut-meniu optiuni-meniu');
+    const v = volumeSunet();
+    const randuriSunet = [
+      ['general', 'Volumul general'],
+      ['ambianta', 'Sunetul locurilor'],
+      ['efecte', 'Efectele'],
+      ['muzica', 'Muzica'],
+    ].map(([cheie, nume]) => {
+      const r = div('rand-optiune');
+      const glisor = Object.assign(document.createElement('input'), { type: 'range', min: 0, max: 100, value: Math.round(v[cheie] * 100), className: 'glisor-sunet' });
+      glisor.oninput = () => seteazaVolum(cheie, glisor.value / 100);
+      r.append(div('nume-optiune', nume), glisor);
+      return r;
+    });
+    const randMut = div('rand-optiune');
+    randMut.append(
+      div('nume-optiune', 'Fără sunet'),
+      buton(v.mut ? 'Pornește sunetul' : 'Oprește tot', 'buton-mic-meniu', () => {
+        seteazaVolum('mut', !v.mut);
+        arataOptiunile();
+      }),
+    );
     const randViteza = div('rand-optiune');
     randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri)'));
     const alegeri = div('alegeri-optiune');
@@ -724,7 +762,7 @@ function deschideMeniul() {
         setTimeout(arataOptiunile, 300);
       }),
     );
-    continut.append(randViteza, randEcran);
+    continut.append(randViteza, ...randuriSunet, randMut, randEcran);
     panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
   }
 
@@ -778,6 +816,7 @@ function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
   const r = randeaza(stratLume, d, date.aranjare[d.id], ctx);
+  sunet.scena(d.id, ctx);
   const faraZona = [];
   const actiuniFaraZona = [];
   interactive = [];

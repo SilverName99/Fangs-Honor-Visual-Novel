@@ -45,6 +45,7 @@ export function creeazaEcranMagazin(parinte, joc) {
     if (!inv.incape(id)) return joc.gand('Nu mai am loc în rucsac.');
     s.bani -= pret;
     inv.adauga(id, 1);
+    joc.sunet.efect('monede');
     schimbat();
   }
 
@@ -55,6 +56,7 @@ export function creeazaEcranMagazin(parinte, joc) {
     const id = x.id;
     inv.scoate(id, 1);
     s.bani += pretVanzare(id);
+    joc.sunet.efect('monede');
     // Dacă stiva s-a terminat, selecția trece pe nimic (altfel ar arăta alt obiect, venit pe același loc)
     if (!s.inventar[index] || s.inventar[index].id !== id) selectat = null;
     schimbat();

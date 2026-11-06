@@ -52,6 +52,7 @@ export function creeazaEcranInventar(parinte, joc) {
     if (!el) {
       el = div('ecran-inventar');
       parinte.append(el);
+      joc.sunet.efect('rucsac');
     }
     arata();
   }
@@ -61,6 +62,12 @@ export function creeazaEcranInventar(parinte, joc) {
     if (!selectat) return null;
     if (selectat.din === 'slot') return s.echipat[selectat.slot] || null;
     return (selectat.din === 'cufar' ? s.cufar : s.inventar)[selectat.index]?.id || null;
+  }
+
+  // Echiparea reușită (sau scoaterea unei piese) are sunetul ei; o eroare n-are
+  function echipat(eroare) {
+    if (!eroare) joc.sunet.efect('echipare');
+    return eroare;
   }
 
   function ruleaza(eroare) {
@@ -109,10 +116,10 @@ export function creeazaEcranInventar(parinte, joc) {
       const slot = tinta.slice(5);
       if (sursa.din !== 'inventar') return;
       if (inv.def(id).slot !== slot) return joc.mesaj(`${inv.def(id).nume} nu se pune la ${NUME_SLOTURI[slot]}.`);
-      return ruleaza(inv.echipeaza(sursa.index));
+      return ruleaza(echipat(inv.echipeaza(sursa.index)));
     }
     if (tinta === 'inventar') {
-      if (sursa.din === 'slot') return ruleaza(inv.dezechipeaza(sursa.slot));
+      if (sursa.din === 'slot') return ruleaza(echipat(inv.dezechipeaza(sursa.slot)));
       if (sursa.din === 'cufar') return ruleaza(inv.dinCufar(sursa.index));
     }
     if (tinta === 'cufar' && sursa.din === 'inventar') return ruleaza(inv.spreCufar(sursa.index));
@@ -185,7 +192,7 @@ export function creeazaEcranInventar(parinte, joc) {
     const b = (t, clic) => actiuni.append(buton(t, clic, 'buton-mic-meniu'));
     if (selectat.din === 'inventar') {
       if (d.tip === 'consumabil') b(d.efecte?.nevoi?.sete ? 'Bea' : d.efecte?.nevoi?.foame ? 'Mănâncă' : 'Folosește', () => ruleaza(joc.folosesteObiect(selectat.index)));
-      if (d.tip === 'echipament') b('Echipează', () => ruleaza(inv.echipeaza(selectat.index)));
+      if (d.tip === 'echipament') b('Echipează', () => ruleaza(echipat(inv.echipeaza(selectat.index))));
       if (optiuni.cufar) b('În cufăr', () => ruleaza(inv.spreCufar(selectat.index)));
       b('Aruncă', () => {
         const x = s.inventar[selectat.index];
@@ -195,10 +202,10 @@ export function creeazaEcranInventar(parinte, joc) {
       });
     }
     if (selectat.din === 'cufar') {
-      if (d.tip === 'echipament') b('Echipează', () => ruleaza(inv.echipeazaDinCufar(selectat.index)));
+      if (d.tip === 'echipament') b('Echipează', () => ruleaza(echipat(inv.echipeazaDinCufar(selectat.index))));
       b('Ia în inventar', () => ruleaza(inv.dinCufar(selectat.index)));
     }
-    if (selectat.din === 'slot') b('Dă jos', () => ruleaza(inv.dezechipeaza(selectat.slot)));
+    if (selectat.din === 'slot') b('Dă jos', () => ruleaza(echipat(inv.dezechipeaza(selectat.slot))));
     text.append(actiuni);
     detalii.append(ic, text);
     return detalii;

@@ -171,8 +171,10 @@ export function creeazaZaruri(parinte, joc) {
     // Toți amestecă zarurile în pahar, apoi le trântesc pe buturugă
     for (const j of activi()) if (j.id !== 'vale') seteazaStare(j.id, 'amesteca');
     deseneaza();
+    joc.sunet.efect('zaruri_agitare');
     await asteapta((cfg().amestecare ?? 1.6) * 1000);
     if (!el) return;
+    joc.sunet.efect('zaruri_aruncare');
     for (const j of s.jucatori) if (j.id !== 'vale') seteazaStare(j.id, 'normal');
     s.aruncare = false;
     tura();

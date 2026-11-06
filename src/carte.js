@@ -68,6 +68,7 @@ export function creeazaCarte(parinte, joc) {
     const lista = personajeCunoscute(joc.date, joc.stare);
     const noua = pagina + dir;
     if (animatie || noua < 0 || noua >= lista.length) return;
+    joc.sunet.efect('pagina');
     const carte = el.querySelector('.carte');
     const [stanga, dreapta] = carte.children;
     const p = lista[noua];
