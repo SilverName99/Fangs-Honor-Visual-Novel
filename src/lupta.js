@@ -430,13 +430,15 @@ export function creeazaLupta(parinte, joc) {
     const cale = sursa.atac.sageata;
     const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[cale] ?? 100;
     const s = elementImagine([cale], { clasa: 'proiectil sageata-lupta', raport: 4, eticheta: 'săgeată' });
-    s.style.height = `${2.5 * (procent / 100)}%`;
+    s.style.height = `${3.5 * (procent / 100)}%`;
     L.scena.append(s);
     const de = centru(sursa);
     de.y -= de.latime * 0.25;
     const la = inTinta(de, tinta);
+    // Zborul aproape drept (decis de autor): pornește aproape de înălțimea țintei, ca să nu cadă pieziș
+    de.y = la.y + (de.y - la.y) * 0.3;
     const unghi = (Math.atan2(la.y - de.y, la.x - de.x) * 180) / Math.PI;
-    const ms = Math.max(120, Math.hypot(la.x - de.x, la.y - de.y) / (VITEZA * 1.6));
+    const ms = Math.max(120, Math.hypot(la.x - de.x, la.y - de.y) / (VITEZA * 1.1));
     const transform = `translate(-50%, -50%) rotate(${unghi}deg)`;
     await s
       .animate([{ left: `${de.x}px`, top: `${de.y}px`, transform }, { left: `${la.x}px`, top: `${la.y}px`, transform }], { duration: ms / viteza(), easing: 'linear', fill: 'forwards' })
