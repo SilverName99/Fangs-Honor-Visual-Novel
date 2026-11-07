@@ -205,7 +205,7 @@ Elemente (lista poate crește):
 | Panoul mic (Dormi, Muncă, anunțuri) | `ui_panou.png` | tabla cu banda titlului (900×700); stă întreagă, cu forma imaginii (lată de cel mult 860 px), titlul pe banda albastră, butoanele de pergament din meniu, cu forma imaginii lor, late de 300 px, câte două pe rând (decis) |
 | Slot de inventar / de echipament | `ui_slot.png`, `ui_slot_hover.png` / `ui_slot_echipament.png` (+ `_hover`) | căsuța de pe foaie / rama de lângă Vale |
 | Bare (viață, stamina, foame, sete) | `ui_bara_rama.png`, `ui_bara_<tip>.png` | rama + umplutura |
-| Cursorul | `ui_cursor.png`, `ui_cursor_click.png` | se poate încărca mare; jocul îl micșorează la mărimea aleasă în Opțiuni (16–96 px, implicit 32; vârful în colțul stânga-sus); rămâne și peste butoane, fără mânuța browserului |
+| Cursorul | `ui_cursor.png`, `ui_cursor_click.png` | se poate încărca mare; jocul îl micșorează la mărimea aleasă în Opțiuni (16–96 px, implicit 32; vârful în colțul stânga-sus); rămâne și peste butoane, fără mânuța browserului; peste 32 px îl desenează jocul (Chrome înlocuiește cursoarele mari cu săgeata lui la marginea ecranului) |
 | Figura lui Vale pentru echipament | `ui_vale_apoza.png` | A-pose, fundal transparent |
 | Fundalul meniului principal | `ui_meniu_fundal.png` | 1920×1080 |
 | Cartea personajelor (deschisă, pagini goale) | `ui_carte.png` | 1600×1000; „Închide” e pergamentul din meniu |

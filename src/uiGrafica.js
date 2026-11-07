@@ -342,6 +342,33 @@ function cursorLaMarime(img) {
   return c.toDataURL('image/png');
 }
 
+// Chrome nu arată cursoarele mai mari de 32 px când ar ieși din pagină (marginea ferestrei, josul ecranului
+// complet) și pune atunci săgeata lui. Peste 32 px, cursorul browserului se ascunde și jocul îl desenează el,
+// ca imagine care urmează mouse-ul; până la 32 px rămâne cursorul adevărat (fără nicio întârziere)
+const LIMITA_CURSOR = 32;
+let cursorDom = null;
+function pornesteCursorDom() {
+  if (cursorDom) return cursorDom;
+  const img = document.createElement('img');
+  img.className = 'cursor-joc';
+  img.alt = '';
+  img.hidden = true;
+  document.body.append(img);
+  const st = { img, normal: '', apasat: '', jos: false };
+  const pune = () => (img.src = (st.jos && st.apasat) || st.normal);
+  addEventListener('pointermove', (e) => {
+    img.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    img.hidden = !st.normal;
+  }, { capture: true, passive: true });
+  addEventListener('pointerdown', () => ((st.jos = true), pune()), { capture: true });
+  addEventListener('pointerup', () => ((st.jos = false), pune()), { capture: true });
+  // Când mouse-ul iese din fereastră, imaginea nu rămâne agățată la margine
+  document.addEventListener('mouseout', (e) => !e.relatedTarget && (img.hidden = true));
+  st.pune = pune;
+  cursorDom = st;
+  return st;
+}
+
 export function aplicaGraficaUi(aranjareUi = {}) {
   aplicaBare(aranjareUi.bare);
   aplicaMeniu(aranjareUi.meniu);
@@ -351,7 +378,24 @@ export function aplicaGraficaUi(aranjareUi = {}) {
   const scrie = () => (stil.textContent = ELEMENTE_UI.map((x) => reguli.get(x.id) || '').join('\n'));
   const cursoare = new Map();
   refaCursoarele = () => {
-    for (const [el, img] of cursoare) reguli.set(el.id, regula(el, cursorLaMarime(img), 0));
+    const mare = marimeCursor() > LIMITA_CURSOR;
+    for (const [el, img] of cursoare) {
+      const url = cursorLaMarime(img);
+      if (!mare) {
+        reguli.set(el.id, regula(el, url, 0));
+        continue;
+      }
+      const c = pornesteCursorDom();
+      c[el.apasat ? 'apasat' : 'normal'] = url;
+      // Cursorul browserului dispare peste tot; imaginea jocului ține locul lui
+      reguli.set(el.id, el.apasat ? '' : 'body, body *{cursor:none !important;}');
+    }
+    if (cursorDom) {
+      if (!mare) cursorDom.img.hidden = true;
+      cursorDom.activ = mare;
+      if (!mare) cursorDom.normal = '';
+      cursorDom.pune();
+    }
     scrie();
   };
   for (const el of ELEMENTE_UI) {

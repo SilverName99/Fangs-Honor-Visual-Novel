@@ -2529,3 +2529,14 @@ svg.zone {
   padding: 8px 28px;
   font-size: 24px;
 }
+
+/* Cursorul desenat de joc (peste 32 px): vârful e colțul stânga-sus al imaginii, deasupra a tot, fără să prindă clicuri */
+.cursor-joc {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
