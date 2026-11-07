@@ -1379,7 +1379,7 @@ svg.zone {
   text-overflow: ellipsis;
   font: 600 calc(var(--h) * 0.12) Georgia, serif;
   /* După „font” (care o resetează): scrisul puțin mai jos de jumătatea etichetei, ca să pară pe mijlocul pânzei */
-  line-height: calc(var(--h) * 0.28);
+  line-height: calc(var(--h) * 0.24);
   color: #f3e6c8;
   white-space: nowrap;
   overflow: hidden;
