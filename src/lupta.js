@@ -113,23 +113,44 @@ export function creeazaLupta(parinte, joc) {
     const tipDeBaza = arma?.tipArma || 'pumni';
     const tipArma = deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
+      ...dupaArma(arma, scut, tipArma),
       id: 'vale',
       idPoze: 'vale',
       nume: 'Vale',
       viata: def?.test ? 100 : Math.round(s.nevoi.viata),
       viataMax: 100,
       staminaMax: cfg.vale.staminaMax,
-      atac: arma?.atac || cfg.pumni,
       armura: armuraDin(piese),
       armuraMax: armuraDin(piese),
-      blocare: scut?.blocare ?? cfg.blocareImplicita,
       abilitati: [],
-      // Sunetul loviturii, după arma din mână
-      sunetAtac: { pumni: 'lupta_pumn', topor_doua_maini: 'lupta_topor', arc: 'lupta_arc' }[tipArma] || 'lupta_sabie',
       // Vale obosit pornește cu bara goală, odihnit cu ea pe jumătate
       bara: s.nevoi.stamina < joc.date.config.nevoi.prag ? 0 : 50,
+    };
+  }
+
+  // Tot ce ține de arma din mână; separat, ca Vale să-și poată schimba arma în timpul luptei
+  function dupaArma(arma, scut, tipArma) {
+    return {
+      atac: arma?.atac || cfg.pumni,
+      blocare: scut?.blocare ?? cfg.blocareImplicita,
+      // Sunetul loviturii, după arma din mână
+      sunetAtac: { pumni: 'lupta_pumn', topor_doua_maini: 'lupta_topor', arc: 'lupta_arc' }[tipArma] || 'lupta_sabie',
       poze: (p) => [...cuRezerva(p).map((x) => `combat/vale_${tipArma}_${x}.png`), `combat/vale_${tipArma}_idle.png`, `combat/vale_pumni_idle.png`],
     };
+  }
+
+  // Schimbarea armei (decis de autor): în tura lui Vale, o armă din rucsac se echipează de-adevăratelea
+  // (cea veche intră în rucsac), apoi pozele, atacul, blocarea și armura (scutul) urmează noul echipament
+  function armaNouaVale(f) {
+    const e = joc.stare.echipat;
+    const arma = e.arma_primara ? inv.def(e.arma_primara) : null;
+    const scut = e.arma_secundara ? inv.def(e.arma_secundara) : null;
+    Object.assign(f, dupaArma(arma, scut, inv.tipArmaVale()));
+    const max = armuraDin(Object.values(e).filter(Boolean).map((id) => inv.def(id)));
+    f.armura = Math.max(0, Math.min(max, f.armura + max - f.armuraMax));
+    f.armuraMax = max;
+    f.cache = null;
+    poza(f, 'idle');
   }
 
   function luptatorDinDate(id, x, nume) {
@@ -514,6 +535,11 @@ export function creeazaLupta(parinte, joc) {
       // dar se umple mai încet (cât ar fi durat de la −cost), ca jucătorul să vadă că se încarcă, nu că s-a blocat
       sursa.bara = 0;
       sursa.incetinire = 100 / (100 + (a.cost || 0));
+    } else if (actiune.tip === 'arma') {
+      armaNouaVale(sursa);
+      joc.sunet.efect('echipare');
+      jurnal(`${sursa.nume} își schimbă arma: ${actiune.nume}.`);
+      sursa.bara = 0;
     } else if (actiune.tip === 'fuga') {
       return termina('fuga');
     }
@@ -588,6 +614,29 @@ export function creeazaLupta(parinte, joc) {
     L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege locul'), inapoi(f));
   }
 
+  // Armele (și scutul) din rucsac, cu locul lor în inventar, ca să se poată echipa
+  const armeInRucsac = () =>
+    joc.stare.inventar.map((x, index) => ({ ...x, index })).filter((x) => ['arma_primara', 'arma_secundara'].includes(inv.def(x.id).slot));
+
+  function alegeArma(f) {
+    const titlu = div('titlu-meniu-lupta', 'Alege arma');
+    L.elMeniu.replaceChildren(
+      titlu,
+      ...armeInRucsac().map((x) => {
+        const b = buton('', () => {
+          // Dacă nu încape ce dă jos (de exemplu sabia și scutul în locul arcului), rămâne tura lui și vede de ce
+          const eroare = inv.echipeaza(x.index);
+          if (eroare) return (titlu.textContent = eroare);
+          executa(f, { tip: 'arma', nume: inv.def(x.id).nume });
+        });
+        b.className = 'buton-lupta obiect-lupta';
+        b.append(iconitaObiect(inv, x.id), div('eticheta-lupta', inv.def(x.id).nume));
+        return b;
+      }),
+      inapoi(f),
+    );
+  }
+
   function meniu(f) {
     L.elMeniu.classList.remove('alege-loc');
     L.activ = f;
@@ -620,6 +669,10 @@ export function creeazaLupta(parinte, joc) {
           inapoi(f),
         );
       }, !consumabile.length, consumabile.length ? '' : 'N-ai nimic de folosit în luptă'),
+      // Doar Vale își schimbă arma: recruții au arma lor, din npcs.json
+      ...(f.id === 'vale'
+        ? [butonActiune('schimba_arma', '⟳', 'Schimbă arma', () => alegeArma(f), !armeInRucsac().length, armeInRucsac().length ? '' : 'N-ai altă armă în rucsac')]
+        : []),
       butonActiune('schimba', '⇄', 'Schimbă locul', () => alegeLoc(f)),
       ...(L.def.fuga ? [butonActiune('fugi', '🏃', 'Fugi', () => executa(f, { tip: 'fuga' }))] : []),
     );

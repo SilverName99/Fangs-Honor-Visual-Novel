@@ -201,6 +201,7 @@ export const ELEMENTE_UI = [
     ['aparare', 'Apărare (scutul)'],
     ['obiect', 'Obiect (sticluța)'],
     ['schimba', 'Schimbă locul (săgețile)'],
+    ['schimba_arma', 'Schimbă arma (doar Vale; arma cu săgeți în cerc)'],
     ['fugi', 'Fugi (cizma)'],
     ['vindecare', 'Puterea preotului: Vindecare'],
     ['goleste_bara', 'Puterea preotului: golește bara inamicului (clepsidra)'],
