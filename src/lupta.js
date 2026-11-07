@@ -277,11 +277,12 @@ export function creeazaLupta(parinte, joc) {
     }
     urm.sort((a, b) => a.t - b.t);
     // Doar când se schimbă ordinea se redesenează (altfel portretele s-ar reîncărca de 60 de ori pe secundă)
-    const lista = urm.slice(0, 8).map(({ f }) => f);
+    // Următorii 6 (decis de autor), la mărimea lor, nu întinși pe toată bara
+    const lista = urm.slice(0, 6).map(({ f }) => f);
     const cheie = lista.map((f) => L.toti.indexOf(f)).join(',');
     if (cheie === L.cheieOrdine) return;
     L.cheieOrdine = cheie;
-    L.elOrdine.replaceChildren(...lista.map((f, i) => medalion(f, i === 0)));
+    L.elMedalioane.replaceChildren(...lista.map((f, i) => medalion(f, i === 0)));
   }
 
   // Medalionul: fața din portretul de dialog (decis de autor: fără poze separate de medalion), rama și numele
@@ -680,6 +681,7 @@ export function creeazaLupta(parinte, joc) {
       numarari[x.id] = (numarari[x.id] || 0) + 1;
       const multi = def.inamici.filter((y) => y.id === x.id).length > 1;
       const f = { ...luptatorDinDate(x.id, d, multi ? `${d.nume} ${numarari[x.id]}` : d.nume), linie: x.linie, rand: x.rand };
+      if (d.numeScurt) f.numeScurt = multi ? `${d.numeScurt} ${numarari[x.id]}` : d.numeScurt;
       // Doar în lupta de test: inamici care dărâmă repede (pentru poza „cazut” a aliaților) sau care cad dintr-o lovitură
       if (def.test && def.inamiciPuternici) f.atac = { ...f.atac, min: f.atac.min * 10, max: f.atac.max * 10 };
       if (def.test && def.inamiciSlabi) f.viata = f.viataMax = 1;
@@ -702,6 +704,8 @@ export function creeazaLupta(parinte, joc) {
       puneScut,
     };
     L.elOrdine = div('ordine-lupta');
+    // Medalioanele sunt o bucată separată, așezată de autor peste bară, ca să stea exact pe lemnul ei
+    L.elMedalioane = div('medalioane-lupta');
     L.elJurnal = div('jurnal-lupta', def.nume);
     L.elMeniu = div('lupta-meniu');
     L.elLocuri = div('locuri-lupta');
@@ -745,7 +749,7 @@ export function creeazaLupta(parinte, joc) {
     // Interfața stă unde a pus-o autorul în editor (Aranjare → „Ecranul de luptă: interfața”); conținutul fiecărei
     // bucăți se măsoară din înălțimea ei (--h), ca o bară micșorată să-și micșoreze și medalioanele, și butoanele
     const ui = joc.lume.get('lupta_interfata');
-    const bucati = { bara_sus: L.elOrdine, jurnal: L.elJurnal, actiuni: L.elMeniu, viteza };
+    const bucati = { bara_sus: L.elOrdine, medalioane: L.elMedalioane, jurnal: L.elJurnal, actiuni: L.elMeniu, viteza };
     // Tabla de acțiuni are două locuri: cel de luptă (jos) și cel de la formație (în locul barii de sus)
     L.pune = (elem, id) => {
       const i = ui?.obiecte.findIndex((o) => o.id === id) ?? -1;
@@ -757,7 +761,7 @@ export function creeazaLupta(parinte, joc) {
       elem.style.setProperty('--h', `${p.scara * INALTIME}px`);
     };
     for (const [id, elem] of Object.entries(bucati)) L.pune(elem, id);
-    el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu, viteza);
+    el.append(scenaLupta, L.elOrdine, L.elMedalioane, L.elJurnal, L.elMeniu, viteza);
     actualizeazaBare();
 
     // Cu mai mulți aliați, formația se poate schimba înainte de începere
@@ -768,6 +772,7 @@ export function creeazaLupta(parinte, joc) {
   function start() {
     // Abia acum apar bara turelor și jurnalul, iar tabla coboară la locul ei de luptă
     L.elOrdine.hidden = false;
+    L.elMedalioane.hidden = false;
     L.elJurnal.hidden = false;
     L.pune(L.elMeniu, 'actiuni');
     L.elMeniu.hidden = true;
@@ -778,6 +783,7 @@ export function creeazaLupta(parinte, joc) {
   function pregatire() {
     // Formația (decis de autor): fără bara turelor și jurnal; doar tabla cu „Începe lupta”, sus, în locul barii
     L.elOrdine.hidden = true;
+    L.elMedalioane.hidden = true;
     L.elJurnal.hidden = true;
     L.pune(L.elMeniu, 'formatie');
     let ales = null;

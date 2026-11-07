@@ -77,6 +77,7 @@
     "orc_colector": {
       "_nota": "TODO echilibru. Colectorul de taxe; mai greu decât paznicii, cu bâta. Pozele lui: combat/orc_colector_*.png.",
       "nume": "Orcul colector",
+      "numeScurt": "Orc C.",
       "viata": 45,
       "staminaMax": 80,
       "atac": {

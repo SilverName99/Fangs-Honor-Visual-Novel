@@ -200,6 +200,8 @@ export function construiesteLumea(date) {
     tinte: [],
     obiecte: [
       bucata('bara_sus', 'lup-bara', 'Bara de sus (rândul turelor)', fisierUi('lupta_bara_sus'), 1500 / 170, POZITII_LUPTA_UI.bara_sus),
+      // Medalioanele (următorii 6), așezate peste lemnul barii; în editor e doar un dreptunghi
+      bucata('medalioane', 'lup-medalioane', 'Medalioanele (următorii 6 la rând)', 'ui/text_medalioane_lupta.png', RAPORT_MEDALIOANE, POZITII_LUPTA_UI.medalioane),
       bucata('jurnal', 'lup-jurnal', 'Jurnalul (ce s-a întâmplat)', fisierUi('lupta_jurnal'), 900 / 64, POZITII_LUPTA_UI.jurnal),
       bucata('actiuni', 'lup-actiuni', 'Tabla de acțiuni (și formația)', fisierUi('lupta_actiuni'), 1300 / 190, POZITII_LUPTA_UI.actiuni),
       bucata('viteza', 'lup-viteza', 'Butonul de viteză', fisierUi('lupta_buton'), 1, POZITII_LUPTA_UI.viteza),
@@ -264,8 +266,11 @@ export const LOCURI_LUPTA = ['aliat', 'inamic'].flatMap((tabara) =>
 );
 // Unde stă implicit interfața luptei (picioarele bucății, ca la sprite-uri; scara = înălțimea din ecran).
 // Mai mică decât prima variantă (cerut de autor), cu tabla de acțiuni jos și la formație
+// Rândul de medalioane: 6 coloane de 0.72 × înălțime, cu 5 spații de 0.1 (la fel în stil.css)
+const RAPORT_MEDALIOANE = 6 * 0.72 + 5 * 0.1;
 export const POZITII_LUPTA_UI = {
   bara_sus: { x: 0.5, y: 0.125, scara: 0.12 },
+  medalioane: { x: 0.5, y: 0.115, scara: 0.1 },
   jurnal: { x: 0.5, y: 0.175, scara: 0.045 },
   actiuni: { x: 0.5, y: 0.99, scara: 0.14 },
   viteza: { x: 0.965, y: 0.985, scara: 0.075 },

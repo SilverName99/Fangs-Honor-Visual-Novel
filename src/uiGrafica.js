@@ -172,8 +172,19 @@ export const ELEMENTE_UI = [
     selector,
     extra: (url, m, img) => `${selector}{width:auto;aspect-ratio:${img.naturalWidth} / ${img.naturalHeight};border:none;border-radius:0;background-color:transparent}`,
   })),
-  { id: 'lupta_rama', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (aliat), interiorul transparent', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.aliat .rama-medalion', extra: '.medalion.aliat .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
-  { id: 'lupta_rama_inamic', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (inamic)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.inamic .rama-medalion', extra: '.medalion.inamic .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
+  // Rama stă fix pe marginea medalionului; fața umple exact fereastra ei (găsită din imagine, vezi fereastraRama)
+  ...[
+    ['lupta_rama', 'aliat', 'Rama portretului din rândul de sus (aliat), interiorul transparent'],
+    ['lupta_rama_inamic', 'inamic', 'Rama portretului din rândul de sus (inamic)'],
+  ].map(([id, tabara, nume]) => ({
+    id,
+    grup: 'Luptă: interfața',
+    nume,
+    marime: '256 × 256 px, fundal transparent',
+    tip: 'fundal',
+    selector: `.medalion.${tabara} .rama-medalion`,
+    extra: (url, m, img) => `.medalion.${tabara} .rama-medalion{border:none;border-radius:0}.medalion.${tabara}{--fereastra-rama:${fereastraRama(img)}}`,
+  })),
   { id: 'lupta_eticheta', grup: 'Luptă: interfața', nume: 'Eticheta de pânză (numele sub portret și numele butonului la hover), goală', marime: '300 × 70 px, fundal transparent', tip: 'fundal', selector: '.eticheta-medalion, .eticheta-lupta, .nume-luptator', extra: '.eticheta-medalion,.eticheta-lupta,.nume-luptator{border:none;background-color:transparent}' },
   { id: 'lupta_bara_verticala', grup: 'Luptă: interfața', nume: 'Rama barei verticale de viață / stamina (interiorul transparent)', marime: '48 × 260 px, fundal transparent', tip: 'fundal', selector: '.bara-v .rama-v', extra: '.bara-v .rama-v{border:none;border-radius:0;box-shadow:none}' },
   { id: 'lupta_buton', grup: 'Luptă: interfața', nume: 'Butonul pătrat de lemn (acțiunile, viteza), gol', marime: '200 × 200 px, fundal transparent', tip: 'fundal', selector: '.buton-lupta, .buton.viteza-joc',
@@ -208,6 +219,39 @@ export const ELEMENTE_UI = [
 ];
 
 export const fisierUi = (id) => `ui/ui_${id}.png`;
+
+// Fereastra unei rame pătrate (unde se vede portretul), citită din transparența imaginii: pe mijlocul laturilor,
+// de la margine spre centru, se trece peste golul din afară și peste ramă; pe diagonală se află cât de rotunjite
+// sunt colțurile ferestrei. Fața se taie cu 1% mai mare, ca să intre puțin sub ramă și să nu rămână fantă
+function fereastraRama(img) {
+  try {
+    const n = img.naturalWidth;
+    const h = img.naturalHeight;
+    const c = Object.assign(document.createElement('canvas'), { width: n, height: h });
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const date = ctx.getImageData(0, 0, n, h).data;
+    const opac = (x, y) => date[(y * n + x) * 4 + 3] >= 128;
+    const treci = (pas) => {
+      let i = 0;
+      while (i < 400 && pas(i) !== null && !pas(i)) i++;
+      while (i < 400 && pas(i) !== null && pas(i)) i++;
+      return i;
+    };
+    const pe = (lim, f) => (i) => (i >= lim ? null : f(i));
+    const stanga = treci(pe(n / 2, (i) => opac(i, h >> 1))) / n;
+    const dreapta = treci(pe(n / 2, (i) => opac(n - 1 - i, h >> 1))) / n;
+    const sus = treci(pe(h / 2, (i) => opac(n >> 1, i))) / h;
+    const jos = treci(pe(h / 2, (i) => opac(n >> 1, h - 1 - i))) / h;
+    const diag = treci(pe(Math.min(n, h) / 2, (i) => opac(i, Math.round((i * h) / n)))) / n;
+    const b = Math.max(stanga, sus);
+    const raza = Math.max(0, Math.min(0.5, (diag - b) / (1 - Math.SQRT1_2)));
+    const pr = (x) => `${Math.max(0, x * 100 - 1).toFixed(1)}%`;
+    return `inset(${pr(sus)} ${pr(dreapta)} ${pr(jos)} ${pr(stanga)} round ${(raza * 100).toFixed(1)}%)`;
+  } catch {
+    return 'inset(7% round 12%)';
+  }
+}
 
 function regula(el, url, margine) {
   switch (el.tip) {
