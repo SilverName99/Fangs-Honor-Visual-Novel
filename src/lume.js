@@ -186,6 +186,25 @@ export function construiesteLumea(date) {
       bucata('inchide', 'mag-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
     ],
   });
+  // Interfața luptei (bara de sus cu medalioanele, jurnalul, tabla de acțiuni, butonul de viteză): autorul o mută și o
+  // mărește în editor; conținutul (medalioane, butoane, texte) crește odată cu înălțimea fiecărei bucăți.
+  // Tipurile au prefixul „lup-”, ca să nu se ciocnească în editor cu clasele din joc
+  scene.set('lupta_interfata', {
+    id: 'lupta_interfata',
+    tip: 'ecran',
+    titlu: 'Ecranul de luptă: interfața',
+    titluObiecte: 'Bucățile interfeței de luptă',
+    imagine: 'locations/lupta_padure_interior.png',
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      bucata('bara_sus', 'lup-bara', 'Bara de sus (rândul turelor)', fisierUi('lupta_bara_sus'), 1500 / 170, POZITII_LUPTA_UI.bara_sus),
+      bucata('jurnal', 'lup-jurnal', 'Jurnalul (ce s-a întâmplat)', fisierUi('lupta_jurnal'), 900 / 64, POZITII_LUPTA_UI.jurnal),
+      bucata('actiuni', 'lup-actiuni', 'Tabla de acțiuni (și formația)', fisierUi('lupta_actiuni'), 1300 / 190, POZITII_LUPTA_UI.actiuni),
+      bucata('viteza', 'lup-viteza', 'Butonul de viteză', fisierUi('lupta_buton'), 1, POZITII_LUPTA_UI.viteza),
+    ],
+  });
   // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor
   scene.set('zaruri', {
     id: 'zaruri',
@@ -242,6 +261,14 @@ export const LOCURI_LUPTA = ['aliat', 'inamic'].flatMap((tabara) =>
     })),
   ),
 );
+// Unde stă implicit interfața luptei (picioarele bucății, ca la sprite-uri; scara = înălțimea din ecran).
+// Mai mică decât prima variantă (cerut de autor), cu tabla de acțiuni jos și la formație
+export const POZITII_LUPTA_UI = {
+  bara_sus: { x: 0.5, y: 0.125, scara: 0.12 },
+  jurnal: { x: 0.5, y: 0.175, scara: 0.045 },
+  actiuni: { x: 0.5, y: 0.99, scara: 0.14 },
+  viteza: { x: 0.965, y: 0.985, scara: 0.075 },
+};
 export const idHartaLupta = (fundal) => `lupta_${fundal.replace('.', '_')}`;
 
 // Pozițiile de pornire, ca în designul autorului: rucsacul și armele în stânga lui Vale, coiful, armura și jambierele în dreapta

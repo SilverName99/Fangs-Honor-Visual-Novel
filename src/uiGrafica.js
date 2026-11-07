@@ -156,19 +156,20 @@ export const ELEMENTE_UI = [
     extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:150px;height:150px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
       '.buton.inapoi-carte,.buton.inainte-carte{background-size:contain}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
   // Ecranul de luptă (designul autorului, „sat sărac, dar îngrijit”): în galerie la grupul „Luptă: interfața”.
-  // Piesele lungi (bara de sus, jurnalul, tabla de acțiuni) își păstrează forma imaginii, cu lățimea din joc
+  // Piesele lungi (bara de sus, jurnalul, tabla de acțiuni) își păstrează forma imaginii: înălțimea e cea aleasă
+  // în editor (Aranjare → „Ecranul de luptă: interfața”), lățimea urmează din forma imaginii
   ...[
-    ['lupta_bara_sus', 'Bara de sus (rândul turelor), goală', '1600 × 220', '.ordine-lupta', 1500],
-    ['lupta_jurnal', 'Fâșia jurnalului, goală', '1000 × 90', '.jurnal-lupta', 900],
-    ['lupta_actiuni', 'Tabla de acțiuni de jos, goală', '1400 × 220', '.lupta-meniu', 1300],
-  ].map(([id, nume, marime, selector, latime]) => ({
+    ['lupta_bara_sus', 'Bara de sus (rândul turelor), goală', '1600 × 220', '.ordine-lupta'],
+    ['lupta_jurnal', 'Fâșia jurnalului, goală', '1000 × 90', '.jurnal-lupta'],
+    ['lupta_actiuni', 'Tabla de acțiuni de jos, goală', '1400 × 220', '.lupta-meniu'],
+  ].map(([id, nume, marime, selector]) => ({
     id,
     grup: 'Luptă: interfața',
     nume,
     marime: `${marime} px, fundal transparent`,
     tip: 'fundal',
     selector,
-    extra: (url, m, img) => `${selector}{width:${latime}px;height:auto;aspect-ratio:${img.naturalWidth} / ${img.naturalHeight};border:none;border-radius:0;background-color:transparent}`,
+    extra: (url, m, img) => `${selector}{width:auto;aspect-ratio:${img.naturalWidth} / ${img.naturalHeight};border:none;border-radius:0;background-color:transparent}`,
   })),
   { id: 'lupta_rama', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (aliat), interiorul transparent', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.aliat .rama-medalion', extra: '.medalion.aliat .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
   { id: 'lupta_rama_inamic', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (inamic)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.inamic .rama-medalion', extra: '.medalion.inamic .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
@@ -176,8 +177,11 @@ export const ELEMENTE_UI = [
   { id: 'lupta_bara_verticala', grup: 'Luptă: interfața', nume: 'Rama barei verticale de viață / stamina (interiorul transparent)', marime: '48 × 260 px, fundal transparent', tip: 'fundal', selector: '.bara-v .rama-v', extra: '.bara-v .rama-v{border:none;border-radius:0;box-shadow:none}' },
   { id: 'lupta_buton', grup: 'Luptă: interfața', nume: 'Butonul pătrat de lemn (acțiunile, viteza), gol', marime: '200 × 200 px, fundal transparent', tip: 'fundal', selector: '.buton-lupta, .buton.viteza-joc',
     extra: '.buton-lupta,.buton-lupta:hover,.buton.viteza-joc,.buton.viteza-joc:hover{border:none;border-image:none;border-radius:0;box-shadow:none}.buton.viteza-joc{width:96px;height:96px;padding:0}' },
-  { id: 'lupta_buton_hover', grup: 'Luptă: interfața', nume: 'Butonul pătrat, cu mouse-ul deasupra (cu strălucire)', marime: '200 × 200 px, fundal transparent', tip: 'fundal', selector: '.buton-lupta:hover:not(:disabled), .buton.viteza-joc:hover' },
-  { id: 'lupta_inel', grup: 'Luptă: interfața', nume: 'Inelul de pe jos (sub cel care e la rând)', marime: '600 × 200 px, fundal transparent', tip: 'fundal', selector: '.luptator .inel-lupta', extra: '.luptator .inel-lupta{border:none;border-radius:0;box-shadow:none;background-size:100% 100%}' },
+  // Hover-ul are loc de strălucire în jur, deci întins pe buton ar face lemnul mai mic: iese în afara butonului
+  // cu atâția pixeli cât e marginea (cu minus), reglabilă în editor, ca la butoanele din dreapta-sus
+  { id: 'lupta_buton_hover', grup: 'Luptă: interfața', nume: 'Butonul pătrat, cu mouse-ul deasupra (cu strălucire)', marime: '200 × 200 px, fundal transparent', tip: '9-slice', margine: -8, selector: '.buton-lupta:hover:not(:disabled), .buton.viteza-joc:hover' },
+  { id: 'lupta_inel', grup: 'Luptă: interfața', nume: 'Inelul de pe jos (sub cel care e la rând și pe locurile libere, la formație)', marime: '600 × 200 px, fundal transparent', tip: 'fundal', selector: '.luptator .inel-lupta, .locuri-lupta .loc-liber',
+    extra: '.luptator .inel-lupta,.locuri-lupta .loc-liber{border:none;border-radius:0;box-shadow:none;background-size:100% 100%}' },
   { id: 'lupta_inel_tinta', grup: 'Luptă: interfața', nume: 'Inelul roșu de pe jos (ținta de sub mouse)', marime: '600 × 200 px, fundal transparent', tip: 'fundal', selector: '.luptator.inamic.tinta-valida.sub-mouse .inel-lupta', extra: '.luptator.inamic.tinta-valida.sub-mouse .inel-lupta{border:none;box-shadow:none}' },
   // Iconițele acțiunilor; puterile au iconița după id-ul lor (golesteBara → ui_icon_goleste_bara.png)
   ...[

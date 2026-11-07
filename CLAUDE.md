@@ -223,7 +223,7 @@ Elemente (lista poate crește):
 
 - **Trei feluri** (`data/sunete.json`, scris de Claude; fișierele în `assets/sunete/`, doar pe VPS, încărcate din galerie la grupurile „Sunete: …”, doar **MP3**):
   - **ambianța** fiecărei scene (`sunete/ambianta/<id>.mp3`, se repetă): cheia e id-ul scenei; o scenă fără ambianță o moștenește pe a zonei, apoi pe a hărții; `variante` după condiții (noaptea, taverna seara). La schimbarea locului, sunetele trec lin unul în altul;
-  - **efectele** scurte (`sunete/efecte/<id>.mp3`): ușa la intrarea într-un loc, pașii spre o zonă, ușa încuiată, clicul pe butoane, monedele (magazin, taxa), mâncat/băut, somnul, rucsacul (inventarul), echiparea, pagina cărții, apa și lemnele (`sunet` la acțiune), munca, zarurile (agitate, aruncate), începutul unui eveniment cu imagini, în luptă: lovitura după armă (sabie, pumn, topor, arc, glaive), impactul, scutul, căderea, puterile preotului, strigătul inamicilor (`sunet` la inamic în `lupte.json`: lup, mistreț, orc);
+  - **efectele** scurte (`sunete/efecte/<id>.mp3`): ușa la intrarea într-un loc, pașii spre o zonă, ușa încuiată, clicul pe butoane, monedele (magazin, taxa), mâncat/băut, somnul, rucsacul (inventarul), echiparea, pagina cărții, apa și lemnele (`sunet` la acțiune), munca, zarurile (agitate, aruncate), începutul unui eveniment cu imagini, în luptă: lovitura după armă (sabie, pumn, topor, arc, glaive), impactul, scutul, căderea, puterile preotului, strigătul inamicilor (`sunet` la inamic în `lupte.json`: lup, mistreț; orcii fără strigăt, decis de autor);
   - **muzica** (`sunete/muzica/<id>.mp3`): meniul, lupta (ține locul ambianței), victoria și înfrângerea (scurte), finalul.
 - **Un sunet lipsă e doar liniște.** Sunetul pornește după primul clic (regula browserelor).
 - **Opțiuni:** volumul general, al locurilor, al efectelor, al muzicii și „Fără sunet”; se țin minte în browser, nu în salvare.
@@ -441,10 +441,14 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 ### Ecranul de luptă (decis, după designul autorului: „sat sărac, dar îngrijit”, lemn simplu, fier, pânză albastră)
 
 - **Sus:** bara de lemn (`ui_lupta_bara_sus.png`) cu **medalioanele** celor care urmează, în ordinea turelor (următorii 8; primul e mai mare și luminat), cu rama aurie la aliați și roșie la inamici (`ui_lupta_rama.png`, `ui_lupta_rama_inamic.png`) și **numele dedesubt**, pe o etichetă de pânză (`ui_lupta_eticheta.png`). Portretul din medalion: `combat/<id>_medalion.png` (doar fața, 256×256; galeria: „Luptă: medalioane”); până se încarcă, fața din portretul de dialog. Sub bară, **jurnalul** (`ui_lupta_jurnal.png`).
-- **Lângă fiecare luptător**, în stânga lui, **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura crăpată e un scuț mic sub ele.
+- **Lângă fiecare luptător**, în stânga lui (la inamici în dreapta), **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura crăpată e un scuț mic sub ele.
 - **Jos:** tabla de acțiuni (`ui_lupta_actiuni.png`) cu **butoane pătrate doar cu iconițe** (`ui_lupta_buton.png` + `_hover`; numele apare deasupra, pe eticheta de pânză, la hover): Atac, fiecare putere separat (preotul n-are Atac, are Vindecare, Golește bara, Scutul de lumină), Apărare, Obiect (deschide obiectele de luptă, cu iconița și câte bucăți ai), Schimbă locul, Fugi. Când alegi ținta sau locul, pe tablă e îndemnul și „Înapoi”. Iconițele: `ui_icon_atac/aparare/obiect/schimba/fugi/vindecare/goleste_bara/scut_lumina.png` (o putere ia iconița după id-ul ei: `golesteBara` → `goleste_bara`).
 - **Pe jos:** inelul auriu sub cel care e la rând (`ui_lupta_inel.png`), cel roșu sub inamicul de sub mouse când alegi ținta (`ui_lupta_inel_tinta.png`).
 - **Rezultatul** (victorie, înfrângere, fugă) apare pe panoul mic (ca la Dormi). Butonul de viteză folosește butonul pătrat de lemn.
+- **Aranjarea** (decis): bara de sus, jurnalul, tabla de acțiuni și butonul de viteză se mută și se măresc în editor, la Aranjare → „Ecranul de luptă: interfața” (`data/aranjare/lupta_interfata.json`); medalioanele, butoanele și textele cresc odată cu înălțimea bucății, iar lățimea urmează forma imaginii. Tabla stă jos și la formație („Începe lupta”) și la „Schimbă locul”.
+- **Locurile libere** (formația, „Schimbă locul”) sunt inelul auriu de pe jos (`ui_lupta_inel.png`), stins, aprins la hover (decis: fără cercurile verzi).
+- **Barele verticale:** la aliați în stânga, **la inamici în dreapta** (decis).
+- Iconițele din butoane își păstrează forma (nu se turtesc); hover-ul butonului iese în afară cu marginea lui (cu minus, reglabilă la Interfață), ca lemnul să nu pară mai mic; fără căsuța albă de nume a browserului.
 - Toate piesele: în galerie la grupul **„Luptă: interfața”**.
 
 ### Imaginile de luptă (`assets/combat/`)

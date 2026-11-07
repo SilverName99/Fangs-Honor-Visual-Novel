@@ -1137,6 +1137,13 @@ svg.zone {
   gap: 4px;
   z-index: 2;
 }
+/* La inamici (care privesc spre stânga), barele stau în dreapta lor (decis de autor) */
+.luptator.inamic .bare-luptator {
+  right: auto;
+  left: 100%;
+  margin-right: 0;
+  margin-left: 4px;
+}
 .bara-v {
   position: relative;
   width: 22px;
@@ -1253,16 +1260,18 @@ svg.zone {
   }
 }
 /* Sus: bara de lemn cu medalioanele, în ordinea în care vor acționa (primul e mai mare și luminat), cu numele sub ele */
-.ordine-lupta {
+/* Bucățile interfeței de luptă stau unde le-a pus autorul în editor (picioarele bucății, ca la sprite-uri);
+   înălțimea vine din poziție, lățimea din forma imaginii, iar tot ce e înăuntru se măsoară din înălțime (--h) */
+.bucata-lupta {
   position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1500px;
-  height: 170px;
+  transform: translate(-50%, -100%);
   box-sizing: border-box;
+}
+.ordine-lupta {
+  --h: 130px;
+  aspect-ratio: 1500 / 170;
   display: flex;
-  gap: 14px;
+  gap: calc(var(--h) * 0.08);
   align-items: center;
   justify-content: center;
   background: linear-gradient(#4a3522, #2e2013);
@@ -1271,7 +1280,8 @@ svg.zone {
 }
 .medalion {
   position: relative;
-  width: 100px;
+  flex: none;
+  width: calc(var(--h) * 0.56);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1279,13 +1289,17 @@ svg.zone {
 .medalion .portret-medalion {
   position: relative;
   width: 100%;
-  height: auto;
+  /* Pătrat, oricare ar fi forma pozei (până la medalion se folosește portretul de dialog, care e 4:5):
+     altfel unii ar sta mai sus și alții mai jos */
+  aspect-ratio: 1;
   border-radius: 12px;
   overflow: hidden;
   background: #1a140e;
 }
 /* Până e încărcat medalionul, fața din portretul de dialog (care e bust, deci fața e sus) */
 .medalion .portret-medalion img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: 50% 12%;
 }
@@ -1308,20 +1322,20 @@ svg.zone {
   border-color: #8e3a2e;
 }
 .medalion.primul {
-  width: 126px;
+  width: calc(var(--h) * 0.7);
   filter: drop-shadow(0 0 12px rgba(255, 190, 90, 0.85));
 }
 .eticheta-medalion {
-  margin-top: 4px;
+  margin-top: calc(var(--h) * 0.02);
   width: 100%;
-  height: 30px;
+  height: calc(var(--h) * 0.18);
   box-sizing: border-box;
-  padding: 0 6px;
+  padding: 0 calc(var(--h) * 0.04);
   display: block;
-  line-height: 30px;
+  line-height: calc(var(--h) * 0.18);
   text-align: center;
   text-overflow: ellipsis;
-  font: 600 14px Georgia, serif;
+  font: 600 calc(var(--h) * 0.1) Georgia, serif;
   color: #f3e6c8;
   white-space: nowrap;
   overflow: hidden;
@@ -1330,18 +1344,13 @@ svg.zone {
 }
 /* Sub bară: fâșia de pânză cu ce s-a întâmplat */
 .jurnal-lupta {
-  position: absolute;
-  top: 186px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 64px;
-  box-sizing: border-box;
-  padding: 0 50px;
+  --h: 49px;
+  aspect-ratio: 900 / 64;
+  padding: 0 calc(var(--h) * 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: calc(var(--h) * 0.38);
   color: #f3e6c8;
   text-shadow: 0 2px 4px #000;
   white-space: nowrap;
@@ -1351,33 +1360,36 @@ svg.zone {
 }
 /* Jos: tabla de acțiuni cu butoanele pătrate, doar cu iconițe; numele apare deasupra, la hover */
 .lupta-meniu {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  transform: translateX(-50%);
-  width: 1300px;
-  height: 190px;
-  box-sizing: border-box;
-  padding: 0 140px;
+  --h: 151px;
+  aspect-ratio: 1300 / 190;
+  padding: 0 calc(var(--h) * 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: calc(var(--h) * 0.1);
   background: linear-gradient(#4a3522, #2e2013);
   border: 3px solid #5a3e24;
   border-radius: 8px;
 }
 .titlu-meniu-lupta {
-  font-size: 28px;
+  font-size: calc(var(--h) * 0.15);
   color: #f3e6c8;
   text-shadow: 0 2px 4px #000;
-  margin-right: 20px;
+  margin-right: calc(var(--h) * 0.1);
+  white-space: nowrap;
+}
+/* „Începe lupta”: pergamentul din meniu, la mărimea tablei */
+.lupta-meniu .buton.buton-mic-meniu {
+  flex: none;
+  min-width: 0;
+  padding: calc(var(--h) * 0.08) calc(var(--h) * 0.22);
+  font-size: calc(var(--h) * 0.14);
 }
 .buton-lupta {
   position: relative;
   flex: none;
-  width: 116px;
-  height: 116px;
+  width: calc(var(--h) * 0.6);
+  height: calc(var(--h) * 0.6);
   padding: 0;
   background: linear-gradient(#6a4a2c, #3e2a17);
   border: 3px solid #2a1a0e;
@@ -1397,30 +1409,40 @@ svg.zone {
   inset: 18%;
   width: auto;
   height: auto;
-  font-size: 46px;
-  line-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--h) * 0.24);
+  line-height: 1;
+  /* Iconița își păstrează forma (decis de autor: să nu fie turtită) */
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.buton-lupta .iconita img {
+  object-fit: contain;
 }
 .numar-obiect {
   position: absolute;
-  right: 8px;
-  bottom: 4px;
-  font: 700 22px Georgia, serif;
+  right: 8%;
+  bottom: 3%;
+  font: 700 calc(var(--h) * 0.12) Georgia, serif;
   color: #fff;
   text-shadow: 0 1px 3px #000, 0 0 6px #000;
 }
 .eticheta-lupta {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 12px);
+  bottom: calc(100% + var(--h) * 0.06);
   transform: translateX(-50%);
   display: none;
-  min-width: 170px;
-  height: 44px;
+  min-width: calc(var(--h) * 0.9);
+  height: calc(var(--h) * 0.23);
   box-sizing: border-box;
-  padding: 0 22px;
+  padding: 0 calc(var(--h) * 0.12);
   align-items: center;
   justify-content: center;
-  font: 600 20px Georgia, serif;
+  font: 600 calc(var(--h) * 0.105) Georgia, serif;
   color: #f3e6c8;
   white-space: nowrap;
   pointer-events: none;
@@ -1440,18 +1462,24 @@ svg.zone {
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
 }
+/* Locurile libere (formația, „Schimbă locul”): inelul auriu de pe jos (decis de autor, în locul cercurilor verzi),
+   puțin stins; aprins cu mouse-ul deasupra */
 .locuri-lupta .loc-liber {
   position: absolute;
-  width: 150px;
-  height: 60px;
+  width: 230px;
+  aspect-ratio: 3;
   transform: translate(-50%, -50%);
-  border: 3px dashed rgba(140, 220, 160, 0.9);
+  border: 3px solid #f0b85a;
   border-radius: 50%;
+  box-shadow: 0 0 14px rgba(255, 190, 90, 0.9), inset 0 0 10px rgba(255, 190, 90, 0.6);
+  opacity: 0.55;
   cursor: pointer;
   z-index: 100;
+  transition: opacity 0.15s;
 }
 .locuri-lupta .loc-liber:hover {
-  background: rgba(140, 220, 160, 0.25);
+  opacity: 1;
+  filter: brightness(1.2);
 }
 
 /* Piesele cu imagine proprie de noapte nu primesc filtrul de întunecare */
@@ -1600,11 +1628,6 @@ svg.zone {
   display: none;
 }
 
-/* Cât se alege un loc (formația, „Schimbă locul”), meniul urcă sub jurnal, ca să nu acopere locurile de jos */
-.lupta-meniu.sus {
-  bottom: auto;
-  top: 260px;
-}
 
 /* ----- Cartea personajelor ----- */
 .ecran-carte {
@@ -2081,6 +2104,20 @@ svg.zone {
   font-size: 15px;
   background: rgba(20, 14, 8, 0.7);
   border-radius: 10px;
+}
+
+/* În luptă, butonul de viteză stă unde l-a pus autorul (Aranjare → „Ecranul de luptă: interfața”) */
+.viteza-joc.viteza-lupta {
+  --h: 81px;
+  right: auto;
+  bottom: auto;
+  min-width: 0;
+  aspect-ratio: 1;
+  width: auto !important;
+  height: var(--h) !important;
+  padding: 0 !important;
+  font-size: calc(var(--h) * 0.3);
+  z-index: 200;
 }
 
 /* Butonul de viteză (×1 / ×2 / ×4), în colțul din dreapta-jos, în luptă și la zaruri */

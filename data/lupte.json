@@ -47,8 +47,7 @@
         "tip": "apropiat",
         "sunet": "lupta_topor"
       },
-      "armura": 0,
-      "sunet": "orc"
+      "armura": 0
     },
     "betiv": {
       "nume": "Bețiv",
@@ -87,8 +86,7 @@
         "sunet": "lupta_topor"
       },
       "armura": 1,
-      "rezistenta": 5,
-      "sunet": "orc"
+      "rezistenta": 5
     }
   },
   "lupte": {

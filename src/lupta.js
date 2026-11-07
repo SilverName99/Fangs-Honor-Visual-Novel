@@ -1,6 +1,7 @@
 import { elementImagine } from './imagini.js';
 import { iconita as iconitaObiect } from './ecranInventar.js';
 import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
+import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { context } from './stare.js';
 // Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
 import { asteapta, viteza, butonViteza } from './viteza.js';
@@ -16,7 +17,8 @@ function buton(text, clic, dezactivat = false, titlu = '') {
 }
 // Butonul pătrat de pe tabla de acțiuni (designul autorului): doar iconița; numele apare deasupra, pe eticheta de pânză
 function butonActiune(iconita, simbol, nume, clic, dezactivat = false, titlu = '') {
-  const b = buton('', clic, dezactivat, titlu || nume);
+  // Fără „title” cu numele: căsuța albă a browserului ar apărea peste eticheta de pânză; rămâne doar motivul dezactivării
+  const b = buton('', clic, dezactivat, titlu);
   b.className = 'buton-lupta';
   b.append(Object.assign(div(`icon-hud icon-${iconita}`), { textContent: simbol }), div('eticheta-lupta', nume));
   return b;
@@ -551,8 +553,6 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function alegeLoc(f) {
-    // Cât alegi un loc, meniul urcă sus, ca să nu acopere locurile de jos ale hărții
-    L.elMeniu.classList.add('sus');
     L.elLocuri.replaceChildren();
     if (f.lat) {
       // Personajul lat se mută doar pe o linie întreagă liberă
@@ -578,7 +578,6 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function meniu(f) {
-    L.elMeniu.classList.remove('sus');
     L.activ = f;
     L.elLocuri.replaceChildren();
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
@@ -601,7 +600,7 @@ export function creeazaLupta(parinte, joc) {
         m.replaceChildren(
           div('titlu-meniu-lupta', 'Alege obiectul'),
           ...consumabile.map((x) => {
-            const b = buton('', () => alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })), false, inv.def(x.id).nume);
+            const b = buton('', () => alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })));
             b.className = 'buton-lupta obiect-lupta';
             b.append(iconitaObiect(inv, x.id), div('numar-obiect', `×${x.n}`), div('eticheta-lupta', inv.def(x.id).nume));
             return b;
@@ -738,7 +737,22 @@ export function creeazaLupta(parinte, joc) {
     scenaLupta.addEventListener('mouseleave', () => marcheazaSubMouse(null));
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));
     scenaLupta.append(L.elLocuri);
-    el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu, butonViteza());
+    const viteza = butonViteza();
+    viteza.classList.add('viteza-lupta');
+    // Interfața stă unde a pus-o autorul în editor (Aranjare → „Ecranul de luptă: interfața”); conținutul fiecărei
+    // bucăți se măsoară din înălțimea ei (--h), ca o bară micșorată să-și micșoreze și medalioanele, și butoanele
+    const ui = joc.lume.get('lupta_interfata');
+    const bucati = { bara_sus: L.elOrdine, jurnal: L.elJurnal, actiuni: L.elMeniu, viteza };
+    ui?.obiecte.forEach((o, i) => {
+      const elem = bucati[o.id];
+      if (!elem) return;
+      const p = pozitie(joc.date.aranjare.lupta_interfata, o, i);
+      elem.classList.add('bucata-lupta');
+      aplicaPozitie(elem, p);
+      elem.style.zIndex = '';
+      elem.style.setProperty('--h', `${p.scara * INALTIME}px`);
+    });
+    el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu, viteza);
     actualizeazaBare();
 
     // Cu mai mulți aliați, formația se poate schimba înainte de începere
@@ -747,15 +761,12 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function start() {
-    L.elMeniu.classList.remove('sus');
     L.elMeniu.hidden = true;
     L.pauza = false;
     requestAnimationFrame(bucla);
   }
 
   function pregatire() {
-    // Formația: meniul stă sus, ca toate cele 6 locuri de jos să se poată apăsa
-    L.elMeniu.classList.add('sus');
     let ales = null;
     const gata = () => {
       L.toti.forEach(aseaza);
