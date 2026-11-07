@@ -95,8 +95,7 @@
       "sunet": "casa"
     },
     "taverna": {
-      "sunet": "taverna_voci",
-      "strat": "taverna_muzica",
+      "sunet": "taverna_muzica",
       "volum": 0.8,
       "infundat": "mult",
       "variante": [
@@ -114,12 +113,10 @@
       ]
     },
     "taverna.parter": {
-      "sunet": "taverna_voci",
-      "strat": "taverna_muzica"
+      "sunet": "taverna_muzica"
     },
     "taverna.etaj": {
-      "sunet": "taverna_voci",
-      "strat": "taverna_muzica",
+      "sunet": "taverna_muzica",
       "volum": 0.7,
       "infundat": "mult",
       "variante": [
@@ -263,10 +260,9 @@
     "campsite": "Camp site: focul de tabără în pădure",
     "biserica": "Biserica: liniște de piatră, ecou",
     "poarta": "Poarta seara (18–23): focul orcilor trosnind, mormăieli",
-    "taverna_muzica": "Taverna: muzica de tavernă (se aude odată cu vocile; afară și din camera de sus, înfundat)",
+    "taverna_muzica": "Taverna: muzica și vocile din fundal, într-un singur fișier (afară și din camera de sus se aude înfundat)",
     "moara_vant": "Moara: vântul care învârte aripile, lemnul care scârțâie",
-    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)",
-    "taverna_voci": "Taverna: vocile din fundal, oameni vorbind, căni (se aude odată cu muzica; afară și din camera de sus, înfundat)"
+    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)"
   },
   "efecte": {
     "usa": "Ușa de lemn care se deschide (când intri într-un loc)",
