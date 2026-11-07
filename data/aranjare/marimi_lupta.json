@@ -206,6 +206,17 @@
     "combat/betiv_idle.png": {
       "lupta_taverna_parter": 112,
       "lupta_padure_interior": 112
+    },
+    "combat/vale_sabie_idle.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_atac.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_aparare.png": {
+      "lupta_taverna_parter": 105
     }
   }
 }
