@@ -1,5 +1,6 @@
 import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
-import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
+import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
+import { verifica } from './conditii.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -77,7 +78,9 @@ export function creeazaActiuni(parinte, joc) {
       schimbaNevoie(s, 'stamina', refacere);
       // Imaginea cu Vale dormind (decis de autor, ca la muncă), cu sunetul somnului, apoi trezirea;
       // dacă se culcă ziua (afară e încă lumină), imaginea de zi
-      cuImagine({ ...a, imagine: (ziua && a.imagineZi) || a.imagine }, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
+      // „varianteImagine”: alte imagini după stare (acasă, cu acoperișul reparat), prima potrivită câștigă
+      const v = (a.varianteImagine || []).find((x) => verifica(x.conditii, context(s))) || a;
+      cuImagine({ ...a, imagine: (ziua && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
     };
     // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
     // (până la ora trezirii) sau „până noaptea” ziua (până la 23:00, când începe noaptea), și „Închide”

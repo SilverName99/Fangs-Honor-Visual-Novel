@@ -111,6 +111,14 @@
               "nume": "Dormi",
               "imagine": "locations/somn_casa.png",
               "imagineZi": "locations/somn_casa_zi.png",
+              "varianteImagine": [
+                {
+                  "conditii": { "stare": { "acoperis": "reparat" } },
+                  "imagine": "locations/somn_casa_reparata.png",
+                  "imagineZi": "locations/somn_casa_zi_reparata.png",
+                  "nume": "acoperișul reparat"
+                }
+              ],
               "text": "Vale doarme..."
             },
             {

@@ -429,6 +429,10 @@ export function imaginiCerute(date, scene) {
     for (const a of [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])]) {
       if (a.imagine) adauga(a.imagine, `${a.nume} (pe tot ecranul cât durează, 1920 × 1080)`);
       if (a.imagineZi) adauga(a.imagineZi, `${a.nume}, ziua (când se culcă și afară e încă lumină, 1920 × 1080)`);
+      for (const v of a.varianteImagine || []) {
+        if (v.imagine) adauga(v.imagine, `${a.nume} (${v.nume}, 1920 × 1080)`, true);
+        if (v.imagineZi) adauga(v.imagineZi, `${a.nume}, ziua (${v.nume}, 1920 × 1080)`, true);
+      }
     }
   // Schițele din cartea personajelor (pagina din dreapta)
   grup = 'Cartea personajelor';
