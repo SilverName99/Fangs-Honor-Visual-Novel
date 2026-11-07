@@ -152,6 +152,8 @@
               "n": 1,
               "minute": 5,
               "sunet": "apa",
+              "imagine": "locations/munca_apa.png",
+              "text": "Scoți apă de la fântână...",
               "maxPeZi": 2,
               "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine."
             }

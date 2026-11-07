@@ -265,7 +265,7 @@ Viață, stamina, foame, sete, toate pe scara 0-100. Recruții **nu** consumă n
 - **Leșinul:** Vale se trezește acasă, iar mama l-a găsit. Pierde o jumătate de zi și o parte din bani sau un obiect (`TODO`: cât și ce). Nu e game over.
 - **Somnul** reface stamina. Se poate dormi acasă (gratis) sau la tavernă (contra cost). Panoul are mereu 4 butoane (decis): „Dormi 2 ore”, „Dormi 6 ore”, „Dormi până dimineața” (seara și noaptea, până la ora trezirii) sau „Dormi până noaptea” (ziua, până la 23:00), „Închide”.
 - **Apa de la fântână** (bucătăria): cel mult de două ori pe zi (decis; `maxPeZi` la acțiune, numărătoarea în salvare, `folosiri`).
-- **Munca** (câmpul, vacile, moara) și **adunatul lemnelor** arată, cât durează, o imagine pe tot ecranul câteva secunde, ca la vânătoare (decis de autor; `imagine` și `text` la muncă în `config.json` / la acțiune: `locations/munca_arat.png`, `munca_vaci.png`, `munca_moara.png`, `munca_lemne.png`; un clic o sare). **Noaptea** nu se lucrează la câmp, la vaci sau la moară și nu se vânează: doar gândul lui Vale (`gandNoapte`, ciorne).
+- **Munca** (câmpul, vacile, moara) și **adunatul lemnelor** arată, cât durează, o imagine pe tot ecranul câteva secunde, ca la vânătoare (decis de autor; `imagine` și `text` la muncă în `config.json` / la acțiune: `locations/munca_arat.png`, `munca_vaci.png`, `munca_moara.png`, `munca_lemne.png`, iar la apa de la fântână `munca_apa.png`; un clic o sare). **Noaptea** nu se lucrează la câmp, la vaci sau la moară și nu se vânează: doar gândul lui Vale (`gandNoapte`, ciorne).
 
 ### Rutinele personajelor
 
