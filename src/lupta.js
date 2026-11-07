@@ -430,9 +430,8 @@ export function creeazaLupta(parinte, joc) {
       if (a.ramas === 0) jurnal(`${a.nume} lui ${tinta.nume} s-a crăpat!`);
     }
     numar(tinta, `−${d}`);
-    // Lovitura se aude în scut când se apără; altfel impactul (dacă sunetul atacului nu e deja chiar impactul)
+    // Se aude doar ce se întâmplă (decis de autor): arma, iar în scut când ținta se apără; fără un impact în plus
     if (tinta.apara) joc.sunet.efect('lupta_scut');
-    else if (sursa.sunetAtac !== 'lupta_lovit') joc.sunet.efect('lupta_lovit');
     if (!tinta.apara) poza(tinta, 'lovit');
     tinta.corp.classList.add('lovit');
     if (tinta.viata <= 0) {
