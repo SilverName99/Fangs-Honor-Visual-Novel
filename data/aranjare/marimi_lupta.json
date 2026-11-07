@@ -232,8 +232,8 @@
       "lupta_padure_interior": 155
     },
     "combat/vale_sabie_scut_aparare.png": {
-      "lupta_taverna_parter": 118,
-      "lupta_padure_interior": 118
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115
     },
     "combat/vale_sabie_scut_lovit.png": {
       "lupta_taverna_parter": 105,
@@ -256,16 +256,16 @@
       "lupta_padure_interior": 105
     },
     "combat/vale_sabie_scut_cazut.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 135,
+      "lupta_padure_interior": 135
     },
     "combat/vale_sabie_cazut.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 135,
+      "lupta_padure_interior": 135
     },
     "combat/vale_sabie_doua_maini_cazut.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 135,
+      "lupta_padure_interior": 135
     }
   }
 }
