@@ -292,18 +292,6 @@ export function creeazaEcranInventar(parinte, joc) {
     const ecran = joc.lume.get('echipament');
     el.replaceChildren();
     const cuCufar = !!optiuni.cufar;
-    // La cufăr (decis de autor), rucsacul trece în stânga și cufărul în dreapta: bucățile rucsacului (foaia, semnul de
-    // carte) stau oglindite față de locul lor din editor, iar cufărul ia locul foii din dreapta. La magazin rămâne ca acum
-    const oglinda = (o, i) => {
-      const p = pozitie(joc.date.aranjare.echipament, o, i);
-      return { ...o, id: `${o.id}_oglindit`, implicit: { ...p, x: 1 - p.x } };
-    };
-    const langaFoaie = (o, i) => {
-      const iF = ecran.obiecte.findIndex((x) => x.tip === 'inv-foaie');
-      const pf = pozitie(joc.date.aranjare.echipament, ecran.obiecte[iF], iF);
-      const p = pozitie(joc.date.aranjare.echipament, o, i);
-      return { ...o, id: `${o.id}_oglindit`, implicit: { ...p, x: 1 - pf.x + (p.x - pf.x) } };
-    };
 
     ecran.obiecte.forEach((o, i) => {
       // Lângă cufăr, în stânga stă cufărul în locul lui Vale (echiparea merge și de acolo, din butonul „Echipează”)
@@ -332,7 +320,7 @@ export function creeazaEcranInventar(parinte, joc) {
         return;
       }
       if (o.tip === 'inv-titlu') {
-        const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Inventar' : 'Echipament') : cuCufar ? 'Cufărul' : 'Inventar';
+        const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
         const t = div('titlu-ecran-inv', text);
         // Textul e cât 80% din înălțimea pusă în editor, minus 10 px (cerut de autor)
         t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 10}px`;
@@ -351,13 +339,13 @@ export function creeazaEcranInventar(parinte, joc) {
         semn.onclick = () => ((vedere = vedere === 'poveste' ? 'rucsac' : 'poveste'), (selectat = null), arata());
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         semn.style.fontSize = `${p.scara * INALTIME * 0.075}px`;
-        // La cufăr, semnul rămâne lipit de foaia rucsacului, în aceeași parte a ei (se mută odată cu foaia)
-        return asaza(semn, cuCufar ? langaFoaie(o, i) : o, i, 1600);
+        return asaza(semn, o, i, 1600);
       }
       if (o.tip !== 'inv-foaie') return;
 
-      // Foaia rucsacului (sau a obiectelor de poveste) cu detaliile obiectului ales: în dreapta, iar la cufăr în stânga
-      const c = foaie(cuCufar ? oglinda(o, i) : o, i, '');
+      // Foaia din dreapta: rucsacul (sau obiectele de poveste) și detaliile obiectului ales (și la cufăr: decis de autor,
+      // ca rucsacul să stea mereu în aceeași parte)
+      const c = foaie(o, i, '');
       c.parentElement.dataset.tinta = 'inventar';
       if (vedere === 'poveste') {
         c.append(capFoaie('Obiecte de poveste'));
@@ -389,9 +377,10 @@ export function creeazaEcranInventar(parinte, joc) {
       }
       c.append(grila(s.inventar, inv.capacitate(), 'inventar'), detaliiObiect(s));
 
-      // Lângă cufăr: a doua foaie, cufărul, în dreapta, pe locul foii rucsacului din editor
+      // Lângă cufăr: a doua foaie, în stânga, oglindită față de prima
       if (cuCufar) {
-        const cc = foaie(o, i, 'foaie-cufar');
+        const p = pozitie(joc.date.aranjare.echipament, o, i);
+        const cc = foaie({ ...o, id: 'foaie_cufar', implicit: { ...p, x: 1 - p.x } }, i, 'foaie-cufar');
         cc.parentElement.dataset.tinta = 'cufar';
         const total = joc.date.config.inventar.cufar;
         cc.append(capFoaie('În cufăr', inv.ocupate(s.cufar), total));
