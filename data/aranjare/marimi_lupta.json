@@ -222,6 +222,22 @@
     "combat/vale_sabie_lovit.png": {
       "lupta_taverna_parter": 105,
       "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_scut_idle.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_scut_atac.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_scut_aparare.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_sabie_scut_lovit.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
     }
   }
 }
