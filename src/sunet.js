@@ -60,6 +60,9 @@ addEventListener('keydown', deblocheaza, { capture: true });
 // sunetul e doar în Testare și în joc
 const previzualizare = new URLSearchParams(location.search).has('meniu');
 const nivel = (tip) => (volume.mut || previzualizare ? 0 : volume.general * volume[tip]);
+// Volumul fiecărui fișier, ales de autor în galerie (data/aranjare/volume_sunete.json, în procente)
+let volumeFisiere = {};
+const volumFisier = (cale) => (cale ? (volumeFisiere[cale] ?? 100) / 100 : 1);
 
 function porneste(audio) {
   const p = audio.play();
@@ -91,7 +94,7 @@ function fir(tip) {
         const pas = Math.max(0.01, nivel(tip) / (TRECERE / 50));
         const t = setInterval(() => {
           if (curent?.audio !== audio) return clearInterval(t);
-          const tinta = nivel(tip) * curent.volum;
+          const tinta = Math.min(1, nivel(tip) * curent.volum);
           audio.volume = audio.volume < tinta ? Math.min(tinta, audio.volume + pas) : Math.max(tinta, audio.volume - pas);
           if (Math.abs(audio.volume - tinta) < 0.001) clearInterval(t);
         }, 50);
@@ -107,7 +110,7 @@ function fir(tip) {
       curent = { cale, audio, volum };
       infunda(audio, infundat);
       porneste(audio);
-      const tinta = () => nivel(tip) * (curent?.volum ?? 1);
+      const tinta = () => Math.min(1, nivel(tip) * (curent?.volum ?? 1));
       const pas = Math.max(0.01, tinta() / (TRECERE / 50));
       const t = setInterval(() => {
         if (curent?.audio !== audio) return clearInterval(t);
@@ -116,7 +119,7 @@ function fir(tip) {
       }, 50);
     },
     volum() {
-      if (curent) curent.audio.volume = nivel(tip) * curent.volum;
+      if (curent) curent.audio.volume = Math.min(1, nivel(tip) * curent.volum);
     },
     cale: () => curent?.cale || null,
   };
@@ -129,12 +132,13 @@ const muzica = fir('muzica');
 let muzicaActiva = false; // cât merge muzica (lupta, meniul), ambianța tace
 let ultimaAmbianta = null;
 const canta = (a) => {
-  ambianta.canta(a.cale, a);
-  strat.canta(a.strat, a);
+  ambianta.canta(a.cale, { ...a, volum: a.volum * volumFisier(a.cale) });
+  strat.canta(a.strat, { ...a, volum: a.volum * volumFisier(a.strat) });
 };
 
 export function creeazaSunet(date) {
   const s = date.sunete || {};
+  volumeFisiere = date.aranjare?.volume_sunete || {};
 
   // Ambianța scenei: a ei, sau moștenită de la zona și harta de deasupra; prima variantă potrivită câștigă.
   // O variantă își poate da volumul și înfundarea ei; altfel le ia pe ale ambianței de bază
@@ -168,7 +172,7 @@ export function creeazaSunet(date) {
       const cale = caleSunet('efecte', id);
       if (!s.efecte?.[id] || lipsa.has(cale) || !deblocat || nivel('efecte') <= 0) return;
       const a = new Audio(urlImagine(cale));
-      a.volume = nivel('efecte');
+      a.volume = Math.min(1, nivel('efecte') * volumFisier(cale));
       a.onerror = () => lipsa.add(cale);
       a.play().catch(() => {});
     },
@@ -182,7 +186,8 @@ export function creeazaSunet(date) {
       }
       ambianta.canta(null);
       strat.canta(null);
-      muzica.canta(caleSunet('muzica', id), { repetat });
+      const cale = caleSunet('muzica', id);
+      muzica.canta(cale, { repetat, volum: volumFisier(cale) });
     },
   };
 }

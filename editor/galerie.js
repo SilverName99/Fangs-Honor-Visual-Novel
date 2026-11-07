@@ -138,7 +138,12 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     const proiectile = new Set(comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil).filter(Boolean));
     // La fel efectele puterilor (scutul de lumină)
     const efecte = new Set(comun.date.npcs.personaje.flatMap((p) => (p.lupta?.abilitati || []).map((a) => a.imagine)).filter(Boolean));
+    // Fiecare sunet are volumul lui, în procente (cât de tare se aude față de restul); 100% = cum e fișierul
+    const volumeSunete = comun.date.aranjare?.volume_sunete || {};
     const extraCard = (c) => {
+      if (eSunet(c.cale))
+        return `<label class="marime-lupta" title="Cât de tare se aude sunetul ăsta în joc, față de celelalte (100% = cum e fișierul)">Volum
+          <input type="number" min="0" max="300" step="5" data-volum="${esc(c.cale)}" value="${volumeSunete[c.cale] ?? 100}">%</label>`;
       if (proiectile.has(c.cale))
         return `<label class="marime-lupta" title="Cât de mare se vede arma aruncată în luptă (100% = normal)">Mărime în luptă (aruncat)
           <input type="number" min="20" max="400" step="5" data-marime="${esc(c.cale)}" value="${marimi[c.cale] ?? 100}">%</label>`;
@@ -336,6 +341,28 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
           comun.date.aranjare.marimi_lupta = a;
         } catch (e) {
           alert(`Nu s-a salvat mărimea:\n${e.message}`);
+        }
+        i.disabled = false;
+      };
+    }
+    // Volumul unui sunet: se salvează în data/aranjare/volume_sunete.json; ascultarea din card îl folosește pe loc
+    for (const i of container.querySelectorAll('[data-volum]')) {
+      const audio = i.closest('.card')?.querySelector('audio');
+      const aplicaPrevizualizare = () => audio && (audio.volume = Math.min(1, Number(i.value) / 100));
+      aplicaPrevizualizare();
+      i.onchange = async () => {
+        const v = Math.max(0, Math.min(300, Math.round(Number(i.value) || 0)));
+        i.value = v;
+        aplicaPrevizualizare();
+        const a = structuredClone(comun.date.aranjare.volume_sunete || {});
+        if (v === 100) delete a[i.dataset.volum];
+        else a[i.dataset.volum] = v;
+        i.disabled = true;
+        try {
+          await api('aranjare/volume_sunete', { method: 'PUT', body: JSON.stringify(a), headers: { 'Content-Type': 'application/json' } });
+          comun.date.aranjare.volume_sunete = a;
+        } catch (e) {
+          alert(`Nu s-a salvat volumul:\n${e.message}`);
         }
         i.disabled = false;
       };
