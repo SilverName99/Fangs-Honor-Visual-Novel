@@ -212,8 +212,8 @@
       "lupta_padure_interior": 105
     },
     "combat/vale_sabie_atac.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 135,
+      "lupta_padure_interior": 135
     },
     "combat/vale_sabie_aparare.png": {
       "lupta_taverna_parter": 105,
