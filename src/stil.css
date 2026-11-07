@@ -2213,6 +2213,22 @@ svg.zone {
   flex: 1;
   overflow-y: auto;
   color: #f3e6c8;
+  /* Bara de derulare subțire, aurie pe lemn (cea albă a browserului strica tabla) */
+  scrollbar-width: thin;
+  scrollbar-color: #c9a24f rgba(0, 0, 0, 0.35);
+  padding-right: 8px;
+}
+.continut-meniu::-webkit-scrollbar {
+  width: 10px;
+}
+.continut-meniu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+}
+.continut-meniu::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #e2b65a, #9a6a24);
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.35);
 }
 .gol-meniu {
   margin-top: 80px;
@@ -2258,14 +2274,70 @@ svg.zone {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding: 22px 10px;
+  padding: 12px 10px;
   border-bottom: 1px solid rgba(243, 230, 200, 0.2);
   font: 28px Georgia, serif;
 }
-/* Glisorul de volum, în culorile meniului */
+/* Glisorul de volum, în culorile meniului: o șină adâncită în lemn, plină cu auriu până la buton,
+   și un buton rotund de alamă (decis de autor: mai mare și mai frumos decât cel al browserului) */
 .glisor-sunet {
-  width: 420px;
-  accent-color: #c9a24f;
+  --p: 50%;
+  width: 460px;
+  height: 44px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.glisor-sunet:focus {
+  outline: none;
+}
+.glisor-sunet::-webkit-slider-runnable-track {
+  height: 16px;
+  border-radius: 8px;
+  border: 2px solid #2a1a0e;
+  background: linear-gradient(#f2cf7a, #b9811d) 0 / var(--p) 100% no-repeat, linear-gradient(#1a120a, #3a2816);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 230, 180, 0.15);
+}
+.glisor-sunet::-moz-range-track {
+  height: 12px;
+  border-radius: 8px;
+  border: 2px solid #2a1a0e;
+  background: linear-gradient(#1a120a, #3a2816);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+.glisor-sunet::-moz-range-progress {
+  height: 12px;
+  border-radius: 8px;
+  background: linear-gradient(#f2cf7a, #b9811d);
+}
+.glisor-sunet::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 38px;
+  height: 38px;
+  margin-top: -13px;
+  border-radius: 50%;
+  border: 3px solid #5a3a1a;
+  background: radial-gradient(circle at 35% 30%, #fff1c4, #e2b65a 45%, #8a5a1c);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.glisor-sunet::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #5a3a1a;
+  background: radial-gradient(circle at 35% 30%, #fff1c4, #e2b65a 45%, #8a5a1c);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+.glisor-sunet:hover::-webkit-slider-thumb,
+.glisor-sunet:active::-webkit-slider-thumb {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 210, 120, 0.8);
+}
+.glisor-sunet:hover::-moz-range-thumb {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 210, 120, 0.8);
 }
 .alegeri-optiune {
   display: flex;
@@ -2290,4 +2362,14 @@ svg.zone {
   align-self: center;
   /* Mai sus de marginea de jos a tablei (decis de autor), ca să nu stea peste ornamentul de jos */
   margin-bottom: 60px;
+}
+
+/* Opțiunile: butoanele din rânduri mai scunde, ca toate rândurile să încapă pe tablă fără derulare */
+.optiuni-meniu .rand-optiune {
+  padding: 8px 10px;
+  font-size: 26px;
+}
+.optiuni-meniu .buton.buton-mic-meniu {
+  padding: 8px 28px;
+  font-size: 24px;
 }

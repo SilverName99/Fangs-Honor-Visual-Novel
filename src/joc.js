@@ -731,7 +731,13 @@ function deschideMeniul() {
     ].map(([cheie, nume]) => {
       const r = div('rand-optiune');
       const glisor = Object.assign(document.createElement('input'), { type: 'range', min: 0, max: 100, value: Math.round(v[cheie] * 100), className: 'glisor-sunet' });
-      glisor.oninput = () => seteazaVolum(cheie, glisor.value / 100);
+      // Partea plină a șinei (aurie) se desenează din CSS după --p, ca la toate browserele să arate la fel
+      const umple = () => glisor.style.setProperty('--p', `${glisor.value}%`);
+      umple();
+      glisor.oninput = () => {
+        umple();
+        seteazaVolum(cheie, glisor.value / 100);
+      };
       r.append(div('nume-optiune', nume), glisor);
       return r;
     });
