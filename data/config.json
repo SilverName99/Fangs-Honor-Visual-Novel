@@ -137,7 +137,7 @@
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",
     "zaruri": 3,
     "minute": 30,
-    "maxCastiguriPeZi": 2,
+    "maxCastiguriPeZi": 1,
     "jucatori": [
       {
         "id": "paznic_orc_1",
