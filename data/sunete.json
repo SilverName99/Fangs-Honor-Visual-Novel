@@ -1,5 +1,5 @@
 {
-  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). volum: cât de tare față de volumul din Opțiuni (zonele de afară aud satul de pe hartă cu 10% mai încet, 0.9); infundat: „putin” sau „mult”, același sunet auzit prin pereți (satul din casă, taverna de afară); fără să repornească sunetul, doar se potrivește lin. strat: al doilea sunet, care merge în același timp (taverna: vocile și muzica, separat). variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă; își poate da volumul și înfundarea ei, altfel le ia pe ale ambianței de bază. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
+  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). volum: cât de tare față de volumul din Opțiuni (zonele de afară aud satul de pe hartă cu 10% mai încet, 0.9); infundat: „putin” sau „mult”, același sunet auzit prin pereți (satul din casă, taverna de afară); fără să repornească sunetul, doar se potrivește lin. strat: al doilea sunet, care merge în același timp, cu stratVolum și stratInfundat ale lui (bucătăria: focul clar peste satul înfundat); o variantă trebuie să-l repete, altfel îl oprește. variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă; își poate da volumul și înfundarea ei, altfel le ia pe ale ambianței de bază. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
   "ambiante": {
     "harta": {
       "sunet": "sat_zi",
@@ -64,7 +64,23 @@
       ]
     },
     "casa.bucatarie": {
-      "sunet": "casa"
+      "sunet": "sat_zi",
+      "volum": 0.75,
+      "infundat": "putin",
+      "strat": "casa",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.8,
+          "infundat": "mult",
+          "strat": "casa"
+        }
+      ]
     },
     "fierar": {
       "sunet": "fierarie",

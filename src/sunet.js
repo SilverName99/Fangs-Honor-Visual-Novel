@@ -133,7 +133,7 @@ let muzicaActiva = false; // cât merge muzica (lupta, meniul), ambianța tace
 let ultimaAmbianta = null;
 const canta = (a) => {
   ambianta.canta(a.cale, { ...a, volum: a.volum * volumFisier(a.cale) });
-  strat.canta(a.strat, { ...a, volum: a.volum * volumFisier(a.strat) });
+  strat.canta(a.strat, { volum: a.stratVolum * volumFisier(a.strat), infundat: a.stratInfundat });
 };
 
 export function creeazaSunet(date) {
@@ -158,6 +158,9 @@ export function creeazaSunet(date) {
         strat: s2 ? caleSunet('ambianta', s2) : null,
         volum: din('volum', 1),
         infundat: din('infundat', false),
+        // Al doilea sunet are volumul și înfundarea lui (bucătăria: focul clar, satul înfundat)
+        stratVolum: din('stratVolum', 1),
+        stratInfundat: din('stratInfundat', false),
       };
     }
     return { cale: null, strat: null };
