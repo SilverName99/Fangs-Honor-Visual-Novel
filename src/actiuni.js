@@ -97,20 +97,32 @@ export function creeazaActiuni(parinte, joc) {
     ]);
   }
 
+  // Unele acțiuni merg doar de câteva ori pe zi (apa de la fântână și lemnele: de două ori, decis de autor);
+  // numărătoarea stă în salvare, pe loc și acțiune, și se ia de la capăt în fiecare zi
+  function folosiriAzi(a) {
+    const s = joc.stare;
+    s.folosiri ||= {};
+    const cheie = `${s.scena}/${a.id}`;
+    const zi = ziua(s);
+    if (s.folosiri[cheie]?.zi !== zi) s.folosiri[cheie] = { zi, n: 0 };
+    return s.folosiri[cheie];
+  }
+
   function obtine(a) {
     if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
-    // Unele acțiuni merg doar de câteva ori pe zi (apa de la fântână: de două ori, decis de autor);
-    // numărătoarea stă în salvare, pe loc și acțiune, și se ia de la capăt în fiecare zi
-    if (a.maxPeZi) {
-      const s = joc.stare;
-      s.folosiri ||= {};
-      const cheie = `${s.scena}/${a.id}`;
-      const zi = ziua(s);
-      const f = s.folosiri[cheie]?.zi === zi ? s.folosiri[cheie] : { zi, n: 0 };
-      if (f.n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
-      f.n++;
-      s.folosiri[cheie] = f;
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    // Cu „variante” (lemnele: o oră sau două), întâi alegi cât stai, pe panoul mic
+    if (a.variante && !a.alesa) {
+      return panou(a.titlu || a.nume, (inchide) =>
+        a.variante.map((v) =>
+          buton(v.nume, () => {
+            inchide();
+            obtine({ ...a, ...v, alesa: true });
+          }, (v.stamina || 0) > joc.stare.nevoi.stamina),
+        ),
+      );
     }
+    if (a.maxPeZi) folosiriAzi(a).n++;
     if (joc.avanseaza(a.minute || 0)) return;
     if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
     // Sunetul acțiunii, dacă are (apa de la fântână, lemnele); cu imagine (lemnele), sunetul vine odată cu ea

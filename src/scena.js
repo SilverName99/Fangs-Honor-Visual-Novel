@@ -168,6 +168,8 @@ export function randeaza(strat, descriere, aranjare, context) {
     const p = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
     p.setAttribute('points', puncteSvg(poligon));
     p.setAttribute('class', 'zona-clic');
+    // Id-ul țintei pe zonă: ușurează găsirea ei la testare și în panoul debug
+    p.setAttribute('data-tinta', t.id);
     p.setAttribute('filter', 'url(#contur-moale)');
     if (t.personaj && masca) p.setAttribute('mask', `url(#${masca})`);
     svg.append(p);

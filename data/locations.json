@@ -847,10 +847,26 @@
         {
           "id": "lemne",
           "tip": "obtine",
-          "nume": "Adună lemne (1 oră)",
+          "nume": "Adună lemne",
+          "titlu": "Aduni lemne",
           "obiect": "lemn",
-          "n": 3,
-          "minute": 60,
+          "_nota": "Decis de autor: o oră = 3 lemne, două ore = 4 lemne; cel mult de două ori pe zi.",
+          "variante": [
+            {
+              "nume": "O oră (+3 lemne)",
+              "minute": 60,
+              "n": 3,
+              "stamina": 10
+            },
+            {
+              "nume": "Două ore (+4 lemne)",
+              "minute": 120,
+              "n": 4,
+              "stamina": 20
+            }
+          ],
+          "maxPeZi": 2,
+          "mesajMaxPeZi": "Am cărat destul lemn pentru azi. Mâine din nou.",
           "sunet": "lemne",
           "stamina": 10,
           "imagine": "locations/munca_lemne.png",
