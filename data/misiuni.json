@@ -26,7 +26,7 @@
               "acoperis": "reparat"
             }
           },
-          "sfat": "Cu cele 10 lemne, vorbesc cu mama, dimineața sau la amiază (pe lumină).",
+          "sfat": "Cu cele 10 lemne, vorbesc cu mama dimineața, în bucătărie, odihnit.",
           "predare": {
             "text": "Uite lemnele, mamă. Mă urc pe acoperiș.",
             "nod": "acoperis_predare",
@@ -34,11 +34,18 @@
               "areCate": {
                 "lemn": 10
               },
-              "moment": [
-                "dimineata",
-                "amiaza"
-              ]
-            }
+              "loc": "casa/bucatarie",
+              "ora": {
+                "min": "05:00",
+                "max": "10:59"
+              },
+              "nevoie": {
+                "stamina": {
+                  "min": 30
+                }
+              }
+            },
+            "_nota": "Decis de autor: se predă doar dimineața, în bucătărie; obosit (sub 30 stamina), mama îl trimite la odihnă."
           },
           "indiciu": {
             "text": "Despre acoperiș...",
@@ -54,7 +61,19 @@
                 }
               },
               {
-                "nod": "acoperis_intuneric"
+                "nod": "acoperis_nu_acum",
+                "conditii": {
+                  "nu": {
+                    "loc": "casa/bucatarie",
+                    "ora": {
+                      "min": "05:00",
+                      "max": "10:59"
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "acoperis_obosit"
               }
             ]
           }
@@ -76,8 +95,14 @@
         "conditii": {
           "stare": {
             "acoperis": "stricat"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "05:00",
+            "max": "10:59"
           }
-        }
+        },
+        "_nota": "Decis de autor: misiunea se ia doar dimineața, cât Miriam e în bucătărie (până la 11)."
       }
     }
   ]

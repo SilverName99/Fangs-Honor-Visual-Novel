@@ -16,6 +16,12 @@ const tipuri = {
       const r = c.relatii?.[k] ?? 0;
       return (lim.min == null || r >= lim.min) && (lim.max == null || r <= lim.max);
     }),
+  // „nevoie: { stamina: { min: 30 } }” = nevoia lui Vale e între limite (mama nu-l lasă pe acoperiș frânt de oboseală)
+  nevoie: (v, c) =>
+    Object.entries(v).every(([k, lim]) => {
+      const n = c.nevoi?.[k] ?? 0;
+      return (lim.min == null || n >= lim.min) && (lim.max == null || n <= lim.max);
+    }),
   bani: (v, c) => (v.min == null || c.bani >= v.min) && (v.max == null || c.bani <= v.max),
   deblocat: (v, c) => (c.deblocate || []).includes(v),
   zileSaptamana: (v, c) => v.includes(c.ziSaptamana),
