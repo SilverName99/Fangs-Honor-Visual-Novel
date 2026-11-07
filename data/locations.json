@@ -110,6 +110,7 @@
               "tip": "dormi",
               "nume": "Dormi",
               "imagine": "locations/somn_casa.png",
+              "imagineZi": "locations/somn_casa_zi.png",
               "text": "Vale doarme..."
             },
             {
@@ -485,6 +486,7 @@
               "tip": "dormi",
               "nume": "Dormi",
               "imagine": "locations/somn_taverna.png",
+              "imagineZi": "locations/somn_taverna_zi.png",
               "text": "Vale doarme..."
             }
           ],

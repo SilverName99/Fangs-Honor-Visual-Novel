@@ -75,8 +75,9 @@ export function creeazaActiuni(parinte, joc) {
       const refacere = cfg.somn.staminaPeOra * ore * (s.nevoi.foame < cfg.nevoi.prag ? 0.5 : 1);
       if (joc.avanseaza(minute, cfg.somn.nevoiInSomn)) return;
       schimbaNevoie(s, 'stamina', refacere);
-      // Imaginea cu Vale dormind (decis de autor, ca la muncă), cu sunetul somnului, apoi trezirea
-      cuImagine(a, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
+      // Imaginea cu Vale dormind (decis de autor, ca la muncă), cu sunetul somnului, apoi trezirea;
+      // dacă se culcă ziua (afară e încă lumină), imaginea de zi
+      cuImagine({ ...a, imagine: (ziua && a.imagineZi) || a.imagine }, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
     };
     // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
     // (până la ora trezirii) sau „până noaptea” ziua (până la 23:00, când începe noaptea), și „Închide”
