@@ -130,7 +130,7 @@ export const ELEMENTE_UI = [
   { id: 'inventar_foaie', grup: 'Inventarul', nume: 'Foaia de pergament a inventarului, goală', marime: '900 × 1250 px, fundal transparent', tip: 'fundal', selector: '.foaie-inv', extra: '.foaie-inv{border:none;border-radius:0;box-shadow:none}' },
   { id: 'inventar_semn', grup: 'Inventarul', nume: 'Semnul de carte („Obiecte de poveste”), gol', marime: '240 × 360 px, fundal transparent', tip: 'fundal', selector: '.semn-inv', // Forma de panglică din CSS (tăiată jos) e doar pentru când lipsește imaginea; cu imaginea, nu se mai taie nimic
     extra: '.semn-inv{border:none;border-radius:0;box-shadow:none;clip-path:none}' },
-  { id: 'slot_echipament', grup: 'Inventarul', nume: 'Slotul de echipament (rama de lângă Vale)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot', extra: '.slot,.slot:hover,.slot.selectata{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'slot_echipament', grup: 'Inventarul', nume: 'Slotul de echipament (rama de lângă Vale)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot', extra: (url, m, img) => '.slot,.slot:hover,.slot.selectata{border:none;border-radius:0;box-shadow:none}' + deschidereRama(img, '.slot > *') },
   { id: 'slot_echipament_hover', grup: 'Inventarul', nume: 'Slotul de echipament, cu mouse-ul deasupra', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.slot:hover, .slot.selectata' },
   { id: 'slot', grup: 'Inventarul', nume: 'Căsuța din inventar (pe foaie)', marime: '128 × 128 px', tip: 'fundal', selector: '.celula', extra: '.celula,.celula:hover,.celula.selectata,.celula.goala:hover{border:none;border-radius:0;box-shadow:none}' },
   { id: 'slot_hover', grup: 'Inventarul', nume: 'Căsuța din inventar, cu mouse-ul deasupra', marime: '128 × 128 px', tip: 'fundal', selector: '.celula:hover, .celula.selectata' },
@@ -251,6 +251,41 @@ function fereastraRama(img) {
     return `inset(${pr(sus)} ${pr(dreapta)} ${pr(jos)} ${pr(stanga)} round ${(raza * 100).toFixed(1)}%)`;
   } catch {
     return 'inset(7% round 12%)';
+  }
+}
+
+// Deschiderea unei rame de slot (partea goală din mijloc): de la centru spre fiecare margine, până la primul pixel
+// opac. Iconița se mută pe mijlocul deschiderii, nu al pătratului, ca să stea centrată și când rama e mai groasă
+// într-o parte (decis de autor: rucsacul și gluga nu stăteau la mijloc). Cu mijlocul pictat (opac), rămâne 22%
+function deschidereRama(img, selector) {
+  try {
+    const n = img.naturalWidth;
+    const h = img.naturalHeight;
+    const c = Object.assign(document.createElement('canvas'), { width: n, height: h });
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const date = ctx.getImageData(0, 0, n, h).data;
+    const opac = (x, y) => date[(y * n + x) * 4 + 3] >= 128;
+    const cx = n >> 1;
+    const cy = h >> 1;
+    if (opac(cx, cy)) return '';
+    const mergi = (dx, dy) => {
+      let x = cx;
+      let y = cy;
+      while (x > 0 && y > 0 && x < n - 1 && y < h - 1 && !opac(x, y)) (x += dx), (y += dy);
+      return [x, y];
+    };
+    const stanga = mergi(-1, 0)[0] / n;
+    const dreapta = 1 - (mergi(1, 0)[0] + 1) / n;
+    const sus = mergi(0, -1)[1] / h;
+    const jos = 1 - (mergi(0, 1)[1] + 1) / h;
+    // Doar mutarea spre mijlocul deschiderii; mărimea iconiței rămâne cea de până acum (22% de jur împrejur)
+    const dx = (stanga - dreapta) / 2;
+    const dy = (sus - jos) / 2;
+    const p = (v) => `${((0.22 + v) * 100).toFixed(1)}%`;
+    return `${selector}{inset:${p(dy)} ${p(-dx)} ${p(-dy)} ${p(dx)}}`;
+  } catch {
+    return '';
   }
 }
 

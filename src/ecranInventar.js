@@ -30,7 +30,8 @@ function centrare(img) {
     let x0 = c.width, y0 = c.height, x1 = -1, y1 = -1;
     for (let y = 0; y < c.height; y++)
       for (let x = 0; x < c.width; x++)
-        if (d[(y * c.width + x) * 4 + 3] > 24) {
+        // Doar partea plină a obiectului: umbra fină sau strălucirea din jur nu trag centrarea într-o parte
+        if (d[(y * c.width + x) * 4 + 3] > 128) {
           if (x < x0) x0 = x;
           if (x > x1) x1 = x;
           if (y < y0) y0 = y;
