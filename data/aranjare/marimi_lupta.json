@@ -292,16 +292,16 @@
       "lupta_padure_interior": 105
     },
     "combat/vale_arc_atac.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 113,
+      "lupta_padure_interior": 113
     },
     "combat/vale_arc_aparare.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 113,
+      "lupta_padure_interior": 113
     },
     "combat/vale_arc_lovit.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 113,
+      "lupta_padure_interior": 113
     },
     "combat/vale_arc_cazut.png": {
       "lupta_taverna_parter": 130,
