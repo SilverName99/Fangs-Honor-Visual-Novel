@@ -417,7 +417,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 - Când un personaj al jucătorului e gata, **timpul se oprește** până se alege acțiunea.
 - Sus pe ecran se vede **ordinea următoare**: medalioane cu portrete, în ordinea în care vor acționa (vezi „Ecranul de luptă”).
 - Vale obosit (stamina din nevoi sub 30) pornește lupta cu bara goală, iar Vale odihnit o pornește pe jumătate plină.
-- Fiecare personaj are o bară de **viață** și una de **stamina**, pe verticală, în stânga lui.
+- Fiecare personaj are o bară de **viață** (cu armura gri deasupra) și una de **stamina**, pe verticală, în stânga lui.
 
 ### Acțiuni
 
@@ -427,15 +427,14 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 | **Apărare** | Până la tura următoare a personajului, daunele primite scad cu procentul de **blocare**: 50% implicit, iar cu scut cât spune scutul (de exemplu 70%). |
 | **Obiect** | Inventarul lui Vale e **comun în luptă**: orice aliat îl poate folosi în tura lui (de exemplu o poțiune de viață). Consumă tura. |
 | **Schimbă locul** | Se mută pe un loc liber sau face schimb cu cel de pe aceeași linie (față ↔ spate). Consumă tura. |
-| **Abilitate** | Doar personajele care au abilități. **Preotul nu atacă normal** (`faraAtac`), are doar 3 puteri: vindecare, **golește bara de stamina a unui inamic** și **scutul de lumină** (pus în fața unui aliat, oprește complet următoarea lovitură, fără daune și fără uzura armurii; rămâne până e lovit). Imaginea scutului: `combat/scut_lumina.png`, cu mărimea reglabilă în galerie. Efectele folosesc registrul din secțiunea 13. |
+| **Abilitate** | Doar personajele care au abilități. **Preotul nu atacă normal** (`faraAtac`), are doar 3 puteri: vindecare, **golește bara de stamina a unui inamic** și **scutul de lumină** (pus în fața unui aliat, oprește complet următoarea lovitură, fără daune, nici la armură; rămâne până e lovit). Imaginea scutului: `combat/scut_lumina.png`, cu mărimea reglabilă în galerie. Efectele folosesc registrul din secțiunea 13. |
 | **Fugi** | Doar în luptele unde e permis. Reușește sigur (alegere simplă, se poate schimba). |
 
-**Armura:**
-- Fiecare piesă de echipament poate avea **puncte de armură** și o **rezistență** (câte lovituri suportă, de exemplu 5).
-- Daunele primite = daunele atacului − armura pieselor întregi, **minimum 1**. Blocarea din *Apărare* se aplică după armură.
-- **Fiecare lovitură primită** scade cu 1 rezistența fiecărei piese întregi. La 0, piesa **crapă**: până la sfârșitul luptei nu mai dă armură. Pe ecran se vede că s-a crăpat.
-- După luptă, piesele crăpate revin la normal singure (alegere simplă; se poate schimba, de exemplu reparat la fierar).
-- Toate cifrele stau în `config.json` și `items.json`.
+**Armura** (decis de autor, simplu și vizibil):
+- Fiecare piesă de echipament adaugă **puncte de armură** la o **bară gri, peste viață** (pe bara vieții, deasupra roșului). Așa se vede cât aduce fiecare piesă.
+- **Loviturile golesc întâi armura, apoi viața.** *Apărarea* scade lovitura (50%, cu scut cât spune scutul) înainte să ajungă la armură.
+- La **fiecare luptă** armura pornește plină (nu se uzează între lupte). Inamicii și recruții pot avea și ei armură (`armura` în `lupte.json` / `npcs.json`).
+- Cifrele de pornire: glugă 5, vestă 10, jambiere 5, scut 5 (Vale are 100 viață); Roderick 15, Bram 30, Kaia 8; lupul negru 8, mistrețul și colectorul 10 (`TODO` echilibru).
 
 **Căderea:** la viață 0, personajul **cade**, dar nu moare. După luptă se ridică: recruții cu viața plină, Vale cu puțină viață (`TODO` cât).
 
@@ -444,7 +443,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 ### Ecranul de luptă (decis, după designul autorului: „sat sărac, dar îngrijit”, lemn simplu, fier, pânză albastră)
 
 - **Sus:** bara de lemn (`ui_lupta_bara_sus.png`) cu **medalioanele** celor care urmează, în ordinea turelor (**următorii 6**, la mărimea lor, nu întinși; primul e puțin mai mare și luminat; rândul de medalioane e o bucată separată în editor, „Medalioanele”, așezată peste lemnul barii; rama stă fix pe marginea portretului, fața umple exact fereastra ramei, măsurată din imagine, iar eticheta e lată cât rama), cu rama aurie la aliați și roșie la inamici (`ui_lupta_rama.png`, `ui_lupta_rama_inamic.png`) și **numele dedesubt**, pe o etichetă de pânză (`ui_lupta_eticheta.png`). Portretul din medalion e fața din portretul de dialog (decis: fără poze separate de medalion), tăiată pătrat, doar în fereastra ramei; medalioanele cresc odată cu bara. Sub bară, **jurnalul** (`ui_lupta_jurnal.png`).
-- **Lângă fiecare luptător**, în stânga lui (la inamici în dreapta), **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura crăpată e un scuț mic sub ele.
+- **Lângă fiecare luptător**, în stânga lui (la inamici în dreapta), **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura e partea gri de deasupra vieții.
 - **Jos:** tabla de acțiuni (`ui_lupta_actiuni.png`) cu **butoane pătrate doar cu iconițe** (`ui_lupta_buton.png` + `_hover`; numele apare deasupra, pe eticheta de pânză, la hover): Atac, fiecare putere separat (preotul n-are Atac, are Vindecare, Golește bara, Scutul de lumină), Apărare, Obiect (deschide obiectele de luptă, cu iconița și câte bucăți ai), Schimbă locul, Fugi. Când alegi ținta sau locul, pe tablă e îndemnul și „Înapoi”. Iconițele: `ui_icon_atac/aparare/obiect/schimba/fugi/vindecare/goleste_bara/scut_lumina.png` (o putere ia iconița după id-ul ei: `golesteBara` → `goleste_bara`).
 - **Pe jos:** inelul auriu sub cel care e la rând (`ui_lupta_inel.png`), cel roșu sub inamicul de sub mouse când alegi ținta (`ui_lupta_inel_tinta.png`).
 - **Rezultatul** (victorie, înfrângere, fugă) apare pe panoul mic (ca la Dormi). Butonul de viteză folosește butonul pătrat de lemn.

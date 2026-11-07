@@ -66,7 +66,7 @@ export function descriere(inv, id) {
   const parti = [];
   if (d.atac) parti.push(`Atac ${d.atac.min}-${d.atac.max} (${d.atac.tip === 'distanta' ? 'de la distanță' : 'apropiat'})`);
   if (d.douaMaini) parti.push('cu două mâini');
-  if (d.armura) parti.push(`Armură ${d.armura}, rezistă ${d.rezistenta} lovituri`);
+  if (d.armura) parti.push(`Armură +${d.armura}`);
   if (d.blocare) parti.push(`Blochează ${Math.round(d.blocare * 100)}%`);
   if (d.capacitate) parti.push(`${d.capacitate} sloturi`);
   for (const [k, v] of Object.entries(d.efecte?.nevoi || {})) parti.push(`${k} ${v > 0 ? '+' : ''}${v}`);

@@ -1125,15 +1125,6 @@ svg.zone {
   object-fit: contain;
   object-position: bottom;
 }
-.stare-armura {
-  position: absolute;
-  left: 50%;
-  bottom: -28px;
-  transform: translateX(-50%);
-  font-size: 22px;
-  color: #ff9a7a;
-  text-shadow: 0 1px 3px #000;
-}
 /* Viața și stamina pe verticală, în stânga luptătorului (designul autorului); umplerea crește de jos */
 .bare-luptator {
   position: absolute;
@@ -1175,6 +1166,18 @@ svg.zone {
 }
 .bara-v.viata .umplere-v {
   background: linear-gradient(#e0574a, #a3261c);
+}
+/* Armura: partea gri de deasupra vieții, se golește prima */
+.bara-v .armura-v {
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  border-radius: 2px;
+  background: linear-gradient(#d4d6da, #7e838b);
+  transition: height 0.15s linear, bottom 0.15s linear;
+}
+.numar-lupta.armura {
+  color: #c9ccd2;
 }
 .bara-v.stamina .umplere-v {
   background: linear-gradient(#f2c25a, #b9811d);

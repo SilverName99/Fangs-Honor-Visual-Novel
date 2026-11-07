@@ -97,9 +97,9 @@ export function creeazaLupta(parinte, joc) {
   let L = null;
 
   // ---------- luptătorii ----------
-  function armuriDin(listaPiese) {
-    return listaPiese.filter((p) => p.armura > 0).map((p) => ({ nume: p.nume, armura: p.armura, ramas: p.rezistenta ?? 99 }));
-  }
+  // Armura (decis de autor): fiecare piesă adaugă puncte la o bară gri, peste viață; loviturile golesc întâi armura,
+  // apoi viața. La fiecare luptă armura pornește plină (nu se uzează între lupte)
+  const armuraDin = (listaPiese) => listaPiese.reduce((s, p) => s + (p.armura || 0), 0);
 
   function luptatorVale(def) {
     const s = joc.stare;
@@ -120,7 +120,8 @@ export function creeazaLupta(parinte, joc) {
       viataMax: 100,
       staminaMax: cfg.vale.staminaMax,
       atac: arma?.atac || cfg.pumni,
-      armuri: armuriDin(piese),
+      armura: armuraDin(piese),
+      armuraMax: armuraDin(piese),
       blocare: scut?.blocare ?? cfg.blocareImplicita,
       abilitati: [],
       // Sunetul loviturii, după arma din mână
@@ -143,7 +144,8 @@ export function creeazaLupta(parinte, joc) {
       // Preotul nu atacă normal („faraAtac”): are doar puterile lui; pumnii stau ca rezervă, să nu crape codul
       atac: x.atac || cfg.pumni,
       faraAtac: !!x.faraAtac,
-      armuri: armuriDin([{ nume: 'Armura', armura: x.armura || 0, rezistenta: x.rezistenta }]),
+      armura: x.armura || 0,
+      armuraMax: x.armura || 0,
       blocare: x.blocare ?? cfg.blocareImplicita,
       abilitati: x.abilitati || [],
       // Strigătul inamicului când atacă (lupul mârâie, orcul răcnește) și sunetul loviturii lui
@@ -166,7 +168,6 @@ export function creeazaLupta(parinte, joc) {
   // Un personaj lat ocupă ambele locuri ale liniei lui (stă oficial „în față”)
   const laLoc = (tabara, linie, rand) => L.toti.find((f) => f.tabara === tabara && f.linie === linie && (f.rand === rand || f.lat));
   const linieGoala = (tabara, linie, faraCine) => !L.toti.some((f) => f !== faraCine && f.tabara === tabara && f.linie === linie);
-  const armuraIntreaga = (f) => f.armuri.filter((a) => a.ramas > 0).reduce((s, a) => s + a.armura, 0);
 
   // Apropiat: doar fața; spatele doar dacă locul din fața lui, pe aceeași linie, e gol sau personajul de acolo a căzut
   function tintePosibile(sursa, tip) {
@@ -228,8 +229,10 @@ export function creeazaLupta(parinte, joc) {
   function baraVerticala(tip) {
     const b = div(`bara-v ${tip}`);
     const umplere = div('umplere-v');
-    b.append(umplere, div('rama-v'));
-    return [b, umplere];
+    // Pe bara vieții, armura e partea gri de deasupra roșului
+    const armura = tip === 'viata' ? div('armura-v') : null;
+    b.append(umplere, ...(armura ? [armura] : []), div('rama-v'));
+    return [b, umplere, armura];
   }
 
   function creeazaElement(f) {
@@ -237,12 +240,12 @@ export function creeazaLupta(parinte, joc) {
     // Viața și stamina stau pe verticală, în stânga luptătorului, fără nume (numele e sus, sub medalion)
     const bare = div('bare-luptator');
     bare.title = f.nume;
-    const [bv, uv] = baraVerticala('viata');
+    const [bv, uv, av] = baraVerticala('viata');
     const [bs, us] = baraVerticala('stamina');
     f.elViata = uv;
+    f.elArmuraBara = av;
     f.elBara = us;
-    f.elArmura = div('stare-armura');
-    bare.append(bv, bs, f.elArmura);
+    bare.append(bv, bs);
     // Inelul de pe jos: auriu sub cel care e la rând, roșu sub ținta de sub mouse
     f.corp = div('corp');
     // Numele apare lângă luptător doar cu mouse-ul deasupra (decis de autor)
@@ -259,12 +262,14 @@ export function creeazaLupta(parinte, joc) {
     // nu la 90 (înainte se oprea la 90 și părea plină înainte să vină rândul)
     const inaltime = (p) => `${Math.max(0, Math.min(100, p)) * 0.9}%`;
     for (const f of L.toti) {
-      f.elViata.style.height = inaltime((f.viata / f.viataMax) * 100);
+      // Bara vieții ține viața și armura împreună: roșul jos, griul armurii deasupra lui
+      const total = f.viataMax + f.armuraMax;
+      const pViata = (Math.max(0, f.viata) / total) * 100;
+      f.elViata.style.height = inaltime(pViata);
+      f.elArmuraBara.style.bottom = `calc(5% + ${inaltime(pViata)})`;
+      f.elArmuraBara.style.height = inaltime((f.armura / total) * 100);
       f.elBara.style.height = inaltime(f.bara);
-      const crapate = f.armuri.filter((a) => a.ramas <= 0).length;
-      // Armura crăpată: un scuț mic sub bare (detaliile la hover)
-      f.elArmura.textContent = crapate ? '⛉' : '';
-      f.elArmura.title = crapate ? `Armură crăpată (${crapate})` : '';
+      f.elViata.parentElement.parentElement.title = `${f.nume}: viață ${Math.max(0, Math.round(f.viata))}/${f.viataMax}${f.armuraMax ? `, armură ${f.armura}/${f.armuraMax}` : ''}`;
     }
   }
 
@@ -420,16 +425,14 @@ export function creeazaLupta(parinte, joc) {
       numar(tinta, 'blocat', 'scut');
       return 0;
     }
-    let d = Math.max(1, intre(sursa.atac.min, sursa.atac.max) - armuraIntreaga(tinta));
+    let d = intre(sursa.atac.min, sursa.atac.max);
     if (tinta.apara) d = Math.max(1, Math.round(d * (1 - tinta.blocare)));
-    tinta.viata -= d;
-    // Fiecare lovitură uzează fiecare piesă întreagă; la zero, piesa crapă până la sfârșitul luptei
-    for (const a of tinta.armuri) {
-      if (a.ramas <= 0) continue;
-      a.ramas--;
-      if (a.ramas === 0) jurnal(`${a.nume} lui ${tinta.nume} s-a crăpat!`);
-    }
-    numar(tinta, `−${d}`);
+    // Lovitura golește întâi armura (bara gri), apoi viața
+    const dinArmura = Math.min(tinta.armura, d);
+    tinta.armura -= dinArmura;
+    tinta.viata -= d - dinArmura;
+    if (dinArmura && tinta.armura === 0) jurnal(`Armura lui ${tinta.nume} s-a dus!`);
+    numar(tinta, `−${d}`, dinArmura === d ? 'armura' : '');
     // Se aude doar ce se întâmplă (decis de autor): arma, iar în scut când ținta se apără; fără un impact în plus
     if (tinta.apara) joc.sunet.efect('lupta_scut');
     if (!tinta.apara) poza(tinta, 'lovit');

@@ -126,8 +126,7 @@
           "max": 12,
           "tip": "apropiat"
         },
-        "armura": 2,
-        "rezistenta": 6
+        "armura": 15
       },
       "_despre": "Roderick Lightfinder, fratele tatălui lui Vale (unchiul), fost soldat. Se poate recruta dacă l-ai ajutat în scandalul din tavernă (cum anume: TODO).",
       "dialog": "soldat",
@@ -190,8 +189,7 @@
           "tip": "apropiat",
           "sunet": "lupta_topor"
         },
-        "armura": 4,
-        "rezistenta": 8
+        "armura": 30
       },
       "program": [
         {
@@ -309,8 +307,7 @@
           "proiectil": "sprites/glaive_padure_campsite.png",
           "sunet": "glaive"
         },
-        "armura": 1,
-        "rezistenta": 5,
+        "armura": 8,
         "locuri": 2
       },
       "dialog": "vanatoare",

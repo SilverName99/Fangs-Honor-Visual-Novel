@@ -32,8 +32,7 @@
         "tip": "apropiat",
         "sunet": "lupta_lovit"
       },
-      "armura": 1,
-      "rezistenta": 5,
+      "armura": 8,
       "sunet": "lup"
     },
     "orc_taverna": {
@@ -71,7 +70,7 @@
         "tip": "apropiat",
         "sunet": "lupta_lovit"
       },
-      "armura": 1,
+      "armura": 10,
       "sunet": "mistret"
     },
     "orc_colector": {
@@ -86,8 +85,7 @@
         "tip": "apropiat",
         "sunet": "lupta_topor"
       },
-      "armura": 1,
-      "rezistenta": 5
+      "armura": 10
     }
   },
   "lupte": {
