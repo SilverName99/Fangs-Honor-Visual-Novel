@@ -29,7 +29,10 @@ function deblocheaza() {
 addEventListener('pointerdown', deblocheaza, { capture: true });
 addEventListener('keydown', deblocheaza, { capture: true });
 
-const nivel = (tip) => (volume.mut ? 0 : volume.general * volume[tip]);
+// Previzualizarea meniului din editor (Interfață) e jocul într-un cadru: acolo nu se aude nimic,
+// sunetul e doar în Testare și în joc
+const previzualizare = new URLSearchParams(location.search).has('meniu');
+const nivel = (tip) => (volume.mut || previzualizare ? 0 : volume.general * volume[tip]);
 
 function porneste(audio) {
   const p = audio.play();
@@ -54,7 +57,7 @@ function fir(tip) {
       if (curent?.cale === cale) return;
       if (curent) stinge(curent.audio);
       curent = null;
-      if (!cale || lipsa.has(cale)) return;
+      if (!cale || lipsa.has(cale) || previzualizare) return;
       const audio = new Audio(urlImagine(cale));
       audio.loop = repetat;
       audio.volume = 0;

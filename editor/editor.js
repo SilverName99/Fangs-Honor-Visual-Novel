@@ -29,10 +29,13 @@ document.addEventListener('deschide-aranjare', (e) => {
 });
 const interfata = creeazaInterfata(document.getElementById('interfata'), comun, reincarcaImagini, verificaSincronizarea);
 
+const cadru = document.getElementById('cadru-test');
 for (const b of document.querySelectorAll('.taburi button')) {
   b.onclick = () => {
     document.querySelectorAll('.taburi button').forEach((x) => x.classList.toggle('activ', x === b));
     document.querySelectorAll('.tab').forEach((t) => t.classList.toggle('activ', t.id === b.dataset.tab));
+    // Jocul de test se oprește de tot când pleci din Testare, ca muzica și sunetele lui să nu se mai audă
+    if (b.dataset.tab !== 'testare' && cadru.src !== 'about:blank') cadru.src = 'about:blank';
     if (b.dataset.tab === 'aranjare') return aranjare.arata();
     aranjare.ascunde();
     if (b.dataset.tab === 'galerie') galerie.arata();
@@ -42,7 +45,6 @@ for (const b of document.querySelectorAll('.taburi button')) {
   };
 }
 
-const cadru = document.getElementById('cadru-test');
 function incarcaTestul() {
   cadru.src = `index.html?debug=1&test=1&t=${Date.now()}`;
 }
