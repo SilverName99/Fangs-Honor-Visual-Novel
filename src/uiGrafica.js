@@ -310,16 +310,58 @@ export function aplicaMeniu(meniu = {}) {
   for (const [k, , implicit] of REGLAJE_MENIU) r.setProperty(`--meniu-${k}`, `${meniu[k] ?? implicit}px`);
 }
 
+// Mărimea cursorului (decis de autor): se alege din Opțiuni și se ține minte în browser, nu în salvare.
+// CSS nu poate mări un cursor, deci imaginea se redesenează pe un canvas la mărimea aleasă
+const CHEIE_CURSOR = 'fh_marime_cursor';
+export const MARIME_CURSOR = { min: 16, max: 96, implicit: 32 };
+export function marimeCursor() {
+  try {
+    const v = Number(localStorage.getItem(CHEIE_CURSOR));
+    return v >= MARIME_CURSOR.min && v <= MARIME_CURSOR.max ? v : MARIME_CURSOR.implicit;
+  } catch {
+    return MARIME_CURSOR.implicit;
+  }
+}
+let refaCursoarele = () => {};
+export function seteazaMarimeCursor(px) {
+  try {
+    localStorage.setItem(CHEIE_CURSOR, String(px));
+  } catch {}
+  refaCursoarele();
+}
+// Încape în pătratul ales, cu forma lui; vârful rămâne în colțul stânga-sus, unde browserul face clicul
+function cursorLaMarime(img) {
+  const m = marimeCursor();
+  const k = m / Math.max(img.naturalWidth, img.naturalHeight);
+  const c = document.createElement('canvas');
+  c.width = Math.max(1, Math.round(img.naturalWidth * k));
+  c.height = Math.max(1, Math.round(img.naturalHeight * k));
+  const g = c.getContext('2d');
+  g.imageSmoothingQuality = 'high';
+  g.drawImage(img, 0, 0, c.width, c.height);
+  return c.toDataURL('image/png');
+}
+
 export function aplicaGraficaUi(aranjareUi = {}) {
   aplicaBare(aranjareUi.bare);
   aplicaMeniu(aranjareUi.meniu);
   const stil = document.createElement('style');
   document.head.append(stil);
   const reguli = new Map();
+  const scrie = () => (stil.textContent = ELEMENTE_UI.map((x) => reguli.get(x.id) || '').join('\n'));
+  const cursoare = new Map();
+  refaCursoarele = () => {
+    for (const [el, img] of cursoare) reguli.set(el.id, regula(el, cursorLaMarime(img), 0));
+    scrie();
+  };
   for (const el of ELEMENTE_UI) {
     if (el.tip === 'imagine') continue;
     const img = new Image();
     img.onload = () => {
+      if (el.tip === 'cursor') {
+        cursoare.set(el, img);
+        return refaCursoarele();
+      }
       const baza = el.ca ? ELEMENTE_UI.find((x) => x.id === el.ca) : el;
       const ales = aranjareUi.margini?.[baza.id] ?? baza.margine ?? 0;
       // Piesele care stau la mărimea imaginii nu ies în afară (o margine cu minus ar mări rama peste mărimea ei)

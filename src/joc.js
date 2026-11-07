@@ -27,7 +27,7 @@ import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
-import { aplicaGraficaUi, aplicaMeniu } from './uiGrafica.js';
+import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
@@ -773,7 +773,17 @@ function deschideMeniul() {
         setTimeout(arataOptiunile, 300);
       }),
     );
-    continut.append(randViteza, ...randuriSunet, randMut, randEcran);
+    // Mărimea cursorului: se vede pe loc, cât tragi de glisor
+    const randCursor = div('rand-optiune');
+    const glisorCursor = Object.assign(document.createElement('input'), { type: 'range', min: MARIME_CURSOR.min, max: MARIME_CURSOR.max, step: 4, value: marimeCursor(), className: 'glisor-sunet' });
+    const umpleCursor = () => glisorCursor.style.setProperty('--p', `${((glisorCursor.value - MARIME_CURSOR.min) / (MARIME_CURSOR.max - MARIME_CURSOR.min)) * 100}%`);
+    umpleCursor();
+    glisorCursor.oninput = () => {
+      umpleCursor();
+      seteazaMarimeCursor(Number(glisorCursor.value));
+    };
+    randCursor.append(div('nume-optiune', 'Mărimea cursorului'), glisorCursor);
+    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randEcran);
     panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
   }
 
