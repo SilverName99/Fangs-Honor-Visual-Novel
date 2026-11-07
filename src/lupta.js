@@ -262,12 +262,13 @@ export function creeazaLupta(parinte, joc) {
     // nu la 90 (înainte se oprea la 90 și părea plină înainte să vină rândul)
     const inaltime = (p) => `${Math.max(0, Math.min(100, p)) * 0.9}%`;
     for (const f of L.toti) {
-      // Bara vieții ține viața și armura împreună: roșul jos, griul armurii deasupra lui
-      const total = f.viataMax + f.armuraMax;
-      const pViata = (Math.max(0, f.viata) / total) * 100;
+      // Armura (decis de autor): griul acoperă vârful roșului; la lovituri se retrage în sus până dă de viață,
+      // apoi scade viața în jos. Bara e doar viața, ca la armura pierdută bara să rămână plină cât viața e plină
+      const pViata = (Math.max(0, f.viata) / f.viataMax) * 100;
+      const pArmura = Math.min(pViata, (f.armura / f.viataMax) * 100);
       f.elViata.style.height = inaltime(pViata);
-      f.elArmuraBara.style.bottom = `calc(5% + ${inaltime(pViata)})`;
-      f.elArmuraBara.style.height = inaltime((f.armura / total) * 100);
+      f.elArmuraBara.style.top = `calc(95% - ${inaltime(pViata)})`;
+      f.elArmuraBara.style.height = inaltime(pArmura);
       f.elBara.style.height = inaltime(f.bara);
       f.elViata.parentElement.parentElement.title = `${f.nume}: viață ${Math.max(0, Math.round(f.viata))}/${f.viataMax}${f.armuraMax ? `, armură ${f.armura}/${f.armuraMax}` : ''}`;
     }

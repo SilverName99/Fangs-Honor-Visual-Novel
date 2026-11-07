@@ -417,7 +417,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 - Când un personaj al jucătorului e gata, **timpul se oprește** până se alege acțiunea.
 - Sus pe ecran se vede **ordinea următoare**: medalioane cu portrete, în ordinea în care vor acționa (vezi „Ecranul de luptă”).
 - Vale obosit (stamina din nevoi sub 30) pornește lupta cu bara goală, iar Vale odihnit o pornește pe jumătate plină.
-- Fiecare personaj are o bară de **viață** (cu armura gri deasupra) și una de **stamina**, pe verticală, în stânga lui.
+- Fiecare personaj are o bară de **viață** (cu armura gri peste vârful ei) și una de **stamina**, pe verticală, în stânga lui.
 
 ### Acțiuni
 
@@ -431,7 +431,8 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 | **Fugi** | Doar în luptele unde e permis. Reușește sigur (alegere simplă, se poate schimba). |
 
 **Armura** (decis de autor, simplu și vizibil):
-- Fiecare piesă de echipament adaugă **puncte de armură** la o **bară gri, peste viață** (pe bara vieții, deasupra roșului). Așa se vede cât aduce fiecare piesă.
+- Fiecare piesă de echipament adaugă **puncte de armură** la o **bară gri, peste viață**: griul acoperă vârful roșului (bara e doar viața). Așa se vede cât aduce fiecare piesă.
+- **La lovituri, griul se retrage în sus până dă de viață, apoi viața scade în jos** (decis de autor).
 - **Loviturile golesc întâi armura, apoi viața.** *Apărarea* scade lovitura (50%, cu scut cât spune scutul) înainte să ajungă la armură.
 - La **fiecare luptă** armura pornește plină (nu se uzează între lupte). Inamicii și recruții pot avea și ei armură (`armura` în `lupte.json` / `npcs.json`).
 - Cifrele de pornire: glugă 5, vestă 10, jambiere 5, scut 5 (Vale are 100 viață); Roderick 15, Bram 30, Kaia 8; lupul negru 8, mistrețul și colectorul 10 (`TODO` echilibru).
@@ -443,7 +444,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 ### Ecranul de luptă (decis, după designul autorului: „sat sărac, dar îngrijit”, lemn simplu, fier, pânză albastră)
 
 - **Sus:** bara de lemn (`ui_lupta_bara_sus.png`) cu **medalioanele** celor care urmează, în ordinea turelor (**următorii 6**, la mărimea lor, nu întinși; primul e puțin mai mare și luminat; rândul de medalioane e o bucată separată în editor, „Medalioanele”, așezată peste lemnul barii; rama stă fix pe marginea portretului, fața umple exact fereastra ramei, măsurată din imagine, iar eticheta e lată cât rama), cu rama aurie la aliați și roșie la inamici (`ui_lupta_rama.png`, `ui_lupta_rama_inamic.png`) și **numele dedesubt**, pe o etichetă de pânză (`ui_lupta_eticheta.png`). Portretul din medalion e fața din portretul de dialog (decis: fără poze separate de medalion), tăiată pătrat, doar în fereastra ramei; medalioanele cresc odată cu bara. Sub bară, **jurnalul** (`ui_lupta_jurnal.png`).
-- **Lângă fiecare luptător**, în stânga lui (la inamici în dreapta), **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura e partea gri de deasupra vieții.
+- **Lângă fiecare luptător**, în stânga lui (la inamici în dreapta), **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura e griul de peste vârful vieții.
 - **Jos:** tabla de acțiuni (`ui_lupta_actiuni.png`) cu **butoane pătrate doar cu iconițe** (`ui_lupta_buton.png` + `_hover`; numele apare deasupra, pe eticheta de pânză, la hover): Atac, fiecare putere separat (preotul n-are Atac, are Vindecare, Golește bara, Scutul de lumină), Apărare, Obiect (deschide obiectele de luptă, cu iconița și câte bucăți ai), Schimbă locul, Fugi. Când alegi ținta sau locul, pe tablă e îndemnul și „Înapoi”. Iconițele: `ui_icon_atac/aparare/obiect/schimba/fugi/vindecare/goleste_bara/scut_lumina.png` (o putere ia iconița după id-ul ei: `golesteBara` → `goleste_bara`).
 - **Pe jos:** inelul auriu sub cel care e la rând (`ui_lupta_inel.png`), cel roșu sub inamicul de sub mouse când alegi ținta (`ui_lupta_inel_tinta.png`).
 - **Rezultatul** (victorie, înfrângere, fugă) apare pe panoul mic (ca la Dormi). Butonul de viteză folosește butonul pătrat de lemn.
