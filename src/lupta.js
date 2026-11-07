@@ -255,9 +255,12 @@ export function creeazaLupta(parinte, joc) {
   // Lupta se poate închide cât o animație încă rulează: atunci nu mai e nimic de desenat
   function actualizeazaBare() {
     if (!L) return;
+    // Umplerea are loc în 90% din ramă (5% sus și jos); o bară plină ajunge sus abia la 100,
+    // nu la 90 (înainte se oprea la 90 și părea plină înainte să vină rândul)
+    const inaltime = (p) => `${Math.max(0, Math.min(100, p)) * 0.9}%`;
     for (const f of L.toti) {
-      f.elViata.style.height = `${Math.max(0, (f.viata / f.viataMax) * 100)}%`;
-      f.elBara.style.height = `${Math.max(0, Math.min(100, f.bara))}%`;
+      f.elViata.style.height = inaltime((f.viata / f.viataMax) * 100);
+      f.elBara.style.height = inaltime(f.bara);
       const crapate = f.armuri.filter((a) => a.ramas <= 0).length;
       // Armura crăpată: un scuț mic sub bare (detaliile la hover)
       f.elArmura.textContent = crapate ? '⛉' : '';
