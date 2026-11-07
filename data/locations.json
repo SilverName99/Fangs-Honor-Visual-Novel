@@ -108,7 +108,9 @@
             {
               "id": "dormi",
               "tip": "dormi",
-              "nume": "Dormi"
+              "nume": "Dormi",
+              "imagine": "locations/somn_casa.png",
+              "text": "Vale doarme..."
             },
             {
               "id": "cufar",
@@ -481,7 +483,9 @@
             {
               "id": "dormi",
               "tip": "dormi",
-              "nume": "Dormi"
+              "nume": "Dormi",
+              "imagine": "locations/somn_taverna.png",
+              "text": "Vale doarme..."
             }
           ],
           "incuiat": {

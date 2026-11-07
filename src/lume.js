@@ -420,9 +420,9 @@ export function imaginiCerute(date, scene) {
       if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
     }
   }
-  // Imaginile muncii (câmpul, vacile, moara, lemnele, apa): pe tot ecranul cât durează, ca la vânătoare.
-  // Doar muncile care chiar au un loc pe hartă (ferma de porci nu mai există)
-  grup = 'Munca';
+  // Imaginile muncii și ale somnului (câmpul, vacile, moara, lemnele, apa, patul): pe tot ecranul cât durează,
+  // ca la vânătoare. Doar muncile care chiar au un loc pe hartă (ferma de porci nu mai există)
+  grup = 'Munca și somnul';
   const muncileFolosite = new Set(date.locations.zone.flatMap((z) => (z.locuri || []).map((l) => l.actiune)).filter(Boolean));
   for (const [id, m] of Object.entries(date.config.munca || {})) if (m.imagine && muncileFolosite.has(id)) adauga(m.imagine, `Muncă: ${m.nume} (pe tot ecranul cât lucrează Vale, 1920 × 1080)`);
   for (const z of date.locations.zone)
