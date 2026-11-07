@@ -2567,3 +2567,28 @@ svg.zone {
   color: #5a3e22;
   margin: 2px 0 0 34px;
 }
+
+/* Semnul misiunii deasupra unui personaj sau a unei clădiri: auriu (! nouă, ? de predat), gri (? în lucru); plutește ușor */
+.semn-scena {
+  position: absolute;
+  z-index: 4000;
+  transform: translate(-50%, -110%);
+  font: 900 80px/1 Georgia, serif;
+  color: #ffcf4a;
+  text-shadow: 0 0 14px rgba(255, 190, 60, 0.95), 0 0 3px #000, 0 2px 4px #000;
+  pointer-events: none;
+  animation: pluteste-semn 1.8s ease-in-out infinite;
+}
+.semn-scena.lucru {
+  color: #c9c9c9;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 2px 4px #000;
+}
+@keyframes pluteste-semn {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -10px;
+  }
+}

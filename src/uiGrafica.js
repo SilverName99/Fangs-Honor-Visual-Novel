@@ -323,6 +323,20 @@ export function marimeCursor() {
   }
 }
 let refaCursoarele = () => {};
+// Semnele misiunilor (! și ?) în scenă și pe hartă; se pot opri din Opțiuni, pentru cine vrea să descopere singur
+const CHEIE_SEMNE = 'fh_semne_misiuni';
+export function semneMisiuniPornite() {
+  try {
+    return localStorage.getItem(CHEIE_SEMNE) !== 'nu';
+  } catch {
+    return true;
+  }
+}
+export function seteazaSemneMisiuni(da) {
+  try {
+    localStorage.setItem(CHEIE_SEMNE, da ? 'da' : 'nu');
+  } catch {}
+}
 export function seteazaMarimeCursor(px) {
   try {
     localStorage.setItem(CHEIE_CURSOR, String(px));

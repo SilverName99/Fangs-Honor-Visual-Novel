@@ -1,7 +1,7 @@
 import './stil.css';
 import { dateBundle as date } from './date.js';
 import { construiesteLumea, candidati } from './lume.js';
-import { creeazaEcran, randeaza, aplicaMoment, puncteSvg } from './scena.js';
+import { creeazaEcran, randeaza, aplicaMoment, puncteSvg, LATIME, INALTIME } from './scena.js';
 import { conturImagine } from './contur.js';
 import { verifica, registreazaConditie } from './conditii.js';
 import { preincarca, elementImagine } from './imagini.js';
@@ -20,7 +20,7 @@ import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
-import { actualizeazaMisiuni, optiuniMisiuni } from './misiuni.js';
+import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
@@ -28,7 +28,7 @@ import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
-import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor } from './uiGrafica.js';
+import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor, seteazaSemneMisiuni, semneMisiuniPornite } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
@@ -811,7 +811,16 @@ function deschideMeniul() {
       seteazaMarimeCursor(Number(glisorCursor.value));
     };
     randCursor.append(div('nume-optiune', 'Mărimea cursorului'), glisorCursor);
-    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randEcran);
+    const randSemne = div('rand-optiune');
+    randSemne.append(
+      div('nume-optiune', 'Semnele misiunilor (! și ?)'),
+      buton(semneMisiuniPornite() ? 'Oprește-le' : 'Pornește-le', 'buton-mic-meniu', () => {
+        seteazaSemneMisiuni(!semneMisiuniPornite());
+        afiseaza();
+        arataOptiunile();
+      }),
+    );
+    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randSemne, randEcran);
     panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
   }
 
@@ -860,6 +869,48 @@ function comutaEcranComplet() {
   else document.documentElement.requestFullscreen?.().catch(() => mesaj('Browserul nu permite ecran complet aici. Încearcă F11.'));
 }
 document.addEventListener('fullscreenchange', () => afiseaza());
+
+// Semnele misiunilor în afara dialogului (decis de autor): ! / ? deasupra personajului din scenă și deasupra
+// clădirii (sau ușii) unde e el acum, ca să știi la cine să mergi fără să deschizi cartea. Se pot opri din Opțiuni
+function puneSemneMisiuni(d, r, ctx, prezenti) {
+  if (!semneMisiuniPornite()) return;
+  const semne = new Map();
+  for (const p of personaje.values()) {
+    const semn = semnPersonaj(joc, p.id);
+    // Cine doarme nu poate vorbi acum, deci nu cheamă pe nimeni
+    if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc: undeEste(p, ctx) });
+  }
+  if (!semne.size) return;
+  const pune = (parinte, left, top, semn) => {
+    const s = div(`semn-scena ${semn}`, semn === 'nou' ? '!' : '?');
+    Object.assign(s.style, { left, top });
+    parinte.append(s);
+  };
+  // Personajele din scena de acum
+  for (const [id, { semn }] of semne) {
+    const el = prezenti.has(id) && r.obiecte.get(id);
+    if (el?.isConnected) pune(el.parentElement, el.style.left, `calc(${el.style.top} - ${el.style.height})`, semn);
+  }
+  // Clădirile de pe hartă și ușile din zone: unde e acum cineva cu un semn (cel mai important câștigă)
+  const ordine = { gata: 3, nou: 2, lucru: 1 };
+  for (const t of d.tinte) {
+    if (!t.spre) continue;
+    const tinta = t.spre.replace('.', '/');
+    const aici = [...semne.values()].filter((x) => x.loc && (x.loc === tinta || x.loc.startsWith(`${tinta}/`)));
+    if (!aici.length) continue;
+    const semn = aici.sort((a, b) => ordine[b.semn] - ordine[a.semn])[0].semn;
+    const piesa = d.obiecte.find((o) => o.tinta === t.id && r.obiecte.get(o.id)?.isConnected);
+    if (piesa) {
+      const el = r.obiecte.get(piesa.id);
+      pune(el.parentElement, el.style.left, `calc(${el.style.top} - ${el.style.height})`, semn);
+      continue;
+    }
+    const poligon = r.poligoane.get(t.id);
+    if (!poligon?.isConnected) continue;
+    const b = poligon.getBBox();
+    pune(stratLume, `${((b.x + b.width / 2) / LATIME) * 100}%`, `${(b.y / INALTIME) * 100}%`, semn);
+  }
+}
 
 function afiseaza() {
   const d = lume.get(stare.scena);
@@ -957,6 +1008,7 @@ function afiseaza() {
     setTimeout(() => el.classList.contains('lipsa') && puneZona(), 600);
   }
 
+  puneSemneMisiuni(d, r, ctx, prezenti);
   baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));
 
   butoaneHud.replaceChildren(

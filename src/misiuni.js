@@ -63,3 +63,9 @@ export function optiuniMisiuni(joc, idPersonaj) {
   }
   return rez;
 }
+
+// Semnul cel mai important al unui personaj, pentru scenă și hartă: ? auriu (de predat), ! (nouă), ? gri (în lucru)
+export function semnPersonaj(joc, idPersonaj) {
+  const semne = optiuniMisiuni(joc, idPersonaj).map((x) => x.alegere.semn);
+  return ['gata', 'nou', 'lucru'].find((s) => semne.includes(s)) || null;
+}
