@@ -12,8 +12,52 @@ function buton(text, clic, clasa = '') {
   return b;
 }
 
+// Unele iconițe generate au mai mult gol transparent într-o parte (rucsacul stătea prea jos în slot): după ce se
+// încarcă, se măsoară unde e partea vizibilă și imaginea se mută cât să stea ea pe mijlocul căsuței. Calculul se face
+// o singură dată pe imagine (o căsuță e pătrată, deci mutarea e o fracție din căsuță)
+const centrari = new Map();
+function centrare(img) {
+  if (centrari.has(img.src)) return centrari.get(img.src);
+  let rez = null;
+  try {
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    const pas = Math.max(1, Math.round(Math.max(w, h) / 256));
+    const c = Object.assign(document.createElement('canvas'), { width: Math.ceil(w / pas), height: Math.ceil(h / pas) });
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    const d = ctx.getImageData(0, 0, c.width, c.height).data;
+    let x0 = c.width, y0 = c.height, x1 = -1, y1 = -1;
+    for (let y = 0; y < c.height; y++)
+      for (let x = 0; x < c.width; x++)
+        if (d[(y * c.width + x) * 4 + 3] > 24) {
+          if (x < x0) x0 = x;
+          if (x > x1) x1 = x;
+          if (y < y0) y0 = y;
+          if (y > y1) y1 = y;
+        }
+    if (x1 >= 0) {
+      const m = Math.max(c.width, c.height);
+      rez = { x: (c.width / 2 - (x0 + x1 + 1) / 2) / m, y: (c.height / 2 - (y0 + y1 + 1) / 2) / m };
+    }
+  } catch {
+    rez = null;
+  }
+  centrari.set(img.src, rez);
+  return rez;
+}
 export function iconita(inv, id) {
-  return elementImagine([`items/${id}.png`], { clasa: 'iconita', raport: 1, eticheta: inv.def(id).nume });
+  const el = elementImagine([`items/${id}.png`], { clasa: 'iconita', raport: 1, eticheta: inv.def(id).nume });
+  const aplica = () => {
+    const img = el.querySelector('img');
+    if (!img?.complete || !img.naturalWidth) return;
+    const c = centrare(img);
+    if (c) img.style.translate = `${(c.x * 100).toFixed(1)}% ${(c.y * 100).toFixed(1)}%`;
+  };
+  el.addEventListener('incarcat', aplica);
+  // Deja încărcată (din memoria imaginilor): se aplică pe loc, după ce intră în pagină
+  requestAnimationFrame(aplica);
+  return el;
 }
 
 // Descrierea scurtă a unui obiect: ce face și cât valorează
@@ -248,6 +292,18 @@ export function creeazaEcranInventar(parinte, joc) {
     const ecran = joc.lume.get('echipament');
     el.replaceChildren();
     const cuCufar = !!optiuni.cufar;
+    // La cufăr (decis de autor), rucsacul trece în stânga și cufărul în dreapta: bucățile rucsacului (foaia, semnul de
+    // carte) stau oglindite față de locul lor din editor, iar cufărul ia locul foii din dreapta. La magazin rămâne ca acum
+    const oglinda = (o, i) => {
+      const p = pozitie(joc.date.aranjare.echipament, o, i);
+      return { ...o, id: `${o.id}_oglindit`, implicit: { ...p, x: 1 - p.x } };
+    };
+    const langaFoaie = (o, i) => {
+      const iF = ecran.obiecte.findIndex((x) => x.tip === 'inv-foaie');
+      const pf = pozitie(joc.date.aranjare.echipament, ecran.obiecte[iF], iF);
+      const p = pozitie(joc.date.aranjare.echipament, o, i);
+      return { ...o, id: `${o.id}_oglindit`, implicit: { ...p, x: 1 - pf.x + (p.x - pf.x) } };
+    };
 
     ecran.obiecte.forEach((o, i) => {
       // Lângă cufăr, în stânga stă cufărul în locul lui Vale (echiparea merge și de acolo, din butonul „Echipează”)
@@ -276,7 +332,7 @@ export function creeazaEcranInventar(parinte, joc) {
         return;
       }
       if (o.tip === 'inv-titlu') {
-        const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Cufărul' : 'Echipament') : 'Inventar';
+        const text = o.id === 'titlu_echipament' ? (cuCufar ? 'Inventar' : 'Echipament') : cuCufar ? 'Cufărul' : 'Inventar';
         const t = div('titlu-ecran-inv', text);
         // Textul e cât 80% din înălțimea pusă în editor, minus 10 px (cerut de autor)
         t.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.8 - 10}px`;
@@ -295,12 +351,13 @@ export function creeazaEcranInventar(parinte, joc) {
         semn.onclick = () => ((vedere = vedere === 'poveste' ? 'rucsac' : 'poveste'), (selectat = null), arata());
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         semn.style.fontSize = `${p.scara * INALTIME * 0.075}px`;
-        return asaza(semn, o, i, 1600);
+        // La cufăr, semnul rămâne lipit de foaia rucsacului, în aceeași parte a ei (se mută odată cu foaia)
+        return asaza(semn, cuCufar ? langaFoaie(o, i) : o, i, 1600);
       }
       if (o.tip !== 'inv-foaie') return;
 
-      // Foaia din dreapta: rucsacul (sau obiectele de poveste) și detaliile obiectului ales
-      const c = foaie(o, i, '');
+      // Foaia rucsacului (sau a obiectelor de poveste) cu detaliile obiectului ales: în dreapta, iar la cufăr în stânga
+      const c = foaie(cuCufar ? oglinda(o, i) : o, i, '');
       c.parentElement.dataset.tinta = 'inventar';
       if (vedere === 'poveste') {
         c.append(capFoaie('Obiecte de poveste'));
@@ -332,10 +389,9 @@ export function creeazaEcranInventar(parinte, joc) {
       }
       c.append(grila(s.inventar, inv.capacitate(), 'inventar'), detaliiObiect(s));
 
-      // Lângă cufăr: a doua foaie, în stânga, oglindită față de prima
+      // Lângă cufăr: a doua foaie, cufărul, în dreapta, pe locul foii rucsacului din editor
       if (cuCufar) {
-        const p = pozitie(joc.date.aranjare.echipament, o, i);
-        const cc = foaie({ ...o, id: 'foaie_cufar', implicit: { ...p, x: 1 - p.x } }, i, 'foaie-cufar');
+        const cc = foaie(o, i, 'foaie-cufar');
         cc.parentElement.dataset.tinta = 'cufar';
         const total = joc.date.config.inventar.cufar;
         cc.append(capFoaie('În cufăr', inv.ocupate(s.cufar), total));
