@@ -30,6 +30,9 @@ body {
 .strat-lume {
   position: absolute;
   inset: 0;
+  /* Straturile din scenă (piesele „deasupra”, cele cu imagine de noapte, prim-planul) rămân în scenă:
+     oricât de sus ar urca între ele, nu ies peste interfață (moara de noapte ajunsese peste meniu) */
+  isolation: isolate;
 }
 
 .imagine {
