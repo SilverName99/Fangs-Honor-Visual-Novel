@@ -262,6 +262,10 @@
     "combat/vale_sabie_cazut.png": {
       "lupta_taverna_parter": 150,
       "lupta_padure_interior": 150
+    },
+    "combat/vale_sabie_doua_maini_cazut.png": {
+      "lupta_taverna_parter": 150,
+      "lupta_padure_interior": 150
     }
   }
 }
