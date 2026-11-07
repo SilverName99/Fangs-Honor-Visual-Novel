@@ -269,7 +269,8 @@ function regula(el, url, margine) {
     case 'textura':
       return `${el.selector}{background-image:url("${url}");background-repeat:repeat-x;background-size:auto 100%;}`;
     case 'cursor':
-      return el.apasat ? `body:active, body *:active{cursor:url("${url}") 0 0, auto;}` : `body, body *{cursor:url("${url}") 0 0, auto;}`;
+      // !important: butoanele și zonele clicabile au „cursor: pointer” în stil, care altfel ar pune mânuța browserului
+      return el.apasat ? `body:active, body *:active{cursor:url("${url}") 0 0, auto !important;}` : `body, body *{cursor:url("${url}") 0 0, auto !important;}`;
     default:
       return '';
   }
