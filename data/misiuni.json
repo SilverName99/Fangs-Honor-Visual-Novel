@@ -13,7 +13,7 @@
             "obiect": "lemn",
             "n": 10
           },
-          "sfat": "Lemnele se adună din pădure („Adună lemne”: o oră = 3, două ore = 4; de cel mult două ori pe zi).",
+          "sfat": "Lemnele se adună din pădure („Adună lemne”: o oră = 3, două ore = 6; de cel mult două ori pe zi).",
           "indiciu": {
             "text": "N-am apucat încă să adun lemnele.",
             "nod": "acoperis_indiciu"

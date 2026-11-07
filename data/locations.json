@@ -860,7 +860,7 @@
           "nume": "Adună lemne",
           "titlu": "Aduni lemne",
           "obiect": "lemn",
-          "_nota": "Decis de autor: o oră = 3 lemne, două ore = 4 lemne; cel mult de două ori pe zi.",
+          "_nota": "Decis de autor: o oră = 3 lemne, două ore = 6 lemne; cel mult de două ori pe zi.",
           "variante": [
             {
               "nume": "O oră (+3 lemne)",
@@ -869,9 +869,9 @@
               "stamina": 10
             },
             {
-              "nume": "Două ore (+4 lemne)",
+              "nume": "Două ore (+6 lemne)",
               "minute": 120,
-              "n": 4,
+              "n": 6,
               "stamina": 20
             }
           ],
