@@ -743,15 +743,17 @@ export function creeazaLupta(parinte, joc) {
     // bucăți se măsoară din înălțimea ei (--h), ca o bară micșorată să-și micșoreze și medalioanele, și butoanele
     const ui = joc.lume.get('lupta_interfata');
     const bucati = { bara_sus: L.elOrdine, jurnal: L.elJurnal, actiuni: L.elMeniu, viteza };
-    ui?.obiecte.forEach((o, i) => {
-      const elem = bucati[o.id];
-      if (!elem) return;
-      const p = pozitie(joc.date.aranjare.lupta_interfata, o, i);
+    // Tabla de acțiuni are două locuri: cel de luptă (jos) și cel de la formație (în locul barii de sus)
+    L.pune = (elem, id) => {
+      const i = ui?.obiecte.findIndex((o) => o.id === id) ?? -1;
+      if (i < 0) return;
+      const p = pozitie(joc.date.aranjare.lupta_interfata, ui.obiecte[i], i);
       elem.classList.add('bucata-lupta');
       aplicaPozitie(elem, p);
       elem.style.zIndex = '';
       elem.style.setProperty('--h', `${p.scara * INALTIME}px`);
-    });
+    };
+    for (const [id, elem] of Object.entries(bucati)) L.pune(elem, id);
     el.append(scenaLupta, L.elOrdine, L.elJurnal, L.elMeniu, viteza);
     actualizeazaBare();
 
@@ -761,12 +763,20 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function start() {
+    // Abia acum apar bara turelor și jurnalul, iar tabla coboară la locul ei de luptă
+    L.elOrdine.hidden = false;
+    L.elJurnal.hidden = false;
+    L.pune(L.elMeniu, 'actiuni');
     L.elMeniu.hidden = true;
     L.pauza = false;
     requestAnimationFrame(bucla);
   }
 
   function pregatire() {
+    // Formația (decis de autor): fără bara turelor și jurnal; doar tabla cu „Începe lupta”, sus, în locul barii
+    L.elOrdine.hidden = true;
+    L.elJurnal.hidden = true;
+    L.pune(L.elMeniu, 'formatie');
     let ales = null;
     const gata = () => {
       L.toti.forEach(aseaza);

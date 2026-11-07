@@ -203,6 +203,7 @@ export function construiesteLumea(date) {
       bucata('jurnal', 'lup-jurnal', 'Jurnalul (ce s-a întâmplat)', fisierUi('lupta_jurnal'), 900 / 64, POZITII_LUPTA_UI.jurnal),
       bucata('actiuni', 'lup-actiuni', 'Tabla de acțiuni (și formația)', fisierUi('lupta_actiuni'), 1300 / 190, POZITII_LUPTA_UI.actiuni),
       bucata('viteza', 'lup-viteza', 'Butonul de viteză', fisierUi('lupta_buton'), 1, POZITII_LUPTA_UI.viteza),
+      bucata('formatie', 'lup-actiuni', 'Tabla de la formație (înainte de luptă, cu „Începe lupta”)', fisierUi('lupta_actiuni'), 1300 / 190, POZITII_LUPTA_UI.formatie),
     ],
   });
   // Masa de zaruri de la poartă: fundalul văzut prin ochii lui Vale, cu buturuga; peste el orcii și paharele lor
@@ -268,6 +269,8 @@ export const POZITII_LUPTA_UI = {
   jurnal: { x: 0.5, y: 0.175, scara: 0.045 },
   actiuni: { x: 0.5, y: 0.99, scara: 0.14 },
   viteza: { x: 0.965, y: 0.985, scara: 0.075 },
+  // La formație, tabla cu „Începe lupta” stă sus, în locul barii turelor (care apare abia la începerea luptei)
+  formatie: { x: 0.5, y: 0.15, scara: 0.15 },
 };
 export const idHartaLupta = (fundal) => `lupta_${fundal.replace('.', '_')}`;
 

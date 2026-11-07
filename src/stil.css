@@ -1627,7 +1627,9 @@ svg.zone {
 }
 
 /* „display: flex” de mai sus ar anula atributul hidden: meniul trebuie să dispară cât se execută o acțiune */
-.lupta-meniu[hidden] {
+.lupta-meniu[hidden],
+.ordine-lupta[hidden],
+.jurnal-lupta[hidden] {
   display: none;
 }
 
