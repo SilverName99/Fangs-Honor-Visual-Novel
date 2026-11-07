@@ -68,7 +68,7 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
 
 ### Cele trei ecrane ale editorului
 
-1. **Galerie.** Tragi PNG-uri în pagină. Sunt grupate pe categorii (secțiunea 5). Editorul arată **ce lipsește** (cerut de date, dar neîncărcat) și **ce nu e folosit**. Numele se verifică după convenție și se propune numele corect.
+1. **Galerie.** Tragi PNG-uri în pagină. Sunt grupate pe categorii (secțiunea 5). Un grup la care e totul încărcat (și opționalele) stă închis. Editorul arată **ce lipsește** (cerut de date, dar neîncărcat) și **ce nu e folosit**. Numele se verifică după convenție și se propune numele corect.
 2. **Aranjare.** Deschizi o scenă, harta sau ecranul de echipament și:
    - tragi sprite-urile și piesele, iar rotița mouse-ului le mărește (x, y, scară);
    - desenezi **zonele clicabile** punct cu punct (poligoane);

@@ -193,7 +193,9 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       const gataObl = obl.filter((c) => comun.imagini.has(c.cale)).length;
       const gataOpt = lista.filter((c) => c.optional && comun.imagini.has(c.cale)).length;
       const complet = gataObl === obl.length;
-      return `<details class="grup-galerie" data-grup="${esc(g)}" ${inchiseImplicit.has(g) && !deschise.has(g) ? '' : 'open'}>
+      // Un grup cu tot încărcat (și opționalele) stă închis (cerut de autor): nu mai e nimic de făcut acolo
+      const totul = lista.every((c) => comun.imagini.has(c.cale));
+      return `<details class="grup-galerie" data-grup="${esc(g)}" ${(inchiseImplicit.has(g) || totul) && !deschise.has(g) ? '' : 'open'}>
         <summary><b>${esc(g)}</b> <span class="${complet ? 'bine' : 'avertisment'}">${gataObl} / ${obl.length} obligatorii</span>
         <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span></summary>
         <div class="grila">${carduri(lista)}</div></details>`;
