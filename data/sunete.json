@@ -123,10 +123,21 @@
           "conditii": {
             "ora": {
               "min": "02:00",
-              "max": "08:59"
+              "max": "04:59"
             }
           },
           "volum": 0.8,
+          "infundat": false
+        },
+        {
+          "sunet": "sat_zi",
+          "conditii": {
+            "ora": {
+              "min": "05:00",
+              "max": "08:59"
+            }
+          },
+          "volum": 0.9,
           "infundat": false
         }
       ]
@@ -144,11 +155,22 @@
           "conditii": {
             "ora": {
               "min": "02:00",
-              "max": "08:59"
+              "max": "04:59"
             }
           },
           "volum": 0.8,
           "infundat": false
+        },
+        {
+          "sunet": "sat_zi",
+          "conditii": {
+            "ora": {
+              "min": "05:00",
+              "max": "08:59"
+            }
+          },
+          "volum": 0.75,
+          "infundat": "putin"
         }
       ]
     },
