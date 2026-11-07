@@ -1377,7 +1377,7 @@ svg.zone {
   padding: 0 calc(var(--h) * 0.03);
   display: block;
   /* Scrisul puțin mai jos de jumătatea etichetei: așa pare pe mijlocul pânzei, sub marginea ei de sus mai groasă */
-  line-height: calc(var(--h) * 0.265);
+  line-height: calc(var(--h) * 0.32);
   text-align: center;
   text-overflow: ellipsis;
   font: 600 calc(var(--h) * 0.12) Georgia, serif;
