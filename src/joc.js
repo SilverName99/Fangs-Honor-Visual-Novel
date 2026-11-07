@@ -974,8 +974,9 @@ addEventListener('keydown', (e) => {
   // Literele scrise într-un câmp (panoul debug) nu deschid inventarul sau cartea
   if (e.target.closest?.('input, textarea, select')) return;
   if ((e.key === 'v' || e.key === 'V') && !dialog.activ()) return comutaPanoul();
-  if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() ? carte.inchide() : carte.deschide();
-  if (carte.deschisa()) return e.key === 'Escape' && carte.inchide();
+  if ((e.key === 'p' || e.key === 'P') && !dialog.activ() && !ecranInventar.deschis() && !ui.querySelector('.acoperitor')) return carte.deschisa() || carte.deschide();
+  // Cartea se închide doar din butonul „Închide” (decis de autor): nici tastele, nici clicul pe fundal
+  if (carte.deschisa()) return;
   if ((e.key === 'i' || e.key === 'I') && !dialog.activ() && !ecranMagazin.deschis()) return ecranInventar.deschis() ? ecranInventar.inchide() : ecranInventar.deschide({ cufar: false });
   if (e.key !== 'Escape') return;
   const acoperitor = ui.querySelector('.acoperitor');

@@ -207,8 +207,6 @@ export function creeazaCarte(parinte, joc) {
         joc.sunet.efect('pagina');
         arata();
       };
-      // Un clic pe fundal (în afara cărții) o închide, ca la o carte pusă pe masă
-      el.onclick = (e) => e.target === el && inchide();
       el.append(carte, inapoi, inainte, comuta, inchideB);
       parinte.append(el);
     }
