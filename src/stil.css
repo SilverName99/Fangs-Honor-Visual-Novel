@@ -2189,6 +2189,8 @@ svg.zone {
   height: var(--meniu-butonInaltime, 165px);
   display: flex;
   align-items: center;
+  /* Iconița și scrisul stau împreună, centrate pe pergament (decis de autor: iconița lângă scris) */
+  justify-content: center;
   gap: 0;
   padding: 0 var(--meniu-butonInterior, 40px);
   color: #2a1a0e;
@@ -2202,17 +2204,15 @@ svg.zone {
 }
 .buton.buton-meniu .icon-hud {
   flex: none;
-  /* Mutarea spre dreapta se reglează în editor (Interfață → Meniul), după rama butonului */
-  margin-left: var(--meniu-iconitaDreapta, 16px);
   width: var(--meniu-iconita, 130px);
   height: var(--meniu-iconita, 130px);
   font-size: calc(var(--meniu-iconita, 130px) * 0.7);
   line-height: var(--meniu-iconita, 130px);
 }
 .text-buton-meniu {
-  flex: 1;
-  /* Scrisul stă lângă iconiță (decis de autor), la distanța reglată în editor */
-  padding-left: var(--meniu-iconitaText, 30px);
+  flex: none;
+  /* Scrisul stă lângă iconiță, la distanța reglată în editor */
+  padding-left: var(--meniu-iconitaText, 24px);
   text-align: left;
   font: 700 var(--meniu-text, 40px) Georgia, serif;
 }
