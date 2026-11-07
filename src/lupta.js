@@ -561,6 +561,8 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function alegeLoc(f) {
+    // Cât alegi locul, tabla e străvezie în stânga, ca să se vadă (și să se poată apăsa) locurile de sub ea (cerut de autor)
+    L.elMeniu.classList.add('alege-loc');
     L.elLocuri.replaceChildren();
     if (f.lat) {
       // Personajul lat se mută doar pe o linie întreagă liberă
@@ -586,6 +588,7 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function meniu(f) {
+    L.elMeniu.classList.remove('alege-loc');
     L.activ = f;
     L.elLocuri.replaceChildren();
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
@@ -775,6 +778,7 @@ export function creeazaLupta(parinte, joc) {
   }
 
   function start() {
+    L.elMeniu.classList.remove('alege-loc');
     // Abia acum apar bara turelor și jurnalul, iar tabla coboară la locul ei de luptă
     L.elOrdine.hidden = false;
     L.elMedalioane.hidden = false;

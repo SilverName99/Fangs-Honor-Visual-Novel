@@ -1679,6 +1679,16 @@ svg.zone {
 }
 
 /* „display: flex” de mai sus ar anula atributul hidden: meniul trebuie să dispară cât se execută o acțiune */
+/* „Alege locul”: partea din stânga a tablei devine străvezie și lasă clicul să treacă la locurile de sub ea;
+   îndemnul și „Înapoi”, la mijloc, rămân întregi și apăsabile */
+.lupta-meniu.alege-loc {
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 27%, #000 34%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 27%, #000 34%);
+}
+.lupta-meniu.alege-loc > * {
+  pointer-events: auto;
+}
 .lupta-meniu[hidden],
 .ordine-lupta[hidden],
 .medalioane-lupta[hidden],
