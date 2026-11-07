@@ -2592,3 +2592,53 @@ svg.zone {
     margin-top: -10px;
   }
 }
+
+/* Barele lui Vale în inventar: aceleași piese ca în panoul din HUD, dar cât le face autorul în editor */
+.bara-nevoie.bara-inv {
+  margin: 0;
+  transform: translate(-50%, -100%);
+}
+.bara-inv .cale {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.bara-inv .umplere {
+  flex: none;
+}
+/* Cât e bara de înaltă în editor, atât de mare e și scrisul (mărimea vine din cod, după înălțimea ei) */
+.bara-inv .eticheta,
+.bara-inv .valoare {
+  font-size: 1em;
+}
+.bara-inv .eticheta {
+  left: 7%;
+}
+.bara-inv .valoare {
+  right: 7%;
+}
+/* Cât ar crește bara cu obiectul ales: aceeași culoare, mai deschisă, pulsând ușor */
+.bara-inv .umplere.previzualizare {
+  border-radius: 999px;
+  opacity: 0.5;
+  filter: brightness(1.5);
+  animation: pulseaza 1.2s ease-in-out infinite;
+}
+.monede-inv {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  transform: translate(-50%, -100%);
+  white-space: nowrap;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  color: #f3e2b8;
+  text-shadow: 0 2px 4px #000;
+}
+.monede-inv .icon-hud {
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  text-align: center;
+}

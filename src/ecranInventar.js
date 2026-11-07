@@ -2,6 +2,7 @@ import { elementImagine } from './imagini.js';
 import { pozitie, aplicaPozitie, LATIME, INALTIME } from './scena.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 import { fisierUi } from './uiGrafica.js';
+import { RAPORT_BARA_INV } from './lume.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, clasa = '') {
@@ -332,6 +333,37 @@ export function creeazaEcranInventar(parinte, joc) {
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         b.style.fontSize = `${p.scara * INALTIME * 0.4}px`;
         return asaza(b, o, i, 1700);
+      }
+      // Barele lui Vale (decis de autor): aceleași ca în panoul din HUD, cu grafica lor; cu un obiect de mâncat sau
+      // de băut ales, partea mai deschisă arată cât ar crește bara (și „+20” lângă cifră)
+      if (o.tip === 'inv-bara') {
+        const cheie = o.id.replace('bara_', '');
+        const v = Math.round(s.nevoi[cheie] ?? 0);
+        const idAles = obiectSelectat();
+        const d = idAles && inv.def(idAles);
+        const plus = d?.tip === 'consumabil' ? d.efecte?.nevoi?.[cheie] || 0 : 0;
+        const bara = div(`bara-nevoie bara-inv ${cheie} ${v < joc.date.config.nevoi.prag ? 'scazut' : ''}`);
+        const cale = div('cale');
+        const umplere = div('umplere');
+        umplere.style.width = `${v}%`;
+        cale.append(umplere);
+        if (plus > 0) {
+          const pre = div('umplere previzualizare');
+          pre.style.width = `${Math.min(100, v + plus) - v}%`;
+          cale.append(pre);
+        }
+        const p = pozitie(joc.date.aranjare.echipament, o, i);
+        const h = p.scara * INALTIME;
+        bara.style.width = `${h * RAPORT_BARA_INV}px`;
+        bara.style.fontSize = `${Math.max(11, h * 0.5)}px`;
+        bara.append(cale, div('eticheta', { viata: 'Viață', stamina: 'Stamina', foame: 'Foame', sete: 'Sete' }[cheie]), div('valoare', plus > 0 ? `${v} +${plus}` : String(v)));
+        return asaza(bara, o, i, 1600);
+      }
+      if (o.tip === 'inv-monede') {
+        const m = div('monede-inv');
+        m.append(Object.assign(div('icon-hud icon-monede'), { textContent: '🪙' }), div('', `${s.bani} monede`));
+        m.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.6}px`;
+        return asaza(m, o, i, 1600);
       }
       if (o.tip === 'inv-semn') {
         const semn = div('semn-inv');

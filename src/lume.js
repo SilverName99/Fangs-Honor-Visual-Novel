@@ -144,6 +144,7 @@ export function construiesteLumea(date) {
   // Ecranul de inventar (designul autorului) se aranjează în editor ca o scenă: în stânga Vale și sloturile de echipament,
   // în dreapta foaia de pergament cu inventarul, semnul de carte, titlurile și butonul „Închide”
   // În editor, tot ce nu e figura sau foaia stă peste ele (ca în joc), ca să poată fi apucat cu mouse-ul
+  // Barele din inventar sunt lungi (lățimea = de atâtea ori înălțimea), ca cele din panoul lui Vale
   const bucata = (id, tip, nume, imagine, raport, implicit) => ({ id, tip, nume, eticheta: nume, imagine, raport, variante: [], implicit, deasupra: !['figura', 'inv-foaie', 'mag-marfa', 'mag-rucsac'].includes(tip) });
   scene.set('echipament', {
     id: 'echipament',
@@ -166,6 +167,14 @@ export function construiesteLumea(date) {
       bucata('titlu_echipament', 'inv-titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
       bucata('titlu_inventar', 'inv-titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
       bucata('inchide', 'inv-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
+      // Barele lui Vale și monedele, ca să le vezi și din inventar (decis de autor: fiecare bară se așază separat)
+      ...[
+        ['viata', 'Viață', 0.21, 0.885],
+        ['stamina', 'Stamina', 0.41, 0.885],
+        ['foame', 'Foame', 0.21, 0.94],
+        ['sete', 'Sete', 0.41, 0.94],
+      ].map(([id, nume, x, y]) => bucata(`bara_${id}`, 'inv-bara', `Bara: ${nume}`, `ui/text_bara_${id}.png`, RAPORT_BARA_INV, { x, y, scara: 0.036 })),
+      bucata('monede', 'inv-monede', 'Monedele lui Vale', 'ui/text_monede_inventar.png', 4, { x: 0.31, y: 0.99, scara: 0.045 }),
     ],
   });
   // Magazinul (același la negustor, la Bram și la Agnes): două foi de pergament peste scena estompată, ca la inventar.
@@ -268,6 +277,7 @@ export const LOCURI_LUPTA = ['aliat', 'inamic'].flatMap((tabara) =>
 // Mai mică decât prima variantă (cerut de autor), cu tabla de acțiuni jos și la formație
 // Rândul de medalioane: 6 coloane de 0.72 × înălțime, cu 5 spații de 0.1 (la fel în stil.css)
 const RAPORT_MEDALIOANE = 6 * 0.72 + 5 * 0.1;
+export const RAPORT_BARA_INV = 8;
 export const POZITII_LUPTA_UI = {
   bara_sus: { x: 0.5, y: 0.125, scara: 0.12 },
   medalioane: { x: 0.5, y: 0.115, scara: 0.1 },
