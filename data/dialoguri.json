@@ -29,7 +29,12 @@
           }
         }
       },
-      "meniu"
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
     ],
     "noduri": {
       "prezentare": {
@@ -53,41 +58,57 @@
         "emotie": "normal",
         "text": "Spune-i că sunt bine. Și că n-are de ce să-și facă griji pentru un bătrân încăpățânat."
       },
-      "meniu": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Ce-i, băiete? Hai, spune.",
-        "alegeri": [
-          {
-            "text": "Orcii ăștia beau pe datorie și râd de noi. Până când îi mai lăsăm, unchiule?",
-            "conditii": {
-              "loc": "taverna/parter",
-              "prezent": "hangita",
-              "nu": {
-                "existaStare": "scandal_taverna"
-              }
-            },
-            "efecte": {
-              "eveniment": "taverna_scandal"
-            },
-            "spre": null
-          },
-          {
-            "text": "Cum era tata, când erați tineri?",
-            "spre": "tata"
-          },
-          {
-            "text": "Ai grijă de tine, unchiule.",
-            "spre": null
-          }
-        ]
-      },
       "tata": {
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Mai încăpățânat ca tine. Și mai bun decât mine la toate... mai puțin la băut. Hai, lasă trecutul. Nu-l mai aduce nimeni înapoi."
+      },
+      "salut1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ce-i, băiete? Hai, spune."
+      },
+      "salut2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "A, Vale. Trage un scaun, dacă tot ai venit."
+      },
+      "r_tata_a": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ca un soldat bătrân: berea e slabă și amintirile tari.",
+        "urmator": "r_tata_b"
+      },
+      "r_tata_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cum era tata, când erați tineri?",
+        "urmator": "tata"
       }
-    }
+    },
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
+    "meniu": true,
+    "optiuni": [
+      {
+        "text": "Orcii ăștia beau pe datorie și râd de noi. Până când îi mai lăsăm, unchiule?",
+        "conditii": {
+          "loc": "taverna/parter",
+          "prezent": "hangita",
+          "nu": {
+            "existaStare": "scandal_taverna"
+          }
+        },
+        "efecte": {
+          "eveniment": "taverna_scandal"
+        },
+        "inchide": true
+      }
+    ],
+    "vorbeste": [
+      {
+        "nod": "r_tata_a"
+      }
+    ]
   },
   "soldat_dupa_refuz": {
     "partener": "soldat",
@@ -123,7 +144,12 @@
           }
         }
       },
-      "meniu"
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
     ],
     "noduri": {
       "prezentare": {
@@ -149,44 +175,6 @@
           }
         ]
       },
-      "meniu": {
-        "vorbitor": "hangita",
-        "emotie": "normal",
-        "text": "Cu ce te servesc, Vale?",
-        "alegeri": [
-          {
-            "text": "Cumpără",
-            "efecte": {
-              "magazin": "hangita"
-            },
-            "spre": null
-          },
-          {
-            "text": "Închiriază o cameră (5 monede)",
-            "conditii": {
-              "bani": {
-                "min": 5
-              },
-              "nu": {
-                "inchiriat": "taverna"
-              }
-            },
-            "efecte": {
-              "bani": -5,
-              "inchiriaza": "taverna"
-            },
-            "spre": "camera"
-          },
-          {
-            "text": "Ce se mai aude prin sat?",
-            "spre": "barfa"
-          },
-          {
-            "text": "Mulțumesc, Agnes. Pe curând.",
-            "spre": null
-          }
-        ]
-      },
       "camera": {
         "vorbitor": "hangita",
         "emotie": "normal",
@@ -201,8 +189,58 @@
         "vorbitor": "hangita",
         "emotie": "normal",
         "text": "Orcii beau, sătenii tac, iar eu număr cănile sparte. Ca în fiecare zi. Dacă afli ceva mai vesel, vino și spune-mi și mie."
+      },
+      "salut1": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Cu ce te servesc, Vale?"
+      },
+      "salut2": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Iar tu? Stai jos, că nu te mușc. Ce-ți aduc?"
+      },
+      "a_obosita": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Obosită, dar în picioare. Tavernă plină înseamnă pungă plină... sau măcar înseamnă că oamenii nu-s singuri seara."
       }
-    }
+    },
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
+    "meniu": true,
+    "optiuni": [
+      {
+        "text": "Cumpără",
+        "efecte": {
+          "magazin": "hangita"
+        },
+        "spre": null
+      },
+      {
+        "text": "Închiriază o cameră (5 monede)",
+        "conditii": {
+          "bani": {
+            "min": 5
+          },
+          "nu": {
+            "inchiriat": "taverna"
+          }
+        },
+        "efecte": {
+          "bani": -5,
+          "inchiriaza": "taverna"
+        },
+        "spre": "camera"
+      }
+    ],
+    "vorbeste": [
+      {
+        "nod": "barfa"
+      },
+      {
+        "nod": "a_obosita"
+      }
+    ]
   },
   "vanatoare_intalnire": {
     "partener": "vanatoare",
@@ -254,26 +292,19 @@
   },
   "vanatoare": {
     "partener": "vanatoare",
-    "start": "a",
+    "start": [
+      {
+        "aleator": [
+          "a",
+          "salut2"
+        ]
+      }
+    ],
     "noduri": {
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Ai venit tot singur? Bine. Cu cât știu mai puțini de locul ăsta, cu atât mai bine.",
-        "alegeri": [
-          {
-            "text": "Cum e vânatul în ultima vreme?",
-            "spre": "vanat"
-          },
-          {
-            "text": "Ce ai de gând să faci cu orcii?",
-            "spre": "orci"
-          },
-          {
-            "text": "Mă întorc în sat. Ai grijă de tine.",
-            "spre": null
-          }
-        ]
+        "text": "Ai venit tot singur? Bine. Cu cât știu mai puțini de locul ăsta, cu atât mai bine."
       },
       "vanat": {
         "vorbitor": "vanatoare",
@@ -284,8 +315,47 @@
         "vorbitor": "vanatoare",
         "emotie": "suparat",
         "text": "Singură? Nimic. Sunt prea mulți. Dar dacă satul ar avea câțiva oameni cu inimă... asta ar fi altă poveste."
+      },
+      "salut2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Te-am auzit de departe. Calci ca un urs, Vale."
+      },
+      "k_vanat_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bine, cât poate fi de bine în pădurea asta.",
+        "urmator": "k_vanat_b"
+      },
+      "k_vanat_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cum e vânatul în ultima vreme?",
+        "urmator": "vanat"
+      },
+      "k_orci_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Țin ochii pe sat, de la marginea pădurii.",
+        "urmator": "k_orci_b"
+      },
+      "k_orci_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce ai de gând să faci cu orcii?",
+        "urmator": "orci"
       }
-    }
+    },
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
+    "meniu": true,
+    "vorbeste": [
+      {
+        "nod": "k_vanat_a"
+      },
+      {
+        "nod": "k_orci_a"
+      }
+    ]
   },
   "kaia_la_vanatoare": {
     "partener": "vanatoare",
@@ -439,31 +509,39 @@
     }
   },
   "fermier": {
-    "_nota": "CIORNĂ. Misiunile fermierului sunt TODO; aici vor apărea ca alegeri.",
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Misiunile fermierului sunt TODO.",
     "partener": "fermier",
     "start": "a",
     "noduri": {
       "a": {
         "vorbitor": "fermier",
         "emotie": "normal",
-        "text": "Bună ziua, Vale. Dacă vii după muncă, câmpul nu duce lipsă. Orcii au grijă să nu ne ajungă niciodată grâul.",
-        "alegeri": [
-          {
-            "text": "Cum merg lucrurile pe câmp?",
-            "spre": "b"
-          },
-          {
-            "text": "Spor la treabă.",
-            "spre": null
-          }
-        ]
+        "text": "Bună ziua, Vale. Dacă vii după muncă, câmpul nu duce lipsă. Orcii au grijă să nu ne ajungă niciodată grâul."
       },
       "b": {
         "vorbitor": "fermier",
         "emotie": "suparat",
         "text": "Ar merge, dacă n-ar trece patrula în fiecare săptămână să-și ia „partea”. Partea lor e cam jumătate. Și crește."
+      },
+      "f_camp_a": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Muncim, ca de obicei. Pământul nu întreabă cine stăpânește satul.",
+        "urmator": "f_camp_b"
+      },
+      "f_camp_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cum merg lucrurile pe câmp?",
+        "urmator": "b"
       }
-    }
+    },
+    "meniu": true,
+    "vorbeste": [
+      {
+        "nod": "f_camp_a"
+      }
+    ]
   },
   "miriam": {
     "partener": "miriam",
@@ -634,7 +712,12 @@
           }
         }
       },
-      "meniu"
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
     ],
     "noduri": {
       "prezentare": {
@@ -658,25 +741,6 @@
         "emotie": "normal",
         "text": "Fierarii nu uită. Nici fierul, nici oamenii."
       },
-      "meniu": {
-        "vorbitor": "fierar",
-        "emotie": "normal",
-        "text": "Spune repede. Fierul nu așteaptă.",
-        "alegeri": [
-          {
-            "text": "Ce mai faci, Bram?",
-            "spre": "cum"
-          },
-          {
-            "text": "Cum îi suporți pe orci?",
-            "spre": "orci"
-          },
-          {
-            "text": "Te las să lucrezi.",
-            "spre": null
-          }
-        ]
-      },
       "cum": {
         "vorbitor": "fierar",
         "emotie": "normal",
@@ -686,11 +750,43 @@
         "vorbitor": "fierar",
         "emotie": "suparat",
         "text": "Strâng din dinți și bat fierul mai tare. Într-o zi o să-mi ceară să le ascut toporul pentru ultima oară. Atunci o să vadă cât de bine îl ascut."
+      },
+      "salut1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Spune repede. Fierul nu așteaptă."
+      },
+      "salut2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Vale. Dacă ai venit după ceva, spune. Dacă nu, ține-te departe de foc."
+      },
+      "f_orci_a": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Muncesc. Ce altceva să fac?",
+        "urmator": "f_orci_b"
+      },
+      "f_orci_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și cum îi suporți pe orci?",
+        "urmator": "orci"
       }
-    }
+    },
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
+    "meniu": true,
+    "vorbeste": [
+      {
+        "nod": "cum"
+      },
+      {
+        "nod": "f_orci_a"
+      }
+    ]
   },
   "mag": {
-    "_nota": "CIORNĂ. Elian e tânăr (decis de autor). E mag al luminii sub acoperire: replicile doar sugerează asta, nu o spun.",
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Elian e tânăr (decis de autor). E mag al luminii sub acoperire: replicile doar sugerează asta, nu o spun.",
     "partener": "mag",
     "start": [
       {
@@ -701,7 +797,12 @@
           }
         }
       },
-      "meniu"
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
     ],
     "noduri": {
       "prezentare": {
@@ -725,25 +826,6 @@
         "emotie": "normal",
         "text": "Știu. Se roagă pentru tatăl tău. Și pentru tine, cred. Spune-i că lumânarea ei arde mereu cel mai frumos."
       },
-      "meniu": {
-        "vorbitor": "mag",
-        "emotie": "normal",
-        "text": "Ce te frământă, Vale?",
-        "alegeri": [
-          {
-            "text": "Crezi că lumina ne mai poate ajuta?",
-            "spre": "lumina"
-          },
-          {
-            "text": "Nu ți-e frică de orci, frate Elian?",
-            "spre": "frica"
-          },
-          {
-            "text": "Am trecut doar să văd ce faci.",
-            "spre": "trecut"
-          }
-        ]
-      },
       "lumina": {
         "vorbitor": "mag",
         "emotie": "normal",
@@ -758,8 +840,66 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Atunci treci mai des. Biserica asta are nevoie de mai mulți oameni care „doar trec”."
+      },
+      "salut1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ce te frământă, Vale?"
+      },
+      "salut2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pace ție, Vale. Intră, aici e loc pentru toată lumea."
+      },
+      "e_lumina_a": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Bine, slavă cerului. Lumânările ard, doar oamenii vin tot mai rar.",
+        "urmator": "e_lumina_b"
+      },
+      "e_lumina_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Crezi că lumina ne mai poate ajuta?",
+        "urmator": "lumina"
+      },
+      "e_frica_a": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Liniștit, cât se poate de liniștit într-un sat ca ăsta.",
+        "urmator": "e_frica_b"
+      },
+      "e_frica_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu ți-e frică de orci, frate Elian?",
+        "urmator": "frica"
+      },
+      "e_trecut_a": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Eu sunt bine. Dar tu? Ce te aduce pe aici?",
+        "urmator": "e_trecut_b"
+      },
+      "e_trecut_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am trecut doar să văd ce faci.",
+        "urmator": "trecut"
       }
-    }
+    },
+    "meniu": true,
+    "vorbeste": [
+      {
+        "nod": "e_lumina_a"
+      },
+      {
+        "nod": "e_frica_a"
+      },
+      {
+        "nod": "e_trecut_a"
+      }
+    ]
   },
   "negustor": {
     "_nota": "CIORNĂ. Prețul eliberării (40 de monede) e TODO. Ce a furat hoțul e ciornă.",
