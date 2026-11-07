@@ -266,6 +266,25 @@
     "combat/vale_sabie_doua_maini_cazut.png": {
       "lupta_taverna_parter": 130,
       "lupta_padure_interior": 130
+    },
+    "combat/vale_topor_doua_maini_idle.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_topor_doua_maini_atac.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_topor_doua_maini_aparare.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_topor_doua_maini_lovit.png": {
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
+    },
+    "combat/vale_topor_doua_maini_cazut.png": {
+      "lupta_taverna_parter": 130
     }
   }
 }
