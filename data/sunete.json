@@ -17,7 +17,6 @@
     "casa": {
       "sunet": "sat_zi",
       "volum": 0.9,
-      "infundat": "putin",
       "variante": [
         {
           "sunet": "sat_noapte",
@@ -25,7 +24,8 @@
             "moment": [
               "noaptea"
             ]
-          }
+          },
+          "volum": 0.8
         }
       ]
     },
@@ -40,7 +40,9 @@
             "moment": [
               "noaptea"
             ]
-          }
+          },
+          "volum": 0.8,
+          "infundat": "mult"
         }
       ]
     },
@@ -55,7 +57,9 @@
             "moment": [
               "noaptea"
             ]
-          }
+          },
+          "volum": 0.8,
+          "infundat": "mult"
         }
       ]
     },
@@ -72,7 +76,7 @@
               "noaptea"
             ]
           },
-          "volum": 0.9
+          "volum": 0.8
         }
       ]
     },
@@ -86,8 +90,7 @@
               "noaptea"
             ]
           },
-          "volum": 0.75,
-          "infundat": "putin"
+          "volum": 0.8
         }
       ]
     },
@@ -107,7 +110,7 @@
               "max": "08:59"
             }
           },
-          "volum": 0.9,
+          "volum": 0.8,
           "infundat": false
         }
       ]
@@ -128,8 +131,8 @@
               "max": "08:59"
             }
           },
-          "volum": 0.75,
-          "infundat": "putin"
+          "volum": 0.8,
+          "infundat": false
         }
       ]
     },
@@ -151,7 +154,8 @@
                 }
               }
             ]
-          }
+          },
+          "volum": 0.8
         }
       ]
     },
@@ -164,7 +168,8 @@
             "moment": [
               "noaptea"
             ]
-          }
+          },
+          "volum": 0.8
         }
       ]
     },
@@ -178,7 +183,7 @@
               "noaptea"
             ]
           },
-          "volum": 0.9
+          "volum": 0.8
         }
       ]
     },
@@ -217,12 +222,25 @@
             "moment": [
               "noaptea"
             ]
-          }
+          },
+          "volum": 0.8
         }
       ]
     },
     "biserica.interior": {
-      "sunet": "biserica"
+      "sunet": "biserica",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.8,
+          "infundat": "mult"
+        }
+      ]
     },
     "poarta": {
       "sunet": "poarta_zi",
@@ -234,7 +252,7 @@
               "noaptea"
             ]
           },
-          "volum": 0.9
+          "volum": 0.8
         },
         {
           "sunet": "poarta",
