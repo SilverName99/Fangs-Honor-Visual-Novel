@@ -2624,21 +2624,3 @@ svg.zone {
   filter: brightness(1.5);
   animation: pulseaza 1.2s ease-in-out infinite;
 }
-.monede-inv {
-  display: flex;
-  align-items: center;
-  gap: 0.35em;
-  transform: translate(-50%, -100%);
-  white-space: nowrap;
-  font-family: Georgia, serif;
-  font-weight: 700;
-  color: #f3e2b8;
-  text-shadow: 0 2px 4px #000;
-}
-.monede-inv .icon-hud {
-  width: 1.2em;
-  height: 1.2em;
-  font-size: 0.9em;
-  line-height: 1.2em;
-  text-align: center;
-}

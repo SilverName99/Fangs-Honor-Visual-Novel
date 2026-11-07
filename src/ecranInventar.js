@@ -106,6 +106,7 @@ export function creeazaEcranInventar(parinte, joc) {
   function obiectSelectat() {
     const s = joc.stare;
     if (!selectat) return null;
+    if (selectat.din === 'bani') return 'monede';
     if (selectat.din === 'slot') return s.echipat[selectat.slot] || null;
     return (selectat.din === 'cufar' ? s.cufar : s.inventar)[selectat.index]?.id || null;
   }
@@ -184,9 +185,20 @@ export function creeazaEcranInventar(parinte, joc) {
     return c;
   }
 
+  // Căsuța monedelor (decis de autor): mereu prima în rucsac, toate monedele una peste alta, cu numărul pe ea
+  function celulaMonede() {
+    const c = div('celula celula-monede');
+    if (selectat?.din === 'bani') c.classList.add('selectata');
+    c.append(iconita(inv, 'monede'), div('numar', String(joc.stare.bani)));
+    c.title = `${joc.stare.bani} monede`;
+    c.onclick = () => ((selectat = { din: 'bani' }), arata());
+    return c;
+  }
+
   function grila(lista, cap, din) {
     const g = div('grila-inv');
     g.dataset.tinta = din;
+    if (din === 'inventar') g.append(celulaMonede());
     lista.forEach((x, index) => g.append(celula(x, { din, index })));
     for (let i = inv.ocupate(lista); i < cap; i++) g.append(div('celula goala'));
     return g;
@@ -233,7 +245,7 @@ export function creeazaEcranInventar(parinte, joc) {
     const ic = div('iconita-detalii');
     ic.append(iconita(inv, id));
     const text = div('text-detalii');
-    text.append(div('nume-obiect', d.nume), div('descriere-obiect', descriere(inv, id)));
+    text.append(div('nume-obiect', d.nume), div('descriere-obiect', id === 'monede' ? `${s.bani} ${s.bani === 1 ? 'monedă' : 'monede'}` : descriere(inv, id)));
     const actiuni = div('actiuni-inv');
     const b = (t, clic) => actiuni.append(buton(t, clic, 'buton-mic-meniu'));
     if (selectat.din === 'inventar') {
@@ -336,34 +348,31 @@ export function creeazaEcranInventar(parinte, joc) {
       }
       // Barele lui Vale (decis de autor): aceleași ca în panoul din HUD, cu grafica lor; cu un obiect de mâncat sau
       // de băut ales, partea mai deschisă arată cât ar crește bara (și „+20” lângă cifră)
+      // Bara nevoii (decis de autor): una singură, unde o pune autorul în editor; apare doar când e ales ceva de mâncat
+      // sau de băut și arată nevoia pe care o umple (pâinea → foamea), cu partea mai deschisă = cât ar crește.
+      // Un obiect care umple două nevoi (berea: setea și stamina) are două bare, una sub alta
       if (o.tip === 'inv-bara') {
-        const cheie = o.id.replace('bara_', '');
-        const v = Math.round(s.nevoi[cheie] ?? 0);
         const idAles = obiectSelectat();
         const d = idAles && inv.def(idAles);
-        const plus = d?.tip === 'consumabil' ? d.efecte?.nevoi?.[cheie] || 0 : 0;
-        const bara = div(`bara-nevoie bara-inv ${cheie} ${v < joc.date.config.nevoi.prag ? 'scazut' : ''}`);
-        const cale = div('cale');
-        const umplere = div('umplere');
-        umplere.style.width = `${v}%`;
-        cale.append(umplere);
-        if (plus > 0) {
-          const pre = div('umplere previzualizare');
-          pre.style.width = `${Math.min(100, v + plus) - v}%`;
-          cale.append(pre);
-        }
+        if (d?.tip !== 'consumabil') return;
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         const h = p.scara * INALTIME;
-        bara.style.width = `${h * RAPORT_BARA_INV}px`;
-        bara.style.fontSize = `${Math.max(11, h * 0.5)}px`;
-        bara.append(cale, div('eticheta', { viata: 'Viață', stamina: 'Stamina', foame: 'Foame', sete: 'Sete' }[cheie]), div('valoare', plus > 0 ? `${v} +${plus}` : String(v)));
-        return asaza(bara, o, i, 1600);
-      }
-      if (o.tip === 'inv-monede') {
-        const m = div('monede-inv');
-        m.append(Object.assign(div('icon-hud icon-monede'), { textContent: '🪙' }), div('', `${s.bani} monede`));
-        m.style.fontSize = `${pozitie(joc.date.aranjare.echipament, o, i).scara * INALTIME * 0.6}px`;
-        return asaza(m, o, i, 1600);
+        Object.entries(d.efecte?.nevoi || {}).filter(([, plus]) => plus > 0).forEach(([cheie, plus], k) => {
+          const v = Math.round(s.nevoi[cheie] ?? 0);
+          const bara = div(`bara-nevoie bara-inv ${cheie} ${v < joc.date.config.nevoi.prag ? 'scazut' : ''}`);
+          const cale = div('cale');
+          const umplere = div('umplere');
+          umplere.style.width = `${v}%`;
+          const pre = div('umplere previzualizare');
+          pre.style.width = `${Math.min(100, v + plus) - v}%`;
+          cale.append(umplere, pre);
+          bara.style.width = `${h * RAPORT_BARA_INV}px`;
+          bara.style.fontSize = `${Math.max(11, h * 0.5)}px`;
+          bara.append(cale, div('eticheta', { viata: 'Viață', stamina: 'Stamina', foame: 'Foame', sete: 'Sete' }[cheie]), div('valoare', `${v} +${plus}`));
+          asaza(bara, o, i, 1600);
+          bara.style.marginTop = `${k * h * 1.3}px`;
+        });
+        return;
       }
       if (o.tip === 'inv-semn') {
         const semn = div('semn-inv');
@@ -394,7 +403,7 @@ export function creeazaEcranInventar(parinte, joc) {
         c.append(lista);
         return;
       }
-      c.append(capFoaie('Rucsac', inv.ocupate(s.inventar), inv.capacitate()));
+      c.append(capFoaie('Rucsac', inv.ocupate(s.inventar) + 1, inv.capacitateRucsac()));
       if (optiuni.deLuat) {
         const { id, n } = optiuni.deLuat;
         const b = div('de-luat');

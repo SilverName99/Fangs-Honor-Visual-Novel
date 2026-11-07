@@ -137,8 +137,15 @@ export function creeazaEcranMagazin(parinte, joc) {
         c.append(g, detalii('marfa'));
       } else if (o.tip === 'mag-rucsac') {
         const c = foaie(o, i);
-        c.append(capFoaie('Rucsacul tău', `${inv.ocupate(s.inventar)} / ${inv.capacitate()}`));
+        c.append(capFoaie('Rucsacul tău', `${inv.ocupate(s.inventar) + 1} / ${inv.capacitateRucsac()}`));
         const g = div('grila-inv grila-marfa');
+        // Monedele stau și aici în rucsac, în căsuța lor (ocupă un loc), fără preț
+        const mm = div('marfa');
+        const cm = div('celula celula-monede');
+        cm.append(iconita(inv, 'monede'), div('numar', String(s.bani)));
+        cm.title = `${s.bani} monede`;
+        mm.append(cm, div('pret-marfa gol'));
+        g.append(mm);
         s.inventar.forEach((x, index) => {
           const m = div('marfa');
           const lat = inv.sloturiStiva(x);

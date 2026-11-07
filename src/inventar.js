@@ -16,10 +16,13 @@ export function creeazaInventar(date, getStare) {
   const def = (id) => defs[id] || { nume: id, tip: 'material', stiva: 1 };
   const sloturiStiva = (x) => def(x.id).sloturi || 1;
   const ocupate = (lista) => lista.reduce((s, x) => s + sloturiStiva(x), 0);
-  const capacitate = () => {
+  // Monedele stau și ele în rucsac, într-o singură căsuță (decis de autor: ocupă un loc), deci obiectele au un loc mai puțin
+  const LOC_BANI = 1;
+  const capacitateRucsac = () => {
     const r = getStare().echipat.rucsac;
     return r ? def(r).capacitate : cfg.faraRucsac;
   };
+  const capacitate = () => capacitateRucsac() - LOC_BANI;
 
   // Pune întâi în stivele începute, apoi în stive noi cât e loc; întoarce câte n-au încăput
   function adaugaIn(lista, cap, id, n) {
@@ -78,7 +81,7 @@ export function creeazaInventar(date, getStare) {
 
     const proba = structuredClone(s.inventar);
     proba.splice(index, 1);
-    const capNoua = slot === 'rucsac' ? d.capacitate : capacitate();
+    const capNoua = slot === 'rucsac' ? d.capacitate - LOC_BANI : capacitate();
     for (const id of dateJos) if (adaugaIn(proba, capNoua, id, 1) > 0) return slot === 'rucsac' ? `Rucsacul e prea mic: golește mai întâi ${ocupate(proba) + 1 - capNoua} sloturi.` : 'Nu e loc în inventar pentru ce dai jos.';
     if (ocupate(proba) > capNoua) return `Rucsacul e prea mic: golește mai întâi ${ocupate(proba) - capNoua} sloturi.`;
 
@@ -98,7 +101,7 @@ export function creeazaInventar(date, getStare) {
     const josDe = new Set([slot]);
     if (d.douaMaini) josDe.add('arma_secundara');
     if (slot === 'arma_secundara' && def(s.echipat.arma_primara).douaMaini) josDe.add('arma_primara');
-    if (slot === 'rucsac' && ocupate(s.inventar) > d.capacitate) return `Rucsacul e prea mic: golește mai întâi ${ocupate(s.inventar) - d.capacitate} sloturi.`;
+    if (slot === 'rucsac' && ocupate(s.inventar) > d.capacitate - LOC_BANI) return `Rucsacul e prea mic: golește mai întâi ${ocupate(s.inventar) - d.capacitate + LOC_BANI} sloturi.`;
     const cufar = structuredClone(s.cufar);
     if (--cufar[index].n <= 0) cufar.splice(index, 1);
     for (const id of [...josDe].map((sl) => s.echipat[sl]).filter(Boolean)) if (adaugaIn(cufar, cfg.cufar, id, 1) > 0) return 'Nu e loc în cufăr pentru ce dai jos.';
@@ -113,7 +116,7 @@ export function creeazaInventar(date, getStare) {
     const id = s.echipat[slot];
     if (!id) return null;
     const proba = structuredClone(s.inventar);
-    const cap = slot === 'rucsac' ? cfg.faraRucsac : capacitate();
+    const cap = slot === 'rucsac' ? cfg.faraRucsac - LOC_BANI : capacitate();
     if (adaugaIn(proba, cap, id, 1) > 0 || ocupate(proba) > cap) return slot === 'rucsac' ? 'Fără rucsac nu încape tot ce ai. Golește întâi inventarul.' : 'Nu e loc în inventar.';
     s.inventar = proba;
     delete s.echipat[slot];
@@ -123,6 +126,8 @@ export function creeazaInventar(date, getStare) {
   return {
     def,
     capacitate,
+    // Toate locurile rucsacului, cu tot cu căsuța monedelor (pentru „Rucsac x / N”)
+    capacitateRucsac,
     ocupate,
     sloturiStiva,
     numar,

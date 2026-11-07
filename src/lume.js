@@ -167,14 +167,8 @@ export function construiesteLumea(date) {
       bucata('titlu_echipament', 'inv-titlu', 'Titlul „Echipament”', 'ui/text_titlu_echipament.png', 5, { x: 0.31, y: 0.1, scara: 0.06 }),
       bucata('titlu_inventar', 'inv-titlu', 'Titlul „Inventar”', 'ui/text_titlu_inventar.png', 4, { x: 0.7, y: 0.1, scara: 0.06 }),
       bucata('inchide', 'inv-inchide', 'Butonul „Închide”', fisierUi('meniu_buton'), 3.2, { x: 0.93, y: 0.975, scara: 0.075 }),
-      // Barele lui Vale și monedele, ca să le vezi și din inventar (decis de autor: fiecare bară se așază separat)
-      ...[
-        ['viata', 'Viață', 0.21, 0.885],
-        ['stamina', 'Stamina', 0.41, 0.885],
-        ['foame', 'Foame', 0.21, 0.94],
-        ['sete', 'Sete', 0.41, 0.94],
-      ].map(([id, nume, x, y]) => bucata(`bara_${id}`, 'inv-bara', `Bara: ${nume}`, `ui/text_bara_${id}.png`, RAPORT_BARA_INV, { x, y, scara: 0.036 })),
-      bucata('monede', 'inv-monede', 'Monedele lui Vale', 'ui/text_monede_inventar.png', 4, { x: 0.31, y: 0.99, scara: 0.045 }),
+      // Bara nevoii (decis de autor): una singură; apare doar când alegi ceva de mâncat sau de băut
+      bucata('bara', 'inv-bara', 'Bara nevoii (apare când alegi ceva de mâncat sau de băut)', 'ui/text_bara_nevoie.png', RAPORT_BARA_INV, { x: 0.31, y: 0.9, scara: 0.036 }),
     ],
   });
   // Magazinul (același la negustor, la Bram și la Agnes): două foi de pergament peste scena estompată, ca la inventar.

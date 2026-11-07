@@ -1,28 +1,208 @@
 {
   "_nota": "Obiectele jocului. Cifrele (prețuri, daune, armură) sunt valori de pornire, de echilibrat (TODO). Iconița: assets/items/<id>.png. armura = câte puncte adaugă piesa la bara gri de armură din luptă (se golește înaintea vieții). sloturi = câte locuri ocupă în inventar (implicit 1).",
   "obiecte": {
-    "paine": { "nume": "Pâine", "tip": "consumabil", "stiva": 5, "pret": 2, "minute": 10, "efecte": { "nevoi": { "foame": 25 } } },
-    "bere": { "nume": "Bere", "tip": "consumabil", "stiva": 3, "pret": 3, "minute": 10, "efecte": { "nevoi": { "sete": 20, "stamina": 10 } } },
-    "apa": { "nume": "Sticlă cu apă", "tip": "consumabil", "stiva": 3, "pret": 1, "minute": 5, "efecte": { "nevoi": { "sete": 35 } } },
-    "pansament": { "nume": "Pansament", "tip": "consumabil", "stiva": 5, "pret": 3, "minute": 5, "inLupta": true, "efecte": { "nevoi": { "viata": 15 } } },
-    "potiune_viata": { "nume": "Poțiune de viață", "tip": "consumabil", "stiva": 3, "pret": 15, "minute": 1, "inLupta": true, "efecte": { "nevoi": { "viata": 40 } } },
-    "carne": { "nume": "Carne", "tip": "material", "stiva": 5, "pret": 4 },
-    "piele": { "nume": "Piele de animal", "tip": "material", "stiva": 3, "sloturi": 2, "pret": 6 },
-    "blana_lup": { "nume": "Blană de lup", "tip": "material", "stiva": 3, "sloturi": 2, "pret": 8 },
-    "lemn": { "nume": "Lemn", "tip": "material", "stiva": 10, "pret": 1 },
-    "sageti": { "nume": "Săgeți", "tip": "material", "stiva": 20, "pret": 1 },
-
-    "sabie": { "nume": "Sabie", "tip": "echipament", "slot": "arma_primara", "tipArma": "sabie", "atac": { "min": 11, "max": 13, "tip": "apropiat" }, "pret": 30 },
-    "sabie_mare": { "nume": "Sabie mare", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "sabie_doua_maini", "atac": { "min": 16, "max": 20, "tip": "apropiat" }, "pret": 45 },
-    "topor_mare": { "nume": "Topor mare", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "topor_doua_maini", "atac": { "min": 13, "max": 23, "tip": "apropiat" }, "pret": 45 },
-    "arc": { "nume": "Arc", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "arc", "atac": { "min": 8, "max": 12, "tip": "distanta", "sageata": "combat/sageata.png" }, "pret": 35 },
-    "scut_lemn": { "nume": "Scut de lemn", "tip": "echipament", "slot": "arma_secundara", "scut": true, "blocare": 0.7, "armura": 5, "pret": 15 },
-    "gluga": { "nume": "Glugă de piele", "tip": "echipament", "slot": "cap", "armura": 5, "pret": 8 },
-    "vesta_piele": { "nume": "Vestă de piele", "tip": "echipament", "slot": "armura", "armura": 10, "pret": 20 },
-    "jambiere_piele": { "nume": "Jambiere de piele", "tip": "echipament", "slot": "jambiere", "armura": 5, "pret": 8 },
-    "rucsac_panza": { "nume": "Rucsac de pânză", "tip": "echipament", "slot": "rucsac", "capacitate": 8, "pret": 12 },
-    "rucsac_piele": { "nume": "Rucsac de piele", "tip": "echipament", "slot": "rucsac", "capacitate": 16, "pret": 25 },
-
-    "cheie_fierar": { "nume": "Cheia fierarului", "tip": "poveste" }
+    "monede": {
+      "nume": "Monede",
+      "tip": "bani",
+      "_nota": "Banii lui Vale (stare.bani), arătați în rucsac ca o singură căsuță care ocupă un loc (decis de autor); obiectul e doar pentru iconiță."
+    },
+    "paine": {
+      "nume": "Pâine",
+      "tip": "consumabil",
+      "stiva": 5,
+      "pret": 2,
+      "minute": 10,
+      "efecte": {
+        "nevoi": {
+          "foame": 25
+        }
+      }
+    },
+    "bere": {
+      "nume": "Bere",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 3,
+      "minute": 10,
+      "efecte": {
+        "nevoi": {
+          "sete": 20,
+          "stamina": 10
+        }
+      }
+    },
+    "apa": {
+      "nume": "Sticlă cu apă",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 1,
+      "minute": 5,
+      "efecte": {
+        "nevoi": {
+          "sete": 35
+        }
+      }
+    },
+    "pansament": {
+      "nume": "Pansament",
+      "tip": "consumabil",
+      "stiva": 5,
+      "pret": 3,
+      "minute": 5,
+      "inLupta": true,
+      "efecte": {
+        "nevoi": {
+          "viata": 15
+        }
+      }
+    },
+    "potiune_viata": {
+      "nume": "Poțiune de viață",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 15,
+      "minute": 1,
+      "inLupta": true,
+      "efecte": {
+        "nevoi": {
+          "viata": 40
+        }
+      }
+    },
+    "carne": {
+      "nume": "Carne",
+      "tip": "material",
+      "stiva": 5,
+      "pret": 4
+    },
+    "piele": {
+      "nume": "Piele de animal",
+      "tip": "material",
+      "stiva": 3,
+      "sloturi": 2,
+      "pret": 6
+    },
+    "blana_lup": {
+      "nume": "Blană de lup",
+      "tip": "material",
+      "stiva": 3,
+      "sloturi": 2,
+      "pret": 8
+    },
+    "lemn": {
+      "nume": "Lemn",
+      "tip": "material",
+      "stiva": 10,
+      "pret": 1
+    },
+    "sageti": {
+      "nume": "Săgeți",
+      "tip": "material",
+      "stiva": 20,
+      "pret": 1
+    },
+    "sabie": {
+      "nume": "Sabie",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "tipArma": "sabie",
+      "atac": {
+        "min": 11,
+        "max": 13,
+        "tip": "apropiat"
+      },
+      "pret": 30
+    },
+    "sabie_mare": {
+      "nume": "Sabie mare",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "douaMaini": true,
+      "sloturi": 2,
+      "tipArma": "sabie_doua_maini",
+      "atac": {
+        "min": 16,
+        "max": 20,
+        "tip": "apropiat"
+      },
+      "pret": 45
+    },
+    "topor_mare": {
+      "nume": "Topor mare",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "douaMaini": true,
+      "sloturi": 2,
+      "tipArma": "topor_doua_maini",
+      "atac": {
+        "min": 13,
+        "max": 23,
+        "tip": "apropiat"
+      },
+      "pret": 45
+    },
+    "arc": {
+      "nume": "Arc",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "douaMaini": true,
+      "sloturi": 2,
+      "tipArma": "arc",
+      "atac": {
+        "min": 8,
+        "max": 12,
+        "tip": "distanta",
+        "sageata": "combat/sageata.png"
+      },
+      "pret": 35
+    },
+    "scut_lemn": {
+      "nume": "Scut de lemn",
+      "tip": "echipament",
+      "slot": "arma_secundara",
+      "scut": true,
+      "blocare": 0.7,
+      "armura": 5,
+      "pret": 15
+    },
+    "gluga": {
+      "nume": "Glugă de piele",
+      "tip": "echipament",
+      "slot": "cap",
+      "armura": 5,
+      "pret": 8
+    },
+    "vesta_piele": {
+      "nume": "Vestă de piele",
+      "tip": "echipament",
+      "slot": "armura",
+      "armura": 10,
+      "pret": 20
+    },
+    "jambiere_piele": {
+      "nume": "Jambiere de piele",
+      "tip": "echipament",
+      "slot": "jambiere",
+      "armura": 5,
+      "pret": 8
+    },
+    "rucsac_panza": {
+      "nume": "Rucsac de pânză",
+      "tip": "echipament",
+      "slot": "rucsac",
+      "capacitate": 8,
+      "pret": 12
+    },
+    "rucsac_piele": {
+      "nume": "Rucsac de piele",
+      "tip": "echipament",
+      "slot": "rucsac",
+      "capacitate": 16,
+      "pret": 25
+    },
+    "cheie_fierar": {
+      "nume": "Cheia fierarului",
+      "tip": "poveste"
+    }
   }
 }
