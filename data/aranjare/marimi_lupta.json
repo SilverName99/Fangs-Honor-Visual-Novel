@@ -256,16 +256,16 @@
       "lupta_padure_interior": 105
     },
     "combat/vale_sabie_scut_cazut.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130
     },
     "combat/vale_sabie_cazut.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130
     },
     "combat/vale_sabie_doua_maini_cazut.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130
     }
   }
 }
