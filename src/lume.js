@@ -426,9 +426,10 @@ export function imaginiCerute(date, scene) {
   const muncileFolosite = new Set(date.locations.zone.flatMap((z) => (z.locuri || []).map((l) => l.actiune)).filter(Boolean));
   for (const [id, m] of Object.entries(date.config.munca || {})) if (m.imagine && muncileFolosite.has(id)) adauga(m.imagine, `Muncă: ${m.nume} (pe tot ecranul cât lucrează Vale, 1920 × 1080)`);
   for (const z of date.locations.zone)
-    for (const a of [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])])
+    for (const a of [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])]) {
       if (a.imagine) adauga(a.imagine, `${a.nume} (pe tot ecranul cât durează, 1920 × 1080)`);
       if (a.imagineZi) adauga(a.imagineZi, `${a.nume}, ziua (când se culcă și afară e încă lumină, 1920 × 1080)`);
+    }
   // Schițele din cartea personajelor (pagina din dreapta)
   grup = 'Cartea personajelor';
   for (const p of date.npcs.personaje) if (p.carte) adauga(fisierCarte(p.id), `Carte: ${p.nume} (schiță în cerneală sau cărbune, 4:5, de exemplu 1024 × 1280, fundal transparent)`);
