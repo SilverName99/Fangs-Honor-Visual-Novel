@@ -8,6 +8,8 @@ const tipuri = {
   stare: (v, c) => Object.entries(v).every(([k, val]) => c.stari?.[k] === val),
   nuStare: (v, c) => Object.entries(v).every(([k, val]) => c.stari?.[k] !== val),
   areObiect: (v, c) => (c.obiecte || []).includes(v),
+  // „areCate: { lemn: 10 }” = are cel puțin atâtea bucăți în rucsac (pentru misiuni: lemnele pentru acoperiș)
+  areCate: (v, c) => Object.entries(v).every(([id, n]) => (c.inventar || []).filter((x) => x.id === id).reduce((s, x) => s + x.n, 0) >= n),
   misiune: (v, c) => Object.entries(v).every(([k, val]) => c.misiuni?.[k] === val),
   relatie: (v, c) =>
     Object.entries(v).every(([k, lim]) => {

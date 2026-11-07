@@ -20,7 +20,7 @@ import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
-import { actualizeazaMisiuni } from './misiuni.js';
+import { actualizeazaMisiuni, optiuniMisiuni } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
@@ -615,6 +615,31 @@ const dialog = creeazaDialog(ui, {
   laEfecte: (e) => {
     aplicaEfecte(e, joc);
     actualizeazaHud();
+  },
+  // Meniul de discuție: „Vorbește” (o replică nouă dacă are, altfel una la întâmplare), misiunile, opțiunile
+  // personajului (de exemplu „Cumpără”) și „La revedere”. Replicile de „Vorbește” stau în dialogul principal
+  // al personajului, ca să fie aceleași oriunde îl găsești (Miriam acasă și în piață)
+  optiuniMeniu: (d) => {
+    const ctx = context(stare);
+    const id = d.partener;
+    const principal = dialoguri[personaje.get(id)?.dialog] || d;
+    const alegeri = [];
+    const noduri = { ...principal.noduri };
+    const replici = (principal.vorbeste || []).filter((x) => verifica(x.conditii, ctx));
+    if (replici.length) {
+      const auzite = stare.auzite || [];
+      const noi = replici.filter((x) => !auzite.includes(`${id}/${x.nod}`));
+      const din = noi.length ? noi : replici;
+      const x = din[Math.floor(Math.random() * din.length)];
+      alegeri.push({ text: 'Vorbește', spre: x.nod, efecte: { auzit: `${id}/${x.nod}` } });
+    }
+    for (const { alegere, dialog: idDialog } of optiuniMisiuni(joc, id)) {
+      Object.assign(noduri, dialoguri[idDialog]?.noduri);
+      alegeri.push(alegere);
+    }
+    alegeri.push(...(d.optiuni || principal.optiuni || []).filter((a) => verifica(a.conditii, ctx)));
+    alegeri.push({ text: 'La revedere.', inchide: true });
+    return { alegeri, noduri };
   },
   laFinal: (d) => {
     // Un personaj intră în carte după prima discuție cu el (și după un eveniment în care vorbește el)

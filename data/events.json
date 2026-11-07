@@ -659,6 +659,16 @@
       "nume": "Întâlnirea cu vânătoarea",
       "repetare": "o_data",
       "dialog": "vanatoare_intalnire"
+    },
+    {
+      "id": "acoperis_reparat",
+      "manual": true,
+      "grup": "Misiunea acoperișului",
+      "nume": "Vale repară acoperișul",
+      "imagini": [
+        "events/acoperis_reparat.png"
+      ],
+      "dialog": "miriam_acoperis_gata"
     }
   ]
 }

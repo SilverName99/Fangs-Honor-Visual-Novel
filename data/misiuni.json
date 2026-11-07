@@ -1,5 +1,5 @@
 {
-  "_nota": "Misiunile (decis de autor): cine o dă, titlul, o descriere scurtă în vocea lui Vale, pașii în ordine și recompensa. Un pas e gata când condițiile din „gata” sunt îndeplinite (același format ca peste tot) sau, cu „numara”, când Vale are destule bucăți din obiect; atunci se bifează singur și apare următorul. Starea misiunii stă în salvare: „inceputa”, „terminata” (sau „ratata”). Pornește din efectul „misiune”: { \"acoperis\": \"inceputa\" }.",
+  "_nota": "Misiunile (decis de autor). dela = cine o dă; dialog = unde stau nodurile ei (implicit dialogul celui care o dă). oferta = opțiunea cu ! din meniul de discuție (text, nod, conditii = când apare: de exemplu după altă misiune, la o încredere; la = alt personaj). pasi = în ordine; un pas e gata când „gata” (condiții) e îndeplinit sau, cu „numara”, când Vale are destule bucăți; se bifează singur. La pas: la = personajul la care se face (implicit cel care a dat-o); indiciu = opțiunea cu ? gri (text, nod: indicația); predare = opțiunea cu ? auriu, cât „conditii” sunt îndeplinite (text, nod); sfat = rândul scurt din carte, sub pasul de acum. nod poate fi și o listă { nod, conditii } (primul îndeplinit). Starea: inceputa / terminata / ratata, pornită cu efectul misiune.",
   "misiuni": [
     {
       "id": "acoperis",
@@ -7,13 +7,72 @@
       "dela": "miriam",
       "descriere": "CIORNĂ: Plouă în casă, în colțul de lângă vatră. Mama vrea să peticim acoperișul până vin ploile mari. Îmi trebuie lemn bun din pădure.",
       "pasi": [
-        { "text": "Adun lemn din pădure", "numara": { "obiect": "lemn", "n": 10 } },
-        { "text": "Repar acoperișul (la casă, ziua)", "gata": { "stare": { "acoperis": "reparat" } } },
-        { "text": "Îi spun mamei că e gata", "gata": { "stare": { "acoperis_multumit": "da" } } }
+        {
+          "text": "Adun lemn din pădure",
+          "numara": {
+            "obiect": "lemn",
+            "n": 10
+          },
+          "sfat": "Lemnele se adună din pădure („Adună lemne”, 3 bucăți pe oră).",
+          "indiciu": {
+            "text": "N-am apucat încă să adun lemnele.",
+            "nod": "acoperis_indiciu"
+          }
+        },
+        {
+          "text": "Îi duc lemnele mamei și repar acoperișul",
+          "gata": {
+            "stare": {
+              "acoperis": "reparat"
+            }
+          },
+          "sfat": "Cu cele 10 lemne, vorbesc cu mama, dimineața sau la amiază (pe lumină).",
+          "predare": {
+            "text": "Uite lemnele, mamă. Mă urc pe acoperiș.",
+            "nod": "acoperis_predare",
+            "conditii": {
+              "areCate": {
+                "lemn": 10
+              },
+              "moment": [
+                "dimineata",
+                "amiaza"
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre acoperiș...",
+            "nod": [
+              {
+                "nod": "acoperis_lipsa_lemn",
+                "conditii": {
+                  "nu": {
+                    "areCate": {
+                      "lemn": 10
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "acoperis_intuneric"
+              }
+            ]
+          }
+        }
       ],
       "recompensa": {
         "_nota": "TODO: recompensa misiunii (nedecisă de autor). „text” apare în carte, „efecte” se aplică la final.",
         "efecte": {}
+      },
+      "dialog": "miriam",
+      "oferta": {
+        "text": "Iar a plouat în casă",
+        "nod": "acoperis",
+        "conditii": {
+          "stare": {
+            "acoperis": "stricat"
+          }
+        }
       }
     }
   ]

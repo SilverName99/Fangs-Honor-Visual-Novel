@@ -86,6 +86,7 @@ export function creeazaCarte(parinte, joc) {
       const facut = k < i;
       const cat = p.numara && !facut ? ` (${Math.min(cateAre(s, p.numara.obiect), p.numara.n)}/${p.numara.n})` : '';
       pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${p.text}${cat}`));
+      if (!facut && p.sfat) pasi.append(div('sfat-misiune', p.sfat));
     });
     pag.append(pasi);
     if (st === 'terminata') pag.append(div('stare-misiune', 'Gata!'));

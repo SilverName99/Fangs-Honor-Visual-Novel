@@ -99,39 +99,6 @@
           }
         }
       ],
-      "actiuni": [
-        {
-          "_nota": "Misiunea acoperișului: apare cât misiunea e începută și acoperișul e încă stricat. Textele sunt ciorne.",
-          "id": "repara_acoperis",
-          "tip": "lucrare",
-          "nume": "Repară acoperișul (4 ore)",
-          "consuma": {
-            "lemn": 10
-          },
-          "minute": 240,
-          "stamina": 30,
-          "sunet": "munca",
-          "imagine": "locations/munca_acoperis.png",
-          "text": "Repari acoperișul...",
-          "gandNoapte": "E prea întuneric să mă urc pe acoperiș. Mâine dimineață.",
-          "mesajGata": "Acoperișul e reparat!",
-          "efecte": {
-            "stare": {
-              "acoperis": "reparat"
-            }
-          },
-          "ascuns": {
-            "conditii": {
-              "misiune": {
-                "acoperis": "inceputa"
-              },
-              "stare": {
-                "acoperis": "stricat"
-              }
-            }
-          }
-        }
-      ],
       "locuri": [
         {
           "id": "camera_vale",

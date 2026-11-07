@@ -4,7 +4,9 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 
 // Dialogul: Vale în stânga, celălalt personaj în dreapta, textul jos, deasupra portretelor.
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal }) {
+// Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
+// replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu }) {
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -55,12 +57,16 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     text.textContent = nod.text || '';
     caseta.classList.toggle('gand', !!nod.gand);
 
-    const vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));
+    let vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));
+    // La capătul unei ramuri (fără alegeri și fără continuare), meniul personajului apare direct sub replică
+    if (activ.dialog.meniu && !vizibile.length && !nod.urmator && !nod.sfarsit) vizibile = meniu();
     alegeri.replaceChildren(
       ...vizibile.map((a, i) => {
         const b = document.createElement('button');
         b.className = 'alegere';
         b.textContent = `${i + 1}. ${a.text}`;
+        // Semnul misiunii, lângă text: ! nouă, ? gri în lucru, ? auriu gata de predat
+        if (a.semn) b.append(Object.assign(document.createElement('span'), { className: `semn-misiune ${a.semn}`, textContent: a.semn === 'nou' ? '!' : '?' }));
         b.onclick = (e) => {
           e.stopPropagation();
           alege(a);
@@ -72,9 +78,19 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     mai.hidden = vizibile.length > 0;
   }
 
+  // Opțiunile meniului; nodurile misiunilor (din alte dialoguri) se adaugă la dialogul de acum
+  function meniu() {
+    const { alegeri: lista, noduri } = optiuniMeniu(activ.dialog);
+    activ.dialog = { ...activ.dialog, noduri: { ...noduri, ...activ.dialog.noduri } };
+    return lista;
+  }
+
   function alege(a) {
     laEfecte(a.efecte);
-    if (activ) arataNod(a.spre ?? null);
+    if (!activ) return;
+    // „inchide”: alegerea încheie discuția (La revedere, sau ceva care pornește după dialog: un eveniment, o luptă)
+    if (a.inchide) return inchide();
+    arataNod(a.spre ?? null);
   }
 
   function continua() {

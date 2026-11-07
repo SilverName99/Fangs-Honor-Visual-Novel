@@ -13,6 +13,10 @@ const efecte = {
     Object.entries(v).forEach(([id, cu]) => (joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, (joc.stare.relatii[id] || 0) + cu)))),
   obiect: (v, joc) => [].concat(v).forEach((id) => joc.primeste(id, 1)),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
+  // „consuma: { lemn: 10 }” = Vale dă (sau folosește) atâtea bucăți din rucsac
+  consuma: (v, joc) => Object.entries(v).forEach(([id, n]) => joc.inventar.scoateOriunde(id, n)),
+  // Replicile din „Vorbește” deja auzite: cele noi vin primele, apoi toate la întâmplare
+  auzit: (v, joc) => (joc.stare.auzite ||= []).includes(v) || joc.stare.auzite.push(v),
   stare: (v, joc) => Object.assign(joc.stare.stari, v),
   deblocheaza: (v, joc) => [].concat(v).forEach((loc) => joc.stare.deblocate.includes(loc) || joc.stare.deblocate.push(loc)),
   // O misiune nouă intră în carte (în ordinea în care a început) și se anunță pe ecran
