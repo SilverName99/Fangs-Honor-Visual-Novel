@@ -254,7 +254,7 @@ export const REGLAJE_MENIU = [
   ['spatiuRanduri', 'Distanța dintre rânduri', 44, 2],
   ['spatiuColoane', 'Distanța dintre coloane', 46, 2],
   ['iconita', 'Mărimea iconițelor', 115, 5],
-  ['iconitaText', 'Distanța dintre iconiță și scris', 200, 2],
+  ['iconitaText', 'Distanța dintre iconiță și scris', 160, 2],
   ['text', 'Mărimea textului din butoane', 34, 1],
   ['titluSus', 'Poziția titlului (de sus)', 107, 2],
   ['titlu', 'Mărimea titlului', 74, 2],

@@ -2212,7 +2212,7 @@ svg.zone {
 .text-buton-meniu {
   flex: none;
   /* Scrisul stă lângă iconiță, la distanța reglată în editor */
-  padding-left: var(--meniu-iconitaText, 200px);
+  padding-left: var(--meniu-iconitaText, 160px);
   text-align: left;
   font: 700 var(--meniu-text, 40px) Georgia, serif;
 }
