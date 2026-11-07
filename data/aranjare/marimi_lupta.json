@@ -220,7 +220,8 @@
       "lupta_padure_interior": 105
     },
     "combat/vale_sabie_lovit.png": {
-      "lupta_taverna_parter": 105
+      "lupta_taverna_parter": 105,
+      "lupta_padure_interior": 105
     }
   }
 }
