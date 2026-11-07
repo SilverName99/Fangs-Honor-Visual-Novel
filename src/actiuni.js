@@ -2,6 +2,9 @@ import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
 import { verifica } from './conditii.js';
 import { aplicaEfecte } from './efecte.js';
+import { baraNevoie } from './baraNevoie.js';
+import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
+import { RAPORT_BARA_INV } from './lume.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -35,6 +38,25 @@ export function creeazaActiuni(parinte, joc) {
 
   const prea_obosit = () => joc.stare.nevoi.stamina < cfg.nevoi.prag;
 
+  // Cu mouse-ul pe un buton, bara de stamina arată cât ar crește (somn) sau scădea (muncă); locul ei e ales de
+  // autor în editor (Aranjare → „Panoul mic”). Butonul primit e întors, ca să se poată scrie direct în listă
+  function cuBaraStamina(b, schimbare) {
+    b.addEventListener('mouseenter', () => {
+      const fundal = b.closest('.acoperitor');
+      fundal?.querySelector('.bara-panou')?.remove();
+      const o = joc.lume.get('panou')?.obiecte.find((x) => x.id === 'bara');
+      if (!fundal || !o) return;
+      const p = pozitie(joc.date.aranjare.panou, o, 1);
+      const h = p.scara * INALTIME;
+      const bara = baraNevoie('stamina', joc.stare.nevoi.stamina, Math.round(schimbare()), h, h * RAPORT_BARA_INV, cfg.nevoi.prag);
+      bara.classList.add('bara-panou', 'obiect');
+      aplicaPozitie(bara, p);
+      fundal.append(bara);
+    });
+    b.addEventListener('mouseleave', () => b.closest('.acoperitor')?.querySelector('.bara-panou')?.remove());
+    return b;
+  }
+
   // Imaginea muncii pe tot ecranul câteva secunde (decis de autor, ca la vânătoare), apoi restul.
   // Sunetul pornește puțin după clic, ca să nu se suprapună cu el
   function cuImagine(a, dupa, idSunet) {
@@ -54,14 +76,14 @@ export function creeazaActiuni(parinte, joc) {
       const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.`);
       if (prea_obosit()) return [info, div('text-anunt', 'Ești prea obosit pentru muncă grea. Odihnește-te întâi.')];
       const ore = [1, 2, 4].map((h) =>
-        buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, () => {
+        cuBaraStamina(buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, () => {
           inchide();
           if (joc.avanseaza(h * 60)) return;
           s.bani += h * m.monedePeOra;
           schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
           // Întâi imaginea cu Vale la muncă (cu sunetul muncii), apoi ce a câștigat
           cuImagine(m, () => joc.dupaActiune(`+${h * m.monedePeOra} monede`), 'munca');
-        }, s.nevoi.stamina < h * m.staminaPeOra),
+        }, s.nevoi.stamina < h * m.staminaPeOra), () => -h * m.staminaPeOra),
       );
       return [info, ...ore];
     });
@@ -70,11 +92,15 @@ export function creeazaActiuni(parinte, joc) {
   function dormi(a) {
     const s = joc.stare;
     if (a.cost && s.bani < a.cost) return joc.gand(`N-am destui bani. Îmi trebuie ${a.cost} monede.`);
+    // Foamea mare face somnul mai puțin odihnitor (pedeapsă moale); „factorRefacere” la acțiune îl face mai
+    // odihnitor după condiții (acasă, cu acoperișul reparat: recompensa misiunii, decis de autor)
+    const refacereSomn = (minute) => {
+      const bonus = (a.factorRefacere || []).find((x) => verifica(x.conditii, context(s)))?.factor ?? 1;
+      return cfg.somn.staminaPeOra * (minute / 60) * (s.nevoi.foame < cfg.nevoi.prag ? 0.5 : 1) * bonus;
+    };
     const somn = (minute) => {
       if (a.cost) s.bani -= a.cost;
-      const ore = minute / 60;
-      // Foamea mare face somnul mai puțin odihnitor (pedeapsă moale)
-      const refacere = cfg.somn.staminaPeOra * ore * (s.nevoi.foame < cfg.nevoi.prag ? 0.5 : 1);
+      const refacere = refacereSomn(minute);
       if (joc.avanseaza(minute, cfg.somn.nevoiInSomn)) return;
       schimbaNevoie(s, 'stamina', refacere);
       // Imaginea cu Vale dormind (decis de autor, ca la muncă), cu sunetul somnului, apoi trezirea;
@@ -91,9 +117,9 @@ export function creeazaActiuni(parinte, joc) {
     const tinta = ziua ? inMinute('23:00') : inMinute(cfg.somn.oraTrezire);
     const pana = (tinta - acum + MINUTE_ZI) % MINUTE_ZI || MINUTE_ZI;
     panou(a.nume || 'Dormi', (inchide) => [
-      buton('Dormi 2 ore', () => (inchide(), somn(120))),
-      buton('Dormi 6 ore', () => (inchide(), somn(360))),
-      buton(ziua ? 'Dormi până noaptea' : 'Dormi până dimineața', () => (inchide(), somn(pana))),
+      cuBaraStamina(buton('Dormi 2 ore', () => (inchide(), somn(120))), () => refacereSomn(120)),
+      cuBaraStamina(buton('Dormi 6 ore', () => (inchide(), somn(360))), () => refacereSomn(360)),
+      cuBaraStamina(buton(ziua ? 'Dormi până noaptea' : 'Dormi până dimineața', () => (inchide(), somn(pana))), () => refacereSomn(pana)),
     ]);
   }
 
@@ -115,10 +141,10 @@ export function creeazaActiuni(parinte, joc) {
     if (a.variante && !a.alesa) {
       return panou(a.titlu || a.nume, (inchide) =>
         a.variante.map((v) =>
-          buton(v.nume, () => {
+          cuBaraStamina(buton(v.nume, () => {
             inchide();
             obtine({ ...a, ...v, alesa: true });
-          }, (v.stamina || 0) > joc.stare.nevoi.stamina),
+          }, (v.stamina || 0) > joc.stare.nevoi.stamina), () => -(v.stamina || 0)),
         ),
       );
     }

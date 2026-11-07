@@ -3,6 +3,7 @@ import { pozitie, aplicaPozitie, LATIME, INALTIME } from './scena.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 import { fisierUi } from './uiGrafica.js';
 import { RAPORT_BARA_INV } from './lume.js';
+import { baraNevoie } from './baraNevoie.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, clasa = '') {
@@ -358,17 +359,7 @@ export function creeazaEcranInventar(parinte, joc) {
         const p = pozitie(joc.date.aranjare.echipament, o, i);
         const h = p.scara * INALTIME;
         Object.entries(d.efecte?.nevoi || {}).filter(([, plus]) => plus > 0).forEach(([cheie, plus], k) => {
-          const v = Math.round(s.nevoi[cheie] ?? 0);
-          const bara = div(`bara-nevoie bara-inv ${cheie} ${v < joc.date.config.nevoi.prag ? 'scazut' : ''}`);
-          const cale = div('cale');
-          const umplere = div('umplere');
-          umplere.style.width = `${v}%`;
-          const pre = div('umplere previzualizare');
-          pre.style.width = `${Math.min(100, v + plus) - v}%`;
-          cale.append(umplere, pre);
-          bara.style.width = `${h * RAPORT_BARA_INV}px`;
-          bara.style.fontSize = `${Math.max(11, h * 0.5)}px`;
-          bara.append(cale, div('eticheta', { viata: 'Viață', stamina: 'Stamina', foame: 'Foame', sete: 'Sete' }[cheie]), div('valoare', `${v} +${plus}`));
+          const bara = baraNevoie(cheie, s.nevoi[cheie] ?? 0, plus, h, h * RAPORT_BARA_INV, joc.date.config.nevoi.prag);
           asaza(bara, o, i, 1600);
           bara.style.marginTop = `${k * h * 1.3}px`;
         });

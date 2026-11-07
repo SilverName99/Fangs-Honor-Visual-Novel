@@ -61,8 +61,13 @@
         }
       ],
       "recompensa": {
-        "_nota": "TODO: recompensa misiunii (nedecisă de autor). „text” apare în carte, „efecte” se aplică la final.",
-        "efecte": {}
+        "_nota": "Decis de autor: încrederea Miriamei +1 și somnul de acasă mai odihnitor (factorRefacere la „Dormi” acasă, cu acoperișul reparat; +30% e ales de Claude, reglabil).",
+        "text": "Mama are mai multă încredere în mine (+1), iar acasă dorm mai bine.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
       },
       "dialog": "miriam",
       "oferta": {

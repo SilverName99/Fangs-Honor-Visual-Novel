@@ -2624,3 +2624,17 @@ svg.zone {
   filter: brightness(1.5);
   animation: pulseaza 1.2s ease-in-out infinite;
 }
+
+/* Cât ar scădea bara (munca): partea care se duce, roșiatică, pulsând */
+.bara-inv .umplere.pierdere {
+  border-radius: 999px;
+  background: #b0362b;
+  opacity: 0.85;
+  animation: pulseaza 1.2s ease-in-out infinite;
+}
+/* Bara de stamina de pe panoul mic: pusă de autor în editor, peste tot, fără să prindă mouse-ul */
+.acoperitor > .bara-panou {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}

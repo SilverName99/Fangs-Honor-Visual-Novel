@@ -171,6 +171,22 @@ export function construiesteLumea(date) {
       bucata('bara', 'inv-bara', 'Bara nevoii (apare când alegi ceva de mâncat sau de băut)', 'ui/text_bara_nevoie.png', RAPORT_BARA_INV, { x: 0.31, y: 0.9, scara: 0.036 }),
     ],
   });
+  // Panoul mic (Dormi, Muncă, lemnele): bara de stamina care arată, sub mouse, cât crește sau scade (decis de autor:
+  // locul ei se alege în editor). Panoul stă mereu la mijloc; în editor se vede ca dreptunghi, doar ca reper
+  scene.set('panou', {
+    id: 'panou',
+    tip: 'ecran',
+    titlu: 'Panoul mic (Dormi, Muncă): bara de stamina',
+    titluObiecte: 'Bucățile panoului',
+    imagine: 'ui/text_fundal_panou.png',
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      { ...bucata('reper', 'pan-reper', 'Panoul (doar reper, stă mereu la mijloc)', fisierUi('panou'), 900 / 700, { x: 0.5, y: 0.82, scara: 0.65 }), deasupra: false },
+      bucata('bara', 'inv-bara', 'Bara de stamina (sub mouse: cât crește sau scade)', 'ui/text_bara_panou.png', RAPORT_BARA_INV, { x: 0.5, y: 0.9, scara: 0.036 }),
+    ],
+  });
   // Magazinul (același la negustor, la Bram și la Agnes): două foi de pergament peste scena estompată, ca la inventar.
   // Tipurile au prefixul „mag-”, ca să nu se ciocnească în editor cu clase CSS existente
   scene.set('magazin', {
