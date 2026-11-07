@@ -738,6 +738,11 @@ svg.zone {
   width: 100%;
   height: 100%;
 }
+/* Iconițele obiectelor își păstrează forma imaginii peste tot (rucsac, sloturi, magazin, luptă, obiectul tras cu
+   mouse-ul): o imagine care nu e pătrată stă centrată în căsuță, nu se turtește (decis de autor) */
+.iconita img {
+  object-fit: contain;
+}
 .iconita.lipsa {
   font-size: 15px;
   padding: 4px;

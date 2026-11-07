@@ -389,7 +389,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 - Toate bucățile (figura, sloturile, foaia, semnul, titlurile, „Închide”) se mută și se măresc în editor, la Aranjare → „Ecranul de inventar și echipament”. Piesele se încarcă în galerie, la grupul **Inventarul** (`ui_slot_echipament.png` + `_hover` pentru ramele de lângă Vale, `ui_slot.png` + `_hover` pentru căsuțele de pe foaie).
 - **Drag & drop** din inventar în sloturi și înapoi (și între rucsac și cufăr). Un slot nepotrivit refuză obiectul (de exemplu jambierele pe cap).
 - **Sloturi** (decis: fără mănuși și bocanci): `cap` (Coif), `armura` (Armură, pentru tors), `jambiere` (Jambiere), `arma_primara`, `arma_secundara`, `rucsac`. **Armele cu două mâini ocupă ambele sloturi de armă.** Migrarea la versiunea 3 mută haina pe `armura`, pantalonii pe `jambiere` și scoate mănușile și bocancii.
-- Fiecare obiect are o **iconiță** (`assets/items/<id>.png`).
+- Fiecare obiect are o **iconiță** (`assets/items/<id>.png`, ideal 512 × 512, fundal transparent); peste tot își păstrează forma (una care nu e pătrată stă centrată, nu se turtește).
 
 ### Magazinul (decis, după designul inventarului)
 
