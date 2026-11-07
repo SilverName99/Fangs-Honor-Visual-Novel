@@ -420,6 +420,14 @@ export function imaginiCerute(date, scene) {
       if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
     }
   }
+  // Imaginile muncii (câmpul, vacile, moara, lemnele, apa): pe tot ecranul cât durează, ca la vânătoare.
+  // Doar muncile care chiar au un loc pe hartă (ferma de porci nu mai există)
+  grup = 'Munca';
+  const muncileFolosite = new Set(date.locations.zone.flatMap((z) => (z.locuri || []).map((l) => l.actiune)).filter(Boolean));
+  for (const [id, m] of Object.entries(date.config.munca || {})) if (m.imagine && muncileFolosite.has(id)) adauga(m.imagine, `Muncă: ${m.nume} (pe tot ecranul cât lucrează Vale, 1920 × 1080)`);
+  for (const z of date.locations.zone)
+    for (const a of [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])])
+      if (a.imagine) adauga(a.imagine, `${a.nume} (pe tot ecranul cât durează, 1920 × 1080)`);
   // Schițele din cartea personajelor (pagina din dreapta)
   grup = 'Cartea personajelor';
   for (const p of date.npcs.personaje) if (p.carte) adauga(fisierCarte(p.id), `Carte: ${p.nume} (schiță în cerneală sau cărbune, 4:5, de exemplu 1024 × 1280, fundal transparent)`);
