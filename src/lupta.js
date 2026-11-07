@@ -283,10 +283,10 @@ export function creeazaLupta(parinte, joc) {
     L.elOrdine.replaceChildren(...lista.map((f, i) => medalion(f, i === 0)));
   }
 
-  // Medalionul: portretul (combat/<id>_medalion.png; până e încărcat, fața din portretul de dialog), rama și numele
+  // Medalionul: fața din portretul de dialog (decis de autor: fără poze separate de medalion), rama și numele
   function medalion(f, primul) {
     const m = div(`medalion ${f.tabara}${primul ? ' primul' : ''}`);
-    const portret = elementImagine([`combat/${f.idPoze}_medalion.png`, `portraits/${f.idPoze}_normal.png`, `combat/${f.idPoze}_idle.png`], { clasa: 'portret-medalion', raport: 1, eticheta: f.nume });
+    const portret = elementImagine([`portraits/${f.idPoze}_normal.png`, `combat/${f.idPoze}_idle.png`], { clasa: 'portret-medalion', raport: 1, eticheta: f.nume });
     m.append(portret, div('rama-medalion'), div('eticheta-medalion', f.nume));
     return m;
   }

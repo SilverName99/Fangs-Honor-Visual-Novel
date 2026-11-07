@@ -1291,7 +1291,10 @@ svg.zone {
   width: 100%;
   /* Pătrat, oricare ar fi forma pozei (până la medalion se folosește portretul de dialog, care e 4:5):
      altfel unii ar sta mai sus și alții mai jos */
-  aspect-ratio: 1;
+  /* !important: imaginea își pune singură forma pozei (portretul de dialog e 4:5) și ar ieși din ramă */
+  aspect-ratio: 1 !important;
+  /* Fața stă doar în fereastra ramei, nu sub marginea ei de lemn */
+  clip-path: inset(7% round 12%);
   border-radius: 12px;
   overflow: hidden;
   background: #1a140e;
@@ -2198,6 +2201,9 @@ svg.zone {
   box-shadow: 0 0 22px rgba(255, 210, 120, 0.7);
 }
 .buton.buton-meniu .icon-hud {
+  flex: none;
+  /* Mutarea spre dreapta se reglează în editor (Interfață → Meniul), după rama butonului */
+  margin-left: var(--meniu-iconitaDreapta, 16px);
   width: var(--meniu-iconita, 130px);
   height: var(--meniu-iconita, 130px);
   font-size: calc(var(--meniu-iconita, 130px) * 0.7);

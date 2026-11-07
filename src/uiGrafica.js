@@ -117,7 +117,8 @@ export const ELEMENTE_UI = [
     ['galerie', 'Meniu: iconița Galerie (tabloul)'],
     ['optiuni', 'Meniu: iconița Opțiuni (rotițele și cheia)'],
   // Cu imaginea încărcată, simbolul din text e transparent; fără umbră, altfel umbra lui rămâne ca o pată neagră
-  ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none}` })),
+  // „contain”: iconița își păstrează forma în căsuța ei, oricât de lată ar fi imaginea (decis: să nu fie turtite)
+  ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none;background-size:contain;background-position:center}` })),
   // Inventarul (designul autorului): în galerie, la grupul „Inventarul”
   { id: 'inventar_fundal', grup: 'Inventarul', nume: 'Fundalul ecranului de inventar (cu piedestalul lui Vale)', marime: '1920 × 1080 px', tip: 'fundal', selector: '.ecran-inventar',
     // Imaginea are fundal transparent (decis de autor): ecranul stă peste locația în care ești, întunecată și estompată, ca la meniu
@@ -193,7 +194,7 @@ export const ELEMENTE_UI = [
     ['vindecare', 'Puterea preotului: Vindecare'],
     ['goleste_bara', 'Puterea preotului: golește bara inamicului (clepsidra)'],
     ['scut_lumina', 'Puterea preotului: Scutul de lumină'],
-  ].map(([id, nume]) => ({ id: `icon_${id}`, grup: 'Luptă: interfața', nume: `Iconiță: ${nume}`, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none}` })),
+  ].map(([id, nume]) => ({ id: `icon_${id}`, grup: 'Luptă: interfața', nume: `Iconiță: ${nume}`, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none;background-size:contain;background-position:center}` })),
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,
@@ -253,6 +254,7 @@ export const REGLAJE_MENIU = [
   ['spatiuRanduri', 'Distanța dintre rânduri', 44, 2],
   ['spatiuColoane', 'Distanța dintre coloane', 46, 2],
   ['iconita', 'Mărimea iconițelor', 115, 5],
+  ['iconitaDreapta', 'Iconițele, mutate spre dreapta', 16, 2],
   ['text', 'Mărimea textului din butoane', 34, 1],
   ['titluSus', 'Poziția titlului (de sus)', 107, 2],
   ['titlu', 'Mărimea titlului', 74, 2],
