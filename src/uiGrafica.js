@@ -255,6 +255,7 @@ export const REGLAJE_MENIU = [
   ['spatiuColoane', 'Distanța dintre coloane', 46, 2],
   ['iconita', 'Mărimea iconițelor', 115, 5],
   ['iconitaDreapta', 'Iconițele, mutate spre dreapta', 16, 2],
+  ['iconitaText', 'Distanța dintre iconiță și scris', 30, 2],
   ['text', 'Mărimea textului din butoane', 34, 1],
   ['titluSus', 'Poziția titlului (de sus)', 107, 2],
   ['titlu', 'Mărimea titlului', 74, 2],

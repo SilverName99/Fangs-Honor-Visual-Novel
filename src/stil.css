@@ -2189,7 +2189,7 @@ svg.zone {
   height: var(--meniu-butonInaltime, 165px);
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 0;
   padding: 0 var(--meniu-butonInterior, 40px);
   color: #2a1a0e;
   background: linear-gradient(#efe0bd, #d9c393);
@@ -2211,7 +2211,9 @@ svg.zone {
 }
 .text-buton-meniu {
   flex: 1;
-  text-align: center;
+  /* Scrisul stă lângă iconiță (decis de autor), la distanța reglată în editor */
+  padding-left: var(--meniu-iconitaText, 30px);
+  text-align: left;
   font: 700 var(--meniu-text, 40px) Georgia, serif;
 }
 .continut-meniu {

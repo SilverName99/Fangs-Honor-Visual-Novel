@@ -669,8 +669,8 @@ function deschideMeniul() {
     const grila = div('grila-meniu');
     grila.append(
       optiune('continua', '🚪', 'Continuă', inchide),
-      optiune('salveaza', '🪶', 'Salvează într-un fișier', () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
-      optiune('incarca', '📜', 'Încarcă dintr-un fișier', async () => {
+      optiune('salveaza', '🪶', 'Salvează', () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
+      optiune('incarca', '📜', 'Încarcă', async () => {
         try {
           stare = await salvare.importa();
           salveaza();
