@@ -1,5 +1,5 @@
 {
-  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). volum: cât de tare față de volumul din Opțiuni (zonele de afară aud satul de pe hartă cu 10% mai încet, 0.9); infundat: „putin” sau „mult”, același sunet auzit prin pereți (satul din casă, taverna de afară); fără să repornească sunetul, doar se potrivește lin. variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă; își poate da volumul și înfundarea ei, altfel le ia pe ale ambianței de bază. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
+  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). volum: cât de tare față de volumul din Opțiuni (zonele de afară aud satul de pe hartă cu 10% mai încet, 0.9); infundat: „putin” sau „mult”, același sunet auzit prin pereți (satul din casă, taverna de afară); fără să repornească sunetul, doar se potrivește lin. strat: al doilea sunet, care merge în același timp (taverna: vocile și muzica, separat). variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă; își poate da volumul și înfundarea ei, altfel le ia pe ale ambianței de bază. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
   "ambiante": {
     "harta": {
       "sunet": "sat_zi",
@@ -95,7 +95,8 @@
       "sunet": "casa"
     },
     "taverna": {
-      "sunet": "taverna_muzica",
+      "sunet": "taverna_voci",
+      "strat": "taverna_muzica",
       "volum": 0.8,
       "infundat": "mult",
       "variante": [
@@ -113,10 +114,12 @@
       ]
     },
     "taverna.parter": {
-      "sunet": "taverna_muzica"
+      "sunet": "taverna_voci",
+      "strat": "taverna_muzica"
     },
     "taverna.etaj": {
-      "sunet": "taverna_muzica",
+      "sunet": "taverna_voci",
+      "strat": "taverna_muzica",
       "volum": 0.7,
       "infundat": "mult",
       "variante": [
@@ -260,9 +263,10 @@
     "campsite": "Camp site: focul de tabără în pădure",
     "biserica": "Biserica: liniște de piatră, ecou",
     "poarta": "Poarta seara (18–23): focul orcilor trosnind, mormăieli",
-    "taverna_muzica": "Taverna: o muzică de tavernă, oameni vorbind, căni, foc (afară și din camera de sus se aude înfundat)",
+    "taverna_muzica": "Taverna: muzica de tavernă (se aude odată cu vocile; afară și din camera de sus, înfundat)",
     "moara_vant": "Moara: vântul care învârte aripile, lemnul care scârțâie",
-    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)"
+    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)",
+    "taverna_voci": "Taverna: vocile din fundal, oameni vorbind, căni (se aude odată cu muzica; afară și din camera de sus, înfundat)"
   },
   "efecte": {
     "usa": "Ușa de lemn care se deschide (când intri într-un loc)",

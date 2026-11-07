@@ -123,9 +123,15 @@ function fir(tip) {
 }
 
 const ambianta = fir('ambianta');
+// Al doilea strat de ambianță, care merge în același timp cu primul (taverna: vocile și muzica, încărcate separat)
+const strat = fir('ambianta');
 const muzica = fir('muzica');
 let muzicaActiva = false; // cât merge muzica (lupta, meniul), ambianța tace
 let ultimaAmbianta = null;
+const canta = (a) => {
+  ambianta.canta(a.cale, a);
+  strat.canta(a.strat, a);
+};
 
 export function creeazaSunet(date) {
   const s = date.sunete || {};
@@ -141,15 +147,22 @@ export function creeazaSunet(date) {
       if (!a) continue;
       const v = (a.variante || []).find((x) => verifica(x.conditii, ctx));
       const din = (cheie, implicit) => v?.[cheie] ?? a[cheie] ?? implicit;
-      return { cale: caleSunet('ambianta', v?.sunet || a.sunet), volum: din('volum', 1), infundat: din('infundat', false) };
+      // „strat”: al doilea sunet, în același timp; o variantă fără „strat” îl oprește (taverna închisă: doar satul)
+      const s2 = v ? v.strat : a.strat;
+      return {
+        cale: caleSunet('ambianta', v?.sunet || a.sunet),
+        strat: s2 ? caleSunet('ambianta', s2) : null,
+        volum: din('volum', 1),
+        infundat: din('infundat', false),
+      };
     }
-    return { cale: null };
+    return { cale: null, strat: null };
   }
 
   return {
     scena(idScena, ctx) {
       ultimaAmbianta = ambiantaPentru(idScena, ctx);
-      if (!muzicaActiva) ambianta.canta(ultimaAmbianta.cale, ultimaAmbianta);
+      if (!muzicaActiva) canta(ultimaAmbianta);
     },
     efect(id) {
       const cale = caleSunet('efecte', id);
@@ -164,10 +177,11 @@ export function creeazaSunet(date) {
       muzicaActiva = !!id;
       if (!id) {
         muzica.canta(null);
-        if (ultimaAmbianta) ambianta.canta(ultimaAmbianta.cale, ultimaAmbianta);
+        if (ultimaAmbianta) canta(ultimaAmbianta);
         return;
       }
       ambianta.canta(null);
+      strat.canta(null);
       muzica.canta(caleSunet('muzica', id), { repetat });
     },
   };
@@ -183,5 +197,6 @@ export function seteazaVolum(cheie, valoare) {
     // fără localStorage, volumul ține până se închide jocul
   }
   ambianta.volum();
+  strat.volum();
   muzica.volum();
 }
