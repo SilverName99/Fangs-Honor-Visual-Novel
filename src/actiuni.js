@@ -1,6 +1,7 @@
 import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
 import { verifica } from './conditii.js';
+import { aplicaEfecte } from './efecte.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -128,7 +129,25 @@ export function creeazaActiuni(parinte, joc) {
     joc.deschideEcranMagazin(a);
   }
 
+  // O lucrare care cere materiale (repararea acoperișului): le consumă, durează, obosește, arată imaginea ei
+  // pe tot ecranul, apoi schimbă starea lumii (efecte). Noaptea nu se face: doar gândul lui Vale
+  function lucrare(a) {
+    const s = joc.stare;
+    if (a.gandNoapte && momentZi(minuteInZi(s)) === 'noaptea') return joc.gand(a.gandNoapte);
+    for (const [id, n] of Object.entries(a.consuma || {})) {
+      const are = inv.numar(s.inventar, id);
+      if (are < n) return joc.gand(`Îmi mai trebuie ${n - are} × ${inv.def(id).nume}. Am ${are} din ${n}.`);
+    }
+    if (a.stamina && s.nevoi.stamina < a.stamina) return joc.gand('Sunt prea obosit pentru asta. Trebuie să mă odihnesc întâi.');
+    if (joc.avanseaza(a.minute || 0)) return;
+    for (const [id, n] of Object.entries(a.consuma || {})) inv.scoate(id, n);
+    if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+    aplicaEfecte(a.efecte, joc);
+    cuImagine(a, () => joc.dupaActiune(a.mesajGata || ''), a.sunet);
+  }
+
   const tipuri = {
+    lucrare,
     dormi,
     obtine,
     magazin,

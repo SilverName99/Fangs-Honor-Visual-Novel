@@ -468,6 +468,17 @@
     "partener": "miriam",
     "start": [
       {
+        "nod": "acoperis_gata",
+        "conditii": {
+          "misiune": {
+            "acoperis": "inceputa"
+          },
+          "stare": {
+            "acoperis": "reparat"
+          }
+        }
+      },
+      {
         "nod": "cina",
         "conditii": {
           "ora": {
@@ -481,7 +492,24 @@
           "stare": {
             "acoperis": "stricat"
           },
-          "sansa": 0.5
+          "sansa": 0.5,
+          "nu": {
+            "misiune": {
+              "acoperis": "inceputa"
+            }
+          }
+        }
+      },
+      {
+        "nod": "acoperis_lemne",
+        "conditii": {
+          "misiune": {
+            "acoperis": "inceputa"
+          },
+          "stare": {
+            "acoperis": "stricat"
+          },
+          "sansa": 0.4
         }
       },
       {
@@ -504,6 +532,9 @@
             "efecte": {
               "relatie": {
                 "miriam": 1
+              },
+              "misiune": {
+                "acoperis": "inceputa"
               }
             }
           },
@@ -547,6 +578,23 @@
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Stai jos, cina e aproape gata. Nu e mult, dar e caldă. Și e a noastră."
+      },
+      "acoperis_lemne": {
+        "_nota": "CIORNĂ: mama îi amintește de acoperiș cât misiunea e în lucru.",
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Ai apucat să aduci lemnul pentru acoperiș? Nu te grăbesc, dar norii de la munte nu arată a bine."
+      },
+      "acoperis_gata": {
+        "_nota": "CIORNĂ: finalul misiunii acoperișului (pasul „Îi spun mamei”). Recompensa e TODO.",
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Am auzit ciocanul toată ziua... Nu mai picură nimic lângă vatră. În noaptea asta dormim fără găleată lângă pat. Mulțumesc, Vale.",
+        "efecte": {
+          "stare": {
+            "acoperis_multumit": "da"
+          }
+        }
       }
     }
   },

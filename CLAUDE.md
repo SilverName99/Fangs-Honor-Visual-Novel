@@ -98,6 +98,7 @@ data/
   events.json           evenimente
   dialoguri.json        dialogurile (noduri cu vorbitor, emoție, text, alegeri)
   lupte.json            inamicii și luptele (participanți, recompense, înfrângere)
+  misiuni.json          misiunile (cine o dă, descriere, pași, recompensă)
   aranjare/             SCRIS DE EDITOR: poziții, poligoane, sloturi, margini UI
 src/                    codul jocului
 editor/                 editorul (galerie, aranjare, testare)
@@ -119,7 +120,7 @@ CLAUDE.md
 - **Situația:** satul e ocupat de orci, care i-au cruțat pe localnici în schimbul unei **taxe săptămânale**. Ieșirea din sat e păzită de orci, deci tot demo-ul se petrece în sat și în pădurea de lângă el.
 - **Libertate:** nu există o ordine impusă. Jucătorul decide ce face, iar taxa și evenimentele aduc presiunea.
 - **Finalul demo-ului:** Vale recrutează aliați, îi adună la Camp site (adunarea secretă) și atacă poarta într-o luptă pe ture. Dacă o câștigă, satul e liber.
-- **Misiunea de la mamă (acoperișul):** mama îi cere lui Vale să adune lemn din pădure ca să repare acoperișul. La final, imaginea casei (piesa de pe hartă și imaginea zonei) trece de la `acoperis: stricat` la `acoperis: reparat`. Recompensa e `TODO`.
+- **Misiunea de la mamă (acoperișul):** mama îi cere lui Vale să adune lemn din pădure ca să repare acoperișul. La final, imaginea casei (piesa de pe hartă și imaginea zonei) trece de la `acoperis: stricat` la `acoperis: reparat`. Recompensa e `TODO`. **Ciorna de acum** (propusă de Claude, autorul o poate schimba): Miriam se plânge de acoperiș („Mă ocup eu” pornește misiunea; după refuz te mai roagă); pașii: 10 lemne (4/10 în carte), apoi în zona casei apare „Repară acoperișul (4 ore)” (ziua, consumă lemnul și 30 stamina, imaginea `locations/munca_acoperis.png`), apoi îi spui mamei (o replică a ei). Cât e în lucru, mama mai întreabă de lemn.
 - **Magul din biserică** (preotul) e de fapt mag al luminii, sub acoperire. Orcii nu știu.
 - **Camera fierarului:** încuiată. Fierarul îți dă cheia după ce îl ajuți cu o misiune (`TODO`: care). În cameră e un cufăr cu un obiect bun (`TODO`: care).
 - **Dragonii:** doar indicii, în prolog sau într-o poveste la tavernă (`TODO`).
@@ -504,7 +505,9 @@ Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și mot
 
 **Dialogurile** (decis): toate replicile din joc sunt ciorne scrise de Claude, la cererea autorului; autorul spune ce și unde schimbă.
 
-**Cartea personajelor (decis):** butonul „📖 Personaje” din HUD (sau tasta P). O carte cu pagini care se întorc, câte un personaj pe fiecare două pagini: în stânga numele, încrederea (10 romburi, „x/10”) și o descriere scurtă, în vocea lui Vale, cu font de scris de mână (Dancing Script și Caveat, incluse în build, merg offline); în dreapta schița lui, `ui/carte_<id>.png` (desen în cerneală sau cărbune, 4:5, fundal transparent; în galerie la „Cartea personajelor”). Cartea deschisă poate primi o imagine, `ui/ui_carte.png` (1600×1000, două pagini goale). Săgețile au doar sunetul paginii (fără clic). Un personaj intră în carte după prima discuție cu el, în ordinea în care i-a cunoscut Vale; Miriam e acolo de la început (`start.cunoscuti`). În carte: Miriam, Roderick, Bram, Kaia, Elian, Agnes, fermierul, hoțul, plus orcul colector și paznicul orc (fără bara de încredere, `faraIncredere`) (`carte` în `npcs.json`; descrierile sunt ciorne de Claude).
+**Cartea (decis de autor):** butonul cu cartea din HUD (sau tasta P) o deschide **la misiuni**; lângă „Închide” e un pergament la fel, „Personaje”, care trece la cartea personajelor (și înapoi, „Misiuni”). **Misiunile** (`data/misiuni.json`, `src/misiuni.js`): în stânga lista („În lucru”, apoi „Terminate”, tăiate), în dreapta misiunea aleasă: de la cine e, descrierea în vocea lui Vale, pașii făcuți bifați și tăiați, pasul de acum îngroșat (cu cât ai strâns, de exemplu „(4/10)”), cei de după ascunși. O misiune are: `dela`, `titlu`, `descriere`, `pasi` (fiecare cu `text` și `gata` = condiții, sau `numara` = obiect și câte), `recompensa` (`text` în carte, `efecte` la final); pornește cu efectul `misiune: { id: "inceputa" }` („Misiune nouă” pe ecran); pașii se bifează singuri, iar la ultimul misiunea devine `terminata`. Acțiunea `lucrare` (în `locations.json`) consumă materiale, durează, obosește, arată o imagine și aplică efecte. **Semnul pe hartă** pentru misiuni: propus, nedecis.
+
+**Cartea personajelor (decis):** O carte cu pagini care se întorc, câte un personaj pe fiecare două pagini: în stânga numele, încrederea (10 romburi, „x/10”) și o descriere scurtă, în vocea lui Vale, cu font de scris de mână (Dancing Script și Caveat, incluse în build, merg offline); în dreapta schița lui, `ui/carte_<id>.png` (desen în cerneală sau cărbune, 4:5, fundal transparent; în galerie la „Cartea personajelor”). Cartea deschisă poate primi o imagine, `ui/ui_carte.png` (1600×1000, două pagini goale). Săgețile au doar sunetul paginii (fără clic). Un personaj intră în carte după prima discuție cu el, în ordinea în care i-a cunoscut Vale; Miriam e acolo de la început (`start.cunoscuti`). În carte: Miriam, Roderick, Bram, Kaia, Elian, Agnes, fermierul, hoțul, plus orcul colector și paznicul orc (fără bara de încredere, `faraIncredere`) (`carte` în `npcs.json`; descrierile sunt ciorne de Claude).
 
 **Recrutarea și finalul:**
 1. Fiecare om se alătură pe drumul lui (relație, questline sau plată).

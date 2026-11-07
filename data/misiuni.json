@@ -1,0 +1,20 @@
+{
+  "_nota": "Misiunile (decis de autor): cine o dă, titlul, o descriere scurtă în vocea lui Vale, pașii în ordine și recompensa. Un pas e gata când condițiile din „gata” sunt îndeplinite (același format ca peste tot) sau, cu „numara”, când Vale are destule bucăți din obiect; atunci se bifează singur și apare următorul. Starea misiunii stă în salvare: „inceputa”, „terminata” (sau „ratata”). Pornește din efectul „misiune”: { \"acoperis\": \"inceputa\" }.",
+  "misiuni": [
+    {
+      "id": "acoperis",
+      "titlu": "Acoperișul",
+      "dela": "miriam",
+      "descriere": "CIORNĂ: Plouă în casă, în colțul de lângă vatră. Mama vrea să peticim acoperișul până vin ploile mari. Îmi trebuie lemn bun din pădure.",
+      "pasi": [
+        { "text": "Adun lemn din pădure", "numara": { "obiect": "lemn", "n": 10 } },
+        { "text": "Repar acoperișul (la casă, ziua)", "gata": { "stare": { "acoperis": "reparat" } } },
+        { "text": "Îi spun mamei că e gata", "gata": { "stare": { "acoperis_multumit": "da" } } }
+      ],
+      "recompensa": {
+        "_nota": "TODO: recompensa misiunii (nedecisă de autor). „text” apare în carte, „efecte” se aplică la final.",
+        "efecte": {}
+      }
+    }
+  ]
+}

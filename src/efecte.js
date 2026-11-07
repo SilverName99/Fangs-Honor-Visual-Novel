@@ -15,7 +15,17 @@ const efecte = {
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   stare: (v, joc) => Object.assign(joc.stare.stari, v),
   deblocheaza: (v, joc) => [].concat(v).forEach((loc) => joc.stare.deblocate.includes(loc) || joc.stare.deblocate.push(loc)),
-  misiune: (v, joc) => Object.assign(joc.stare.misiuni, v),
+  // O misiune nouă intră în carte (în ordinea în care a început) și se anunță pe ecran
+  misiune: (v, joc) =>
+    Object.entries(v).forEach(([id, st]) => {
+      const s = joc.stare;
+      if (st === 'inceputa' && !s.misiuni[id]) {
+        (s.ordineMisiuni ||= []).push(id);
+        const m = joc.date.misiuni?.misiuni?.find((x) => x.id === id);
+        if (m) joc.mesaj(`Misiune nouă: ${m.titlu} (în carte)`);
+      }
+      s.misiuni[id] = st;
+    }),
   lupta: (v, joc) => joc.pornesteLupta(v),
   // Jocul de zaruri cu paznicii pornește după ce se închide dialogul (ca să nu stea peste el)
   zaruri: (v, joc) => setTimeout(() => joc.pornesteZaruri(), 0),

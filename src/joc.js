@@ -20,6 +20,7 @@ import { creeazaEcranInventar } from './ecranInventar.js';
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
+import { actualizeazaMisiuni } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
@@ -138,6 +139,8 @@ function anunt(text) {
 }
 
 function actualizeazaHud() {
+  // Pașii misiunilor se bifează singuri după orice schimbare (lemn adunat, acoperiș reparat, dialog)
+  actualizeazaMisiuni(joc);
   const ctx = context(stare);
   ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;
   const bani = div('rand-monede');
@@ -933,7 +936,8 @@ function afiseaza() {
 
   butoaneHud.replaceChildren(
     butonHud('inventar', '🎒', 'Inventar', () => ecranInventar.deschide({ cufar: false })),
-    butonHud('personaje', '📖', 'Personaje', () => carte.deschide()),
+    // Cartea se deschide la misiuni; „Personaje” de lângă „Închide” trece la cartea personajelor
+    butonHud('personaje', '📖', 'Cartea (misiuni, personaje)', () => carte.deschide()),
     butonHud('meniu', '☰', 'Meniu', deschideMeniul),
     butonHud('ecran', '⤢', document.fullscreenElement ? 'Ieși' : 'Ecran complet', comutaEcranComplet),
   );
