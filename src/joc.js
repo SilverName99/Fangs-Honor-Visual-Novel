@@ -631,8 +631,8 @@ const dialog = creeazaDialog(ui, {
       const noi = replici.filter((x) => !auzite.includes(`${id}/${x.nod}`));
       const din = noi.length ? noi : replici;
       const x = din[Math.floor(Math.random() * din.length)];
-      // Scris ca o propunere a lui Vale, nu ca o poruncă („Vorbește!”), decis de autor
-      alegeri.push({ text: 'Hai să stăm puțin de vorbă.', spre: x.nod, efecte: { auzit: `${id}/${x.nod}` } });
+      // „Ce mai faci?” (decis de autor); cei mai în vârstă primesc forma de respect, din npcs.json („intrebareVorba”)
+      alegeri.push({ text: personaje.get(id)?.intrebareVorba || 'Ce mai faci?', spre: x.nod, efecte: { auzit: `${id}/${x.nod}` } });
     }
     for (const { alegere, dialog: idDialog } of optiuniMisiuni(joc, id)) {
       Object.assign(noduri, dialoguri[idDialog]?.noduri);
