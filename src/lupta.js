@@ -336,6 +336,7 @@ export function creeazaLupta(parinte, joc) {
 
   // ---------- acțiuni ----------
   async function loveste(sursa, tinta) {
+    if (sursa.atac.sageata) return trage(sursa, tinta);
     poza(sursa, 'atac');
     if (sursa.sunet) joc.sunet.efect(sursa.sunet);
     joc.sunet.efect(sursa.sunetAtac);
@@ -417,6 +418,37 @@ export function creeazaLupta(parinte, joc) {
       if (!t.cazut && !t.apara) poza(t, 'idle');
     }
     return daune;
+  }
+
+  // Arcul (Vale): săgeata zboară drept spre țintă, cu vârful pe direcția de zbor, fără să se întoarcă.
+  // Arcașul nu se aruncă înainte ca la sabie; mărimea săgeții se reglează din galerie, ca la glaive
+  async function trage(sursa, tinta) {
+    poza(sursa, 'atac');
+    joc.sunet.efect(sursa.sunetAtac);
+    await asteapta(200);
+    if (!L) return 0;
+    const cale = sursa.atac.sageata;
+    const procent = joc.date.aranjare?.marimi_lupta?.marimi?.[cale] ?? 100;
+    const s = elementImagine([cale], { clasa: 'proiectil sageata-lupta', raport: 4, eticheta: 'săgeată' });
+    s.style.height = `${2.5 * (procent / 100)}%`;
+    L.scena.append(s);
+    const de = centru(sursa);
+    de.y -= de.latime * 0.25;
+    const la = inTinta(de, tinta);
+    const unghi = (Math.atan2(la.y - de.y, la.x - de.x) * 180) / Math.PI;
+    const ms = Math.max(120, Math.hypot(la.x - de.x, la.y - de.y) / (VITEZA * 1.6));
+    const transform = `translate(-50%, -50%) rotate(${unghi}deg)`;
+    await s
+      .animate([{ left: `${de.x}px`, top: `${de.y}px`, transform }, { left: `${la.x}px`, top: `${la.y}px`, transform }], { duration: ms / viteza(), easing: 'linear', fill: 'forwards' })
+      .finished.catch(() => {});
+    s.remove();
+    if (!L) return 0;
+    const d = aplicaLovitura(sursa, tinta);
+    await asteapta(400);
+    tinta.corp.classList.remove('lovit');
+    poza(sursa, 'idle');
+    if (!tinta.cazut && !tinta.apara) poza(tinta, 'idle');
+    return d;
   }
 
   // Scutul de lumină: imaginea stă în fața aliatului (spre inamici); mărimea se reglează din galerie, ca la glaive

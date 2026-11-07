@@ -15,7 +15,7 @@
     "sabie": { "nume": "Sabie", "tip": "echipament", "slot": "arma_primara", "tipArma": "sabie", "atac": { "min": 11, "max": 13, "tip": "apropiat" }, "pret": 30 },
     "sabie_mare": { "nume": "Sabie mare", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "sabie_doua_maini", "atac": { "min": 16, "max": 20, "tip": "apropiat" }, "pret": 45 },
     "topor_mare": { "nume": "Topor mare", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "topor_doua_maini", "atac": { "min": 13, "max": 23, "tip": "apropiat" }, "pret": 45 },
-    "arc": { "nume": "Arc", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "arc", "atac": { "min": 8, "max": 12, "tip": "distanta" }, "pret": 35 },
+    "arc": { "nume": "Arc", "tip": "echipament", "slot": "arma_primara", "douaMaini": true, "sloturi": 2, "tipArma": "arc", "atac": { "min": 8, "max": 12, "tip": "distanta", "sageata": "combat/sageata.png" }, "pret": 35 },
     "scut_lemn": { "nume": "Scut de lemn", "tip": "echipament", "slot": "arma_secundara", "scut": true, "blocare": 0.7, "armura": 5, "pret": 15 },
     "gluga": { "nume": "Glugă de piele", "tip": "echipament", "slot": "cap", "armura": 5, "pret": 8 },
     "vesta_piele": { "nume": "Vestă de piele", "tip": "echipament", "slot": "armura", "armura": 10, "pret": 20 },

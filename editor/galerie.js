@@ -135,7 +135,11 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     // Zonele de luptă (hărțile): fiecare poză de luptă are mărimea ei pe fiecare zonă
     const zoneLupta = [...comun.lume.values()].filter((d) => d.tip === 'lupta').map((d) => [d.id, d.titlu.replace('Luptă: ', '')]);
     // Imaginile folosite și ca armă aruncată în luptă (glaive-ul Kaiei) au și ele mărimea lor în luptă
-    const proiectile = new Set(comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil).filter(Boolean));
+    // și săgeata arcului lui Vale
+    const proiectile = new Set([
+      ...comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil),
+      ...Object.values(comun.date.items?.obiecte || {}).map((o) => o.atac?.sageata),
+    ].filter(Boolean));
     // La fel efectele puterilor (scutul de lumină)
     const efecte = new Set(comun.date.npcs.personaje.flatMap((p) => (p.lupta?.abilitati || []).map((a) => a.imagine)).filter(Boolean));
     // Fiecare sunet are volumul lui, în procente (cât de tare se aude față de restul); 100% = cum e fișierul

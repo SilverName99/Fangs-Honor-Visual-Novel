@@ -1639,6 +1639,10 @@ svg.zone {
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
 }
+/* Săgeata nu strălucește ca glaive-ul: e doar lemn și fier */
+.proiectil.sageata-lupta {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+}
 
 /* Scutul de lumină: în fața personajului (spre inamici), pulsează ușor cât e activ și se sparge la lovitură */
 .scut-lumina {
