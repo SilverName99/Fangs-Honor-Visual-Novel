@@ -2370,10 +2370,21 @@ svg.zone {
   margin-bottom: 60px;
 }
 
-/* Opțiunile: butoanele din rânduri mai scunde, ca toate rândurile să încapă pe tablă fără derulare */
+/* Opțiunile: rândurile se întind pe toată înălțimea tablei (decis de autor), cu o linie aurie estompată la capete
+   între ele; textul puțin mai spre dreapta */
+.optiuni-meniu {
+  display: flex;
+  flex-direction: column;
+}
 .optiuni-meniu .rand-optiune {
-  padding: 8px 10px;
+  flex: 1 0 auto;
+  padding: 8px 10px 8px 28px;
   font-size: 26px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, transparent, rgba(226, 182, 90, 0.55) 12%, rgba(226, 182, 90, 0.55) 88%, transparent) 1;
+}
+.optiuni-meniu .rand-optiune:last-child {
+  border-bottom: none;
 }
 .optiuni-meniu .buton.buton-mic-meniu {
   padding: 8px 28px;
