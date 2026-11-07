@@ -448,6 +448,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 - **Aranjarea** (decis): bara de sus, jurnalul, tabla de acțiuni și butonul de viteză se mută și se măresc în editor, la Aranjare → „Ecranul de luptă: interfața” (`data/aranjare/lupta_interfata.json`); medalioanele, butoanele și textele cresc odată cu înălțimea bucății, iar lățimea urmează forma imaginii. În luptă, tabla stă jos (și la „Schimbă locul”). **La formație** (înainte de luptă), bara turelor și jurnalul nu apar: doar tabla cu „Începe lupta”, sus, în locul barii (bucata „Tabla de la formație”, aranjabilă separat).
 - **Locurile libere** (formația, „Schimbă locul”) sunt inelul auriu de pe jos (`ui_lupta_inel.png`), stins, aprins la hover (decis: fără cercurile verzi).
 - **Barele verticale:** la aliați în stânga, **la inamici în dreapta** (decis).
+- **Hover pe un luptător** (oricând în luptă): o strălucire fină și numele lui lângă el, pe eticheta de pânză. Sub medalion se scrie numele scurt, unde e lung (`numeScurt` în `npcs.json`: „F. Elian”).
 - Iconițele din butoane își păstrează forma (nu se turtesc); hover-ul butonului iese în afară cu marginea lui (cu minus, reglabilă la Interfață), ca lemnul să nu pară mai mic; fără căsuța albă de nume a browserului.
 - Toate piesele: în galerie la grupul **„Luptă: interfața”**.
 

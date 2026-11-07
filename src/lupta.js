@@ -245,7 +245,8 @@ export function creeazaLupta(parinte, joc) {
     bare.append(bv, bs, f.elArmura);
     // Inelul de pe jos: auriu sub cel care e la rând, roșu sub ținta de sub mouse
     f.corp = div('corp');
-    f.el.append(div('inel-lupta'), bare, f.corp);
+    // Numele apare lângă luptător doar cu mouse-ul deasupra (decis de autor)
+    f.el.append(div('inel-lupta'), bare, f.corp, div('nume-luptator', f.nume));
     poza(f, 'idle');
     aseaza(f);
     return f.el;
@@ -287,7 +288,8 @@ export function creeazaLupta(parinte, joc) {
   function medalion(f, primul) {
     const m = div(`medalion ${f.tabara}${primul ? ' primul' : ''}`);
     const portret = elementImagine([`portraits/${f.idPoze}_normal.png`, `combat/${f.idPoze}_idle.png`], { clasa: 'portret-medalion', raport: 1, eticheta: f.nume });
-    m.append(portret, div('rama-medalion'), div('eticheta-medalion', f.nume));
+    // Sub medalion încape doar un nume scurt („F. Elian”); numele întreg apare la hover pe luptător
+    m.append(portret, div('rama-medalion'), div('eticheta-medalion', f.numeScurt || f.nume));
     return m;
   }
 
@@ -646,7 +648,7 @@ export function creeazaLupta(parinte, joc) {
     const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
     // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
     const aliati = (def.test ? ['vale'] : s.grup)
-      .map((id) => (id === 'vale' ? luptatorVale(def) : personaje.get(id)?.lupta && luptatorDinDate(id, personaje.get(id).lupta, personaje.get(id).nume)))
+      .map((id) => (id === 'vale' ? luptatorVale(def) : personaje.get(id)?.lupta && { ...luptatorDinDate(id, personaje.get(id).lupta, personaje.get(id).nume), numeScurt: personaje.get(id).numeScurt }))
       .filter(Boolean);
     // Locurile libere se dau pe rând celor care nu au încă loc în formație
     const ocupate = new Set();
@@ -668,7 +670,7 @@ export function creeazaLupta(parinte, joc) {
     for (const x of def.aliati || []) {
       const p = personaje.get(x.id);
       if (!p?.lupta || aliati.some((f) => f.id === x.id)) continue;
-      const f = { ...luptatorDinDate(x.id, p.lupta, p.nume), temporar: true };
+      const f = { ...luptatorDinDate(x.id, p.lupta, p.nume), numeScurt: p.numeScurt, temporar: true };
       asaza(f, x);
       aliati.push(f);
     }
@@ -728,11 +730,12 @@ export function creeazaLupta(parinte, joc) {
     // Cine e sub mouse primește clasa „sub-mouse”: strălucirea roșie a inamicilor apare doar atunci
     const marcheazaSubMouse = (f) => {
       L?.toti.forEach((x) => x.el.classList.toggle('sub-mouse', x === f));
-      scenaLupta.classList.toggle('peste-tinta', !!f && (f.el.classList.contains('tinta-valida') || f.tabara === 'aliat'));
+      scenaLupta.classList.toggle('peste-tinta', !!f && !!L?.laClic && (f.el.classList.contains('tinta-valida') || f.tabara === 'aliat'));
     };
     scenaLupta.addEventListener('mousemove', (e) => {
       if (!L) return;
-      marcheazaSubMouse(L.laClic ? subMouse(e) : null);
+      // Oricând, nu doar când se alege ținta: cel de sub mouse se luminează fin și își arată numele
+      marcheazaSubMouse(subMouse(e));
     });
     scenaLupta.addEventListener('mouseleave', () => marcheazaSubMouse(null));
     for (const f of L.toti) scenaLupta.append(creeazaElement(f));

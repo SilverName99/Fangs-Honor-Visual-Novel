@@ -384,6 +384,7 @@
     {
       "id": "mag",
       "nume": "Fratele Elian",
+      "numeScurt": "F. Elian",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Preotul satului, tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Vorbește puțin și ascultă mult. Când e el prin preajmă, lumânările par să ardă mai frumos."
