@@ -1724,6 +1724,8 @@ svg.zone {
   border-radius: 18px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 0 0 4px #2b170b;
   perspective: 5000px;
+  /* Puțin mai mică și urcată (decis de autor), ca butoanele să stea dedesubt, nu peste copertă */
+  transform: translateY(-58px) scale(0.9);
 }
 .carte .pagina {
   position: relative;
@@ -1806,7 +1808,7 @@ svg.zone {
 .inapoi-carte,
 .inainte-carte {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   font-size: 34px;
   padding: 18px 26px;
@@ -1822,16 +1824,17 @@ svg.zone {
   opacity: 0.25;
   pointer-events: none;
 }
-.inchide-carte {
-  position: absolute;
-  top: 24px;
-  right: 40px;
-}
-/* „Personaje” / „Misiuni”: același pergament ca „Închide”, chiar în stânga lui */
+/* Sub carte, unul lângă altul, la mijloc: „Personaje” / „Misiuni” în stânga, „Închide” în dreapta */
+.inchide-carte,
 .comuta-carte {
   position: absolute;
-  top: 24px;
-  right: 380px;
+  bottom: 22px;
+}
+.comuta-carte {
+  right: calc(50% + 15px);
+}
+.inchide-carte {
+  left: calc(50% + 15px);
 }
 /* Misiunile din carte: lista în stânga, misiunea aleasă în dreapta, cu același scris de mână */
 .titlu-sectiune-misiuni {
