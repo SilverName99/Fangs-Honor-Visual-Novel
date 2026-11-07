@@ -1787,10 +1787,10 @@ svg.zone {
   padding: 18px 26px;
 }
 .inapoi-carte {
-  left: 35px;
+  left: 25px;
 }
 .inainte-carte {
-  right: 35px;
+  right: 25px;
 }
 .inapoi-carte:disabled,
 .inainte-carte:disabled {

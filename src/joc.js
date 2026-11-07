@@ -446,6 +446,8 @@ function alegeCuSanse(lista) {
 }
 
 function vaneaza(v) {
+  // Noaptea nu se vânează (decis de autor): doar gândul lui Vale
+  if (v.gandNoapte && context(stare).moment === 'noaptea') return gand(v.gandNoapte);
   // „insotitor”: cineva care vânează și el în aceeași perioadă (Kaia, 10–14) te poate găsi și luptă cu tine.
   // Se verifică la ora la care pleci la vânătoare, înainte să treacă timpul
   const i = v.insotitor;
@@ -513,6 +515,8 @@ const joc = {
   sunet,
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
+  // Imagini pe tot ecranul (munca, ca ecranul de încărcare de la vânătoare)
+  arataImagini: (imagini, gata, opt) => secventa.arata(imagini, gata, opt),
   date,
   lume,
   evenimente,
@@ -629,7 +633,8 @@ const debug = creeazaDebug(ui, joc);
 const ecranInventar = creeazaEcranInventar(ui, joc);
 const ecranMagazin = creeazaEcranMagazin(ui, joc);
 // Un clic pe orice buton sau alegere are sunetul lui (mic, discret)
-addEventListener('click', (e) => e.target.closest?.('.buton, .alegere') && sunet.efect('clic'), { capture: true });
+// Săgețile cărții au doar sunetul paginii (decis de autor), fără clic peste el
+addEventListener('click', (e) => e.target.closest?.('.buton, .alegere') && !e.target.closest('.inapoi-carte, .inainte-carte') && sunet.efect('clic'), { capture: true });
 const carte = creeazaCarte(ui, joc);
 const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);

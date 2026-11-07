@@ -760,6 +760,7 @@
             "minute": 60,
             "secunde": 3,
             "text": "Cauți urme de vânat...",
+            "gandNoapte": "Noaptea, în pădure, eu aș fi vânatul. Mai bine aștept să se lumineze.",
             "insotitor": {
               "personaj": "vanatoare",
               "sansa": 0.1,
@@ -831,7 +832,9 @@
           "n": 3,
           "minute": 60,
           "sunet": "lemne",
-          "stamina": 10
+          "stamina": 10,
+          "imagine": "locations/munca_lemne.png",
+          "text": "Aduni lemne..."
         }
       ]
     },

@@ -63,26 +63,38 @@
     "cufar": 40
   },
   "munca": {
-    "_nota": "Muncile de la câmpuri: monede și stamina pe oră (TODO echilibru).",
+    "_nota": "Muncile de la câmpuri și de la moară: monede și stamina pe oră (TODO echilibru). „imagine”: arătată câteva secunde cât muncești (ca la vânătoare); „text”: ce scrie pe ea; „gandNoapte”: gândul lui Vale noaptea, când nu se poate lucra (decis de autor). Textele sunt ciorne.",
     "munca_arat": {
       "nume": "Arat",
       "monedePeOra": 3,
-      "staminaPeOra": 12
+      "staminaPeOra": 12,
+      "imagine": "locations/munca_arat.png",
+      "text": "Ari câmpul...",
+      "gandNoapte": "E noapte. Nu ară nimeni pe întuneric, mă întorc mâine dimineață."
     },
     "munca_porci": {
       "nume": "Ferma de porci",
       "monedePeOra": 3,
-      "staminaPeOra": 10
+      "staminaPeOra": 10,
+      "imagine": "locations/munca_porci.png",
+      "text": "Muncești la ferma de porci...",
+      "gandNoapte": "E noapte. Animalele dorm, mă întorc mâine."
     },
     "munca_vaci": {
       "nume": "Ferma de vaci",
       "monedePeOra": 3,
-      "staminaPeOra": 10
+      "staminaPeOra": 10,
+      "imagine": "locations/munca_vaci.png",
+      "text": "Îngrijești vacile...",
+      "gandNoapte": "E noapte. Vacile dorm, nu are rost să le deranjez. Revin mâine."
     },
     "munca_moara": {
       "nume": "Moara",
       "monedePeOra": 4,
-      "staminaPeOra": 14
+      "staminaPeOra": 14,
+      "imagine": "locations/munca_moara.png",
+      "text": "Cari saci de grâu la moară...",
+      "gandNoapte": "Moara stă noaptea. Revin mâine dimineață."
     }
   },
   "somn": {

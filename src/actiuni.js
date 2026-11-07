@@ -1,6 +1,9 @@
 import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua } from './stare.js';
 
+// Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
+const SECUNDE_IMAGINE = 2.5;
+
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, dezactivat = false) {
   const b = document.createElement('button');
@@ -30,9 +33,20 @@ export function creeazaActiuni(parinte, joc) {
 
   const prea_obosit = () => joc.stare.nevoi.stamina < cfg.nevoi.prag;
 
+  // Imaginea muncii pe tot ecranul câteva secunde (decis de autor, ca la vânătoare), apoi restul.
+  // Sunetul pornește puțin după clic, ca să nu se suprapună cu el
+  function cuImagine(a, dupa, idSunet) {
+    joc.salveaza();
+    if (idSunet) setTimeout(() => joc.sunet.efect(idSunet), 150);
+    if (!a.imagine) return dupa();
+    joc.arataImagini([a.imagine], dupa, { automat: SECUNDE_IMAGINE * 1000, text: a.text || '' });
+  }
+
   function munca(idMunca) {
     const m = cfg.munca[idMunca];
     if (!m) return joc.mesaj('Munca asta nu e definită în config.');
+    // Noaptea nu se lucrează la câmp, la vaci sau la moară (decis de autor): doar gândul lui Vale
+    if (m.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(m.gandNoapte);
     panou(m.nume, (inchide) => {
       const s = joc.stare;
       const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.`);
@@ -40,11 +54,11 @@ export function creeazaActiuni(parinte, joc) {
       const ore = [1, 2, 4].map((h) =>
         buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, () => {
           inchide();
-          joc.sunet.efect('munca');
           if (joc.avanseaza(h * 60)) return;
           s.bani += h * m.monedePeOra;
           schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
-          joc.dupaActiune(`+${h * m.monedePeOra} monede`);
+          // Întâi imaginea cu Vale la muncă (cu sunetul muncii), apoi ce a câștigat
+          cuImagine(m, () => joc.dupaActiune(`+${h * m.monedePeOra} monede`), 'munca');
         }, s.nevoi.stamina < h * m.staminaPeOra),
       );
       return [info, ...ore];
@@ -93,10 +107,15 @@ export function creeazaActiuni(parinte, joc) {
     }
     if (joc.avanseaza(a.minute || 0)) return;
     if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
-    // Sunetul acțiunii, dacă are (apa de la fântână, lemnele)
-    if (a.sunet) joc.sunet.efect(a.sunet);
-    joc.primeste(a.obiect, a.n || 1);
-    joc.dupaActiune(`+${a.n || 1} ${inv.def(a.obiect).nume}`);
+    // Sunetul acțiunii, dacă are (apa de la fântână, lemnele); cu imagine (lemnele), sunetul vine odată cu ea
+    cuImagine(
+      a,
+      () => {
+        joc.primeste(a.obiect, a.n || 1);
+        joc.dupaActiune(`+${a.n || 1} ${inv.def(a.obiect).nume}`);
+      },
+      a.sunet,
+    );
   }
 
   // Magazinul are ecranul lui (src/ecranMagazin.js), ca inventarul

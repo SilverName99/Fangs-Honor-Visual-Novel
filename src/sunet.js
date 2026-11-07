@@ -24,7 +24,34 @@ const laDeblocare = [];
 function deblocheaza() {
   if (deblocat) return;
   deblocat = true;
+  if (ctxAudio?.state === 'suspended') ctxAudio.resume();
   for (const f of laDeblocare.splice(0)) f();
+}
+
+// Sunetul „înfundat” (decis de autor: satul auzit din casă, taverna auzită de afară): același fișier,
+// trecut printr-un filtru care taie sunetele înalte, ca prin pereți. Filtrul se pune doar unde trebuie
+// și, odată pus, doar se deschide sau se închide lin, fără să repornească sunetul
+let ctxAudio = null;
+const FRECVENTA = { putin: 1600, mult: 550 };
+function filtru(audio) {
+  if (audio.filtru) return audio.filtru;
+  try {
+    ctxAudio ||= new AudioContext();
+    if (deblocat && ctxAudio.state === 'suspended') ctxAudio.resume();
+    const f = ctxAudio.createBiquadFilter();
+    f.type = 'lowpass';
+    f.frequency.value = 20000;
+    ctxAudio.createMediaElementSource(audio).connect(f).connect(ctxAudio.destination);
+    audio.filtru = f;
+  } catch {
+    audio.filtru = null;
+  }
+  return audio.filtru;
+}
+function infunda(audio, cat) {
+  if (!cat && !audio.filtru) return;
+  const f = filtru(audio);
+  if (f) f.frequency.setTargetAtTime(FRECVENTA[cat] || 20000, ctxAudio.currentTime, 0.25);
 }
 addEventListener('pointerdown', deblocheaza, { capture: true });
 addEventListener('keydown', deblocheaza, { capture: true });
@@ -41,7 +68,7 @@ function porneste(audio) {
 
 // Un fir de sunet care se repetă (ambianța sau muzica): la schimbare, cel vechi se stinge și cel nou crește lin
 function fir(tip) {
-  let curent = null; // { cale, audio }
+  let curent = null; // { cale, audio, volum }
   const stinge = (audio) => {
     const pas = audio.volume / (TRECERE / 50);
     const t = setInterval(() => {
@@ -53,8 +80,23 @@ function fir(tip) {
     }, 50);
   };
   return {
-    canta(cale, { repetat = true } = {}) {
-      if (curent?.cale === cale) return;
+    // volum: cât de tare față de volumul ales în Opțiuni (zonele de afară aud harta cu 10% mai încet);
+    // infundat: 'putin' sau 'mult' (vezi FRECVENTA)
+    canta(cale, { repetat = true, volum = 1, infundat = false } = {}) {
+      // Același sunet (de pe hartă într-o zonă, din tavernă afară): nu repornește, doar se potrivește lin
+      if (curent && curent.cale === cale) {
+        curent.volum = volum;
+        infunda(curent.audio, infundat);
+        const audio = curent.audio;
+        const pas = Math.max(0.01, nivel(tip) / (TRECERE / 50));
+        const t = setInterval(() => {
+          if (curent?.audio !== audio) return clearInterval(t);
+          const tinta = nivel(tip) * curent.volum;
+          audio.volume = audio.volume < tinta ? Math.min(tinta, audio.volume + pas) : Math.max(tinta, audio.volume - pas);
+          if (Math.abs(audio.volume - tinta) < 0.001) clearInterval(t);
+        }, 50);
+        return;
+      }
       if (curent) stinge(curent.audio);
       curent = null;
       if (!cale || lipsa.has(cale) || previzualizare) return;
@@ -62,9 +104,10 @@ function fir(tip) {
       audio.loop = repetat;
       audio.volume = 0;
       audio.onerror = () => lipsa.add(cale);
-      curent = { cale, audio };
+      curent = { cale, audio, volum };
+      infunda(audio, infundat);
       porneste(audio);
-      const tinta = () => nivel(tip);
+      const tinta = () => nivel(tip) * (curent?.volum ?? 1);
       const pas = Math.max(0.01, tinta() / (TRECERE / 50));
       const t = setInterval(() => {
         if (curent?.audio !== audio) return clearInterval(t);
@@ -73,7 +116,7 @@ function fir(tip) {
       }, 50);
     },
     volum() {
-      if (curent) curent.audio.volume = nivel(tip);
+      if (curent) curent.audio.volume = nivel(tip) * curent.volum;
     },
     cale: () => curent?.cale || null,
   };
@@ -87,7 +130,8 @@ let ultimaAmbianta = null;
 export function creeazaSunet(date) {
   const s = date.sunete || {};
 
-  // Ambianța scenei: a ei, sau moștenită de la zona și harta de deasupra; prima variantă potrivită câștigă
+  // Ambianța scenei: a ei, sau moștenită de la zona și harta de deasupra; prima variantă potrivită câștigă.
+  // O variantă își poate da volumul și înfundarea ei; altfel le ia pe ale ambianței de bază
   function ambiantaPentru(idScena, ctx) {
     const lant = [idScena];
     if (idScena.includes('.')) lant.push(idScena.split('.')[0]);
@@ -96,15 +140,16 @@ export function creeazaSunet(date) {
       const a = s.ambiante?.[id];
       if (!a) continue;
       const v = (a.variante || []).find((x) => verifica(x.conditii, ctx));
-      return caleSunet('ambianta', v?.sunet || a.sunet);
+      const din = (cheie, implicit) => v?.[cheie] ?? a[cheie] ?? implicit;
+      return { cale: caleSunet('ambianta', v?.sunet || a.sunet), volum: din('volum', 1), infundat: din('infundat', false) };
     }
-    return null;
+    return { cale: null };
   }
 
   return {
     scena(idScena, ctx) {
       ultimaAmbianta = ambiantaPentru(idScena, ctx);
-      if (!muzicaActiva) ambianta.canta(ultimaAmbianta);
+      if (!muzicaActiva) ambianta.canta(ultimaAmbianta.cale, ultimaAmbianta);
     },
     efect(id) {
       const cale = caleSunet('efecte', id);
@@ -119,7 +164,7 @@ export function creeazaSunet(date) {
       muzicaActiva = !!id;
       if (!id) {
         muzica.canta(null);
-        ambianta.canta(ultimaAmbianta);
+        if (ultimaAmbianta) ambianta.canta(ultimaAmbianta.cale, ultimaAmbianta);
         return;
       }
       ambianta.canta(null);

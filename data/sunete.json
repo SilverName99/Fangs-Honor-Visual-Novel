@@ -1,38 +1,268 @@
 {
-  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
+  "_nota": "Sunetele jocului (MP3, în assets/sunete/, încărcate din galerie la „Sunete”). Un sunet lipsă = liniște, nu strică nimic. ambiante: sunetul de fundal al fiecărei scene (cheia e id-ul scenei: harta, o zonă sau zona.loc); o scenă fără ambianță o moștenește pe a celei de deasupra (loc → zonă → hartă). volum: cât de tare față de volumul din Opțiuni (zonele de afară aud satul de pe hartă cu 10% mai încet, 0.9); infundat: „putin” sau „mult”, același sunet auzit prin pereți (satul din casă, taverna de afară); fără să repornească sunetul, doar se potrivește lin. variante: altă ambianță după condiții (aceleași condiții ca peste tot), prima care se potrivește câștigă; își poate da volumul și înfundarea ei, altfel le ia pe ale ambianței de bază. efecte: sunete scurte. muzica: melodiile (meniul, lupta, finalurile); cât merge muzica de luptă, ambianța tace.",
   "ambiante": {
-    "harta": { "sunet": "sat_zi", "variante": [{ "sunet": "sat_noapte", "conditii": { "moment": ["noaptea"] } }] },
-    "casa": { "sunet": "casa" },
-    "fierar": { "sunet": "fierarie" },
-    "fierar.camera": { "sunet": "casa" },
-    "taverna": { "sunet": "taverna_afara", "variante": [{ "sunet": "sat_noapte", "conditii": { "ora": { "min": "02:00", "max": "08:59" } } }] },
-    "taverna.parter": { "sunet": "taverna", "variante": [{ "sunet": "taverna_seara", "conditii": { "oricare": [{ "ora": { "min": "18:00" } }, { "ora": { "max": "01:59" } }] } }] },
-    "taverna.etaj": { "sunet": "taverna_afara" },
-    "piata": { "sunet": "piata", "variante": [{ "sunet": "sat_noapte", "conditii": { "oricare": [{ "moment": ["noaptea"] }, { "ora": { "min": "20:00" } }] } }] },
-    "campuri": { "sunet": "campuri", "variante": [{ "sunet": "sat_noapte", "conditii": { "moment": ["noaptea"] } }] },
-    "moara": { "sunet": "moara" },
-    "padure": { "sunet": "padure_zi", "variante": [{ "sunet": "padure_noapte", "conditii": { "oricare": [{ "moment": ["noaptea"] }, { "ora": { "min": "21:00" } }] } }] },
-    "padure.campsite": { "sunet": "campsite" },
-    "biserica": { "sunet": "sat_zi", "variante": [{ "sunet": "sat_noapte", "conditii": { "moment": ["noaptea"] } }] },
-    "biserica.interior": { "sunet": "biserica" },
-    "poarta": { "sunet": "poarta" }
+    "harta": {
+      "sunet": "sat_zi",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "casa": {
+      "sunet": "sat_zi",
+      "volum": 0.9,
+      "infundat": "putin",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "casa.camera_vale": {
+      "sunet": "sat_zi",
+      "volum": 0.75,
+      "infundat": "putin",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "casa.camera_mama": {
+      "sunet": "sat_zi",
+      "volum": 0.75,
+      "infundat": "putin",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "casa.bucatarie": {
+      "sunet": "casa"
+    },
+    "fierar": {
+      "sunet": "fierarie",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.9
+        }
+      ]
+    },
+    "fierar.interior": {
+      "sunet": "fierarie",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.75,
+          "infundat": "putin"
+        }
+      ]
+    },
+    "fierar.camera": {
+      "sunet": "casa"
+    },
+    "taverna": {
+      "sunet": "taverna_muzica",
+      "volum": 0.8,
+      "infundat": "mult",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "ora": {
+              "min": "02:00",
+              "max": "08:59"
+            }
+          },
+          "volum": 0.9,
+          "infundat": false
+        }
+      ]
+    },
+    "taverna.parter": {
+      "sunet": "taverna_muzica"
+    },
+    "taverna.etaj": {
+      "sunet": "taverna_muzica",
+      "volum": 0.7,
+      "infundat": "mult",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "ora": {
+              "min": "02:00",
+              "max": "08:59"
+            }
+          },
+          "volum": 0.75,
+          "infundat": "putin"
+        }
+      ]
+    },
+    "piata": {
+      "sunet": "piata",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "oricare": [
+              {
+                "moment": [
+                  "noaptea"
+                ]
+              },
+              {
+                "ora": {
+                  "min": "20:00"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "campuri": {
+      "sunet": "campuri",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "moara": {
+      "sunet": "moara_vant",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.9
+        }
+      ]
+    },
+    "padure": {
+      "sunet": "padure_zi",
+      "variante": [
+        {
+          "sunet": "padure_noapte",
+          "conditii": {
+            "oricare": [
+              {
+                "moment": [
+                  "noaptea"
+                ]
+              },
+              {
+                "ora": {
+                  "min": "21:00"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "padure.campsite": {
+      "sunet": "campsite"
+    },
+    "biserica": {
+      "sunet": "sat_zi",
+      "volum": 0.9,
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ]
+    },
+    "biserica.interior": {
+      "sunet": "biserica"
+    },
+    "poarta": {
+      "sunet": "poarta_zi",
+      "variante": [
+        {
+          "sunet": "sat_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          },
+          "volum": 0.9
+        },
+        {
+          "sunet": "poarta",
+          "conditii": {
+            "ora": {
+              "min": "18:00",
+              "max": "22:59"
+            }
+          }
+        }
+      ]
+    }
   },
   "fisiereAmbianta": {
     "sat_zi": "Satul ziua: păsări, vânt ușor, viață în depărtare",
     "sat_noapte": "Satul noaptea: greieri, o bufniță departe, vânt",
-    "casa": "În casă: focul din vatră trosnind, liniște",
-    "taverna": "Sala tavernei: câțiva oameni vorbind, căni, foc",
-    "taverna_seara": "Taverna seara: gălăgie, râsete",
-    "taverna_afara": "În fața tavernei (și în camera de sus): gălăgia înfundată din spatele zidurilor",
+    "casa": "În bucătărie (și în camera fierarului): focul din vatră trosnind, liniște",
     "piata": "Piața: oameni, negustori strigând",
     "fierarie": "Fierăria: ciocanul pe nicovală din când în când, focul forjei",
     "campuri": "Câmpurile: vânt, vaci în depărtare, păsări",
-    "moara": "Moara: roata cu apă și pârâul",
-    "padure_zi": "Pădurea ziua: păsări",
+    "padure_zi": "Pădurea ziua: păsări de pădure, frunze (fără nimic din sat)",
     "padure_noapte": "Pădurea noaptea: greieri, bufniță",
     "campsite": "Camp site: focul de tabără în pădure",
     "biserica": "Biserica: liniște de piatră, ecou",
-    "poarta": "Poarta: vânt, un foc trosnind, mormăieli de orci"
+    "poarta": "Poarta seara (18–23): focul orcilor trosnind, mormăieli",
+    "taverna_muzica": "Taverna: o muzică de tavernă, oameni vorbind, căni, foc (afară și din camera de sus se aude înfundat)",
+    "moara_vant": "Moara: vântul care învârte aripile, lemnul care scârțâie",
+    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)"
   },
   "efecte": {
     "usa": "Ușa de lemn care se deschide (când intri într-un loc)",
