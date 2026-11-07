@@ -1117,41 +1117,78 @@ svg.zone {
   object-fit: contain;
   object-position: bottom;
 }
-.bare-luptator {
+.stare-armura {
   position: absolute;
-  left: -20%;
-  right: -20%;
-  bottom: 100%;
-  margin-bottom: 8px;
-  text-align: center;
-  font-size: 20px;
-  color: #f3e6c8;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+  font-size: 22px;
+  color: #ff9a7a;
   text-shadow: 0 1px 3px #000;
 }
-.bara-lupta {
-  height: 12px;
-  margin-top: 4px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  overflow: hidden;
+/* Viața și stamina pe verticală, în stânga luptătorului (designul autorului); umplerea crește de jos */
+.bare-luptator {
+  position: absolute;
+  right: 100%;
+  top: 8%;
+  margin-right: 4px;
+  height: 150px;
+  display: flex;
+  gap: 4px;
+  z-index: 2;
 }
-.bara-lupta .umplere {
+.bara-v {
+  position: relative;
+  width: 22px;
   height: 100%;
 }
-.bara-lupta.viata .umplere {
-  background: #c94a3f;
+.bara-v .rama-v {
+  position: absolute;
+  inset: 0;
+  border: 3px solid #3b3b3b;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px #000;
+  pointer-events: none;
 }
-.bara-lupta.stamina .umplere {
-  background: #d9b44a;
+.bara-v .umplere-v {
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: 5%;
+  max-height: 90%;
+  border-radius: 2px;
+  transition: height 0.15s linear;
 }
-.stare-armura {
-  font-size: 15px;
-  color: #ff9a7a;
-  min-height: 18px;
+.bara-v.viata .umplere-v {
+  background: linear-gradient(#e0574a, #a3261c);
 }
-.luptator.la-rand .corp {
-  filter: drop-shadow(0 0 10px rgba(255, 220, 140, 0.95));
+.bara-v.stamina .umplere-v {
+  background: linear-gradient(#f2c25a, #b9811d);
+}
+/* Inelul de pe jos: auriu sub cel care e la rând, roșu sub ținta de sub mouse */
+.inel-lupta {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 110%;
+  aspect-ratio: 3;
+  transform: translate(-50%, 45%);
+  display: none;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 3px solid #f0b85a;
+  box-shadow: 0 0 14px rgba(255, 190, 90, 0.9), inset 0 0 10px rgba(255, 190, 90, 0.6);
+}
+.luptator.lat .inel-lupta {
+  width: 75%;
+}
+.luptator.la-rand .inel-lupta,
+.luptator.tinta-valida.sub-mouse .inel-lupta {
+  display: block;
+}
+.luptator.inamic.tinta-valida.sub-mouse .inel-lupta {
+  border-color: #e0574a;
+  box-shadow: 0 0 14px rgba(240, 80, 60, 0.9), inset 0 0 10px rgba(240, 80, 60, 0.6);
 }
 /* Mâna apare doar deasupra formei unei ținte, nu pe tot dreptunghiul pozei (clicul se verifică pe pixeli) */
 .scena-lupta.peste-tinta {
@@ -1215,73 +1252,193 @@ svg.zone {
     opacity: 0;
   }
 }
+/* Sus: bara de lemn cu medalioanele, în ordinea în care vor acționa (primul e mai mare și luminat), cu numele sub ele */
 .ordine-lupta {
   position: absolute;
-  top: 24px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
+  width: 1500px;
+  height: 170px;
+  box-sizing: border-box;
   display: flex;
-  gap: 8px;
+  gap: 14px;
   align-items: center;
-  font-size: 20px;
+  justify-content: center;
+  background: linear-gradient(#4a3522, #2e2013);
+  border: 3px solid #5a3e24;
+  border-radius: 6px;
+}
+.medalion {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.medalion .portret-medalion {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a140e;
+}
+/* Până e încărcat medalionul, fața din portretul de dialog (care e bust, deci fața e sus) */
+.medalion .portret-medalion img {
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+.medalion .portret-medalion.lipsa {
+  font-size: 13px;
+  padding: 4px;
+}
+.medalion .rama-medalion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border: 4px solid #9a7b4f;
+  border-radius: 12px;
+  pointer-events: none;
+}
+.medalion.inamic .rama-medalion {
+  border-color: #8e3a2e;
+}
+.medalion.primul {
+  width: 126px;
+  filter: drop-shadow(0 0 12px rgba(255, 190, 90, 0.85));
+}
+.eticheta-medalion {
+  margin-top: 4px;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 6px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  text-overflow: ellipsis;
+  font: 600 14px Georgia, serif;
   color: #f3e6c8;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #1e2a4a;
+  border: 1px solid #6b5a3a;
 }
-.jeton {
-  padding: 6px 14px;
-  border-radius: 16px;
-  border: 1px solid;
-  background: rgba(0, 0, 0, 0.6);
-}
-.jeton.aliat {
-  border-color: #7fd19b;
-}
-.jeton.inamic {
-  border-color: #e0685a;
-}
+/* Sub bară: fâșia de pânză cu ce s-a întâmplat */
 .jurnal-lupta {
   position: absolute;
-  top: 80px;
+  top: 186px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 26px;
+  width: 900px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
   color: #f3e6c8;
   text-shadow: 0 2px 4px #000;
   white-space: nowrap;
+  overflow: hidden;
+  background: #1e2a4a;
+  border: 2px solid #6b5a3a;
 }
+/* Jos: tabla de acțiuni cu butoanele pătrate, doar cu iconițe; numele apare deasupra, la hover */
 .lupta-meniu {
   position: absolute;
   left: 50%;
-  bottom: 24px;
+  bottom: 8px;
   transform: translateX(-50%);
+  width: 1300px;
+  height: 190px;
+  box-sizing: border-box;
+  padding: 0 140px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  max-width: 1100px;
-  padding: 18px 26px;
-  background: rgba(20, 14, 8, 0.94);
-  border: 2px solid #a7854f;
-  border-radius: 12px;
-}
-.lupta-meniu button {
-  font: 600 24px Georgia, serif;
-  color: #f3e6c8;
-  background: linear-gradient(#3a2c1d, #24190f);
-  border: 2px solid #a7854f;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(#4a3522, #2e2013);
+  border: 3px solid #5a3e24;
   border-radius: 8px;
-  padding: 8px 22px;
+}
+.titlu-meniu-lupta {
+  font-size: 28px;
+  color: #f3e6c8;
+  text-shadow: 0 2px 4px #000;
+  margin-right: 20px;
+}
+.buton-lupta {
+  position: relative;
+  flex: none;
+  width: 116px;
+  height: 116px;
+  padding: 0;
+  background: linear-gradient(#6a4a2c, #3e2a17);
+  border: 3px solid #2a1a0e;
+  border-radius: 8px;
   cursor: pointer;
 }
-.lupta-meniu button:disabled {
+.buton-lupta:hover:not(:disabled) {
+  box-shadow: 0 0 16px rgba(255, 190, 90, 0.9);
+}
+.buton-lupta:disabled {
   opacity: 0.4;
   cursor: default;
 }
-.titlu-meniu-lupta,
-.text-rezultat {
-  width: 100%;
-  text-align: center;
-  font-size: 28px;
+.buton-lupta .icon-hud,
+.buton-lupta .iconita {
+  position: absolute;
+  inset: 18%;
+  width: auto;
+  height: auto;
+  font-size: 46px;
+  line-height: 72px;
+}
+.numar-obiect {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  font: 700 22px Georgia, serif;
+  color: #fff;
+  text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+.eticheta-lupta {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+  display: none;
+  min-width: 170px;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0 22px;
+  align-items: center;
+  justify-content: center;
+  font: 600 20px Georgia, serif;
   color: #f3e6c8;
+  white-space: nowrap;
+  pointer-events: none;
+  background: #1e2a4a;
+  border: 2px solid #6b5a3a;
+}
+.buton-lupta:hover .eticheta-lupta {
+  display: flex;
+}
+/* Rezultatul luptei: panoul mic (ca la Dormi), peste câmpul de luptă întunecat */
+.rezultat-lupta {
+  position: absolute;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
 }
 .locuri-lupta .loc-liber {
   position: absolute;
@@ -1446,7 +1603,7 @@ svg.zone {
 /* Cât se alege un loc (formația, „Schimbă locul”), meniul urcă sub jurnal, ca să nu acopere locurile de jos */
 .lupta-meniu.sus {
   bottom: auto;
-  top: 130px;
+  top: 260px;
 }
 
 /* ----- Cartea personajelor ----- */

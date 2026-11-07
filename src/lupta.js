@@ -1,4 +1,5 @@
 import { elementImagine } from './imagini.js';
+import { iconita as iconitaObiect } from './ecranInventar.js';
 import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { context } from './stare.js';
 // Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
@@ -13,6 +14,15 @@ function buton(text, clic, dezactivat = false, titlu = '') {
   b.title = titlu;
   return b;
 }
+// Butonul pătrat de pe tabla de acțiuni (designul autorului): doar iconița; numele apare deasupra, pe eticheta de pânză
+function butonActiune(iconita, simbol, nume, clic, dezactivat = false, titlu = '') {
+  const b = buton('', clic, dezactivat, titlu || nume);
+  b.className = 'buton-lupta';
+  b.append(Object.assign(div(`icon-hud icon-${iconita}`), { textContent: simbol }), div('eticheta-lupta', nume));
+  return b;
+}
+// golesteBara → goleste_bara: numele fișierelor sunt cu _ (ui_icon_goleste_bara.png)
+const caFisier = (id) => id.replace(/[A-Z]/g, (l) => `_${l.toLowerCase()}`);
 const intre = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 // Poza „cazut” (răpus) e nouă; până o încarcă autorul, căderea folosește poza „lovit”, înclinată din cod.
 // „lovit”, nu „ranit”: altfel numele s-ar fi bătut cu portretul rănit (fierar_ranit.png) în galerie
@@ -102,6 +112,7 @@ export function creeazaLupta(parinte, joc) {
     const tipArma = deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
       id: 'vale',
+      idPoze: 'vale',
       nume: 'Vale',
       viata: def?.test ? 100 : Math.round(s.nevoi.viata),
       viataMax: 100,
@@ -121,6 +132,8 @@ export function creeazaLupta(parinte, joc) {
   function luptatorDinDate(id, x, nume) {
     return {
       id,
+      // Medalionul din rândul de sus folosește aceleași poze ca lupta (orcii din tavernă = paznicul de la poartă)
+      idPoze: x.poze || id,
       nume,
       viata: x.viata,
       viataMax: x.viata,
@@ -209,19 +222,28 @@ export function creeazaLupta(parinte, joc) {
     f.corp.replaceChildren(f.cache.get(p));
   }
 
+  // Bara verticală (designul autorului): umplerea crește de jos în sus, rama de fier stă peste ea
+  function baraVerticala(tip) {
+    const b = div(`bara-v ${tip}`);
+    const umplere = div('umplere-v');
+    b.append(umplere, div('rama-v'));
+    return [b, umplere];
+  }
+
   function creeazaElement(f) {
     f.el = div(`luptator ${f.tabara}`);
+    // Viața și stamina stau pe verticală, în stânga luptătorului, fără nume (numele e sus, sub medalion)
     const bare = div('bare-luptator');
-    f.elViata = div('umplere');
-    f.elBara = div('umplere');
-    const bv = div('bara-lupta viata');
-    bv.append(f.elViata);
-    const bs = div('bara-lupta stamina');
-    bs.append(f.elBara);
+    bare.title = f.nume;
+    const [bv, uv] = baraVerticala('viata');
+    const [bs, us] = baraVerticala('stamina');
+    f.elViata = uv;
+    f.elBara = us;
     f.elArmura = div('stare-armura');
-    bare.append(div('nume-luptator', f.nume), bv, bs, f.elArmura);
+    bare.append(bv, bs, f.elArmura);
+    // Inelul de pe jos: auriu sub cel care e la rând, roșu sub ținta de sub mouse
     f.corp = div('corp');
-    f.el.append(bare, f.corp);
+    f.el.append(div('inel-lupta'), bare, f.corp);
     poza(f, 'idle');
     aseaza(f);
     return f.el;
@@ -231,10 +253,12 @@ export function creeazaLupta(parinte, joc) {
   function actualizeazaBare() {
     if (!L) return;
     for (const f of L.toti) {
-      f.elViata.style.width = `${Math.max(0, (f.viata / f.viataMax) * 100)}%`;
-      f.elBara.style.width = `${Math.max(0, Math.min(100, f.bara))}%`;
+      f.elViata.style.height = `${Math.max(0, (f.viata / f.viataMax) * 100)}%`;
+      f.elBara.style.height = `${Math.max(0, Math.min(100, f.bara))}%`;
       const crapate = f.armuri.filter((a) => a.ramas <= 0).length;
-      f.elArmura.textContent = crapate ? `armură crăpată (${crapate})` : '';
+      // Armura crăpată: un scuț mic sub bare (detaliile la hover)
+      f.elArmura.textContent = crapate ? '⛉' : '';
+      f.elArmura.title = crapate ? `Armură crăpată (${crapate})` : '';
     }
   }
 
@@ -249,7 +273,20 @@ export function creeazaLupta(parinte, joc) {
       for (let k = 0; k < 3; k++) urm.push({ f, t: t0 + (k * 100) / rate(f) });
     }
     urm.sort((a, b) => a.t - b.t);
-    L.elOrdine.replaceChildren(div('eticheta-ordine', 'Urmează:'), ...urm.slice(0, 7).map(({ f }) => div(`jeton ${f.tabara}`, f.nume)));
+    // Doar când se schimbă ordinea se redesenează (altfel portretele s-ar reîncărca de 60 de ori pe secundă)
+    const lista = urm.slice(0, 8).map(({ f }) => f);
+    const cheie = lista.map((f) => L.toti.indexOf(f)).join(',');
+    if (cheie === L.cheieOrdine) return;
+    L.cheieOrdine = cheie;
+    L.elOrdine.replaceChildren(...lista.map((f, i) => medalion(f, i === 0)));
+  }
+
+  // Medalionul: portretul (combat/<id>_medalion.png; până e încărcat, fața din portretul de dialog), rama și numele
+  function medalion(f, primul) {
+    const m = div(`medalion ${f.tabara}${primul ? ' primul' : ''}`);
+    const portret = elementImagine([`combat/${f.idPoze}_medalion.png`, `portraits/${f.idPoze}_normal.png`, `combat/${f.idPoze}_idle.png`], { clasa: 'portret-medalion', raport: 1, eticheta: f.nume });
+    m.append(portret, div('rama-medalion'), div('eticheta-medalion', f.nume));
+    return m;
   }
 
   function jurnal(text) {
@@ -493,10 +530,13 @@ export function creeazaLupta(parinte, joc) {
     L.elLocuri.replaceChildren();
   }
 
+  // Pe tablă, cât alegi ceva pe câmp: îndemnul și butonul „Înapoi”
+  const inapoi = (f) => butonActiune('inapoi', '↩', 'Înapoi', () => meniu(f));
+
   function alegeTinta(lista, laAlegere) {
     L.toti.forEach((f) => f.el.classList.toggle('tinta-valida', lista.includes(f)));
     L.laClic = (f) => lista.includes(f) && laAlegere(f);
-    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege ținta'), buton('Înapoi', () => meniu(L.activ)));
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege ținta'), inapoi(L.activ));
   }
 
   // Marcajul pentru o linie întreagă (unde poate merge un personaj lat)
@@ -517,7 +557,7 @@ export function creeazaLupta(parinte, joc) {
     if (f.lat) {
       // Personajul lat se mută doar pe o linie întreagă liberă
       for (const linie of [0, 1, 2]) if (linie !== f.linie && linieGoala('aliat', linie, f)) marcajLinie(linie, () => executa(f, { tip: 'muta', linie, rand: 'fata' }));
-      L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege linia'), buton('Înapoi', () => meniu(f)));
+      L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege linia'), inapoi(f));
       return;
     }
     for (const linie of [0, 1, 2]) {
@@ -534,7 +574,7 @@ export function creeazaLupta(parinte, joc) {
         L.elLocuri.append(loc);
       }
     }
-    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege locul'), buton('Înapoi', () => meniu(f)));
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege locul'), inapoi(f));
   }
 
   function meniu(f) {
@@ -547,24 +587,30 @@ export function creeazaLupta(parinte, joc) {
     const consumabile = inv.def && joc.stare.inventar.filter((x) => inv.def(x.id).inLupta);
     const m = L.elMeniu;
     m.hidden = false;
+    // Fiecare putere are butonul ei (preotul: vindecare, golirea barei, scutul de lumină), fără un „Abilitate” cu listă
     m.replaceChildren(
-      div('titlu-meniu-lupta', `Rândul lui ${f.nume}`),
-      ...(f.faraAtac ? [] : [buton('Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f), poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
-      buton('Apărare', () => executa(f, { tip: 'aparare' })),
-      buton('Obiect', () => {
+      ...(f.faraAtac
+        ? []
+        : [butonActiune('atac', '⚔', 'Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f), poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
+      ...f.abilitati.map((a) =>
+        butonActiune(caFisier(a.id), '✦', a.nume, () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (t) => executa(f, { tip: 'abilitate', abilitate: a, tinta: t }))),
+      ),
+      butonActiune('aparare', '🛡', 'Apărare', () => executa(f, { tip: 'aparare' })),
+      butonActiune('obiect', '🧪', 'Obiect', () => {
+        // Obiectele de luptă: câte un buton cu iconița obiectului și câte bucăți ai
         m.replaceChildren(
           div('titlu-meniu-lupta', 'Alege obiectul'),
-          ...consumabile.map((x) =>
-            buton(`${inv.def(x.id).nume} ×${x.n}`, () => alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t }))),
-          ),
-          buton('Înapoi', () => meniu(f)),
+          ...consumabile.map((x) => {
+            const b = buton('', () => alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })), false, inv.def(x.id).nume);
+            b.className = 'buton-lupta obiect-lupta';
+            b.append(iconitaObiect(inv, x.id), div('numar-obiect', `×${x.n}`), div('eticheta-lupta', inv.def(x.id).nume));
+            return b;
+          }),
+          inapoi(f),
         );
-      }, !consumabile.length),
-      buton('Schimbă locul', () => alegeLoc(f)),
-      ...f.abilitati.map((a) =>
-        buton(a.nume, () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (t) => executa(f, { tip: 'abilitate', abilitate: a, tinta: t }))),
-      ),
-      ...(L.def.fuga ? [buton('Fugi', () => executa(f, { tip: 'fuga' }))] : []),
+      }, !consumabile.length, consumabile.length ? '' : 'N-ai nimic de folosit în luptă'),
+      butonActiune('schimba', '⇄', 'Schimbă locul', () => alegeLoc(f)),
+      ...(L.def.fuga ? [butonActiune('fugi', '🏃', 'Fugi', () => executa(f, { tip: 'fuga' }))] : []),
     );
   }
 
@@ -758,15 +804,14 @@ export function creeazaLupta(parinte, joc) {
       arataLocuri();
     };
     L.elMeniu.hidden = false;
-    L.elMeniu.replaceChildren(
-      div('titlu-meniu-lupta', 'Formația: click pe un aliat, apoi pe locul nou'),
-      buton('Începe lupta', () => {
+    const incepe = buton('Începe lupta', () => {
         L.laClic = null;
         L.elLocuri.replaceChildren();
         L.toti.forEach((f) => f.el.classList.remove('la-rand'));
         start();
-      }),
-    );
+      });
+    incepe.className = 'buton buton-mic-meniu';
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Formația: click pe un aliat, apoi pe locul nou'), incepe);
   }
 
   function termina(rezultat) {
@@ -779,12 +824,13 @@ export function creeazaLupta(parinte, joc) {
     // Un jingle scurt la victorie și la înfrângere; la fugă revine direct ambianța
     if (rezultat === 'fuga') joc.sunet.muzica(null);
     else joc.sunet.muzica(rezultat, { repetat: false });
-    L.elMeniu.classList.remove('sus');
-    L.elMeniu.hidden = false;
-    L.elMeniu.replaceChildren(
-      div('titlu-meniu-lupta', titlu),
-      ...(parte?.text ? [div('text-rezultat', parte.text)] : []),
-      buton('Continuă', () => {
+    L.elMeniu.hidden = true;
+    // Rezultatul stă pe panoul mic (același ca la Dormi), peste câmpul de luptă
+    const fundalRezultat = div('rezultat-lupta');
+    const panou = div('panou-actiune');
+    fundalRezultat.append(panou);
+    el.append(fundalRezultat);
+    const continua = buton('Continuă', () => {
         joc.sunet.muzica(null);
         // Lupta de test nu lasă urme: nici viață pierdută, nici timp trecut
         if (L.def.test) {
@@ -799,8 +845,9 @@ export function creeazaLupta(parinte, joc) {
         el.replaceChildren();
         L = null;
         joc.dupaLupta(parte?.efecte, cfg.minute);
-      }),
-    );
+      });
+    continua.className = 'buton buton-mic-meniu';
+    panou.append(div('titlu-meniu', titlu), ...(parte?.text ? [div('text-anunt', parte.text)] : []), continua);
     L.pauza = true;
   }
 

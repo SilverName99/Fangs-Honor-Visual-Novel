@@ -385,6 +385,10 @@ export function imaginiCerute(date, scene) {
       if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
     }
   }
+  // Medalioanele din rândul de sus al luptei (doar fața, pătrat); până se încarcă, fața din portretul de dialog
+  grup = 'Luptă: medalioane';
+  const cuMedalion = [['vale', 'Vale'], ...luptatori.map(([id, nume]) => [id, nume])];
+  for (const [id, nume] of cuMedalion) adauga(`combat/${id}_medalion.png`, `Medalion în luptă: ${nume} (doar fața, 256 × 256)`, true);
   // Schițele din cartea personajelor (pagina din dreapta)
   grup = 'Cartea personajelor';
   for (const p of date.npcs.personaje) if (p.carte) adauga(fisierCarte(p.id), `Carte: ${p.nume} (schiță în cerneală sau cărbune, 4:5, de exemplu 1024 × 1280, fundal transparent)`);

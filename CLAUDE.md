@@ -412,9 +412,9 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 - Când bara e plină, personajul acționează și bara se golește.
 - **Abilitățile grele** fac bara să se umple **mai încet** până la mișcarea următoare (costul e per abilitate: durează cât ar fi durat de la −cost la 100), deci personajul așteaptă mai mult. Bara pornește de la 0 și se vede cum urcă.
 - Când un personaj al jucătorului e gata, **timpul se oprește** până se alege acțiunea.
-- Sus pe ecran se vede **ordinea următoare**: portrete mici, în ordinea în care vor acționa.
+- Sus pe ecran se vede **ordinea următoare**: medalioane cu portrete, în ordinea în care vor acționa (vezi „Ecranul de luptă”).
 - Vale obosit (stamina din nevoi sub 30) pornește lupta cu bara goală, iar Vale odihnit o pornește pe jumătate plină.
-- Fiecare personaj are o bară de **viață** și una de **stamina**, afișate deasupra lui.
+- Fiecare personaj are o bară de **viață** și una de **stamina**, pe verticală, în stânga lui.
 
 ### Acțiuni
 
@@ -437,6 +437,15 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 **Căderea:** la viață 0, personajul **cade**, dar nu moare. După luptă se ridică: recruții cu viața plină, Vale cu puțină viață (`TODO` cât).
 
 **Inamicii** aleg o țintă validă la întâmplare. Unii pot avea preferințe în JSON (de exemplu „lovește pe cel mai slăbit”).
+
+### Ecranul de luptă (decis, după designul autorului: „sat sărac, dar îngrijit”, lemn simplu, fier, pânză albastră)
+
+- **Sus:** bara de lemn (`ui_lupta_bara_sus.png`) cu **medalioanele** celor care urmează, în ordinea turelor (următorii 8; primul e mai mare și luminat), cu rama aurie la aliați și roșie la inamici (`ui_lupta_rama.png`, `ui_lupta_rama_inamic.png`) și **numele dedesubt**, pe o etichetă de pânză (`ui_lupta_eticheta.png`). Portretul din medalion: `combat/<id>_medalion.png` (doar fața, 256×256; galeria: „Luptă: medalioane”); până se încarcă, fața din portretul de dialog. Sub bară, **jurnalul** (`ui_lupta_jurnal.png`).
+- **Lângă fiecare luptător**, în stânga lui, **viața și stamina pe verticală**, fără nume (`ui_lupta_bara_verticala.png` e rama; umplerea e din cod); armura crăpată e un scuț mic sub ele.
+- **Jos:** tabla de acțiuni (`ui_lupta_actiuni.png`) cu **butoane pătrate doar cu iconițe** (`ui_lupta_buton.png` + `_hover`; numele apare deasupra, pe eticheta de pânză, la hover): Atac, fiecare putere separat (preotul n-are Atac, are Vindecare, Golește bara, Scutul de lumină), Apărare, Obiect (deschide obiectele de luptă, cu iconița și câte bucăți ai), Schimbă locul, Fugi. Când alegi ținta sau locul, pe tablă e îndemnul și „Înapoi”. Iconițele: `ui_icon_atac/aparare/obiect/schimba/fugi/vindecare/goleste_bara/scut_lumina.png` (o putere ia iconița după id-ul ei: `golesteBara` → `goleste_bara`).
+- **Pe jos:** inelul auriu sub cel care e la rând (`ui_lupta_inel.png`), cel roșu sub inamicul de sub mouse când alegi ținta (`ui_lupta_inel_tinta.png`).
+- **Rezultatul** (victorie, înfrângere, fugă) apare pe panoul mic (ca la Dormi). Butonul de viteză folosește butonul pătrat de lemn.
+- Toate piesele: în galerie la grupul **„Luptă: interfața”**.
 
 ### Imaginile de luptă (`assets/combat/`)
 

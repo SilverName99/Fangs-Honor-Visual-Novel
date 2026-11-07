@@ -46,9 +46,9 @@ export const ELEMENTE_UI = [
     extra: (url, m, img) =>
       `.nume-vorbitor{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};border-width:${marimeDialog(m)};border-image-width:${marimeDialog(m)};padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;white-space:nowrap}` +
       `.caseta .nume-vorbitor{top:calc(-1 * var(--margine-dialog, 0px) - ${marimeDialog(img.naturalHeight / 2)})}` },
-  { id: 'buton', nume: 'Buton', marime: '320 × 80 px', tip: '9-slice', margine: 20, selector: '.buton, .alegere, .lupta-meniu button' },
-  { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover, .lupta-meniu button:hover' },
-  { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active, .lupta-meniu button:active' },
+  { id: 'buton', nume: 'Buton', marime: '320 × 80 px', tip: '9-slice', margine: 20, selector: '.buton, .alegere' },
+  { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover' },
+  { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active' },
   // Alegerile din dialog au rama lor (după butoane, ca să o înlocuiască pe a lor); hover-ul schimbă doar imaginea
   { id: 'alegere', nume: 'Alegerea din dialog (rândul subțire)', marime: '1400 × 64 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.alegere',
     extra: (url, m, img) =>
@@ -65,7 +65,7 @@ export const ELEMENTE_UI = [
     extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth * 0.5)};height:${marimeDialog(img.naturalHeight * 0.5)};color:transparent}` },
   // Panoul mic (Dormi, Muncă, anunțurile): tabla cu banda titlului, întreagă, cu forma imaginii (fără să se turtească);
   // titlul stă pe banda albastră, iar butoanele sunt pergamentul din meniu. Restul panourilor îl folosesc ca ramă (9-slice)
-  { id: 'panou', nume: 'Panoul mic (Dormi, Muncă, anunțuri): tabla cu banda titlului, goală', marime: '900 × 700 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-inv, .lupta-meniu, .debug',
+  { id: 'panou', nume: 'Panoul mic (Dormi, Muncă, anunțuri): tabla cu banda titlului, goală', marime: '900 × 700 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-inv, .debug',
     extra: (url, m, img) => {
       const k = Math.min(1, LATIME_PANOU / img.naturalWidth);
       const w = img.naturalWidth * k;
@@ -155,6 +155,41 @@ export const ELEMENTE_UI = [
   { id: 'sageata', nume: 'Săgeata de răsfoit (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte',
     extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:150px;height:150px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
       '.buton.inapoi-carte,.buton.inainte-carte{background-size:contain}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
+  // Ecranul de luptă (designul autorului, „sat sărac, dar îngrijit”): în galerie la grupul „Luptă: interfața”.
+  // Piesele lungi (bara de sus, jurnalul, tabla de acțiuni) își păstrează forma imaginii, cu lățimea din joc
+  ...[
+    ['lupta_bara_sus', 'Bara de sus (rândul turelor), goală', '1600 × 220', '.ordine-lupta', 1500],
+    ['lupta_jurnal', 'Fâșia jurnalului, goală', '1000 × 90', '.jurnal-lupta', 900],
+    ['lupta_actiuni', 'Tabla de acțiuni de jos, goală', '1400 × 220', '.lupta-meniu', 1300],
+  ].map(([id, nume, marime, selector, latime]) => ({
+    id,
+    grup: 'Luptă: interfața',
+    nume,
+    marime: `${marime} px, fundal transparent`,
+    tip: 'fundal',
+    selector,
+    extra: (url, m, img) => `${selector}{width:${latime}px;height:auto;aspect-ratio:${img.naturalWidth} / ${img.naturalHeight};border:none;border-radius:0;background-color:transparent}`,
+  })),
+  { id: 'lupta_rama', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (aliat), interiorul transparent', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.aliat .rama-medalion', extra: '.medalion.aliat .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
+  { id: 'lupta_rama_inamic', grup: 'Luptă: interfața', nume: 'Rama portretului din rândul de sus (inamic)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.medalion.inamic .rama-medalion', extra: '.medalion.inamic .rama-medalion{border:none;border-radius:0;transform:scale(1.12)}' },
+  { id: 'lupta_eticheta', grup: 'Luptă: interfața', nume: 'Eticheta de pânză (numele sub portret și numele butonului la hover), goală', marime: '300 × 70 px, fundal transparent', tip: 'fundal', selector: '.eticheta-medalion, .eticheta-lupta', extra: '.eticheta-medalion,.eticheta-lupta{border:none;background-color:transparent}' },
+  { id: 'lupta_bara_verticala', grup: 'Luptă: interfața', nume: 'Rama barei verticale de viață / stamina (interiorul transparent)', marime: '48 × 260 px, fundal transparent', tip: 'fundal', selector: '.bara-v .rama-v', extra: '.bara-v .rama-v{border:none;border-radius:0;box-shadow:none}' },
+  { id: 'lupta_buton', grup: 'Luptă: interfața', nume: 'Butonul pătrat de lemn (acțiunile, viteza), gol', marime: '200 × 200 px, fundal transparent', tip: 'fundal', selector: '.buton-lupta, .buton.viteza-joc',
+    extra: '.buton-lupta,.buton-lupta:hover,.buton.viteza-joc,.buton.viteza-joc:hover{border:none;border-image:none;border-radius:0;box-shadow:none}.buton.viteza-joc{width:96px;height:96px;padding:0}' },
+  { id: 'lupta_buton_hover', grup: 'Luptă: interfața', nume: 'Butonul pătrat, cu mouse-ul deasupra (cu strălucire)', marime: '200 × 200 px, fundal transparent', tip: 'fundal', selector: '.buton-lupta:hover:not(:disabled), .buton.viteza-joc:hover' },
+  { id: 'lupta_inel', grup: 'Luptă: interfața', nume: 'Inelul de pe jos (sub cel care e la rând)', marime: '600 × 200 px, fundal transparent', tip: 'fundal', selector: '.luptator .inel-lupta', extra: '.luptator .inel-lupta{border:none;border-radius:0;box-shadow:none;background-size:100% 100%}' },
+  { id: 'lupta_inel_tinta', grup: 'Luptă: interfața', nume: 'Inelul roșu de pe jos (ținta de sub mouse)', marime: '600 × 200 px, fundal transparent', tip: 'fundal', selector: '.luptator.inamic.tinta-valida.sub-mouse .inel-lupta', extra: '.luptator.inamic.tinta-valida.sub-mouse .inel-lupta{border:none;box-shadow:none}' },
+  // Iconițele acțiunilor; puterile au iconița după id-ul lor (golesteBara → ui_icon_goleste_bara.png)
+  ...[
+    ['atac', 'Atac (sabia)'],
+    ['aparare', 'Apărare (scutul)'],
+    ['obiect', 'Obiect (sticluța)'],
+    ['schimba', 'Schimbă locul (săgețile)'],
+    ['fugi', 'Fugi (cizma)'],
+    ['vindecare', 'Puterea preotului: Vindecare'],
+    ['goleste_bara', 'Puterea preotului: golește bara inamicului (clepsidra)'],
+    ['scut_lumina', 'Puterea preotului: Scutul de lumină'],
+  ].map(([id, nume]) => ({ id: `icon_${id}`, grup: 'Luptă: interfața', nume: `Iconiță: ${nume}`, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none}` })),
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,
