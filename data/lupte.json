@@ -2,7 +2,10 @@
   "_nota": "Inamicii și luptele. aliati = cine luptă alături de Vale doar în lupta asta (fără să fie recrutat). poze = inamicul folosește pozele altcuiva. harti = locurile care au hartă de luptă separată (locations/lupta_<zona>_<loc>.png), cu locurile luptătorilor mutate în editor; celelalte lupte folosesc imaginea locului. linie: 0 (sus), 1 (mijloc), 2 (jos); rand: fata / spate. Cifrele și ce se întâmplă la înfrângere sunt de pornire (TODO). Pozele: assets/combat/<id>_<poza>.png (idle, atac, aparare, ranit). La un inamic, „filtru” (CSS) și „marime” (%) schimbă cum arată pozele refolosite (lupul negru = pozele lupului, întunecate și mai mari).",
   "harti": [
     "taverna.parter",
-    "padure.interior"
+    "padure.interior",
+    "poarta",
+    "piata",
+    "fierar"
   ],
   "inamici": {
     "lup": {
