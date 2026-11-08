@@ -153,6 +153,63 @@
         "_nota": "Decis de autor: bani, încredere +1 și magazinul lui Bram. Suma (15) e aleasă de Claude.",
         "text": "15 monede, încrederea lui Bram +1 și magazinul lui deschis."
       }
+    },
+    {
+      "id": "elian_ierburi",
+      "titlu": "Ierburile lui Elian",
+      "dela": "mag",
+      "dialog": "mag",
+      "descriere": "CIORNĂ: Fratele Elian vrea să facă o alifie pentru răni, dar un preot care iese des din sat dă de bănuit. Îi caut eu sunătoare în pădure.",
+      "oferta": {
+        "_nota": "Decis de autor: doar când Elian e afară (citește pe scările bisericii, 14–23), la o zi după prima discuție.",
+        "text": "Ce citești, frate Elian?",
+        "nod": "ierburi_oferta",
+        "conditii": {
+          "loc": "biserica",
+          "cunoscutDeZile": {
+            "mag": 1
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Culeg sunătoare din pădure",
+          "numara": {
+            "obiect": "sunatoare",
+            "n": 4
+          },
+          "sfat": "Dimineața (5–10), în pădure: „Caută ierburi”. Flori galbene, cinci petale, în mănunchi; frunzele au găurele mici.",
+          "indiciu": {
+            "text": "Cum arăta sunătoarea?",
+            "nod": "ierburi_indiciu"
+          }
+        },
+        {
+          "text": "Îi duc ierburile lui Elian",
+          "gata": {
+            "stare": {
+              "ierburi_elian": "date"
+            }
+          },
+          "sfat": "Cu cele 4 fire, vorbesc cu Elian.",
+          "predare": {
+            "text": "Ți-am adus sunătoarea.",
+            "nod": "ierburi_predare",
+            "conditii": {
+              "areCate": {
+                "sunatoare": 4
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Cum arăta sunătoarea?",
+            "nod": "ierburi_indiciu"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Elian +1 și două pansamente."
+      }
     }
   ]
 }

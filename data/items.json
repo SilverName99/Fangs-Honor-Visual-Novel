@@ -209,6 +209,28 @@
       "tip": "poveste",
       "pret": 40,
       "_nota": "Fierul confiscat de colector (misiunea lui Bram). Prețul face miza la zaruri: jumătate, 20 de monede."
+    },
+    "sunatoare": {
+      "nume": "Sunătoare",
+      "tip": "material",
+      "stiva": 10,
+      "pret": 2,
+      "_nota": "Planta de leac pentru Elian (misiunea elian_ierburi)."
+    },
+    "papadie": {
+      "nume": "Păpădie",
+      "tip": "planta",
+      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+    },
+    "piciorul_cocosului": {
+      "nume": "Piciorul-cocoșului",
+      "tip": "planta",
+      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+    },
+    "musetel": {
+      "nume": "Mușețel",
+      "tip": "planta",
+      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
     }
   }
 }

@@ -963,6 +963,75 @@
         "emotie": "normal",
         "text": "Am trecut doar să văd ce faci.",
         "urmator": "trecut"
+      },
+      "ierburi_oferta": {
+        "_nota": "CIORNĂ: misiunea elian_ierburi.",
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Un ierbar vechi, rămas de la preotul de dinaintea mea. Leacuri, alifii... Mi-ar trebui sunătoare pentru o alifie de răni. Dar dacă un preot iese prea des din sat, orcii încep să pună întrebări.",
+        "urmator": "ierburi_oferta_b"
+      },
+      "ierburi_oferta_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pot s-o caut eu. Cum arată?",
+        "urmator": "ierburi_oferta_c"
+      },
+      "ierburi_oferta_c": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Flori galbene, mici, cu cinci petale, adunate în mănunchi în vârful tulpinii. Ține o frunză în lumină: are puncte mici, luminoase, ca niște găurele de ac. Și se culege dimineața, cât mai e roua pe ea. Patru fire ar ajunge.",
+        "alegeri": [
+          {
+            "text": "Ți le aduc, frate Elian.",
+            "spre": "ierburi_accept",
+            "efecte": {
+              "misiune": {
+                "elian_ierburi": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Altă dată.",
+            "spre": "ierburi_altadata"
+          }
+        ]
+      },
+      "ierburi_accept": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lumina să-ți fie călăuză. Și... nu le spune orcilor pentru cine culegi."
+      },
+      "ierburi_altadata": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Desigur. Ierbarul așteaptă de ani buni, mai poate aștepta."
+      },
+      "ierburi_indiciu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Flori galbene, cinci petale, în mănunchi. Iar frunzele, ținute în lumină, au găurele mici. Nu te lăsa păcălit de păpădie, are prea multe petale. Și caută dimineața."
+      },
+      "ierburi_predare": {
+        "_nota": "CIORNĂ: recompensa (decis de autor): încredere +1 și două pansamente.",
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Exact ele! Vezi punctele din frunze? Din astea fac o alifie care închide rănile de două ori mai repede. Ia și tu două pansamente: cine umblă prin pădure are nevoie de ele.",
+        "efecte": {
+          "consuma": {
+            "sunatoare": 4
+          },
+          "relatie": {
+            "mag": 1
+          },
+          "obiect": [
+            "pansament",
+            "pansament"
+          ],
+          "stare": {
+            "ierburi_elian": "date"
+          }
+        }
       }
     },
     "meniu": true,

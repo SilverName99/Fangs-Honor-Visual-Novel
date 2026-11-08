@@ -5,6 +5,7 @@ import { aplicaEfecte } from './efecte.js';
 import { baraNevoie } from './baraNevoie.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
+import { iconita } from './ecranInventar.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -210,7 +211,46 @@ export function creeazaActiuni(parinte, joc) {
     );
   }
 
+  // Culesul cu recunoaștere (decis de autor: ierburile lui Elian se strâng altfel decât fierul și lemnele): pe panou
+  // apar câteva plante, doar ca imagini, amestecate; o alegi pe cea descrisă de Elian. Cea bună aduce „n” bucăți,
+  // celelalte doar timp pierdut. Doar la orele din „ora” (sunătoarea se culege dimineața, cu roua pe ea)
+  function culege(a) {
+    const s = joc.stare;
+    if (a.ora && !verifica({ ora: a.ora }, context(s))) return joc.gand(a.gandOra || 'Nu e momentul potrivit.');
+    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    const plante = [...a.plante].sort(() => Math.random() - 0.5);
+    panou(a.titlu || a.nume, (inchide) => {
+      const rand = div('plante-culese');
+      for (const pl of plante) {
+        const b = buton('', () => {
+          inchide();
+          if (a.maxPeZi) folosiriAzi(a).n++;
+          if (joc.avanseaza(a.minute || 60)) return;
+          if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+          cuImagine(
+            a,
+            () => {
+              if (pl.corecta) {
+                joc.primeste(pl.id, a.n || 1);
+                return joc.dupaActiune(`+${a.n || 1} ${inv.def(pl.id).nume}`);
+              }
+              joc.dupaActiune('');
+              joc.gand(a.gandGresit || 'Asta nu seamănă cu ce mi-a descris.');
+            },
+            a.sunet,
+          );
+        });
+        b.classList.add('planta-culeasa');
+        b.append(iconita(inv, pl.id));
+        rand.append(b);
+      }
+      return [div('text-anunt', a.intrebare || 'Care e planta?'), rand];
+    });
+  }
+
   const tipuri = {
+    culege,
     cauta,
     lucrare,
     dormi,

@@ -892,6 +892,49 @@
           "stamina": 10,
           "imagine": "locations/munca_lemne.png",
           "text": "Aduni lemne..."
+        },
+        {
+          "_nota": "Misiunea lui Elian (ciornă): apare cât e misiunea începută; doar dimineața; alegi planta după descrierea lui.",
+          "id": "ierburi",
+          "tip": "culege",
+          "nume": "Caută ierburi (1 oră)",
+          "titlu": "Ce culegi?",
+          "intrebare": "Elian a zis: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac.",
+          "plante": [
+            {
+              "id": "sunatoare",
+              "corecta": true
+            },
+            {
+              "id": "papadie"
+            },
+            {
+              "id": "piciorul_cocosului"
+            },
+            {
+              "id": "musetel"
+            }
+          ],
+          "n": 2,
+          "minute": 60,
+          "stamina": 5,
+          "maxPeZi": 2,
+          "mesajMaxPeZi": "Roua s-a uscat. Mâine dimineață mai caut.",
+          "ora": {
+            "min": "05:00",
+            "max": "09:59"
+          },
+          "gandOra": "Elian a zis că sunătoarea se culege dimineața, cât mai e roua pe ea. Revin mâine devreme.",
+          "gandGresit": "Asta nu seamănă cu ce mi-a descris Elian. Am pierdut o oră degeaba.",
+          "imagine": "locations/munca_ierburi.png",
+          "text": "Cauți printre ierburile ude de rouă...",
+          "ascuns": {
+            "conditii": {
+              "misiune": {
+                "elian_ierburi": "inceputa"
+              }
+            }
+          }
         }
       ]
     },
