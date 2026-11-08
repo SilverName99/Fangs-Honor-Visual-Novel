@@ -653,32 +653,7 @@
         "events/taverna_scandal_2.png",
         "events/taverna_scandal_3.png"
       ],
-      "vorbitor": "soldat",
-      "emotie": "suparat",
-      "text": "Destul! Mai puneți o dată mâna pe ea și vă rup brațele!",
-      "alegeri": [
-        {
-          "text": "Sari lângă Roderick. Nu-l lași singur.",
-          "efecte": {
-            "stare": {
-              "scandal_taverna": "ajutat"
-            },
-            "lupta": "scandal_taverna",
-            "relatie": {
-              "soldat": 1
-            }
-          }
-        },
-        {
-          "text": "Rămâi pe loc. Nu e lupta ta.",
-          "efecte": {
-            "stare": {
-              "scandal_taverna": "refuzat"
-            },
-            "eveniment": "taverna_scandal_refuz"
-          }
-        }
-      ]
+      "dialog": "taverna_scandal"
     },
     {
       "id": "taverna_scandal_victorie",
@@ -688,22 +663,8 @@
       "imagini": [
         "events/taverna_scandal_victorie.png"
       ],
-      "vorbitor": "hangita",
-      "emotie": "normal",
-      "text": "Pentru asta, masa e din partea casei. Mănâncă, bea și ia și astea la drum. Doar... ai grijă. Orcii nu uită, iar la taxa următoare o să vrea mai mult.",
+      "dialog": "taverna_scandal_victorie",
       "efecte": {
-        "seteazaNevoi": {
-          "foame": 100,
-          "sete": 100
-        },
-        "obiect": [
-          "paine",
-          "paine",
-          "paine",
-          "bere",
-          "bere"
-        ],
-        "taxaCrestere": 10,
         "stare": {
           "scandal_lupta": "castigata"
         }
@@ -725,7 +686,8 @@
         "stare": {
           "scandal_lupta": "pierduta"
         }
-      }
+      },
+      "dialog": "taverna_scandal_infrangere"
     },
     {
       "id": "taverna_scandal_refuz",
@@ -734,8 +696,7 @@
       "nume": "Scandalul: Vale nu se bagă",
       "imagini": [
         "events/taverna_scandal_refuz_1.png",
-        "events/taverna_scandal_refuz_2.png",
-        "events/taverna_scandal_refuz_3.png"
+        "events/taverna_scandal_refuz_2.png"
       ],
       "dialog": "soldat_dupa_refuz",
       "efecte": {

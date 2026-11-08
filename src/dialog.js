@@ -68,7 +68,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     stanga.classList.toggle('tacut', !vorbesteVale);
     dreapta.classList.toggle('tacut', vorbesteVale || !nod.vorbitor);
 
-    nume.textContent = nod.vorbitor ? numeVorbitor(nod.vorbitor, activ.dialog) : '';
+    // „nume” la replică: un vorbitor fără nume propriu care împrumută portretele altuia (orcii din tavernă)
+    nume.textContent = nod.vorbitor ? nod.nume || numeVorbitor(nod.vorbitor, activ.dialog) : '';
     nume.hidden = !nod.vorbitor;
     text.textContent = nod.text || '';
     caseta.classList.toggle('gand', !!nod.gand);

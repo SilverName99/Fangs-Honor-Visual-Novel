@@ -193,17 +193,18 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Scandalul din tavernă
 - **Până la scandal,** Roderick nu-l bagă în seamă pe Vale („Unchiul Roderick nici nu ridică ochii din cană”).
-- **Pornește:** din **ziua 3**, în tavernă, cât e și Agnes acolo (16–00). În meniul lui apare „*Orcii fac multă dezordine și gălăgie...* !”, care pornește scandalul (3 imagini).
-  - **Îl ajuți:** luptă alături de Roderick contra a doi orci. Încrederea lui +1. Mai departe:
-    - victorie: Agnes te hrănește, primești pâine și bere, iar taxa crește cu 10;
-    - înfrângere: rămâi cu 10 viață și trec 2 ore.
-  - **Refuzi:** Roderick e bătut. Nu primești încredere, dar **tot îl poți recruta** mai târziu.
+- **Pornește:** din **ziua 3**, în tavernă, cât e și Agnes acolo (16–00). În meniul lui apare „*Orcii fac multă dezordine și gălăgie...* !”: o scurtă poveste (orcii de la masa din colț cer bere, Agnes se teme, Roderick strânge cana), apoi orcul o apucă pe Agnes de braț → „(Te uiți spre ei.)” → 3 imagini → orcii și Roderick se ceartă, iar Roderick îi cere lui Vale să aleagă (dialogul `taverna_scandal`).
+  - **Îl ajuți:** „Nu ești singur, unchiule.” → luptă alături de Roderick contra a doi orci. Încrederea lui +1. Mai departe:
+    - victorie: o imagine, apoi Agnes și Roderick vorbesc cu Vale (pentru prima dată Roderick chiar se uită la el); Agnes te hrănește, primești 3 pâini și 2 beri, iar taxa crește cu 10;
+    - înfrângere: o imagine, apoi Agnes îl îngrijește pe Vale și Roderick îi spune că a stat lângă el, atât i-a cerut; rămâi cu 10 viață și trec 2 ore.
+  - **Refuzi:** 2 imagini (decis de autor): Roderick se bate singur și e doborât, apoi orcii pleacă râzând; dialogul cu el, rănit (`soldat_dupa_refuz`). Nu primești încredere, dar **tot îl poți recruta** mai târziu.
 - **Legături:** după scandal vine „Cina în familie” (Miriam).
-- **Imaginile scandalului** (`events/taverna_scandal_*.png`) le facem când lucrăm la scandal.
+- **Imaginile:** `events/taverna_scandal_1.png`, `_2`, `_3` (orcii la masă, orcul o apucă pe Agnes, dezordinea și Roderick ridicându-se), `taverna_scandal_victorie.png`, `taverna_scandal_infrangere.png`, `taverna_scandal_refuz_1.png`, `taverna_scandal_refuz_2.png`.
 
 **Cum verifici**
 1. Ziua 1 sau 2, ora 17:00 („Amiază” + 5 × „+1 oră”), sala tavernei: Roderick te ignoră și ai doar „La revedere”.
 2. Treci în ziua 3, tot la 17:00: apare „*Orcii fac multă dezordine și gălăgie...* !” → „(Te uiți spre ei.)” → imaginile scandalului și alegerea.
+3. Victoria și înfrângerea se văd și direct: F2 → Eveniment → `taverna_scandal_victorie` / `taverna_scandal_infrangere` → Pornește.
 
 ---
 
