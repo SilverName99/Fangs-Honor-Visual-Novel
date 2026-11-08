@@ -115,6 +115,8 @@ export function creeazaMiniJocuri(parinte, joc) {
       anima();
       const t = await Promise.race([clic(e.el), pauza(DURATA).then(() => null)]);
       cancelAnimationFrame(cadru);
+      // La fiecare clic, toporul lovește copacul (decis de autor), reușită sau nu
+      if (t !== null) joc.sunet.efect('topor_copac');
       const r = t === null ? 0 : raza(t);
       const bine = Math.abs(r - R) <= TOLERANTA;
       if (bine) lovituri++;
