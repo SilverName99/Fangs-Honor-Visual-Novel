@@ -102,43 +102,9 @@
       "scandal_start": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
-        "text": "Taverna e plină, dar e liniște ca la priveghi. Oamenii vorbesc în șoaptă, cu nasul în cană. Doar de la masa din colț se aude râs gros, de orc.",
-        "_nota": "CIORNĂ: pornește scandalul (misiunea scandal). Decis de autor: dialogurile misiunilor mai lungi, ca o poveste.",
-        "urmator": "s2"
-      },
-      "s2": {
-        "vorbitor": "paznic_orc_1",
-        "nume": "Orc",
-        "emotie": "rade",
-        "text": "Hangițo! Încă o cană! Și de data asta să fie bere, nu apă de ploaie!",
-        "urmator": "s3"
-      },
-      "s3": {
-        "vorbitor": "hangita",
-        "emotie": "speriat",
-        "text": "Vin imediat... Vă rog, e ultimul butoi din pivniță. Până la târg nu mai primesc altul.",
-        "urmator": "s4"
-      },
-      "s4": {
-        "vorbitor": "vale",
-        "gand": true,
         "emotie": "suparat",
-        "text": "Unchiul Roderick strânge cana atât de tare încât i s-au albit degetele. Nu se uită la ei. Dar văd cum ascultă fiecare cuvânt.",
-        "urmator": "s5"
-      },
-      "s5": {
-        "vorbitor": "paznic_orc_1",
-        "nume": "Orc",
-        "emotie": "rade",
-        "text": "Ultimul? Atunci vino tu încoace, să ni-l torni frumos. Hai, nu fi sfioasă.",
-        "urmator": "s6"
-      },
-      "s6": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "suparat",
-        "text": "Unul o apucă pe Agnes de braț, iar ea scapă tava din mâini.",
+        "text": "La masa din colț, orcii au început să bată cu pumnii în masă. Toată taverna tace și se face mică.",
+        "_nota": "CIORNĂ: pornește scandalul (misiunea scandal). De aici, totul se petrece peste imaginile scandalului (decis de autor).",
         "alegeri": [
           {
             "text": "(Te uiți spre ei.)",
@@ -163,67 +129,6 @@
         }
       }
     ]
-  },
-  "soldat_dupa_refuz": {
-    "_nota": "CIORNĂ (Claude). După ce Vale nu se bagă (2 imagini).",
-    "partener": "soldat",
-    "start": "a",
-    "noduri": {
-      "a": {
-        "vorbitor": "hangita",
-        "emotie": "speriat",
-        "text": "Roderick! Doamne, ce ți-au făcut...",
-        "urmator": "b"
-      },
-      "b": {
-        "vorbitor": "soldat",
-        "emotie": "ranit",
-        "text": "Las-o, Agnes. Am mai fost bătut. Mă ridic singur.",
-        "urmator": "c"
-      },
-      "c": {
-        "vorbitor": "vale",
-        "emotie": "speriat",
-        "text": "Unchiule... lasă-mă să te ajut.",
-        "urmator": "d"
-      },
-      "d": {
-        "vorbitor": "soldat",
-        "emotie": "ranit",
-        "text": "Acum? Acum vrei să ajuți?",
-        "urmator": "e"
-      },
-      "e": {
-        "vorbitor": "soldat",
-        "emotie": "ranit",
-        "text": "Nu-ți cer socoteală, băiete. Erau doi, mari cât ușa, și tu n-ai nici sabie, nici armură. Poate ai făcut bine.",
-        "urmator": "f"
-      },
-      "f": {
-        "vorbitor": "soldat",
-        "emotie": "ranit",
-        "text": "Dar fratele meu n-ar fi stat deoparte. Niciodată. Nici în ziua în care a murit.",
-        "urmator": "g"
-      },
-      "g": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Unchiule, eu...",
-        "urmator": "h"
-      },
-      "h": {
-        "vorbitor": "soldat",
-        "emotie": "ranit",
-        "text": "Lasă. Du-te acasă, la maică-ta. Rănile astea mi le ling singur.",
-        "urmator": "i"
-      },
-      "i": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "suparat",
-        "text": "Iese pe ușă șchiopătând, fără să se uite înapoi. Agnes strânge cioburile în tăcere. Nimeni din tavernă nu se uită la mine."
-      }
-    }
   },
   "hangita": {
     "partener": "hangita",
@@ -1770,10 +1675,54 @@
     }
   },
   "taverna_scandal": {
-    "_nota": "CIORNĂ (Claude). Scandalul din tavernă, după cele 3 imagini: alegerea lui Vale.",
+    "_nota": "CIORNĂ (Claude). Decis de autor: tot scandalul se petrece peste imaginile lui (replicile stau peste imagine, fundalul nu se mai întoarce la tavernă până la final). Dacă Vale nu se bagă, totul continuă aici, cu cele 2 imagini ale refuzului.",
+    "grup": "Scandalul din tavernă",
     "partener": "soldat",
-    "start": "a",
+    "start": "i1",
     "noduri": {
+      "i1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Taverna e plină, dar e liniște ca la priveghi. Oamenii vorbesc în șoaptă, cu nasul în cană. Doar de la masa din colț se aude râs gros, de orc.",
+        "imagine": "events/taverna_scandal_1.png",
+        "urmator": "i2"
+      },
+      "i2": {
+        "vorbitor": "paznic_orc_1",
+        "nume": "Orc",
+        "emotie": "rade",
+        "text": "Hangițo! Încă o cană! Și de data asta să fie bere, nu apă de ploaie!",
+        "urmator": "i3"
+      },
+      "i3": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Vin imediat... Vă rog, e ultimul butoi din pivniță. Până la târg nu mai primesc altul.",
+        "urmator": "i4"
+      },
+      "i4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Unchiul Roderick strânge cana atât de tare încât i s-au albit degetele. Nu se uită la ei. Dar văd cum ascultă fiecare cuvânt.",
+        "urmator": "i5"
+      },
+      "i5": {
+        "vorbitor": "paznic_orc_1",
+        "nume": "Orc",
+        "emotie": "rade",
+        "text": "Ultimul? Atunci vino tu încoace, să ni-l torni frumos. Hai, nu fi sfioasă.",
+        "urmator": "i6"
+      },
+      "i6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Unul o apucă pe Agnes de braț, iar ea scapă tava din mâini.",
+        "imagine": "events/taverna_scandal_2.png",
+        "urmator": "a"
+      },
       "a": {
         "vorbitor": "hangita",
         "emotie": "speriat",
@@ -1791,7 +1740,8 @@
         "vorbitor": "soldat",
         "emotie": "suparat",
         "text": "Destul! Mai puneți o dată mâna pe ea și vă rup brațele!",
-        "urmator": "d"
+        "urmator": "d",
+        "imagine": "events/taverna_scandal_3.png"
       },
       "d": {
         "vorbitor": "paznic_orc_1",
@@ -1811,13 +1761,7 @@
           },
           {
             "text": "Rămâi pe loc. Nu e lupta ta.",
-            "inchide": true,
-            "efecte": {
-              "stare": {
-                "scandal_taverna": "refuzat"
-              },
-              "eveniment": "taverna_scandal_refuz"
-            }
+            "spre": "r1"
           }
         ]
       },
@@ -1848,6 +1792,91 @@
             }
           }
         ]
+      },
+      "r1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Rămân pe scaun. Picioarele nu mă ascultă. Unchiul se aruncă singur asupra lor.",
+        "imagine": "events/taverna_scandal_refuz_1.png",
+        "efecte": {
+          "stare": {
+            "scandal_taverna": "refuzat"
+          }
+        },
+        "urmator": "r2"
+      },
+      "r2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Primul pumn al unchiului îl clatină pe unul dintre ei. Dar celălalt îl prinde de la spate, iar pumnii încep să cadă pe el, unul după altul.",
+        "urmator": "r3"
+      },
+      "r3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Când se termină, orcii pleacă râzând, cu berea neplătită. Unchiul rămâne pe podea, printre cioburi.",
+        "imagine": "events/taverna_scandal_refuz_2.png",
+        "efecte": {
+          "marcheaza": "soldat_ranit"
+        },
+        "urmator": "ref_a"
+      },
+      "ref_a": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Roderick! Doamne, ce ți-au făcut...",
+        "urmator": "ref_b"
+      },
+      "ref_b": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Las-o, Agnes. Am mai fost bătut. Mă ridic singur.",
+        "urmator": "ref_c"
+      },
+      "ref_c": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Unchiule... lasă-mă să te ajut.",
+        "urmator": "ref_d"
+      },
+      "ref_d": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Acum? Acum vrei să ajuți?",
+        "urmator": "ref_e"
+      },
+      "ref_e": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Nu-ți cer socoteală, băiete. Erau doi, mari cât ușa, și tu n-ai nici sabie, nici armură. Poate ai făcut bine.",
+        "urmator": "ref_f"
+      },
+      "ref_f": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Dar fratele meu n-ar fi stat deoparte. Niciodată. Nici în ziua în care a murit.",
+        "urmator": "ref_g"
+      },
+      "ref_g": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, eu...",
+        "urmator": "ref_h"
+      },
+      "ref_h": {
+        "vorbitor": "soldat",
+        "emotie": "ranit",
+        "text": "Lasă. Du-te acasă, la maică-ta. Rănile astea mi le ling singur.",
+        "urmator": "ref_i"
+      },
+      "ref_i": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Iese pe ușă șchiopătând, fără să se uite înapoi. Agnes strânge cioburile în tăcere. Nimeni din tavernă nu se uită la mine."
       }
     }
   },
@@ -1860,7 +1889,8 @@
         "vorbitor": "hangita",
         "emotie": "speriat",
         "text": "S-au dus... Doamne, chiar s-au dus. Vale Lightfinder, de când ai crescut tu atât de mare?",
-        "urmator": "b"
+        "urmator": "b",
+        "imagine": "events/taverna_scandal_victorie.png"
       },
       "b": {
         "vorbitor": "soldat",
@@ -1920,7 +1950,8 @@
         "emotie": "normal",
         "text": "Pentru prima dată după mult timp, unchiul Roderick se uită la mine. Nu prin mine, ca până acum. La mine."
       }
-    }
+    },
+    "grup": "Scandalul din tavernă"
   },
   "taverna_scandal_infrangere": {
     "_nota": "CIORNĂ (Claude). După lupta pierdută (trec 2 ore, Vale rămâne cu 10 viață).",
@@ -1931,7 +1962,8 @@
         "vorbitor": "hangita",
         "emotie": "speriat",
         "text": "Vale? Vale, mă auzi? Nu te ridica încă, ai sânge pe tot obrazul.",
-        "urmator": "b"
+        "urmator": "b",
+        "imagine": "events/taverna_scandal_infrangere.png"
       },
       "b": {
         "vorbitor": "vale",
@@ -1975,6 +2007,7 @@
         "emotie": "ranit",
         "text": "Trec aproape două ore până pot să stau iar în picioare fără să se învârtă taverna cu mine."
       }
-    }
+    },
+    "grup": "Scandalul din tavernă"
   }
 }

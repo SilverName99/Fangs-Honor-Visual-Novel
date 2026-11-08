@@ -6,7 +6,7 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine }) {
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -44,6 +44,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     activ.nod = nod;
     if (nod.imagine && nod.imagine !== activ.imagine) {
       activ.imagine = nod.imagine;
+      // Galeria din meniu ține minte și imaginile de sub replici (scandalul din tavernă se petrece peste ele)
+      laImagine?.(nod.imagine);
       el.classList.add('cu-imagine', 'asteapta-imaginea');
       // Replicile și portretele apar abia când se vede imaginea, ca între două imagini să nu clipească dialogul
       schimbaImagine(fundal, elementImagine([nod.imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: nod.imagine }), () =>

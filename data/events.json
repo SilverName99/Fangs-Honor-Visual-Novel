@@ -615,11 +615,6 @@
       "manual": true,
       "grup": "Scandalul din tavernă",
       "nume": "Scandalul: orcii intră în tavernă",
-      "imagini": [
-        "events/taverna_scandal_1.png",
-        "events/taverna_scandal_2.png",
-        "events/taverna_scandal_3.png"
-      ],
       "dialog": "taverna_scandal"
     },
     {
@@ -627,9 +622,6 @@
       "manual": true,
       "grup": "Scandalul din tavernă",
       "nume": "Scandalul: victorie",
-      "imagini": [
-        "events/taverna_scandal_victorie.png"
-      ],
       "dialog": "taverna_scandal_victorie",
       "efecte": {
         "stare": {
@@ -642,9 +634,6 @@
       "manual": true,
       "grup": "Scandalul din tavernă",
       "nume": "Scandalul: înfrângere",
-      "imagini": [
-        "events/taverna_scandal_infrangere.png"
-      ],
       "efecte": {
         "seteazaNevoi": {
           "viata": 10
@@ -655,20 +644,6 @@
         }
       },
       "dialog": "taverna_scandal_infrangere"
-    },
-    {
-      "id": "taverna_scandal_refuz",
-      "manual": true,
-      "grup": "Scandalul din tavernă",
-      "nume": "Scandalul: Vale nu se bagă",
-      "imagini": [
-        "events/taverna_scandal_refuz_1.png",
-        "events/taverna_scandal_refuz_2.png"
-      ],
-      "dialog": "soldat_dupa_refuz",
-      "efecte": {
-        "marcheaza": "soldat_ranit"
-      }
     },
     {
       "id": "intalnire_vanatoare",

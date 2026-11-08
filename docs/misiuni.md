@@ -193,11 +193,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Scandalul din tavernă
 - **Până la scandal,** Roderick nu-l bagă în seamă pe Vale („Unchiul Roderick nici nu ridică ochii din cană”).
-- **Pornește:** din **ziua 3**, în tavernă, cât e și Agnes acolo (16–00). În meniul lui apare „*Orcii fac multă dezordine și gălăgie...* !”: o scurtă poveste (orcii de la masa din colț cer bere, Agnes se teme, Roderick strânge cana), apoi orcul o apucă pe Agnes de braț → „(Te uiți spre ei.)” → 3 imagini → orcii și Roderick se ceartă, iar Roderick îi cere lui Vale să aleagă (dialogul `taverna_scandal`).
+- **Pornește:** din **ziua 3**, în tavernă, cât e și Agnes acolo (16–00). În meniul lui apare „*Orcii fac multă dezordine și gălăgie...* !”: o scurtă poveste (orcii de la masa din colț cer bere, Agnes se teme, Roderick strânge cana), apoi orcul o apucă pe Agnes de braț → „(Te uiți spre ei.)” → toată scena peste cele 3 imagini (replicile stau peste ele): orcii cer bere, unul o apucă pe Agnes, Roderick se ridică și îi cere lui Vale să aleagă (dialogul `taverna_scandal`).
   - **Îl ajuți:** „Nu ești singur, unchiule.” → luptă alături de Roderick contra a doi orci. Încrederea lui +1. Mai departe:
     - victorie: o imagine, apoi Agnes și Roderick vorbesc cu Vale (pentru prima dată Roderick chiar se uită la el); Agnes te hrănește, primești 3 pâini și 2 beri, iar taxa crește cu 10;
     - înfrângere: o imagine, apoi Agnes îl îngrijește pe Vale și Roderick îi spune că a stat lângă el, atât i-a cerut; rămâi cu 10 viață și trec 2 ore.
-  - **Refuzi:** 2 imagini (decis de autor): Roderick se bate singur și e doborât, apoi orcii pleacă râzând; dialogul cu el, rănit (`soldat_dupa_refuz`). Nu primești încredere, dar **tot îl poți recruta** mai târziu.
+  - **Refuzi:** 2 imagini (decis de autor): Roderick se bate singur și e doborât, apoi orcii pleacă râzând; dialogul cu el, rănit, tot peste imagine. Nu primești încredere, dar **tot îl poți recruta** mai târziu.
 - **Legături:** după scandal vine „Cina în familie” (Miriam).
 - **Imaginile:** `events/taverna_scandal_1.png`, `_2`, `_3` (orcii la masă, orcul o apucă pe Agnes, dezordinea și Roderick ridicându-se), `taverna_scandal_victorie.png`, `taverna_scandal_infrangere.png`, `taverna_scandal_refuz_1.png`, `taverna_scandal_refuz_2.png`.
 

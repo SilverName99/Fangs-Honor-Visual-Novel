@@ -462,7 +462,9 @@ function pornesteEveniment(id, fortat = false) {
   if (!fortat && !poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) return;
   noteazaEveniment(stare, ev, ziua(stare));
   salveaza();
-  if (ev.imagini?.length) sunet.efect('eveniment');
+  // Sunetul de început și la evenimentele ale căror imagini stau sub replici (scandalul din tavernă)
+  const subReplici = Object.values(dialoguri[ev.dialog]?.noduri || {}).some((n) => n.imagine);
+  if (ev.imagini?.length || subReplici) sunet.efect('eveniment');
   // Întâi imaginile (dacă are), apoi textul cu alegeri sau un dialog întreg;
   // un eveniment fără text (de exemplu după înfrângere) doar își aplică efectele
   secventa.arata(ev.imagini, () => {
@@ -746,6 +748,10 @@ const joc = {
 
 const dialog = creeazaDialog(ui, {
   laCapatulRamurii: arataCastigurileAsteptate,
+  laImagine: (cale) => {
+    stare.imaginiVazute ||= [];
+    if (!stare.imaginiVazute.includes(cale)) stare.imaginiVazute.push(cale);
+  },
   numeVorbitor: (id, d) => (id === 'vale' ? 'Vale' : id === d.partener && d.numePartener ? d.numePartener : personaje.get(id)?.nume || id.replaceAll('_', ' ')),
   emotieVale: () => (stare.nevoi.viata < cfg.nevoi.prag ? 'ranit' : 'normal'),
   verificaConditii: (c) => verifica(c, context(stare)),
@@ -870,14 +876,24 @@ function deschideMeniul() {
 
   // Galeria: ilustrațiile evenimentelor pe care Vale le-a văzut deja, pe eveniment; un clic le arată mari
   function arataGaleria() {
-    const vazute = evenimente.filter((ev) => ev.imagini?.length && stare.evenimente[ev.id]);
+    // Imaginile evenimentelor văzute, plus cele de sub replici pe care le-a văzut Vale, grupate după poveste
+    const grupuri = new Map();
+    const adauga = (nume, cale) => {
+      const lista = grupuri.get(nume) || [];
+      if (!lista.includes(cale)) lista.push(cale);
+      grupuri.set(nume, lista);
+    };
+    for (const ev of evenimente) if (ev.imagini?.length && stare.evenimente[ev.id]) ev.imagini.forEach((c) => adauga(ev.nume || ev.grup || ev.id, c));
+    const vazuteSub = new Set(stare.imaginiVazute || []);
+    for (const [id, d] of Object.entries(dialoguri))
+      for (const n of Object.values(d.noduri || {})) if (n.imagine && vazuteSub.has(n.imagine)) adauga(d.grup || id, n.imagine);
     const continut = div('continut-meniu galerie-meniu');
-    if (!vazute.length) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
-    for (const ev of vazute) {
+    if (!grupuri.size) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
+    for (const [nume, imagini] of grupuri) {
       const grup = div('grup-galerie');
-      grup.append(div('nume-grup-galerie', ev.nume || ev.grup || ev.id));
+      grup.append(div('nume-grup-galerie', nume));
       const rand = div('rand-galerie');
-      for (const cale of ev.imagini) {
+      for (const cale of imagini) {
         const mic = elementImagine([cale], { clasa: 'miniatura-galerie', raport: 16 / 9, eticheta: cale });
         mic.onclick = () => {
           const mare = div('imagine-mare-galerie');
