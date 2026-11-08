@@ -322,14 +322,10 @@
         {
           "text": "Lasă grâul, nu e al tău!",
           "efecte": {
-            "reputatie": 2,
-            "relatie": {
-              "fermier": 3
-            },
-            "pedeapsa": "paznic_orc_1",
             "stare": {
               "fermier_deblocat": "da"
-            }
+            },
+            "lupta": "bataie_orc_campuri"
           }
         },
         {
@@ -381,14 +377,10 @@
         {
           "text": "Lasă grâul, nu e al tău!",
           "efecte": {
-            "reputatie": 2,
-            "relatie": {
-              "fermier": 3
-            },
-            "pedeapsa": "paznic_orc_1",
             "stare": {
               "fermier_deblocat": "da"
-            }
+            },
+            "lupta": "bataie_orc_campuri"
           }
         },
         {

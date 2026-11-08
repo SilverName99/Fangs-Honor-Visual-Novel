@@ -5,7 +5,8 @@
     "padure.interior",
     "poarta",
     "piata",
-    "fierar"
+    "fierar",
+    "campuri"
   ],
   "inamici": {
     "lup": {
@@ -557,6 +558,34 @@
         "text": "Lupul negru vă scapă din nou, rânjind din umbră.",
         "efecte": {
           "eveniment": "kaia_lup_scapat"
+        }
+      }
+    },
+    "bataie_orc_campuri": {
+      "_nota": "Decis de autor: și pe câmpuri te poți bate cu orcul care ia grâul fermierilor. Textele sunt ciorne.",
+      "nume": "Bătaie cu un orc",
+      "fundal": "campuri",
+      "fuga": false,
+      "inamici": [
+        {
+          "id": "orc_taverna",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Orcul aruncă sacul în noroi și pleacă înjurând. Fermierul se uită la tine de parcă ai fi coborât din cer.",
+        "efecte": {
+          "reputatie": 2,
+          "relatie": {
+            "fermier": 3
+          }
+        }
+      },
+      "infrangere": {
+        "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
+        "efecte": {
+          "pedeapsa": "paznic_orc_1"
         }
       }
     }
