@@ -57,6 +57,17 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 2. Pune 10 lemne (Obiect: Lemn, de 10 ori; sau adună-le din pădure).
 3. Iar dimineața, în bucătărie: „Uite lemnele, mamă…” → imaginea → mulțumirea. În carte, misiunea apare la „Terminate”.
 
+### ✅ Mama îl bandajează (nu e misiune)
+- **Când:** Vale e rănit (sub 60 viață) și vorbește cu mama acasă (bucătăria sau camera ei); **o dată pe zi**.
+- Mama se sperie și îi oferă să-l bandajeze. „Bine, mamă.” → imaginea cu ea bandajându-l în camera ei → trece o oră, viața +30. „Nu-i nimic, mamă” → mama se supără puțin; nu mai întreabă în ziua aceea.
+
+**Imagini:** `events/miriam_bandaj.png`.
+
+**Cum verifici**
+1. F2 → nevoi: viața 40. Timp „Dimineață” (07:00, zi lucrătoare), bucătăria.
+2. Vorbește cu mama → „Vale! Doamne, ce-ai pățit?” → „Bine, mamă.” → imaginea → „Mulțumesc, mamă.” (viața 70, ceasul +1 oră).
+3. Vorbește iar cu ea în aceeași zi: salutul obișnuit. A doua zi, rănit, te întreabă din nou.
+
 ### 📝 Cina în familie
 - După **scandalul din tavernă** (oricum s-ar fi terminat): mama îl roagă pe Vale să-l aducă pe Roderick la cină. Scenă caldă despre tată.
 - Leagă misiunea mamei de drumul lui Roderick.

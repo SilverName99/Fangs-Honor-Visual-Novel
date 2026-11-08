@@ -570,6 +570,20 @@
     "partener": "miriam",
     "start": [
       {
+        "_nota": "Decis de autor: când Vale e rănit, o dată pe zi, mama se îngrijorează și îi oferă să-l bandajeze (prag: sub 60 viață, ales de Claude).",
+        "nod": "ingrijorata",
+        "conditii": {
+          "nevoie": {
+            "viata": {
+              "max": 59
+            }
+          },
+          "nu": {
+            "marcatAzi": "bandaj_miriam"
+          }
+        }
+      },
+      {
         "nod": "cina",
         "conditii": {
           "ora": {
@@ -715,6 +729,33 @@
         "vorbitor": "miriam",
         "emotie": "speriat",
         "text": "Abia te ții pe picioare, Vale. Nu te las să te urci pe acoperiș așa. Odihnește-te întâi."
+      },
+      "ingrijorata": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Vale! Doamne, ce-ai pățit? Ești numai vânătăi și zgârieturi. Vino încoace, în camera mea, să te bandajez.",
+        "alegeri": [
+          {
+            "text": "Bine, mamă.",
+            "inchide": true,
+            "efecte": {
+              "marcheaza": "bandaj_miriam",
+              "eveniment": "miriam_bandaj"
+            }
+          },
+          {
+            "text": "Nu-i nimic, mamă. Mă descurc.",
+            "spre": "ingrijorata_refuz",
+            "efecte": {
+              "marcheaza": "bandaj_miriam"
+            }
+          }
+        ]
+      },
+      "ingrijorata_refuz": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Încăpățânat ca tatăl tău... Măcar ai grijă de tine, mă auzi?"
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",

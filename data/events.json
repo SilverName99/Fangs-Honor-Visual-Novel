@@ -883,6 +883,31 @@
       "nume": "Lupul negru a scăpat",
       "grup": "Kaia: lupul negru",
       "dialog": "kaia_lup_scapat"
+    },
+    {
+      "id": "miriam_bandaj",
+      "manual": true,
+      "repetare": "mereu",
+      "_nota": "Decis de autor: o oră, cu imaginea Miriamei bandajându-l pe Vale în camera ei. Viața +30 (TODO echilibru). Replica e ciornă.",
+      "nume": "Mama îl bandajează pe Vale",
+      "grup": "Miriam: bandajul",
+      "imagini": [
+        "events/miriam_bandaj.png"
+      ],
+      "vorbitor": "miriam",
+      "emotie": "normal",
+      "text": "Gata. Strânge din dinți încă o zi și o să fie bine. Și nu mă mai speria așa, Vale.",
+      "alegeri": [
+        {
+          "text": "Mulțumesc, mamă.",
+          "efecte": {
+            "timp": 60,
+            "nevoi": {
+              "viata": 30
+            }
+          }
+        }
+      ]
     }
   ]
 }

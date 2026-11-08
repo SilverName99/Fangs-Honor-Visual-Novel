@@ -56,6 +56,8 @@ const tipuri = {
       const zile = (c.minute - la) / 1440;
       return (lim.subZile == null || zile < lim.subZile) && (lim.pesteZile == null || zile >= lim.pesteZile);
     }),
+  // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei)
+  marcatAzi: (v, c) => c.marcaje?.[v] != null && c.minute != null && Math.floor(c.marcaje[v] / 1440) === Math.floor(c.minute / 1440),
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)
   // „taxaRatata: true” = Vale a rămas dator cel puțin o dată (paznicul îi aduce aminte)
   taxaRatata: (v, c) => ((c.taxa?.ratari || 0) > 0) === v,
