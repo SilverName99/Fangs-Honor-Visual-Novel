@@ -16,7 +16,9 @@
   },
   "harti": {
     "lupta_taverna_parter": 115,
-    "lupta_padure_interior": 118
+    "lupta_padure_interior": 118,
+    "lupta_poarta": 118,
+    "lupta_fierar": 118
   },
   "personajeHarti": {
     "lupta_taverna_parter": {
