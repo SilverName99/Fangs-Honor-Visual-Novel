@@ -812,6 +812,42 @@
       "dialog": "poarta_fier"
     },
     {
+      "id": "poarta_oprit",
+      "_nota": "Decis de autor: până termini misiunea fierului lui Bram, poarta e închisă tot timpul: orcul te oprește și te întoarce din drum. În timpul misiunii, ziua, fără fier, vine în loc „poarta_fier”. Taxa se plătește atunci doar când vine colectorul acasă.",
+      "nume": "Poarta: orcul te întoarce din drum",
+      "grup": "Misiunea lui Bram: fierul",
+      "conditii": {
+        "loc": "poarta",
+        "nu": {
+          "misiune": {
+            "bram_fier": "terminata"
+          }
+        },
+        "oricare": [
+          {
+            "nu": {
+              "misiune": {
+                "bram_fier": "inceputa"
+              }
+            }
+          },
+          {
+            "areObiect": "fier_bram"
+          },
+          {
+            "nu": {
+              "ora": {
+                "min": "06:00",
+                "max": "22:59"
+              }
+            }
+          }
+        ]
+      },
+      "repetare": "mereu",
+      "dialog": "poarta_oprit"
+    },
+    {
       "id": "kaia_intalnire",
       "manual": true,
       "nume": "Kaia, față în față cu lupii",

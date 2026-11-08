@@ -1542,5 +1542,29 @@
         "text": "Ne-a scăpat. Data viitoare nu. Mâine, aceeași oră, la marginea pădurii."
       }
     }
+  },
+  "poarta_oprit": {
+    "_nota": "CIORNĂ. Decis de autor: până e gata misiunea fierului lui Bram, poarta e închisă: un orc îl oprește pe Vale și îl întoarce din drum (aceeași imagine ca la misiune), apoi Vale ajunge înapoi pe hartă.",
+    "grup": "Misiunea lui Bram: fierul",
+    "partener": "paznic_orc_1",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "imagine": "events/poarta_fier_1.png",
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Hei, tu! Încotro? Întoarce-te de unde ai venit, n-ai ce căuta aici.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "N-are rost să-i caut pe orci cu nas. Mai bine mă întorc.",
+        "efecte": {
+          "mergi": "harta"
+        }
+      }
+    }
   }
 }

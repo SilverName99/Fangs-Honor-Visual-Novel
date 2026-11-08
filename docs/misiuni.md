@@ -76,6 +76,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
     - **te bați cu colectorul**: el trișează (cu bâta, 400 viață), iar Vale are doar pumnii. Nu se poate câștiga, doar iei bătaie.
 - **Pasul 2:** duci fierul la Bram: „Ți-am adus fierul înapoi, Bram. ?”.
 - **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă.
+- **Poarta e închisă până termini misiunea** (decis de autor): înainte de misiune, noaptea sau cu fierul deja la tine, orcul te oprește (prima imagine de la poartă) și te întoarce pe hartă. Taxa se plătește atunci doar când vine colectorul acasă.
 - **Legături:** folosește jocul de zaruri de la poartă.
 
 **Imagini:** `events/bram_fier_1.png`, `events/bram_fier_2.png`, `events/poarta_fier_1.png`, `events/poarta_fier_2.png`.
@@ -84,7 +85,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 1. F2 → „Toți cunoscuți de 3 zile”. Dacă ești în ziua 1 sau 2, apasă „Ziua următoare” până ajungi în ziua 3. Apoi timp „Dimineață” (07:00, zi lucrătoare).
 2. De pe **hartă**, mergi la fierărie: rulează cele două imagini cu replici. (Sau: Eveniment `bram_fier_confiscat` → Pornește.)
 3. Vorbește cu Bram → „Am văzut ce s-a întâmplat cu fierul... !” → „Îl aduc înapoi, Bram.”
-4. Încearcă ușa fierăriei: e zăvorâtă.
+4. Încearcă ușa fierăriei: e zăvorâtă. (Înainte de pasul 3, încearcă și poarta: orcul te întoarce pe hartă.)
 5. De pe **hartă**, mergi la poartă: imaginea 1 → „Vreau să vorbesc cu colectorul” → imaginea 2 cu cele trei căi. Încearcă-le pe rând (după fiecare, ieși și intră iar la poartă):
    - **Plătesc:** pune 60 de monede din F2;
    - **Zaruri:** ora 14–18 (de exemplu „Amiază” + 2 × „+1 oră”). Miza orcilor e „Fierul lui Bram”;
