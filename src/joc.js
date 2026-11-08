@@ -152,15 +152,21 @@ function intreaba(text, da = 'Da', nu = 'Nu') {
   });
 }
 
-// Ce a primit Vale de la ultima actualizare a HUD-ului (bani, încredere, obiecte). Dacă între timp s-a terminat
-// o misiune, totul urcă ușor pe ecran și dispare (decis de autor), chiar înainte să se închidă dialogul;
-// altfel se uită (munca, magazinul și restul își arată deja câștigul în felul lor)
+// Ce a primit Vale de la ultima actualizare a HUD-ului (bani, încredere, obiecte). Ce primește într-o discuție sau
+// într-un eveniment (Agnes după scandal, o misiune terminată) urcă ușor pe ecran și dispare la ultima replică
+// (decis de autor); în afara lor se uită (munca, magazinul și restul își arată deja câștigul în felul lor)
 let castiguri = [];
 // Câștigurile unei misiuni terminate în mijlocul unui dialog așteaptă ultima replică a ramurii (decis de autor:
 // „fix înainte să se termine dialogul”)
 let deArataLaFinal = [];
 function arataCastigurileAsteptate() {
-  const lista = deArataLaFinal;
+  // Același lucru primit de mai multe ori în discuție (trei pâini, una câte una) se adună într-un singur „+3”
+  const lista = [];
+  for (const c of deArataLaFinal) {
+    const la = lista.find((x) => x.tip === c.tip && x.id === c.id);
+    if (la) la.n += c.n;
+    else lista.push({ ...c });
+  }
   deArataLaFinal = [];
   arataCastiguri(lista);
 }
@@ -192,10 +198,8 @@ function arataCastiguri(lista) {
 function actualizeazaHud() {
   // Pașii misiunilor se bifează singuri după orice schimbare (lemn adunat, acoperiș reparat, dialog)
   const terminate = actualizeazaMisiuni(joc);
-  if (terminate.length) {
-    if (dialog?.activ()) deArataLaFinal.push(...castiguri);
-    else arataCastiguri(castiguri);
-  }
+  if (dialog?.activ()) deArataLaFinal.push(...castiguri);
+  else if (terminate.length) arataCastiguri(castiguri);
   castiguri = [];
   const ctx = context(stare);
   ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;

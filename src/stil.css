@@ -3130,6 +3130,12 @@ svg.zone {
   line-height: 72px;
   text-align: center;
 }
+/* Iconița unui obiect încă neîncărcată: doar numele mic în pătrățel, nu literele mari ale simbolurilor */
+.castig .iconita {
+  font-size: 12px;
+  line-height: 1.2;
+  overflow: hidden;
+}
 .castig .icon-incredere {
   color: #ffd36a;
 }
