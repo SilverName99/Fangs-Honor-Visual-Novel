@@ -1705,7 +1705,7 @@
             "text": "Înainte!",
             "inchide": true,
             "efecte": {
-              "lupta": "lupta_lup_negru"
+              "luptaVanatoare": "lupta_lup_negru"
             }
           }
         ]

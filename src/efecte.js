@@ -81,6 +81,8 @@ const efecte = {
   eveniment: (v, joc) => joc.pornesteEvenimentDupa(v),
   // Vale e dus altundeva, după ce se închide dialogul (vânătoarea îl duce la campsite-ul ei)
   mergi: (v, joc) => setTimeout(() => joc.mergi(v, { faraTimp: true }), 0),
+  // O luptă din poveste care pornește ca o vânătoare (lupul negru): întâi imaginea pădurii, apoi lupta
+  luptaVanatoare: (v, joc) => joc.luptaVanatoare(v),
   // Vânătoarea împreună cu un personaj (Kaia, dimineața la campsite), după ce se închide dialogul
   vanatoareCu: (v, joc) => joc.vanatoareCu(v),
   // Magazinul unui personaj, deschis din dialog (Agnes: „Cumpără”)

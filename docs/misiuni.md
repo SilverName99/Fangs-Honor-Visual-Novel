@@ -177,7 +177,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici**
 1. F2 → Misiune: Lupul negru → Pornește (sau vino din întâlnirea cu Kaia).
 2. Timp „Amiază”, apoi de trei ori „+1 oră” (15:00) → zona pădurii: Kaia e acolo.
-3. Vorbește cu ea → „Sunt gata” → „Înainte!” → lupta.
+3. Vorbește cu ea → „Sunt gata” → „Înainte!” → imaginea adâncului pădurii („Cauți urme de vânat...”, trece o oră) → lupta.
    - Victorie: replicile și tabăra. Camp site apare apoi în pădure.
    - Înfrângere: „Mâine, aceeași oră”.
 

@@ -550,6 +550,18 @@ function vanatoareCu(id) {
   if (!loc) return;
   dupaDialog = () => vaneaza({ ...loc.vanatoare, imagine: loc.imagine }, id);
 }
+// O luptă din poveste care pornește ca vânătoarea obișnuită (decis de autor: lupul negru), ca să nu sară direct
+// în luptă: imaginea adâncului pădurii stă câteva secunde, apoi lupta; trece și timpul vânătorii
+function luptaVanatoare(id) {
+  const loc = date.locations.zone.find((z) => z.id === 'padure')?.locuri?.find((l) => l.vanatoare);
+  const v = loc?.vanatoare || {};
+  dupaDialog = () => {
+    if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
+    salveaza();
+    afiseaza();
+    secventa.arata([loc?.imagine].filter(Boolean), () => joc.pornesteLupta(id), { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' });
+  };
+}
 // Ce urmează după ce se închide dialogul curent (de exemplu lupta cu Kaia după discuția de la vânătoare)
 let dupaDialog = null;
 
@@ -610,6 +622,7 @@ const joc = {
   pornesteEveniment,
   pornesteEvenimentDupa,
   vanatoareCu,
+  luptaVanatoare,
   sumaTaxa,
   // Magazinul unui personaj (npcs.json, „magazin”), deschis după ce se închide dialogul
   deschideMagazin(id) {
