@@ -658,7 +658,8 @@
       "manual": true,
       "nume": "Întâlnirea cu vânătoarea",
       "repetare": "o_data",
-      "dialog": "vanatoare_intalnire"
+      "dialog": "vanatoare_intalnire",
+      "_nota": "Nefolosit de când întâlnirea cu Kaia s-a schimbat (kaia_intalnire); rămâne ca ciornă."
     },
     {
       "id": "acoperis_reparat",
@@ -712,6 +713,43 @@
       },
       "repetare": "mereu",
       "dialog": "poarta_fier"
+    },
+    {
+      "id": "kaia_intalnire",
+      "manual": true,
+      "nume": "Kaia, luptându-se cu lupii",
+      "grup": "Kaia: întâlnirea",
+      "repetare": "mereu",
+      "dialog": "kaia_intalnire"
+    },
+    {
+      "id": "kaia_dupa_victorie",
+      "manual": true,
+      "nume": "Kaia, după lupta câștigată",
+      "grup": "Kaia: întâlnirea",
+      "dialog": "kaia_dupa_victorie"
+    },
+    {
+      "id": "kaia_dupa_infrangere",
+      "manual": true,
+      "nume": "Kaia, după lupta pierdută",
+      "grup": "Kaia: întâlnirea",
+      "dialog": "kaia_dupa_infrangere"
+    },
+    {
+      "id": "kaia_tabara",
+      "manual": true,
+      "nume": "Kaia îi arată tabăra",
+      "grup": "Kaia: lupul negru",
+      "dialog": "kaia_tabara"
+    },
+    {
+      "id": "kaia_lup_scapat",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Lupul negru a scăpat",
+      "grup": "Kaia: lupul negru",
+      "dialog": "kaia_lup_scapat"
     }
   ]
 }

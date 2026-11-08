@@ -129,7 +129,9 @@
             "blana_lup",
             "blana_lup"
           ],
-          "eveniment": "intalnire_vanatoare"
+          "contor": {
+            "vanatori_castigate": 1
+          }
         }
       },
       "infrangere": {
@@ -171,7 +173,9 @@
             "blana_lup",
             "blana_lup"
           ],
-          "eveniment": "intalnire_vanatoare"
+          "contor": {
+            "vanatori_castigate": 1
+          }
         }
       },
       "infrangere": {
@@ -220,7 +224,9 @@
             "blana_lup",
             "blana_lup"
           ],
-          "eveniment": "intalnire_vanatoare"
+          "contor": {
+            "vanatori_castigate": 1
+          }
         }
       },
       "infrangere": {
@@ -249,7 +255,9 @@
             "carne",
             "piele"
           ],
-          "eveniment": "intalnire_vanatoare"
+          "contor": {
+            "vanatori_castigate": 1
+          }
         }
       },
       "infrangere": {
@@ -436,6 +444,112 @@
         "text": "„Pumni contra bâtă? Ce credeai, omule?” Colectorul râde, iar paznicii te aruncă afară de lângă poartă.",
         "efecte": {
           "timp": 60
+        }
+      }
+    },
+    "kaia_lupi": {
+      "nume": "Lupii și Kaia",
+      "fundal": "padure.interior",
+      "fuga": false,
+      "aliati": [
+        {
+          "id": "vanatoare",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "inamici": [
+        {
+          "id": "lup",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 1,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 2,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Ultimul lup fuge schelălăind printre copaci.",
+        "efecte": {
+          "obiect": [
+            "carne",
+            "blana_lup"
+          ],
+          "relatie": {
+            "vanatoare": 1
+          },
+          "contor": {
+            "vanatori_castigate": 1
+          },
+          "eveniment": "kaia_dupa_victorie"
+        }
+      },
+      "infrangere": {
+        "text": "Lupii vă dau ocol, apoi se retrag în desiș.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          },
+          "eveniment": "kaia_dupa_infrangere"
+        }
+      }
+    },
+    "lupta_lup_negru": {
+      "nume": "Lupul negru",
+      "fundal": "padure.interior",
+      "fuga": false,
+      "aliati": [
+        {
+          "id": "vanatoare",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "inamici": [
+        {
+          "id": "lup_alfa",
+          "linie": 1,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "lup",
+          "linie": 2,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Lupul negru cade. Haita se risipește prin pădure.",
+        "efecte": {
+          "obiect": [
+            "blana_lup",
+            "blana_lup",
+            "carne"
+          ],
+          "relatie": {
+            "vanatoare": 1
+          },
+          "stare": {
+            "lup_negru": "ucis"
+          },
+          "eveniment": "kaia_tabara"
+        }
+      },
+      "infrangere": {
+        "text": "Lupul negru vă scapă din nou, rânjind din umbră.",
+        "efecte": {
+          "eveniment": "kaia_lup_scapat"
         }
       }
     }

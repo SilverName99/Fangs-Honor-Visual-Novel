@@ -814,7 +814,38 @@
                 "deblocat": "padure/campsite"
               }
             },
-            "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru cu lupul negru, 25% mistrețul."
+            "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru cu lupul negru, 25% mistrețul.",
+            "intalnire": {
+              "_nota": "Decis de autor: Kaia se întâlnește abia din ziua 4, după o vânătoare câștigată; dacă Vale o lasă singură, trebuie să mai vâneze o dată înainte să o mai găsească.",
+              "eveniment": "kaia_intalnire",
+              "conditii": {
+                "zi": {
+                  "min": 4
+                },
+                "contor": {
+                  "vanatori_castigate": {
+                    "min": 1
+                  }
+                },
+                "nuStare": {
+                  "kaia_intalnita": "da"
+                },
+                "oricare": [
+                  {
+                    "nuStare": {
+                      "kaia_refuz": "da"
+                    }
+                  },
+                  {
+                    "contor": {
+                      "vanatori_dupa_refuz": {
+                        "min": 1
+                      }
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         {

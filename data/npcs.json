@@ -296,7 +296,8 @@
       },
       "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la campsite-ul ei din pădure, care devine locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
-        "padure/campsite"
+        "padure/campsite",
+        "padure"
       ],
       "lupta": {
         "_nota": "TODO echilibru. locuri: 2 = ține toată linia. ricoseu: 3 = lovește până la 3 inamici. proiectil = imaginea armei aruncate, care zboară la ținte și se întoarce.",
@@ -315,6 +316,17 @@
       },
       "dialog": "vanatoare",
       "program": [
+        {
+          "de": "15:00",
+          "pana": "17:00",
+          "loc": "padure",
+          "conditii": {
+            "misiune": {
+              "lupul_negru": "inceputa"
+            }
+          },
+          "ce": "o așteaptă pe Vale la marginea pădurii, cât e misiunea lupului negru (decis de autor)"
+        },
         {
           "de": "05:00",
           "pana": "10:00",
@@ -342,7 +354,10 @@
           "ce": "doarme la campsite"
         }
       ],
-      "gandDoarme": "Doarme. Nu vreau s-o trezesc acum."
+      "gandDoarme": "Doarme. Nu vreau s-o trezesc acum.",
+      "dialoguriPeLoc": {
+        "padure": "kaia_lup_negru"
+      }
     },
     {
       "id": "tigru",

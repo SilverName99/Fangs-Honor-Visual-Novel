@@ -455,7 +455,17 @@ function vaneaza(v) {
   // Se verifică la ora la care pleci la vânătoare, înainte să treacă timpul
   const i = v.insotitor;
   const cuInsotitor = i && verifica(i.conditii, context(stare)) && Math.random() < (i.sansa ?? 0);
+  // „intalnire”: o întâlnire din poveste care ține locul vânătorii obișnuite cât sunt îndeplinite condițiile
+  // (Kaia luptându-se cu lupii, decis de autor)
+  const intalnire = v.intalnire && verifica(v.intalnire.conditii, context(stare));
   if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
+  if (intalnire) {
+    salveaza();
+    afiseaza();
+    return pornesteEveniment(v.intalnire.eveniment, true);
+  }
+  // Fiecare vânătoare obișnuită contează (după ce a lăsat-o pe Kaia singură, Vale trebuie să mai vâneze o dată)
+  aplicaEfecte({ contor: { vanatori: 1, vanatori_dupa_refuz: 1 } }, joc);
   salveaza();
   afiseaza();
   const id = alegeCuSanse(v.lupte);

@@ -1283,5 +1283,214 @@
         "text": "Gândește-te, gândește-te. Fierul nu fuge nicăieri. Doar ruginește."
       }
     }
+  },
+  "kaia_intalnire": {
+    "_nota": "CIORNĂ. Peste prima imagine: Vale o vede pe Kaia luptându-se cu trei lupi; peste a doua: se recunosc și se pregătesc de luptă.",
+    "grup": "Kaia: întâlnirea",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "imagine": "events/kaia_intalnire_1.png",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Lupi... și cineva se luptă cu ei. O fată, călare pe un tigru! Sunt trei, iar ea e singură.",
+        "alegeri": [
+          {
+            "text": "O ajut!",
+            "spre": "b"
+          },
+          {
+            "text": "Nu e lupta mea. Plec.",
+            "inchide": true,
+            "efecte": {
+              "stare": {
+                "kaia_refuz": "da"
+              },
+              "contorZero": "vanatori_dupa_refuz"
+            }
+          }
+        ]
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Vale?! Tu ești? Ce cauți aici?",
+        "imagine": "events/kaia_intalnire_2.png",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Kaia? Kaia de la hotar? Credeam că n-o să te mai văd niciodată!",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Vorbim după. Ține-i pe cei din stânga, eu mă ocup de ceilalți!",
+        "alegeri": [
+          {
+            "text": "La luptă!",
+            "inchide": true,
+            "efecte": {
+              "stare": {
+                "kaia_intalnita": "da"
+              },
+              "lupta": "kaia_lupi"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "kaia_dupa_victorie": {
+    "_nota": "CIORNĂ: după lupta câștigată alături de Kaia; pornește misiunea lupului negru.",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu te-ai prostit, Vale. Lupta nu ți-a uitat-o mâna.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am văzut fum deasupra satului acum câteva luni. Am venit cât de repede am putut, dar drumurile sunt pline de orci. Ce s-a întâmplat, Vale?",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino mâine după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
+        "efecte": {
+          "stare": {
+            "cunoscut_vanatoare": "da"
+          },
+          "misiune": {
+            "lupul_negru": "inceputa"
+          }
+        }
+      }
+    }
+  },
+  "kaia_dupa_infrangere": {
+    "_nota": "CIORNĂ: după lupta pierdută; același drum mai departe.",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ne-au întrecut... dar suntem vii, și asta contează. Tigrul meu i-a gonit până la urmă.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am văzut fum deasupra satului acum câteva luni. Am venit cât de repede am putut, dar drumurile sunt pline de orci. Ce s-a întâmplat, Vale?",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino mâine după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
+        "efecte": {
+          "stare": {
+            "cunoscut_vanatoare": "da"
+          },
+          "misiune": {
+            "lupul_negru": "inceputa"
+          }
+        }
+      }
+    }
+  },
+  "kaia_lup_negru": {
+    "_nota": "CIORNĂ: Kaia la marginea pădurii (15–17), cât e misiunea lupului negru.",
+    "partener": "vanatoare",
+    "meniu": true,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai venit. Bine. Urmele lui sunt proaspete."
+      },
+      "pregatit": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci liniște și ochii-n patru. El ne vânează pe noi la fel de mult cum îl vânăm noi pe el.",
+        "alegeri": [
+          {
+            "text": "Înainte!",
+            "inchide": true,
+            "efecte": {
+              "lupta": "lupta_lup_negru"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "kaia_tabara": {
+    "_nota": "CIORNĂ: după lupul negru, Kaia îi arată tabăra ei (Camp site).",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Gata. Haita n-o să mai coboare spre sat o vreme.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai luptat bine, Vale. Vino cu mine: am un loc în pădure unde orcii nu ajung. Acolo putem vorbi în liniște.",
+        "efecte": {
+          "deblocheaza": "padure/campsite",
+          "mergi": "padure.campsite"
+        }
+      }
+    }
+  },
+  "kaia_lup_scapat": {
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Ne-a scăpat. Data viitoare nu. Mâine, aceeași oră, la marginea pădurii."
+      }
+    }
   }
 }

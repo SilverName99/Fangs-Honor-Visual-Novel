@@ -210,6 +210,38 @@
       "recompensa": {
         "text": "Încrederea lui Elian +1 și două pansamente."
       }
+    },
+    {
+      "id": "lupul_negru",
+      "titlu": "Lupul negru",
+      "dela": "vanatoare",
+      "dialog": "kaia_lup_negru",
+      "descriere": "CIORNĂ: Kaia s-a întors! Lupii din pădure sunt mânați de un lup negru, mai mare decât oricare. Îl vânăm împreună.",
+      "pasi": [
+        {
+          "text": "O întâlnesc pe Kaia la marginea pădurii (15–17) și vânăm lupul negru",
+          "gata": {
+            "stare": {
+              "lup_negru": "ucis"
+            }
+          },
+          "sfat": "După-amiaza, între 15 și 17, Kaia mă așteaptă la marginea pădurii.",
+          "predare": {
+            "text": "Sunt gata. Hai după lupul negru.",
+            "nod": "pregatit",
+            "conditii": {
+              "loc": "padure",
+              "ora": {
+                "min": "15:00",
+                "max": "16:59"
+              }
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1 și tabăra ei din pădure (Camp site)."
+      }
     }
   ]
 }
