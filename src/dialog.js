@@ -6,13 +6,19 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor }) {
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
   const dreapta = div('loc-portret dreapta');
   const caseta = div('caseta');
   const nume = div('nume-vorbitor');
+  // Când replicile stau peste o imagine (personajele vorbesc între ele), lângă nume stă medalionul din luptă,
+  // ca să se vadă repede cine vorbește (cerut de autor)
+  const textNume = document.createElement('span');
+  const medalionNume = div('medalion medalion-nume aliat');
+  nume.append(medalionNume, textNume);
+  let cheieMedalion = '';
   const text = div('text-dialog');
   const alegeri = div('alegeri');
   const mai = div('continua');
@@ -77,7 +83,17 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     dreapta.classList.toggle('tacut', vorbesteVale || !nod.vorbitor);
 
     // „nume” la replică: un vorbitor fără nume propriu care împrumută portretele altuia (orcii din tavernă)
-    nume.textContent = nod.vorbitor ? nod.nume || numeVorbitor(nod.vorbitor, activ.dialog) : '';
+    textNume.textContent = nod.vorbitor ? nod.nume || numeVorbitor(nod.vorbitor, activ.dialog) : '';
+    const cheie = nod.vorbitor ? `${nod.vorbitor}_${nod.emotie || 'normal'}` : '';
+    if (cheie !== cheieMedalion) {
+      cheieMedalion = cheie;
+      medalionNume.className = `medalion medalion-nume ${tabaraVorbitor?.(nod.vorbitor) || 'aliat'}`;
+      medalionNume.replaceChildren(
+        ...(nod.vorbitor
+          ? [elementImagine([`portraits/${cheie}.png`, `portraits/${nod.vorbitor}_normal.png`], { clasa: 'portret-medalion', raport: 1, eticheta: nod.vorbitor }), div('rama-medalion')]
+          : []),
+      );
+    }
     nume.hidden = !nod.vorbitor;
     text.textContent = nod.text || '';
     caseta.classList.toggle('gand', !!nod.gand);

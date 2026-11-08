@@ -3149,3 +3149,17 @@ svg.zone {
   color: #f3e6c8;
   text-shadow: 0 2px 4px #000;
 }
+
+/* Medalionul de lângă nume (cerut de autor): doar când replicile stau peste o imagine; în stânga plăcuței,
+   aceleași piese ca medalioanele din luptă (rama aurie la oameni, roșie la orci) */
+.medalion.medalion-nume {
+  --h: 120px;
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.dialog:not(.cu-imagine) .medalion-nume {
+  display: none;
+}
