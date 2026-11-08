@@ -6,7 +6,7 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii }) {
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -74,6 +74,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     caseta.classList.toggle('gand', !!nod.gand);
 
     let vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));
+    // Ultima replică a unei ramuri: acum urcă pe ecran ce a primit Vale, dacă tocmai a terminat o misiune
+    if (!vizibile.length && !nod.urmator) laCapatulRamurii?.();
     // La capătul unei ramuri (fără alegeri și fără continuare), meniul personajului apare direct sub replică
     if (activ.dialog.meniu && !vizibile.length && !nod.urmator && !nod.sfarsit) vizibile = meniu();
     alegeri.replaceChildren(
@@ -122,6 +124,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;
+    laCapatulRamurii?.();
     laFinal(dialog);
   }
 

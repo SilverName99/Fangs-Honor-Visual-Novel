@@ -16,7 +16,7 @@ import { creeazaDialog } from './dialog.js';
 import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
-import { creeazaEcranInventar } from './ecranInventar.js';
+import { creeazaEcranInventar, iconita as iconitaObiect } from './ecranInventar.js';
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
@@ -152,9 +152,51 @@ function intreaba(text, da = 'Da', nu = 'Nu') {
   });
 }
 
+// Ce a primit Vale de la ultima actualizare a HUD-ului (bani, încredere, obiecte). Dacă între timp s-a terminat
+// o misiune, totul urcă ușor pe ecran și dispare (decis de autor), chiar înainte să se închidă dialogul;
+// altfel se uită (munca, magazinul și restul își arată deja câștigul în felul lor)
+let castiguri = [];
+// Câștigurile unei misiuni terminate în mijlocul unui dialog așteaptă ultima replică a ramurii (decis de autor:
+// „fix înainte să se termine dialogul”)
+let deArataLaFinal = [];
+function arataCastigurileAsteptate() {
+  const lista = deArataLaFinal;
+  deArataLaFinal = [];
+  arataCastiguri(lista);
+}
+function inregistreazaCastig(c) {
+  const la = castiguri.find((x) => x.tip === c.tip && x.id === c.id);
+  if (la) la.n += c.n;
+  else castiguri.push({ ...c });
+}
+function arataCastiguri(lista) {
+  if (!lista.length) return;
+  const rand = div('castiguri');
+  for (const c of lista) {
+    const bucata = div('castig');
+    bucata.append(div('numar-castig', `+${c.n}`));
+    if (c.tip === 'bani') bucata.append(iconita('monede', '🪙'));
+    else if (c.tip === 'incredere') {
+      bucata.append(iconita('incredere', '◆'));
+      bucata.title = personaje.get(c.id)?.nume || c.id;
+      // Al cui e încrederea, pe scurt („Bram”, „F. Elian”)
+      const p = personaje.get(c.id);
+      bucata.append(div('nume-castig', p?.numeScurt || p?.nume?.split(' ')[0] || ''));
+    } else bucata.append(iconitaObiect(inventar, c.id));
+    rand.append(bucata);
+  }
+  ui.append(rand);
+  setTimeout(() => rand.remove(), 3200);
+}
+
 function actualizeazaHud() {
   // Pașii misiunilor se bifează singuri după orice schimbare (lemn adunat, acoperiș reparat, dialog)
-  actualizeazaMisiuni(joc);
+  const terminate = actualizeazaMisiuni(joc);
+  if (terminate.length) {
+    if (dialog?.activ()) deArataLaFinal.push(...castiguri);
+    else arataCastiguri(castiguri);
+  }
+  castiguri = [];
   const ctx = context(stare);
   ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;
   const bani = div('rand-monede');
@@ -589,6 +631,7 @@ const joc = {
     afiseaza();
   },
   intreaba,
+  inregistreazaCastig,
   dupaActiune(text) {
     salveaza();
     afiseaza();
@@ -640,6 +683,7 @@ const joc = {
 };
 
 const dialog = creeazaDialog(ui, {
+  laCapatulRamurii: arataCastigurileAsteptate,
   numeVorbitor: (id, d) => (id === 'vale' ? 'Vale' : id === d.partener && d.numePartener ? d.numePartener : personaje.get(id)?.nume || id.replaceAll('_', ' ')),
   emotieVale: () => (stare.nevoi.viata < cfg.nevoi.prag ? 'ranit' : 'normal'),
   verificaConditii: (c) => verifica(c, context(stare)),

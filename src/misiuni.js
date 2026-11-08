@@ -17,9 +17,11 @@ export const listaMisiuni = (date) => date.misiuni?.misiuni || [];
 export const pasul = (stare, id) => stare.pasiMisiuni?.[id] ?? 0;
 
 // Se cheamă după fiecare schimbare (la redesenarea HUD-ului); întoarce misiunile terminate acum
+// Întoarce misiunile terminate acum (ca jocul să arate ce a primit Vale pentru ele)
 export function actualizeazaMisiuni(joc) {
   const s = joc.stare;
   s.pasiMisiuni ||= {};
+  const terminate = [];
   for (const m of listaMisiuni(joc.date)) {
     if (s.misiuni[m.id] !== 'inceputa') continue;
     let i = pasul(s, m.id);
@@ -30,7 +32,9 @@ export function actualizeazaMisiuni(joc) {
     s.misiuni[m.id] = 'terminata';
     aplicaEfecte(m.recompensa?.efecte, joc);
     joc.mesaj(`Misiune terminată: ${m.titlu}`);
+    terminate.push(m.id);
   }
+  return terminate;
 }
 
 // Un nod fix sau o listă { nod, conditii } din care se ia primul îndeplinit (același format ca „start” la dialoguri)

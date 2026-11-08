@@ -5,13 +5,24 @@ import { MINUTE_ZI, inMinute } from './timp.js';
 // Un efect nou = o funcție nouă aici, fără să atingi restul codului.
 const efecte = {
   timp: (v, joc) => joc.avanseaza(v),
-  bani: (v, joc) => (joc.stare.bani = Math.max(0, joc.stare.bani + v)),
+  // Ce primește Vale (bani, încredere, obiecte) se ține minte puțin, ca la sfârșitul unei misiuni să urce pe ecran
+  bani: (v, joc) => {
+    joc.stare.bani = Math.max(0, joc.stare.bani + v);
+    if (v > 0) joc.inregistreazaCastig?.({ tip: 'bani', n: v });
+  },
   nevoi: (v, joc) => Object.entries(v).forEach(([k, cu]) => schimbaNevoie(joc.stare, k, cu)),
   reputatie: (v, joc) => (joc.stare.reputatie += v),
   // Încrederea stă între 0 și maxim (10), ca bara din cartea personajelor să nu iasă din scară
   relatie: (v, joc) =>
-    Object.entries(v).forEach(([id, cu]) => (joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, (joc.stare.relatii[id] || 0) + cu)))),
-  obiect: (v, joc) => [].concat(v).forEach((id) => joc.primeste(id, 1)),
+    Object.entries(v).forEach(([id, cu]) => {
+      joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, (joc.stare.relatii[id] || 0) + cu));
+      if (cu > 0) joc.inregistreazaCastig?.({ tip: 'incredere', id, n: cu });
+    }),
+  obiect: (v, joc) =>
+    [].concat(v).forEach((id) => {
+      joc.primeste(id, 1);
+      joc.inregistreazaCastig?.({ tip: 'obiect', id, n: 1 });
+    }),
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
   // Lucrul confiscat ajunge înapoi la Vale (plătit, câștigat), deci nu mai e la orci

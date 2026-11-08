@@ -3075,3 +3075,55 @@ svg.zone {
   margin-top: auto;
   width: 260px;
 }
+
+/* Recompensele unei misiuni terminate: urcă ușor pe ecran și dispar (decis de autor) */
+.castiguri {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  z-index: 9200;
+  display: flex;
+  gap: 42px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: castiguri-urca 3.2s ease-out forwards;
+}
+@keyframes castiguri-urca {
+  0% { opacity: 0; margin-top: 30px; }
+  15% { opacity: 1; margin-top: 0; }
+  70% { opacity: 1; margin-top: -60px; }
+  100% { opacity: 0; margin-top: -110px; }
+}
+.castig {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.9));
+}
+.numar-castig {
+  font: 700 54px Georgia, serif;
+  color: #ffe08a;
+  text-shadow: 0 2px 4px #000, 0 0 12px rgba(0, 0, 0, 0.8);
+}
+.castig .icon-hud,
+.castig .iconita {
+  width: 72px;
+  height: 72px;
+  font-size: 56px;
+  line-height: 72px;
+  text-align: center;
+}
+.castig .icon-incredere {
+  color: #ffd36a;
+}
+.nume-castig {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  text-align: center;
+  font: 600 22px Georgia, serif;
+  color: #f3e6c8;
+  text-shadow: 0 2px 4px #000;
+}

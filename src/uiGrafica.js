@@ -107,6 +107,7 @@ export const ELEMENTE_UI = [
     ['meniu', 'Iconița Meniu'],
     ['ecran', 'Iconița Ecran complet'],
     ['monede', 'Iconița monedelor'],
+    ['incredere', 'Iconița încrederii (la recompensele misiunilor: „+1”)'],
     ['inapoi', 'Iconița Înapoi (săgeată)'],
     ['continua', 'Meniu: iconița Continuă (ușa)'],
     ['salveaza', 'Meniu: iconița Salvează (pana)'],
