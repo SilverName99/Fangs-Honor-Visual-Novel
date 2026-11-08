@@ -121,7 +121,11 @@ export function creeazaActiuni(parinte, joc) {
       // imaginea de zi dimineața, la amiază și seara (decis de autor); cea de noapte doar noaptea
       // „varianteImagine”: alte imagini după stare (acasă, cu acoperișul reparat), prima potrivită câștigă
       const v = (a.varianteImagine || []).find((x) => verifica(x.conditii, context(s))) || a;
-      const deZi = momentZi(acum) !== 'noaptea';
+      // Imaginea de noapte dacă somnul prinde măcar o bucată de noapte (decis de autor: seara, „până dimineața”
+      // sau 6 ore trec peste 23:00); altfel cea de zi
+      let prindeNoaptea = false;
+      for (let t = 0; t < minute && !prindeNoaptea; t += 15) prindeNoaptea = momentZi((acum + t) % MINUTE_ZI) === 'noaptea';
+      const deZi = !prindeNoaptea;
       cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
     };
     // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
