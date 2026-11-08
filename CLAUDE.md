@@ -68,13 +68,14 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
 
 ### Cele trei ecrane ale editorului
 
-1. **Galerie.** Tragi PNG-uri în pagină. Sunt grupate pe categorii (secțiunea 5). Un grup la care e totul încărcat (și opționalele) stă închis. Editorul arată **ce lipsește** (cerut de date, dar neîncărcat) și **ce nu e folosit**. Numele se verifică după convenție și se propune numele corect.
+1. **Galerie.** Tragi PNG-uri în pagină. Sunt grupate pe categorii (secțiunea 5). Un grup la care e totul încărcat (și opționalele) stă închis. O bifă, „Ascunde secțiunile la care nu mai e nimic de adăugat”, le ascunde de tot (ținută minte în browser). Editorul arată **ce lipsește** (cerut de date, dar neîncărcat) și **ce nu e folosit**. Numele se verifică după convenție și se propune numele corect.
 2. **Aranjare.** Deschizi o scenă, harta sau ecranul de echipament și:
    - tragi sprite-urile și piesele, iar rotița mouse-ului le mărește (x, y, scară);
    - desenezi **zonele clicabile** punct cu punct (poligoane);
    - așezi sloturile de echipament peste figura lui Vale;
    - setezi marginile elementelor de interfață (secțiunea 9).
-3. **Testare.** Jocul, cu panoul debug deschis: schimbi ora, pui noapte, setezi stări și vezi variantele.
+3. **Testare.** Jocul, cu panoul debug deschis: schimbi ora, pui noapte, setezi stări și vezi variantele. Panoul debug (F2) are și: misiunile (pornește / resetează, cu pasul la care ești), „Toți cunoscuți de 3 zile”, „+1 vânătoare câștigată”, evenimentele pornite forțat.
+4. **Misiuni** (decis de autor): tab-ul cu `docs/misiuni.md`, walkthrough-ul: fiecare misiune, cum pornește, imaginile ei cu prompturile (buton „Copiază”) și cum se verifică la Testare.
 
 **Ce NU face editorul:** dialoguri, evenimente, condiții, misiuni. Pe astea autorul le descrie în cuvinte, iar Claude le scrie în JSON. Un formular pentru ele se face doar dacă autorul îl cere mai târziu.
 
