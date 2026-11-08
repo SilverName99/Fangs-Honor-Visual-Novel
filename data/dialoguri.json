@@ -735,9 +735,6 @@
             "text": "Mă ocup eu, mamă. Aduc lemn din pădure.",
             "spre": "multumesc",
             "efecte": {
-              "relatie": {
-                "miriam": 1
-              },
               "misiune": {
                 "acoperis": "inceputa"
               }
@@ -745,12 +742,7 @@
           },
           {
             "text": "Nu acum, mamă. Am alte griji.",
-            "spre": "suparata",
-            "efecte": {
-              "relatie": {
-                "miriam": -1
-              }
-            }
+            "spre": "suparata"
           }
         ]
       },
