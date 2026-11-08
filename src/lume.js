@@ -403,6 +403,13 @@ export function imaginiCerute(date, scene) {
     grup = `Eveniment: ${ev.grup || ev.nume || ev.id}`;
     ev.imagini.forEach((cale, i) => adauga(cale, `${ev.nume || ev.id}: imaginea ${i + 1}`));
   }
+  // Imaginile de sub replici (un dialog care se petrece peste o imagine, de exemplu orcul care ia fierul lui Bram)
+  for (const [id, d] of Object.entries(date.dialoguri || {})) {
+    const imagini = [...new Set(Object.values(d.noduri || {}).map((n) => n.imagine).filter(Boolean))];
+    if (!imagini.length) continue;
+    grup = `Eveniment: ${d.grup || id}`;
+    imagini.forEach((cale, i) => adauga(cale, `${d.grup || id}: imaginea ${i + 1} (sub replici)`));
+  }
   grup = 'Portrete';
   for (const p of date.npcs.personaje) {
     if (p.faraPortret) continue;

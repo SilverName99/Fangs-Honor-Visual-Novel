@@ -37,6 +37,9 @@ const efecte = {
   // Pune o nevoie la o valoare fixă (de exemplu viața 10 după bătaie, foamea plină după masa de la Agnes)
   seteazaNevoi: (v, joc) => Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(0, Math.min(100, val)))),
   // Ține minte când s-a întâmplat ceva, pentru condiția „trecut” (unchiul lipsește 2 zile după bătaie)
+  // Numărătorile: „contor: { vanatori: 1 }” adună, „contorZero: ["vanatori_dupa_refuz"]” o ia de la zero
+  contor: (v, joc) => Object.entries(v).forEach(([k, n]) => ((joc.stare.contoare ||= {})[k] = (joc.stare.contoare[k] || 0) + n)),
+  contorZero: (v, joc) => [].concat(v).forEach((k) => ((joc.stare.contoare ||= {})[k] = 0)),
   marcheaza: (v, joc) => [].concat(v).forEach((k) => ((joc.stare.marcaje ||= {})[k] = joc.stare.minute)),
   // Camera de la tavernă ține până la prânzul de după noaptea pentru care ai plătit-o:
   // plătită seara sau după miezul nopții, tot în dimineața următoare expiră

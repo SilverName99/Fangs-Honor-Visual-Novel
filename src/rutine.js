@@ -1,3 +1,4 @@
+import { verifica } from './conditii.js';
 // Un număr „aleator” care e mereu același pentru aceeași zi și același moment:
 // personajul nu apare și dispare când ieși și reintri în scenă
 function aleatorFix(text) {
@@ -18,6 +19,8 @@ export function intrareProgram(personaj, ctx) {
   };
   return personaj.program.find((p) => {
     if (p.zile && !p.zile.includes(ctx.ziSaptamana)) return false;
+    // „conditii”: intervalul ține doar cât sunt îndeplinite (de exemplu o întâlnire dintr-o misiune)
+    if (p.conditii && !verifica(p.conditii, ctx)) return false;
     const de = min(p.de);
     const pana = min(p.pana);
     return de < pana ? minuteZi >= de && minuteZi < pana : minuteZi >= de || minuteZi < pana;

@@ -483,7 +483,10 @@ function gand(text) {
 // Cine intră în cartea personajelor după dialogul de acum (cel apăsat, chiar dacă răspunde altcineva în locul lui)
 let deCunoscut = [];
 function cunoaste(id) {
-  if (id && personaje.get(id)?.carte && !stare.cunoscuti.includes(id)) stare.cunoscuti.push(id);
+  if (!id || !personaje.get(id)?.carte || stare.cunoscuti.includes(id)) return;
+  stare.cunoscuti.push(id);
+  // Ziua primei discuții: misiunile unui personaj apar abia după câteva zile de la ea (decis de autor)
+  (stare.cunoscutLa ||= {})[id] = ziua(stare);
 }
 
 function vorbesteCu(id, idDialog) {
@@ -913,6 +916,13 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   }
 }
 
+// „clicabil: false” = doar se vede; „clicabil: { conditii }” = se poate apăsa abia când condițiile sunt îndeplinite
+function esteClicabil(p, ctx) {
+  if (p?.clicabil === false) return false;
+  if (p?.clicabil?.conditii) return verifica(p.clicabil.conditii, ctx);
+  return true;
+}
+
 function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
@@ -941,8 +951,8 @@ function afiseaza() {
   for (const t of d.tinte) {
     const poligon = r.poligoane.get(t.id);
     if (t.personaj) {
-      // Zona unui personaj contează doar cât timp el e în scenă
-      if (!prezenti.has(t.personaj)) {
+      // Zona unui personaj contează doar cât timp el e în scenă (și cât se poate vorbi cu el)
+      if (!prezenti.has(t.personaj) || !esteClicabil(personaje.get(t.personaj), ctx)) {
         poligon?.remove();
         continue;
       }
@@ -981,7 +991,7 @@ function afiseaza() {
       continue;
     }
     // Cu zonă desenată, strălucirea și click-ul vin din zonă; fără ea, personajul răspunde pe forma lui
-    if (cuZona.has(o.id) || personaje.get(o.id).clicabil === false) {
+    if (cuZona.has(o.id) || !esteClicabil(personaje.get(o.id), ctx)) {
       el.classList.add('cu-zona');
       continue;
     }

@@ -20,7 +20,10 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   // Rombul de pe marginea de sus: piesă separată, ca să nu se întindă odată cu chenarul (se vede doar cu imaginea lui)
   const ornament = div('ornament-dialog');
   caseta.append(ornament, nume, text, alegeri, mai);
-  el.append(stanga, dreapta, caseta);
+  // Imaginea pe tot ecranul din spatele replicilor (decis de autor: la unele evenimente replicile stau peste imagine);
+  // rămâne de la un nod la altul până o schimbă altul sau se termină dialogul
+  const fundal = div('fundal-dialog');
+  el.append(fundal, stanga, dreapta, caseta);
   parinte.append(el);
 
   // Portretele se refolosesc: un portret deja încărcat nu mai clipește la fiecare replică
@@ -39,6 +42,11 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
     activ.nod = nod;
+    if (nod.imagine && nod.imagine !== activ.imagine) {
+      activ.imagine = nod.imagine;
+      fundal.replaceChildren(elementImagine([nod.imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: nod.imagine }));
+      el.classList.add('cu-imagine');
+    }
     laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
 
@@ -100,6 +108,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   function inchide() {
     if (!activ) return;
     el.hidden = true;
+    fundal.replaceChildren();
+    el.classList.remove('cu-imagine');
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;

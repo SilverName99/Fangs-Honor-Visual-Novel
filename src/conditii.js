@@ -26,6 +26,20 @@ const tipuri = {
   deblocat: (v, c) => (c.deblocate || []).includes(v),
   zileSaptamana: (v, c) => v.includes(c.ziSaptamana),
   zi: (v, c) => (v.min == null || c.zi >= v.min) && (v.max == null || c.zi <= v.max),
+  // „cunoscutDeZile: { fierar: 1 }” = Vale l-a cunoscut și au trecut de atunci cel puțin atâtea zile din calendar
+  // (decis de autor: o misiune apare după prima discuție și după câteva zile). Cine e cunoscut dintr-o salvare
+  // mai veche, fără ziua întâlnirii, contează ca întâlnit în ziua 1
+  cunoscutDeZile: (v, c) =>
+    Object.entries(v).every(([id, n]) => {
+      if (!(c.cunoscuti || []).includes(id) && c.stari?.[`cunoscut_${id}`] !== 'da') return false;
+      return c.zi - (c.cunoscutLa?.[id] ?? 1) >= n;
+    }),
+  // „contor: { vanatori_castigate: { min: 1 } }” = numărătorile din salvare (vânători, încercări...)
+  contor: (v, c) =>
+    Object.entries(v).every(([k, lim]) => {
+      const n = c.contoare?.[k] ?? 0;
+      return (lim.min == null || n >= lim.min) && (lim.max == null || n <= lim.max);
+    }),
   sansa: (v, c) => (c.aleator ?? Math.random)() < v,
   // SAU: e destul ca una dintre condiții să fie îndeplinită (de exemplu fierarul e acasă SAU ai cheia)
   oricare: (v, c) => v.some((cond) => verifica(cond, c)),
