@@ -184,6 +184,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### Vânătoarea împreună (după Lupul negru)
 - **Când:** dimineața, 05–10, la Camp site, Kaia e acolo. În meniul ei apare „Mergem împreună la vânătoare?”.
 - „Să mergem.” → vânătoarea obișnuită (lupi sau mistreț), cu Kaia sigur alături în luptă. „Poate altă dată.” te întoarce la meniu.
+- După luptă: un scurt dialog (altul după înfrângere), apoi Kaia se întoarce în pădure (nu mai e la campsite până la 14:00), iar Vale rămâne în tabără.
 
 **Cum verifici:** după Lupul negru, mergi la Camp site la 07:00 → apasă pe Kaia → „Mergem împreună la vânătoare?” → „Să mergem.” → lupta are două tabere: Vale și Kaia contra animalelor. La 15:00 opțiunea nu mai apare.
 

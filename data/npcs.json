@@ -330,6 +330,14 @@
         {
           "de": "05:00",
           "pana": "10:00",
+          "conditii": {
+            "marcatAzi": "kaia_plecata"
+          },
+          "ce": "după vânătoarea împreună s-a întors în pădure (decis de autor): nu mai e la campsite până după-amiază"
+        },
+        {
+          "de": "05:00",
+          "pana": "10:00",
           "loc": "padure/campsite",
           "ce": "dimineața la campsite"
         },

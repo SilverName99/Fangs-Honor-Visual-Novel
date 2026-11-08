@@ -866,6 +866,11 @@
                   }
                 ]
               }
+            },
+            "dupaCuInsotitor": {
+              "_nota": "Decis de autor: după vânătoarea împreună cu Kaia (de la campsite), dialogul de după, ca eveniment.",
+              "victorie": "kaia_dupa_vanatoare",
+              "infrangere": "kaia_dupa_vanatoare_infrangere"
             }
           }
         },

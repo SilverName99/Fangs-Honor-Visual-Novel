@@ -2009,5 +2009,73 @@
       }
     },
     "grup": "Scandalul din tavernă"
+  },
+  "kaia_dupa_vanatoare": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: după vânătoarea pornită de la campsite, un scurt dialog; Kaia se întoarce în pădure, Vale rămâne în tabără.",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu-i rău, Vale. Ai ținut pasul. Și n-ai călcat pe nicio cracă... aproape.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am avut o învățătoare bună.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Tigrul meu încă n-a mâncat. Mă întorc în pădure până se încălzește. Tu odihnește-te la foc, ai meritat.",
+        "efecte": {
+          "marcheaza": "kaia_plecata"
+        },
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Dispare printre copaci fără niciun zgomot. Rămân singur în tabără, lângă focul pe jumătate stins."
+      }
+    }
+  },
+  "kaia_dupa_vanatoare_infrangere": {
+    "_nota": "CIORNĂ (Claude). Ca mai sus, după o vânătoare pierdută.",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vanatoare",
+        "emotie": "ranit",
+        "text": "Ne-au prins pe picior greșit. Se mai întâmplă, chiar și mie.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "emotie": "ranit",
+        "text": "Iartă-mă. Te-am încurcat.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu m-ai încurcat. Ai rămas în picioare mai mult decât credeam. Stai aici, la foc, și leagă-ți rănile. Eu mă duc să văd încotro au luat-o.",
+        "efecte": {
+          "marcheaza": "kaia_plecata"
+        },
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Dispare printre copaci fără niciun zgomot. Rămân singur în tabără, cu rănile și cu focul pe jumătate stins."
+      }
+    }
   }
 }

@@ -550,7 +550,13 @@ function vaneaza(v, cuCine = null) {
   afiseaza();
   const id = alegeCuSanse(v.lupte);
   const def = date.lupte.lupte[id];
-  const lupta = cuInsotitor ? { ...def, aliati: [...(def.aliati || []), { id: i.personaj }] } : id;
+  let lupta = cuInsotitor ? { ...def, aliati: [...(def.aliati || []), { id: i.personaj }] } : id;
+  // Vânătoarea pornită de la campsite (decis de autor): după luptă, un scurt dialog cu Kaia, apoi ea se întoarce
+  // în pădure, iar Vale rămâne în tabără (înfrângerea nu-l mai trimite altundeva)
+  if (cuCine && v.dupaCuInsotitor) {
+    const cu = (parte, eveniment) => ({ ...parte, efecte: { ...(parte?.efecte || {}), eveniment } });
+    lupta = { ...lupta, victorie: cu(def.victorie, v.dupaCuInsotitor.victorie), infrangere: { ...def.infrangere, efecte: { eveniment: v.dupaCuInsotitor.infrangere } } };
+  }
   secventa.arata(
     [v.imagine],
     () => {

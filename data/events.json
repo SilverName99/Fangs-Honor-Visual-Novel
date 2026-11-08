@@ -827,6 +827,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "kaia_dupa_vanatoare",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "După vânătoarea cu Kaia",
+      "dialog": "kaia_dupa_vanatoare"
+    },
+    {
+      "id": "kaia_dupa_vanatoare_infrangere",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "După vânătoarea cu Kaia",
+      "dialog": "kaia_dupa_vanatoare_infrangere"
     }
   ]
 }
