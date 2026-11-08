@@ -181,6 +181,19 @@
               "text": "Scoți apă de la fântână...",
               "maxPeZi": 2,
               "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine."
+            },
+            {
+              "_nota": "Decis de autor: o pâine pe zi de pe masa din bucătărie, cu imaginea ei, ca la apă. Textele sunt ciorne.",
+              "id": "paine",
+              "tip": "obtine",
+              "nume": "Ia o pâine de pe masă",
+              "obiect": "paine",
+              "n": 1,
+              "minute": 2,
+              "imagine": "locations/munca_paine.png",
+              "text": "Iei o pâine caldă de pe masă...",
+              "maxPeZi": 1,
+              "mesajMaxPeZi": "Am luat deja pâinea de azi. Restul e pentru mama."
             }
           ],
           "variante": [

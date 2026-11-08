@@ -58,7 +58,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 3. Iar dimineața, în bucătărie: „Uite lemnele, mamă…” → imaginea → mulțumirea. În carte, misiunea apare la „Terminate”.
 
 ### ✅ Mama îl bandajează (nu e misiune)
-- **Când:** Vale e rănit (sub 60 viață) și vorbește cu mama acasă (bucătăria sau camera ei); **o dată pe zi**.
+- **Când:** Vale e rănit (sub 60 viață) și vorbește cu mama acasă (bucătăria sau camera ei) sau la biserică (sâmbăta și duminica, 05–08: „Hai acasă, acum”, iar Vale ajunge în camera ei); **o dată pe zi**.
 - Mama se sperie și îi oferă să-l bandajeze. „Bine, mamă.” → imaginea cu ea bandajându-l în camera ei → trece o oră, viața +30. „Nu-i nimic, mamă” → mama se supără puțin; nu mai întreabă în ziua aceea.
 
 **Imagini:** `events/miriam_bandaj.png`.
