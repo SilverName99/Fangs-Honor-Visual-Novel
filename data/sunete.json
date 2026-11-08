@@ -248,7 +248,28 @@
       ]
     },
     "padure.campsite": {
-      "sunet": "campsite"
+      "_nota": "Decis de autor: noaptea se aude noaptea pădurii (ca în zona pădurii), cu focul taberei peste ea.",
+      "sunet": "campsite",
+      "variante": [
+        {
+          "sunet": "padure_noapte",
+          "strat": "campsite",
+          "conditii": {
+            "oricare": [
+              {
+                "moment": [
+                  "noaptea"
+                ]
+              },
+              {
+                "ora": {
+                  "min": "21:00"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     "biserica": {
       "sunet": "sat_zi",
