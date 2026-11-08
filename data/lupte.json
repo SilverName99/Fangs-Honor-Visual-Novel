@@ -354,10 +354,7 @@
       "victorie": {
         "text": "Orcii fug înjurând. Negustorul îți strânge mâna.",
         "efecte": {
-          "reputatie": 3,
-          "relatie": {
-            "negustor": 3
-          }
+          "reputatie": 3
         }
       },
       "infrangere": {
@@ -412,10 +409,7 @@
       "victorie": {
         "text": "Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine: „N-o să uit asta.”",
         "efecte": {
-          "reputatie": 3,
-          "relatie": {
-            "fierar": 3
-          }
+          "reputatie": 3
         }
       },
       "infrangere": {
@@ -576,10 +570,7 @@
       "victorie": {
         "text": "Orcul aruncă sacul în noroi și pleacă înjurând. Fermierul se uită la tine de parcă ai fi coborât din cer.",
         "efecte": {
-          "reputatie": 2,
-          "relatie": {
-            "fermier": 3
-          }
+          "reputatie": 2
         }
       },
       "infrangere": {

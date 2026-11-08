@@ -686,7 +686,43 @@ const joc = {
     if (reafiseaza) afiseaza();
     else actualizeazaHud();
   },
+  // Testarea misiunilor (F2 → Resetează): jocul se ține minte în clipa în care începe o misiune, separat de
+  // salvare, ca resetarea să șteargă și ce a schimbat misiunea în lume (acoperișul, stările, obiectele, încrederea),
+  // nu doar bifa din carte; altfel o misiune terminată nu mai poate fi încercată din nou
+  retineInainteDeMisiune(id) {
+    try {
+      const toate = JSON.parse(localStorage.getItem(`${CHEIE}_inainte_misiuni`) || '{}');
+      toate[id] = JSON.parse(JSON.stringify(stare));
+      localStorage.setItem(`${CHEIE}_inainte_misiuni`, JSON.stringify(toate));
+    } catch {
+      // Fără loc în browser: resetarea rămâne doar ștergerea misiunii
+    }
+  },
+  revinoInainteDeMisiune(id) {
+    let inainte = null;
+    try {
+      inainte = JSON.parse(localStorage.getItem(`${CHEIE}_inainte_misiuni`) || '{}')[id];
+    } catch {
+      inainte = null;
+    }
+    if (!inainte) return false;
+    stare = inainte;
+    ecranInventar.inchide();
+    dialog.inchide();
+    salveaza();
+    afiseaza();
+    return true;
+  },
+  uitaInainteDeMisiuni() {
+    try {
+      localStorage.removeItem(`${CHEIE}_inainte_misiuni`);
+    } catch {
+      // nimic de șters
+    }
+  },
   jocNou() {
+    // Momentele ținute minte pentru „Resetează” sunt din jocul vechi: nu trebuie să ducă înapoi în el
+    joc.uitaInainteDeMisiuni();
     stare = stareNoua(cfg);
     ecranInventar.inchide();
     dialog.inchide();
@@ -795,6 +831,7 @@ function deschideMeniul() {
       optiune('incarca', '📜', 'Încarcă', async () => {
         try {
           stare = await salvare.importa();
+          joc.uitaInainteDeMisiuni();
           salveaza();
           inchide();
           afiseaza();

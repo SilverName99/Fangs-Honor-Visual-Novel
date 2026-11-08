@@ -20,10 +20,7 @@
         {
           "text": "Mai spune-mi.",
           "efecte": {
-            "timp": 20,
-            "relatie": {
-              "hangita": 1
-            }
+            "timp": 20
           }
         },
         {
@@ -205,9 +202,6 @@
           "text": "Pune sacul la loc!",
           "efecte": {
             "reputatie": 2,
-            "relatie": {
-              "negustor": 2
-            },
             "pedeapsa": "orc_colector"
           }
         },
@@ -220,9 +214,6 @@
           },
           "efecte": {
             "bani": -8,
-            "relatie": {
-              "negustor": 3
-            },
             "reputatie": 1
           }
         },
@@ -262,9 +253,6 @@
           "text": "Las-o în pace și plătește ca toată lumea.",
           "efecte": {
             "reputatie": 2,
-            "relatie": {
-              "hangita": 3
-            },
             "pedeapsa": "orc_colector"
           }
         },
@@ -276,10 +264,7 @@
             }
           },
           "efecte": {
-            "bani": -3,
-            "relatie": {
-              "hangita": 2
-            }
+            "bani": -3
           }
         },
         {
@@ -329,9 +314,6 @@
           "text": "Îl ajut pe fermier să strângă ce a rămas.",
           "efecte": {
             "timp": 30,
-            "relatie": {
-              "fermier": 2
-            },
             "stare": {
               "fermier_deblocat": "da"
             }
@@ -384,9 +366,6 @@
           "text": "Îl ajut pe fermier să strângă ce a rămas.",
           "efecte": {
             "timp": 30,
-            "relatie": {
-              "fermier": 2
-            },
             "stare": {
               "fermier_deblocat": "da"
             }
@@ -435,10 +414,7 @@
         {
           "text": "Ajut la strâns marfa.",
           "efecte": {
-            "timp": 30,
-            "relatie": {
-              "negustor": 2
-            }
+            "timp": 30
           }
         },
         {
@@ -539,18 +515,12 @@
             }
           },
           "efecte": {
-            "bani": -6,
-            "relatie": {
-              "fierar": 2
-            }
+            "bani": -6
           }
         },
         {
           "text": "Nu mă bag.",
           "efecte": {
-            "relatie": {
-              "fierar": -1
-            },
             "reputatie": -1
           }
         }

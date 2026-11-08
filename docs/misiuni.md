@@ -24,7 +24,7 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - **Testare misiuni:**
   - „Toți cunoscuți de 3 zile”: sare peste așteptarea de după prima discuție;
   - „+1 vânătoare câștigată”: pentru Kaia.
-- **Misiune:** o alegi din listă, apoi „Pornește” (ca după „Accept”) sau „Resetează” (o ia de la capăt). Lista arată la ce pas ești.
+- **Misiune:** o alegi din listă, apoi „Pornește” (ca după „Accept”) sau „Resetează”. Lista arată la ce pas ești. **„Resetează” întoarce tot jocul la clipa dinainte să înceapă misiunea** (ora, locul, obiectele, încrederea, acoperișul etc.), așa că o poți juca din nou de la ofertă, fără joc nou. Merge pentru misiunile începute de când ai jocul actualizat; la una mai veche doar o șterge din carte.
 - **Eveniment:** alegi un eveniment din listă și „Pornește”, chiar dacă s-a mai întâmplat (de exemplu imaginile cu fierul lui Bram).
 - **Mergi la:** te duce direct într-un loc. Evenimentele care pornesc la sosire apar doar dacă mergi de pe hartă.
 - **Monede, Obiect → Primește, Stări:** pui ce îți trebuie (de exemplu 60 de monede, 10 lemne).

@@ -48,6 +48,8 @@ const efecte = {
     Object.entries(v).forEach(([id, st]) => {
       const s = joc.stare;
       if (st === 'inceputa' && !s.misiuni[id]) {
+        // Pentru testare: jocul de dinainte de misiune, ca „Resetează” din F2 să poată reveni la el
+        joc.retineInainteDeMisiune?.(id);
         (s.ordineMisiuni ||= []).push(id);
         const m = joc.date.misiuni?.misiuni?.find((x) => x.id === id);
         if (m) joc.mesaj(`Misiune nouă: ${m.titlu} (în carte)`);

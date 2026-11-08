@@ -100,6 +100,8 @@ export function creeazaDebug(parinte, joc) {
     };
     el.querySelector('.reseteaza-mis').onclick = () => {
       const id = el.querySelector('.d-misiune').value;
+      // Întâi jocul de dinainte de misiune (cu tot ce a schimbat ea în lume); fără el, doar se șterge misiunea
+      if (joc.revinoInainteDeMisiune(id)) return joc.mesaj('Jocul s-a întors la clipa dinainte de misiune.');
       delete s.misiuni[id];
       if (s.pasiMisiuni) delete s.pasiMisiuni[id];
       s.ordineMisiuni = (s.ordineMisiuni || []).filter((x) => x !== id);
