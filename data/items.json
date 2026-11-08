@@ -78,10 +78,9 @@
       "pret": 4
     },
     "piele": {
-      "nume": "Piele de animal",
+      "nume": "Piele de mistreț",
       "tip": "material",
       "stiva": 3,
-      "sloturi": 2,
       "pret": 6
     },
     "blana_lup": {
