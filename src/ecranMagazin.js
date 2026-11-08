@@ -3,7 +3,8 @@ import { iconita, descriere } from './ecranInventar.js';
 
 // Magazinul (același la negustorul din piață, la Bram și la Agnes): după designul inventarului, cu două foi de
 // pergament peste scena estompată. Stânga: marfa negustorului, dreapta: rucsacul lui Vale. Bucățile se aranjează
-// în editor, la Aranjare → „Magazinul”.
+// în editor, la Aranjare → „Magazinul”. Un magazin poate avea și „schimburi” (Elian: 3 sunătoare → 1 pansament,
+// decis de autor): în stânga stau schimburile, ce dai → ce primești, cu săgeata între ele, în loc de marfă.
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 const monede = (n) => `${n} ${n === 1 ? 'monedă' : 'monede'}`;
 
@@ -47,6 +48,42 @@ export function creeazaEcranMagazin(parinte, joc) {
     inv.adauga(id, 1);
     joc.sunet.efect('monede');
     schimbat();
+  }
+
+  const cateAm = (id) => inv.numar(joc.stare.inventar, id);
+  const potSchimba = (t) => Object.entries(t.da).every(([id, n]) => cateAm(id) >= n);
+
+  function schimba(t) {
+    const lipsa = Object.entries(t.da).find(([id, n]) => cateAm(id) < n);
+    if (lipsa) return joc.gand(`Îmi trebuie ${lipsa[1]} × ${inv.def(lipsa[0]).nume}. Am doar ${cateAm(lipsa[0])}.`);
+    // Întâi dai, apoi primești: locul eliberat poate fi chiar cel în care intră ce primești
+    for (const [id, n] of Object.entries(t.da)) inv.scoate(id, n);
+    const nuIncape = Object.keys(t.primesti).find((id) => !inv.incape(id));
+    if (nuIncape) {
+      for (const [id, n] of Object.entries(t.da)) inv.adauga(id, n);
+      return joc.gand('Nu mai am loc în rucsac.');
+    }
+    for (const [id, n] of Object.entries(t.primesti)) inv.adauga(id, n);
+    joc.sunet.efect('rucsac');
+    schimbat();
+  }
+
+  // Un rând de schimb: ce dai (cu cât ai sub el), săgeata, ce primești
+  function randSchimb(t, k) {
+    const r = div('schimb');
+    if (selectat?.din === 'marfa' && selectat.schimb === k) r.classList.add('selectat');
+    const parte = (lista, cuCatAm) =>
+      Object.entries(lista).map(([id, n]) => {
+        const m = div('marfa');
+        const cel = div('celula');
+        cel.append(iconita(inv, id), div('numar', `×${n}`));
+        cel.title = inv.def(id).nume;
+        m.append(cel, cuCatAm ? Object.assign(div(`pret-marfa${cateAm(id) < n ? ' slab' : ''}`), { textContent: `ai ${cateAm(id)}` }) : div('pret-marfa', inv.def(id).nume));
+        return m;
+      });
+    r.append(...parte(t.da, true), Object.assign(div('sageata-schimb'), { textContent: '➜' }), ...parte(t.primesti, false));
+    r.onclick = () => ((selectat = { din: 'marfa', schimb: k }), arata());
+    return r;
   }
 
   function vinde(index) {
@@ -95,12 +132,30 @@ export function creeazaEcranMagazin(parinte, joc) {
   function detalii(pe) {
     const s = joc.stare;
     const casuta = div('detalii-inv');
-    const id = selectat?.din === 'marfa' ? selectat.id : selectat?.din === 'rucsac' ? s.inventar[selectat.index]?.id : null;
+    const schimbAles = selectat?.schimb !== undefined ? magazin.schimburi[selectat.schimb] : null;
+    const id = schimbAles ? Object.keys(schimbAles.primesti)[0] : selectat?.din === 'marfa' ? selectat.id : selectat?.din === 'rucsac' ? s.inventar[selectat.index]?.id : null;
     if (!id || selectat.din !== pe) {
-      casuta.append(div('ajutor-inv', pe === 'marfa' ? 'Apasă pe un obiect ca să vezi ce face și cât costă.' : 'Apasă pe un obiect din rucsac ca să-l vinzi.'));
+      const ajutor = magazin.schimburi
+        ? pe === 'marfa' ? 'Apasă pe un schimb ca să vezi ce primești.' : 'Aici vezi ce ai în rucsac.'
+        : pe === 'marfa' ? 'Apasă pe un obiect ca să vezi ce face și cât costă.' : 'Apasă pe un obiect din rucsac ca să-l vinzi.';
+      casuta.append(div('ajutor-inv', ajutor));
       return casuta;
     }
     const d = inv.def(id);
+    if (selectat.schimb !== undefined) {
+      const t = magazin.schimburi[selectat.schimb];
+      const text = div('text-detalii');
+      const lista = (o) => Object.entries(o).map(([x, n]) => `${n} × ${inv.def(x).nume}`).join(', ');
+      text.append(div('nume-obiect', `${lista(t.da)} → ${lista(t.primesti)}`), div('descriere-obiect', descriere(inv, id)));
+      const act = div('actiuni-inv');
+      act.append(Object.assign(document.createElement('button'), { className: 'buton buton-mic-meniu', textContent: 'Schimbă', onclick: () => schimba(t) }));
+      if (!potSchimba(t)) act.append(div('ajutor-inv', 'N-ai destule.'));
+      text.append(act);
+      const ic = div('iconita-detalii');
+      ic.append(iconita(inv, id));
+      casuta.append(ic, text);
+      return casuta;
+    }
     const ic = div('iconita-detalii');
     ic.append(iconita(inv, id));
     const text = div('text-detalii');
@@ -124,6 +179,7 @@ export function creeazaEcranMagazin(parinte, joc) {
         const c = foaie(o, i);
         c.append(capFoaie(magazin.titlu || magazin.nume || 'Marfa'));
         const g = div('grila-inv grila-marfa');
+        (magazin.schimburi || []).forEach((t, k) => g.append(randSchimb(t, k)));
         for (const id of magazin.vinde || []) {
           const m = div('marfa');
           const cel = div('celula');
@@ -156,8 +212,10 @@ export function creeazaEcranMagazin(parinte, joc) {
           if (x.n > 1) cel.append(div('numar', String(x.n)));
           cel.title = inv.def(x.id).nume;
           // Sub ce cumpără negustorul se vede prețul de vânzare; restul e estompat
+          // La schimburi, în rucsac e luminat doar ce se poate da (sunătoarea), fără prețuri
+          const deDat = (magazin.schimburi || []).some((t) => t.da[x.id]);
           m.append(cel, cumparaDeLaMine(x.id) ? pret(pretVanzare(x.id)) : div('pret-marfa gol'));
-          if (!cumparaDeLaMine(x.id)) m.classList.add('nu-cumpara');
+          if (!cumparaDeLaMine(x.id) && !deDat) m.classList.add('nu-cumpara');
           m.onclick = () => ((selectat = { din: 'rucsac', index }), arata());
           g.append(m);
         });
@@ -168,6 +226,8 @@ export function creeazaEcranMagazin(parinte, joc) {
         }
         c.append(g, detalii('rucsac'));
       } else if (o.tip === 'mag-monede') {
+        // La schimburi (Elian) nu se plătește nimic, deci monedele n-au ce căuta sus
+        if (!magazin.vinde?.length && magazin.schimburi) return;
         const m = div('monede-magazin');
         m.append(Object.assign(div('icon-hud icon-monede'), { textContent: '🪙' }), div('', `Ai ${monede(s.bani)}`));
         const p = asaza(m, o, i, 1700);

@@ -106,7 +106,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   - Cu mini-jocurile oprite (Opțiuni), Vale o alege singur pe cea bună și primește 2 fire.
 - **Pasul 2:** dai ierburile lui Elian.
 - **Recompensa:** încrederea lui Elian +1 și 2 pansamente.
-- **După misiune:** în meniul lui Elian apare „Îmi faci un pansament din trei fire de sunătoare?” (cât ai 3 fire): 3 sunătoare → 1 pansament, oricând.
+- **După misiune:** în meniul lui Elian apare „Schimburi (sunătoare pentru pansamente)”: se deschide un ecran ca la magazin, cu schimbul în stânga (3 sunătoare → săgeata → 1 pansament, cu câte fire ai) și rucsacul în dreapta; „Schimbă” se poate apăsa de câte ori ai fire.
 - **Mecanica:** e diferită de a lui Bram (acolo alegi cum să iei fierul; aici recunoști planta).
 
 **Imagini:** `locations/munca_ierburi.png` (fundalul mini-jocului), `items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`.
@@ -122,7 +122,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - a treia oară în aceeași zi, „Roua s-a uscat”;
    - la prânz, „se culege dimineața”.
 4. Cu 4 fire (sau din F2: Obiect Sunătoare), vorbește cu Elian → „Ți-am adus sunătoarea” → încredere +1 și 2 pansamente.
-5. Mai adu 3 fire → la Elian, „Îmi faci un pansament…” → 1 pansament. „Caută ierburi” e încă în pădure.
+5. Mai adu 3 fire (sau din F2) → la Elian, „Schimburi” → apasă pe schimb → „Schimbă” → 1 pansament în rucsac; cu mai puțin de 3 fire, gândul „Îmi trebuie 3…”. „Caută ierburi” e încă în pădure.
 6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
 ### 💡 Secretul lui Elian

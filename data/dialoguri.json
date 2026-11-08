@@ -1055,17 +1055,6 @@
             "ierburi_elian": "date"
           }
         }
-      },
-      "schimb_pansament": {
-        "vorbitor": "mag",
-        "emotie": "normal",
-        "text": "Sigur. Stai puțin... Gata. Leagă-l strâns și nu-l scoate până mâine.",
-        "efecte": {
-          "consuma": {
-            "sunatoare": 3
-          },
-          "obiect": "pansament"
-        }
       }
     },
     "meniu": true,
@@ -1082,17 +1071,17 @@
     ],
     "optiuni": [
       {
-        "_nota": "Decis de autor: după misiune, Elian face oricând un pansament din 3 fire de sunătoare.",
-        "text": "Îmi faci un pansament din trei fire de sunătoare?",
+        "_nota": "Decis de autor: după misiune, Elian face oricând un pansament din 3 fire de sunătoare, pe ecranul de schimb.",
+        "text": "Schimburi (sunătoare pentru pansamente)",
         "conditii": {
           "misiune": {
             "elian_ierburi": "terminata"
-          },
-          "areCate": {
-            "sunatoare": 3
           }
         },
-        "spre": "schimb_pansament"
+        "efecte": {
+          "magazin": "mag"
+        },
+        "spre": null
       }
     ]
   },

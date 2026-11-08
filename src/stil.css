@@ -2917,3 +2917,34 @@ svg.zone {
   box-sizing: border-box;
   pointer-events: none;
 }
+
+/* Schimburile (Elian: sunătoare → pansament): ce dai, săgeata, ce primești, pe un rând cât foaia */
+.schimb {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  align-items: start;
+  gap: 16px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.schimb:hover,
+.schimb.selectat {
+  background: rgba(120, 80, 30, 0.15);
+}
+.schimb.selectat .celula {
+  border-color: #c8952e;
+  box-shadow: 0 0 12px rgba(200, 149, 46, 0.7), inset 0 0 10px rgba(70, 45, 20, 0.3);
+}
+.sageata-schimb {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 96px;
+  color: #6b4a22;
+}
+.schimb .pret-marfa {
+  font-size: 24px;
+}

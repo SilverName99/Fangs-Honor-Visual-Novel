@@ -153,8 +153,9 @@ export const ELEMENTE_UI = [
   },
   // Săgețile cărții: o singură imagine, cu vârful spre dreapta; cea din stânga e aceeași, întoarsă din cod
   // Imaginea își păstrează forma (contain), oricât de lată ar fi generată
-  { id: 'sageata', nume: 'Săgeata de răsfoit (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte',
+  { id: 'sageata', nume: 'Săgeata de răsfoit din carte, folosită și la schimburile lui Elian (cu vârful spre dreapta; cea spre stânga e aceeași, întoarsă)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.buton.inapoi-carte, .buton.inainte-carte, .sageata-schimb',
     extra: '.buton.inapoi-carte,.buton.inainte-carte,.buton.inapoi-carte:hover,.buton.inainte-carte:hover,.buton.inapoi-carte:active,.buton.inainte-carte:active{width:150px;height:150px;padding:0;color:transparent;border:none;border-image:none;border-radius:0;box-shadow:none}' +
+      '.sageata-schimb{color:transparent;background-size:contain;background-repeat:no-repeat;background-position:center}' +
       '.buton.inapoi-carte,.buton.inainte-carte{background-size:contain}.buton.inapoi-carte{transform:translateY(-50%) scaleX(-1)}.buton.inapoi-carte:hover,.buton.inainte-carte:hover{filter:brightness(1.15) drop-shadow(0 0 10px rgba(255,210,120,.8))}' },
   // Ecranul de luptă (designul autorului, „sat sărac, dar îngrijit”): în galerie la grupul „Luptă: interfața”.
   // Piesele lungi (bara de sus, jurnalul, tabla de acțiuni) își păstrează forma imaginii: înălțimea e cea aleasă

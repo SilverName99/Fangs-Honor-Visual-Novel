@@ -471,7 +471,22 @@
           }
         ]
       },
-      "dialog": "mag"
+      "dialog": "mag",
+      "magazin": {
+        "_nota": "Decis de autor: după misiunea ierburilor, Elian face pansamente din sunătoare (3 → 1), pe ecranul magazinului.",
+        "titlu": "Schimburile lui Elian",
+        "schimburi": [
+          {
+            "da": {
+              "sunatoare": 3
+            },
+            "primesti": {
+              "pansament": 1
+            }
+          }
+        ],
+        "cumpara": []
+      }
     },
     {
       "id": "hangita",
