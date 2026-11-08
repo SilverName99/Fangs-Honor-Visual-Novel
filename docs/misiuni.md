@@ -73,7 +73,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   - colectorul râde și dă **trei căi**:
     - **plătești 60 de monede**;
     - **câștigi la zaruri** de la paznici (doar 14–18). Fierul e miza orcilor, iar Vale pune 20 de monede;
-    - **te bați cu colectorul**: el trișează (cu bâta, 400 viață), iar Vale are doar pumnii. Nu se poate câștiga, doar iei bătaie.
+    - **te bați cu colectorul**: el trișează (cu bâta, 400 viață), iar Vale are doar pumnii. Nu se poate câștiga, doar iei bătaie. Data următoare, colectorul își bate joc de Vale că s-a întors, apoi îi dă iar de ales.
 - **Pasul 2:** duci fierul la Bram: „Ți-am adus fierul înapoi, Bram. ?”.
 - **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă.
 - **Poarta e închisă până termini misiunea** (decis de autor): înainte de misiune, noaptea sau cu fierul deja la tine, orcul te oprește (prima imagine de la poartă) și te întoarce pe hartă. Taxa se plătește atunci doar când vine colectorul acasă.

@@ -1234,7 +1234,22 @@
         "alegeri": [
           {
             "text": "Vreau să vorbesc cu colectorul.",
+            "conditii": {
+              "nuStare": {
+                "batut_de_colector": "da"
+              }
+            },
             "spre": "c"
+          },
+          {
+            "_nota": "Decis de autor: după ce colectorul l-a bătut, își bate joc de Vale că s-a întors, apoi îi dă iar de ales.",
+            "text": "Vreau să vorbesc cu colectorul.",
+            "conditii": {
+              "stare": {
+                "batut_de_colector": "da"
+              }
+            },
+            "spre": "c_batut"
           },
           {
             "text": "Nu acum.",
@@ -1331,6 +1346,19 @@
         "efecte": {
           "mergi": "harta"
         }
+      },
+      "c_batut": {
+        "imagine": "events/poarta_fier_2.png",
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ha! Ia uite cine s-a întors! Încă te mai ții pe picioare după bătaia de data trecută?",
+        "urmator": "c_batut_2"
+      },
+      "c_batut_2": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ori ești curajos, ori prost. La oameni nu-i văd niciodată diferența. Bine, bine... ți-l mai ofer o dată.",
+        "urmator": "d"
       }
     }
   },

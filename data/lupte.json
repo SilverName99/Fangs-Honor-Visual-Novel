@@ -447,7 +447,10 @@
         "text": "„Pumni contra bâtă? Ce credeai, omule?” Colectorul râde, iar paznicii te aruncă afară de lângă poartă.",
         "efecte": {
           "timp": 60,
-          "mergi": "harta"
+          "mergi": "harta",
+          "stare": {
+            "batut_de_colector": "da"
+          }
         }
       }
     },
