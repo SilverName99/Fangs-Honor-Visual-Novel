@@ -1,9 +1,9 @@
 # Misiunile: evidență și walkthrough
 
 Documentul ține minte fiecare misiune: cum pornește, ce faci, ce primești și cu ce se leagă.
-Pentru fiecare misiune are și **imaginile** cu prompturile lor și **cum o verifici** în editor, la Testare.
+Pentru fiecare misiune are și **imaginile** cerute și **cum o verifici** în editor, la Testare.
 Mai târziu devine walkthrough-ul jocului. Se actualizează la fiecare misiune nouă sau schimbată.
-În editor se citește din tab-ul **Misiuni**, care are câte un buton „Copiază” la fiecare prompt.
+În editor se citește din tab-ul **Misiuni**.
 
 **Starea fiecărei misiuni:** ✅ în joc · 📝 hotărâtă, nefăcută încă · 💡 idee, de discutat.
 Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
@@ -78,24 +78,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă.
 - **Legături:** folosește jocul de zaruri de la poartă.
 
-**Imagini și prompturi.** La toate atașezi imaginea zonei unde se petrece, plus portretele sau sprite-urile personajelor din ea.
-
-`events/bram_fier_1.png`: atașezi `fierar_zona.png`, portretul lui Bram și pe al colectorului.
-```
-Use the attached images for the forge yard, the blacksmith's face, body and clothes, and the orc tax collector's face, armor and club. Semi-realistic cinematic medieval fantasy illustration, 16:9, the yard of a humble village forge in daylight, the huge orc tax collector crouching by the anvil and pulling a hidden stash of iron bars and scrap out from under a pile of coal, a cruel triumphant grin on his face, the broad-shouldered blacksmith standing beside him with a smith's hammer in his clenched fist, furious but holding himself back, smoke drifting from the forge, tense mood, no text, no UI
-```
-`events/bram_fier_2.png`: atașezi aceleași imagini.
-```
-Use the attached images for the forge yard, the blacksmith's face, body and clothes, and the orc tax collector's face, armor and club. Semi-realistic cinematic medieval fantasy illustration, 16:9, the orc tax collector walking away from the forge toward the village gate, a heavy sack of iron bars slung over his shoulder, laughing over his shoulder, while in the background the blacksmith stands alone by his cold anvil with slumped shoulders, gray overcast light, bitter and helpless mood, no text, no UI
-```
-`events/poarta_fier_1.png`: atașezi `poarta_zona.png` și portretul paznicului.
-```
-Use the attached images for the village gate and the orc guard's face, armor and axe. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from the viewer's point of view as if the guard is speaking to us: a big orc guard at the wooden village gate stepping forward and pointing back the way we came with his axe, ordering us to turn around and leave, the tall palisade wall behind him, grim overcast daylight, threatening mood, no text, no UI
-```
-`events/poarta_fier_2.png`: atașezi `poarta_zona.png`, portretul colectorului și pe al paznicului.
-```
-Use the attached images for the village gate, the orc tax collector and the orc guard. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from the viewer's point of view: the orc tax collector lounging at his rough wooden table by the village gate, a sack of confiscated iron bars at his feet, a heavy club resting on his shoulder, grinning smugly straight at us as if offering a cruel bargain, two orc guards playing dice on a barrel in the background, overcast daylight, no text, no UI
-```
+**Imagini:** `events/bram_fier_1.png`, `events/bram_fier_2.png`, `events/poarta_fier_1.png`, `events/poarta_fier_2.png`.
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Dacă ești în ziua 1 sau 2, apasă „Ziua următoare” până ajungi în ziua 3. Apoi timp „Dimineață” (07:00, zi lucrătoare).
@@ -125,16 +108,7 @@ Use the attached images for the village gate, the orc tax collector and the orc 
 - **Recompensa:** încrederea lui Elian +1 și 2 pansamente.
 - **Mecanica:** e diferită de a lui Bram (acolo alegi cum să iei fierul; aici recunoști planta).
 
-**Imagini și prompturi**
-
-`locations/munca_ierburi.png`: atașezi portretul lui Vale și `padure_zona.png`.
-```
-Use the attached portrait for the young man's face and hair, and the attached image for the forest. Semi-realistic cinematic medieval fantasy illustration, 16:9, the young man kneeling in a misty forest clearing at dawn, carefully picking small yellow wildflowers wet with dew, holding a leaf up against the light to look at it, a small linen pouch at his belt, soft golden morning light slanting through the trees, dew drops sparkling on the grass, calm and quiet mood, no text, no UI
-```
-Plantele (`items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`), dintr-o singură imagine pe care o tai eu. Atașezi iconița sabiei ca referință de stil. **Sunătoarea și piciorul-cocoșului trebuie să semene** (amândouă galbene, cu cinci petale), ca alegerea să fie grea.
-```
-Use the attached sword icon as the exact style reference: cinematic realistic illustration, dramatic low-key lighting with deep shadows and a soft golden highlight, high detail. Four separate game inventory icons of wild healing plants in one row, evenly spaced, same size, not touching or overlapping, each plant centered in its own square, in this order from left to right: 1) St John's wort: a stem topped with a loose cluster of many small bright yellow five-petaled flowers, oval leaves with tiny translucent dots visible like pinpricks; 2) dandelion: a single round yellow flower head with many thin petals and a rosette of jagged leaves; 3) meadow buttercup: a single glossy bright yellow cup-shaped flower with five petals on a thin stem, deeply cut leaves without dots, looking similar to the first plant at a glance; 4) chamomile: small daisy-like flowers with white petals around a yellow center and feathery leaves. Transparent background, no text, no labels
-```
+**Imagini:** `locations/munca_ierburi.png`, `items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`.
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Timp „Amiază”, apoi de două ori „+1 oră” (14:00).
@@ -164,16 +138,7 @@ Use the attached sword icon as the exact style reference: cinematic realistic il
   - La înfrângere: alte replici.
   - În ambele cazuri: încrederea Kaiei +1, ea povestește ce s-a întâmplat și pornește misiunea lupului negru.
 
-**Imagini și prompturi**
-
-`events/kaia_intalnire_1.png`: atașezi imaginea cu Kaia (portretul sau sprite-ul) și `padure_interior.png`.
-```
-Use the attached images for the huntress's face, hair, clothes and saber-toothed tiger, and for the deep forest. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from behind a thick tree trunk at the edge of a dark forest glade as if we are hiding and watching: a young huntress riding a huge saber-toothed tiger fights off three snarling gray wolves, her curved throwing glaive spinning through the air, fallen leaves swirling, dramatic shafts of light through the canopy, danger and urgency, no text, no UI
-```
-`events/kaia_intalnire_2.png`: atașezi portretul lui Vale și imaginea cu Kaia.
-```
-Use the attached images for the young man's face, hair and clothes, and for the huntress and her saber-toothed tiger. Semi-realistic cinematic medieval fantasy illustration, 16:9, in the same dark forest glade the young man now stands back to back with the huntress on her saber-toothed tiger, his weapon raised, three gray wolves circling them with bared fangs, the two of them glancing at each other with surprised recognition, ready to fight together, dramatic cinematic lighting, no text, no UI
-```
+**Imagini:** `events/kaia_intalnire_1.png`, `events/kaia_intalnire_2.png`.
 
 **Cum verifici**
 1. F2 → „+1 vânătoare câștigată”. Apasă „Ziua următoare” până ajungi în ziua 4. Timp „Dimineață”.
@@ -188,12 +153,7 @@ Use the attached images for the young man's face, hair and clothes, and for the 
 - **Înfrângere:** „Mâine, aceeași oră”.
 - **Recompensa:** încredere și Camp site.
 
-**Imagine și prompt**
-
-`sprites/vanatoare_padure.png`: Kaia la marginea pădurii, sprite cu fundal transparent, decupat strâns, cu picioarele jos. Atașezi sprite-ul ei de la campsite, ca să semene.
-```
-Use the attached image for the huntress's face, hair, clothes and saber-toothed tiger exactly. Semi-realistic cinematic medieval fantasy, full body, the young huntress standing next to her huge saber-toothed tiger with one hand resting on its neck, her glaive on her back, looking toward the viewer as if waiting for someone at the edge of a forest, warm afternoon light, tightly framed, feet at the bottom of the image, transparent background, no shadow, no text
-```
+**Imagini:** `sprites/vanatoare_padure.png`.
 
 **Cum verifici**
 1. F2 → Misiune: Lupul negru → Pornește (sau vino din întâlnirea cu Kaia).

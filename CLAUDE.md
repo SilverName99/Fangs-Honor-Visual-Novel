@@ -75,7 +75,7 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
    - așezi sloturile de echipament peste figura lui Vale;
    - setezi marginile elementelor de interfață (secțiunea 9).
 3. **Testare.** Jocul, cu panoul debug deschis: schimbi ora, pui noapte, setezi stări și vezi variantele. Panoul debug (F2) are și: misiunile (pornește / resetează, cu pasul la care ești), „Toți cunoscuți de 3 zile”, „+1 vânătoare câștigată”, evenimentele pornite forțat.
-4. **Misiuni** (decis de autor): tab-ul cu `docs/misiuni.md`, walkthrough-ul: fiecare misiune, cum pornește, imaginile ei cu prompturile (buton „Copiază”) și cum se verifică la Testare.
+4. **Misiuni** (decis de autor): tab-ul cu `docs/misiuni.md`, walkthrough-ul: fiecare misiune, cum pornește, ce imagini cere și cum se verifică la Testare (decis de autor: fără prompturi în el; prompturile le dă Claude în conversație).
 
 **Ce NU face editorul:** dialoguri, evenimente, condiții, misiuni. Pe astea autorul le descrie în cuvinte, iar Claude le scrie în JSON. Un formular pentru ele se face doar dacă autorul îl cere mai târziu.
 
