@@ -43,9 +43,11 @@ function alegeNod(spec, ctx) {
 // pasului de acum), ? auriu = gata de predat. Un personaj poate avea mai multe deodată, iar pasul unei misiuni
 // poate fi la alt personaj decât cel care a dat-o („la” la pas). Nodurile vin din dialogul misiunii („dialog”,
 // implicit dialogul celui care o dă), ca să poată fi folosite și din dialogul altcuiva
-export function optiuniMisiuni(joc, idPersonaj) {
+// „loc”: unde e personajul, când semnul lui se pune de departe (pe ușa din zonă sau pe clădirea de pe hartă);
+// condițiile de loc ale ofertei se verifică acolo unde e el, nu unde e Vale (Elian în biserică: „!” doar afară, pe scări)
+export function optiuniMisiuni(joc, idPersonaj, loc) {
   const s = joc.stare;
-  const ctx = context(s);
+  const ctx = loc ? { ...context(s), loc } : context(s);
   const rez = [];
   for (const m of listaMisiuni(joc.date)) {
     const st = s.misiuni[m.id];
@@ -65,7 +67,7 @@ export function optiuniMisiuni(joc, idPersonaj) {
 }
 
 // Semnul cel mai important al unui personaj, pentru scenă și hartă: ? auriu (de predat), ! (nouă), ? gri (în lucru)
-export function semnPersonaj(joc, idPersonaj) {
-  const semne = optiuniMisiuni(joc, idPersonaj).map((x) => x.alegere.semn);
+export function semnPersonaj(joc, idPersonaj, loc) {
+  const semne = optiuniMisiuni(joc, idPersonaj, loc).map((x) => x.alegere.semn);
   return ['gata', 'nou', 'lucru'].find((s) => semne.includes(s)) || null;
 }

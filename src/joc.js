@@ -900,9 +900,10 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   if (!semneMisiuniPornite()) return;
   const semne = new Map();
   for (const p of personaje.values()) {
-    const semn = semnPersonaj(joc, p.id);
+    const loc = undeEste(p, ctx);
+    const semn = loc && semnPersonaj(joc, p.id, loc);
     // Cine doarme nu poate vorbi acum, deci nu cheamă pe nimeni
-    if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc: undeEste(p, ctx) });
+    if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc });
   }
   if (!semne.size) return;
   const pune = (parinte, left, top, semn) => {
