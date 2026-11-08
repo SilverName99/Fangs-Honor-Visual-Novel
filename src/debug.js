@@ -57,6 +57,8 @@ export function creeazaDebug(parinte, joc) {
         .join('')}
       <label class="rand-d"><span>Mergi la</span><select class="d-scena">${optiuniScene}</select></label>
       <div class="rand-d"><span>Eveniment</span><select class="d-eveniment">${joc.evenimente.map((e) => `<option>${e.id}</option>`).join('')}</select><button class="porneste-ev">Pornește</button></div>
+      <div class="rand-d"><span>Misiune</span><select class="d-misiune">${(joc.date.misiuni?.misiuni || []).map((m) => `<option value="${m.id}">${m.titlu} (${s.misiuni[m.id] || 'neîncepută'}${s.misiuni[m.id] === 'inceputa' ? `, pasul ${(s.pasiMisiuni?.[m.id] ?? 0) + 1}` : ''})</option>`).join('')}</select><button class="porneste-mis">Pornește</button><button class="reseteaza-mis">Resetează</button></div>
+      <div class="rand-d"><span>Testare misiuni</span><button class="cunoscuti-vechi">Toți cunoscuți de 3 zile</button><button class="vanatoare-castigata">+1 vânătoare câștigată</button></div>
       <div class="rand-d"><span>Obiect</span><select class="d-obiect">${Object.entries(joc.date.items.obiecte).filter(([, o]) => !['bani', 'planta'].includes(o.tip)).map(([id, o]) => `<option value="${id}">${o.nume}</option>`).join('')}</select><button class="adauga-ob">Primește</button></div>
       <div class="rand-d"><span>Luptă</span><select class="d-alege-lupta">${Object.entries(joc.date.lupte.lupte).map(([id, l]) => `<option value="${id}">${l.nume}</option>`).join('')}</select><button class="porneste-lupta">Pornește</button></div>
       <div class="rand-d"><span>Zaruri</span><button class="porneste-zaruri">Joacă cu paznicii</button><label><input type="checkbox" class="d-putere-zaruri" ${s.stari.zaruri_hot === 'da' ? 'checked' : ''}> puterea de la hoț</label><span>câștiguri azi: ${s.zaruri?.castiguri ?? 0}</span><button class="reset-zaruri">Golește</button></div>
@@ -91,6 +93,31 @@ export function creeazaDebug(parinte, joc) {
       };
     });
     el.querySelector('.d-scena').onchange = (e) => joc.mergi(e.target.value, { faraTimp: true });
+    // Misiunile, pentru testare: pornită direct (ca după „Accept”) sau ștearsă de tot, ca să se ia de la capăt
+    el.querySelector('.porneste-mis').onclick = () => {
+      joc.aplicaEfecte({ misiune: { [el.querySelector('.d-misiune').value]: 'inceputa' } });
+      joc.dupaSchimbare(true);
+    };
+    el.querySelector('.reseteaza-mis').onclick = () => {
+      const id = el.querySelector('.d-misiune').value;
+      delete s.misiuni[id];
+      if (s.pasiMisiuni) delete s.pasiMisiuni[id];
+      s.ordineMisiuni = (s.ordineMisiuni || []).filter((x) => x !== id);
+      joc.dupaSchimbare(true);
+    };
+    // Misiunile apar la câteva zile după prima discuție: așa se sare peste așteptare
+    el.querySelector('.cunoscuti-vechi').onclick = () => {
+      s.cunoscutLa ||= {};
+      for (const p of joc.date.npcs.personaje) if (p.carte) {
+        if (!s.cunoscuti.includes(p.id)) s.cunoscuti.push(p.id);
+        s.cunoscutLa[p.id] = Math.min(s.cunoscutLa[p.id] ?? 99, Math.floor(s.minute / MINUTE_ZI) + 1 - 3);
+      }
+      joc.dupaSchimbare(true);
+    };
+    el.querySelector('.vanatoare-castigata').onclick = () => {
+      joc.aplicaEfecte({ contor: { vanatori_castigate: 1 } });
+      joc.dupaSchimbare(true);
+    };
     el.querySelector('.porneste-ev').onclick = () => joc.pornesteEveniment(el.querySelector('.d-eveniment').value, true);
     el.querySelector('.adauga-ob').onclick = () => {
       joc.primeste(el.querySelector('.d-obiect').value, 1);

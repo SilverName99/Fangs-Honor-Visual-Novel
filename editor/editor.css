@@ -676,3 +676,37 @@ svg.editor-zone.desen {
   border: 1px solid #3a3f4b;
   background: #000;
 }
+
+/* Bifa care ascunde secțiunile complete din galerie */
+.ascunde-complete {
+  display: block;
+  margin: 0 0 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* Tab-ul „Misiuni”: documentul de walkthrough, ușor de citit */
+.document-misiuni {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 32px 80px;
+  line-height: 1.55;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+#misiuni.tab.activ {
+  overflow-y: auto;
+}
+.document-misiuni h1 { font-size: 28px; margin-top: 0; }
+.document-misiuni h2 { font-size: 22px; margin-top: 34px; border-bottom: 1px solid #555; padding-bottom: 4px; }
+.document-misiuni h3 { font-size: 18px; margin-top: 22px; }
+.document-misiuni h4 { font-size: 16px; margin: 16px 0 6px; color: #e8c97a; }
+.document-misiuni code { background: rgba(255, 255, 255, 0.08); padding: 1px 5px; border-radius: 4px; font-size: 0.92em; }
+.document-misiuni table { border-collapse: collapse; margin: 10px 0; width: 100%; }
+.document-misiuni th, .document-misiuni td { border: 1px solid #555; padding: 5px 8px; text-align: left; vertical-align: top; }
+.document-misiuni blockquote { margin: 6px 0; padding: 6px 12px; border-left: 3px solid #e8c97a; background: rgba(255, 255, 255, 0.04); }
+.document-misiuni ul { margin: 4px 0 8px; }
+
+.document-misiuni .prompt { position: relative; margin: 8px 0 14px; }
+.document-misiuni .prompt pre { white-space: pre-wrap; background: rgba(0, 0, 0, 0.35); border: 1px solid #555; border-radius: 6px; padding: 12px 12px 12px 12px; padding-right: 110px; font-size: 13px; margin: 0; }
+.document-misiuni .prompt .copiaza { position: absolute; top: 6px; right: 6px; }

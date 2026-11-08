@@ -1,7 +1,9 @@
 # Misiunile: evidență și walkthrough
 
 Documentul ține minte fiecare misiune: cum pornește, ce faci, ce primești și cu ce se leagă.
+Pentru fiecare misiune are și **imaginile** cu prompturile lor și **cum o verifici** în editor, la Testare.
 Mai târziu devine walkthrough-ul jocului. Se actualizează la fiecare misiune nouă sau schimbată.
+În editor se citește din tab-ul **Misiuni**, care are câte un buton „Copiază” la fiecare prompt.
 
 **Starea fiecărei misiuni:** ✅ în joc · 📝 hotărâtă, nefăcută încă · 💡 idee, de discutat.
 Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
@@ -13,6 +15,21 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - **Încrederea** (0–10) crește prin misiuni duse la capăt. Un personaj se poate **recruta de la 8/10**.
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
+
+## Cum testezi (panoul debug)
+
+În editor, la **Testare**, apasă **F2** pentru panoul debug. Butoanele de care ai nevoie:
+
+- **Timp:** „Dimineață” (07:00), „Amiază” (12:00), „Seară” (19:00), „Ziua următoare”, „+1 oră”.
+- **Testare misiuni:**
+  - „Toți cunoscuți de 3 zile”: sare peste așteptarea de după prima discuție;
+  - „+1 vânătoare câștigată”: pentru Kaia.
+- **Misiune:** o alegi din listă, apoi „Pornește” (ca după „Accept”) sau „Resetează” (o ia de la capăt). Lista arată la ce pas ești.
+- **Eveniment:** alegi un eveniment din listă și „Pornește”, chiar dacă s-a mai întâmplat (de exemplu imaginile cu fierul lui Bram).
+- **Mergi la:** te duce direct într-un loc. Evenimentele care pornesc la sosire apar doar dacă mergi de pe hartă.
+- **Monede, Obiect → Primește, Stări:** pui ce îți trebuie (de exemplu 60 de monede, 10 lemne).
+
+Imaginile lipsă apar ca dreptunghiuri colorate, cu numele fișierului pe ele.
 
 ## Prologul 📝
 
@@ -32,8 +49,13 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Acoperișul
 - **Pornește:** dimineața, cât Miriam e în bucătărie (până la 11): „Iar a plouat în casă !” → „Mă ocup eu”. Dacă refuzi, opțiunea rămâne în meniu.
 - **Pasul 1:** 10 lemne din pădure („Adună lemne”: o oră = 3, două ore = 6; de cel mult două ori pe zi).
-- **Pasul 2:** cu lemnele, dimineața, în bucătărie, odihnit (cel puțin 30 stamina): „Uite lemnele, mamă…”. Urmează imaginea cu Vale pe acoperiș (`events/acoperis_reparat.png`), cu 4 ore și 30 stamina consumate, apoi mama îi mulțumește.
+- **Pasul 2:** cu lemnele, dimineața, în bucătărie, odihnit (cel puțin 30 stamina): „Uite lemnele, mamă…”. Urmează imaginea cu Vale pe acoperiș (`events/acoperis_reparat.png`, ✅ încărcată), cu 4 ore și 30 stamina consumate, apoi mama îi mulțumește.
 - **Recompensa:** încrederea Miriamei +1; casa trece pe „reparată” (harta, zona, imaginile de somn); somnul de acasă reface cu 30% mai multă stamina.
+
+**Cum verifici**
+1. Timp „Dimineață” (07:00) într-o zi lucrătoare, apoi „Mergi la”: Bucătăria. Vorbește cu Miriam → „Iar a plouat în casă !” → „Mă ocup eu”.
+2. Pune 10 lemne (Obiect: Lemn, de 10 ori; sau adună-le din pădure).
+3. Iar dimineața, în bucătărie: „Uite lemnele, mamă…” → imaginea → mulțumirea. În carte, misiunea apare la „Terminate”.
 
 ### 📝 Cina în familie
 - După **scandalul din tavernă** (oricum s-ar fi terminat): mama îl roagă pe Vale să-l aducă pe Roderick la cină. Scenă caldă despre tată.
@@ -44,21 +66,47 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ## Bram Emberforge (fierarul)
 
 ### ✅ Fierul lui Bram
-- **Pornește:** din ziua 3, la cel puțin o zi după prima discuție cu Bram, când Vale vine la fierărie și Bram lucrează afară. Rulează evenimentul cu două imagini și replici peste ele:
-  - `events/bram_fier_1.png`: colectorul găsește fierul ascuns sub cărbuni;
-  - `events/bram_fier_2.png`: colectorul pleacă cu el.
-  
-  Fierul ajunge la orci.
+- **Pornește:** din ziua 3, la cel puțin o zi după prima discuție cu Bram, când Vale vine la fierărie și Bram lucrează afară (luni–vineri 06–12 și 14–18). Rulează două imagini, cu replici peste ele: colectorul găsește fierul ascuns, apoi pleacă cu el. Fierul ajunge la orci.
 - **Oferta:** la Bram, „Am văzut ce s-a întâmplat cu fierul... !”.
 - **Pasul 1: iei fierul înapoi de la poartă.** De fiecare dată când Vale vine la poartă (06–23), cât e misiunea în lucru:
-  - `events/poarta_fier_1.png`: un paznic îi face semn să plece. Vale se gândește că nu pleacă fără fier.
-  - `events/poarta_fier_2.png`: colectorul râde și dă **trei căi**:
+  - un paznic îi face semn să plece, iar Vale se gândește că nu pleacă fără fier;
+  - colectorul râde și dă **trei căi**:
     - **plătești 60 de monede**;
     - **câștigi la zaruri** de la paznici (doar 14–18). Fierul e miza orcilor, iar Vale pune 20 de monede;
     - **te bați cu colectorul**: el trișează (cu bâta, 400 viață), iar Vale are doar pumnii. Nu se poate câștiga, doar iei bătaie.
 - **Pasul 2:** duci fierul la Bram: „Ți-am adus fierul înapoi, Bram. ?”.
 - **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă.
 - **Legături:** folosește jocul de zaruri de la poartă.
+
+**Imagini și prompturi.** La toate atașezi imaginea zonei unde se petrece, plus portretele sau sprite-urile personajelor din ea.
+
+`events/bram_fier_1.png`: atașezi `fierar_zona.png`, portretul lui Bram și pe al colectorului.
+```
+Use the attached images for the forge yard, the blacksmith's face, body and clothes, and the orc tax collector's face, armor and club. Semi-realistic cinematic medieval fantasy illustration, 16:9, the yard of a humble village forge in daylight, the huge orc tax collector crouching by the anvil and pulling a hidden stash of iron bars and scrap out from under a pile of coal, a cruel triumphant grin on his face, the broad-shouldered blacksmith standing beside him with a smith's hammer in his clenched fist, furious but holding himself back, smoke drifting from the forge, tense mood, no text, no UI
+```
+`events/bram_fier_2.png`: atașezi aceleași imagini.
+```
+Use the attached images for the forge yard, the blacksmith's face, body and clothes, and the orc tax collector's face, armor and club. Semi-realistic cinematic medieval fantasy illustration, 16:9, the orc tax collector walking away from the forge toward the village gate, a heavy sack of iron bars slung over his shoulder, laughing over his shoulder, while in the background the blacksmith stands alone by his cold anvil with slumped shoulders, gray overcast light, bitter and helpless mood, no text, no UI
+```
+`events/poarta_fier_1.png`: atașezi `poarta_zona.png` și portretul paznicului.
+```
+Use the attached images for the village gate and the orc guard's face, armor and axe. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from the viewer's point of view as if the guard is speaking to us: a big orc guard at the wooden village gate stepping forward and pointing back the way we came with his axe, ordering us to turn around and leave, the tall palisade wall behind him, grim overcast daylight, threatening mood, no text, no UI
+```
+`events/poarta_fier_2.png`: atașezi `poarta_zona.png`, portretul colectorului și pe al paznicului.
+```
+Use the attached images for the village gate, the orc tax collector and the orc guard. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from the viewer's point of view: the orc tax collector lounging at his rough wooden table by the village gate, a sack of confiscated iron bars at his feet, a heavy club resting on his shoulder, grinning smugly straight at us as if offering a cruel bargain, two orc guards playing dice on a barrel in the background, overcast daylight, no text, no UI
+```
+
+**Cum verifici**
+1. F2 → „Toți cunoscuți de 3 zile”. Dacă ești în ziua 1 sau 2, apasă „Ziua următoare” până ajungi în ziua 3. Apoi timp „Dimineață” (07:00, zi lucrătoare).
+2. De pe **hartă**, mergi la fierărie: rulează cele două imagini cu replici. (Sau: Eveniment `bram_fier_confiscat` → Pornește.)
+3. Vorbește cu Bram → „Am văzut ce s-a întâmplat cu fierul... !” → „Îl aduc înapoi, Bram.”
+4. Încearcă ușa fierăriei: e zăvorâtă.
+5. De pe **hartă**, mergi la poartă: imaginea 1 → „Vreau să vorbesc cu colectorul” → imaginea 2 cu cele trei căi. Încearcă-le pe rând (după fiecare, ieși și intră iar la poartă):
+   - **Plătesc:** pune 60 de monede din F2;
+   - **Zaruri:** ora 14–18 (de exemplu „Amiază” + 2 × „+1 oră”). Miza orcilor e „Fierul lui Bram”;
+   - **Mă bat:** lupta cu pumnii contra colectorului; pierzi.
+6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
 ### 💡 Cheia camerei lui Bram
 - O altă misiune, mai târziu. În cufăr ar putea fi sabia tatălui lui Vale (de discutat).
@@ -77,6 +125,27 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Recompensa:** încrederea lui Elian +1 și 2 pansamente.
 - **Mecanica:** e diferită de a lui Bram (acolo alegi cum să iei fierul; aici recunoști planta).
 
+**Imagini și prompturi**
+
+`locations/munca_ierburi.png`: atașezi portretul lui Vale și `padure_zona.png`.
+```
+Use the attached portrait for the young man's face and hair, and the attached image for the forest. Semi-realistic cinematic medieval fantasy illustration, 16:9, the young man kneeling in a misty forest clearing at dawn, carefully picking small yellow wildflowers wet with dew, holding a leaf up against the light to look at it, a small linen pouch at his belt, soft golden morning light slanting through the trees, dew drops sparkling on the grass, calm and quiet mood, no text, no UI
+```
+Plantele (`items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`), dintr-o singură imagine pe care o tai eu. Atașezi iconița sabiei ca referință de stil. **Sunătoarea și piciorul-cocoșului trebuie să semene** (amândouă galbene, cu cinci petale), ca alegerea să fie grea.
+```
+Use the attached sword icon as the exact style reference: cinematic realistic illustration, dramatic low-key lighting with deep shadows and a soft golden highlight, high detail. Four separate game inventory icons of wild healing plants in one row, evenly spaced, same size, not touching or overlapping, each plant centered in its own square, in this order from left to right: 1) St John's wort: a stem topped with a loose cluster of many small bright yellow five-petaled flowers, oval leaves with tiny translucent dots visible like pinpricks; 2) dandelion: a single round yellow flower head with many thin petals and a rosette of jagged leaves; 3) meadow buttercup: a single glossy bright yellow cup-shaped flower with five petals on a thin stem, deeply cut leaves without dots, looking similar to the first plant at a glance; 4) chamomile: small daisy-like flowers with white petals around a yellow center and feathery leaves. Transparent background, no text, no labels
+```
+
+**Cum verifici**
+1. F2 → „Toți cunoscuți de 3 zile”. Timp „Amiază”, apoi de două ori „+1 oră” (14:00).
+2. Mergi la biserică (zona, unde Elian citește pe scări) → vorbește cu el → „Ce citești, frate Elian? !” → „Ți le aduc”.
+3. Timp „Dimineață” → mergi în pădure → „Caută ierburi” → alege o plantă:
+   - sunătoarea dă +2 fire;
+   - alta, gândul „Nu seamănă…”;
+   - a treia oară, „Roua s-a uscat”;
+   - la prânz, „se culege dimineața”.
+4. Cu 4 fire (sau din F2: Obiect Sunătoare), vorbește cu Elian → „Ți-am adus sunătoarea” → încredere +1 și 2 pansamente.
+
 ### 💡 Secretul lui Elian
 - Vale, rănit grav, e vindecat de Elian cu lumina. Află că e mag și îi păstrează secretul. De discutat.
 
@@ -86,20 +155,52 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Întâlnirea cu Kaia
 - **Pornește:** prima vânătoare câștigată deblochează întâlnirea. Din **ziua 4**, la următoarea vânătoare, în locul vânatului obișnuit:
-  - `events/kaia_intalnire_1.png`: Vale o vede pe Kaia luptându-se cu 3 lupi și se gândește ce să facă.
+  - **prima imagine:** Vale o vede pe Kaia luptându-se cu 3 lupi și se gândește ce să facă.
     - **„Nu e lupta mea. Plec.”**: nu se întâmplă nimic. Vale trebuie să mai vâneze o dată singur, iar la vânătoarea de după o poate întâlni din nou.
-    - **„O ajut!”**: urmează imaginea 2.
-  - `events/kaia_intalnire_2.png`: se recunosc și se pregătesc de luptă.
+    - **„O ajut!”**: urmează a doua imagine.
+  - **a doua imagine:** se recunosc și se pregătesc de luptă.
 - **Lupta:** Vale și Kaia contra 3 lupi.
   - La victorie: replici, carne și o blană.
   - La înfrângere: alte replici.
   - În ambele cazuri: încrederea Kaiei +1, ea povestește ce s-a întâmplat și pornește misiunea lupului negru.
 
+**Imagini și prompturi**
+
+`events/kaia_intalnire_1.png`: atașezi imaginea cu Kaia (portretul sau sprite-ul) și `padure_interior.png`.
+```
+Use the attached images for the huntress's face, hair, clothes and saber-toothed tiger, and for the deep forest. Semi-realistic cinematic medieval fantasy illustration, 16:9, seen from behind a thick tree trunk at the edge of a dark forest glade as if we are hiding and watching: a young huntress riding a huge saber-toothed tiger fights off three snarling gray wolves, her curved throwing glaive spinning through the air, fallen leaves swirling, dramatic shafts of light through the canopy, danger and urgency, no text, no UI
+```
+`events/kaia_intalnire_2.png`: atașezi portretul lui Vale și imaginea cu Kaia.
+```
+Use the attached images for the young man's face, hair and clothes, and for the huntress and her saber-toothed tiger. Semi-realistic cinematic medieval fantasy illustration, 16:9, in the same dark forest glade the young man now stands back to back with the huntress on her saber-toothed tiger, his weapon raised, three gray wolves circling them with bared fangs, the two of them glancing at each other with surprised recognition, ready to fight together, dramatic cinematic lighting, no text, no UI
+```
+
+**Cum verifici**
+1. F2 → „+1 vânătoare câștigată”. Apasă „Ziua următoare” până ajungi în ziua 4. Timp „Dimineață”.
+2. Pădure → vânătoarea → prima imagine. Alege „Plec”.
+3. Vânează iar: o vânătoare obișnuită (lupi sau mistreț).
+4. Vânează încă o dată: iar prima imagine. Alege „O ajut!” → a doua imagine → lupta cu Kaia.
+5. După luptă (o câștigi sau o pierzi): replicile Kaiei și „Misiune nouă: Lupul negru”.
+
 ### ✅ Lupul negru
-- **Pasul:** între 15 și 17, Kaia îl așteaptă pe Vale la **marginea pădurii** (pe imaginea pădurii; sprite `sprites/vanatoare_padure.png`). „Sunt gata. Hai după lupul negru. ?” duce la lupta cu Kaia contra lupului negru și a doi lupi.
+- **Pasul:** între 15 și 17, Kaia îl așteaptă pe Vale la **marginea pădurii** (pe imaginea pădurii). „Sunt gata. Hai după lupul negru. ?” duce la lupta cu Kaia contra lupului negru și a doi lupi.
 - **Victorie:** încrederea Kaiei +1, apoi îl duce în **tabăra ei** (Camp site se deblochează).
 - **Înfrângere:** „Mâine, aceeași oră”.
 - **Recompensa:** încredere și Camp site.
+
+**Imagine și prompt**
+
+`sprites/vanatoare_padure.png`: Kaia la marginea pădurii, sprite cu fundal transparent, decupat strâns, cu picioarele jos. Atașezi sprite-ul ei de la campsite, ca să semene.
+```
+Use the attached image for the huntress's face, hair, clothes and saber-toothed tiger exactly. Semi-realistic cinematic medieval fantasy, full body, the young huntress standing next to her huge saber-toothed tiger with one hand resting on its neck, her glaive on her back, looking toward the viewer as if waiting for someone at the edge of a forest, warm afternoon light, tightly framed, feet at the bottom of the image, transparent background, no shadow, no text
+```
+
+**Cum verifici**
+1. F2 → Misiune: Lupul negru → Pornește (sau vino din întâlnirea cu Kaia).
+2. Timp „Amiază”, apoi de trei ori „+1 oră” (15:00) → zona pădurii: Kaia e acolo.
+3. Vorbește cu ea → „Sunt gata” → „Înainte!” → lupta.
+   - Victorie: replicile și tabăra. Camp site apare apoi în pădure.
+   - Înfrângere: „Mâine, aceeași oră”.
 
 ---
 
@@ -113,6 +214,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
     - înfrângere: rămâi cu 10 viață și trec 2 ore.
   - **Refuzi:** Roderick e bătut. Nu primești încredere, dar **tot îl poți recruta** mai târziu.
 - **Legături:** după scandal vine „Cina în familie” (Miriam).
+- **Imaginile scandalului** (`events/taverna_scandal_*.png`) le facem când lucrăm la scandal.
+
+**Cum verifici**
+1. Ziua 1 sau 2, ora 17:00 („Amiază” + 5 × „+1 oră”), sala tavernei: Roderick te ignoră și ai doar „La revedere”.
+2. Treci în ziua 3, tot la 17:00: apare „*Orcii fac multă dezordine și gălăgie...* !” → „(Te uiți spre ei.)” → imaginile scandalului și alegerea.
 
 ---
 
@@ -120,6 +226,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### 💡 Camera de la tavernă
 - **Camera de sus e ascunsă** (nu se vede, nu se poate închiria) până la o misiune a lui Agnes. De ales misiunea.
+
+**Cum verifici:** la tavernă nu mai apare ușa spre camera de sus. La Agnes nu mai apare „Închiriază o cameră”.
 
 ---
 
@@ -129,7 +237,13 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Până atunci,** nu se poate vorbi cu el.
 - **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (08–13), 80% la fiecare intrare pe câmpuri.
 - După ea (oricum ai ales), fermierul devine cel cu care poți vorbi.
+- Imaginea e cea de la patrula de orci de pe câmpuri, `events/orci_patrula_campuri.png`.
 - Misiunile lui: 💡 de discutat.
+
+**Cum verifici**
+1. Ziua 1 sau 2, ora 08–13, câmpuri: fermierul nu se poate apăsa.
+2. Ziua 3, 08:00: de pe **hartă**, mergi la câmpuri (de câteva ori, dacă nu vine din prima): patrula de orci.
+3. După alegere, fermierul se poate apăsa.
 
 ---
 
@@ -143,17 +257,3 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ## Dragonii 💡
 
 - Doar indicii. Rămâne de hotărât cum află Vale de ei și prin ce (o poveste, un obiect, ceva găsit în pădure).
-
----
-
-## Imaginile cerute de misiunile de mai sus
-
-| Fișier | Ce arată |
-|---|---|
-| `events/acoperis_reparat.png` | Vale pe acoperiș (încărcată) |
-| `events/bram_fier_1.png`, `bram_fier_2.png` | colectorul găsește fierul / pleacă cu el |
-| `events/poarta_fier_1.png`, `poarta_fier_2.png` | paznicul care îl trimite înapoi / colectorul cu cele trei căi |
-| `locations/munca_ierburi.png` | Vale culegând ierburi în rouă |
-| `items/sunatoare.png`, `papadie.png`, `piciorul_cocosului.png`, `musetel.png` | plantele de la cules |
-| `events/kaia_intalnire_1.png`, `kaia_intalnire_2.png` | Kaia contra lupilor / Vale lângă Kaia |
-| `sprites/vanatoare_padure.png` | Kaia la marginea pădurii |

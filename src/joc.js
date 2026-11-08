@@ -587,6 +587,8 @@ const joc = {
   },
   pornesteZaruri: () => zaruri.porneste(),
   conditii: (c) => verifica(c, context(stare)),
+  // Pentru panoul debug (misiunile pornite direct, contoarele)
+  aplicaEfecte: (e) => aplicaEfecte(e, joc),
   // O singură replică a unui personaj, ca un dialog scurt (orcii de la masa de zaruri)
   replica(cine, emotie, text) {
     dialog.porneste({ partener: cine, start: 'r', noduri: { r: { vorbitor: cine, emotie, text } } });

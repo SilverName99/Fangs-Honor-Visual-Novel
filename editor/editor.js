@@ -4,6 +4,7 @@ import { api } from './api.js';
 import { normalizeaza } from '../src/date.js';
 import { construiesteLumea } from '../src/lume.js';
 import { creeazaGalerie } from './galerie.js';
+import { arataMisiunile } from './misiuni.js';
 import { creeazaAranjare } from './aranjare.js';
 import { creeazaInterfata } from './interfata.js';
 
@@ -39,6 +40,7 @@ for (const b of document.querySelectorAll('.taburi button')) {
     if (b.dataset.tab === 'aranjare') return aranjare.arata();
     aranjare.ascunde();
     if (b.dataset.tab === 'galerie') galerie.arata();
+    if (b.dataset.tab === 'misiuni') arataMisiunile(document.getElementById('misiuni'));
     if (b.dataset.tab === 'interfata') interfata.arata();
     // Jocul de test se încarcă abia când e deschis tab-ul, ca să pornească mereu de la ultima variantă
     if (b.dataset.tab === 'testare') incarcaTestul();

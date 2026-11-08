@@ -118,6 +118,14 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
   }
 
   const deschise = new Set();
+  // Bifa „Ascunde secțiunile complete” (cerut de autor): se ține minte în browser
+  let ascundeComplete = (() => {
+    try {
+      return localStorage.getItem('galerie_ascunde_complete') === 'da';
+    } catch {
+      return false;
+    }
+  })();
   function arata() {
     cerute = imaginiCerute(comun.date, comun.lume);
     const obligatorii = cerute.filter((c) => !c.optional);
@@ -199,6 +207,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       const complet = gataObl === obl.length;
       // Un grup cu tot încărcat (și opționalele) stă închis (cerut de autor): nu mai e nimic de făcut acolo
       const totul = lista.every((c) => comun.imagini.has(c.cale));
+      if (totul && ascundeComplete) return '';
       return `<details class="grup-galerie" data-grup="${esc(g)}" ${(inchiseImplicit.has(g) || totul) && !deschise.has(g) ? '' : 'open'}>
         <summary><b>${esc(g)}</b> <span class="${complet ? 'bine' : 'avertisment'}">${gataObl} / ${obl.length} obligatorii</span>
         <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span></summary>
@@ -238,6 +247,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       <p class="sumar">Mai simplu: trage un PNG direct pe cartonașul lipsă din dreapta și se încarcă cu numele potrivit.</p>
       </aside><div class="coloana-zone">
       <h2>Imagini pe zone</h2>
+      <label class="ascunde-complete"><input type="checkbox" ${ascundeComplete ? 'checked' : ''}> Ascunde secțiunile la care nu mai e nimic de adăugat</label>
       ${grupuri.map(sectiuneGrup).join('')}
       ${
         nefolosite.length
@@ -273,6 +283,13 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
         i.click();
       };
     }
+    container.querySelector('.ascunde-complete input').onchange = (e) => {
+      ascundeComplete = e.target.checked;
+      try {
+        localStorage.setItem('galerie_ascunde_complete', ascundeComplete ? 'da' : 'nu');
+      } catch {}
+      arata();
+    };
     for (const d of container.querySelectorAll('.grup-galerie[data-grup]')) {
       d.ontoggle = () => (d.open ? deschise.add(d.dataset.grup) : deschise.delete(d.dataset.grup));
     }
