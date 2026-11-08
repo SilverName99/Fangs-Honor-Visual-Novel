@@ -63,14 +63,15 @@
     "cufar": 40
   },
   "munca": {
-    "_nota": "Muncile de la câmpuri și de la moară: monede și stamina pe oră (TODO echilibru). „imagine”: arătată câteva secunde cât muncești (ca la vânătoare); „text”: ce scrie pe ea; „gandNoapte”: gândul lui Vale noaptea, când nu se poate lucra (decis de autor). Textele sunt ciorne.",
+    "_nota": "Muncile de la câmpuri și de la moară: monede și stamina pe oră (TODO echilibru). „imagine”: arătată câteva secunde cât muncești (ca la vânătoare); „text”: ce scrie pe ea; „gandNoapte”: gândul lui Vale noaptea, când nu se poate lucra (decis de autor). Textele sunt ciorne. „miniJoc” (decis de autor): arat = semnul oprit în zona verde, muls = clic în ritm, moara = clic repede să umpli sacul; perfect = +50% monede, ratat de tot = jumătate; cu mini-jocurile oprite din Opțiuni, suma de pe oră.",
     "munca_arat": {
       "nume": "Arat",
       "monedePeOra": 3,
       "staminaPeOra": 12,
       "imagine": "locations/munca_arat.png",
       "text": "Ari câmpul...",
-      "gandNoapte": "E noapte. Nu ară nimeni pe întuneric, mă întorc mâine dimineață."
+      "gandNoapte": "E noapte. Nu ară nimeni pe întuneric, mă întorc mâine dimineață.",
+      "miniJoc": "arat"
     },
     "munca_porci": {
       "nume": "Ferma de porci",
@@ -86,7 +87,8 @@
       "staminaPeOra": 10,
       "imagine": "locations/munca_vaci.png",
       "text": "Îngrijești vacile...",
-      "gandNoapte": "E noapte. Vacile dorm, nu are rost să le deranjez. Revin mâine."
+      "gandNoapte": "E noapte. Vacile dorm, nu are rost să le deranjez. Revin mâine.",
+      "miniJoc": "muls"
     },
     "munca_moara": {
       "nume": "Moara",
@@ -94,7 +96,8 @@
       "staminaPeOra": 14,
       "imagine": "locations/munca_moara.png",
       "text": "Cari saci de grâu la moară...",
-      "gandNoapte": "Moara stă noaptea. Revin mâine dimineață."
+      "gandNoapte": "Moara stă noaptea. Revin mâine dimineață.",
+      "miniJoc": "moara"
     }
   },
   "somn": {

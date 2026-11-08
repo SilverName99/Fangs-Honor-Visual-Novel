@@ -2676,3 +2676,244 @@ svg.zone {
   width: 100%;
   height: 100%;
 }
+
+/* ----- Mini-jocurile (muncă, lemne, ierburi): pe tot ecranul, peste imaginea muncii ----- */
+.mini-joc {
+  position: absolute;
+  inset: 0;
+  z-index: 14;
+  background: #000;
+  user-select: none;
+  animation: intuneca-fundal 0.3s ease-out;
+}
+.mini-joc > .fundal {
+  position: absolute;
+  inset: 0;
+}
+.mini-umbra {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+/* La cules, imaginea trebuie să se vadă bine: plantele stau pe ea */
+.mini-culege .mini-umbra {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), transparent 22%);
+}
+.mini-loc {
+  position: absolute;
+  inset: 0;
+}
+.mini-sus {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+  width: 1300px;
+  text-align: center;
+  color: #f3e6c8;
+  text-shadow: 0 2px 6px #000, 0 0 2px #000;
+  pointer-events: none;
+}
+.mini-titlu {
+  font: 600 44px Georgia, serif;
+}
+.mini-indemn {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.mini-scor {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  padding: 8px 22px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f3e6c8;
+  font: 600 30px Georgia, serif;
+  pointer-events: none;
+}
+.mini-joc .buton.mini-incepe,
+.mini-joc .buton.mini-gata {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: 2;
+}
+.mini-joc .buton.mini-incepe {
+  top: 62%;
+}
+.mini-joc .buton.mini-gata {
+  right: 60px;
+  left: auto;
+  bottom: 30px;
+  transform: none;
+}
+.mini-rezultat {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 22px 46px;
+  border: 2px solid #a7854f;
+  border-radius: 10px;
+  background: rgba(20, 14, 8, 0.88);
+  color: #f3e6c8;
+  font: 600 44px Georgia, serif;
+  z-index: 3;
+}
+.mini-clipa {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font: 700 56px Georgia, serif;
+  text-shadow: 0 2px 8px #000;
+  pointer-events: none;
+  animation: mini-clipa 0.65s ease-out forwards;
+  z-index: 2;
+}
+.mini-clipa.bine {
+  color: #9fe07a;
+}
+.mini-clipa.rau {
+  color: #ff8a7a;
+}
+@keyframes mini-clipa {
+  from { opacity: 1; margin-top: 0; }
+  to { opacity: 0; margin-top: -40px; }
+}
+/* Lemnele: cercul care se strânge spre inel */
+.mini-inel,
+.mini-cerc {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.mini-inel {
+  width: 220px;
+  height: 220px;
+  border: 10px solid rgba(232, 192, 96, 0.95);
+  box-shadow: 0 0 18px rgba(232, 192, 96, 0.7);
+  box-sizing: border-box;
+}
+.mini-cerc {
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+}
+/* Aratul: semnul pe bară */
+.mini-bara {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 46px;
+  border: 3px solid #a7854f;
+  border-radius: 10px;
+  background: rgba(30, 20, 12, 0.85);
+  pointer-events: none;
+}
+.mini-verde {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(110, 190, 80, 0.85);
+}
+.mini-semn {
+  position: absolute;
+  top: -14px;
+  bottom: -14px;
+  width: 10px;
+  margin-left: -5px;
+  border-radius: 4px;
+  background: #f3e6c8;
+  box-shadow: 0 0 8px #000;
+}
+/* Mulsul: cercul care pulsează */
+.mini-puls {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 8px solid rgba(243, 230, 200, 0.95);
+  background: radial-gradient(rgba(243, 230, 200, 0.35), rgba(243, 230, 200, 0.08));
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+/* Moara: sacul care se umple */
+.mini-sac {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 420px;
+  border: 4px solid #a7854f;
+  border-radius: 40px 40px 26px 26px;
+  background: rgba(60, 44, 28, 0.85);
+  overflow: hidden;
+  pointer-events: none;
+}
+.mini-sac-plin {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(#fbf6ea, #e6dcc4);
+}
+.mini-timp {
+  position: absolute;
+  left: calc(50% + 190px);
+  top: 50%;
+  color: #f3e6c8;
+  font: 600 48px Georgia, serif;
+  text-shadow: 0 2px 6px #000;
+  pointer-events: none;
+}
+/* Ierburile: plantele de pe imagine, cu picioarele în punctul ales */
+.planta-mini {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  transition: filter 0.15s, opacity 0.4s, transform 0.4s;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.6));
+}
+.planta-mini:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 220, 130, 0.95)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.6));
+}
+.planta-mini .iconita {
+  width: 100%;
+  height: 100%;
+}
+.planta-mini.culeasa {
+  opacity: 0;
+  transform: translate(-50%, -140%) scale(0.7);
+  pointer-events: none;
+}
+/* Unele plante întoarse, ca să nu arate toate la fel (doar imaginea, nu și scrisul placeholderului) */
+.planta-mini.intoarsa img {
+  transform: scaleX(-1);
+}
+.mini-puls-tinta {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px dashed rgba(232, 192, 96, 0.8);
+  box-sizing: border-box;
+  pointer-events: none;
+}

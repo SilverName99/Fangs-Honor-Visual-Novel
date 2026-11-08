@@ -910,18 +910,20 @@
           "nume": "Adună lemne",
           "titlu": "Aduni lemne",
           "obiect": "lemn",
-          "_nota": "Decis de autor: o oră = 3 lemne, două ore = 6 lemne; cel mult de două ori pe zi.",
+          "_nota": "Decis de autor: mini-jocul cercului, 3 lovituri; o oră = 1 lemn pe lovitură (0–3), două ore = 2 pe lovitură (0–6); cu mini-jocurile oprite, 2 și 4 lemne; cel mult de două ori pe zi.",
           "variante": [
             {
-              "nume": "O oră (+3 lemne)",
+              "nume": "O oră (până la 3 lemne)",
               "minute": 60,
-              "n": 3,
+              "n": 2,
+              "nPeLovitura": 1,
               "stamina": 10
             },
             {
-              "nume": "Două ore (+6 lemne)",
+              "nume": "Două ore (până la 6 lemne)",
               "minute": 120,
-              "n": 6,
+              "n": 4,
+              "nPeLovitura": 2,
               "stamina": 20
             }
           ],
@@ -930,31 +932,37 @@
           "sunet": "lemne",
           "stamina": 10,
           "imagine": "locations/munca_lemne.png",
-          "text": "Aduni lemne..."
+          "text": "Aduni lemne...",
+          "miniJoc": "cerc",
+          "incercari": 3,
+          "gandNimic": "Toporul a sărit de fiecare dată pe lângă. N-am adunat nimic ca lumea."
         },
         {
-          "_nota": "Misiunea lui Elian (ciornă): apare cât e misiunea începută; doar dimineața; alegi planta după descrierea lui.",
+          "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, fiecare sunătoare = 1 fir. Cu mini-jocurile oprite: 2 fire, singur.",
           "id": "ierburi",
           "tip": "culege",
           "nume": "Caută ierburi (1 oră)",
-          "titlu": "Ce culegi?",
-          "intrebare": "Elian a zis: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac.",
+          "titlu": "Culegi ierburi",
+          "intrebare": "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4.",
           "plante": [
             {
               "id": "sunatoare",
-              "corecta": true
+              "corecta": true,
+              "cate": 4
             },
             {
-              "id": "papadie"
+              "id": "papadie",
+              "cate": 3
             },
             {
-              "id": "piciorul_cocosului"
+              "id": "piciorul_cocosului",
+              "cate": 3
             },
             {
-              "id": "musetel"
+              "id": "musetel",
+              "cate": 3
             }
           ],
-          "n": 2,
           "minute": 60,
           "stamina": 5,
           "maxPeZi": 2,
@@ -964,16 +972,28 @@
             "max": "09:59"
           },
           "gandOra": "Elian a zis că sunătoarea se culege dimineața, cât mai e roua pe ea. Revin mâine devreme.",
-          "gandGresit": "Asta nu seamănă cu ce mi-a descris Elian. Am pierdut o oră degeaba.",
+          "gandGresit": "Unele dintre ele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
           "imagine": "locations/munca_ierburi.png",
           "text": "Cauți printre ierburile ude de rouă...",
           "ascuns": {
             "conditii": {
-              "misiune": {
-                "elian_ierburi": "inceputa"
-              }
+              "oricare": [
+                {
+                  "misiune": {
+                    "elian_ierburi": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "elian_ierburi": "terminata"
+                  }
+                }
+              ]
             }
-          }
+          },
+          "maxCulese": 4,
+          "nPeCorecta": 1,
+          "nFaraJoc": 2
         }
       ]
     },

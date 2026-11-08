@@ -372,6 +372,20 @@ export function seteazaSemneMisiuni(da) {
     localStorage.setItem(CHEIE_SEMNE, da ? 'da' : 'nu');
   } catch {}
 }
+// Mini-jocurile de la muncă și de la cules (decis de autor); oprite, munca dă cât dădea înainte și culesul se face singur
+const CHEIE_MINI = 'fh_mini_jocuri';
+export function miniJocuriPornite() {
+  try {
+    return localStorage.getItem(CHEIE_MINI) !== 'nu';
+  } catch {
+    return true;
+  }
+}
+export function seteazaMiniJocuri(da) {
+  try {
+    localStorage.setItem(CHEIE_MINI, da ? 'da' : 'nu');
+  } catch {}
+}
 export function seteazaMarimeCursor(px) {
   try {
     localStorage.setItem(CHEIE_CURSOR, String(px));

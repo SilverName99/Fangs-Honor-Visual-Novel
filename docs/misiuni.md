@@ -48,7 +48,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Acoperișul
 - **Pornește:** dimineața, cât Miriam e în bucătărie (până la 11): „Iar a plouat în casă !” → „Mă ocup eu”. Dacă refuzi, opțiunea rămâne în meniu.
-- **Pasul 1:** 10 lemne din pădure („Adună lemne”: o oră = 3, două ore = 6; de cel mult două ori pe zi).
+- **Pasul 1:** 10 lemne din pădure („Adună lemne”, de cel mult două ori pe zi). Mini-jocul: 3 lovituri, un cerc se strânge spre inelul auriu și apeși când ajunge pe el; o oră = 1 lemn pe lovitură reușită (0–3), două ore = 2 (0–6). Cu mini-jocurile oprite: 2 și 4 lemne.
 - **Pasul 2:** cu lemnele, dimineața, în bucătărie, odihnit (cel puțin 30 stamina): „Uite lemnele, mamă…”. Urmează imaginea cu Vale pe acoperiș (`events/acoperis_reparat.png`, ✅ încărcată), cu 4 ore și 30 stamina consumate, apoi mama îi mulțumește.
 - **Recompensa:** încrederea Miriamei +1; casa trece pe „reparată” (harta, zona, imaginile de somn); somnul de acasă reface cu 30% mai multă stamina.
 
@@ -100,25 +100,30 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Ierburile lui Elian
 - **Pornește:** doar când Elian e **afară** (citește pe scările bisericii, 14–23), la cel puțin o zi după prima discuție. Opțiunea e „Ce citești, frate Elian? !”.
-- **Pasul 1:** 4 fire de **sunătoare**. Dimineața (5–10), în pădure: „Caută ierburi” (1 oră, de cel mult două ori pe zi).
-  - Pe panou apar 4 plante, doar ca imagini și amestecate: sunătoare, păpădie, piciorul-cocoșului, mușețel.
-  - Alegi după descrierea lui Elian: „flori galbene, mici, cu cinci petale, în mănunchi; frunzele, ținute în lumină, au găurele mici”.
-  - Planta bună aduce 2 fire, cea greșită doar o oră pierdută.
+- **Pasul 1:** 4 fire de **sunătoare**. Dimineața (5–10), în pădure: „Caută ierburi” (1 oră, de cel mult două ori pe zi). Locul apare în pădure **doar de când ai misiunea** și rămâne și după ea.
+  - **Mini-jocul:** pe imaginea culesului apar **13 plante** la întâmplare, în zona desenată de tine în editor: 4 sunătoare și câte 3 de păpădie, piciorul-cocoșului și mușețel. Culegi **cel mult 4**; fiecare sunătoare = 1 fir, celelalte nu aduc nimic (gândul „Unele nu semănau…”).
+  - Descrierea lui Elian („flori galbene, mici, cu cinci petale, în mănunchi; frunzele, ținute în lumină, au găurele mici”) e sus pe ecran, în carte și în „Cum arăta sunătoarea?”.
+  - Cu mini-jocurile oprite (Opțiuni), Vale o alege singur pe cea bună și primește 2 fire.
 - **Pasul 2:** dai ierburile lui Elian.
 - **Recompensa:** încrederea lui Elian +1 și 2 pansamente.
+- **După misiune:** în meniul lui Elian apare „Îmi faci un pansament din trei fire de sunătoare?” (cât ai 3 fire): 3 sunătoare → 1 pansament, oricând.
 - **Mecanica:** e diferită de a lui Bram (acolo alegi cum să iei fierul; aici recunoști planta).
 
-**Imagini:** `locations/munca_ierburi.png`, `items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`.
+**Imagini:** `locations/munca_ierburi.png` (fundalul mini-jocului), `items/sunatoare.png`, `items/papadie.png`, `items/piciorul_cocosului.png`, `items/musetel.png`.
+
+**De aranjat în editor:** Aranjare → Ecrane → „Culesul (mini-joc): Caută ierburi”: desenezi „Zona în care apar plantele” (unde e iarbă pe imagine) și măreşti/micșorezi „O plantă” cu rotița, ca să alegi mărimea plantelor. Până desenezi zona, plantele stau în jumătatea de jos.
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Timp „Amiază”, apoi de două ori „+1 oră” (14:00).
 2. Mergi la biserică (zona, unde Elian citește pe scări) → vorbește cu el → „Ce citești, frate Elian? !” → „Ți le aduc”.
-3. Timp „Dimineață” → mergi în pădure → „Caută ierburi” → alege o plantă:
-   - sunătoarea dă +2 fire;
-   - alta, gândul „Nu seamănă…”;
-   - a treia oară, „Roua s-a uscat”;
+3. Timp „Dimineață” → mergi în pădure → „Caută ierburi” → apar 13 plante; culege 4:
+   - fiecare sunătoare culeasă dă +1 fir;
+   - dacă ai luat și altele, gândul „Unele nu semănau…”;
+   - a treia oară în aceeași zi, „Roua s-a uscat”;
    - la prânz, „se culege dimineața”.
 4. Cu 4 fire (sau din F2: Obiect Sunătoare), vorbește cu Elian → „Ți-am adus sunătoarea” → încredere +1 și 2 pansamente.
+5. Mai adu 3 fire → la Elian, „Îmi faci un pansament…” → 1 pansament. „Caută ierburi” e încă în pădure.
+6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
 ### 💡 Secretul lui Elian
 - Vale, rănit grav, e vindecat de Elian cu lumina. Află că e mag și îi păstrează secretul. De discutat.

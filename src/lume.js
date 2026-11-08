@@ -263,6 +263,34 @@ export function construiesteLumea(date) {
       })),
     ],
   });
+  // Culesul ierburilor (decis de autor): pe imaginea culesului, autorul desenează zona în care apar plantele, la
+  // întâmplare; „planta” e doar un model, ca să se aleagă mărimea lor (poziția ei nu contează)
+  for (const z of zone)
+    for (const a of [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])].filter((x) => x.tip === 'culege')) {
+      const buna = a.plante.find((p) => p.corecta)?.id;
+      scene.set(`culege_${a.id}`, {
+        id: `culege_${a.id}`,
+        tip: 'ecran',
+        titlu: `Culesul (mini-joc): ${a.nume.replace(/\s*\(.*\)/, '')}`,
+        titluObiecte: 'Mărimea plantelor',
+        titluFundal: 'Vale culege',
+        imagine: a.imagine,
+        variante: [],
+        parinte: null,
+        tinte: [{ id: 'plante', nume: 'Zona în care apar plantele' }],
+        obiecte: [
+          {
+            id: 'planta',
+            tip: 'figura',
+            nume: 'O plantă (doar mărimea contează)',
+            imagine: `items/${buna}.png`,
+            raport: 1,
+            variante: [],
+            implicit: { x: 0.5, y: 0.8, scara: 0.1 },
+          },
+        ],
+      });
+    }
   return scene;
 }
 

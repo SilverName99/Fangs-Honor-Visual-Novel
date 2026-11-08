@@ -28,7 +28,7 @@ import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
-import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor, seteazaSemneMisiuni, semneMisiuniPornite } from './uiGrafica.js';
+import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor, seteazaSemneMisiuni, semneMisiuniPornite, miniJocuriPornite, seteazaMiniJocuri } from './uiGrafica.js';
 
 const parametri = new URLSearchParams(location.search);
 const CHEIE = salvare.cheieSalvare(parametri.has('test'));
@@ -836,7 +836,15 @@ function deschideMeniul() {
         arataOptiunile();
       }),
     );
-    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randSemne, randEcran);
+    const randMini = div('rand-optiune');
+    randMini.append(
+      div('nume-optiune', 'Mini-jocurile (muncă, lemne, ierburi)'),
+      buton(miniJocuriPornite() ? 'Oprește-le' : 'Pornește-le', 'buton-mic-meniu', () => {
+        seteazaMiniJocuri(!miniJocuriPornite());
+        arataOptiunile();
+      }),
+    );
+    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randSemne, randMini, randEcran);
     panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
   }
 

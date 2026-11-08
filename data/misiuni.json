@@ -159,7 +159,7 @@
       "titlu": "Ierburile lui Elian",
       "dela": "mag",
       "dialog": "mag",
-      "descriere": "CIORNĂ: Fratele Elian vrea să facă o alifie pentru răni, dar un preot care iese des din sat dă de bănuit. Îi caut eu sunătoare în pădure.",
+      "descriere": "CIORNĂ: Fratele Elian vrea să facă o alifie pentru răni, dar un preot care iese des din sat dă de bănuit. Îi caut eu patru fire de sunătoare în pădure: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au găurele mici. Se culege dimineața.",
       "oferta": {
         "_nota": "Decis de autor: doar când Elian e afară (citește pe scările bisericii, 14–23), la o zi după prima discuție.",
         "text": "Ce citești, frate Elian?",
@@ -178,7 +178,7 @@
             "obiect": "sunatoare",
             "n": 4
           },
-          "sfat": "Dimineața (5–10), în pădure: „Caută ierburi”. Flori galbene, cinci petale, în mănunchi; frunzele au găurele mici.",
+          "sfat": "Dimineața (5–10), în pădure: „Caută ierburi”. Culeg cel mult 4 plante odată, doar pe cele cu cinci petale în mănunchi.",
           "indiciu": {
             "text": "Cum arăta sunătoarea?",
             "nod": "ierburi_indiciu"
@@ -208,7 +208,7 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea lui Elian +1 și două pansamente."
+        "text": "Încrederea lui Elian +1 și două pansamente. Apoi, oricând: 3 fire de sunătoare = un pansament."
       }
     },
     {

@@ -5,7 +5,8 @@ import { aplicaEfecte } from './efecte.js';
 import { baraNevoie } from './baraNevoie.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
-import { iconita } from './ecranInventar.js';
+import { creeazaMiniJocuri } from './miniJocuri.js';
+import { miniJocuriPornite } from './uiGrafica.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -25,6 +26,7 @@ function buton(text, clic, dezactivat = false) {
 export function creeazaActiuni(parinte, joc) {
   const cfg = joc.date.config;
   const inv = joc.inventar;
+  const mini = creeazaMiniJocuri(parinte, joc);
 
   function panou(titlu, continut) {
     const fundal = div('acoperitor');
@@ -74,14 +76,24 @@ export function creeazaActiuni(parinte, joc) {
     if (m.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(m.gandNoapte);
     panou(m.nume, (inchide) => {
       const s = joc.stare;
-      const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.`);
+      const cuJoc = m.miniJoc && miniJocuriPornite();
+      const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.${cuJoc ? ' Cât de bine lucrezi: de la jumătate până la +50%.' : ''}`);
       if (prea_obosit()) return [info, div('text-anunt', 'Ești prea obosit pentru muncă grea. Odihnește-te întâi.')];
       const ore = [1, 2, 4].map((h) =>
-        cuBaraStamina(buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, () => {
+        cuBaraStamina(buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, async () => {
           inchide();
           if (joc.avanseaza(h * 60)) return;
-          s.bani += h * m.monedePeOra;
           schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
+          // Cu mini-jocul (decis de autor): perfect = +50%, ratat de tot = jumătate; oprit din Opțiuni = cât era
+          if (cuJoc) {
+            joc.salveaza();
+            setTimeout(() => joc.sunet.efect('munca'), 150);
+            const scor = await mini[m.miniJoc]({ imagine: m.imagine, titlu: m.nume });
+            const bani = Math.round(h * m.monedePeOra * (0.5 + scor));
+            s.bani += bani;
+            return joc.dupaActiune(`+${bani} monede`);
+          }
+          s.bani += h * m.monedePeOra;
           // Întâi imaginea cu Vale la muncă (cu sunetul muncii), apoi ce a câștigat
           cuImagine(m, () => joc.dupaActiune(`+${h * m.monedePeOra} monede`), 'munca');
         }, s.nevoi.stamina < h * m.staminaPeOra), () => -h * m.staminaPeOra),
@@ -152,6 +164,18 @@ export function creeazaActiuni(parinte, joc) {
     if (a.maxPeZi) folosiriAzi(a).n++;
     if (joc.avanseaza(a.minute || 0)) return;
     if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
+    // Lemnele cu mini-jocul cercului (decis de autor): fiecare lovitură reușită aduce „nPeLovitura” lemne;
+    // cu mini-jocurile oprite din Opțiuni, „n” (cât la o lovitură din două, cam)
+    if (a.miniJoc && miniJocuriPornite()) {
+      joc.salveaza();
+      setTimeout(() => a.sunet && joc.sunet.efect(a.sunet), 150);
+      return mini[a.miniJoc]({ imagine: a.imagine, titlu: a.titlu || a.nume, incercari: a.incercari }).then((lovituri) => {
+        const n = lovituri * (a.nPeLovitura || 1);
+        if (n) joc.primeste(a.obiect, n);
+        joc.dupaActiune(n ? `+${n} ${inv.def(a.obiect).nume}` : '');
+        if (!n && a.gandNimic) joc.gand(a.gandNimic);
+      });
+    }
     // Sunetul acțiunii, dacă are (apa de la fântână, lemnele); cu imagine (lemnele), sunetul vine odată cu ea
     cuImagine(
       a,
@@ -211,41 +235,29 @@ export function creeazaActiuni(parinte, joc) {
     );
   }
 
-  // Culesul cu recunoaștere (decis de autor: ierburile lui Elian se strâng altfel decât fierul și lemnele): pe panou
-  // apar câteva plante, doar ca imagini, amestecate; o alegi pe cea descrisă de Elian. Cea bună aduce „n” bucăți,
-  // celelalte doar timp pierdut. Doar la orele din „ora” (sunătoarea se culege dimineața, cu roua pe ea)
+  // Culesul cu recunoaștere (decis de autor: ierburile lui Elian): pe imaginea culesului apar plantele, bune și
+  // greșite, la întâmplare în zona desenată în editor; culegi cel mult „maxCulese”, fiecare bună aduce o bucată.
+  // Cu mini-jocurile oprite din Opțiuni, Vale o alege singur pe cea bună și primește „nFaraJoc”.
+  // Doar la orele din „ora” (sunătoarea se culege dimineața, cu roua pe ea)
   function culege(a) {
     const s = joc.stare;
     if (a.ora && !verifica({ ora: a.ora }, context(s))) return joc.gand(a.gandOra || 'Nu e momentul potrivit.');
     if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
     if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
-    const plante = [...a.plante].sort(() => Math.random() - 0.5);
-    panou(a.titlu || a.nume, (inchide) => {
-      const rand = div('plante-culese');
-      for (const pl of plante) {
-        const b = buton('', () => {
-          inchide();
-          if (a.maxPeZi) folosiriAzi(a).n++;
-          if (joc.avanseaza(a.minute || 60)) return;
-          if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
-          cuImagine(
-            a,
-            () => {
-              if (pl.corecta) {
-                joc.primeste(pl.id, a.n || 1);
-                return joc.dupaActiune(`+${a.n || 1} ${inv.def(pl.id).nume}`);
-              }
-              joc.dupaActiune('');
-              joc.gand(a.gandGresit || 'Asta nu seamănă cu ce mi-a descris.');
-            },
-            a.sunet,
-          );
-        });
-        b.classList.add('planta-culeasa');
-        b.append(iconita(inv, pl.id));
-        rand.append(b);
-      }
-      return [div('text-anunt', a.intrebare || 'Care e planta?'), rand];
+    if (a.maxPeZi) folosiriAzi(a).n++;
+    if (joc.avanseaza(a.minute || 60)) return;
+    if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+    const buna = a.plante.find((p) => p.corecta).id;
+    const primeste = (n) => {
+      if (n) joc.primeste(buna, n);
+      joc.dupaActiune(n ? `+${n} ${inv.def(buna).nume}` : '');
+    };
+    if (!miniJocuriPornite()) return cuImagine(a, () => primeste(a.nFaraJoc ?? 2), a.sunet);
+    joc.salveaza();
+    if (a.sunet) setTimeout(() => joc.sunet.efect(a.sunet), 150);
+    mini.culege(a).then(({ corecte, gresite }) => {
+      primeste(corecte * (a.nPeCorecta || 1));
+      if (gresite) joc.gand(a.gandGresit || 'Unele nu semănau cu ce mi-a descris. Le-am lăsat acolo.');
     });
   }
 

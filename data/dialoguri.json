@@ -1039,7 +1039,7 @@
         "_nota": "CIORNĂ: recompensa (decis de autor): încredere +1 și două pansamente.",
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Exact ele! Vezi punctele din frunze? Din astea fac o alifie care închide rănile de două ori mai repede. Ia și tu două pansamente: cine umblă prin pădure are nevoie de ele.",
+        "text": "Exact ele! Vezi punctele din frunze? Din astea fac o alifie care închide rănile de două ori mai repede. Ia și tu două pansamente: cine umblă prin pădure are nevoie de ele. Și dacă mai dai de ea, adu-mi câte trei fire: îți fac oricând un pansament din ele.",
         "efecte": {
           "consuma": {
             "sunatoare": 4
@@ -1055,6 +1055,17 @@
             "ierburi_elian": "date"
           }
         }
+      },
+      "schimb_pansament": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Sigur. Stai puțin... Gata. Leagă-l strâns și nu-l scoate până mâine.",
+        "efecte": {
+          "consuma": {
+            "sunatoare": 3
+          },
+          "obiect": "pansament"
+        }
       }
     },
     "meniu": true,
@@ -1067,6 +1078,21 @@
       },
       {
         "nod": "e_trecut_a"
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: după misiune, Elian face oricând un pansament din 3 fire de sunătoare.",
+        "text": "Îmi faci un pansament din trei fire de sunătoare?",
+        "conditii": {
+          "misiune": {
+            "elian_ierburi": "terminata"
+          },
+          "areCate": {
+            "sunatoare": 3
+          }
+        },
+        "spre": "schimb_pansament"
       }
     ]
   },
