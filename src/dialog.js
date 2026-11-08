@@ -6,7 +6,7 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod }) {
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -38,22 +38,28 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   let activ = null;
 
-  function arataNod(idNod) {
+  // „reluat”: discuția continuă după un refresh al paginii, de la replica la care rămăsese; efectele ei s-au
+  // aplicat deja (și s-au salvat), deci nu se mai aplică o dată
+  function arataNod(idNod, reluat = false) {
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
     activ.nod = nod;
-    if (nod.imagine && nod.imagine !== activ.imagine) {
-      activ.imagine = nod.imagine;
+    // La reluare, imaginea de sub replici e cea de dinainte de refresh (replica de acum poate să n-o aibă pe a ei)
+    const imagine = nod.imagine || (reluat ? activ.imagineReluata : null);
+    if (imagine && imagine !== activ.imagine) {
+      activ.imagine = imagine;
       // Galeria din meniu ține minte și imaginile de sub replici (scandalul din tavernă se petrece peste ele)
-      laImagine?.(nod.imagine);
+      laImagine?.(imagine);
       el.classList.add('cu-imagine', 'asteapta-imaginea');
       // Replicile și portretele apar abia când se vede imaginea, ca între două imagini să nu clipească dialogul
-      schimbaImagine(fundal, elementImagine([nod.imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: nod.imagine }), () =>
+      schimbaImagine(fundal, elementImagine([imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: imagine }), () =>
         el.classList.remove('asteapta-imaginea'),
       );
     }
-    laEfecte(nod.efecte);
+    if (!reluat) laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
+    // Jocul ține minte unde a rămas discuția, ca la un refresh să continue de aici (nu să se piardă o misiune)
+    laNod?.(activ.original, idNod, activ.imagine);
 
     // În dreapta stă cel care vorbește (într-o scenă cu mai mulți, de exemplu orcul și Bram); cât vorbește Vale,
     // rămâne ultimul dintre ei
@@ -143,10 +149,11 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   });
 
   return {
-    porneste(dialog) {
-      activ = { dialog, emotiePartener: 'normal', alegeri: [] };
+    porneste(dialog, { delaNod = null, imagine = null } = {}) {
+      activ = { dialog, original: dialog, emotiePartener: 'normal', alegeri: [], imagineReluata: imagine };
       el.hidden = false;
       parinte.classList.add('in-dialog');
+      if (delaNod) return arataNod(delaNod, true);
       // „start” poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire cu un personaj e o prezentare)
       // „aleator”: un nod ales la întâmplare din listă (replicile paznicului de la poartă), ca discuția să nu fie mereu aceeași
       const start = [].concat(dialog.start).find((s) => typeof s === 'string' || verificaConditii(s.conditii));

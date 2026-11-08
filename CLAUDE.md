@@ -32,7 +32,7 @@ Dragonii, magia (în afară de abilitățile preotului), harta mare și fortăre
 - **Jocul în sine e doar fișiere statice**, fără backend, conturi sau API-uri externe, și merge **100% offline**. Backend-ul există doar pentru editor (secțiunea 4).
 - **Conținutul stă în JSON** (secțiunea 5). Codul doar îl citește. Datele se încarcă prin `import` / `import.meta.glob`, nu prin `fetch`, ca să meargă și sub `file://` în versiunea `.exe`.
 - **Scena e fixă 16:9**, proiectată la 1920×1080 și scalată să încapă în fereastră, cu bare negre dacă raportul diferă. Doar orizontal. Toate pozițiile din JSON sunt **normalizate 0-1** față de scenă (x, y, scară), nu în pixeli.
-- **Salvare** în `localStorage`, cu câmp `versiuneSalvare`, plus **export/import** de fișier JSON ca backup. Orice schimbare de structură a salvării trebuie să aibă migrare sau să dea un mesaj clar.
+- **Salvare** în `localStorage`, cu câmp `versiuneSalvare`, plus **export/import** de fișier JSON ca backup. **La un refresh al paginii** (decis de autor: o misiune nu are voie să se blocheze), salvarea ține minte ce era în curs (`reluare`, `luptaInCurs`): discuția continuă de la replica la care rămăsese (cu imaginea de sub ea), un eveniment oprit în timpul imaginilor se arată din nou, iar o luptă începută pornește de la capăt. Orice schimbare de structură a salvării trebuie să aibă migrare sau să dea un mesaj clar.
 - **Imagini: autorul lucrează doar cu PNG.** La build, un script convertește automat totul în WebP. Autorul nu atinge niciodată fișiere WebP. **Preîncarcă scenele vecine** în fundal, ca navigarea să fie instantanee.
 - **Toate imaginile se încarcă la pornire** (decis de autor; **oprit deocamdată**, se pornește la final cu `incarcareLaPornire: true` în `config.json`), cu un ecran „Se pregătesc imaginile... %”, ca trecerile (noaptea pe hartă, evenimentele) să nu se vadă încărcându-se. **Între două imagini** (evenimente, imaginile din spatele replicilor) cea veche rămâne până se vede cea nouă, iar replicile și portretele apar abia odată cu imaginea.
 - **Imaginile lipsă nu blochează nimic.** Dacă un fișier lipsește, afișează automat un **placeholder** (dreptunghi colorat cu numele fișierului). La interfață, se folosește stilul CSS implicit (secțiunea 9).
@@ -388,7 +388,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 
 - Inventarul are un număr de **sloturi**, iar rucsacul îl mărește: fără rucsac 3 (decis), rucsacul de pânză 8 (decis), cel de piele 16 (`TODO`). Rucsacul de pânză stă deocamdată în cufărul de acasă de la începutul jocului (`start.cufar`; `TODO`: cum face rost Vale de el); din cufăr, echipamentul se poate echipa direct (ce se dă jos rămâne în cufăr). Salvarea e la versiunea 4: cine n-are rucsacul îl primește în cufăr.
 - **Stive:** obiectele de același fel stau în același slot, până la o limită per obiect (de exemplu 5 pâini, 3 sticle de apă, 10 bucăți de lemn, 20 de săgeți). Echipamentul nu se stivuiește.
-- **Obiectele mari ocupă 2 sloturi:** armele cu două mâini, pieile mari (blana de lup și arcul ocupă doar unul, decis de autor; arcul tot ține ambele mâini).
+- **Obiectele mari ocupă 2 sloturi:** armele cu două mâini, pieile mari (blana de lup, pielea de mistreț și arcul ocupă doar unul, decis de autor; arcul tot ține ambele mâini).
 - **Echipamentul purtat nu ocupă sloturi.**
 - **Obiectele de poveste** (chei, scrisori) stau pe o pagină separată, fără limită, și nu se pot pierde.
 - **Cufărul de acasă:** un depozit mare (~40 de sloturi, `TODO`).

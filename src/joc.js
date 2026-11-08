@@ -461,6 +461,7 @@ function pornesteEveniment(id, fortat = false) {
   // Și un eveniment pornit dintr-un efect respectă „repetare” (întâlnirea cu vânătoarea e o singură dată)
   if (!fortat && !poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) return;
   noteazaEveniment(stare, ev, ziua(stare));
+  stare.reluare = { eveniment: ev.id };
   salveaza();
   // Sunetul de început și la evenimentele ale căror imagini stau sub replici (scandalul din tavernă)
   const subReplici = Object.values(dialoguri[ev.dialog]?.noduri || {}).some((n) => n.imagine);
@@ -473,11 +474,26 @@ function pornesteEveniment(id, fortat = false) {
       actualizeazaHud();
       return vorbesteCu(null, ev.dialog);
     }
-    if (ev.text || ev.alegeri?.length) return dialog.porneste(caDialog(ev));
+    if (ev.text || ev.alegeri?.length) return dialog.porneste({ ...caDialog(ev), _eveniment: ev.id });
     aplicaEfecte(ev.efecte, joc);
+    stare.reluare = null;
     salveaza();
     afiseaza();
   });
+}
+
+// După un refresh: lupta în curs o ia de la capăt, discuția continuă de la replica la care rămăsese,
+// iar un eveniment oprit în timpul imaginilor se arată din nou (efectele lui nu se aplicaseră încă)
+function reiaDupaReincarcare() {
+  if (stare.luptaInCurs) return joc.pornesteLupta(stare.luptaInCurs);
+  const r = stare.reluare;
+  if (!r) return;
+  stare.reluare = null;
+  if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine });
+  const ev = r.eveniment && evenimente.find((e) => e.id === r.eveniment);
+  if (!ev) return;
+  if (r.text) return dialog.porneste({ ...caDialog(ev), _eveniment: ev.id }, { delaNod: 'e' });
+  pornesteEveniment(ev.id, true);
 }
 
 // Pornit dintr-un efect: așteaptă să se închidă dialogul sau lupta din care a venit
@@ -669,6 +685,9 @@ const joc = {
   aplicaPedeapsa,
   pornesteLupta(id) {
     dialog.inchide();
+    // La un refresh în timpul luptei, lupta o ia de la capăt (nu se pierde, cu tot cu ce urmează după ea)
+    stare.luptaInCurs = id;
+    salveaza();
     lupta.porneste(id);
   },
   pornesteZaruri: () => zaruri.porneste(),
@@ -688,6 +707,7 @@ const joc = {
     joc.replica('paznic_orc_1', aCastigat ? 'suparat' : 'rade', text);
   },
   dupaLupta(efecte, minute) {
+    stare.luptaInCurs = null;
     aplicaEfecte(efecte, joc);
     if (!avanseaza(minute)) {
       salveaza();
@@ -746,8 +766,15 @@ const joc = {
   },
 };
 
+// Reluarea după un refresh al paginii (cerut de autor: o misiune nu trebuie să se blocheze dacă pagina se
+// reîncarcă în mijlocul ei): salvarea ține minte discuția, evenimentul sau lupta în curs
+const iduriDialog = new Map(Object.entries(dialoguri).map(([id, d]) => [d, id]));
 const dialog = creeazaDialog(ui, {
   laCapatulRamurii: arataCastigurileAsteptate,
+  laNod: (d, nod, imagine) => {
+    stare.reluare = iduriDialog.has(d) ? { dialog: iduriDialog.get(d), nod, imagine } : d._eveniment ? { eveniment: d._eveniment, text: true } : null;
+    salveaza();
+  },
   laImagine: (cale) => {
     stare.imaginiVazute ||= [];
     if (!stare.imaginiVazute.includes(cale)) stare.imaginiVazute.push(cale);
@@ -786,6 +813,7 @@ const dialog = creeazaDialog(ui, {
     return { alegeri, noduri };
   },
   laFinal: (d) => {
+    stare.reluare = null;
     // Un personaj intră în carte după prima discuție cu el (și după un eveniment în care vorbește el)
     for (const id of [...deCunoscut, d?.partener]) cunoaste(id);
     deCunoscut = [];
@@ -1251,6 +1279,7 @@ addEventListener('keydown', (e) => {
 });
 
 afiseaza();
+reiaDupaReincarcare();
 if (parametri.has('debug')) debug.comuta();
 
 // Toate imaginile jocului se încarcă de la pornire (decis de autor), ca trecerile (noaptea pe hartă, imaginile
