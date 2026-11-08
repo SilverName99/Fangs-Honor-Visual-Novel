@@ -2931,3 +2931,14 @@ svg.zone {
 .schimb .pret-marfa {
   font-size: 24px;
 }
+
+/* Zaruri: butoanele sunt pergamentul din meniu; cele mici (+, −, Regulile) rămân mici, „Mincinosule!” iese în evidență */
+.ecran-zaruri .buton.buton-mic-meniu.mic {
+  min-width: 0;
+  padding: 6px 18px;
+  font-size: 22px;
+}
+.ecran-zaruri .buton.buton-mic-meniu.mincinos {
+  color: #7a1f12;
+  border-color: #7a1f12;
+}

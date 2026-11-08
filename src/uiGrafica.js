@@ -46,10 +46,8 @@ export const ELEMENTE_UI = [
     extra: (url, m, img) =>
       `.nume-vorbitor{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};border-width:${marimeDialog(m)};border-image-width:${marimeDialog(m)};padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;white-space:nowrap}` +
       `.caseta .nume-vorbitor{top:calc(-1 * var(--margine-dialog, 0px) - ${marimeDialog(img.naturalHeight / 2)})}` },
-  { id: 'buton', nume: 'Buton', marime: '320 × 80 px', tip: '9-slice', margine: 20, selector: '.buton, .alegere' },
-  { id: 'buton_hover', nume: 'Buton, cu mouse-ul deasupra', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:hover, .alegere:hover' },
-  { id: 'buton_apasat', nume: 'Buton apăsat', marime: '320 × 80 px (la fel ca butonul)', tip: '9-slice', ca: 'buton', selector: '.buton:active, .alegere:active' },
-  // Alegerile din dialog au rama lor (după butoane, ca să o înlocuiască pe a lor); hover-ul schimbă doar imaginea
+  // Fără rama generală de buton și fără fundalul ferestrelor (decis de autor): butoanele sunt pergamentul din meniu,
+  // iar în spatele panourilor se vede scena întunecată. Alegerile din dialog au rama lor; hover-ul schimbă doar imaginea
   { id: 'alegere', nume: 'Alegerea din dialog (rândul subțire)', marime: '1400 × 64 px, fundal transparent', tip: '9-slice', margine: 16, faraMinus: true, selector: '.alegere',
     extra: (url, m, img) =>
       `.alegere{width:${marimeDialog(img.naturalWidth)};height:${marimeDialog(img.naturalHeight)};border-width:${marimeDialog(m)};border-image-width:${marimeDialog(m)};padding:0 24px;box-sizing:border-box;display:flex;align-items:center}` },
@@ -143,7 +141,6 @@ export const ELEMENTE_UI = [
   { id: 'bara_sete', nume: 'Umplerea barei de sete', marime: '64 × 16 px, textură care se repetă', tip: 'textura', selector: '.sete .umplere' },
   { id: 'cursor', nume: 'Cursorul mouse-ului', marime: '32 × 32 px (maximum 64 × 64); vârful săgeții în colțul stânga-sus', tip: 'cursor' },
   { id: 'cursor_click', nume: 'Cursorul, cât timp apeși', marime: '32 × 32 px (maximum 64 × 64)', tip: 'cursor', apasat: true },
-  { id: 'meniu_fundal', nume: 'Fundalul meniului și al ferestrelor', marime: '1920 × 1080 px', tip: 'fundal', selector: '.acoperitor' },
   { id: 'carte', nume: 'Cartea personajelor (cartea deschisă, două pagini goale)', marime: '1600 × 1000 px', tip: 'fundal', selector: '.carte', extra: (url) =>
       // Foaia care se întoarce e chiar hârtia din imagine: fiecare față arată bucata din imagine peste care stă (dreapta: de la 800 px, stânga: de la 40 px)
       `.carte{box-shadow:none;border-radius:0}.carte .pagina{background:none;box-shadow:none}` +

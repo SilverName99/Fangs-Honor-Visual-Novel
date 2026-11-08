@@ -13,9 +13,10 @@ const STARI_ORC = ['normal', 'amesteca', 'gandeste'];
 const PUNCTE = { 1: [5], 2: [3, 7], 3: [3, 5, 7], 4: [1, 3, 7, 9], 5: [1, 3, 5, 7, 9], 6: [1, 3, 4, 6, 7, 9] };
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
+// Pergamentul din meniu, ca butoanele de peste tot (decis de autor: fără rama generală de buton)
 function buton(text, clic, clasa = '') {
   const b = document.createElement('button');
-  b.className = `buton ${clasa}`;
+  b.className = `buton buton-mic-meniu ${clasa}`;
   b.textContent = text;
   b.onclick = clic;
   return b;
