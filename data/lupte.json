@@ -443,7 +443,8 @@
       "infrangere": {
         "text": "„Pumni contra bâtă? Ce credeai, omule?” Colectorul râde, iar paznicii te aruncă afară de lângă poartă.",
         "efecte": {
-          "timp": 60
+          "timp": 60,
+          "mergi": "harta"
         }
       }
     },

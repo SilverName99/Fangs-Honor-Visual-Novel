@@ -89,6 +89,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - **Plătesc:** pune 60 de monede din F2;
    - **Zaruri:** ora 14–18 (de exemplu „Amiază” + 2 × „+1 oră”). Miza orcilor e „Fierul lui Bram”;
    - **Mă bat:** lupta cu pumnii contra colectorului; pierzi.
+   - După „Nu acum”, „Mă mai gândesc” sau o bătaie pierdută, Vale ajunge înapoi pe hartă: paznicul nu-l lasă la poartă cât e misiunea în lucru.
 6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
 ### 💡 Cheia camerei lui Bram

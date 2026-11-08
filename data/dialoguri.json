@@ -1214,7 +1214,7 @@
     }
   },
   "poarta_fier": {
-    "_nota": "CIORNĂ. Peste prima imagine: un orc îi face semn lui Vale să se întoarcă; peste a doua: colectorul și cele trei căi.",
+    "_nota": "CIORNĂ. Peste prima imagine: un orc îi face semn lui Vale să se întoarcă; peste a doua: colectorul și cele trei căi. Decis de autor: cât e misiunea în lucru, paznicul nu-l lasă pe Vale la poartă: la sfârșitul discuției ajunge înapoi pe hartă (afară de zaruri, care se joacă chiar acolo).",
     "grup": "Misiunea lui Bram: fierul",
     "partener": "paznic_orc_1",
     "start": "a",
@@ -1238,7 +1238,10 @@
           },
           {
             "text": "Nu acum.",
-            "spre": null
+            "spre": null,
+            "efecte": {
+              "mergi": "harta"
+            }
           }
         ]
       },
@@ -1308,17 +1311,26 @@
       "platit": {
         "vorbitor": "orc_colector",
         "emotie": "rade",
-        "text": "Plăcere să fac afaceri cu tine. Acum cară-te, până nu mă răzgândesc."
+        "text": "Plăcere să fac afaceri cu tine. Acum cară-te, până nu mă răzgândesc.",
+        "efecte": {
+          "mergi": "harta"
+        }
       },
       "zaruri_nu": {
         "vorbitor": "orc_colector",
         "emotie": "rade",
-        "text": "Băieții joacă zaruri după-amiaza, între două și șase. Vino atunci, dacă ai curaj. Și bani."
+        "text": "Băieții joacă zaruri după-amiaza, între două și șase. Vino atunci, dacă ai curaj. Și bani.",
+        "efecte": {
+          "mergi": "harta"
+        }
       },
       "gandeste": {
         "vorbitor": "orc_colector",
         "emotie": "rade",
-        "text": "Gândește-te, gândește-te. Fierul nu fuge nicăieri. Doar ruginește."
+        "text": "Gândește-te, gândește-te. Fierul nu fuge nicăieri. Doar ruginește.",
+        "efecte": {
+          "mergi": "harta"
+        }
       }
     }
   },
