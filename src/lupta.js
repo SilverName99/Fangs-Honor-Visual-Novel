@@ -402,11 +402,14 @@ export function creeazaLupta(parinte, joc) {
     L.scena.append(p);
     const daune = [];
     let de = centru(sursa);
+    // Sunetul aruncării o dată, la plecare; la fiecare țintă atinsă (și la ricoșeu) se aude lovitura, aceeași ca
+    // atunci când atacă un lup (decis de autor)
+    joc.sunet.efect(sursa.sunetAtac);
     for (const t of tinte) {
       const la = inTinta(de, t);
-      joc.sunet.efect(sursa.sunetAtac);
       await zboara(p, de, la);
       if (!L) return daune;
+      joc.sunet.efect(sursa.atac.sunetImpact || 'lupta_lovit');
       daune.push(aplicaLovitura(sursa, t));
       de = la;
     }
