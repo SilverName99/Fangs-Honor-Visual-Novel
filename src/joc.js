@@ -1105,7 +1105,8 @@ if (parametri.has('debug')) debug.comuta();
 // Toate imaginile jocului se încarcă de la pornire (decis de autor), ca trecerile (noaptea pe hartă, imaginile
 // evenimentelor) să nu se mai vadă încărcându-se. Întâi scena de acum, apoi restul; un ecran arată cât s-a ajuns.
 // La testele automate (?test=1) se încarcă tot, dar fără ecran, ca să nu încurce
-{
+// Oprită deocamdată (decis de autor, „incarcareLaPornire” în config.json); se pornește la finalul jocului
+if (date.config.incarcareLaPornire) {
   const cai = imaginiCerute(date, lume)
     .map((x) => x.cale)
     .filter((c) => c.endsWith('.png'));

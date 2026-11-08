@@ -34,7 +34,7 @@ Dragonii, magia (în afară de abilitățile preotului), harta mare și fortăre
 - **Scena e fixă 16:9**, proiectată la 1920×1080 și scalată să încapă în fereastră, cu bare negre dacă raportul diferă. Doar orizontal. Toate pozițiile din JSON sunt **normalizate 0-1** față de scenă (x, y, scară), nu în pixeli.
 - **Salvare** în `localStorage`, cu câmp `versiuneSalvare`, plus **export/import** de fișier JSON ca backup. Orice schimbare de structură a salvării trebuie să aibă migrare sau să dea un mesaj clar.
 - **Imagini: autorul lucrează doar cu PNG.** La build, un script convertește automat totul în WebP. Autorul nu atinge niciodată fișiere WebP. **Preîncarcă scenele vecine** în fundal, ca navigarea să fie instantanee.
-- **Toate imaginile se încarcă la pornire** (decis de autor), cu un ecran „Se pregătesc imaginile... %”, ca trecerile (noaptea pe hartă, evenimentele) să nu se vadă încărcându-se. **Între două imagini** (evenimente, imaginile din spatele replicilor) cea veche rămâne până se vede cea nouă, iar replicile și portretele apar abia odată cu imaginea.
+- **Toate imaginile se încarcă la pornire** (decis de autor; **oprit deocamdată**, se pornește la final cu `incarcareLaPornire: true` în `config.json`), cu un ecran „Se pregătesc imaginile... %”, ca trecerile (noaptea pe hartă, evenimentele) să nu se vadă încărcându-se. **Între două imagini** (evenimente, imaginile din spatele replicilor) cea veche rămâne până se vede cea nouă, iar replicile și portretele apar abia odată cu imaginea.
 - **Imaginile lipsă nu blochează nimic.** Dacă un fișier lipsește, afișează automat un **placeholder** (dreptunghi colorat cu numele fișierului). La interfață, se folosește stilul CSS implicit (secțiunea 9).
 - Versiunea finală se împachetează cu **Electron** într-un `.exe` pentru Windows, offline. Păstrează codul compatibil: căi relative, `base: './'` în Vite, fără `fetch` către alte domenii. Asta se face la final.
 - Include un **mod debug** (tastă sau panou): sari peste timp, setează resurse și nevoi, mută-te direct într-un loc, setează stări (de exemplu `acoperis`), pornește o luptă.
@@ -552,7 +552,7 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 
 **Jocul din tavernă:** altul decât zarurile, îl stabilim mai târziu.
 
-**De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare.
+**De scos la final:** butoanele de schimbat ora din joc (`ceasRapid` în `config.json`), puse doar pentru testare. **De pornit la final:** încărcarea imaginilor la pornire (`incarcareLaPornire: true` în `config.json`).
 
 **Unde stau lucrurile în cod:** acțiunile unui loc (dormit, magazin, muncă, luptă) stau în `locations.json` la `actiuni`; muncile de la câmpuri în `config.json` la `munca`; elementele de interfață și dimensiunile lor în `src/uiGrafica.js`; ecranul de inventar și echipament se aranjează în editor ca „scena” `echipament`.
 

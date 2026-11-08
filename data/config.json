@@ -267,5 +267,7 @@
         "textRatat": "N-ai adus blănurile la timp. Orcii îți dublează taxa următoare."
       }
     }
-  }
+  },
+  "incarcareLaPornire": false,
+  "_notaIncarcare": "Decis de autor: încărcarea tuturor imaginilor la pornire (ecranul cu procente) e oprită deocamdată; se pornește (true) la finalul jocului."
 }
