@@ -13,10 +13,11 @@ const STARI_ORC = ['normal', 'amesteca', 'gandeste'];
 const PUNCTE = { 1: [5], 2: [3, 7], 3: [3, 5, 7], 4: [1, 3, 7, 9], 5: [1, 3, 5, 7, 9], 6: [1, 3, 4, 6, 7, 9] };
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
-// Pergamentul din meniu, ca butoanele de peste tot (decis de autor: fără rama generală de buton)
-function buton(text, clic, clasa = '') {
+// Pergamentul din meniu doar la alegerea mizei și la foaia cu regulile; la masă (Licitează, Mincinosule, + și −)
+// butoanele rămân fără el, ca înainte (decis de autor)
+function buton(text, clic, clasa = '', pergament = false) {
   const b = document.createElement('button');
-  b.className = `buton buton-mic-meniu ${clasa}`;
+  b.className = `buton ${pergament ? 'buton-mic-meniu ' : ''}${clasa}`;
   b.textContent = text;
   b.onclick = clic;
   return b;
@@ -115,16 +116,31 @@ export function creeazaZaruri(parinte, joc) {
     arataMiza(lista);
   }
 
+  // Regulile pe o foaie de pergament (aceeași ca la inventar), deschisă din „?” (decis de autor)
+  function arataRegulile() {
+    const fundal = div('fundal-reguli');
+    const foaie = div('foaie-inv hartie-reguli');
+    foaie.append(div('titlu-reguli', 'Regulile'), div('text-reguli', regulile), buton('Am înțeles', () => fundal.remove(), 'inchide-reguli', true));
+    fundal.append(foaie);
+    fundal.onclick = (e) => e.target === fundal && fundal.remove();
+    el.append(fundal);
+  }
+
   function arataMiza(lista) {
     const panou = div('panou-zaruri-miza');
-    panou.append(div('titlu-zaruri', 'Zaruri cu paznicii'), div('text-zaruri', cfg().replici.oferta));
+    const titlu = div('rand-titlu-zaruri');
+    titlu.append(div('titlu-zaruri', 'Zaruri cu paznicii'), Object.assign(buton('?', arataRegulile, 'mic buton-intrebare', true), { title: 'Regulile' }));
+    panou.append(titlu, div('text-zaruri', cfg().replici.oferta));
+    // Alegerile una lângă alta (decis de autor), pe două rânduri de text: miza ta, apoi ce pun ei
+    const alegeri = div('alegeri-miza');
     for (const o of lista) {
-      const b = buton(`Pui ${o.miza} monede · ei pun: ${nume(o.premiu)}${o.recuperat ? ' (luat de orci)' : ''}`, () => incepe(o), 'miza');
+      const b = buton('', () => incepe(o), 'miza', true);
+      b.append(div('', `Pui ${o.miza} monede`), div('ce-pun', `Ei pun: ${nume(o.premiu)}`));
       b.disabled = joc.stare.bani < o.miza;
-      panou.append(b);
+      alegeri.append(b);
     }
-    panou.append(buton('Nu acum', inchide, 'renunta'));
-    panou.append(div('ajutor-zaruri', regulile));
+    alegeri.append(buton('Nu acum', inchide, 'renunta', true));
+    panou.append(alegeri);
     // Masa se vede deja în spatele panoului cu miza
     construiesteMasa();
     el.querySelector('.strat-ui-zaruri').replaceChildren(panou);
@@ -384,9 +400,9 @@ export function creeazaZaruri(parinte, joc) {
     if (vale.ramase > 0) for (const f of vale.zaruri) randVale.append(zar(f, `${s.aruncare ? 'rostogolire' : ''}${s.dezvaluit && f === s.licitatie?.f ? ' potrivit' : ''}`));
     sub.append(randVale);
     // Regulile stau ascunse sub un buton, ca să nu acopere orcii
-    const ajutor = buton(s.ajutor ? '✕ Regulile' : '? Regulile', () => ((s.ajutor = !s.ajutor), deseneaza()), 'mic buton-reguli');
+    const ajutor = buton('? Regulile', arataRegulile, 'mic buton-reguli');
     // Fără titlu și istoric sus (decis de autor): licitațiile se văd în baloane, interfața rămâne curată
-    strat.replaceChildren(...elemente, sub, panouVale(), ajutor, butonViteza(), ...(s.ajutor ? [Object.assign(div('ajutor-zaruri mic'), { textContent: regulile })] : []));
+    strat.replaceChildren(...elemente, sub, panouVale(), ajutor, butonViteza());
   }
 
   function jetoane(j) {
@@ -420,8 +436,8 @@ export function creeazaZaruri(parinte, joc) {
     s.alegere ||= l ? (l.f < 6 ? { q: l.q, f: l.f + 1 } : { q: l.q + 1, f: 1 }) : { q: 1, f: s.jucatori[0].zaruri[0] };
     const a = s.alegere;
     const cantitate = div('alegere-cantitate');
-    const minus = buton('−', () => ((a.q = Math.max(1, a.q - 1)), deseneaza()), 'mic');
-    const plus = buton('+', () => ((a.q = Math.min(total(), a.q + 1)), deseneaza()), 'mic');
+    const minus = buton('−', () => ((a.q = Math.max(1, a.q - 1)), deseneaza()), 'mic plus-minus');
+    const plus = buton('+', () => ((a.q = Math.min(total(), a.q + 1)), deseneaza()), 'mic plus-minus');
     cantitate.append(minus, div('cantitate', CANTITATI[a.q] || `${a.q} zaruri`), plus, div('de', 'de'));
     const fete = div('alegere-fata');
     for (let f = 1; f <= 6; f++) {
