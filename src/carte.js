@@ -46,7 +46,7 @@ export function creeazaCarte(parinte, joc) {
   };
 
   function paginaListaMisiuni({ inLucru, gata }) {
-    const pag = div('pagina stanga');
+    const pag = div('pagina stanga lista-misiuni');
     pag.append(div('nume-carte', 'Misiuni'));
     if (!inLucru.length && !gata.length) {
       pag.append(div('descriere-carte', 'Încă n-am nicio misiune.'));
