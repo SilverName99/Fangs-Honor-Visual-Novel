@@ -948,7 +948,8 @@
           "text": "Aduni lemne...",
           "miniJoc": "cerc",
           "incercari": 3,
-          "gandNimic": "Toporul a sărit de fiecare dată pe lângă. N-am adunat nimic ca lumea."
+          "gandNimic": "Toporul a sărit de fiecare dată pe lângă. N-am adunat nimic ca lumea.",
+          "gandNoapte": "E beznă în pădure. Nu văd unde dau cu toporul. Mai bine mă întorc dimineață."
         },
         {
           "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, fiecare sunătoare = 1 fir. Cu mini-jocurile oprite: 2 fire, singur.",

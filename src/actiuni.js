@@ -153,6 +153,8 @@ export function creeazaActiuni(parinte, joc) {
   }
 
   function obtine(a) {
+    // Noaptea nu se adună lemne (decis de autor): doar gândul lui Vale, ca la muncă
+    if (a.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(a.gandNoapte);
     if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
     if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
     // Cu „variante” (lemnele: o oră sau două), întâi alegi cât stai, pe panoul mic
