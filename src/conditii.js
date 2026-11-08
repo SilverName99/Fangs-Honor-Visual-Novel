@@ -31,8 +31,11 @@ const tipuri = {
   // mai veche, fără ziua întâlnirii, contează ca întâlnit în ziua 1
   cunoscutDeZile: (v, c) =>
     Object.entries(v).every(([id, n]) => {
-      if (!(c.cunoscuti || []).includes(id) && c.stari?.[`cunoscut_${id}`] !== 'da') return false;
-      return c.zi - (c.cunoscutLa?.[id] ?? 1) >= n;
+      const inCarte = (c.cunoscuti || []).includes(id);
+      if (!inCarte && c.stari?.[`cunoscut_${id}`] !== 'da') return false;
+      // Chiar în prima discuție (prezentarea a pus deja „cunoscut_<id>”, dar ziua întâlnirii se scrie abia la
+      // sfârșitul ei) întâlnirea e de azi, nu din ziua 1: altfel misiunea apărea imediat și dispărea la a doua discuție
+      return c.zi - (c.cunoscutLa?.[id] ?? (inCarte ? 1 : c.zi)) >= n;
     }),
   // „contor: { vanatori_castigate: { min: 1 } }” = numărătorile din salvare (vânători, încercări...)
   contor: (v, c) =>
