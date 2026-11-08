@@ -258,11 +258,26 @@ export function creeazaMiniJocuri(parinte, joc) {
     // Locuri la întâmplare în zonă, nu prea aproape unele de altele (picioarele plantei stau în punct)
     const xs = poligon.map((p) => p[0]);
     const ys = poligon.map((p) => p[1]);
+    // Planta întreagă trebuie să stea pe ecran (zona poate ajunge până la margine) și să nu stea sub numărătoare
+    // sau sub „Gata”, de jos, unde n-ar mai putea fi apăsată
+    const MARGINE = 10;
+    const ocupate = [
+      [LATIME / 2 - 150, INALTIME - 110, LATIME / 2 + 150, INALTIME],
+      [LATIME - 380, INALTIME - 120, LATIME, INALTIME],
+    ];
+    function incapePeEcran([x, y]) {
+      const st = x * LATIME - marime / 2;
+      const dr = x * LATIME + marime / 2;
+      const sus = y * INALTIME - marime;
+      const jos = y * INALTIME;
+      if (st < MARGINE || dr > LATIME - MARGINE || sus < MARGINE || jos > INALTIME - MARGINE) return false;
+      return !ocupate.some(([x1, y1, x2, y2]) => st < x2 && dr > x1 && sus < y2 && jos > y1);
+    }
     const puncte = [];
     for (let distanta = marime * 0.8; puncte.length < lista.length && distanta > 1; distanta *= 0.8) {
       for (let incercare = 0; incercare < 3000 && puncte.length < lista.length; incercare++) {
         const p = [Math.min(...xs) + Math.random() * (Math.max(...xs) - Math.min(...xs)), Math.min(...ys) + Math.random() * (Math.max(...ys) - Math.min(...ys))];
-        if (!inPoligon(p, poligon)) continue;
+        if (!inPoligon(p, poligon) || !incapePeEcran(p)) continue;
         if (puncte.some((q) => Math.hypot((q[0] - p[0]) * LATIME, (q[1] - p[1]) * INALTIME) < distanta)) continue;
         puncte.push(p);
       }
