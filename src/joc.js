@@ -1015,8 +1015,18 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
     const loc = undeEste(p, ctx);
     const semn = loc && semnPersonaj(joc, p.id, loc);
     // Cine doarme nu poate vorbi acum, deci nu cheamă pe nimeni
-    if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc });
+    if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc, p });
   }
+  // Pe hartă și pe ușile din zone semnul arată unde e cineva acum, dar drumul până acolo ia timp (decis de autor):
+  // dacă la sosire nu mai e acolo, sau nu mai are nimic de spus (Kaia pleacă de la marginea pădurii la 17:00),
+  // semnul nu se mai pune
+  const ajungeLaTimp = (x, tinta) => {
+    const minute = (d.tip === 'harta' ? cfg.timp.spreZona : 0) + (x.loc !== tinta ? cfg.timp.spreLoc : 0);
+    const viitor = { ...stare, minute: stare.minute + costTimp(stare, minute, cfg.nevoi) };
+    const ctxViitor = context(viitor);
+    if (undeEste(x.p, ctxViitor) !== x.loc || intrareProgram(x.p, ctxViitor)?.doarme) return false;
+    return semnPersonaj({ ...joc, stare: viitor }, x.p.id, x.loc) !== null;
+  };
   if (!semne.size) return;
   const pune = (parinte, left, top, semn) => {
     const s = div(`semn-scena ${semn}`, semn === 'nou' ? '!' : '?');
@@ -1033,7 +1043,7 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   for (const t of d.tinte) {
     if (!t.spre) continue;
     const tinta = t.spre.replace('.', '/');
-    const aici = [...semne.values()].filter((x) => x.loc && (x.loc === tinta || x.loc.startsWith(`${tinta}/`)));
+    const aici = [...semne.values()].filter((x) => x.loc && (x.loc === tinta || x.loc.startsWith(`${tinta}/`)) && ajungeLaTimp(x, tinta));
     if (!aici.length) continue;
     const semn = aici.sort((a, b) => ordine[b.semn] - ordine[a.semn])[0].semn;
     const piesa = d.obiecte.find((o) => o.tinta === t.id && r.obiecte.get(o.id)?.isConnected);
