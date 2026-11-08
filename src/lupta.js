@@ -590,11 +590,29 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = false;
   }
 
+  // Un loc din față unde poate trece un inamic din spate care nu poate lovi de acolo: întâi pe linia lui,
+  // apoi pe alta; doar locuri libere, ca să nu-l împingă în spate pe unul care atacă deja
+  function locInFata(f) {
+    if (f.lat) return null;
+    const linii = [f.linie, ...[0, 1, 2].filter((l) => l !== f.linie)];
+    const linie = linii.find((l) => !laLoc(f.tabara, l, 'fata'));
+    return linie === undefined ? null : { linie, rand: 'fata' };
+  }
+
+  // Inamicii (cerut de autor): nu doar atacă; din spate trec în față când n-au cum lovi, iar uneori, mai ales
+  // când sunt răniți, se apără
   async function randInamic(f) {
     L.pauza = true;
     await asteapta(300);
+    const ci = cfg.inamici || {};
+    if (!poateAtaca(f)) {
+      const loc = locInFata(f);
+      return executa(f, loc ? { tip: 'muta', ...loc } : { tip: 'aparare' });
+    }
     const tinte = tintePosibile(f, f.atac.tip);
-    if (!tinte.length || !poateAtaca(f)) return executa(f, { tip: 'aparare' });
+    if (!tinte.length) return executa(f, { tip: 'aparare' });
+    const ranit = f.viata < f.viataMax * (ci.pragRanit ?? 0.35);
+    if (Math.random() < (ranit ? ci.sansaAparareRanit ?? 0.35 : ci.sansaAparare ?? 0.1)) return executa(f, { tip: 'aparare' });
     executa(f, { tip: 'atac', tinta: tinte[intre(0, tinte.length - 1)] });
   }
 

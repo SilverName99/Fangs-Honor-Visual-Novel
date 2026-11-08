@@ -134,7 +134,13 @@
     },
     "viataDupaCadere": 10,
     "staminaConsumata": 15,
-    "minute": 30
+    "minute": 30,
+    "inamici": {
+      "_nota": "Cum se poartă inamicii (TODO echilibru): sansaAparare = cât de des se apără fără motiv; sub pragRanit din viață se apără mai des (sansaAparareRanit). Un inamic din spate care nu poate ataca de acolo trece în față, dacă e loc.",
+      "sansaAparare": 0.1,
+      "pragRanit": 0.35,
+      "sansaAparareRanit": 0.35
+    }
   },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",

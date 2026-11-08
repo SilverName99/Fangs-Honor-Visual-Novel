@@ -457,7 +457,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 **Căderea:** la viață 0, personajul **cade**, dar nu moare. După luptă se ridică: recruții cu viața plină, Vale cu puțină viață (`TODO` cât).
 
-**Inamicii** aleg o țintă validă la întâmplare. Unii pot avea preferințe în JSON (de exemplu „lovește pe cel mai slăbit”).
+**Inamicii** aleg o țintă validă la întâmplare. **Se și apără** (decis de autor): uneori (10%), mai des când sunt răniți (35% sub 35% din viață); un inamic din spate care nu poate lovi de acolo **trece în față**, pe un loc liber (întâi pe linia lui), altfel se apără (`lupta.inamici` în `config.json`, `TODO` echilibru). Unii pot avea preferințe în JSON (de exemplu „lovește pe cel mai slăbit”).
 
 ### Ecranul de luptă (decis, după designul autorului: „sat sărac, dar îngrijit”, lemn simplu, fier, pânză albastră)
 
