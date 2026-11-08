@@ -528,6 +528,14 @@
               "inchiriat": "taverna"
             },
             "mesaj": "Nu pot urca așa, fără să plătesc. Mai întâi vorbesc cu Agnes."
+          },
+          "ascuns": {
+            "_nota": "Decis de autor: camera nu se vede până la misiunea lui Agnes (TODO: care).",
+            "conditii": {
+              "stare": {
+                "camera_taverna": "deschisa"
+              }
+            }
           }
         }
       ]

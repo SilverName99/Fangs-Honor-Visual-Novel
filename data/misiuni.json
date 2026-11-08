@@ -242,6 +242,39 @@
       "recompensa": {
         "text": "Încrederea Kaiei +1 și tabăra ei din pădure (Camp site)."
       }
+    },
+    {
+      "id": "scandal",
+      "titlu": "Scandalul din tavernă",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick n-a mai putut să stea deoparte.",
+      "oferta": {
+        "_nota": "Decis de autor: din ziua 3, în tavernă, cât e și Agnes acolo; textul arată că Roderick încă nu-l bagă în seamă pe Vale.",
+        "text": "*Orcii fac multă dezordine și gălăgie...*",
+        "nod": "scandal_start",
+        "conditii": {
+          "zi": {
+            "min": 3
+          },
+          "loc": "taverna/parter",
+          "prezent": "hangita",
+          "nu": {
+            "existaStare": "scandal_taverna"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Scandalul din tavernă",
+          "gata": {
+            "existaStare": "scandal_taverna"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Dacă l-am ajutat pe Roderick, încrederea lui +1. Altfel, nimic (dar tot îl pot recruta mai târziu)."
+      }
     }
   ]
 }

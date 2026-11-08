@@ -271,6 +271,68 @@
       ]
     },
     {
+      "id": "orci_patrula_campuri_prima",
+      "_nota": "Decis de autor: prima dată când orcii îi necăjesc pe fermieri vine sigur și devreme (din ziua 3, 80% la fiecare intrare dimineața pe câmpuri), ca fermierul să devină cel cu care se poate vorbi; după el, evenimentul obișnuit din categoria orci.",
+      "conditii": {
+        "loc": "campuri",
+        "ora": {
+          "min": "08:00",
+          "max": "12:59"
+        },
+        "zi": {
+          "min": 3
+        },
+        "nuStare": {
+          "fermier_deblocat": "da"
+        },
+        "sansa": 0.8
+      },
+      "repetare": "o_data",
+      "imagini": [
+        "events/orci_patrula_campuri.png"
+      ],
+      "grup": "Orcii prin sat",
+      "vorbitor": "paznic_orc_1",
+      "emotie": "rade",
+      "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "alegeri": [
+        {
+          "text": "Lasă grâul, nu e al tău!",
+          "efecte": {
+            "reputatie": 2,
+            "relatie": {
+              "fermier": 3
+            },
+            "pedeapsa": "paznic_orc_1",
+            "stare": {
+              "fermier_deblocat": "da"
+            }
+          }
+        },
+        {
+          "text": "Îl ajut pe fermier să strângă ce a rămas.",
+          "efecte": {
+            "timp": 30,
+            "relatie": {
+              "fermier": 2
+            },
+            "stare": {
+              "fermier_deblocat": "da"
+            }
+          }
+        },
+        {
+          "text": "Plec mai departe.",
+          "efecte": {
+            "reputatie": -1,
+            "stare": {
+              "fermier_deblocat": "da"
+            }
+          }
+        }
+      ]
+    },
+    {
       "id": "orci_patrula_campuri",
       "categorie": "orci",
       "_nota": "CIORNĂ (Claude): orcii fac dezordine; textele se pot schimba.",
@@ -300,7 +362,10 @@
             "relatie": {
               "fermier": 3
             },
-            "pedeapsa": "paznic_orc_1"
+            "pedeapsa": "paznic_orc_1",
+            "stare": {
+              "fermier_deblocat": "da"
+            }
           }
         },
         {
@@ -309,13 +374,19 @@
             "timp": 30,
             "relatie": {
               "fermier": 2
+            },
+            "stare": {
+              "fermier_deblocat": "da"
             }
           }
         },
         {
           "text": "Plec mai departe.",
           "efecte": {
-            "reputatie": -1
+            "reputatie": -1,
+            "stare": {
+              "fermier_deblocat": "da"
+            }
           }
         }
       ]
@@ -577,7 +648,10 @@
             "stare": {
               "scandal_taverna": "ajutat"
             },
-            "lupta": "scandal_taverna"
+            "lupta": "scandal_taverna",
+            "relatie": {
+              "soldat": 1
+            }
           }
         },
         {

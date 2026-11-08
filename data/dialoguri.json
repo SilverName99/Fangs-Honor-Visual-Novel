@@ -22,6 +22,14 @@
     "partener": "soldat",
     "start": [
       {
+        "nod": "ignora",
+        "conditii": {
+          "nu": {
+            "existaStare": "scandal_taverna"
+          }
+        }
+      },
+      {
         "nod": "prezentare",
         "conditii": {
           "nuStare": {
@@ -84,29 +92,41 @@
         "emotie": "normal",
         "text": "Cum era tata, când erați tineri?",
         "urmator": "tata"
+      },
+      "ignora": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul Roderick nici nu ridică ochii din cană. Parcă nici nu m-ar vedea."
+      },
+      "scandal_start": {
+        "_nota": "CIORNĂ: pornește scandalul (misiunea scandal).",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Orcii de la masa din colț fac tot mai multă gălăgie. Unul o apucă pe Agnes de braț, iar ea scapă tava din mâini.",
+        "alegeri": [
+          {
+            "text": "(Te uiți spre ei.)",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "scandal": "inceputa"
+              },
+              "eveniment": "taverna_scandal"
+            }
+          }
+        ]
       }
     },
-    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
     "meniu": true,
-    "optiuni": [
-      {
-        "text": "Orcii ăștia beau pe datorie și râd de noi. Până când îi mai lăsăm, unchiule?",
-        "conditii": {
-          "loc": "taverna/parter",
-          "prezent": "hangita",
-          "nu": {
-            "existaStare": "scandal_taverna"
-          }
-        },
-        "efecte": {
-          "eveniment": "taverna_scandal"
-        },
-        "inchide": true
-      }
-    ],
     "vorbeste": [
       {
-        "nod": "r_tata_a"
+        "nod": "r_tata_a",
+        "conditii": {
+          "existaStare": "scandal_taverna"
+        }
       }
     ]
   },
@@ -224,6 +244,9 @@
           },
           "nu": {
             "inchiriat": "taverna"
+          },
+          "stare": {
+            "camera_taverna": "deschisa"
           }
         },
         "efecte": {

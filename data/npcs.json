@@ -695,7 +695,15 @@
         }
       ],
       "_numeTODO": "Numele fermierului e TODO (nedecis).",
-      "intrebareVorba": "Ce mai faceți?"
+      "intrebareVorba": "Ce mai faceți?",
+      "clicabil": {
+        "_nota": "Decis de autor: nu se poate vorbi cu el până nu-l necăjesc orcii (orci_patrula_campuri_prima).",
+        "conditii": {
+          "stare": {
+            "fermier_deblocat": "da"
+          }
+        }
+      }
     }
   ]
 }
