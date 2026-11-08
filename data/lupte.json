@@ -17,7 +17,7 @@
         "min": 4,
         "max": 7,
         "tip": "apropiat",
-        "sunet": "lupta_lovit"
+        "sunet": "lupta_muscatura"
       },
       "armura": 0,
       "sunet": "lup"
@@ -34,7 +34,7 @@
         "min": 6,
         "max": 10,
         "tip": "apropiat",
-        "sunet": "lupta_lovit"
+        "sunet": "lupta_muscatura"
       },
       "armura": 8,
       "sunet": "lup"

@@ -619,7 +619,7 @@ const joc = {
     const x = stare.inventar[index];
     const d = inventar.def(x.id);
     inventar.scoate(x.id, 1);
-    sunet.efect(d.efecte?.nevoi?.sete ? 'baut' : 'mancat');
+    sunet.efect(d.sunet || (d.efecte?.nevoi?.sete ? 'baut' : 'mancat'));
     aplicaEfecte(d.efecte, joc);
     if (d.minute) avanseaza(d.minute);
     return null;

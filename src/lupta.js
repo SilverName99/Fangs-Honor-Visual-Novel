@@ -549,7 +549,8 @@ export function creeazaLupta(parinte, joc) {
       const d = inv.def(actiune.id);
       const v = d.efecte?.nevoi?.viata || 0;
       inv.scoate(actiune.id, 1);
-      joc.sunet.efect('baut');
+      // Un obiect cu sunetul lui (pansamentul) îl folosește pe acela, nu sunetul băutului
+      joc.sunet.efect(d.sunet || 'baut');
       actiune.tinta.viata = Math.min(actiune.tinta.viataMax, actiune.tinta.viata + v);
       numar(actiune.tinta, `+${v}`, 'vindecare');
       jurnal(`${sursa.nume} folosește ${d.nume} pe ${actiune.tinta.nume}.`);
