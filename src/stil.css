@@ -2787,18 +2787,22 @@ svg.zone {
   to { opacity: 0; margin-top: -40px; }
 }
 /* Lemnele: cercul care se strânge spre inel */
+.mini-piesa {
+  position: absolute;
+  pointer-events: none;
+}
 .mini-inel,
 .mini-cerc {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
 }
 .mini-inel {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
   border: 10px solid rgba(232, 192, 96, 0.95);
   box-shadow: 0 0 18px rgba(232, 192, 96, 0.7);
   box-sizing: border-box;
@@ -2810,12 +2814,6 @@ svg.zone {
 }
 /* Aratul: semnul pe bară */
 .mini-bara {
-  position: absolute;
-  left: 50%;
-  top: 58%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 46px;
   border: 3px solid #a7854f;
   border-radius: 10px;
   background: rgba(30, 20, 12, 0.85);
@@ -2829,10 +2827,8 @@ svg.zone {
 }
 .mini-semn {
   position: absolute;
-  top: -14px;
-  bottom: -14px;
-  width: 10px;
-  margin-left: -5px;
+  top: -30%;
+  bottom: -30%;
   border-radius: 4px;
   background: #f3e6c8;
   box-shadow: 0 0 8px #000;
@@ -2840,10 +2836,7 @@ svg.zone {
 /* Mulsul: cercul care pulsează */
 .mini-puls {
   position: absolute;
-  left: 50%;
-  top: 56%;
-  width: 300px;
-  height: 300px;
+  inset: 0;
   border-radius: 50%;
   border: 8px solid rgba(243, 230, 200, 0.95);
   background: radial-gradient(rgba(243, 230, 200, 0.35), rgba(243, 230, 200, 0.08));
@@ -2853,14 +2846,8 @@ svg.zone {
 }
 /* Moara: sacul care se umple */
 .mini-sac {
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  transform: translateX(-50%);
-  width: 260px;
-  height: 420px;
   border: 4px solid #a7854f;
-  border-radius: 40px 40px 26px 26px;
+  border-radius: 15% 15% 10% 10% / 10% 10% 6% 6%;
   background: rgba(60, 44, 28, 0.85);
   overflow: hidden;
   pointer-events: none;
@@ -2873,11 +2860,11 @@ svg.zone {
   background: linear-gradient(#fbf6ea, #e6dcc4);
 }
 .mini-timp {
-  position: absolute;
-  left: calc(50% + 190px);
-  top: 50%;
   color: #f3e6c8;
-  font: 600 48px Georgia, serif;
+  font-family: Georgia, serif;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
   text-shadow: 0 2px 6px #000;
   pointer-events: none;
 }
@@ -2907,11 +2894,7 @@ svg.zone {
 }
 .mini-puls-tinta {
   position: absolute;
-  left: 50%;
-  top: 56%;
-  width: 300px;
-  height: 300px;
-  transform: translate(-50%, -50%);
+  inset: 0;
   border-radius: 50%;
   border: 4px dashed rgba(232, 192, 96, 0.8);
   box-sizing: border-box;

@@ -263,6 +263,20 @@ export function construiesteLumea(date) {
       })),
     ],
   });
+  // Mini-jocurile muncii (decis de autor): autorul mută și mărește bucata fiecăruia pe imaginea muncii, ca în joc.
+  // Fundalul e imaginea primei munci care folosește mini-jocul (lemnele, aratul, vacile, moara)
+  const toateActiunile = zone.flatMap((z) => [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])]);
+  const imagineMiniJoc = (tip) =>
+    Object.values(date.config.munca || {}).find((m) => m.miniJoc === tip)?.imagine || toateActiunile.find((a) => a.miniJoc === tip)?.imagine || null;
+  const piesaMini = (id, nume, raport, implicit) => ({ id, tip: 'mini-piesa', nume, eticheta: nume, imagine: `ui/text_mini_${id}.png`, raport, variante: [], implicit });
+  for (const [tip, titlu, obiecte] of [
+    ['cerc', 'Mini-joc: lemnele (cercul)', [piesaMini('inel', 'Inelul auriu (cercul pornește de 3 ori mai mare)', 1, { x: 0.5, y: 0.652, scara: 0.2037 })]],
+    ['arat', 'Mini-joc: aratul (bara)', [piesaMini('bara', 'Bara cu zona verde', 1000 / 46, { x: 0.5, y: 0.6226, scara: 0.0426 })]],
+    ['muls', 'Mini-joc: vacile (cercul în ritm)', [piesaMini('puls', 'Cercul care pulsează (la cea mai mare mărime)', 1, { x: 0.5, y: 0.699, scara: 0.2778 })]],
+    ['moara', 'Mini-joc: moara (sacul)', [piesaMini('sac', 'Sacul de făină', 260 / 420, { x: 0.5, y: 0.689, scara: 0.389 }), piesaMini('timp', 'Secundele rămase', 2.5, { x: 0.66, y: 0.56, scara: 0.06 })]],
+  ]) {
+    scene.set(`minijoc_${tip}`, { id: `minijoc_${tip}`, tip: 'ecran', titlu, titluObiecte: 'Bucățile mini-jocului', titluFundal: 'Imaginea muncii', imagine: imagineMiniJoc(tip), variante: [], parinte: null, tinte: [], obiecte });
+  }
   // Culesul ierburilor (decis de autor): pe imaginea culesului, autorul desenează zona în care apar plantele, la
   // întâmplare; „planta” e doar un model, ca să se aleagă mărimea lor (poziția ei nu contează)
   for (const z of zone)

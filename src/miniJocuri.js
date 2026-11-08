@@ -1,6 +1,6 @@
 import { elementImagine } from './imagini.js';
 import { iconita } from './ecranInventar.js';
-import { LATIME, INALTIME, pozitie } from './scena.js';
+import { LATIME, INALTIME, pozitie, aplicaPozitie } from './scena.js';
 
 // Mini-jocurile de la muncă și de la cules (decis de autor): fiecare stă pe tot ecranul, peste imaginea muncii,
 // și întoarce un scor. Se pot opri din Opțiuni; atunci munca dă cât dădea înainte (codul din actiuni.js).
@@ -60,6 +60,21 @@ export function creeazaMiniJocuri(parinte, joc) {
     setTimeout(() => m.remove(), 650);
   }
 
+  // O bucată a mini-jocului (inelul, bara, cercul, sacul), pusă unde a așezat-o autorul pe imaginea muncii
+  // (editor: Aranjare → Ecrane → „Mini-joc: …”); restul bucății se desenează în ea, proporțional cu mărimea ei
+  function piesa(e, idEcran, id) {
+    const o = joc.lume.get(idEcran)?.obiecte.find((x) => x.id === id);
+    const p = pozitie(joc.date.aranjare[idEcran], o, 0);
+    const el = div(`mini-piesa mini-piesa-${id} obiect`);
+    // Sub mesajele „Lovit!” și sub rezultat, oricât de jos ar sta
+    el.dataset.zFix = '1';
+    aplicaPozitie(el, p);
+    const h = p.scara * INALTIME;
+    el.style.width = `${h * o.raport}px`;
+    e.loc.append(el);
+    return { el, h };
+  }
+
   // Așteaptă un clic (sau Spațiu) pe ecranul jocului; întoarce momentul lui
   const clic = (el) =>
     new Promise((r) => {
@@ -73,11 +88,15 @@ export function creeazaMiniJocuri(parinte, joc) {
   // Lemnele: un cerc se strânge spre un inel; clic când ajunge pe el. „incercari” încercări, întoarce câte au reușit
   async function cerc({ imagine, titlu, incercari = 3 }) {
     const e = ecran(imagine, titlu, 'Lovește când cercul care se strânge ajunge pe inelul auriu.');
+    const { el: loc, h } = piesa(e, 'minijoc_cerc', 'inel');
     const inel = div('mini-inel');
+    inel.style.borderWidth = `${h * 0.045}px`;
     const cercul = div('mini-cerc');
-    e.loc.append(inel, cercul);
-    const R = 110;
-    const TOLERANTA = 22;
+    cercul.style.borderWidth = `${Math.max(2, h * 0.023)}px`;
+    loc.append(inel, cercul);
+    // Cercul pornește de 3 ori mai mare decât inelul; „pe inel” = cu cel mult o cincime din rază pe lângă
+    const R = h / 2;
+    const TOLERANTA = R * 0.2;
     const DURATA = 1700;
     let lovituri = 0;
     const arataScor = (i) => (e.scor.textContent = `Lovitura ${Math.min(i + 1, incercari)} din ${incercari} · reușite: ${lovituri}`);
@@ -86,7 +105,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     for (let i = 0; i < incercari; i++) {
       arataScor(i);
       const start = performance.now();
-      const raza = (t) => 330 * (1 - (t - start) / DURATA);
+      const raza = (t) => 3 * R * (1 - (t - start) / DURATA);
       let cadru;
       const anima = () => {
         const r = Math.max(0, raza(performance.now()));
@@ -111,11 +130,13 @@ export function creeazaMiniJocuri(parinte, joc) {
   // Aratul: un semn alunecă stânga-dreapta pe o bară; îl oprești în zona verde. 3 runde, scorul 0–1
   async function arat({ imagine, titlu }) {
     const e = ecran(imagine, titlu, 'Oprește semnul în zona verde: plugul merge drept doar dacă îl ții bine.');
-    const bara = div('mini-bara');
+    const { el: bara, h } = piesa(e, 'minijoc_arat', 'bara');
+    bara.classList.add('mini-bara');
     const verde = div('mini-verde');
     const semn = div('mini-semn');
+    semn.style.width = `${Math.max(4, h * 0.22)}px`;
+    semn.style.marginLeft = `${-Math.max(4, h * 0.22) / 2}px`;
     bara.append(verde, semn);
-    e.loc.append(bara);
     const RUNDE = 3;
     const LATIME_VERDE = 0.14;
     const TRECERE = 1100;
@@ -154,9 +175,10 @@ export function creeazaMiniJocuri(parinte, joc) {
   // Mulsul: un cerc pulsează; clic când e cel mai mare (pe ritm). Câte o șansă pe puls, scorul 0–1
   async function muls({ imagine, titlu }) {
     const e = ecran(imagine, titlu, 'Apasă în ritm, când cercul e cel mai mare.');
+    const { el: loc } = piesa(e, 'minijoc_muls', 'puls');
     const puls = div('mini-puls');
     // Inelul stins arată cât de mare e cercul pe bătaie
-    e.loc.append(div('mini-puls-tinta'), puls);
+    loc.append(div('mini-puls-tinta'), puls);
     const BATAI = 6;
     const PERIOADA = 1000;
     const FEREASTRA = 170;
@@ -169,7 +191,7 @@ export function creeazaMiniJocuri(parinte, joc) {
       const f = (((performance.now() - start) % PERIOADA) + PERIOADA) % PERIOADA / PERIOADA;
       // Cel mai mare la începutul fiecărei perioade (bătaia), apoi se strânge și crește la loc
       const marime = 0.55 + 0.45 * Math.pow(Math.cos(Math.PI * f), 2);
-      puls.style.transform = `translate(-50%, -50%) scale(${marime})`;
+      puls.style.transform = `scale(${marime})`;
       cadru = requestAnimationFrame(anima);
     };
     anima();
@@ -200,11 +222,14 @@ export function creeazaMiniJocuri(parinte, joc) {
   // Moara: clic repede ca să umpli sacul înainte să se termine timpul; sacul se mai și scurge puțin. Scorul 0–1
   async function moara({ imagine, titlu }) {
     const e = ecran(imagine, titlu, 'Apasă repede ca să umpli sacul cu făină înainte să treacă timpul.');
-    const sac = div('mini-sac');
+    const { el: sac } = piesa(e, 'minijoc_moara', 'sac');
+    sac.classList.add('mini-sac');
     const plin = div('mini-sac-plin');
     sac.append(plin);
-    const timp = div('mini-timp');
-    e.loc.append(sac, timp);
+    const { el: timp, h: hTimp } = piesa(e, 'minijoc_moara', 'timp');
+    timp.classList.add('mini-timp');
+    timp.style.fontSize = `${hTimp * 0.8}px`;
+    timp.style.lineHeight = `${hTimp}px`;
     const SECUNDE = 6;
     const PE_CLIC = 0.05;
     const SCURGERE = 0.04;

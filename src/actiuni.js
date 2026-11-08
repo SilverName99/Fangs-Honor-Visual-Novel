@@ -74,11 +74,12 @@ export function creeazaActiuni(parinte, joc) {
     if (!m) return joc.mesaj('Munca asta nu e definită în config.');
     // Noaptea nu se lucrează la câmp, la vaci sau la moară (decis de autor): doar gândul lui Vale
     if (m.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(m.gandNoapte);
+    // Prea obosit: doar gândul lui Vale, fără panou (decis de autor)
+    if (prea_obosit()) return joc.gand(m.gandObosit || 'Sunt prea obosit pentru muncă grea. Trebuie să mă odihnesc întâi.');
     panou(m.nume, (inchide) => {
       const s = joc.stare;
       const cuJoc = m.miniJoc && miniJocuriPornite();
       const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.${cuJoc ? ' Cât de bine lucrezi: de la jumătate până la +50%.' : ''}`);
-      if (prea_obosit()) return [info, div('text-anunt', 'Ești prea obosit pentru muncă grea. Odihnește-te întâi.')];
       const ore = [1, 2, 4].map((h) =>
         cuBaraStamina(buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, async () => {
           inchide();
