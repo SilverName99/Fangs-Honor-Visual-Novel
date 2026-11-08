@@ -106,12 +106,13 @@ export function creeazaLupta(parinte, joc) {
     const piese = Object.values(s.echipat).filter(Boolean).map((id) => inv.def(id));
     // În lupta de test, arma lui Vale se alege din panou (ca să se vadă fiecare set de poze), fără să-i schimbe echipamentul
     const deTest = def?.test && def.armaVale !== undefined;
-    const idArma = deTest ? def.armaVale : s.echipat.arma_primara;
+    // „faraArme”: Vale se bate doar cu pumnii (bătaia cu colectorul pentru fierul lui Bram, decis de autor)
+    const idArma = def?.faraArme ? null : deTest ? def.armaVale : s.echipat.arma_primara;
     const arma = idArma ? inv.def(idArma) : null;
-    const idScut = deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
+    const idScut = def?.faraArme ? null : deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
     const scut = idScut ? inv.def(idScut) : null;
     const tipDeBaza = arma?.tipArma || 'pumni';
-    const tipArma = deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
+    const tipArma = def?.faraArme ? 'pumni' : deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
       ...dupaArma(arma, scut, tipArma),
       id: 'vale',
@@ -704,7 +705,7 @@ export function creeazaLupta(parinte, joc) {
         );
       }, !consumabile.length, consumabile.length ? '' : 'N-ai nimic de folosit în luptă'),
       // Doar Vale își schimbă arma: recruții au arma lor, din npcs.json
-      ...(f.id === 'vale'
+      ...(f.id === 'vale' && !L.def.faraArme
         ? [butonActiune('schimba_arma', '⟳', 'Schimbă arma', () => alegeArma(f), !armeInRucsac().length, armeInRucsac().length ? '' : 'N-ai altă armă în rucsac')]
         : []),
       butonActiune('schimba', '⇄', 'Schimbă locul', () => alegeLoc(f)),

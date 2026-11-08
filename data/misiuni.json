@@ -104,6 +104,55 @@
         },
         "_nota": "Decis de autor: misiunea se ia doar dimineața, cât Miriam e în bucătărie (până la 11)."
       }
+    },
+    {
+      "id": "bram_fier",
+      "titlu": "Fierul lui Bram",
+      "dela": "fierar",
+      "dialog": "fierar",
+      "descriere": "CIORNĂ: Orcul colector i-a găsit lui Bram fierul ascuns și l-a dus la poartă. Fără fier, Bram nu mai poate lucra. I-am promis că i-l aduc înapoi.",
+      "oferta": {
+        "text": "Am văzut ce s-a întâmplat cu fierul...",
+        "nod": "fier_oferta",
+        "conditii": {
+          "stare": {
+            "fier_confiscat": "da"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Iau fierul înapoi de la colector, la poartă",
+          "gata": {
+            "areObiect": "fier_bram"
+          },
+          "sfat": "La poartă, colectorul: plătesc 60 de monede, îi bat pe paznici la zaruri (după-amiaza, 14–18) sau... mă bat cu el.",
+          "indiciu": {
+            "text": "Încă n-am luat fierul.",
+            "nod": "fier_indiciu"
+          }
+        },
+        {
+          "text": "Îi duc fierul lui Bram",
+          "gata": {
+            "stare": {
+              "magazin_bram": "deschis"
+            }
+          },
+          "sfat": "Cu fierul, vorbesc cu Bram.",
+          "predare": {
+            "text": "Ți-am adus fierul înapoi, Bram.",
+            "nod": "fier_predare",
+            "conditii": {
+              "areObiect": "fier_bram"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "_nota": "Decis de autor: bani, încredere +1 și magazinul lui Bram. Suma (15) e aleasă de Claude.",
+        "text": "15 monede, încrederea lui Bram +1 și magazinul lui deschis."
+      }
     }
   ]
 }

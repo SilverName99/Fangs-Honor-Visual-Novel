@@ -779,6 +779,76 @@
         "emotie": "normal",
         "text": "Și cum îi suporți pe orci?",
         "urmator": "orci"
+      },
+      "fier_oferta": {
+        "_nota": "CIORNĂ: Bram cere fier (misiunea bram_fier).",
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Ai văzut, deci. Tot ce strânsesem într-o iarnă... Fără fier nu fac nici cuie, nici potcoave. Și satul are nevoie de ele.",
+        "urmator": "fier_oferta_b"
+      },
+      "fier_oferta_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Te pot ajuta. De unde fac rost de fier?",
+        "urmator": "fier_oferta_c"
+      },
+      "fier_oferta_c": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mi l-a luat colectorul și-l ține la poartă. Dacă ai vreo cale să-l iei înapoi... Dar ai grijă, băiete. Cu orcii nu te joci.",
+        "alegeri": [
+          {
+            "text": "Îl aduc înapoi, Bram.",
+            "spre": "fier_accept",
+            "efecte": {
+              "misiune": {
+                "bram_fier": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Altă dată.",
+            "spre": "fier_altadata"
+          }
+        ]
+      },
+      "fier_accept": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mulțumesc, băiete. Ai grijă pe unde umbli."
+      },
+      "fier_altadata": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cum vrei. Fierul nu fuge nicăieri. Doar eu rămân fără treabă."
+      },
+      "fier_indiciu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "E la poartă, la colector. Lui nu-i trebuie fierul, îi trebuie să ne vadă cum ne târâm după el. Nu te bate cu el, Vale. Orcul ăla nu se bate cinstit."
+      },
+      "fier_predare": {
+        "_nota": "CIORNĂ: Vale aduce fierul; recompensa (decis de autor): bani, încredere și magazinul deschis.",
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Fierul meu! Cum l-ai luat de la ei? Nu, nu-mi spune. Mai bine nu știu.",
+        "urmator": "fier_predare_b",
+        "efecte": {
+          "daObiect": "fier_bram",
+          "bani": 15,
+          "relatie": {
+            "fierar": 1
+          },
+          "stare": {
+            "magazin_bram": "deschis"
+          }
+        }
+      },
+      "fier_predare_b": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ia banii ăștia. Și de azi încolo ușa mea e deschisă pentru tine. Intră când vrei: am și marfă de vândut."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -981,6 +1051,167 @@
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Am auzit ciocanul toată ziua... Nu mai picură nimic lângă vatră. În noaptea asta dormim fără găleată lângă pat. Mulțumesc, Vale."
+      }
+    }
+  },
+  "bram_fier_confiscat": {
+    "_nota": "CIORNĂ. Peste prima imagine: colectorul găsește fierul ascuns; peste a doua: pleacă cu el.",
+    "grup": "Misiunea lui Bram: fierul",
+    "partener": "orc_colector",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "imagine": "events/bram_fier_1.png",
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ia te uită ce ascunde fierarul sub cărbuni! Credeai că nu mă uit și pe sub nicovală?",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "E fier vechi. Pentru potcoave și cuie. Satul are nevoie de ele.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Satul are nevoie de ce zic eu că are nevoie. Fierul e al nostru. Tot fierul.",
+        "urmator": "d"
+      },
+      "d": {
+        "imagine": "events/bram_fier_2.png",
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Și să nu te mai prind că ascunzi ceva, că data viitoare iau și nicovala. Și mâinile.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "...",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Fierul ăla era tot ce mai avea Bram. Poate îl pot ajuta cumva.",
+        "efecte": {
+          "stare": {
+            "fier_confiscat": "da"
+          },
+          "confisca": "fier_bram"
+        }
+      }
+    }
+  },
+  "poarta_fier": {
+    "_nota": "CIORNĂ. Peste prima imagine: un orc îi face semn lui Vale să se întoarcă; peste a doua: colectorul și cele trei căi.",
+    "grup": "Misiunea lui Bram: fierul",
+    "partener": "paznic_orc_1",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "imagine": "events/poarta_fier_1.png",
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Hei, tu! Încotro? Întoarce-te de unde ai venit, n-ai ce căuta aici.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Fierul lui Bram e undeva aici. Nu plec fără el.",
+        "alegeri": [
+          {
+            "text": "Vreau să vorbesc cu colectorul.",
+            "spre": "c"
+          },
+          {
+            "text": "Nu acum.",
+            "spre": null
+          }
+        ]
+      },
+      "c": {
+        "imagine": "events/poarta_fier_2.png",
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ia te uită, satul și-a trimis apărătorul. Fierul? Al nostru e acum. Dar... azi mă simt darnic.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Trei căi ai, omule. Plătești 60 de monede. Sau îi bați pe băieții mei la zaruri, după-amiaza. Sau ți-l iei cu pumnii... de la mine.",
+        "alegeri": [
+          {
+            "text": "Plătesc. (60 de monede)",
+            "conditii": {
+              "bani": {
+                "min": 60
+              }
+            },
+            "efecte": {
+              "bani": -60,
+              "recupereaza": "fier_bram"
+            },
+            "spre": "platit"
+          },
+          {
+            "text": "Joc zaruri cu paznicii.",
+            "conditii": {
+              "ora": {
+                "min": "14:00",
+                "max": "17:59"
+              }
+            },
+            "efecte": {
+              "zaruri": true
+            },
+            "inchide": true
+          },
+          {
+            "text": "Joc zaruri cu paznicii.",
+            "conditii": {
+              "nu": {
+                "ora": {
+                  "min": "14:00",
+                  "max": "17:59"
+                }
+              }
+            },
+            "spre": "zaruri_nu"
+          },
+          {
+            "text": "Mă bat cu tine pentru el.",
+            "efecte": {
+              "lupta": "bataie_colector_fier"
+            },
+            "inchide": true
+          },
+          {
+            "text": "Mă mai gândesc.",
+            "spre": "gandeste"
+          }
+        ]
+      },
+      "platit": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Plăcere să fac afaceri cu tine. Acum cară-te, până nu mă răzgândesc."
+      },
+      "zaruri_nu": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Băieții joacă zaruri după-amiaza, între două și șase. Vino atunci, dacă ai curaj. Și bani."
+      },
+      "gandeste": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Gândește-te, gândește-te. Fierul nu fuge nicăieri. Doar ruginește."
       }
     }
   }

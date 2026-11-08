@@ -86,6 +86,21 @@
         "sunet": "lupta_topor"
       },
       "armura": 10
+    },
+    "colector_bata": {
+      "_nota": "Colectorul în bătaia pentru fierul lui Bram: trișează, cu bâta, iar Vale are doar pumnii; nu se poate câștiga (decis de autor). Pozele colectorului.",
+      "nume": "Orcul colector",
+      "numeScurt": "Orc C.",
+      "poze": "orc_colector",
+      "viata": 400,
+      "staminaMax": 90,
+      "atac": {
+        "min": 16,
+        "max": 22,
+        "tip": "apropiat",
+        "sunet": "lupta_topor"
+      },
+      "armura": 30
     }
   },
   "lupte": {
@@ -395,6 +410,32 @@
         "text": "Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
+        }
+      }
+    },
+    "bataie_colector_fier": {
+      "nume": "Bătaie cu colectorul",
+      "fundal": "poarta",
+      "fuga": false,
+      "faraArme": true,
+      "inamici": [
+        {
+          "id": "colector_bata",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Colectorul se clatină și scapă bâta. Nici el nu-i vine să creadă. Fierul e al tău.",
+        "efecte": {
+          "recupereaza": "fier_bram",
+          "reputatie": 3
+        }
+      },
+      "infrangere": {
+        "text": "„Pumni contra bâtă? Ce credeai, omule?” Colectorul râde, iar paznicii te aruncă afară de lângă poartă.",
+        "efecte": {
+          "timp": 60
         }
       }
     }

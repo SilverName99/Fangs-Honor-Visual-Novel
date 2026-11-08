@@ -50,9 +50,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
 
-    const partener = activ.dialog.partener;
+    // În dreapta stă cel care vorbește (într-o scenă cu mai mulți, de exemplu orcul și Bram); cât vorbește Vale,
+    // rămâne ultimul dintre ei
     const vorbesteVale = nod.vorbitor === 'vale';
-    if (nod.vorbitor && !vorbesteVale) activ.emotiePartener = nod.emotie || 'normal';
+    if (nod.vorbitor && !vorbesteVale) {
+      activ.emotiePartener = nod.emotie || 'normal';
+      activ.inDreapta = nod.vorbitor;
+    }
+    const partener = activ.inDreapta || activ.dialog.partener;
 
     stanga.replaceChildren(portret('vale', vorbesteVale ? nod.emotie || 'normal' : emotieVale()));
     dreapta.replaceChildren(...(partener && partener !== 'vale' ? [portret(partener, activ.emotiePartener)] : []));

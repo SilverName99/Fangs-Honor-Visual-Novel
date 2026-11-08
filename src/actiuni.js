@@ -184,7 +184,34 @@ export function creeazaActiuni(parinte, joc) {
     cuImagine(a, () => joc.dupaActiune(a.mesajGata || ''), a.sunet);
   }
 
+  // Căutat cu noroc (decis: fierul lui Bram se strânge altfel decât lemnele): fiecare oră aduce 0–3 bucăți,
+  // după „tabel”; prima dată Vale are un gând al lui („primaData”)
+  function cauta(a) {
+    const s = joc.stare;
+    if (a.gandNoapte && momentZi(minuteInZi(s)) === 'noaptea') return joc.gand(a.gandNoapte);
+    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    if (a.maxPeZi) folosiriAzi(a).n++;
+    if (joc.avanseaza(a.minute || 60)) return;
+    if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+    let z = Math.random() * a.tabel.reduce((t, x) => t + x.sansa, 0);
+    const n = (a.tabel.find((x) => (z -= x.sansa) < 0) || a.tabel.at(-1)).n;
+    const prima = a.primaData && !s.stari[`cautat_${a.id}`];
+    if (prima) s.stari[`cautat_${a.id}`] = 'da';
+    cuImagine(
+      a,
+      () => {
+        if (n > 0) joc.primeste(a.obiect, n);
+        joc.dupaActiune(n > 0 ? `+${n} ${inv.def(a.obiect).nume}` : '');
+        if (prima) joc.gand(a.primaData);
+        else if (!n && a.gandNimic) joc.gand(a.gandNimic);
+      },
+      a.sunet,
+    );
+  }
+
   const tipuri = {
+    cauta,
     lucrare,
     dormi,
     obtine,

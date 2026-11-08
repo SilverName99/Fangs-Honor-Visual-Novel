@@ -669,6 +669,49 @@
         "events/acoperis_reparat.png"
       ],
       "dialog": "miriam_acoperis_gata"
+    },
+    {
+      "id": "bram_fier_confiscat",
+      "_nota": "Decis de autor: din ziua 3, la o zi după prima discuție cu Bram, când e afară la nicovală. Două imagini, cu replici peste fiecare. Replicile sunt ciorne.",
+      "nume": "Orcul îi ia fierul lui Bram",
+      "grup": "Misiunea lui Bram: fierul",
+      "conditii": {
+        "loc": "fierar",
+        "personajIn": {
+          "fierar": [
+            "fierar"
+          ]
+        },
+        "zi": {
+          "min": 3
+        },
+        "cunoscutDeZile": {
+          "fierar": 1
+        }
+      },
+      "repetare": "o_data",
+      "dialog": "bram_fier_confiscat"
+    },
+    {
+      "id": "poarta_fier",
+      "_nota": "Decis de autor: cât e misiunea lui Bram în lucru și fierul e încă la orci, de fiecare dată când Vale vine la poartă. Replicile sunt ciorne.",
+      "nume": "Fierul lui Bram, la poartă",
+      "grup": "Misiunea lui Bram: fierul",
+      "conditii": {
+        "loc": "poarta",
+        "misiune": {
+          "bram_fier": "inceputa"
+        },
+        "nu": {
+          "areObiect": "fier_bram"
+        },
+        "ora": {
+          "min": "06:00",
+          "max": "22:59"
+        }
+      },
+      "repetare": "mereu",
+      "dialog": "poarta_fier"
     }
   ]
 }

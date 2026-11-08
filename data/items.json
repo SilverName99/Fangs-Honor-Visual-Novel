@@ -203,6 +203,12 @@
     "cheie_fierar": {
       "nume": "Cheia fierarului",
       "tip": "poveste"
+    },
+    "fier_bram": {
+      "nume": "Fierul lui Bram",
+      "tip": "poveste",
+      "pret": 40,
+      "_nota": "Fierul confiscat de colector (misiunea lui Bram). Prețul face miza la zaruri: jumătate, 20 de monede."
     }
   }
 }

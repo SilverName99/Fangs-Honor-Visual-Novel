@@ -118,7 +118,7 @@ export function creeazaZaruri(parinte, joc) {
     const panou = div('panou-zaruri-miza');
     panou.append(div('titlu-zaruri', 'Zaruri cu paznicii'), div('text-zaruri', cfg().replici.oferta));
     for (const o of lista) {
-      const b = buton(`Pui ${o.miza} monede · ei pun: ${nume(o.premiu)}${o.recuperat ? ' (al tău, luat de ei)' : ''}`, () => incepe(o), 'miza');
+      const b = buton(`Pui ${o.miza} monede · ei pun: ${nume(o.premiu)}${o.recuperat ? ' (luat de orci)' : ''}`, () => incepe(o), 'miza');
       b.disabled = joc.stare.bani < o.miza;
       panou.append(b);
     }

@@ -276,24 +276,35 @@
               ]
             }
           ],
-          "incuiat": {
-            "conditii": {
-              "oricare": [
-                {
-                  "personajIn": {
-                    "fierar": [
-                      "fierar",
-                      "fierar/interior"
-                    ]
-                  }
-                },
-                {
-                  "areObiect": "cheie_fierar"
+          "incuiat": [
+            {
+              "conditii": {
+                "stare": {
+                  "magazin_bram": "deschis"
                 }
-              ]
+              },
+              "mesaj": "Ușa fierăriei e zăvorâtă. Bram nu primește pe nimeni înăuntru. Nu încă."
             },
-            "mesaj": "Ușa fierăriei e închisă. Bram nu e aici acum; poate îl găsesc mai târziu."
-          }
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "personajIn": {
+                      "fierar": [
+                        "fierar",
+                        "fierar/interior"
+                      ]
+                    }
+                  },
+                  {
+                    "areObiect": "cheie_fierar"
+                  }
+                ]
+              },
+              "mesaj": "Ușa fierăriei e închisă. Bram nu e aici acum; poate îl găsesc mai târziu."
+            }
+          ],
+          "_incuiat": "Decis de autor: magazinul lui Bram e închis până la misiunea cu fierul; după ea, Bram îl invită înăuntru."
         },
         {
           "id": "camera",
