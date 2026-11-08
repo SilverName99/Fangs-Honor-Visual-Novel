@@ -84,14 +84,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
     // „nume” la replică: un vorbitor fără nume propriu care împrumută portretele altuia (orcii din tavernă)
     textNume.textContent = nod.vorbitor ? nod.nume || numeVorbitor(nod.vorbitor, activ.dialog) : '';
-    // Medalionul folosește mereu portretul „normal” (decis de autor), ca în luptă: fața nu se schimbă cu emoția
-    const cheie = nod.vorbitor || '';
+    // Fața din medalion urmează emoția replicii (decis de autor); fără portretul acela, cel „normal”
+    const cheie = nod.vorbitor ? `${nod.vorbitor}_${nod.emotie || 'normal'}` : '';
     if (cheie !== cheieMedalion) {
       cheieMedalion = cheie;
       medalionNume.className = `medalion medalion-nume ${tabaraVorbitor?.(nod.vorbitor) || 'aliat'}`;
       medalionNume.replaceChildren(
         ...(nod.vorbitor
-          ? [elementImagine([`portraits/${cheie}_normal.png`], { clasa: 'portret-medalion', raport: 1, eticheta: nod.vorbitor }), div('rama-medalion')]
+          ? [elementImagine([`portraits/${cheie}.png`, `portraits/${nod.vorbitor}_normal.png`], { clasa: 'portret-medalion', raport: 1, eticheta: nod.vorbitor }), div('rama-medalion')]
           : []),
       );
     }
