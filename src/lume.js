@@ -39,7 +39,8 @@ export function construiesteLumea(date) {
     variante: harta.variante || [],
     estompare: harta.estompare || [],
     parinte: null,
-    tinte: zone.map((z) => ({ id: z.id, nume: z.nume, spre: z.id })),
+    // O zonă poate fi și ea încuiată de pe hartă (poarta noaptea, până e gata misiunea lui Bram): doar gândul lui Vale
+    tinte: zone.map((z) => ({ id: z.id, nume: z.nume, spre: z.id, incuiat: z.incuiat || null })),
     obiecte: zone.flatMap((z) =>
       (z.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: z.nume, imagine: p.imagine, variante: p.variante || [], tinta: z.id, deasupra: !!p.deasupra })),
     ),

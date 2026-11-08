@@ -1035,7 +1035,28 @@
           }
         }
       ],
-      "locuri": []
+      "locuri": [],
+      "incuiat": [
+        {
+          "_nota": "Decis de autor: noaptea, cât poarta e încă închisă (până e gata misiunea fierului lui Bram), Vale nici nu ajunge acolo: doar gândul lui. Ciornă.",
+          "conditii": {
+            "oricare": [
+              {
+                "misiune": {
+                  "bram_fier": "terminata"
+                }
+              },
+              {
+                "ora": {
+                  "min": "06:00",
+                  "max": "22:59"
+                }
+              }
+            ]
+          },
+          "mesaj": "E noapte. Să mă duc acum la poartă, printre orci, n-ar fi deloc bine. Mai bine aștept până dimineață."
+        }
+      ]
     },
     {
       "id": "biserica",
