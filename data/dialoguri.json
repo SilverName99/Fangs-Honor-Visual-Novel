@@ -1324,7 +1324,7 @@
               "bani": -60,
               "recupereaza": "fier_bram"
             },
-            "spre": "platit"
+            "inchide": true
           },
           {
             "text": "Joc zaruri cu paznicii.",
@@ -1363,14 +1363,6 @@
             "spre": "gandeste"
           }
         ]
-      },
-      "platit": {
-        "vorbitor": "orc_colector",
-        "emotie": "rade",
-        "text": "Plăcere să fac afaceri cu tine. Acum cară-te, până nu mă răzgândesc.",
-        "efecte": {
-          "mergi": "harta"
-        }
       },
       "zaruri_nu": {
         "vorbitor": "orc_colector",

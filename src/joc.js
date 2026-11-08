@@ -609,10 +609,11 @@ const joc = {
     dialog.porneste({ partener: cine, start: 'r', noduri: { r: { vorbitor: cine, emotie, text } } });
   },
   // După masa de zaruri: trece timpul, apoi orcul spune ce crede despre rezultat
-  dupaZaruri(text, aCastigat, minute) {
+  dupaZaruri(text, aCastigat, minute, eveniment) {
     if (avanseaza(minute)) return;
     salveaza();
     afiseaza();
+    if (eveniment) return pornesteEvenimentDupa(eveniment);
     joc.replica('paznic_orc_1', aCastigat ? 'suparat' : 'rade', text);
   },
   dupaLupta(efecte, minute) {

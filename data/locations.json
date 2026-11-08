@@ -1047,6 +1047,11 @@
                 }
               },
               {
+                "stare": {
+                  "poarta_deschisa": "da"
+                }
+              },
+              {
                 "ora": {
                   "min": "06:00",
                   "max": "22:59"

@@ -282,11 +282,14 @@ export function creeazaZaruri(parinte, joc) {
   function inchide() {
     const terminat = s && s.final !== undefined;
     const aCastigat = s?.final;
+    const premiu = s?.oferta?.recuperat ? s.oferta.premiu : null;
     el?.remove();
     el = null;
     s = null;
     if (!terminat) return joc.dupaActiune();
-    joc.dupaZaruri(aCastigat ? cfg().replici.valeCastiga : cfg().replici.valePierde, aCastigat, cfg().minute);
+    // Un premiu cu evenimentul lui (fierul lui Bram) îl arată pe acela în locul replicii obișnuite a paznicului
+    const ev = aCastigat && premiu ? joc.inventar.def(premiu)?.evenimentRecuperat : null;
+    joc.dupaZaruri(aCastigat ? cfg().replici.valeCastiga : cfg().replici.valePierde, aCastigat, cfg().minute, ev);
   }
 
   // ---------- desenul ----------

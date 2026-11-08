@@ -15,11 +15,15 @@ const efecte = {
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
   // Lucrul confiscat ajunge înapoi la Vale (plătit, câștigat), deci nu mai e la orci
+  // Un obiect luat de orci, recăpătat; unele au un eveniment al lor după aceea (fierul lui Bram: colectorul
+  // îi spune lui Vale că-l mai așteaptă la poartă)
   recupereaza: (v, joc) =>
     [].concat(v).forEach((id) => {
       const i = joc.stare.confiscate.indexOf(id);
       if (i >= 0) joc.stare.confiscate.splice(i, 1);
       joc.primeste(id, 1);
+      const ev = joc.inventar.def(id)?.evenimentRecuperat;
+      if (ev) joc.pornesteEvenimentDupa(ev);
     }),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   // „consuma: { lemn: 10 }” = Vale dă (sau folosește) atâtea bucăți din rucsac

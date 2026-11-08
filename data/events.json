@@ -815,6 +815,9 @@
             "bram_fier": "terminata"
           }
         },
+        "nuStare": {
+          "poarta_deschisa": "da"
+        },
         "oricare": [
           {
             "nu": {
@@ -822,9 +825,6 @@
                 "bram_fier": "inceputa"
               }
             }
-          },
-          {
-            "areObiect": "fier_bram"
           },
           {
             "nu": {
@@ -838,6 +838,30 @@
       },
       "repetare": "mereu",
       "dialog": "poarta_oprit"
+    },
+    {
+      "id": "fier_recuperat",
+      "manual": true,
+      "repetare": "o_data",
+      "_nota": "Decis de autor: când Vale ia fierul înapoi (plată, zaruri sau bătaie), imaginea cu fierul primit și colectorul care îi spune că-l mai așteaptă la poartă; de acum poarta e deschisă. Replica e ciornă.",
+      "nume": "Fierul lui Bram, luat înapoi",
+      "grup": "Misiunea lui Bram: fierul",
+      "imagini": [
+        "events/poarta_fier_recuperat.png"
+      ],
+      "vorbitor": "orc_colector",
+      "emotie": "rade",
+      "text": "Ia-ți fierul, omule, și du-l la fierarul tău. Și să nu te pierzi... Te mai așteptăm pe la poartă: taxa, zarurile, ce mai ai tu de dat.",
+      "alegeri": [
+        {
+          "text": "Mai vedem noi.",
+          "efecte": {
+            "stare": {
+              "poarta_deschisa": "da"
+            }
+          }
+        }
+      ]
     },
     {
       "id": "kaia_intalnire",
