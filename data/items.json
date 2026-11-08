@@ -147,7 +147,6 @@
       "tip": "echipament",
       "slot": "arma_primara",
       "douaMaini": true,
-      "sloturi": 2,
       "tipArma": "arc",
       "atac": {
         "min": 8,
@@ -155,7 +154,8 @@
         "tip": "distanta",
         "sageata": "combat/sageata.png"
       },
-      "pret": 35
+      "pret": 35,
+      "_notaSloturi": "Decis de autor: arcul ocupă un singur loc în rucsac (dar tot ține ambele mâini)."
     },
     "scut_lemn": {
       "nume": "Scut de lemn",

@@ -388,7 +388,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 
 - Inventarul are un număr de **sloturi**, iar rucsacul îl mărește: fără rucsac 3 (decis), rucsacul de pânză 8 (decis), cel de piele 16 (`TODO`). Rucsacul de pânză stă deocamdată în cufărul de acasă de la începutul jocului (`start.cufar`; `TODO`: cum face rost Vale de el); din cufăr, echipamentul se poate echipa direct (ce se dă jos rămâne în cufăr). Salvarea e la versiunea 4: cine n-are rucsacul îl primește în cufăr.
 - **Stive:** obiectele de același fel stau în același slot, până la o limită per obiect (de exemplu 5 pâini, 3 sticle de apă, 10 bucăți de lemn, 20 de săgeți). Echipamentul nu se stivuiește.
-- **Obiectele mari ocupă 2 sloturi:** armele cu două mâini, pieile mari (blana de lup ocupă doar unul, decis de autor).
+- **Obiectele mari ocupă 2 sloturi:** armele cu două mâini, pieile mari (blana de lup și arcul ocupă doar unul, decis de autor; arcul tot ține ambele mâini).
 - **Echipamentul purtat nu ocupă sloturi.**
 - **Obiectele de poveste** (chei, scrisori) stau pe o pagină separată, fără limită, și nu se pot pierde.
 - **Cufărul de acasă:** un depozit mare (~40 de sloturi, `TODO`).
