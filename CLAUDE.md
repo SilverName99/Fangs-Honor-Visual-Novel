@@ -245,7 +245,7 @@ Elemente (lista poate crește):
 ## 10. Dialog
 
 - NPC-ul în **dreapta**, Vale în **stânga**, amândoi la ~85-90% din înălțimea scenei, ancorați jos. Fundalul scenei rămâne vizibil, puțin întunecat; numele locului (banda de sus) face parte din fundal: stă în spatele portretelor și se întunecă odată cu scena (decis).
-- Chenarul de text stă jos (~25% din înălțime), **deasupra portretelor**, cu numele vorbitorului într-un colț. **Când replicile stau peste o imagine** (personajele vorbesc între ele într-o misiune), lângă nume, în stânga plăcuței, stă **medalionul din luptă** cu fața vorbitorului (rama aurie la oameni, roșie la orci; decis de autor), ca să se vadă repede cine vorbește.
+- Chenarul de text stă jos (~25% din înălțime), **deasupra portretelor**, cu numele vorbitorului într-un colț. **Când replicile stau peste o imagine** (personajele vorbesc între ele într-o misiune), lângă nume, în stânga plăcuței, stă **medalionul din luptă** cu fața vorbitorului (mereu din portretul `normal`, ca în luptă; rama aurie la oameni, roșie la orci; decis de autor), ca să se vadă repede cine vorbește.
 - Fiecare replică are un câmp `emotie` (de exemplu `"emotie": "speriat"`) care alege portretul.
 - Sub text apar 2-3 alegeri, care pot avea efecte (secțiunea 13).
 
