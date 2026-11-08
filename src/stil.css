@@ -2986,3 +2986,8 @@ svg.zone {
   background: linear-gradient(90deg, #a7854f, #e8c060);
   transition: width 0.15s;
 }
+
+/* „Ești sigur?” peste orice ecran (inventar, meniu), în stilul panoului mic */
+.acoperitor.intrebare {
+  z-index: 9500;
+}

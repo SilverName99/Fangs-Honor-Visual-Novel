@@ -138,6 +138,20 @@ function anunt(text) {
   ui.append(fundal);
 }
 
+// Întrebarea „ești sigur?” în stilul jocului, pe panoul mic, nu fereastra browserului (decis de autor: aceea
+// scoate jocul din ecranul complet și nu se potrivește cu restul). Întoarce o promisiune: da / nu
+function intreaba(text, da = 'Da', nu = 'Nu') {
+  return new Promise((raspunde) => {
+    const fundal = div('acoperitor intrebare');
+    const panou = div('panou-anunt');
+    const gata = (r) => (fundal.remove(), raspunde(r));
+    panou.append(div('text-anunt', text), buton(da, 'buton-mic-meniu', () => gata(true)), buton(nu, 'buton-mic-meniu', () => gata(false)));
+    fundal.append(panou);
+    fundal.onclick = (e) => e.target === fundal && gata(false);
+    ui.append(fundal);
+  });
+}
+
 function actualizeazaHud() {
   // Pașii misiunilor se bifează singuri după orice schimbare (lemn adunat, acoperiș reparat, dialog)
   actualizeazaMisiuni(joc);
@@ -574,6 +588,7 @@ const joc = {
     salveaza();
     afiseaza();
   },
+  intreaba,
   dupaActiune(text) {
     salveaza();
     afiseaza();
@@ -731,9 +746,11 @@ function deschideMeniul() {
         }
       }),
       optiune('joc_nou', '🌅', 'Joc nou', () => {
-        if (!confirm('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).')) return;
-        inchide();
-        joc.jocNou();
+        intreaba('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).', 'Joc nou', 'Renunț').then((da) => {
+          if (!da) return;
+          inchide();
+          joc.jocNou();
+        });
       }),
       optiune('galerie', '🖼', 'Galerie', arataGaleria),
       optiune('optiuni', '⚙', 'Opțiuni', arataOptiunile),

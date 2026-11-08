@@ -254,10 +254,13 @@ export function creeazaEcranInventar(parinte, joc) {
       if (d.tip === 'echipament') b('Echipează', () => ruleaza(echipat(inv.echipeaza(selectat.index))));
       if (optiuni.cufar) b('În cufăr', () => ruleaza(inv.spreCufar(selectat.index)));
       b('Aruncă', () => {
-        const x = s.inventar[selectat.index];
-        if (!confirm(`Arunci ${d.nume}${x.n > 1 ? ` (toate ${x.n})` : ''}? Nu se mai poate recupera.`)) return;
-        s.inventar.splice(selectat.index, 1);
-        ruleaza();
+        const index = selectat.index;
+        const x = s.inventar[index];
+        joc.intreaba(`Arunci ${d.nume}${x.n > 1 ? ` (toate ${x.n})` : ''}? Nu se mai poate recupera.`, 'Aruncă', 'Păstrează').then((da) => {
+          if (!da || s.inventar[index] !== x) return;
+          s.inventar.splice(index, 1);
+          ruleaza();
+        });
       });
     }
     if (selectat.din === 'cufar') {

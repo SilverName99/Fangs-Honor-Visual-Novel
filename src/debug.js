@@ -143,7 +143,7 @@ export function creeazaDebug(parinte, joc) {
         joc.dupaSchimbare(false);
       };
     });
-    el.querySelector('.joc-nou').onclick = () => confirm('Începi un joc nou? Salvarea curentă se pierde.') && joc.jocNou();
+    el.querySelector('.joc-nou').onclick = () => joc.intreaba('Începi un joc nou? Salvarea curentă se pierde.').then((da) => da && joc.jocNou());
   }
 
   // ---------- Testare luptă: fundal, arma lui Vale, aliați și inamici aleși de mână ----------
