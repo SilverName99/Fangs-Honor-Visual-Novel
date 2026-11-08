@@ -41,16 +41,23 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   let spatiuApasat = false;
   // Ziua și ora la care se uită editorul: scena arată exact ce e în joc atunci
   // (personajele prezente, sprite-ul lor de la ora aceea, variantele de noapte)
+  // „Arată tot” (cerut de autor): personajele, decorul și intervalele care țin de misiuni sau stări apar oricum,
+  // ca să poată fi aranjate înainte de a ajunge la ele în joc (de exemplu Kaia la marginea pădurii); ținut minte în browser
+  const CHEIE_TOT = 'fh_editor_arata_tot';
+  let tot = false;
+  try {
+    tot = localStorage.getItem(CHEIE_TOT) === 'da';
+  } catch {}
   const vedere = { zi: 'luni', ora: 12 };
   const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
   const context = () => {
     const minuteZi = vedere.ora * 60;
-    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [] };
+    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [], arataTot: tot };
   };
   const locScena = () => idScena.replace('.', '/');
   const prezent = (idPers) => {
     const p = personaje.get(idPers);
-    return !!p && undeEste(p, context()) === locScena() && verifica(p.apare, context());
+    return !!p && undeEste(p, context()) === locScena() && (tot || verifica(p.apare, context()));
   };
   // Cheile sub care se salvează poziția și zona: cu „@cina” când e activă o variantă cu nume
   const ko = (id) => id + sufixVarianta(descriere(), id, context());
@@ -58,6 +65,17 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     const t = descriere().tinte.find((x) => x.id === id);
     return t?.personaj ? id + sufixVarianta(descriere(), t.personaj, context()) : id;
   };
+  // Prima zi și oră la care personajul e în scena asta (pentru „La ora lui”); cu „Arată tot”, și intervalele din misiuni
+  function oraLui(p) {
+    const loc = locScena();
+    if (p.program) {
+      const x = p.program.find((i) => i.loc === loc && (tot || !i.conditii));
+      return x ? { ora: Number(x.de.split(':')[0]), zi: x.zile?.[0] || vedere.zi } : null;
+    }
+    const inceput = { dimineata: 5, amiaza: 10, seara: 18, noaptea: 23 };
+    const m = Object.entries(p.rutina || {}).find(([, r]) => r.loc === loc)?.[0];
+    return m ? { ora: inceput[m], zi: vedere.zi } : null;
+  }
   // Când apare un personaj în scena asta, pe scurt (pentru panou)
   function candEAici(p) {
     const loc = locScena();
@@ -165,7 +183,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     r.svg.remove();
     // Personajele care nu sunt aici la ora aleasă nu se văd (ca în joc)
     for (const o of d.obiecte) {
-      if ((o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !verifica(o.apare, context()))) {
+      if ((o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !tot && !verifica(o.apare, context()))) {
         r.obiecte.get(o.id).remove();
         r.obiecte.delete(o.id);
       }
@@ -451,7 +469,8 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <b>${String(vedere.ora).padStart(2, '0')}:00</b>
         <button class="btn ora-plus" title="O oră înainte">+</button>
         <span class="sumar">${MOMENTE[context().moment]}</span>
-      </div>`;
+      </div>
+      <label class="arata-tot" title="Personajele, decorul și orele care apar abia după o misiune sau o stare se văd oricum, ca să le poți aranja"><input type="checkbox" class="tot" ${tot ? 'checked' : ''}> Arată tot (și ce apare abia după misiuni)</label>`;
 
     if (desen) {
       const t = desen.id === PRIM_PLAN ? { nume: 'prim-plan (ce stă în fața personajelor)' } : d.tinte.find((x) => x.id === desen.id);
@@ -483,11 +502,12 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           .map((o) => {
             const sel = selectie?.tip === 'obiect' && selectie.id === o.id;
             const aranjat = !!lucru.obiecte[ko(o.id)];
-            const absent = (o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !verifica(o.apare, context()));
+            const absent = (o.tip === 'sprite' && !prezent(o.id)) || (o.tip === 'decor' && !tot && !verifica(o.apare, context()));
             const varianta = ko(o.id) !== o.id ? ` <span class="sumar">(${esc(ko(o.id).split('@')[1])})</span>` : '';
             return `<div class="rand ${sel ? 'selectat' : ''} ${absent ? 'absent' : ''}" data-obiect="${esc(o.id)}">
               <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}${varianta}
               ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${esc(candEAici(personaje.get(o.id)))}${absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
+              ${o.tip === 'sprite' && absent && oraLui(personaje.get(o.id)) ? '<button class="btn la-ora" title="Mută ziua și ora editorului când e el aici">La ora lui</button>' : ''}
             </div>${
               sel && !absent
                 ? `<div class="numeric">
@@ -535,6 +555,21 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       vedere.ora = (vedere.ora + cu + 24) % 24;
       arataScena();
     };
+    elPanou.querySelector('.tot').onchange = (e) => {
+      tot = e.target.checked;
+      try {
+        localStorage.setItem(CHEIE_TOT, tot ? 'da' : 'nu');
+      } catch {}
+      arataScena();
+    };
+    for (const b of elPanou.querySelectorAll('.la-ora')) {
+      b.onclick = (e) => {
+        e.stopPropagation();
+        const ora = oraLui(personaje.get(b.closest('[data-obiect]').dataset.obiect));
+        Object.assign(vedere, ora);
+        arataScena();
+      };
+    }
     elPanou.querySelector('.ora-minus').onclick = () => schimbaOra(-1);
     elPanou.querySelector('.ora-plus').onclick = () => schimbaOra(1);
     elPanou.querySelector('.zoom-reset').onclick = () => (ecranul.reseteaza(), arataZoom());

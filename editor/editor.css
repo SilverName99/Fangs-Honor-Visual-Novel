@@ -710,3 +710,15 @@ svg.editor-zone.desen {
 .document-misiuni .prompt { position: relative; margin: 8px 0 14px; }
 .document-misiuni .prompt pre { white-space: pre-wrap; background: rgba(0, 0, 0, 0.35); border: 1px solid #555; border-radius: 6px; padding: 12px 12px 12px 12px; padding-right: 110px; font-size: 13px; margin: 0; }
 .document-misiuni .prompt .copiaza { position: absolute; top: 6px; right: 6px; }
+/* „Arată tot”: ce apare abia după misiuni se vede oricum, ca să poată fi aranjat */
+.arata-tot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 4px;
+  cursor: pointer;
+}
+.rand .btn.la-ora {
+  margin-left: auto;
+  font-size: 12px;
+}

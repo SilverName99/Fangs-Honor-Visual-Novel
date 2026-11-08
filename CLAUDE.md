@@ -73,7 +73,8 @@ Autorul lucrează **doar din browser**, pe VPS-ul lui, fără să instaleze nimi
    - tragi sprite-urile și piesele, iar rotița mouse-ului le mărește (x, y, scară);
    - desenezi **zonele clicabile** punct cu punct (poligoane);
    - așezi sloturile de echipament peste figura lui Vale;
-   - setezi marginile elementelor de interfață (secțiunea 9).
+   - setezi marginile elementelor de interfață (secțiunea 9);
+   - bifa **„Arată tot”** (decis de autor, ținută minte în browser) arată și personajele, decorul și orele care apar abia după o misiune sau o stare (de exemplu Kaia la marginea pădurii), ca să poată fi aranjate dinainte; la un personaj care nu e acolo la ora aleasă, „La ora lui” mută ziua și ora editorului când e el acolo.
 3. **Testare.** Jocul, cu panoul debug deschis: schimbi ora, pui noapte, setezi stări și vezi variantele. Panoul debug (F2) are și: misiunile (pornește / resetează, cu pasul la care ești), „Toți cunoscuți de 3 zile”, „+1 vânătoare câștigată”, evenimentele pornite forțat.
 4. **Misiuni** (decis de autor): tab-ul cu `docs/misiuni.md`, walkthrough-ul: fiecare misiune, cum pornește, ce imagini cere și cum se verifică la Testare (decis de autor: fără prompturi în el; prompturile le dă Claude în conversație).
 

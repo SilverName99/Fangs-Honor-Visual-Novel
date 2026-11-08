@@ -20,7 +20,8 @@ export function intrareProgram(personaj, ctx) {
   return personaj.program.find((p) => {
     if (p.zile && !p.zile.includes(ctx.ziSaptamana)) return false;
     // „conditii”: intervalul ține doar cât sunt îndeplinite (de exemplu o întâlnire dintr-o misiune)
-    if (p.conditii && !verifica(p.conditii, ctx)) return false;
+    // În editor, cu „Arată tot” bifat, intervalele din misiuni se văd și fără misiune (ca să poată fi aranjate)
+    if (p.conditii && !ctx.arataTot && !verifica(p.conditii, ctx)) return false;
     const de = min(p.de);
     const pana = min(p.pana);
     return de < pana ? minuteZi >= de && minuteZi < pana : minuteZi >= de || minuteZi < pana;
