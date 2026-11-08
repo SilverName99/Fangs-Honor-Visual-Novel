@@ -1,4 +1,4 @@
-import { elementImagine, preincarca } from './imagini.js';
+import { elementImagine, preincarca, schimbaImagine } from './imagini.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 
@@ -9,10 +9,15 @@ export function creeazaSecventa(parinte) {
   el.hidden = true;
   parinte.append(el);
   let activ = null;
+  const strat = div('strat-secventa');
+  const indicator = div('indicator-secventa');
 
   function deseneaza() {
     const { imagini, i, opt } = activ;
-    el.replaceChildren(elementImagine([imagini[i]], { clasa: 'fundal', fundal: true }), div('indicator-secventa', opt.text || `${i + 1} / ${imagini.length} ▸`));
+    // Imaginea veche rămâne până se vede cea nouă (decis de autor: fără gol între imagini)
+    if (!el.contains(strat)) el.replaceChildren(strat, indicator);
+    indicator.textContent = opt.text || `${i + 1} / ${imagini.length} ▸`;
+    schimbaImagine(strat, elementImagine([imagini[i]], { clasa: 'fundal', fundal: true }));
     // Ca ecran de încărcare (vânătoarea), imaginea trece singură după câteva secunde
     clearTimeout(activ.temporizator);
     if (opt.automat) activ.temporizator = setTimeout(inainte, opt.automat);
@@ -28,6 +33,7 @@ export function creeazaSecventa(parinte) {
     clearTimeout(activ.temporizator);
     activ = null;
     el.hidden = true;
+    strat.replaceChildren();
     el.replaceChildren();
     gata();
   }

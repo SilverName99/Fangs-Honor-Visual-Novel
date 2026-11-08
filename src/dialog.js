@@ -1,4 +1,4 @@
-import { elementImagine } from './imagini.js';
+import { elementImagine, schimbaImagine } from './imagini.js';
 
 const div = (clasa) => Object.assign(document.createElement('div'), { className: clasa });
 
@@ -44,8 +44,11 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     activ.nod = nod;
     if (nod.imagine && nod.imagine !== activ.imagine) {
       activ.imagine = nod.imagine;
-      fundal.replaceChildren(elementImagine([nod.imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: nod.imagine }));
-      el.classList.add('cu-imagine');
+      el.classList.add('cu-imagine', 'asteapta-imaginea');
+      // Replicile și portretele apar abia când se vede imaginea, ca între două imagini să nu clipească dialogul
+      schimbaImagine(fundal, elementImagine([nod.imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: nod.imagine }), () =>
+        el.classList.remove('asteapta-imaginea'),
+      );
     }
     laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
@@ -107,6 +110,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   }
 
   function continua() {
+    if (el.classList.contains('asteapta-imaginea')) return;
     if (activ && !activ.alegeri.length) arataNod(activ.nod.urmator ?? null);
   }
 
@@ -114,7 +118,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!activ) return;
     el.hidden = true;
     fundal.replaceChildren();
-    el.classList.remove('cu-imagine');
+    el.classList.remove('cu-imagine', 'asteapta-imaginea');
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;

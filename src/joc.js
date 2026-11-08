@@ -1,10 +1,10 @@
 import './stil.css';
 import { dateBundle as date } from './date.js';
-import { construiesteLumea, candidati } from './lume.js';
+import { construiesteLumea, candidati, imaginiCerute } from './lume.js';
 import { creeazaEcran, randeaza, aplicaMoment, puncteSvg, LATIME, INALTIME } from './scena.js';
 import { conturImagine } from './contur.js';
 import { verifica, registreazaConditie } from './conditii.js';
-import { preincarca, elementImagine } from './imagini.js';
+import { preincarca, elementImagine, incarcaToate } from './imagini.js';
 import { VITEZE, viteza, seteazaViteza } from './viteza.js';
 import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
@@ -1100,6 +1100,35 @@ addEventListener('keydown', (e) => {
 
 afiseaza();
 if (parametri.has('debug')) debug.comuta();
+
+// Toate imaginile jocului se încarcă de la pornire (decis de autor), ca trecerile (noaptea pe hartă, imaginile
+// evenimentelor) să nu se mai vadă încărcându-se. Întâi scena de acum, apoi restul; un ecran arată cât s-a ajuns.
+// La testele automate (?test=1) se încarcă tot, dar fără ecran, ca să nu încurce
+{
+  const cai = imaginiCerute(date, lume)
+    .map((x) => x.cale)
+    .filter((c) => c.endsWith('.png'));
+  const acum = lume.get(stare.scena);
+  const primele = candidati(acum.imagine, acum.variante, context(stare));
+  const ordine = [...new Set([...primele, ...cai])];
+  if (parametri.has('test')) incarcaToate(ordine);
+  else {
+    const ecran = div('ecran-incarcare');
+    const umplere = div('umplere-incarcare');
+    const bara = div('bara-incarcare');
+    bara.append(umplere);
+    const text = div('text-incarcare', 'Se pregătesc imaginile...');
+    ecran.append(text, bara);
+    ui.append(ecran);
+    incarcaToate(ordine, (facute, total) => {
+      umplere.style.width = `${(facute / total) * 100}%`;
+      text.textContent = `Se pregătesc imaginile... ${Math.round((facute / total) * 100)}%`;
+    }).then(() => {
+      ecran.classList.add('gata');
+      setTimeout(() => ecran.remove(), 400);
+    });
+  }
+}
 // Previzualizarea din editor (Interfață → Meniul): jocul pornește cu meniul deschis și primește mărimile pe loc,
 // cât autorul le reglează, fără să le salveze
 if (parametri.has('meniu')) deschideMeniul();

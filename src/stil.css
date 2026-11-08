@@ -2942,3 +2942,47 @@ svg.zone {
   color: #7a1f12;
   border-color: #7a1f12;
 }
+
+/* Trecerea între imagini: cea veche rămâne până se vede cea nouă */
+.strat-secventa {
+  position: absolute;
+  inset: 0;
+}
+.dialog.asteapta-imaginea > .loc-portret,
+.dialog.asteapta-imaginea > .caseta {
+  visibility: hidden;
+}
+
+/* Ecranul de la pornire, cât se pregătesc toate imaginile (decis de autor) */
+.ecran-incarcare {
+  position: absolute;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #0d0a07;
+  color: #f3e6c8;
+  font: 600 36px Georgia, serif;
+  transition: opacity 0.4s;
+}
+.ecran-incarcare.gata {
+  opacity: 0;
+  pointer-events: none;
+}
+.bara-incarcare {
+  width: 700px;
+  height: 18px;
+  border: 2px solid #a7854f;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+.umplere-incarcare {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #a7854f, #e8c060);
+  transition: width 0.15s;
+}
