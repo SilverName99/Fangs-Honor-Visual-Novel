@@ -1323,7 +1323,7 @@
     }
   },
   "kaia_intalnire": {
-    "_nota": "CIORNĂ. Peste prima imagine: Vale o vede pe Kaia luptându-se cu trei lupi; peste a doua: se recunosc și se pregătesc de luptă.",
+    "_nota": "CIORNĂ. Peste prima imagine (decis de autor): Kaia, călare pe tigru, față în față cu trei lupi care o înconjoară, încă fără luptă (se pândesc); peste a doua: Vale vine lângă ea, se recunosc și se pregătesc de luptă.",
     "grup": "Kaia: întâlnirea",
     "partener": "vanatoare",
     "start": "a",
@@ -1333,7 +1333,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "speriat",
-        "text": "Lupi... și cineva se luptă cu ei. O fată, călare pe un tigru! Sunt trei, iar ea e singură.",
+        "text": "Lupi... trei, care se învârt în jurul cuiva. O fată, călare pe un tigru! Se pândesc unii pe alții; încă nu sare nimeni.",
         "alegeri": [
           {
             "text": "O ajut!",

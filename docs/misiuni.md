@@ -134,7 +134,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Întâlnirea cu Kaia
 - **Pornește:** prima vânătoare câștigată deblochează întâlnirea. Din **ziua 4**, la următoarea vânătoare, în locul vânatului obișnuit:
-  - **prima imagine:** Vale o vede pe Kaia luptându-se cu 3 lupi și se gândește ce să facă.
+  - **prima imagine:** Vale o vede pe Kaia, călare pe tigru, față în față cu 3 lupi care o înconjoară; încă nu se luptă, se pândesc (decis de autor). Vale se gândește ce să facă.
     - **„Nu e lupta mea. Plec.”**: nu se întâmplă nimic. Vale trebuie să mai vâneze o dată singur, iar la vânătoarea de după o poate întâlni din nou.
     - **„O ajut!”**: urmează a doua imagine.
   - **a doua imagine:** se recunosc și se pregătesc de luptă.
