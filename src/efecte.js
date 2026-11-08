@@ -79,6 +79,8 @@ const efecte = {
   eveniment: (v, joc) => joc.pornesteEvenimentDupa(v),
   // Vale e dus altundeva, după ce se închide dialogul (vânătoarea îl duce la campsite-ul ei)
   mergi: (v, joc) => setTimeout(() => joc.mergi(v, { faraTimp: true }), 0),
+  // Vânătoarea împreună cu un personaj (Kaia, dimineața la campsite), după ce se închide dialogul
+  vanatoareCu: (v, joc) => joc.vanatoareCu(v),
   // Magazinul unui personaj, deschis din dialog (Agnes: „Cumpără”)
   magazin: (v, joc) => joc.deschideMagazin(v),
   // Orcii îl pedepsesc pe Vale (după ce se închide ce e pe ecran); valoarea e orcul care vorbește

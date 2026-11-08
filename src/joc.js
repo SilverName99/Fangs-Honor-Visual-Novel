@@ -508,16 +508,18 @@ function alegeCuSanse(lista) {
   return cu.at(-1).id;
 }
 
-function vaneaza(v) {
+// „cuCine”: vânătoarea pornită din dialog, împreună cu cineva (Kaia, dimineața la campsite): el e sigur
+// alături în luptă, fără întâlnirile din poveste și fără discuția de la vânătoare (s-au vorbit deja)
+function vaneaza(v, cuCine = null) {
   // Noaptea nu se vânează (decis de autor): doar gândul lui Vale
   if (v.gandNoapte && context(stare).moment === 'noaptea') return gand(v.gandNoapte);
   // „insotitor”: cineva care vânează și el în aceeași perioadă (Kaia, 10–14) te poate găsi și luptă cu tine.
   // Se verifică la ora la care pleci la vânătoare, înainte să treacă timpul
-  const i = v.insotitor;
-  const cuInsotitor = i && verifica(i.conditii, context(stare)) && Math.random() < (i.sansa ?? 0);
+  const i = cuCine ? { personaj: cuCine } : v.insotitor;
+  const cuInsotitor = !!cuCine || (i && verifica(i.conditii, context(stare)) && Math.random() < (i.sansa ?? 0));
   // „intalnire”: o întâlnire din poveste care ține locul vânătorii obișnuite cât sunt îndeplinite condițiile
   // (Kaia față în față cu lupii, decis de autor)
-  const intalnire = v.intalnire && verifica(v.intalnire.conditii, context(stare));
+  const intalnire = !cuCine && v.intalnire && verifica(v.intalnire.conditii, context(stare));
   if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
   if (intalnire) {
     salveaza();
@@ -541,6 +543,12 @@ function vaneaza(v) {
     },
     { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' },
   );
+}
+// Vânătoarea de la locul de vânătoare al pădurii, cu un personaj alături (efectul „vanatoareCu”)
+function vanatoareCu(id) {
+  const loc = date.locations.zone.find((z) => z.id === 'padure')?.locuri?.find((l) => l.vanatoare);
+  if (!loc) return;
+  dupaDialog = () => vaneaza({ ...loc.vanatoare, imagine: loc.imagine }, id);
 }
 // Ce urmează după ce se închide dialogul curent (de exemplu lupta cu Kaia după discuția de la vânătoare)
 let dupaDialog = null;
@@ -601,6 +609,7 @@ const joc = {
   mergi,
   pornesteEveniment,
   pornesteEvenimentDupa,
+  vanatoareCu,
   sumaTaxa,
   // Magazinul unui personaj (npcs.json, „magazin”), deschis după ce se închide dialogul
   deschideMagazin(id) {
