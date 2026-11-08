@@ -52,16 +52,39 @@
         {
           "text": "Te ajut.",
           "efecte": {
+            "eveniment": "negustor_saci_ajutor"
+          }
+        },
+        {
+          "text": "Altă dată.",
+          "efecte": {}
+        }
+      ],
+      "_nota": "CIORNĂ: negustorul îi cere lui Vale să-l ajute cu sacii; dacă îl ajută, urmează imaginea cu Vale cărând sacii (decis de autor, fără mini-joc), apoi plata.",
+      "nume": "Negustorul cere ajutor cu sacii"
+    },
+    {
+      "id": "negustor_saci_ajutor",
+      "manual": true,
+      "repetare": "mereu",
+      "grup": "Piața: sacii negustorului",
+      "nume": "Vale cară sacii negustorului",
+      "imagini": [
+        "events/negustor_saci.png"
+      ],
+      "vorbitor": "negustor",
+      "emotie": "normal",
+      "text": "Gata, toți la locul lor. Mulțumesc, tinere! Ține, cinci monede, cum am zis.",
+      "alegeri": [
+        {
+          "text": "Cu plăcere.",
+          "efecte": {
             "timp": 60,
             "bani": 5,
             "nevoi": {
               "stamina": -10
             }
           }
-        },
-        {
-          "text": "Altă dată.",
-          "efecte": {}
         }
       ]
     },
