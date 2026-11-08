@@ -116,13 +116,16 @@ CLAUDE.md
 
 ## 6. Povestea și starea inițială
 
+**Toate misiunile, cum pornesc și cum se leagă: `docs/misiuni.md`** (decis de autor: evidența lor, viitorul walkthrough; se actualizează la fiecare misiune). **Regulă:** o misiune apare doar după prima discuție cu personajul și după câteva zile (`cunoscutDeZile`). **Tonul** (decis): începe întunecat și se încălzește odată cu încrederea totală; spre final se vorbește de revoltă (`TODO`). **Prologul** (decis, de făcut): la un joc nou, 5–7 imagini cu text (orcii vin, soldații satului și tatăl lui Vale cad, taxa, zidul), apoi Vale se trezește în camera lui: a fost un vis.
+
 - **Protagonist:** Vale Lightfinder, 25 de ani. Locuiește cu mama lui, **Miriam Lightfinder**, într-o casă pe jumătate dărăpănată. Tatăl a murit apărând satul într-o bătălie cu orcii.
 - **Situația:** satul e ocupat de orci, care i-au cruțat pe localnici în schimbul unei **taxe săptămânale**. Ieșirea din sat e păzită de orci, deci tot demo-ul se petrece în sat și în pădurea de lângă el.
 - **Libertate:** nu există o ordine impusă. Jucătorul decide ce face, iar taxa și evenimentele aduc presiunea.
 - **Finalul demo-ului:** Vale recrutează aliați, îi adună la Camp site (adunarea secretă) și atacă poarta într-o luptă pe ture. Dacă o câștigă, satul e liber.
 - **Misiunea de la mamă (acoperișul):** mama îi cere lui Vale să adune lemn din pădure ca să repare acoperișul. La final, imaginea casei (piesa de pe hartă și imaginea zonei) trece de la `acoperis: stricat` la `acoperis: reparat`. **Recompensa** (decis de autor): încrederea Miriamei +1 și somnul de acasă mai odihnitor cu acoperișul reparat (+30% stamina, `factorRefacere` la „Dormi”; cifra e aleasă de Claude). **Ciorna de acum** (autorul o poate schimba): în meniul Miriamei apare „Iar a plouat în casă !”, **doar dimineața, cât e ea în bucătărie** (până la 11, decis de autor); „Mă ocup eu” pornește misiunea (refuzul o lasă în meniu). Pasul 1: 10 lemne din pădure (în meniu „N-am apucat încă să adun lemnele ?” dă indicația). Pasul 2 (decis de autor): cu lemnele, **tot dimineața, în bucătărie, și odihnit** (sub 30 stamina mama îl trimite la odihnă), „Uite lemnele, mamă. Mă urc pe acoperiș. ?” → mama, apoi **imaginea cu Vale reparând acoperișul** (`events/acoperis_reparat.png`, evenimentul `acoperis_reparat`; consumă lemnele, 4 ore și 30 stamina), apoi mama îi mulțumește și misiunea e terminată.
 - **Magul din biserică** (preotul) e de fapt mag al luminii, sub acoperire. Orcii nu știu.
-- **Camera fierarului:** încuiată. Fierarul îți dă cheia după ce îl ajuți cu o misiune (`TODO`: care). În cameră e un cufăr cu un obiect bun (`TODO`: care).
+- **Fierul lui Bram** (decis, `docs/misiuni.md`): orcul colector îi confiscă fierul; Vale îl ia înapoi de la poartă (60 de monede, zaruri cu paznicii sau o bătaie trucată, fără șanse); răsplata: bani, încredere și **magazinul lui Bram, închis până atunci**.
+- **Camera fierarului:** încuiată. Fierarul îți dă cheia după altă misiune (`TODO`: care). În cameră e un cufăr cu un obiect bun (`TODO`: care).
 - **Dragonii:** doar indicii, în prolog sau într-o poveste la tavernă (`TODO`).
 
 ## 7. Navigarea: hartă > zonă > loc
@@ -147,7 +150,7 @@ Reguli:
 |---|---|---|---|
 | `casa` | `casa.png` (+ `casa_reparata.png`) | `casa_zona.png` (+ `casa_zona_reparata.png`) | `camera_vale`, `camera_mama`, `bucatarie` (cufărul de acasă e aici sau în camera lui Vale) |
 | `fierar` | `fierar.png` | `fierar_zona.png` | `interior` (magazin), `camera` (la etaj, **încuiată**, cu cufăr; se intră doar din magazin, `"din": "interior"`) |
-| `taverna` | `taverna.png` | `taverna_zona.png` | `parter` (deschis 09:00–02:00), `etaj` (camera plătită la Agnes, cu patul de dormit) |
+| `taverna` | `taverna.png` | `taverna_zona.png` | `parter` (deschis 09:00–02:00), `etaj` (camera plătită la Agnes, cu patul de dormit; **ascunsă până la o misiune a lui Agnes**, `TODO` care) |
 | `piata` | `piata.png` (+ `piata_fara_prizonier.png`) | `piata_zona.png` (+ `piata_zona_fara_prizonier.png`) | **fără locuri**: zona e chiar scena, cu negustorul, hoțul legat și magazinul |
 | `campuri` | `culturi.png` (câmpul de grâu) și `ferma.png` (vacile), ambele lungi, lângă moară | `campuri_zona.png` | 2 zone care dau **acțiuni de muncă**, nu scene: câmpul de grâu (arat) și ferma de vaci (decis: fără porci). Doar **06–13** se lucrează aici (decis): fermierul (`fermier`, sprite, se poate vorbi cu el; misiunile lui sunt `TODO`), iar ceilalți săteni la muncă sunt desenați direct în imaginea zonei pentru orele acelea, `campuri_zona_lucru.png`; după 13:00, până a doua zi, câmpurile sunt goale (`campuri_zona.png`; noaptea `campuri_zona_noapte.png`) |
 | `moara` | `moara.png` (stă **deasupra** pieselor câmpurilor, `deasupra` în `locations.json`) | `moara_zona.png` (+ `moara_zona_noapte.png`) | o zonă care dă **acțiunea de muncă** la moară (decis: moara e locație separată de câmpuri) |
@@ -363,7 +366,7 @@ Un eveniment e o scenă cu imagine sau portret, text și 2-3 alegeri, declanșat
 
 **Scandalul din tavernă** (decis, o singură dată): o replică din dialogul cu Roderick (doar când Agnes e în tavernă, deci 16–00) pornește 3 imagini cu orcii care intră, o agresează pe Agnes și fac dezordine. Alegi:
 - **îl ajuți:** luptă Vale + Roderick contra 2 orci slabi, fără fugă (pozele paznicilor de la poartă). **Victorie:** o imagine, Agnes te hrănește (foame și sete pline), îți dă 3 pâini și 2 beri, iar taxa crește cu 10 de atunci încolo. **Înfrângere:** o imagine, rămâi cu 10 viață și trec 2 ore. În ambele cazuri Roderick devine recrutabil (cum: `TODO`).
-- **refuzi:** 3 imagini cu Roderick bătut și orcii plecând râzând, apoi un dialog cu el (rănit). Lipsește 2 zile din tavernă și **nu mai poate fi recrutat**.
+- **refuzi:** 3 imagini cu Roderick bătut și orcii plecând râzând, apoi un dialog cu el (rănit). Lipsește 2 zile din tavernă; **tot poate fi recrutat** mai târziu, doar nu primește încrederea (decis de autor). **Până la scandal, Roderick nu-l bagă în seamă pe Vale**; scandalul pornește din misiunea lui, din ziua 3 („*Orcii fac multă dezordine și gălăgie...*”).
 
 Bețivul care te provoacă la bătaie apare doar după scandal. **Prima discuție** cu fiecare personaj e o prezentare, cu o singură replică (la Agnes și „Cumpără”).
 
@@ -493,7 +496,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 |---|---|---|---|
 | `vale` | Protagonist | – | – |
 | `miriam` | Mama | Casă | nu se recrutează |
-| `soldat` | **Roderick Lightfinder**, unchiul lui Vale (fratele tatălui), fost soldat, în hainele lui vechi de soldat; luptă apropiat | Taverna, biserica dimineața | doar dacă l-ai ajutat în scandalul din tavernă; cum anume, `TODO` |
+| `soldat` | **Roderick Lightfinder**, unchiul lui Vale (fratele tatălui), fost soldat, în hainele lui vechi de soldat; luptă apropiat | Taverna, biserica dimineața | încredere 8/10 (decis: și dacă nu l-ai ajutat în scandal; atunci doar nu primește +1); cum anume, `TODO` |
 | `fierar` | **Bram Emberforge**, fierarul; tank | Fierăria | relație suficientă |
 | `hot` | Tânărul hoț, legat la butuc (numele: `TODO`). Negustorul îl eliberează pentru **40 de monede** (`TODO` suma), apoi hoțul îi mulțumește lui Vale; unde merge după aceea e `TODO`. **Nu luptă** (decis: cele 6 locuri din luptă sunt pline, deci n-are poze de luptă); ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva, ca lupta să fie mai ușoară (un orc în minus sau orcii pornesc cu bara goală), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate (toate `TODO`) | Piața | plătești o sumă unui negustor ca să-l elibereze |
 | `vanatoare` | **Kaia, vânătoarea** (Huntress în *Fangs&Honor*; numele tigrului: `TODO`), călare pe un tigru: „Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse.” Programul ei: 05–10 la campsite, 10–14 plecată la vânătoare (nu e nicăieri; dacă vânezi atunci, 10% șanse s-o întâlnești: o scurtă discuție, apoi luptă alături de tine), 14–23 la campsite (alt sprite, `_dupa_amiaza`), 23–05 doarme (sprite `_doarme`); dacă apeși pe ea cât doarme, Vale se gândește că nu vrea s-o trezească. Atac de la distanță care lovește până la 3 inamici (`ricoseu: 3`); **în luptă ține două locuri** (față și spate pe aceeași linie, `locuri: 2`). **Povestea** (decis): era o prietenă bună a sătenilor, venea rar prin sat; s-a strecurat prin pădure și îl găsește pe Vale la vânătoare (după prima vânătoare, evenimentul `intalnire_vanatoare`). El o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la micul ei campsite, care devine **Camp site**, locul ascuns al grupului | Camp site-ul din pădure | `TODO` (încă nedecis) |
@@ -505,7 +508,7 @@ Fiecare personaj are **5 poze**: `idle`, `atac`, `aparare`, `lovit` (reacția sc
 
 Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și motivul personal al fiecăruia împotriva orcilor sunt `TODO`.
 
-**Încrederea (decis):** fiecare personaj important are o încredere de la 0 la 10 (`relatie` în efecte și condiții, `incredere.max` în `config.json`; nu iese din scară). La 10 apare în dialog misiunea de recrutare; la cei care nu se recrutează (Miriam, Agnes, fermierul), la 10 apare **o misiune specială** (toate `TODO`, condiția `"relatie": { "<id>": { "min": 10 } }`). Orcii n-au încredere. În demo nu există schimb de inventar cu recruții.
+**Încrederea (decis):** fiecare personaj important are o încredere de la 0 la 10 (`relatie` în efecte și condiții, `incredere.max` în `config.json`; nu iese din scară). **Se câștigă prin misiuni duse la capăt; recrutarea se poate de la 8/10** (decis de autor); o misiune refuzată doar nu dă încrederea, nu închide drumul. La 10 apare în dialog misiunea de recrutare; la cei care nu se recrutează (Miriam, Agnes, fermierul), la 10 apare **o misiune specială** (toate `TODO`, condiția `"relatie": { "<id>": { "min": 10 } }`). Orcii n-au încredere. În demo nu există schimb de inventar cu recruții.
 
 **Dialogurile** (decis): toate replicile din joc sunt ciorne scrise de Claude, la cererea autorului; autorul spune ce și unde schimbă.
 
