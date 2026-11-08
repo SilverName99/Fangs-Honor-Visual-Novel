@@ -12,9 +12,12 @@ export const fisierCarte = (id) => `ui/carte_${id}.png`;
 export function personajeCunoscute(date, stare) {
   const din = date.npcs.personaje.filter((p) => p.carte);
   const cunoscut = (p) => stare.cunoscuti?.includes(p.id) || stare.stari?.[`cunoscut_${p.id}`] === 'da';
+  // Orcii stau mereu la sfârșitul cărții (decis de autor): colectorul penultimul, paznicul ultimul
+  const LA_URMA = ['orc_colector', 'paznic_orc_1'];
   const ordine = (p) => {
+    if (LA_URMA.includes(p.id)) return 1e6 + LA_URMA.indexOf(p.id);
     const i = stare.cunoscuti?.indexOf(p.id) ?? -1;
-    return i < 0 ? Infinity : i;
+    return i < 0 ? 1e5 : i;
   };
   return din.filter(cunoscut).sort((a, b) => ordine(a) - ordine(b));
 }
