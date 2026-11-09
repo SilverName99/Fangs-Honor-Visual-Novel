@@ -1005,7 +1005,8 @@ export function creeazaLupta(parinte, joc) {
     const vale = L.toti.find((f) => f.id === 'vale');
     // Formația rămâne salvată pentru lupta următoare
     if (!L.def.test) for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
-    const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : null;
+    // „dupaFuga”: unde ajunge Vale când fuge (din pivniță fuge sus, nu rămâne lângă șobolani)
+    const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : L.def.dupaFuga || null;
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
     // Un jingle scurt la victorie și la înfrângere; la fugă revine direct ambianța
     if (rezultat === 'fuga') joc.sunet.muzica(null);
