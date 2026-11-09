@@ -359,7 +359,7 @@
       "dialog": "hangita",
       "descriere": "CIORNĂ: Agnes a auzit zgomote ciudate în pivniță, chiar la butoaiele cu berea nouă. A deschis ușa, ceva mare s-a mișcat în întuneric, iar ea a trântit ușa la loc. Am promis că cobor eu să văd ce e acolo.",
       "oferta": {
-        "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Berea”: șobolanii au venit la butoaiele cu berea nouă.",
+        "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Berea”: șobolanii au venit la butoaiele cu berea nouă. Decis de autor: doar 09–11, cât taverna e încă goală.",
         "text": "Doamna Agnes, sunteți albă ca varul...",
         "nod": "pivnita_oferta",
         "conditii": {
@@ -367,7 +367,11 @@
             "agnes_bere": "terminata"
           },
           "loc": "taverna/parter",
-          "prezent": "hangita"
+          "prezent": "hangita",
+          "ora": {
+            "min": "09:00",
+            "max": "10:59"
+          }
         }
       },
       "pasi": [
