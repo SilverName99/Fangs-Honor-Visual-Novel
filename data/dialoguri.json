@@ -2642,7 +2642,7 @@
     }
   },
   "pivnita_coborare": {
-    "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”: la intrarea în pivniță, peste imagini. Decis de autor: șobolanii vorbesc cu Vale despre o teroare care se apropie, de partea căreia stă clanul lor (sună a bazaconii, dar îi spun să se gândească bine de partea cui stă). Ce e teroarea: TODO. La a doua coborâre (după o înfrângere), doar câteva replici.",
+    "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”: la intrarea în pivniță, peste imagini. Decis de autor: șobolanii vorbesc cu Vale despre o teroare care se apropie, de partea căreia stă clanul lor (sună a bazaconii, dar îi spun să se gândească bine de partea cui stă). Ce e teroarea: TODO. La a doua coborâre (după o înfrângere), doar câteva replici. Decis de autor: șobolanii vorbesc repede și nervos, repetă cuvintele („da-da”, „repede-repede”), leagă cuvintele cu cratimă („om-lucru”, „cei-mulți”) și șuieră („Ssss!”).",
     "grup": "Misiunea lui Agnes: pivnița",
     "partener": null,
     "start": [
@@ -2681,14 +2681,14 @@
       "d": {
         "vorbitor": "sobolan_gheare",
         "emotie": "rade",
-        "text": "Ssss... Un om. Un om cu foc în mână coboară în gaura noastră.",
+        "text": "Ssss! Om-lucru! Om-lucru cu foc în labă coboară în gaura noastră, da-da!",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "speriat",
-        "text": "A vorbit. Șobolanul ăla a vorbit. Poate am băut ceva sus fără să știu.",
+        "text": "A vorbit. Șobolanul ăla a vorbit. Repede, chițăit, ca și cum cuvintele i-ar fugi din gură. Poate am băut ceva sus fără să știu.",
         "urmator": "f"
       },
       "f": {
@@ -2700,19 +2700,19 @@
       "g": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "rade",
-        "text": "Ce suntem? Suntem cei care ascultă. Voi, oamenii, nu ascultați niciodată. Mâncați, dormiți și plătiți orcilor.",
+        "text": "Ce suntem? Ssss! Noi suntem cei-mulți, cei-care-ascultă! Voi, oameni-lucruri, nu ascultați niciodată. Mâncați-dormiți, plătiți-plătiți la orci, da-da!",
         "urmator": "h"
       },
       "h": {
         "vorbitor": "sobolan_gheare",
         "emotie": "normal",
-        "text": "Pământul tremură, omule. De jos, din adânc. Voi nu simțiți nimic. Noi, șobolanii, simțim primii.",
+        "text": "Pământul tremură, om-lucru. Jos-jos, în adânc! Voi nu simțiți nimic, nimic! Noi simțim primii, mereu primii, da-da!",
         "urmator": "i"
       },
       "i": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "normal",
-        "text": "Vine. Teroarea vine. Nu azi, nu mâine... dar vine. Și când vine, cerul se face negru, iar morții nu mai stau în morminte.",
+        "text": "Vine! Vine-vine! Teroarea vine! Nu azi, nu mâine... dar vine! Și cerul se face negru-negru, iar morții ies din morminte, ies-ies!",
         "urmator": "j"
       },
       "j": {
@@ -2724,13 +2724,13 @@
       "k": {
         "vorbitor": "sobolan_gheare",
         "emotie": "rade",
-        "text": "Prostii, zice omul. Ssss. Așa zic toți. Până e prea târziu.",
+        "text": "Prostii, zice om-lucru! Ssss-ss! Toți zic prostii-prostii. Până e prea târziu, prea-prea târziu!",
         "urmator": "l"
       },
       "l": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "normal",
-        "text": "Clanul nostru a ales deja. Noi stăm alături de ea. Cine stă alături de ea trăiește. Ceilalți...",
+        "text": "Clanul a ales, da-da! Noi stăm lângă ea, lângă teroare. Cine stă lângă ea trăiește-trăiește. Ceilalți... ssss...",
         "urmator": "m"
       },
       "m": {
@@ -2743,13 +2743,13 @@
       "n": {
         "vorbitor": "sobolan_gheare",
         "emotie": "normal",
-        "text": "Orcii voștri sunt mici, omule. Taxa voastră e mică. Zidul vostru e mic. Gândește-te bine de partea cui stai când vine ea.",
+        "text": "Orcii voștri sunt mici-mici, om-lucru. Taxa mică, zidul mic! Gândește-te bine de partea cui stai când vine ea. Gândește-gândește!",
         "urmator": "o"
       },
       "o": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "suparat",
-        "text": "Gândește-te bine! Dar nu azi. Azi ai coborât în gaura noastră.",
+        "text": "Gândește bine, da-da! Dar nu azi. Azi ai coborât în gaura noastră. Rupe-rupe! Ssss!",
         "urmator": "p"
       },
       "p": {
@@ -2781,7 +2781,7 @@
       "r2": {
         "vorbitor": "sobolan_gheare",
         "emotie": "rade",
-        "text": "Ssss... S-a întors omul. Te-ai gândit de partea cui stai?",
+        "text": "Ssss! S-a întors om-lucru! Te-ai gândit, da? De partea cui stai, a cui-a cui?",
         "imagine": "events/pivnita_2.png",
         "urmator": "r3"
       },
@@ -2794,7 +2794,7 @@
       "r4": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "suparat",
-        "text": "Greșit răspuns.",
+        "text": "Greșit, greșit-greșit! Rupe-rupe!",
         "alegeri": [
           {
             "text": "(Pune mâna pe armă!)",
