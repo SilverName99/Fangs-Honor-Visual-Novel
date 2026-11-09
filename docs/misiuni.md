@@ -260,25 +260,25 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → cele 3 imagini; la final ești în sala tavernei, cu încredere +1 la Agnes și „Închiriază o cameră” la ea.
 3. Inventar (I) → semnul „Obiecte de poveste” → Hârtii vechi → citești hârtiile.
 
-### ✅ Pivnița
-- **Pornește:** după „Camera de sus”, la Agnes, în tavernă: „Doamna Agnes, sunteți albă ca varul... !”. A auzit zgârieturi în pivniță, a deschis ușa, ceva mare s-a mișcat în întuneric și a trântit-o. „Cobor eu să văd ce e acolo.”
-- **Pivnița** e un loc nou (`taverna/pivnita`), cu ușa doar din sala tavernei; apare cu misiunea și rămâne deschisă după ea.
-- **La intrare** (cât e misiunea în lucru), peste 2 imagini: Vale coboară cu torța, apoi lumina îi arată pe cei 3 șobolani. **Șobolanii vorbesc** (decis de autor): îi spun despre o teroare care se apropie, de partea căreia stă clanul lor (morții care nu mai stau în morminte; sună a bazaconii), și că trebuie să se gândească bine de partea cui stă. La a doua coborâre (după o înfrângere), doar câteva replici. Apoi **lupta**: doi șobolani cu gheare (în față) și unul care scuipă bale acide (în spate, de la distanță, **otrăvește**: 3 viață la fiecare tură a țintei, 3 ture, trece de armură).
-- **Victorie:** peste 2 imagini: șobolanii răpuși și gaura din zid pe unde au intrat (Vale își spune că au fost bazaconii și nu-i spune lui Agnes că vorbeau); sus, Agnes cu un făcăleț în mâini, ușurată. Încredere +1.
-- **Înfrângere:** fără imagine, în sala tavernei: Vale urcă rănit (10 viață), Agnes se sperie și îl trimite să se lege la răni și să mănânce. **Fugă:** Vale urcă în sala tavernei, fără discuție. În ambele cazuri misiunea rămâne în lucru și poate coborî din nou (atunci șobolanii spun doar câteva replici).
-- **Imagini:** `locations/taverna_pivnita.png` (pivnița), `locations/lupta_taverna_pivnita.png` (harta de luptă), `events/pivnita_1.png` (coborârea cu torța), `pivnita_2.png` (cei 3 șobolani), `pivnita_3.png` (după luptă), `pivnita_4.png` (sus, Agnes); pozele de luptă `combat/sobolan_gheare_*.png` și `combat/sobolan_scuipa_*.png` (câte 5); portretele `portraits/sobolan_gheare_<stare>.png` și `portraits/sobolan_scuipa_<stare>.png` (`normal`, `suparat`, `ranit`, `rade`; fața din `normal` apare și în medalionul din luptă).
-
-**Cum verifici:** după „Camera de sus”, la Agnes → „sunteți albă ca varul” → „Cobor eu”. În sala tavernei, ușa „Pivnița” → coborârea → lupta → victoria.
-
 ### ✅ Berea
-- **Pornește:** după „Pivnița”, la Agnes: „Taverna miroase a apă cu spumă... !”. Orcii i-au golit butoaiele; cu pivnița curată ar face bere, dar îi trebuie **5 orz** și **2 miere**.
+- **Pornește:** după „Camera de sus” (decis de autor: înaintea pivniței, ca jucătorul să aibă timp să-și facă rost de o armă și de poțiuni), la Agnes: „Taverna miroase a apă cu spumă... !”. Orcii i-au golit butoaiele; ar face bere nouă, dar îi trebuie **5 orz** și **2 miere**.
 - **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect de poveste, fără loc în rucsac, se numără.
 - **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”.
 - **Predarea:** la Agnes, „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată după-amiaza, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană.
 - **Recompensa:** încrederea lui Agnes +1 și o bere.
 - **Imagini:** `events/agnes_bere_1.png` (Agnes și Vale fac bere în pivniță), `agnes_bere_2.png` (seara, taverna plină și veselă); iconițele `items/orz.png` și `items/miere.png`.
 
-**Cum verifici:** după „Pivnița”, la Agnes → „apă cu spumă” → „Ți le aduc eu”. Moara de 3 ori (2+2+1 orz), fermierul (6–13, la câmpuri) → miere, apoi Agnes → „Am adus orzul și mierea!”.
+**Cum verifici:** după „Camera de sus”, la Agnes → „apă cu spumă” → „Ți le aduc eu”. Moara de 3 ori (2+2+1 orz), fermierul (6–13, la câmpuri) → miere, apoi Agnes → „Am adus orzul și mierea!”.
+
+### ✅ Pivnița
+- **Pornește:** după „Berea”, la Agnes, în tavernă: „Doamna Agnes, sunteți albă ca varul... !”. A auzit zgârieturi în pivniță, la butoaiele cu berea nouă (șobolanii au venit după ea), a deschis ușa, ceva mare s-a mișcat în întuneric și a trântit-o. „Cobor eu să văd ce e acolo.”
+- **Pivnița** e un loc nou (`taverna/pivnita`), cu ușa doar din sala tavernei; apare cu misiunea și rămâne deschisă după ea.
+- **La intrare** (cât e misiunea în lucru), peste 2 imagini: Vale coboară cu torța, apoi lumina îi arată pe cei 3 șobolani. **Șobolanii vorbesc** (decis de autor): îi spun despre o teroare care se apropie, de partea căreia stă clanul lor (morții care nu mai stau în morminte; sună a bazaconii), și că trebuie să se gândească bine de partea cui stă. La a doua coborâre (după o înfrângere), doar câteva replici. Apoi **lupta**: doi șobolani cu gheare (în față) și unul care scuipă bale acide (în spate, de la distanță, **otrăvește**: 3 viață la fiecare tură a țintei, 3 ture, trece de armură).
+- **Victorie:** peste 2 imagini: șobolanii răpuși și gaura din zid pe unde au intrat (Vale își spune că au fost bazaconii și nu-i spune lui Agnes că vorbeau); sus, Agnes cu un făcăleț în mâini, ușurată. Încredere +1.
+- **Înfrângere:** fără imagine, în sala tavernei: Vale urcă rănit (10 viață), Agnes se sperie și îl trimite să se lege la răni și să mănânce. **Fugă:** Vale urcă în sala tavernei, fără discuție. În ambele cazuri misiunea rămâne în lucru și poate coborî din nou (atunci șobolanii spun doar câteva replici).
+- **Imagini:** `locations/taverna_pivnita.png` (pivnița), `locations/lupta_taverna_pivnita.png` (harta de luptă), `events/pivnita_1.png` (coborârea cu torța), `pivnita_2.png` (cei 3 șobolani), `pivnita_3.png` (după luptă), `pivnita_4.png` (sus, Agnes); pozele de luptă `combat/sobolan_gheare_*.png` și `combat/sobolan_scuipa_*.png` (câte 5); portretele `portraits/sobolan_gheare_<stare>.png` și `portraits/sobolan_scuipa_<stare>.png` (`normal`, `suparat`, `ranit`, `rade`; fața din `normal` apare și în medalionul din luptă).
+
+**Cum verifici:** după „Berea”, la Agnes → „sunteți albă ca varul” → „Cobor eu”. În sala tavernei, ușa „Pivnița” → coborârea → lupta → victoria.
 
 ---
 
@@ -302,7 +302,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### 📝 Eliberarea
 - După discuția cu negustorul, Vale poate cere să vorbească cu hoțul. Hoțul îi spune de ce a furat: din nevoie, ca să-și hrănească familia; nimeni nu-l crede, dar Vale îl crede și îl eliberează.
-- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa lui Finn** (hoțul), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei**.
+- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa lui Finn** (hoțul), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei** (bătrâna cu poțiuni; vinde și **leacul de otravă**, `leac_otrava`, decis de autor: în luptă scoate otrava, bun la șobolanii din pivniță).
 
 ### 📝 Mâncarea
 - Vale aduce mâncare familiei hoțului.

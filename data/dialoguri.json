@@ -365,13 +365,13 @@
       "po3": {
         "vorbitor": "hangita",
         "emotie": "speriat",
-        "text": "Azi-noapte am auzit ceva în pivniță. Zgârieturi. Ceva care roade lemnul butoaielor.",
+        "text": "Azi-noapte am auzit ceva în pivniță. Zgârieturi. Ceva care roade butoaiele cu berea noastră, Vale. Berea pe care am făcut-o împreună.",
         "urmator": "po4"
       },
       "po4": {
         "vorbitor": "hangita",
         "emotie": "speriat",
-        "text": "Azi-dimineață am luat lampa și am deschis ușa. În întuneric s-a mișcat ceva mare. Prea mare ca să fie o pisică. Am trântit ușa și n-am mai coborât.",
+        "text": "Azi-dimineață am luat lampa și am deschis ușa. Lângă butoaie s-a mișcat ceva mare. Prea mare ca să fie o pisică. Am trântit ușa și n-am mai coborât.",
         "urmator": "po5"
       },
       "po5": {
@@ -419,7 +419,7 @@
       "bo3": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "Acum că pivnița e curată, aș putea face iar bere, ca pe vremuri. Dar n-am orz și n-am miere.",
+        "text": "Butoaiele le am, pivnița o am. Aș putea face iar bere, ca pe vremuri. Dar n-am orz și n-am miere.",
         "urmator": "bo4"
       },
       "bo4": {
@@ -2659,7 +2659,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Treptele scârțâie sub mine. Torța abia luminează câțiva pași înainte, iar aerul miroase a bere stătută și a ceva putred.",
+        "text": "Treptele scârțâie sub mine. Torța abia luminează câțiva pași înainte, iar aerul miroase a bere vărsată și a ceva putred.",
         "imagine": "events/pivnita_1.png",
         "urmator": "b"
       },
@@ -2667,7 +2667,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Printre butoaie se aude din nou: zgârieturi. Și încă ceva, mai încet... ca niște șoapte.",
+        "text": "Lângă butoaiele cu berea nouă se aude din nou: zgârieturi. Un butoi e ros până la cep. Și încă ceva, mai încet... ca niște șoapte.",
         "urmator": "c"
       },
       "c": {

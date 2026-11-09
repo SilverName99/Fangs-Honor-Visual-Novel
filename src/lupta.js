@@ -585,7 +585,13 @@ export function creeazaLupta(parinte, joc) {
       // Un obiect cu sunetul lui (pansamentul) îl folosește pe acela, nu sunetul băutului
       joc.sunet.efect(d.sunet || 'baut');
       actiune.tinta.viata = Math.min(actiune.tinta.viataMax, actiune.tinta.viata + v);
-      numar(actiune.tinta, `+${v}`, 'vindecare');
+      if (v) numar(actiune.tinta, `+${v}`, 'vindecare');
+      // Leacul de otravă (decis de autor): oprește otrava șobolanilor pe loc
+      if (d.vindecaOtrava && actiune.tinta.otrava) {
+        actiune.tinta.otrava = null;
+        actiune.tinta.el.classList.remove('otravit');
+        numar(actiune.tinta, 'Vindecat', 'vindecare');
+      }
       jurnal(`${sursa.nume} folosește ${d.nume} pe ${actiune.tinta.nume}.`);
       sursa.bara = 0;
     } else if (actiune.tip === 'muta') {

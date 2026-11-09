@@ -252,7 +252,8 @@ export function creeazaEcranInventar(parinte, joc) {
     const actiuni = div('actiuni-inv');
     const b = (t, clic) => actiuni.append(buton(t, clic, 'buton-mic-meniu'));
     if (selectat.din === 'inventar') {
-      if (d.tip === 'consumabil') b(d.efecte?.nevoi?.sete ? 'Bea' : d.efecte?.nevoi?.foame ? 'Mănâncă' : 'Folosește', () => ruleaza(joc.folosesteObiect(selectat.index)));
+      // Un obiect fără efecte în afara luptei (leacul de otravă) nu se poate folosi degeaba din inventar
+      if (d.tip === 'consumabil' && Object.keys(d.efecte || {}).length) b(d.efecte?.nevoi?.sete ? 'Bea' : d.efecte?.nevoi?.foame ? 'Mănâncă' : 'Folosește', () => ruleaza(joc.folosesteObiect(selectat.index)));
       if (d.tip === 'echipament') b('Echipează', () => ruleaza(echipat(inv.echipeaza(selectat.index))));
       if (optiuni.cufar) b('În cufăr', () => ruleaza(inv.spreCufar(selectat.index)));
       b('Aruncă', () => {

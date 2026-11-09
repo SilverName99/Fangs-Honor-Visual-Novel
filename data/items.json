@@ -71,6 +71,19 @@
       },
       "sunet": "baut"
     },
+    "leac_otrava": {
+      "nume": "Leac de otravă",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 12,
+      "minute": 1,
+      "inLupta": true,
+      "vindecaOtrava": true,
+      "efecte": {},
+      "sunet": "baut",
+      "descriere": "Oprește otrava (de exemplu balele acide ale șobolanilor).",
+      "_nota": "Decis de autor: se vinde la bătrâna cu poțiuni (ierbăreasa), în zona nouă de pe hartă (cu misiunea lui Finn, de făcut). Prețul: TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
+    },
     "carne": {
       "nume": "Carne",
       "tip": "material",

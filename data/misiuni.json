@@ -357,14 +357,14 @@
       "titlu": "Pivnița",
       "dela": "hangita",
       "dialog": "hangita",
-      "descriere": "CIORNĂ: Agnes a auzit zgomote ciudate în pivniță. A deschis ușa, ceva mare s-a mișcat în întuneric, iar ea a trântit ușa la loc. Am promis că cobor eu să văd ce e acolo.",
+      "descriere": "CIORNĂ: Agnes a auzit zgomote ciudate în pivniță, chiar la butoaiele cu berea nouă. A deschis ușa, ceva mare s-a mișcat în întuneric, iar ea a trântit ușa la loc. Am promis că cobor eu să văd ce e acolo.",
       "oferta": {
-        "_nota": "Decis de autor: a doua misiune a lui Agnes, după „Camera de sus”.",
+        "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Berea”: șobolanii au venit la butoaiele cu berea nouă.",
         "text": "Doamna Agnes, sunteți albă ca varul...",
         "nod": "pivnita_oferta",
         "conditii": {
           "misiune": {
-            "agnes_camera": "terminata"
+            "agnes_bere": "terminata"
           },
           "loc": "taverna/parter",
           "prezent": "hangita"
@@ -376,7 +376,7 @@
           "gata": {
             "existaStare": "sobolani_ucisi"
           },
-          "sfat": "Ușa pivniței e în sala tavernei. Să iau ceva cu care să mă apăr.",
+          "sfat": "Ușa pivniței e în sala tavernei. Să iau o armă bună și câteva poțiuni de viață.",
           "indiciu": {
             "text": "Despre pivniță...",
             "nod": "pivnita_indiciu"
@@ -397,14 +397,14 @@
       "titlu": "Berea",
       "dela": "hangita",
       "dialog": "hangita",
-      "descriere": "CIORNĂ: Orcii i-au golit lui Agnes toate butoaiele. Acum, cu pivnița curată, ar putea face bere nouă, dar îi trebuie orz și miere.",
+      "descriere": "CIORNĂ: Orcii i-au golit lui Agnes toate butoaiele. Ar putea face bere nouă, ca pe vremuri, dar îi trebuie orz și miere.",
       "oferta": {
-        "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Pivnița”.",
+        "_nota": "Decis de autor: a doua misiune a lui Agnes, după „Camera de sus” (înaintea pivniței, ca jucătorul să aibă timp să se pregătească de șobolani).",
         "text": "Taverna miroase a apă cu spumă...",
         "nod": "bere_oferta",
         "conditii": {
           "misiune": {
-            "agnes_pivnita": "terminata"
+            "agnes_camera": "terminata"
           },
           "loc": "taverna/parter",
           "prezent": "hangita"
