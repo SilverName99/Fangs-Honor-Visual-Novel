@@ -251,9 +251,9 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   1. camera cu lucrurile soldatului prin ea; Vale se apucă de strâns;
   2. camera curată, Vale aproape a terminat și vede ceva sub pat: un rucsac cu niște hârtii vechi (nu le citește);
   3. jos, în tavernă: Vale îi arată lui Agnes ce a găsit; ea nu înțelege ce sunt și îl trimite la Roderick. Vale rămâne în sala tavernei.
-- **Hârtiile** (`hartii_vechi`) ajung la obiectele de poveste și rămân acolo. **Se citesc cu un clic** pe ele (inventar → „Obiecte de poveste” → Hârtii vechi → „Citește”), peste imaginea lor: un solz desenat în creion („Nici sabia, nici focul nu l-au zgâriat.”), semne și un drum spre un loc însemnat cu X (ce scrie exact: de hotărât).
+- **Hârtiile** (`hartii_vechi`) ajung la obiectele de poveste și rămân acolo. **Se citesc cu un clic** pe ele (inventar → „Obiecte de poveste” → Hârtii vechi → „Citește”), fiecare peste imaginea ei (decis de autor): (1) un solz desenat în creion, cu o mână pentru mărime, o lamă știrbită și nota „Nici sabia, nici focul nu l-au zgâriat.”; (2) semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; (3) o hartă: satul, zidul, un drum prin pădure, peste un râu, pe lângă niște ruine, până la o râpă însemnată cu X (propunerea lui Claude, de confirmat).
 - **Recompensa:** încrederea lui Agnes +1; camera de sus se poate închiria (5 monede).
-- **Imagini:** `events/agnes_camera_1.png` (camera cu lucrurile soldatului, fără Vale), `events/agnes_camera_2.png` (camera curată, Vale vede rucsacul sub pat), `events/agnes_camera_3.png` (jos, la tejghea, Agnes se uită la hârtii), `events/hartii_vechi.png` (hârtiile de aproape, la citit).
+- **Imagini:** `events/agnes_camera_1.png` (camera cu lucrurile soldatului, fără Vale), `events/agnes_camera_2.png` (camera curată, Vale vede rucsacul sub pat), `events/agnes_camera_3.png` (jos, la tejghea, Agnes se uită la hârtii), `events/hartie_1.png`, `hartie_2.png`, `hartie_3.png` (fiecare hârtie de aproape, la citit).
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Las-o pe mine”.

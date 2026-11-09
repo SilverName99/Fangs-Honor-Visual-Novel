@@ -2414,7 +2414,7 @@
     }
   },
   "hartii_citite": {
-    "_nota": "CIORNĂ (Claude). Decis de autor: hârtiile se citesc din inventar (obiecte de poveste), cu un clic, oricând. Ce scrie exact pe ele: TODO (de hotărât de autor).",
+    "_nota": "CIORNĂ (Claude). Decis de autor: hârtiile se citesc din inventar (obiecte de poveste), cu un clic, oricând; fiecare hârtie are imaginea ei. Conținutul hârtiilor e propunerea lui Claude, de confirmat de autor.",
     "grup": "Hârtiile vechi",
     "partener": null,
     "start": "a",
@@ -2424,35 +2424,51 @@
         "gand": true,
         "emotie": "normal",
         "text": "Desfac hârtiile cu grijă. Sunt trei, îngălbenite și pătate, scrise cu o mână grăbită.",
-        "imagine": "events/hartii_vechi.png",
+        "imagine": "events/hartie_1.png",
         "urmator": "b"
       },
       "b": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe prima e desenat în creion un solz, mare cât palma. Dedesubt, cu un scris strâmb: „Nici sabia, nici focul nu l-au zgâriat.”",
+        "text": "Pe prima, un solz desenat în creion, mare cât palma, cu o mână schițată lângă el, ca să se vadă cât e de mare. Alături, o lamă de sabie știrbită.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe a doua, semne pe care nu le înțeleg și câteva schițe mărunte.",
+        "text": "Dedesubt, cu un scris strâmb: „Nici sabia, nici focul nu l-au zgâriat.”",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe a treia, un drum desenat în grabă printr-o pădure, spre un loc însemnat cu un X. Nu recunosc nimic.",
+        "text": "Pe a doua, semne ciudate, copiate de pe o piatră înaltă, desenată și ea. Și urme de gheare uriașe, săpate adânc în stâncă.",
+        "imagine": "events/hartie_2.png",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Un solz de... ce? Nicio fiară din pădurea noastră n-are solzi așa de mari.",
+        "text": "N-am văzut niciodată semnele astea. Nu seamănă cu nicio scriere pe care o știu.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe a treia, o hartă. Satul nostru, zidul, apoi un drum prin pădure, peste un râu și pe lângă niște ruine, până la o râpă însemnată cu un X.",
+        "imagine": "events/hartie_3.png",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Un solz de... ce? Nicio fiară din pădurea noastră n-are solzi așa de mari. Și drumul ăsta trece dincolo de zid.",
         "efecte": {
           "stare": {
             "hartii_citite": "da"
