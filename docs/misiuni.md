@@ -107,7 +107,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
 ### 📝 Foalele stricate
-- Foalele forjei s-au stricat; Vale aduce piei de mistreț pentru unele noi. Imagini, cu replicile peste ele. Vine înaintea cheii.
+- Foalele forjei s-au stricat; Vale aduce **3 piei de mistreț** pentru unele noi. Imagini, cu replicile peste ele. Vine înaintea cheii.
 
 ### 💡 Cheia camerei lui Bram
 - După „Foalele stricate”. Ce e în cufăr: de discutat.
@@ -144,7 +144,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
 ### 📝 Bolnavul
-- Elian îi spune lui Vale de o plantă specială care apare **doar seara**. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
+- Elian îi spune lui Vale de o plantă specială care apare **doar seara** (18–23, în pădure, cu mini-jocul culesului); bolnavul e un sătean fără nume. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
 
 ### 📝 Cărțile
 - Orcii vor să percheziționeze biserica; Vale îl ajută pe Elian să ascundă niște cărți vechi. Primul semn că preotul ascunde ceva.
@@ -203,11 +203,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ## Roderick Lightfinder (unchiul)
 
 ### 📝 Locul unde a căzut tata
-- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale. Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
+- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale, **prin ieșirea din zona hoțului** (deci după eliberarea hoțului). Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
 - După ea vine „Cina în familie” (Miriam).
 
 ### 📝 Antrenamentul
-- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**.
+- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
 
 ### ✅ Hârtiile soldatului
 - **Pornește:** a doua zi după „Camera de sus”, cu hârtiile la Vale, în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
@@ -258,11 +258,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 3. Sala tavernei → Agnes → „Camera e goală...” → încredere +1, apare „Închiriază o cameră”.
 
 ### 📝 Pivnița
-- Agnes aude zgomote ciudate din pivniță; a deschis ușa, s-a speriat și a închis-o repede, fără să vadă ce era. Jos sunt **3 șobolani**: unul care scuipă bale acide (otravă, de la distanță) și doi care atacă cu ghearele. Luptă în pivniță.
+- Agnes aude zgomote ciudate din pivniță; a deschis ușa, s-a speriat și a închis-o repede, fără să vadă ce era. Jos sunt **3 șobolani**: unul care scuipă bale acide (otravă, de la distanță) și doi care atacă cu ghearele. Luptă în pivniță (loc nou, `taverna/pivnita`, cu hartă de luptă; se intră doar din sala tavernei; după misiune rămâne deschisă, pentru mai mult lore).
 - Șobolanii care scuipă revin în lupta finală, ca ajutoare de la distanță ale orcilor.
 
 ### 📝 Berea
-- Orcii i-au golit butoaiele. Vale aduce **orz** (cât e misiunea în lucru, munca la moară dă și orz, obiect de poveste, fără loc în rucsac, până are destul) și **miere** (de la fermier, contra cost). Agnes face bere nouă.
+- Orcii i-au golit butoaiele. Vale aduce **5 orz** (cât e misiunea în lucru, munca la moară dă și orz, obiect de poveste, fără loc în rucsac, până are destul) și **2 miere** (de la fermier, 5 monede bucata). Agnes face bere nouă.
 
 **Cum verifici:** la tavernă nu mai apare ușa spre camera de sus. La Agnes nu mai apare „Închiriază o cameră”.
 
@@ -288,7 +288,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### 📝 Eliberarea
 - După discuția cu negustorul, Vale poate cere să vorbească cu hoțul. Hoțul îi spune de ce a furat: din nevoie, ca să-și hrănească familia; nimeni nu-l crede, dar Vale îl crede și îl eliberează.
-- După eliberare apare pe hartă un **drum nou**, spre o mică zonă: casa hoțului, ieșirea mai puțin păzită de orci (pe unde Vale și Roderick ies în misiuni) și încă două locuri (de hotărât).
+- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa hoțului** (numele hoțului: de ales), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei**.
 
 ### 📝 Mâncarea
 - Vale aduce mâncare familiei hoțului.
