@@ -25,3 +25,4 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 ## Șobolanii
 
 - În jocul principal există **3 unități de șobolani** care îi ajută în luptă pe Undead. În demo apar în pivnița tavernei (unul care scuipă bale acide, doi care atacă cu ghearele), iar cei care scuipă revin în lupta finală ca ajutoare de la distanță ale orcilor.
+- **Șobolanii vorbesc** (decis de autor): sunt un clan de șobolani mutanți care s-a aliat cu **o teroare care se apropie**. În pivnița lui Agnes îi spun lui Vale despre ea: sună a bazaconii, dar îl avertizează să se gândească bine de partea cui stă. Ce e teroarea: `TODO`.

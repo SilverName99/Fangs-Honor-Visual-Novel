@@ -2642,10 +2642,18 @@
     }
   },
   "pivnita_coborare": {
-    "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”: la intrarea în pivniță, peste imagini, apoi lupta.",
+    "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”: la intrarea în pivniță, peste imagini. Decis de autor: șobolanii vorbesc cu Vale despre o teroare care se apropie, de partea căreia stă clanul lor (sună a bazaconii, dar îi spun să se gândească bine de partea cui stă). Ce e teroarea: TODO. La a doua coborâre (după o înfrângere), doar câteva replici.",
     "grup": "Misiunea lui Agnes: pivnița",
     "partener": null,
-    "start": "a",
+    "start": [
+      {
+        "conditii": {
+          "existaStare": "sobolani_vorbit"
+        },
+        "nod": "r1"
+      },
+      "a"
+    ],
     "noduri": {
       "a": {
         "vorbitor": "vale",
@@ -2659,18 +2667,92 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Printre butoaie se aude din nou: zgârieturi. Și un clipocit umed, ca de bale.",
+        "text": "Printre butoaie se aude din nou: zgârieturi. Și încă ceva, mai încet... ca niște șoapte.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "speriat",
-        "text": "Lumina torței îi prinde. Trei șobolani, cât niște câini. Unul e umflat și verzui, cu spinarea plină de bășici, iar din gură îi curg bale care sfârâie pe piatră.",
+        "text": "Lumina torței îi prinde. Trei șobolani, cât niște câini. Doi au gheare lungi și negre, ca de cârtiță. Al treilea stă mai în spate, cu gâtul lung și o pungă umflată sub falcă, în care lucește ceva gălbui.",
         "imagine": "events/pivnita_2.png",
         "urmator": "d"
       },
       "d": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "rade",
+        "text": "Ssss... Un om. Un om cu foc în mână coboară în gaura noastră.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "A vorbit. Șobolanul ăla a vorbit. Poate am băut ceva sus fără să știu.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Ce... ce naiba sunteți voi?",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "rade",
+        "text": "Ce suntem? Suntem cei care ascultă. Voi, oamenii, nu ascultați niciodată. Mâncați, dormiți și plătiți orcilor.",
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "normal",
+        "text": "Pământul tremură, omule. De jos, din adânc. Voi nu simțiți nimic. Noi, șobolanii, simțim primii.",
+        "urmator": "i"
+      },
+      "i": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "normal",
+        "text": "Vine. Teroarea vine. Nu azi, nu mâine... dar vine. Și când vine, cerul se face negru, iar morții nu mai stau în morminte.",
+        "urmator": "j"
+      },
+      "j": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Vorbiți prostii. Bale și prostii.",
+        "urmator": "k"
+      },
+      "k": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "rade",
+        "text": "Prostii, zice omul. Ssss. Așa zic toți. Până e prea târziu.",
+        "urmator": "l"
+      },
+      "l": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "normal",
+        "text": "Clanul nostru a ales deja. Noi stăm alături de ea. Cine stă alături de ea trăiește. Ceilalți...",
+        "urmator": "m"
+      },
+      "m": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Punga de sub falca lui lucește tot mai tare. O picătură îi cade din gură și sfârâie pe piatră.",
+        "urmator": "n"
+      },
+      "n": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "normal",
+        "text": "Orcii voștri sunt mici, omule. Taxa voastră e mică. Zidul vostru e mic. Gândește-te bine de partea cui stai când vine ea.",
+        "urmator": "o"
+      },
+      "o": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "suparat",
+        "text": "Gândește-te bine! Dar nu azi. Azi ai coborât în gaura noastră.",
+        "urmator": "p"
+      },
+      "p": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "speriat",
@@ -2680,6 +2762,47 @@
             "text": "(Pune mâna pe armă!)",
             "inchide": true,
             "efecte": {
+              "stare": {
+                "sobolani_vorbit": "da"
+              },
+              "lupta": "taverna_sobolani"
+            }
+          }
+        ]
+      },
+      "r1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cobor din nou. De data asta știu ce mă așteaptă jos.",
+        "imagine": "events/pivnita_1.png",
+        "urmator": "r2"
+      },
+      "r2": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "rade",
+        "text": "Ssss... S-a întors omul. Te-ai gândit de partea cui stai?",
+        "imagine": "events/pivnita_2.png",
+        "urmator": "r3"
+      },
+      "r3": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "De partea Agnesei. Ieșiți din pivnița ei.",
+        "urmator": "r4"
+      },
+      "r4": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "suparat",
+        "text": "Greșit răspuns.",
+        "alegeri": [
+          {
+            "text": "(Pune mâna pe armă!)",
+            "inchide": true,
+            "efecte": {
+              "stare": {
+                "sobolani_vorbit": "da"
+              },
               "lupta": "taverna_sobolani"
             }
           }
@@ -2706,7 +2829,7 @@
         "gand": true,
         "emotie": "normal",
         "text": "Lângă peretele din fund e o gaură în zid, roasă de curând. Pe acolo au intrat. O astup cu un butoi gol, până o repară cineva cum trebuie.",
-        "urmator": "c"
+        "urmator": "b2"
       },
       "c": {
         "vorbitor": "vale",
@@ -2729,7 +2852,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Șobolani. Trei, cât niște câini. Unul scuipa ceva care ardea piatra.",
-        "urmator": "f"
+        "urmator": "e2"
       },
       "f": {
         "vorbitor": "hangita",
@@ -2746,6 +2869,20 @@
             "sobolani_ucisi": "da"
           }
         }
+      },
+      "b2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Încă le aud vocile șuierate. Teroarea, morții din morminte... Bazaconii. Trebuie să fie bazaconii.",
+        "urmator": "c"
+      },
+      "e2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu-i spun că vorbeau. M-ar crede nebun.",
+        "urmator": "f"
       }
     }
   },

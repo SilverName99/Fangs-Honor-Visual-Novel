@@ -788,7 +788,7 @@ const iduriDialog = new Map(Object.entries(dialoguri).map(([id, d]) => [d, id]))
 const dialog = creeazaDialog(ui, {
   laCapatulRamurii: arataCastigurileAsteptate,
   // Orcii au rama roșie (ca inamicii din luptă), ceilalți pe cea aurie
-  tabaraVorbitor: (id) => (/orc/.test(id) ? 'inamic' : 'aliat'),
+  tabaraVorbitor: (id) => (/orc|sobolan/.test(id) ? 'inamic' : 'aliat'),
   laNod: (d, nod, imagine) => {
     stare.reluare = iduriDialog.has(d) ? { dialog: iduriDialog.get(d), nod, imagine } : d._eveniment ? { eveniment: d._eveniment, text: true } : null;
     salveaza();

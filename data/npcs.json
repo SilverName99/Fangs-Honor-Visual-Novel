@@ -598,6 +598,32 @@
       "intrebareVorba": "Ce mai faceți?"
     },
     {
+      "id": "sobolan_gheare",
+      "nume": "Șobolan",
+      "_despre": "Decis de autor: șobolanii mutanți vorbesc (pivnița lui Agnes). Fără sprite: apar doar în dialog, peste imaginile pivniței, și în luptă. rade = rânjește zeflemitor.",
+      "stariPortret": [
+        "normal",
+        "suparat",
+        "ranit"
+      ],
+      "stariExtra": [
+        "rade"
+      ]
+    },
+    {
+      "id": "sobolan_scuipa",
+      "nume": "Șobolan scuipător",
+      "_despre": "Decis de autor: șobolanul care scuipă bale acide vorbește și el. Fără sprite, ca celălalt.",
+      "stariPortret": [
+        "normal",
+        "suparat",
+        "ranit"
+      ],
+      "stariExtra": [
+        "rade"
+      ]
+    },
+    {
       "id": "orc_colector",
       "nume": "Orcul colector",
       "carte": {
