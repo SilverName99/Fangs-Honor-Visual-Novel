@@ -210,7 +210,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
 
 ### ✅ Hârtiile soldatului
-- **Pornește:** după „Camera de sus”, cu hârtiile la Vale, în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
+- **Pornește:** după „Camera de sus”, cu hârtiile la Vale, **doar în tavernă** (Roderick e acolo 14–00; la biserică nu), în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
 - Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
 - Fără încredere (doar discuție); după ea vine **primul vis**.
 - **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).

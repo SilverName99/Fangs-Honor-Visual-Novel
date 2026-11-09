@@ -331,12 +331,13 @@
       "dialog": "soldat",
       "descriere": "CIORNĂ: Agnes zice că unchiul Roderick l-a cunoscut pe soldatul din camera de sus. Poate el înțelege ce scrie pe hârtiile găsite acolo.",
       "oferta": {
-        "_nota": "Decis de autor: după ce Vale are hârtiile (după misiunea lui Agnes), Roderick are o misiune în care vorbesc despre ele; fără pauză.",
+        "_nota": "Decis de autor: după ce Vale are hârtiile (după misiunea lui Agnes), Roderick are o misiune în care vorbesc despre ele; fără pauză; doar în tavernă (14–00), nu la biserică.",
         "text": "Unchiule, am găsit niște hârtii...",
         "nod": "hartii_oferta",
         "conditii": {
           "areObiect": "hartii_vechi",
-          "existaStare": "scandal_taverna"
+          "existaStare": "scandal_taverna",
+          "loc": "taverna/parter"
         }
       },
       "pasi": [
