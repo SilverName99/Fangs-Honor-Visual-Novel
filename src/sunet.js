@@ -142,10 +142,13 @@ export function creeazaSunet(date) {
 
   // Ambianța scenei: a ei, sau moștenită de la zona și harta de deasupra; prima variantă potrivită câștigă.
   // O variantă își poate da volumul și înfundarea ei; altfel le ia pe ale ambianței de bază
-  function ambiantaPentru(idScena, ctx) {
-    const lant = [idScena];
-    if (idScena.includes('.')) lant.push(idScena.split('.')[0]);
-    if (idScena !== 'harta') lant.push('harta');
+  // „lantDat”: scena, zona ei și harta ei, până la satul de sus (Marginea satului are harta ei, apoi satul)
+  function ambiantaPentru(idScena, ctx, lantDat) {
+    const lant = lantDat?.length ? [...lantDat] : [idScena];
+    if (!lantDat?.length) {
+      if (idScena.includes('.')) lant.push(idScena.split('.')[0]);
+      if (idScena !== 'harta') lant.push('harta');
+    }
     for (const id of lant) {
       const a = s.ambiante?.[id];
       if (!a) continue;
@@ -167,8 +170,8 @@ export function creeazaSunet(date) {
   }
 
   return {
-    scena(idScena, ctx) {
-      ultimaAmbianta = ambiantaPentru(idScena, ctx);
+    scena(idScena, ctx, lant) {
+      ultimaAmbianta = ambiantaPentru(idScena, ctx, lant);
       if (!muzicaActiva) canta(ultimaAmbianta);
     },
     efect(id) {

@@ -143,20 +143,6 @@
       ]
     },
     {
-      "id": "hot_eliberat",
-      "_nota": "CIORNĂ (Claude). Unde merge hoțul după ce e eliberat e TODO.",
-      "manual": true,
-      "vorbitor": "hot",
-      "emotie": "normal",
-      "text": "Nu știu de ce ai făcut asta, dar n-o să uit. Dacă ai vreodată nevoie de cineva care să intre unde nu-l cheamă nimeni... mă găsești tu. Sau te găsesc eu.",
-      "alegeri": [
-        {
-          "text": "Ai grijă de tine. Și lasă pungile altora în pace.",
-          "efecte": {}
-        }
-      ]
-    },
-    {
       "id": "betiv_dupa_lupta",
       "_nota": "CIORNĂ (Claude): după ce Vale îi bate pe bețivi în tavernă; textele se pot schimba.",
       "manual": true,
@@ -903,6 +889,32 @@
       "nume": "Berea",
       "grup": "Misiunea lui Agnes: berea",
       "dialog": "bere_gata"
+    },
+    {
+      "id": "finn_butuc",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Finn: discuția de la butuc",
+      "grup": "Finn: eliberarea",
+      "dialog": "finn_butuc"
+    },
+    {
+      "id": "finn_eliberat",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: eliberarea",
+      "grup": "Finn: eliberarea",
+      "dialog": "finn_eliberat"
+    },
+    {
+      "id": "mormant_tata",
+      "manual": true,
+      "repetare": {
+        "pauzaZile": 1
+      },
+      "nume": "Mormântul tatălui",
+      "dialog": "mormant_tata",
+      "_nota": "O dată pe zi (ales de Claude)."
     }
   ]
 }

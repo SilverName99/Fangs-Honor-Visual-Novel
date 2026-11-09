@@ -441,7 +441,7 @@ function mergi(id, { faraTimp = false } = {}) {
   if (spre.parinte === de.id) sunet.efect(spre.tip === 'loc' ? 'usa' : 'pasi');
   // Doar coborârea (spre o zonă sau un loc) costă timp; „Înapoi” e gratuit
   if (!faraTimp && spre.parinte === de.id) {
-    if (avanseaza(costTimp(stare, spre.tip === 'zona' ? cfg.timp.spreZona : cfg.timp.spreLoc, cfg.nevoi))) return;
+    if (avanseaza(costTimp(stare, spre.tip === 'loc' ? cfg.timp.spreLoc : cfg.timp.spreZona, cfg.nevoi))) return;
   }
   salveaza();
   afiseaza();
@@ -480,6 +480,7 @@ function pornesteEveniment(id, fortat = false) {
     salveaza();
     afiseaza();
   });
+  return true;
 }
 
 // După un refresh: lupta în curs o ia de la capăt, discuția continuă de la replica la care rămăsese,
@@ -1095,8 +1096,8 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   // Pe hartă și pe ușile din zone semnul arată unde e cineva acum, dar drumul până acolo ia timp (decis de autor):
   // dacă la sosire nu mai e acolo, sau nu mai are nimic de spus (Kaia pleacă de la marginea pădurii la 17:00),
   // semnul nu se mai pune
-  const ajungeLaTimp = (x, tinta) => {
-    const minute = (d.tip === 'harta' ? cfg.timp.spreZona : 0) + (x.loc !== tinta ? cfg.timp.spreLoc : 0);
+  const ajungeLaTimp = (x) => {
+    const minute = minuteDrum(d.id, x.loc);
     const viitor = { ...stare, minute: stare.minute + costTimp(stare, minute, cfg.nevoi) };
     const ctxViitor = context(viitor);
     if (undeEste(x.p, ctxViitor) !== x.loc || intrareProgram(x.p, ctxViitor)?.doarme) return false;
@@ -1117,8 +1118,7 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   const ordine = { gata: 3, nou: 2, lucru: 1 };
   for (const t of d.tinte) {
     if (!t.spre) continue;
-    const tinta = t.spre.replace('.', '/');
-    const aici = [...semne.values()].filter((x) => x.loc && (x.loc === tinta || x.loc.startsWith(`${tinta}/`)) && ajungeLaTimp(x, tinta));
+    const aici = [...semne.values()].filter((x) => x.loc && subScena(t.spre, x.loc) && ajungeLaTimp(x));
     if (!aici.length) continue;
     const semn = aici.sort((a, b) => ordine[b.semn] - ordine[a.semn])[0].semn;
     const piesa = d.obiecte.find((o) => o.tinta === t.id && r.obiecte.get(o.id)?.isConnected);
@@ -1134,6 +1134,26 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   }
 }
 
+// Locul unui personaj („zona/loc”) e sub scena asta? Urcă din loc spre hartă (o zonă de pe Marginea satului
+// e și sub drumul spre ea de pe harta satului)
+function lantScene(id) {
+  const lant = [];
+  for (let s = lume.get(id); s; s = lume.get(s.parinte)) lant.push(s);
+  return lant;
+}
+function subScena(idScena, loc) {
+  return lantScene(loc.replace('/', '.')).some((s) => s.id === idScena);
+}
+// Cât ține drumul de aici până la locul unui personaj: câte o zonă sau hartă și câte un loc pe drum
+function minuteDrum(deLa, loc) {
+  let minute = 0;
+  for (const s of lantScene(loc.replace('/', '.'))) {
+    if (s.id === deLa) break;
+    minute += s.tip === 'loc' ? cfg.timp.spreLoc : cfg.timp.spreZona;
+  }
+  return minute;
+}
+
 // „clicabil: false” = doar se vede; „clicabil: { conditii }” = se poate apăsa abia când condițiile sunt îndeplinite
 function esteClicabil(p, ctx) {
   if (p?.clicabil === false) return false;
@@ -1145,7 +1165,7 @@ function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
   const r = randeaza(stratLume, d, date.aranjare[d.id], ctx);
-  sunet.scena(d.id, ctx);
+  sunet.scena(d.id, ctx, lantScene(d.id).map((s) => s.id));
   const faraZona = [];
   const actiuniFaraZona = [];
   interactive = [];
@@ -1179,6 +1199,8 @@ function afiseaza() {
     }
     if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) {
       poligon?.remove();
+      // Și piesa lui de pe hartă (drumul spre Marginea satului nu se vede până la eliberarea lui Finn)
+      for (const o of d.obiecte.filter((o) => o.tinta === t.id)) r.obiecte.get(o.id)?.remove();
       continue;
     }
     const piese = d.obiecte.filter((o) => o.tinta === t.id).map((o) => r.obiecte.get(o.id));

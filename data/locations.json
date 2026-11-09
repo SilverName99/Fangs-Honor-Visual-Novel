@@ -28,6 +28,48 @@
       }
     ]
   },
+  "harti": [
+    {
+      "id": "marginea",
+      "_nota": "Decis de autor: a doua hartă, ca cea a satului, cu mai puține locuri. Drumul spre ea apare pe harta satului după eliberarea lui Finn.",
+      "nume": "Marginea satului",
+      "imagine": "map/marginea_harta.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "din": "harta",
+      "ascuns": {
+        "conditii": {
+          "stare": {
+            "hot": "eliberat"
+          }
+        }
+      },
+      "piese": [
+        {
+          "id": "drum_marginea",
+          "imagine": "map/piese/drum_marginea.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "zone": [
     {
       "id": "casa",
@@ -1231,6 +1273,223 @@
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "casa_finn",
+      "nume": "Casa lui Finn",
+      "harta": "marginea",
+      "piese": [
+        {
+          "id": "casa_finn",
+          "imagine": "map/piese/casa_finn.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/casa_finn_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "locuri": [
+        {
+          "id": "interior",
+          "nume": "Casa lui Finn",
+          "imagine": "locations/casa_finn_interior.png",
+          "incuiat": {
+            "_nota": "Ales de Claude: noaptea familia doarme (fără sprite-uri de somn).",
+            "conditii": {
+              "nu": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            },
+            "mesaj": "E noapte. Finn și ai lui dorm. Nu vreau să-i trezesc."
+          }
+        }
+      ]
+    },
+    {
+      "id": "iesirea",
+      "nume": "Ieșirea",
+      "harta": "marginea",
+      "piese": [
+        {
+          "id": "iesirea",
+          "imagine": "map/piese/iesirea.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/iesirea_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "locuri": [],
+      "actiuni": [
+        {
+          "id": "iesirea",
+          "tip": "gand",
+          "nume": "Poteca de lângă zid",
+          "_nota": "CIORNĂ. Ieșirea mai puțin păzită: o folosesc mai târziu misiunile lui Roderick.",
+          "text": "Între doi stâlpi putrezi ai zidului se strecoară o potecă spre pădure. Orcii nu păzesc aici. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
+        }
+      ]
+    },
+    {
+      "id": "contrabandist",
+      "nume": "Contrabandistul",
+      "harta": "marginea",
+      "piese": [
+        {
+          "id": "contrabandist",
+          "imagine": "map/piese/contrabandist.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/contrabandist_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "locuri": []
+    },
+    {
+      "id": "cimitir",
+      "nume": "Cimitirul",
+      "harta": "marginea",
+      "piese": [
+        {
+          "id": "cimitir",
+          "imagine": "map/piese/cimitir.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/cimitir_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "locuri": [],
+      "actiuni": [
+        {
+          "id": "mormant",
+          "tip": "eveniment",
+          "nume": "Mormântul tatălui",
+          "eveniment": "mormant_tata",
+          "gandAltfel": "Am fost azi la tata. Mâine vin din nou."
+        }
+      ]
+    },
+    {
+      "id": "coliba",
+      "nume": "Coliba ierbăresei",
+      "harta": "marginea",
+      "piese": [
+        {
+          "id": "coliba",
+          "imagine": "map/piese/coliba.png",
+          "variante": [
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/coliba_zona.png",
+      "variante": [
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
+          }
+        }
+      ],
+      "locuri": [
+        {
+          "id": "interior",
+          "nume": "Coliba ierbăresei",
+          "imagine": "locations/coliba_interior.png",
+          "incuiat": {
+            "_nota": "Ales de Claude: noaptea bătrâna doarme.",
+            "conditii": {
+              "nu": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            },
+            "mesaj": "E întuneric la geam. Bătrâna doarme; mă întorc mâine."
+          }
         }
       ]
     }

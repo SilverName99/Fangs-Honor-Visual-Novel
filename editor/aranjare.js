@@ -150,10 +150,14 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       return `<button data-id="${esc(id)}" class="n${nivel} ${id === idScena ? 'activ' : ''}" title="${areFundal ? '' : 'Fundal neîncărcat'}">
         <span class="punct ${areFundal ? '' : 'fara'}"></span>${esc(d.titlu)}${modificate.has(id) ? ' •' : ''}</button>`;
     };
-    let html = rand('harta', 0);
-    for (const z of date.locations.zone) {
-      html += rand(z.id, 1);
-      for (const l of z.locuri) if (!l.actiune) html += rand(`${z.id}.${l.id}`, 2);
+    // Fiecare hartă (satul, Marginea satului) cu zonele și locurile ei dedesubt
+    let html = '';
+    for (const h of ['harta', ...(date.locations.harti || []).map((x) => x.id)]) {
+      html += rand(h, 0);
+      for (const z of date.locations.zone.filter((x) => (x.harta || 'harta') === h)) {
+        html += rand(z.id, 1);
+        for (const l of z.locuri) if (!l.actiune) html += rand(`${z.id}.${l.id}`, 2);
+      }
     }
     const harti = [...lume.values()].filter((d) => d.tip === 'lupta');
     if (harti.length) html += '<div class="titlu-grup">Hărți de luptă</div>' + harti.map((d) => rand(d.id, 0)).join('');
@@ -454,7 +458,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   function arataPanou() {
     const d = descriere();
-    const tip = d.titluFundal || { harta: 'Harta satului', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)', lupta: 'Hartă de luptă' }[d.tip];
+    const tip = d.titluFundal || { harta: d.id === 'harta' ? 'Harta satului' : 'Hartă', zona: 'Imaginea zonei', loc: 'Scena locului', ecran: 'Ecranul de inventar (fundal opțional)', lupta: 'Hartă de luptă' }[d.tip];
     let html = `<h3>${esc(d.titlu)}</h3><div class="sumar">${tip} · <span class="cale">${esc(d.harta || d.imagine)}</span></div>
       <div class="salvare">
         <button class="btn principal salveaza">Salvează</button>

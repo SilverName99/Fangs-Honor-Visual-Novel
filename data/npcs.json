@@ -301,22 +301,13 @@
       "nume": "Finn",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Un tânăr hoț, legat la butucul din piață. Negustorul cere bani ca să-l elibereze. Nu știu încă ce a furat și nici dacă merită ajutat."
+        "descriere": "Finn, un tânăr de la marginea satului. A furat punga negustorului ca să-și hrănească mama bolnavă și sora mică. Nimeni nu l-a crezut. Eu da."
       },
       "locuriSprite": [
-        "piata"
+        "piata",
+        "casa_finn/interior"
       ],
       "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
-      "apare": {
-        "nuStare": {
-          "hot": "eliberat"
-        },
-        "moment": [
-          "dimineata",
-          "amiaza",
-          "seara"
-        ]
-      },
       "cineRaspunde": {
         "personaj": "negustor",
         "conditii": {
@@ -326,7 +317,37 @@
         }
       },
       "_numeTODO": "Numele hoțului e TODO (nedecis).",
-      "_numeNota": "Decis de autor: hoțul din piață se numește Finn."
+      "_numeNota": "Decis de autor: hoțul din piață se numește Finn.",
+      "dialog": "hot",
+      "program": [
+        {
+          "de": "05:00",
+          "pana": "23:00",
+          "loc": "piata",
+          "conditii": {
+            "nuStare": {
+              "hot": "eliberat"
+            }
+          },
+          "ce": "legat la butucul din piață"
+        },
+        {
+          "de": "06:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          },
+          "ce": "acasă, cu mama și sora lui (ales de Claude)"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "ce": "noaptea: la butuc nu se vede; după eliberare doarme acasă (casa e încuiată noaptea)"
+        }
+      ]
     },
     {
       "id": "vanatoare",
@@ -622,6 +643,139 @@
       "stariExtra": [
         "rade"
       ]
+    },
+    {
+      "id": "mama_finn",
+      "nume": "Mama lui Finn",
+      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "_despre": "Decis de autor: e bolnava pe care o vindecă Vale seara, în misiunea lui Elian „Bolnavul”. Stă în pat, lângă vatră.",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Mama lui Finn. E bolnavă de mult, tușește zi și noapte și abia se mai ridică din pat. L-a cunoscut pe tata."
+      },
+      "locuriSprite": [
+        "casa_finn/interior"
+      ],
+      "dialog": "mama_finn",
+      "intrebareVorba": "Ce mai faceți?",
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "ce": "în pat, lângă vatră"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "ce": "doarme (casa e încuiată noaptea)"
+        }
+      ]
+    },
+    {
+      "id": "sora_finn",
+      "nume": "Sora lui Finn",
+      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice."
+      },
+      "locuriSprite": [
+        "casa_finn/interior"
+      ],
+      "dialog": "sora_finn",
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "ce": "în casă, lângă mama ei"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "ce": "doarme (casa e încuiată noaptea)"
+        }
+      ]
+    },
+    {
+      "id": "contrabandist",
+      "nume": "Contrabandistul",
+      "_numeTODO": "Numele lui e TODO (nedecis).",
+      "_despre": "Marginea satului: lucruri care nu se găsesc în piață. Ce vinde e TODO (ciornă de Claude).",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "Un om care face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa."
+      },
+      "locuriSprite": [
+        "contrabandist"
+      ],
+      "dialog": "contrabandist",
+      "intrebareVorba": "Ce mai faci?",
+      "program": [
+        {
+          "de": "08:00",
+          "pana": "23:00",
+          "loc": "contrabandist",
+          "ce": "la magazia lui (ore alese de Claude)"
+        },
+        {
+          "de": "23:00",
+          "pana": "08:00",
+          "ce": "plecat"
+        }
+      ],
+      "magazin": {
+        "_nota": "TODO: ce vinde contrabandistul (decide autorul). Deocamdată: săgeți și arcul.",
+        "titlu": "Marfa contrabandistului",
+        "vinde": [
+          "sageti",
+          "arc"
+        ],
+        "cumpara": [
+          "piele",
+          "blana_lup"
+        ]
+      }
+    },
+    {
+      "id": "ierbareasa",
+      "nume": "Bătrâna ierbăreasă",
+      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; vinde și leacul de otravă (bun la șobolanii din pivniță).",
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor",
+        "descriere": "O bătrână care trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă."
+      },
+      "locuriSprite": [
+        "coliba/interior"
+      ],
+      "dialog": "ierbareasa",
+      "intrebareVorba": "Ce mai faceți, bunico?",
+      "program": [
+        {
+          "de": "06:00",
+          "pana": "23:00",
+          "loc": "coliba/interior",
+          "ce": "printre ierburi"
+        },
+        {
+          "de": "23:00",
+          "pana": "06:00",
+          "ce": "doarme (coliba e încuiată noaptea)"
+        }
+      ],
+      "magazin": {
+        "titlu": "Leacurile bătrânei",
+        "vinde": [
+          "potiune_viata",
+          "leac_otrava",
+          "pansament"
+        ],
+        "cumpara": [
+          "sunatoare"
+        ]
+      }
     },
     {
       "id": "orc_colector",

@@ -295,6 +295,11 @@ export function creeazaActiuni(parinte, joc) {
     magazin,
     cufar: () => joc.deschideInventarul({ cufar: true }),
     taxa: () => joc.platesteTaxa(),
+    // Un loc unde Vale doar se gândește la ceva (ieșirea de la Marginea satului) sau unde pornește o scurtă
+    // scenă (mormântul tatălui): fără muncă și fără magazin
+    gand: (a) => joc.gand(a.text),
+    // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
+    eveniment: (a) => joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel)),
     lupta: (a) => {
       if (joc.avanseaza(a.minute || 0)) return;
       joc.pornesteLupta(a.lupta);

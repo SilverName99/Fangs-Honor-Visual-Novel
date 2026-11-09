@@ -461,6 +461,31 @@
           }
         }
       }
+    },
+    {
+      "id": "finn_eliberare",
+      "titlu": "Eliberarea lui Finn",
+      "dela": "hot",
+      "descriere": "CIORNĂ: Finn, hoțul legat la butucul din piață, a furat ca să-și hrănească mama bolnavă și sora mică. Nimeni nu-l crede. Eu îl cred. Negustorul îl lasă liber pentru 40 de monede.",
+      "pasi": [
+        {
+          "text": "Plătesc negustorului 40 de monede",
+          "gata": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          },
+          "sfat": "Negustorul e la taraba din piață, ziua. Apăs pe Finn, la butuc."
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1 și drumul spre Marginea satului.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      }
     }
   ]
 }

@@ -31,20 +31,38 @@ export function construiesteLumea(date) {
   const { harta, zone } = date.locations;
   const personaje = date.npcs.personaje;
 
-  scene.set('harta', {
-    id: 'harta',
-    tip: 'harta',
-    titlu: harta.nume,
-    imagine: harta.imagine,
-    variante: harta.variante || [],
-    estompare: harta.estompare || [],
-    parinte: null,
-    // O zonă poate fi și ea încuiată de pe hartă (poarta noaptea, până e gata misiunea lui Bram): doar gândul lui Vale
-    tinte: zone.map((z) => ({ id: z.id, nume: z.nume, spre: z.id, incuiat: z.incuiat || null })),
-    obiecte: zone.flatMap((z) =>
-      (z.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: z.nume, imagine: p.imagine, variante: p.variante || [], tinta: z.id, deasupra: !!p.deasupra })),
-    ),
-  });
+  // Mai multe hărți (decis de autor: „Marginea satului”, a doua hartă, ca cea a satului, cu mai puține locuri).
+  // Harta satului rămâne „harta”; celelalte stau în „harti”, fiecare cu zonele ei („harta” la zonă) și cu un drum
+  // (piesele lui) pe harta de unde se ajunge la ea („din”, implicit satul). „Înapoi” de pe ea duce tot acolo
+  const harti = [{ ...harta, id: 'harta' }, ...(date.locations.harti || [])];
+  const hartaZonei = (z) => z.harta || 'harta';
+  for (const h of harti) {
+    const aleEi = zone.filter((z) => hartaZonei(z) === h.id);
+    const drumuri = harti.filter((x) => x.id !== 'harta' && x.id !== h.id && (x.din || 'harta') === h.id);
+    scene.set(h.id, {
+      id: h.id,
+      tip: 'harta',
+      titlu: h.nume,
+      imagine: h.imagine,
+      variante: h.variante || [],
+      estompare: h.estompare || [],
+      parinte: h.id === 'harta' ? null : h.din || 'harta',
+      // O zonă poate fi și ea încuiată de pe hartă (poarta noaptea, până e gata misiunea lui Bram): doar gândul lui Vale.
+      // Un drum spre altă hartă poate fi ascuns până la o misiune (Marginea satului, după eliberarea lui Finn)
+      tinte: [
+        ...aleEi.map((z) => ({ id: z.id, nume: z.nume, spre: z.id, incuiat: z.incuiat || null, ascuns: z.ascuns || null })),
+        ...drumuri.map((x) => ({ id: x.id, nume: x.nume, spre: x.id, incuiat: x.incuiat || null, ascuns: x.ascuns || null })),
+      ],
+      obiecte: [
+        ...aleEi.flatMap((z) =>
+          (z.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: z.nume, imagine: p.imagine, variante: p.variante || [], tinta: z.id, deasupra: !!p.deasupra })),
+        ),
+        ...drumuri.flatMap((x) =>
+          (x.piese || []).map((p) => ({ id: p.id, tip: 'piesa', nume: x.nume, imagine: p.imagine, variante: p.variante || [], tinta: x.id, deasupra: !!p.deasupra })),
+        ),
+      ],
+    });
+  }
 
   // Personajele care au sprite într-un loc (cheie „zona/loc”) sau direct într-o zonă (cheie „zona”, ca piața)
   const spriteuri = (cheie, fisier) =>
@@ -78,7 +96,7 @@ export function construiesteLumea(date) {
       imagine: z.imagine,
       variante: z.variante || [],
       filtruSeara: z.filtruSeara || null,
-      parinte: 'harta',
+      parinte: hartaZonei(z),
       tinte: [
         ...z.locuri.filter((l) => !l.din).map(tintaLoc),
         // O zonă fără locuri (piața) e ea însăși scena: acțiunile și personajele stau direct pe ea
@@ -420,7 +438,7 @@ export function imaginiCerute(date, scene) {
       continue;
     }
     const tipScena = { harta: 'Harta', zona: 'Zona', loc: 'Loc' }[s.tip];
-    grup = s.tip === 'harta' ? 'Harta' : s.tip === 'zona' ? s.titlu : scene.get(s.parinte).titlu;
+    grup = s.tip === 'harta' ? (s.id === 'harta' ? 'Harta' : s.titlu) : s.tip === 'zona' ? s.titlu : scene.get(s.parinte).titlu;
     cuVariante(s.imagine, s.variante, `${tipScena}: ${s.titlu}`);
     for (const o of s.obiecte) {
       // Piesa de pe hartă stă la zona ei (casa la Casa), nu la Harta

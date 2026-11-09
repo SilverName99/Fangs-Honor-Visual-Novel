@@ -1515,7 +1515,7 @@
     ]
   },
   "negustor": {
-    "_nota": "CIORNĂ. Prețul eliberării (40 de monede) e TODO. Ce a furat hoțul e ciornă.",
+    "_nota": "CIORNĂ. Prețul eliberării (40 de monede) e TODO. Decis de autor: întâi vorbești cu Finn (îl crezi), abia apoi poți plăti.",
     "partener": "negustor",
     "start": [
       {
@@ -1535,8 +1535,27 @@
         "text": "Te uiți la el? Hoțul ăsta mi-a șterpelit o pungă întreagă de monede. Stă la butuc până își plătește datoria.",
         "alegeri": [
           {
+            "text": "Pot să vorbesc cu el?",
+            "inchide": true,
+            "conditii": {
+              "nu": {
+                "misiune": {
+                  "finn_eliberare": "inceputa"
+                }
+              }
+            },
+            "efecte": {
+              "eveniment": "finn_butuc"
+            }
+          },
+          {
             "text": "Cât vrei ca să-l eliberezi?",
-            "spre": "pret"
+            "spre": "pret",
+            "conditii": {
+              "misiune": {
+                "finn_eliberare": "inceputa"
+              }
+            }
           },
           {
             "text": "Merită ce i se întâmplă.",
@@ -1551,7 +1570,7 @@
         "alegeri": [
           {
             "text": "Plătesc. (40 de monede)",
-            "spre": null,
+            "inchide": true,
             "conditii": {
               "bani": {
                 "min": 40
@@ -1562,7 +1581,7 @@
               "stare": {
                 "hot": "eliberat"
               },
-              "eveniment": "hot_eliberat"
+              "eveniment": "finn_eliberat"
             }
           },
           {
@@ -1574,7 +1593,7 @@
       "liber": {
         "vorbitor": "negustor",
         "emotie": "normal",
-        "text": "Ai plătit pentru hoțul ăla, ai dreptul să-l cauți. Dar pe aici nu l-am mai văzut."
+        "text": "Ai plătit pentru hoțul ăla, treaba ta. Eu unul nu l-am mai văzut pe aici, și bine că nu."
       }
     }
   },
@@ -2978,6 +2997,523 @@
           "stare": {
             "bere_facuta": "da"
           }
+        }
+      }
+    }
+  },
+  "finn_butuc": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Eliberarea lui Finn”: discuția de la butuc, peste imagine.",
+    "grup": "Finn: eliberarea",
+    "partener": "hot",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn stă legat de butuc, cu mâinile prinse în lemn. Oamenii trec pe lângă el fără să se uite. Unii scuipă.",
+        "imagine": "events/finn_butuc.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Ai venit să râzi și tu? Haide, toată lumea o face.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu. Am venit să te întreb de ce.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "De ce? Pentru că am furat. Asta vrei să auzi? Am luat punga negustorului. Patruzeci de monede.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Asta știe tot satul. Eu te-am întrebat de ce.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "...Mama e bolnavă. Tușește de o lună și nu mai doarme nopțile. Iar sora mea mică... de trei zile n-am mai avut ce pune pe masă.",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Orcii ne-au luat tot la ultima taxă. Am cerut de lucru peste tot. Nimeni nu vrea un băiat de la marginea satului.",
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Povești! Toți hoții au o mamă bolnavă.",
+        "urmator": "i"
+      },
+      "i": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Ai fi vrut s-o vezi murind, ca să mă crezi?",
+        "urmator": "j"
+      },
+      "j": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la el. La mâinile crăpate, la hainele rupte. Nu arată a cineva care fură de plăcere.",
+        "urmator": "k"
+      },
+      "k": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Te cred.",
+        "urmator": "l"
+      },
+      "l": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "...Ce?",
+        "urmator": "m"
+      },
+      "m": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Te cred, Finn. Și am să te scot de aici.",
+        "urmator": "n"
+      },
+      "n": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nimeni nu m-a crezut până acum. Nimeni nici măcar n-a întrebat.",
+        "alegeri": [
+          {
+            "text": "Așteaptă-mă. Mă întorc cu banii.",
+            "efecte": {
+              "misiune": {
+                "finn_eliberare": "inceputa"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "finn_eliberat": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Eliberarea lui Finn”: peste 3 imagini (butucul, drumul de la marginea satului, casa lui). La final Vale rămâne în casa lui Finn.",
+    "grup": "Finn: eliberarea",
+    "partener": "hot",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Patruzeci. Bune, numărate. Ia-l și să nu-l mai văd pe lângă taraba mea.",
+        "imagine": "events/finn_eliberat_1.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Desfac lacătul butucului. Finn își trage mâinile din lemn și le freacă, pline de vânătăi.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu știu cum să-ți mulțumesc. Nu știu nici măcar de ce ai făcut-o.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pentru că ți-ai spus povestea și n-ai cerut nimic. Hai, du-mă la ai tăi.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn o ia pe drumul din spatele gardurilor, spre marginea satului. Îl știu de când eram copil. Dar de când au venit orcii, n-am mai avut ce căuta pe aici.",
+        "imagine": "events/finn_eliberat_2.png",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu mai vine nimeni pe aici. Nici orcii nu se obosesc. Aici stau doar cei care n-au unde altundeva.",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Case strâmbe, garduri căzute, cimitirul satului pe deal. Și, mai încolo, zidul, unde lemnul e mai putred.",
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Finn! Finn s-a întors!",
+        "imagine": "events/finn_eliberat_3.png",
+        "urmator": "i"
+      },
+      "i": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O fetiță îi sare în brațe. Într-un pat de lângă vatră, o femeie palidă se ridică într-un cot și tușește.",
+        "urmator": "j"
+      },
+      "j": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "Fiule... credeam că nu te mai văd. Cine e tânărul ăsta?",
+        "urmator": "k"
+      },
+      "k": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale Lightfinder, mamă. El m-a scos de la butuc. A plătit pentru mine.",
+        "urmator": "l"
+      },
+      "l": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Lightfinder... L-am cunoscut pe tatăl tău. Era un om bun. Se vede că semeni cu el.",
+        "urmator": "m"
+      },
+      "m": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Ai adus ceva de mâncare?",
+        "urmator": "n"
+      },
+      "n": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Nu acum, mică. Îți promit că o să găsesc ceva.",
+        "urmator": "o"
+      },
+      "o": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Casa e goală. Niciun miros de pâine, niciun foc adevărat în vatră. Iar tusea femeii nu-mi place deloc.",
+        "urmator": "p"
+      },
+      "p": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale... dacă ai vreodată nevoie de cineva care să intre unde nu-l cheamă nimeni, mă găsești aici. La Marginea satului.",
+        "efecte": {
+          "mergi": "casa_finn.interior"
+        }
+      }
+    }
+  },
+  "hot": {
+    "_nota": "CIORNĂ (Claude). Finn, acasă, după eliberare.",
+    "partener": "hot",
+    "meniu": true,
+    "start": [
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
+    ],
+    "noduri": {
+      "salut1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale! Intră, intră. N-am ce să-ți ofer, dar pragul e al tău."
+      },
+      "salut2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ai venit să vezi dacă n-am fugit cu vreo pungă? Glumesc. Glumesc!"
+      },
+      "f_lucru": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Caut de lucru. Dar cine vrea un hoț? Măcar acum nu mai stau la butuc."
+      },
+      "f_margine": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Aici, la margine, oamenii se ajută între ei. Contrabandistul, bătrâna din colibă... fiecare are povestea lui. Și nimeni nu întreabă prea multe."
+      }
+    },
+    "vorbeste": [
+      {
+        "nod": "f_lucru"
+      },
+      {
+        "nod": "f_margine"
+      }
+    ]
+  },
+  "mama_finn": {
+    "_nota": "CIORNĂ (Claude). Mama lui Finn, bolnavă, în pat. Decis de autor: o vindecă Vale în misiunea lui Elian „Bolnavul”.",
+    "partener": "mama_finn",
+    "meniu": true,
+    "start": [
+      {
+        "aleator": [
+          "salut1"
+        ]
+      }
+    ],
+    "noduri": {
+      "salut1": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "Vale... ce bine-mi pare să te văd. Iartă-mă că nu mă ridic."
+      },
+      "m_tusea": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "Tusea asta nu mă lasă. Am băut toate ceaiurile pe care le știam, dar nimic nu ajută."
+      },
+      "m_finn": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Finn e un băiat bun. Doar că lumea nu vede decât ce a făcut, nu și de ce."
+      }
+    },
+    "vorbeste": [
+      {
+        "nod": "m_tusea"
+      },
+      {
+        "nod": "m_finn"
+      }
+    ]
+  },
+  "sora_finn": {
+    "_nota": "CIORNĂ (Claude). Sora mică a lui Finn.",
+    "partener": "sora_finn",
+    "meniu": true,
+    "start": [
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
+    ],
+    "noduri": {
+      "salut1": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Vale! Ai venit să te joci cu mine?"
+      },
+      "salut2": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Finn zice că ești cel mai curajos om din sat!"
+      },
+      "s_curaj": {
+        "vorbitor": "sora_finn",
+        "emotie": "speriat",
+        "text": "E adevărat că nu ți-e frică de orci? Mie mi-e. Mă ascund sub pat când trec pe drum."
+      },
+      "s_foame": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Știi cum miroase pâinea caldă? Eu aproape am uitat."
+      }
+    },
+    "vorbeste": [
+      {
+        "nod": "s_curaj"
+      },
+      {
+        "nod": "s_foame"
+      }
+    ]
+  },
+  "contrabandist": {
+    "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (numele lui e TODO).",
+    "partener": "contrabandist",
+    "meniu": true,
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_contrabandist": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Ia uite cine a găsit drumul spre margine. Nu te uita așa, nu mușc. Am lucruri pe care nu le găsești la taraba din piață... dacă ai cu ce plăti.",
+        "efecte": {
+          "stare": {
+            "cunoscut_contrabandist": "da"
+          }
+        }
+      },
+      "salut1": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Ce-ți trebuie azi, Lightfinder?"
+      },
+      "salut2": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Iar tu? Bine. Banii n-au miros."
+      },
+      "c_marfa": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Nu mă întreba de unde vin lucrurile. Eu nu te întreb de unde vin banii tăi."
+      },
+      "c_orci": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Orcii păzesc poarta, nu și gardul. Iar un gard, băiete, e doar o ușă pe care n-a deschis-o nimeni încă."
+      }
+    },
+    "vorbeste": [
+      {
+        "nod": "c_marfa"
+      },
+      {
+        "nod": "c_orci"
+      }
+    ],
+    "optiuni": [
+      {
+        "text": "Cumpără",
+        "efecte": {
+          "magazin": "contrabandist"
+        },
+        "spre": null
+      }
+    ]
+  },
+  "ierbareasa": {
+    "_nota": "CIORNĂ (Claude). Bătrâna ierbăreasă de la Marginea satului (numele ei e TODO). Decis de autor: vinde și leacul de otravă.",
+    "partener": "ierbareasa",
+    "meniu": true,
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_ierbareasa": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "salut1",
+          "salut2"
+        ]
+      }
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Un Lightfinder la ușa mea... Ultima dată când am văzut unul, era tatăl tău, după o bătaie. Stai jos. Ce te doare?",
+        "efecte": {
+          "stare": {
+            "cunoscut_ierbareasa": "da"
+          }
+        }
+      },
+      "salut1": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Intră, flăcăule, și închide ușa. Ierburile mele nu iubesc curentul."
+      },
+      "salut2": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Iar ai venit cu zgârieturi? Lasă, că bătrâna are leac pentru toate."
+      },
+      "i_leac": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Bale de șobolan? Ard ca focul și intră în sânge. Leacul meu le oprește pe loc. Ia unul, că nu știi niciodată ce te așteaptă prin pivnițe."
+      },
+      "i_ierburi": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Pădurea dă tot ce-ți trebuie, dacă știi unde să cauți. Și când să cauți. Unele ierburi ies doar seara, ca stelele."
+      }
+    },
+    "vorbeste": [
+      {
+        "nod": "i_leac"
+      },
+      {
+        "nod": "i_ierburi"
+      }
+    ],
+    "optiuni": [
+      {
+        "text": "Cumpără",
+        "efecte": {
+          "magazin": "ierbareasa"
+        },
+        "spre": null
+      }
+    ]
+  },
+  "mormant_tata": {
+    "_nota": "CIORNĂ (Claude). La mormântul tatălui, în cimitirul de la Marginea satului; o dată pe zi.",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mormântul tatei e lângă gardul cimitirului. Crucea de lemn s-a înnegrit de ploi.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Smulg iarba de pe mormânt și mă așez lângă el.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Tată... satul e tot al lor. Dar nu mai stau cu mâinile în sân. Îți promit.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Vântul trece prin iarbă. Pentru o clipă, parcă îi aud iar vocea.",
+        "efecte": {
+          "timp": 20
         }
       }
     }

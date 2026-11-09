@@ -144,7 +144,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
 ### 📝 Bolnavul
-- Elian îi spune lui Vale de o plantă specială care apare **doar seara** (18–23, în pădure, cu mini-jocul culesului); bolnavul e un sătean fără nume. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
+- Elian îi spune lui Vale de o plantă specială care apare **doar seara** (18–23, în pădure, cu mini-jocul culesului); **bolnava e mama lui Finn** (decis de autor), deci misiunea vine după eliberarea lui Finn. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
 
 ### 📝 Cărțile
 - Orcii vor să percheziționeze biserica; Vale îl ajută pe Elian să ascundă niște cărți vechi. Primul semn că preotul ascunde ceva.
@@ -300,12 +300,24 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Finn (hoțul)
 
-### 📝 Eliberarea
-- După discuția cu negustorul, Vale poate cere să vorbească cu hoțul. Hoțul îi spune de ce a furat: din nevoie, ca să-și hrănească familia; nimeni nu-l crede, dar Vale îl crede și îl eliberează.
-- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa lui Finn** (hoțul), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei** (bătrâna cu poțiuni; vinde și **leacul de otravă**, `leac_otrava`, decis de autor: în luptă scoate otrava, bun la șobolanii din pivniță).
+### ✅ Eliberarea
+- **Pornește** (decis de autor): în piață, apeși pe Finn, legat la butuc; răspunde negustorul. „Pot să vorbesc cu el?” → discuția de la butuc, peste o imagine: Finn spune că a furat ca să-și hrănească **mama bolnavă și sora mică**; nimeni nu-l crede, dar Vale îl crede → misiunea pornește („Așteaptă-mă. Mă întorc cu banii.”).
+- **Pasul:** negustorul cere 40 de monede (`TODO` suma); „Cât vrei ca să-l eliberezi?” apare abia după discuția cu Finn.
+- **Eliberarea**, peste 3 imagini: Vale îl dezleagă de la butuc; Finn îl duce pe drumul din spatele gardurilor spre marginea satului (Vale îl știe de copil, dar de când au venit orcii n-a mai avut ce căuta pe acolo; decis de autor); casa lui Finn: sora îi sare în brațe, mama, bolnavă, în pat, îl cunoscuse pe tatăl lui Vale. La final Vale rămâne în casa lui Finn.
+- **Recompensa:** încrederea lui Finn +1 și **drumul spre Marginea satului**: o piesă nouă pe harta satului (`drum_marginea`), care duce la **a doua hartă** (decis de autor: ca cea a satului, cu mai puține locuri). „Înapoi” de pe ea duce în sat.
+- **Marginea satului** (`harti` în `locations.json`, zonele cu `"harta": "marginea"`):
+  - **Casa lui Finn** (zona + interiorul): Finn, mama și sora lui, 06–23 (ales de Claude); noaptea casa e încuiată, dorm. Cu toți trei se poate vorbi. **Mama lui Finn e bolnava din misiunea lui Elian „Bolnavul”** (decis de autor).
+  - **Ieșirea:** poteca de lângă zid; deocamdată doar gândul lui Vale („...dar nu singur. Nu încă.”). O folosesc mai târziu misiunile lui Roderick.
+  - **Contrabandistul:** zona e chiar scena; el e acolo 08–23 (ales de Claude), cu magazin (`TODO`: ce vinde; deocamdată săgeți și arcul).
+  - **Cimitirul:** „Mormântul tatălui”, o scurtă scenă cu gândurile lui Vale, o dată pe zi (20 de minute).
+  - **Coliba ierbăresei** (zona + interiorul): bătrâna, 06–23, vinde poțiuni de viață, **leacul de otravă** și pansamente; noaptea doarme.
+  - Numele mamei, al surorii, al contrabandistului și al bătrânei sunt `TODO`.
+- **Imagini:** `events/finn_butuc.png`, `finn_eliberat_1.png`, `finn_eliberat_2.png`, `finn_eliberat_3.png`; harta `map/marginea_harta.png` (+ `_noapte`); piesele `map/piese/drum_marginea.png` (pe harta satului), `casa_finn.png`, `iesirea.png`, `contrabandist.png`, `cimitir.png`, `coliba.png` (+ `_noapte`); scenele `locations/casa_finn_zona.png`, `casa_finn_interior.png`, `iesirea_zona.png`, `contrabandist_zona.png`, `cimitir_zona.png`, `coliba_zona.png`, `coliba_interior.png` (zonele și cu `_noapte`); sprite-urile `sprites/hot_casa_finn_interior.png`, `mama_finn_casa_finn_interior.png`, `sora_finn_casa_finn_interior.png`, `contrabandist_contrabandist.png`, `ierbareasa_coliba_interior.png`; portretele `portraits/mama_finn_*`, `sora_finn_*`, `contrabandist_*`, `ierbareasa_*`; schițele din carte `ui/carte_<id>.png`.
+
+**Cum verifici:** în piață, ziua, cu 40 de monede: apasă pe Finn → „Pot să vorbesc cu el?” → discuția → „Așteaptă-mă”. Apasă din nou → „Cât vrei...” → „Plătesc” → cele 3 imagini → ești în casa lui Finn. Pe harta satului apare drumul spre Marginea satului.
 
 ### 📝 Mâncarea
-- Vale aduce mâncare familiei hoțului.
+- Vale aduce mâncare familiei lui Finn (sora lui: „Ai adus ceva de mâncare?”).
 
 ### 📝 Lada colectorului
 - Seara, cu hoțul, Vale recuperează bani și alte lucruri de la orcul colector. Nu ajută la lupta finală: ajută sătenii.
