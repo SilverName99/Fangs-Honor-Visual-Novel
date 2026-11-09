@@ -298,7 +298,7 @@
     },
     {
       "id": "hot",
-      "nume": "Hoțul",
+      "nume": "Finn",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Un tânăr hoț, legat la butucul din piață. Negustorul cere bani ca să-l elibereze. Nu știu încă ce a furat și nici dacă merită ajutat."
@@ -325,7 +325,8 @@
           }
         }
       },
-      "_numeTODO": "Numele hoțului e TODO (nedecis)."
+      "_numeTODO": "Numele hoțului e TODO (nedecis).",
+      "_numeNota": "Decis de autor: hoțul din piață se numește Finn."
     },
     {
       "id": "vanatoare",

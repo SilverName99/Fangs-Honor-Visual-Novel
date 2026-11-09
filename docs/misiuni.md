@@ -284,11 +284,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ---
 
-## Hoțul
+## Finn (hoțul)
 
 ### 📝 Eliberarea
 - După discuția cu negustorul, Vale poate cere să vorbească cu hoțul. Hoțul îi spune de ce a furat: din nevoie, ca să-și hrănească familia; nimeni nu-l crede, dar Vale îl crede și îl eliberează.
-- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa hoțului** (numele hoțului: de ales), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei**.
+- După eliberare apare pe hartă un **drum nou**, spre o mică zonă (o zonă obișnuită a hărții, cu imaginea ei ca o hartă mică): **casa lui Finn** (hoțul), **ieșirea mai puțin păzită** de orci (pe unde Vale și Roderick ies în misiuni), **contrabandistul** (lucruri care nu se găsesc în piață), **cimitirul satului** (mormântul tatălui) și **coliba ierbăresei**.
 
 ### 📝 Mâncarea
 - Vale aduce mâncare familiei hoțului.
