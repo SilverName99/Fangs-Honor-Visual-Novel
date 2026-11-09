@@ -139,11 +139,31 @@
           },
           "volum": 0.9,
           "infundat": false
+        },
+        {
+          "sunet": "taverna_pivnita_misiune",
+          "conditii": {
+            "misiune": {
+              "agnes_pivnita": "inceputa"
+            }
+          },
+          "volum": 0.6,
+          "infundat": "mult"
         }
       ]
     },
     "taverna.parter": {
-      "sunet": "taverna_muzica"
+      "sunet": "taverna_muzica",
+      "variante": [
+        {
+          "sunet": "taverna_pivnita_misiune",
+          "conditii": {
+            "misiune": {
+              "agnes_pivnita": "inceputa"
+            }
+          }
+        }
+      ]
     },
     "taverna.etaj": {
       "sunet": "taverna_muzica",
@@ -171,6 +191,16 @@
           },
           "volum": 0.75,
           "infundat": "putin"
+        },
+        {
+          "sunet": "taverna_pivnita_misiune",
+          "conditii": {
+            "misiune": {
+              "agnes_pivnita": "inceputa"
+            }
+          },
+          "volum": 0.6,
+          "infundat": "mult"
         }
       ]
     },
@@ -323,6 +353,24 @@
           }
         }
       ]
+    },
+    "taverna.pivnita": {
+      "_nota": "Decis de autor: cât e misiunea în lucru, melodia încordată, clar; după ea, muzica tavernei de sus, înfundată.",
+      "sunet": "taverna_muzica",
+      "volum": 0.6,
+      "infundat": "mult",
+      "variante": [
+        {
+          "sunet": "taverna_pivnita_misiune",
+          "conditii": {
+            "misiune": {
+              "agnes_pivnita": "inceputa"
+            }
+          },
+          "volum": 1,
+          "infundat": false
+        }
+      ]
     }
   },
   "fisiereAmbianta": {
@@ -339,7 +387,8 @@
     "poarta": "Poarta seara (18–23): focul orcilor trosnind, mormăieli",
     "taverna_muzica": "Taverna: muzica și vocile din fundal, într-un singur fișier (afară și din camera de sus se aude înfundat)",
     "moara_vant": "Moara: vântul care învârte aripile, lemnul care scârțâie",
-    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)"
+    "poarta_zi": "Poarta ziua: ciori, vânt rece, a vreme rea (fără foc)",
+    "taverna_pivnita_misiune": "Misiunea „Pivnița”: o melodie încordată, apăsătoare (zgârieturi, întuneric), în tavernă și în pivniță cât e misiunea în lucru (decis de autor)"
   },
   "efecte": {
     "usa": "Ușa de lemn care se deschide (când intri într-un loc)",
