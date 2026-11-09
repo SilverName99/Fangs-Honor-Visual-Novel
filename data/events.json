@@ -263,11 +263,11 @@
     },
     {
       "id": "orci_patrula_campuri_prima",
-      "_nota": "Decis de autor: prima dată când orcii îi necăjesc pe fermieri vine sigur și devreme (din ziua 3, 80% la fiecare intrare dimineața pe câmpuri), ca fermierul să devină cel cu care se poate vorbi; după el, evenimentul obișnuit din categoria orci. Cât e în lucru misiunea berii (îți trebuie mierea de la fermier), patrula vine sigur la prima intrare 08–13 (ales de Claude).",
+      "_nota": "Decis de autor: prima dată când orcii îi necăjesc pe fermieri vine sigur și devreme (din ziua 3, 80% la fiecare intrare pe câmpuri, 06–13, cât e și fermierul acolo), ca fermierul să devină cel cu care se poate vorbi; după el, evenimentul obișnuit din categoria orci. Cât e în lucru misiunea berii (îți trebuie mierea de la fermier), patrula vine sigur la prima intrare 06–13 (ales de Claude).",
       "conditii": {
         "loc": "campuri",
         "ora": {
-          "min": "08:00",
+          "min": "06:00",
           "max": "12:59"
         },
         "zi": {

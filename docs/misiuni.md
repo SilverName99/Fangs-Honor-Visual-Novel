@@ -263,7 +263,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Berea
 - **Pornește:** după „Camera de sus” (decis de autor: înaintea pivniței, ca jucătorul să aibă timp să-și facă rost de o armă și de poțiuni), la Agnes: „Taverna miroase a apă cu spumă... !”. Orcii i-au golit butoaiele; ar face bere nouă, dar îi trebuie **5 orz** și **2 miere**.
 - **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect de poveste, fără loc în rucsac, se numără.
-- **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 08 și 13 (din ziua 3).
+- **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 06 și 13, cât e și fermierul acolo (din ziua 3).
 - **Predarea:** la Agnes, „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată după-amiaza, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană.
 - **Recompensa:** încrederea lui Agnes +1 și o bere.
 - **Imagini:** `events/agnes_bere_1.png` (Agnes și Vale fac bere în pivniță), `agnes_bere_2.png` (seara, taverna plină și veselă); iconițele `items/orz.png` și `items/miere.png`.
@@ -286,14 +286,14 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Deblocarea fermierului
 - **Până atunci,** nu se poate vorbi cu el.
-- **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (08–13), 80% la fiecare intrare pe câmpuri.
+- **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (06–13, cât e și fermierul acolo), 80% la fiecare intrare pe câmpuri.
 - După ea (oricum ai ales), fermierul devine cel cu care poți vorbi.
 - Imaginea e cea de la patrula de orci de pe câmpuri, `events/orci_patrula_campuri.png`.
 - Misiunile lui: 💡 de discutat.
 
 **Cum verifici**
 1. Ziua 1 sau 2, ora 08–13, câmpuri: fermierul nu se poate apăsa.
-2. Ziua 3, 08:00: de pe **hartă**, mergi la câmpuri (de câteva ori, dacă nu vine din prima): patrula de orci.
+2. Ziua 3, 06:00: de pe **hartă**, mergi la câmpuri (de câteva ori, dacă nu vine din prima): patrula de orci.
 3. După alegere, fermierul se poate apăsa.
 
 ---
