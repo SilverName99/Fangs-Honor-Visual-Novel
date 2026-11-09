@@ -604,7 +604,21 @@
                 }
               ]
             }
-          }
+          },
+          "variante": [
+            {
+              "imagine": "events/agnes_camera_1.png",
+              "nume": "plină de lucrurile soldatului (misiunea lui Agnes)",
+              "conditii": {
+                "misiune": {
+                  "agnes_camera": "inceputa"
+                },
+                "nu": {
+                  "existaStare": "camera_golita"
+                }
+              }
+            }
+          ]
         }
       ]
     },

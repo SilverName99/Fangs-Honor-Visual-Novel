@@ -247,7 +247,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Camera de sus (prima misiune a lui Agnes)
 - **Pornește:** la câteva zile după prima discuție cu Agnes, în tavernă, cât e ea acolo: „Ce s-a întâmplat cu camera de sus? !”. Agnes povestește de fostul chiriaș, un soldat căzut în ziua în care a căzut și tatăl lui Vale. „Las-o pe mine, doamna Agnes. O golesc eu.”
-- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Acolo, cât e taverna deschisă (9 dimineața – 2 noaptea): „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena, peste 3 imagini (decis de autor):
+- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Până strângi lucrurile, camera arată ca în `agnes_camera_1.png` (plină de lucrurile soldatului; decis de autor). Acolo, cât e taverna deschisă (9 dimineața – 2 noaptea): „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena, peste 3 imagini (decis de autor):
   1. camera cu lucrurile soldatului prin ea; Vale se apucă de strâns;
   2. camera curată, Vale aproape a terminat și vede ceva sub pat: un rucsac cu niște hârtii vechi (nu le citește);
   3. jos, în tavernă: Vale îi arată lui Agnes ce a găsit; ea nu înțelege ce sunt și îl trimite la Roderick. Vale rămâne în sala tavernei.
