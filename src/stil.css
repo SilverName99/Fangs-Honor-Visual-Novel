@@ -1042,6 +1042,11 @@ svg.zone {
 .grila-marfa {
   grid-auto-rows: auto;
   row-gap: 10px;
+  /* Când lista e lungă (schimburile mamei), se derulează în loc să iasă peste caseta de jos */
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  align-content: start;
 }
 .marfa {
   display: flex;
@@ -2921,7 +2926,8 @@ svg.zone {
 .schimb {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 160px 1fr 160px;
+  /* Ce dai (poate fi mai mult de un material) | săgeata | ce primești */
+  grid-template-columns: 1fr auto 1fr;
   align-items: start;
   gap: 16px;
   padding: 10px;
@@ -2936,8 +2942,19 @@ svg.zone {
   border-color: #c8952e;
   box-shadow: 0 0 12px rgba(200, 149, 46, 0.7), inset 0 0 10px rgba(70, 45, 20, 0.3);
 }
+.parte-schimb {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.schimb .marfa {
+  width: 130px;
+}
+.schimb .marfa .celula {
+  height: 130px;
+}
 .sageata-schimb {
-  height: 160px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3162,4 +3179,10 @@ svg.zone {
 }
 .dialog:not(.cu-imagine) .medalion-nume {
   display: none;
+}
+
+/* Schimbul pentru care n-ai destule materiale: decolorat (cerut de autor) */
+.schimb.fara-materiale {
+  opacity: 0.5;
+  filter: grayscale(0.8);
 }

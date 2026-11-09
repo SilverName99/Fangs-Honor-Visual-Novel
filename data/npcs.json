@@ -105,7 +105,47 @@
       "dialoguriPeLoc": {
         "piata": "miriam_piata"
       },
-      "intrebareVorba": "Ce mai faci, mamă?"
+      "intrebareVorba": "Ce mai faci, mamă?",
+      "magazin": {
+        "_nota": "Decis de autor: Miriam coase piesele de piele cât stă la cusut (11–14, în camera ei), pe ecranul de schimb. Câte piei cere fiecare: TODO echilibru (ales de Claude).",
+        "titlu": "Ce poate coase mama",
+        "schimburi": [
+          {
+            "da": {
+              "blana_lup": 2
+            },
+            "primesti": {
+              "gluga": 1
+            }
+          },
+          {
+            "da": {
+              "piele": 2
+            },
+            "primesti": {
+              "jambiere_piele": 1
+            }
+          },
+          {
+            "da": {
+              "piele": 3
+            },
+            "primesti": {
+              "vesta_piele": 1
+            }
+          },
+          {
+            "da": {
+              "piele": 2,
+              "blana_lup": 2
+            },
+            "primesti": {
+              "rucsac_piele": 1
+            }
+          }
+        ],
+        "cumpara": []
+      }
     },
     {
       "id": "soldat",

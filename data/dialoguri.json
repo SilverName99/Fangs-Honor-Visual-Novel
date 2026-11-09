@@ -802,6 +802,23 @@
             }
           }
         ]
+      },
+      "coase": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Adu-mi piei bune și-ți cos ce-ți trebuie. Tatăl tău zicea că pielea de mistreț ține mai bine decât orice zale ieftine.",
+        "alegeri": [
+          {
+            "text": "Să vedem ce poți face.",
+            "inchide": true,
+            "efecte": {
+              "magazin": "miriam"
+            }
+          },
+          {
+            "text": "Altă dată, mamă."
+          }
+        ]
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -815,6 +832,20 @@
       },
       {
         "nod": "d3"
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: cât coase (11–14, în camera ei), Miriam face piesele de piele din piei. Replica e ciornă.",
+        "text": "Mamă, mi-ai putea coase ceva din piei?",
+        "conditii": {
+          "loc": "casa/camera_mama",
+          "ora": {
+            "min": "11:00",
+            "max": "13:59"
+          }
+        },
+        "spre": "coase"
       }
     ]
   },

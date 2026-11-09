@@ -277,16 +277,13 @@
                 "scut_lemn",
                 "sabie_mare",
                 "topor_mare",
-                "arc",
-                "gluga",
-                "vesta_piele",
-                "jambiere_piele",
-                "rucsac_piele"
+                "arc"
               ],
               "cumpara": [
                 "piele",
                 "blana_lup"
-              ]
+              ],
+              "_nota": "Decis de autor: piesele de piele (gluga, vesta, jambierele, rucsacul) nu le mai vinde Bram; le coase Miriam din piei."
             }
           ],
           "incuiat": [

@@ -81,7 +81,15 @@ export function creeazaEcranMagazin(parinte, joc) {
         m.append(cel, cuCatAm ? Object.assign(div(`pret-marfa${cateAm(id) < n ? ' slab' : ''}`), { textContent: `ai ${cateAm(id)}` }) : div('pret-marfa', inv.def(id).nume));
         return m;
       });
-    r.append(...parte(t.da, true), Object.assign(div('sageata-schimb'), { textContent: '➜' }), ...parte(t.primesti, false));
+    // Ce dai (unul sau mai multe materiale, unul lângă altul), săgeata, ce primești
+    const grup = (lista, cuCatAm) => {
+      const g = div('parte-schimb');
+      g.append(...parte(lista, cuCatAm));
+      return g;
+    };
+    r.append(grup(t.da, true), Object.assign(div('sageata-schimb'), { textContent: '➜' }), grup(t.primesti, false));
+    // Un schimb pentru care n-ai destule (decis de autor) e decolorat, ca să se vadă repede ce nu poți face
+    if (Object.entries(t.da).some(([id, n]) => cateAm(id) < n)) r.classList.add('fara-materiale');
     r.onclick = () => ((selectat = { din: 'marfa', schimb: k }), arata());
     return r;
   }
