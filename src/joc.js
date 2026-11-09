@@ -682,7 +682,11 @@ const joc = {
   },
   intreaba,
   inregistreazaCastig,
-  // Un eveniment „laTrezire” (un vis) pornește după somn, dacă îi sunt îndeplinite condițiile
+  // Un obiect de poveste citit din inventar (hârtiile soldatului): dialogul lui, peste imaginea lui
+  citeste(idDialog) {
+    setTimeout(() => vorbesteCu(null, idDialog), 0);
+  },
+    // Un eveniment „laTrezire” (un vis) pornește după somn, dacă îi sunt îndeplinite condițiile
   dupaSomn() {
     const ctx = context(stare);
     const vis = evenimente.find((ev) => ev.laTrezire && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));

@@ -300,25 +300,17 @@
           "gata": {
             "existaStare": "camera_golita"
           },
-          "sfat": "Urc la etaj și strâng lucrurile fostului chiriaș.",
+          "sfat": "Urc la etaj (cât e taverna deschisă, 9 dimineața – 2 noaptea) și strâng lucrurile fostului chiriaș.",
           "indiciu": {
             "text": "Despre camera de sus...",
             "nod": "camera_indiciu"
           }
         },
         {
-          "text": "Îi spun lui Agnes că am terminat",
+          "text": "Îi arăt lui Agnes ce am găsit",
           "gata": {
             "stare": {
               "camera_taverna": "deschisa"
-            }
-          },
-          "sfat": "Agnes e în tavernă, de la 9 dimineața până noaptea.",
-          "predare": {
-            "text": "Camera e goală. Și am găsit ceva...",
-            "nod": "camera_predare",
-            "conditii": {
-              "loc": "taverna/parter"
             }
           }
         }

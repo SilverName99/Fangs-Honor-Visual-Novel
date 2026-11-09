@@ -237,8 +237,9 @@
       "nume": "Hârtii vechi",
       "tip": "poveste",
       "pret": 0,
-      "descriere": "Trei hârtii găsite în rucsacul fostului chiriaș de la tavernă: un solz desenat în creion și un drum spre un loc pe care nu-l recunosc.",
-      "_nota": "Misiunea lui Agnes „Camera de sus”. Ce scrie pe ele: TODO (decis de autor: de hotărât)."
+      "descriere": "Niște hârtii vechi, găsite sub patul fostului chiriaș de la tavernă. Apasă pe ele ca să le citești.",
+      "_nota": "Misiunea lui Agnes „Camera de sus”. Ce scrie pe ele: TODO (decis de autor: de hotărât).",
+      "citeste": "hartii_citite"
     }
   }
 }

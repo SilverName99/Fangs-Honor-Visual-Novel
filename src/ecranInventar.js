@@ -393,6 +393,15 @@ export function creeazaEcranInventar(parinte, joc) {
           const ic = div('iconita-poveste');
           ic.append(iconita(inv, id));
           r.append(ic, div('', inv.def(id).nume));
+          // Unele se pot citi (hârtiile soldatului, decis de autor): un clic le deschide, ca o discuție peste imagine
+          if (inv.def(id).citeste) {
+            r.classList.add('se-citeste');
+            r.append(div('citeste-poveste', 'Citește'));
+            r.onclick = () => {
+              inchide();
+              joc.citeste(inv.def(id).citeste);
+            };
+          }
           lista.append(r);
         }
         if (!s.poveste.length) lista.append(div('ajutor-inv', 'Încă nimic. Cheile, scrisorile și celelalte lucruri importante apar aici și nu se pot pierde.'));

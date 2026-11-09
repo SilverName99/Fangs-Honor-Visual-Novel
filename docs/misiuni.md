@@ -247,15 +247,18 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Camera de sus (prima misiune a lui Agnes)
 - **Pornește:** la câteva zile după prima discuție cu Agnes, în tavernă, cât e ea acolo: „Ce s-a întâmplat cu camera de sus? !”. Agnes povestește de fostul chiriaș, un soldat căzut în ziua în care a căzut și tatăl lui Vale. „Las-o pe mine, doamna Agnes. O golesc eu.”
-- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Acolo: „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena peste imagini: lucrurile soldatului, rucsacul de sub pat și **3 hârtii vechi** (un solz desenat în creion, „Nici sabia, nici focul nu l-au zgâriat.”, și un drum spre un loc necunoscut; ce scrie exact: de hotărât). Hârtiile ajung la obiectele de poveste.
-- **Pasul 2:** la Agnes, „Camera e goală. Și am găsit ceva... ?”: ea nu știe să citească hârtiile, dar știe că Roderick a fost în aceeași strajă cu soldatul.
+- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Acolo, cât e taverna deschisă (9 dimineața – 2 noaptea): „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena, peste 3 imagini (decis de autor):
+  1. camera cu lucrurile soldatului prin ea; Vale se apucă de strâns;
+  2. camera curată, Vale aproape a terminat și vede ceva sub pat: un rucsac cu niște hârtii vechi (nu le citește);
+  3. jos, în tavernă: Vale îi arată lui Agnes ce a găsit; ea nu înțelege ce sunt și îl trimite la Roderick. Vale rămâne în sala tavernei.
+- **Hârtiile** (`hartii_vechi`) ajung la obiectele de poveste și rămân acolo. **Se citesc cu un clic** pe ele (inventar → „Obiecte de poveste” → Hârtii vechi → „Citește”), peste imaginea lor: un solz desenat în creion („Nici sabia, nici focul nu l-au zgâriat.”), semne și un drum spre un loc însemnat cu X (ce scrie exact: de hotărât).
 - **Recompensa:** încrederea lui Agnes +1; camera de sus se poate închiria (5 monede).
-- **Imagini:** `events/agnes_camera_1.png` (camera, lucrurile soldatului), `events/agnes_camera_2.png` (rucsacul de sub pat), `events/agnes_camera_hartii.png` (cele trei hârtii, de aproape).
+- **Imagini:** `events/agnes_camera_1.png` (camera cu lucrurile soldatului, fără Vale), `events/agnes_camera_2.png` (camera curată, Vale vede rucsacul sub pat), `events/agnes_camera_3.png` (jos, la tejghea, Agnes se uită la hârtii), `events/hartii_vechi.png` (hârtiile de aproape, la citit).
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Las-o pe mine”.
-2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → scena cu hârtiile.
-3. Sala tavernei → Agnes → „Camera e goală...” → încredere +1, apare „Închiriază o cameră”.
+2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → cele 3 imagini; la final ești în sala tavernei, cu încredere +1 la Agnes și „Închiriază o cameră” la ea.
+3. Inventar (I) → semnul „Obiecte de poveste” → Hârtii vechi → citești hârtiile.
 
 ### 📝 Pivnița
 - Agnes aude zgomote ciudate din pivniță; a deschis ușa, s-a speriat și a închis-o repede, fără să vadă ce era. Jos sunt **3 șobolani**: unul care scuipă bale acide (otravă, de la distanță) și doi care atacă cu ghearele. Luptă în pivniță (loc nou, `taverna/pivnita`, cu hartă de luptă; se intră doar din sala tavernei; după misiune rămâne deschisă, pentru mai mult lore).

@@ -348,41 +348,6 @@
         "vorbitor": "hangita",
         "emotie": "normal",
         "text": "Ușa de sus e deschisă. Ia-ți timp, nu te grăbi."
-      },
-      "camera_predare": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Am strâns tot, doamna Agnes. Și în rucsacul lui erau astea. Trei hârtii vechi.",
-        "urmator": "cp2",
-        "_nota": "CIORNĂ (Claude). Predarea misiunii „Camera de sus”."
-      },
-      "cp2": {
-        "vorbitor": "hangita",
-        "emotie": "normal",
-        "text": "Un solz desenat? Și semnele astea... Eu nu știu să citesc așa ceva, Vale. Dar știu cine ar putea.",
-        "urmator": "cp3"
-      },
-      "cp3": {
-        "vorbitor": "hangita",
-        "emotie": "normal",
-        "text": "Unchiul tău. Roderick a fost în aceeași strajă cu el. Ani întregi au stat la masa aia din colț și au râs până dimineața.",
-        "urmator": "cp4"
-      },
-      "cp4": {
-        "vorbitor": "hangita",
-        "emotie": "speriat",
-        "text": "Păstrează-le tu. Eu... eu n-aș ști ce să fac cu ele. Și mulțumesc. Mi-ai luat o piatră de pe inimă.",
-        "efecte": {
-          "stare": {
-            "camera_taverna": "deschisa"
-          }
-        },
-        "urmator": "cp5"
-      },
-      "cp5": {
-        "vorbitor": "hangita",
-        "emotie": "normal",
-        "text": "Camera e iar de închiriat. Pentru tine, oricând ai nevoie de un pat, la același preț ca pentru oricine. Nu mai mic, că doar n-am înnebunit."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2333,9 +2298,9 @@
     }
   },
   "camera_golita": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Agnes: Vale golește camera de sus; replicile stau peste imagini. Ce scrie pe hârtii: TODO (decis de autor: de hotărât).",
+    "_nota": "CIORNĂ (Claude). Decis de autor: 3 imagini: camera cu lucrurile soldatului; camera curată, Vale vede ceva sub pat; jos în tavernă, Vale îi arată lui Agnes ce a găsit, iar ea îl trimite la Roderick. Vale nu citește hârtiile: se citesc din inventar (obiecte de poveste), cu un clic.",
     "grup": "Misiunea lui Agnes: camera de sus",
-    "partener": null,
+    "partener": "hangita",
     "start": "a",
     "noduri": {
       "a": {
@@ -2350,41 +2315,147 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "suparat",
-        "text": "Strâng totul cu grijă: o cană ciobită, cizmele tocite, o curea cu cataramă de fier. Poate că l-a cunoscut și tata. Poate au căzut unul lângă altul.",
+        "text": "Cizmele tocite lângă ușă, o cană ciobită, o curea cu cataramă de fier. Poate că l-a cunoscut și tata. Poate au căzut unul lângă altul.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Sub pat, un rucsac de pânză, legat strâns. Înăuntru, învelite într-o bucată de piele unsă, ca să nu le prindă umezeala: trei hârtii vechi.",
-        "imagine": "events/agnes_camera_2.png",
+        "text": "Mă apuc de treabă. Strâng totul cu grijă, bucată cu bucată, într-un colț.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe prima e desenat în creion un solz, mare cât palma. Dedesubt, cu un scris strâmb: „Nici sabia, nici focul nu l-au zgâriat.”",
-        "imagine": "events/agnes_camera_hartii.png",
+        "text": "Aproape am terminat. Camera arată iar ca o cameră, nu ca un mormânt.",
+        "imagine": "events/agnes_camera_2.png",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe celelalte două, semne pe care nu le înțeleg și un drum desenat în grabă, spre un loc pe care nu-l recunosc.",
+        "text": "Dar sub pat, în umbră, e ceva. Un rucsac de pânză, legat strâns cu curele.",
         "urmator": "f"
       },
       "f": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Un solz de... ce? Nicio fiară din pădurea noastră n-are solzi așa de mari. Le iau cu mine. Agnes trebuie să le vadă.",
+        "text": "Înăuntru, învelite într-o bucată de piele unsă, ca să nu le prindă umezeala: niște hârtii vechi. Nu-mi stă în fire să umblu prin lucrurile unui mort. Le duc lui Agnes.",
         "efecte": {
           "obiect": "hartii_vechi",
           "stare": {
             "camera_golita": "da"
+          }
+        },
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cobor în sală cu pachetul strâns sub braț. Agnes ridică ochii de la tejghea.",
+        "imagine": "events/agnes_camera_3.png",
+        "efecte": {
+          "mergi": "taverna.parter"
+        },
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am terminat sus, doamna Agnes. Dar am găsit asta sub pat, în rucsacul lui. Niște hârtii vechi.",
+        "urmator": "i"
+      },
+      "i": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Ia să văd...",
+        "urmator": "j"
+      },
+      "j": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Agnes desface hârtiile pe tejghea și le întoarce pe toate părțile, încruntată.",
+        "urmator": "k"
+      },
+      "k": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Un desen, niște semne... Eu nu știu să citesc așa ceva, Vale. Nici nu-mi dau seama ce sunt.",
+        "urmator": "l"
+      },
+      "l": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Dar știu cine ar putea. Unchiul tău. Roderick a fost în aceeași strajă cu el, ani de zile. Du-te la el.",
+        "urmator": "m"
+      },
+      "m": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Și păstrează-le tu. Eu n-aș ști ce să fac cu ele.",
+        "urmator": "n"
+      },
+      "n": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Mulțumesc, Vale. Mi-ai luat o piatră de pe inimă. Camera e iar de închiriat. Pentru tine, oricând, la același preț ca pentru oricine. Nu mai mic, că doar n-am înnebunit.",
+        "efecte": {
+          "stare": {
+            "camera_taverna": "deschisa"
+          }
+        }
+      }
+    }
+  },
+  "hartii_citite": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: hârtiile se citesc din inventar (obiecte de poveste), cu un clic, oricând. Ce scrie exact pe ele: TODO (de hotărât de autor).",
+    "grup": "Hârtiile vechi",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Desfac hârtiile cu grijă. Sunt trei, îngălbenite și pătate, scrise cu o mână grăbită.",
+        "imagine": "events/hartii_vechi.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe prima e desenat în creion un solz, mare cât palma. Dedesubt, cu un scris strâmb: „Nici sabia, nici focul nu l-au zgâriat.”",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe a doua, semne pe care nu le înțeleg și câteva schițe mărunte.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe a treia, un drum desenat în grabă printr-o pădure, spre un loc însemnat cu un X. Nu recunosc nimic.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Un solz de... ce? Nicio fiară din pădurea noastră n-are solzi așa de mari.",
+        "efecte": {
+          "stare": {
+            "hartii_citite": "da"
           }
         }
       }

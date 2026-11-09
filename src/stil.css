@@ -3186,3 +3186,16 @@ svg.zone {
   opacity: 0.5;
   filter: grayscale(0.8);
 }
+
+/* Obiectele de poveste care se pot citi (hârtiile soldatului): se apasă pe ele */
+.obiect-poveste.se-citeste {
+  cursor: pointer;
+}
+.obiect-poveste.se-citeste:hover {
+  background: rgba(120, 80, 30, 0.15);
+}
+.citeste-poveste {
+  margin-left: auto;
+  font-style: italic;
+  opacity: 0.75;
+}

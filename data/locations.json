@@ -540,10 +540,22 @@
                   },
                   "nu": {
                     "existaStare": "camera_golita"
-                  }
+                  },
+                  "oricare": [
+                    {
+                      "ora": {
+                        "min": "09:00"
+                      }
+                    },
+                    {
+                      "ora": {
+                        "max": "01:59"
+                      }
+                    }
+                  ]
                 }
               },
-              "_nota": "Misiunea lui Agnes „Camera de sus”: strânsul durează și obosește puțin, apoi imaginile cu replicile peste ele."
+              "_nota": "Misiunea lui Agnes „Camera de sus”: doar cât e taverna deschisă (scena se termină jos, la Agnes); strânsul durează și obosește puțin, apoi cele 3 imagini cu replicile peste ele."
             },
             {
               "id": "dormi",
