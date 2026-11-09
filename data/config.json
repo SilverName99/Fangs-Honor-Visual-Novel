@@ -97,7 +97,20 @@
       "imagine": "locations/munca_moara.png",
       "text": "Cari saci de grâu la moară...",
       "gandNoapte": "Moara stă noaptea. Revin mâine dimineață.",
-      "miniJoc": "moara"
+      "miniJoc": "moara",
+      "bonus": [
+        {
+          "_nota": "Decis de autor: cât e misiunea berii, munca la moară dă și orz, până ai cât trebuie (2 pe muncă: TODO echilibru).",
+          "obiect": "orz",
+          "n": 2,
+          "max": 5,
+          "conditii": {
+            "misiune": {
+              "agnes_bere": "inceputa"
+            }
+          }
+        }
+      ]
     }
   },
   "somn": {

@@ -6,7 +6,8 @@
     "poarta",
     "piata",
     "fierar",
-    "campuri"
+    "campuri",
+    "taverna.pivnita"
   ],
   "inamici": {
     "lup": {
@@ -105,6 +106,40 @@
         "sunet": "lupta_topor"
       },
       "armura": 30
+    },
+    "sobolan_gheare": {
+      "nume": "Șobolan",
+      "numeScurt": "Șobolan",
+      "viata": 22,
+      "staminaMax": 120,
+      "atac": {
+        "min": 3,
+        "max": 5,
+        "tip": "apropiat",
+        "sunet": "lupta_muscatura"
+      },
+      "armura": 0,
+      "sunet": "sobolan",
+      "_nota": "Pivnița lui Agnes (decis de autor): doi șobolani care atacă cu ghearele. Cifre de pornire (TODO echilibru)."
+    },
+    "sobolan_scuipa": {
+      "nume": "Șobolan scuipător",
+      "numeScurt": "Șob. scuip.",
+      "viata": 18,
+      "staminaMax": 85,
+      "atac": {
+        "min": 2,
+        "max": 3,
+        "tip": "distanta",
+        "sunet": "lupta_scuipat",
+        "otrava": {
+          "daune": 3,
+          "ture": 3
+        }
+      },
+      "armura": 0,
+      "sunet": "sobolan",
+      "_nota": "Decis de autor: scuipă bale acide de la distanță, care otrăvesc (3 viață la fiecare tură a țintei, 3 ture, trece de armură). Revine în lupta finală, la orci. Cifre de pornire (TODO echilibru)."
     }
   },
   "lupte": {
@@ -577,6 +612,40 @@
         "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
+        }
+      }
+    },
+    "taverna_sobolani": {
+      "nume": "Pivnița tavernei",
+      "fundal": "taverna.pivnita",
+      "fuga": true,
+      "inamici": [
+        {
+          "id": "sobolan_gheare",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "sobolan_gheare",
+          "linie": 2,
+          "rand": "fata"
+        },
+        {
+          "id": "sobolan_scuipa",
+          "linie": 1,
+          "rand": "spate"
+        }
+      ],
+      "victorie": {
+        "text": "Ultimul șobolan nu se mai mișcă.",
+        "efecte": {
+          "eveniment": "pivnita_victorie"
+        }
+      },
+      "infrangere": {
+        "text": "Mușcăturile te ard ca focul. Te retragi pe trepte.",
+        "efecte": {
+          "eveniment": "pivnita_infrangere"
         }
       }
     }

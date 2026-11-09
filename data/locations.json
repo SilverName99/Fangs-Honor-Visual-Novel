@@ -619,6 +619,29 @@
               }
             }
           ]
+        },
+        {
+          "id": "pivnita",
+          "nume": "Pivnița",
+          "imagine": "locations/taverna_pivnita.png",
+          "din": "parter",
+          "_nota": "Decis de autor: pivnița lui Agnes; se intră doar din sala tavernei; apare cu misiunea „Pivnița” și rămâne deschisă după ea (pentru mai mult lore).",
+          "ascuns": {
+            "conditii": {
+              "oricare": [
+                {
+                  "misiune": {
+                    "agnes_pivnita": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "agnes_pivnita": "terminata"
+                  }
+                }
+              ]
+            }
+          }
         }
       ]
     },

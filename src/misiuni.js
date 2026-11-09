@@ -6,7 +6,8 @@ import { aplicaEfecte } from './efecte.js';
 // Pasul la care a ajuns fiecare misiune stă în salvare (pasiMisiuni), ca un pas făcut să rămână făcut
 // (lemnul folosit la reparație nu „desface” pasul cu adunatul lemnului)
 
-export const cateAre = (stare, id) => (stare.inventar || []).filter((x) => x.id === id).reduce((s, x) => s + x.n, 0);
+// Și obiectele de poveste care se numără (orzul pentru bere) intră la socoteală
+export const cateAre = (stare, id) => (stare.inventar || []).filter((x) => x.id === id).reduce((s, x) => s + x.n, 0) + (stare.povesteNumar?.[id] || 0);
 
 export function pasGata(p, stare) {
   if (p.numara && cateAre(stare, p.numara.obiect) < p.numara.n) return false;

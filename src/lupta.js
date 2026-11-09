@@ -497,15 +497,48 @@ export function creeazaLupta(parinte, joc) {
     if (tinta.apara) joc.sunet.efect('lupta_scut');
     if (!tinta.apara) poza(tinta, 'lovit');
     tinta.corp.classList.add('lovit');
-    if (tinta.viata <= 0) {
-      tinta.viata = 0;
-      tinta.cazut = true;
-      joc.sunet.efect('lupta_cazut');
-      tinta.el.classList.add('cazut');
-      poza(tinta, 'cazut');
+    // „otrava” la atac (șobolanul care scuipă bale acide, decis de autor): ținta pierde viață la fiecare tură a ei
+    if (sursa.atac.otrava && tinta.viata > 0) {
+      tinta.otrava = { ...sursa.atac.otrava };
+      tinta.el.classList.add('otravit');
+      jurnal(`${tinta.nume} e otrăvit!`);
     }
+    if (tinta.viata <= 0) cade(tinta);
     actualizeazaBare();
     return d;
+  }
+
+  function cade(f) {
+    f.viata = 0;
+    f.cazut = true;
+    f.otrava = null;
+    f.el.classList.remove('otravit');
+    joc.sunet.efect('lupta_cazut');
+    f.el.classList.add('cazut');
+    poza(f, 'cazut');
+  }
+
+  // Otrava lovește la începutul turei celui otrăvit, trece de armură și ține câteva ture; dacă îl doboară,
+  // tura lui se pierde. Întoarce true când luptătorul a căzut din cauza ei
+  function otravaLaRand(f) {
+    const o = f.otrava;
+    if (!o) return false;
+    f.viata = Math.max(0, f.viata - o.daune);
+    numar(f, `−${o.daune}`, 'otrava');
+    jurnal(`Otrava îl roade pe ${f.nume}: −${o.daune} viață.`);
+    if (--o.ture <= 0) {
+      f.otrava = null;
+      f.el.classList.remove('otravit');
+    }
+    if (f.viata > 0) return false;
+    cade(f);
+    f.bara = 0;
+    actualizeazaBare();
+    if (!vii('inamic').length || !vii('aliat').length) {
+      L.pauza = true;
+      termina(vii('inamic').length ? 'infrangere' : 'victorie');
+    }
+    return true;
   }
 
   async function executa(sursa, actiune) {
@@ -743,7 +776,10 @@ export function creeazaLupta(parinte, joc) {
     if (!L.pauza) {
       for (const f of L.toti) if (!f.cazut) f.bara += f.staminaMax * cfg.viteza * (f.incetinire ?? 1) * dt * viteza();
       const gata = L.toti.filter((f) => !f.cazut && f.bara >= 100).sort((a, b) => b.bara - a.bara)[0];
-      if (gata) {
+      if (gata && otravaLaRand(gata)) {
+        // Căzut din cauza otrăvii: nu mai joacă (lupta poate să se fi și terminat)
+        if (!L) return;
+      } else if (gata) {
         gata.bara = 100;
         // Rândul jucătorului: timpul se oprește până alege
         if (gata.tabara === 'aliat') {

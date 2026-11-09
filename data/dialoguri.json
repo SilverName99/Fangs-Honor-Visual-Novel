@@ -348,6 +348,138 @@
         "vorbitor": "hangita",
         "emotie": "normal",
         "text": "Ușa de sus e deschisă. Ia-ți timp, nu te grăbi."
+      },
+      "pivnita_oferta": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Vale... slavă Domnului că ești tu. Nu râde de mine, te rog.",
+        "urmator": "po2",
+        "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”."
+      },
+      "po2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce s-a întâmplat, doamna Agnes?",
+        "urmator": "po3"
+      },
+      "po3": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Azi-noapte am auzit ceva în pivniță. Zgârieturi. Ceva care roade lemnul butoaielor.",
+        "urmator": "po4"
+      },
+      "po4": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Azi-dimineață am luat lampa și am deschis ușa. În întuneric s-a mișcat ceva mare. Prea mare ca să fie o pisică. Am trântit ușa și n-am mai coborât.",
+        "urmator": "po5"
+      },
+      "po5": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "De atunci n-am curaj nici să mă uit la ușa aia.",
+        "alegeri": [
+          {
+            "text": "Cobor eu să văd ce e acolo.",
+            "spre": "po_da",
+            "efecte": {
+              "misiune": {
+                "agnes_pivnita": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Poate altă dată."
+          }
+        ]
+      },
+      "po_da": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Ia măcar o torță de lângă vatră. Și... ai grijă, băiete."
+      },
+      "pivnita_indiciu": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Ușa pivniței e acolo, lângă tejghea. Eu nu cobor nici moartă."
+      },
+      "bere_oferta": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Știi ce-mi lipsește cel mai mult, Vale? Mirosul de bere proaspătă.",
+        "urmator": "bo2",
+        "_nota": "CIORNĂ (Claude). Misiunea „Berea”."
+      },
+      "bo2": {
+        "vorbitor": "hangita",
+        "emotie": "suparat",
+        "text": "Orcii mi-au golit butoaiele unul după altul. Ce-a mai rămas e apă cu spumă, și se vede pe fețele oamenilor.",
+        "urmator": "bo3"
+      },
+      "bo3": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Acum că pivnița e curată, aș putea face iar bere, ca pe vremuri. Dar n-am orz și n-am miere.",
+        "urmator": "bo4"
+      },
+      "bo4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cât îți trebuie?",
+        "urmator": "bo5"
+      },
+      "bo5": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Cinci măsuri de orz și două de miere. Orzul l-ai găsi la moară, dacă pui umărul la treabă. Iar mierea... fermierul ține stupi, dar nu dă nimic pe gratis.",
+        "alegeri": [
+          {
+            "text": "Ți le aduc eu.",
+            "spre": "bo_da",
+            "efecte": {
+              "misiune": {
+                "agnes_bere": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Poate altă dată."
+          }
+        ]
+      },
+      "bo_da": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Atunci pregătesc ceaunul. De mult n-am mai avut un motiv să-l scot."
+      },
+      "bere_indiciu": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Cinci măsuri de orz de la moară și două de miere de la fermier. Nu uita, că eu am și uitat cum miroase berea bună."
+      },
+      "bere_predare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus orzul și mierea, doamna Agnes. Cinci și două, cum ai zis.",
+        "urmator": "bp2"
+      },
+      "bp2": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Ia te uită! Hai jos în pivniță, că azi facem bere ca lumea.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "orz": 5,
+                "miere": 2
+              },
+              "eveniment": "bere_gata"
+            }
+          }
+        ]
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -712,12 +844,44 @@
         "emotie": "normal",
         "text": "Cum merg lucrurile pe câmp?",
         "urmator": "b"
+      },
+      "miere": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Pentru berea lui Agnes? Atunci ia de la stupul cel bun. Și spune-i că vreau și eu o cană când e gata."
       }
     },
     "meniu": true,
     "vorbeste": [
       {
         "nod": "f_camp_a"
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: mierea pentru berea lui Agnes, de la fermier, 5 monede bucata.",
+        "text": "Îmi vinzi două măsuri de miere? (10 monede)",
+        "conditii": {
+          "misiune": {
+            "agnes_bere": "inceputa"
+          },
+          "nu": {
+            "areCate": {
+              "miere": 2
+            }
+          },
+          "bani": {
+            "min": 10
+          }
+        },
+        "efecte": {
+          "bani": -10,
+          "obiect": [
+            "miere",
+            "miere"
+          ]
+        },
+        "spre": "miere"
       }
     ]
   },
@@ -2307,7 +2471,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Camera miroase a praf și a lumânare stinsă de mult. Pe pat, o mantie de soldat împăturită, ca și cum stăpânul ei ar fi plecat doar până la colț.",
+        "text": "Camera miroase a praf și a ceară veche. Pe pat, o mantie de soldat împăturită, ca și cum stăpânul ei ar fi plecat doar până la colț.",
         "imagine": "events/agnes_camera_1.png",
         "urmator": "b"
       },
@@ -2329,7 +2493,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Aproape am terminat. Camera arată iar ca o cameră, nu ca un mormânt.",
+        "text": "Aproape am terminat. Camera arată iar ca o cameră.",
         "imagine": "events/agnes_camera_2.png",
         "urmator": "e"
       },
@@ -2472,6 +2636,210 @@
         "efecte": {
           "stare": {
             "hartii_citite": "da"
+          }
+        }
+      }
+    }
+  },
+  "pivnita_coborare": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Pivnița”: la intrarea în pivniță, peste imagini, apoi lupta.",
+    "grup": "Misiunea lui Agnes: pivnița",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Treptele scârțâie sub mine. Torța abia luminează câțiva pași înainte, iar aerul miroase a bere stătută și a ceva putred.",
+        "imagine": "events/pivnita_1.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Printre butoaie se aude din nou: zgârieturi. Și un clipocit umed, ca de bale.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Lumina torței îi prinde. Trei șobolani, cât niște câini. Unul e umflat și verzui, cu spinarea plină de bășici, iar din gură îi curg bale care sfârâie pe piatră.",
+        "imagine": "events/pivnita_2.png",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Ceilalți doi își arată ghearele. Nu fug de lumină. Vin spre mine.",
+        "alegeri": [
+          {
+            "text": "(Pune mâna pe armă!)",
+            "inchide": true,
+            "efecte": {
+              "lupta": "taverna_sobolani"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "pivnita_victorie": {
+    "_nota": "CIORNĂ (Claude). După lupta câștigată în pivniță: peste imagini, apoi sus, la Agnes.",
+    "grup": "Misiunea lui Agnes: pivnița",
+    "partener": "hangita",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ultimul șobolan se zvârcolește și rămâne nemișcat. Gâfâi. Mâna îmi tremură pe torță.",
+        "imagine": "events/pivnita_3.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lângă peretele din fund e o gaură în zid, roasă de curând. Pe acolo au intrat. O astup cu un butoi gol, până o repară cineva cum trebuie.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Urc treptele. Agnes stă lângă ușă, cu un făcăleț strâns în mâini, gata de luptă.",
+        "imagine": "events/pivnita_4.png",
+        "efecte": {
+          "mergi": "taverna.parter"
+        },
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Vale! Ce era acolo? Bubuia de parcă se dărâma casa!",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Șobolani. Trei, cât niște câini. Unul scuipa ceva care ardea piatra.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Doamne ferește... Și eu care voiam să cobor după un butoi.",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Mulțumesc, Vale. Încă o dată. Nu știu ce m-aș face fără tine.",
+        "efecte": {
+          "stare": {
+            "sobolani_ucisi": "da"
+          }
+        }
+      }
+    }
+  },
+  "pivnita_infrangere": {
+    "_nota": "CIORNĂ (Claude). După lupta pierdută în pivniță: misiunea rămâne în lucru; Vale poate coborî din nou.",
+    "partener": "hangita",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Mușcăturile mă ard ca focul. Mă retrag pe trepte, trântesc ușa în urma mea și mă sprijin de ea, gâfâind.",
+        "efecte": {
+          "mergi": "taverna.parter"
+        },
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Vale! Ești plin de sânge! Ce e acolo jos?",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "ranit",
+        "text": "Șobolani... cât niște câini. Mai cobor o dată, după ce-mi trag sufletul.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Nu înainte să te legi la răni. Și să mănânci ceva."
+      }
+    }
+  },
+  "bere_gata": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Berea”: Agnes și Vale fac bere, apoi seara taverna e plină.",
+    "grup": "Misiunea lui Agnes: berea",
+    "partener": "hangita",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Toată după-amiaza o petrecem în pivniță. Agnes fierbe, amestecă și numără, iar eu car apă și ridic butoaie.",
+        "imagine": "events/agnes_bere_1.png",
+        "efecte": {
+          "timp": 180
+        },
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Mai încet cu mierea, Vale! Bere facem, nu turtă dulce.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "E prima dată de mult când o văd râzând.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Seara, taverna e plină. Miroase a bere proaspătă, iar cineva a scos de undeva o fluieră.",
+        "imagine": "events/agnes_bere_2.png",
+        "urmator": "e",
+        "efecte": {
+          "panaLaOra": "19:00"
+        }
+      },
+      "e": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Prima cană e a ta. Ai muncit pentru ea.",
+        "efecte": {
+          "obiect": "bere"
+        },
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Pentru o seară, satul ăsta și-a amintit cum e să râdă. Mulțumesc, Vale.",
+        "efecte": {
+          "stare": {
+            "bere_facuta": "da"
           }
         }
       }

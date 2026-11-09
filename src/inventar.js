@@ -137,6 +137,8 @@ export function creeazaInventar(date, getStare) {
       const s = getStare();
       if (def(id).tip === 'poveste') {
         if (!s.poveste.includes(id)) s.poveste.push(id);
+        // Unele obiecte de poveste se numără (orzul și mierea pentru berea lui Agnes), tot fără loc în rucsac
+        if (def(id).numarabil) (s.povesteNumar ||= {})[id] = (s.povesteNumar[id] || 0) + n;
         return 0;
       }
       return adaugaIn(s.inventar, capacitate(), id, n);
@@ -145,6 +147,14 @@ export function creeazaInventar(date, getStare) {
     scoateOriunde(id, n = 1) {
       const s = getStare();
       const i = s.poveste.indexOf(id);
+      if (i >= 0 && def(id).numarabil) {
+        s.povesteNumar[id] = (s.povesteNumar?.[id] || 0) - n;
+        if (s.povesteNumar[id] <= 0) {
+          delete s.povesteNumar[id];
+          s.poveste.splice(i, 1);
+        }
+        return;
+      }
       if (i >= 0) return s.poveste.splice(i, 1);
       scoateDin(s.inventar, id, n);
     },

@@ -2,6 +2,7 @@ import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
 import { verifica } from './conditii.js';
 import { aplicaEfecte } from './efecte.js';
+import { cateAre } from './misiuni.js';
 import { baraNevoie } from './baraNevoie.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
@@ -69,6 +70,19 @@ export function creeazaActiuni(parinte, joc) {
     joc.arataImagini([a.imagine], dupa, { automat: SECUNDE_IMAGINE * 1000, text: a.text || '' });
   }
 
+  // „bonus” la muncă (decis de autor: cât e misiunea berii, moara dă și orz): câte bucăți, până la cât trebuie
+  function bonusMunca(m) {
+    let text = '';
+    for (const b of m.bonus || []) {
+      if (!verifica(b.conditii, context(joc.stare))) continue;
+      const n = Math.min(b.n, (b.max ?? Infinity) - cateAre(joc.stare, b.obiect));
+      if (n <= 0) continue;
+      joc.primeste(b.obiect, n);
+      text += `, +${n} ${inv.def(b.obiect).nume}`;
+    }
+    return text;
+  }
+
   function munca(idMunca) {
     const m = cfg.munca[idMunca];
     if (!m) return joc.mesaj('Munca asta nu e definită în config.');
@@ -92,11 +106,11 @@ export function creeazaActiuni(parinte, joc) {
             const scor = await mini[m.miniJoc]({ imagine: m.imagine, titlu: m.nume });
             const bani = Math.round(h * m.monedePeOra * (0.5 + scor));
             s.bani += bani;
-            return joc.dupaActiune(`+${bani} monede`);
+            return joc.dupaActiune(`+${bani} monede${bonusMunca(m)}`);
           }
           s.bani += h * m.monedePeOra;
           // Întâi imaginea cu Vale la muncă (cu sunetul muncii), apoi ce a câștigat
-          cuImagine(m, () => joc.dupaActiune(`+${h * m.monedePeOra} monede`), 'munca');
+          cuImagine(m, () => joc.dupaActiune(`+${h * m.monedePeOra} monede${bonusMunca(m)}`), 'munca');
         }, s.nevoi.stamina < h * m.staminaPeOra), () => -h * m.staminaPeOra),
       );
       return [info, ...ore];

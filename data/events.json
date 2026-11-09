@@ -863,6 +863,46 @@
         }
       },
       "_nota": "Decis de autor: data următoare când doarme Vale, după discuția cu Roderick despre hârtii."
+    },
+    {
+      "id": "pivnita_coborare",
+      "nume": "Pivnița: coborârea",
+      "grup": "Misiunea lui Agnes: pivnița",
+      "repetare": "mereu",
+      "dialog": "pivnita_coborare",
+      "conditii": {
+        "loc": "taverna/pivnita",
+        "misiune": {
+          "agnes_pivnita": "inceputa"
+        },
+        "nu": {
+          "existaStare": "sobolani_ucisi"
+        }
+      },
+      "_nota": "La fiecare intrare în pivniță cât e misiunea în lucru (după o înfrângere, Vale poate coborî din nou)."
+    },
+    {
+      "id": "pivnita_victorie",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Pivnița: victoria",
+      "grup": "Misiunea lui Agnes: pivnița",
+      "dialog": "pivnita_victorie"
+    },
+    {
+      "id": "pivnita_infrangere",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Pivnița: înfrângerea",
+      "dialog": "pivnita_infrangere"
+    },
+    {
+      "id": "bere_gata",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Berea",
+      "grup": "Misiunea lui Agnes: berea",
+      "dialog": "bere_gata"
     }
   ]
 }

@@ -5,6 +5,13 @@ import { MINUTE_ZI, inMinute } from './timp.js';
 // Un efect nou = o funcție nouă aici, fără să atingi restul codului.
 const efecte = {
   timp: (v, joc) => joc.avanseaza(v),
+  // „panaLaOra: "19:00"”: timpul trece până la ora aceea (azi, sau mâine dacă a trecut); berea lui Agnes e gata seara
+  panaLaOra: (v, joc) => {
+    const [h, m] = v.split(':').map(Number);
+    const acum = joc.stare.minute % 1440;
+    const tinta = h * 60 + m;
+    joc.avanseaza((tinta - acum + 1440) % 1440);
+  },
   // Ce primește Vale (bani, încredere, obiecte) se ține minte puțin, ca la sfârșitul unei misiuni să urce pe ecran
   bani: (v, joc) => {
     joc.stare.bani = Math.max(0, joc.stare.bani + v);

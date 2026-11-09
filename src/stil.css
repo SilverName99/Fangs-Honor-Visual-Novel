@@ -3199,3 +3199,11 @@ svg.zone {
   font-style: italic;
   opacity: 0.75;
 }
+
+/* Otrava (șobolanul care scuipă bale acide): numărul verde și o tentă verzuie pe luptătorul otrăvit */
+.numar-lupta.otrava {
+  color: #8fe36a;
+}
+.luptator.otravit .corp {
+  filter: sepia(0.4) hue-rotate(50deg) saturate(1.6);
+}

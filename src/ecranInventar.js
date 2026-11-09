@@ -392,7 +392,7 @@ export function creeazaEcranInventar(parinte, joc) {
           const r = div('obiect-poveste');
           const ic = div('iconita-poveste');
           ic.append(iconita(inv, id));
-          r.append(ic, div('', inv.def(id).nume));
+          r.append(ic, div('', inv.def(id).nume + (inv.def(id).numarabil ? ` ×${s.povesteNumar?.[id] || 0}` : '')));
           // Unele se pot citi (hârtiile soldatului, decis de autor): un clic le deschide, ca o discuție peste imagine
           if (inv.def(id).citeste) {
             r.classList.add('se-citeste');

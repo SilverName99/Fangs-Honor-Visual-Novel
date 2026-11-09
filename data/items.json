@@ -240,6 +240,22 @@
       "descriere": "Niște hârtii vechi, găsite sub patul fostului chiriaș de la tavernă. Apasă pe ele ca să le citești.",
       "_nota": "Misiunea lui Agnes „Camera de sus”. Ce scrie pe ele: TODO (decis de autor: de hotărât).",
       "citeste": "hartii_citite"
+    },
+    "orz": {
+      "nume": "Orz",
+      "tip": "poveste",
+      "numarabil": true,
+      "pret": 0,
+      "descriere": "Orz de la moară, pentru berea lui Agnes.",
+      "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
+    },
+    "miere": {
+      "nume": "Miere",
+      "tip": "poveste",
+      "numarabil": true,
+      "pret": 0,
+      "descriere": "Miere de la fermier, pentru berea lui Agnes.",
+      "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
     }
   }
 }

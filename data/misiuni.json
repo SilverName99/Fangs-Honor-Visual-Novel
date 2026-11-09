@@ -350,6 +350,116 @@
       "recompensa": {
         "text": "Acum știu ce caut: solzii de pe hârtii."
       }
+    },
+    {
+      "id": "agnes_pivnita",
+      "titlu": "Pivnița",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": "CIORNĂ: Agnes a auzit zgomote ciudate în pivniță. A deschis ușa, ceva mare s-a mișcat în întuneric, iar ea a trântit ușa la loc. Am promis că cobor eu să văd ce e acolo.",
+      "oferta": {
+        "_nota": "Decis de autor: a doua misiune a lui Agnes, după „Camera de sus”.",
+        "text": "Doamna Agnes, sunteți albă ca varul...",
+        "nod": "pivnita_oferta",
+        "conditii": {
+          "misiune": {
+            "agnes_camera": "terminata"
+          },
+          "loc": "taverna/parter",
+          "prezent": "hangita"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Cobor în pivniță și văd ce e acolo",
+          "gata": {
+            "existaStare": "sobolani_ucisi"
+          },
+          "sfat": "Ușa pivniței e în sala tavernei. Să iau ceva cu care să mă apăr.",
+          "indiciu": {
+            "text": "Despre pivniță...",
+            "nod": "pivnita_indiciu"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Agnes +1. Pivnița rămâne deschisă.",
+        "efecte": {
+          "relatie": {
+            "hangita": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "agnes_bere",
+      "titlu": "Berea",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": "CIORNĂ: Orcii i-au golit lui Agnes toate butoaiele. Acum, cu pivnița curată, ar putea face bere nouă, dar îi trebuie orz și miere.",
+      "oferta": {
+        "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Pivnița”.",
+        "text": "Taverna miroase a apă cu spumă...",
+        "nod": "bere_oferta",
+        "conditii": {
+          "misiune": {
+            "agnes_pivnita": "terminata"
+          },
+          "loc": "taverna/parter",
+          "prezent": "hangita"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Adun orz",
+          "numara": {
+            "obiect": "orz",
+            "n": 5
+          },
+          "sfat": "Cât muncesc la moară, primesc și orz (2 la fiecare muncă).",
+          "indiciu": {
+            "text": "Despre bere...",
+            "nod": "bere_indiciu"
+          }
+        },
+        {
+          "text": "Cumpăr miere de la fermier",
+          "numara": {
+            "obiect": "miere",
+            "n": 2
+          },
+          "sfat": "Fermierul ține stupi. Lucrează la câmpuri dimineața (6–13). 5 monede bucata.",
+          "indiciu": {
+            "text": "Despre bere...",
+            "nod": "bere_indiciu"
+          }
+        },
+        {
+          "text": "Duc orzul și mierea la Agnes",
+          "gata": {
+            "existaStare": "bere_facuta"
+          },
+          "predare": {
+            "text": "Am adus orzul și mierea!",
+            "nod": "bere_predare",
+            "conditii": {
+              "loc": "taverna/parter",
+              "areCate": {
+                "orz": 5,
+                "miere": 2
+              }
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Agnes +1 și prima cană din berea nouă.",
+        "efecte": {
+          "relatie": {
+            "hangita": 1
+          }
+        }
+      }
     }
   ]
 }
