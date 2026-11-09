@@ -13,7 +13,7 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - O misiune apare la un personaj doar **după prima discuție cu el** și după **câteva zile** (diferit pentru fiecare).
 - **Semnele** din meniul de discuție, de deasupra personajului și de pe hartă: **!** = misiune nouă, **?** gri = în lucru (dă indicația), **?** auriu = gata de predat.
 - **Încrederea** (0–10) crește prin misiuni duse la capăt. Un personaj se poate **recruta de la 8/10**.
-- **Între misiunile aceluiași personaj e o zi pauză** (decis de autor): următoarea apare abia a doua zi după ce o termini pe cea dinainte (condiția `misiuneTerminata`).
+- **Fără pauză între misiunile unui personaj** (decis de autor): doar unele misiuni apar cu întârziere, unde e scris la ele (condiția `misiuneTerminata` poate cere zile de la o altă misiune).
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
 
@@ -210,12 +210,12 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
 
 ### ✅ Hârtiile soldatului
-- **Pornește:** a doua zi după „Camera de sus”, cu hârtiile la Vale, în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
+- **Pornește:** după „Camera de sus”, cu hârtiile la Vale, în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
 - Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
 - Fără încredere (doar discuție); după ea vine **primul vis**.
 - **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).
 
-**Cum verifici:** după „Camera de sus”, a doua zi, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”. În aceeași zi cu predarea la Agnes, opțiunea nu apare.
+**Cum verifici:** după „Camera de sus”, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”.
 
 ### ✅ Primul vis (nu e misiune)
 - Data următoare când doarme (oriunde, oricât), după discuția despre hârtii: Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
