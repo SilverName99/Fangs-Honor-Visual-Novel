@@ -21,3 +21,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 - **Karzor**, dragonul primordial al **aerului**: foarte puternic, folosește multe fulgere, ca atacuri și ca puteri speciale. E singurul dragon de care s-a știut, iar lumea crede că e mort.
 - **Împăratul elfilor de pădure (wood elves)** are încă legământul cu Karzor. E un secret: doar o organizație secretă a elfilor de pădure știe.
 - **Cum arată Karzor** (după imaginea autorului; arată ca un dragon al pădurii pentru că legământul cu împăratul elfilor de pădure i-a dat înfățișarea lor): solzi ca scoarța și frunze verzi peste tot corpul, aripi ca de pânză verde-maronie întinsă pe oase ca niște ramuri, coarne ca niște crengi, iar pe piept un scut auriu cu un copac (semnul elfilor de pădure).
+
+## Șobolanii
+
+- În jocul principal există **3 unități de șobolani** care îi ajută în luptă pe Undead. În demo apar în pivnița tavernei (unul care scuipă bale acide, doi care atacă cu ghearele), iar cei care scuipă revin în lupta finală ca ajutoare de la distanță ale orcilor.

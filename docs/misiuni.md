@@ -69,8 +69,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 3. Vorbește iar cu ea în aceeași zi: salutul obișnuit. A doua zi, rănit, te întreabă din nou.
 
 ### 📝 Cina în familie
-- După **scandalul din tavernă** (oricum s-ar fi terminat): mama îl roagă pe Vale să-l aducă pe Roderick la cină. Scenă caldă despre tată.
-- Leagă misiunea mamei de drumul lui Roderick.
+- După misiunea lui Roderick **„Locul unde a căzut tata”**: mama îi spune lui Vale să-l invite pe Roderick la cină. La cină vorbesc ca Roderick să-l antreneze pe Vale mai bine (de aici pornește **Antrenamentul**).
+- Imagini, cu replicile peste ele.
 
 ---
 
@@ -105,8 +105,11 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - După „Nu acum”, „Mă mai gândesc” sau o bătaie pierdută, Vale ajunge înapoi pe hartă: paznicul nu-l lasă la poartă cât e misiunea în lucru.
 6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
+### 📝 Foalele stricate
+- Foalele forjei s-au stricat; Vale aduce piei de mistreț pentru unele noi. Imagini, cu replicile peste ele. Vine înaintea cheii.
+
 ### 💡 Cheia camerei lui Bram
-- O altă misiune, mai târziu. În cufăr ar putea fi sabia tatălui lui Vale (de discutat).
+- După „Foalele stricate”. Ce e în cufăr: de discutat.
 
 ---
 
@@ -139,8 +142,14 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 5. Mai adu 3 fire (sau din F2) → la Elian, „Schimburi” → apasă pe schimb → „Schimbă” → 1 pansament în rucsac; cu mai puțin de 3 fire, gândul „Îmi trebuie 3…”. „Caută ierburi” e încă în pădure.
 6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
+### 📝 Bolnavul
+- Elian îi spune lui Vale de o plantă specială care apare **doar seara**. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
+
+### 📝 Cărțile
+- Orcii vor să percheziționeze biserica; Vale îl ajută pe Elian să ascundă niște cărți vechi. Primul semn că preotul ascunde ceva.
+
 ### 💡 Secretul lui Elian
-- Vale, rănit grav, e vindecat de Elian cu lumina. Află că e mag și îi păstrează secretul. De discutat.
+- După „Cărțile” (poate încă una). Idee: Vale și Roderick luptă cu ceva prea puternic, iar Elian apare, îi apără cu un scut de lumină și le reface viața. De discutat.
 
 ---
 
@@ -192,6 +201,16 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Roderick Lightfinder (unchiul)
 
+### 📝 Locul unde a căzut tata
+- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale. Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
+- După ea vine „Cina în familie” (Miriam).
+
+### 📝 Antrenamentul
+- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**.
+
+### 📝 Solzii de dragon
+- Pornește după hârtiile găsite în camera de la tavernă (misiunea lui Agnes): Roderick aude de ele, iar Vale și Roderick pleacă în căutarea solzilor.
+
 ### ✅ Scandalul din tavernă
 - **Până la scandal,** Roderick nu-l bagă în seamă pe Vale („Unchiul Roderick nici nu ridică ochii din cană”).
 - **Pornește:** din **ziua 3**, în tavernă, cât e și Agnes acolo (16–00). În meniul lui apare „*Orcii fac multă dezordine și gălăgie...* !”: o scurtă poveste (orcii de la masa din colț cer bere, Agnes se teme, Roderick strânge cana), apoi orcul o apucă pe Agnes de braț → „(Te uiți spre ei.)” → toată scena peste cele 3 imagini (replicile stau peste ele): orcii cer bere, unul o apucă pe Agnes, Roderick se ridică și îi cere lui Vale să aleagă (dialogul `taverna_scandal`).
@@ -211,8 +230,16 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Agnes (hangița)
 
-### 💡 Camera de la tavernă
-- **Camera de sus e ascunsă** (nu se vede, nu se poate închiria) până la o misiune a lui Agnes. De ales misiunea.
+### 📝 Camera de sus (prima misiune a lui Agnes)
+- Vale golește camera de sus, unde stătea un soldat chiriaș mort în lupta cu orcii. În rucsacul lui găsește **3 hârtii vechi**: poate un desen în creion al unui solz de dragon, cu o notă despre cât de rezistenți sunt, și indicii despre locul unde l-a găsit (ce scrie: de hotărât). Prima apariție a dragonilor; după asta, Roderick pornește căutarea solzilor.
+- După misiune, camera se poate închiria.
+
+### 📝 Pivnița
+- Agnes aude zgomote ciudate din pivniță; a deschis ușa, s-a speriat și a închis-o repede, fără să vadă ce era. Jos sunt **3 șobolani**: unul care scuipă bale acide (otravă, de la distanță) și doi care atacă cu ghearele. Luptă în pivniță.
+- Șobolanii care scuipă revin în lupta finală, ca ajutoare de la distanță ale orcilor.
+
+### 📝 Berea
+- Orcii i-au golit butoaiele. Vale aduce **orz** (cât e misiunea în lucru, munca la moară dă și orz, obiect de poveste, fără loc în rucsac, până are destul) și **miere** (de la fermier, contra cost). Agnes face bere nouă.
 
 **Cum verifici:** la tavernă nu mai apare ușa spre camera de sus. La Agnes nu mai apare „Închiriază o cameră”.
 
@@ -236,11 +263,20 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Hoțul
 
-### 💡 De discutat
-- Eliberarea (40 de monede la negustor), apoi ajutor din umbră înainte de lupta finală.
+### 📝 Eliberarea
+- După discuția cu negustorul, Vale poate cere să vorbească cu hoțul. Hoțul îi spune de ce a furat: din nevoie, ca să-și hrănească familia; nimeni nu-l crede, dar Vale îl crede și îl eliberează.
+- După eliberare apare pe hartă un **drum nou**, spre o mică zonă: casa hoțului, ieșirea mai puțin păzită de orci (pe unde Vale și Roderick ies în misiuni) și încă două locuri (de hotărât).
+
+### 📝 Mâncarea
+- Vale aduce mâncare familiei hoțului.
+
+### 📝 Lada colectorului
+- Seara, cu hoțul, Vale recuperează bani și alte lucruri de la orcul colector. Nu ajută la lupta finală: ajută sătenii.
 
 ---
 
-## Dragonii 💡
+## Dragonii
 
-- Doar indicii. Rămâne de hotărât cum află Vale de ei și prin ce (o poveste, un obiect, ceva găsit în pădure).
+- Doar indicii în demo. Prima apariție: **hârtiile din camera de la tavernă** (misiunea lui Agnes), apoi căutarea solzilor cu Roderick. Lumea mare: `docs/lore.md`.
+- 📝 **Semne pe parcurs** (decis de autor): după anumite misiuni, data următoare când doarme, Vale visează ceva; uneori simte ceva ciudat. Nu prin tigrul Kaiei (Vale și Kaia se cunosc de mult).
+- 📝 **Finalul demo-ului** (decis de autor): după ce satul e eliberat, Vale împlinește 26 de ani. În noaptea aceea se aude un răget în depărtare sau apare un mag străin. Cliffhanger pentru jocul mare.
