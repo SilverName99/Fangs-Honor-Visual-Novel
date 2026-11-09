@@ -263,7 +263,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Berea
 - **Pornește:** după „Camera de sus” (decis de autor: înaintea pivniței, ca jucătorul să aibă timp să-și facă rost de o armă și de poțiuni), la Agnes: „Taverna miroase a apă cu spumă... !”. Orcii i-au golit butoaiele; ar face bere nouă, dar îi trebuie **5 orz** și **2 miere**.
 - **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect de poveste, fără loc în rucsac, se numără.
-- **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”.
+- **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 08 și 13 (din ziua 3).
 - **Predarea:** la Agnes, „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată după-amiaza, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană.
 - **Recompensa:** încrederea lui Agnes +1 și o bere.
 - **Imagini:** `events/agnes_bere_1.png` (Agnes și Vale fac bere în pivniță), `agnes_bere_2.png` (seara, taverna plină și veselă); iconițele `items/orz.png` și `items/miere.png`.
