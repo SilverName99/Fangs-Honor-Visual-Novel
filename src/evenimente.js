@@ -48,7 +48,7 @@ export function categoriePermite(ev, stare, zi, categorii = {}) {
 export function alegeEveniment(lista, stare, ctx, categorii) {
   return (
     lista.find(
-      (ev) => !ev.manual && poateReveni(ev, stare.evenimente[ev.id], ctx.zi) && categoriePermite(ev, stare, ctx.zi, categorii) && verifica(ev.conditii, ctx),
+      (ev) => !ev.manual && !ev.laTrezire && poateReveni(ev, stare.evenimente[ev.id], ctx.zi) && categoriePermite(ev, stare, ctx.zi, categorii) && verifica(ev.conditii, ctx),
     ) || null
   );
 }

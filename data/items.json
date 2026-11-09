@@ -232,6 +232,13 @@
       "nume": "Mușețel",
       "tip": "planta",
       "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+    },
+    "hartii_vechi": {
+      "nume": "Hârtii vechi",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Trei hârtii găsite în rucsacul fostului chiriaș de la tavernă: un solz desenat în creion și un drum spre un loc pe care nu-l recunosc.",
+      "_nota": "Misiunea lui Agnes „Camera de sus”. Ce scrie pe ele: TODO (decis de autor: de hotărât)."
     }
   }
 }

@@ -682,6 +682,12 @@ const joc = {
   },
   intreaba,
   inregistreazaCastig,
+  // Un eveniment „laTrezire” (un vis) pornește după somn, dacă îi sunt îndeplinite condițiile
+  dupaSomn() {
+    const ctx = context(stare);
+    const vis = evenimente.find((ev) => ev.laTrezire && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));
+    if (vis) setTimeout(() => pornesteEveniment(vis.id), 0);
+  },
   dupaActiune(text) {
     salveaza();
     afiseaza();

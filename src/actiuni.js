@@ -126,7 +126,11 @@ export function creeazaActiuni(parinte, joc) {
       let prindeNoaptea = false;
       for (let t = 0; t < minute && !prindeNoaptea; t += 15) prindeNoaptea = momentZi((acum + t) % MINUTE_ZI) === 'noaptea';
       const deZi = !prindeNoaptea;
-      cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => joc.dupaActiune('Te-ai odihnit.'), 'somn');
+      cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => {
+        joc.dupaActiune('Te-ai odihnit.');
+        // Visele lui Vale vin la trezire (decis de autor: după anumite misiuni, data următoare când doarme)
+        joc.dupaSomn?.();
+      }, 'somn');
     };
     // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
     // (până la ora trezirii) sau „până noaptea” ziua (până la 23:00, când începe noaptea), și „Închide”

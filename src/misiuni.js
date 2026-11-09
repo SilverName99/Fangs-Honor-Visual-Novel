@@ -30,6 +30,8 @@ export function actualizeazaMisiuni(joc) {
     s.pasiMisiuni[m.id] = i;
     if (i < m.pasi.length) continue;
     s.misiuni[m.id] = 'terminata';
+    // Ziua în care s-a terminat: misiunea următoare a aceluiași personaj vine abia după o zi (decis de autor)
+    (s.terminateLa ||= {})[m.id] = Math.floor(s.minute / 1440) + 1;
     aplicaEfecte(m.recompensa?.efecte, joc);
     joc.mesaj(`Misiune terminată: ${m.titlu}`);
     terminate.push(m.id);

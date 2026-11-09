@@ -525,26 +525,72 @@
           "imagine": "locations/taverna_etaj.png",
           "actiuni": [
             {
+              "id": "goleste",
+              "tip": "lucrare",
+              "nume": "Strânge lucrurile chiriașului",
+              "minute": 90,
+              "stamina": 10,
+              "efecte": {
+                "eveniment": "camera_golita"
+              },
+              "ascuns": {
+                "conditii": {
+                  "misiune": {
+                    "agnes_camera": "inceputa"
+                  },
+                  "nu": {
+                    "existaStare": "camera_golita"
+                  }
+                }
+              },
+              "_nota": "Misiunea lui Agnes „Camera de sus”: strânsul durează și obosește puțin, apoi imaginile cu replicile peste ele."
+            },
+            {
               "id": "dormi",
               "tip": "dormi",
               "nume": "Dormi",
               "imagine": "locations/somn_taverna.png",
               "imagineZi": "locations/somn_taverna_zi.png",
-              "text": "Vale doarme..."
+              "text": "Vale doarme...",
+              "ascuns": {
+                "conditii": {
+                  "stare": {
+                    "camera_taverna": "deschisa"
+                  }
+                }
+              }
             }
           ],
           "incuiat": {
             "conditii": {
-              "inchiriat": "taverna"
+              "oricare": [
+                {
+                  "inchiriat": "taverna"
+                },
+                {
+                  "misiune": {
+                    "agnes_camera": "inceputa"
+                  }
+                }
+              ]
             },
             "mesaj": "Nu pot urca așa, fără să plătesc. Mai întâi vorbesc cu Agnes."
           },
           "ascuns": {
-            "_nota": "Decis de autor: camera nu se vede până la misiunea lui Agnes (TODO: care).",
+            "_nota": "Decis de autor: camera se vede de la misiunea lui Agnes „Camera de sus”.",
             "conditii": {
-              "stare": {
-                "camera_taverna": "deschisa"
-              }
+              "oricare": [
+                {
+                  "stare": {
+                    "camera_taverna": "deschisa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "agnes_camera": "inceputa"
+                  }
+                }
+              ]
             }
           }
         }

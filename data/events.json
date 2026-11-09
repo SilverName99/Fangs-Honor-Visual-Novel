@@ -841,6 +841,28 @@
       "repetare": "mereu",
       "nume": "După vânătoarea cu Kaia",
       "dialog": "kaia_dupa_vanatoare_infrangere"
+    },
+    {
+      "id": "camera_golita",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Camera de sus",
+      "grup": "Misiunea lui Agnes: camera de sus",
+      "dialog": "camera_golita"
+    },
+    {
+      "id": "vis_1",
+      "laTrezire": true,
+      "repetare": "o_data",
+      "nume": "Primul vis",
+      "grup": "Visele lui Vale",
+      "dialog": "vis_1",
+      "conditii": {
+        "stare": {
+          "vis_1": "asteapta"
+        }
+      },
+      "_nota": "Decis de autor: data următoare când doarme Vale, după discuția cu Roderick despre hârtii."
     }
   ]
 }

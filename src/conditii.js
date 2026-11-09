@@ -50,6 +50,10 @@ const tipuri = {
   nu: (v, c) => !verifica(v, c),
   // „existaStare: scandal_taverna” = s-a întâmplat deja, oricum s-ar fi terminat
   existaStare: (v, c) => c.stari?.[v] != null,
+  // „misiuneTerminata: { agnes_camera: 1 }” = terminată de cel puțin o zi (decis de autor: între misiunile unui
+  // personaj e o zi pauză); o misiune terminată înainte să se țină minte ziua trece drept veche
+  misiuneTerminata: (v, c) =>
+    Object.entries(v).every(([id, zile]) => c.misiuni?.[id] === 'terminata' && c.zi - (c.terminateLa?.[id] ?? -Infinity) >= zile),
   // „trecut: { soldat_ranit: { subZile: 2 } }” = marcajul (pus de efectul „marcheaza”) e mai nou de 2 zile.
   // Fără marcaj, condiția nu e îndeplinită (lucrul nu s-a întâmplat)
   trecut: (v, c) =>

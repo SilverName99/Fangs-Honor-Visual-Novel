@@ -275,6 +275,92 @@
       "recompensa": {
         "text": "Dacă l-am ajutat pe Roderick, încrederea lui +1. Altfel, nimic (dar tot îl pot recruta mai târziu)."
       }
+    },
+    {
+      "id": "agnes_camera",
+      "titlu": "Camera de sus",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": "CIORNĂ: Camera de sus a tavernei a rămas cum a lăsat-o fostul chiriaș, un soldat căzut în lupta cu orcii. Agnes nu se îndură s-o golească. M-am oferit s-o fac eu, ca să o poată închiria din nou.",
+      "oferta": {
+        "_nota": "Decis de autor: prima misiune a lui Agnes. Apare la câteva zile după prima discuție cu ea, cât e în tavernă.",
+        "text": "Ce s-a întâmplat cu camera de sus?",
+        "nod": "camera_oferta",
+        "conditii": {
+          "loc": "taverna/parter",
+          "prezent": "hangita",
+          "cunoscutDeZile": {
+            "hangita": 2
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Golesc camera de sus",
+          "gata": {
+            "existaStare": "camera_golita"
+          },
+          "sfat": "Urc la etaj și strâng lucrurile fostului chiriaș.",
+          "indiciu": {
+            "text": "Despre camera de sus...",
+            "nod": "camera_indiciu"
+          }
+        },
+        {
+          "text": "Îi spun lui Agnes că am terminat",
+          "gata": {
+            "stare": {
+              "camera_taverna": "deschisa"
+            }
+          },
+          "sfat": "Agnes e în tavernă, de la 9 dimineața până noaptea.",
+          "predare": {
+            "text": "Camera e goală. Și am găsit ceva...",
+            "nod": "camera_predare",
+            "conditii": {
+              "loc": "taverna/parter"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Agnes +1. Camera de sus se poate închiria.",
+        "efecte": {
+          "relatie": {
+            "hangita": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "roderick_hartii",
+      "titlu": "Hârtiile soldatului",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": "CIORNĂ: Agnes zice că unchiul Roderick l-a cunoscut pe soldatul din camera de sus. Poate el înțelege ce scrie pe hârtiile găsite acolo.",
+      "oferta": {
+        "_nota": "Decis de autor: după ce Vale are hârtiile, Roderick are o misiune în care vorbesc despre ele; cu o zi pauză după misiunea lui Agnes.",
+        "text": "Unchiule, am găsit niște hârtii...",
+        "nod": "hartii_oferta",
+        "conditii": {
+          "areObiect": "hartii_vechi",
+          "misiuneTerminata": {
+            "agnes_camera": 1
+          },
+          "existaStare": "scandal_taverna"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Vorbesc cu unchiul Roderick despre hârtii",
+          "gata": {
+            "existaStare": "hartii_discutate"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Acum știu ce caut: solzii de pe hârtii."
+      }
     }
   ]
 }

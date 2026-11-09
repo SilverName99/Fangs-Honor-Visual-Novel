@@ -75,6 +75,8 @@ export function descriere(inv, id) {
   for (const [k, v] of Object.entries(d.efecte?.nevoi || {})) parti.push(`${k} ${v > 0 ? '+' : ''}${v}`);
   if ((d.sloturi || 1) > 1) parti.push(`ocupă ${d.sloturi} sloturi`);
   if (d.pret) parti.push(`valoare ${d.pret} ${d.pret === 1 ? 'monedă' : 'monede'}`);
+  // Obiectele de poveste (hârtiile soldatului) au și un rând al lor, în vocea lui Vale
+  if (d.descriere) return [d.descriere, ...parti].join(' · ');
   return parti.join(' · ');
 }
 

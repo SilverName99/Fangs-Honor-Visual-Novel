@@ -13,6 +13,7 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - O misiune apare la un personaj doar **după prima discuție cu el** și după **câteva zile** (diferit pentru fiecare).
 - **Semnele** din meniul de discuție, de deasupra personajului și de pe hartă: **!** = misiune nouă, **?** gri = în lucru (dă indicația), **?** auriu = gata de predat.
 - **Încrederea** (0–10) crește prin misiuni duse la capăt. Un personaj se poate **recruta de la 8/10**.
+- **Între misiunile aceluiași personaj e o zi pauză** (decis de autor): următoarea apare abia a doua zi după ce o termini pe cea dinainte (condiția `misiuneTerminata`).
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
 
@@ -208,8 +209,22 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### 📝 Antrenamentul
 - După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**.
 
+### ✅ Hârtiile soldatului
+- **Pornește:** a doua zi după „Camera de sus”, cu hârtiile la Vale, în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
+- Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
+- Fără încredere (doar discuție); după ea vine **primul vis**.
+- **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).
+
+**Cum verifici:** după „Camera de sus”, a doua zi, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”. În aceeași zi cu predarea la Agnes, opțiunea nu apare.
+
+### ✅ Primul vis (nu e misiune)
+- Data următoare când doarme (oriunde, oricât), după discuția despre hârtii: Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
+- **Imagine:** `events/vis_1.png`.
+
+**Cum verifici:** după „Hârtiile soldatului”, acasă → Dormi 2 ore → după imaginea somnului, visul.
+
 ### 📝 Solzii de dragon
-- Pornește după hârtiile găsite în camera de la tavernă (misiunea lui Agnes): Roderick aude de ele, iar Vale și Roderick pleacă în căutarea solzilor.
+- După discuția despre hârtii: Vale și Roderick pleacă în căutarea solzilor, prin ieșirea din zona hoțului (deci după eliberarea hoțului).
 
 ### ✅ Scandalul din tavernă
 - **Până la scandal,** Roderick nu-l bagă în seamă pe Vale („Unchiul Roderick nici nu ridică ochii din cană”).
@@ -230,9 +245,17 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Agnes (hangița)
 
-### 📝 Camera de sus (prima misiune a lui Agnes)
-- Vale golește camera de sus, unde stătea un soldat chiriaș mort în lupta cu orcii. În rucsacul lui găsește **3 hârtii vechi**: poate un desen în creion al unui solz de dragon, cu o notă despre cât de rezistenți sunt, și indicii despre locul unde l-a găsit (ce scrie: de hotărât). Prima apariție a dragonilor; după asta, Roderick pornește căutarea solzilor.
-- După misiune, camera se poate închiria.
+### ✅ Camera de sus (prima misiune a lui Agnes)
+- **Pornește:** la câteva zile după prima discuție cu Agnes, în tavernă, cât e ea acolo: „Ce s-a întâmplat cu camera de sus? !”. Agnes povestește de fostul chiriaș, un soldat căzut în ziua în care a căzut și tatăl lui Vale. „Las-o pe mine, doamna Agnes. O golesc eu.”
+- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Acolo: „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena peste imagini: lucrurile soldatului, rucsacul de sub pat și **3 hârtii vechi** (un solz desenat în creion, „Nici sabia, nici focul nu l-au zgâriat.”, și un drum spre un loc necunoscut; ce scrie exact: de hotărât). Hârtiile ajung la obiectele de poveste.
+- **Pasul 2:** la Agnes, „Camera e goală. Și am găsit ceva... ?”: ea nu știe să citească hârtiile, dar știe că Roderick a fost în aceeași strajă cu soldatul.
+- **Recompensa:** încrederea lui Agnes +1; camera de sus se poate închiria (5 monede).
+- **Imagini:** `events/agnes_camera_1.png` (camera, lucrurile soldatului), `events/agnes_camera_2.png` (rucsacul de sub pat), `events/agnes_camera_hartii.png` (cele trei hârtii, de aproape).
+
+**Cum verifici**
+1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Las-o pe mine”.
+2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → scena cu hârtiile.
+3. Sala tavernei → Agnes → „Camera e goală...” → încredere +1, apare „Închiriază o cameră”.
 
 ### 📝 Pivnița
 - Agnes aude zgomote ciudate din pivniță; a deschis ușa, s-a speriat și a închis-o repede, fără să vadă ce era. Jos sunt **3 șobolani**: unul care scuipă bale acide (otravă, de la distanță) și doi care atacă cu ghearele. Luptă în pivniță.
