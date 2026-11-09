@@ -654,6 +654,32 @@
           "mergi": "taverna.parter"
         }
       }
+    },
+    "bataie_orc_campuri_prima": {
+      "_nota": "Decis de autor: prima bătaie cu orcul de pe câmpuri; după victorie, o imagine și un dialog cu fermierul (de atunci se poate vorbi cu el).",
+      "nume": "Bătaie cu un orc",
+      "fundal": "campuri",
+      "fuga": false,
+      "inamici": [
+        {
+          "id": "orc_taverna",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "victorie": {
+        "text": "Orcul aruncă sacul în noroi și pleacă înjurând.",
+        "efecte": {
+          "reputatie": 2,
+          "eveniment": "fermier_multumeste"
+        }
+      },
+      "infrangere": {
+        "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
+        "efecte": {
+          "pedeapsa": "paznic_orc_1"
+        }
+      }
     }
   },
   "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)"

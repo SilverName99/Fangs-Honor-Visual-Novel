@@ -288,6 +288,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Până atunci,** nu se poate vorbi cu el.
 - **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (06–13, cât e și fermierul acolo), 80% la fiecare intrare pe câmpuri.
 - După ea (oricum ai ales), fermierul devine cel cu care poți vorbi.
+- **Dacă te bați cu orcul și câștigi** (decis de autor): o imagine, `events/fermier_multumeste.png`, cu o discuție peste ea: fermierul îi mulțumește lui Vale, îi spune că poate veni la el oricând și că are stupi (de acolo e mierea pentru berea lui Agnes).
 - Imaginea e cea de la patrula de orci de pe câmpuri, `events/orci_patrula_campuri.png`.
 - Misiunile lui: 💡 de discutat.
 

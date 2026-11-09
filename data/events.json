@@ -302,7 +302,7 @@
             "stare": {
               "fermier_deblocat": "da"
             },
-            "lupta": "bataie_orc_campuri"
+            "lupta": "bataie_orc_campuri_prima"
           }
         },
         {
@@ -924,6 +924,14 @@
       "nume": "Mormântul tatălui",
       "dialog": "mormant_tata",
       "_nota": "O dată pe zi (ales de Claude)."
+    },
+    {
+      "id": "fermier_multumeste",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Fermierul îi mulțumește",
+      "grup": "Orcii prin sat",
+      "dialog": "fermier_multumeste"
     }
   ]
 }

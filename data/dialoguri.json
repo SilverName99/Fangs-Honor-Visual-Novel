@@ -3517,5 +3517,75 @@
         }
       }
     }
+  },
+  "fermier_multumeste": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: după ce Vale bate orcul de pe câmpuri prima dată, o imagine și o discuție cu fermierul, peste ea.",
+    "grup": "Orcii prin sat",
+    "partener": "fermier",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Orcul se ridică din noroi, își ia toporul și pleacă spre poartă, înjurând. Sacul de grâu rămâne între brazde.",
+        "imagine": "events/fermier_multumeste.png",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "fermier",
+        "emotie": "speriat",
+        "text": "Doamne... ai pus mâna pe un orc. Pe un orc! Băiete, ești nebun de-a binelea.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Grâul e al tău. Nu al lor.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Așa e. Dar de când au venit, nimeni n-a mai îndrăznit să le-o spună.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Tu ești Vale, nu? Băiatul Miriamei. Te-am văzut pe la moară.",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Eu sunt. Te-a lovit?",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "fermier",
+        "emotie": "ranit",
+        "text": "Un ghiont. Am mai primit și altele. Dar azi am rămas cu grâul meu. Mulțumesc.",
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Ascultă, n-am bani să-ți dau. Dar dacă ai vreodată nevoie de muncă sau de un sac de făină, vino la mine. Am și câțiva stupi în spatele hambarului, dacă-ți trebuie vreodată miere.",
+        "urmator": "i"
+      },
+      "i": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Câțiva săteni s-au oprit din lucru și se uită la mine. Unul dă din cap. Altul zâmbește, pentru prima dată de mult.",
+        "urmator": "j"
+      },
+      "j": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Acum du-te, până nu se întoarce cu alții. Și... ai grijă, Vale."
+      }
+    }
   }
 }
