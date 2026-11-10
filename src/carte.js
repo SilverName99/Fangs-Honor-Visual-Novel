@@ -11,7 +11,9 @@ export const fisierCarte = (id) => `ui/carte_${id}.png`;
 // Personajele din carte, în ordinea în care le-a cunoscut Vale (cine e marcat doar prin stare vine la urmă)
 export function personajeCunoscute(date, stare) {
   const din = date.npcs.personaje.filter((p) => p.carte);
-  const cunoscut = (p) => stare.cunoscuti?.includes(p.id) || stare.stari?.[`cunoscut_${p.id}`] === 'da';
+  // „dupaStare”: cine nu se cunoaște dintr-o discuție obișnuită intră în carte după o întâmplare (șobolanii din pivniță)
+  const cunoscut = (p) =>
+    stare.cunoscuti?.includes(p.id) || stare.stari?.[`cunoscut_${p.id}`] === 'da' || (p.carte.dupaStare && stare.stari?.[p.carte.dupaStare] != null);
   // Orcii stau mereu la sfârșitul cărții (decis de autor): colectorul penultimul, paznicul ultimul
   const LA_URMA = ['orc_colector', 'paznic_orc_1'];
   const ordine = (p) => {

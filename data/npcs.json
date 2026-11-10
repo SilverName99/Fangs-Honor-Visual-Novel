@@ -662,7 +662,14 @@
       ],
       "stariExtra": [
         "rade"
-      ]
+      ],
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii.",
+        "nume": "Șobolanul cu gheare",
+        "faraIncredere": true,
+        "dupaStare": "sobolani_vorbit",
+        "descriere": "Șobolanii din pivnița lui Agnes sunt cât niște câini, cu gheare lungi și negre, ca de cârtiță. Și vorbesc: repede, chițăit, repetând fiecare cuvânt. Își zic „cei-mulți, cei-care-ascultă” și jură că din adânc vine o teroare. Aș vrea să cred că-s bazaconii."
+      }
     },
     {
       "id": "sobolan_scuipa",
@@ -675,7 +682,14 @@
       ],
       "stariExtra": [
         "rade"
-      ]
+      ],
+      "carte": {
+        "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii.",
+        "nume": "Șobolanul scuipător",
+        "faraIncredere": true,
+        "dupaStare": "sobolani_vorbit",
+        "descriere": "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge; fără leacul Bătrânei Morwen, otrava nu se oprește. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc."
+      }
     },
     {
       "id": "mama_finn",
