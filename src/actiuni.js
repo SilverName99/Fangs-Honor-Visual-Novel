@@ -299,7 +299,11 @@ export function creeazaActiuni(parinte, joc) {
     // scenă (mormântul tatălui): fără muncă și fără magazin
     gand: (a) => joc.gand(a.text),
     // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
-    eveniment: (a) => joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel)),
+    // „cand”: condițiile fără de care Vale doar se gândește („gandCand”): contrabandistul vine doar 18–02
+    eveniment: (a) =>
+      a.cand && !verifica(a.cand, context(joc.stare))
+        ? joc.gand(a.gandCand || 'Nu e momentul potrivit.')
+        : joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel)),
     lupta: (a) => {
       if (joc.avanseaza(a.minute || 0)) return;
       joc.pornesteLupta(a.lupta);

@@ -3251,6 +3251,277 @@
         "vorbitor": "hot",
         "emotie": "normal",
         "text": "Aici, la margine, oamenii se ajută între ei. Contrabandistul, bătrâna din colibă... fiecare are povestea lui. Și nimeni nu întreabă prea multe."
+      },
+      "mancare_oferta": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Ultima oară? Zilele trecute. Niște varză fiartă și coaja unei pâini pe care am... găsit-o.",
+        "_nota": "CIORNĂ (Claude). Misiunea „Mâncarea”.",
+        "urmator": "mancare_oferta2"
+      },
+      "mancare_oferta2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la sora lui. E slabă ca un vrej. Și mama lor, în pat, are nevoie de ceva mai mult decât de varză.",
+        "urmator": "mancare_oferta3"
+      },
+      "mancare_oferta3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu mai furi nimic, Finn. Aduc eu mâncare. Pâine și carne, și facem ceva cald, ca lumea.",
+        "urmator": "mancare_oferta4"
+      },
+      "mancare_oferta4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ai face asta? Nu... nu-ți pot da nimic înapoi, Vale.",
+        "urmator": "mancare_oferta5"
+      },
+      "mancare_oferta5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu ți-am cerut nimic. Trei pâini și două bucăți de carne ajung pentru o masă adevărată?",
+        "urmator": "mancare_oferta6"
+      },
+      "mancare_oferta6": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Pentru noi? E ospăț de nuntă.",
+        "alegeri": [
+          {
+            "text": "Atunci vin cu ele.",
+            "spre": "mancare_da",
+            "efecte": {
+              "misiune": {
+                "finn_mancarea": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mai întâi să văd ce pot face."
+          }
+        ]
+      },
+      "mancare_da": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Carne? Carne adevărată?! Finn, ai auzit?"
+      },
+      "mancare_indiciu": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Pâine găsești la negustorul din piață sau la Agnes. Carnea... de la vânătoare. Eu n-aș ieși în pădure nici pentru o pungă de aur."
+      },
+      "mancare_predare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus pâine și carne! Trei pâini și două bucăți bune.",
+        "urmator": "mancare_predare2"
+      },
+      "mancare_predare2": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Miroase! Finn, miroase a pâine!",
+        "urmator": "mancare_predare3"
+      },
+      "mancare_predare3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Avem un ceaun vechi. Și apă. Și... cam atât.",
+        "urmator": "mancare_predare4"
+      },
+      "mancare_predare4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Restul îl fac eu. Mama m-a învățat să gătesc când tata era plecat cu soldații.",
+        "alegeri": [
+          {
+            "text": "Hai să gătim.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "paine": 3,
+                "carne": 2
+              },
+              "eveniment": "finn_masa"
+            }
+          }
+        ]
+      },
+      "mama_oferta": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "De la începutul iernii. Întâi a fost doar o tuse. Apoi febra, seara, în fiecare seară.",
+        "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn” (decis de autor: în locul „Bolnavului” lui Elian).",
+        "urmator": "mama_oferta2"
+      },
+      "mama_oferta2": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Am încercat ceaiuri, ventuze, tot ce știa bătrâna din colibă. Nimic. Slăbește pe zi ce trece.",
+        "urmator": "mama_oferta3"
+      },
+      "mama_oferta3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tușea ei se aude și de aici, din prag. Seacă, adâncă, de parcă i-ar rupe pieptul.",
+        "urmator": "mama_oferta4"
+      },
+      "mama_oferta4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Fratele Elian, preotul, se pricepe la plante. Mi-a dat odată o alifie care a închis o rană în două zile.",
+        "urmator": "mama_oferta5"
+      },
+      "mama_oferta5": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Un preot? Să vină aici, la margine, la casa unui hoț?",
+        "urmator": "mama_oferta6"
+      },
+      "mama_oferta6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Elian nu întreabă cine ești. Întreabă doar ce te doare.",
+        "alegeri": [
+          {
+            "text": "Vorbesc eu cu el.",
+            "spre": "mama_da",
+            "efecte": {
+              "misiune": {
+                "finn_mama": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mai întâi să mă gândesc."
+          }
+        ]
+      },
+      "mama_da": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Dacă o face bine pe mama... Vale, îți rămân dator pe viață. Și eu nu spun asta oricui."
+      },
+      "mama_elian": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Frate Elian, am nevoie de ajutorul tău. Nu pentru mine.",
+        "urmator": "mama_elian2"
+      },
+      "mama_elian2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Spune, Vale. Ce s-a întâmplat?",
+        "urmator": "mama_elian3"
+      },
+      "mama_elian3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "La marginea satului stă o femeie bolnavă. Mama lui Finn, băiatul care stătea legat la butuc. Tușește de luni de zile, iar seara o ia febra.",
+        "urmator": "mama_elian4"
+      },
+      "mama_elian4": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Tusea seacă, adâncă? Și transpiră noaptea, iar dimineața e mai bine?",
+        "urmator": "mama_elian5"
+      },
+      "mama_elian5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Așa zice Finn.",
+        "urmator": "mama_elian6"
+      },
+      "mama_elian6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am mai văzut asta. Dacă o lași, o mănâncă pe dinăuntru. Dar se poate opri, dacă ai planta potrivită.",
+        "urmator": "mama_elian7"
+      },
+      "mama_elian7": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Luminița-nopții. Crește la marginea pădurii, în luminișuri. Ziua n-o vezi: își ține florile strânse. Doar la apus se deschid, galbene, mari cât o monedă, cu patru petale late, ca niște inimioare. Și miros ușor a lămâie.",
+        "urmator": "mama_elian8"
+      },
+      "mama_elian8": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Adu-mi trei flori, seara, cât sunt proaspete. Iar apoi mergem împreună la ea. Nu vreau să-i dea cineva un ceai făcut după ureche.",
+        "urmator": "mama_elian9"
+      },
+      "mama_elian9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Vii la marginea satului? Dacă te văd orcii...",
+        "urmator": "mama_elian10"
+      },
+      "mama_elian10": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Orcii văd un preot care merge la o bolnavă. Asta fac preoții, Vale. Du-te. Și ai grijă în pădure, seara nu e doar luminița care iese la iveală.",
+        "efecte": {
+          "stare": {
+            "finn_mama_pas": "elian"
+          }
+        }
+      },
+      "mama_indiciu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Seara, între apus și noapte, la marginea pădurii. Flori galbene, cu patru petale late, ca niște inimioare, care miros a lămâie. Adu-mi trei."
+      },
+      "mama_seara": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ai florile? Bine. Dar ceaiul se face seara, când o ia febra. Vino după apus și mergem împreună."
+      },
+      "mama_predare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus luminița-nopții. Trei flori, culese la apus.",
+        "urmator": "mama_predare2"
+      },
+      "mama_predare2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Arată-mi... Da. Exact ele. Simți lămâia? Bine ai făcut.",
+        "urmator": "mama_predare3"
+      },
+      "mama_predare3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Așteaptă să-mi iau traista. Și o lumânare. Mergem acum, cât e febra la ea.",
+        "alegeri": [
+          {
+            "text": "Hai la Finn.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "luminita_noptii": 3
+              },
+              "eveniment": "finn_vindecare"
+            }
+          }
+        ]
+      },
+      "f_masa": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Sora mea încă vorbește de masa aia. Zice că a fost cea mai bună zi de când au venit orcii."
+      },
+      "f_mama": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Mama a dormit toată noaptea. Prima oară de la începutul iernii. Nu știu cum să-i mulțumesc preotului."
+      },
+      "f_contrabandist": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Cu cheia aia, ai grijă. Și nu-i spune nimănui de unde o ai. Nici lui Elian."
       }
     },
     "vorbeste": [
@@ -3259,6 +3530,28 @@
       },
       {
         "nod": "f_margine"
+      },
+      {
+        "nod": "f_masa",
+        "conditii": {
+          "stare": {
+            "finn_masa": "facuta"
+          }
+        }
+      },
+      {
+        "nod": "f_mama",
+        "conditii": {
+          "stare": {
+            "mama_finn": "vindecata"
+          }
+        }
+      },
+      {
+        "nod": "f_contrabandist",
+        "conditii": {
+          "areObiect": "cheie_contrabandist"
+        }
       }
     ]
   },
@@ -3267,6 +3560,14 @@
     "partener": "mama_finn",
     "meniu": true,
     "start": [
+      {
+        "nod": "salut2",
+        "conditii": {
+          "stare": {
+            "mama_finn": "vindecata"
+          }
+        }
+      },
       {
         "aleator": [
           "salut1"
@@ -3288,14 +3589,37 @@
         "vorbitor": "mama_finn",
         "emotie": "normal",
         "text": "Finn e un băiat bun. Doar că lumea nu vede decât ce a făcut, nu și de ce."
+      },
+      "salut2": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Vale! Uite, stau în capul oaselor. Elian zice că încă o săptămână de ceai și mă ridic de tot."
+      },
+      "m_bine": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Tusea s-a dus aproape de tot. Am uitat cum e să respiri fără să te doară."
       }
     },
     "vorbeste": [
       {
-        "nod": "m_tusea"
+        "nod": "m_tusea",
+        "conditii": {
+          "nuStare": {
+            "mama_finn": "vindecata"
+          }
+        }
       },
       {
         "nod": "m_finn"
+      },
+      {
+        "nod": "m_bine",
+        "conditii": {
+          "stare": {
+            "mama_finn": "vindecata"
+          }
+        }
       }
     ]
   },
@@ -3331,6 +3655,11 @@
         "vorbitor": "sora_finn",
         "emotie": "normal",
         "text": "Știi cum miroase pâinea caldă? Eu aproape am uitat."
+      },
+      "s_masa": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Când mai facem carne la ceaun? Mâine? Poimâine? Te rog!"
       }
     },
     "vorbeste": [
@@ -3338,12 +3667,25 @@
         "nod": "s_curaj"
       },
       {
-        "nod": "s_foame"
+        "nod": "s_foame",
+        "conditii": {
+          "nuStare": {
+            "finn_masa": "facuta"
+          }
+        }
+      },
+      {
+        "nod": "s_masa",
+        "conditii": {
+          "stare": {
+            "finn_masa": "facuta"
+          }
+        }
       }
     ]
   },
   "contrabandist": {
-    "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (numele lui e TODO).",
+    "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (numele lui e TODO). Decis de autor: apare doar în cocioaba lui, după ce Vale așteaptă 30 de minute pe scăunel (18–02).",
     "partener": "contrabandist",
     "meniu": true,
     "start": [
@@ -3356,6 +3698,14 @@
         }
       },
       {
+        "nod": "vine",
+        "conditii": {
+          "stare": {
+            "contrabandist_tocmai": "da"
+          }
+        }
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -3363,20 +3713,10 @@
       }
     ],
     "noduri": {
-      "prezentare": {
-        "vorbitor": "contrabandist",
-        "emotie": "normal",
-        "text": "Ia uite cine a găsit drumul spre margine. Nu te uita așa, nu mușc. Am lucruri pe care nu le găsești la taraba din piață... dacă ai cu ce plăti.",
-        "efecte": {
-          "stare": {
-            "cunoscut_contrabandist": "da"
-          }
-        }
-      },
       "salut1": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "Ce-ți trebuie azi, Lightfinder?"
+        "text": "Mai vrei ceva, Lightfinder? Nu stau mult."
       },
       "salut2": {
         "vorbitor": "contrabandist",
@@ -3392,6 +3732,74 @@
         "vorbitor": "contrabandist",
         "emotie": "normal",
         "text": "Orcii păzesc poarta, nu și gardul. Iar un gard, băiete, e doar o ușă pe care n-a deschis-o nimeni încă."
+      },
+      "prezentare": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stau pe scăunel și aștept. Lumina felinarului tremură. Afară latră un câine, apoi se face liniște. O jumătate de oră... apoi ușa din spate scârțâie.",
+        "efecte": {
+          "stare": {
+            "contrabandist_tocmai": "nu"
+          }
+        },
+        "urmator": "prezentare2"
+      },
+      "prezentare2": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Nu te ridica. Te-am urmărit de când ai ieșit din sat. Singur. Bine.",
+        "urmator": "prezentare3"
+      },
+      "prezentare3": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Cheia ți-a dat-o Finn. Puștiul ăla nu dă cheia nimănui, deci ori l-ai prins de gât, ori ți-a dat-o de bunăvoie. Și n-ai fața unuia care strânge oameni de gât.",
+        "urmator": "prezentare4"
+      },
+      "prezentare4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Finn m-a trimis. Zice că ai lucruri pe care nu le găsești în piață.",
+        "urmator": "prezentare5"
+      },
+      "prezentare5": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Am. Unele pe bani. Altele... la schimb. Banii-i ia oricine. Pe o blană bună sau pe o vorbă bună dau mai mult decât pe argint.",
+        "urmator": "prezentare6"
+      },
+      "prezentare6": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "O singură regulă, Lightfinder: n-ai fost aici. Nu m-ai văzut. Iar dacă vii cu cineva în spate, cocioaba asta o să fie goală până la sfârșitul lumii.",
+        "efecte": {
+          "stare": {
+            "cunoscut_contrabandist": "da"
+          }
+        }
+      },
+      "vine": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stau pe scăunel și aștept. Jumătate de oră, în liniștea de lângă gard. Apoi ușa din spate scârțâie.",
+        "efecte": {
+          "stare": {
+            "contrabandist_tocmai": "nu"
+          }
+        },
+        "urmator": "vine2"
+      },
+      "vine2": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Singur, ca de obicei. Bine. Ce-ți trebuie azi?"
+      },
+      "c_finn": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Finn e un puști bun. Prea bun pentru meseria asta. Dacă te-a adus la mine, înseamnă că ai făcut ceva ce n-a făcut nimeni pentru el."
       }
     },
     "vorbeste": [
@@ -3400,11 +3808,14 @@
       },
       {
         "nod": "c_orci"
+      },
+      {
+        "nod": "c_finn"
       }
     ],
     "optiuni": [
       {
-        "text": "Cumpără",
+        "text": "Ce marfă ai?",
         "efecte": {
           "magazin": "contrabandist"
         },
@@ -3585,6 +3996,224 @@
         "vorbitor": "fermier",
         "emotie": "normal",
         "text": "Acum du-te, până nu se întoarce cu alții. Și... ai grijă, Vale."
+      }
+    }
+  },
+  "finn_masa": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Mâncarea” (decis de autor: două imagini, Vale gătește carnea la ceaun, apoi mănâncă toți patru, mama mai greu, din pat).",
+    "grup": "Finn: mâncarea",
+    "partener": "hot",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pun ceaunul pe vatră. Carnea sfârâie, iar casa se umple de un miros pe care, se pare, nimeni de aici nu-l mai simțise de mult.",
+        "imagine": "events/finn_masa_1.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Pot să mestec eu? Pot? Promit că nu-l răstorn!",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ține lingura cu amândouă mâinile. Așa. Încet, să nu se prindă de fund.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Uite-o. Parcă-i bucătar la castel.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "Miroase... ca pe vremuri. Ca la masa de duminică.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rup pâinea în bucăți mari. Finn o ajută pe mama lui să se ridice în capul oaselor, cu o pernă la spate. Mănâncă încet, cu mâna tremurândă, dar mănâncă.",
+        "imagine": "events/finn_masa_2.png",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "E cea mai bună mâncare din toată lumea! Din toată!",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Mulțumesc, Vale. Nu pentru mâncare. Pentru că ai stat la masă cu noi.",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu-mi aduc aminte când am râs ultima oară toți patru. Mersi, frate.",
+        "urmator": "a10"
+      },
+      "a10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pentru o seară, la marginea satului nu mai sunt orci. Doar un ceaun gol și o fetiță care adoarme cu capul pe masă.",
+        "efecte": {
+          "stare": {
+            "finn_masa": "facuta"
+          },
+          "nevoi": {
+            "foame": 40
+          }
+        }
+      }
+    }
+  },
+  "finn_vindecare": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn”: Elian face ceaiul, mama îl bea, apoi Finn îi dă lui Vale cheia contrabandistului (decis de autor: Finn lucrează în secret pentru el).",
+    "grup": "Finn: mama",
+    "partener": "mag",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Preotul? Chiar ai venit?",
+        "imagine": "events/finn_vindecare_1.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am venit pentru mama ta, Finn. Pune apă la fiert. Nu clocotită, doar să fumege.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian rupe petalele una câte una și le lasă să cadă în apă. Mirosul de lămâie umple casa. Sora lui Finn se uită ca la o vrăjitorie.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "sora_finn",
+        "emotie": "speriat",
+        "text": "Florile alea o fac bine pe mama?",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Florile o ajută. Restul îl face ea. Iar noi ne rugăm să aibă putere.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Bea încet. Câte o gură. Nu te grăbi, avem toată noaptea.",
+        "imagine": "events/finn_vindecare_2.png",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "E... cald. Îmi coboară până în piept.",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian îi pune mâna pe frunte și se roagă în șoaptă. Pentru o clipă, mi se pare că flacăra lumânării se face mai albă, mai caldă. Clipesc, și e iar o lumânare obișnuită. Oboseala, probabil.",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tusea se rărește. Apoi se oprește. Mama lui Finn închide ochii și respiră adânc, liniștit, pentru prima oară de când o știu.",
+        "urmator": "a10"
+      },
+      "a10": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Febra a scăzut. Câte o cană în fiecare seară, o săptămână. Las florile uscate pe masă și mai trec eu pe aici.",
+        "urmator": "a11"
+      },
+      "a11": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Dumnezeu să vă țină, părinte. Și pe tine, Vale.",
+        "urmator": "a12"
+      },
+      "a12": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pe mine să nu mă pomenești nimănui, doamnă. Un preot care umblă noaptea prin sat dă de vorbit. Noapte bună.",
+        "urmator": "a13"
+      },
+      "a13": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale. Stai puțin. Afară.",
+        "imagine": "events/finn_vindecare_3.png",
+        "urmator": "a14"
+      },
+      "a14": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ți-am spus că am furat ca să-i hrănesc. E adevărat. Dar nu ți-am spus tot.",
+        "urmator": "a15"
+      },
+      "a15": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lucrez pentru cineva. Contrabandistul de lângă gard. Duc vorbe, car lucruri pe poteca de lângă zid, unde orcii nu se uită. Mă plătește puțin și rar. De-aia am ajuns la butuc.",
+        "urmator": "a16"
+      },
+      "a16": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De ce-mi spui asta acum?",
+        "urmator": "a17"
+      },
+      "a17": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Pentru că ai stat lângă mama toată noaptea. Pentru că ai adus un preot la casa unui hoț. Pe tine nu te mai mint.",
+        "urmator": "a18"
+      },
+      "a18": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ia cheia. E a cocioabei lui. Intri seara, stai pe scăunel și aștepți. Dacă se convinge că nu te-a urmărit nimeni, vine. Spune-i că Finn te-a trimis.",
+        "urmator": "a19"
+      },
+      "a19": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cheia e rece și grea. O vâr în buzunar. Pe drumul spre casă, mă uit de două ori peste umăr.",
+        "efecte": {
+          "stare": {
+            "mama_finn": "vindecata"
+          },
+          "obiect": [
+            "cheie_contrabandist"
+          ],
+          "mergi": "casa_finn"
+        },
+        "_nota": "La final Vale e afară, la casa lui Finn (unde îi dă cheia)."
       }
     }
   }

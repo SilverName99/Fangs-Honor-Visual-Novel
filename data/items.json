@@ -269,6 +269,21 @@
       "pret": 0,
       "descriere": "Miere de la fermier, pentru berea lui Agnes.",
       "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
+    },
+    "luminita_noptii": {
+      "nume": "Luminiță-nopții",
+      "tip": "material",
+      "stiva": 10,
+      "pret": 2,
+      "descriere": "Flori galbene care se deschid doar la apus. Elian zice că alină tusea.",
+      "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă de Claude: luminița-nopții e numele popular al unei plante adevărate, care înflorește seara)."
+    },
+    "cheie_contrabandist": {
+      "nume": "Cheia cocioabei",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "O cheie veche de fier, de la Finn. Deschide cocioaba contrabandistului, de la Marginea satului.",
+      "_nota": "Decis de autor: o dă Finn după misiunea „Mama lui Finn”."
     }
   }
 }

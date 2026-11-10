@@ -437,6 +437,7 @@ function lesin() {
 function mergi(id, { faraTimp = false } = {}) {
   const de = lume.get(stare.scena);
   const spre = lume.get(id);
+  if (de?.laPlecare && de.id !== id) aplicaEfecte(de.laPlecare, joc);
   stare.scena = id;
   if (spre.parinte === de.id) sunet.efect(spre.tip === 'loc' ? 'usa' : 'pasi');
   // Doar coborârea (spre o zonă sau un loc) costă timp; „Înapoi” e gratuit
@@ -473,6 +474,15 @@ function pornesteEveniment(id, fortat = false) {
       aplicaEfecte(ev.efecte, joc);
       actualizeazaHud();
       return vorbesteCu(null, ev.dialog);
+    }
+    // „vorbesteCu”: după efecte, discuția obișnuită cu un personaj care tocmai a apărut (contrabandistul, după
+    // așteptarea pe scăunel), ca și cum Vale l-ar fi apăsat: cu meniul, misiunile și intrarea în carte
+    if (ev.vorbesteCu) {
+      aplicaEfecte(ev.efecte, joc);
+      stare.reluare = null;
+      salveaza();
+      afiseaza();
+      return vorbesteCu(ev.vorbesteCu);
     }
     if (ev.text || ev.alegeri?.length) return dialog.porneste({ ...caDialog(ev), _eveniment: ev.id });
     aplicaEfecte(ev.efecte, joc);

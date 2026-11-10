@@ -490,6 +490,168 @@
           }
         }
       }
+    },
+    {
+      "id": "finn_mancarea",
+      "titlu": "Mâncarea",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": "CIORNĂ: Acasă la Finn nu e nimic de mâncare. Sora lui aproape a uitat cum miroase pâinea caldă. Le duc trei pâini și două bucăți de carne și gătim împreună.",
+      "oferta": {
+        "_nota": "Decis de autor: odată cu „Mama lui Finn”, după eliberare.",
+        "text": "Când ați mâncat ultima oară ceva cald?",
+        "nod": "mancare_oferta",
+        "conditii": {
+          "misiune": {
+            "finn_eliberare": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Fac rost de 3 pâini",
+          "numara": {
+            "obiect": "paine",
+            "n": 3
+          },
+          "sfat": "Pâine se găsește la negustorul din piață și la Agnes.",
+          "indiciu": {
+            "text": "Despre mâncare...",
+            "nod": "mancare_indiciu"
+          }
+        },
+        {
+          "text": "Fac rost de 2 bucăți de carne",
+          "numara": {
+            "obiect": "carne",
+            "n": 2
+          },
+          "sfat": "Carnea vine de la vânătoare (lupi, mistreț).",
+          "indiciu": {
+            "text": "Despre mâncare...",
+            "nod": "mancare_indiciu"
+          }
+        },
+        {
+          "text": "Duc mâncarea la Finn",
+          "gata": {
+            "stare": {
+              "finn_masa": "facuta"
+            }
+          },
+          "sfat": "Cu pâinea și carnea, vorbesc cu Finn, acasă la el.",
+          "predare": {
+            "text": "Am adus pâine și carne!",
+            "nod": "mancare_predare",
+            "conditii": {
+              "areCate": {
+                "paine": 3,
+                "carne": 2
+              }
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "finn_mama",
+      "titlu": "Mama lui Finn",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": "CIORNĂ: Mama lui Finn tușește de luni de zile și slăbește pe zi ce trece. Fratele Elian se pricepe la plante; poate știe un leac.",
+      "oferta": {
+        "_nota": "Decis de autor: misiunea lui Finn (în locul „Bolnavului” lui Elian), odată cu „Mâncarea”; Elian e implicat și primește și el încredere.",
+        "text": "Mama ta... de cât timp e bolnavă?",
+        "nod": "mama_oferta",
+        "conditii": {
+          "misiune": {
+            "finn_eliberare": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Vorbesc cu Fratele Elian despre mama lui Finn",
+          "la": "mag",
+          "gata": {
+            "existaStare": "finn_mama_pas"
+          },
+          "sfat": "Elian e la biserică: ziua înăuntru, după-amiaza și seara pe scări.",
+          "predare": {
+            "text": "Frate Elian, am nevoie de ajutorul tău.",
+            "nod": "mama_elian"
+          }
+        },
+        {
+          "text": "Culeg 3 flori de luminița-nopții",
+          "numara": {
+            "obiect": "luminita_noptii",
+            "n": 3
+          },
+          "la": "mag",
+          "sfat": "Seara (18–23), în pădure: „Caută luminița-nopții”.",
+          "indiciu": {
+            "text": "Cum arăta luminița-nopții?",
+            "nod": "mama_indiciu"
+          }
+        },
+        {
+          "text": "Merg cu Elian, seara, la mama lui Finn",
+          "la": "mag",
+          "gata": {
+            "stare": {
+              "mama_finn": "vindecata"
+            }
+          },
+          "sfat": "Seara (18–23), cu florile, vorbesc cu Elian pe scările bisericii.",
+          "predare": {
+            "text": "Am adus luminița-nopții.",
+            "nod": "mama_predare",
+            "conditii": {
+              "areCate": {
+                "luminita_noptii": 3
+              },
+              "ora": {
+                "min": "18:00",
+                "max": "22:59"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Am florile...",
+            "nod": [
+              {
+                "nod": "mama_seara",
+                "conditii": {
+                  "areCate": {
+                    "luminita_noptii": 3
+                  }
+                }
+              },
+              {
+                "nod": "mama_indiciu"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1, a lui Elian +1 și cheia cocioabei contrabandistului.",
+        "efecte": {
+          "relatie": {
+            "hot": 1,
+            "mag": 1
+          }
+        }
+      }
     }
   ]
 }

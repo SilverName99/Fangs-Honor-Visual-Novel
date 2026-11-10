@@ -143,8 +143,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 5. Mai adu 3 fire (sau din F2) → la Elian, „Schimburi” → apasă pe schimb → „Schimbă” → 1 pansament în rucsac; cu mai puțin de 3 fire, gândul „Îmi trebuie 3…”. „Caută ierburi” e încă în pădure.
 6. Opțiuni → „Mini-jocurile” → Oprește-le → „Caută ierburi” dă direct 2 fire.
 
-### 📝 Bolnavul
-- Elian îi spune lui Vale de o plantă specială care apare **doar seara** (18–23, în pădure, cu mini-jocul culesului); **bolnava e mama lui Finn** (decis de autor), deci misiunea vine după eliberarea lui Finn. Vale o găsește și i-o duce, iar seara merg împreună la casa bolnavului și i-o dau ca ceai sau pastă, ca să se facă bine. Imagini, cu replicile peste ele.
+### ➡️ Bolnavul
+- A devenit misiunea lui Finn **„Mama lui Finn”** (decis de autor; Elian e foarte implicat și primește și el încredere +1). Vezi la Finn.
 
 ### 📝 Cărțile
 - Orcii vor să percheziționeze biserica; Vale îl ajută pe Elian să ascundă niște cărți vechi. Primul semn că preotul ascunde ceva.
@@ -308,18 +308,35 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Eliberarea**, peste 3 imagini: Vale îl dezleagă de la butuc; Finn îl duce pe drumul din spatele gardurilor spre marginea satului (Vale îl știe de copil, dar de când au venit orcii n-a mai avut ce căuta pe acolo; decis de autor); casa lui Finn: sora îi sare în brațe, mama, bolnavă, în pat, îl cunoscuse pe tatăl lui Vale. La final Vale rămâne în casa lui Finn.
 - **Recompensa:** încrederea lui Finn +1 și **drumul spre Marginea satului**, **a doua hartă** (decis de autor: ca cea a satului, cu mai puține locuri). Trecerea dintr-o hartă în alta e o zonă desenată în editor pe fiecare hartă (decis de autor: fără piesă separată); „Înapoi” de pe Marginea satului duce tot în sat.
 - **Marginea satului** (`harti` în `locations.json`, zonele cu `"harta": "marginea"`):
-  - **Casa lui Finn** (zona + interiorul): Finn, mama și sora lui, 06–23 (ales de Claude); noaptea casa e încuiată, dorm. Cu toți trei se poate vorbi. **Mama lui Finn e bolnava din misiunea lui Elian „Bolnavul”** (decis de autor).
+  - **Casa lui Finn** (zona + interiorul): Finn, mama și sora lui, 06–23 (ales de Claude); noaptea casa e încuiată, dorm. Cu toți trei se poate vorbi. **Mama lui Finn e bolnava** din misiunea „Mama lui Finn” (decis de autor).
   - **Ieșirea** (fără piesă pe hartă, doar zonă desenată): poteca de lângă zid; deocamdată doar gândul lui Vale („...dar nu singur. Nu încă.”). O folosesc mai târziu misiunile lui Roderick.
-  - **Contrabandistul:** zona e chiar scena; el e acolo 08–23 (ales de Claude), cu magazin (`TODO`: ce vinde; deocamdată săgeți și arcul).
+  - **Contrabandistul** (decis de autor): cocioaba lui (zona, cu ușa închisă și lacătul) e **încuiată** până când Finn îi dă lui Vale cheia (după „Mama lui Finn”). Înăuntru (`interior`), **scăunelul**: Vale stă și așteaptă **30 de minute** (contrabandistul se asigură că nu l-a urmărit nimeni), doar **18–02**; ziua, doar gândul lui Vale. Apoi apare contrabandistul (sprite în cocioabă) și discuția cu el pornește singură; rămâne acolo cât stă Vale în cocioabă (la plecare, data viitoare trebuie așteptat din nou). Marfa: unele lucruri pe bani, altele **doar la schimb** (decis de autor; `TODO` ce anume, ciornă de Claude: săgeți, arc, sabie mare pe bani; 3 blăni de lup → topor mare, 2 piei + 2 carne → poțiune de viață, 2 blăni → leac de otravă). Mai târziu poate avea și misiuni. **Finn lucrează în secret pentru el** (decis de autor).
   - **Cimitirul:** „Mormântul tatălui”, o scurtă scenă cu gândurile lui Vale, o dată pe zi (20 de minute).
   - **Coliba ierbăresei** (zona + interiorul): bătrâna, 06–23, vinde poțiuni de viață, **leacul de otravă** și pansamente; noaptea doarme.
   - Numele mamei, al surorii, al contrabandistului și al bătrânei sunt `TODO`.
-- **Imagini:** `events/finn_butuc.png`, `finn_eliberat_1.png`, `finn_eliberat_2.png`, `finn_eliberat_3.png`; harta `map/marginea_harta.png` (+ `_noapte`); piesele `map/piese/casa_finn.png`, `contrabandist.png`, `cimitir.png`, `coliba.png` (+ `_noapte`); scenele `locations/casa_finn_zona.png`, `casa_finn_interior.png`, `iesirea_zona.png`, `contrabandist_zona.png`, `cimitir_zona.png`, `coliba_zona.png`, `coliba_interior.png` (zonele și cu `_noapte`); sprite-urile `sprites/hot_casa_finn_interior.png`, `mama_finn_casa_finn_interior.png`, `sora_finn_casa_finn_interior.png`, `contrabandist_contrabandist.png`, `ierbareasa_coliba_interior.png`; portretele `portraits/mama_finn_*`, `sora_finn_*`, `contrabandist_*`, `ierbareasa_*`; schițele din carte `ui/carte_<id>.png`.
+- **Imagini:** `events/finn_butuc.png`, `finn_eliberat_1.png`, `finn_eliberat_2.png`, `finn_eliberat_3.png`; harta `map/marginea_harta.png` (+ `_noapte`); piesele `map/piese/casa_finn.png`, `contrabandist.png`, `cimitir.png`, `coliba.png` (+ `_noapte`); scenele `locations/casa_finn_zona.png`, `casa_finn_interior.png`, `iesirea_zona.png`, `contrabandist_zona.png`, `contrabandist_interior.png`, `cimitir_zona.png`, `coliba_zona.png`, `coliba_interior.png` (zonele și cu `_noapte`); sprite-urile `sprites/hot_casa_finn_interior.png`, `mama_finn_casa_finn_interior.png`, `sora_finn_casa_finn_interior.png`, `contrabandist_contrabandist_interior.png`, `ierbareasa_coliba_interior.png`; portretele `portraits/mama_finn_*`, `sora_finn_*`, `contrabandist_*`, `ierbareasa_*`; schițele din carte `ui/carte_<id>.png`.
 
 **Cum verifici:** în piață, ziua, cu 40 de monede: apasă pe Finn → „Pot să vorbesc cu el?” → discuția → „Așteaptă-mă”. Apasă din nou → „Cât vrei...” → „Plătesc” → cele 3 imagini → ești în casa lui Finn. Pe harta satului apare zona spre Marginea satului (desenată în editor; până atunci, un buton jos).
 
-### 📝 Mâncarea
-- Vale aduce mâncare familiei lui Finn (sora lui: „Ai adus ceva de mâncare?”).
+### ✅ Mâncarea
+- **Pornește** (decis de autor: odată cu „Mama lui Finn”, imediat după eliberare): la Finn, acasă, „Când ați mâncat ultima oară ceva cald?” → „Atunci vin cu ele.”
+- **Pașii:** 3 pâini (negustorul, Agnes), 2 bucăți de carne (vânătoare), apoi la Finn „Am adus pâine și carne!” → „Hai să gătim.”
+- **Masa**, peste 2 imagini (decis de autor): Vale gătește carnea la ceaun, cu sora lui Finn la lingură; apoi mănâncă toți patru, mama mai greu, din pat. Trec 90 de minute; Vale se satură și el (foame +40).
+- **Recompensa:** încrederea lui Finn +1. După ea, Finn și sora lui au replici noi în „Ce mai faci?”.
+- **Imagini:** `events/finn_masa_1.png`, `finn_masa_2.png` (galeria: „Finn: mâncarea”).
+
+**Cum verifici:** cu 3 pâini și 2 carne (F2 → Obiect), la Finn: „Când ați mâncat...” → „Atunci vin cu ele” → „Am adus pâine și carne!” → „Hai să gătim” → cele 2 imagini cu replicile → „Mâncarea” terminată, Finn +1.
+
+### ✅ Mama lui Finn
+- **Pornește** (decis de autor: misiunea lui Finn, în locul „Bolnavului” lui Elian): la Finn, „Mama ta... de cât timp e bolnavă?” → „Vorbesc eu cu el.”
+- **Pasul 1:** la Elian (biserica, oricând e treaz), „Frate Elian, am nevoie de ajutorul tău.” Elian recunoaște boala și îi spune de **luminița-nopții** (ciornă de Claude: e numele popular al unei plante adevărate, care își deschide florile la apus): galbenă, mare cât o monedă, cu patru petale late ca niște inimioare, miros de lămâie.
+- **Pasul 2:** 3 flori, **seara (18–23)**, în pădure: „Caută luminița-nopții (1 oră)”, mini-jocul culesului (13 plante: 4 luminițe, câte 3 din celelalte; zona plantelor se desenează în editor, la Aranjare → Ecrane → „Culesul”, ca la sunătoare). Apare doar cât e misiunea în lucru, după discuția cu Elian. Indicația o dă Elian („Cum arăta luminița-nopții?”).
+- **Pasul 3:** cu florile, **seara**, la Elian (pe scările bisericii): „Am adus luminița-nopții.” → „Hai la Finn.” (ziua, Elian îl trimite să vină după apus).
+- **Vindecarea**, peste 3 imagini: Elian face ceaiul la vatra lui Finn; mama îl bea, Elian se roagă cu mâna pe fruntea ei (Vale crede o clipă că lumina lumânării s-a făcut mai albă, un mic semn pentru secretul lui Elian); afară, Finn îi spune că lucrează în secret pentru contrabandist și îi dă **cheia cocioabei**. Trec 2 ore; Vale rămâne afară, la casa lui Finn.
+- **Recompensa:** încrederea lui Finn +1, a lui Elian +1 și cheia (`cheie_contrabandist`, la obiectele de poveste). Mama lui Finn are replici noi (s-a vindecat).
+- **Imagini:** `events/finn_vindecare_1.png`, `_2.png`, `_3.png` (galeria: „Finn: mama”); planta `items/luminita_noptii.png`; imaginea culesului `locations/munca_luminita.png`; cheia `items/cheie_contrabandist.png`.
+
+**Cum verifici:** pornește misiunea la Finn; la Elian, „Frate Elian, am nevoie...”; seara, în pădure, „Caută luminița-nopții” (sau F2 → Obiect: 3 Luminiță-nopții); seara la Elian, „Am adus luminița-nopții” → „Hai la Finn” → cele 3 imagini → cheia în inventar, la obiectele de poveste. Apoi, la Marginea satului, cocioaba se deschide; înăuntru, seara (18–02), „Scăunelul” → 30 de minute → contrabandistul și marfa lui.
 
 ### 📝 Lada colectorului
 - Seara, cu hoțul, Vale recuperează bani și alte lucruri de la orcul colector. Nu ajută la lupta finală: ajută sătenii.

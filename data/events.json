@@ -932,6 +932,43 @@
       "nume": "Fermierul îi mulțumește",
       "grup": "Orcii prin sat",
       "dialog": "fermier_multumeste"
+    },
+    {
+      "id": "contrabandist_asteptare",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Așteptarea în cocioabă",
+      "_nota": "Decis de autor: 30 de minute pe scăunel, apoi vine contrabandistul.",
+      "efecte": {
+        "timp": 30,
+        "stare": {
+          "contrabandist_aici": "da",
+          "contrabandist_tocmai": "da"
+        }
+      },
+      "vorbesteCu": "contrabandist"
+    },
+    {
+      "id": "finn_masa",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: masa",
+      "grup": "Finn: mâncarea",
+      "efecte": {
+        "timp": 90
+      },
+      "dialog": "finn_masa"
+    },
+    {
+      "id": "finn_vindecare",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: vindecarea mamei",
+      "grup": "Finn: mama",
+      "efecte": {
+        "timp": 120
+      },
+      "dialog": "finn_vindecare"
     }
   ]
 }

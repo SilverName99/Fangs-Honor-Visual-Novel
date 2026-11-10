@@ -1131,6 +1131,56 @@
           "maxCulese": 4,
           "nPeCorecta": 1,
           "nFaraJoc": 2
+        },
+        {
+          "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă): apare doar cât e pasul culesului; doar seara (18–23). Mini-jocul ca la sunătoare (13 plante: 4 luminițe, câte 3 din celelalte).",
+          "id": "luminita",
+          "tip": "culege",
+          "nume": "Caută luminița-nopții (1 oră)",
+          "titlu": "Cauți luminița-nopții",
+          "intrebare": "Elian: flori galbene, mari cât o monedă, cu patru petale late, ca niște inimioare; se deschid doar la apus și miros ușor a lămâie. Culege cel mult 4.",
+          "plante": [
+            {
+              "id": "luminita_noptii",
+              "corecta": true,
+              "cate": 4
+            },
+            {
+              "id": "papadie",
+              "cate": 3
+            },
+            {
+              "id": "piciorul_cocosului",
+              "cate": 3
+            },
+            {
+              "id": "musetel",
+              "cate": 3
+            }
+          ],
+          "minute": 60,
+          "stamina": 5,
+          "maxPeZi": 2,
+          "mesajMaxPeZi": "S-a întunecat de tot. Mâine seară mai caut.",
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          },
+          "gandOra": "Elian a zis că luminița-nopții își deschide florile doar la apus. Revin seara.",
+          "gandGresit": "Unele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
+          "imagine": "locations/munca_luminita.png",
+          "text": "Cauți printre ierburi, în lumina apusului...",
+          "ascuns": {
+            "conditii": {
+              "misiune": {
+                "finn_mama": "inceputa"
+              },
+              "existaStare": "finn_mama_pas"
+            }
+          },
+          "maxCulese": 4,
+          "nPeCorecta": 1,
+          "nFaraJoc": 2
         }
       ]
     },
@@ -1369,7 +1419,56 @@
           }
         }
       ],
-      "locuri": []
+      "locuri": [
+        {
+          "id": "interior",
+          "nume": "Cocioaba",
+          "imagine": "locations/contrabandist_interior.png",
+          "incuiat": {
+            "conditii": {
+              "areObiect": "cheie_contrabandist"
+            },
+            "mesaj": "Un lacăt greu atârnă pe ușă. Fără cheie nu intru."
+          },
+          "laPlecare": {
+            "stare": {
+              "contrabandist_aici": "nu"
+            }
+          },
+          "actiuni": [
+            {
+              "id": "scaunel",
+              "tip": "eveniment",
+              "nume": "Scăunelul (aștepți 30 de minute)",
+              "_nota": "Decis de autor: contrabandistul vine doar după ce se asigură că Vale n-a fost urmărit; doar 18–02. Ascuns cât e el aici.",
+              "eveniment": "contrabandist_asteptare",
+              "cand": {
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "18:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "01:59"
+                    }
+                  }
+                ]
+              },
+              "gandCand": "Ziua nu vine nimeni aici. Finn a zis: seara, după ce se lasă întunericul, și până după miezul nopții.",
+              "ascuns": {
+                "conditii": {
+                  "nuStare": {
+                    "contrabandist_aici": "da"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "_nota": "Decis de autor: cocioaba e încuiată cu lacăt; cheia o dă Finn după misiunea „Mama lui Finn”. Înăuntru, scăunelul: Vale așteaptă 30 de minute (18–02), apoi vine contrabandistul."
     },
     {
       "id": "cimitir",

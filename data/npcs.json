@@ -702,41 +702,70 @@
       "id": "contrabandist",
       "nume": "Contrabandistul",
       "_numeTODO": "Numele lui e TODO (nedecis).",
-      "_despre": "Marginea satului: lucruri care nu se găsesc în piață. Ce vinde e TODO (ciornă de Claude).",
+      "_despre": "Marginea satului. Decis de autor: se întâlnește cu Vale doar în cocioaba lui, seara, după jumătate de oră de așteptare; Finn lucrează în secret pentru el. Ce vinde e TODO (ciornă de Claude).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Un om care face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa."
       },
-      "locuriSprite": [
-        "contrabandist"
-      ],
       "dialog": "contrabandist",
       "intrebareVorba": "Ce mai faci?",
       "program": [
         {
-          "de": "08:00",
-          "pana": "23:00",
-          "loc": "contrabandist",
-          "ce": "la magazia lui (ore alese de Claude)"
-        },
-        {
-          "de": "23:00",
-          "pana": "08:00",
-          "ce": "plecat"
+          "de": "18:00",
+          "pana": "02:00",
+          "loc": "contrabandist/interior",
+          "conditii": {
+            "stare": {
+              "contrabandist_aici": "da"
+            }
+          },
+          "ce": "vine după ce Vale așteaptă pe scăunel (decis de autor); pleacă odată cu el"
         }
       ],
       "magazin": {
-        "_nota": "TODO: ce vinde contrabandistul (decide autorul). Deocamdată: săgeți și arcul.",
+        "_nota": "TODO: ce vinde și ce schimbă contrabandistul (decide autorul). Decis de autor: unele lucruri nu se dau pe bani, ci la schimb. Ciornă de Claude.",
         "titlu": "Marfa contrabandistului",
         "vinde": [
           "sageti",
-          "arc"
+          "arc",
+          "sabie_mare"
+        ],
+        "schimburi": [
+          {
+            "da": {
+              "blana_lup": 3
+            },
+            "primesti": {
+              "topor_mare": 1
+            }
+          },
+          {
+            "da": {
+              "piele": 2,
+              "carne": 2
+            },
+            "primesti": {
+              "potiune_viata": 1
+            }
+          },
+          {
+            "da": {
+              "blana_lup": 2
+            },
+            "primesti": {
+              "leac_otrava": 1
+            }
+          }
         ],
         "cumpara": [
           "piele",
-          "blana_lup"
+          "blana_lup",
+          "carne"
         ]
-      }
+      },
+      "locuriSprite": [
+        "contrabandist/interior"
+      ]
     },
     {
       "id": "ierbareasa",

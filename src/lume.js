@@ -120,6 +120,8 @@ export function construiesteLumea(date) {
         imagine: l.imagine,
         variante: l.variante || [],
         filtruSeara: l.filtruSeara || null,
+        // „laPlecare”: efectele de la ieșirea din loc (contrabandistul pleacă odată cu Vale din cocioabă)
+        laPlecare: l.laPlecare || null,
         // „din”: locul se deschide din alt loc al zonei, nu din imaginea zonei (camera fierarului e prin magazin)
         parinte: l.din ? `${z.id}.${l.din}` : z.id,
         // Acțiunile locului (dormit, cufăr, magazin...) au și ele zone care se pot desena pe imagine
