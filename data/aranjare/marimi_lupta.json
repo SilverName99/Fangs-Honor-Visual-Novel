@@ -778,7 +778,7 @@
       "lupta_taverna_pivnita": 135
     },
     "combat/sobolan_scuipa_aparare.png": {
-      "lupta_taverna_parter": 90,
+      "lupta_taverna_parter": 100,
       "lupta_padure_interior": 90,
       "lupta_poarta": 90,
       "lupta_piata": 90,
@@ -805,13 +805,13 @@
       "lupta_taverna_pivnita": 135
     },
     "combat/sobolan_scuipa_lovit.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135,
-      "lupta_poarta": 135,
-      "lupta_piata": 135,
-      "lupta_fierar": 135,
-      "lupta_campuri": 135,
-      "lupta_taverna_pivnita": 135
+      "lupta_taverna_parter": 95,
+      "lupta_padure_interior": 90,
+      "lupta_poarta": 90,
+      "lupta_piata": 90,
+      "lupta_fierar": 90,
+      "lupta_campuri": 90,
+      "lupta_taverna_pivnita": 90
     }
   }
 }
