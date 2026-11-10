@@ -769,13 +769,13 @@
       "lupta_taverna_pivnita": 115
     },
     "combat/sobolan_scuipa_idle.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115,
-      "lupta_poarta": 115,
-      "lupta_piata": 115,
-      "lupta_fierar": 115,
-      "lupta_campuri": 115,
-      "lupta_taverna_pivnita": 115
+      "lupta_taverna_parter": 135,
+      "lupta_padure_interior": 135,
+      "lupta_poarta": 135,
+      "lupta_piata": 135,
+      "lupta_fierar": 135,
+      "lupta_campuri": 135,
+      "lupta_taverna_pivnita": 135
     },
     "combat/sobolan_scuipa_aparare.png": {
       "lupta_taverna_parter": 90,
