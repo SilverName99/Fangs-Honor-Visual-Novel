@@ -1,0 +1,26 @@
+{
+  "zone": {},
+  "obiecte": {
+    "contrabandist": {
+      "x": 0.7665,
+      "y": 0.2463,
+      "scara": 0.2
+    },
+    "coliba": {
+      "x": 0.9186,
+      "y": 0.2373,
+      "scara": 0.2
+    },
+    "cimitir": {
+      "x": 0.5946,
+      "y": 0.1864,
+      "scara": 0.2
+    },
+    "casa_finn": {
+      "x": 0.146,
+      "y": 0.873,
+      "scara": 0.3422
+    }
+  },
+  "primPlan": []
+}
