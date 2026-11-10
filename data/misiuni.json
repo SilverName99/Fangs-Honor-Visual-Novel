@@ -539,7 +539,7 @@
               "finn_masa": "facuta"
             }
           },
-          "sfat": "Cu pâinea și carnea, vorbesc cu Finn, acasă la el.",
+          "sfat": "Cu pâinea și carnea, vorbesc cu Finn, acasă la el (06–08 sau 13–18).",
           "predare": {
             "text": "Am adus pâine și carne!",
             "nod": "mancare_predare",
@@ -547,7 +547,8 @@
               "areCate": {
                 "paine": 3,
                 "carne": 2
-              }
+              },
+              "loc": "casa_finn/interior"
             }
           }
         }

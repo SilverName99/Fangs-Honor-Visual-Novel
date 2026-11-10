@@ -3225,6 +3225,12 @@
     "meniu": true,
     "start": [
       {
+        "nod": "salut_campuri",
+        "conditii": {
+          "loc": "campuri"
+        }
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -3250,7 +3256,7 @@
       "f_margine": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Aici, la margine, oamenii se ajută între ei. Contrabandistul, bătrâna din colibă... fiecare are povestea lui. Și nimeni nu întreabă prea multe."
+        "text": "Aici, la margine, oamenii se ajută între ei. Jarek, Bătrâna Morwen... fiecare are povestea lui. Și nimeni nu întreabă prea multe."
       },
       "mancare_oferta": {
         "vorbitor": "hot",
@@ -3359,7 +3365,7 @@
       "mama_oferta2": {
         "vorbitor": "hot",
         "emotie": "suparat",
-        "text": "Am încercat ceaiuri, ventuze, tot ce știa bătrâna din colibă. Nimic. Slăbește pe zi ce trece.",
+        "text": "Am încercat ceaiuri, ventuze, tot ce știa Bătrâna Morwen. Nimic. Slăbește pe zi ce trece.",
         "urmator": "mama_oferta3"
       },
       "mama_oferta3": {
@@ -3522,6 +3528,12 @@
         "vorbitor": "hot",
         "emotie": "normal",
         "text": "Cu cheia aia, ai grijă. Și nu-i spune nimănui de unde o ai. Nici lui Elian."
+      },
+      "salut_campuri": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale! Uite-mă, muncesc cinstit. Fermierul zice că sap ca doi. Plătește ca pentru unul, dar e un început.",
+        "_nota": "CIORNĂ (Claude). La câmpuri, 08–13."
       }
     },
     "vorbeste": [
@@ -3629,6 +3641,27 @@
     "meniu": true,
     "start": [
       {
+        "nod": "salut_coliba",
+        "conditii": {
+          "loc": "coliba/interior"
+        }
+      },
+      {
+        "nod": "salut_afara",
+        "conditii": {
+          "loc": "casa_finn"
+        }
+      },
+      {
+        "nod": "salut_plecat",
+        "conditii": {
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          }
+        }
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -3660,6 +3693,24 @@
         "vorbitor": "sora_finn",
         "emotie": "normal",
         "text": "Când mai facem carne la ceaun? Mâine? Poimâine? Te rog!"
+      },
+      "salut_plecat": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Finn a plecat cu treburi. Nu-mi spune niciodată unde. Zice că e mai bine să nu știu.",
+        "_nota": "CIORNĂ (Claude). Seara, cât Finn e plecat (decis de autor)."
+      },
+      "salut_coliba": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Vale! Bătrâna Morwen mă învață plantele! Asta e mușețel, asta e... asta e tot mușețel.",
+        "_nota": "CIORNĂ (Claude). La colibă, 14–18."
+      },
+      "salut_afara": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Vale! Mă joc de-a cavalerii. Eu sunt cavalerul, iar găinile sunt orcii!",
+        "_nota": "CIORNĂ (Claude). Afară, 10–14."
       }
     },
     "vorbeste": [
@@ -3685,7 +3736,7 @@
     ]
   },
   "contrabandist": {
-    "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (numele lui e TODO). Decis de autor: apare doar în cocioaba lui, după ce Vale așteaptă 30 de minute pe scăunel (18–02).",
+    "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (Jarek, decis de autor). Decis de autor: apare doar în cocioaba lui, după ce Vale așteaptă 30 de minute pe scăunel (18–02).",
     "partener": "contrabandist",
     "meniu": true,
     "start": [
@@ -3772,7 +3823,7 @@
       "prezentare6": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "O singură regulă, Lightfinder: n-ai fost aici. Nu m-ai văzut. Iar dacă vii cu cineva în spate, cocioaba asta o să fie goală până la sfârșitul lumii.",
+        "text": "O singură regulă, Lightfinder: n-ai fost aici. Nu m-ai văzut. Iar dacă vii cu cineva în spate, cocioaba asta o să fie goală până la sfârșitul lumii. Mi se spune Jarek. Atât îți trebuie să știi.",
         "efecte": {
           "stare": {
             "cunoscut_contrabandist": "da"
@@ -3824,7 +3875,7 @@
     ]
   },
   "ierbareasa": {
-    "_nota": "CIORNĂ (Claude). Bătrâna ierbăreasă de la Marginea satului (numele ei e TODO). Decis de autor: vinde și leacul de otravă.",
+    "_nota": "CIORNĂ (Claude). Bătrâna ierbăreasă de la Marginea satului (Bătrâna Morwen, decis de autor). Decis de autor: vinde și leacul de otravă.",
     "partener": "ierbareasa",
     "meniu": true,
     "start": [
@@ -3847,7 +3898,7 @@
       "prezentare": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Un Lightfinder la ușa mea... Ultima dată când am văzut unul, era tatăl tău, după o bătaie. Stai jos. Ce te doare?",
+        "text": "Un Lightfinder la ușa mea... Ultima dată când am văzut unul, era tatăl tău, după o bătaie. Eu sunt Morwen. Stai jos. Ce te doare?",
         "efecte": {
           "stare": {
             "cunoscut_ierbareasa": "da"
@@ -3873,6 +3924,11 @@
         "vorbitor": "ierbareasa",
         "emotie": "normal",
         "text": "Pădurea dă tot ce-ți trebuie, dacă știi unde să cauți. Și când să cauți. Unele ierburi ies doar seara, ca stelele."
+      },
+      "i_lina": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Fetița lui Finn vine în fiecare după-amiază. Sortează ierburi și pune întrebări cât zece. Îi dau ceai pentru maică-sa. E un schimb bun."
       }
     },
     "vorbeste": [
@@ -3881,6 +3937,9 @@
       },
       {
         "nod": "i_ierburi"
+      },
+      {
+        "nod": "i_lina"
       }
     ],
     "optiuni": [
@@ -4178,7 +4237,7 @@
       "a15": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Lucrez pentru cineva. Contrabandistul de lângă gard. Duc vorbe, car lucruri pe poteca de lângă zid, unde orcii nu se uită. Mă plătește puțin și rar. De-aia am ajuns la butuc.",
+        "text": "Lucrez pentru cineva. Jarek, contrabandistul de lângă gard. Duc vorbe, car lucruri pe poteca de lângă zid, unde orcii nu se uită. Mă plătește puțin și rar. De-aia am ajuns la butuc.",
         "urmator": "a16"
       },
       "a16": {

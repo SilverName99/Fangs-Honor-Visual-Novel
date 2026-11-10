@@ -1356,7 +1356,49 @@
               }
             },
             "mesaj": "E noapte. Finn și ai lui dorm. Nu vreau să-i trezesc."
-          }
+          },
+          "variante": [
+            {
+              "_nota": "Decis de autor: cât e Marta bolnavă, e desenată în imagine, în pat; seara cu focul aprins în vatră.",
+              "imagine": "locations/casa_finn_interior_bolnava_seara.png",
+              "conditii": {
+                "nuStare": {
+                  "mama_finn": "vindecata"
+                },
+                "moment": [
+                  "seara"
+                ]
+              }
+            },
+            {
+              "imagine": "locations/casa_finn_interior_bolnava.png",
+              "conditii": {
+                "nuStare": {
+                  "mama_finn": "vindecata"
+                }
+              }
+            }
+          ],
+          "actiuni": [
+            {
+              "id": "mama_bolnava",
+              "tip": "gand",
+              "nume": "Marta",
+              "_nota": "Decis de autor: cât e bolnavă, nu se vorbește cu ea; Vale doar se gândește (zona se desenează pe ea, în editor). Ciornă de Claude.",
+              "text": [
+                "Doarme. Respiră greu, cu un hârâit în piept. Mai bine n-o trezesc.",
+                "Tușește prin somn. Cineva i-a pus o cârpă udă pe frunte.",
+                "E palidă ca varul. Mâinile îi tremură pe pătură, chiar și în somn."
+              ],
+              "ascuns": {
+                "conditii": {
+                  "stare": {
+                    "mama_finn": "vindecata"
+                  }
+                }
+              }
+            }
+          ]
         }
       ]
     },

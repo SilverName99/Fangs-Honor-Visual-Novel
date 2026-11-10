@@ -305,7 +305,8 @@
       },
       "locuriSprite": [
         "piata",
-        "casa_finn/interior"
+        "casa_finn/interior",
+        "campuri"
       ],
       "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
       "cineRaspunde": {
@@ -333,14 +334,46 @@
         },
         {
           "de": "06:00",
-          "pana": "23:00",
+          "pana": "08:00",
           "loc": "casa_finn/interior",
           "conditii": {
             "stare": {
               "hot": "eliberat"
             }
           },
-          "ce": "acasă, cu mama și sora lui (ales de Claude)"
+          "ce": "acasă: face focul, are grijă de mama lui"
+        },
+        {
+          "de": "08:00",
+          "pana": "13:00",
+          "loc": "campuri",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          },
+          "ce": "la câmpuri, muncește cu ziua la fermier (decis de autor)"
+        },
+        {
+          "de": "13:00",
+          "pana": "18:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          },
+          "ce": "acasă"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            }
+          },
+          "ce": "plecat pe ascuns, lucrează pentru Jarek (decis de autor): nu e nicăieri"
         },
         {
           "de": "23:00",
@@ -646,12 +679,11 @@
     },
     {
       "id": "mama_finn",
-      "nume": "Mama lui Finn",
-      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "nume": "Marta",
       "_despre": "Decis de autor: e bolnava pe care o vindecă Vale seara, în misiunea lui Elian „Bolnavul”. Stă în pat, lângă vatră.",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Mama lui Finn. E bolnavă de mult, tușește zi și noapte și abia se mai ridică din pat. L-a cunoscut pe tata."
+        "descriere": "Marta, mama lui Finn. A fost bolnavă de mult, tușea n-o lăsa nici zi, nici noapte. L-a cunoscut pe tata."
       },
       "locuriSprite": [
         "casa_finn/interior"
@@ -663,7 +695,12 @@
           "de": "06:00",
           "pana": "23:00",
           "loc": "casa_finn/interior",
-          "ce": "în pat, lângă vatră"
+          "conditii": {
+            "stare": {
+              "mama_finn": "vindecata"
+            }
+          },
+          "ce": "după vindecare, în pat, în capul oaselor; cât e bolnavă e desenată în imaginea casei (decis de autor)"
         },
         {
           "de": "23:00",
@@ -674,22 +711,41 @@
     },
     {
       "id": "sora_finn",
-      "nume": "Sora lui Finn",
-      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "nume": "Lina",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice."
+        "descriere": "Lina, sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice."
       },
       "locuriSprite": [
-        "casa_finn/interior"
+        "casa_finn/interior",
+        "casa_finn",
+        "coliba/interior"
       ],
       "dialog": "sora_finn",
       "program": [
         {
           "de": "06:00",
+          "pana": "10:00",
+          "loc": "casa_finn/interior",
+          "ce": "acasă, lângă mama ei"
+        },
+        {
+          "de": "10:00",
+          "pana": "14:00",
+          "loc": "casa_finn",
+          "ce": "afară, în fața casei, se joacă (decis de autor)"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "coliba/interior",
+          "ce": "o ajută pe Bătrâna Morwen să sorteze plante, în schimbul ceaiurilor pentru mama ei (decis de autor)"
+        },
+        {
+          "de": "18:00",
           "pana": "23:00",
           "loc": "casa_finn/interior",
-          "ce": "în casă, lângă mama ei"
+          "ce": "acasă"
         },
         {
           "de": "23:00",
@@ -700,12 +756,11 @@
     },
     {
       "id": "contrabandist",
-      "nume": "Contrabandistul",
-      "_numeTODO": "Numele lui e TODO (nedecis).",
+      "nume": "Jarek",
       "_despre": "Marginea satului. Decis de autor: se întâlnește cu Vale doar în cocioaba lui, seara, după jumătate de oră de așteptare; Finn lucrează în secret pentru el. Ce vinde e TODO (ciornă de Claude).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Un om care face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa."
+        "descriere": "Jarek, contrabandistul de lângă gard. Face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa."
       },
       "dialog": "contrabandist",
       "intrebareVorba": "Ce mai faci?",
@@ -769,12 +824,11 @@
     },
     {
       "id": "ierbareasa",
-      "nume": "Bătrâna ierbăreasă",
-      "_numeTODO": "Numele ei e TODO (nedecis).",
+      "nume": "Bătrâna Morwen",
       "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; vinde și leacul de otravă (bun la șobolanii din pivniță).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "O bătrână care trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă."
+        "descriere": "Bătrâna Morwen trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă."
       },
       "locuriSprite": [
         "coliba/interior"

@@ -297,7 +297,8 @@ export function creeazaActiuni(parinte, joc) {
     taxa: () => joc.platesteTaxa(),
     // Un loc unde Vale doar se gândește la ceva (ieșirea de la Marginea satului) sau unde pornește o scurtă
     // scenă (mormântul tatălui): fără muncă și fără magazin
-    gand: (a) => joc.gand(a.text),
+    // „text” poate fi și o listă: Vale se gândește de fiecare dată la altceva (Marta, bolnavă, în pat)
+    gand: (a) => joc.gand(Array.isArray(a.text) ? a.text[Math.floor(Math.random() * a.text.length)] : a.text),
     // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
     // „cand”: condițiile fără de care Vale doar se gândește („gandCand”): contrabandistul vine doar 18–02
     eveniment: (a) =>
