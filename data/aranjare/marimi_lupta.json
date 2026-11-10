@@ -167,27 +167,57 @@
     },
     "combat/mag_idle.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/mag_aparare.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/mag_lovit.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/mag_scut_lumina.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/mag_goleste_bara.png": {
-      "lupta_taverna_parter": 113,
-      "lupta_padure_interior": 113
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/mag_vindecare.png": {
-      "lupta_taverna_parter": 113,
-      "lupta_padure_interior": 113
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/paznic_orc_1_atac.png": {
       "lupta_taverna_parter": 115,
@@ -558,6 +588,15 @@
       "lupta_fierar": 125,
       "lupta_campuri": 125,
       "lupta_taverna_pivnita": 125
+    },
+    "combat/mag_cazut.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     }
   }
 }
