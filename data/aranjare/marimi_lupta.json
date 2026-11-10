@@ -733,13 +733,13 @@
       "lupta_taverna_pivnita": 115
     },
     "combat/sobolan_gheare_aparare.png": {
-      "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115,
-      "lupta_poarta": 115,
-      "lupta_piata": 115,
-      "lupta_fierar": 115,
-      "lupta_campuri": 115,
-      "lupta_taverna_pivnita": 115
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110
     },
     "combat/sobolan_gheare_atac.png": {
       "lupta_taverna_parter": 115,
