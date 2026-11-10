@@ -241,83 +241,183 @@
     },
     "combat/orc_colector_aparare.png": {
       "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120
     },
     "combat/orc_colector_lovit.png": {
       "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120
     },
     "combat/orc_colector_atac.png": {
       "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120
     },
     "combat/orc_colector_idle.png": {
       "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120
     },
     "combat/lup_idle.png": {
       "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_padure_interior": 125,
+      "lupta_poarta": 125,
+      "lupta_piata": 125,
+      "lupta_fierar": 125,
+      "lupta_campuri": 125,
+      "lupta_taverna_pivnita": 125
     },
     "combat/lup_atac.png": {
-      "lupta_taverna_parter": 140,
-      "lupta_padure_interior": 140
+      "lupta_taverna_parter": 125,
+      "lupta_padure_interior": 125,
+      "lupta_poarta": 125,
+      "lupta_piata": 125,
+      "lupta_fierar": 125,
+      "lupta_campuri": 125,
+      "lupta_taverna_pivnita": 125
     },
     "combat/lup_aparare.png": {
       "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_padure_interior": 125,
+      "lupta_poarta": 125,
+      "lupta_piata": 125,
+      "lupta_fierar": 125,
+      "lupta_campuri": 125,
+      "lupta_taverna_pivnita": 125
     },
     "combat/lup_lovit.png": {
       "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_padure_interior": 125,
+      "lupta_poarta": 125,
+      "lupta_piata": 125,
+      "lupta_fierar": 125,
+      "lupta_campuri": 125,
+      "lupta_taverna_pivnita": 125
     },
     "combat/lup_cazut.png": {
       "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125
+      "lupta_padure_interior": 125,
+      "lupta_poarta": 125,
+      "lupta_piata": 125,
+      "lupta_fierar": 125,
+      "lupta_campuri": 125,
+      "lupta_taverna_pivnita": 125
     },
     "combat/mistret_atac.png": {
-      "lupta_taverna_parter": 155,
-      "lupta_padure_interior": 155
+      "lupta_taverna_parter": 145,
+      "lupta_padure_interior": 145,
+      "lupta_poarta": 145,
+      "lupta_piata": 145,
+      "lupta_fierar": 145,
+      "lupta_campuri": 145,
+      "lupta_taverna_pivnita": 145
     },
     "combat/mistret_aparare.png": {
       "lupta_taverna_parter": 145,
-      "lupta_padure_interior": 145
+      "lupta_padure_interior": 145,
+      "lupta_poarta": 145,
+      "lupta_piata": 145,
+      "lupta_fierar": 145,
+      "lupta_campuri": 145,
+      "lupta_taverna_pivnita": 145
     },
     "combat/mistret_lovit.png": {
       "lupta_taverna_parter": 145,
-      "lupta_padure_interior": 145
+      "lupta_padure_interior": 145,
+      "lupta_poarta": 145,
+      "lupta_piata": 145,
+      "lupta_fierar": 145,
+      "lupta_campuri": 145,
+      "lupta_taverna_pivnita": 145
     },
     "combat/mistret_cazut.png": {
       "lupta_taverna_parter": 145,
-      "lupta_padure_interior": 145
+      "lupta_padure_interior": 145,
+      "lupta_poarta": 145,
+      "lupta_piata": 145,
+      "lupta_fierar": 145,
+      "lupta_campuri": 145,
+      "lupta_taverna_pivnita": 145
     },
     "combat/mistret_idle.png": {
       "lupta_taverna_parter": 145,
-      "lupta_padure_interior": 145
+      "lupta_padure_interior": 145,
+      "lupta_poarta": 145,
+      "lupta_piata": 145,
+      "lupta_fierar": 145,
+      "lupta_campuri": 145,
+      "lupta_taverna_pivnita": 145
     },
     "combat/orc_colector_cazut.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120
     },
     "combat/betiv_atac.png": {
       "lupta_taverna_parter": 112,
-      "lupta_padure_interior": 112
+      "lupta_padure_interior": 112,
+      "lupta_poarta": 112,
+      "lupta_piata": 112,
+      "lupta_fierar": 112,
+      "lupta_campuri": 112,
+      "lupta_taverna_pivnita": 112
     },
     "combat/betiv_aparare.png": {
       "lupta_taverna_parter": 112,
-      "lupta_padure_interior": 112
+      "lupta_padure_interior": 112,
+      "lupta_poarta": 112,
+      "lupta_piata": 112,
+      "lupta_fierar": 112,
+      "lupta_campuri": 112,
+      "lupta_taverna_pivnita": 112
     },
     "combat/betiv_lovit.png": {
       "lupta_taverna_parter": 112,
-      "lupta_padure_interior": 112
+      "lupta_padure_interior": 112,
+      "lupta_poarta": 112,
+      "lupta_piata": 112,
+      "lupta_fierar": 112,
+      "lupta_campuri": 112,
+      "lupta_taverna_pivnita": 112
     },
     "combat/betiv_cazut.png": {
       "lupta_taverna_parter": 112,
-      "lupta_padure_interior": 112
+      "lupta_padure_interior": 112,
+      "lupta_poarta": 112,
+      "lupta_piata": 112,
+      "lupta_fierar": 112,
+      "lupta_campuri": 112,
+      "lupta_taverna_pivnita": 112
     },
     "combat/betiv_idle.png": {
       "lupta_taverna_parter": 112,
-      "lupta_padure_interior": 112
+      "lupta_padure_interior": 112,
+      "lupta_poarta": 112,
+      "lupta_piata": 112,
+      "lupta_fierar": 112,
+      "lupta_campuri": 112,
+      "lupta_taverna_pivnita": 112
     },
     "combat/vale_sabie_idle.png": {
       "lupta_taverna_parter": 100,
