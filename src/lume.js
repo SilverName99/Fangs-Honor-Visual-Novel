@@ -22,6 +22,8 @@ function varianteDinProgram(p, cheie, fisier) {
       conditii: {
         ...(x.de < x.pana || x.pana === '00:00' ? { ora: { min: x.de, max: minusUnMinut(x.pana) } } : { oricare: [{ ora: { min: x.de } }, { ora: { max: minusUnMinut(x.pana) } }] }),
         ...(x.zile ? { zileSaptamana: x.zile } : {}),
+        // Și condițiile intervalului: Lina are alt sprite seara doar cât e Marta bolnavă (ea stă atunci în pat)
+        ...(x.conditii || {}),
       },
     }));
 }

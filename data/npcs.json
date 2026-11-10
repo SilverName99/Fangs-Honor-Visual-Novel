@@ -759,6 +759,18 @@
           "de": "18:00",
           "pana": "23:00",
           "loc": "casa_finn/interior",
+          "sprite": "mama_bolnava",
+          "conditii": {
+            "nuStare": {
+              "mama_finn": "vindecata"
+            }
+          },
+          "ce": "acasă, cât e Marta bolnavă (decis de autor: alt sprite, pentru că în pat stă mama ei)"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
           "ce": "acasă"
         },
         {
