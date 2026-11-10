@@ -602,7 +602,8 @@ svg.editor-zone.desen {
 .marime-lupta input {
   width: 64px;
 }
-.card .locuri-lupta {
+.card .locuri-lupta,
+.card .copiaza-marimea {
   margin-top: 6px;
   width: 100%;
 }
