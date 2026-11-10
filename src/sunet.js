@@ -16,6 +16,14 @@ try {
 
 export const caleSunet = (tip, id) => `sunete/${tip}/${id}.mp3`;
 const lipsa = new Set();
+// Un sunet e trecut ca lipsă (liniște de atunci) doar dacă fișierul chiar nu există: o eroare de o clipă la
+// încărcare (o cerere întreruptă, rețeaua) nu trebuie să-l amuțească pentru tot restul jocului, cum se întâmpla
+// cu lovitura șobolanilor, auzită doar prima dată
+function verificaLipsa(cale, url) {
+  fetch(url, { method: 'HEAD' })
+    .then((r) => !r.ok && lipsa.add(cale))
+    .catch(() => location.protocol === 'file:' && lipsa.add(cale));
+}
 
 // Browserele nu lasă pagina să pornească sunetul înainte de primul clic al jucătorului: până atunci,
 // ce trebuia să sune se ține minte și pornește la primul clic sau la prima tastă
@@ -106,7 +114,7 @@ function fir(tip) {
       const audio = new Audio(urlImagine(cale));
       audio.loop = repetat;
       audio.volume = 0;
-      audio.onerror = () => lipsa.add(cale);
+      audio.onerror = () => verificaLipsa(cale, audio.src);
       curent = { cale, audio, volum };
       infunda(audio, infundat);
       porneste(audio);
@@ -179,7 +187,7 @@ export function creeazaSunet(date) {
       if (!s.efecte?.[id] || lipsa.has(cale) || !deblocat || nivel('efecte') <= 0) return;
       const a = new Audio(urlImagine(cale));
       a.volume = Math.min(1, nivel('efecte') * volumFisier(cale));
-      a.onerror = () => lipsa.add(cale);
+      a.onerror = () => verificaLipsa(cale, a.src);
       a.play().catch(() => {});
     },
     // Muzica înlocuiește ambianța cât timp merge (lupta, meniul); un jingle scurt (victorie) nu se repetă
