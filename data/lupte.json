@@ -119,8 +119,7 @@
         "sunet": "lupta_sobolan"
       },
       "armura": 0,
-      "sunet": "sobolan",
-      "_nota": "Pivnița lui Agnes (decis de autor): doi șobolani care atacă cu ghearele. Cifre de pornire (TODO echilibru)."
+      "_nota": "Pivnița lui Agnes (decis de autor): doi șobolani care atacă cu ghearele. Cifre de pornire (TODO echilibru). Decis de autor: la atac se aude doar lovitura lui (lupta_sobolan), fără strigătul de șobolan (acela rămâne doar la cel care scuipă)."
     },
     "sobolan_scuipa": {
       "nume": "Șobolan scuipător",

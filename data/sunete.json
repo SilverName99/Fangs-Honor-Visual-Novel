@@ -424,7 +424,7 @@
     "lup": "Lupul mârâie (când atacă)",
     "mistret": "Mistrețul grohăie (când atacă)",
     "glaive": "Glaive-ul Kaiei rotindu-se prin aer",
-    "sobolan": "Șobolanul chițăie (când atacă; pivnița lui Agnes)",
+    "sobolan": "Strigătul șobolanului care scuipă, când atacă (pivnița lui Agnes); cel cu gheare are doar lupta_sobolan",
     "lupta_scuipat": "șobolanul scuipă bale acide: un scuipat umed, sfârâit"
   },
   "muzica": {
