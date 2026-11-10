@@ -221,23 +221,48 @@
     },
     "combat/paznic_orc_1_atac.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/paznic_orc_1_aparare.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/paznic_orc_1_lovit.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/paznic_orc_1_cazut.png": {
-      "lupta_taverna_parter": 105,
-      "lupta_padure_interior": 105
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/paznic_orc_1_idle.png": {
       "lupta_taverna_parter": 115,
-      "lupta_padure_interior": 115
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     },
     "combat/orc_colector_aparare.png": {
       "lupta_taverna_parter": 120,
