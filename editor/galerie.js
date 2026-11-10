@@ -170,7 +170,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
               <input type="number" min="20" max="400" step="5" data-marime-img-harta="${esc(c.cale)}|${esc(id)}" value="${marimiImaginiHarti[c.cale]?.[id] ?? marimi[c.cale] ?? 100}">%</label>`,
           )
           .join('') +
-          `<button class="btn copiaza-marimea" data-cale="${esc(c.cale)}" title="Pune procentul de la prima zonă (${esc(zoneLupta[0]?.[1] || '')}) la toate zonele, pentru toate pozele acestui personaj">Primul procent la toate pozele lui</button>`;
+          `<button class="btn copiaza-marimea" data-cale="${esc(c.cale)}" title="Pune procentul de la prima zonă (${esc(zoneLupta[0]?.[1] || '')}) la toate zonele, doar pentru poza asta">Primul procent la toate zonele</button>`;
       if (c.grup === 'Hărți de luptă') {
         const id = c.cale.split('/').pop().replace(/\.png$/, '');
         return `<label class="marime-lupta" title="Cât de mari se văd toți luptătorii pe harta asta (100% = normal)">Mărimea personajelor aici
@@ -342,34 +342,23 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     for (const b of container.querySelectorAll('.locuri-lupta')) {
       b.onclick = () => document.dispatchEvent(new CustomEvent('deschide-aranjare', { detail: b.dataset.scena }));
     }
-    // „Primul procent la toate pozele lui” (cerut de autor): procentul de la prima zonă de luptă, pus pe toate zonele,
-    // la toate pozele aceluiași personaj (Vale: toate seturile de arme), într-o singură salvare
-    const posturi = new Set(['idle', 'atac', 'aparare', 'lovit', 'cazut', ...comun.date.npcs.personaje.flatMap((p) => (p.lupta?.abilitati || []).map((a) => a.poza).filter(Boolean))]);
-    const personajDin = (cale) => {
-      const nume = cale.replace(/^combat\//, '').replace(/\.png$/, '');
-      if (nume.startsWith('vale_')) return 'vale';
-      const poza = [...posturi].find((x) => nume.endsWith(`_${x}`));
-      return poza ? nume.slice(0, -poza.length - 1) : nume;
-    };
+    // „Primul procent la toate zonele” (cerut de autor): procentul de la prima zonă de luptă, pus pe toate zonele,
+    // DOAR la poza acestui card (nu și la celelalte poze ale personajului), într-o singură salvare
     for (const b of container.querySelectorAll('.copiaza-marimea')) {
       b.onclick = async () => {
-        const prima = b.closest('.card').querySelector('[data-marime-img-harta]');
-        if (!prima) return;
-        const v = Math.max(20, Math.min(400, Math.round(Number(prima.value) || 100)));
-        const cine = personajDin(b.dataset.cale);
-        const zone = [...comun.lume.values()].filter((d) => d.tip === 'lupta').map((d) => d.id);
-        // și pozele încă neîncărcate, ca să aibă mărimea bună de cum le încarci
-        const cai = new Set([...comun.imagini.keys(), ...cerute.map((c) => c.cale), ...[...container.querySelectorAll('[data-marime-img-harta]')].map((i) => i.dataset.marimeImgHarta.split('|')[0])]);
-        const ale = [...cai].filter((c) => c.startsWith('combat/') && personajDin(c) === cine);
+        const campuri = [...b.closest('.card').querySelectorAll('[data-marime-img-harta]')];
+        if (!campuri.length) return;
+        const v = Math.max(20, Math.min(400, Math.round(Number(campuri[0].value) || 100)));
+        const cale = b.dataset.cale;
         const a = structuredClone(comun.date.aranjare.marimi_lupta || {});
-        for (const cale of ale) for (const z of zone) ((a.imaginiHarti ||= {})[cale] ||= {})[z] = v;
+        for (const i of campuri) ((a.imaginiHarti ||= {})[cale] ||= {})[i.dataset.marimeImgHarta.split('|')[1]] = v;
         b.disabled = true;
         try {
           await api('aranjare/marimi_lupta', { method: 'PUT', body: JSON.stringify(a), headers: { 'Content-Type': 'application/json' } });
           comun.date.aranjare.marimi_lupta = a;
-          for (const i of container.querySelectorAll('[data-marime-img-harta]')) if (ale.includes(i.dataset.marimeImgHarta.split('|')[0])) i.value = v;
-          b.textContent = `✓ ${v}% la ${ale.length} ${ale.length === 1 ? 'poză' : 'poze'}`;
-          setTimeout(() => (b.textContent = 'Primul procent la toate pozele lui'), 2500);
+          for (const i of campuri) i.value = v;
+          b.textContent = `✓ ${v}% pe toate zonele`;
+          setTimeout(() => (b.textContent = 'Primul procent la toate zonele'), 2500);
         } catch (e) {
           alert(`Nu s-a salvat mărimea:\n${e.message}`);
         }
