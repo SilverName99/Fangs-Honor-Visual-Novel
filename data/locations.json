@@ -31,7 +31,7 @@
   "harti": [
     {
       "id": "marginea",
-      "_nota": "Decis de autor: a doua hartă, ca cea a satului, cu mai puține locuri. Drumul spre ea apare pe harta satului după eliberarea lui Finn.",
+      "_nota": "Decis de autor: a doua hartă, ca cea a satului, cu mai puține locuri. Pe ambele hărți, trecerea dintr-una în alta e o zonă desenată în editor (fără piesă separată); pe harta satului apare după eliberarea lui Finn.",
       "nume": "Marginea satului",
       "imagine": "map/marginea_harta.png",
       "variante": [
@@ -51,23 +51,7 @@
             "hot": "eliberat"
           }
         }
-      },
-      "piese": [
-        {
-          "id": "drum_marginea",
-          "imagine": "map/piese/drum_marginea.png",
-          "variante": [
-            {
-              "sufix": "_noapte",
-              "conditii": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
-            }
-          ]
-        }
-      ]
+      }
     }
   ],
   "zone": [
@@ -1330,22 +1314,7 @@
       "id": "iesirea",
       "nume": "Ieșirea",
       "harta": "marginea",
-      "piese": [
-        {
-          "id": "iesirea",
-          "imagine": "map/piese/iesirea.png",
-          "variante": [
-            {
-              "sufix": "_noapte",
-              "conditii": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
-            }
-          ]
-        }
-      ],
+      "piese": [],
       "imagine": "locations/iesirea_zona.png",
       "variante": [
         {
@@ -1366,7 +1335,8 @@
           "_nota": "CIORNĂ. Ieșirea mai puțin păzită: o folosesc mai târziu misiunile lui Roderick.",
           "text": "Între doi stâlpi putrezi ai zidului se strecoară o potecă spre pădure. Orcii nu păzesc aici. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
         }
-      ]
+      ],
+      "_nota": "Decis de autor: fără piesă pe hartă; locul se desenează ca zonă pe harta Marginii satului."
     },
     {
       "id": "contrabandist",

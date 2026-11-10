@@ -52,6 +52,9 @@ export function construiesteLumea(date) {
       tinte: [
         ...aleEi.map((z) => ({ id: z.id, nume: z.nume, spre: z.id, incuiat: z.incuiat || null, ascuns: z.ascuns || null })),
         ...drumuri.map((x) => ({ id: x.id, nume: x.nume, spre: x.id, incuiat: x.incuiat || null, ascuns: x.ascuns || null })),
+        // Și drumul înapoi (decis de autor): pe fiecare hartă se desenează în editor locul pe unde treci
+        // dintr-o parte în alta, fără o piesă separată
+        ...(h.id === 'harta' ? [] : [{ id: `spre_${h.din || 'harta'}`, nume: harti.find((x) => x.id === (h.din || 'harta'))?.nume || 'Satul', spre: h.din || 'harta' }]),
       ],
       obiecte: [
         ...aleEi.flatMap((z) =>
