@@ -697,6 +697,96 @@
       "lupta_fierar": 115,
       "lupta_campuri": 115,
       "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_gheare_idle.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_gheare_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_gheare_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_gheare_cazut.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_gheare_lovit.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_scuipa_idle.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_scuipa_aparare.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_scuipa_atac.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_scuipa_cazut.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
+    },
+    "combat/sobolan_scuipa_lovit.png": {
+      "lupta_taverna_parter": 115,
+      "lupta_padure_interior": 115,
+      "lupta_poarta": 115,
+      "lupta_piata": 115,
+      "lupta_fierar": 115,
+      "lupta_campuri": 115,
+      "lupta_taverna_pivnita": 115
     }
   }
 }
