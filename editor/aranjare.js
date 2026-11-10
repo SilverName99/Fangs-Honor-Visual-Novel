@@ -52,9 +52,11 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
   const context = () => {
     const minuteZi = vedere.ora * 60;
-    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [], arataTot: tot };
+    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [], arataTot: tot, locEditor: locScena() };
   };
-  const locScena = () => idScena.replace('.', '/');
+  function locScena() {
+    return idScena.replace('.', '/');
+  }
   const prezent = (idPers) => {
     const p = personaje.get(idPers);
     return !!p && undeEste(p, context()) === locScena() && (tot || verifica(p.apare, context()));
