@@ -106,13 +106,15 @@ export function creeazaLupta(parinte, joc) {
     const piese = Object.values(s.echipat).filter(Boolean).map((id) => inv.def(id));
     // În lupta de test, arma lui Vale se alege din panou (ca să se vadă fiecare set de poze), fără să-i schimbe echipamentul
     const deTest = def?.test && def.armaVale !== undefined;
-    // „faraArme”: Vale se bate doar cu pumnii (bătaia cu colectorul pentru fierul lui Bram, decis de autor)
-    const idArma = def?.faraArme ? null : deTest ? def.armaVale : s.echipat.arma_primara;
+    // „faraArme”: Vale se bate doar cu pumnii (bătaia cu colectorul pentru fierul lui Bram, decis de autor);
+    // „faraEchipament”: și fără armură (bătaia cu bețivul din tavernă, decis de autor)
+    const faraArme = def?.faraArme || def?.faraEchipament;
+    const idArma = faraArme ? null : deTest ? def.armaVale : s.echipat.arma_primara;
     const arma = idArma ? inv.def(idArma) : null;
-    const idScut = def?.faraArme ? null : deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
+    const idScut = faraArme ? null : deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
     const scut = idScut ? inv.def(idScut) : null;
     const tipDeBaza = arma?.tipArma || 'pumni';
-    const tipArma = def?.faraArme ? 'pumni' : deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
+    const tipArma = faraArme ? 'pumni' : deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
       ...dupaArma(arma, scut, tipArma),
       id: 'vale',
@@ -121,8 +123,8 @@ export function creeazaLupta(parinte, joc) {
       viata: def?.test ? 100 : Math.round(s.nevoi.viata),
       viataMax: 100,
       staminaMax: cfg.vale.staminaMax,
-      armura: armuraDin(piese),
-      armuraMax: armuraDin(piese),
+      armura: def?.faraEchipament ? 0 : armuraDin(piese),
+      armuraMax: def?.faraEchipament ? 0 : armuraDin(piese),
       abilitati: [],
       // Vale obosit pornește cu bara goală, odihnit cu ea pe jumătate
       bara: s.nevoi.stamina < joc.date.config.nevoi.prag ? 0 : 50,
@@ -766,7 +768,7 @@ export function creeazaLupta(parinte, joc) {
         );
       }, !consumabile.length, consumabile.length ? '' : 'N-ai nimic de folosit în luptă'),
       // Doar Vale își schimbă arma: recruții au arma lor, din npcs.json
-      ...(f.id === 'vale' && !L.def.faraArme
+      ...(f.id === 'vale' && !L.def.faraArme && !L.def.faraEchipament
         ? [butonActiune('schimba_arma', '⟳', 'Schimbă arma', () => alegeArma(f), !armeInRucsac().length, armeInRucsac().length ? '' : 'N-ai altă armă în rucsac')]
         : []),
       butonActiune('schimba', '⇄', 'Schimbă locul', () => alegeLoc(f)),
@@ -805,11 +807,13 @@ export function creeazaLupta(parinte, joc) {
     const def = typeof idLupta === 'object' ? idLupta : joc.date.lupte?.lupte?.[idLupta];
     if (!def) return joc.mesaj(`Lupta „${idLupta}” nu există.`);
     const s = joc.stare;
-    // Muzica de luptă ține locul ambianței până se termină lupta
-    joc.sunet.muzica('lupta');
+    // Muzica de luptă ține locul ambianței până se termină lupta; „faraMuzica”: rămâne ambianța locului
+    // (bătaia cu bețivul, decis de autor: se aude tot muzica tavernei)
+    if (!def.faraMuzica) joc.sunet.muzica('lupta');
     const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
     // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
-    const aliati = (def.test ? ['vale'] : s.grup)
+    // „doarVale”: o bătaie unu la unu, fără grup (bețivul din tavernă, decis de autor)
+    const aliati = (def.test || def.doarVale ? ['vale'] : s.grup)
       .map((id) => (id === 'vale' ? luptatorVale(def) : personaje.get(id)?.lupta && { ...luptatorDinDate(id, personaje.get(id).lupta, personaje.get(id).nume), numeScurt: personaje.get(id).numeScurt }))
       .filter(Boolean);
     // Locurile libere se dau pe rând celor care nu au încă loc în formație
@@ -1016,7 +1020,7 @@ export function creeazaLupta(parinte, joc) {
     const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
     // Un jingle scurt la victorie și la înfrângere; la fugă revine direct ambianța
     if (rezultat === 'fuga') joc.sunet.muzica(null);
-    else joc.sunet.muzica(rezultat, { repetat: false });
+    else if (!L.def.faraMuzica) joc.sunet.muzica(rezultat, { repetat: false });
     L.elMeniu.hidden = true;
     // Rezultatul stă pe panoul mic (același ca la Dormi), peste câmpul de luptă
     const fundalRezultat = div('rezultat-lupta');

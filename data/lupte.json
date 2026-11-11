@@ -348,12 +348,7 @@
       "inamici": [
         {
           "id": "betiv",
-          "linie": 0,
-          "rand": "fata"
-        },
-        {
-          "id": "betiv",
-          "linie": 2,
+          "linie": 1,
           "rand": "fata"
         }
       ],
@@ -367,7 +362,11 @@
       "infrangere": {
         "text": "Te trezești pe podeaua tavernei, cu un cucui cât un ou și gust de bere vărsată în gură.",
         "efecte": {}
-      }
+      },
+      "doarVale": true,
+      "faraEchipament": true,
+      "faraMuzica": true,
+      "_nota": "Decis de autor: unu la unu, doar Vale și un bețiv, cu pumnii, fără armură; se aude tot muzica tavernei."
     },
     "bataie_orc_taraba": {
       "nume": "Bătaie cu doi orci",
