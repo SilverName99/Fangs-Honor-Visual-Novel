@@ -1886,22 +1886,25 @@ svg.zone {
 /* Pagina misiunii e text de sus în jos, nu schița centrată */
 .carte .pagina.dreapta.pagina-misiune {
   display: block;
-  padding-top: 90px;
-  padding-bottom: 50px;
 }
-/* Când textul nu încape pe pagină, se derulează (decis de autor), cu o bară subțire, în culorile cernelii */
+/* Când textul nu încape pe pagină, se derulează (decis de autor), cu o bară subțire, în culorile cernelii.
+   Se derulează doar interiorul, între marginile paginii, ca textul să nu treacă peste marginea de jos a cărții */
 .carte .pagina.dreapta.pagina-misiune,
 .carte .pagina.lista-misiuni {
+  overflow: hidden;
+}
+.derulare-carte {
+  height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(70, 45, 20, 0.55) transparent;
 }
-.carte .pagina.dreapta.pagina-misiune::-webkit-scrollbar,
-.carte .pagina.lista-misiuni::-webkit-scrollbar {
+.derulare-carte::-webkit-scrollbar {
   width: 10px;
 }
-.carte .pagina.dreapta.pagina-misiune::-webkit-scrollbar-thumb,
-.carte .pagina.lista-misiuni::-webkit-scrollbar-thumb {
+.derulare-carte::-webkit-scrollbar-thumb {
   background: rgba(70, 45, 20, 0.5);
   border-radius: 6px;
 }

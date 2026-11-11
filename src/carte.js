@@ -50,12 +50,20 @@ export function creeazaCarte(parinte, joc) {
     return p?.carte?.nume || p?.nume || id;
   };
 
+  // Conținutul unei pagini de misiuni stă într-un strat care se derulează între marginile paginii
+  function paginaDerulata(clasa) {
+    const pag = div(clasa);
+    const continut = div('derulare-carte');
+    pag.append(continut);
+    return { pag, continut };
+  }
+
   function paginaListaMisiuni({ inLucru, gata }) {
-    const pag = div('pagina stanga lista-misiuni');
+    const { pag: cadru, continut: pag } = paginaDerulata('pagina stanga lista-misiuni');
     pag.append(div('nume-carte', 'Misiuni'));
     if (!inLucru.length && !gata.length) {
       pag.append(div('descriere-carte', 'Încă n-am nicio misiune.'));
-      return pag;
+      return cadru;
     }
     const sectiune = (titlu, lista, clasa) => {
       if (!lista.length) return;
@@ -72,12 +80,12 @@ export function creeazaCarte(parinte, joc) {
     };
     sectiune('În lucru', inLucru, 'in-lucru');
     sectiune('Terminate', gata, 'terminata');
-    return pag;
+    return cadru;
   }
 
   function paginaMisiune(m) {
-    const pag = div('pagina dreapta pagina-misiune');
-    if (!m) return pag;
+    const { pag: cadru, continut: pag } = paginaDerulata('pagina dreapta pagina-misiune');
+    if (!m) return cadru;
     const s = joc.stare;
     const st = s.misiuni[m.id];
     const i = st === 'inceputa' ? pasul(s, m.id) : m.pasi.length;
@@ -97,14 +105,18 @@ export function creeazaCarte(parinte, joc) {
     if (st === 'terminata') pag.append(div('stare-misiune', 'Gata!'));
     if (st === 'ratata') pag.append(div('stare-misiune ratata', 'Ratată.'));
     if (m.recompensa?.text) pag.append(div('recompensa-misiune', `Recompensă: ${m.recompensa.text}`));
-    return pag;
+    return cadru;
   }
 
   function arataMisiunile() {
     const lista = misiuniCunoscute();
     const toate = [...lista.inLucru, ...lista.gata];
     if (!toate.some((m) => m.id === aleasa)) aleasa = toate[0]?.id ?? null;
+    // Lista rămâne derulată unde era (decis de autor: la alegerea unei misiuni nu sare înapoi sus)
+    const sus = el.querySelector('.lista-misiuni .derulare-carte')?.scrollTop || 0;
     el.querySelector('.carte').replaceChildren(paginaListaMisiuni(lista), paginaMisiune(toate.find((m) => m.id === aleasa)));
+    const lst = el.querySelector('.lista-misiuni .derulare-carte');
+    if (lst) lst.scrollTop = sus;
   }
 
   const max = () => joc.date.config.incredere?.max ?? 10;

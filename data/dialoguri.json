@@ -4573,104 +4573,6 @@
           }
         ]
       },
-      "b": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Mă ghemuiesc după zidul din spate, cu cărțile în brațe. Prin crăpătura dintre pietre îl văd pe colector intrând în curtea bisericii. Vorbește cu Elian încet, prea încet ca să înțeleg ceva.",
-        "imagine": "events/elian_carti_3.png",
-        "urmator": "b2"
-      },
-      "b2": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Elian clatină din cap. Colectorul se apleacă spre el. Apoi urlă, de răsună tot dealul:",
-        "urmator": "b3"
-      },
-      "b3": {
-        "vorbitor": "orc_colector",
-        "emotie": "suparat",
-        "text": "Nu mă minți, popă! Știu că ascunzi cărți vrăjitorești! Le găsesc eu, și-atunci te ard cu ele cu tot!",
-        "urmator": "b4"
-      },
-      "b4": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Elian nu spune nimic. Colectorul ridică bâta și îl lovește în stomac. Elian se îndoaie de mijloc, fără un sunet.",
-        "imagine": "events/elian_carti_4.png",
-        "urmator": "b5"
-      },
-      "b5": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Strâng cărțile la piept până mă dor degetele. Aș vrea să ies. Dar am promis.",
-        "urmator": "b6"
-      },
-      "b6": {
-        "vorbitor": "orc_colector",
-        "emotie": "rade",
-        "text": "Data viitoare caut și sub altar, popă. Și pe tine te caut.",
-        "imagine": "events/elian_carti_5.png",
-        "urmator": "b7"
-      },
-      "b7": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Colectorul scuipă în iarbă și pleacă. Elian rămâne în genunchi, cu o mână pe pământ, și respiră greu.",
-        "urmator": "b8"
-      },
-      "b8": {
-        "vorbitor": "vale",
-        "emotie": "speriat",
-        "text": "Elian! Te-a lovit rău?",
-        "imagine": "events/elian_carti_6.png",
-        "urmator": "b9"
-      },
-      "b9": {
-        "vorbitor": "mag",
-        "emotie": "ranit",
-        "text": "Am mai fost lovit... Lasă. Cărțile, Vale. Le-ai păstrat?",
-        "urmator": "b10"
-      },
-      "b10": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Toate trei. Nu le-a văzut nimeni.",
-        "urmator": "b11"
-      },
-      "b11": {
-        "vorbitor": "mag",
-        "emotie": "ranit",
-        "text": "Atunci n-a fost degeaba.",
-        "urmator": "b12"
-      },
-      "b12": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Ce e în ele, de le caută colectorul așa?",
-        "urmator": "b13"
-      },
-      "b13": {
-        "vorbitor": "mag",
-        "emotie": "normal",
-        "text": "Lucruri vechi, scrise de oameni care nu mai sunt. Unele lucruri trebuie păstrate, chiar dacă nu le mai înțelege nimeni. Mulțumesc, Vale. N-o să uit asta.",
-        "urmator": "b14"
-      },
-      "b14": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Își ia cărțile, se ridică încet, sprijinindu-se de zid, și intră în biserică. Ușa se închide în urma lui.",
-        "efecte": {
-          "stare": {
-            "carti_elian": "ascunse"
-          }
-        }
-      },
       "r": {
         "vorbitor": "mag",
         "emotie": "speriat",
@@ -4689,6 +4591,187 @@
           },
           "misiune": {
             "elian_carti": "ratata"
+          }
+        }
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă ghemuiesc după zidul din spate, cu cărțile în brațe. Piatra e rece, iar inima îmi bate atât de tare, că mi-e frică să nu mă audă.",
+        "imagine": "events/elian_carti_3.png",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Prin crăpătura dintre pietre îl văd pe colector intrând în curtea bisericii. Merge încet, cu bâta pe umăr, ca un om care știe că nimeni nu-l poate opri.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se oprește în fața lui Elian și îi vorbește încet. Prea încet ca să prind vreun cuvânt. Elian ține mâinile împreunate și privește în pământ.",
+        "urmator": "b4"
+      },
+      "b4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cărțile astea miros a praf și a ceară de lumânare. Una are pe copertă un semn ciudat, ca un soare cu raze frânte. N-am mai văzut așa ceva.",
+        "urmator": "b5"
+      },
+      "b5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian clatină din cap. O dată. De două ori. Colectorul se apleacă spre el, până aproape îi atinge fața. Apoi urlă, de răsună tot dealul:",
+        "urmator": "b6"
+      },
+      "b6": {
+        "vorbitor": "orc_colector",
+        "emotie": "suparat",
+        "text": "Nu mă minți, popă! Știu că ascunzi cărți vrăjitorești! Le găsesc eu, și-atunci te ard cu ele cu tot!",
+        "urmator": "b7"
+      },
+      "b7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cărți vrăjitorești? Strâng cărțile mai tare la piept, fără să vreau. Elian nu răspunde nimic. Nici măcar nu ridică ochii.",
+        "urmator": "b8"
+      },
+      "b8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Colectorul își pierde răbdarea. Ridică bâta și îl lovește pe Elian în stomac, cu toată greutatea lui.",
+        "imagine": "events/elian_carti_4.png",
+        "urmator": "b9"
+      },
+      "b9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian se îndoaie de mijloc, fără un sunet. Doar un șuierat scurt, când aerul îi iese din piept.",
+        "urmator": "b10"
+      },
+      "b10": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Asta-i doar o mângâiere, popă. Data viitoare nu mai întreb.",
+        "urmator": "b11"
+      },
+      "b11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îmi înfig unghiile în copertă. Aș putea ieși. Aș putea să-i sar în spate, să-i smulg bâta... și apoi ce? Mâine ar arde biserica. Și poate și casa noastră.",
+        "urmator": "b12"
+      },
+      "b12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Am promis. Am promis că nu ies, orice s-ar întâmpla. Abia acum înțeleg de ce m-a pus să promit.",
+        "urmator": "b13"
+      },
+      "b13": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Data viitoare caut și sub altar, popă. Și pe tine te caut.",
+        "imagine": "events/elian_carti_5.png",
+        "urmator": "b14"
+      },
+      "b14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Colectorul scuipă în iarbă și pleacă spre sat, fluierând, cu bâta pe umăr. Nici nu se uită înapoi.",
+        "urmator": "b15"
+      },
+      "b15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian rămâne în genunchi, cu o mână pe pământ. Respiră greu, apăsat. Dar buzele i se mișcă. Se roagă? Acum?",
+        "urmator": "b16"
+      },
+      "b16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Aștept până nu se mai aude fluieratul. Apoi încă puțin. Abia atunci ies din spatele zidului.",
+        "urmator": "b17"
+      },
+      "b17": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Elian! Te-a lovit rău?",
+        "imagine": "events/elian_carti_6.png",
+        "urmator": "b18"
+      },
+      "b18": {
+        "vorbitor": "mag",
+        "emotie": "ranit",
+        "text": "Am mai fost lovit... Lasă. Cărțile, Vale. Le-ai păstrat?",
+        "urmator": "b19"
+      },
+      "b19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Toate trei. Nu le-a văzut nimeni.",
+        "urmator": "b20"
+      },
+      "b20": {
+        "vorbitor": "mag",
+        "emotie": "ranit",
+        "text": "Atunci n-a fost degeaba.",
+        "urmator": "b21"
+      },
+      "b21": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce e în ele, de le caută colectorul așa?",
+        "urmator": "b22"
+      },
+      "b22": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lucruri vechi, scrise de oameni care nu mai sunt. Unele lucruri trebuie păstrate, chiar dacă nu le mai înțelege nimeni. Mulțumesc, Vale. N-o să uit asta.",
+        "urmator": "b23"
+      },
+      "b23": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Își ia cărțile, se ridică încet, sprijinindu-se de zid, și intră în biserică. Ușa se închide în urma lui.",
+        "urmator": "b24"
+      },
+      "b24": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rămân singur în curte. „Cărți vrăjitorești”, a zis orcul. Iar Elian a încasat bâta în burtă fără să clipească, doar ca să nu le găsească.",
+        "urmator": "b25"
+      },
+      "b25": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ce fel de cărți păzește un preot cu atâta încăpățânare? Ce scrie în ele, de prețuiesc mai mult decât propria lui piele? Și semnul acela de pe copertă... soarele cu raze frânte.",
+        "urmator": "b26"
+      },
+      "b26": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Poate că Fratele Elian nu e doar un preot care citește pe scări. Sau poate văd eu fantome ziua-n amiaza mare.",
+        "efecte": {
+          "stare": {
+            "carti_elian": "ascunse"
           }
         }
       }

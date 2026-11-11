@@ -1105,6 +1105,8 @@ document.addEventListener('fullscreenchange', () => afiseaza());
 
 // Semnele misiunilor în afara dialogului (decis de autor): ! / ? deasupra personajului din scenă și deasupra
 // clădirii (sau ușii) unde e el acum, ca să știi la cine să mergi fără să deschizi cartea. Se pot opri din Opțiuni
+// Cât de jos stă cel puțin semnul „!”/„?”, ca să încapă întreg pe imagine (e înalt cam cât atât, cu plutirea lui)
+const SEMN_SUS_MIN = 115;
 function puneSemneMisiuni(d, r, ctx, prezenti) {
   if (!semneMisiuniPornite()) return;
   const semne = new Map();
@@ -1145,13 +1147,15 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
     const piesa = d.obiecte.find((o) => o.tinta === t.id && r.obiecte.get(o.id)?.isConnected);
     if (piesa) {
       const el = r.obiecte.get(piesa.id);
-      pune(el.parentElement, el.style.left, `calc(${el.style.top} - ${el.style.height})`, semn);
+      // O clădire lipită de marginea de sus a hărții (biserica) ar împinge semnul afară din imagine: atunci coboară
+      // peste clădire, cât să se vadă întreg (decis de autor)
+      pune(el.parentElement, el.style.left, `max(calc(${el.style.top} - ${el.style.height}), ${(SEMN_SUS_MIN / INALTIME) * 100}%)`, semn);
       continue;
     }
     const poligon = r.poligoane.get(t.id);
     if (!poligon?.isConnected) continue;
     const b = poligon.getBBox();
-    pune(stratLume, `${((b.x + b.width / 2) / LATIME) * 100}%`, `${(b.y / INALTIME) * 100}%`, semn);
+    pune(stratLume, `${((b.x + b.width / 2) / LATIME) * 100}%`, `max(${(b.y / INALTIME) * 100}%, ${(SEMN_SUS_MIN / INALTIME) * 100}%)`, semn);
   }
 }
 
