@@ -1501,7 +1501,7 @@
     "optiuni": [
       {
         "_nota": "Decis de autor: după misiune, Elian face oricând un pansament din 3 fire de sunătoare, pe ecranul de schimb.",
-        "text": "Schimburi (sunătoare pentru pansamente)",
+        "text": "Schimburi",
         "conditii": {
           "misiune": {
             "elian_ierburi": "terminata"

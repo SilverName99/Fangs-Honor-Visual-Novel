@@ -1046,7 +1046,25 @@ svg.zone {
   flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
+  /* Doar în jos (decis de autor): fără derulare stânga-dreapta */
+  overflow-x: hidden;
   align-content: start;
+  /* Bara de derulare ca la meniu (decis de autor): subțire, aurie, nu cea albă a browserului */
+  scrollbar-width: thin;
+  scrollbar-color: #c9a24f rgba(0, 0, 0, 0.35);
+  padding-right: 8px;
+}
+.grila-marfa::-webkit-scrollbar {
+  width: 10px;
+}
+.grila-marfa::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+}
+.grila-marfa::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #e2b65a, #9a6a24);
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.35);
 }
 .marfa {
   display: flex;
@@ -2933,6 +2951,8 @@ svg.zone {
   padding: 10px;
   border-radius: 12px;
   cursor: pointer;
+  /* Rândul nu iese din foaie (altfel apărea derularea stânga-dreapta) */
+  min-width: 0;
 }
 .schimb:hover,
 .schimb.selectat {
@@ -2944,8 +2964,10 @@ svg.zone {
 }
 .parte-schimb {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  min-width: 0;
 }
 .schimb .marfa {
   width: 130px;
