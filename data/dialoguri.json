@@ -4139,126 +4139,271 @@
     }
   },
   "finn_vindecare": {
-    "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn”: Elian face ceaiul, mama îl bea, apoi Finn îi dă lui Vale cheia contrabandistului (decis de autor: Finn lucrează în secret pentru el).",
+    "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn”, peste 4 imagini (decis de autor): sosirea la casă, ceaiul, Marta bea, cheia afară. Finn lucrează în secret pentru Jarek (decis de autor).",
     "grup": "Finn: mama",
     "partener": "mag",
     "start": "a",
     "noduri": {
       "a": {
-        "vorbitor": "hot",
-        "emotie": "speriat",
-        "text": "Preotul? Chiar ai venit?",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn ne așteaptă la capătul potecii din spatele gardurilor, cu o lumânare ascunsă în palmă. Când îl vede pe Elian, se oprește în loc.",
         "imagine": "events/finn_vindecare_1.png",
         "urmator": "a2"
       },
       "a2": {
-        "vorbitor": "mag",
-        "emotie": "normal",
-        "text": "Am venit pentru mama ta, Finn. Pune apă la fiert. Nu clocotită, doar să fumege.",
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Chiar ai venit... Iertați-mă, părinte. Nu credeam că un preot calcă vreodată pe aici.",
         "urmator": "a3"
       },
       "a3": {
-        "vorbitor": "vale",
-        "gand": true,
+        "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Elian rupe petalele una câte una și le lasă să cadă în apă. Mirosul de lămâie umple casa. Sora lui Finn se uită ca la o vrăjitorie.",
+        "text": "Pe aici calcă oameni, Finn. Iar eu sunt doar unul dintre ei. Unde e mama ta?",
         "urmator": "a4"
       },
       "a4": {
-        "vorbitor": "sora_finn",
-        "emotie": "speriat",
-        "text": "Florile alea o fac bine pe mama?",
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Înăuntru. A început iar. Tușește de la apus și nu se mai oprește.",
         "urmator": "a5"
       },
       "a5": {
-        "vorbitor": "mag",
+        "vorbitor": "vale",
+        "gand": true,
         "emotie": "normal",
-        "text": "Florile o ajută. Restul îl face ea. Iar noi ne rugăm să aibă putere.",
+        "text": "Din casă se aude tusea. Seacă, adâncă, de parcă i-ar rupe pieptul. Elian își strânge traista la piept și grăbește pasul.",
         "urmator": "a6"
       },
       "a6": {
-        "vorbitor": "mag",
+        "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Bea încet. Câte o gură. Nu te grăbi, avem toată noaptea.",
-        "imagine": "events/finn_vindecare_2.png",
+        "text": "Elian, dacă te vede cineva pe drumul ăsta, la ora asta...",
         "urmator": "a7"
       },
       "a7": {
-        "vorbitor": "mama_finn",
-        "emotie": "ranit",
-        "text": "E... cald. Îmi coboară până în piept.",
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Atunci o să vadă un preot care se duce la o bolnavă. Asta fac preoții, Vale. Haideți. Febra nu așteaptă după noi.",
         "urmator": "a8"
       },
       "a8": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Elian îi pune mâna pe frunte și se roagă în șoaptă. Pentru o clipă, mi se pare că flacăra lumânării se face mai albă, mai caldă. Clipesc, și e iar o lumânare obișnuită. Oboseala, probabil.",
+        "vorbitor": "sora_finn",
+        "emotie": "speriat",
+        "text": "Finn! Cine-i domnul? E doctor?",
+        "imagine": "events/finn_vindecare_2.png",
         "urmator": "a9"
       },
       "a9": {
-        "vorbitor": "vale",
-        "gand": true,
+        "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Tusea se rărește. Apoi se oprește. Mama lui Finn închide ochii și respiră adânc, liniștit, pentru prima oară de când o știu.",
+        "text": "E preot, Lina. Fratele Elian. A venit s-o facă bine pe mama.",
         "urmator": "a10"
       },
       "a10": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Febra a scăzut. Câte o cană în fiecare seară, o săptămână. Las florile uscate pe masă și mai trec eu pe aici.",
+        "text": "Bună seara, Lina. Mă ajuți? Am nevoie de cineva cu mâini mici și atente. Adu-mi oala aceea de lut și apă curată.",
         "urmator": "a11"
       },
       "a11": {
-        "vorbitor": "mama_finn",
+        "vorbitor": "vale",
+        "gand": true,
         "emotie": "normal",
-        "text": "Dumnezeu să vă țină, părinte. Și pe tine, Vale.",
+        "text": "Lina aleargă după oală de parcă i s-ar fi dat cea mai importantă misiune din lume.",
         "urmator": "a12"
       },
       "a12": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Pe mine să nu mă pomenești nimănui, doamnă. Un preot care umblă noaptea prin sat dă de vorbit. Noapte bună.",
+        "text": "Finn, pune apa la foc. Nu clocotită, doar să fumege. Dacă fierbe, florile își pierd puterea.",
         "urmator": "a13"
       },
       "a13": {
-        "vorbitor": "hot",
+        "vorbitor": "vale",
+        "gand": true,
         "emotie": "normal",
-        "text": "Vale. Stai puțin. Afară.",
-        "imagine": "events/finn_vindecare_3.png",
+        "text": "Elian rupe petalele una câte una și le lasă să cadă în apă. Mirosul de lămâie umple casa și, pentru o clipă, acoperă mirosul de boală.",
         "urmator": "a14"
       },
       "a14": {
-        "vorbitor": "hot",
-        "emotie": "normal",
-        "text": "Ți-am spus că am furat ca să-i hrănesc. E adevărat. Dar nu ți-am spus tot.",
+        "vorbitor": "sora_finn",
+        "emotie": "speriat",
+        "text": "Florile alea o fac bine pe mama?",
         "urmator": "a15"
       },
       "a15": {
-        "vorbitor": "hot",
+        "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Lucrez pentru cineva. Jarek, contrabandistul de lângă gard. Duc vorbe, car lucruri pe poteca de lângă zid, unde orcii nu se uită. Mă plătește puțin și rar. De-aia am ajuns la butuc.",
+        "text": "Florile o ajută. Restul îl face ea. Noi doar îi dăm putere să lupte.",
         "urmator": "a16"
       },
       "a16": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "De ce-mi spui asta acum?",
+        "text": "Cum ai învățat toate astea, Elian? Plantele, bolile...",
         "urmator": "a17"
       },
       "a17": {
-        "vorbitor": "hot",
+        "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Pentru că ai stat lângă mama toată noaptea. Pentru că ai adus un preot la casa unui hoț. Pe tine nu te mai mint.",
+        "text": "Din cărți vechi. Și din greșeli. Un preot vede mulți bolnavi, Vale. Unele lucruri le înveți vrând-nevrând.",
         "urmator": "a18"
       },
       "a18": {
-        "vorbitor": "hot",
+        "vorbitor": "vale",
+        "gand": true,
         "emotie": "normal",
-        "text": "Ia cheia. E a cocioabei lui. Intri seara, stai pe scăunel și aștepți. Dacă se convinge că nu te-a urmărit nimeni, vine. Spune-i că Finn te-a trimis.",
+        "text": "O spune zâmbind, dar privirea îi fuge spre foc. Parcă ar fi vrut să spună altceva.",
         "urmator": "a19"
       },
       "a19": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Doamnă, eu sunt Fratele Elian. Bea încet, câte o gură. Nu te grăbi, avem toată noaptea.",
+        "imagine": "events/finn_vindecare_3.png",
+        "urmator": "a20"
+      },
+      "a20": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "Părinte... n-am cu ce să vă plătesc.",
+        "urmator": "a21"
+      },
+      "a21": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu mi-ai cerut nimic, deci nici nu-mi datorezi nimic. Bea.",
+        "urmator": "a22"
+      },
+      "a22": {
+        "vorbitor": "mama_finn",
+        "emotie": "ranit",
+        "text": "E... cald. Îmi coboară până în piept.",
+        "urmator": "a23"
+      },
+      "a23": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian îi pune mâna pe frunte și se roagă în șoaptă. Pentru o clipă, flacăra lumânării se face mai albă, mai caldă. Clipesc, și e iar o lumânare obișnuită. Oboseala, probabil.",
+        "urmator": "a24"
+      },
+      "a24": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stăm toți în tăcere. Lina s-a ghemuit lângă pat, cu capul pe pătură. Finn nu-și ia ochii de la mama lui.",
+        "urmator": "a25"
+      },
+      "a25": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tusea se rărește. Apoi se oprește. Marta închide ochii și respiră adânc, liniștit, pentru prima oară de când o știu.",
+        "urmator": "a26"
+      },
+      "a26": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Finn... mama doarme. Doarme și nu tușește!",
+        "urmator": "a27"
+      },
+      "a27": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Văd, Lina. Văd.",
+        "urmator": "a28"
+      },
+      "a28": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Febra a scăzut. O cană în fiecare seară, o săptămână. Las florile uscate pe masă și mai trec eu pe aici.",
+        "urmator": "a29"
+      },
+      "a29": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Dumnezeu să vă țină, părinte. Și pe tine, Vale. Tatăl tău ar fi fost mândru de tine.",
+        "urmator": "a30"
+      },
+      "a30": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pe mine să nu mă pomenești nimănui, doamnă. Un preot care umblă noaptea prin sat dă de vorbit. Noapte bună.",
+        "urmator": "a31"
+      },
+      "a31": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian își strânge traista și pleacă singur, pe poteca din spatele gardurilor. Nu se uită înapoi.",
+        "urmator": "a32"
+      },
+      "a32": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale. Stai puțin. Afară.",
+        "imagine": "events/finn_vindecare_4.png",
+        "urmator": "a33"
+      },
+      "a33": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ți-am spus că am furat ca să-i hrănesc. E adevărat. Dar nu ți-am spus tot.",
+        "urmator": "a34"
+      },
+      "a34": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lucrez pentru cineva. Jarek, contrabandistul de lângă gard. Duc vorbe, car lucruri pe poteca de lângă zid, unde orcii nu se uită. Mă plătește puțin și rar. De-aia am ajuns la butuc.",
+        "urmator": "a35"
+      },
+      "a35": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și seara, când nu ești acasă... acolo ești?",
+        "urmator": "a36"
+      },
+      "a36": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Acolo. Lina crede că muncesc la vreun fermier. Mama... mama știe. Nu zice nimic, dar știe.",
+        "urmator": "a37"
+      },
+      "a37": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De ce-mi spui asta acum?",
+        "urmator": "a38"
+      },
+      "a38": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Pentru că ai stat lângă mama toată seara. Pentru că ai adus un preot la casa unui hoț. Pe tine nu te mai mint.",
+        "urmator": "a39"
+      },
+      "a39": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ia cheia. E a cocioabei lui. Intri seara, stai pe scăunel și aștepți. Dacă se convinge că nu te-a urmărit nimeni, vine. Spune-i că Finn te-a trimis.",
+        "urmator": "a40"
+      },
+      "a40": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă nu-i place de mine?",
+        "urmator": "a41"
+      },
+      "a41": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lui Jarek nu-i place de nimeni. Dar face afaceri cu oricine. Ai grijă cu el, Vale.",
+        "urmator": "a42"
+      },
+      "a42": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
