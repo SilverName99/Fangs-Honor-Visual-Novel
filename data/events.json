@@ -969,6 +969,54 @@
         "timp": 120
       },
       "dialog": "finn_vindecare"
+    },
+    {
+      "id": "elian_carti",
+      "nume": "Cărțile lui Elian",
+      "grup": "Elian: cărțile",
+      "_nota": "Decis de autor: după cel puțin 7 zile, următoarea dată când Elian citește afară. Ales de Claude: 14–18, cât colectorul e în rondul lui prin sat; și abia după ce l-ai cunoscut pe Elian.",
+      "conditii": {
+        "loc": "biserica",
+        "prezent": "mag",
+        "zi": {
+          "min": 8
+        },
+        "cunoscutDeZile": {
+          "mag": 1
+        },
+        "ora": {
+          "min": "14:00",
+          "max": "17:59"
+        }
+      },
+      "repetare": "o_data",
+      "dialog": "elian_carti"
+    },
+    {
+      "id": "finn_lada",
+      "nume": "Lada colectorului",
+      "grup": "Finn: lada colectorului",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "finn_lada",
+      "furisare": [
+        {
+          "pas": 2,
+          "imagine": "events/finn_lada_2.png"
+        },
+        {
+          "pas": 3,
+          "imagine": "events/finn_lada_3.png"
+        },
+        {
+          "pas": 4,
+          "imagine": "events/finn_lada_4.png"
+        }
+      ],
+      "_nota": "Decis de autor: furișatul pe 3 imagini, cu câte două locuri desenate în editor (Aranjare → Ecrane → „Furișatul …”)."
     }
   ]
 }

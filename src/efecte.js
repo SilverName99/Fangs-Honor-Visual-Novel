@@ -43,6 +43,13 @@ const efecte = {
       const ev = joc.inventar.def(id)?.evenimentRecuperat;
       if (ev) joc.pornesteEvenimentDupa(ev);
     }),
+  // Tot ce au luat orcii (pedepsele), recăpătat din lada colectorului (misiunea lui Finn). Lucrurile de poveste
+  // care au o întâmplare a lor la recuperare (fierul lui Bram) rămân la orci: se iau înapoi doar pe drumul lor
+  recupereazaConfiscate: (v, joc) =>
+    [...joc.stare.confiscate].filter((id) => !joc.inventar.def(id)?.evenimentRecuperat).forEach((id) => efecte.recupereaza(id, joc)),
+  // Furișatul (misiunea lui Finn, decis de autor): după replică, pe imagine, două locuri desenate de autor;
+  // unul e sigur, celălalt îl alertează pe orc. Discuția continuă de la „reusit” sau de la „esuat”
+  furisare: (v, joc) => joc.furisare(v),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   // „consuma: { lemn: 10 }” = Vale dă (sau folosește) atâtea bucăți din rucsac
   consuma: (v, joc) => Object.entries(v).forEach(([id, n]) => joc.inventar.scoateOriunde(id, n)),

@@ -301,10 +301,15 @@ export function creeazaActiuni(parinte, joc) {
     gand: (a) => joc.gand(Array.isArray(a.text) ? a.text[Math.floor(Math.random() * a.text.length)] : a.text),
     // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
     // „cand”: condițiile fără de care Vale doar se gândește („gandCand”): contrabandistul vine doar 18–02
-    eveniment: (a) =>
-      a.cand && !verifica(a.cand, context(joc.stare))
-        ? joc.gand(a.gandCand || 'Nu e momentul potrivit.')
-        : joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel)),
+    // „cand” poate fi și o listă { conditii, gand }: primul neîndeplinit spune de ce nu (lada colectorului: doar
+    // noaptea, și nu chiar în noaptea în care i-a văzut orcul)
+    eveniment: (a) => {
+      const ctx = context(joc.stare);
+      const cand = Array.isArray(a.cand) ? a.cand : a.cand ? [{ conditii: a.cand, gand: a.gandCand }] : [];
+      const opreste = cand.find((c) => !verifica(c.conditii, ctx));
+      if (opreste) return joc.gand(opreste.gand || 'Nu e momentul potrivit.');
+      return joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel));
+    },
     lupta: (a) => {
       if (joc.avanseaza(a.minute || 0)) return;
       joc.pornesteLupta(a.lupta);
@@ -313,6 +318,7 @@ export function creeazaActiuni(parinte, joc) {
 
   return {
     munca,
+    mini,
     executa(a) {
       const f = tipuri[a.tip];
       if (f) f(a);

@@ -1,6 +1,7 @@
 import { elementImagine } from './imagini.js';
 import { iconita } from './ecranInventar.js';
-import { LATIME, INALTIME, pozitie, aplicaPozitie } from './scena.js';
+import { LATIME, INALTIME, pozitie, aplicaPozitie, randeaza } from './scena.js';
+import { context } from './stare.js';
 
 // Mini-jocurile de la muncă și de la cules (decis de autor): fiecare stă pe tot ecranul, peste imaginea muncii,
 // și întoarce un scor. Se pot opri din Opțiuni; atunci munca dă cât dădea înainte (codul din actiuni.js).
@@ -347,5 +348,34 @@ export function creeazaMiniJocuri(parinte, joc) {
     return { corecte, gresite };
   }
 
-  return { cerc, arat, muls, moara, culege };
+  // Furișatul (decis de autor, lada colectorului): imaginea pasului, cu cele două locuri desenate de autor în editor
+  // (Aranjare → Ecrane → „Furișatul …”), „sigur” și „periculos”. Arată la fel, ca jucătorul să aleagă după ce vede
+  // în imagine (lumina torței, orcul). Până sunt desenate, două butoane. Întoarce „sigur” sau „periculos”
+  async function furisare(idEcran, indemn) {
+    const d = joc.lume.get(idEcran);
+    const el = div('mini-joc mini-furis');
+    const strat = div('strat-lume');
+    el.append(strat);
+    parinte.append(el);
+    const { poligoane } = randeaza(strat, d, joc.date.aranjare[idEcran], context(joc.stare));
+    const sus = div('mini-sus');
+    sus.append(div('mini-indemn', indemn || 'Pe unde o iei?'));
+    el.append(sus);
+    const ales = await new Promise((r) => {
+      if (poligoane.has('sigur') && poligoane.has('periculos')) {
+        for (const [id, p] of poligoane) {
+          p.classList.add('vizibila');
+          p.addEventListener('click', (e) => (e.stopPropagation(), r(id)));
+        }
+        return;
+      }
+      const jos = div('mini-butoane-furis');
+      jos.append(buton('Pe aici e sigur (zona nedesenată)', () => r('sigur')), buton('Pe aici te vede orcul (zona nedesenată)', () => r('periculos')));
+      el.append(jos);
+    });
+    el.remove();
+    return ales;
+  }
+
+  return { cerc, arat, muls, moara, culege, furisare };
 }

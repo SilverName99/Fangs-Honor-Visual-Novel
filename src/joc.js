@@ -512,6 +512,16 @@ function pornesteEvenimentDupa(id) {
   setTimeout(() => pornesteEveniment(id), 0);
 }
 
+// Furișatul (lada colectorului): după replica de pe imagine, Vale alege pe unde o ia; discuția continuă de la nodul
+// potrivit. Cu mini-jocurile oprite din Opțiuni, trece singur (ca la celelalte, fără risc)
+function furisare(v) {
+  setTimeout(async () => {
+    const r = miniJocuriPornite() ? await actiuni.mini.furisare(`furis_${v.eveniment}_${v.pas}`, v.indemn) : 'sigur';
+    const d = dialoguri[v.dialog];
+    if (d) dialog.porneste(d, { delaNod: r === 'sigur' ? v.reusit : v.esuat });
+  }, 0);
+}
+
 function activeaza(tinta, ctx) {
   // Un loc poate avea mai multe lacăte, fiecare cu gândul lui (camera fierarului: fără cheie / el doarme);
   // primul care nu e îndeplinit spune de ce nu se intră
@@ -656,6 +666,7 @@ const joc = {
   mergi,
   pornesteEveniment,
   pornesteEvenimentDupa,
+  furisare,
   vanatoareCu,
   luptaVanatoare,
   sumaTaxa,

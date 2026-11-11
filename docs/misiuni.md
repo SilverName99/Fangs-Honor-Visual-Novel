@@ -17,6 +17,27 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
 
+## Încrederea: de unde vine fiecare punct
+
+**Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Câteva dintre ele se pot **rata** (o alegere greșită, un refuz), iar recrutarea se face de la **8/10**, deci jucătorul are voie să piardă cel mult 2 puncte. La Miriam, Agnes și fermier (nu se recrutează), 10/10 deschide o misiune specială.
+
+Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
+
+| Personaj | De unde vine +1 | Acum |
+|---|---|---|
+| **Miriam** | ✅ Acoperișul · 📝 Cina în familie (de decis dacă dă) · 💡 încă 8 | 1 / 10 |
+| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · 📝 Locul unde a căzut tata · 📝 Antrenamentul · 💡 încă 7 (Hârtiile soldatului nu dau, decis) | 1 / 10 |
+| **Bram** | ✅ Fierul lui Bram · 📝 Foalele stricate · 📝 Cheia camerei · 💡 încă 7 | 1 / 10 |
+| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · 💡 încă 8 | 2 / 10 |
+| **Agnes** | ✅ Camera de sus · ✅ Berea · ✅ Pivnița · 💡 încă 7 | 3 / 10 |
+| **Fermierul** | 💡 toate 10 (patrula de orci nu dă, decis: încrederea vine doar din misiuni) | 0 / 10 |
+| **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
+
+**De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️”.
+
+---
+
 ## Cum testezi (panoul debug)
 
 În editor, la **Testare**, apasă **F2** pentru panoul debug. Butoanele de care ai nevoie:
@@ -146,8 +167,15 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ➡️ Bolnavul
 - A devenit misiunea lui Finn **„Mama lui Finn”** (decis de autor; Elian e foarte implicat și primește și el încredere +1). Vezi la Finn.
 
-### 📝 Cărțile
-- Orcii vor să percheziționeze biserica; Vale îl ajută pe Elian să ascundă niște cărți vechi. Primul semn că preotul ascunde ceva.
+### ✅ Cărțile
+- **Pornește singură** (decis de autor): după cel puțin 7 zile (din ziua 8), următoarea dată când mergi la biserică și Elian citește afară. Ales de Claude: doar 14–18 (cât colectorul își face rondul prin sat) și abia după ce l-ai cunoscut pe Elian.
+- **Imaginile** (decis de autor): (1) Elian vine agitat, cu 3 cărți în brațe; (2) te roagă să le iei și să te ascunzi după biserică, orice s-ar întâmpla. Alegi:
+  - **le iei** (misiunea pornește): (3) din spatele bisericii, colectorul vorbește cu Elian, se aude doar ce strigă el; (4) colectorul îl lovește pe Elian cu bâta în stomac; (5) Elian în genunchi, colectorul pleacă; (6) mergi la Elian: îți mulțumește, își ia cărțile și intră în biserică. **Încrederea lui Elian +1.**
+  - **refuzi:** o singură imagine, Elian fuge mai departe cu cărțile; misiunea apare în carte ca **ratată**, fără încredere.
+- Primul semn că Elian ascunde ceva: colectorul strigă de „cărți vrăjitorești” (ciornă).
+- **Imagini:** `events/elian_carti_1.png` … `elian_carti_6.png`, `elian_carti_refuz.png` (galeria: „Elian: cărțile”).
+
+**Cum verifici:** din ziua 8, 14:00–17:59, intră pe imaginea bisericii (Elian e afară) → evenimentul pornește singur. Pentru a doua variantă: F2 → „Resetează” la misiune (sau joc nou).
 
 ### 💡 Secretul lui Elian
 - După „Cărțile” (poate încă una). Idee: Vale și Roderick luptă cu ceva prea puternic, iar Elian apare, îi apără cu un scut de lumină și le reface viața. De discutat.
@@ -337,8 +365,16 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 **Cum verifici:** pornește misiunea la Finn; la Elian, „Frate Elian, am nevoie...”; seara, în pădure, „Caută luminița-nopții” (sau F2 → Obiect: 3 Luminiță-nopții); seara la Elian, „Am adus luminița-nopții” → „Hai la Finn” → cele 3 imagini → cheia în inventar, la obiectele de poveste. Apoi, la Marginea satului, cocioaba se deschide; înăuntru, seara (18–02), „Scăunelul” → 30 de minute → contrabandistul și marfa lui.
 
-### 📝 Lada colectorului
-- Seara, cu hoțul, Vale recuperează bani și alte lucruri de la orcul colector. Nu ajută la lupta finală: ajută sătenii.
+### ✅ Lada colectorului
+- **Pornește** (decis de autor): după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?” → „Sunt cu tine.” Colectorul ține banii taxei într-o ladă, la poartă; noaptea pleacă, paznicul doarme, rămâne doar un orc cu o torță.
+- **Pasul:** după miezul nopții (23–03, ales de Claude), pe imaginea casei lui Finn (afară): „Pleacă cu Finn spre poartă”.
+- **Imaginile** (decis de autor): (1) vă apropiați de poartă; (2), (3), (4) **furișatul**: pe fiecare imagine sunt două locuri, unul sigur, celălalt îl alertează pe orc (le desenezi tu în editor, la Aranjare → Ecrane → „Furișatul: Lada colectorului (1/2/3)”, zonele „Pe aici e sigur” și „Pe aici te vede orcul”; arată la fel, deci jucătorul alege după ce vede în imagine, de exemplu lumina torței); (5) Finn deschide lada și puneți totul în sac; (6) plecați cu sacul.
+- **Greșit** la oricare pas: imaginea fugii (`finn_lada_esec.png`), orcul se uită din depărtare; încerci din nou abia noaptea următoare.
+- **Recompensa:** încrederea lui Finn +1, 30 de monede (`TODO` echilibru) și **tot ce au luat orcii la pedepse** (afară de fierul lui Bram, care are drumul lui). Jumătate din bani îi împarte Finn oamenilor de la margine.
+- Cu mini-jocurile oprite din Opțiuni, furișatul trece singur.
+- **Imagini:** `events/finn_lada_1.png` … `finn_lada_6.png`, `finn_lada_esec.png` (galeria: „Finn: lada colectorului”).
+
+**Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → „Pleacă cu Finn spre poartă”. Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
 
 ---
 

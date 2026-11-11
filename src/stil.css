@@ -3229,3 +3229,24 @@ svg.zone {
 .luptator.otravit .corp {
   filter: sepia(0.4) hue-rotate(50deg) saturate(1.6);
 }
+
+/* Furișatul (lada colectorului): cele două locuri strălucesc la fel, mai tare cu mouse-ul deasupra */
+.mini-furis .strat-lume {
+  position: absolute;
+  inset: 0;
+}
+.mini-furis .zona-clic.vizibila {
+  stroke-opacity: 0.35;
+}
+.mini-furis .zona-clic:hover {
+  stroke-opacity: 1;
+}
+.mini-butoane-furis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}

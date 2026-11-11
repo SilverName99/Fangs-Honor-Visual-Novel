@@ -653,6 +653,72 @@
           }
         }
       }
+    },
+    {
+      "id": "elian_carti",
+      "titlu": "Cărțile",
+      "dela": "mag",
+      "dialog": "elian_carti",
+      "descriere": "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian mi le-a dat să le ascund și m-a pus să promit că nu ies, orice s-ar întâmpla.",
+      "pasi": [
+        {
+          "text": "Ascund cărțile lui Elian de colector",
+          "gata": {
+            "stare": {
+              "carti_elian": "ascunse"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Elian +1.",
+        "efecte": {
+          "relatie": {
+            "mag": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "finn_lada",
+      "titlu": "Lada colectorului",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": "CIORNĂ: Colectorul ține banii taxei într-o ladă, la poartă. Noaptea, cu Finn, ne furișăm până la ea și luăm înapoi ce e al satului.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Mâncarea” și „Mama lui Finn”.",
+        "text": "Ce te frământă, Finn?",
+        "nod": "lada_oferta",
+        "conditii": {
+          "misiune": {
+            "finn_mancarea": "terminata",
+            "finn_mama": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Noaptea, mă furișez cu Finn până la lada colectorului",
+          "gata": {
+            "stare": {
+              "finn_lada": "luata"
+            }
+          },
+          "sfat": "După miezul nopții (23–03), în fața casei lui Finn: „Pleacă cu Finn spre poartă”. Unde e lumină, nu calc.",
+          "indiciu": {
+            "text": "Despre ladă...",
+            "nod": "lada_indiciu"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1, o parte din bani și tot ce mi-au luat orcii.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      }
     }
   ]
 }

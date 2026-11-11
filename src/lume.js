@@ -304,6 +304,24 @@ export function construiesteLumea(date) {
   ]) {
     scene.set(`minijoc_${tip}`, { id: `minijoc_${tip}`, tip: 'ecran', titlu, titluObiecte: 'Bucățile mini-jocului', titluFundal: 'Imaginea muncii', imagine: imagineMiniJoc(tip), variante: [], parinte: null, tinte: [], obiecte });
   }
+  // Furișatul (decis de autor, lada colectorului): pe fiecare imagine a pasului, autorul desenează cele două locuri
+  for (const ev of date.events?.evenimente || [])
+    (ev.furisare || []).forEach((f, i) =>
+      scene.set(`furis_${ev.id}_${f.pas}`, {
+        id: `furis_${ev.id}_${f.pas}`,
+        tip: 'ecran',
+        titlu: `Furișatul: ${ev.nume} (${i + 1})`,
+        titluFundal: 'Imaginea pasului',
+        imagine: f.imagine,
+        variante: [],
+        parinte: null,
+        tinte: [
+          { id: 'sigur', nume: 'Pe aici e sigur' },
+          { id: 'periculos', nume: 'Pe aici te vede orcul' },
+        ],
+        obiecte: [],
+      }),
+    );
   // Culesul ierburilor (decis de autor): pe imaginea culesului, autorul desenează zona în care apar plantele, la
   // întâmplare; „planta” e doar un model, ca să se aleagă mărimea lor (poziția ei nu contează)
   for (const z of zone)

@@ -206,7 +206,18 @@
               "imagine": "locations/munca_apa.png",
               "text": "Scoți apă de la fântână...",
               "maxPeZi": 2,
-              "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine."
+              "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine.",
+              "ascuns": {
+                "_nota": "Decis de autor: seara și noaptea nu se mai poate lua (zona nu se mai apasă).",
+                "conditii": {
+                  "nu": {
+                    "moment": [
+                      "seara",
+                      "noaptea"
+                    ]
+                  }
+                }
+              }
             },
             {
               "_nota": "Decis de autor: o pâine pe zi de pe masa din bucătărie, cu imaginea ei, ca la apă. Textele sunt ciorne.",
@@ -219,7 +230,18 @@
               "imagine": "locations/munca_paine.png",
               "text": "Iei o pâine caldă de pe masă...",
               "maxPeZi": 1,
-              "mesajMaxPeZi": "Am luat deja pâinea de azi. Restul e pentru mama."
+              "mesajMaxPeZi": "Am luat deja pâinea de azi. Restul e pentru mama.",
+              "ascuns": {
+                "_nota": "Decis de autor: seara și noaptea nu se mai poate lua (zona nu se mai apasă).",
+                "conditii": {
+                  "nu": {
+                    "moment": [
+                      "seara",
+                      "noaptea"
+                    ]
+                  }
+                }
+              }
             }
           ],
           "variante": [
@@ -320,6 +342,13 @@
                 }
               },
               "mesaj": "Ușa fierăriei e zăvorâtă. Bram nu primește pe nimeni înăuntru. Nu încă."
+            },
+            {
+              "_nota": "Decis de autor: noaptea, cât doarme Bram (22–06), alt gând la ușă. Ciornă de Claude.",
+              "conditii": {
+                "nuDoarme": "fierar"
+              },
+              "mesaj": "E noapte și la fierărie nu arde nicio lumină. Bram doarme de mult. Mă întorc mâine."
             },
             {
               "conditii": {
@@ -1399,6 +1428,53 @@
               }
             }
           ]
+        }
+      ],
+      "actiuni": [
+        {
+          "id": "lada",
+          "tip": "eveniment",
+          "nume": "Pleacă cu Finn spre poartă",
+          "eveniment": "finn_lada",
+          "_nota": "Misiunea lui Finn „Lada colectorului”: doar noaptea (23–03, ales de Claude) și nu chiar în noaptea în care i-a văzut orcul.",
+          "cand": [
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  },
+                  {
+                    "ora": {
+                      "max": "02:59"
+                    }
+                  }
+                ]
+              },
+              "gand": "Finn a zis: după miezul nopții, când doarme tot satul."
+            },
+            {
+              "conditii": {
+                "nu": {
+                  "trecut": {
+                    "finn_lada_esec": {
+                      "subZile": 0.75
+                    }
+                  }
+                }
+              },
+              "gand": "Nu în noaptea asta. Orcul ăla e încă cu ochii în patru. Mâine noapte."
+            }
+          ],
+          "ascuns": {
+            "conditii": {
+              "misiune": {
+                "finn_lada": "inceputa"
+              }
+            }
+          }
         }
       ]
     },
