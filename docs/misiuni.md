@@ -168,7 +168,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - A devenit misiunea lui Finn **„Mama lui Finn”** (decis de autor; Elian e foarte implicat și primește și el încredere +1). Vezi la Finn.
 
 ### ✅ Cărțile
-- **Pornește singură** (decis de autor): după cel puțin 7 zile (din ziua 8), următoarea dată când mergi la biserică și Elian citește afară. Ales de Claude: doar 14–18 (cât colectorul își face rondul prin sat) și abia după ce l-ai cunoscut pe Elian.
+- **Pornește singură** (decis de autor): după cel puțin 7 zile (din ziua 8), următoarea dată când mergi la biserică și Elian citește afară. Ales de Claude: doar 14–18 (cât colectorul își face rondul prin sat) și abia după ce l-ai cunoscut pe Elian. **Semnul „!”** (decis de autor, ca să nu te ia prin surprindere): deasupra lui Elian și a bisericii de pe hartă, cât evenimentul ar porni când ajungi acolo (`ofertaEveniment` la misiune).
 - **Imaginile** (decis de autor): (1) Elian vine agitat, cu 3 cărți în brațe; (2) te roagă să le iei și să te ascunzi după biserică, orice s-ar întâmpla. Alegi:
   - **le iei** (misiunea pornește): (3) din spatele bisericii, colectorul vorbește cu Elian, se aude doar ce strigă el; (4) colectorul îl lovește pe Elian cu bâta în stomac; (5) Elian în genunchi, colectorul pleacă; (6) mergi la Elian: îți mulțumește, își ia cărțile și intră în biserică. **Încrederea lui Elian +1.**
   - **refuzi:** o singură imagine, Elian fuge mai departe cu cărțile; misiunea apare în carte ca **ratată**, fără încredere.
