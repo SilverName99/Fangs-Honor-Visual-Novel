@@ -1600,7 +1600,18 @@
               }
             },
             "mesaj": "E întuneric la geam. Bătrâna doarme; mă întorc mâine."
-          }
+          },
+          "zoneVariante": [
+            {
+              "nume": "noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              },
+              "_nota": "Decis de autor: noaptea, pe imaginea de noapte, ușa colibei se desenează separat."
+            }
+          ]
         }
       ]
     }

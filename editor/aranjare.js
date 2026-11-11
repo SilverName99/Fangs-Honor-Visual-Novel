@@ -5,7 +5,7 @@ import { verifica, registreazaConditie } from '../src/conditii.js';
 import { ZILE, NUME_ZILE, momentZi } from '../src/timp.js';
 
 const MOMENTE = { dimineata: 'Dimineața', amiaza: 'Amiaza', seara: 'Seara', noaptea: 'Noaptea' };
-import { creeazaEcran, randeaza, aplicaMoment, sufixVarianta, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
+import { creeazaEcran, randeaza, aplicaMoment, sufixVarianta, sufixZona, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -63,10 +63,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   };
   // Cheile sub care se salvează poziția și zona: cu „@cina” când e activă o variantă cu nume
   const ko = (id) => id + sufixVarianta(descriere(), id, context());
-  const kz = (id) => {
-    const t = descriere().tinte.find((x) => x.id === id);
-    return t?.personaj ? id + sufixVarianta(descriere(), t.personaj, context()) : id;
-  };
+  const kz = (id) => id + sufixZona(descriere(), descriere().tinte.find((x) => x.id === id), context());
   // Prima zi și oră la care personajul e în scena asta (pentru „La ora lui”); cu „Arată tot”, și intervalele din misiuni
   function oraLui(p) {
     const loc = locScena();

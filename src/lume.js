@@ -93,6 +93,7 @@ export function construiesteLumea(date) {
       vanatoare: l.vanatoare ? { ...l.vanatoare, imagine: l.imagine } : null,
       incuiat: l.incuiat || null,
       ascuns: l.ascuns || null,
+      zoneVariante: l.zoneVariante || null,
     });
     scene.set(z.id, {
       id: z.id,

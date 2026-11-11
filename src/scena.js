@@ -69,6 +69,14 @@ export function sufixVarianta(descriere, idObiect, context) {
   return v ? `@${v.nume}` : '';
 }
 
+// Zona unei ținte poate avea altă formă după condiții (decis de autor: ușa colibei ierbăresei e în alt loc
+// pe imaginea de noapte): „zoneVariante” la loc, cu nume; zona se salvează sub „interior@noapte”
+export function sufixZona(descriere, tinta, context) {
+  if (tinta?.personaj) return sufixVarianta(descriere, tinta.personaj, context);
+  const v = (tinta?.zoneVariante || []).find((x) => x.nume && verifica(x.conditii, context));
+  return v ? `@${v.nume}` : '';
+}
+
 export function pozitie(aranjare, obiect, index, sufix = '') {
   return (sufix && aranjare?.obiecte?.[obiect.id + sufix]) || aranjare?.obiecte?.[obiect.id] || obiect.implicit || pozitieImplicita(index, obiect.tip);
 }
@@ -162,7 +170,7 @@ export function randeaza(strat, descriere, aranjare, context) {
   }
   const poligoane = new Map();
   for (const t of descriere.tinte) {
-    const sufix = t.personaj ? sufixVarianta(descriere, t.personaj, context) : '';
+    const sufix = sufixZona(descriere, t, context);
     const poligon = (sufix && aranjare?.zone?.[t.id + sufix]) || aranjare?.zone?.[t.id];
     if (!poligon || poligon.length < 3) continue;
     const p = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
