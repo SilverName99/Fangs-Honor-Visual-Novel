@@ -6230,13 +6230,21 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "text": "Nu... nu, nu, nu!",
-        "urmator": "v9"
+        "urmator": "v8b"
+      },
+      "v8b": {
+        "imagine": "events/vis_2_4.png",
+        "durata": 3500,
+        "apropiere": true,
+        "urmator": "v9",
+        "_nota": "Decis de autor: Edwin căzut, cu ochii deschiși spre cameră; imaginea se apropie încet, apoi trece în ochiul dragonului."
       },
       "v9": {
-        "imagine": "events/vis_2_4.png",
-        "durata": 2800,
+        "imagine": "events/vis_2_5.png",
+        "durata": 3000,
+        "trecere": 1600,
         "urmator": "v10",
-        "_nota": "Ochiul de dragon (decis de autor): doar câteva secunde, fără text; trece singur."
+        "_nota": "Ochiul de dragon (decis de autor): apare încet peste ochiul lui Edwin, stă câteva secunde, fără text; trece singur."
       },
       "v10": {
         "vorbitor": "vale",

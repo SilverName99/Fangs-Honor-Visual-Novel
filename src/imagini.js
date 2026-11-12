@@ -87,14 +87,20 @@ export function preincarca(cale) {
 
 // Pune imaginea nouă peste cea veche și o scoate pe cea veche abia când e gata cea nouă (decis de autor:
 // între două imagini nu trebuie să se vadă ce e dedesubt). „gata” se cheamă când imaginea nouă se vede
-export function schimbaImagine(container, el, gata) {
+// „trecere” (ms): imaginea nouă apare încet peste cea veche, care se scoate abia după (visul: din ochiul lui
+// Edwin în ochiul dragonului, decis de autor); fără ea, schimbarea e pe loc
+export function schimbaImagine(container, el, gata, trecere = 0) {
   const vechi = [...container.children];
   container.append(el);
   let terminat = false;
   const termina = () => {
     if (terminat) return;
     terminat = true;
-    for (const v of vechi) v.remove();
+    if (trecere) {
+      el.style.animationDuration = `${trecere}ms`;
+      el.classList.add('trecere-lenta');
+      setTimeout(() => vechi.forEach((v) => v.remove()), trecere);
+    } else for (const v of vechi) v.remove();
     gata?.();
   };
   if (el.dataset.gata || el.classList.contains('lipsa')) return termina();

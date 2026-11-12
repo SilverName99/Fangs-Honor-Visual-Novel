@@ -355,8 +355,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după „Lumânările” și eliberarea lui Finn: Roderick (biserică sau tavernă) → „Unchiule, știu drumul...” → „Diseară, unchiule.” → Mergi la Marginea satului → Ieșirea, ora 20:00 → Roderick → „Sunt gata” → imaginile → alegerea. Ca să vezi și cealaltă alegere: F2 → Misiune `roderick_locul` → Resetează.
 
 ### ✅ Al doilea vis (nu e misiune)
-- **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; un orc mare îl lovește pe Edwin drept în piept și îi crapă platoșa pe mijloc (decis de autor: de aici, misiunea lui Bram cu platoșa); apoi **un ochi uriaș de dragon**, care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
-- **Imaginile:** `events/vis_2_1.png` … `vis_2_4.png`. Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
+- **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; un orc mare îl lovește pe Edwin drept în piept și îi crapă platoșa pe mijloc (decis de autor: de aici, misiunea lui Bram cu platoșa); apoi Edwin căzut cu fața la pământ, cu ochii deschiși spre noi (imaginea se apropie încet, `apropiere`), din care ochiul lui trece în **ochiul uriaș al unui dragon** (`trecere`), care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
+- **Imaginile:** `events/vis_2_1.png` … `vis_2_5.png` (4 = Edwin căzut, 5 = ochiul dragonului). Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
 
 **Cum verifici:** după „Locul”, acasă, seara → „Dormi până dimineața”.
 

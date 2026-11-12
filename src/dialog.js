@@ -66,12 +66,18 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       laImagine?.(imagine);
       el.classList.add('cu-imagine', 'asteapta-imaginea');
       // Replicile și portretele apar abia când se vede imaginea, ca între două imagini să nu clipească dialogul
-      schimbaImagine(fundal, elementImagine([imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: imagine }), () => {
+      const nou = elementImagine([imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: imagine });
+      // „apropiere” (visul, decis de autor): imaginea se apropie încet cât stă pe ecran, ca într-un film
+      if (nod.apropiere) {
+        nou.classList.add('apropiere-lenta');
+        nou.style.animationDuration = `${nod.durata || 4000}ms`;
+      }
+      schimbaImagine(fundal, nou, () => {
         el.classList.remove('asteapta-imaginea');
         const dupa = activ?.dupaImagine;
         if (activ) activ.dupaImagine = null;
         dupa?.();
-      });
+      }, nod.trecere || 0);
     }
     // „durata” (ochiul de dragon din vis, decis de autor): imaginea stă doar câteva secunde, fără text și fără
     // portrete, apoi discuția trece singură mai departe; ceasul pornește abia când se vede imaginea
