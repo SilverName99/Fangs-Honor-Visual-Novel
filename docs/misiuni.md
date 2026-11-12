@@ -3,7 +3,7 @@
 Documentul ține minte fiecare misiune: cum pornește, ce faci, ce primești și cu ce se leagă.
 Pentru fiecare misiune are și **imaginile** cerute și **cum o verifici** în editor, la Testare.
 Mai târziu devine walkthrough-ul jocului. Se actualizează la fiecare misiune nouă sau schimbată.
-În editor se citește din tab-ul **Misiuni**.
+În editor se citește din tab-ul **Misiuni**, pe căsuțe: fiecare `##` e o căsuță, fiecare `###` e o misiune în ea (păstrează titlurile așa).
 
 **Starea fiecărei misiuni:** ✅ în joc · 📝 hotărâtă, nefăcută încă · 💡 idee, de discutat.
 Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
@@ -272,7 +272,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - Victorie: replicile și tabăra. Camp site apare apoi în pădure.
    - Înfrângere: „Mâine, aceeași oră”.
 
-### Vânătoarea împreună (după Lupul negru)
+### ✅ Vânătoarea împreună (după Lupul negru)
 - **Când:** dimineața, 05–10, la Camp site, Kaia e acolo. În meniul ei apare „Mergem împreună la vânătoare?”.
 - „Să mergem.” → vânătoarea obișnuită (lupi sau mistreț), cu Kaia sigur alături în luptă. „Poate altă dată.” te întoarce la meniu.
 - După luptă: un scurt dialog (altul după înfrângere), apoi Kaia se întoarce în pădure (nu mai e la campsite până la 14:00), iar Vale rămâne în tabără.
@@ -282,30 +282,6 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ---
 
 ## Roderick Lightfinder (unchiul)
-
-### 📝 Locul unde a căzut tata
-- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale, **prin ieșirea din zona hoțului** (deci după eliberarea hoțului). Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
-- După ea vine „Cina în familie” (Miriam).
-
-### 📝 Antrenamentul
-- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
-
-### ✅ Hârtiile soldatului
-- **Pornește:** după „Camera de sus”, cu hârtiile la Vale, **doar în tavernă** (Roderick e acolo 14–00; la biserică nu), în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
-- Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
-- Fără încredere (doar discuție); după ea vine **primul vis**.
-- **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).
-
-**Cum verifici:** după „Camera de sus”, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”.
-
-### ✅ Primul vis (nu e misiune)
-- Data următoare când doarme (oriunde, oricât), după discuția despre hârtii: Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
-- **Imagine:** `events/vis_1.png`.
-
-**Cum verifici:** după „Hârtiile soldatului”, acasă → Dormi 2 ore → după imaginea somnului, visul.
-
-### 📝 Solzii de dragon
-- După discuția despre hârtii: Vale și Roderick pleacă în căutarea solzilor, prin ieșirea din zona hoțului (deci după eliberarea hoțului).
 
 ### ✅ Scandalul din tavernă
 - **Până la scandal,** Roderick nu-l bagă în seamă pe Vale („Unchiul Roderick nici nu ridică ochii din cană”).
@@ -321,6 +297,30 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 1. Ziua 1 sau 2, ora 17:00 („Amiază” + 5 × „+1 oră”), sala tavernei: Roderick te ignoră și ai doar „La revedere”.
 2. Treci în ziua 3, tot la 17:00: apare „*Orcii fac multă dezordine și gălăgie...* !” → „(Te uiți spre ei.)” → imaginile scandalului și alegerea.
 3. Victoria și înfrângerea se văd și direct: F2 → Eveniment → `taverna_scandal_victorie` / `taverna_scandal_infrangere` → Pornește.
+
+### ✅ Hârtiile soldatului
+- **Pornește:** după „Camera de sus”, cu hârtiile la Vale, **doar în tavernă** (Roderick e acolo 14–00; la biserică nu), în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
+- Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
+- Fără încredere (doar discuție); după ea vine **primul vis**.
+- **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).
+
+**Cum verifici:** după „Camera de sus”, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”.
+
+### ✅ Primul vis (nu e misiune)
+- Data următoare când doarme (oriunde, oricât), după discuția despre hârtii: Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
+- **Imagine:** `events/vis_1.png`.
+
+**Cum verifici:** după „Hârtiile soldatului”, acasă → Dormi 2 ore → după imaginea somnului, visul.
+
+### 📝 Locul unde a căzut tata
+- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale, **prin ieșirea din zona hoțului** (deci după eliberarea hoțului). Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
+- După ea vine „Cina în familie” (Miriam).
+
+### 📝 Antrenamentul
+- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
+
+### 📝 Solzii de dragon
+- După discuția despre hârtii: Vale și Roderick pleacă în căutarea solzilor, prin ieșirea din zona hoțului (deci după eliberarea hoțului).
 
 ---
 
@@ -366,7 +366,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Fermierul
 
-### ✅ Deblocarea fermierului
+### ✅ Patrula de orci (deblocarea fermierului)
 - **Până atunci,** nu se poate vorbi cu el.
 - **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (06–13, cât e și fermierul acolo), 80% la fiecare intrare pe câmpuri.
 - După ea (oricum ai ales), fermierul devine cel cu care poți vorbi.
