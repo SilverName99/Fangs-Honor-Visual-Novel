@@ -1301,6 +1301,101 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Ia banii ăștia. Și de azi încolo ușa mea e deschisă pentru tine. Intră când vrei: am și marfă de vândut."
+      },
+      "foale_oferta": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Forja e rece. Pentru prima oară de când îl știu, la fierăria lui Bram nu se aude ciocanul.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Foalele stricate” (decis de autor: 3 piei de mistreț, înaintea cheii).",
+        "urmator": "foale_oferta2"
+      },
+      "foale_oferta2": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Nu te uita așa, băiete. N-am murit. Doar foalele mele au murit.",
+        "urmator": "foale_oferta3"
+      },
+      "foale_oferta3": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Pielea a crăpat de la frig și de la ani. Am cârpit-o de zece ori. A unsprezecea oară s-a rupt de tot, cu o gaură cât pumnul.",
+        "urmator": "foale_oferta4"
+      },
+      "foale_oferta4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și nu poți pune piele nouă?",
+        "urmator": "foale_oferta5"
+      },
+      "foale_oferta5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cu ce piele? Orcii iau toate blănurile din sat la taxă. Iar pentru foale îți trebuie piele groasă, care să țină aerul și focul. Piele de mistreț. Trei bucăți bune.",
+        "urmator": "foale_oferta6"
+      },
+      "foale_oferta6": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Fără foale, focul nu se încinge. Fără foc, fierul e doar o bucată de piatră. Iar eu sunt doar un om cu un ciocan și nimic de bătut.",
+        "alegeri": [
+          {
+            "text": "Îți aduc eu pieile, domnule Bram.",
+            "spre": "foale_da",
+            "efecte": {
+              "misiune": {
+                "bram_foale": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mistreții nu se lasă prinși ușor..."
+          }
+        ]
+      },
+      "foale_da": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Tu? Ha! Bine, băiete. Adu-mi trei piei de mistreț și-ți arăt cum cântă o forjă adevărată."
+      },
+      "foale_indiciu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Trei piei de mistreț. Mistreții umblă prin pădure; dacă dai de unul la vânătoare, ai grijă la colți. Și nu-mi aduce blană de lup, că aia arde ca paiele."
+      },
+      "foale_predare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Domnule Bram, uite: trei piei de mistreț. Groase, cum ai zis.",
+        "urmator": "foale_predare2"
+      },
+      "foale_predare2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ia să văd... Doamne, chiar sunt bune. Pe cuvântul meu, n-am crezut că le aduci.",
+        "urmator": "foale_predare3"
+      },
+      "foale_predare3": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ce mai stai? Apucă de capătul ăla. Azi faci și tu ceva cu mâinile, nu doar cu sabia.",
+        "alegeri": [
+          {
+            "text": "Hai să le facem.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "piele": 3
+              },
+              "eveniment": "bram_foale"
+            }
+          }
+        ]
+      },
+      "f_foale": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Auzi cum suflă? Foalele noi țin aerul ca un taur. De când le-am pus, fierul se încinge de două ori mai repede."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1311,6 +1406,14 @@
       },
       {
         "nod": "f_orci_a"
+      },
+      {
+        "nod": "f_foale",
+        "conditii": {
+          "stare": {
+            "foale_bram": "noi"
+          }
+        }
       }
     ]
   },
@@ -5014,6 +5117,90 @@
         "efecte": {
           "marcheaza": "finn_lada_esec",
           "mergi": "casa_finn"
+        }
+      }
+    }
+  },
+  "bram_foale": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Foalele stricate”: Vale și Bram fac foalele noi, peste 2 imagini.",
+    "grup": "Misiunea lui Bram: foalele",
+    "partener": "fierar",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram desface foalele vechi ca pe un animal bătrân, cu grijă, aproape cu tristețe. Pielea crăpată cade bucăți pe jos.",
+        "imagine": "events/bram_foale_1.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ține pielea întinsă. Mai tare. Așa. Dacă rămâne o cută, pe acolo fuge aerul.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Taie pieile de mistreț după rama veche, apoi le coase cu o ață groasă, ceruită. Degetele lui, groase cât cârnații, se mișcă mai repede decât ale mamei la gherghef.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unde ai învățat să coși așa?",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Un fierar își coase singur șorțul, foalele și mănușile, băiete. Nimeni altcineva n-o face pentru el.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Gata. Acum pune mâna pe mâner și trage. Încet, apoi tare. Să vedem dacă mai are inimă.",
+        "imagine": "events/bram_foale_2.png",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Trag de mâner. Foalele se umflă, apoi suflă. Jarul se trezește, roșu, apoi galben, apoi aproape alb. Căldura îmi lovește fața.",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ha! Auzi? AUZI? Asta e o forjă, nu un cuptor de pâine!",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram scoate din jar o bară încinsă și o lovește cu ciocanul. Scântei peste tot. Râde ca un copil. Nu l-am mai văzut râzând așa de când a venit taxa.",
+        "urmator": "a10"
+      },
+      "a10": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mulțumesc, băiete. Nu doar pentru piei. Ai adus focul înapoi în casa asta.",
+        "urmator": "a11"
+      },
+      "a11": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Tatăl tău venea aici să-i ascut sabia. Stătea exact unde stai tu acum și trăgea de foale ca să mă grăbească. Semeni cu el mai mult decât crezi.",
+        "efecte": {
+          "stare": {
+            "foale_bram": "noi"
+          }
         }
       }
     }

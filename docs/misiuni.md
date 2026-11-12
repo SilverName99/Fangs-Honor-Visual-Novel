@@ -17,6 +17,53 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
 
+## Cum apar misiunile, pe personaje
+
+Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 plănuită · 💡 de discutat). Detaliile sunt mai jos, la fiecare personaj.
+
+**Miriam (mama)**
+1. ✅ **Acoperișul**: dimineața (până la 11), cât mama e în bucătărie. Acoperișul trebuie să fie încă stricat.
+2. 📝 **Cina în familie**: după „Locul unde a căzut tata” (Roderick).
+
+**Bram (fierarul)**
+1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
+2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram?”.
+3. 💡 **Cheia camerei**: după „Foalele stricate” (misiunea și ce e în cufăr: de ales).
+
+**Fratele Elian (preotul)**
+1. ✅ **Ierburile lui Elian**: la o zi după prima discuție, când Elian citește afară, pe scările bisericii (14–23): „Ce citești, frate Elian?”.
+2. ✅ **Cărțile**: pornește singură, din ziua 8, când mergi la biserică între 14 și 18 și Elian e afară (semnul „!” pe biserică).
+3. 💡 **Secretul lui Elian**: după „Cărțile”.
+
+**Kaia (vânătoarea)**
+1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
+2. ✅ **Lupul negru**: imediat după întâlnire (dacă ai ajutat-o); 15–17, la marginea pădurii.
+3. ✅ **Vânătoarea împreună** (nu e misiune): după „Lupul negru”, dimineața (05–10), la Camp site.
+
+**Roderick (unchiul)**
+1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
+2. ✅ **Hârtiile soldatului**: după „Camera de sus” (Agnes) și după scandal, cu hârtiile la tine, în tavernă.
+3. 📝 **Locul unde a căzut tata**: după eliberarea lui Finn (se ajunge prin ieșirea de la Marginea satului).
+4. 📝 **Antrenamentul**: după „Cina în familie”.
+5. 📝 **Solzii de dragon**: după „Hârtiile soldatului” și eliberarea lui Finn.
+
+**Agnes (hangița)**
+1. ✅ **Camera de sus**: la 2 zile după prima discuție cu Agnes, în tavernă, cât e ea acolo.
+2. ✅ **Berea**: imediat după „Camera de sus”.
+3. ✅ **Pivnița**: după „Berea”, doar 09–11, cât taverna e goală.
+
+**Fermierul**
+1. ✅ **Patrula de orci** (deblocarea lui): din ziua 3, dimineața, la câmpuri. Abia după ea poți vorbi cu el.
+2. 💡 Misiunile lui: de discutat.
+
+**Finn (hoțul)**
+1. ✅ **Eliberarea**: în piață, apeși pe Finn, legat la butuc → „Pot să vorbesc cu el?”.
+2. ✅ **Mâncarea** și ✅ **Mama lui Finn**: amândouă deodată, imediat după eliberare, la Finn acasă.
+3. ✅ **Lada colectorului**: după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?”. Apoi, după miezul nopții, Finn te așteaptă în fața casei.
+4. 💡 **Puterea de la zaruri**: după „Lada colectorului”.
+
+---
+
 ## Încrederea: de unde vine fiecare punct
 
 **Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Câteva dintre ele se pot **rata** (o alegere greșită, un refuz), iar recrutarea se face de la **8/10**, deci jucătorul are voie să piardă cel mult 2 puncte. La Miriam, Agnes și fermier (nu se recrutează), 10/10 deschide o misiune specială.
@@ -27,7 +74,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · 📝 Cina în familie (de decis dacă dă) · 💡 încă 8 | 1 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · 📝 Locul unde a căzut tata · 📝 Antrenamentul · 💡 încă 7 (Hârtiile soldatului nu dau, decis) | 1 / 10 |
-| **Bram** | ✅ Fierul lui Bram · 📝 Foalele stricate · 📝 Cheia camerei · 💡 încă 7 | 1 / 10 |
+| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia camerei · 💡 încă 7 | 2 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · 💡 încă 8 | 2 / 10 |
 | **Agnes** | ✅ Camera de sus · ✅ Berea · ✅ Pivnița · 💡 încă 7 | 3 / 10 |
@@ -127,8 +174,14 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - După „Nu acum”, „Mă mai gândesc” sau o bătaie pierdută, Vale ajunge înapoi pe hartă: paznicul nu-l lasă la poartă cât e misiunea în lucru.
 6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
-### 📝 Foalele stricate
-- Foalele forjei s-au stricat; Vale aduce **3 piei de mistreț** pentru unele noi. Imagini, cu replicile peste ele. Vine înaintea cheii.
+### ✅ Foalele stricate
+- **Pornește:** imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram? !”. Pielea foalelor a crăpat de tot, iar orcii iau toate blănurile din sat la taxă → „Îți aduc eu pieile, domnule Bram.”
+- **Pasul 1:** 3 piei de mistreț (de la vânătoare: mistrețul apare în 25% din vânători). Indicația: „Despre foale...”.
+- **Pasul 2:** la Bram, „Ți-am adus pieile de mistreț! ?” → „Hai să le facem.” Peste 2 imagini (decis de autor): Bram și Vale coc pielea pe rama veche, apoi Vale trage de foale, focul se încinge, Bram bate fierul și râde; îi spune lui Vale că tatăl lui stătea exact acolo, la foale. Trec 2 ore.
+- **Recompensa:** încrederea lui Bram +1 (alta, `TODO` dacă vrei).
+- **Imagini:** `events/bram_foale_1.png`, `bram_foale_2.png` (galeria: „Misiunea lui Bram: foalele”).
+
+**Cum verifici:** după „Fierul lui Bram”, cu 3 piei de mistreț (F2 → Obiect), la Bram: „De ce e forja rece...” → „Îți aduc eu pieile” → „Ți-am adus pieile de mistreț!” → „Hai să le facem” → cele 2 imagini → Bram 2/10.
 
 ### 💡 Cheia camerei lui Bram
 - După „Foalele stricate”. Ce e în cufăr: de discutat.

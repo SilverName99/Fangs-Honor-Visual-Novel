@@ -1017,6 +1017,17 @@
         }
       ],
       "_nota": "Decis de autor: furișatul pe 3 imagini, cu câte două locuri desenate în editor (Aranjare → Ecrane → „Furișatul …”)."
+    },
+    {
+      "id": "bram_foale",
+      "nume": "Foalele noi",
+      "grup": "Misiunea lui Bram: foalele",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 120
+      },
+      "dialog": "bram_foale"
     }
   ]
 }

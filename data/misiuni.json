@@ -721,6 +721,67 @@
           }
         }
       }
+    },
+    {
+      "id": "bram_foale",
+      "titlu": "Foalele stricate",
+      "dela": "fierar",
+      "dialog": "fierar",
+      "descriere": "CIORNĂ: Foalele forjei lui Bram s-au rupt de tot. Fără ele, focul nu se încinge și Bram nu poate lucra. Îi trebuie trei piei groase de mistreț, iar orcii iau toate blănurile din sat.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Fierul lui Bram”, înaintea cheii.",
+        "text": "De ce e forja rece, domnule Bram?",
+        "nod": "foale_oferta",
+        "conditii": {
+          "misiune": {
+            "bram_fier": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Fac rost de 3 piei de mistreț",
+          "numara": {
+            "obiect": "piele",
+            "n": 3
+          },
+          "sfat": "Mistreții umblă prin pădure (vânătoarea, „Adâncul pădurii”).",
+          "indiciu": {
+            "text": "Despre foale...",
+            "nod": "foale_indiciu"
+          }
+        },
+        {
+          "text": "Duc pieile la Bram",
+          "gata": {
+            "stare": {
+              "foale_bram": "noi"
+            }
+          },
+          "sfat": "Cu cele 3 piei, vorbesc cu Bram.",
+          "predare": {
+            "text": "Ți-am adus pieile de mistreț!",
+            "nod": "foale_predare",
+            "conditii": {
+              "areCate": {
+                "piele": 3
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre foale...",
+            "nod": "foale_indiciu"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      }
     }
   ]
 }
