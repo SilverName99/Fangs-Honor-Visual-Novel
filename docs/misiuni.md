@@ -367,14 +367,14 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Lada colectorului
 - **Pornește** (decis de autor): după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?” → „Sunt cu tine.” Colectorul ține banii taxei într-o ladă, la poartă; noaptea pleacă, paznicul doarme, rămâne doar un orc cu o torță.
-- **Pasul:** după miezul nopții (23–03, ales de Claude), pe imaginea casei lui Finn (afară): „Pleacă cu Finn spre poartă”.
+- **Pasul:** după miezul nopții (23–03, ales de Claude), **Finn te așteaptă în fața casei lui, cu sacul** (decis de autor: sprite-ul `sprites/hot_casa_finn.png`, pe imaginea casei de afară); apeși pe el → „Să mergem.” În noaptea de după o încercare ratată îți spune „Mâine noapte”.
 - **Imaginile** (decis de autor): (1) vă apropiați de poartă; (2), (3), (4) **furișatul**, din ascunzătoare în ascunzătoare, toate văzute încă din prima imagine (decis de autor): lemnele de lângă casă / căruța stricată, apoi butoaiele de lângă palisadă / căruța, apoi, din spatele butoaielor (orcul cu torța s-a dus la cel de la foc), pe după taraba cu lada, prin umbră / drept prin noroi, pe lângă căruță; pe fiecare imagine sunt două locuri, unul sigur, celălalt îl alertează pe orc (le desenezi tu în editor, la Aranjare → Ecrane → „Furișatul: Lada colectorului (1/2/3)”, zonele „Pe aici e sigur” și „Pe aici te vede orcul”; arată la fel, deci jucătorul alege după ce vede în imagine, de exemplu lumina torței); (5) Finn deschide lada și puneți totul în sac; (6) plecați cu sacul.
 - **Greșit** la oricare pas: imaginea fugii (`finn_lada_esec.png`), orcul se uită din depărtare; încerci din nou abia noaptea următoare.
 - **Recompensa:** încrederea lui Finn +1, 30 de monede (`TODO` echilibru) și **tot ce au luat orcii la pedepse** (afară de fierul lui Bram, care are drumul lui). Jumătate din bani îi împarte Finn oamenilor de la margine.
 - Cu mini-jocurile oprite din Opțiuni, furișatul trece singur.
 - **Imagini:** `events/finn_lada_1.png` … `finn_lada_6.png`, `finn_lada_esec.png` (galeria: „Finn: lada colectorului”).
 
-**Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → „Pleacă cu Finn spre poartă”. Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
+**Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → apasă pe Finn → „Să mergem.” Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
 
 ---
 

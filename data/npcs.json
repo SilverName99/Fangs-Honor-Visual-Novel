@@ -306,7 +306,8 @@
       "locuriSprite": [
         "piata",
         "casa_finn/interior",
-        "campuri"
+        "campuri",
+        "casa_finn"
       ],
       "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
       "cineRaspunde": {
@@ -374,6 +375,17 @@
             }
           },
           "ce": "plecat pe ascuns, lucrează pentru Jarek (decis de autor): nu e nicăieri"
+        },
+        {
+          "de": "23:00",
+          "pana": "03:00",
+          "loc": "casa_finn",
+          "conditii": {
+            "misiune": {
+              "finn_lada": "inceputa"
+            }
+          },
+          "ce": "cât e misiunea „Lada colectorului”, îl așteaptă pe Vale în fața casei, cu sacul (decis de autor)"
         },
         {
           "de": "23:00",

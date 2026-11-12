@@ -3251,6 +3251,23 @@
     "meniu": true,
     "start": [
       {
+        "nod": "lada_noapte_nu",
+        "conditii": {
+          "loc": "casa_finn",
+          "trecut": {
+            "finn_lada_esec": {
+              "subZile": 0.75
+            }
+          }
+        }
+      },
+      {
+        "nod": "lada_noapte",
+        "conditii": {
+          "loc": "casa_finn"
+        }
+      },
+      {
         "nod": "salut_campuri",
         "conditii": {
           "loc": "campuri"
@@ -3625,6 +3642,30 @@
         "vorbitor": "hot",
         "emotie": "normal",
         "text": "Oamenii de la margine au găsit dimineață monede în prag. Nimeni nu știe de unde. Lina zice că a fost un înger. Eu zic să rămână așa."
+      },
+      "lada_noapte": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ai venit. Sacul e gol, luna e sus, paznicul sforăie. Mai bună noapte nu prindem.",
+        "_nota": "CIORNĂ (Claude). Noaptea, în fața casei, cât e misiunea „Lada colectorului”.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "finn_lada"
+            }
+          },
+          {
+            "text": "Mai așteaptă puțin.",
+            "inchide": true
+          }
+        ]
+      },
+      "lada_noapte_nu": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Nu în noaptea asta, Vale. Orcul ăla e încă cu ochii în patru după ce ne-a văzut umbrele. Mâine noapte."
       }
     },
     "vorbeste": [

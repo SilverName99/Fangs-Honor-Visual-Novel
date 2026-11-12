@@ -1429,53 +1429,6 @@
             }
           ]
         }
-      ],
-      "actiuni": [
-        {
-          "id": "lada",
-          "tip": "eveniment",
-          "nume": "Pleacă cu Finn spre poartă",
-          "eveniment": "finn_lada",
-          "_nota": "Misiunea lui Finn „Lada colectorului”: doar noaptea (23–03, ales de Claude) și nu chiar în noaptea în care i-a văzut orcul.",
-          "cand": [
-            {
-              "conditii": {
-                "oricare": [
-                  {
-                    "ora": {
-                      "min": "23:00"
-                    }
-                  },
-                  {
-                    "ora": {
-                      "max": "02:59"
-                    }
-                  }
-                ]
-              },
-              "gand": "Finn a zis: după miezul nopții, când doarme tot satul."
-            },
-            {
-              "conditii": {
-                "nu": {
-                  "trecut": {
-                    "finn_lada_esec": {
-                      "subZile": 0.75
-                    }
-                  }
-                }
-              },
-              "gand": "Nu în noaptea asta. Orcul ăla e încă cu ochii în patru. Mâine noapte."
-            }
-          ],
-          "ascuns": {
-            "conditii": {
-              "misiune": {
-                "finn_lada": "inceputa"
-              }
-            }
-          }
-        }
       ]
     },
     {
