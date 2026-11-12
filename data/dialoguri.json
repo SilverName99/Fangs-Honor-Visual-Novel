@@ -260,7 +260,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Lângă altar, pe o scândură, stau înșirate cioturi de lumânări arse până la capăt. Multe. Le număr fără să vreau: douăzeci și trei.",
+        "text": "Pe treapta de sus a altarului stau înșirate cioturi de lumânări arse până la capăt. Multe. Le număr fără să vreau: douăzeci și trei.",
         "urmator": "lum_c2"
       },
       "lum_c2": {
@@ -5794,7 +5794,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Unchiul ia prima lumânare, o aprinde de la candela de lângă altar și o lipește pe scândură.",
+        "text": "Unchiul ia prima lumânare, o aprinde de la lumânarea mare din sfeșnicul de lângă altar și o lipește pe treapta de sus, lângă cioturile vechi.",
         "urmator": "l3"
       },
       "l3": {
@@ -5844,7 +5844,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Douăzeci și două de flăcări ard acum în fața altarului. Unchiul ține în mână ultima lumânare. Mâna îi tremură atât de tare, încât abia o poate ține.",
+        "text": "Douăzeci și două de flăcări ard acum pe treapta altarului. Unchiul ține în mână ultima lumânare. Mâna îi tremură atât de tare, încât abia o poate ține.",
         "imagine": "events/roderick_lumanari_2.png",
         "urmator": "l11"
       },

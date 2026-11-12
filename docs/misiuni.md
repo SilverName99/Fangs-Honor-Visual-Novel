@@ -329,7 +329,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Pasul 3:** **a doua zi**, lumânările de la Elian (în aceeași zi: „Încă se răcesc în tipare”).
 - **Pasul 4:** **seara (18–00), în tavernă**, la Roderick: „Am adus lumânările, unchiule.” (ziua: „se aprind seara”) → în biserică, peste **2 imagini**: Roderick aprinde lumânările una câte una și spune numele fiecăruia (Hal, Tobin, frații Corwin, soldatul din camera de sus...); la ultima nu poate rosti numele. Vale o aprinde: „Edwin Lightfinder. Tata.” Apoi îi cere: „Arată-mi unde a căzut.” Roderick: nu pe la poartă, ci pe la gardul putred de la Marginea satului.
 - **Recompensa:** încrederea lui Roderick +1. Vale rămâne în biserică.
-- **Imaginile:** `events/roderick_lumanari_1.png` (biserica goală, noaptea: Roderick aprinde lumânările pe o scândură lângă altar, Vale lângă el), `events/roderick_lumanari_2.png` (aproape: 22 de flăcări, Roderick cu ultima lumânare în mâna care tremură, Vale îi ia lumânarea). Obiecte: `items/ceara.png`, `items/lumanari.png`.
+- **Imaginile:** `events/roderick_lumanari_1.png` (biserica goală, noaptea: Roderick, în genunchi pe treapta de sus a altarului, aprinde lumânările în șir; Vale, jos pe culoar, ține mănunchiul), `events/roderick_lumanari_2.png` (mai aproape, aceeași biserică: 22 de flăcări pe treaptă, Roderick cu ultima lumânare în mâna care tremură, Vale îngenuncheat lângă el îi ia lumânarea). Obiecte: `items/ceara.png`, `items/lumanari.png`.
 - Numele celor căzuți sunt ciorne (Claude).
 
 **Cum verifici**
