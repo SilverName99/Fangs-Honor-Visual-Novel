@@ -4858,14 +4858,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mai aproape. Aud focul trosnind și sforăitul paznicului. Lada e chiar acolo, pe masă.",
+        "text": "Suntem după butoaie, lipiți de palisadă. Cel cu torța s-a dus la foc, lângă cel care doarme. Aud cum mormăie ceva între ei. Lada e chiar lângă noi, pe taraba din stânga.",
         "imagine": "events/finn_lada_4.png",
         "urmator": "c2"
       },
       "c2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Ultimul pas: colțul copertinei, după butoi și coșuri, sau pe sub masă, după pânza atârnată. Dacă ne vede acum, nu mai apucăm nici să fugim.",
+        "text": "Ultimul pas: pe după tarabă, prin umbră, sau drept prin noroi, pe lângă căruță. Dacă ne vede acum, nu mai apucăm nici să fugim.",
         "alegeri": [
           {
             "text": "Mă strecor mai departe.",
