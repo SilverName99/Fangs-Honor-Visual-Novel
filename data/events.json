@@ -897,10 +897,10 @@
       "nume": "Roderick: locul unde a căzut tata",
       "grup": "Roderick: locul unde a căzut tata",
       "efecte": {
-        "timp": 150
+        "panaLaOra": "23:30"
       },
       "dialog": "roderick_locul",
-      "_nota": "Decis de autor: Roderick îl scoate pe Vale peste gardul putred de la Marginea satului, seara; 7 imagini."
+      "_nota": "Decis de autor: Roderick îl scoate pe Vale peste gardul putred de la Marginea satului, seara; 7 imagini. Se întorc noaptea (23:30, decis de autor), ca somnul de după să aducă visul."
     },
     {
       "id": "vis_2",
