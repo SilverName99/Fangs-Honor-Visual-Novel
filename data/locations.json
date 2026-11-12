@@ -187,7 +187,8 @@
             "conditii": {
               "nuDoarme": "miriam"
             },
-            "mesaj": "Nu o deranjez pe mama mea la ora asta. Trebuie să se odihnească."
+            "mesaj": "Nu o deranjez pe mama mea la ora asta. Trebuie să se odihnească.",
+            "mesajIesire": "Mama se pregătește de culcare. Ies încet și închid ușa după mine."
           }
         },
         {
@@ -348,7 +349,8 @@
               "conditii": {
                 "nuDoarme": "fierar"
               },
-              "mesaj": "E noapte și la fierărie nu arde nicio lumină. Bram doarme de mult. Mă întorc mâine."
+              "mesaj": "E noapte și la fierărie nu arde nicio lumină. Bram doarme de mult. Mă întorc mâine.",
+              "mesajIesire": "Bram stinge focul din forjă și mă conduce la ușă: „E noapte, băiete. Mâine.”"
             },
             {
               "conditii": {
@@ -366,7 +368,8 @@
                   }
                 ]
               },
-              "mesaj": "Ușa fierăriei e închisă. Bram nu e aici acum; poate îl găsesc mai târziu."
+              "mesaj": "Ușa fierăriei e închisă. Bram nu e aici acum; poate îl găsesc mai târziu.",
+              "mesajIesire": "Bram închide fierăria și pleacă. Ies odată cu el."
             }
           ],
           "_incuiat": "Decis de autor: magazinul lui Bram e închis până la misiunea cu fierul; după ea, Bram îl invită înăuntru."
@@ -387,7 +390,8 @@
               "conditii": {
                 "nuDoarme": "fierar"
               },
-              "mesaj": "Bram doarme. Nu vreau să-l deranjez acum."
+              "mesaj": "Bram doarme. Nu vreau să-l deranjez acum.",
+              "mesajIesire": "Bram vine să se culce. Ies din camera lui."
             }
           ]
         }
@@ -553,7 +557,8 @@
                   }
                 ]
               },
-              "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mâine dimineață."
+              "mesaj": "Ușa e zăvorâtă. Agnes a închis pe ziua de azi. Revin mâine dimineață.",
+              "mesajIesire": "Agnes stinge lămpile și închide taverna. Ies în noapte."
             },
             {
               "conditii": {
@@ -641,7 +646,8 @@
                 }
               ]
             },
-            "mesaj": "Nu pot urca așa, fără să plătesc. Mai întâi vorbesc cu Agnes."
+            "mesaj": "Nu pot urca așa, fără să plătesc. Mai întâi vorbesc cu Agnes.",
+            "mesajIesire": "A trecut prânzul și camera nu mai e a mea. Îmi strâng lucrurile și cobor."
           },
           "ascuns": {
             "_nota": "Decis de autor: camera se vede de la misiunea lui Agnes „Camera de sus”.",
@@ -1385,7 +1391,8 @@
                 ]
               }
             },
-            "mesaj": "E noapte. Finn și ai lui dorm. Nu vreau să-i trezesc."
+            "mesaj": "E noapte. Finn și ai lui dorm. Nu vreau să-i trezesc.",
+            "mesajIesire": "Se face noapte. Finn și ai lui se pregătesc de culcare; e timpul să plec."
           },
           "variante": [
             {
@@ -1639,7 +1646,8 @@
                 ]
               }
             },
-            "mesaj": "E întuneric la geam. Bătrâna doarme; mă întorc mâine."
+            "mesaj": "E întuneric la geam. Bătrâna doarme; mă întorc mâine.",
+            "mesajIesire": "Bătrâna Morwen stinge opaițul. E vremea să plec."
           },
           "zoneVariante": [
             {

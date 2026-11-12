@@ -1233,9 +1233,25 @@ function esteClicabil(p, ctx) {
   return true;
 }
 
+// Un loc care se închide cât stă Vale în el (Bram se culcă sau pleacă, taverna închide, mama se culcă): Vale iese
+// afară, cu un gând (decis de autor: după foalele lui Bram, terminate seara în magazin, la noapte ieși din fierărie).
+// Lacătele sunt aceleași ca la intrare; „mesajIesire” la lacăt e gândul de la ieșire (altfel, cel de la intrare)
+function scoateDacaSeInchide(d, ctx) {
+  if (d.tip !== 'loc' || !d.parinte || dialog.activ() || secventa.activa()) return;
+  const t = lume.get(d.parinte)?.tinte.find((x) => x.spre === d.id);
+  const lacat = [].concat(t?.incuiat || []).find((l) => !verifica(l.conditii, ctx));
+  if (!lacat) return;
+  setTimeout(() => {
+    if (stare.scena !== d.id || dialog.activ()) return;
+    mergi(d.parinte, { faraTimp: true });
+    gand(lacat.mesajIesire || lacat.mesaj || 'Trebuie să plec de aici.');
+  }, 0);
+}
+
 function afiseaza() {
   const d = lume.get(stare.scena);
   const ctx = context(stare);
+  scoateDacaSeInchide(d, ctx);
   const r = randeaza(stratLume, d, date.aranjare[d.id], ctx);
   sunet.scena(d.id, ctx, lantScene(d.id).map((s) => s.id));
   const faraZona = [];

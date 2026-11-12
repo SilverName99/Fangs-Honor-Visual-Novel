@@ -148,7 +148,7 @@ Reguli:
 - **Strălucirea (decis de autor):** **doar piesele de pe hartă** au strălucirea lor (CSS `drop-shadow` pe forma PNG-ului). **Tot restul** (locuri, acțiuni, personaje) folosește strălucirea zonelor desenate: o bandă aurie estompată pe conturul zonei. Un personaj fără zonă desenată primește automat o zonă trasată din forma sprite-ului (`src/contur.js`), afișată exact ca una desenată.
 - **Zonele clicabile sunt poligoane**, desenate în editor. **Regula autorului:** tot ce e clicabil (locuri, acțiuni, personaje) are o zonă desenată de el; **excepție: piesele de pe hartă**, care răspund automat pe forma lor. Până e desenată zona, acțiunile apar ca butoane, iar personajele răspund pe forma sprite-ului.
 - **Strălucirea în repaus** (ca să se vadă ce e clicabil): 30% ziua, 20% noaptea; completă cu mouse-ul deasupra.
-- **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide. `incuiat` poate fi și o listă de lacăte, fiecare cu mesajul lui (camera fierarului: fără cheie / fierarul doarme).
+- **Locuri încuiate:** un loc poate cere o condiție (secțiunea 12). Dacă nu e îndeplinită, apare un mesaj și locul nu se deschide. `incuiat` poate fi și o listă de lacăte, fiecare cu mesajul lui (camera fierarului: fără cheie / fierarul doarme). **Dacă locul se închide cât e Vale înăuntru** (Bram se culcă sau pleacă, taverna închide, mama se culcă), Vale iese singur afară, cu un gând (decis de autor; `mesajIesire` la lacăt).
 - **Locuri ascunse:** apar pe imagine doar după o condiție (de exemplu Camp site).
 - Buton de **înapoi** pe fiecare nivel. Mutarea între locuri **consumă timp** (configurabil). Întoarcerea la nivelul de deasupra nu consumă timp.
 
