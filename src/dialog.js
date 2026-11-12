@@ -146,7 +146,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!activ) return;
     el.hidden = true;
     fundal.replaceChildren();
-    el.classList.remove('cu-imagine', 'asteapta-imaginea');
+    el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis');
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;
@@ -169,6 +169,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     porneste(dialog, { delaNod = null, imagine = null } = {}) {
       activ = { dialog, original: dialog, emotiePartener: 'normal', alegeri: [], imagineReluata: imagine };
       el.hidden = false;
+      // Visele (decis de autor): ceață pe marginile ecranului, ca să se vadă că e un vis
+      el.classList.toggle('vis', !!dialog.vis);
       parinte.classList.add('in-dialog');
       if (delaNod) return arataNod(delaNod, true);
       // „start” poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire cu un personaj e o prezentare)

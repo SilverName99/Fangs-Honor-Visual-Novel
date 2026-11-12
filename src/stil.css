@@ -2697,6 +2697,30 @@ svg.zone {
 .dialog.cu-imagine {
   background: #000;
 }
+/* Visele (decis de autor): ceață pe marginile ecranului, încețoșată și albăstruie, care respiră încet;
+   mijlocul imaginii rămâne clar */
+.dialog.vis .fundal-dialog::before,
+.dialog.vis .fundal-dialog::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.dialog.vis .fundal-dialog::before {
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, transparent 55%, #000 100%);
+  mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, transparent 55%, #000 100%);
+}
+.dialog.vis .fundal-dialog::after {
+  background:
+    radial-gradient(ellipse 62% 58% at 50% 46%, transparent 50%, rgba(205, 214, 230, 0.35) 78%, rgba(225, 230, 240, 0.8) 100%);
+  animation: ceata-vis 7s ease-in-out infinite alternate;
+}
+@keyframes ceata-vis {
+  from { opacity: 0.75; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.04); }
+}
 .dialog > .loc-portret,
 .dialog > .caseta {
   z-index: 1;

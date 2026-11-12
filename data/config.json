@@ -118,7 +118,9 @@
     "oraTrezire": "07:00",
     "cameraPanaLa": "12:00",
     "staminaPeOra": 15,
-    "nevoiInSomn": 0.5
+    "nevoiInSomn": 0.5,
+    "_notaVis": "Decis de autor: visele vin doar după un somn peste noapte, nu după câteva ore. Somnul trebuie să prindă cel puțin atâtea ore din noapte (23–05).",
+    "oreNoaptePentruVis": 4
   },
   "magazin": {
     "_nota": "Când vinzi, primești o parte din preț.",

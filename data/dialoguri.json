@@ -2572,6 +2572,7 @@
     "_nota": "CIORNĂ (Claude). Decis de autor: primul vis, data următoare când doarme Vale, după discuția cu Roderick despre hârtii. Doar un semn: Vale nu știe încă nimic.",
     "grup": "Visele lui Vale",
     "partener": null,
+    "vis": true,
     "start": "a",
     "noduri": {
       "a": {

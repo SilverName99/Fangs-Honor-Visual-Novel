@@ -307,10 +307,10 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după „Camera de sus”, 15:00, sala tavernei → Roderick → „Unchiule, am găsit niște hârtii...”.
 
 ### ✅ Primul vis (nu e misiune)
-- Data următoare când doarme (oriunde, oricât), după discuția despre hârtii: Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
-- **Imagine:** `events/vis_1.png`.
+- **Prima noapte dormită** după discuția despre hârtii (oriunde; decis de autor: visele vin doar după un somn peste noapte, care prinde cel puțin 4 ore din 23–05, nu după câteva ore): Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
+- **Imagine:** `events/vis_1.png`. Ca toate visele, cu ceață pe marginile ecranului (`vis: true` la dialog).
 
-**Cum verifici:** după „Hârtiile soldatului”, acasă → Dormi 2 ore → după imaginea somnului, visul.
+**Cum verifici:** după „Hârtiile soldatului”, acasă, seara sau noaptea → „Dormi până dimineața” (sau „Dormi 6 ore” de la 22:00) → după imaginea somnului, visul. „Dormi 2 ore” nu aduce visul.
 
 ### 📝 Locul unde a căzut tata
 - Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale, **prin ieșirea din zona hoțului** (deci după eliberarea hoțului). Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.

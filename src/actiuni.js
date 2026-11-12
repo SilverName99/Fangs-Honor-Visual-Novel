@@ -137,13 +137,15 @@ export function creeazaActiuni(parinte, joc) {
       const v = (a.varianteImagine || []).find((x) => verifica(x.conditii, context(s))) || a;
       // Imaginea de noapte dacă somnul prinde măcar o bucată de noapte (decis de autor: seara, „până dimineața”
       // sau 6 ore trec peste 23:00); altfel cea de zi
-      let prindeNoaptea = false;
-      for (let t = 0; t < minute && !prindeNoaptea; t += 15) prindeNoaptea = momentZi((acum + t) % MINUTE_ZI) === 'noaptea';
-      const deZi = !prindeNoaptea;
+      let minuteNoapte = 0;
+      for (let t = 0; t < minute; t += 15) if (momentZi((acum + t) % MINUTE_ZI) === 'noaptea') minuteNoapte += Math.min(15, minute - t);
+      const deZi = minuteNoapte === 0;
+      // Visele vin doar după un somn peste noapte (decis de autor), nu după un pui de somn de câteva ore
+      const pesteNoapte = minuteNoapte >= (cfg.somn.oreNoaptePentruVis ?? 4) * 60;
       cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => {
         joc.dupaActiune('Te-ai odihnit.');
         // Visele lui Vale vin la trezire (decis de autor: după anumite misiuni, data următoare când doarme)
-        joc.dupaSomn?.();
+        if (pesteNoapte) joc.dupaSomn?.();
       }, 'somn');
     };
     // Mereu patru butoane, în ordinea cerută de autor: 2 ore, 6 ore, apoi „până dimineața” seara și noaptea
