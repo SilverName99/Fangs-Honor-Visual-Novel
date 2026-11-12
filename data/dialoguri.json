@@ -4787,26 +4787,26 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Luna e ascunsă după nori. Finn merge în fața mea, aplecat, cu sacul gol pe umăr. Poarta se vede de departe, după lumina torței.",
+        "text": "Luna plină luminează noroiul din fața porții. Finn merge în fața mea, aplecat, cu sacul gol pe umăr, și se oprește după gardul rupt.",
         "imagine": "events/finn_lada_1.png",
         "urmator": "a2"
       },
       "a2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Acolo. Lada stă lângă masa taxei. Paznicul doarme la zid; auzi cum sforăie?",
+        "text": "Acolo, sub copertina din dreapta. Lada stă pe masa taxei. Paznicul doarme la foc; auzi cum sforăie?",
         "urmator": "a3"
       },
       "a3": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Cel cu torța se plimbă de la foc la poartă și înapoi. Unde e lumină, nu călcăm. Unde scârțâie, nu călcăm.",
+        "text": "Până la ea avem după ce să ne ascundem: lemnele de lângă casă, căruța stricată din mijloc, butoaiele de lângă palisadă. Dar cel cu torța se plimbă de colo-colo. Unde bate lumina, nu călcăm.",
         "urmator": "a4"
       },
       "a4": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Până la umbra de acolo sunt două drumuri. Unul e sigur. Celălalt... nu știu. Alege tu, eu vin după tine.",
+        "text": "Primul salt. Lemnele de lângă casă sau căruța din mijloc. Alege tu, eu vin după tine.",
         "imagine": "events/finn_lada_2.png",
         "alegeri": [
           {
@@ -4829,14 +4829,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Am ajuns în umbră. Torța trece pe lângă noi, la câțiva pași. Îmi țin respirația până se îndepărtează.",
+        "text": "Am ajuns. Torța trece pe lângă noi, la câțiva pași. Îmi țin respirația până se îndepărtează.",
         "imagine": "events/finn_lada_3.png",
         "urmator": "b2"
       },
       "b2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Bine. Încă puțin. Uită-te unde bate lumina.",
+        "text": "Acum: butoaiele de lângă palisadă sau iar căruța. Uită-te unde bate lumina.",
         "alegeri": [
           {
             "text": "Mă strecor mai departe.",
@@ -4858,14 +4858,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mai aproape. Aud focul trosnind și sforăitul paznicului. Lada e chiar acolo.",
+        "text": "Mai aproape. Aud focul trosnind și sforăitul paznicului. Lada e chiar acolo, pe masă.",
         "imagine": "events/finn_lada_4.png",
         "urmator": "c2"
       },
       "c2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Ultimul pas. Dacă ne vede acum, nu mai apucăm nici să fugim.",
+        "text": "Ultimul pas: colțul copertinei, după butoi și coșuri, sau pe sub masă, după pânza atârnată. Dacă ne vede acum, nu mai apucăm nici să fugim.",
         "alegeri": [
           {
             "text": "Mă strecor mai departe.",
