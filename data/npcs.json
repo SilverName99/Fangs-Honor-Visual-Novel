@@ -157,7 +157,9 @@
       },
       "locuriSprite": [
         "taverna/parter",
-        "biserica/interior"
+        "biserica/interior",
+        "iesirea",
+        "antrenament"
       ],
       "lupta": {
         "viata": 75,
@@ -169,9 +171,20 @@
         },
         "armura": 15
       },
-      "_despre": "Roderick Lightfinder, fratele tatălui lui Vale (unchiul), fost soldat. Se poate recruta dacă l-ai ajutat în scandalul din tavernă (cum anume: TODO).",
+      "_despre": "Roderick Lightfinder, fratele lui Edwin (tatăl lui Vale), unchiul. Fost soldat; a luptat lângă Edwin în bătălia cu orcii și a supraviețuit pentru că Edwin i-a poruncit să fugă în sat („Ai grijă de Miriam și de băiat.”, decis de autor). Se poate recruta de la 8/10 încredere (cum anume: TODO).",
       "dialog": "soldat",
       "program": [
+        {
+          "de": "07:00",
+          "pana": "10:00",
+          "loc": "antrenament",
+          "conditii": {
+            "misiune": {
+              "roderick_antrenament": "inceputa"
+            }
+          },
+          "ce": "cât e misiunea „Antrenamentul”, îl așteaptă pe Vale la locul de antrenament de la Marginea satului (decis de autor: în orele în care nu știe nimeni unde e)"
+        },
         {
           "de": "00:00",
           "pana": "10:00",
@@ -189,6 +202,17 @@
           "pana": "18:00",
           "loc": "taverna/parter",
           "ce": "în tavernă"
+        },
+        {
+          "de": "19:00",
+          "pana": "23:00",
+          "loc": "iesirea",
+          "conditii": {
+            "misiune": {
+              "roderick_locul": "inceputa"
+            }
+          },
+          "ce": "cât e misiunea „Locul unde a căzut tata”, îl așteaptă pe Vale seara la gardul putred de la Marginea satului"
         },
         {
           "de": "18:00",

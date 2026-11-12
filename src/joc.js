@@ -522,6 +522,40 @@ function furisare(v) {
   }, 0);
 }
 
+// Antrenamentul cu Roderick (decis de autor): mini-jocul lemnelor peste prima imagine a evenimentului (Vale se
+// pregătește să lovească manechinul), iar la fiecare lovitură reușită se vede o clipă a doua imagine (lovitura); la
+// ratare, nu. Cu mini-jocurile oprite, cele două imagini una după alta, și ziua contează. Ziua de antrenament contează
+// doar cu destule lovituri reușite („reusiteMin”); apoi Roderick spune ce crede (dialogul din „antrenament”)
+function antrenament(idEv) {
+  const ev = evenimente.find((e) => e.id === idEv);
+  const a = ev?.antrenament;
+  if (!a) return;
+  setTimeout(async () => {
+    noteazaEveniment(stare, ev, ziua(stare));
+    let reusite;
+    if (miniJocuriPornite()) {
+      reusite = await actiuni.mini.cerc({
+        imagine: ev.imagini[0],
+        imagineLovitura: ev.imagini[1],
+        titlu: a.titlu || ev.nume,
+        idEcran: `minijoc_${ev.id}`,
+        sunet: a.sunet,
+        indemn: a.indemn,
+      });
+    } else {
+      sunet.efect('eveniment');
+      await new Promise((r) => secventa.arata(ev.imagini, r));
+      reusite = a.reusiteMin ?? 2;
+    }
+    const bine = reusite >= (a.reusiteMin ?? 2);
+    aplicaEfecte({ marcheaza: a.marcaj, nevoi: { stamina: -(a.stamina || 0) }, stare: { [a.stareRezultat]: bine ? 'bun' : 'slab' }, ...(bine ? { contor: { [a.contor]: 1 } } : {}) }, joc);
+    if (avanseaza(a.minute || 0)) return;
+    salveaza();
+    afiseaza();
+    vorbesteCu(null, a.dialog);
+  }, 0);
+}
+
 function activeaza(tinta, ctx) {
   // Un loc poate avea mai multe lacăte, fiecare cu gândul lui (camera fierarului: fără cheie / el doarme);
   // primul care nu e îndeplinit spune de ce nu se intră
@@ -665,6 +699,7 @@ const joc = {
   mesaj,
   mergi,
   pornesteEveniment,
+  antrenament,
   pornesteEvenimentDupa,
   furisare,
   vanatoareCu,

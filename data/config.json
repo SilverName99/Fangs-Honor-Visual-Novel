@@ -71,7 +71,23 @@
       "imagine": "locations/munca_arat.png",
       "text": "Ari câmpul...",
       "gandNoapte": "E noapte. Nu ară nimeni pe întuneric, mă întorc mâine dimineață.",
-      "miniJoc": "arat"
+      "miniJoc": "arat",
+      "bonus": [
+        {
+          "_nota": "Misiunea lui Roderick „Antrenamentul”: cât e în lucru și manechinul nu e făcut, aratul dă și un snop de paie, până ai 3 (ales de Claude, ca orzul la bere; TODO echilibru).",
+          "obiect": "paie",
+          "n": 1,
+          "max": 3,
+          "conditii": {
+            "misiune": {
+              "roderick_antrenament": "inceputa"
+            },
+            "nuStare": {
+              "manechin": "construit"
+            }
+          }
+        }
+      ]
     },
     "munca_porci": {
       "nume": "Ferma de porci",
@@ -155,7 +171,18 @@
       "sansaAparare": 0.1,
       "pragRanit": 0.35,
       "sansaAparareRanit": 0.35
-    }
+    },
+    "bonusVale": [
+      {
+        "_nota": "Antrenamentul cu Roderick (decis de autor): după cele 3 zile, +2 la atac, pentru totdeauna, orice ar ține Vale în mână (cifra aleasă de Claude, TODO echilibru).",
+        "atac": 2,
+        "conditii": {
+          "misiune": {
+            "roderick_antrenament": "terminata"
+          }
+        }
+      }
+    ]
   },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",

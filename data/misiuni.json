@@ -106,6 +106,86 @@
       }
     },
     {
+      "id": "miriam_cina",
+      "titlu": "Cina în familie",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": "CIORNĂ: Mama a găsit pe masă crenguța de la copacul de dincolo de gard. Vrea să-l cheme pe unchiul Roderick la cină. De șase luni n-a mai călcat pe la noi.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Locul unde a căzut tata”, dimineața, cât e Miriam în bucătărie.",
+        "text": "Mamă... ai găsit crenguța?",
+        "nod": "cina_o1",
+        "conditii": {
+          "misiune": {
+            "roderick_locul": "terminata"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "05:00",
+            "max": "10:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îl chem pe unchiul Roderick la cină",
+          "la": "soldat",
+          "gata": {
+            "existaStare": "cina_invitat"
+          },
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "predare": {
+            "text": "Unchiule, mama te cheamă diseară la cină.",
+            "nod": [
+              {
+                "nod": "cina_iv1",
+                "conditii": {
+                  "stare": {
+                    "locul_alegere": "invinuit"
+                  }
+                }
+              },
+              {
+                "nod": "cina_i1"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Seara, cina în familie",
+          "gata": {
+            "existaStare": "cina_facuta"
+          },
+          "sfat": "Seara (18–22), acasă, în bucătărie, cu mama.",
+          "predare": {
+            "text": "Mamă, vine unchiul?",
+            "nod": "cina_s1",
+            "conditii": {
+              "loc": "casa/bucatarie",
+              "ora": {
+                "min": "18:00",
+                "max": "21:59"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre cină...",
+            "nod": "cina_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "_nota": "Decis de autor: +1 la Miriam și +1 la Roderick.",
+        "text": "Încrederea mamei +1 și a unchiului Roderick +1. Unchiul o să mă antreneze.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1,
+            "soldat": 1
+          }
+        }
+      }
+    },
+    {
       "id": "bram_fier",
       "titlu": "Fierul lui Bram",
       "dela": "fierar",
@@ -350,6 +430,263 @@
       ],
       "recompensa": {
         "text": "Acum știu ce caut: solzii de pe hârtii."
+      }
+    },
+    {
+      "id": "roderick_lumanari",
+      "titlu": "Lumânările",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": "CIORNĂ: În fiecare zi, unchiul Roderick aprinde la biserică câte o lumânare pentru fiecare om căzut în bătălia cu orcii. Douăzeci și trei. Orcii i-au luat toată ceara, iar el nu mai are ce să aprindă.",
+      "oferta": {
+        "_nota": "Decis de autor: după scandalul din tavernă, la biserică, cât se roagă Roderick (10–14); începutul e altfel dacă l-ai ajutat sau nu în scandal.",
+        "text": "Unchiule... pot să stau puțin lângă tine?",
+        "nod": [
+          {
+            "nod": "lum_a1",
+            "conditii": {
+              "stare": {
+                "scandal_taverna": "ajutat"
+              }
+            }
+          },
+          {
+            "nod": "lum_b1"
+          }
+        ],
+        "conditii": {
+          "existaStare": "scandal_taverna",
+          "loc": "biserica/interior"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Cer ceară de la fermier",
+          "la": "fermier",
+          "gata": {
+            "existaStare": "lumanari_ceara"
+          },
+          "sfat": "Fermierul ține stupi. E la câmpuri dimineața (6–13).",
+          "predare": {
+            "text": "Mai ai ceva ceară? E pentru lumânările lui Roderick.",
+            "nod": "lum_f1"
+          }
+        },
+        {
+          "text": "Duc ceara la Fratele Elian",
+          "la": "mag",
+          "gata": {
+            "existaStare": "lumanari_comandate"
+          },
+          "sfat": "Elian e la biserică: înăuntru până la 14, apoi pe scări, până seara.",
+          "predare": {
+            "text": "Frate Elian, poți turna lumânări din ceara asta?",
+            "nod": "lum_e1",
+            "conditii": {
+              "areObiect": "ceara"
+            }
+          }
+        },
+        {
+          "text": "Iau lumânările de la Elian, a doua zi",
+          "la": "mag",
+          "gata": {
+            "existaStare": "lumanari_gata"
+          },
+          "sfat": "Lumânările se răcesc peste noapte. Mâine sunt gata.",
+          "predare": {
+            "text": "Sunt gata lumânările?",
+            "nod": "lum_e6",
+            "conditii": {
+              "nu": {
+                "marcatAzi": "lumanari_elian"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Sunt gata lumânările?",
+            "nod": "lum_e_asteapta"
+          }
+        },
+        {
+          "text": "Seara, aprind lumânările cu unchiul",
+          "gata": {
+            "existaStare": "lumanari_aprinse"
+          },
+          "sfat": "Seara (18–00), unchiul e în tavernă.",
+          "predare": {
+            "text": "Am adus lumânările, unchiule.",
+            "nod": "lum_p1",
+            "conditii": {
+              "areObiect": "lumanari",
+              "ora": {
+                "min": "18:00"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Am lumânările...",
+            "nod": "lum_p_zi"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea unchiului Roderick +1. Și a acceptat să-mi arate unde a căzut tata.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "roderick_locul",
+      "titlu": "Locul unde a căzut tata",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": "CIORNĂ: Unchiul Roderick a acceptat să-mi arate locul unde a căzut tata, dincolo de gardul putred de la Marginea satului. Nu pe la poartă: acolo nu ne-ar lăsa orcii nici să ne uităm.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Lumânările”, doar când Vale știe drumul spre Marginea satului (după eliberarea lui Finn); pe acolo îl scoate Roderick din sat.",
+        "text": "Unchiule, știu drumul spre Marginea satului.",
+        "nod": "locul_o1",
+        "conditii": {
+          "misiune": {
+            "roderick_lumanari": "terminata"
+          },
+          "stare": {
+            "hot": "eliberat"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Seara, mă întâlnesc cu unchiul la gardul putred de la Marginea satului",
+          "gata": {
+            "existaStare": "tata_locul"
+          },
+          "sfat": "Seara (19–23), la Ieșirea de la Marginea satului.",
+          "predare": {
+            "text": "Sunt gata, unchiule.",
+            "nod": "locul_s1",
+            "conditii": {
+              "loc": "iesirea"
+            }
+          },
+          "indiciu": {
+            "text": "Despre diseară...",
+            "nod": "locul_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "_nota": "Decis de autor: +1 încredere, dar se poate rata (⚠️): dacă Vale îl învinuiește pe Roderick, nu primește punctul (efectul stă la alegere, nu aici).",
+        "text": "Am văzut locul unde a căzut tata. Dacă nu l-am judecat pe unchiul, încrederea lui +1."
+      }
+    },
+    {
+      "id": "roderick_antrenament",
+      "titlu": "Antrenamentul",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": "CIORNĂ: La cină, mama l-a convins pe unchiul Roderick să mă antreneze. Mai întâi facem un manechin de lovit, la locul lui ferit de la Marginea satului.",
+      "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită.",
+      "pasi": [
+        {
+          "text": "Adun ce trebuie pentru manechin",
+          "numara": [
+            {
+              "obiect": "lemn",
+              "n": 6,
+              "nume": "lemne"
+            },
+            {
+              "obiect": "paie",
+              "n": 3,
+              "nume": "paie"
+            },
+            {
+              "obiect": "franghie",
+              "n": 1,
+              "nume": "frânghie"
+            }
+          ],
+          "sfat": "Lemnele, din pădure. Paiele, de la câmpul de grâu (un snop la fiecare arat). Frânghia, de la negustorul din piață.",
+          "indiciu": {
+            "text": "Despre manechin...",
+            "nod": "antr_ind"
+          }
+        },
+        {
+          "text": "Construiesc manechinul cu unchiul",
+          "gata": {
+            "stare": {
+              "manechin": "construit"
+            }
+          },
+          "sfat": "Unchiul mă așteaptă dimineața (7–10) la locul de antrenament de la Marginea satului.",
+          "predare": {
+            "text": "Am adus tot ce trebuie pentru manechin!",
+            "nod": "antr_c1",
+            "conditii": {
+              "loc": "antrenament",
+              "areCate": {
+                "lemn": 6,
+                "paie": 3,
+                "franghie": 1
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre manechin...",
+            "nod": "antr_ind"
+          }
+        },
+        {
+          "text": "Mă antrenez cu unchiul, câte o dată pe zi",
+          "numara": {
+            "contor": "antrenamente_roderick",
+            "n": 3
+          },
+          "sfat": "Dimineața (7–10), la locul de antrenament. Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
+          "predare": {
+            "text": "Să ne antrenăm, unchiule!",
+            "nod": "antr_s1",
+            "conditii": {
+              "loc": "antrenament",
+              "nu": {
+                "marcatAzi": "antrenament_roderick"
+              },
+              "nevoie": {
+                "stamina": {
+                  "min": 20
+                }
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre antrenament...",
+            "nod": [
+              {
+                "nod": "antr_azi",
+                "conditii": {
+                  "marcatAzi": "antrenament_roderick"
+                }
+              },
+              {
+                "nod": "antr_obosit"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "_nota": "+2 la atac: „bonusVale” în config.json (ales de Claude, TODO echilibru).",
+        "text": "Încrederea unchiului Roderick +1. Lovesc mai bine: +2 la atac, pentru totdeauna.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1
+          }
+        }
       }
     },
     {

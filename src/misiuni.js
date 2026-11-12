@@ -9,8 +9,13 @@ import { aplicaEfecte } from './efecte.js';
 // Și obiectele de poveste care se numără (orzul pentru bere) intră la socoteală
 export const cateAre = (stare, id) => (stare.inventar || []).filter((x) => x.id === id).reduce((s, x) => s + x.n, 0) + (stare.povesteNumar?.[id] || 0);
 
+// „numara” la un pas: un obiect ({ obiect, n }), o listă de obiecte (materialele manechinului lui Roderick) sau o
+// numărătoare din salvare ({ contor, n }: zilele de antrenament); pentru fiecare, cât are Vale acum
+export const numaratori = (p, stare) =>
+  [].concat(p.numara || []).map((x) => ({ ...x, are: x.contor ? stare.contoare?.[x.contor] || 0 : cateAre(stare, x.obiect) }));
+
 export function pasGata(p, stare) {
-  if (p.numara && cateAre(stare, p.numara.obiect) < p.numara.n) return false;
+  if (numaratori(p, stare).some((x) => x.are < x.n)) return false;
   return verifica(p.gata, context(stare));
 }
 

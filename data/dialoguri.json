@@ -203,6 +203,410 @@
             "vis_1": "asteapta"
           }
         }
+      },
+      "lum_a1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul stă în genunchi în fața altarului, cu fruntea sprijinită de pumni. Nu se roagă cu voce tare. Doar buzele i se mișcă.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Lumânările” (decis de autor: după scandal, la biserică; începutul diferă după cum l-ai ajutat sau nu).",
+        "urmator": "lum_a2"
+      },
+      "lum_a2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vale. Te-ai făcut om al bisericii de când mi-ai ținut spatele în tavernă?",
+        "urmator": "lum_a3"
+      },
+      "lum_a3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am venit să văd ce faci. Cum e mâna?",
+        "urmator": "lum_a4"
+      },
+      "lum_a4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Se vindecă. Am încasat și lovituri mai urâte, de la oameni mai frumoși decât orcii ăia.",
+        "urmator": "lum_c1"
+      },
+      "lum_b1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul stă în genunchi în fața altarului. Pe obraz are încă vânătaia de la tavernă, gălbuie pe margini.",
+        "_nota": "CIORNĂ (Claude). „Lumânările”, începutul dacă Vale nu l-a ajutat în scandal.",
+        "urmator": "lum_b2"
+      },
+      "lum_b2": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Ai venit să vezi dacă mai respir?",
+        "urmator": "lum_b3"
+      },
+      "lum_b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am venit să-ți cer iertare. În seara aia trebuia să sar și eu.",
+        "urmator": "lum_b4"
+      },
+      "lum_b4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Lasă. La vârsta ta, nici eu n-aș fi sărit. Ba aș fi sărit... și uite unde m-a adus.",
+        "urmator": "lum_c1"
+      },
+      "lum_c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lângă altar, pe o scândură, stau înșirate cioturi de lumânări arse până la capăt. Multe. Le număr fără să vreau: douăzeci și trei.",
+        "urmator": "lum_c2"
+      },
+      "lum_c2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... cum a murit tata? Mama nu vorbește niciodată despre asta. Nici tu.",
+        "urmator": "lum_c3"
+      },
+      "lum_c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul tace atât de mult, încât cred că nu m-a auzit.",
+        "urmator": "lum_c4"
+      },
+      "lum_c4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ce vrei să-ți spun, băiete? Că a murit ca un erou? Toți mor la fel. În noroi, strigându-și mama.",
+        "urmator": "lum_c5"
+      },
+      "lum_c5": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Nu aici. Nu acum.",
+        "urmator": "lum_c6"
+      },
+      "lum_c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se uită la cioturile de lumânări, ca și cum ele i-ar putea răspunde în locul lui.",
+        "urmator": "lum_c7"
+      },
+      "lum_c7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vezi lumânările astea? În fiecare zi aprind câte una pentru fiecare om care a căzut atunci. Douăzeci și trei. De o săptămână n-am mai avut ce să aprind.",
+        "urmator": "lum_c8"
+      },
+      "lum_c8": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Orcii iau tot ce arde: ceara, seul, până și mucurile de lumânare de la Agnes. Să nu le mai putem aprinde nici morților.",
+        "urmator": "lum_c9"
+      },
+      "lum_c9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Fermierul ține stupi. Poate i-a rămas ceva ceară, ascunsă de ei. Iar Fratele Elian știe să toarne lumânări. Eu n-am cu ce plăti, și nimeni nu mai dă pe datorie unui bețiv.",
+        "urmator": "lum_c10"
+      },
+      "lum_c10": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Adu-mi lumânări, și într-o seară le aprindem împreună. Poate atunci... poate atunci găsesc cuvintele.",
+        "alegeri": [
+          {
+            "text": "Ți le aduc eu, unchiule.",
+            "spre": "lum_da",
+            "efecte": {
+              "misiune": {
+                "roderick_lumanari": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Altă dată, unchiule."
+          }
+        ]
+      },
+      "lum_da": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Mulțumesc, Vale. Și spune-i fermierului pentru cine sunt. O să înțeleagă."
+      },
+      "lum_f1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mai ai ceva ceară de la stupi? E pentru lumânările lui Roderick. Pentru cei căzuți.",
+        "_nota": "CIORNĂ (Claude). „Lumânările”, la fermier.",
+        "urmator": "lum_f2"
+      },
+      "lum_f2": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Ceară...",
+        "urmator": "lum_f3"
+      },
+      "lum_f3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fermierul se uită spre drumul pe care trece patrula orcilor. Apoi se uită în jur și coboară vocea.",
+        "urmator": "lum_f4"
+      },
+      "lum_f4": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Am îngropat doi faguri sub podeaua grajdului, unde nu umblă orcii. Îi păstram pentru iarnă, să am ce vinde.",
+        "urmator": "lum_f5"
+      },
+      "lum_f5": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Dar pentru băieții ăia... Tobin, al morarului, a arat cu mine trei veri la rând. Ia-i. Nu-ți cer nimic pe ei.",
+        "urmator": "lum_f6"
+      },
+      "lum_f6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se întoarce cu doi faguri înveliți într-o cârpă, grei și galbeni, mirosind a vară.",
+        "efecte": {
+          "obiect": "ceara",
+          "stare": {
+            "lumanari_ceara": "da"
+          }
+        },
+        "urmator": "lum_f7"
+      },
+      "lum_f7": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Spune-i lui Roderick să aprindă una și pentru Tobin. Din partea mea."
+      },
+      "lum_e1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Frate Elian, poți turna lumânări din ceara asta? Sunt pentru unchiul Roderick. Pentru cei căzuți în bătălie.",
+        "_nota": "CIORNĂ (Claude). „Lumânările”, la Elian (încă un semn mic că e mag al luminii).",
+        "urmator": "lum_e2"
+      },
+      "lum_e2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pentru cei douăzeci și trei...",
+        "urmator": "lum_e3"
+      },
+      "lum_e3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Îl văd pe Roderick în fiecare zi, la altar. Se roagă ca un om care nu mai crede că e auzit.",
+        "urmator": "lum_e4"
+      },
+      "lum_e4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian ia fagurii și îi cântărește în palme. Pentru o clipă, mi se pare că ceara se încălzește și se înmoaie în mâinile lui, înainte să ajungă la foc.",
+        "urmator": "lum_e5"
+      },
+      "lum_e5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ceara se topește încet și se toarnă în tipare, iar lumânările trebuie să se răcească peste noapte. Vino mâine după ele.",
+        "efecte": {
+          "daObiect": "ceara",
+          "stare": {
+            "lumanari_comandate": "da"
+          },
+          "marcheaza": "lumanari_elian"
+        }
+      },
+      "lum_e6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Gata. Douăzeci și trei, drepte și curate. Le-am numărat de două ori.",
+        "urmator": "lum_e7"
+      },
+      "lum_e7": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Spune-i lui Roderick că biserica e deschisă oricând. Și că lumina nu se stinge doar pentru că a încetat cineva să creadă în ea.",
+        "efecte": {
+          "obiect": "lumanari",
+          "stare": {
+            "lumanari_gata": "da"
+          }
+        }
+      },
+      "lum_e_asteapta": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Încă se răcesc în tipare. O lumânare grăbită își plânge toată ceara într-o oră. Vino mâine."
+      },
+      "lum_p1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, am adus lumânările. Douăzeci și trei.",
+        "urmator": "lum_p2"
+      },
+      "lum_p2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul lasă cana jos. N-o mai ridică.",
+        "urmator": "lum_p3"
+      },
+      "lum_p3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Atunci hai. Acum, cât e biserica goală.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "roderick_lumanari"
+            }
+          }
+        ]
+      },
+      "lum_p_zi": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Nu acum, băiete. Lumânările pentru morți se aprind seara, când nu se mai uită nimeni. Caută-mă diseară în tavernă."
+      },
+      "locul_o1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, știu drumul spre Marginea satului. Și am văzut gardul de care ziceai.",
+        "_nota": "CIORNĂ (Claude). „Locul unde a căzut tata” (decis de autor: Roderick îl scoate pe Vale pe la gardul putred de la Marginea satului).",
+        "urmator": "locul_o2"
+      },
+      "locul_o2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Deci ai fost pe la casa hoțului ăluia mic, Finn. Bine. Oamenii de acolo știu să tacă.",
+        "urmator": "locul_o3"
+      },
+      "locul_o3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Diseară, după ce se întunecă. Te aștept la gard. Și ia-ți ceva gros pe tine: noaptea, pe câmp, frigul nu iartă.",
+        "alegeri": [
+          {
+            "text": "Diseară, unchiule.",
+            "spre": "locul_da",
+            "efecte": {
+              "misiune": {
+                "roderick_locul": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Nu sunt încă pregătit."
+          }
+        ]
+      },
+      "locul_da": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Până atunci, o să-mi mai beau curajul. Nu te uita așa. Doar o cană."
+      },
+      "locul_ind": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Diseară, la gardul putred de la Marginea satului. După ce se întunecă, de pe la șapte. Te aștept până pe la unsprezece."
+      },
+      "locul_s1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai venit. Credeam că te răzgândești.",
+        "urmator": "locul_s2"
+      },
+      "locul_s2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și eu credeam că te răzgândești tu.",
+        "urmator": "locul_s3"
+      },
+      "locul_s3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mă gândesc de șase luni, băiete. Hai, până nu mă apucă iar.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "roderick_locul"
+            }
+          }
+        ]
+      },
+      "antr_ind": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pentru manechin: șase lemne, pentru stâlp și pentru brațe, trei snopi de paie pentru trup și o frânghie bună, să le țină laolaltă. Paie găsești la câmpul de grâu, frânghie la negustorul din piață.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Antrenamentul”."
+      },
+      "antr_c1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus tot, unchiule: lemne, paie și frânghie.",
+        "urmator": "antr_c2"
+      },
+      "antr_c2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bun. Acum vedem dacă te pricepi și la altceva decât la cărat.",
+        "alegeri": [
+          {
+            "text": "Hai să-l facem.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "lemn": 6,
+                "paie": 3,
+                "franghie": 1
+              },
+              "eveniment": "antrenament_manechin"
+            }
+          }
+        ]
+      },
+      "antr_s1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ia sabia de lemn. Nu așa, că doar nu ții o lingură. Picioarele depărtate, greutatea pe cel din spate.",
+        "urmator": "antr_s2"
+      },
+      "antr_s2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Lovești când îți spun eu, nu când îți vine ție. Ochii pe manechin, nu pe mine.",
+        "alegeri": [
+          {
+            "text": "Sunt gata.",
+            "inchide": true,
+            "efecte": {
+              "antrenament": "antrenament_roderick"
+            }
+          }
+        ]
+      },
+      "antr_azi": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pentru azi ajunge, băiete. Mușchii cresc cât dormi, nu cât lovești. Mâine dimineață, din nou."
+      },
+      "antr_obosit": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Abia te ții pe picioare. Du-te și odihnește-te: un soldat obosit e un soldat mort."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -1130,6 +1534,172 @@
             "text": "Altă dată, mamă."
           }
         ]
+      },
+      "cina_o1": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Vale. Vino încoace.",
+        "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Cina în familie” (decis de autor: după „Locul unde a căzut tata”, dimineața; +1 la Miriam și la Roderick).",
+        "urmator": "cina_o2"
+      },
+      "cina_o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama stă la masă și ține în mâini crenguța cu frunze aurii. Se vede că n-a lăsat-o din mână de când a găsit-o.",
+        "urmator": "cina_o3"
+      },
+      "cina_o3": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "De unde ai crenguța asta?",
+        "urmator": "cina_o4"
+      },
+      "cina_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De la copacul de dincolo de gard. Unchiul Roderick m-a dus acolo. Mi-a arătat unde a căzut tata.",
+        "urmator": "cina_o5"
+      },
+      "cina_o5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama nu spune nimic multă vreme. Își trece degetul peste o frunză, încet, ca peste o față.",
+        "urmator": "cina_o6"
+      },
+      "cina_o6": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Copacul nostru. Sub el mi-a cerut tatăl tău să-i fiu nevastă. Era tot toamnă, și frunzele erau la fel de aurii.",
+        "urmator": "cina_o7"
+      },
+      "cina_o7": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Roderick... de șase luni nu mai calcă pragul casei ăsteia. Și eu nu l-am chemat nici măcar o dată.",
+        "urmator": "cina_o8"
+      },
+      "cina_o8": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mi-a fost mai ușor să fiu supărată pe el decât să fiu tristă. Nu e drept, știu.",
+        "urmator": "cina_o9"
+      },
+      "cina_o9": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Gata. Destul. Cheamă-l diseară la cină. Și să nu-l lași să-ți spună nu.",
+        "alegeri": [
+          {
+            "text": "Îl chem eu, mamă.",
+            "spre": "cina_da",
+            "efecte": {
+              "misiune": {
+                "miriam_cina": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Poate altă dată...",
+            "spre": "cina_nu"
+          }
+        ]
+      },
+      "cina_da": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Pun fasolea la înmuiat. Și scot fața de masă cea bună."
+      },
+      "cina_nu": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Altă dată o să fie prea târziu, Vale. Mereu e prea târziu."
+      },
+      "cina_i1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, mama te cheamă diseară la cină. A zis să nu te las să spui nu.",
+        "urmator": "cina_i2"
+      },
+      "cina_i2": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Miriam? Pe mine?",
+        "urmator": "cina_i3"
+      },
+      "cina_i3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se uită în cana lui, apoi la mâini, apoi iar în cană. Nu l-am văzut niciodată speriat. Nici măcar în fața orcilor.",
+        "urmator": "cina_i4"
+      },
+      "cina_i4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Și ce să duc? Nu pot să vin cu mâna goală la masa fratelui meu.",
+        "urmator": "cina_i5"
+      },
+      "cina_i5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Vino doar tu. Bărbierit, dacă se poate.",
+        "urmator": "cina_i6"
+      },
+      "cina_i6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ha! Bine, băiete. Bărbierit.",
+        "efecte": {
+          "stare": {
+            "cina_invitat": "da"
+          }
+        }
+      },
+      "cina_iv1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... mama te cheamă diseară la cină.",
+        "urmator": "cina_iv2"
+      },
+      "cina_iv2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "După tot ce ți-am povestit acolo, la copac? Ai avut dreptate să-mi spui ce mi-ai spus, băiete.",
+        "urmator": "cina_iv3"
+      },
+      "cina_iv3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Atunci a vorbit durerea, nu eu. Mama te vrea la masă. Și... și eu.",
+        "urmator": "cina_iv4"
+      },
+      "cina_iv4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se uită la mine multă vreme. Apoi dă din cap, o singură dată.",
+        "urmator": "cina_i4"
+      },
+      "cina_s1": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Tocmai a bătut cineva la ușă. Du-te și deschide. Și Vale... nu-l descoase. Lasă-l să vină singur la vorbă.",
+        "alegeri": [
+          {
+            "text": "Deschid eu.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "miriam_cina"
+            }
+          }
+        ]
+      },
+      "cina_ind": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Diseară, după ce se întunecă. Am pus deja fasolea la fiert. Dacă întârzie, mi-l aduci de ureche."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -4205,7 +4775,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mormântul tatei e lângă gardul cimitirului. Crucea de lemn s-a înnegrit de ploi.",
+        "text": "Mormântul tatei e lângă gardul cimitirului. Pe crucea de lemn, înnegrită de ploi, abia se mai citește: EDWIN LIGHTFINDER.",
         "urmator": "b"
       },
       "b": {
@@ -5203,6 +5773,792 @@
             "foale_bram": "noi"
           }
         }
+      }
+    }
+  },
+  "roderick_lumanari": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Lumânările”: seara, în biserică, peste 2 imagini. Numele soldaților căzuți sunt ciorne.",
+    "grup": "Roderick: lumânările",
+    "partener": "soldat",
+    "start": "l1",
+    "noduri": {
+      "l1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Biserica e goală și rece. Fratele Elian ne deschide ușa și iese pe scări fără un cuvânt.",
+        "imagine": "events/roderick_lumanari_1.png",
+        "urmator": "l2"
+      },
+      "l2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul ia prima lumânare, o aprinde de la candela de lângă altar și o lipește pe scândură.",
+        "urmator": "l3"
+      },
+      "l3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hal. A ținut poarta până n-a mai putut ridica scutul. Avea nepoți cât tine.",
+        "urmator": "l4"
+      },
+      "l4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Tobin, fiul morarului. A mințit că are optsprezece ani, ca să-l primim. Avea șaptesprezece.",
+        "urmator": "l5"
+      },
+      "l5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Fermierul a zis să aprinzi una și pentru Tobin. Din partea lui.",
+        "urmator": "l6"
+      },
+      "l6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Atunci Tobin primește două. Le merită.",
+        "urmator": "l7"
+      },
+      "l7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Frații Corwin. Amândoi. Unul a căzut încercând să-l ridice pe celălalt.",
+        "urmator": "l8"
+      },
+      "l8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Le aprinde una câte una. La fiecare spune un nume și câteva cuvinte. Unele mă fac să zâmbesc. Altele mă fac să strâng din pumni.",
+        "urmator": "l9"
+      },
+      "l9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și soldatul din camera de sus a lui Agnes. Nu vorbea mult. Dar când vorbea, tăceam toți și ascultam.",
+        "urmator": "l10"
+      },
+      "l10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Douăzeci și două de flăcări ard acum în fața altarului. Unchiul ține în mână ultima lumânare. Mâna îi tremură atât de tare, încât abia o poate ține.",
+        "imagine": "events/roderick_lumanari_2.png",
+        "urmator": "l11"
+      },
+      "l11": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și...",
+        "urmator": "l12"
+      },
+      "l12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu poate. Deschide gura de două ori și nu iese nimic.",
+        "urmator": "l13"
+      },
+      "l13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi iau ușor lumânarea din mână și o aprind eu.",
+        "urmator": "l14"
+      },
+      "l14": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Edwin Lightfinder. Tata.",
+        "urmator": "l15"
+      },
+      "l15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul închide ochii. Stăm amândoi în lumina celor douăzeci și trei de flăcări, multă vreme, fără să spunem nimic.",
+        "urmator": "l16"
+      },
+      "l16": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De șase luni n-am putut să-i rostesc numele cu voce tare. Mulțumesc, băiete.",
+        "urmator": "l17"
+      },
+      "l17": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Arată-mi unde a căzut, unchiule.",
+        "urmator": "l18"
+      },
+      "l18": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Nu pe la poartă. Acolo nu ne-ar lăsa orcii nici să ne uităm.",
+        "urmator": "l19"
+      },
+      "l19": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "La Marginea satului, dincolo de casele de acolo, e un loc unde gardul e putred și jos. Acolo nu păzește nimeni.",
+        "urmator": "l20"
+      },
+      "l20": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Când știi drumul până acolo, vino și spune-mi. Te duc.",
+        "efecte": {
+          "stare": {
+            "lumanari_aprinse": "da"
+          },
+          "mergi": "biserica.interior"
+        }
+      }
+    }
+  },
+  "roderick_locul": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Locul unde a căzut tata” (decis de autor: Edwin i-a poruncit lui Roderick să fugă în sat: „Ai grijă de Miriam și de băiat.”). 7 imagini; alegerea de la imaginea 5 dă +1 doar dacă Vale îl consolează (⚠️).",
+    "grup": "Roderick: locul unde a căzut tata",
+    "partener": "soldat",
+    "start": "r1",
+    "noduri": {
+      "r1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Gardul e mai putred decât mi se părea ziua. Unchiul îl sare dintr-o singură mișcare, ca un om care a mai făcut asta de o sută de ori.",
+        "imagine": "events/roderick_locul_1.png",
+        "urmator": "r2"
+      },
+      "r2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dă-mi mâna. Și nu te uita înapoi spre sat: de aici se văd torțele de pe zid. Dacă le vezi tu, te pot vedea și ei.",
+        "urmator": "r3"
+      },
+      "r3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mergem multă vreme prin iarba înaltă și uscată. Unchiul nu spune nimic. Parcă își numără pașii, ca să nu se gândească la altceva.",
+        "imagine": "events/roderick_locul_2.png",
+        "urmator": "r4"
+      },
+      "r4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "N-ai mai fost aici de atunci?",
+        "urmator": "r5"
+      },
+      "r5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am venit în fiecare noapte. Doar că mă opream la gard.",
+        "urmator": "r6"
+      },
+      "r6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Câmpul se deschide deodată în fața noastră. Iarba a crescut peste tot, dar nu ascunde nimic: lame ruginite, scuturi crăpate, un steag albastru cu rombul auriu, rupt pe jumătate și înfipt în pământ.",
+        "imagine": "events/roderick_locul_3.png",
+        "urmator": "r7"
+      },
+      "r7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și la mijloc, copacul. Uriaș, cu frunzele galbene ca focul. E atât de frumos, încât doare să te uiți la el.",
+        "urmator": "r8"
+      },
+      "r8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aici ne-am oprit. Ni s-a spus că orcii vin dinspre pădure, așa că ne-am făcut zid de scuturi lângă copac. Douăzeci și trei de oameni care nu mai ținuseră o sabie de ani buni... și doi frați care se credeau încă tineri.",
+        "urmator": "r9"
+      },
+      "r9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vezi asta?",
+        "imagine": "events/roderick_locul_4.png",
+        "urmator": "r10"
+      },
+      "r10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe scoarță, cam la înălțimea unui copil cocoțat pe prima creangă, sunt scrijelite două litere: un E și un R. Lemnul a crescut peste ele și le-a lățit, dar încă se citesc.",
+        "urmator": "r11"
+      },
+      "r11": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aici ne cățăram când eram mici. Edwin urca primul, mereu. Eu cădeam, el râdea, apoi cobora să mă ridice. Așa a fost toată viața.",
+        "urmator": "r12"
+      },
+      "r12": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și tot aici l-am lăsat.",
+        "urmator": "r13"
+      },
+      "r13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se lasă jos, între rădăcini, ca și cum nu-l mai țin picioarele. Mă așez lângă el.",
+        "imagine": "events/roderick_locul_5.png",
+        "urmator": "r14"
+      },
+      "r14": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Era primăvară. Copacul era alb de flori. Când au venit orcii, florile cădeau peste noi ca zăpada, iar noi stăteam în ele și tremuram.",
+        "urmator": "r15"
+      },
+      "r15": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am ținut linia mai mult decât ar fi crezut oricine. Apoi a căzut Hal, și Tobin, și frații Corwin, și linia s-a rupt în două.",
+        "urmator": "r16"
+      },
+      "r16": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Edwin m-a prins de umăr și m-a întors spre el. Avea sânge pe față și se uita la mine cum se uita când eram mici și cădeam din copac.",
+        "urmator": "r17"
+      },
+      "r17": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mi-a zis: „Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”",
+        "urmator": "r18"
+      },
+      "r18": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și eu am ascultat. Mi-am lăsat fratele aici, în mijlocul lor, și am fugit.",
+        "urmator": "r19"
+      },
+      "r19": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Și n-am avut grijă de nimeni. Satul a căzut a doua zi. Iar eu stau în tavernă și beau, și de șase luni nu mă pot uita în ochii maică-tii.",
+        "urmator": "r20"
+      },
+      "r20": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu știu ce să-i spun. O parte din mine, cea care l-a pierdut pe tata, vrea să urle la el. Cealaltă vede doar un om care se îneacă.",
+        "alegeri": [
+          {
+            "text": "Ai făcut ce ți-a cerut. Tata știa ce face, unchiule.",
+            "spre": "u1",
+            "efecte": {
+              "relatie": {
+                "soldat": 1
+              },
+              "stare": {
+                "locul_alegere": "consolat"
+              }
+            }
+          },
+          {
+            "text": "Trebuia să rămâi lângă el!",
+            "spre": "v1",
+            "efecte": {
+              "stare": {
+                "locul_alegere": "invinuit"
+              }
+            }
+          }
+        ]
+      },
+      "u1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Asta... asta ar fi zis și el. Exact așa.",
+        "urmator": "u2"
+      },
+      "u2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Umerii unchiului încep să tremure. Nu spun nimic. Îl las să plângă, poate pentru prima oară de la primăvară.",
+        "urmator": "u3"
+      },
+      "u3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mulțumesc, băiete.",
+        "urmator": "w1"
+      },
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cuvintele îmi ies din gură înainte să le pot opri.",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Da. Trebuia.",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu se apără. Nici măcar nu ridică ochii. Parcă de șase luni aștepta să i-o spună cineva.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și nu mă simt deloc mai ușor.",
+        "urmator": "w1"
+      },
+      "w1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când ne ridicăm să plecăm, o crenguță cade din copac la picioarele mele, cu trei frunze aurii pe ea. O ridic. Nu știu de ce. Poate pentru mama.",
+        "imagine": "events/roderick_locul_6.png",
+        "urmator": "w2"
+      },
+      "w2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ia-o. Maică-ta iubea copacul ăsta. Venea aici cu Edwin, pe vremea când tu nici nu erai pe lume.",
+        "urmator": "w3"
+      },
+      "w3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "După ce s-a terminat totul, orcii ne-au lăsat să ne strângem morții. Ca să vedem bine ce pățește cine se pune cu ei. L-am dus pe Edwin în spate, până la cimitir.",
+        "urmator": "w4"
+      },
+      "w4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne întoarcem pe întuneric. Unchiul mă ajută din nou să sar gardul. Nu mai spunem nimic tot drumul.",
+        "imagine": "events/roderick_locul_7.png",
+        "urmator": "w5"
+      },
+      "w5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Acasă, pun crenguța pe masa din bucătărie. Mama doarme. Mă strecor în camera mea fără să fac zgomot.",
+        "efecte": {
+          "stare": {
+            "tata_locul": "vazut",
+            "crenguta": "pe_masa",
+            "vis_2": "asteapta"
+          },
+          "mergi": "casa.camera_vale"
+        }
+      }
+    }
+  },
+  "vis_2": {
+    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește.",
+    "grup": "Visele lui Vale",
+    "partener": null,
+    "vis": true,
+    "start": "v1",
+    "noduri": {
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Copacul e alb. Alb de flori. Și aerul miroase a primăvară.",
+        "imagine": "events/vis_2_1.png",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "În fața lui stau oameni cu scuturi, umăr lângă umăr. Unii râd prea tare. Alții se roagă în șoaptă.",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Dinspre pădure vine un vuiet, ca un râu ieșit din matcă. Orcii.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fier pe fier. Florile cad peste noi ca zăpada. Și în mijlocul lor, cu coiful strâmb și sabia ridicată... tata.",
+        "imagine": "events/vis_2_2.png",
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Tată! Tată, sunt aici!",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mă aude. Nimeni nu mă aude. Sunt aici și, totuși, nu sunt.",
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Un orc mai mare decât toți ceilalți. O singură lovitură. Tata cade în genunchi, printre flori.",
+        "imagine": "events/vis_2_3.png",
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Nu... nu, nu, nu!",
+        "urmator": "v9"
+      },
+      "v9": {
+        "imagine": "events/vis_2_4.png",
+        "durata": 2800,
+        "urmator": "v10",
+        "_nota": "Ochiul de dragon (decis de autor): doar câteva secunde, fără text; trece singur."
+      },
+      "v10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Mă trezesc dintr-o smucitură, ud de sudoare. Inima îmi bate să-mi spargă pieptul.",
+        "trezire": true,
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ochiul ăla... auriu, cu pupila subțire ca o tăietură de cuțit. Nu se uita prin mine. Se uita la mine.",
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și parcă... parcă voia să-mi spună ceva.",
+        "efecte": {
+          "stare": {
+            "vis_2": "vazut"
+          }
+        }
+      }
+    }
+  },
+  "miriam_cina": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Cina în familie”: 3 imagini; la sfârșit pornește „Antrenamentul” (decis de autor: după cină, Roderick acceptă insistențele mamei).",
+    "grup": "Miriam: cina în familie",
+    "partener": "miriam",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul stă în prag, cu căciula în mâini. Bărbierit, cu cămașa curată. Nu l-am mai văzut așa de... nici nu mai știu de când.",
+        "imagine": "events/miriam_cina_1.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bună seara, Miriam.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bună seara, Roderick. Intră. Fasolea nu se mănâncă singură.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mâncăm o vreme în tăcere. Pe masă, într-o cană cu apă, stă crenguța cu frunze aurii. Unchiul tot se uită la ea.",
+        "imagine": "events/miriam_cina_2.png",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Vale mi-a zis că l-ai dus la copac.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Da.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Și că i-ai spus cum a murit.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "I-am spus. Ție nu ți-am spus niciodată. Și trebuia, Miriam. De la început.",
+        "urmator": "c9"
+      },
+      "c9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul lasă lingura jos. Mâinile îi tremură, ca atunci, în biserică, la ultima lumânare.",
+        "urmator": "c10"
+      },
+      "c10": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ultimul lucru pe care mi l-a spus Edwin a fost: „Ai grijă de Miriam și de băiat.”",
+        "urmator": "c11"
+      },
+      "c11": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Și eu n-am avut grijă de voi. Am stat în tavernă și mi-a fost rușine. Șase luni.",
+        "urmator": "c12"
+      },
+      "c12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama nu spune nimic multă vreme. Apoi se ridică, ocolește masa și îl ia în brațe, așa cum stă, pe scaun.",
+        "urmator": "c13"
+      },
+      "c13": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bătrân prost și încăpățânat ce ești. Exact ca el.",
+        "imagine": "events/miriam_cina_3.png",
+        "urmator": "c14"
+      },
+      "c14": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Să știi că te-am urât. Pentru că tu te-ai întors, și el nu. Și mi-a fost rușine de asta în fiecare zi.",
+        "urmator": "c15"
+      },
+      "c15": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aveai tot dreptul.",
+        "urmator": "c16"
+      },
+      "c16": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "N-aveam niciun drept. Ai făcut ce ți-a cerut fratele tău. Acum fă și restul.",
+        "urmator": "c17"
+      },
+      "c17": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Restul?",
+        "urmator": "c18"
+      },
+      "c18": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "„Ai grijă de băiat.” Uită-te la el. Umblă noaptea, se bate cu lupii, se bagă între orci și oameni. Dacă tot o face, măcar s-o facă știind să țină o sabie în mână.",
+        "urmator": "c19"
+      },
+      "c19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă!",
+        "urmator": "c20"
+      },
+      "c20": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Tu taci și mănâncă.",
+        "urmator": "c21"
+      },
+      "c21": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Are dreptate, băiete. Edwin te-ar fi învățat demult.",
+        "urmator": "c22"
+      },
+      "c22": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De mâine dimineață, la Marginea satului. Am un loc ferit, pe unde nu trec orcii. Dar mai întâi ne trebuie un manechin, pe care să-l poți ciopârți fără să-ți ceară nimeni socoteală.",
+        "urmator": "c23"
+      },
+      "c23": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pentru prima oară de la primăvară, în casa noastră se râde la masă.",
+        "efecte": {
+          "stare": {
+            "cina_facuta": "da"
+          },
+          "misiune": {
+            "roderick_antrenament": "inceputa"
+          }
+        }
+      }
+    }
+  },
+  "antrenament_manechin": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Antrenamentul”: construcția manechinului, peste o imagine.",
+    "grup": "Roderick: antrenamentul",
+    "partener": "soldat",
+    "start": "a1",
+    "noduri": {
+      "a1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Înfigem stâlpul adânc în pământ, iar unchiul bate pene în jurul lui până nu se mai clintește. Apoi îmbrăcăm crucea de lemn în paie, strâns, și o legăm cu frânghie.",
+        "imagine": "events/antrenament_manechin.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mai strâns. Dacă se desface la prima lovitură, o să râdă și orcii de noi.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când terminăm, manechinul are un cap de paie, un trup gros și două brațe întinse, ca o sperietoare de ciori. Arată caraghios. Și totuși, nu-mi pot lua ochii de la el.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Edwin și cu mine am avut unul la fel, în curtea tatălui nostru. L-am ciopârțit până n-a mai rămas din el decât stâlpul.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De mâine te antrenezi. În fiecare dimineață, o dată. Și să nu te prind că te plângi.",
+        "efecte": {
+          "stare": {
+            "manechin": "construit"
+          }
+        }
+      }
+    }
+  },
+  "roderick_antrenament_dupa": {
+    "_nota": "CIORNĂ (Claude). După fiecare antrenament cu Roderick: „antrenament_rezultat” = bun (măcar 2 lovituri reușite din 3) sau slab; la a treia zi reușită, încheierea misiunii.",
+    "partener": "soldat",
+    "start": [
+      {
+        "nod": "gata1",
+        "conditii": {
+          "stare": {
+            "antrenament_rezultat": "bun"
+          },
+          "contor": {
+            "antrenamente_roderick": {
+              "min": 3
+            }
+          }
+        }
+      },
+      {
+        "nod": "bun1",
+        "conditii": {
+          "stare": {
+            "antrenament_rezultat": "bun"
+          },
+          "contor": {
+            "antrenamente_roderick": {
+              "max": 1
+            }
+          }
+        }
+      },
+      {
+        "nod": "bun2",
+        "conditii": {
+          "stare": {
+            "antrenament_rezultat": "bun"
+          }
+        }
+      },
+      {
+        "nod": "slab"
+      }
+    ],
+    "noduri": {
+      "bun1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Nu-i rău. Deloc rău. Ții sabia ca un țăran, dar lovești ca un Lightfinder. Mâine, din nou."
+      },
+      "bun2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mai bine decât ieri. Vezi? Brațul ține minte ce uită capul. Mâine, din nou."
+      },
+      "slab": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Lovești aerul de parcă ți-ar fi dator. Ziua de azi nu se pune. Mâine o luăm de la capăt."
+      },
+      "gata1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Uită-te la manechin. Uită-te bine.",
+        "urmator": "gata2"
+      },
+      "gata2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Paiele îi ies din toate părțile, iar brațul stâng atârnă de o singură sfoară. L-am ciopârțit exact cum zicea unchiul că l-au ciopârțit ei, pe vremuri.",
+        "urmator": "gata3"
+      },
+      "gata3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Trei dimineți, și nu te-ai plâns nici măcar o dată. Edwin se plângea în fiecare zi, să știi.",
+        "urmator": "gata4"
+      },
+      "gata4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Încă nu ești soldat. Dar nici băiatul de acum trei zile nu mai ești. Lovești mai bine. Iar eu... eu mă simt mai puțin bătrân.",
+        "urmator": "gata5"
+      },
+      "gata5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Manechinul rămâne aici. Când ai nevoie să-ți descarci nervii, știi unde-l găsești."
       }
     }
   }

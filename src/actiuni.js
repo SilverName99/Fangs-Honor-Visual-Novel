@@ -300,7 +300,15 @@ export function creeazaActiuni(parinte, joc) {
     // Un loc unde Vale doar se gândește la ceva (ieșirea de la Marginea satului) sau unde pornește o scurtă
     // scenă (mormântul tatălui): fără muncă și fără magazin
     // „text” poate fi și o listă: Vale se gândește de fiecare dată la altceva (Marta, bolnavă, în pat)
-    gand: (a) => joc.gand(Array.isArray(a.text) ? a.text[Math.floor(Math.random() * a.text.length)] : a.text),
+    // „text”: un gând, o listă din care se alege unul la întâmplare, sau gânduri cu condiții ({ conditii, text }),
+    // dintre care câștigă primul îndeplinit (ieșirea de la Marginea: alt gând după ce l-a scos Roderick pe acolo)
+    gand: (a) => {
+      const lista = [].concat(a.text);
+      const cuConditii = lista.find((x) => typeof x === 'object' && verifica(x.conditii, context(joc.stare)));
+      if (cuConditii) return joc.gand(cuConditii.text);
+      const simple = lista.filter((x) => typeof x === 'string');
+      return joc.gand(simple[Math.floor(Math.random() * simple.length)]);
+    },
     // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
     // „cand”: condițiile fără de care Vale doar se gândește („gandCand”): contrabandistul vine doar 18–02
     // „cand” poate fi și o listă { conditii, gand }: primul neîndeplinit spune de ce nu (lada colectorului: doar

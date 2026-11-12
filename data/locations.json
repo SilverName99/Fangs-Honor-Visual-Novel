@@ -768,7 +768,8 @@
             "apa",
             "pansament",
             "potiune_viata",
-            "rucsac_panza"
+            "rucsac_panza",
+            "franghie"
           ],
           "cumpara": [
             "carne",
@@ -1452,9 +1453,19 @@
         {
           "id": "iesirea",
           "tip": "gand",
-          "nume": "Poteca de lângă zid",
-          "_nota": "CIORNĂ. Ieșirea mai puțin păzită: o folosesc mai târziu misiunile lui Roderick.",
-          "text": "Între doi stâlpi putrezi ai zidului se strecoară o potecă spre pădure. Orcii nu păzesc aici. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
+          "nume": "Gardul putred",
+          "_nota": "CIORNĂ. Decis de autor: gardul e putred și jos, ușor de sărit (fără gaură); pe aici îl scoate Roderick pe Vale (misiunea „Locul unde a căzut tata”). După ea, alt gând.",
+          "text": [
+            {
+              "conditii": {
+                "misiune": {
+                  "roderick_locul": "terminata"
+                }
+              },
+              "text": "Gardul pe care m-a ajutat unchiul să-l sar. Dincolo e câmpul, cu copacul lor. Și, mai departe, tot ce n-am văzut niciodată."
+            },
+            "Gardul e putred aici și destul de jos cât să-l sar dintr-un salt. Orcii nu păzesc locul ăsta. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
+          ]
         }
       ],
       "_nota": "Decis de autor: fără piesă pe hartă; locul se desenează ca zonă pe harta Marginii satului."
@@ -1643,6 +1654,77 @@
           ]
         }
       ]
+    },
+    {
+      "id": "antrenament",
+      "nume": "Locul de antrenament",
+      "harta": "marginea",
+      "_nota": "Decis de autor: locul unde Roderick îl antrenează pe Vale, pe harta Marginii (piesă nouă, pusă de autor pe un loc liber). Apare odată cu misiunea „Antrenamentul”; manechinul rămâne acolo după ea. Noaptea, imaginea zonei primește filtrul din cod.",
+      "ascuns": {
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "roderick_antrenament": "inceputa"
+              }
+            },
+            {
+              "misiune": {
+                "roderick_antrenament": "terminata"
+              }
+            }
+          ]
+        }
+      },
+      "piese": [
+        {
+          "id": "antrenament",
+          "imagine": "map/piese/antrenament.png",
+          "variante": [
+            {
+              "imagine": "map/piese/antrenament_manechin_noapte.png",
+              "nume": "cu manechinul, noaptea",
+              "conditii": {
+                "stare": {
+                  "manechin": "construit"
+                },
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            },
+            {
+              "sufix": "_manechin",
+              "conditii": {
+                "stare": {
+                  "manechin": "construit"
+                }
+              }
+            },
+            {
+              "sufix": "_noapte",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "imagine": "locations/antrenament_zona.png",
+      "variante": [
+        {
+          "sufix": "_manechin",
+          "conditii": {
+            "stare": {
+              "manechin": "construit"
+            }
+          }
+        }
+      ],
+      "locuri": [],
+      "actiuni": []
     }
   ]
 }

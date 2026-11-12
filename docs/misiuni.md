@@ -23,7 +23,8 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 **Miriam (mama)**
 1. ✅ **Acoperișul**: dimineața (până la 11), cât mama e în bucătărie. Acoperișul trebuie să fie încă stricat.
-2. 📝 **Cina în familie**: după „Locul unde a căzut tata” (Roderick).
+2. ✅ **Cina în familie**: după „Locul unde a căzut tata” (Roderick), dimineața, cât mama e în bucătărie.
+3. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
@@ -43,9 +44,10 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 **Roderick (unchiul)**
 1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
 2. ✅ **Hârtiile soldatului**: după „Camera de sus” (Agnes) și după scandal, cu hârtiile la tine, în tavernă.
-3. 📝 **Locul unde a căzut tata**: după eliberarea lui Finn (se ajunge prin ieșirea de la Marginea satului).
-4. 📝 **Antrenamentul**: după „Cina în familie”.
-5. 📝 **Solzii de dragon**: după „Hârtiile soldatului” și eliberarea lui Finn.
+3. ✅ **Lumânările**: după scandal (oricum s-a terminat), la biserică, cât se roagă Roderick (10–14).
+4. ✅ **Locul unde a căzut tata**: după „Lumânările”, când Vale știe drumul spre Marginea satului (după eliberarea lui Finn). Apoi, la primul somn peste noapte, **al doilea vis**.
+5. ✅ **Antrenamentul**: pornește singur, la sfârșitul „Cinei în familie” (Miriam).
+6. 📝 **Solzii de dragon**: după „Antrenamentul” (decis de autor: după cele 4 misiuni, Roderick îi povestește de solzi), dincolo de gardul de la Marginea satului.
 
 **Agnes (hangița)**
 1. ✅ **Camera de sus**: la 2 zile după prima discuție cu Agnes, în tavernă, cât e ea acolo.
@@ -72,8 +74,8 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
 | Personaj | De unde vine +1 | Acum |
 |---|---|---|
-| **Miriam** | ✅ Acoperișul · 📝 Cina în familie (de decis dacă dă) · 💡 încă 8 | 1 / 10 |
-| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · 📝 Locul unde a căzut tata · 📝 Antrenamentul · 💡 încă 7 (Hârtiile soldatului nu dau, decis) | 1 / 10 |
+| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · 💡 încă 8 (la 8/10: misiunea specială, echipamentul tatălui) | 2 / 10 |
+| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia camerei · 💡 încă 7 | 2 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · 💡 încă 8 | 2 / 10 |
@@ -81,7 +83,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Fermierul** | 💡 toate 10 (patrula de orci nu dă, decis: încrederea vine doar din misiuni) | 0 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
-**De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️”.
+**De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
 
 ---
 
@@ -137,9 +139,17 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 2. Vorbește cu mama → „Vale! Doamne, ce-ai pățit?” → „Bine, mamă.” → imaginea → „Mulțumesc, mamă.” (viața 70, ceasul +1 oră).
 3. Vorbește iar cu ea în aceeași zi: salutul obișnuit. A doua zi, rănit, te întreabă din nou.
 
-### 📝 Cina în familie
-- După misiunea lui Roderick **„Locul unde a căzut tata”**: mama îi spune lui Vale să-l invite pe Roderick la cină. La cină vorbesc ca Roderick să-l antreneze pe Vale mai bine (de aici pornește **Antrenamentul**).
-- Imagini, cu replicile peste ele.
+### ✅ Cina în familie
+- **Pornește** (decis de autor): după „Locul unde a căzut tata” (Roderick), **dimineața, cât e mama în bucătărie**: „Mamă... ai găsit crenguța? !”. Mama ține crenguța cu frunze aurii: sub copacul acela i-a cerut Edwin să-i fie nevastă. Recunoaște că i-a fost mai ușor să fie supărată pe Roderick decât tristă → „Cheamă-l diseară la cină.”
+- **Pasul 1:** invitația, la Roderick (biserică sau tavernă): „Unchiule, mama te cheamă diseară la cină.” Dacă Vale l-a învinuit la copac, întâi se împacă.
+- **Pasul 2:** **seara (18–22), acasă, în bucătărie**, la mama: „Mamă, vine unchiul?” → „Deschid eu.” → **3 imagini**: Roderick în prag, bărbierit; cina în tăcere, cu crenguța într-o cană pe masă; Roderick îi spune în sfârșit Miriamei ultimele cuvinte ale lui Edwin, iar mama îl ia în brațe. Mama insistă ca Roderick să-l învețe pe Vale să țină o sabie → pornește **„Antrenamentul”**.
+- **Recompensa** (decis de autor): încrederea Miriamei +1 și a lui Roderick +1.
+- **Imaginile:** `events/miriam_cina_1.png`, `_2`, `_3`.
+
+**Cum verifici:** după „Locul”, F2 → „Ziua următoare”, „Dimineață”, Mergi la bucătărie → mama → „ai găsit crenguța?” → Roderick (15:00, tavernă) → seara, 19:00, bucătărie → mama → „Mamă, vine unchiul?”.
+
+### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
+- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, platoșa, jambierele și sabia (`coif_tata`, `platosa_tata`, `jambiere_tata`, `sabia_tata`, cu iconițele încărcate). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
 
 ---
 
@@ -290,7 +300,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
     - victorie: o imagine, apoi Agnes și Roderick vorbesc cu Vale (pentru prima dată Roderick chiar se uită la el); Agnes te hrănește, primești 3 pâini și 2 beri, iar taxa crește cu 10;
     - înfrângere: o imagine, apoi Agnes îl îngrijește pe Vale și Roderick îi spune că a stat lângă el, atât i-a cerut; rămâi cu 10 viață și trec 2 ore.
   - **Refuzi:** 2 imagini (decis de autor): Roderick se bate singur și e doborât, apoi orcii pleacă râzând; dialogul cu el, rănit, tot peste imagine. Nu primești încredere, dar **tot îl poți recruta** mai târziu.
-- **Legături:** după scandal vine „Cina în familie” (Miriam).
+- **Legături:** după scandal vine „Lumânările” (la biserică), oricum s-ar fi terminat.
 - **Imaginile:** `events/taverna_scandal_1.png`, `_2`, `_3` (orcii la masă, orcul o apucă pe Agnes, dezordinea și Roderick ridicându-se), `taverna_scandal_victorie.png`, `taverna_scandal_infrangere.png`, `taverna_scandal_refuz_1.png`, `taverna_scandal_refuz_2.png`.
 
 **Cum verifici**
@@ -312,15 +322,50 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 **Cum verifici:** după „Hârtiile soldatului”, acasă, seara sau noaptea → „Dormi până dimineața” (sau „Dormi 6 ore” de la 22:00) → după imaginea somnului, visul. „Dormi 2 ore” nu aduce visul.
 
-### 📝 Locul unde a căzut tata
-- Vale și Roderick merg la locul bătăliei unde a căzut tatăl lui Vale, **prin ieșirea din zona hoțului** (deci după eliberarea hoțului). Amintiri din copilăria lui Vale; Vale plânge, Roderick îl consolează. Nu găsesc nimic: e o misiune de poveste. Dialoguri lungi și dramatice, peste imagini. La final, încrederea lui Roderick +1.
-- După ea vine „Cina în familie” (Miriam).
+### ✅ Lumânările
+- **Pornește** (decis de autor): după scandal, **la biserică, cât se roagă Roderick (10–14)**: „Unchiule... pot să stau puțin lângă tine? !”. Începutul e altfel după cum l-ai ajutat sau nu în scandal (cald: „mi-ai ținut spatele”; rece: „Ai venit să vezi dacă mai respir?”), apoi Vale îl întreabă cum a murit tata. Roderick nu poate răspunde; îi arată cioturile celor 23 de lumânări pe care le aprinde în fiecare zi pentru cei căzuți. Orcii i-au luat toată ceara.
+- **Pasul 1:** faguri de ceară de la **fermier** (la câmpuri, 6–13). Fermierul i-a ascuns sub grajd; pentru cei căzuți îi dă pe degeaba (Tobin, fiul morarului, a arat cu el).
+- **Pasul 2:** ceara la **Elian** („poți turna lumânări?”); Elian ține fagurii în palme și ceara parcă se înmoaie singură (încă un semn că e mag).
+- **Pasul 3:** **a doua zi**, lumânările de la Elian (în aceeași zi: „Încă se răcesc în tipare”).
+- **Pasul 4:** **seara (18–00), în tavernă**, la Roderick: „Am adus lumânările, unchiule.” (ziua: „se aprind seara”) → în biserică, peste **2 imagini**: Roderick aprinde lumânările una câte una și spune numele fiecăruia (Hal, Tobin, frații Corwin, soldatul din camera de sus...); la ultima nu poate rosti numele. Vale o aprinde: „Edwin Lightfinder. Tata.” Apoi îi cere: „Arată-mi unde a căzut.” Roderick: nu pe la poartă, ci pe la gardul putred de la Marginea satului.
+- **Recompensa:** încrederea lui Roderick +1. Vale rămâne în biserică.
+- **Imaginile:** `events/roderick_lumanari_1.png` (biserica goală, noaptea: Roderick aprinde lumânările pe o scândură lângă altar, Vale lângă el), `events/roderick_lumanari_2.png` (aproape: 22 de flăcări, Roderick cu ultima lumânare în mâna care tremură, Vale îi ia lumânarea). Obiecte: `items/ceara.png`, `items/lumanari.png`.
+- Numele celor căzuți sunt ciorne (Claude).
 
-### 📝 Antrenamentul
-- După cină: Roderick îl antrenează pe Vale, **de 3 ori, o dată pe zi**. Fiecare antrenament: **+5 viață maximă**; la final, încrederea lui Roderick +1.
+**Cum verifici**
+1. F2: „Toți cunoscuți de 3 zile”, apoi starea `scandal_taverna` = `ajutat` (sau `refuzat`, pentru celălalt început); Mergi la biserică (interior), ora 11:00 → Roderick → „Unchiule... pot să stau puțin lângă tine?” → „Ți le aduc eu.”
+2. Fermierul (dacă nu e deblocat: starea `fermier_deblocat` = `da`), dimineața, la câmpuri → „Mai ai ceva ceară?”.
+3. Elian → „Frate Elian, poți turna lumânări...” → încă o dată în aceeași zi („Încă se răcesc”) → „Ziua următoare” → „Sunt gata lumânările?”.
+4. Roderick ziua („Am lumânările...” → „se aprind seara”), apoi seara în tavernă → „Am adus lumânările” → cele 2 imagini.
+
+### ✅ Locul unde a căzut tata
+- **Pornește** (decis de autor): după „Lumânările”, **doar după eliberarea lui Finn** (Vale trebuie să știe drumul spre Marginea satului), la Roderick: „Unchiule, știu drumul spre Marginea satului. !” → „Diseară, unchiule.”
+- **Seara (19–23), Roderick îl așteaptă la Ieșirea de la Marginea satului**, la gardul putred (decis de autor: gardul e doar putred și jos, ușor de sărit; acolo nu păzesc orcii). Sprite: `sprites/soldat_iesirea.png`. „Sunt gata, unchiule.” → „Să mergem.”
+- **Peste 7 imagini:** sar gardul; merg prin iarba uscată; câmpul bătăliei (lame ruginite, scuturi, steagul albastru cu rombul auriu) și **copacul mare, cu frunze aurii** (toamnă; lupta a fost primăvara, cu copacul înflorit); pe scoarță, literele **E** și **R**, scrijelite de cei doi frați când erau copii; Roderick, între rădăcini, povestește: linia s-a rupt, iar **Edwin i-a poruncit: „Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”** (decis de autor). A ascultat și de atunci se urăște pentru asta.
+- **Alegerea ⚠️:** „Ai făcut ce ți-a cerut. Tata știa ce face, unchiule.” → **+1** (Roderick plânge, pentru prima oară) / „Trebuia să rămâi lângă el!” → fără punct (Roderick nu se apără). Apoi o **crenguță cu frunze aurii** cade la picioarele lui Vale; Roderick spune că Miriam iubea copacul și că l-a dus el pe Edwin în spate, până la cimitir. Se întorc pe întuneric; acasă, Vale lasă crenguța pe masa din bucătărie.
+- **După:** la primul somn peste noapte, **al doilea vis**; dimineața, mama găsește crenguța („Cina în familie”). Gardul de la Ieșire are alt gând după misiune.
+- **Imaginile:** `events/roderick_locul_1.png` … `roderick_locul_7.png`.
+
+**Cum verifici:** după „Lumânările” și eliberarea lui Finn: Roderick (biserică sau tavernă) → „Unchiule, știu drumul...” → „Diseară, unchiule.” → Mergi la Marginea satului → Ieșirea, ora 20:00 → Roderick → „Sunt gata” → imaginile → alegerea. Ca să vezi și cealaltă alegere: F2 → Misiune `roderick_locul` → Resetează.
+
+### ✅ Al doilea vis (nu e misiune)
+- **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; Edwin răpus de un orc mare; apoi **un ochi uriaș de dragon**, care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
+- **Imaginile:** `events/vis_2_1.png` … `vis_2_4.png`. Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
+
+**Cum verifici:** după „Locul”, acasă, seara → „Dormi până dimineața”.
+
+### ✅ Antrenamentul
+- **Pornește singur**, la sfârșitul „Cinei în familie” (decis de autor: Roderick acceptă insistențele mamei). Pe harta Marginii apare **locul de antrenament** (piesă nouă, `map/piese/antrenament.png`, pe un loc liber ales de autor). Cât e misiunea, **Roderick e acolo 07–10** (orele în care „nu știe nimeni unde e”). Sprite: `sprites/soldat_antrenament.png`.
+- **Pasul 1:** materialele pentru manechin: **6 lemne** (pădurea), **3 snopi de paie** (câte unul la fiecare arat, la câmpul de grâu, cât e misiunea; ales de Claude) și **o frânghie** (negustorul din piață, 4 monede). Cartea arată „(lemne 4/6, paie 1/3, frânghie 0/1)”.
+- **Pasul 2:** la Roderick, „Am adus tot ce trebuie pentru manechin!” → construcția peste o imagine (3 ore, −20 stamina). De atunci manechinul rămâne acolo (piesa și imaginea zonei, varianta `_manechin`).
+- **Pasul 3** (decis de autor): **o dată pe zi, 3 zile**, „Să ne antrenăm, unchiule!” (odihnit: −20 stamina, 2 ore). **Mini-jocul lemnelor** peste imaginea în care Vale se pregătește să lovească (Roderick îl privește din spate); **la fiecare lovitură reușită se vede o clipă imaginea loviturii**, la ratare nu. Ziua se pune doar cu măcar 2 lovituri din 3 (ales de Claude); altfel Roderick îl trimite să revină mâine. Cu mini-jocurile oprite, cele două imagini una după alta, și ziua se pune. Inelul se mută pe manechin în editor: Aranjare → Ecrane → „Mini-joc: Antrenamentul cu Roderick”.
+- **Recompensa:** încrederea lui Roderick +1 și **+2 la atac, pentru totdeauna** (`bonusVale` în `config.json`; ales de Claude, aprobat de autor).
+- **Imaginile:** zona `locations/antrenament_zona.png` (+ `_manechin`), piesa `map/piese/antrenament.png` (+ `_noapte`, `_manechin`, `_manechin_noapte`), `events/antrenament_manechin.png`, `events/antrenament_pregatire.png`, `events/antrenament_lovitura.png`. Obiecte: `items/paie.png`, `items/franghie.png`. Sunetul: `sunete/efecte/manechin.mp3`.
+
+**Cum verifici:** după cină, F2 → Mergi la Marginea satului → locul de antrenament, ora 08:00 → Roderick („Despre manechin...”). Obiect → Primește: 6 lemne, 1 frânghie; paiele: munca la arat (sau F2 → Obiect → paie de 3 ori) → „Am adus tot” → a doua zi „Să ne antrenăm” → încă două zile.
 
 ### 📝 Solzii de dragon
-- După discuția despre hârtii: Vale și Roderick pleacă în căutarea solzilor, prin ieșirea din zona hoțului (deci după eliberarea hoțului).
+- **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. De discutat.
 
 ---
 

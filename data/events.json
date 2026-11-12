@@ -860,6 +860,95 @@
       "_nota": "Decis de autor: data următoare când doarme Vale, după discuția cu Roderick despre hârtii."
     },
     {
+      "id": "roderick_lumanari",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Roderick: lumânările",
+      "grup": "Roderick: lumânările",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "roderick_lumanari",
+      "_nota": "Misiunea „Lumânările”: seara, în biserică, peste 2 imagini."
+    },
+    {
+      "id": "roderick_locul",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Roderick: locul unde a căzut tata",
+      "grup": "Roderick: locul unde a căzut tata",
+      "efecte": {
+        "timp": 150
+      },
+      "dialog": "roderick_locul",
+      "_nota": "Decis de autor: Roderick îl scoate pe Vale peste gardul putred de la Marginea satului, seara; 7 imagini."
+    },
+    {
+      "id": "vis_2",
+      "laTrezire": true,
+      "repetare": "o_data",
+      "nume": "Al doilea vis",
+      "grup": "Visele lui Vale",
+      "dialog": "vis_2",
+      "conditii": {
+        "stare": {
+          "vis_2": "asteapta"
+        }
+      },
+      "_nota": "Decis de autor: la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, ultima (ochiul de dragon) doar câteva secunde."
+    },
+    {
+      "id": "miriam_cina",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Miriam: cina în familie",
+      "grup": "Miriam: cina în familie",
+      "efecte": {
+        "timp": 120
+      },
+      "dialog": "miriam_cina",
+      "_nota": "Misiunea „Cina în familie”, seara, acasă; 3 imagini."
+    },
+    {
+      "id": "antrenament_manechin",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Roderick: manechinul",
+      "grup": "Roderick: antrenamentul",
+      "efecte": {
+        "timp": 180,
+        "nevoi": {
+          "stamina": -20
+        }
+      },
+      "dialog": "antrenament_manechin",
+      "_nota": "Misiunea „Antrenamentul”: construcția manechinului, peste o imagine (consumă materialele în alegerea de dinainte)."
+    },
+    {
+      "id": "antrenament_roderick",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Antrenamentul cu Roderick",
+      "grup": "Roderick: antrenamentul",
+      "imagini": [
+        "events/antrenament_pregatire.png",
+        "events/antrenament_lovitura.png"
+      ],
+      "_nota": "Decis de autor: prima imagine, Vale se pregătește să lovească manechinul (Roderick îl privește din spate); a doua, lovitura, arătată o clipă doar la o lovitură reușită din mini-jocul lemnelor. Pornește din efectul „antrenament”, nu cu pornesteEveniment.",
+      "antrenament": {
+        "titlu": "Antrenamentul cu Roderick",
+        "indemn": "Lovește manechinul când cercul care se strânge ajunge pe inelul auriu.",
+        "sunet": "manechin",
+        "reusiteMin": 2,
+        "contor": "antrenamente_roderick",
+        "marcaj": "antrenament_roderick",
+        "minute": 120,
+        "stamina": 20,
+        "stareRezultat": "antrenament_rezultat",
+        "dialog": "roderick_antrenament_dupa"
+      }
+    },
+    {
       "id": "pivnita_coborare",
       "nume": "Pivnița: coborârea",
       "grup": "Misiunea lui Agnes: pivnița",

@@ -50,6 +50,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
     activ.nod = nod;
+    activ.dupaImagine = null;
+    // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
+    if (nod.trezire) {
+      fundal.replaceChildren();
+      el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis');
+      activ.imagine = null;
+      activ.imagineReluata = null;
+    }
     // La reluare, imaginea de sub replici e cea de dinainte de refresh (replica de acum poate să n-o aibă pe a ei)
     const imagine = nod.imagine || (reluat ? activ.imagineReluata : null);
     if (imagine && imagine !== activ.imagine) {
@@ -58,9 +66,20 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       laImagine?.(imagine);
       el.classList.add('cu-imagine', 'asteapta-imaginea');
       // Replicile și portretele apar abia când se vede imaginea, ca între două imagini să nu clipească dialogul
-      schimbaImagine(fundal, elementImagine([imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: imagine }), () =>
-        el.classList.remove('asteapta-imaginea'),
-      );
+      schimbaImagine(fundal, elementImagine([imagine], { clasa: 'imagine-fundal-dialog', fundal: true, eticheta: imagine }), () => {
+        el.classList.remove('asteapta-imaginea');
+        const dupa = activ?.dupaImagine;
+        if (activ) activ.dupaImagine = null;
+        dupa?.();
+      });
+    }
+    // „durata” (ochiul de dragon din vis, decis de autor): imaginea stă doar câteva secunde, fără text și fără
+    // portrete, apoi discuția trece singură mai departe; ceasul pornește abia când se vede imaginea
+    el.classList.toggle('fara-caseta', !!nod.durata);
+    if (nod.durata) {
+      const porneste = () => setTimeout(() => activ?.nod === nod && arataNod(nod.urmator ?? null), nod.durata);
+      if (el.classList.contains('asteapta-imaginea')) activ.dupaImagine = porneste;
+      else porneste();
     }
     if (!reluat) laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
@@ -146,7 +165,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!activ) return;
     el.hidden = true;
     fundal.replaceChildren();
-    el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis');
+    el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis', 'fara-caseta');
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;

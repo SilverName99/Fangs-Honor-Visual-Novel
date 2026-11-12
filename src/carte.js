@@ -1,5 +1,5 @@
 import { elementImagine } from './imagini.js';
-import { listaMisiuni, pasul, cateAre } from './misiuni.js';
+import { listaMisiuni, pasul, numaratori } from './misiuni.js';
 
 // Cartea personajelor: câte un personaj pe fiecare două pagini (stânga: nume, încredere, descriere; dreapta: schița lui).
 // Fonturile de scris de mână se importă în joc.js (editorul folosește doar numele fișierelor de aici).
@@ -97,7 +97,10 @@ export function creeazaCarte(parinte, joc) {
     m.pasi.forEach((p, k) => {
       if (k > i || (k === i && st !== 'inceputa')) return;
       const facut = k < i;
-      const cat = p.numara && !facut ? ` (${Math.min(cateAre(s, p.numara.obiect), p.numara.n)}/${p.numara.n})` : '';
+      // Cât a strâns: „(4/10)”, iar la mai multe obiecte deodată, fiecare cu numele lui („lemne 4/6, paie 1/3”)
+      const num = facut ? [] : numaratori(p, s);
+      const cate = (x) => `${Math.min(x.are, x.n)}/${x.n}`;
+      const cat = !num.length ? '' : num.length === 1 ? ` (${cate(num[0])})` : ` (${num.map((x) => `${x.nume || joc.date.items.obiecte[x.obiect]?.nume.toLowerCase() || x.obiect} ${cate(x)}`).join(', ')})`;
       pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${p.text}${cat}`));
       if (!facut && p.sfat) pasi.append(div('sfat-misiune', p.sfat));
     });

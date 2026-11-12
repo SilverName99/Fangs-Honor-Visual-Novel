@@ -50,6 +50,8 @@ const efecte = {
   // Furișatul (misiunea lui Finn, decis de autor): după replică, pe imagine, două locuri desenate de autor;
   // unul e sigur, celălalt îl alertează pe orc. Discuția continuă de la „reusit” sau de la „esuat”
   furisare: (v, joc) => joc.furisare(v),
+  // Antrenamentul cu Roderick: valoarea e evenimentul cu imaginile și regulile lui (decis de autor)
+  antrenament: (v, joc) => joc.antrenament(v),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   // „consuma: { lemn: 10 }” = Vale dă (sau folosește) atâtea bucăți din rucsac
   consuma: (v, joc) => Object.entries(v).forEach(([id, n]) => joc.inventar.scoateOriunde(id, n)),

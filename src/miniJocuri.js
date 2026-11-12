@@ -86,10 +86,15 @@ export function creeazaMiniJocuri(parinte, joc) {
       addEventListener('keydown', laTasta);
     });
 
-  // Lemnele: un cerc se strânge spre un inel; clic când ajunge pe el. „incercari” încercări, întoarce câte au reușit
-  async function cerc({ imagine, titlu, incercari = 3 }) {
-    const e = ecran(imagine, titlu, 'Lovește când cercul care se strânge ajunge pe inelul auriu.');
-    const { el: loc, h } = piesa(e, 'minijoc_cerc', 'inel');
+  // Lemnele: un cerc se strânge spre un inel; clic când ajunge pe el. „incercari” încercări, întoarce câte au reușit.
+  // Același joc la antrenamentul cu Roderick (decis de autor), pe ecranul lui („idEcran”, inelul pus pe manechin),
+  // cu sunetul lui; „imagineLovitura”: la o lovitură reușită se vede o clipă imaginea loviturii (la ratare, nu)
+  async function cerc({ imagine, titlu, incercari = 3, idEcran = 'minijoc_cerc', imagineLovitura = null, sunet = 'topor_copac', indemn }) {
+    const e = ecran(imagine, titlu, indemn || 'Lovește când cercul care se strânge ajunge pe inelul auriu.');
+    // Imaginea loviturii stă gata încărcată peste fundal, ascunsă, ca să apară fără să clipească
+    const lovitura = imagineLovitura && elementImagine([imagineLovitura], { clasa: 'fundal mini-lovitura', fundal: true });
+    if (lovitura) e.el.children[0].after(lovitura);
+    const { el: loc, h } = piesa(e, idEcran, 'inel');
     const inel = div('mini-inel');
     inel.style.borderWidth = `${h * 0.045}px`;
     const cercul = div('mini-cerc');
@@ -117,12 +122,17 @@ export function creeazaMiniJocuri(parinte, joc) {
       const t = await Promise.race([clic(e.el), pauza(DURATA).then(() => null)]);
       cancelAnimationFrame(cadru);
       // La fiecare clic, toporul lovește copacul (decis de autor), reușită sau nu
-      if (t !== null) joc.sunet.efect('topor_copac');
+      if (t !== null) joc.sunet.efect(sunet);
       const r = t === null ? 0 : raza(t);
       const bine = Math.abs(r - R) <= TOLERANTA;
       if (bine) lovituri++;
       clipa(e.el, bine ? 'Lovit!' : r > R ? 'Prea devreme' : 'Prea târziu', bine);
       cercul.style.width = cercul.style.height = '0px';
+      if (bine && lovitura) {
+        lovitura.classList.add('vazuta');
+        await pauza(900);
+        lovitura.classList.remove('vazuta');
+      }
       await pauza(750);
     }
     arataScor(incercari);

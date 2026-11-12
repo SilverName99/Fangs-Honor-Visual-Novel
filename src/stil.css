@@ -2717,6 +2717,11 @@ svg.zone {
     radial-gradient(ellipse 62% 58% at 50% 46%, transparent 50%, rgba(205, 214, 230, 0.35) 78%, rgba(225, 230, 240, 0.8) 100%);
   animation: ceata-vis 7s ease-in-out infinite alternate;
 }
+/* O imagine care trece singură (ochiul din vis): fără chenar și fără portrete, doar imaginea */
+.dialog.fara-caseta > .caseta,
+.dialog.fara-caseta > .loc-portret {
+  visibility: hidden;
+}
 @keyframes ceata-vis {
   from { opacity: 0.75; transform: scale(1); }
   to { opacity: 1; transform: scale(1.04); }
@@ -2755,6 +2760,14 @@ svg.zone {
 .mini-joc > .fundal {
   position: absolute;
   inset: 0;
+}
+/* Antrenamentul: imaginea loviturii apare o clipă peste cea a pregătirii, doar la o lovitură reușită */
+.mini-joc > .mini-lovitura {
+  opacity: 0;
+  transition: opacity 0.08s;
+}
+.mini-joc > .mini-lovitura.vazuta {
+  opacity: 1;
 }
 .mini-umbra {
   position: absolute;

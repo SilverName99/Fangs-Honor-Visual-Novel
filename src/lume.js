@@ -304,6 +304,21 @@ export function construiesteLumea(date) {
   ]) {
     scene.set(`minijoc_${tip}`, { id: `minijoc_${tip}`, tip: 'ecran', titlu, titluObiecte: 'Bucățile mini-jocului', titluFundal: 'Imaginea muncii', imagine: imagineMiniJoc(tip), variante: [], parinte: null, tinte: [], obiecte });
   }
+  // Antrenamentul cu Roderick (decis de autor): același joc ca la lemne, cu inelul pus separat, pe manechin,
+  // peste prima imagine a antrenamentului (Vale se pregătește să lovească)
+  for (const ev of (date.events?.evenimente || []).filter((e) => e.antrenament))
+    scene.set(`minijoc_${ev.id}`, {
+      id: `minijoc_${ev.id}`,
+      tip: 'ecran',
+      titlu: `Mini-joc: ${ev.nume}`,
+      titluObiecte: 'Bucățile mini-jocului',
+      titluFundal: 'Imaginea pregătirii',
+      imagine: ev.imagini?.[0] || null,
+      variante: [],
+      parinte: null,
+      tinte: [],
+      obiecte: [piesaMini('inel', 'Inelul auriu (pe manechin; cercul pornește de 3 ori mai mare)', 1, { x: 0.5, y: 0.5, scara: 0.2037 })],
+    });
   // Furișatul (decis de autor, lada colectorului): pe fiecare imagine a pasului, autorul desenează cele două locuri
   for (const ev of date.events?.evenimente || [])
     (ev.furisare || []).forEach((f, i) =>

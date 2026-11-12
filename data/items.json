@@ -284,6 +284,77 @@
       "pret": 0,
       "descriere": "O cheie veche de fier, de la Finn. Deschide cocioaba contrabandistului, de la Marginea satului.",
       "_nota": "Decis de autor: o dă Finn după misiunea „Mama lui Finn”."
+    },
+    "ceara": {
+      "nume": "Faguri de ceară",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Faguri de ceară curată, de la stupii fermierului. Din ei se pot turna lumânări.",
+      "_nota": "Misiunea lui Roderick „Lumânările” (ciornă de Claude)."
+    },
+    "lumanari": {
+      "nume": "Lumânări",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Douăzeci și trei de lumânări galbene, turnate de Fratele Elian. Câte una pentru fiecare om căzut în lupta cu orcii.",
+      "_nota": "Misiunea lui Roderick „Lumânările” (ciornă de Claude)."
+    },
+    "paie": {
+      "nume": "Snop de paie",
+      "tip": "poveste",
+      "numarabil": true,
+      "pret": 0,
+      "descriere": "Paie de grâu, legate în snop. Pentru manechinul de antrenament.",
+      "_nota": "Misiunea lui Roderick „Antrenamentul”: câte unul la fiecare muncă la arat, cât e misiunea (ales de Claude, ca orzul la bere)."
+    },
+    "franghie": {
+      "nume": "Frânghie",
+      "tip": "material",
+      "stiva": 5,
+      "pret": 4,
+      "descriere": "O frânghie groasă de cânepă. Bună de legat orice.",
+      "_nota": "Pentru manechinul lui Roderick; o vinde negustorul din piață (preț ales de Claude, TODO echilibru)."
+    },
+    "coif_tata": {
+      "nume": "Coiful lui Edwin",
+      "tip": "echipament",
+      "slot": "cap",
+      "armura": 8,
+      "pret": 0,
+      "descriere": "Coiful de oțel al tatei, cu apărătoare pentru nas și creasta albastră, decolorată. Mama l-a curățat și l-a uns, ca pe ceva de care nu te desparți.",
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+    },
+    "platosa_tata": {
+      "nume": "Platoșa lui Edwin",
+      "tip": "echipament",
+      "slot": "armura",
+      "armura": 15,
+      "pret": 0,
+      "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Are o adâncitură aproape de inimă.",
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+    },
+    "jambiere_tata": {
+      "nume": "Jambierele lui Edwin",
+      "tip": "echipament",
+      "slot": "jambiere",
+      "armura": 8,
+      "pret": 0,
+      "descriere": "Jambierele de oțel ale tatei, cu apărători pentru genunchi.",
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+    },
+    "sabia_tata": {
+      "nume": "Sabia lui Edwin",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "tipArma": "sabie",
+      "atac": {
+        "min": 13,
+        "max": 16,
+        "tip": "apropiat"
+      },
+      "pret": 0,
+      "descriere": "Sabia tatei. Pe măciulie, un romb mic, auriu, ca pe steagul satului. Ciupită de luptă, dar lustruită de curând.",
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     }
   }
 }

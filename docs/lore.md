@@ -2,6 +2,13 @@
 
 Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar doar indicii (CLAUDE.md, secțiunea 6). Se completează când autorul mai adaugă ceva; nimic de aici nu se inventează.
 
+## Familia Lightfinder și bătălia de la copac
+
+- **Edwin Lightfinder** (decis de autor), tatăl lui Vale, fratele mai mare al lui Roderick, soțul Miriamei. A căzut primăvara trecută, în bătălia în care cei 23 de oameni ai satului au încercat să oprească orcii, pe câmpul de dincolo de gardul Marginii satului, lângă **copacul mare** în care se cățărau el și Roderick când erau copii (literele E și R sunt încă scrijelite în scoarță; sub același copac i-a cerut Edwin Miriamei să-i fie nevastă).
+- Când linia s-a rupt, Edwin i-a poruncit lui Roderick: **„Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”** Roderick a ascultat, satul a căzut a doua zi, iar de atunci Roderick bea și nu se mai poate uita în ochii Miriamei. După bătălie, orcii i-au lăsat pe săteni să-și strângă morții; Roderick l-a dus pe Edwin în spate, până la cimitirul de la Marginea.
+- **Echipamentul lui Edwin** (coiful cu creasta albastră, platoșa cu rombul auriu, jambierele, sabia cu rombul pe măciulie) l-a ascuns Miriam; Vale îl primește mai târziu (misiunea ei specială).
+- Numele celor căzuți spuse la lumânări (Hal, Tobin, fiul morarului, frații Corwin) sunt ciorne de Claude.
+
 ## Dragonii și oamenii
 
 - Majoritatea oamenilor cred că dragonii au dispărut de tot.

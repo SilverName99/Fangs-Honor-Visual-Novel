@@ -3,6 +3,7 @@ import { iconita as iconitaObiect } from './ecranInventar.js';
 import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { context } from './stare.js';
+import { verifica } from './conditii.js';
 // Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
 import { asteapta, viteza, butonViteza } from './viteza.js';
 
@@ -131,10 +132,17 @@ export function creeazaLupta(parinte, joc) {
     };
   }
 
+  // Ce a învățat Vale pe drum („bonusVale” în config, după condiții): antrenamentul cu Roderick dă +2 la atac,
+  // orice ar ține în mână (decis de autor)
+  function cuBonusVale(atac) {
+    const plus = (cfg.bonusVale || []).filter((b) => verifica(b.conditii, context(joc.stare))).reduce((s, b) => s + (b.atac || 0), 0);
+    return plus ? { ...atac, min: atac.min + plus, max: atac.max + plus } : atac;
+  }
+
   // Tot ce ține de arma din mână; separat, ca Vale să-și poată schimba arma în timpul luptei
   function dupaArma(arma, scut, tipArma) {
     return {
-      atac: arma?.atac || cfg.pumni,
+      atac: cuBonusVale(arma?.atac || cfg.pumni),
       blocare: scut?.blocare ?? cfg.blocareImplicita,
       // Sunetul loviturii, după arma din mână
       sunetAtac: { pumni: 'lupta_pumn', topor_doua_maini: 'lupta_topor', arc: 'lupta_arc' }[tipArma] || 'lupta_sabie',
