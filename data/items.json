@@ -324,6 +324,13 @@
       "descriere": "Coiful de oțel al tatei, cu apărătoare pentru nas și creasta albastră, decolorată. Mama l-a curățat și l-a uns, ca pe ceva de care nu te desparți.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
+    "platosa_tata_crapata": {
+      "nume": "Platoșa crăpată a lui Edwin",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Platoșa tatei, crăpată pe mijloc de o lovitură de topor, chiar prin rombul auriu. Așa nu se poate purta. Poate o poate repara Bram.",
+      "_nota": "Decis de autor: lovitura din al doilea vis; Miriam i-o dă lui Vale crăpată (misiunea ei specială), iar Bram o repară într-o misiune (de făcut); după reparație devine „platosa_tata”."
+    },
     "platosa_tata": {
       "nume": "Platoșa lui Edwin",
       "tip": "echipament",
@@ -331,7 +338,7 @@
       "armura": 15,
       "pret": 0,
       "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Are o adâncitură aproape de inimă.",
-      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită). Platoșa e întâi crăpată („platosa_tata_crapata”); asta e cea reparată de Bram."
     },
     "jambiere_tata": {
       "nume": "Jambierele lui Edwin",

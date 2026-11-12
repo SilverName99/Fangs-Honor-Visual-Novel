@@ -30,6 +30,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
 2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram?”.
 3. 💡 **Cheia camerei**: după „Foalele stricate” (misiunea și ce e în cufăr: de ales).
+4. 📝 **Platoșa tatălui**: după misiunea specială a Miriamei (echipamentul tatălui), Bram repară platoșa crăpată.
 
 **Fratele Elian (preotul)**
 1. ✅ **Ierburile lui Elian**: la o zi după prima discuție, când Elian citește afară, pe scările bisericii (14–23): „Ce citești, frate Elian?”.
@@ -76,7 +77,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · 💡 încă 8 (la 8/10: misiunea specială, echipamentul tatălui) | 2 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
-| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia camerei · 💡 încă 7 | 2 / 10 |
+| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia camerei · 📝 Platoșa tatălui · 💡 încă 6 | 2 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · 💡 încă 8 | 2 / 10 |
 | **Agnes** | ✅ Camera de sus · ✅ Berea · ✅ Pivnița · 💡 încă 7 | 3 / 10 |
@@ -149,7 +150,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după „Locul”, F2 → „Ziua următoare”, „Dimineață”, Mergi la bucătărie → mama → „ai găsit crenguța?” → Roderick (15:00, tavernă) → seara, 19:00, bucătărie → mama → „Mamă, vine unchiul?”.
 
 ### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
-- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, platoșa, jambierele și sabia (`coif_tata`, `platosa_tata`, `jambiere_tata`, `sabia_tata`, cu iconițele încărcate). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
+- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
+- **Legături:** platoșa o repară Bram („Platoșa tatălui”).
 
 ---
 
@@ -192,6 +194,10 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Imagini:** `events/bram_foale_1.png`, `bram_foale_2.png` (galeria: „Misiunea lui Bram: foalele”).
 
 **Cum verifici:** după „Fierul lui Bram”, cu 3 piei de mistreț (F2 → Obiect), la Bram: „De ce e forja rece...” → „Îți aduc eu pieile” → „Ți-am adus pieile de mistreț!” → „Hai să le facem” → cele 2 imagini → Bram 2/10.
+
+### 📝 Platoșa tatălui
+- Decis de autor: după misiunea specială a Miriamei, Bram repară platoșa crăpată a lui Edwin (`platosa_tata_crapata` → `platosa_tata`). Ce cere și cum: de făcut. (Bram îl știa pe Edwin: „Tatăl tău venea aici să-i ascut sabia.”)
+- **Imagini:** `items/platosa_tata_crapata.png` (aceeași platoșă, crăpată pe mijloc, prin romb).
 
 ### 💡 Cheia camerei lui Bram
 - După „Foalele stricate”. Ce e în cufăr: de discutat.
@@ -349,7 +355,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după „Lumânările” și eliberarea lui Finn: Roderick (biserică sau tavernă) → „Unchiule, știu drumul...” → „Diseară, unchiule.” → Mergi la Marginea satului → Ieșirea, ora 20:00 → Roderick → „Sunt gata” → imaginile → alegerea. Ca să vezi și cealaltă alegere: F2 → Misiune `roderick_locul` → Resetează.
 
 ### ✅ Al doilea vis (nu e misiune)
-- **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; Edwin răpus de un orc mare; apoi **un ochi uriaș de dragon**, care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
+- **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; un orc mare îl lovește pe Edwin drept în piept și îi crapă platoșa pe mijloc (decis de autor: de aici, misiunea lui Bram cu platoșa); apoi **un ochi uriaș de dragon**, care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
 - **Imaginile:** `events/vis_2_1.png` … `vis_2_4.png`. Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
 
 **Cum verifici:** după „Locul”, acasă, seara → „Dormi până dimineața”.
