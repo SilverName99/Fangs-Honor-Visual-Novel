@@ -1187,7 +1187,8 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   // Clădirile de pe hartă și ușile din zone: unde e acum cineva cu un semn (cel mai important câștigă)
   const ordine = { gata: 3, nou: 2, lucru: 1 };
   for (const t of d.tinte) {
-    if (!t.spre) continue;
+    // Pe drumul înapoi spre sat (de pe Marginea satului) nu se pune semn (decis de autor): acolo e tot satul
+    if (!t.spre || t.id.startsWith('spre_')) continue;
     const aici = [...semne.values()].filter((x) => x.loc && subScena(t.spre, x.loc) && ajungeLaTimp(x));
     if (!aici.length) continue;
     const semn = aici.sort((a, b) => ordine[b.semn] - ordine[a.semn])[0].semn;
