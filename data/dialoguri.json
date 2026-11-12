@@ -5980,23 +5980,23 @@
         "urmator": "r9"
       },
       "r9": {
-        "vorbitor": "soldat",
+        "vorbitor": "vale",
+        "gand": true,
         "emotie": "normal",
-        "text": "Vezi asta?",
+        "text": "Unchiul se apropie de copac și își pune palma pe scoarță, încet, cum ai pune mâna pe umărul unui om drag.",
         "imagine": "events/roderick_locul_4.png",
         "urmator": "r10"
       },
       "r10": {
-        "vorbitor": "vale",
-        "gand": true,
+        "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Pe scoarță, cam la înălțimea unui copil cocoțat pe prima creangă, sunt scrijelite două litere: un E și un R. Lemnul a crescut peste ele și le-a lățit, dar încă se citesc.",
+        "text": "Vezi creanga aia de jos? Pe ea ne cățăram când eram mici.",
         "urmator": "r11"
       },
       "r11": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Aici ne cățăram când eram mici. Edwin urca primul, mereu. Eu cădeam, el râdea, apoi cobora să mă ridice. Așa a fost toată viața.",
+        "text": "Edwin urca primul, mereu. Eu cădeam, el râdea, apoi cobora să mă ridice. Așa a fost toată viața.",
         "urmator": "r12"
       },
       "r12": {
