@@ -332,8 +332,9 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Pornește** (decis de autor): după scandal, **la biserică, cât se roagă Roderick (10–14)**: „Unchiule... pot să stau puțin lângă tine? !”. Începutul e altfel după cum l-ai ajutat sau nu în scandal (cald: „mi-ai ținut spatele”; rece: „Ai venit să vezi dacă mai respir?”), apoi Vale îl întreabă cum a murit tata. Roderick nu poate răspunde; îi arată cioturile celor 23 de lumânări pe care le aprinde în fiecare zi pentru cei căzuți. Orcii i-au luat toată ceara.
 - **Pasul 1:** faguri de ceară de la **fermier** (la câmpuri, 6–13). Fermierul i-a ascuns sub grajd; pentru cei căzuți îi dă pe degeaba (Tobin, fiul morarului, a arat cu el).
 - **Pasul 2:** ceara la **Elian** („poți turna lumânări?”); Elian ține fagurii în palme și ceara parcă se înmoaie singură (încă un semn că e mag).
-- **Pasul 3:** **a doua zi**, lumânările de la Elian (în aceeași zi: „Încă se răcesc în tipare”).
-- **Pasul 4:** **seara (18–00), în tavernă**, la Roderick: „Am adus lumânările, unchiule.” (ziua: „se aprind seara”) → în biserică, peste **2 imagini**: Roderick aprinde lumânările una câte una și spune numele fiecăruia (Hal, Tobin, frații Corwin, soldatul din camera de sus...); la ultima nu poate rosti numele. Vale o aprinde: „Edwin Lightfinder. Tata.” Apoi îi cere: „Arată-mi unde a căzut.” Roderick: nu pe la poartă, ci pe la gardul putred de la Marginea satului.
+- **Pasul 3:** **a doua zi**, lumânările de la Elian (în aceeași zi: „Încă se răcesc în tipare”). Decis de autor: nu în timpul slujbei de dimineață (05–08), nici ceara, nici lumânările.
+- **Pasul 4:** la Roderick (biserică sau tavernă), „Am adus lumânările, unchiule.” → „Diseară, la biserică.” (decis de autor).
+- **Pasul 5:** **seara (18–23), când Vale ajunge la biserică, pornește direct prima imagine** (decis de autor) → în biserică, peste **2 imagini**: Roderick aprinde lumânările una câte una și spune numele fiecăruia (Hal, Tobin, frații Corwin, soldatul din camera de sus...); la ultima nu poate rosti numele. Vale o aprinde: „Edwin Lightfinder. Tata.” Apoi îi cere: „Arată-mi unde a căzut.” Roderick: nu pe la poartă, ci pe la gardul putred de la Marginea satului.
 - **Recompensa:** încrederea lui Roderick +1. Vale rămâne în biserică.
 - **Imaginile:** `events/roderick_lumanari_1.png` (biserica goală, noaptea: Roderick, în genunchi pe treapta de sus a altarului, aprinde lumânările în șir; Vale, jos pe culoar, ține mănunchiul), `events/roderick_lumanari_2.png` (mai aproape, aceeași biserică: 22 de flăcări pe treaptă, Roderick cu ultima lumânare în mâna care tremură, Vale îngenuncheat lângă el îi ia lumânarea). Obiecte: `items/ceara.png`, `items/lumanari.png`.
 - Numele celor căzuți sunt ciorne (Claude).
@@ -342,7 +343,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 1. F2: „Toți cunoscuți de 3 zile”, apoi starea `scandal_taverna` = `ajutat` (sau `refuzat`, pentru celălalt început); Mergi la biserică (interior), ora 11:00 → Roderick → „Unchiule... pot să stau puțin lângă tine?” → „Ți le aduc eu.”
 2. Fermierul (dacă nu e deblocat: starea `fermier_deblocat` = `da`), dimineața, la câmpuri → „Mai ai ceva ceară?”.
 3. Elian → „Frate Elian, poți turna lumânări...” → încă o dată în aceeași zi („Încă se răcesc”) → „Ziua următoare” → „Sunt gata lumânările?”.
-4. Roderick ziua („Am lumânările...” → „se aprind seara”), apoi seara în tavernă → „Am adus lumânările” → cele 2 imagini.
+4. Roderick → „Am adus lumânările” → „Diseară, la biserică.” → seara (19:00), mergi de pe hartă la biserică → cele 2 imagini pornesc singure. Elian la 06:00: „Acum e slujba de dimineață”.
 
 ### ✅ Locul unde a căzut tata
 - **Pornește** (decis de autor): după „Lumânările”, **doar după eliberarea lui Finn** (Vale trebuie să știe drumul spre Marginea satului), la Roderick: „Unchiule, știu drumul spre Marginea satului. !” → „Diseară, unchiule.”

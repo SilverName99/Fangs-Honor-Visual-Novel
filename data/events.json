@@ -861,7 +861,6 @@
     },
     {
       "id": "roderick_lumanari",
-      "manual": true,
       "repetare": "o_data",
       "nume": "Roderick: lumânările",
       "grup": "Roderick: lumânările",
@@ -869,7 +868,27 @@
         "timp": 60
       },
       "dialog": "roderick_lumanari",
-      "_nota": "Misiunea „Lumânările”: seara, în biserică, peste 2 imagini."
+      "_nota": "Decis de autor: după ce i-a dus lumânările, Roderick îl cheamă seara la biserică; când Vale ajunge acolo seara (18–23), pornește direct prima imagine.",
+      "conditii": {
+        "oricare": [
+          {
+            "loc": "biserica"
+          },
+          {
+            "loc": "biserica/interior"
+          }
+        ],
+        "ora": {
+          "min": "18:00",
+          "max": "22:59"
+        },
+        "stare": {
+          "lumanari_intalnire": "da"
+        },
+        "misiune": {
+          "roderick_lumanari": "inceputa"
+        }
+      }
     },
     {
       "id": "roderick_locul",

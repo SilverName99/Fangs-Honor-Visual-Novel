@@ -463,21 +463,12 @@
       "lum_p3": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Atunci hai. Acum, cât e biserica goală.",
-        "alegeri": [
-          {
-            "text": "Să mergem.",
-            "inchide": true,
-            "efecte": {
-              "eveniment": "roderick_lumanari"
-            }
+        "text": "Atunci diseară. După ce se întunecă, vino la biserică, cât e goală. Te aștept acolo.",
+        "efecte": {
+          "stare": {
+            "lumanari_intalnire": "da"
           }
-        ]
-      },
-      "lum_p_zi": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Nu acum, băiete. Lumânările pentru morți se aprind seara, când nu se mai uită nimeni. Caută-mă diseară în tavernă."
+        }
       },
       "locul_o1": {
         "vorbitor": "vale",
@@ -607,6 +598,17 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Abia te ții pe picioare. Du-te și odihnește-te: un soldat obosit e un soldat mort."
+      },
+      "lum_p_seara": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Diseară, la biserică, după ce se întunecă. Nu întârzia, băiete."
+      },
+      "lum_e_slujba": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Acum e slujba de dimineață, Vale. Vino după ce se termină, pe la opt.",
+        "_nota": "Decis de autor: la Elian nu se iau lumânările (nici nu se dă ceara) în timpul slujbei de dimineață (05–08)."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",

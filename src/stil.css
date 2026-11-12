@@ -658,6 +658,16 @@ svg.zone {
 .ui.in-dialog .titlu-scena {
   z-index: 5;
 }
+/* Stratul semnelor misiunilor: cât scena, peste numele locului, fără să prindă clicuri */
+.ui > .strat-semne {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  pointer-events: none;
+}
+.ui.in-dialog > .strat-semne {
+  visibility: hidden;
+}
 
 /* ----- Acțiunile din loc ----- */
 .bara-actiuni {
@@ -933,10 +943,12 @@ svg.zone {
 /* Detaliile obiectului ales, jos pe foaie */
 .detalii-inv {
   margin-top: auto;
-  min-height: 250px;
+  /* Cu rucsacul mare (4 rânduri de căsuțe) caseta nu mai are voie să urce peste ultimul rând (cerut de autor):
+     e mai joasă, iar butoanele stau pe un singur rând */
+  min-height: 200px;
   display: flex;
-  gap: 24px;
-  padding: 20px;
+  gap: 20px;
+  padding: 14px 18px;
   box-sizing: border-box;
   border: 2px solid rgba(90, 60, 30, 0.5);
   border-radius: 12px;
@@ -944,8 +956,8 @@ svg.zone {
 }
 .iconita-detalii {
   flex: none;
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
 }
 .text-detalii {
   flex: 1;
@@ -953,14 +965,14 @@ svg.zone {
   flex-direction: column;
 }
 .nume-obiect {
-  font: 700 36px Georgia, serif;
+  font: 700 32px Georgia, serif;
 }
 .descriere-obiect,
 .ajutor-inv {
-  font-size: 25px;
-  line-height: 1.35;
+  font-size: 23px;
+  line-height: 1.3;
   color: #4a3420;
-  margin: 8px 0 14px;
+  margin: 6px 0 10px;
 }
 .actiuni-inv {
   margin-top: auto;
@@ -972,6 +984,11 @@ svg.zone {
   min-width: 0;
   padding: 20px 42px;
   font-size: 31px;
+}
+.continut-foaie .actiuni-inv .buton.buton-mic-meniu {
+  padding: 12px 22px;
+  font-size: 25px;
+  white-space: nowrap;
 }
 /* Obiectele de poveste (cheile, scrisorile), pe foaia lor */
 .poveste-inv {

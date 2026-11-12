@@ -70,7 +70,10 @@ const navigare = div('navigare-rezerva');
 const baraActiuni = div('bara-actiuni');
 // Panoul lui Vale nu stă mereu deschis (decis de autor): un buton cu iconița lui îl deschide și îl închide
 const butonVale = div('buton-vale-loc');
-ui.append(butoaneHud, titlu, inapoi, butonVale, hud, ceasHud, navigare, baraActiuni);
+// Semnele misiunilor („!”/„?”) stau pe un strat al interfeței, imediat peste numele locului (decis de autor: semnul
+// de deasupra bisericii, lipită de marginea de sus a hărții, se vede peste titlu, nu dispare sub el)
+const stratSemne = div('strat-semne');
+ui.append(butoaneHud, titlu, stratSemne, inapoi, butonVale, hud, ceasHud, navigare, baraActiuni);
 
 // Iconița unui buton: până se încarcă imaginea ei (ui_icon_<id>.png) rămâne simbolul din text
 // Clasa are prefixul „icon-”, ca să nu se bată cu alte clase din joc (de exemplu „continua” din dialog, „ecran” din scenă)
@@ -782,6 +785,12 @@ const joc = {
   dupaLupta(efecte, minute) {
     stare.luptaInCurs = null;
     aplicaEfecte(efecte, joc);
+    // Prada (carnea, blănurile de la vânătoare) urcă pe ecran, ca la o misiune terminată (decis de autor);
+    // dacă lupta duce direct într-o discuție, apare la ultima ei replică
+    const prada = castiguri;
+    castiguri = [];
+    if (dialog.activ()) deArataLaFinal.push(...prada);
+    else arataCastiguri(prada);
     if (!avanseaza(minute)) {
       salveaza();
       afiseaza();
@@ -1143,6 +1152,7 @@ document.addEventListener('fullscreenchange', () => afiseaza());
 // Cât de jos stă cel puțin semnul „!”/„?”, ca să încapă întreg pe imagine (e înalt cam cât atât, cu plutirea lui)
 const SEMN_SUS_MIN = 115;
 function puneSemneMisiuni(d, r, ctx, prezenti) {
+  stratSemne.replaceChildren();
   if (!semneMisiuniPornite()) return;
   const semne = new Map();
   for (const p of personaje.values()) {
@@ -1162,10 +1172,12 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
     return semnPersonaj({ ...joc, stare: viitor }, x.p.id, x.loc) !== null;
   };
   if (!semne.size) return;
-  const pune = (parinte, left, top, semn) => {
+  // Pozițiile sunt în procente din scenă, iar stratul semnelor are aceeași mărime ca scena: semnul ajunge exact
+  // deasupra personajului sau a clădirii, doar că stă peste interfață
+  const pune = (_parinte, left, top, semn) => {
     const s = div(`semn-scena ${semn}`, semn === 'nou' ? '!' : '?');
     Object.assign(s.style, { left, top });
-    parinte.append(s);
+    stratSemne.append(s);
   };
   // Personajele din scena de acum
   for (const [id, { semn }] of semne) {

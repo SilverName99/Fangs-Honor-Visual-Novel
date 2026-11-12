@@ -483,8 +483,18 @@
             "text": "Frate Elian, poți turna lumânări din ceara asta?",
             "nod": "lum_e1",
             "conditii": {
-              "areObiect": "ceara"
+              "areObiect": "ceara",
+              "nu": {
+                "ora": {
+                  "min": "05:00",
+                  "max": "07:59"
+                }
+              }
             }
+          },
+          "indiciu": {
+            "text": "Frate Elian, am adus ceara.",
+            "nod": "lum_e_slujba"
           }
         },
         {
@@ -493,40 +503,67 @@
           "gata": {
             "existaStare": "lumanari_gata"
           },
-          "sfat": "Lumânările se răcesc peste noapte. Mâine sunt gata.",
+          "sfat": "Lumânările se răcesc peste noapte. Mâine sunt gata (nu în timpul slujbei de dimineață, 5–8).",
           "predare": {
             "text": "Sunt gata lumânările?",
             "nod": "lum_e6",
             "conditii": {
               "nu": {
-                "marcatAzi": "lumanari_elian"
+                "oricare": [
+                  {
+                    "marcatAzi": "lumanari_elian"
+                  },
+                  {
+                    "ora": {
+                      "min": "05:00",
+                      "max": "07:59"
+                    }
+                  }
+                ]
               }
             }
           },
           "indiciu": {
             "text": "Sunt gata lumânările?",
-            "nod": "lum_e_asteapta"
+            "nod": [
+              {
+                "nod": "lum_e_slujba",
+                "conditii": {
+                  "ora": {
+                    "min": "05:00",
+                    "max": "07:59"
+                  }
+                }
+              },
+              {
+                "nod": "lum_e_asteapta"
+              }
+            ]
           }
         },
         {
-          "text": "Seara, aprind lumânările cu unchiul",
+          "text": "Îi duc lumânările unchiului",
           "gata": {
-            "existaStare": "lumanari_aprinse"
+            "existaStare": "lumanari_intalnire"
           },
-          "sfat": "Seara (18–00), unchiul e în tavernă.",
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
           "predare": {
             "text": "Am adus lumânările, unchiule.",
             "nod": "lum_p1",
             "conditii": {
-              "areObiect": "lumanari",
-              "ora": {
-                "min": "18:00"
-              }
+              "areObiect": "lumanari"
             }
+          }
+        },
+        {
+          "text": "Seara, la biserică, aprind lumânările cu unchiul",
+          "gata": {
+            "existaStare": "lumanari_aprinse"
           },
+          "sfat": "Seara (18–23), merg la biserică: unchiul mă așteaptă acolo.",
           "indiciu": {
-            "text": "Am lumânările...",
-            "nod": "lum_p_zi"
+            "text": "Despre diseară...",
+            "nod": "lum_p_seara"
           }
         }
       ],
