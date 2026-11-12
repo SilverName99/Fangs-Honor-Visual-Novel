@@ -177,7 +177,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Foalele stricate
 - **Pornește:** imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram? !”. Pielea foalelor a crăpat de tot, iar orcii iau toate blănurile din sat la taxă → „Îți aduc eu pieile, domnule Bram.”
 - **Pasul 1:** 3 piei de mistreț (de la vânătoare: mistrețul apare în 25% din vânători). Indicația: „Despre foale...”.
-- **Pasul 2:** la Bram, „Ți-am adus pieile de mistreț! ?” → „Hai să le facem.” Peste 2 imagini (decis de autor): Bram și Vale coc pielea pe rama veche, apoi Vale trage de foale, focul se încinge, Bram bate fierul și râde; îi spune lui Vale că tatăl lui stătea exact acolo, la foale. Trec 2 ore.
+- **Pasul 2:** la Bram, „Ți-am adus pieile de mistreț! ?” → „Hai să le facem.” Peste 2 imagini (decis de autor): Bram și Vale cos pielea pe rama veche, apoi Vale trage de foale, focul se încinge, Bram bate fierul și râde; îi spune lui Vale că tatăl lui stătea exact acolo, la foale. Trec 2 ore.
 - **Recompensa:** încrederea lui Bram +1 (alta, `TODO` dacă vrei).
 - **Imagini:** `events/bram_foale_1.png`, `bram_foale_2.png` (galeria: „Misiunea lui Bram: foalele”).
 
