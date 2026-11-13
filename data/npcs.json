@@ -928,21 +928,8 @@
         }
       ],
       "magazin": {
-        "titlu": "Leacurile bătrânei",
-        "vinde": [
-          "potiune_viata",
-          "leac_otrava",
-          "potiune_vigoare",
-          "pansament"
-        ],
-        "cumpara": [
-          "sunatoare",
-          "papadie",
-          "musetel",
-          "piciorul_cocosului",
-          "luminita_noptii"
-        ],
-        "_nota": "Decis de autor: Bătrâna Morwen vinde poțiuni și le face din florile culese (schimburi). Rețetele și cele 3 poțiuni noi (vigoare, pielea de piatră, furia) sunt ciorne de Claude, TODO echilibru.",
+        "titlu": "Poțiunile bătrânei",
+        "_nota": "Decis de autor: Bătrâna Morwen nu vinde și nu cumpără nimic: face poțiunile doar din florile aduse de Vale, la schimb. Rețetele și cele 3 poțiuni noi (vigoare, pielea de piatră, furia) sunt ciorne de Claude, TODO echilibru.",
         "schimburi": [
           {
             "da": {

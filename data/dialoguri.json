@@ -989,7 +989,7 @@
       },
       {
         "_nota": "Decis de autor: 2 bucăți de carne crudă → 1 carne friptă.",
-        "text": "Îmi frigi niște carne?",
+        "text": "Schimburi",
         "efecte": {
           "magazin": "hangita.schimburi"
         },
@@ -4808,7 +4808,7 @@
     ]
   },
   "ierbareasa": {
-    "_nota": "CIORNĂ (Claude). Bătrâna ierbăreasă de la Marginea satului (Bătrâna Morwen, decis de autor). Decis de autor: vinde și leacul de otravă.",
+    "_nota": "CIORNĂ (Claude). Bătrâna ierbăreasă de la Marginea satului (Bătrâna Morwen, decis de autor). Decis de autor: nu vinde nimic; face poțiunile și leacul de otravă doar din florile aduse de Vale, la schimb.",
     "partener": "ierbareasa",
     "meniu": true,
     "start": [
@@ -4851,7 +4851,7 @@
       "i_leac": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Bale de șobolan? Ard ca focul și intră în sânge. Leacul meu le oprește pe loc. Ia unul, că nu știi niciodată ce te așteaptă prin pivnițe."
+        "text": "Bale de șobolan? Ard ca focul și intră în sânge. Leacul meu le oprește pe loc. Adu-mi doi piciorul-cocoșului și o păpădie, și ți-l fac. Nu știi niciodată ce te așteaptă prin pivnițe."
       },
       "i_ierburi": {
         "vorbitor": "ierbareasa",
@@ -4862,9 +4862,18 @@
         "vorbitor": "ierbareasa",
         "emotie": "normal",
         "text": "Fetița lui Finn vine în fiecare după-amiază. Sortează ierburi și pune întrebări cât zece. Îi dau ceai pentru maică-sa. E un schimb bun."
+      },
+      "i_flori": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Eu nu vând leacuri, flăcăule. Banii nu vindecă pe nimeni. Adu-mi flori din pădure, și bătrâna ți le face poțiuni. Florile cresc pentru toată lumea; priceperea, nu.",
+        "_nota": "CIORNĂ (Claude). Decis de autor: Morwen nu vinde, face poțiuni doar din florile aduse."
       }
     },
     "vorbeste": [
+      {
+        "nod": "i_flori"
+      },
       {
         "nod": "i_leac"
       },
@@ -4877,7 +4886,7 @@
     ],
     "optiuni": [
       {
-        "text": "Cumpără",
+        "text": "Schimburi",
         "efecte": {
           "magazin": "ierbareasa"
         },

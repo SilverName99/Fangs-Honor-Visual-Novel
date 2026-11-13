@@ -82,7 +82,7 @@
       "efecte": {},
       "sunet": "baut",
       "descriere": "Oprește otrava (de exemplu balele acide ale șobolanilor).",
-      "_nota": "Decis de autor: se vinde la bătrâna cu poțiuni (ierbăreasa), în zona nouă de pe hartă (cu misiunea lui Finn, de făcut). Prețul: TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
+      "_nota": "Decis de autor: îl face Bătrâna Morwen (ierbăreasa), doar la schimb, din flori (2 piciorul-cocoșului + 1 păpădie); ea nu vinde nimic. Prețul (la vânzare, la negustori): TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
     },
     "potiune_vigoare": {
       "nume": "Poțiune de vigoare",
