@@ -106,7 +106,7 @@ Imaginile lipsă apar ca dreptunghiuri colorate, cu numele fișierului pe ele.
 ## Altele: mâncarea, florile, poțiunile și săgețile
 
 Nu sunt misiuni, dar le folosești peste tot (decis de autor):
-- **Carnea friptă:** la Agnes, „Îmi frigi niște carne?” (2 carne → 1 friptă); acasă, în bucătărie, „Frige o bucată de carne” (1 → 1, o dată pe zi; fără imagine, decis de autor: doar zona desenată pe bucătărie, în editor). Iconița: `items/carne_gatita.png`.
+- **Carnea friptă:** la Agnes, „Îmi frigi niște carne?” (2 carne → 1 friptă); acasă, în bucătărie, zona „Frige o bucată de carne” (desenată pe vatră, în editor) deschide ecranul de schimb, „Vatra” (decis de autor): 1 carne → 1 friptă, o dată pe zi, 30 de minute. Iconița: `items/carne_gatita.png`.
 - **Orzul:** după „Berea” lui Agnes, munca la moară dă mereu orz (2 pe muncă).
 - **Florile:** la cules (sunătoarea dimineața, luminița-nopții seara), orice floare culeasă rămâne în rucsac: păpădia, mușețelul, piciorul-cocoșului.
 - **Bătrâna Morwen** face poțiuni din flori, la schimb (ciorne, TODO echilibru): viață (2 sunătoare + 1 mușețel), leacul de otravă (2 piciorul-cocoșului + 1 păpădie), **vigoare** (2 păpădie + 1 mușețel; +50 stamina), **pielea de piatră** (2 luminița-nopții + 1 piciorul-cocoșului; în luptă +15 armură), **furia** (2 luminița-nopții + 1 sunătoare; în luptă +3 atac). Iconițe: `items/potiune_vigoare.png`, `potiune_piatra.png`, `potiune_furie.png`.

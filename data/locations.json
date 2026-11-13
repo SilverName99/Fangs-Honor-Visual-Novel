@@ -245,21 +245,26 @@
               }
             },
             {
-              "_nota": "Decis de autor: fără imagine; doar zona desenată pe bucătărie.",
               "id": "gatit",
-              "tip": "lucrare",
+              "tip": "magazin",
               "nume": "Frige o bucată de carne",
-              "consuma": {
-                "carne": 1
-              },
-              "efecte": {
-                "obiect": "carne_gatita"
-              },
-              "minute": 30,
-              "maxPeZi": 1,
-              "mesajMaxPeZi": "Am gătit deja azi. Mâine din nou; lemnele de foc nu cresc în pomi.",
-              "sunet": "munca",
-              "mesajGata": "+1 Carne friptă"
+              "titlu": "Vatra",
+              "_nota": "Decis de autor: zona desenată pe bucătărie deschide ecranul de schimb: 1 carne → 1 carne friptă, o dată pe zi, 30 de minute.",
+              "schimburi": [
+                {
+                  "id": "gatit",
+                  "da": {
+                    "carne": 1
+                  },
+                  "primesti": {
+                    "carne_gatita": 1
+                  },
+                  "buton": "Frige",
+                  "minute": 30,
+                  "maxPeZi": 1,
+                  "mesajMaxPeZi": "Am gătit deja azi. Mâine din nou; lemnele de foc nu cresc în pomi."
+                }
+              ]
             }
           ],
           "variante": [
