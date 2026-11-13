@@ -245,7 +245,7 @@
               }
             },
             {
-              "_nota": "Decis de autor: în bucătărie, Vale își poate frige singur o bucată de carne, o dată pe zi (zona se desenează în editor). Textele sunt ciorne.",
+              "_nota": "Decis de autor: fără imagine; doar zona desenată pe bucătărie.",
               "id": "gatit",
               "tip": "lucrare",
               "nume": "Frige o bucată de carne",
@@ -258,8 +258,6 @@
               "minute": 30,
               "maxPeZi": 1,
               "mesajMaxPeZi": "Am gătit deja azi. Mâine din nou; lemnele de foc nu cresc în pomi.",
-              "imagine": "locations/munca_gatit.png",
-              "text": "Frigi carnea la focul din vatră...",
               "sunet": "munca",
               "mesajGata": "+1 Carne friptă"
             }
