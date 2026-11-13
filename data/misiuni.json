@@ -626,7 +626,7 @@
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: La cină, mama l-a convins pe unchiul Roderick să mă antreneze. Mai întâi facem un manechin de lovit, la locul lui ferit de la Marginea satului.",
-      "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită.",
+      "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită. Decis de autor: fără o sabie de o mână la el (în rucsac sau echipată), Vale nu se poate antrena.",
       "pasi": [
         {
           "text": "Adun ce trebuie pentru manechin",
@@ -684,7 +684,7 @@
             "contor": "antrenamente_roderick",
             "n": 3
           },
-          "sfat": "Dimineața (7–10), la locul de antrenament. Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
+          "sfat": "Dimineața (7–10), la locul de antrenament, cu o sabie de o mână la mine (în rucsac sau în mână; Bram vinde). Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
           "predare": {
             "text": "Să ne antrenăm, unchiule!",
             "nod": "antr_s1",
@@ -697,7 +697,11 @@
                 "stamina": {
                   "min": 20
                 }
-              }
+              },
+              "areLaEl": [
+                "sabie",
+                "sabia_tata"
+              ]
             }
           },
           "indiciu": {
@@ -707,6 +711,17 @@
                 "nod": "antr_azi",
                 "conditii": {
                   "marcatAzi": "antrenament_roderick"
+                }
+              },
+              {
+                "nod": "antr_fara_sabie",
+                "conditii": {
+                  "nu": {
+                    "areLaEl": [
+                      "sabie",
+                      "sabia_tata"
+                    ]
+                  }
                 }
               },
               {

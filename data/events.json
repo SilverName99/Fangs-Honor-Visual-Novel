@@ -957,7 +957,7 @@
       "antrenament": {
         "titlu": "Antrenamentul cu Roderick",
         "indemn": "Lovește manechinul când cercul care se strânge ajunge pe inelul auriu.",
-        "sunet": "manechin",
+        "sunet": "lupta_sabie",
         "reusiteMin": 2,
         "contor": "antrenamente_roderick",
         "marcaj": "antrenament_roderick",
