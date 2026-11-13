@@ -1667,7 +1667,7 @@
       "id": "antrenament",
       "nume": "Locul de antrenament",
       "harta": "marginea",
-      "_nota": "Decis de autor: locul unde Roderick îl antrenează pe Vale, pe harta Marginii (piesă nouă, pusă de autor pe un loc liber). Apare odată cu misiunea „Antrenamentul”; manechinul rămâne acolo după ea. Noaptea, imaginea zonei primește filtrul din cod.",
+      "_nota": "Decis de autor: locul unde Roderick îl antrenează pe Vale, pe harta Marginii (piesă nouă, pusă de autor pe un loc liber). Apare odată cu misiunea „Antrenamentul”; manechinul rămâne acolo după ea. Noaptea, imaginea de noapte (decis de autor), cu sau fără manechin.",
       "ascuns": {
         "conditii": {
           "oricare": [
@@ -1723,11 +1723,31 @@
       "imagine": "locations/antrenament_zona.png",
       "variante": [
         {
+          "imagine": "locations/antrenament_zona_manechin_noapte.png",
+          "nume": "cu manechinul, noaptea",
+          "conditii": {
+            "stare": {
+              "manechin": "construit"
+            },
+            "moment": [
+              "noaptea"
+            ]
+          }
+        },
+        {
           "sufix": "_manechin",
           "conditii": {
             "stare": {
               "manechin": "construit"
             }
+          }
+        },
+        {
+          "sufix": "_noapte",
+          "conditii": {
+            "moment": [
+              "noaptea"
+            ]
           }
         }
       ],
