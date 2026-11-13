@@ -180,7 +180,10 @@ function inregistreazaCastig(c) {
 }
 function arataCastiguri(lista) {
   if (!lista.length) return;
-  const rand = div('castiguri');
+  // Un rând care abia a pornit (o misiune terminată chiar de muncă) primește bucățile noi lângă ale lui,
+  // ca să nu urce două rânduri unul peste altul
+  const vechi = ui.querySelector('.castiguri');
+  const rand = vechi && Date.now() - vechi.dataset.t < 400 ? vechi : div('castiguri');
   for (const c of lista) {
     const bucata = div('castig');
     bucata.append(div('numar-castig', `+${c.n}`));
@@ -194,6 +197,8 @@ function arataCastiguri(lista) {
     } else bucata.append(iconitaObiect(inventar, c.id));
     rand.append(bucata);
   }
+  if (rand === vechi) return;
+  rand.dataset.t = Date.now();
   ui.append(rand);
   setTimeout(() => rand.remove(), 3200);
 }
@@ -709,10 +714,13 @@ const joc = {
   luptaVanatoare,
   sumaTaxa,
   // Magazinul unui personaj (npcs.json, „magazin”), deschis după ce se închide dialogul
-  deschideMagazin(id) {
+  // „hangita.schimburi”: al doilea magazin al cuiva („magazine” în npcs.json; Agnes: carnea friptă, decis de autor)
+  deschideMagazin(cheie) {
+    const [id, al] = cheie.split('.');
     const p = personaje.get(id);
-    if (!p?.magazin) return mesaj(`${p?.nume || id} nu are magazin.`);
-    setTimeout(() => actiuni.executa({ tip: 'magazin', nume: `${p.nume}`, ...p.magazin }), 0);
+    const m = al ? p?.magazine?.[al] : p?.magazin;
+    if (!m) return mesaj(`${p?.nume || id} nu are magazin.`);
+    setTimeout(() => actiuni.executa({ tip: 'magazin', nume: `${p.nume}`, ...m }), 0);
   },
   salveaza,
   actualizeazaHud,
@@ -720,10 +728,12 @@ const joc = {
   get inventar() {
     return inventar;
   },
-  // Primește un obiect; dacă nu încape, întreabă ce face (aruncă ceva sau îl lasă)
+  // Primește un obiect; dacă nu încape, întreabă ce face (aruncă ceva sau îl lasă). Întoarce câte au încăput,
+  // ca pe ecran să urce doar ce a ajuns în rucsac
   primeste(id, n = 1) {
     const rest = inventar.adauga(id, n);
     if (rest > 0) inventarPlin(id, rest);
+    return n - rest;
   },
   folosesteObiect(index) {
     const x = stare.inventar[index];
@@ -752,10 +762,16 @@ const joc = {
     const vis = evenimente.find((ev) => ev.laTrezire && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));
     if (vis) setTimeout(() => pornesteEveniment(vis.id), 0);
   },
-  dupaActiune(text) {
+  // Ce a adus acțiunea urcă pe ecran, ca prada după vânătoare (decis de autor): monedele și ce mai dă munca,
+  // lemnele, apa, florile; plus ce au dat efectele ei (carnea friptă de acasă). Fără câștig, doar mesajul
+  dupaActiune(text, castig = []) {
+    for (const c of castig) if (c.n > 0) inregistreazaCastig(c);
+    const lista = castiguri;
+    castiguri = [];
     salveaza();
     afiseaza();
-    if (text) mesaj(text);
+    if (lista.length) arataCastiguri(lista);
+    else if (text) mesaj(text);
   },
   pedeapsa,
   aplicaPedeapsa,

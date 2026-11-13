@@ -39,9 +39,13 @@ export function creeazaEcranMagazin(parinte, joc) {
     arata();
   }
 
+  // Prețul la negustorul ăsta: „preturi” la magazin îl schimbă (săgețile, mai scumpe la Bram decât la Jarek,
+  // decis de autor); altfel, prețul obiectului
+  const pretAici = (id) => magazin.preturi?.[id] ?? inv.def(id).pret;
+
   function cumpara(id) {
     const s = joc.stare;
-    const pret = inv.def(id).pret;
+    const pret = pretAici(id);
     if (s.bani < pret) return joc.gand(`N-am destui bani. Îmi trebuie ${monede(pret)}.`);
     if (!inv.incape(id)) return joc.gand('Nu mai am loc în rucsac.');
     s.bani -= pret;
@@ -170,7 +174,7 @@ export function creeazaEcranMagazin(parinte, joc) {
     text.append(div('nume-obiect', d.nume), div('descriere-obiect', descriere(inv, id)));
     const act = div('actiuni-inv');
     const b = (t, clic) => act.append(Object.assign(document.createElement('button'), { className: 'buton buton-mic-meniu', textContent: t, onclick: clic }));
-    if (pe === 'marfa') b(`Cumpără · ${monede(d.pret)}`, () => cumpara(id));
+    if (pe === 'marfa') b(`Cumpără · ${monede(pretAici(id))}`, () => cumpara(id));
     else if (cumparaDeLaMine(id)) b(`Vinde · ${monede(pretVanzare(id))}`, () => vinde(selectat.index));
     else act.append(div('ajutor-inv', 'Negustorul ăsta nu cumpără așa ceva.'));
     text.append(act);
@@ -194,7 +198,7 @@ export function creeazaEcranMagazin(parinte, joc) {
           if (selectat?.din === 'marfa' && selectat.id === id) cel.classList.add('selectata');
           cel.append(iconita(inv, id));
           cel.title = inv.def(id).nume;
-          m.append(cel, pret(inv.def(id).pret, s.bani < inv.def(id).pret));
+          m.append(cel, pret(pretAici(id), s.bani < pretAici(id)));
           m.onclick = () => ((selectat = { din: 'marfa', id }), arata());
           g.append(m);
         }

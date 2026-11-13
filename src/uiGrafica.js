@@ -115,6 +115,7 @@ export const ELEMENTE_UI = [
     ['joc_nou', 'Meniu: iconița Joc nou (răsăritul)'],
     ['galerie', 'Meniu: iconița Galerie (tabloul)'],
     ['optiuni', 'Meniu: iconița Opțiuni (rotițele și cheia)'],
+    ['ochi', 'Dialog: ochiul din colțul stânga-jos (ascunde dialogul, ca să se vadă toată imaginea)'],
   // Cu imaginea încărcată, simbolul din text e transparent; fără umbră, altfel umbra lui rămâne ca o pată neagră
   // „contain”: iconița își păstrează forma în căsuța ei, oricât de lată ar fi imaginea (decis: să nu fie turtite)
   ].map(([id, nume]) => ({ id: `icon_${id}`, nume, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none;background-size:contain;background-position:center}` })),

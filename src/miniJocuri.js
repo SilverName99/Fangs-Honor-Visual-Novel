@@ -322,6 +322,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     }
     let corecte = 0;
     let gresite = 0;
+    const culese = [];
     e.scor.textContent = `Culese: 0 / ${max}`;
     let gata;
     const terminat = new Promise((r) => (gata = r));
@@ -343,6 +344,7 @@ export function creeazaMiniJocuri(parinte, joc) {
         el.onclick = null;
         if (p.corecta) corecte++;
         else gresite++;
+        culese.push(p.id);
         e.scor.textContent = `Culese: ${corecte + gresite} / ${max}`;
         if (corecte + gresite >= max) setTimeout(gata, 450);
       };
@@ -355,7 +357,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     bGata.remove();
     for (const p of e.loc.querySelectorAll('.planta-mini')) p.onclick = null;
     e.el.remove();
-    return { corecte, gresite };
+    return { corecte, gresite, culese };
   }
 
   // Furișatul (decis de autor, lada colectorului): imaginea pasului, cu cele două locuri desenate de autor în editor

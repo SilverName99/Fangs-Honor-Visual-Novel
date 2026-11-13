@@ -675,7 +675,24 @@
         ],
         "cumpara": []
       },
-      "intrebareVorba": "Ce mai faceți, doamna Agnes?"
+      "intrebareVorba": "Ce mai faceți, doamna Agnes?",
+      "magazine": {
+        "schimburi": {
+          "_nota": "Decis de autor: Agnes face carne friptă din carne crudă (2 → 1), ca schimburile lui Elian.",
+          "titlu": "Bucătăria Agnesei",
+          "schimburi": [
+            {
+              "da": {
+                "carne": 2
+              },
+              "primesti": {
+                "carne_gatita": 1
+              }
+            }
+          ],
+          "cumpara": []
+        }
+      }
     },
     {
       "id": "negustor",
@@ -915,10 +932,63 @@
         "vinde": [
           "potiune_viata",
           "leac_otrava",
+          "potiune_vigoare",
           "pansament"
         ],
         "cumpara": [
-          "sunatoare"
+          "sunatoare",
+          "papadie",
+          "musetel",
+          "piciorul_cocosului",
+          "luminita_noptii"
+        ],
+        "_nota": "Decis de autor: Bătrâna Morwen vinde poțiuni și le face din florile culese (schimburi). Rețetele și cele 3 poțiuni noi (vigoare, pielea de piatră, furia) sunt ciorne de Claude, TODO echilibru.",
+        "schimburi": [
+          {
+            "da": {
+              "sunatoare": 2,
+              "musetel": 1
+            },
+            "primesti": {
+              "potiune_viata": 1
+            }
+          },
+          {
+            "da": {
+              "piciorul_cocosului": 2,
+              "papadie": 1
+            },
+            "primesti": {
+              "leac_otrava": 1
+            }
+          },
+          {
+            "da": {
+              "papadie": 2,
+              "musetel": 1
+            },
+            "primesti": {
+              "potiune_vigoare": 1
+            }
+          },
+          {
+            "da": {
+              "luminita_noptii": 2,
+              "piciorul_cocosului": 1
+            },
+            "primesti": {
+              "potiune_piatra": 1
+            }
+          },
+          {
+            "da": {
+              "luminita_noptii": 2,
+              "sunatoare": 1
+            },
+            "primesti": {
+              "potiune_furie": 1
+            }
+          }
         ]
       }
     },

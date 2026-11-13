@@ -995,7 +995,24 @@ svg.zone {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 12px;
+  /* Bara de derulare ca la marfa din magazin (cerut de autor: „mai frumos”), nu cea albă a browserului */
+  scrollbar-width: thin;
+  scrollbar-color: #c9a24f rgba(0, 0, 0, 0.35);
+}
+.poveste-inv.mai-jos {
+  /* Doar conținutul se estompează, nu și bara de derulare (fâșia din dreapta rămâne întreagă) */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent), linear-gradient(#000, #000);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent), linear-gradient(#000, #000);
+  -webkit-mask-size: calc(100% - 16px) 100%, 16px 100%;
+  mask-size: calc(100% - 16px) 100%, 16px 100%;
+  -webkit-mask-position: left top, right top;
+  mask-position: left top, right top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .obiect-poveste {
   display: flex;
@@ -1071,14 +1088,17 @@ svg.zone {
   scrollbar-color: #c9a24f rgba(0, 0, 0, 0.35);
   padding-right: 8px;
 }
-.grila-marfa::-webkit-scrollbar {
+.grila-marfa::-webkit-scrollbar,
+.poveste-inv::-webkit-scrollbar {
   width: 10px;
 }
-.grila-marfa::-webkit-scrollbar-track {
+.grila-marfa::-webkit-scrollbar-track,
+.poveste-inv::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.35);
   border-radius: 5px;
 }
-.grila-marfa::-webkit-scrollbar-thumb {
+.grila-marfa::-webkit-scrollbar-thumb,
+.poveste-inv::-webkit-scrollbar-thumb {
   background: linear-gradient(90deg, #e2b65a, #9a6a24);
   border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, 0.35);
@@ -2752,6 +2772,65 @@ svg.zone {
 @keyframes trecere-lenta {
   from { opacity: 0; transform: scale(1.15); }
   to { opacity: 1; transform: scale(1); }
+}
+/* Săgețile lui Vale în luptă, lângă el, cât ține arcul în mână (decis de autor) */
+.sageti-lupta {
+  position: absolute;
+  right: -6%;
+  bottom: 18%;
+  width: 56px;
+  height: 56px;
+  pointer-events: none;
+  z-index: 3;
+}
+.sageti-lupta .iconita {
+  width: 100%;
+  height: 100%;
+}
+.sageti-lupta .numar-sageti {
+  position: absolute;
+  right: -8px;
+  bottom: -6px;
+  font: 700 22px Georgia, serif;
+  color: #fff;
+  text-shadow: 0 0 3px #000, 0 2px 3px #000;
+}
+.sageti-lupta.gol .numar-sageti {
+  color: #ff6b5a;
+}
+/* Ochiul din dialog (cerut de autor): în colțul stânga-jos; ascunde chenarul, portretele și umbra de peste scenă */
+.dialog > .buton-ochi {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0.7;
+  transition: opacity 0.15s, filter 0.15s;
+}
+.dialog > .buton-ochi:hover,
+.dialog.ascuns-text > .buton-ochi {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 200, 80, 0.8));
+}
+.dialog > .buton-ochi .icon-hud {
+  width: 100%;
+  height: 100%;
+  font-size: 54px;
+  line-height: 84px;
+}
+.dialog.ascuns-text {
+  background: transparent;
+}
+.dialog.ascuns-text > .caseta,
+.dialog.ascuns-text > .loc-portret,
+.dialog.fara-caseta > .buton-ochi {
+  visibility: hidden;
 }
 /* O imagine care trece singură (ochiul din vis): fără chenar și fără portrete, doar imaginea */
 .dialog.fara-caseta > .caseta,

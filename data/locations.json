@@ -243,6 +243,25 @@
                   }
                 }
               }
+            },
+            {
+              "_nota": "Decis de autor: în bucătărie, Vale își poate frige singur o bucată de carne, o dată pe zi (zona se desenează în editor). Textele sunt ciorne.",
+              "id": "gatit",
+              "tip": "lucrare",
+              "nume": "Frige o bucată de carne",
+              "consuma": {
+                "carne": 1
+              },
+              "efecte": {
+                "obiect": "carne_gatita"
+              },
+              "minute": 30,
+              "maxPeZi": 1,
+              "mesajMaxPeZi": "Am gătit deja azi. Mâine din nou; lemnele de foc nu cresc în pomi.",
+              "imagine": "locations/munca_gatit.png",
+              "text": "Frigi carnea la focul din vatră...",
+              "sunet": "munca",
+              "mesajGata": "+1 Carne friptă"
             }
           ],
           "variante": [
@@ -326,13 +345,18 @@
                 "scut_lemn",
                 "sabie_mare",
                 "topor_mare",
-                "arc"
+                "arc",
+                "sageti"
               ],
               "cumpara": [
                 "piele",
                 "blana_lup"
               ],
-              "_nota": "Decis de autor: piesele de piele (gluga, vesta, jambierele, rucsacul) nu le mai vinde Bram; le coase Miriam din piei."
+              "_nota": "Decis de autor: piesele de piele (gluga, vesta, jambierele, rucsacul) nu le mai vinde Bram; le coase Miriam din piei.",
+              "preturi": {
+                "sageti": 2
+              },
+              "_notaPreturi": "Decis de autor: Bram vinde și săgeți, dar mai scump decât Jarek (2 față de 1 monedă; TODO echilibru)."
             }
           ],
           "incuiat": [
@@ -1111,7 +1135,7 @@
           "gandNoapte": "E beznă în pădure. Nu văd unde dau cu toporul. Mai bine mă întorc dimineață."
         },
         {
-          "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, fiecare sunătoare = 1 fir. Cu mini-jocurile oprite: 2 fire, singur.",
+          "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, iar orice floare culeasă rămâne în rucsac (decis de autor, pentru poțiunile Bătrânei Morwen). Cu mini-jocurile oprite: 2 fire de sunătoare, singur.",
           "id": "ierburi",
           "tip": "culege",
           "nume": "Caută ierburi (1 oră)",
@@ -1169,7 +1193,7 @@
           "nFaraJoc": 2
         },
         {
-          "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă): apare doar cât e pasul culesului; doar seara (18–23). Mini-jocul ca la sunătoare (13 plante: 4 luminițe, câte 3 din celelalte).",
+          "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă): apare de la pasul culesului și rămâne și după misiune (decis de autor: luminița e folosită la poțiuni); doar seara (18–23). Mini-jocul ca la sunătoare; orice floare culeasă rămâne în rucsac.",
           "id": "luminita",
           "tip": "culege",
           "nume": "Caută luminița-nopții (1 oră)",
@@ -1208,10 +1232,19 @@
           "text": "Cauți printre ierburi, în lumina apusului...",
           "ascuns": {
             "conditii": {
-              "misiune": {
-                "finn_mama": "inceputa"
-              },
-              "existaStare": "finn_mama_pas"
+              "oricare": [
+                {
+                  "misiune": {
+                    "finn_mama": "inceputa"
+                  },
+                  "existaStare": "finn_mama_pas"
+                },
+                {
+                  "misiune": {
+                    "finn_mama": "terminata"
+                  }
+                }
+              ]
             }
           },
           "maxCulese": 4,

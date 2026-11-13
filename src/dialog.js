@@ -29,7 +29,18 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   // Imaginea pe tot ecranul din spatele replicilor (decis de autor: la unele evenimente replicile stau peste imagine);
   // rămâne de la un nod la altul până o schimbă altul sau se termină dialogul
   const fundal = div('fundal-dialog');
-  el.append(fundal, stanga, dreapta, caseta);
+  // Ochiul din colțul stânga-jos (cerut de autor): ascunde chenarul și portretele, ca să se vadă toată imaginea;
+  // încă un clic oriunde (sau pe ochi) le aduce înapoi
+  const ochi = Object.assign(document.createElement('button'), { className: 'buton-ochi' });
+  ochi.setAttribute('aria-label', 'Ascunde dialogul');
+  ochi.append(Object.assign(div('icon-hud icon-ochi'), { textContent: '👁' }));
+  const ascuns = () => el.classList.contains('ascuns-text');
+  ochi.onclick = (e) => {
+    e.stopPropagation();
+    el.classList.toggle('ascuns-text');
+  };
+  el.addEventListener('click', () => ascuns() && el.classList.remove('ascuns-text'));
+  el.append(fundal, stanga, dreapta, caseta, ochi);
   parinte.append(el);
 
   // Portretele se refolosesc: un portret deja încărcat nu mai clipește la fiecare replică
@@ -163,6 +174,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   }
 
   function continua() {
+    // Cu dialogul ascuns (ochiul), prima apăsare doar îl arată înapoi, nu sare peste replică
+    if (ascuns()) return el.classList.remove('ascuns-text');
     if (el.classList.contains('asteapta-imaginea')) return;
     if (activ && !activ.alegeri.length) arataNod(activ.nod.urmator ?? null);
   }
@@ -171,7 +184,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!activ) return;
     el.hidden = true;
     fundal.replaceChildren();
-    el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis', 'fara-caseta');
+    el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis', 'fara-caseta', 'ascuns-text');
     parinte.classList.remove('in-dialog');
     const { dialog } = activ;
     activ = null;

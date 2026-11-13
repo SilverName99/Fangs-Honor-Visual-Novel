@@ -84,11 +84,70 @@
       "descriere": "Oprește otrava (de exemplu balele acide ale șobolanilor).",
       "_nota": "Decis de autor: se vinde la bătrâna cu poțiuni (ierbăreasa), în zona nouă de pe hartă (cu misiunea lui Finn, de făcut). Prețul: TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
     },
+    "potiune_vigoare": {
+      "nume": "Poțiune de vigoare",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 12,
+      "minute": 1,
+      "efecte": {
+        "nevoi": {
+          "stamina": 50
+        }
+      },
+      "sunet": "baut",
+      "descriere": "Un ceai amar și verde, care alungă oboseala. Reface stamina (+50).",
+      "_nota": "CIORNĂ (Claude), cerută de autor: una dintre cele 3 poțiuni noi ale Bătrânei Morwen, din flori. Cifrele: TODO echilibru."
+    },
+    "potiune_piatra": {
+      "nume": "Pielea de piatră",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 18,
+      "minute": 1,
+      "inLupta": true,
+      "lupta": {
+        "armura": 15
+      },
+      "efecte": {},
+      "sunet": "baut",
+      "descriere": "Un elixir cenușiu, greu ca plumbul. În luptă, pielea se întărește: +15 armură până la sfârșitul luptei.",
+      "_nota": "CIORNĂ (Claude), cerută de autor: poțiune nouă a Bătrânei Morwen, din flori; doar în luptă. Cifrele: TODO echilibru."
+    },
+    "potiune_furie": {
+      "nume": "Poțiunea furiei",
+      "tip": "consumabil",
+      "stiva": 3,
+      "pret": 18,
+      "minute": 1,
+      "inLupta": true,
+      "lupta": {
+        "atac": 3
+      },
+      "efecte": {},
+      "sunet": "baut",
+      "descriere": "Un elixir roșu, care arde pe gât. În luptă, loviturile sunt mai grele: +3 la atac până la sfârșitul luptei.",
+      "_nota": "CIORNĂ (Claude), cerută de autor: poțiune nouă a Bătrânei Morwen, din flori; doar în luptă. Cifrele: TODO echilibru."
+    },
     "carne": {
       "nume": "Carne",
       "tip": "material",
       "stiva": 5,
       "pret": 4
+    },
+    "carne_gatita": {
+      "nume": "Carne friptă",
+      "tip": "consumabil",
+      "stiva": 5,
+      "pret": 8,
+      "minute": 10,
+      "efecte": {
+        "nevoi": {
+          "foame": 50
+        }
+      },
+      "descriere": "Carne friptă, caldă și sățioasă. Ține de foame mult mai bine decât pâinea.",
+      "_nota": "Decis de autor: la Agnes, 2 bucăți de carne crudă → 1 friptă; acasă, în bucătărie, 1 → 1, o dată pe zi. Cât sătură: TODO echilibru (ales de Claude)."
     },
     "piele": {
       "nume": "Piele de mistreț",
@@ -112,7 +171,9 @@
       "nume": "Săgeți",
       "tip": "material",
       "stiva": 20,
-      "pret": 1
+      "pret": 1,
+      "descriere": "Săgeți pentru arc. Fiecare săgeată trasă în luptă se pierde.",
+      "_nota": "Decis de autor: arcul are nevoie de săgeți; în luptă, fiecare atac cu arcul consumă una. Jarek le vinde la prețul de aici, Bram mai scump („preturi” la magazinul lui)."
     },
     "sabie": {
       "nume": "Sabie",
@@ -167,7 +228,8 @@
         "sageata": "combat/sageata.png"
       },
       "pret": 35,
-      "_notaSloturi": "Decis de autor: arcul ocupă un singur loc în rucsac (dar tot ține ambele mâini)."
+      "_notaSloturi": "Decis de autor: arcul ocupă un singur loc în rucsac (dar tot ține ambele mâini).",
+      "descriere": "Trage de la distanță. Are nevoie de săgeți: fiecare atac consumă una."
     },
     "scut_lemn": {
       "nume": "Scut de lemn",
@@ -229,22 +291,32 @@
       "tip": "material",
       "stiva": 10,
       "pret": 2,
-      "_nota": "Planta de leac pentru Elian (misiunea elian_ierburi)."
+      "_nota": "Planta de leac pentru Elian (misiunea elian_ierburi).",
+      "descriere": "Flori galbene, mărunte. Fratele Elian face pansamente din ele, iar Bătrâna Morwen, poțiuni."
     },
     "papadie": {
       "nume": "Păpădie",
-      "tip": "planta",
-      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+      "tip": "material",
+      "stiva": 10,
+      "pret": 1,
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "piciorul_cocosului": {
       "nume": "Piciorul-cocoșului",
-      "tip": "planta",
-      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+      "tip": "material",
+      "stiva": 10,
+      "pret": 1,
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "musetel": {
       "nume": "Mușețel",
-      "tip": "planta",
-      "_nota": "Doar imaginea, ca plantă de încurcat la cules (misiunea lui Elian); nu se primește."
+      "tip": "material",
+      "stiva": 10,
+      "pret": 1,
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "hartii_vechi": {
       "nume": "Hârtii vechi",
@@ -256,11 +328,11 @@
     },
     "orz": {
       "nume": "Orz",
-      "tip": "poveste",
-      "numarabil": true,
-      "pret": 0,
-      "descriere": "Orz de la moară, pentru berea lui Agnes.",
-      "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
+      "tip": "material",
+      "stiva": 10,
+      "pret": 1,
+      "descriere": "Orz de la moară.",
+      "_nota": "Decis de autor: după misiunea berii lui Agnes, munca la moară dă mereu orz (înainte era obiect de poveste, doar pentru bere)."
     },
     "miere": {
       "nume": "Miere",
@@ -275,7 +347,7 @@
       "tip": "material",
       "stiva": 10,
       "pret": 2,
-      "descriere": "Flori galbene care se deschid doar la apus. Elian zice că alină tusea.",
+      "descriere": "Flori galbene care se deschid doar la apus. Elian zice că alină tusea; Bătrâna Morwen face poțiuni din ele.",
       "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă de Claude: luminița-nopții e numele popular al unei plante adevărate, care înflorește seara)."
     },
     "cheie_contrabandist": {

@@ -125,6 +125,16 @@
               "agnes_bere": "inceputa"
             }
           }
+        },
+        {
+          "_nota": "Decis de autor: după misiunea berii, moara dă mereu orz (2 pe muncă, ales de Claude, TODO echilibru).",
+          "obiect": "orz",
+          "n": 2,
+          "conditii": {
+            "misiune": {
+              "agnes_bere": "terminata"
+            }
+          }
         }
       ]
     }

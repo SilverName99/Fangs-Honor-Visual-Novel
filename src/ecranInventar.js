@@ -407,6 +407,10 @@ export function creeazaEcranInventar(parinte, joc) {
         }
         if (!s.poveste.length) lista.append(div('ajutor-inv', 'Încă nimic. Cheile, scrisorile și celelalte lucruri importante apar aici și nu se pot pierde.'));
         c.append(lista);
+        // Cât mai e ceva dedesubt, marginea de jos a listei se estompează, ca să se vadă că lista continuă
+        const estompeaza = () => lista.classList.toggle('mai-jos', lista.scrollTop + lista.clientHeight < lista.scrollHeight - 2);
+        lista.addEventListener('scroll', estompeaza);
+        requestAnimationFrame(estompeaza);
         return;
       }
       c.append(capFoaie('Rucsac', inv.ocupate(s.inventar) + 1, inv.capacitateRucsac()));

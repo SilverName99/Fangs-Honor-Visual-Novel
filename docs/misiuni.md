@@ -103,6 +103,15 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
 Imaginile lipsă apar ca dreptunghiuri colorate, cu numele fișierului pe ele.
 
+## Altele: mâncarea, florile, poțiunile și săgețile
+
+Nu sunt misiuni, dar le folosești peste tot (decis de autor):
+- **Carnea friptă:** la Agnes, „Îmi frigi niște carne?” (2 carne → 1 friptă); acasă, în bucătărie, „Frige o bucată de carne” (1 → 1, o dată pe zi; imaginea `locations/munca_gatit.png`, zona se desenează în editor). Iconița: `items/carne_gatita.png`.
+- **Orzul:** după „Berea” lui Agnes, munca la moară dă mereu orz (2 pe muncă).
+- **Florile:** la cules (sunătoarea dimineața, luminița-nopții seara), orice floare culeasă rămâne în rucsac: păpădia, mușețelul, piciorul-cocoșului.
+- **Bătrâna Morwen** face poțiuni din flori, la schimb (ciorne, TODO echilibru): viață (2 sunătoare + 1 mușețel), leacul de otravă (2 piciorul-cocoșului + 1 păpădie), **vigoare** (2 păpădie + 1 mușețel; +50 stamina), **pielea de piatră** (2 luminița-nopții + 1 piciorul-cocoșului; în luptă +15 armură), **furia** (2 luminița-nopții + 1 sunătoare; în luptă +3 atac). Iconițe: `items/potiune_vigoare.png`, `potiune_piatra.png`, `potiune_furie.png`.
+- **Săgețile:** arcul trage doar cu săgeți (una pe atac); lângă Vale, în luptă, se vede câte mai are. Jarek le vinde cu 1 monedă, Bram cu 2.
+
 ## Prologul 📝
 
 La un joc nou, înainte de orice: 5–7 imagini cu text peste ele.
@@ -364,12 +373,13 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Antrenamentul
 - **Pornește singur**, la sfârșitul „Cinei în familie” (decis de autor: Roderick acceptă insistențele mamei). Pe harta Marginii apare **locul de antrenament** (piesă nouă, `map/piese/antrenament.png`, pe un loc liber ales de autor). Cât e misiunea, **Roderick e acolo 07–10** (orele în care „nu știe nimeni unde e”). Sprite: `sprites/soldat_antrenament.png`.
 - **Pasul 1:** materialele pentru manechin: **6 lemne** (pădurea), **3 snopi de paie** (câte unul la fiecare arat, la câmpul de grâu, cât e misiunea; ales de Claude) și **o frânghie** (negustorul din piață, 4 monede). Cartea arată „(lemne 4/6, paie 1/3, frânghie 0/1)”.
-- **Pasul 2:** la Roderick, „Am adus tot ce trebuie pentru manechin!” → construcția peste o imagine (3 ore, −20 stamina). De atunci manechinul rămâne acolo (piesa și imaginea zonei, varianta `_manechin`).
-- **Pasul 3** (decis de autor): **cu o sabie de o mână la Vale** (în rucsac sau echipată; Bram vinde; fără ea Roderick îl trimite după una), **o dată pe zi, 3 zile**, „Să ne antrenăm, unchiule!” (odihnit: −20 stamina, 2 ore). **Mini-jocul lemnelor** peste imaginea în care Vale se pregătește să lovească (Roderick îl privește din spate); **la fiecare lovitură reușită se vede o clipă imaginea loviturii**, la ratare nu. Ziua se pune doar cu măcar 2 lovituri din 3 (ales de Claude); altfel Roderick îl trimite să revină mâine. Cu mini-jocurile oprite, cele două imagini una după alta, și ziua se pune. Inelul se mută pe manechin în editor: Aranjare → Ecrane → „Mini-joc: Antrenamentul cu Roderick”.
+- **Pasul 2** (cerut de autor): cu tot strâns, **i le arăți lui Roderick**, oriunde e (dimineața la locul de antrenament, 10–14 la biserică, apoi la tavernă): „Unchiule, am adunat tot ce trebuie pentru manechin!”. Le cercetează, zice că sunt bune și îi spune lui Vale să vină cu ele **dimineața, între 7 și 10, la locul de la Marginea**. Dacă îl găsești chiar acolo la ora aceea, vă apucați direct de construit (pasul 3 vine imediat).
+- **Pasul 3:** la locul de antrenament, 7–10, „Am adus tot ce trebuie pentru manechin!” → construcția peste o imagine (3 ore, −20 stamina). De atunci manechinul rămâne acolo (piesa și imaginea zonei, varianta `_manechin`).
+- **Pasul 4** (decis de autor): **cu o sabie de o mână la Vale** (în rucsac sau echipată; Bram vinde; fără ea Roderick îl trimite după una), **o dată pe zi, 3 zile**, „Să ne antrenăm, unchiule!” (odihnit: −20 stamina, 2 ore). **Mini-jocul lemnelor** peste imaginea în care Vale se pregătește să lovească (Roderick îl privește din spate); **la fiecare lovitură reușită se vede o clipă imaginea loviturii**, la ratare nu. Ziua se pune doar cu măcar 2 lovituri din 3 (ales de Claude); altfel Roderick îl trimite să revină mâine. Cu mini-jocurile oprite, cele două imagini una după alta, și ziua se pune. Inelul se mută pe manechin în editor: Aranjare → Ecrane → „Mini-joc: Antrenamentul cu Roderick”.
 - **Recompensa:** încrederea lui Roderick +1 și **+2 la atac, pentru totdeauna** (`bonusVale` în `config.json`; ales de Claude, aprobat de autor).
 - **Imaginile:** zona `locations/antrenament_zona.png` (+ `_manechin`), piesa `map/piese/antrenament.png` (+ `_noapte`, `_manechin`, `_manechin_noapte`), `events/antrenament_constructie.png`, `events/antrenament_pregatire.png`, `events/antrenament_lovitura.png`. Obiecte: `items/paie.png`, `items/franghie.png`. Sunetul loviturii: același ca lovitura de sabie din luptă (`lupta_sabie`, decis de autor).
 
-**Cum verifici:** după cină, F2 → Mergi la Marginea satului → locul de antrenament, ora 08:00 → Roderick („Despre manechin...”). Obiect → Primește: 6 lemne, 1 frânghie; paiele: munca la arat (sau F2 → Obiect → paie de 3 ori) → „Am adus tot” → a doua zi „Să ne antrenăm” → încă două zile.
+**Cum verifici:** după cină, F2 → Mergi la Marginea satului → locul de antrenament, ora 08:00 → Roderick („Despre manechin...”). Obiect → Primește: 6 lemne, 1 frânghie; paiele: munca la arat (sau F2 → Obiect → paie de 3 ori) → la tavernă, după-amiaza, „Unchiule, am adunat tot” (te cheamă dimineața la loc) → a doua zi, 08:00, la locul de antrenament, „Am adus tot” → construcția → a doua zi „Să ne antrenăm” → încă două zile.
 
 ### 📝 Solzii de dragon
 - **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. De discutat.
@@ -462,7 +472,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Mama lui Finn
 - **Pornește** (decis de autor: misiunea lui Finn, în locul „Bolnavului” lui Elian): la Finn, „Mama ta... de cât timp e bolnavă?” → „Vorbesc eu cu el.”
 - **Pasul 1:** la Elian (biserica, oricând e treaz), „Frate Elian, am nevoie de ajutorul tău.” Elian recunoaște boala și îi spune de **luminița-nopții** (ciornă de Claude: e numele popular al unei plante adevărate, care își deschide florile la apus): galbenă, mare cât o monedă, cu patru petale late ca niște inimioare, miros de lămâie.
-- **Pasul 2:** 3 flori, **seara (18–23)**, în pădure: „Caută luminița-nopții (1 oră)”, mini-jocul culesului (13 plante: 4 luminițe, câte 3 din celelalte; zona plantelor se desenează în editor, la Aranjare → Ecrane → „Culesul”, ca la sunătoare). Apare doar cât e misiunea în lucru, după discuția cu Elian. Indicația o dă Elian („Cum arăta luminița-nopții?”).
+- **Pasul 2:** 3 flori, **seara (18–23)**, în pădure: „Caută luminița-nopții (1 oră)”, mini-jocul culesului (13 plante: 4 luminițe, câte 3 din celelalte; zona plantelor se desenează în editor, la Aranjare → Ecrane → „Culesul”, ca la sunătoare). Apare de la discuția cu Elian și rămâne și după misiune (decis de autor: luminița intră în poțiunile Bătrânei Morwen); orice floare culeasă rămâne în rucsac. Indicația o dă Elian („Cum arăta luminița-nopții?”).
 - **Pasul 3:** cu florile, **seara**, la Elian (pe scările bisericii): „Am adus luminița-nopții.” → „Hai la Finn.” (ziua, Elian îl trimite să vină după apus).
 - **Vindecarea**, peste 4 imagini (decis de autor): Finn îi așteaptă pe Vale și Elian la capătul potecii și intră toți trei în casă; Elian face ceaiul la vatra lui Finn, cu Lina la ajutor; mama îl bea, Elian se roagă cu mâna pe fruntea ei (Vale crede o clipă că lumina lumânării s-a făcut mai albă, un mic semn pentru secretul lui Elian); afară, Finn îi spune că lucrează în secret pentru contrabandist și îi dă **cheia cocioabei**. Trec 2 ore; Vale rămâne afară, la casa lui Finn.
 - **Recompensa:** încrederea lui Finn +1, a lui Elian +1 și cheia (`cheie_contrabandist`, la obiectele de poveste). Mama lui Finn are replici noi (s-a vindecat).

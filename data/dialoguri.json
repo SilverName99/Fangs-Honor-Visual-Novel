@@ -22,6 +22,15 @@
     "partener": "soldat",
     "start": [
       {
+        "nod": "ignora_biserica",
+        "conditii": {
+          "nu": {
+            "existaStare": "scandal_taverna"
+          },
+          "loc": "biserica/interior"
+        }
+      },
+      {
         "nod": "ignora",
         "conditii": {
           "nu": {
@@ -544,11 +553,65 @@
         "text": "Pentru manechin: șase lemne, pentru stâlp și pentru brațe, trei snopi de paie pentru trup și o frânghie bună, să le țină laolaltă. Paie găsești la câmpul de grâu, frânghie la negustorul din piață. Și fă-ți rost de o sabie de-adevăratelea, de o mână. Fără ea nu ne antrenăm.",
         "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Antrenamentul”."
       },
+      "antr_v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi întind frânghia. Unchiul o încearcă între pumni, ca pe o curea de șa, apoi ia o bucată de lemn, o întoarce pe toate părțile și ciocănește în ea cu degetele, ascultând.",
+        "_nota": "CIORNĂ (Claude). Cerut de autor: cu materialele strânse, Roderick le vede și îl cheamă pe Vale dimineața, 7–10, la locul de la Marginea.",
+        "urmator": "antr_v2"
+      },
+      "antr_v2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Lemn uscat, nu putregai. Paiele n-au mucegai. Frânghia ține și un cal nărăvaș.",
+        "urmator": "antr_v3"
+      },
+      "antr_v3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai făcut treaba ca lumea, băiete.",
+        "urmator": "antr_v4"
+      },
+      "antr_v4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "„Ca lumea.” De la unchiul, asta e aproape o laudă.",
+        "urmator": "antr_v5"
+      },
+      "antr_v5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vino cu ele dimineața, între șapte și zece, la locul de la Marginea satului. Mai devreme nu mă găsești, mai târziu sunt la biserică. Și vino odihnit: îl ridicăm împreună, și nu-i treabă de-o clipă.",
+        "urmator": "antr_v6"
+      },
+      "antr_v6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Dimineața, între șapte și zece. Am înțeles, unchiule.",
+        "efecte": {
+          "stare": {
+            "manechin_materiale": "aratate"
+          }
+        }
+      },
+      "antr_ind_loc": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai tot ce trebuie, băiete. Te aștept dimineața, între șapte și zece, la locul de la Marginea, și-l ridicăm împreună.",
+        "_nota": "CIORNĂ (Claude)."
+      },
       "antr_c1": {
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Am adus tot, unchiule: lemne, paie și frânghie.",
-        "urmator": "antr_c2"
+        "urmator": "antr_c2",
+        "efecte": {
+          "stare": {
+            "manechin_materiale": "aratate"
+          }
+        }
       },
       "antr_c2": {
         "vorbitor": "soldat",
@@ -615,6 +678,26 @@
         "emotie": "suparat",
         "text": "Cu ce vrei să lovești, băiete, cu pumnii? Adu-ți o sabie de o mână, una adevărată. Bram are în fierărie. Fără sabie, nu ne antrenăm.",
         "_nota": "Decis de autor: antrenamentul cere o sabie de o mână la Vale (în rucsac sau echipată)."
+      },
+      "lum_pb2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se oprește din rugăciune. Se uită lung la lumânări, ca și cum n-ar crede că sunt adevărate.",
+        "urmator": "lum_p3"
+      },
+      "lum_pb1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, am adus lumânările. Douăzeci și trei.",
+        "urmator": "lum_pb2"
+      },
+      "ignora_biserica": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul Roderick stă în genunchi în fața altarului și nici nu ridică privirea. Parcă nici nu m-ar vedea.",
+        "_nota": "La biserică (cerut de autor: acolo n-are cană în mână)."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -901,6 +984,14 @@
         "text": "Cumpără",
         "efecte": {
           "magazin": "hangita"
+        },
+        "spre": null
+      },
+      {
+        "_nota": "Decis de autor: 2 bucăți de carne crudă → 1 carne friptă.",
+        "text": "Îmi frigi niște carne?",
+        "efecte": {
+          "magazin": "hangita.schimburi"
         },
         "spre": null
       },
@@ -1708,6 +1799,26 @@
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Diseară, după ce se întunecă. Am pus deja fasolea la fiert. Dacă întârzie, mi-l aduci de ureche."
+      },
+      "cina_ib1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, mama te cheamă diseară la cină. A zis să nu te las să spui nu.",
+        "urmator": "cina_ib2"
+      },
+      "cina_ib2": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Miriam? Pe mine?",
+        "urmator": "cina_ib3"
+      },
+      "cina_ib3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se ridică din genunchi și se sprijină de spătarul băncii. Se uită la altar, apoi la mine, apoi iar la altar. Nu l-am văzut niciodată speriat. Nici măcar în fața orcilor.",
+        "urmator": "cina_i4",
+        "_nota": "Decis de autor: la biserică, alt gând decât cana din tavernă."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -6292,7 +6403,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Unchiul stă în prag, cu căciula în mâini. Bărbierit, cu cămașa curată. Nu l-am mai văzut așa de... nici nu mai știu de când.",
+        "text": "Unchiul stă în prag cu vesta în mâini, ca un băiat chemat la judecată. Bărbierit, cu cămașa curată, cu părul ud și pieptănat. Nu l-am mai văzut așa de... nici nu mai știu de când.",
         "imagine": "events/miriam_cina_1.png",
         "urmator": "c2"
       },
@@ -6305,7 +6416,59 @@
       "c3": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Bună seara, Roderick. Intră. Fasolea nu se mănâncă singură.",
+        "text": "Bună seara, Roderick.",
+        "urmator": "c3_1"
+      },
+      "c3_1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama se întoarce de la vatră cu lingura de lemn încă în mână. Pentru o clipă, nimeni nu spune nimic. Șase luni de tăcere stau între ei, aici, în prag.",
+        "urmator": "c3_2"
+      },
+      "c3_2": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Roderick.",
+        "urmator": "c3_3"
+      },
+      "c3_3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Doar atât: numele lui. Dar felul în care îl spune îmi strânge inima. Nu e nici supărare, nici iertare. E doar oboseală. Și dor.",
+        "urmator": "c3_4"
+      },
+      "c3_4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ți-aș fi adus ceva, Miriam... dar băiatul a zis să vin doar eu. Și bărbierit.",
+        "urmator": "c3_5"
+      },
+      "c3_5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Și te-ai bărbierit. Văd.",
+        "urmator": "c3_6"
+      },
+      "c3_6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Colțul gurii mamei tremură. Aproape un zâmbet. Primul pe care i-l văd de la primăvară încoace.",
+        "urmator": "c3_7"
+      },
+      "c3_7": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Ce mai stai în prag ca un străin? Agață vesta în cuiul de lângă ușă și vino la masă. Fasolea s-a răcit deja o dată, de cât m-am uitat la ușă.",
+        "urmator": "c3_8"
+      },
+      "c3_8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul agață vesta în cuiul de lângă ușă. Rămâne o clipă cu mâna pe ea. E cuiul pe care își agăța tata haina, în fiecare seară, când venea acasă.",
         "urmator": "c4"
       },
       "c4": {

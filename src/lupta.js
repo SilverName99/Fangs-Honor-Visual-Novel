@@ -437,6 +437,11 @@ export function creeazaLupta(parinte, joc) {
   // Arcul (Vale): săgeata zboară drept spre țintă, cu vârful pe direcția de zbor, fără să se întoarcă.
   // Arcașul nu se aruncă înainte ca la sabie; mărimea săgeții se reglează din galerie, ca la glaive
   async function trage(sursa, tinta) {
+    // Fiecare săgeată trasă de Vale se ia din rucsac (decis de autor); în lupta de test, nu
+    if (sursa.id === 'vale' && !L.def.test) {
+      inv.scoate('sageti', 1);
+      arataSageti(sursa);
+    }
     poza(sursa, 'atac');
     joc.sunet.efect(sursa.sunetAtac);
     await asteapta(200);
@@ -596,6 +601,17 @@ export function creeazaLupta(parinte, joc) {
       joc.sunet.efect(d.sunet || 'baut');
       actiune.tinta.viata = Math.min(actiune.tinta.viataMax, actiune.tinta.viata + v);
       if (v) numar(actiune.tinta, `+${v}`, 'vindecare');
+      // „lupta: { armura, atac }” la obiect: ține până la sfârșitul luptei (pielea de piatră, furia)
+      if (d.lupta?.armura) {
+        actiune.tinta.armura += d.lupta.armura;
+        actiune.tinta.armuraMax += d.lupta.armura;
+        numar(actiune.tinta, `+${d.lupta.armura} armură`, 'vindecare');
+      }
+      if (d.lupta?.atac) {
+        const a = actiune.tinta.atac;
+        actiune.tinta.atac = { ...a, min: a.min + d.lupta.atac, max: a.max + d.lupta.atac };
+        numar(actiune.tinta, `+${d.lupta.atac} atac`, 'vindecare');
+      }
       // Leacul de otravă (decis de autor): oprește otrava șobolanilor pe loc
       if (d.vindecaOtrava && actiune.tinta.otrava) {
         actiune.tinta.otrava = null;
@@ -743,8 +759,26 @@ export function creeazaLupta(parinte, joc) {
     );
   }
 
+  // Câte săgeți are Vale (decis de autor): lângă el, cât ține arcul în mână, cu iconița săgeților și numărul
+  const sagetiVale = () => inv.numar(joc.stare.inventar, 'sageti');
+  const cuArc = (f) => f.id === 'vale' && !!f.atac?.sageata;
+  function arataSageti(f) {
+    let el = f.el.querySelector('.sageti-lupta');
+    if (!cuArc(f) || L.def.test) return el?.remove();
+    if (!el) {
+      el = div('sageti-lupta');
+      el.append(iconitaObiect(inv, 'sageti'), div('numar-sageti'));
+      f.el.append(el);
+    }
+    el.querySelector('.numar-sageti').textContent = String(sagetiVale());
+    el.classList.toggle('gol', !sagetiVale());
+  }
+
   function meniu(f) {
     L.elMeniu.classList.remove('alege-loc');
+    if (f.id === 'vale') arataSageti(f);
+    // Fără săgeți, arcul nu trage (decis de autor): Vale își poate schimba arma sau se apără
+    const faraSageti = cuArc(f) && !L.def.test && !sagetiVale();
     L.activ = f;
     L.elLocuri.replaceChildren();
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
@@ -757,7 +791,7 @@ export function creeazaLupta(parinte, joc) {
     m.replaceChildren(
       ...(f.faraAtac
         ? []
-        : [butonActiune('atac', '⚔', 'Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f), poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
+        : [butonActiune('atac', '⚔', 'Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f) || faraSageti, faraSageti ? 'N-ai săgeți' : poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
       ...f.abilitati.map((a) =>
         butonActiune(caFisier(a.id), '✦', a.nume, () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (t) => executa(f, { tip: 'abilitate', abilitate: a, tinta: t }))),
       ),

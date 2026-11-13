@@ -146,6 +146,12 @@
                 }
               },
               {
+                "nod": "cina_ib1",
+                "conditii": {
+                  "loc": "biserica/interior"
+                }
+              },
+              {
                 "nod": "cina_i1"
               }
             ]
@@ -549,7 +555,17 @@
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
           "predare": {
             "text": "Am adus lumânările, unchiule.",
-            "nod": "lum_p1",
+            "nod": [
+              {
+                "nod": "lum_pb1",
+                "conditii": {
+                  "loc": "biserica/interior"
+                }
+              },
+              {
+                "nod": "lum_p1"
+              }
+            ],
             "conditii": {
               "areObiect": "lumanari"
             }
@@ -626,7 +642,7 @@
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: La cină, mama l-a convins pe unchiul Roderick să mă antreneze. Mai întâi facem un manechin de lovit, la locul lui ferit de la Marginea satului.",
-      "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită. Decis de autor: fără o sabie de o mână la el (în rucsac sau echipată), Vale nu se poate antrena.",
+      "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită. Decis de autor: fără o sabie de o mână la el (în rucsac sau echipată), Vale nu se poate antrena. Cerut de autor: cu materialele strânse, Roderick le vede întâi și îl cheamă pe Vale dimineața, 7–10, la locul de la Marginea.",
       "pasi": [
         {
           "text": "Adun ce trebuie pentru manechin",
@@ -654,6 +670,41 @@
           }
         },
         {
+          "text": "Îi arăt unchiului ce am adunat",
+          "_nota": "Cerut de autor: cu materialele strânse, Roderick le vede și îi spune lui Vale să vină cu ele dimineața (7–10) la locul de la Marginea. Dacă Vale îl găsește chiar acolo, la ora aceea, se apucă direct de construit.",
+          "gata": {
+            "stare": {
+              "manechin_materiale": "aratate"
+            }
+          },
+          "sfat": "Unchiul e dimineața (7–10) la locul de antrenament de la Marginea satului, între 10 și 14 la biserică, apoi la tavernă până la miezul nopții.",
+          "predare": {
+            "text": "Unchiule, am adunat tot ce trebuie pentru manechin!",
+            "nod": [
+              {
+                "nod": "antr_c1",
+                "conditii": {
+                  "loc": "antrenament"
+                }
+              },
+              {
+                "nod": "antr_v1"
+              }
+            ],
+            "conditii": {
+              "areCate": {
+                "lemn": 6,
+                "paie": 3,
+                "franghie": 1
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre manechin...",
+            "nod": "antr_ind"
+          }
+        },
+        {
           "text": "Construiesc manechinul cu unchiul",
           "gata": {
             "stare": {
@@ -675,7 +726,21 @@
           },
           "indiciu": {
             "text": "Despre manechin...",
-            "nod": "antr_ind"
+            "nod": [
+              {
+                "nod": "antr_ind_loc",
+                "conditii": {
+                  "areCate": {
+                    "lemn": 6,
+                    "paie": 3,
+                    "franghie": 1
+                  }
+                }
+              },
+              {
+                "nod": "antr_ind"
+              }
+            ]
           }
         },
         {

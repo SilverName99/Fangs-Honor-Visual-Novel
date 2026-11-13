@@ -51,6 +51,17 @@ const migrari = {
     const are = [...(s.inventar || []), ...(s.cufar || [])].some((x) => x.id === 'rucsac_panza') || Object.values(s.echipat || {}).includes('rucsac_panza');
     return { ...s, cufar: are ? s.cufar || [] : [...(s.cufar || []), { id: 'rucsac_panza', n: 1 }], versiuneSalvare: 4 };
   },
+  // Orzul nu mai e obiect de poveste (decis de autor: moara îl dă mereu după misiunea berii): ce era numărat la
+  // obiectele de poveste trece în cufărul de acasă, câte 10 pe stivă (rucsacul poate fi plin)
+  4: (s) => {
+    const n = s.povesteNumar?.orz || 0;
+    const poveste = (s.poveste || []).filter((id) => id !== 'orz');
+    const povesteNumar = { ...(s.povesteNumar || {}) };
+    delete povesteNumar.orz;
+    const stive = [];
+    for (let r = n; r > 0; r -= 10) stive.push({ id: 'orz', n: Math.min(10, r) });
+    return { ...s, poveste, povesteNumar, cufar: [...(s.cufar || []), ...stive], versiuneSalvare: 5 };
+  },
 };
 
 export function cheieSalvare(test) {
