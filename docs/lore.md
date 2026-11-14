@@ -105,7 +105,12 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Wild Warden** e **clanul** lor (un clan, nu o familie); în joc se numește **Străjerii Sălbăticiei**. Trăiesc la **marginea pădurilor mari**, nu toți la un loc: în așezări mici sau mijlocii, ca să **apere pădurile și animalele** din ele și să țină echilibrul în viața necuvântătoarelor. Sunt prietenoși cu oamenii (sunt și ei oameni), dar preferă să stea între ai lor.
 - **Kaia** (doar Kaia, fără nume de familie) e din Străjerii Sălbăticiei. Tigrul ei e **Ember**. A prins drag de satul lui Vale și trece pe aici din când în când.
 - **Motivul ei:** clanul ține echilibrul pădurilor, iar orcii îl strică (capcane, vânătoare cu zgomot, haita lupului negru gonită spre sat). Rămâne și îl ajută pe Vale ca să-l refacă: odată cu eliberarea satului, se întoarce și echilibrul în pădure. Și pentru satul la care ține.
-- **Ember** (decis de autor): Kaia l-a găsit pui, singur, la gura unei peșteri (părinții lui, probabil uciși) și a avut grijă de el; de atunci sunt nedespărțiți (misiunea „Rana lui Ember”, cu două amintiri). Ciorne de Claude, de confirmat: Kaia avea nouă ani; a așteptat-o pe mama lui trei zile; bătrânii Străjerilor zic că un animal care nu fuge de un copil „și-a ales omul”, iar cine aduce un pui acasă îl crește singur.
+- **Darul se vede din copilărie:** un copil cu darul animalelor se poate apropia de animalele care fug de ceilalți.
+- **Fiecare Străjer are un tovarăș:** un animal care „și-a ales omul” (lup, râs, urs, șoim; **tigrul cu colți de sabie e cel mai rar**). Nu e magie, ca legământul cu dragonii: e **încredere**, iar animalul rămâne cu el de bunăvoie, toată viața.
+- **Obiceiul:** cine aduce un pui acasă îl crește singur (îl hrănește, îl învață să vâneze); bătrânii doar privesc.
+- **Așezările:** case de lemn la marginea pădurilor mari, fiecare cu un bătrân în frunte. Străjerii coboară rar prin satele oamenilor, după sare și fier.
+- **Limba veche a Străjerilor:** „ember” înseamnă **jar** (ochii puiului ardeau în întuneric ca doi tăciuni).
+- **Ember** (decis de autor): Kaia l-a găsit pui, singur, la gura unei peșteri (părinții lui, probabil uciși), l-a dus acasă și l-a crescut; de atunci sunt nedespărțiți. Prima oară când a coborât cu el în satul lui Vale, după sare, toată lumea și-a închis ușile; Edwin, nu (misiunea „Rana lui Ember”, cu două amintiri, în care se văd doar Kaia și Ember). Ciorne de Claude: Kaia avea nouă ani; a așteptat-o pe mama puiului trei zile.
 - De dezvoltat: clanul și așezările lor, prin povestea Kaiei, cu amintiri (flashback-uri).
 
 ## Actele poveștii (decis de autor)

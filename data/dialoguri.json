@@ -4124,7 +4124,23 @@
         "text": "L-am dus acasă în brațe. Pe drum mi-a zgâriat tot obrazul, iar eu am râs până acasă.",
         "imagine": "events/kaia_amintire_2.png",
         "amintire": true,
-        "urmator": "c2"
+        "urmator": "c1"
+      },
+      "c1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Noaptea, ochii lui ardeau în întuneric ca doi tăciuni. Pe limba veche a Străjerilor, „ember” înseamnă jar. Așa i-am zis.",
+        "amintire": true,
+        "urmator": "c1b",
+        "_nota": "Decis de autor: „ember” înseamnă jar pe limba veche a Străjerilor."
+      },
+      "c1b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Fiecare dintre noi are un tovarăș: un lup, un râs, un urs, un șoim. Nu e vrajă, Vale. E încredere. Iar un tigru cu colți de sabie își alege omul foarte rar.",
+        "amintire": true,
+        "urmator": "c2",
+        "_nota": "Decis de autor: tovarășul Străjerilor, fără magie, din încredere, pe viață."
       },
       "c2": {
         "vorbitor": "vanatoare",
@@ -4132,7 +4148,7 @@
         "text": "Bătrânii Străjerilor zic că un animal care nu fuge de un copil și-a ales omul. Și că cine aduce un pui acasă îl crește singur: îl hrănește, îl învață să vâneze, doarme lângă el iarna.",
         "amintire": true,
         "urmator": "c3",
-        "_nota": "CIORNĂ (Claude): obiceiul Străjerilor Sălbăticiei, de confirmat de autor."
+        "_nota": "Decis de autor: obiceiul Străjerilor Sălbăticiei (animalul care „și-a ales omul”; cine aduce un pui acasă îl crește singur)."
       },
       "c3": {
         "vorbitor": "vanatoare",
@@ -4146,6 +4162,20 @@
         "emotie": "normal",
         "text": "De atunci n-am mai fost despărțiți. Nici măcar o zi.",
         "trezire": true,
+        "urmator": "d1"
+      },
+      "d1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Prima oară când am coborât cu el în satul vostru, după sare, toată lumea și-a închis ușile. Tatăl tău, nu.",
+        "urmator": "d1b",
+        "_nota": "Decis de autor: Străjerii coboară rar prin sate, după sare și fier; Kaia, de mică, cu Ember după ea, la ușa lui Edwin."
+      },
+      "d1b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tata nu mi-a povestit niciodată despre asta.",
         "urmator": "d2"
       },
       "d2": {
