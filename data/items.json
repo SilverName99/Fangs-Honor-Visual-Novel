@@ -276,7 +276,8 @@
       "pret": 25
     },
     "cheie_fierar": {
-      "nume": "Cheia fierarului",
+      "nume": "Cheia cufărului lui Bram",
+      "_nota": "Decis de autor: e cheia cufărului din camera lui Bram, nu a camerei. Misiunea care o dă și ce e în cufăr: TODO.",
       "tip": "poveste"
     },
     "fier_bram": {

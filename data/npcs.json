@@ -632,7 +632,8 @@
       "nume": "Agnes",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti."
+        "descriere": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti.",
+        "faraIncredere": true
       },
       "locuriSprite": [
         "taverna/parter",
@@ -750,7 +751,8 @@
       "_despre": "Decis de autor: e bolnava pe care o vindecă Vale seara, în misiunea lui Elian „Bolnavul”. Stă în pat, lângă vatră.",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Marta, mama lui Finn. A fost bolnavă de mult, tușea n-o lăsa nici zi, nici noapte. L-a cunoscut pe tata."
+        "descriere": "Marta, mama lui Finn. A fost bolnavă de mult, tușea n-o lăsa nici zi, nici noapte. L-a cunoscut pe tata.",
+        "faraIncredere": true
       },
       "locuriSprite": [
         "casa_finn/interior"
@@ -781,7 +783,8 @@
       "nume": "Lina",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Lina, sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice."
+        "descriere": "Lina, sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice.",
+        "faraIncredere": true
       },
       "locuriSprite": [
         "casa_finn/interior",
@@ -839,7 +842,8 @@
       "_despre": "Marginea satului. Decis de autor: se întâlnește cu Vale doar în cocioaba lui, seara, după jumătate de oră de așteptare; Finn lucrează în secret pentru el. Ce vinde e TODO (ciornă de Claude).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Jarek, contrabandistul de lângă gard. Face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa."
+        "descriere": "Jarek, contrabandistul de lângă gard. Face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa.",
+        "faraIncredere": true
       },
       "dialog": "contrabandist",
       "intrebareVorba": "Ce mai faci?",
@@ -907,7 +911,8 @@
       "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; vinde și leacul de otravă (bun la șobolanii din pivniță).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Bătrâna Morwen trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă."
+        "descriere": "Bătrâna Morwen trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă.",
+        "faraIncredere": true
       },
       "locuriSprite": [
         "coliba/interior"
@@ -1120,7 +1125,8 @@
       "nume": "Fermierul",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Fermierul. Ară câmpul de grâu de la ivirea zorilor până la prânz, împreună cu ceilalți săteni. Orcii îi iau o parte din recoltă când le vine cheful."
+        "descriere": "Fermierul. Ară câmpul de grâu de la ivirea zorilor până la prânz, împreună cu ceilalți săteni. Orcii îi iau o parte din recoltă când le vine cheful.",
+        "faraIncredere": true
       },
       "_despre": "Fermierul cu care poți vorbi; va avea misiuni (TODO). Lucrează la câmpuri 06–13; ceilalți săteni la muncă sunt desenați în imaginea zonei pentru orele acelea (campuri_zona_lucru.png).",
       "locuriSprite": [

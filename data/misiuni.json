@@ -402,12 +402,8 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea lui Agnes +1. Camera de sus se poate închiria.",
-        "efecte": {
-          "relatie": {
-            "hangita": 1
-          }
-        }
+        "text": "Camera de sus se poate închiria.",
+        "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {
@@ -842,12 +838,8 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea lui Agnes +1. Pivnița rămâne deschisă.",
-        "efecte": {
-          "relatie": {
-            "hangita": 1
-          }
-        }
+        "text": "Pivnița rămâne deschisă.",
+        "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {
@@ -912,12 +904,8 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea lui Agnes +1 și prima cană din berea nouă.",
-        "efecte": {
-          "relatie": {
-            "hangita": 1
-          }
-        }
+        "text": "Prima cană din berea nouă.",
+        "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {

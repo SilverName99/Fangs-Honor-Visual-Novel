@@ -381,19 +381,12 @@
             },
             {
               "conditii": {
-                "oricare": [
-                  {
-                    "personajIn": {
-                      "fierar": [
-                        "fierar",
-                        "fierar/interior"
-                      ]
-                    }
-                  },
-                  {
-                    "areObiect": "cheie_fierar"
-                  }
-                ]
+                "personajIn": {
+                  "fierar": [
+                    "fierar",
+                    "fierar/interior"
+                  ]
+                }
               },
               "mesaj": "Ușa fierăriei e închisă. Bram nu e aici acum; poate îl găsesc mai târziu.",
               "mesajIesire": "Bram închide fierăria și pleacă. Ies odată cu el."
@@ -409,16 +402,20 @@
           "incuiat": [
             {
               "conditii": {
-                "areObiect": "cheie_fierar"
-              },
-              "mesaj": "Ușa e încuiată."
-            },
-            {
-              "conditii": {
                 "nuDoarme": "fierar"
               },
               "mesaj": "Bram doarme. Nu vreau să-l deranjez acum.",
               "mesajIesire": "Bram vine să se culce. Ies din camera lui."
+            }
+          ],
+          "_incuiat": "Decis de autor: cheia de la Bram e a cufărului din cameră, nu a camerei. În cameră se intră din magazin, cât Bram e treaz.",
+          "actiuni": [
+            {
+              "id": "cufar_bram",
+              "tip": "gand",
+              "nume": "Cufărul lui Bram",
+              "_nota": "Decis de autor: Bram îi dă lui Vale cheia cufărului după o misiune (TODO care); ce e în cufăr: TODO. Până atunci, doar gândul lui Vale (ciornă). Zona se desenează în editor, pe cufăr.",
+              "text": "Un cufăr vechi, ferecat în fier, cu un lacăt cât pumnul. E al lui Bram; fără cheia lui n-am ce căuta în el."
             }
           ]
         }

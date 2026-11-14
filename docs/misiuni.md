@@ -29,7 +29,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
 2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram?”.
-3. 💡 **Cheia camerei**: după „Foalele stricate” (misiunea și ce e în cufăr: de ales).
+3. 💡 **Cheia cufărului**: după „Foalele stricate” (decis de autor: cheia e a cufărului din camera lui Bram, nu a camerei; misiunea și ce e în cufăr: de ales).
 4. 📝 **Platoșa tatălui**: după misiunea specială a Miriamei (echipamentul tatălui), Bram repară platoșa crăpată.
 
 **Fratele Elian (preotul)**
@@ -69,7 +69,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 ## Încrederea: de unde vine fiecare punct
 
-**Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Câteva dintre ele se pot **rata** (o alegere greșită, un refuz), iar recrutarea se face de la **8/10**, deci jucătorul are voie să piardă cel mult 2 puncte. La Miriam, Agnes și fermier (nu se recrutează), 10/10 deschide o misiune specială.
+**Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Câteva dintre ele se pot **rata** (o alegere greșită, un refuz), iar recrutarea se face de la **8/10**, deci jucătorul are voie să piardă cel mult 2 puncte. **Încredere au doar 6 personaje** (decis de autor): Bram, Elian, Kaia și Roderick (se recrutează), Finn (ajută în lupta finală, care are mai multe valuri) și Miriam (de la 8/10, echipamentul tatălui). Agnes, fermierul și ceilalți n-au încredere.
 
 Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
@@ -77,11 +77,9 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · 💡 încă 8 (la 8/10: misiunea specială, echipamentul tatălui) | 2 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
-| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia camerei · 📝 Platoșa tatălui · 💡 încă 6 | 2 / 10 |
+| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · 📝 Cheia cufărului · 📝 Platoșa tatălui · 💡 încă 6 | 2 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · 💡 încă 8 | 2 / 10 |
-| **Agnes** | ✅ Camera de sus · ✅ Berea · ✅ Pivnița · 💡 încă 7 | 3 / 10 |
-| **Fermierul** | 💡 toate 10 (patrula de orci nu dă, decis: încrederea vine doar din misiuni) | 0 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
 **De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
@@ -208,8 +206,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - Decis de autor: după misiunea specială a Miriamei, Bram repară platoșa crăpată a lui Edwin (`platosa_tata_crapata` → `platosa_tata`). Ce cere și cum: de făcut. (Bram îl știa pe Edwin: „Tatăl tău venea aici să-i ascut sabia.”)
 - **Imagini:** `items/platosa_tata_crapata.png` (aceeași platoșă, crăpată pe mijloc, prin romb).
 
-### 💡 Cheia camerei lui Bram
-- După „Foalele stricate”. Ce e în cufăr: de discutat.
+### 💡 Cheia cufărului lui Bram
+- După „Foalele stricate”. **Decis de autor:** cheia e a **cufărului** din camera lui Bram, nu a camerei. În cameră se intră din magazin, cât Bram e treaz; pe cufăr, până la cheie, doar gândul lui Vale (zona „Cufărul lui Bram” se desenează în editor). Misiunea și ce e în cufăr: de discutat.
 
 ---
 
@@ -395,7 +393,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   2. camera curată, Vale aproape a terminat și vede ceva sub pat: un rucsac cu niște hârtii vechi (nu le citește);
   3. jos, în tavernă: Vale îi arată lui Agnes ce a găsit; ea nu înțelege ce sunt și îl trimite la Roderick. Vale rămâne în sala tavernei.
 - **Hârtiile** (`hartii_vechi`) ajung la obiectele de poveste și rămân acolo. **Se citesc cu un clic** pe ele (inventar → „Obiecte de poveste” → Hârtii vechi → „Citește”), fiecare peste imaginea ei (decis de autor): (1) un solz desenat în creion, cu o mână pentru mărime, o lamă știrbită și nota „Nici sabia, nici focul nu l-au zgâriat.”; (2) semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; (3) o hartă: satul, zidul, un drum prin pădure, peste un râu, pe lângă niște ruine, până la o râpă însemnată cu X (propunerea lui Claude, de confirmat).
-- **Recompensa:** încrederea lui Agnes +1; camera de sus se poate închiria (5 monede).
+- **Recompensa:** camera de sus se poate închiria (5 monede). (Agnes n-are încredere, decis de autor.)
 - **Imagini:** `events/agnes_camera_1.png` (camera cu lucrurile soldatului, fără Vale), `events/agnes_camera_2.png` (camera curată, Vale vede rucsacul sub pat), `events/agnes_camera_3.png` (jos, la tejghea, Agnes se uită la hârtii), `events/hartie_1.png`, `hartie_2.png`, `hartie_3.png` (fiecare hârtie de aproape, la citit).
 
 **Cum verifici**
@@ -408,7 +406,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect de poveste, fără loc în rucsac, se numără.
 - **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 06 și 13, cât e și fermierul acolo (din ziua 3).
 - **Predarea:** la Agnes, „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată după-amiaza, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană.
-- **Recompensa:** încrederea lui Agnes +1 și o bere.
+- **Recompensa:** o bere. (Agnes n-are încredere, decis de autor.)
 - **Imagini:** `events/agnes_bere_1.png` (Agnes și Vale fac bere în pivniță), `agnes_bere_2.png` (seara, taverna plină și veselă); iconițele `items/orz.png` și `items/miere.png`.
 
 **Cum verifici:** după „Camera de sus”, la Agnes → „apă cu spumă” → „Ți le aduc eu”. Moara de 3 ori (2+2+1 orz), fermierul (6–13, la câmpuri) → miere, apoi Agnes → „Am adus orzul și mierea!”.
