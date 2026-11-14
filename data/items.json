@@ -435,6 +435,13 @@
       "pret": 0,
       "descriere": "Sabia tatei. Pe măciulie, un romb mic, auriu, ca pe steagul satului. Ciupită de luptă, dar lustruită de curând.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+    },
+    "capcane_orci": {
+      "nume": "Capcanele orcilor",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Capcane de fier din pădure, cu craniul Craniilor Sângerii bătut pe arc. Le-am desfăcut cu Kaia. Bram ar face ceva bun din fierul lor.",
+      "_nota": "Misiunea Kaiei „Capcanele” (decis de autor): duse la Bram, săgeți și încrederea lui; vândute colectorului, monede, dar Kaia află (−1)."
     }
   }
 }

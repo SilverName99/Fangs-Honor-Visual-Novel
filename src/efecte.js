@@ -20,15 +20,20 @@ const efecte = {
   nevoi: (v, joc) => Object.entries(v).forEach(([k, cu]) => schimbaNevoie(joc.stare, k, cu)),
   reputatie: (v, joc) => (joc.stare.reputatie += v),
   // Încrederea stă între 0 și maxim (10), ca bara din cartea personajelor să nu iasă din scară
+  // Și ce se pierde urcă pe ecran, cu roșu (Kaia află de capcanele vândute orcilor, decis de autor): doar cât s-a
+  // pierdut cu adevărat (de la 0 nu mai coboară nimic)
   relatie: (v, joc) =>
     Object.entries(v).forEach(([id, cu]) => {
-      joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, (joc.stare.relatii[id] || 0) + cu));
+      const inainte = joc.stare.relatii[id] || 0;
+      joc.stare.relatii[id] = Math.max(0, Math.min(joc.date.config.incredere?.max ?? 10, inainte + cu));
       if (cu > 0) joc.inregistreazaCastig?.({ tip: 'incredere', id, n: cu });
+      else if (joc.stare.relatii[id] < inainte) joc.inregistreazaCastig?.({ tip: 'incredere', id, n: joc.stare.relatii[id] - inainte });
     }),
+  // Un id sau o listă de id-uri = câte una din fiecare; „{ sageti: 10 }” = mai multe deodată (săgețile de la Bram)
   obiect: (v, joc) =>
-    [].concat(v).forEach((id) => {
-      joc.primeste(id, 1);
-      joc.inregistreazaCastig?.({ tip: 'obiect', id, n: 1 });
+    (v && typeof v === 'object' && !Array.isArray(v) ? Object.entries(v) : [].concat(v).map((id) => [id, 1])).forEach(([id, n]) => {
+      const primit = joc.primeste(id, n);
+      if (primit > 0) joc.inregistreazaCastig?.({ tip: 'obiect', id, n: primit });
     }),
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
@@ -52,6 +57,9 @@ const efecte = {
   furisare: (v, joc) => joc.furisare(v),
   // Antrenamentul cu Roderick: valoarea e evenimentul cu imaginile și regulile lui (decis de autor)
   antrenament: (v, joc) => joc.antrenament(v),
+  // Mini-jocul barei peste imaginea unui eveniment (capcanele Kaiei, decis de autor): ca la furișat, discuția
+  // continuă de la „reusit” sau de la „esuat”
+  miniJoc: (v, joc) => joc.miniJocEveniment(v),
   daObiect: (v, joc) => [].concat(v).forEach((id) => joc.inventar.scoateOriunde(id, 1)),
   // „consuma: { lemn: 10 }” = Vale dă (sau folosește) atâtea bucăți din rucsac
   consuma: (v, joc) => Object.entries(v).forEach(([id, n]) => joc.inventar.scoateOriunde(id, n)),

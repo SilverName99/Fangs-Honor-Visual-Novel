@@ -83,6 +83,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - Orcii **n-au dragoni**. Au **wyverni** (bestii zburătoare, nu dragoni adevărați), cu ritualul lor ca să-i folosească în luptă, și **unelte de luptă împotriva dragonilor**.
 - Craniile Sângerii își strâng forțele ca să **asedieze capitala** oamenilor.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu.
+- **Vânătorii orcilor** umplu pădurea cu **capcane de fier**, cu craniul lor bătut pe arc, și prind tot ce mișcă; carnea afumată și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram (misiunea Kaiei „Capcanele”, ciornă de Claude).
 
 ## Șobolanii
 

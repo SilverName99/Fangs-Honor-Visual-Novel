@@ -1093,6 +1093,18 @@
     "partener": "vanatoare",
     "start": [
       {
+        "_nota": "Decis de autor: după ce Vale a vândut capcanele colectorului, la următoarea discuție Kaia le-a găsit din nou armate (−1).",
+        "nod": "capcane_aflat",
+        "conditii": {
+          "stare": {
+            "capcane_duse": "colector"
+          },
+          "nuStare": {
+            "kaia_capcane_aflat": "da"
+          }
+        }
+      },
+      {
         "aleator": [
           "a",
           "salut2"
@@ -1178,6 +1190,143 @@
         "vorbitor": "vanatoare",
         "emotie": "normal",
         "text": "Ai mei, Străjerii Sălbăticiei, simt când o pădure își pierde echilibrul. Capcanele orcilor, vânătoarea lor cu zgomot, lupii gonați spre sat... Pădurea asta e bolnavă de când au venit ei. Și eu nu plec până nu se vindecă."
+      },
+      "capcane_oferta": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Azi-dimineață, Ember a călcat la un fir de păr de o capcană. Fier, cu dinți cât degetul. Dacă nu sărea în ultima clipă, rămânea fără laba din față.",
+        "urmator": "capcane_oferta2",
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Capcanele” (decis de autor)."
+      },
+      "capcane_oferta2": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Capcane de fier? Cine pune așa ceva în pădurea noastră?",
+        "urmator": "capcane_oferta3"
+      },
+      "capcane_oferta3": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Cine crezi? Au bătut craniul lor pe fiecare, ca să știe toată lumea a cui e pădurea acum. Numai pe poteca de la izvor am numărat cinci.",
+        "urmator": "capcane_oferta4"
+      },
+      "capcane_oferta4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Străjerii vânează cu arcul și cu răbdarea: iei cât îți trebuie și lași pădurea să crească la loc. Fierul nu alege. Prinde căprioara, vulpea, puiul de lup... și într-o zi, un copil din sat care s-a dus după mure.",
+        "urmator": "capcane_oferta5"
+      },
+      "capcane_oferta5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la copiii din sat, care se strecoară în pădure după mure și ciuperci, deși mamele lor le-au interzis.",
+        "urmator": "capcane_oferta6"
+      },
+      "capcane_oferta6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Singură le desfac greu, câte una pe zi. Îmi trebuie două mâini în plus: una ține arcul, cealaltă scoate cuiul. Ce zici, Vale?",
+        "alegeri": [
+          {
+            "text": "Le desfacem împreună.",
+            "spre": "capcane_da",
+            "efecte": {
+              "misiune": {
+                "kaia_capcane": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Altă dată, Kaia.",
+            "spre": "capcane_nu"
+          }
+        ]
+      },
+      "capcane_da": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bine. Ziua, cât se vede bine, și cu mâinile odihnite: fierul ăla nu iartă o mână grăbită. Când ești gata, spune-mi."
+      },
+      "capcane_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Capcanele n-au nevoie de altă dată. Ele stau acolo și așteaptă."
+      },
+      "capcane_pregatit": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci hai. Ia o creangă groasă de lângă foc și ține-te după mine. Și, Vale... calci doar unde calc eu.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_capcane"
+            }
+          },
+          {
+            "text": "Mai așteaptă puțin.",
+            "spre": "capcane_astept"
+          }
+        ]
+      },
+      "capcane_astept": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Cum vrei. Capcanele nu pleacă nicăieri."
+      },
+      "capcane_seara": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu pe întuneric. Fierul ăla se vede greu și ziua. Vino dimineața sau după-amiază, înainte să se lase seara."
+      },
+      "capcane_obosit": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ești frânt, Vale. Cu mâinile obosite nu ții arcul unei capcane: îl scapi. Odihnește-te întâi."
+      },
+      "capcane_maine": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Azi nu mai. Încă îți tremură mâna. Mâine, cu mâinile odihnite, încercăm iar."
+      },
+      "capcane_aflat": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Am fost la izvor, Vale. Știi ce am găsit acolo?",
+        "urmator": "capcane_aflat2"
+      },
+      "capcane_aflat2": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Capcanele. Aceleași, cu linia mea pe arc. Armate din nou, pe aceleași poteci.",
+        "urmator": "capcane_aflat3"
+      },
+      "capcane_aflat3": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Kaia, eu...",
+        "urmator": "capcane_aflat4"
+      },
+      "capcane_aflat4": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Nu-mi spune de ce. Toată lumea din satul ăsta are un de ce.",
+        "urmator": "capcane_aflat5"
+      },
+      "capcane_aflat5": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Data viitoare când îți trebuie bani, taie lemne. Nu-mi vinde pădurea.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": -1
+          },
+          "stare": {
+            "kaia_capcane_aflat": "da"
+          }
+        }
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2155,6 +2304,63 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Nu pentru noi, băiete. Fierul nu rămâne aici: pleacă în căruțe, pe drumul mare. Craniile Sângerii, cum le zice lumea după steagul lor, se pregătesc de ceva mare. Și nu cred că vor doar un sat."
+      },
+      "capcane_predare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Domnule Bram, am ceva pentru dumneata. Capcane de fier, din pădure. Le-am desfăcut cu Kaia, vânătoarea.",
+        "urmator": "capcane_predare2",
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Capcanele”, fierul dus la Bram (decis de autor: săgeți și +1 Bram)."
+      },
+      "capcane_predare2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram ia una în mâini, o întoarce, îi încearcă arcul cu degetul mare. Când dă de craniul bătut cu dalta, se încruntă.",
+        "urmator": "capcane_predare3"
+      },
+      "capcane_predare3": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Lucrătură de orc: grosolană, sudată prost. Dar fierul e bun. Prea bun ca să muște picioare de căprioară.",
+        "urmator": "capcane_predare4"
+      },
+      "capcane_predare4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Vânătoarea? Fata cu tigrul? O știe tot satul. Spune-i că Bram îi mulțumește.",
+        "urmator": "capcane_predare5"
+      },
+      "capcane_predare5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Le topesc și fac din ele vârfuri de săgeți. Fierul ăsta a mușcat destule căprioare; de-acum o să muște orci.",
+        "urmator": "capcane_predare6"
+      },
+      "capcane_predare6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Până atunci, ia astea, din cele gata. Zece. Și nu le risipi pe ciori.",
+        "urmator": "capcane_predare7",
+        "efecte": {
+          "daObiect": "capcane_orci",
+          "obiect": {
+            "sageti": 10
+          },
+          "relatie": {
+            "fierar": 1
+          },
+          "stare": {
+            "capcane_duse": "bram"
+          }
+        },
+        "_nota": "TODO echilibru: 10 săgeți (ales de Claude)."
+      },
+      "capcane_predare7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fierul care prindea căprioare o să zboare acum spre orci. Mi se pare drept."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -3355,6 +3561,327 @@
         "gand": true,
         "emotie": "ranit",
         "text": "Dispare printre copaci fără niciun zgomot. Rămân singur în tabără, cu rănile și cu focul pe jumătate stins."
+      }
+    }
+  },
+  "kaia_capcane": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Capcanele” (decis de autor): 3 imagini cu replici peste ele; pe a doua, mini-jocul barei (5 reușite, cel mult o ratare); pe a treia, căprioara.",
+    "grup": "Kaia: capcanele",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia mă duce pe o potecă pe care n-am mai călcat niciodată, departe de locurile unde vânez eu. Ember merge în urma noastră, cu nasul în frunze.",
+        "imagine": "events/kaia_capcane_1.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Stai. Nu mai face niciun pas.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "La un pas de piciorul meu, sub frunzele ude: două fălci de fier, deschise, cu dinți cât degetul. Pe arcul dintre ele, cineva a bătut cu dalta un craniu.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Craniile Sângerii...",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Le pun pe potecile căprioarelor, lângă izvoare, pe unde trec mistreții. Nu se uită după ele. Vin o dată la câteva zile și strâng ce s-a prins.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ce fac cu ce prind?",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Carnea o afumă, pieile le leagă în baloturi. Totul pleacă pe drumul mare, în căruțe. Ca fierul vostru.",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai mei zic că o pădure bolnavă se recunoaște după liniște. Ascultă.",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ascult. Nicio pasăre. Doar vântul prin crengi și, departe, o ciocănitoare care bate de două ori în scoarță și tace, ca și cum i-ar fi frică.",
+        "urmator": "a10"
+      },
+      "a10": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Hai. Îți arăt cum se desface una fără să rămâi fără degete.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Creanga între fălci, ca să nu se poată închide de tot. Apoi apeși arcul cu amândouă mâinile, câte puțin, iar eu scot cuiul.",
+        "imagine": "events/kaia_capcane_2.png",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Dacă îți scapă o dată, creanga ține.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă îmi scapă a doua oară?",
+        "urmator": "b4"
+      },
+      "b4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "A doua oară nu mai ține. Hai, le facem pe toate cinci.",
+        "alegeri": [
+          {
+            "text": "Apăs arcul.",
+            "inchide": true,
+            "efecte": {
+              "miniJoc": {
+                "eveniment": "kaia_capcane",
+                "dialog": "kaia_capcane",
+                "reusit": "c",
+                "esuat": "esec"
+              }
+            }
+          }
+        ]
+      },
+      "esec": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Arcul îmi scapă a doua oară. Creanga pocnește, iar fălcile se închid cu un clănțănit care îmi îngheață sângele. Apuc să-mi trag mâna, dar dinții de fier îmi rup mâneca și pielea de pe încheietură.",
+        "imagine": "events/kaia_capcane_2.png",
+        "urmator": "esec2",
+        "_nota": "Prima replică după mini-joc: fără efecte (discuția reluată de aici nu le aplică); viața scade la următoarea."
+      },
+      "esec2": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Vale! Arată-mi mâna.",
+        "urmator": "esec3",
+        "efecte": {
+          "nevoi": {
+            "viata": -10
+          }
+        }
+      },
+      "esec3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Doar o zgârietură. Ai noroc: la un mistreț, fierul ăsta rupe osul.",
+        "urmator": "esec4"
+      },
+      "esec4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Destul pe azi. Îți tremură mâinile, iar fierul simte asta. Mâine încercăm iar.",
+        "efecte": {
+          "marcheaza": "kaia_capcane_ratat",
+          "nevoi": {
+            "stamina": -10
+          }
+        }
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Gata. Vezi? Fierul lor e prost, dar arcul e puternic. Toate cinci, desfăcute.",
+        "imagine": "events/kaia_capcane_2.png",
+        "urmator": "c2",
+        "_nota": "Prima replică după mini-joc: fără efecte."
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia zgârie cu vârful cuțitului câte o linie pe arcul fiecărei capcane.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce le faci?",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Le însemnez. Dacă le mai văd vreodată în pădure, știu că sunt aceleași.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Strâng capcanele în sac. Fierul lor zornăie la fiecare pas, ca un lanț.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Stai... Auzi?",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lângă izvor, ceva se zbate în iarbă. O căprioară, prinsă de piciorul din spate într-o capcană pe care n-o văzuserăm. Când ne vede, se zbate și mai tare, iar fierul îi intră mai adânc în carne.",
+        "imagine": "events/kaia_capcane_3.png",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Șșș... Gata, gata. Nu-ți vrea nimeni răul.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia îi pune palma pe gât, iar căprioara se liniștește, ca și cum ar înțelege-o. Ember s-a culcat mai încolo, cu ochii în altă parte, să n-o sperie.",
+        "urmator": "d4"
+      },
+      "d4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Osul nu e rupt. Dacă desfacem capcana, scapă.",
+        "urmator": "d5"
+      },
+      "d5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eu nu mă ating de ce prinde fierul orcilor. Dar tu ai o mamă acasă și o iarnă în față, iar carnea e carne. Hotărăște tu.",
+        "alegeri": [
+          {
+            "text": "O eliberăm.",
+            "spre": "e1"
+          },
+          {
+            "text": "E carne bună. O iau.",
+            "spre": "f1"
+          }
+        ]
+      },
+      "e1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pun creanga între fălci și apăs arcul. Kaia îi scoate piciorul încet, ca dintr-o cizmă strâmtă.",
+        "urmator": "e2"
+      },
+      "e2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Căprioara se ridică, șchiopătând. Se uită o clipă la noi, apoi sare peste izvor și dispare printre copaci.",
+        "urmator": "e3"
+      },
+      "e3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Străjerii zic că pădurea ține minte cine o ajută.",
+        "urmator": "e4"
+      },
+      "e4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eu țin minte sigur.",
+        "urmator": "g",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 2
+          },
+          "stare": {
+            "kaia_caprioara": "eliberata"
+          }
+        },
+        "_nota": "Decis de autor: căprioara eliberată = +2 încredere la Kaia."
+      },
+      "f1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O fac repede, cum m-a învățat tata, ca să nu sufere.",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Fierul orcilor a prins-o, iar tu i-ai terminat treaba.",
+        "urmator": "f3"
+      },
+      "f3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ia-ți carnea. Ai mâncare pentru câteva zile.",
+        "urmator": "g",
+        "efecte": {
+          "obiect": {
+            "carne": 3
+          },
+          "stare": {
+            "kaia_caprioara": "carne"
+          }
+        },
+        "_nota": "TODO echilibru: 3 bucăți de carne (ales de Claude), fără încredere."
+      },
+      "g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sacul cu capcane îmi trage umărul în jos. Fier bun, cu craniul lor pe el.",
+        "urmator": "g2"
+      },
+      "g2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ce faci cu ele e treaba ta. Doar să nu le mai văd în pădure.",
+        "urmator": "g3"
+      },
+      "g3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram ar face ceva bun din fierul ăsta. Iar colectorul... colectorul ar plăti ca să-și primească fierul înapoi.",
+        "efecte": {
+          "obiect": "capcane_orci",
+          "stare": {
+            "kaia_capcane": "desfacute"
+          },
+          "timp": 120,
+          "nevoi": {
+            "stamina": -15
+          }
+        }
       }
     }
   },
@@ -6857,6 +7384,75 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Manechinul rămâne aici. Când ai nevoie să-ți descarci nervii, știi unde-l găsești."
+      }
+    }
+  },
+  "orc_colector": {
+    "_nota": "CIORNĂ (Claude). Colectorul n-are un dialog al lui (discuția taxei e făcută din cod, dialogTaxa în joc.js); de aici vin doar opțiunile în plus de lângă plata taxei, cu nodurile lor. Decis de autor: capcanele Kaiei vândute orcilor, apoi Kaia află (−1).",
+    "partener": "orc_colector",
+    "start": "capcane_a",
+    "optiuni": [
+      {
+        "text": "Am găsit niște capcane de-ale voastre în pădure.",
+        "conditii": {
+          "areObiect": "capcane_orci",
+          "misiune": {
+            "kaia_capcane": "inceputa"
+          }
+        },
+        "spre": "capcane_a"
+      }
+    ],
+    "noduri": {
+      "capcane_a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am găsit astea în pădure. Dezarmate. Sunt ale voastre, nu?",
+        "urmator": "capcane_b"
+      },
+      "capcane_b": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ha! Omulețul îmi aduce fierul înapoi. Și cine le-a dezarmat, ai? Vântul?",
+        "urmator": "capcane_c"
+      },
+      "capcane_c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Le-am găsit așa.",
+        "urmator": "capcane_d"
+      },
+      "capcane_d": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Sigur, sigur. Vreo veveriță cu mâini.",
+        "urmator": "capcane_e"
+      },
+      "capcane_e": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Fier e fier. Vânătorii noștri dau bani pe el, iar eu dau bani pe tine. Ia.",
+        "urmator": "capcane_f",
+        "efecte": {
+          "daObiect": "capcane_orci",
+          "bani": 20,
+          "stare": {
+            "capcane_duse": "colector"
+          }
+        },
+        "_nota": "TODO echilibru: 20 de monede (ales de Claude)."
+      },
+      "capcane_f": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Și dacă mai găsești, adu-le. Plătesc mai bine decât pădurea.",
+        "urmator": "capcane_g"
+      },
+      "capcane_g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Monedele îmi stau grele în palmă. Mai grele decât ar trebui."
       }
     }
   }

@@ -1136,6 +1136,34 @@
         "timp": 120
       },
       "dialog": "bram_foale"
+    },
+    {
+      "id": "kaia_capcane",
+      "nume": "Capcanele orcilor",
+      "grup": "Kaia: capcanele",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "kaia_capcane",
+      "miniJoc": {
+        "imagine": "events/kaia_capcane_2.png",
+        "titlu": "Capcanele orcilor",
+        "indemn": "Oprește semnul în zona verde, ca să apeși arcul capcanei fără să-ți scape. Ai voie să-ți scape o singură dată.",
+        "reusite": 5,
+        "ratari": 1,
+        "sunetEsuat": "capcana",
+        "texte": {
+          "reusite": "Capcane desfăcute",
+          "ratari": "ți-a scăpat",
+          "bine": "Desfăcută!",
+          "rau": "Ți-a scăpat!",
+          "reusit": "Toate cinci, desfăcute!",
+          "esuat": "Capcana s-a închis!"
+        }
+      },
+      "_nota": "Decis de autor: 3 imagini cu replici peste ele. Pe a doua, jocul barei de la arat: 5 reușite, cel mult o ratare (a doua ratare: capcana se închide, Vale se zgârie, se încearcă iar a doua zi). Pe a treia, căprioara: eliberată = +2 Kaia, altfel carne. Bara se așază în editor: Aranjare → Ecrane → „Mini-joc: Capcanele orcilor”."
     }
   ]
 }

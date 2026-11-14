@@ -3333,6 +3333,10 @@ svg.zone {
 .castig .icon-incredere {
   color: #ffd36a;
 }
+/* Ce a pierdut Vale (încrederea Kaiei, după capcanele vândute orcilor): același rând, cu roșu */
+.castig.pierdere .numar-castig {
+  color: #ff7a6a;
+}
 .nume-castig {
   position: absolute;
   left: 0;

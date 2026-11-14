@@ -319,6 +319,21 @@ export function construiesteLumea(date) {
       tinte: [],
       obiecte: [piesaMini('inel', 'Inelul auriu (pe manechin; cercul pornește de 3 ori mai mare)', 1, { x: 0.5, y: 0.5, scara: 0.2037 })],
     });
+  // Mini-jocul barei peste imaginea unui eveniment (capcanele Kaiei, decis de autor): bara se pune separat, pe
+  // imaginea capcanei, nu unde stă la arat
+  for (const ev of (date.events?.evenimente || []).filter((e) => e.miniJoc))
+    scene.set(`minijoc_${ev.id}`, {
+      id: `minijoc_${ev.id}`,
+      tip: 'ecran',
+      titlu: `Mini-joc: ${ev.nume}`,
+      titluObiecte: 'Bucățile mini-jocului',
+      titluFundal: 'Imaginea mini-jocului',
+      imagine: ev.miniJoc.imagine || null,
+      variante: [],
+      parinte: null,
+      tinte: [],
+      obiecte: [piesaMini('bara', 'Bara cu zona verde', 1000 / 46, { x: 0.5, y: 0.82, scara: 0.0426 })],
+    });
   // Furișatul (decis de autor, lada colectorului): pe fiecare imagine a pasului, autorul desenează cele două locuri
   for (const ev of date.events?.evenimente || [])
     (ev.furisare || []).forEach((f, i) =>

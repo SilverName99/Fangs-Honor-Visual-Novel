@@ -184,9 +184,10 @@ function arataCastiguri(lista) {
   // ca să nu urce două rânduri unul peste altul
   const vechi = ui.querySelector('.castiguri');
   const rand = vechi && Date.now() - vechi.dataset.t < 400 ? vechi : div('castiguri');
-  for (const c of lista) {
-    const bucata = div('castig');
-    bucata.append(div('numar-castig', `+${c.n}`));
+  for (const c of lista.filter((x) => x.n !== 0)) {
+    // Și ce pierde Vale se vede, cu roșu (Kaia află de capcanele vândute orcilor: −1 încredere, decis de autor)
+    const bucata = div(c.n < 0 ? 'castig pierdere' : 'castig');
+    bucata.append(div('numar-castig', c.n < 0 ? `−${-c.n}` : `+${c.n}`));
     if (c.tip === 'bani') bucata.append(iconita('monede', '🪙'));
     else if (c.tip === 'incredere') {
       bucata.append(iconita('incredere', '◆'));
@@ -337,18 +338,24 @@ function dialogTaxa(text) {
       },
     });
   }
+  // Ce mai poate face Vale la colector, scris în date (dialogul „orc_colector”: opțiunile, cu condiții, și nodurile
+  // lor): de exemplu să-i vândă capcanele desfăcute cu Kaia (decis de autor). Lângă plata taxei, nu în locul ei
+  const extra = dialoguri.orc_colector;
+  const ctx = context(stare);
+  const optiuni = (extra?.optiuni || []).filter((o) => verifica(o.conditii, ctx)).map(({ text, spre, efecte }) => ({ text, spre, efecte }));
   const nod = stare.taxa.platita
-    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit }
+    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit, ...(optiuni.length ? { alegeri: [...optiuni, { text: 'Plec.', spre: null }] } : {}) }
     : {
         vorbitor: 'orc_colector',
         emotie: 'normal',
         text,
         alegeri: [
           { text: `Plătește (${sumaTaxa()} monede)`, conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
+          ...optiuni,
           { text: 'Nu am bani acum.', spre: null },
         ],
       };
-  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { c: nod } });
+  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { ...(extra?.noduri || {}), c: nod } });
 }
 
 // ---------- pedepsele orcilor ----------
@@ -527,6 +534,33 @@ function furisare(v) {
     const r = miniJocuriPornite() ? await actiuni.mini.furisare(`furis_${v.eveniment}_${v.pas}`, v.indemn) : 'sigur';
     const d = dialoguri[v.dialog];
     if (d) dialog.porneste(d, { delaNod: r === 'sigur' ? v.reusit : v.esuat });
+  }, 0);
+}
+
+// Mini-jocul barei, pornit din discuție (capcanele Kaiei, decis de autor): jocul de la arat, peste imaginea
+// evenimentului, cu regulile lui („miniJoc” la eveniment: câte reușite trebuie, câte ratări ai voie, textele).
+// Discuția continuă de la „reusit” sau de la „esuat”. Cu mini-jocurile oprite din Opțiuni, reușește singur, ca
+// la furișat (fără risc)
+function miniJocEveniment(v) {
+  const ev = evenimente.find((e) => e.id === v.eveniment);
+  const m = ev?.miniJoc;
+  if (!m) return;
+  setTimeout(async () => {
+    const bine = miniJocuriPornite()
+      ? await actiuni.mini.arat({
+          imagine: m.imagine,
+          titlu: m.titlu || ev.nume,
+          idEcran: `minijoc_${ev.id}`,
+          indemn: m.indemn,
+          reusiteCerute: m.reusite,
+          rateuriVoie: m.ratari ?? 0,
+          texte: m.texte,
+        })
+      : true;
+    // Capcana care se închide (decis de autor: a doua ratare): sunetul ei, chiar când se termină jocul
+    if (!bine && m.sunetEsuat) sunet.efect(m.sunetEsuat);
+    const d = dialoguri[v.dialog];
+    if (d) dialog.porneste(d, { delaNod: bine ? v.reusit : v.esuat });
   }, 0);
 }
 
@@ -710,6 +744,7 @@ const joc = {
   antrenament,
   pornesteEvenimentDupa,
   furisare,
+  miniJocEveniment,
   vanatoareCu,
   luptaVanatoare,
   sumaTaxa,

@@ -140,31 +140,41 @@ export function creeazaMiniJocuri(parinte, joc) {
     return lovituri;
   }
 
-  // Aratul: un semn alunecă stânga-dreapta pe o bară; îl oprești în zona verde. 3 runde, scorul 0–1
-  async function arat({ imagine, titlu }) {
-    const e = ecran(imagine, titlu, 'Oprește semnul în zona verde: plugul merge drept doar dacă îl ții bine.');
-    const { el: bara, h } = piesa(e, 'minijoc_arat', 'bara');
+  // Aratul: un semn alunecă stânga-dreapta pe o bară; îl oprești în zona verde. 3 runde, scorul 0–1.
+  // Același joc la capcanele orcilor (decis de autor, misiunea Kaiei), pe ecranul lui („idEcran”, bara pusă pe
+  // imaginea capcanei): „reusiteCerute” reușite (5), cu cel mult „rateuriVoie” ratări (1). O ratare în plus oprește
+  // jocul; atunci întoarce dacă a reușit (true / false), nu scorul. „texte”: cuvintele potrivite jocului
+  async function arat({ imagine, titlu, idEcran = 'minijoc_arat', indemn, reusiteCerute = 0, rateuriVoie = 0, texte = {} }) {
+    const cuTinta = reusiteCerute > 0;
+    const e = ecran(imagine, titlu, indemn || 'Oprește semnul în zona verde: plugul merge drept doar dacă îl ții bine.');
+    const { el: bara, h } = piesa(e, idEcran, 'bara');
     bara.classList.add('mini-bara');
     const verde = div('mini-verde');
     const semn = div('mini-semn');
     semn.style.width = `${Math.max(4, h * 0.22)}px`;
     semn.style.marginLeft = `${-Math.max(4, h * 0.22) / 2}px`;
     bara.append(verde, semn);
-    const RUNDE = 3;
+    // La capcane, cel mult atâtea runde câte reușite și ratări încap; jocul se oprește mai devreme, când e hotărât
+    const RUNDE = cuTinta ? reusiteCerute + rateuriVoie : 3;
     const LATIME_VERDE = 0.14;
     const TRECERE = 1100;
     let reusite = 0;
-    e.scor.textContent = `Brazda 1 din ${RUNDE}`;
+    let ratate = 0;
+    const scorTinta = () => `${texte.reusite || 'Reușite'}: ${reusite} din ${reusiteCerute} · ${texte.ratari || 'ratări'}: ${ratate} din ${rateuriVoie}`;
+    e.scor.textContent = cuTinta ? scorTinta() : `Brazda 1 din ${RUNDE}`;
     await e.incepe();
     for (let i = 0; i < RUNDE; i++) {
-      e.scor.textContent = `Brazda ${i + 1} din ${RUNDE} · drepte: ${reusite}`;
+      if (cuTinta && (reusite >= reusiteCerute || ratate > rateuriVoie)) break;
+      e.scor.textContent = cuTinta ? scorTinta() : `Brazda ${i + 1} din ${RUNDE} · drepte: ${reusite}`;
       const st = 0.1 + Math.random() * (0.9 - LATIME_VERDE - 0.1);
       verde.style.left = `${st * 100}%`;
       verde.style.width = `${LATIME_VERDE * 100}%`;
       const start = performance.now();
-      // Merge dus-întors; la fiecare brazdă puțin mai repede
+      // Merge dus-întors; la fiecare rundă puțin mai repede, iar la ultima e cu un sfert mai repede decât la prima,
+      // oricâte runde ar fi (la arat: 1, 0,88, 0,76, ca până acum)
+      const grabire = 1 - (i * 0.24) / Math.max(1, RUNDE - 1);
       const pozitieSemn = (t) => {
-        const f = ((t - start) / (TRECERE * (1 - i * 0.12))) % 2;
+        const f = ((t - start) / (TRECERE * grabire)) % 2;
         return f < 1 ? f : 2 - f;
       };
       let cadru;
@@ -178,8 +188,15 @@ export function creeazaMiniJocuri(parinte, joc) {
       semn.style.left = `${p * 100}%`;
       const bine = p >= st && p <= st + LATIME_VERDE;
       if (bine) reusite++;
-      clipa(e.el, bine ? 'Drept!' : 'Strâmb', bine);
+      else ratate++;
+      clipa(e.el, bine ? texte.bine || 'Drept!' : texte.rau || 'Strâmb', bine);
+      if (cuTinta) e.scor.textContent = scorTinta();
       await pauza(800);
+    }
+    if (cuTinta) {
+      const reusit = reusite >= reusiteCerute;
+      await e.incheie(reusit ? texte.reusit || 'Reușit!' : texte.esuat || 'Ratat!');
+      return reusit;
     }
     await e.incheie(`Brazde drepte: ${reusite} din ${RUNDE}`);
     return reusite / RUNDE;

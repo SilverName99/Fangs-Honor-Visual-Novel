@@ -330,6 +330,92 @@
       }
     },
     {
+      "id": "kaia_capcane",
+      "titlu": "Capcanele",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": "CIORNĂ: Orcii au umplut pădurea cu capcane de fier, cu craniul lor pe ele. Prind tot ce mișcă, iar Ember a scăpat la un fir de păr. Kaia mi-a cerut să le desfacem împreună.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Lupul negru”.",
+        "text": "Ce s-a întâmplat, Kaia? Pari supărată.",
+        "nod": "capcane_oferta",
+        "conditii": {
+          "misiune": {
+            "lupul_negru": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Desfac capcanele orcilor împreună cu Kaia",
+          "gata": {
+            "stare": {
+              "kaia_capcane": "desfacute"
+            }
+          },
+          "sfat": "Ziua, cât e Kaia la Camp site (05–10 sau 14–18), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
+          "predare": {
+            "text": "Sunt gata. Hai la capcane!",
+            "nod": "capcane_pregatit",
+            "conditii": {
+              "moment": [
+                "dimineata",
+                "amiaza"
+              ],
+              "nevoie": {
+                "stamina": {
+                  "min": 30
+                }
+              },
+              "nu": {
+                "marcatAzi": "kaia_capcane_ratat"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre capcane...",
+            "nod": [
+              {
+                "nod": "capcane_maine",
+                "conditii": {
+                  "marcatAzi": "kaia_capcane_ratat"
+                }
+              },
+              {
+                "nod": "capcane_obosit",
+                "conditii": {
+                  "nevoie": {
+                    "stamina": {
+                      "max": 29
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "capcane_seara"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Hotărăsc ce fac cu fierul capcanelor",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "capcane_duse"
+          },
+          "sfat": "Bram ar face ceva bun din fierul ăsta. Colectorul, la poartă, ar da bani pe el...",
+          "predare": {
+            "text": "Am niște capcane de fier pentru dumneata.",
+            "nod": "capcane_predare"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei, dacă eliberez căprioara (+2). Pe fierul capcanelor: săgeți de la Bram și încrederea lui, sau monede de la colector."
+      },
+      "_nota": "Decis de autor: căprioara eliberată = +2 Kaia (carnea = fără încredere, ales de Claude). Capcanele: la Bram = 10 săgeți și +1 Bram; la colector = 20 de monede (TODO echilibru), iar la următoarea discuție Kaia le-a găsit din nou armate: −1 Kaia, fără punctul lui Bram."
+    },
+    {
       "id": "scandal",
       "titlu": "Scandalul din tavernă",
       "dela": "soldat",

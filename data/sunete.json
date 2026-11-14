@@ -382,7 +382,8 @@
     "mistret": "Mistrețul grohăie (când atacă)",
     "glaive": "Glaive-ul Kaiei rotindu-se prin aer",
     "sobolan": "Strigătul șobolanului care scuipă, când atacă (pivnița lui Agnes); cel cu gheare are doar lupta_sobolan",
-    "lupta_scuipat": "șobolanul scuipă bale acide: un scuipat umed, sfârâit"
+    "lupta_scuipat": "șobolanul scuipă bale acide: un scuipat umed, sfârâit",
+    "capcana": "Capcana de fier care se închide cu un clănțănit (misiunea Kaiei, când îți scapă arcul a doua oară)"
   },
   "muzica": {
     "meniu": "Meniul: temă liniștită, medievală",
