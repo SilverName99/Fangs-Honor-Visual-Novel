@@ -42,13 +42,13 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - **Karzor**, primordialul **aerului**, cu fulgere: lumea îl crede mort. E legat cu **împăratul elfilor de pădure**; știe doar **organizația secretă a elfilor**, singura organizație secretă rămasă (mai târziu, o întorsătură mare într-o bătălie). Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac.
 
 **Inima Luminii și Cercul Luminii**
-- Într-o **mină**, oamenii au găsit **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni): **Inima Luminii**. La lumina soarelui radiază putere și, foarte rar, **creează cristale mici**, care fac **magia luminii** mult mai puternică. E cea mai mare putere magică a oamenilor; necromanția o poate corupe. ❓ Unde e păzită.
+- Într-o **mină**, oamenii au găsit **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni): **Inima Luminii**. La lumina soarelui radiază putere și, foarte rar, **creează cristale mici**, care fac **magia luminii** mult mai puternică. E cea mai mare putere magică a oamenilor; necromanția o poate corupe. E păzită în **clădirea principală a capitalei**.
 - **Cercul Luminii**, asociația magilor, nu e secret; trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și scuturi (steagul albastru al satului, platoșa și sabia lui Edwin) e **forma cristalelor mici**: doar pus acolo, le dă oamenilor încredere și putere.
 
 **Narco**
 - **Arcon**, unul dintre cei mai puternici magi ai Cercului Luminii, a fost corupt de **necromanție** (magia interzisă la oameni, la elfi, la toți). **Acum 20 de ani** a încercat să corupă Inima Luminii; regele l-a oprit, sacrificându-se, și toți l-au crezut mort. **N-a murit:** cu o vrajă interzisă, care merge o singură dată, a reapărut **la un steag pus de el dinainte**. De atunci e **Narco** (numele întors) și nimeni nu știe că trăiește.
-- **Arată acum** ca un **schelet** cu ochi verzi, în glugă mov, cu armură cu cranii, o ladă cu cranii pe spate, un felinar cu un cristal verde (❓ un cristal corupt?) și un toiag cu un **steag mov cu un semn alb**.
+- **Arată acum** ca un **schelet** cu ochi verzi, în glugă mov, cu armură cu cranii, un **felinar cu un cristal corupt** și un toiag cu un **steag mov cu un semn alb**. Pe spate are **un sarcofag** cu sufletele și oasele celor mai puternici luptători răpuși: deschis, ele se adună într-un **monstru din oase și foc verde**, pe care îl controlează.
 - Vrea doar **Inima Luminii**. I-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” **Nimeni nu știe că el e în spatele războiului.**
 
 **Orcii**
@@ -61,7 +61,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - Vorbesc ca niște șobolani, peste tot în univers: repede, repetă cuvintele („da-da!”), leagă cuvintele cu cratimă („om-lucru”, „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
 
 **Vale și dragonul lui**
-- Vale Lightfinder, 25 de ani, are **trezirea mare**. **Nu știe.** Se va lega cu **primordialul morții** (întorsătura cea mare), cel din vise (ochiul din al doilea vis), prin portalul din crăpătura de pe hartă. ❓ Cum arată dragonul după legământul cu un om.
+- Vale Lightfinder, 25 de ani, are **trezirea mare**. **Nu știe.** Se va lega cu **primordialul morții** (întorsătura cea mare), cel din vise (ochiul din al doilea vis), prin portalul din crăpătura de pe hartă. **Primul vis rămâne cu focul**: jucătorul se gândește la foc, iar întorsătura e moartea. ❓ (mai târziu) Cum arată dragonul după legământul cu un om.
 - **Finalul Actului 1:** după eliberarea satului, Vale împlinește 26 de ani; în noaptea aceea se aude un răget în depărtare sau apare un mag străin.
 
 **Satul și familia Lightfinder**
@@ -75,7 +75,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - 📝 **Solzii de dragon**, cu Roderick, dincolo de gard: arată spre portalul morții.
 
 **Personajele cu taină**
-- **Fratele Elian**, preotul, e și **magul satului** (fiecare sat are unul, trimis de Cercul Luminii). **Toți, și orcii, îl cred un mag începător**; de fapt e foarte puternic. **Secretul lui:** are la el **un cristal mic** și a fost trimis să găsească **trezirea** simțită în sat, fără să știe a cui. Vale află într-o misiune a lui Elian (📝). ❓ Cine l-a trimis anume.
+- **Fratele Elian**, preotul, e și **magul satului** (fiecare sat are unul, trimis de Cercul Luminii). **Toți, și orcii, îl cred un mag începător**; de fapt e foarte puternic. **Secretul lui:** are la el **un cristal mic** și a fost trimis să găsească **trezirea** simțită în sat, fără să știe a cui. L-a trimis **Cercul Luminii, la cererea Ordinului Flăcării**. Vale află într-o misiune a lui Elian (📝).
 - **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor**. Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Tigrul ei e **Ember**. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
 
 **Încrederea și finalul**

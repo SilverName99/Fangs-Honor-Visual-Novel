@@ -54,25 +54,25 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Cercul Luminii**, asociația magilor luminii, **nu e secret**. Trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și de pe scuturi (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma cristalelor mici**. Doar pus acolo, le dă oamenilor încredere și putere în luptă.
 - **Inima Luminii** e cea mai mare putere magică a oamenilor. Necromanția o poate **corupe**.
-- De lămurit: unde e păzită Inima acum (presupus: în capitală, în clădirea în care a încercat Arcon s-o corupă).
+- E păzită în **clădirea principală a capitalei** (decis de autor), aceeași în care a încercat Arcon s-o corupă.
 
 ## Fratele Elian (decis de autor)
 
 - E preotul satului și **magul lui** (fiecare sat are cel puțin unul). **Toți, și orcii, îl cred un mag începător**, fără putere.
 - De fapt e **foarte puternic**: a fost trimis aici ca să caute **o nouă trezire**, simțită cu ajutorul cristalului, fără să știe a cui (acela n-a împlinit încă 26 de ani).
 - **Secretul lui:** are la el **un cristal mic**, foarte rar, și misiunea asta. Vale le află într-o misiune a lui Elian (de făcut).
-- De lămurit: cine anume l-a trimis (Cercul Luminii, la cererea Ordinului Flăcării?).
+- L-a trimis **Cercul Luminii, la cererea Ordinului Flăcării** (decis de autor).
 
 ## Narco (decis de autor)
 
 - **Arcon** a fost unul dintre cei mai puternici magi ai **Cercului Luminii**. A descoperit **necromanția**, magia interzisă la oameni, la elfi, la toți, și a fost corupt de ea.
 - **Acum 20 de ani** a cerut ca Inima Luminii să fie folosită pentru necromanție. A fost refuzat, a încercat s-o corupă cu forța și a făcut prăpăd în clădirea în care era păzită. Regele l-a oprit, sacrificându-se, și toți au crezut că Arcon a murit atunci.
 - **N-a murit.** În ultima clipă a folosit **o vrajă din magia interzisă, care merge o singură dată** (numai el știe de ea): a reapărut **la un steag pe care îl pusese dinainte**. De atunci e **Narco** (numele lui, cu literele întoarse) și nimeni nu știe că trăiește.
-- **Cum arată acum** (după imaginea autorului): un **schelet**, cu ochi verzi, aprinși, sub o glugă mov; armură cu cranii; pe spate, o ladă plină cu cranii; într-o mână, un felinar cu un cristal verde; în cealaltă, un toiag cu un craniu și oase, de care atârnă un **steag mov cu un semn alb** (o linie verticală cu trei brațe).
+- **Cum arată acum** (după imaginea autorului): un **schelet**, cu ochi verzi, aprinși, sub o glugă mov; armură cu cranii; pe spate, **un sarcofag** cu cranii; într-o mână, **un felinar cu un cristal corupt**, verde; în cealaltă, un toiag cu un craniu și oase, de care atârnă un **steag mov cu un semn alb** (o linie verticală cu trei brațe).
+- **Sarcofagul** (decis de autor): în el sunt **sufletele și oasele celor mai puternici luptători răpuși**. Când îl deschide, prin puterea lui, ele se adună într-un **monstru** pe care îl controlează: un uriaș din oase și foc verde de suflete, cu cranii pe umeri, pe piept și pe genunchi, cu brățări de fier ghintuite și cu fâșii din steagul mov, cu semnul lui (după imaginea autorului; numele monstrului: de ales).
 - **Ce vrea:** doar **Inima Luminii**, ca să-i corupă puterea.
 - **Cum a pornit războiul:** i-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Aproape adevărat, de-asta îl crede. **Nimeni nu știe** că Narco e în spatele războiului.
 - **Teroarea** de care vorbesc șobolanii e **ce poate face Narco**: moartea, morții vii, magia interzisă. Șobolanii îi zic „Stăpânul-oaselor” (ciornă de Claude).
-- De lămurit: felinarul cu cristalul verde (un cristal mic, corupt?).
 
 ## Orcii (decis de autor)
 
@@ -93,9 +93,9 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 ## Vale și dragonul lui (decis de autor)
 
 - **Vale** (25 de ani) are **trezirea mare**. Încă nu știe.
-- Se va lega cu **primordialul morții**: întorsătura cea mare a poveștii. Dragonul arată așa cum a apărut în vise (ochiul din al doilea vis; solzi maronii, după autor).
+- Se va lega cu **primordialul morții**: întorsătura cea mare a poveștii. În vise apare așa cum a fost descris până acum (ochiul din al doilea vis; solzi maronii, după autor). **Primul vis rămâne cu focul** („o căldură în piept, ca un al doilea foc”, decis de autor): jucătorul se gândește la foc, iar întorsătura e moartea.
 - Drumul spre el trece prin **portalul morții**, din crăpătura de pe harta soldatului.
-- De lămurit: cum arată primordialul morții după legământul cu un om (dragonul ia înfățișarea rasei celui cu care se leagă).
+- De lămurit (mai târziu): cum arată primordialul morții după legământul cu un om (dragonul ia înfățișarea rasei celui cu care se leagă).
 
 ## Kaia și Străjerii Sălbăticiei (decis de autor)
 
