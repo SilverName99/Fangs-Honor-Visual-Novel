@@ -4025,7 +4025,7 @@
     }
   },
   "kaia_ember": {
-    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Rana lui Ember” (decis de autor): Vale ține capul tigrului cât Kaia curăță rana; cât îi pune alifia, Kaia povestește cum l-a găsit pe Ember pui, peste 2 imagini-amintire (cu ceața de la vise), apoi revine la Camp site.",
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Rana lui Ember” (decis de autor): Vale ține capul tigrului cât Kaia curăță rana și îi pune alifia, peste o imagine (de la replica „a4”); Kaia povestește peste 2 imagini-amintire (cu ceața de la vise), apoi se revine la imaginea vindecării.",
     "grup": "Kaia: rana lui Ember",
     "partener": "vanatoare",
     "start": "a",
@@ -4054,7 +4054,9 @@
         "gand": true,
         "emotie": "normal",
         "text": "Îngenunchez lângă Ember și îi iau capul în brațe. E greu ca un butuc și fierbinte de febră. Când Kaia îi atinge rana, tot trupul i se încordează sub mâinile mele, iar colții lungi trec la un deget de obrazul meu.",
-        "urmator": "a5"
+        "urmator": "a5",
+        "imagine": "events/kaia_ember_alifie.png",
+        "_nota": "Decis de autor: de aici, replicile stau peste imaginea cu Vale ținându-i capul lui Ember și Kaia punând alifia, până la amintiri. După amintiri (replica „d”, cu trezire) se revine la ea (ales de Claude)."
       },
       "a5": {
         "vorbitor": "vale",
@@ -4085,7 +4087,7 @@
       "a9": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Mai mult. Pe un frate nu l-am găsit singur, la gura unei peșteri.",
+        "text": "Mai mult. Pe un frate nu l-am găsit singur, într-o scorbură.",
         "urmator": "b"
       },
       "b": {
@@ -4095,26 +4097,26 @@
         "imagine": "events/kaia_amintire_1.png",
         "amintire": true,
         "urmator": "b2",
-        "_nota": "Amintirea Kaiei (decis de autor: Ember găsit pui, singur, la gura unei peșteri). Detaliile (vârsta, rășina, cele trei zile) sunt ciorne de Claude."
+        "_nota": "Amintirea Kaiei (decis de autor: Ember găsit pui, singur, într-o scorbură). Detaliile (vârsta, rășina, cele trei zile) sunt ciorne de Claude."
       },
       "b2": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "La gura unei peșteri, între rădăcini, ceva mic mârâia la mine. Un pui de tigru, cât o pisică, cu colții abia ieșiți. Mârâia, dar nu fugea.",
+        "text": "Într-o scorbură, la rădăcina unui stejar bătrân, ceva mic mârâia la mine. Un pui de tigru, cât o pisică, cu colții abia ieșiți. Mârâia, dar nu fugea.",
         "amintire": true,
         "urmator": "b3"
       },
       "b3": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "L-am așteptat pe mama lui trei zile, ascunsă după o stâncă. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
+        "text": "L-am așteptat pe mama lui trei zile, ascunsă după un trunchi căzut. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
         "amintire": true,
         "urmator": "b4"
       },
       "b4": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "În a treia seară, puiul a ieșit din peșteră și s-a culcat lângă mine. Ca și cum ar fi hotărât el.",
+        "text": "În a treia seară, puiul a ieșit din scorbură și s-a culcat lângă mine. Ca și cum ar fi hotărât el.",
         "amintire": true,
         "urmator": "c"
       },
@@ -4170,7 +4172,8 @@
         "emotie": "normal",
         "text": "De atunci n-am mai fost despărțiți. Nici măcar o zi.",
         "trezire": true,
-        "urmator": "d0"
+        "urmator": "d0",
+        "imagine": "events/kaia_ember_alifie.png"
       },
       "d0": {
         "vorbitor": "vale",

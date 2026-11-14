@@ -110,7 +110,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Obiceiul:** cine aduce un pui acasă îl crește singur (îl hrănește, îl învață să vâneze); bătrânii doar privesc.
 - **Așezările:** case de lemn la marginea pădurilor mari, fiecare cu un bătrân în frunte. Străjerii coboară rar prin satele oamenilor, după sare și fier.
 - **Limba veche a Străjerilor:** „ember” înseamnă **jar** (ochii puiului ardeau în întuneric ca doi tăciuni).
-- **Ember** (decis de autor): Kaia l-a găsit pui, singur, la gura unei peșteri (părinții lui, probabil uciși), l-a dus acasă și l-a crescut; de atunci sunt nedespărțiți. **Colțul de la gâtul Kaiei** e primul colț de lapte al lui Ember (decis de autor). Prima oară când a coborât cu el în satul lui Vale, după sare, toată lumea și-a închis ușile; Edwin, nu (misiunea „Rana lui Ember”, cu două amintiri; în a doua se văd și alți Străjeri, cu tovarășii lor, iar un bătrân o privește din ușă). Ciorne de Claude: Kaia avea nouă ani; a așteptat-o pe mama puiului trei zile.
+- **Ember** (decis de autor): Kaia l-a găsit pui, singur, **într-o scorbură** (decis de autor; părinții lui, probabil uciși), l-a dus acasă și l-a crescut; de atunci sunt nedespărțiți. **Colțul de la gâtul Kaiei** e primul colț de lapte al lui Ember (decis de autor). Prima oară când a coborât cu el în satul lui Vale, după sare, toată lumea și-a închis ușile; Edwin, nu (misiunea „Rana lui Ember”, cu două amintiri; în a doua se văd și alți Străjeri, cu tovarășii lor, iar un bătrân o privește din ușă). Ciorne de Claude: Kaia avea nouă ani; a așteptat-o pe mama puiului trei zile.
 - De dezvoltat: clanul și așezările lor, prin povestea Kaiei, cu amintiri (flashback-uri).
 
 ## Actele poveștii (decis de autor)
