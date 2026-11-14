@@ -262,7 +262,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Kaia (vânătoarea)
 
-### ✅ Întâlnirea cu Kaia
+### ✅ Întâlnirea cu Kaia (nu e misiune)
 - **Pornește:** prima vânătoare câștigată deblochează întâlnirea. Din **ziua 4**, la următoarea vânătoare, în locul vânatului obișnuit:
   - **prima imagine:** Vale o vede pe Kaia, călare pe tigru, față în față cu 3 lupi care o înconjoară; încă nu se luptă, se pândesc (decis de autor). Vale se gândește ce să facă.
     - **„Nu e lupta mea. Plec.”**: nu se întâmplă nimic. Vale trebuie să mai vâneze o dată singur, iar la vânătoarea de după o poate întâlni din nou.
@@ -297,7 +297,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
    - Victorie: replicile și tabăra. Camp site apare apoi în pădure.
    - Înfrângere: „Mâine, aceeași oră”.
 
-### ✅ Vânătoarea împreună (după Lupul negru)
+### ✅ Vânătoarea împreună (nu e misiune, după Lupul negru)
 - **Când:** dimineața, 05–10, la Camp site, Kaia e acolo. În meniul ei apare „Mergem împreună la vânătoare?”.
 - „Să mergem.” → vânătoarea obișnuită (lupi sau mistreț), cu Kaia sigur alături în luptă. „Poate altă dată.” te întoarce la meniu.
 - După luptă: un scurt dialog (altul după înfrângere), apoi Kaia se întoarce în pădure (nu mai e la campsite până la 14:00), iar Vale rămâne în tabără.
@@ -428,7 +428,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Fermierul
 
-### ✅ Patrula de orci (deblocarea fermierului)
+### ✅ Patrula de orci (nu e misiune: deblocarea fermierului)
 - **Până atunci,** nu se poate vorbi cu el.
 - **Prima patrulă de orci pe câmpuri** vine sigur și devreme: din ziua 3, dimineața (06–13, cât e și fermierul acolo), 80% la fiecare intrare pe câmpuri.
 - După ea (oricum ai ales), fermierul devine cel cu care poți vorbi.

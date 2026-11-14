@@ -789,3 +789,6 @@ svg.editor-zone.desen {
 .cum-apare { grid-column: 2; font-size: 13px; color: #9aa; margin-top: 2px; }
 .detalii-misiune { padding: 4px 16px 12px; }
 .detalii-misiune h4:first-child { margin-top: 8px; }
+
+/* Întâmplările care nu sunt misiuni (visele, bandajul): mai șterse, ca să nu pară misiuni în plus */
+.misiune-casuta.nu-misiune > summary { opacity: 0.55; }

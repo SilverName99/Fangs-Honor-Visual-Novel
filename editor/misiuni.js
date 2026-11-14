@@ -168,7 +168,10 @@ export function arataMisiunile(container) {
     const nume = s.titlu.replace(/\s*\(.*\)\s*$/, '');
     const rol = s.titlu.match(/\(([^)]*)\)/)?.[1] || '';
     const numar = {};
+    // Întâmplările care nu sunt misiuni (visele, bandajul, întâlnirea cu Kaia) nu intră în numărătoare:
+    // altfel căsuța ar arăta mai multe misiuni decât are cartea din joc
     for (const m of s.misiuni) {
+      if (/nu e misiune/i.test(m.titlu)) continue;
       const e = semnul(m.titlu) || '•';
       numar[e] = (numar[e] || 0) + 1;
     }
@@ -184,7 +187,7 @@ export function arataMisiunile(container) {
           listaCum.find((x) => x.nume.some((y) => norm(y) === n)) ||
           listaCum.find((x) => x.nume.some((y) => n.startsWith(norm(y)) || norm(y).startsWith(n)));
         const id = `${idx}:${j}`;
-        return `<details class="misiune-casuta" data-id="${id}" ${deschise[id] ? 'open' : ''}>
+        return `<details class="misiune-casuta${/nu e misiune/i.test(m.titlu) ? ' nu-misiune' : ''}" data-id="${id}" ${deschise[id] ? 'open' : ''}>
           <summary><span class="semn-misiune">${semnul(m.titlu) || '•'}</span><span class="titlu-misiune">${inline(titlu)}</span>
           ${potrivire ? `<span class="cum-apare">${inline(potrivire.cum)}</span>` : ''}</summary>
           <div class="detalii-misiune">${caHtml(curata(m.corp).join('\n'))}</div></details>`;
