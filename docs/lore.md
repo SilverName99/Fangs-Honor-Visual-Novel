@@ -105,7 +105,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Wild Warden** e **clanul** lor (un clan, nu o familie); în joc se numește **Străjerii Sălbăticiei**. Trăiesc la **marginea pădurilor mari**, nu toți la un loc: în așezări mici sau mijlocii, ca să **apere pădurile și animalele** din ele și să țină echilibrul în viața necuvântătoarelor. Sunt prietenoși cu oamenii (sunt și ei oameni), dar preferă să stea între ai lor.
 - **Kaia** (doar Kaia, fără nume de familie) e din Străjerii Sălbăticiei. Tigrul ei e **Ember**. A prins drag de satul lui Vale și trece pe aici din când în când.
 - **Motivul ei:** clanul ține echilibrul pădurilor, iar orcii îl strică (capcane, vânătoare cu zgomot, haita lupului negru gonită spre sat). Rămâne și îl ajută pe Vale ca să-l refacă: odată cu eliberarea satului, se întoarce și echilibrul în pădure. Și pentru satul la care ține.
-- De dezvoltat poate mai târziu: clanul și așezările lor, prin povestea Kaiei, poate cu amintiri (flashback-uri).
+- **Ember** (decis de autor): Kaia l-a găsit pui, singur, la gura unei peșteri (părinții lui, probabil uciși) și a avut grijă de el; de atunci sunt nedespărțiți (misiunea „Rana lui Ember”, cu două amintiri). Ciorne de Claude, de confirmat: Kaia avea nouă ani; a așteptat-o pe mama lui trei zile; bătrânii Străjerilor zic că un animal care nu fuge de un copil „și-a ales omul”, iar cine aduce un pui acasă îl crește singur.
+- De dezvoltat: clanul și așezările lor, prin povestea Kaiei, cu amintiri (flashback-uri).
 
 ## Actele poveștii (decis de autor)
 

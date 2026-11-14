@@ -1164,6 +1164,18 @@
         }
       },
       "_nota": "Decis de autor: 3 imagini cu replici peste ele. Pe a doua, jocul barei de la arat: 5 reușite, cel mult o ratare (a doua ratare: capcana se închide, Vale se zgârie, se încearcă iar a doua zi). Pe a treia, căprioara: eliberată = +2 Kaia, altfel carne. Bara se așază în editor: Aranjare → Ecrane → „Mini-joc: Capcanele orcilor”."
+    },
+    {
+      "id": "kaia_ember",
+      "nume": "Rana lui Ember",
+      "grup": "Kaia: rana lui Ember",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "kaia_ember",
+      "_nota": "Decis de autor: fără alegeri; Vale ține capul lui Ember cât Kaia curăță rana, iar cât îi pune alifia, Kaia povestește cum l-a găsit pui, peste 2 imagini-amintire (cu ceața de la vise, „amintire” la replică)."
     }
   ]
 }

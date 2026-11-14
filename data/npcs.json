@@ -448,6 +448,24 @@
       "dialog": "vanatoare",
       "program": [
         {
+          "de": "00:00",
+          "pana": "24:00",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
+          },
+          "ce": "lângă Ember rănit: stă în sprite-ul „kaia_ember”, zi și noapte, până la vindecare (decis de autor)"
+        },
+        {
           "de": "15:00",
           "pana": "17:00",
           "loc": "padure",
@@ -509,6 +527,24 @@
       "faraPortret": true,
       "program": [
         {
+          "de": "00:00",
+          "pana": "24:00",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
+          },
+          "ce": "rănit de un mistreț: e în sprite-ul „kaia_ember”, cu Kaia, până la vindecare (decis de autor)"
+        },
+        {
           "de": "05:00",
           "pana": "10:00",
           "loc": "padure/campsite",
@@ -532,6 +568,40 @@
           "loc": "padure/campsite",
           "sprite": "doarme",
           "ce": "doarme la campsite"
+        }
+      ]
+    },
+    {
+      "id": "kaia_ember",
+      "nume": "Kaia și Ember",
+      "_despre": "Decis de autor: misiunea Kaiei „Rana lui Ember”. Un singur sprite, Kaia lângă Ember rănit de un mistreț, la Camp site, zi și noapte, de la două zile după „Capcanele” până la vindecare; atunci Kaia și Ember nu apar separat. Când îl apeși, răspunde Kaia (cineRaspunde), iar semnele misiunilor ei stau deasupra lui (semneDe). Îl aranjează autorul în editor (cu „Arată tot”).",
+      "locuriSprite": [
+        "padure/campsite"
+      ],
+      "faraPortret": true,
+      "cineRaspunde": {
+        "personaj": "vanatoare"
+      },
+      "semneDe": "vanatoare",
+      "program": [
+        {
+          "de": "00:00",
+          "pana": "24:00",
+          "loc": "padure/campsite",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
+          },
+          "ce": "Kaia lângă Ember rănit, până la vindecare"
         }
       ]
     },

@@ -1105,6 +1105,40 @@
         }
       },
       {
+        "_nota": "Decis de autor: Ember rănit, până acceptă Vale misiunea.",
+        "nod": "ember_salut",
+        "conditii": {
+          "stare": {
+            "hot": "eliberat"
+          },
+          "misiuneTerminata": {
+            "kaia_capcane": 2
+          },
+          "nu": {
+            "oricare": [
+              {
+                "misiune": {
+                  "kaia_ember": "inceputa"
+                }
+              },
+              {
+                "misiune": {
+                  "kaia_ember": "terminata"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nod": "ember_salut2",
+        "conditii": {
+          "misiune": {
+            "kaia_ember": "inceputa"
+          }
+        }
+      },
+      {
         "aleator": [
           "a",
           "salut2"
@@ -1327,6 +1361,98 @@
             "kaia_capcane_aflat": "da"
           }
         }
+      },
+      "ember_salut": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Vale... Bine că ai venit.",
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Rana lui Ember” (decis de autor)."
+      },
+      "ember_salut2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ember doarme mai mult decât îmi place, iar rana e tot caldă. Ai fost la Bătrâna Morwen?"
+      },
+      "ember_oferta": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Un mistreț. Unul bătrân, cu colții cât secera. Ember l-a doborât, dar colțul i-a intrat în coapsă, până la os.",
+        "urmator": "ember_oferta2"
+      },
+      "ember_oferta2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember zace lângă foc, cu capul pe labe. Pe coapsă are o fâșie de pânză înroșită, iar respirația îi e grea și repede.",
+        "urmator": "ember_oferta3"
+      },
+      "ember_oferta3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am spălat rana cu apă de izvor, dar nu ajunge. Colții de mistreț scormonesc prin pământ toată ziua. Dacă rana se umflă, se infectează, iar atunci...",
+        "urmator": "ember_oferta4"
+      },
+      "ember_oferta4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce-ți trebuie?",
+        "urmator": "ember_oferta5"
+      },
+      "ember_oferta5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "O alifie bună. Eu știu să curăț o rană, dar alifiile nu-s de mine. Bătrâna Morwen, de la Marginea satului, face cele mai bune din tot ținutul.",
+        "urmator": "ember_oferta6"
+      },
+      "ember_oferta6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și eu nu pot să plec de lângă el: dacă lupii simt sângele, vin. Te duci tu, Vale?",
+        "alegeri": [
+          {
+            "text": "Mă duc chiar acum.",
+            "spre": "ember_da",
+            "efecte": {
+              "misiune": {
+                "kaia_ember": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Nu acum, Kaia.",
+            "spre": "ember_nu"
+          }
+        ]
+      },
+      "ember_da": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mulțumesc. Spune-i că e pentru un tigru. Și grăbește-te."
+      },
+      "ember_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Atunci du-te. Eu nu plec nicăieri."
+      },
+      "ember_vindecare": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus alifia de la Bătrâna Morwen.",
+        "urmator": "ember_vindecare2"
+      },
+      "ember_vindecare2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "În sfârșit. Vino aici, Vale. Am nevoie de mâinile tale.",
+        "alegeri": [
+          {
+            "text": "Îngenunchez lângă Ember.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_ember"
+            }
+          }
+        ]
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1344,13 +1470,26 @@
     ],
     "optiuni": [
       {
-        "_nota": "Decis de autor: dimineața (05–10), la campsite, Vale o poate întreba pe Kaia să vâneze împreună; lupta e cu ea alături. Replica e ciornă.",
+        "_nota": "Decis de autor: dimineața (05–10), la campsite, Vale o poate întreba pe Kaia să vâneze împreună; lupta e cu ea alături. Replica e ciornă. Cât e Ember rănit (misiunea „Rana lui Ember”), Kaia nu pleacă la vânătoare.",
         "text": "Mergem împreună la vânătoare?",
         "conditii": {
           "loc": "padure/campsite",
           "ora": {
             "min": "05:00",
             "max": "09:59"
+          },
+          "nu": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
           }
         },
         "spre": "vanam_impreuna"
@@ -3885,6 +4024,151 @@
       }
     }
   },
+  "kaia_ember": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Rana lui Ember” (decis de autor): Vale ține capul tigrului cât Kaia curăță rana; cât îi pune alifia, Kaia povestește cum l-a găsit pe Ember pui, peste 2 imagini-amintire (cu ceața de la vise), apoi revine la Camp site.",
+    "grup": "Kaia: rana lui Ember",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia îmi ia borcanul din mână, îl deschide și îl miroase.",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mușețel... și ceva amar. Bătrâna știe ce face.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Întâi trebuie curățată rana, și o să-l doară. Ține-i tu capul, Vale. Strâns, dar fără să-l sufoci. Dacă mârâie, nu te mișca: e doar durerea care vorbește.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îngenunchez lângă Ember și îi iau capul în brațe. E greu ca un butuc și fierbinte de febră. Când Kaia îi atinge rana, tot trupul i se încordează sub mâinile mele, iar colții lungi trec la un deget de obrazul meu.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mă mișc. Îi vorbesc încet, orice îmi trece prin cap, până când respirația i se liniștește.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Gata, gata... Partea grea a trecut.",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia îi întinde alifia pe rană, încet, cu două degete. Mârâitul lui Ember se face tot mai mic, până devine un tors adânc, pe care îl simt în piept.",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ții la el ca la un frate.",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mai mult. Pe un frate nu l-am găsit singur, la gura unei peșteri.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Aveam nouă ani. Ai mei mă trimiseseră după rășină de brad, sus, în pădurea mare de deasupra așezării.",
+        "imagine": "events/kaia_amintire_1.png",
+        "amintire": true,
+        "urmator": "b2",
+        "_nota": "Amintirea Kaiei (decis de autor: Ember găsit pui, singur, la gura unei peșteri). Detaliile (vârsta, rășina, cele trei zile) sunt ciorne de Claude."
+      },
+      "b2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "La gura unei peșteri, între rădăcini, ceva mic mârâia la mine. Un pui de tigru, cât o pisică, cu colții abia ieșiți. Mârâia, dar nu fugea.",
+        "amintire": true,
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "L-am așteptat pe mama lui trei zile, ascunsă după o stâncă. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
+        "amintire": true,
+        "urmator": "b4"
+      },
+      "b4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "În a treia seară, puiul a ieșit din peșteră și s-a culcat lângă mine. Ca și cum ar fi hotărât el.",
+        "amintire": true,
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "L-am dus acasă în brațe. Pe drum mi-a zgâriat tot obrazul, iar eu am râs până acasă.",
+        "imagine": "events/kaia_amintire_2.png",
+        "amintire": true,
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bătrânii Străjerilor zic că un animal care nu fuge de un copil și-a ales omul. Și că cine aduce un pui acasă îl crește singur: îl hrănește, îl învață să vâneze, doarme lângă el iarna.",
+        "amintire": true,
+        "urmator": "c3",
+        "_nota": "CIORNĂ (Claude): obiceiul Străjerilor Sălbăticiei, de confirmat de autor."
+      },
+      "c3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Așa am făcut. L-am hrănit cu lapte de capră dintr-o cârpă, apoi cu carne mestecată de mine. Iar iarna am dormit cu el în brațe, lângă vatră.",
+        "amintire": true,
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "De atunci n-am mai fost despărțiți. Nici măcar o zi.",
+        "trezire": true,
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember deschide un ochi, se uită lung la mine și mă împinge cu botul în palmă, ca o pisică uriașă.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "I-ai ținut capul și nu ți-a fost frică. Ember ține minte asta. Și eu.",
+        "efecte": {
+          "daObiect": "alifie_ember",
+          "stare": {
+            "ember": "vindecat"
+          },
+          "timp": 60
+        }
+      }
+    }
+  },
   "vis_1": {
     "_nota": "CIORNĂ (Claude). Decis de autor: primul vis, data următoare când doarme Vale, după discuția cu Roderick despre hârtii. Doar un semn: Vale nu știe încă nimic.",
     "grup": "Visele lui Vale",
@@ -5498,6 +5782,88 @@
         "emotie": "normal",
         "text": "Eu nu vând leacuri, flăcăule. Banii nu vindecă pe nimeni. Adu-mi flori din pădure, și bătrâna ți le face poțiuni. Florile cresc pentru toată lumea; priceperea, nu.",
         "_nota": "CIORNĂ (Claude). Decis de autor: Morwen nu vinde, face poțiuni doar din florile aduse."
+      },
+      "ember_cerere": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bunico, am nevoie de o alifie. Pentru un tigru.",
+        "urmator": "ember_cerere2",
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Rana lui Ember” (decis de autor: Morwen cere 2 păpădii, 2 piciorul-cocoșului și 3 mușețel)."
+      },
+      "ember_cerere2": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Pentru un tigru? Asta n-am mai auzit-o, și am auzit multe la ușa asta.",
+        "urmator": "ember_cerere3"
+      },
+      "ember_cerere3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "E al Kaiei, vânătoarea din pădure. L-a sfâșiat un mistreț la coapsă, iar rana a început să ardă.",
+        "urmator": "ember_cerere4"
+      },
+      "ember_cerere4": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Fata cu tigrul... O știu. Trece pe la mine după sare și ață, și nu zice niciodată mai mult de trei vorbe. Ai ei păzesc pădurile de când lumea.",
+        "urmator": "ember_cerere5"
+      },
+      "ember_cerere5": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Rana de colț de mistreț putrezește repede. Îți fac o alifie care trage otrava din carne și închide rana.",
+        "urmator": "ember_cerere6"
+      },
+      "ember_cerere6": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Dar florile le aduci tu: două păpădii, două fire de piciorul-cocoșului și trei de mușețel. Le găsești în pădure, prin luminișuri, dimineața, cât e roua pe ele.",
+        "efecte": {
+          "stare": {
+            "ember_alifie": "cerut"
+          }
+        }
+      },
+      "ember_indiciu_flori": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Două păpădii, două fire de piciorul-cocoșului și trei de mușețel. În pădure, prin luminișuri, dimineața. Fără ele, bătrâna n-are din ce să facă alifia."
+      },
+      "ember_flori": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ți-am adus florile, bunico. Toate, cum ai zis.",
+        "urmator": "ember_flori2"
+      },
+      "ember_flori2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Morwen le ia pe rând, le miroase și le pisează într-un mojar de piatră, cu puțină grăsime și o picătură din ceva negru, care miroase a fum.",
+        "urmator": "ember_flori3"
+      },
+      "ember_flori3": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Gata. Se întinde subțire, de două ori pe zi. Iar fetei să-i spui că bătrâna Morwen nu ia nimic de la cei care păzesc pădurea.",
+        "urmator": "ember_flori4",
+        "efecte": {
+          "consuma": {
+            "papadie": 2,
+            "piciorul_cocosului": 2,
+            "musetel": 3
+          },
+          "obiect": "alifie_ember",
+          "stare": {
+            "ember_alifie": "facuta"
+          }
+        }
+      },
+      "ember_flori4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Borcanul e încă cald în palma mea. Ember așteaptă."
       }
     },
     "vorbeste": [

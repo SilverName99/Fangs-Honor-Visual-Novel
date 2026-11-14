@@ -416,6 +416,110 @@
       "_nota": "Decis de autor: căprioara eliberată = +2 Kaia (carnea = fără încredere, ales de Claude). Capcanele: la Bram = 10 săgeți și +1 Bram; la colector = 20 de monede (TODO echilibru), iar la următoarea discuție Kaia le-a găsit din nou armate: −1 Kaia, fără punctul lui Bram."
     },
     {
+      "id": "kaia_ember",
+      "titlu": "Rana lui Ember",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": "CIORNĂ: Un mistreț bătrân l-a sfâșiat pe Ember la coapsă. Kaia nu poate pleca de lângă el, iar rana trebuie unsă cu ceva bun, până nu se infectează. Bătrâna Morwen face cele mai bune alifii.",
+      "oferta": {
+        "_nota": "Decis de autor: la cel puțin două zile după „Capcanele”, la Camp site, unde Kaia stă lângă Ember rănit (un singur sprite, până la vindecare). Ales de Claude: și după eliberarea lui Finn (Bătrâna Morwen stă la Marginea satului).",
+        "text": "Ce i s-a întâmplat lui Ember?",
+        "nod": "ember_oferta",
+        "conditii": {
+          "stare": {
+            "hot": "eliberat"
+          },
+          "misiuneTerminata": {
+            "kaia_capcane": 2
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Merg la Bătrâna Morwen, la Marginea satului, după o alifie",
+          "la": "ierbareasa",
+          "gata": {
+            "existaStare": "ember_alifie"
+          },
+          "sfat": "Coliba ei e la Marginea satului; Morwen e acolo ziua (06–23).",
+          "predare": {
+            "text": "Bunico, am nevoie de o alifie pentru un tigru.",
+            "nod": "ember_cerere"
+          }
+        },
+        {
+          "text": "Culeg florile pentru alifie",
+          "la": "ierbareasa",
+          "numara": [
+            {
+              "obiect": "papadie",
+              "n": 2
+            },
+            {
+              "obiect": "piciorul_cocosului",
+              "n": 2
+            },
+            {
+              "obiect": "musetel",
+              "n": 3
+            }
+          ],
+          "sfat": "În pădure, la „Caută ierburi”, dimineața: două păpădii, două fire de piciorul-cocoșului și trei de mușețel.",
+          "indiciu": {
+            "text": "Despre alifie...",
+            "nod": "ember_indiciu_flori"
+          }
+        },
+        {
+          "text": "Duc florile la Bătrâna Morwen",
+          "la": "ierbareasa",
+          "gata": {
+            "stare": {
+              "ember_alifie": "facuta"
+            }
+          },
+          "sfat": "Cu florile în rucsac, la coliba ei, ziua.",
+          "predare": {
+            "text": "Ți-am adus florile, bunico.",
+            "nod": "ember_flori",
+            "conditii": {
+              "areCate": {
+                "papadie": 2,
+                "piciorul_cocosului": 2,
+                "musetel": 3
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre alifie...",
+            "nod": "ember_indiciu_flori"
+          }
+        },
+        {
+          "text": "Duc alifia la Kaia",
+          "gata": {
+            "stare": {
+              "ember": "vindecat"
+            }
+          },
+          "sfat": "Kaia nu pleacă de lângă Ember: e la Camp site, zi și noapte.",
+          "predare": {
+            "text": "Am adus alifia de la Bătrâna Morwen.",
+            "nod": "ember_vindecare"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1. Și povestea lui Ember.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: fără alegeri la vindecare (Vale ține capul tigrului, Kaia povestește peste 2 imagini-amintire). Încrederea +1, ales de Claude, nu se poate rata."
+    },
+    {
       "id": "scandal",
       "titlu": "Scandalul din tavernă",
       "dela": "soldat",

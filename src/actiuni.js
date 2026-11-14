@@ -2,7 +2,7 @@ import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
 import { verifica } from './conditii.js';
 import { aplicaEfecte } from './efecte.js';
-import { cateAre } from './misiuni.js';
+import { cateAre, listaMisiuni, pasul, numaratori } from './misiuni.js';
 import { baraNevoie } from './baraNevoie.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
@@ -262,6 +262,35 @@ export function creeazaActiuni(parinte, joc) {
     );
   }
 
+  // „intrebare” la cules poate fi și o listă de { conditii, text } (și un text simplu la urmă): îndemnul potrivit
+  // misiunii de acum (florile pentru alifia lui Ember, nu sunătoarea lui Elian)
+  function textPotrivit(t) {
+    if (!Array.isArray(t)) return t;
+    const x = t.find((y) => typeof y === 'string' || verifica(y.conditii, context(joc.stare)));
+    return typeof x === 'string' ? x : x?.text;
+  }
+
+  // Florile (altele decât planta bună) pe care le cere acum pasul unei misiuni în lucru („numara”), câte mai lipsesc,
+  // cel mult „maxCulese” la o căutare
+  function floriCerute(a, buna) {
+    const s = joc.stare;
+    const ids = new Set(a.plante.map((p) => p.id).filter((id) => id !== buna));
+    const lipsa = new Map();
+    for (const m of listaMisiuni(joc.date)) {
+      const p = s.misiuni[m.id] === 'inceputa' && m.pasi[pasul(s, m.id)];
+      if (!p) continue;
+      for (const x of numaratori(p, s)) if (x.obiect && ids.has(x.obiect) && x.are < x.n) lipsa.set(x.obiect, (lipsa.get(x.obiect) || 0) + x.n - x.are);
+    }
+    let loc = a.maxCulese || 4;
+    const rez = [];
+    for (const [id, n] of lipsa) {
+      const ia = Math.min(n, loc);
+      if (ia > 0) rez.push([id, ia]);
+      loc -= ia;
+    }
+    return rez;
+  }
+
   // Culesul cu recunoaștere (decis de autor: ierburile lui Elian): pe imaginea culesului apar plantele, bune și
   // greșite, la întâmplare în zona desenată în editor; culegi cel mult „maxCulese”, fiecare bună aduce o bucată.
   // Cu mini-jocurile oprite din Opțiuni, Vale o alege singur pe cea bună și primește „nFaraJoc”.
@@ -276,12 +305,18 @@ export function creeazaActiuni(parinte, joc) {
     if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
     const buna = a.plante.find((p) => p.corecta).id;
     const primeste = (n) => joc.dupaActiune('', [{ tip: 'obiect', id: buna, n: n && joc.primeste(buna, n) }]);
-    if (!miniJocuriPornite()) return cuImagine(a, () => primeste(a.nFaraJoc ?? 2), a.sunet);
+    if (!miniJocuriPornite()) {
+      // Cu mini-jocurile oprite, Vale culege singur ce-i trebuie: întâi florile cerute acum de o misiune (alifia
+      // pentru Ember: păpădie, piciorul-cocoșului, mușețel), altfel planta bună, ca până acum
+      const cerute = floriCerute(a, buna);
+      if (cerute.length) return cuImagine(a, () => joc.dupaActiune('', cerute.map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) }))), a.sunet);
+      return cuImagine(a, () => primeste(a.nFaraJoc ?? 2), a.sunet);
+    }
     joc.salveaza();
     if (a.sunet) setTimeout(() => joc.sunet.efect(a.sunet), 150);
     // Orice floare culeasă rămâne în rucsac (decis de autor): cea bună pentru misiune, celelalte pentru poțiunile
     // Bătrânei Morwen
-    mini.culege(a).then(({ culese }) => {
+    mini.culege({ ...a, intrebare: textPotrivit(a.intrebare) }).then(({ culese }) => {
       const numar = {};
       for (const id of culese) numar[id] = (numar[id] || 0) + (id === buna ? a.nPeCorecta || 1 : 1);
       joc.dupaActiune('', Object.entries(numar).map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) })));

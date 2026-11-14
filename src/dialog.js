@@ -69,6 +69,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       activ.imagine = null;
       activ.imagineReluata = null;
     }
+    // „amintire” (decis de autor: povestea Kaiei despre Ember): replicile peste o amintire au ceața de la vise, ca să
+    // se vadă că e trecutul; o pune fiecare replică din amintire (și după un refresh), o ia „trezire”
+    if (nod.amintire) el.classList.add('vis');
     // La reluare, imaginea de sub replici e cea de dinainte de refresh (replica de acum poate să n-o aibă pe a ei)
     const imagine = nod.imagine || (reluat ? activ.imagineReluata : null);
     if (imagine && imagine !== activ.imagine) {

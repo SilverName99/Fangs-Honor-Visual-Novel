@@ -442,6 +442,13 @@
       "pret": 0,
       "descriere": "Capcane de fier din pădure, cu craniul Craniilor Sângerii bătut pe arc. Le-am desfăcut cu Kaia. Bram ar face ceva bun din fierul lor.",
       "_nota": "Misiunea Kaiei „Capcanele” (decis de autor): duse la Bram, săgeți și încrederea lui; vândute colectorului, monede, dar Kaia află (−1)."
+    },
+    "alifie_ember": {
+      "nume": "Alifia pentru Ember",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "O alifie verzuie de la Bătrâna Morwen, care miroase a mușețel și a fum. Pentru rana lui Ember.",
+      "_nota": "Misiunea Kaiei „Rana lui Ember” (decis de autor)."
     }
   }
 }

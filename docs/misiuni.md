@@ -107,6 +107,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 2. ✅ **Lupul negru**: imediat după întâlnire (dacă ai ajutat-o); 15–17, la marginea pădurii.
 3. ✅ **Vânătoarea împreună** (nu e misiune): după „Lupul negru”, dimineața (05–10), la Camp site.
 4. ✅ **Capcanele**: imediat după „Lupul negru”, la Kaia, la Camp site: „Ce s-a întâmplat, Kaia? Pari supărată.”.
+5. ✅ **Rana lui Ember**: la cel puțin două zile după „Capcanele” (și după eliberarea lui Finn), la Camp site: Kaia stă lângă Ember rănit (un singur sprite) → „Ce i s-a întâmplat lui Ember? !”.
 
 **Roderick (unchiul)**
 1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
@@ -145,7 +146,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · 📝 Cheia cufărului · 📝 Platoșa tatălui · 💡 încă 5 | 3 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
-| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅⚠️ Capcanele: **+2** doar dacă eliberezi căprioara (două puncte), iar **−1** dacă vinzi capcanele colectorului · 💡 încă 6 | 4 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅⚠️ Capcanele: **+2** doar dacă eliberezi căprioara (două puncte), iar **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · 💡 încă 5 | 5 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
 **De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
@@ -394,6 +395,25 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 5. Calea lui Bram: vorbește cu Bram → „Am niște capcane de fier pentru dumneata. ?” → 10 săgeți, +1 Bram, misiunea terminată.
 6. Calea colectorului (F2 → „Resetează” la misiune, apoi refă pașii 2–4): la poartă, apasă pe colector → „Am găsit niște capcane de-ale voastre în pădure.” → 20 de monede. Apoi la Kaia: ea începe cu „Am fost la izvor, Vale...” și pierzi 1 încredere (−1, cu roșu). A doua oară vorbește normal.
 7. Încearcă și „E carne bună. O iau.”: 3 carne, fără încredere.
+
+### ✅ Rana lui Ember
+- **Pornește** (decis de autor): la cel puțin **două zile după „Capcanele”** (ales de Claude: și după eliberarea lui Finn, ca Vale să poată ajunge la Bătrâna Morwen, la Marginea satului), când vii la Camp site. Acolo e **un singur sprite nou: Kaia lângă Ember, rănit de un mistreț**; până la vindecare, Kaia și Ember nu mai apar separat, zi și noapte, iar Kaia nu mai pleacă la vânătoare (nici dimineața, cu Vale, nici 10–14, singură). Când apeși pe el, răspunde Kaia: „Vale... Bine că ai venit.” → „Ce i s-a întâmplat lui Ember? !”. Un mistreț bătrân i-a înfipt colțul în coapsă; rana trebuie unsă până nu se infectează, iar Kaia nu-l poate lăsa singur → „Mă duc chiar acum.” (sau „Nu acum, Kaia.”, iar oferta rămâne).
+- **Pasul 1:** la Bătrâna Morwen (Marginea satului, coliba, 06–23): „Bunico, am nevoie de o alifie pentru un tigru. ?”. Morwen o știe pe „fata cu tigrul” și cere florile (decis de autor, fără schimb nou): **2 păpădii, 2 fire de piciorul-cocoșului și 3 de mușețel**.
+- **Pasul 2: culegi florile.** În pădure, „Caută ierburi”, dimineața (locul apare și cât e misiunea asta, chiar fără misiunea lui Elian). Sus, pe ecranul culesului, scrie ce cere Morwen. Cu mini-jocurile oprite, Vale culege singur florile care îi lipsesc (cel mult 4 o dată).
+- **Pasul 3:** cu florile, la Morwen: „Ți-am adus florile, bunico. ?” → **Alifia pentru Ember** (obiect de poveste).
+- **Pasul 4:** la Kaia: „Am adus alifia de la Bătrâna Morwen. ?” → „Îngenunchez lângă Ember.” → **fără alegeri** (decis de autor): Vale ține capul tigrului cât Kaia curăță rana; cât îi pune alifia, Kaia povestește cum l-a găsit pe Ember pui, peste **2 imagini-amintire** (au ceața de la vise, ca să se vadă că e trecutul): puiul singur la gura unei peșteri (mama lui n-a mai venit), apoi cum a avut grijă de el. Apoi înapoi la Camp site: „De atunci n-am mai fost despărțiți.”
+- **Recompensa:** încrederea Kaiei **+1** (ales de Claude, nu se poate rata) și povestea lui Ember. După vindecare, Kaia și Ember apar iar separat, ca înainte.
+
+**Imagini:** `sprites/kaia_ember_padure_campsite.png` (Kaia lângă Ember rănit, fundal transparent), `events/kaia_amintire_1.png`, `events/kaia_amintire_2.png` (galeria: „Kaia: rana lui Ember”), iconița `items/alifie_ember.png`.
+
+**De aranjat în editor:** Aranjare → Camp site → bifează „Arată tot” → „Kaia și Ember”: îl muți și îl mărești, apoi îi desenezi zona (până atunci răspunde pe forma sprite-ului).
+
+**Cum verifici**
+1. Termină „Capcanele” și eliberează-l pe Finn. Apoi apasă „Ziua următoare” de două ori.
+2. Pădure → Camp site: în locul Kaiei și al lui Ember e sprite-ul comun, cu „!” deasupra. Apasă pe el → „Ce i s-a întâmplat lui Ember?” → „Mă duc chiar acum.”.
+3. Marginea satului → coliba → Morwen → „Bunico, am nevoie de o alifie...” → ea cere florile. „Despre alifie...” le repetă.
+4. Dimineața, în pădure, „Caută ierburi”: culege păpădii, piciorul-cocoșului și mușețel (sau F2 → Obiect). Cu ele, la Morwen → „Ți-am adus florile” → alifia.
+5. La Camp site → „Am adus alifia” → „Îngenunchez lângă Ember.” → replicile, cele 2 amintiri (cu ceață), înapoi la Camp site → +1 Kaia. După dialog, Kaia și Ember sunt iar separat.
 
 ---
 

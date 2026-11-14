@@ -1010,7 +1010,20 @@
                   "min": "10:00",
                   "max": "13:59"
                 },
-                "deblocat": "padure/campsite"
+                "deblocat": "padure/campsite",
+                "nu": {
+                  "stare": {
+                    "hot": "eliberat"
+                  },
+                  "misiuneTerminata": {
+                    "kaia_capcane": 2
+                  },
+                  "nu": {
+                    "misiune": {
+                      "kaia_ember": "terminata"
+                    }
+                  }
+                }
               }
             },
             "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru cu lupul negru, 25% mistrețul.",
@@ -1089,11 +1102,22 @@
               "nume": "Glaive-ul Kaiei (decor)",
               "imagine": "sprites/glaive_padure_campsite.png",
               "apare": {
-                "personajLa": {
-                  "vanatoare": [
-                    "padure/campsite"
-                  ]
-                }
+                "oricare": [
+                  {
+                    "personajLa": {
+                      "vanatoare": [
+                        "padure/campsite"
+                      ]
+                    }
+                  },
+                  {
+                    "personajLa": {
+                      "kaia_ember": [
+                        "padure/campsite"
+                      ]
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -1140,7 +1164,22 @@
           "tip": "culege",
           "nume": "Caută ierburi (1 oră)",
           "titlu": "Culegi ierburi",
-          "intrebare": "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4.",
+          "intrebare": [
+            {
+              "conditii": {
+                "misiune": {
+                  "kaia_ember": "inceputa"
+                },
+                "nu": {
+                  "misiune": {
+                    "elian_ierburi": "inceputa"
+                  }
+                }
+              },
+              "text": "Bătrâna Morwen: două păpădii, două fire de piciorul-cocoșului și trei de mușețel, pentru alifia lui Ember. Culege cel mult 4."
+            },
+            "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4."
+          ],
           "plante": [
             {
               "id": "sunatoare",
@@ -1183,6 +1222,16 @@
                 {
                   "misiune": {
                     "elian_ierburi": "terminata"
+                  }
+                },
+                {
+                  "misiune": {
+                    "kaia_ember": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "kaia_ember": "terminata"
                   }
                 }
               ]

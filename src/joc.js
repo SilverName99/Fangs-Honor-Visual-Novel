@@ -1208,7 +1208,9 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
   const semne = new Map();
   for (const p of personaje.values()) {
     const loc = undeEste(p, ctx);
-    const semn = loc && semnPersonaj(joc, p.id, loc);
+    // „semneDe”: un sprite care ține locul altcuiva (decis de autor: Kaia lângă Ember rănit, un singur sprite până
+    // la vindecare) arată semnele misiunilor aceluia, ca „!” să stea deasupra lui
+    const semn = loc && semnPersonaj(joc, p.semneDe || p.id, loc);
     // Cine doarme nu poate vorbi acum, deci nu cheamă pe nimeni
     if (semn && !intrareProgram(p, ctx)?.doarme) semne.set(p.id, { semn, loc, p });
   }
@@ -1220,7 +1222,7 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
     const viitor = { ...stare, minute: stare.minute + costTimp(stare, minute, cfg.nevoi) };
     const ctxViitor = context(viitor);
     if (undeEste(x.p, ctxViitor) !== x.loc || intrareProgram(x.p, ctxViitor)?.doarme) return false;
-    return semnPersonaj({ ...joc, stare: viitor }, x.p.id, x.loc) !== null;
+    return semnPersonaj({ ...joc, stare: viitor }, x.p.semneDe || x.p.id, x.loc) !== null;
   };
   if (!semne.size) return;
   // Pozițiile sunt în procente din scenă, iar stratul semnelor are aceeași mărime ca scena: semnul ajunge exact
