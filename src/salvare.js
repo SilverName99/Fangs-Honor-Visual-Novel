@@ -23,7 +23,7 @@ const migrari = {
       versiuneSalvare: 2,
     };
   },
-  // Sloturile noi de armură (coif, armură, jambiere); mănușile și bocancii nu mai există în demo,
+  // Sloturile noi de armură (coif, armură, jambiere); mănușile și bocancii nu mai există în Actul 1,
   // iar pantalonii de pânză au devenit jambierele de piele
   2: (s) => {
     const redenumit = { pantaloni_panza: 'jambiere_piele' };

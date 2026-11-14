@@ -1,5 +1,5 @@
 // Logica inventarului: stive, sloturi, echipament, cufăr. Fără interfață, ca s-o poată folosi și lupta, și magazinul.
-// Sloturile de echipament (decis de autor): armura se îmbunătățește din coif, armură și jambiere; fără mănuși și bocanci în demo
+// Sloturile de echipament (decis de autor): armura se îmbunătățește din coif, armură și jambiere; fără mănuși și bocanci în Actul 1
 export const SLOTURI = ['cap', 'armura', 'jambiere', 'arma_primara', 'arma_secundara', 'rucsac'];
 export const NUME_SLOTURI = {
   cap: 'Coif',

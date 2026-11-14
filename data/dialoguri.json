@@ -174,8 +174,16 @@
       "ho7": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "De dragon, zicea el. Noi râdeam. Dragonii sunt povești de adormit copiii, Vale. Au pierit de sute de ani, dacă au fost vreodată.",
-        "urmator": "ho8"
+        "text": "De dragon, zicea el. Noi râdeam de el. Dragonii sunt ai Ordinului Flăcării, Vale, ai călăreților de la capitală, nu ai unui sat de la marginea regatului. Douăzeci de ierni am stat de strajă și n-am văzut niciunul. Nimeni de pe aici n-a văzut.",
+        "urmator": "ho7b",
+        "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
+      },
+      "ho7b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ultimul dragon de care s-a auzit pe la noi a fost al regelui cel bătrân. Și s-a dus odată cu el, acum douăzeci de ani. Așa e cu ei: unde se duce călărețul, se duce și dragonul.",
+        "urmator": "ho8",
+        "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
       },
       "ho8": {
         "vorbitor": "soldat",
@@ -975,6 +983,12 @@
             }
           }
         ]
+      },
+      "h_dragoni": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Bine, Vale. Doar că mi-e dor de vremurile în care treceau pe aici negustori de la capitală și povesteau de călăreții Ordinului Flăcării. Dragoni adevărați, cât casa! Eu n-am văzut niciunul; pe aici n-a văzut nimeni. Noi aflăm de toate din povești de drum.",
+        "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1021,6 +1035,9 @@
       },
       {
         "nod": "a_obosita"
+      },
+      {
+        "nod": "h_dragoni"
       }
     ]
   },
@@ -1143,6 +1160,24 @@
             "text": "Poate altă dată."
           }
         ]
+      },
+      "k_padure_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eu, bine. Pădurea, nu.",
+        "urmator": "k_padure_b",
+        "_nota": "CIORNĂ (Claude): clanul Kaiei și motivul ei (decis de autor)."
+      },
+      "k_padure_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce are pădurea?",
+        "urmator": "k_padure_c"
+      },
+      "k_padure_c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai mei, Străjerii Sălbăticiei, simt când o pădure își pierde echilibrul. Capcanele orcilor, vânătoarea lor cu zgomot, lupii gonați spre sat... Pădurea asta e bolnavă de când au venit ei. Și eu nu plec până nu se vindecă."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1153,6 +1188,9 @@
       },
       {
         "nod": "k_orci_a"
+      },
+      {
+        "nod": "k_padure_a"
       }
     ],
     "optiuni": [
@@ -1257,7 +1295,9 @@
           "g1",
           "g2",
           "g3",
-          "g4"
+          "g4",
+          "g5",
+          "g6"
         ]
       }
     ],
@@ -1318,6 +1358,18 @@
         "vorbitor": "paznic_orc_1",
         "emotie": "rade",
         "text": "N-ai plătit, hă? Colectorul a ținut minte. Și noi la fel."
+      },
+      "g5": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Gorvak zice că până la iarnă bem din fântânile capitalei voastre. Atunci n-o să mai aveți nici rege, nici magi, nici rombulețe aurii, hă!",
+        "_nota": "CIORNĂ (Claude): Craniile Sângerii, Gorvak și asediul capitalei (decis de autor)."
+      },
+      "g6": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Ce te uiți la cer, pui de om? Dragonii voștri nu mai vin. Ultimul a crăpat odată cu regele vostru cel bătrân.",
+        "_nota": "CIORNĂ (Claude): regele și dragonul focului au murit acum 20 de ani (decis de autor)."
       }
     }
   },
@@ -2085,6 +2137,24 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Auzi cum suflă? Foalele noi țin aerul ca un taur. De când le-am pus, fierul se încinge de două ori mai repede."
+      },
+      "f_fier_a": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ostenit. Orcii vor tot mai multe topoare, și tot mai repede.",
+        "urmator": "f_fier_b",
+        "_nota": "CIORNĂ (Claude): orcii se pregătesc de asediul capitalei (decis de autor)."
+      },
+      "f_fier_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pentru ce le trebuie atâtea?",
+        "urmator": "f_fier_c"
+      },
+      "f_fier_c": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu pentru noi, băiete. Fierul nu rămâne aici: pleacă în căruțe, pe drumul mare. Craniile Sângerii, cum le zice lumea după steagul lor, se pregătesc de ceva mare. Și nu cred că vor doar un sat."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2103,11 +2173,14 @@
             "foale_bram": "noi"
           }
         }
+      },
+      {
+        "nod": "f_fier_a"
       }
     ]
   },
   "mag": {
-    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Elian e tânăr (decis de autor). E mag al luminii sub acoperire: replicile doar sugerează asta, nu o spun.",
+    "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Elian e tânăr (decis de autor). Decis de autor: e preotul și magul satului (fiecare sat are cel puțin unul); toți, și orcii, îl cred un mag începător, dar e foarte puternic, trimis să găsească trezirea simțită prin cristal. Replicile doar sugerează asta.",
     "partener": "mag",
     "start": [
       {
@@ -2286,10 +2359,38 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Colectorul n-a găsit nimic. Am fugit la timp. De data asta."
+      },
+      "e_mag_a": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ca orice mag de sat, Vale: aprind lumânări, leg răni și binecuvântez semănăturile.",
+        "urmator": "e_mag_b",
+        "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
+      },
+      "e_mag_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ce poate face, de fapt, magul nostru?",
+        "urmator": "e_mag_c"
+      },
+      "e_mag_c": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lucruri mărunte. Cercul Luminii trimite câte un mag în fiecare sat, iar în satele mici ajung cei mai tineri și cei mai slabi. Magii puternici rămân la capitală, lângă Inima Luminii.",
+        "urmator": "e_mag_d"
+      },
+      "e_mag_d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Așa zice toată lumea despre el: un mag mic, bun la ierburi și la vorbe blânde. Și totuși, când e el prin preajmă, lumânările ard altfel."
       }
     },
     "meniu": true,
     "vorbeste": [
+      {
+        "nod": "e_mag_a"
+      },
       {
         "nod": "e_lumina_a"
       },
@@ -3462,7 +3563,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe a treia, o hartă. Satul nostru, zidul, apoi un drum prin pădure, peste un râu și pe lângă niște ruine, până la o râpă însemnată cu un X.",
+        "text": "Pe a treia, o hartă. Satul nostru, zidul, apoi un drum prin pădure, peste un râu și pe lângă niște ruine, până la o râpă adâncă, o crăpătură în pământ, însemnată cu un X.",
         "imagine": "events/hartie_3.png",
         "urmator": "g"
       },
@@ -3470,12 +3571,13 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Un solz de... ce? Nicio fiară din pădurea noastră n-are solzi așa de mari. Și drumul ăsta trece dincolo de zid.",
+        "text": "Un solz de... dragon? Aici, la noi? Dragonii sunt ai Ordinului, de la capitală; nimeni de pe aici n-a văzut vreunul. Și totuși, nicio fiară din pădurea noastră n-are solzi așa de mari. Iar drumul ăsta trece dincolo de zid.",
         "efecte": {
           "stare": {
             "hartii_citite": "da"
           }
-        }
+        },
+        "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
       }
     }
   },
@@ -3550,8 +3652,9 @@
       "i": {
         "vorbitor": "sobolan_scuipa",
         "emotie": "normal",
-        "text": "Vine! Vine-vine! Teroarea vine! Nu azi, nu mâine... dar vine! Și cerul se face negru-negru, iar morții ies din morminte, ies-ies!",
-        "urmator": "j"
+        "text": "Vine! Vine-vine! Teroarea vine! Stăpânul-oaselor vine, cu steagul lui! Nu azi, nu mâine... dar vine! Și cerul se face negru-negru, iar morții ies din morminte, ies-ies!",
+        "urmator": "j",
+        "_nota": "CIORNĂ (Claude): „Stăpânul-oaselor” e Narco, iar steagul e cel la care a reapărut (decis de autor)."
       },
       "j": {
         "vorbitor": "vale",
@@ -6092,7 +6195,14 @@
         "emotie": "normal",
         "text": "Câmpul se deschide deodată în fața noastră. Iarba a crescut peste tot, dar nu ascunde nimic: lame ruginite, scuturi crăpate, un steag albastru cu rombul auriu, rupt pe jumătate și înfipt în pământ.",
         "imagine": "events/roderick_locul_3.png",
-        "urmator": "r7"
+        "urmator": "r6b"
+      },
+      "r6b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Rombul auriu... are forma cristalelor Cercului Luminii. Ziceam că, dacă-l porți, îți dă putere. Edwin chiar credea.",
+        "urmator": "r7",
+        "_nota": "CIORNĂ (Claude): rombul de pe steag e forma cristalelor mici (decis de autor)."
       },
       "r7": {
         "vorbitor": "vale",

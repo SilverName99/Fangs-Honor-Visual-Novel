@@ -21,53 +21,62 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 
 Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (decis de autor; pe larg în `docs/lore.md`). ❓ = încă de lămurit.
 
-**Universul**
-- Demo-ul e o poveste mică dintr-o lume mai mare: jocul principal al autorului, *Fangs&Honor* (de acolo vin unele personaje; Kaia e Huntress). În demo **nu** apar dragoni adevărați (doar indicii), altă magie decât a preotului, harta mare și fortăreața.
+**Universul și Actul 1**
+- *Fangs&Honor* e lumea jocului principal al autorului (de acolo vin unele personaje; Kaia e Huntress). Jocul pe care îl facem e **Actul 1: Recuperarea satului**; în **Actul 2** (idee), Vale trece prin portalul morții și se leagă cu dragonul lui. În Actul 1 **nu** apar dragoni adevărați (doar indicii), altă magie decât a preotului, harta mare și fortăreața.
+- **Ce știu oamenii:** neamul omenesc știe de magie, de dragoni, de Ordinul Flăcării și de Inima Luminii. Satul lui Vale e retras, la marginea regatului, și n-a luat parte la războaie: **nimeni de aici n-a văzut vreodată un dragon**. Oamenii au **un rege**; elfii de pădure, **un împărat**.
 
-**Dragonii și legământul**
-- Lumea crede că dragonii au pierit de sute de ani („povești de adormit copiii”).
-- Foarte rar se naște un om care **vorbește cu dragonii** și îi înțelege; și mai rar, unul care poate face **legământul**: se unește cu un dragon, îl călărește și luptă alături de el. Puterea se trezește **la 26 de ani**, iar magii puternici simt aceste „treziri”.
-- După legământ, **dragonul ia înfățișarea rasei** celui cu care s-a legat. Sunt **legați pe viață și pe moarte**: dacă moare unul, moare și celălalt. Omul legat trăiește până la vreo **300 de ani** (un om obișnuit, cam 100).
-- **Cei 5 dragoni primordiali**, câte unul pentru fiecare putere a naturii: **apă, foc, pământ, aer și moarte** (cel al morții e un fel de dragon necromant).
-- **Karzor**, primordialul **aerului**: foarte puternic, lovește cu fulgere. E singurul dragon de care s-a știut, iar lumea îl crede mort. De fapt e legat cu **împăratul elfilor de pădure**, secret știut doar de **o organizație secretă a elfilor de pădure**. Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac (semnul elfilor de pădure).
-- **Organizația secretă a dragonului de foc** (perechea celei a elfilor): doar magi ai luminii foarte puternici; **regele oamenilor știe de ea**. A avut un dragon, **dragonul focului**, legat cu **regele**; regele a murit într-o bătălie și odată cu el a murit și dragonul (❓ cum și când; ❓ era primordialul focului?). Acum domnește **fiul regelui**, care știe de organizație. Organizația stă **dedesubtul capitalei**, într-un loc păzit și secret, și **caută un nou dragon**: de aceea îi caută mereu pe oamenii cu „trezirea”.
+**Dragonii, lumile lor și portalurile**
+- Dragonii trăiesc **în lumile lor**, câte una pentru fiecare fel: a focului (pârjolită, dragoni roșii și portocalii), a aerului (munți plutitori, dragoni albi), **a morții** (doar moarte, dragoni din oase) etc.
+- **Cei 5 dragoni primordiali:** apă, foc, pământ, aer și moarte (al morții e un fel de dragon necromant). Fiecare are lumea lui și **un portal** în lumea noastră. Se știe de două: al **focului** (păzit de oameni) și al **aerului** (al elfilor de pădure, adânc în pădure). Al **morții** nu-l știe nimeni: e adânc într-o crăpătură din pământ, unde duce harta soldatului. Apa și pământul: nedescoperite.
+- Un portal îl deschid, greu, doar magi foarte puternici. Prin el trece **doar cine are darul dragonilor** (ceilalți mor), iar din lumea dragonilor **nu ieși decât legat cu un dragon**.
 
-**Vale**
-- Vale Lightfinder, 25 de ani, e unul dintre cei care pot face legământul. **Nu știe.**
-- **Finalul demo-ului:** după eliberarea satului, Vale împlinește 26 de ani; în noaptea aceea se aude un răget în depărtare sau apare un mag străin (cliffhanger pentru jocul mare).
+**Trezirea și legământul**
+- Darul se trezește **la 26 de ani**, în două feluri: **mic** (vorbești cu dragonii, te legi cu **dragoni mai slabi**, fără viață mai lungă) și **mare**, foarte rar (te legi cu **un primordial** și trăiești până la vreo **300 de ani**, față de ~100). Magii puternici simt trezirile.
+- **Legământul:** dragonul **ia înfățișarea rasei** celui cu care se leagă; sunt **legați pe viață și pe moarte** (moare unul, moare și celălalt), dar **un primordial renaște** în lumea lui. Dragonul îți spune **o incantație** cu care îl chemi printr-un portal; telepatic vorbiți oricând.
 
-**Cristalul cel mare și magia luminii**
-- Într-o **mină**, oamenii au găsit, în mijlocul unei încăperi mari, **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni). Scos la lumina zilei, radiază putere și, **în lumina soarelui**, creează **cristale mici**, foarte rar. Cristalele mici fac **magia luminii** mult mai puternică; puțini au acces la ele.
-- **Asociația magilor** (ai luminii) **nu e secretă**: oamenii știu de ea, de cristalul din mină și de cristalele mici.
-- **Rombul auriu** de pe steaguri și scuturi (steagul albastru al satului, platoșa și sabia lui Edwin) e **forma cristalelor mici**: doar pus acolo, le dă oamenilor încredere și putere în luptă.
-- **Numele:** cristalul cel mare e **Inima Luminii**, asociația e **Cercul Luminii** (decis de autor). ❓ Unde e păzită Inima.
+**Ordinul Flăcării și regele**
+- **Ordinul Flăcării**: călăreții de dragoni ai oamenilor; **nu e secret**. Îi caută mereu pe cei cu trezirea.
+- **Regele**, mag-războinic, era legat cu **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon; odată cu el a murit și dragonul (care a renăscut în lumea focului). De atunci domnește **fiul regelui**, iar oamenii n-au mai găsit pe cineva cu trezirea mare.
 
-**Orcii și Narco**
-- Trei triburi mari: **Craniile Sângerii** (*Blood Skulls*, steag roșu cu un craniu, căpetenia **Gorvak**), cel mai mare, care atacă acum oamenii; **toți orcii din sat sunt din el**. Al doilea: deocamdată nu contează. **Colții de Fier** (*Iron Tusks*, căpetenia **Urzhal**), cel mai mic, dar puternic: îi vor ajuta pe oameni mai târziu (nu în demo).
-- **Arcon**, unul dintre cei mai puternici magi ai **Asociației magilor**, a descoperit **necromanția** (magia interzisă la oameni, la elfi, la toți) și a vrut să **corupă cristalul cel mare**. Asociația l-a oprit și **l-a omorât**, așa cred toți. **Nu e mort**: a reapărut acum, fără să știe nimeni, ca **Narco** (numele lui întors), și e **în spatele atacului orcilor**.
-- **Minciuna lui Narco:** i-a spus lui Gorvak că organizația secretă a oamenilor, din capitală, ține secretul comunicării cu dragonii. Craniile Sângerii își strâng acum forțele ca să **asedieze capitala** și s-o distrugă. ❓ Ce vrea de fapt Narco acum.
+**Karzor și elfii de pădure**
+- **Karzor**, primordialul **aerului**, cu fulgere: lumea îl crede mort. E legat cu **împăratul elfilor de pădure**; știe doar **organizația secretă a elfilor**, singura organizație secretă rămasă (mai târziu, o întorsătură mare într-o bătălie). Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac.
+
+**Inima Luminii și Cercul Luminii**
+- Într-o **mină**, oamenii au găsit **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni): **Inima Luminii**. La lumina soarelui radiază putere și, foarte rar, **creează cristale mici**, care fac **magia luminii** mult mai puternică. E cea mai mare putere magică a oamenilor; necromanția o poate corupe. ❓ Unde e păzită.
+- **Cercul Luminii**, asociația magilor, nu e secret; trimite câte un mag în fiecare sat.
+- **Rombul auriu** de pe steaguri și scuturi (steagul albastru al satului, platoșa și sabia lui Edwin) e **forma cristalelor mici**: doar pus acolo, le dă oamenilor încredere și putere.
+
+**Narco**
+- **Arcon**, unul dintre cei mai puternici magi ai Cercului Luminii, a fost corupt de **necromanție** (magia interzisă la oameni, la elfi, la toți). **Acum 20 de ani** a încercat să corupă Inima Luminii; regele l-a oprit, sacrificându-se, și toți l-au crezut mort. **N-a murit:** cu o vrajă interzisă, care merge o singură dată, a reapărut **la un steag pus de el dinainte**. De atunci e **Narco** (numele întors) și nimeni nu știe că trăiește.
+- **Arată acum** ca un **schelet** cu ochi verzi, în glugă mov, cu armură cu cranii, o ladă cu cranii pe spate, un felinar cu un cristal verde (❓ un cristal corupt?) și un toiag cu un **steag mov cu un semn alb**.
+- Vrea doar **Inima Luminii**. I-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” **Nimeni nu știe că el e în spatele războiului.**
+
+**Orcii**
+- Trei triburi mari: **Craniile Sângerii** (*Blood Skulls*, steag roșu cu un craniu, căpetenia **Gorvak**), cel mai mare, care atacă acum oamenii; **toți orcii din sat sunt din el**. Al doilea: deocamdată nu contează. **Colții de Fier** (*Iron Tusks*, căpetenia **Urzhal**), cel mai mic, dar puternic: îi vor ajuta pe oameni mai târziu (nu în Actul 1).
+- Orcii n-au dragoni: au **wyverni** (nu dragoni adevărați), cu ritualul lor, și **unelte împotriva dragonilor**. Craniile Sângerii pregătesc **asediul capitalei**.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu.
 
 **Șobolanii și teroarea**
-- **Un clan de șobolani mutanți care vorbesc**, aliat cu **„teroarea” care vine**: „cerul se face negru, iar morții ies din morminte”. **Teroarea e ce poate face Narco**: moartea, morții vii, magia interzisă. Îl avertizează pe Vale să se gândească de partea cui stă. În jocul principal, trei unități de șobolani îi ajută pe morți (Undead); în demo, cei care scuipă bale acide revin în lupta finală, de partea orcilor.
+- **Un clan de șobolani mutanți care vorbesc**, aliat cu **„teroarea” care vine**: „cerul se face negru, iar morții ies din morminte”. **Teroarea e ce poate face Narco** (moartea, morții vii, magia interzisă); ei îi zic „Stăpânul-oaselor”. Îl avertizează pe Vale să se gândească de partea cui stă. În jocul principal, trei unități de șobolani îi ajută pe morți (Undead); în Actul 1, cei care scuipă bale acide revin în lupta finală, de partea orcilor.
 - Vorbesc ca niște șobolani, peste tot în univers: repede, repetă cuvintele („da-da!”), leagă cuvintele cu cratimă („om-lucru”, „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
+
+**Vale și dragonul lui**
+- Vale Lightfinder, 25 de ani, are **trezirea mare**. **Nu știe.** Se va lega cu **primordialul morții** (întorsătura cea mare), cel din vise (ochiul din al doilea vis), prin portalul din crăpătura de pe hartă. ❓ Cum arată dragonul după legământul cu un om.
+- **Finalul Actului 1:** după eliberarea satului, Vale împlinește 26 de ani; în noaptea aceea se aude un răget în depărtare sau apare un mag străin.
 
 **Satul și familia Lightfinder**
 - Primăvara trecută, **23 de oameni ai satului** au încercat să oprească orcii pe câmpul de dincolo de gardul Marginii, lângă **copacul mare** (acolo se cățărau Edwin și Roderick când erau copii; tot acolo a cerut-o Edwin pe Miriam). Au căzut, printre ei **Edwin Lightfinder**, tatăl lui Vale. Edwin i-a poruncit fratelui lui: **„Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”** Roderick a ascultat; de atunci bea și nu se mai poate uita în ochii Miriamei. L-a dus pe Edwin în spate până la cimitirul de la Marginea.
 - Satul a căzut a doua zi. Orcii i-au cruțat pe oameni în schimbul unei **taxe săptămânale**, au ridicat zidul și păzesc ieșirea.
 - **Echipamentul lui Edwin** (coiful cu creasta albastră, platoșa cu rombul auriu, crăpată pe mijloc de lovitura care l-a doborât, jambierele, sabia cu rombul pe măciulie) l-a ascuns Miriam; i-l dă lui Vale de la 8/10 încredere, iar platoșa o repară Bram.
 
-**Indiciile despre dragoni, în demo**
-- **Hârtiile soldatului** (camera de sus a tavernei; fostul chiriaș, prietenul lui Roderick, căzut în bătălie): un solz cât palma, „pe care nu-l zgâria nicio sabie”, găsit „departe, dincolo de pădure”; semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; o hartă până la o râpă însemnată cu X (❓ propunerea lui Claude). Roderick: „Ca și cum l-aș mai fi văzut undeva.”
+**Indiciile despre dragoni, în Actul 1**
+- **Hârtiile soldatului** (camera de sus a tavernei; fostul chiriaș, prietenul lui Roderick, căzut în bătălie): un solz cât palma, „pe care nu-l zgâria nicio sabie”, găsit „departe, dincolo de pădure”; semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; o hartă până la o crăpătură în pământ însemnată cu X: **portalul morții**. Roderick: „Ca și cum l-aș mai fi văzut undeva.”
 - **Visele**, doar după un somn peste noapte, cu ceață pe margini: primul (purtat de ceva uriaș care zboară, o căldură în piept „ca un al doilea foc”); al doilea (bătălia, Edwin căzut, ochiul lui trece în ochiul unui dragon); mai vin vise după anumite misiuni. **Semnele nu vin prin tigrul Kaiei.**
-- 📝 **Solzii de dragon**, cu Roderick, dincolo de gard.
+- 📝 **Solzii de dragon**, cu Roderick, dincolo de gard: arată spre portalul morții.
 
 **Personajele cu taină**
-- **Fratele Elian**, preotul, e tânăr, **mag al luminii** din **Asociația magilor** (❓ în sat se știe, orcii nu?). **Secretul lui:** are la el **un cristal mic**, primit cu o misiune secretă (❓ de la cine): **simte trezirea cuiva din sat**, dar nu știe cine, pentru că acela n-a împlinit 26 de ani. Vale află asta într-o misiune a lui Elian (📝).
-- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor** (alții, foarte rari, se nasc cu darul dragonilor). Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Tigrul ei e **Ember**. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
-
-**📝 În discuție (nehotărât): lumea dragonilor și portalurile**
-- Idee nouă: o lume a dragonilor, trei portaluri, două feluri de trezire, incantația care cheamă dragonul, călăreții dragonilor la vedere, wyvernii orcilor, Narco și moartea regelui, demo-ul ca Actul 1. Pe larg în `docs/lore.md`, la „În discuție”.
+- **Fratele Elian**, preotul, e și **magul satului** (fiecare sat are unul, trimis de Cercul Luminii). **Toți, și orcii, îl cred un mag începător**; de fapt e foarte puternic. **Secretul lui:** are la el **un cristal mic** și a fost trimis să găsească **trezirea** simțită în sat, fără să știe a cui. Vale află într-o misiune a lui Elian (📝). ❓ Cine l-a trimis anume.
+- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor**. Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Tigrul ei e **Ember**. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
 
 **Încrederea și finalul**
 - Încredere au doar 6: **Bram, Elian, Kaia și Roderick** (se recrutează de la 8/10), **Finn** (ajută din umbră în lupta finală) și **Miriam** (echipamentul tatălui, de la 8/10).
@@ -436,7 +445,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după cină, F2 → Mergi la Marginea satului → locul de antrenament, ora 08:00 → Roderick („Despre manechin...”). Obiect → Primește: 6 lemne, 1 frânghie; paiele: munca la arat (sau F2 → Obiect → paie de 3 ori) → la tavernă, după-amiaza, „Unchiule, am adunat tot” (te cheamă dimineața la loc) → a doua zi, 08:00, la locul de antrenament, „Am adus tot” → construcția → a doua zi „Să ne antrenăm” → încă două zile.
 
 ### 📝 Solzii de dragon
-- **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. De discutat.
+- **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. **Arată spre portalul morții** (decis de autor): crăpătura din pământ de pe harta soldatului. Restul: de discutat.
 
 ---
 
@@ -549,6 +558,6 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ## Dragonii
 
-- Doar indicii în demo. Prima apariție: **hârtiile din camera de la tavernă** (misiunea lui Agnes), apoi căutarea solzilor cu Roderick. Lumea mare: `docs/lore.md`.
+- Doar indicii în Actul 1. Prima apariție: **hârtiile din camera de la tavernă** (misiunea lui Agnes), apoi căutarea solzilor cu Roderick, spre **portalul morții**. Lumea mare: `docs/lore.md`.
 - 📝 **Semne pe parcurs** (decis de autor): după anumite misiuni, data următoare când doarme, Vale visează ceva; uneori simte ceva ciudat. Nu prin tigrul Kaiei (Vale și Kaia se cunosc de mult).
-- 📝 **Finalul demo-ului** (decis de autor): după ce satul e eliberat, Vale împlinește 26 de ani. În noaptea aceea se aude un răget în depărtare sau apare un mag străin. Cliffhanger pentru jocul mare.
+- 📝 **Finalul Actului 1** (decis de autor): după ce satul e eliberat, Vale împlinește 26 de ani. În noaptea aceea se aude un răget în depărtare sau apare un mag străin. Cliffhanger pentru jocul mare.
