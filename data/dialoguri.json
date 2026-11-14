@@ -4155,13 +4155,28 @@
         "emotie": "normal",
         "text": "Așa am făcut. L-am hrănit cu lapte de capră dintr-o cârpă, apoi cu carne mestecată de mine. Iar iarna am dormit cu el în brațe, lângă vatră.",
         "amintire": true,
-        "urmator": "d"
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Primul lui colț de lapte l-am găsit într-o dimineață, în blana pe care dormeam amândoi. Îl port și acum la gât.",
+        "amintire": true,
+        "urmator": "d",
+        "_nota": "Decis de autor: colțul de la gâtul Kaiei e primul colț de lapte al lui Ember."
       },
       "d": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
         "text": "De atunci n-am mai fost despărțiți. Nici măcar o zi.",
         "trezire": true,
+        "urmator": "d0"
+      },
+      "d0": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Abia acum înțeleg ce e colțul pe care Kaia îl poartă la gât.",
         "urmator": "d1"
       },
       "d1": {
