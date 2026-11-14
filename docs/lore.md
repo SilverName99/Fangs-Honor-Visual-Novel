@@ -47,7 +47,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 - **Asociația magilor** (a magilor luminii) **nu e secretă**: oamenii știu de ea, de magie, de cristalul din mină și de cristalele mici pe care le face.
 - **Rombul auriu** de pe steaguri și de pe scuturi (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma cristalelor mici**. Doar pus acolo, le dă oamenilor încredere și putere în luptă.
 - Necromanția poate **corupe** cristalul cel mare.
-- De lămurit: unde e păzit cristalul cel mare acum; ce nume au cristalul și asociația.
+- **Numele** (decis de autor): cristalul cel mare e **Inima Luminii**, iar asociația magilor e **Cercul Luminii**.
+- De lămurit: unde e păzit cristalul cel mare acum.
 
 ## Fratele Elian și cristalul lui (decis de autor)
 
@@ -72,7 +73,22 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 
 - **Pădurea de la hotar** e chiar pădurea satului: o pădure obișnuită, în care oamenii vânează, taie lemne și culeg flori.
 - Unii oameni se nasc cu **darul dragonilor** (foarte rari); alții cu **darul animalelor**: se înțeleg foarte bine cu ele, iar animalele au mare încredere în ei, mai ales **tigrii cu colți de sabie**.
-- **Wild Warden** e **clanul** lor (un clan, nu o familie). Trăiesc la **marginea pădurilor mari**, nu toți la un loc: în așezări mici sau mijlocii, ca să **apere pădurile și animalele** din ele și să țină echilibrul în viața necuvântătoarelor. Sunt prietenoși cu oamenii (sunt și ei oameni), dar preferă să stea între ai lor.
+- **Wild Warden** e **clanul** lor (un clan, nu o familie); în joc se numește **Străjerii Sălbăticiei** (decis de autor). Trăiesc la **marginea pădurilor mari**, nu toți la un loc: în așezări mici sau mijlocii, ca să **apere pădurile și animalele** din ele și să țină echilibrul în viața necuvântătoarelor. Sunt prietenoși cu oamenii (sunt și ei oameni), dar preferă să stea între ai lor.
 - **Kaia** (doar Kaia, fără nume de familie) e din clanul Wild Warden. Tigrul ei e **Ember**. A prins drag de satul lui Vale și trece pe aici din când în când.
 - **Motivul ei** (decis de autor): clanul ține echilibrul pădurilor, iar orcii îl strică (capcane, vânătoare cu zgomot, haita lupului negru gonită spre sat). Rămâne și îl ajută pe Vale ca să-l refacă: odată cu eliberarea satului, se întoarce și echilibrul în pădure. Și pentru satul la care ține.
 - De dezvoltat poate mai târziu: clanul și așezările lor, prin povestea Kaiei, poate cu amintiri (flashback-uri).
+
+## În discuție (încă nehotărât): lumea dragonilor și portalurile
+
+Idee nouă a autorului; **nimic de aici nu e hotărât** până nu confirmă. Dacă se hotărăște, înlocuiește organizația secretă a dragonului de foc de mai sus.
+
+- Pe lângă lumea oamenilor și a orcilor există **o lume a dragonilor**. În lumea noastră sunt **portaluri** spre ea, pe care le pot deschide, foarte greu, doar magi foarte puternici. Până acum s-au descoperit **trei**.
+- Prin portal poate intra **doar cine are darul dragonilor** (ceilalți mor). Din lumea dragonilor **nu ieși decât legat cu un dragon**.
+- **Două feluri de trezire:** una mică (vorbești cu dragonii, afli lucruri de la ei și te poți lega cu **dragoni mai slabi**, care nu-ți lungesc viața) și una mare, foarte rară (te poți lega cu **un dragon primordial**, ca regele oamenilor, care a murit, și ca împăratul elfilor de pădure, care trăiește).
+- După legământ, dragonul îți spune **o incantație**: în lumea noastră, cu ea deschizi un portal din care vine dragonul să te ajute. Telepatic vorbiți oricând.
+- **Vale** are trezirea mare: dragonul lui primordial va fi **cel al focului sau cel al morții** (plot twist; nehotărât).
+- **Călăreții dragonilor** nu mai sunt o organizație secretă: un ordin cunoscut (nume în discuție: „Ordinul Flăcării” sau „Ordinul în Flăcări”). Singura organizație secretă rămâne **cea a elfilor de pădure**, care știe că Karzor trăiește (o întorsătură mare, mai târziu, într-o bătălie).
+- **Orcii** n-au dragoni, ci **wyverni** (bestii zburătoare, nu dragoni adevărați), cu ritualul lor, și unelte de luptă împotriva dragonilor.
+- **Narco** vrea doar **Inima Luminii**, cea mai mare putere magică a oamenilor. Poate (de confirmat): Narco l-a ucis pe rege. A cerut ca Inima să fie folosită pentru necromanție, a fost refuzat, a încercat s-o ia cu forța și a făcut prăpăd în clădirea în care e păzită; regele, mag-războinic, cu puterea dragonului de foc, s-a sacrificat ca să-l oprească și să-l omoare. Toți cred că Narco a murit atunci.
+- **Elian** e magul satului (fiecare sat are cel puțin unul); toți îl cred începător, dar e foarte puternic, trimis să caute o nouă trezire, simțită cu ajutorul cristalului.
+- **Demo-ul ar putea fi Actul 1** al poveștii; în Actul 2, Vale ar trece prin portal și s-ar lega cu dragonul lui.

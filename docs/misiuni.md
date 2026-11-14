@@ -40,7 +40,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - Într-o **mină**, oamenii au găsit, în mijlocul unei încăperi mari, **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni). Scos la lumina zilei, radiază putere și, **în lumina soarelui**, creează **cristale mici**, foarte rar. Cristalele mici fac **magia luminii** mult mai puternică; puțini au acces la ele.
 - **Asociația magilor** (ai luminii) **nu e secretă**: oamenii știu de ea, de cristalul din mină și de cristalele mici.
 - **Rombul auriu** de pe steaguri și scuturi (steagul albastru al satului, platoșa și sabia lui Edwin) e **forma cristalelor mici**: doar pus acolo, le dă oamenilor încredere și putere în luptă.
-- ❓ Unde e păzit cristalul cel mare. ❓ Nume pentru cristal și pentru asociație.
+- **Numele:** cristalul cel mare e **Inima Luminii**, asociația e **Cercul Luminii** (decis de autor). ❓ Unde e păzită Inima.
 
 **Orcii și Narco**
 - Trei triburi mari: **Craniile Sângerii** (*Blood Skulls*, steag roșu cu un craniu, căpetenia **Gorvak**), cel mai mare, care atacă acum oamenii; **toți orcii din sat sunt din el**. Al doilea: deocamdată nu contează. **Colții de Fier** (*Iron Tusks*, căpetenia **Urzhal**), cel mai mic, dar puternic: îi vor ajuta pe oameni mai târziu (nu în demo).
@@ -64,7 +64,10 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 
 **Personajele cu taină**
 - **Fratele Elian**, preotul, e tânăr, **mag al luminii** din **Asociația magilor** (❓ în sat se știe, orcii nu?). **Secretul lui:** are la el **un cristal mic**, primit cu o misiune secretă (❓ de la cine): **simte trezirea cuiva din sat**, dar nu știe cine, pentru că acela n-a împlinit 26 de ani. Vale află asta într-o misiune a lui Elian (📝).
-- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden**: oamenii născuți cu **darul animalelor** (alții, foarte rari, se nasc cu darul dragonilor). Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Tigrul ei e **Ember**. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
+- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor** (alții, foarte rari, se nasc cu darul dragonilor). Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Tigrul ei e **Ember**. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
+
+**📝 În discuție (nehotărât): lumea dragonilor și portalurile**
+- Idee nouă: o lume a dragonilor, trei portaluri, două feluri de trezire, incantația care cheamă dragonul, călăreții dragonilor la vedere, wyvernii orcilor, Narco și moartea regelui, demo-ul ca Actul 1. Pe larg în `docs/lore.md`, la „În discuție”.
 
 **Încrederea și finalul**
 - Încredere au doar 6: **Bram, Elian, Kaia și Roderick** (se recrutează de la 8/10), **Finn** (ajută din umbră în lupta finală) și **Miriam** (echipamentul tatălui, de la 8/10).
