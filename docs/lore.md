@@ -34,3 +34,32 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 - În jocul principal există **3 unități de șobolani** care îi ajută în luptă pe Undead. În demo apar în pivnița tavernei (unul care scuipă bale acide, doi care atacă cu ghearele), iar cei care scuipă revin în lupta finală ca ajutoare de la distanță ale orcilor.
 - **Șobolanii vorbesc** (decis de autor): sunt un clan de șobolani mutanți care s-a aliat cu **o teroare care se apropie**. În pivnița lui Agnes îi spun lui Vale despre ea: sună a bazaconii, dar îl avertizează să se gândească bine de partea cui stă. Ce e teroarea: `TODO`.
 - **Cum vorbesc șobolanii** (decis de autor, peste tot în univers): repede și nervos, repetă cuvintele („da-da!”, „repede-repede!”, „rupe-rupe!”), leagă cuvintele cu cratimă (oamenii sunt „oameni-lucruri”, un om e „om-lucru”, ei sunt „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
+
+## Cristalul galben și magia luminii (decis de autor)
+
+- **Cristalul galben** apare pe steaguri și e acum și **în biserica satului**.
+- Are o putere magică uriașă: le dă oamenilor **puterea magiei luminii**, ca la Fratele Elian.
+- Cine știe magia interzisă (necromanția) poate să-l **corupă** și să-i folosească puterea pentru distrugere.
+- De lămurit: dacă rombul auriu (steagul bisericii, platoșa și sabia lui Edwin, culorile meniului) e chiar cristalul; dacă în biserică e cristalul adevărat sau o bucată din el; dacă orcii știu că e acolo.
+
+## Orcii și necromancerul (decis de autor)
+
+- Orcii sunt împărțiți în triburi. **Trei sunt cele mari:**
+  1. **cel mai mare trib**, care atacă acum oamenii (și satul lui Vale);
+  2. un al doilea trib, de dezvoltat;
+  3. un al treilea, care apare mai târziu în poveste și îi ajută pe oameni să-i învingă pe orcii care îi atacă acum.
+- **De ce atacă cel mai mare trib:** căpetenia lui crede că oamenii au secretul comunicării cu dragonii. Ideea nu e a lui.
+- **Necromancerul** (numele: Narco, de confirmat): a fost om și mag. A învățat **necromanția**, o magie interzisă la magii oamenilor, ai elfilor, la toți, și a fost corupt de ea.
+- A încercat singur să distrugă **organizația secretă a oamenilor** (cei care încă știu de dragoni și au legătura cu ei) și n-a reușit. Atunci s-a dus la căpetenia celui mai mare trib de orci și l-a mințit (sau i-a făcut altceva; de lămurit), ca să pornească războiul împotriva oamenilor.
+- **Minciuna:** că organizația secretă ține secretul legăturii cu dragonii, iar dacă orcii fură **cristalul galben**, vor putea vorbi cu dragonii și îi vor folosi în luptă.
+- **Adevărul:** cristalul nu face asta. Necromancerul îl vrea pentru el, ca să-i corupă puterea pentru o distrugere uriașă (de ce: de dezvoltat).
+- **Nimeni nu știe** că necromancerul e în spatele războiului.
+- Legătura cu **teroarea** de care vorbesc șobolanii: de lămurit.
+
+## Kaia și neamul ei (decis de autor)
+
+- **Pădurea de la hotar** e chiar pădurea satului: o pădure obișnuită, în care oamenii vânează, taie lemne și culeg flori.
+- **Kaia** e om, dar dintr-un **neam aparte** (o familie cu o putere a ei): oamenii născuți în neamul ăsta se înțeleg foarte bine cu animalele. Nu e doar vorbă: animalele au foarte mare încredere în ei, mai ales **tigrii cu colți de sabie**.
+- **Ember** e tigrul cu colți de sabie al Kaiei.
+- Kaia e o prietenă foarte bună a oamenilor din sat; vine și îl ajută pe Vale.
+- De dezvoltat poate mai târziu (autorul nu știe încă dacă e momentul): neamul ei și mica lor așezare, prin povestea Kaiei, poate cu amintiri (flashback-uri).

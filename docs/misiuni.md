@@ -17,6 +17,23 @@ Replicile din joc sunt ciorne de-ale lui Claude, până le schimbă autorul.
 - O misiune ratată sau refuzată nu închide drumul: doar nu dă încrederea (exemplu: Roderick, dacă nu-l ajuți în scandal).
 - **Tonul** jocului începe întunecat și se încălzește pe măsură ce crește încrederea tuturor; spre final, oamenii vorbesc de revoltă. (📝 de făcut: replici care se schimbă după încrederea totală.)
 
+## Lumea, pe scurt (foarte important)
+
+Lucrurile mari ale poveștii, ca să nu le uităm (decise de autor). Pe larg în `docs/lore.md`. ❓ = încă de lămurit.
+
+- **Vale** are 25 de ani. Puterea legământului cu un dragon i se trezește **la 26**, iar el nu știe încă. Finalul demo-ului: împlinește 26 de ani, iar în noaptea aceea se aude un răget în depărtare sau apare un mag străin.
+- **Dragonii:** lumea crede că au dispărut. **O organizație secretă a oamenilor** încă folosește dragoni. Foarte rar se naște un om care vorbește cu dragonii și îi înțelege; și mai rar, unul care poate face **legământul** (se unește cu dragonul, îl călărește, luptă alături de el). Magii organizației simt aceste „treziri” și îi caută pe acești oameni. După legământ, dragonul ia înfățișarea rasei celui cu care s-a legat.
+- **Cei 5 dragoni primordiali:** apă, foc, pământ, aer și moarte (al morții e un fel de dragon necromant).
+- **Karzor**, dragonul primordial al aerului, cu fulgere: lumea îl crede mort, dar e legat cu **împăratul elfilor de pădure**. Secretul îl știe doar o organizație secretă a elfilor de pădure. Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac.
+- **Cristalul galben:** cel de pe steaguri, care e acum și **în biserica satului**. Le dă oamenilor **magia luminii** (de la el vine puterea lui Elian). ❓ Dacă rombul auriu (steagul bisericii, platoșa și sabia lui Edwin) e chiar cristalul.
+- **Orcii:** trei triburi mari. **Cel mai mare** atacă acum oamenii (și satul nostru). Al doilea: de dezvoltat. Al treilea apare mai târziu și îi ajută pe oameni să-i învingă pe cei care îi atacă acum.
+- **Necromancerul** (❓ numele: Narco?): fost om și mag, corupt de **necromanție, magia interzisă** la oameni, la elfi și la toți ceilalți. A încercat singur să distrugă organizația secretă a oamenilor și n-a reușit, așa că a mințit căpetenia celui mai mare trib de orci: că, dacă fură cristalul galben, orcii vor putea vorbi cu dragonii și îi vor folosi în luptă. Minciună: el vrea puterea cristalului, pe care știe să o corupă, pentru o distrugere uriașă (❓ de ce). **Nimeni nu știe că el e în spatele războiului.**
+- **Șobolanii:** un clan de mutanți care vorbesc, aliați cu **o teroare care se apropie** (❓ legătura cu necromancerul). Vorbesc repede, repetă cuvintele, „da-da”, „om-lucru”, „Ssss!”.
+- **Fratele Elian** e mag al luminii, sub acoperire. Orcii nu știu.
+- **Kaia** e om, dintr-un **neam care se înțelege cu animalele** (animalele au mare încredere în ei, mai ales tigrii cu colți de sabie). Tigrul ei e **Ember**. E o prietenă bună a satului. **Pădurea de la hotar e chiar pădurea satului**, o pădure obișnuită.
+- **Familia Lightfinder:** Edwin a căzut lângă copacul mare de dincolo de gardul Marginii; Roderick a fugit în sat la porunca lui („Ai grijă de Miriam și de băiat.”). Echipamentul lui Edwin l-a ascuns Miriam; platoșa crăpată o repară Bram.
+- **Încrederea** o au doar 6: Bram, Elian, Kaia și Roderick (se recrutează), Finn (ajută în lupta finală, care are mai multe valuri) și Miriam (echipamentul tatălui).
+
 ## Cum apar misiunile, pe personaje
 
 Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 plănuită · 💡 de discutat). Detaliile sunt mai jos, la fiecare personaj.

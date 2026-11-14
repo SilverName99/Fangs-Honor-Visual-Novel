@@ -423,7 +423,7 @@
       "nume": "Kaia",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Vânătoarea de la hotar. Venea rar prin sat, dar toată lumea o știa. Călărește un tigru cu colți de sabie, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Campsite-ul ei din pădure e acum locul nostru ascuns."
+        "descriere": "Vânătoarea de la hotar. Venea rar prin sat, dar toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Campsite-ul ei din pădure e acum locul nostru ascuns."
       },
       "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la campsite-ul ei din pădure, care devine locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
@@ -500,7 +500,7 @@
     },
     {
       "id": "tigru",
-      "nume": "Tigrul Kaiei (TODO nume)",
+      "nume": "Ember",
       "_despre": "Tigrul cu colți de sabie al Kaiei. La campsite stă cu ea; 10–14 e plecat cu ea la vânătoare. Se vede, dar nu se apasă; nu are portrete (în luptă e în pozele Kaiei).",
       "locuriSprite": [
         "padure/campsite"
