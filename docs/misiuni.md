@@ -35,16 +35,19 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - Vale Lightfinder, 25 de ani, e unul dintre cei care pot face legământul. **Nu știe.**
 - **Finalul demo-ului:** după eliberarea satului, Vale împlinește 26 de ani; în noaptea aceea se aude un răget în depărtare sau apare un mag străin (cliffhanger pentru jocul mare).
 
-**Cristalul galben și magia luminii**
-- **Cristalul galben**, cel de pe steaguri, e acum și **în biserica satului**. Le dă oamenilor **magia luminii** (de la el vine puterea Fratelui Elian). Cine știe necromanția îl poate **corupe** și folosi pentru distrugere.
-- ❓ Rombul auriu e chiar cristalul? (steagul albastru cu rombul auriu, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin; culorile meniului). ❓ În biserică e cristalul întreg sau o bucată? Știu orcii că e acolo?
+**Cristalele aurii și magia luminii**
+- **Cristalele aurii** sunt foarte rare: oamenii le-au găsit într-o **peșteră adâncă dintr-o mină**. Scoase la **lumina soarelui**, emană energie și fac **magia luminii** a oamenilor **mult mai puternică**. Oamenii le protejează.
+- **Rombul auriu** de peste tot (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma și culoarea cristalelor**: se crede că doar ele aduc putere și îi ajută pe oameni în luptă, nu doar pe magi.
+- Necromanția le poate **corupe** puterea, pentru distrugere.
+- ❓ **Ce ține ascuns organizația secretă**, legat de puterea cristalelor, și vrea Narco. ❓ E un cristal adevărat în biserica satului? ❓ Organizația cu dragonii e aceeași care păzește cristalele? Face Elian parte din ea?
 
 **Orcii și necromancerul**
-- Orcii au **trei triburi mari**: **cel mai mare** atacă acum oamenii (și satul nostru); al doilea e de dezvoltat; al treilea apare mai târziu și îi ajută pe oameni să-i învingă pe cei care îi atacă acum. ❓ Numele triburilor și al căpeteniei.
-- În spatele războiului e **un necromancer** (❓ numele: Narco?): fost om și mag, corupt de **necromanție**, magia interzisă la oameni, la elfi și la toți ceilalți. A încercat singur să distrugă organizația secretă a oamenilor și n-a reușit, așa că a mințit căpetenia celui mai mare trib: că organizația ține secretul legăturii cu dragonii și că, dacă fură **cristalul galben**, orcii vor vorbi cu dragonii și îi vor folosi în luptă. E o înșelăciune: el vrea cristalul ca să-i corupă puterea pentru o distrugere uriașă (❓ de ce). **Nimeni nu știe că el e în spate.**
+- Orcii au **trei triburi mari**: **cel mai mare** atacă acum oamenii, iar **toți orcii din sat sunt din el**; al doilea e de dezvoltat; al treilea apare mai târziu și îi ajută pe oameni să-i învingă pe cei care îi atacă acum. ❓ Numele tribului cel mare și al căpeteniei.
+- În spatele războiului e **Narco**, un necromancer: fost om și mag, corupt de **necromanție**, magia interzisă la oameni, la elfi și la toți ceilalți. Înainte avea **alt nume, care sună a „Narco”** (❓). A încercat singur să distrugă organizația secretă a oamenilor și n-a reușit, așa că a mințit căpetenia celui mai mare trib: că organizația ține secretul comunicării cu dragonii și stă în **capitala oamenilor**. Acum tribul își strânge forțele ca să **asedieze capitala și s-o distrugă**. Narco vrea de fapt ceva legat de puterea cristalelor (❓ ce), pentru o distrugere uriașă. **Nimeni nu știe că el e în spate.**
+- **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu.
 
 **Șobolanii și teroarea**
-- **Un clan de șobolani mutanți care vorbesc**, aliat cu **„teroarea” care vine**: „cerul se face negru, iar morții ies din morminte” (❓ e chiar necromancerul?). Îl avertizează pe Vale să se gândească de partea cui stă. În jocul principal, trei unități de șobolani îi ajută pe morți (Undead); în demo, cei care scuipă bale acide revin în lupta finală, de partea orcilor.
+- **Un clan de șobolani mutanți care vorbesc**, aliat cu **„teroarea” care vine**: „cerul se face negru, iar morții ies din morminte”. **Teroarea e ce poate face Narco**: moartea, morții vii, magia interzisă. Îl avertizează pe Vale să se gândească de partea cui stă. În jocul principal, trei unități de șobolani îi ajută pe morți (Undead); în demo, cei care scuipă bale acide revin în lupta finală, de partea orcilor.
 - Vorbesc ca niște șobolani, peste tot în univers: repede, repetă cuvintele („da-da!”), leagă cuvintele cu cratimă („om-lucru”, „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
 
 **Satul și familia Lightfinder**
@@ -59,7 +62,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 
 **Personajele cu taină**
 - **Fratele Elian**, preotul, e tânăr și e **mag al luminii, sub acoperire**; orcii nu știu.
-- **Kaia** e om, dintr-un **neam care se înțelege cu animalele** (animalele au mare încredere în ei, mai ales tigrii cu colți de sabie); tigrul ei e **Ember**. E o prietenă bună a satului. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. Neamul ei și așezarea lor: poate mai târziu, prin amintiri (flashback-uri).
+- **Kaia** (se scrie așa) e om, dintr-un **neam care se înțelege cu animalele** (animalele au mare încredere în ei, mai ales tigrii cu colți de sabie); tigrul ei e **Ember**. Neamul ei trăiește **la marginea pădurilor mari**, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul; prietenoși cu oamenii, dar preferă să stea între ai lor. Kaia a prins drag de satul lui Vale și trece pe aici din când în când. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. ❓ Numele neamului. Neamul și așezările lor: poate mai târziu, prin amintiri (flashback-uri).
 
 **Încrederea și finalul**
 - Încredere au doar 6: **Bram, Elian, Kaia și Roderick** (se recrutează de la 8/10), **Finn** (ajută din umbră în lupta finală) și **Miriam** (echipamentul tatălui, de la 8/10).

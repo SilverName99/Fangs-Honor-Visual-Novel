@@ -35,31 +35,31 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în demo apar
 - **Șobolanii vorbesc** (decis de autor): sunt un clan de șobolani mutanți care s-a aliat cu **o teroare care se apropie**. În pivnița lui Agnes îi spun lui Vale despre ea: sună a bazaconii, dar îl avertizează să se gândească bine de partea cui stă. Ce e teroarea: `TODO`.
 - **Cum vorbesc șobolanii** (decis de autor, peste tot în univers): repede și nervos, repetă cuvintele („da-da!”, „repede-repede!”, „rupe-rupe!”), leagă cuvintele cu cratimă (oamenii sunt „oameni-lucruri”, un om e „om-lucru”, ei sunt „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
 
-## Cristalul galben și magia luminii (decis de autor)
+## Cristalele aurii și magia luminii (decis de autor)
 
-- **Cristalul galben** apare pe steaguri și e acum și **în biserica satului**.
-- Are o putere magică uriașă: le dă oamenilor **puterea magiei luminii**, ca la Fratele Elian.
-- Cine știe magia interzisă (necromanția) poate să-l **corupă** și să-i folosească puterea pentru distrugere.
-- De lămurit: dacă rombul auriu (steagul bisericii, platoșa și sabia lui Edwin, culorile meniului) e chiar cristalul; dacă în biserică e cristalul adevărat sau o bucată din el; dacă orcii știu că e acolo.
+- **Cristalele aurii** sunt foarte rare. Oamenii le-au găsit într-o **peșteră adâncă dintr-o mină**. La început au crezut că sunt cristale obișnuite; scoase la **lumina soarelui**, emană energie, iar celor care folosesc **magia luminii** (cum o folosesc oamenii) le-o fac **mult mai puternică**. De atunci, magia oamenilor a devenit mult mai puternică.
+- Oamenii le **protejează**, pentru că dau puterea magilor lor.
+- **Rombul auriu:** se crede că doar prin **forma și culoarea** lor cristalele produc energie și îi ajută pe oameni în luptă, nu doar pe magi. De aceea rombul auriu apare peste tot: pe steaguri (steagul albastru cu rombul auriu, la biserică și pe câmpul bătăliei), pe platoșa și pe sabia lui Edwin.
+- Necromanția le poate **corupe** puterea, pentru distrugere.
+- De lămurit: **mai e ceva**, legat de puterea cristalelor, pe care **organizația secretă a oamenilor îl ține ascuns** și pe care îl vrea necromancerul (ce anume: de decis). Dacă în biserica satului e un cristal adevărat. Dacă organizația secretă cu dragonii e aceeași care păzește cristalele și dacă Elian face parte din ea.
 
 ## Orcii și necromancerul (decis de autor)
 
 - Orcii sunt împărțiți în triburi. **Trei sunt cele mari:**
-  1. **cel mai mare trib**, care atacă acum oamenii (și satul lui Vale);
+  1. **cel mai mare trib**, care atacă acum oamenii; **toți orcii din satul lui Vale sunt din el**;
   2. un al doilea trib, de dezvoltat;
   3. un al treilea, care apare mai târziu în poveste și îi ajută pe oameni să-i învingă pe orcii care îi atacă acum.
-- **De ce atacă cel mai mare trib:** căpetenia lui crede că oamenii au secretul comunicării cu dragonii. Ideea nu e a lui.
-- **Necromancerul** (numele: Narco, de confirmat): a fost om și mag. A învățat **necromanția**, o magie interzisă la magii oamenilor, ai elfilor, la toți, și a fost corupt de ea.
-- A încercat singur să distrugă **organizația secretă a oamenilor** (cei care încă știu de dragoni și au legătura cu ei) și n-a reușit. Atunci s-a dus la căpetenia celui mai mare trib de orci și l-a mințit (sau i-a făcut altceva; de lămurit), ca să pornească războiul împotriva oamenilor.
-- **Minciuna:** că organizația secretă ține secretul legăturii cu dragonii, iar dacă orcii fură **cristalul galben**, vor putea vorbi cu dragonii și îi vor folosi în luptă.
-- **Adevărul:** cristalul nu face asta. Necromancerul îl vrea pentru el, ca să-i corupă puterea pentru o distrugere uriașă (de ce: de dezvoltat).
-- **Nimeni nu știe** că necromancerul e în spatele războiului.
-- Legătura cu **teroarea** de care vorbesc șobolanii: de lămurit.
+- Numele tribului cel mare și al căpeteniei lui: de ales.
+- **Narco**, necromancerul: a fost om și mag. A învățat **necromanția**, o magie interzisă la magii oamenilor, ai elfilor, la toți, și a fost corupt de ea. Înainte să fie corupt avea **alt nume, care sună a „Narco”** (de ales).
+- A încercat singur să distrugă **organizația secretă a oamenilor** și n-a reușit. Atunci s-a dus la căpetenia celui mai mare trib de orci și l-a mințit: că organizația ține secretul comunicării cu dragonii și că **stă în capitala oamenilor**. De aceea tribul își strânge acum forțele ca să **asedieze capitala și s-o distrugă**. **Nimeni nu știe** că Narco e în spatele războiului.
+- Ce vrea de fapt Narco: puterea a ceva legat de cristale, ascuns de organizație (de decis), pentru o distrugere uriașă.
+- **De ce orcii n-au distrus satul:** un sat cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram) îi ajută să se pregătească de război. E mai convenabil decât să-l distrugă.
+- **Teroarea** de care vorbesc șobolanii e **ce poate face Narco**: moartea, morții vii, magia interzisă.
 
 ## Kaia și neamul ei (decis de autor)
 
 - **Pădurea de la hotar** e chiar pădurea satului: o pădure obișnuită, în care oamenii vânează, taie lemne și culeg flori.
-- **Kaia** e om, dar dintr-un **neam aparte** (o familie cu o putere a ei): oamenii născuți în neamul ăsta se înțeleg foarte bine cu animalele. Nu e doar vorbă: animalele au foarte mare încredere în ei, mai ales **tigrii cu colți de sabie**.
-- **Ember** e tigrul cu colți de sabie al Kaiei.
-- Kaia e o prietenă foarte bună a oamenilor din sat; vine și îl ajută pe Vale.
-- De dezvoltat poate mai târziu (autorul nu știe încă dacă e momentul): neamul ei și mica lor așezare, prin povestea Kaiei, poate cu amintiri (flashback-uri).
+- **Kaia** (numele se scrie așa) e om, dar dintr-un **neam aparte**: oamenii născuți în neamul ăsta se înțeleg foarte bine cu animalele. Nu e doar vorbă: animalele au foarte mare încredere în ei, mai ales **tigrii cu colți de sabie**. Tigrul Kaiei e **Ember**.
+- Neamul ei **trăiește la marginea pădurilor mari**, nu toți la un loc: în așezări mici sau mijlocii, ca să **apere pădurile și animalele** din ele și să țină echilibrul în viața necuvântătoarelor. Sunt prietenoși cu oamenii (sunt și ei oameni), dar preferă să stea între ai lor.
+- Kaia a prins drag de satul lui Vale și mai trece pe aici din când în când, să-i vadă pe oameni.
+- Numele neamului: de ales. De dezvoltat poate mai târziu: neamul și așezările lor, prin povestea Kaiei, poate cu amintiri (flashback-uri).
