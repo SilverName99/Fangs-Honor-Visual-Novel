@@ -441,7 +441,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Accepți, dar nu vii până la 3** (decis de autor): Kaia pleacă singură, ca la refuz (lipsește 03–05), iar a doua zi începe cu „Te-am așteptat până la trei, Vale...”; tot fără +1.
 - **Wyvernii nu sunt numiți** (decis de autor): Vale și Kaia îi cred dragoni. Ce sunt de fapt (ritualul orcilor, `docs/lore.md`) rămâne pentru mai târziu.
 
-**Imagini:** `events/kaia_wyverni_orci.png` (amintirea Kaiei: doi orci vorbind, ea ascunsă după o tufă), `events/kaia_wyverni_1.png` … `events/kaia_wyverni_8.png` (galeria: „Kaia: convoiul”).
+**Imagini:** `events/kaia_wyverni_orci.png` (amintirea Kaiei: doi orci vorbind, ea ascunsă după o tufă), `events/kaia_wyverni_1.png` … `events/kaia_wyverni_8.png` (galeria: „Kaia: convoiul”). **Casca Kaiei** (decis de autor, doar în misiunea asta): în afara locului de campare (amintirea cu orcii și imaginile 2–8) Kaia poartă casca, cu părul ascuns în ea; în prima imagine, la locul de campare, e fără cască, ca în portret, și și-o pune la sfârșitul ei.
 
 **Cum verifici**
 1. Termină „Șoimul Străjerilor”, apoi apasă „Ziua următoare”.

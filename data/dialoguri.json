@@ -4979,6 +4979,14 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Bine.",
+        "urmator": "t7b"
+      },
+      "t7b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia își pune casca. Fața i se pierde în umbra ei; doar ochii îi mai văd, sclipind în lumina lunii.",
+        "_nota": "Decis de autor: în misiunea asta, în afara locului de campare, Kaia poartă casca (în imaginile 2–8 și în amintirea cu orcii); aici și-o pune.",
         "urmator": "t8"
       },
       "t8": {
