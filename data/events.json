@@ -917,6 +917,21 @@
       "_nota": "Decis de autor: la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, ultima (ochiul de dragon) doar câteva secunde."
     },
     {
+      "id": "vis_3",
+      "laTrezire": true,
+      "repetare": "o_data",
+      "nume": "Al treilea vis",
+      "grup": "Visele lui Vale",
+      "dialog": "vis_3",
+      "conditii": {
+        "stare": {
+          "kaia_wyverni_vazut": "impreuna"
+        }
+      },
+      "oreNoapte": 1,
+      "_nota": "Decis de autor: după „Convoiul” (doar dacă Vale a mers cu Kaia și a văzut wyvernii), la somnul de după. Ales de Claude: ajunge o oră de somn noaptea (Vale se culcă abia spre dimineață); dacă se culcă ziua, visul vine la noapte."
+    },
+    {
       "id": "miriam_cina",
       "manual": true,
       "repetare": "o_data",

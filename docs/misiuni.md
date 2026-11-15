@@ -116,7 +116,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 4. ✅ **Capcanele**: imediat după „Lupul negru”, la Kaia, la locul de campare: „Ce s-a întâmplat, Kaia? Pari supărată.”.
 5. ✅ **Rana lui Ember**: la cel puțin două zile după „Capcanele” (și după eliberarea lui Finn), la locul de campare: Kaia stă lângă Ember rănit (un singur sprite) → „Ce i s-a întâmplat lui Ember? !”.
 6. ✅ **Șoimul Străjerilor**: din ziua de după „Rana lui Ember”, la locul de campare: „Pot să stau puțin cu tine la foc? !”.
-7. ✅ **Convoiul**: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”): „Ești tăcută azi, Kaia. S-a întâmplat ceva? !”. Apoi, în noaptea de după (23–03), la locul de campare.
+7. ✅ **Convoiul**: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”): „Ești tăcută azi, Kaia. S-a întâmplat ceva? !”. Apoi, în noaptea de după (23–03), la locul de campare. Dacă ai mers cu ea, la somnul de după vine **al treilea vis**.
 
 **Roderick (unchiul)**
 1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
@@ -529,6 +529,16 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 3. Mută ora la 23 (F2) → Pădure → Locul de campare: pornește direct drumul, cu cele 8 imagini → +1 Kaia.
 4. Refuzul: F2 → Misiune: „Convoiul” → „Resetează” (revine la alegere) → „E prea periculos...”. Noaptea, Kaia nu e la locul de campare; dimineața: „Ce-ai văzut la drumul mare, Kaia?” → povestea peste imaginea cu cuștile, fără +1.
 5. „N-am venit”: accepți, apoi lași ora să treacă de 03:00 fără să mergi; dimineața, Kaia începe cu „Te-am așteptat până la trei...”.
+
+### ✅ Al treilea vis (nu e misiune)
+- **Când** (decis de autor): după „Convoiul”, dacă Vale a mers cu Kaia și a văzut wyvernii, la somnul de după. Misiunea se termină noaptea târziu, deci ajunge **o oră de somn noaptea** (ales de Claude; celelalte vise cer 4). Dacă se culcă ziua, visul vine la noapte.
+- **Peste 2 imagini, cu ceață** (ciornă de Claude):
+  1. drumul mare, gol, cu torțele înfipte în pământ; Vale stă în fața cuștii, iar wyvernul se trage înapoi și tremură, ca Ember, uitându-se **în spatele lui Vale**;
+  2. Vale se întoarce: o aripă acoperă tot cerul și, între solzi, **ochiul auriu din al doilea vis**. Nu e legat de nimic. Căldura din piept, „ca un al doilea foc”, ca în primul vis.
+- La trezire: „Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?” (un indiciu că wyvernii nu sunt dragoni, fără să afle ce sunt).
+- **Imagini:** `events/vis_3_1.png`, `events/vis_3_2.png` (galeria: „Visele lui Vale”).
+
+**Cum verifici:** F2 → Stări: `kaia_wyverni_vazut` = `impreuna` (sau joacă „Convoiul” cu Kaia). Timp 03:30, acasă, în camera ta → Dormi → „Dormi până dimineața” → visul la trezire.
 
 ---
 

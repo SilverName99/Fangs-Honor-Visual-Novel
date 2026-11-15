@@ -790,10 +790,13 @@ const joc = {
   citeste(idDialog) {
     setTimeout(() => vorbesteCu(null, idDialog), 0);
   },
-    // Un eveniment „laTrezire” (un vis) pornește după somn, dacă îi sunt îndeplinite condițiile
-  dupaSomn() {
+  // Un eveniment „laTrezire” (un vis) pornește după somn, dacă îi sunt îndeplinite condițiile. Visele vin doar după
+  // un somn peste noapte (decis de autor: cel puțin „oreNoaptePentruVis” din 23–05, nu un pui de somn); un vis poate
+  // cere mai puțin („oreNoapte” la eveniment): după convoiul Kaiei, Vale se culcă abia spre dimineață
+  dupaSomn(minuteNoapte = 0) {
     const ctx = context(stare);
-    const vis = evenimente.find((ev) => ev.laTrezire && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));
+    const destul = (ev) => minuteNoapte >= (ev.oreNoapte ?? cfg.somn?.oreNoaptePentruVis ?? 4) * 60;
+    const vis = evenimente.find((ev) => ev.laTrezire && destul(ev) && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));
     if (vis) setTimeout(() => pornesteEveniment(vis.id), 0);
   },
   // Ce a adus acțiunea urcă pe ecran, ca prada după vânătoare (decis de autor): monedele și ce mai dă munca,

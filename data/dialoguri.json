@@ -11539,5 +11539,108 @@
         "_nota": "Decis de autor: Vale îl păstrează în cufărul lui pentru lupta finală (în joc stă la obiectele de poveste)."
       }
     }
+  },
+  "vis_3": {
+    "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Ales de Claude: wyvernul se teme de ceva din spatele lui Vale; Vale se întoarce și vede un dragon adevărat (aripa peste cer și ochiul din al doilea vis). Căldura din piept rămâne ca în primul vis.",
+    "grup": "Visele lui Vale",
+    "partener": null,
+    "vis": true,
+    "start": "w1",
+    "noduri": {
+      "w1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Drumul mare, noaptea. Praful nu se mai așază: plutește în aer ca ceața.",
+        "imagine": "events/vis_3_1.png",
+        "urmator": "w2"
+      },
+      "w2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai e nimeni. Nici orcii, nici Kaia, nici Ember. Doar torțele, înfipte în pământ de-a lungul drumului. Și cușca.",
+        "urmator": "w3"
+      },
+      "w3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stau chiar în fața ei, atât de aproape încât aș putea atinge gratiile.",
+        "urmator": "w4"
+      },
+      "w4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fiara ridică încet capul și se uită la mine. Ochii ei au culoarea torțelor.",
+        "urmator": "w5"
+      },
+      "w5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Apoi lanțurile zornăie. Se trage înapoi, cât o lasă lanțurile, și se lipește de fundul cuștii. Tremură. Ca Ember.",
+        "urmator": "w6"
+      },
+      "w6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu se uită la mine. Se uită în spatele meu.",
+        "urmator": "w7"
+      },
+      "w7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă întorc.",
+        "urmator": "w8"
+      },
+      "w8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cerul nu mai e cer. E o aripă. O aripă atât de mare, încât acoperă stelele de la un capăt al drumului la celălalt.",
+        "imagine": "events/vis_3_2.png",
+        "trecere": 1600,
+        "urmator": "w9"
+      },
+      "w9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și, între solzii întunecați, un ochi auriu, cu pupila subțire ca o tăietură de cuțit. Ochiul din visul de dinainte.",
+        "urmator": "w10"
+      },
+      "w10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu e legat de nimic. Nu stă în nicio cușcă. Doar mă privește. Și nu mi-e frică.",
+        "urmator": "w11"
+      },
+      "w11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "În piept mi se aprinde iar căldura aceea, ca un al doilea foc.",
+        "urmator": "w12"
+      },
+      "w12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă trezesc cu mâna apăsată pe piept, de parcă mi-aș ține inima pe loc.",
+        "trezire": true,
+        "urmator": "w13"
+      },
+      "w13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?"
+      }
+    }
   }
 }

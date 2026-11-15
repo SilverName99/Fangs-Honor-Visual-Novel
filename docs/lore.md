@@ -110,6 +110,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 - **Vale** (25 de ani) are **trezirea mare**. Încă nu știe.
 - Se va lega cu **primordialul morții**: întorsătura cea mare a poveștii. În vise apare așa cum a fost descris până acum (ochiul din al doilea vis; solzi maronii, după autor). **Primul vis rămâne cu focul** („o căldură în piept, ca un al doilea foc”, decis de autor): jucătorul se gândește la foc, iar întorsătura e moartea.
+- **Al treilea vis** (decis de autor: după „Convoiul”, wyvernii, apoi ceva cu dragoni; ciornă de Claude): wyvernul din cușcă se teme de ceva din spatele lui Vale, ca Ember; acolo e un dragon adevărat, cu aripa peste tot cerul și ochiul din al doilea vis, care doar îl privește. Căldura din piept revine (tot focul, ca să nu se ghicească moartea). Vale se întreabă de ce s-ar teme un dragon de alt dragon: un indiciu că wyvernii nu sunt dragoni.
 - Drumul spre el trece prin **portalul morții**, din crăpătura de pe harta soldatului.
 - De lămurit (mai târziu): cum arată primordialul morții după legământul cu un om (dragonul ia înfățișarea rasei celui cu care se leagă).
 
