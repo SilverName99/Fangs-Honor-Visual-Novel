@@ -5126,7 +5126,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Torțe. Și sub torțe, căruțe mari trase de boi, iar de jur împrejurul lor, orci cu sulițe. Mai mulți decât am văzut vreodată la un loc.",
+        "text": "Torțe. Și sub torțe, căruțe mari trase de bizoni, iar de jur împrejurul lor, orci cu sulițe. Mai mulți decât am văzut vreodată la un loc.",
         "urmator": "t28"
       },
       "t28": {
@@ -5152,16 +5152,16 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Când convoiul ajunge în dreptul nostru, văd ce trag boii după ei. Cuști. Cuști uriașe, din bârne groase și lanțuri, cât o casă fiecare.",
+        "text": "Când prima căruță ajunge în dreptul nostru, văd ce trage bizonul după el. O cușcă. O cușcă uriașă, din bârne groase și lanțuri, cât o casă.",
         "imagine": "events/kaia_wyverni_6.png",
-        "_nota": "Decis de autor: convoiul ajunge în dreptul lor; în cuștile mari sunt wyvernii.",
+        "_nota": "Decis de autor: convoiul ajunge în dreptul lor; în imagine, doar o cușcă, trasă de un bizon, cu un wyvern în ea, și 3 orci (ca să fie cât mai puține personaje).",
         "urmator": "t32"
       },
       "t32": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și în cuști se mișcă ceva.",
+        "text": "Și în cușcă se mișcă ceva.",
         "urmator": "t33"
       },
       "t33": {
@@ -5175,7 +5175,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "În spatele ei vine încă o cușcă. Și încă una. În fiecare, câte o fiară, cu lanțuri la gât, la aripi și la gheare.",
+        "text": "Fiara e legată cu lanțuri la gât, la aripi și la gheare. Iar mai încolo, pe drum, vine încă o căruță cu o cușcă. Și încă una.",
         "urmator": "t35"
       },
       "t35": {
@@ -5309,7 +5309,7 @@
       "p2": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Întâi torțele, zeci de torțe. Apoi căruțele trase de boi și orci cu sulițe, mai mulți decât am văzut vreodată la un loc.",
+        "text": "Întâi torțele, zeci de torțe. Apoi căruțele trase de bizoni și orci cu sulițe, mai mulți decât am văzut vreodată la un loc.",
         "imagine": "events/kaia_wyverni_6.png",
         "amintire": true,
         "urmator": "p3"
