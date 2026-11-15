@@ -1357,6 +1357,38 @@
       },
       "dialog": "plug_fermier",
       "_nota": "Decis de autor: fermierul ară din nou; +1 Bram."
+    },
+    {
+      "id": "cercuri_pivnita",
+      "nume": "Cercurile butoaielor",
+      "grup": "Cercurile butoaielor",
+      "repetare": "o_data",
+      "conditii": {
+        "loc": "taverna/pivnita",
+        "misiune": {
+          "bram_cercuri": "inceputa"
+        },
+        "stare": {
+          "cercuri_seara": "da"
+        },
+        "oricare": [
+          {
+            "ora": {
+              "min": "22:00"
+            }
+          },
+          {
+            "ora": {
+              "max": "01:59"
+            }
+          }
+        ]
+      },
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "cercuri_pivnita",
+      "_nota": "Decis de autor: seara, în pivniță, peste 2 imagini. Ales de Claude: pornește când Vale intră în pivniță după 22 (cât e taverna deschisă, până la 2), în orice seară după ce a dus cercurile la Bram."
     }
   ]
 }

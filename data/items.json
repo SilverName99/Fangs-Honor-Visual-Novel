@@ -471,6 +471,13 @@
       "pret": 0,
       "descriere": "Plugul fermierului, reparat de Bram: brăzdar nou, din fier vechi, și coarne noi, legate cu frânghie.",
       "_nota": "Misiunea „Fierul plugului” (decis de autor)."
+    },
+    "cercuri_vechi": {
+      "nume": "Cercuri vechi de butoi",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Cercurile ruginite ale butoaielor lui Agnes, sărite de berea nouă. Bram le bate din nou: fierul vechi nu-l numără niciun orc.",
+      "_nota": "Misiunea „Cercurile butoaielor” (decis de autor)."
     }
   }
 }

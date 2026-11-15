@@ -1360,6 +1360,92 @@
       }
     },
     {
+      "id": "bram_cercuri",
+      "titlu": "Cercurile butoaielor",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": "CIORNĂ: Berea nouă a lui Agnes a fermentat prea tare și a sărit cercurile ruginite ale butoaielor din pivniță. Agnes nu vrea să-l roage pe Bram, ca să nu aibă el necazuri cu orcii. Așa că îl rog eu. Din partea mea, nu dintr-a ei.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Pivnița” (Agnes). Ales de Claude: și după ce i se deschide magazinul lui Bram („Fierul lui Bram”).",
+        "text": "Doamna Agnes, de ce miroase toată taverna a bere?",
+        "nod": "cer_o1",
+        "conditii": {
+          "misiune": {
+            "agnes_pivnita": "terminata",
+            "bram_fier": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îl rog pe Bram să facă cercuri noi",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "cercuri_bram"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "predare": {
+            "text": "Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.",
+            "nod": "cer_b1"
+          }
+        },
+        {
+          "text": "Iau cercurile vechi de la Agnes",
+          "gata": {
+            "existaStare": "cercuri_luate"
+          },
+          "sfat": "Agnes e la tavernă (09–02).",
+          "predare": {
+            "text": "Bram vrea cercurile vechi, doamna Agnes.",
+            "nod": "cer_cercuri"
+          },
+          "indiciu": {
+            "text": "Despre butoaie...",
+            "nod": "cer_ind"
+          }
+        },
+        {
+          "text": "Duc cercurile vechi la Bram",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "cercuri_seara"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "predare": {
+            "text": "Uite cercurile vechi.",
+            "nod": "cer_predare",
+            "conditii": {
+              "areObiect": "cercuri_vechi"
+            }
+          },
+          "indiciu": {
+            "text": "Despre cercuri...",
+            "nod": "cer_b_ind"
+          }
+        },
+        {
+          "text": "Seara, în pivnița lui Agnes, cu Bram",
+          "gata": {
+            "existaStare": "cercuri_gata"
+          },
+          "sfat": "Seara, după 22 (cât e taverna deschisă, până la 2), cobor în pivnița lui Agnes.",
+          "indiciu": {
+            "text": "Despre diseară...",
+            "nod": "cer_seara"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: berea nouă a sărit cercurile butoaielor; Agnes nu vrea să-l roage pe Bram (ales de Claude: ca să nu aibă el necazuri cu orcii; în taină, îi place de el); Bram bate cercurile vechi din nou, seara le pun în pivniță (2 imagini), Agnes îi aduce o cană de bere și Bram se înroșește; +1 Bram."
+    },
+    {
       "id": "agnes_bere",
       "titlu": "Berea",
       "dela": "hangita",
@@ -1865,7 +1951,7 @@
           ],
           "indiciu": {
             "text": "Despre plug...",
-            "nod": "plug_ind"
+            "nod": "plug_b_ind"
           }
         },
         {
@@ -1888,7 +1974,7 @@
           },
           "indiciu": {
             "text": "Despre plug...",
-            "nod": "plug_ind"
+            "nod": "plug_b_ind"
           }
         },
         {

@@ -707,7 +707,7 @@
         "text": "Unchiul Roderick stă în genunchi în fața altarului și nici nu ridică privirea. Parcă nici nu m-ar vedea.",
         "_nota": "La biserică (cerut de autor: acolo n-are cană în mână)."
       },
-      "metal_r": {
+      "metal_soldat": {
         "vorbitor": "soldat",
         "emotie": "suparat",
         "text": "Toate armele satului le-au luat orcii după bătălie. Ce-a mai rămas stă îngropat pe câmp, lângă oameni. Lasă-l acolo."
@@ -727,7 +727,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_soldat",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -1018,10 +1018,106 @@
         "text": "Bine, Vale. Doar că mi-e dor de vremurile în care treceau pe aici negustori de la capitală și povesteau de călăreții Ordinului Flăcării. Dragoni adevărați, cât casa! Eu n-am văzut niciunul; pe aici n-a văzut nimeni. Noi aflăm de toate din povești de drum.",
         "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
       },
-      "metal_r": {
+      "metal_hangita": {
         "vorbitor": "hangita",
         "emotie": "normal",
         "text": "Ce metal să am eu, dragule? Oalele mele și cana din care bei."
+      },
+      "cer_o1": {
+        "vorbitor": "hangita",
+        "emotie": "suparat",
+        "text": "Berea nouă, Vale. A fermentat prea tare. Azi-noapte am auzit în pivniță un pocnet ca de bici: au sărit cercurile la două butoaie. Erau vechi și ruginite.",
+        "_nota": "CIORNĂ (Claude): misiunea „Cercurile butoaielor” (decis de autor).",
+        "urmator": "cer_o2"
+      },
+      "cer_o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe scara pivniței se prelinge o dâră de bere. Toată taverna miroase a orz și a pâine caldă.",
+        "urmator": "cer_o3"
+      },
+      "cer_o3": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Dacă mai sar și celelalte, pierd toată berea. Și orzul tău, și mierea fermierului.",
+        "urmator": "cer_o4"
+      },
+      "cer_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bram v-ar face cercuri noi într-o zi.",
+        "urmator": "cer_o5"
+      },
+      "cer_o5": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Bram... Nu. Nu vreau să-l rog. Orcii îi numără fierul, Vale. Dacă află că a bătut cercuri pentru mine, îi iau și ce i-a mai rămas. Nu vreau să aibă necazuri din cauza mea.",
+        "_nota": "Decis de autor: alt motiv decât o datorie; ales de Claude: îi e frică să nu pățească el ceva din cauza ei.",
+        "urmator": "cer_o6"
+      },
+      "cer_o6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Agnes își netezește șorțul de două ori, deși e deja neted. Mă uit la ea și pricep că nu doar de orci îi e frică.",
+        "urmator": "cer_o7"
+      },
+      "cer_o7": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Dacă l-ai întreba tu... așa, din partea ta. Nu din partea mea.",
+        "alegeri": [
+          {
+            "text": "Vorbesc eu cu el.",
+            "spre": "cer_da",
+            "efecte": {
+              "misiune": {
+                "bram_cercuri": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Altă dată, doamna Agnes.",
+            "spre": "cer_nu"
+          }
+        ]
+      },
+      "cer_da": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Și să nu-i spui că te-am trimis eu! ...Deși o să-și dea seama."
+      },
+      "cer_nu": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Butoaiele n-au răbdare, Vale."
+      },
+      "cer_ind": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Bram a zis ceva? ...Nu că m-ar interesa. Mă interesează butoaiele."
+      },
+      "cer_cercuri": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Cercurile vechi? Le-am strâns de azi-dimineață. Știam eu că o să vină vorba de ele.",
+        "efecte": {
+          "obiect": "cercuri_vechi",
+          "stare": {
+            "cercuri_luate": "da"
+          }
+        }
+      },
+      "cer_seara": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Diseară? Atunci las ușa pivniței deschisă. Și pun deoparte o cană din berea nouă."
+      },
+      "a_dupa_cercuri": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Bram a trecut azi la prânz. A mâncat de două ori. Cred că i-a plăcut berea."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1064,7 +1160,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_hangita",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -1092,6 +1188,14 @@
       },
       {
         "nod": "h_dragoni"
+      },
+      {
+        "nod": "a_dupa_cercuri",
+        "conditii": {
+          "misiune": {
+            "bram_cercuri": "terminata"
+          }
+        }
       }
     ]
   },
@@ -1804,7 +1908,7 @@
           }
         ]
       },
-      "metal_r": {
+      "metal_vanatoare": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
         "text": "Pădurea nu crește fier, Vale. Doar capcanele orcilor."
@@ -1852,7 +1956,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_vanatoare",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -2227,7 +2331,7 @@
           }
         ]
       },
-      "metal_r": {
+      "metal_fermier": {
         "vorbitor": "fermier",
         "emotie": "normal",
         "text": "Dacă aș avea fier, ți l-aș fi dat de mult."
@@ -2268,7 +2372,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_fermier",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -2790,7 +2894,7 @@
           }
         ]
       },
-      "metal_r": {
+      "metal_miriam": {
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Metal? Avem un cui în perete și un cuțit care nu mai taie. Pe amândouă le-ar lua orcii până să ajungi tu cu ele la Bram."
@@ -2825,7 +2929,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_miriam",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -3191,7 +3295,7 @@
           }
         }
       },
-      "plug_ind": {
+      "plug_b_ind": {
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Patru lemne, o frânghie și metal pe care să nu-l știe orcii. Restul îl fac eu."
@@ -3210,10 +3314,102 @@
           }
         ]
       },
-      "metal_r": {
+      "metal_fierar": {
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Dacă aș avea, nu te-aș trimite pe tine după el."
+      },
+      "cer_b1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Agnes?",
+        "urmator": "cer_b1b"
+      },
+      "cer_b1b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram se oprește din ciocănit, cu ciocanul ridicat.",
+        "urmator": "cer_b2"
+      },
+      "cer_b2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ți-a zis ea să vii?",
+        "urmator": "cer_b3"
+      },
+      "cer_b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu. Adică... mi-a zis să nu-ți spun că m-a trimis.",
+        "urmator": "cer_b4"
+      },
+      "cer_b4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram se scarpină în barbă și se uită în altă parte. Pentru prima dată de când îl știu, fierarul nu știe ce să facă cu mâinile.",
+        "urmator": "cer_b5"
+      },
+      "cer_b5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Orcii îmi numără fierul nou. Pe cel vechi nu-l numără nimeni. Adu-mi cercurile ruginite din pivnița ei: le bat din nou, mai groase, și nimeni n-o să știe nimic.",
+        "urmator": "cer_b6"
+      },
+      "cer_b6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Și... cum o duce? Agnes, adică. Cu pivnița și cu toate.",
+        "urmator": "cer_b7"
+      },
+      "cer_b7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "E bine. Doar butoaiele ei nu.",
+        "urmator": "cer_b8"
+      },
+      "cer_b8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Atunci hai să le facem bine și pe ele.",
+        "efecte": {
+          "stare": {
+            "cercuri_bram": "cerut"
+          }
+        }
+      },
+      "cer_b_ind": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cercurile vechi, băiete. Din pivnița lui Agnes. Fără ele, n-am din ce le face."
+      },
+      "cer_predare": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Bune. Ruginite, dar bune. Le bat azi, să se răcească până diseară.",
+        "urmator": "cer_p2"
+      },
+      "cer_p2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Diseară, după ce închid fierăria, pe la zece, vin în pivnița ei. Să nu ne vadă orcii cu cercurile în brațe.",
+        "efecte": {
+          "daObiect": "cercuri_vechi",
+          "stare": {
+            "cercuri_seara": "da"
+          }
+        }
+      },
+      "cer_b_ind_seara": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Diseară, după zece, în pivnița lui Agnes. Și... pune-ți o cămașă curată. Adică, nu tu. Lasă."
+      },
+      "b_dupa_cercuri": {
+        "vorbitor": "fierar",
+        "emotie": "inrosit",
+        "text": "Agnes zice să-i spun Agnes. Fără „doamna”. Mi-e greu, băiete. Mi se încurcă limba."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -3235,13 +3431,21 @@
       },
       {
         "nod": "f_fier_a"
+      },
+      {
+        "nod": "b_dupa_cercuri",
+        "conditii": {
+          "misiune": {
+            "bram_cercuri": "terminata"
+          }
+        }
       }
     ],
     "optiuni": [
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_fierar",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -3467,7 +3671,7 @@
         "emotie": "normal",
         "text": "Așa zice toată lumea despre el: un mag mic, bun la ierburi și la vorbe blânde. Și totuși, când e el prin preajmă, lumânările ard altfel."
       },
-      "metal_r": {
+      "metal_mag": {
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Biserica a avut un sfeșnic de fier. L-au luat orcii în prima săptămână. Mă rog să fie singurul lucru pe care îl topesc."
@@ -3521,7 +3725,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_mag",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -7046,7 +7250,7 @@
         "emotie": "suparat",
         "text": "Nu în noaptea asta, Vale. Orcul ăla e încă cu ochii în patru după ce ne-a văzut umbrele. Mâine noapte."
       },
-      "metal_r": {
+      "metal_hot": {
         "vorbitor": "hot",
         "emotie": "normal",
         "text": "Metal? ...Jarek are. Fier vechi, lame rupte, potcoave, tot ce adună de pe drumuri. Doar să nu-i spui că te-am trimis eu.",
@@ -7100,7 +7304,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_hot",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -7165,7 +7369,7 @@
         "emotie": "normal",
         "text": "Tusea s-a dus aproape de tot. Am uitat cum e să respiri fără să te doară."
       },
-      "metal_r": {
+      "metal_mama_finn": {
         "vorbitor": "mama_finn",
         "emotie": "normal",
         "text": "Întreabă-l pe Finn. Fiul meu știe de unde se găsește orice. Prea bine știe."
@@ -7196,7 +7400,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_mama_finn",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -7371,7 +7575,7 @@
           }
         ]
       },
-      "metal_r": {
+      "metal_sora_finn": {
         "vorbitor": "sora_finn",
         "emotie": "normal",
         "text": "Eu am un nasture de fier! ...A, trebuie mai mare?"
@@ -7402,7 +7606,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_sora_finn",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -7756,7 +7960,7 @@
         "emotie": "normal",
         "text": "Finn e un puști bun. Prea bun pentru meseria asta. Dacă te-a adus la mine, înseamnă că ai făcut ceva ce n-a făcut nimeni pentru el."
       },
-      "metal_r": {
+      "metal_contrabandist": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
         "text": "Ai venit unde trebuie. Am fier vechi cât să faci zece pluguri. Cincisprezece monede bucata."
@@ -7784,7 +7988,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_contrabandist",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -7948,7 +8152,7 @@
         "emotie": "normal",
         "text": "Borcanul e încă cald în palma mea. Ember așteaptă."
       },
-      "metal_r": {
+      "metal_ierbareasa": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
         "text": "Fier? Bătrâna Morwen are doar oale de lut, copile. Fierul sperie florile."
@@ -7979,7 +8183,7 @@
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
         "text": "De unde pot face rost de niște metal?",
-        "spre": "metal_r",
+        "spre": "metal_ierbareasa",
         "conditii": {
           "misiune": {
             "fermier_plug": "inceputa"
@@ -10191,6 +10395,105 @@
           "daObiect": "plugul_fermierului",
           "stare": {
             "plug_reparat": "da"
+          }
+        }
+      }
+    }
+  },
+  "cercuri_pivnita": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Cercurile butoaielor” (decis de autor): seara, în pivniță, Bram și Vale pun cercurile peste o imagine; Agnes îi aduce lui Bram o cană din berea nouă și Bram se înroșește (portretul „inrosit”).",
+    "grup": "Cercurile butoaielor",
+    "partener": "fierar",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram coboară scara pivniței cu un sac de cercuri pe umăr, de parcă n-ar cântări nimic. Le-a bătut din nou, mai groase și mai late, negre de la foc.",
+        "imagine": "events/cercuri_pivnita_1.png",
+        "_nota": "Decis de autor: seara, Bram și Vale pun cercurile în pivniță.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ține butoiul drept. Eu bat cercul. Dacă se mișcă butoiul, se mișcă berea, iar dacă se mișcă berea, se supără Agnes.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lucrăm la lumina felinarului. Bram bate cercurile pe butoaie, unul câte unul, iar ciocanul lui sună înfundat, ca o inimă mare sub tavernă.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Gata. Ăstea țin până la nunta nepoților mei.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "N-aveți nepoți, domnule Bram.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Atunci țin o veșnicie.",
+        "urmator": "d1"
+      },
+      "d1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe scară se aud pași ușori. Agnes coboară cu câte o cană în fiecare mână, iar spuma berii noi îi curge pe degete.",
+        "imagine": "events/cercuri_pivnita_2.png",
+        "_nota": "Decis de autor: Agnes îi aduce lui Bram o cană din berea nouă, iar Bram se înroșește.",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Am auzit că a coborât cineva în pivnița mea fără să mă întrebe.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Prima cană din berea nouă. Pentru cel care mi-a salvat butoaiele.",
+        "urmator": "d4"
+      },
+      "d4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi întinde cana lui Bram. Bram o ia cu amândouă mâinile, ca pe ceva care s-ar putea sparge, și se face roșu până în vârful urechilor.",
+        "urmator": "d5"
+      },
+      "d5": {
+        "vorbitor": "fierar",
+        "emotie": "inrosit",
+        "text": "Eu... Vale a făcut... Adică, mulțumesc, doamna Agnes.",
+        "urmator": "d6"
+      },
+      "d6": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Agnes. De câte ori ți-am spus, Bram? Agnes.",
+        "urmator": "d7"
+      },
+      "d7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "A doua cană e pentru mine. O beau repede, ca să am un motiv să urc primul.",
+        "efecte": {
+          "stare": {
+            "cercuri_gata": "da"
           }
         }
       }

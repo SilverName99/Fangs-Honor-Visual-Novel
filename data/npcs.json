@@ -318,7 +318,10 @@
         }
       ],
       "dialog": "fierar",
-      "intrebareVorba": "Ce mai faceți, domnule Bram?"
+      "intrebareVorba": "Ce mai faceți, domnule Bram?",
+      "stariExtra": [
+        "inrosit"
+      ]
     },
     {
       "id": "hot",
