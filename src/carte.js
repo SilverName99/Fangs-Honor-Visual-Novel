@@ -88,10 +88,12 @@ export function creeazaCarte(parinte, joc) {
     if (!m) return cadru;
     const s = joc.stare;
     const st = s.misiuni[m.id];
-    const i = st === 'inceputa' ? pasul(s, m.id) : m.pasi.length;
+    // O misiune ratată arată doar pașii făcuți cu adevărat (refuzată de la început: niciunul), nu pe toți bifați
+    const i = st === 'terminata' ? m.pasi.length : pasul(s, m.id);
     pag.append(div('nume-carte titlu-misiune', m.titlu));
     if (m.dela) pag.append(div('dela-misiune', `De la: ${numeDela(m.dela)}`));
-    pag.append(div('descriere-carte', (m.descriere || '').replace(/^CIORNĂ:\s*/, '')));
+    // Și descrierea poate depinde de ce a ales Vale (o listă { conditii, text }: la un refuz, nu mai zice „i-am promis”)
+    pag.append(div('descriere-carte', (textPotrivit(m.descriere, s) || '').replace(/^CIORNĂ:\s*/, '')));
     const pasi = div('pasi-misiune');
     // Pașii făcuți sunt bifați, pasul de acum e scris clar (cu cât ai strâns); cei de după nu se văd încă
     m.pasi.forEach((p, k) => {

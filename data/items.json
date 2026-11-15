@@ -449,6 +449,13 @@
       "pret": 0,
       "descriere": "O alifie verzuie de la Bătrâna Morwen, care miroase a mușețel și a fum. Pentru rana lui Ember.",
       "_nota": "Misiunea Kaiei „Rana lui Ember” (decis de autor)."
+    },
+    "papusa_lina": {
+      "nume": "Păpușa Linei",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Păpușa de cârpă a Linei, cu rochiță albastră și păr de lână. A făcut-o Marta, mama ei.",
+      "_nota": "Misiunea Miriamei „Păpușa Linei” (decis de autor). Un singur obiect, ruptă sau cusută: starea o ține misiunea."
     }
   }
 }

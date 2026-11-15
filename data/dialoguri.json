@@ -2455,6 +2455,76 @@
         "text": "Unchiul se ridică din genunchi și se sprijină de spătarul băncii. Se uită la altar, apoi la mine, apoi iar la altar. Nu l-am văzut niciodată speriat. Nici măcar în fața orcilor.",
         "urmator": "cina_i4",
         "_nota": "Decis de autor: la biserică, alt gând decât cana din tavernă."
+      },
+      "papusa_m1": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Ia să văd...",
+        "_nota": "CIORNĂ (Claude): misiunea Miriamei „Păpușa Linei” (decis de autor).",
+        "urmator": "papusa_m2"
+      },
+      "papusa_m2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama întoarce păpușa pe toate părțile, cu degetele ei care știu fiecare cusătură.",
+        "urmator": "papusa_m3"
+      },
+      "papusa_m3": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "A cui e?",
+        "urmator": "papusa_m4"
+      },
+      "papusa_m4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "A Linei, sora lui Finn. Mama ei n-are nici ac, nici ață. Orcii au luat tot.",
+        "urmator": "papusa_m5"
+      },
+      "papusa_m5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Sărmana fată... Las-o la mine. Brațul ăsta cere lumină bună și mâini odihnite: îl cos mâine, la fereastră. Vino mâine să o iei.",
+        "efecte": {
+          "daObiect": "papusa_lina",
+          "stare": {
+            "papusa_la_miriam": "da"
+          },
+          "marcheaza": "papusa_data"
+        },
+        "_nota": "Decis de autor: Miriam o repară a doua zi."
+      },
+      "papusa_m_unde": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama coase la amiază, în camera ei. Atunci îi duc păpușa Linei."
+      },
+      "papusa_m_maine": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mâine, Vale. Brațul ăsta cere lumină bună și mâini odihnite."
+      },
+      "papusa_m_unde2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama coase la amiază, în camera ei. Atunci găsesc și păpușa Linei."
+      },
+      "papusa_m_gata": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Chiar acum o termin. Stai puțin lângă mine.",
+        "alegeri": [
+          {
+            "text": "Mă așez lângă tine.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "miriam_papusa"
+            }
+          }
+        ]
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -6693,6 +6763,38 @@
     "meniu": true,
     "start": [
       {
+        "_nota": "Misiunea „Păpușa Linei”: în ziua refuzului, Lina e supărată.",
+        "nod": "papusa_refuz_azi",
+        "conditii": {
+          "marcatAzi": "papusa_refuz"
+        }
+      },
+      {
+        "_nota": "Misiunea „Păpușa Linei”: Lina plânge în fața casei, până vorbește Vale cu ea despre păpușă.",
+        "nod": "papusa_salut",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_mama": "terminata"
+          },
+          "nu": {
+            "existaStare": "papusa"
+          }
+        }
+      },
+      {
+        "_nota": "Cât păpușa e la Miriam (sau încă la Vale, până o duce): Lina încă așteaptă.",
+        "nod": "papusa_astept",
+        "conditii": {
+          "misiune": {
+            "miriam_papusa": "inceputa"
+          },
+          "nu": {
+            "existaStare": "papusa_cusuta"
+          }
+        }
+      },
+      {
         "nod": "salut_coliba",
         "conditii": {
           "loc": "coliba/interior"
@@ -6763,6 +6865,52 @@
         "emotie": "normal",
         "text": "Vale! Mă joc de-a cavalerii. Eu sunt cavalerul, iar găinile sunt orcii!",
         "_nota": "CIORNĂ (Claude). Afară, 10–14."
+      },
+      "papusa_salut": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Vale...",
+        "_nota": "Decis de autor: după „Mama lui Finn”, Lina, în fața casei (10–14), plânge cu păpușa ruptă."
+      },
+      "papusa_oferta": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Păpușa mea... S-a rupt.",
+        "alegeri": [
+          {
+            "text": "Arată-mi.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "papusa_lina"
+            }
+          }
+        ]
+      },
+      "papusa_refuz_azi": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Nu mai vreau să mă joc azi.",
+        "_nota": "În ziua în care Vale a refuzat s-o ajute, Lina e supărată."
+      },
+      "papusa_astept": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "A cusut-o mama ta? Nu încă? Bine... Încă aștept. Dar spune-i că dorm cu ea în fiecare noapte, să nu-i fie frică singură acolo.",
+        "_nota": "Decis de autor: cât păpușa e la Miriam, Lina îi spune lui Vale că încă așteaptă."
+      },
+      "papusa_l_gata": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Păpușa mea!",
+        "alegeri": [
+          {
+            "text": "Uite-o.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "papusa_lina_bucurie"
+            }
+          }
+        ]
       }
     },
     "vorbeste": [
@@ -6786,6 +6934,223 @@
         }
       }
     ]
+  },
+  "papusa_lina": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Păpușa Linei” (decis de autor): Lina și-a rupt păpușa cât se juca; peste prima imagine, Vale alege s-o ducă la mama lui sau refuză (atunci misiunea e ratată, fără +1).",
+    "grup": "Păpușa Linei",
+    "partener": "sora_finn",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Mă jucam cu ea de-a cavalerii... și i s-a rupt mâna.",
+        "imagine": "events/papusa_lina_1.png",
+        "_nota": "Decis de autor: Lina plângând, cu păpușa ruptă (s-a rupt cât se juca).",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lina îmi întinde păpușa: o păpușă de cârpă, cu rochiță albastră și păr de lână. Brațul îi atârnă de un fir, iar prin cusătura desfăcută iese umplutura, paie și lână.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Mama mi-a făcut-o când eram mică. Dar acum n-are nici ac, nici ață. Orcii au luat tot.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Și Finn nu știe să coasă. A încercat o dată și și-a cusut mâneca de pantaloni.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la mama, la fereastră, cu acul în mână. N-am văzut încă ruptură pe care ea să n-o poată coase.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Tu știi pe cineva care coase?",
+        "alegeri": [
+          {
+            "text": "O duc la mama mea. Ea coase cel mai frumos din sat.",
+            "spre": "b1",
+            "efecte": {
+              "misiune": {
+                "miriam_papusa": "inceputa"
+              },
+              "stare": {
+                "papusa": "acceptat"
+              },
+              "obiect": "papusa_lina"
+            }
+          },
+          {
+            "text": "N-am timp acum, Lina.",
+            "spre": "r1",
+            "efecte": {
+              "misiune": {
+                "miriam_papusa": "ratata"
+              },
+              "stare": {
+                "papusa": "refuzat"
+              },
+              "marcheaza": "papusa_refuz"
+            }
+          }
+        ],
+        "_nota": "Decis de autor: dacă Vale o duce la mama lui, Miriam primește +1 la final; refuzul închide misiunea, fără +1 (ca la „Cărțile”)."
+      },
+      "b1": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Pe bune? Și o să fie ca nouă?",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mai frumoasă decât nouă. Mama mi-a cusut toate jucăriile când eram mic.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Atunci ai grijă de ea pe drum. Îi e frică de orci."
+      },
+      "r1": {
+        "vorbitor": "sora_finn",
+        "emotie": "suparat",
+        "text": "Bine...",
+        "urmator": "r2"
+      },
+      "r2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lina strânge păpușa la piept și intră în casă, fără să mai spună nimic. Ușa se închide încet în urma ei."
+      }
+    }
+  },
+  "miriam_papusa": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Păpușa Linei” (decis de autor): a doua zi, Miriam coase păpușa la fereastră, peste o imagine, și își amintește cum îi cârpea lui Vale jucăriile când era mic.",
+    "grup": "Păpușa Linei",
+    "partener": "miriam",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama stă la fereastră, cu păpușa în poală. Acul îi zboară printre degete: un punct, încă unul, iar brațul se prinde la loc de umăr, de parcă nici n-ar fi fost rupt.",
+        "imagine": "events/papusa_lina_2.png",
+        "_nota": "Decis de autor: Miriam coase păpușa la fereastră.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Când erai mic, aveai un cal de lemn. Ți-l cioplise tatăl tău, iar tu i-ai rupt coada chiar a doua zi.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Ai plâns o zi întreagă. Seara ți-am cusut o coadă nouă, din lâna mea de la fus. Ai dormit cu calul ăla în brațe până la zece ani.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Îmi amintesc. Era cea mai frumoasă coadă din tot satul.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Era singura lână pe care o aveam.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama rupe ața cu dinții, cum a făcut-o mereu, și netezește rochița păpușii cu palma. Pe umăr i-a pus un petic albastru, rotund, ca un scut mic.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Gata. Spune-i Linei că acum are și păpușa ei un scut. Și spune-i mamei ei că, dacă are nevoie de ac și de ață, să trimită la mine.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mi-a făcut bine, Vale. De mult n-am mai cusut ceva care să facă pe cineva fericit.",
+        "efecte": {
+          "obiect": "papusa_lina",
+          "stare": {
+            "papusa_cusuta": "da"
+          }
+        }
+      }
+    }
+  },
+  "papusa_lina_bucurie": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Păpușa Linei” (decis de autor): Vale îi duce păpușa înapoi, peste o imagine; Lina o strânge în brațe; +1 la Miriam (recompensa misiunii).",
+    "grup": "Păpușa Linei",
+    "partener": "sora_finn",
+    "start": "e1",
+    "noduri": {
+      "e1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lina îmi smulge păpușa din mână și o strânge în brațe atât de tare, că mă tem să nu se descoasă din nou.",
+        "imagine": "events/papusa_lina_3.png",
+        "_nota": "Decis de autor: Lina fericită, cu păpușa în brațe.",
+        "urmator": "e2"
+      },
+      "e2": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Are un scut! Uite, Vale, are un scut pe umăr!",
+        "urmator": "e3"
+      },
+      "e3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mama zice că acum e și ea cavaler.",
+        "urmator": "e4"
+      },
+      "e4": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Atunci de azi o cheamă Cavalerița Petic! Mulțumește-i mamei tale din partea mea. Și din partea ei.",
+        "urmator": "e5"
+      },
+      "e5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lina fuge să i-o arate lui Finn, cu păpușa ridicată deasupra capului, ca pe un steag.",
+        "efecte": {
+          "daObiect": "papusa_lina",
+          "stare": {
+            "papusa_inapoi": "da"
+          }
+        }
+      }
+    }
   },
   "contrabandist": {
     "_nota": "CIORNĂ (Claude). Contrabandistul de la Marginea satului (Jarek, decis de autor). Decis de autor: apare doar în cocioaba lui, după ce Vale așteaptă 30 de minute pe scăunel (18–02).",

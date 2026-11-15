@@ -1243,6 +1243,42 @@
       },
       "dialog": "kaia_wyverni_povestea",
       "_nota": "Decis de autor: dacă Vale n-a mers cu ea, a doua zi Kaia îi povestește ce a văzut (fără +1)."
+    },
+    {
+      "id": "papusa_lina",
+      "nume": "Păpușa Linei: s-a rupt",
+      "grup": "Păpușa Linei",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "papusa_lina",
+      "_nota": "Decis de autor: Lina plânge cu păpușa ruptă; Vale o duce la mama lui sau refuză."
+    },
+    {
+      "id": "miriam_papusa",
+      "nume": "Păpușa Linei: Miriam o coase",
+      "grup": "Păpușa Linei",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "miriam_papusa",
+      "_nota": "Decis de autor: a doua zi, Miriam coase păpușa la fereastră."
+    },
+    {
+      "id": "papusa_lina_bucurie",
+      "nume": "Păpușa Linei: înapoi la Lina",
+      "grup": "Păpușa Linei",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "papusa_lina_bucurie",
+      "_nota": "Decis de autor: Lina strânge păpușa în brațe; +1 la Miriam."
     }
   ]
 }

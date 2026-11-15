@@ -192,6 +192,118 @@
       }
     },
     {
+      "id": "miriam_papusa",
+      "titlu": "Păpușa Linei",
+      "dela": "sora_finn",
+      "dialog": "sora_finn",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "papusa": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Lina, sora mică a lui Finn, și-a rupt păpușa de cârpă cât se juca. Mi-a cerut ajutorul, dar i-am spus că n-am timp."
+        },
+        "CIORNĂ: Lina, sora mică a lui Finn, și-a rupt păpușa de cârpă cât se juca. I-a făcut-o mama ei, dar Marta n-are acum nici ac, nici ață: orcii au luat tot. I-am promis că o duc la mama mea, care coase cel mai frumos din sat."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: misiunea a 3-a a Miriamei (+1 la ea), după „Mama lui Finn”, când Lina se joacă în fața casei (10–14).",
+        "text": "Ce s-a întâmplat, Lina? De ce plângi?",
+        "nod": "papusa_oferta",
+        "conditii": {
+          "misiune": {
+            "finn_mama": "terminata"
+          },
+          "loc": "casa_finn"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îi duc păpușa mamei",
+          "la": "miriam",
+          "gata": {
+            "existaStare": "papusa_la_miriam"
+          },
+          "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, poți să cârpești păpușa asta?",
+            "nod": "papusa_m1",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre păpușa Linei...",
+            "nod": "papusa_m_unde"
+          }
+        },
+        {
+          "text": "Iau păpușa de la mama, a doua zi",
+          "la": "miriam",
+          "gata": {
+            "existaStare": "papusa_cusuta"
+          },
+          "sfat": "Mama o coase mâine, la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, ai cusut păpușa?",
+            "nod": "papusa_m_gata",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              },
+              "nu": {
+                "marcatAzi": "papusa_data"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre păpușa Linei...",
+            "nod": [
+              {
+                "nod": "papusa_m_maine",
+                "conditii": {
+                  "marcatAzi": "papusa_data"
+                }
+              },
+              {
+                "nod": "papusa_m_unde2"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Îi duc Linei păpușa cusută",
+          "gata": {
+            "existaStare": "papusa_inapoi"
+          },
+          "sfat": "Lina e acasă dimineața și seara, în fața casei la amiază (10–14) și la Bătrâna Morwen după-amiaza (14–18).",
+          "predare": {
+            "text": "Uite-o, Lina. Ca nouă!",
+            "nod": "papusa_l_gata",
+            "conditii": {
+              "areObiect": "papusa_lina"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1: s-a bucurat că a putut ajuta.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: misiunea a 3-a a Miriamei. Lina și-a rupt păpușa cât se juca; Vale o duce la Miriam (11–14, în camera ei), care o coase a doua zi, peste o imagine; apoi i-o duce Linei, peste o imagine; +1 la Miriam. Refuzul închide misiunea, fără +1. Cât păpușa e la Miriam, Lina spune că încă așteaptă."
+    },
+    {
       "id": "bram_fier",
       "titlu": "Fierul lui Bram",
       "dela": "fierar",
@@ -1506,7 +1618,17 @@
       "titlu": "Cărțile",
       "dela": "mag",
       "dialog": "elian_carti",
-      "descriere": "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian mi le-a dat să le ascund și m-a pus să promit că nu ies, orice s-ar întâmpla.",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "carti_elian": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian m-a rugat să le ascund, dar l-am refuzat."
+        },
+        "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian mi le-a dat să le ascund și m-a pus să promit că nu ies, orice s-ar întâmpla."
+      ],
       "pasi": [
         {
           "text": "Ascund cărțile lui Elian de colector",

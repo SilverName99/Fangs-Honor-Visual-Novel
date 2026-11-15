@@ -90,7 +90,8 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 **Miriam (mama)**
 1. ✅ **Acoperișul**: dimineața (până la 11), cât mama e în bucătărie. Acoperișul trebuie să fie încă stricat.
 2. ✅ **Cina în familie**: după „Locul unde a căzut tata” (Roderick), dimineața, cât mama e în bucătărie.
-3. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
+3. ✅ **Păpușa Linei**: după „Mama lui Finn”, la Lina, când se joacă în fața casei (10–14): „Ce s-a întâmplat, Lina? De ce plângi? !”.
+4. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
@@ -145,7 +146,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
 | Personaj | De unde vine +1 | Acum |
 |---|---|---|
-| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · 💡 încă 8 (la 8/10: misiunea specială, echipamentul tatălui) | 2 / 10 |
+| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · 💡 încă 7 (la 8/10: misiunea specială, echipamentul tatălui) | 3 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · 📝 Cheia cufărului · 📝 Platoșa tatălui · 💡 încă 5 | 3 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
@@ -225,6 +226,26 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Imaginile:** `events/miriam_cina_1.png`, `_2`, `_3`.
 
 **Cum verifici:** după „Locul”, F2 → „Ziua următoare”, „Dimineață”, Mergi la bucătărie → mama → „ai găsit crenguța?” → Roderick (15:00, tavernă) → seara, 19:00, bucătărie → mama → „Mamă, vine unchiul?”.
+
+### ✅ Păpușa Linei
+- **Pornește** (decis de autor): după „Mama lui Finn”, când Lina se joacă în fața casei (10–14). Lina plânge („Vale...”) → „Ce s-a întâmplat, Lina? De ce plângi? !” → „Arată-mi.”.
+- **Peste prima imagine** (decis de autor): păpușa de cârpă s-a rupt cât se juca Lina cu ea; brațul îi atârnă de un fir și iese umplutura. I-a făcut-o Marta, dar acum n-are nici ac, nici ață: orcii au luat tot. Alegi:
+  - „O duc la mama mea. Ea coase cel mai frumos din sat.”: misiunea pornește, iar păpușa intră la obiectele de poveste;
+  - „N-am timp acum, Lina.”: misiunea e ratată, fără +1 (ca la „Cărțile”). Lina intră în casă, iar în ziua aceea e supărată.
+- **Pasul 1:** la mama, cât coase în camera ei (11–14): „Mamă, poți să cârpești păpușa asta? ?”. Mama o ia și o coase **a doua zi** (decis de autor), la lumină bună. Cât păpușa e la mama, Lina îți spune că încă așteaptă (decis de autor).
+- **Pasul 2:** a doua zi, tot 11–14, în camera ei: „Mamă, ai cusut păpușa? ?” → „Mă așez lângă tine.” → **peste o imagine** (decis de autor), mama o coase la fereastră și își amintește cum îi cârpea lui Vale jucăriile când era mic (calul de lemn cioplit de Edwin, cu coada de lână). Pe umărul păpușii pune un petic rotund, ca un scut.
+- **Pasul 3:** la Lina, oriunde e: „Uite-o, Lina. Ca nouă! ?” → „Uite-o.” → **peste o imagine** (decis de autor), Lina o strânge în brațe; o botează „Cavalerița Petic”.
+- **Recompensa** (decis de autor): încrederea Miriamei **+1**, pentru că s-a bucurat că a putut ajuta.
+
+**Imagini:** `events/papusa_lina_1.png` (Lina plângând, cu păpușa ruptă), `events/papusa_lina_2.png` (Miriam cosând păpușa la fereastră), `events/papusa_lina_3.png` (Lina fericită, cu păpușa în brațe), galeria: „Păpușa Linei”; iconița `items/papusa_lina.png` (o singură păpușă, ruptă sau cusută).
+
+**Cum verifici**
+1. Termină „Mama lui Finn”. Ora 10:30 → Marginea satului → casa lui Finn (afară): Lina plânge → „Ce s-a întâmplat, Lina?” → „Arată-mi.” → imaginea → „O duc la mama mea.”.
+2. Vorbește iar cu Lina: „Încă aștept.”
+3. Ora 12:00 → acasă → camera mamei → mama → „Mamă, poți să cârpești păpușa asta?”. Aceeași zi, „Despre păpușa Linei...” → „Mâine, Vale.”
+4. „Ziua următoare” → 12:00 → camera mamei → „Mamă, ai cusut păpușa?” → imaginea → păpușa e iar la tine.
+5. La Lina (afară 10–14 sau la colibă 14–18) → „Uite-o, Lina. Ca nouă!” → imaginea → +1 la mama.
+6. Refuzul: F2 → Misiune: „Păpușa Linei” → „Resetează” (revine la alegere) → „N-am timp acum, Lina.” → în carte, misiunea e „Ratată”.
 
 ### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
 - Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
