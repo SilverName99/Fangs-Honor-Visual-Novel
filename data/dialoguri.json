@@ -12,7 +12,7 @@
       },
       "miriam": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Negustorul cere de două ori cât valorează cartofii ăștia. Dar încă n-a aflat cât de încăpățânată pot să fiu."
       }
     },
@@ -77,7 +77,7 @@
       },
       "tata": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Mai încăpățânat ca tine. Și mai bun decât mine la toate... mai puțin la băut. Hai, lasă trecutul. Nu-l mai aduce nimeni înapoi."
       },
       "salut1": {
@@ -155,7 +155,7 @@
       },
       "ho4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Scrisul ăsta îl știu. Am stat de strajă cu el douăzeci de ierni. Și tot nu i-am putut citi niciodată scrisul ca lumea.",
         "urmator": "ho5"
       },
@@ -269,20 +269,20 @@
       },
       "lum_b4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Lasă. La vârsta ta, nici eu n-aș fi sărit. Ba aș fi sărit... și uite unde m-a adus.",
         "urmator": "lum_c1"
       },
       "lum_c1": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Pe treapta de sus a altarului stau înșirate cioturi de lumânări arse până la capăt. Multe. Le număr fără să vreau: douăzeci și trei.",
         "urmator": "lum_c2"
       },
       "lum_c2": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiule... cum a murit tata? Mama nu vorbește niciodată despre asta. Nici tu.",
         "urmator": "lum_c3"
       },
@@ -295,7 +295,7 @@
       },
       "lum_c4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Ce vrei să-ți spun, băiete? Că a murit ca un erou? Toți mor la fel. În noroi, strigându-și mama.",
         "urmator": "lum_c5"
       },
@@ -314,7 +314,7 @@
       },
       "lum_c7": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Vezi lumânările astea? În fiecare zi aprind câte una pentru fiecare om care a căzut atunci. Douăzeci și trei. De o săptămână n-am mai avut ce să aprind.",
         "urmator": "lum_c8"
       },
@@ -332,7 +332,7 @@
       },
       "lum_c10": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Adu-mi lumânări, și într-o seară le aprindem împreună. Poate atunci... poate atunci găsesc cuvintele.",
         "alegeri": [
           {
@@ -351,7 +351,7 @@
       },
       "lum_da": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "...Mulțumesc, Vale. Și spune-i fermierului pentru cine sunt. O să înțeleagă."
       },
       "lum_f1": {
@@ -413,13 +413,13 @@
       },
       "lum_e2": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Pentru cei douăzeci și trei...",
         "urmator": "lum_e3"
       },
       "lum_e3": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Îl văd pe Roderick în fiecare zi, la altar. Se roagă ca un om care nu mai crede că e auzit.",
         "urmator": "lum_e4"
       },
@@ -584,7 +584,7 @@
       "antr_v4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "„Ca lumea.” De la unchiul, asta e aproape o laudă.",
         "urmator": "antr_v5"
       },
@@ -768,7 +768,7 @@
     "noduri": {
       "prezentare": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ia te uită, Vale Lightfinder! De când n-ai mai trecut pragul meu? Stai jos, că aici nu mușcă nimeni... în afară de bere, poate.",
         "efecte": {
           "stare": {
@@ -796,7 +796,7 @@
       },
       "prezentare_final": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Cu lingușeli nu primești reducere. Dar zâmbetul ți-l primesc."
       },
       "barfa": {
@@ -811,7 +811,7 @@
       },
       "salut2": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Iar tu? Stai jos, că nu te mușc. Ce-ți aduc?"
       },
       "a_obosita": {
@@ -841,7 +841,7 @@
       "co4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "În ziua aceea. Ziua în care a căzut și tata.",
         "urmator": "co5"
       },
@@ -980,7 +980,7 @@
       },
       "bo_da": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Atunci pregătesc ceaunul. De mult n-am mai avut un motiv să-l scot."
       },
       "bere_indiciu": {
@@ -996,7 +996,7 @@
       },
       "bp2": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ia te uită! Hai jos în pivniță, că azi facem bere ca lumea.",
         "alegeri": [
           {
@@ -1020,7 +1020,7 @@
       },
       "metal_hangita": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ce metal să am eu, dragule? Oalele mele și cana din care bei."
       },
       "cer_o1": {
@@ -1051,7 +1051,7 @@
       },
       "cer_o5": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Bram... Nu. Nu vreau să-l rog. Orcii îi numără fierul, Vale. Dacă află că a bătut cercuri pentru mine, îi iau și ce i-a mai rămas. Nu vreau să aibă necazuri din cauza mea.",
         "_nota": "Decis de autor: alt motiv decât o datorie; ales de Claude: îi e frică să nu pățească el ceva din cauza ei.",
         "urmator": "cer_o6"
@@ -1065,7 +1065,7 @@
       },
       "cer_o7": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Dacă l-ai întreba tu... așa, din partea ta. Nu din partea mea.",
         "alegeri": [
           {
@@ -1085,7 +1085,7 @@
       },
       "cer_da": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Și să nu-i spui că te-am trimis eu! ...Deși o să-și dea seama."
       },
       "cer_nu": {
@@ -1095,12 +1095,12 @@
       },
       "cer_ind": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Bram a zis ceva? ...Nu că m-ar interesa. Mă interesează butoaiele."
       },
       "cer_cercuri": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Cercurile vechi? Le-am strâns de azi-dimineață. Știam eu că o să vină vorba de ele.",
         "efecte": {
           "obiect": "cercuri_vechi",
@@ -1111,12 +1111,12 @@
       },
       "cer_seara": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Diseară? Atunci las ușa pivniței deschisă. Și pun deoparte o cană din berea nouă."
       },
       "a_dupa_cercuri": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Bram a trecut azi la prânz. A mâncat de două ori. Cred că i-a plăcut berea."
       }
     },
@@ -1223,13 +1223,13 @@
       },
       "d": {
         "vorbitor": "vale",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vanatoare",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
         "urmator": "f"
       },
@@ -1383,7 +1383,7 @@
       },
       "salut2": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Te-am auzit de departe. Calci ca un urs, Vale."
       },
       "k_vanat_a": {
@@ -1676,7 +1676,7 @@
       },
       "soim_oferta": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Stai. Lângă foc e loc destul pentru doi. Și pentru un tigru leneș.",
         "alegeri": [
           {
@@ -1700,7 +1700,7 @@
       },
       "soim_inapoi": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Te-am auzit de la marginea luminișului. Tot ca un urs.",
         "_nota": "Salutul de după cele două zile, până îi spune lui Vale ce a hotărât."
       },
@@ -1713,7 +1713,7 @@
       },
       "soim_r2": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "La început m-am supărat pe tine. Mi se părea prea ușor de spus. Apoi am înțeles că mă supăram doar pentru că aveai dreptate.",
         "urmator": "soim_c1"
       },
@@ -1732,20 +1732,20 @@
       },
       "soim_p3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Cine face așa ceva e un om lângă care merită să rămâi.",
         "urmator": "soim_c1"
       },
       "soim_c1": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Rămân, Vale. Eu și Ember.",
         "urmator": "soim_c2"
       },
       "soim_c2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ember se freacă de umărul meu cu capul lui cât un butoi, de mă clatină. Parcă știa de mult.",
         "urmator": "soim_c3"
       },
@@ -1764,7 +1764,7 @@
       },
       "soim_c5": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Străjerii înțeleg pădurile. Pe mine mă înțeleg mai greu.",
         "urmator": "soim_c6"
       },
@@ -1982,7 +1982,7 @@
     "noduri": {
       "a": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ia uite cine-mi sperie vânatul. Pășești ca un urs cu cizme noi, Vale.",
         "urmator": "b"
       },
@@ -2000,13 +2000,13 @@
       },
       "d": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Încă îmi dai ordine, după atâția ani?",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Cineva trebuie s-o facă. Hai, înainte să ne miroasă."
       }
     }
@@ -2471,7 +2471,7 @@
       },
       "multumesc": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Știam eu că pot conta pe tine. Tatăl tău zicea că lemnul bun e la marginea pădurii, unde bate soarele."
       },
       "suparata": {
@@ -2491,12 +2491,12 @@
       },
       "d3": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Când erai mic, te ascundeai sub masa asta de fiecare dată când tuna. Acum abia mai încapi pe ușă."
       },
       "cina": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Stai jos, cina e aproape gata. Nu e mult, dar e caldă. Și e a noastră."
       },
       "salut1": {
@@ -2528,7 +2528,7 @@
       "acoperis_predare": {
         "_nota": "CIORNĂ: Vale aduce lemnele; urmează imaginea cu reparația (evenimentul acoperis_reparat), apoi mama îi mulțumește.",
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Doamne, chiar le-ai adus pe toate. Ai grijă pe scară, să nu-mi dai emoții. Eu îți țin cuiele.",
         "alegeri": [
           {
@@ -2654,26 +2654,26 @@
       },
       "cina_o3": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "De unde ai crenguța asta?",
         "urmator": "cina_o4"
       },
       "cina_o4": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "De la copacul de dincolo de gard. Unchiul Roderick m-a dus acolo. Mi-a arătat unde a căzut tata.",
         "urmator": "cina_o5"
       },
       "cina_o5": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Mama nu spune nimic multă vreme. Își trece degetul peste o frunză, încet, ca peste o față.",
         "urmator": "cina_o6"
       },
       "cina_o6": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Copacul nostru. Sub el mi-a cerut tatăl tău să-i fiu nevastă. Era tot toamnă, și frunzele erau la fel de aurii.",
         "urmator": "cina_o7"
       },
@@ -2685,7 +2685,7 @@
       },
       "cina_o8": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Mi-a fost mai ușor să fiu supărată pe el decât să fiu tristă. Nu e drept, știu.",
         "urmator": "cina_o9"
       },
@@ -2711,7 +2711,7 @@
       },
       "cina_da": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pun fasolea la înmuiat. Și scot fața de masă cea bună."
       },
       "cina_nu": {
@@ -2740,19 +2740,19 @@
       },
       "cina_i4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "...Și ce să duc? Nu pot să vin cu mâna goală la masa fratelui meu.",
         "urmator": "cina_i5"
       },
       "cina_i5": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vino doar tu. Bărbierit, dacă se poate.",
         "urmator": "cina_i6"
       },
       "cina_i6": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ha! Bine, băiete. Bărbierit.",
         "efecte": {
           "stare": {
@@ -2768,7 +2768,7 @@
       },
       "cina_iv2": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "După tot ce ți-am povestit acolo, la copac? Ai avut dreptate să-mi spui ce mi-ai spus, băiete.",
         "urmator": "cina_iv3"
       },
@@ -2801,7 +2801,7 @@
       },
       "cina_ind": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Diseară, după ce se întunecă. Am pus deja fasolea la fiert. Dacă întârzie, mi-l aduci de ureche."
       },
       "cina_ib1": {
@@ -2882,7 +2882,7 @@
       },
       "papusa_m_gata": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Chiar acum o termin. Stai puțin lângă mine.",
         "alegeri": [
           {
@@ -3377,7 +3377,7 @@
       },
       "cer_b2": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Ți-a zis ea să vii?",
         "urmator": "cer_b3"
       },
@@ -3390,7 +3390,7 @@
       "cer_b4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Bram se scarpină în barbă și se uită în altă parte. Pentru prima dată de când îl știu, fierarul nu știe ce să facă cu mâinile.",
         "urmator": "cer_b5"
       },
@@ -3402,13 +3402,13 @@
       },
       "cer_b6": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Și... cum o duce? Agnes, adică. Cu pivnița și cu toate.",
         "urmator": "cer_b7"
       },
       "cer_b7": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "E bine. Doar butoaiele ei nu.",
         "urmator": "cer_b8"
       },
@@ -3446,7 +3446,7 @@
       },
       "cer_b_ind_seara": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "inrosit",
         "text": "Diseară, după zece, în pivnița lui Agnes. Și... pune-ți o cămașă curată. Adică, nu tu. Lasă."
       },
       "b_dupa_cercuri": {
@@ -3566,63 +3566,63 @@
       },
       "cuf_p1": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Le-ai văzut.",
         "urmator": "cuf_p2"
       },
       "cuf_p2": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Douăzeci și două de săbii, domnule Bram.",
         "urmator": "cuf_p3"
       },
       "cuf_p3": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Le-am strâns a doua zi după bătălie, înainte să răsară soarele. Orcii încă își numărau morții, în partea cealaltă a câmpului.",
         "urmator": "cuf_p4"
       },
       "cuf_p4": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Le-am cărat câte patru odată, până aici. Am mers de șase ori. La ultimul drum nu-mi mai simțeam brațele.",
         "urmator": "cuf_p5"
       },
       "cuf_p5": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Sabia tatei nu e printre ele.",
         "urmator": "cuf_p6"
       },
       "cuf_p6": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Știu. Am căutat-o până s-a luminat de-a binelea. Am răscolit cu mâinile toată iarba din jurul copacului. Nimic.",
         "_nota": "Ales de Claude: sabia lui Edwin lipsește din cufăr pentru că e la Miriam (echipamentul lui Edwin, decis de autor); indiciu pentru misiunea ei de la 8/10.",
         "urmator": "cuf_p7"
       },
       "cuf_p7": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Poate au luat-o orcii. Poate... Nu știu, băiete. Iartă-mă.",
         "urmator": "cuf_p8"
       },
       "cuf_p8": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Sabia tatei. Atâta vreme și n-am întrebat niciodată ce s-a întâmplat cu ea. Mi-a fost frică de răspuns.",
         "urmator": "cuf_p9"
       },
       "cuf_p9": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Nu le pot topi. Ar fi ca și cum i-aș îngropa a doua oară. Nu le pot da orcilor, să-și bată din ele topoare. Și nu le mai pot ține sub patul meu, cu colectorul la ușă.",
         "urmator": "cuf_p10"
       },
       "cuf_p10": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Am bătut fier toată viața. Și acum stau în fața a douăzeci și două de săbii și nu știu ce să fac cu ele.",
         "urmator": "cuf_p11"
       },
@@ -3834,7 +3834,7 @@
     "noduri": {
       "prezentare": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale Lightfinder. Mă bucur să te văd aici. Puțini mai trec pragul bisericii de când au venit orcii.",
         "efecte": {
           "stare": {
@@ -3850,7 +3850,7 @@
       },
       "prezentare_final": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Știu. Se roagă pentru tatăl tău. Și pentru tine, cred. Spune-i că lumânarea ei arde mereu cel mai frumos."
       },
       "lumina": {
@@ -3865,7 +3865,7 @@
       },
       "trecut": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Atunci treci mai des. Biserica asta are nevoie de mai mulți oameni care „doar trec”."
       },
       "salut1": {
@@ -3965,7 +3965,7 @@
       "ierburi_predare": {
         "_nota": "CIORNĂ: recompensa (decis de autor): încredere +1 și două pansamente.",
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Exact ele! Vezi punctele din frunze? Din astea fac o alifie care închide rănile de două ori mai repede. Ia și tu două pansamente: cine umblă prin pădure are nevoie de ele. Și dacă mai dai de ea, adu-mi câte trei fire: îți fac oricând un pansament din ele.",
         "efecte": {
           "consuma": {
@@ -3985,7 +3985,7 @@
       },
       "e_carti_da": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Burta încă mă doare când râd. Dar cărțile sunt la locul lor. Și asta contează."
       },
       "e_carti_nu": {
@@ -4058,7 +4058,7 @@
       },
       "sec_o6": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Douăzeci și două.",
         "urmator": "sec_o7"
       },
@@ -4323,7 +4323,7 @@
     "noduri": {
       "a": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am auzit ciocanul toată ziua... Nu mai picură nimic lângă vatră. În noaptea asta dormim fără găleată lângă pat. Mulțumesc, Vale."
       }
     }
@@ -4589,7 +4589,7 @@
     "noduri": {
       "a": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Nu te-ai prostit, Vale. Lupta nu ți-a uitat-o mâna.",
         "urmator": "b"
       },
@@ -4601,13 +4601,13 @@
       },
       "c": {
         "vorbitor": "vale",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vanatoare",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
         "urmator": "e"
       },
@@ -4645,13 +4645,13 @@
       },
       "c": {
         "vorbitor": "vale",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vanatoare",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
         "urmator": "e"
       },
@@ -4974,25 +4974,25 @@
       },
       "b": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Lovește ca taică-său. Cu capul înainte, fără să se gândească. Dar lovește.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am avut de la cine învăța, unchiule. Nici tu n-ai stat deoparte.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Eu n-am pe nimeni acasă, băiete. Tu ai o mamă care te așteaptă. Să nu uiți asta data viitoare.",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru ce-ați făcut, masa e din partea casei. Mănâncă, bea, și ia și astea la drum. Nu primesc niciun refuz.",
         "efecte": {
           "seteazaNevoi": {
@@ -5027,7 +5027,7 @@
       "h": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru prima dată după mult timp, unchiul Roderick se uită la mine. Nu prin mine, ca până acum. La mine."
       }
     },
@@ -5097,13 +5097,13 @@
     "noduri": {
       "a": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Nu-i rău, Vale. Ai ținut pasul. Și n-ai călcat pe nicio cracă... aproape.",
         "urmator": "b"
       },
       "b": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am avut o învățătoare bună.",
         "urmator": "c"
       },
@@ -5401,7 +5401,7 @@
       "e2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Căprioara se ridică, șchiopătând. Se uită o clipă la noi, apoi sare peste izvor și dispare printre copaci.",
         "urmator": "e3",
         "imagine": "events/kaia_capcane_eliberata.png",
@@ -5409,13 +5409,13 @@
       },
       "e3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Străjerii zic că pădurea ține minte cine o ajută.",
         "urmator": "e4"
       },
       "e4": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Eu țin minte sigur.",
         "urmator": "g",
         "efecte": {
@@ -5440,13 +5440,13 @@
       },
       "f2": {
         "vorbitor": "vanatoare",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Fierul orcilor a prins-o, iar tu i-ai terminat treaba.",
         "urmator": "f3"
       },
       "f3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Ia-ți carnea. Ai mâncare pentru câteva zile.",
         "urmator": "g",
         "efecte": {
@@ -5546,13 +5546,13 @@
       },
       "a8": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ții la el ca la un frate.",
         "urmator": "a9"
       },
       "a9": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mai mult. Pe un frate nu l-am găsit singur, într-o scorbură.",
         "urmator": "b"
       },
@@ -5574,21 +5574,21 @@
       },
       "b3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "L-am așteptat pe mama lui trei zile, ascunsă după un trunchi căzut. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
         "amintire": true,
         "urmator": "b4"
       },
       "b4": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "În a treia seară, puiul a ieșit din scorbură și s-a culcat lângă mine. Ca și cum ar fi hotărât el.",
         "amintire": true,
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "L-am dus acasă în brațe. Pe drum mi-a zgâriat tot obrazul, iar eu am râs până acasă.",
         "imagine": "events/kaia_amintire_2.png",
         "amintire": true,
@@ -5620,14 +5620,14 @@
       },
       "c3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Așa am făcut. L-am hrănit cu lapte de capră dintr-o cârpă, apoi cu carne mestecată de mine. Iar iarna am dormit cu el în brațe, lângă vatră.",
         "amintire": true,
         "urmator": "c4"
       },
       "c4": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Primul lui colț de lapte l-am găsit într-o dimineață, în blana pe care dormeam amândoi. Îl port și acum la gât.",
         "amintire": true,
         "urmator": "d",
@@ -5635,7 +5635,7 @@
       },
       "d": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "De atunci n-am mai fost despărțiți. Nici măcar o zi.",
         "trezire": true,
         "urmator": "d0",
@@ -5658,20 +5658,20 @@
       "d1b": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Tata nu mi-a povestit niciodată despre asta.",
         "urmator": "d2"
       },
       "d2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ember deschide un ochi, se uită lung la mine și mă împinge cu botul în palmă, ca o pisică uriașă.",
         "urmator": "d3"
       },
       "d3": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "I-ai ținut capul și nu ți-a fost frică. Ember ține minte asta. Și eu.",
         "efecte": {
           "daObiect": "alifie_ember",
@@ -5700,13 +5700,13 @@
       },
       "a2": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Morwen ar trebui să-și vândă alifiile pe bani. Ar ajunge mai bogată decât colectorul.",
         "urmator": "a3"
       },
       "a3": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Nu-i spune asta. O să-ți ceară câte un coș de flori pentru fiecare zgârietură.",
         "urmator": "a4"
       },
@@ -5907,7 +5907,7 @@
       },
       "e1": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Știam că o să spui asta. Și o parte din mine voia s-o audă.",
         "urmator": "e2"
       },
@@ -5939,7 +5939,7 @@
       "g2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Rămân singur lângă foc. Pentru prima dată, locul ăsta mi se pare prea mare."
       }
     }
@@ -6159,20 +6159,20 @@
       },
       "t9": {
         "vorbitor": "vanatoare",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Calci tot ca un urs.",
         "urmator": "t10"
       },
       "t10": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Un urs care se străduiește.",
         "urmator": "t11"
       },
       "t11": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "O aud pufnind în râs, încet, cu mâna la gură.",
         "urmator": "t12"
       },
@@ -6584,7 +6584,7 @@
       "a": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Camera miroase a praf și a ceară veche. Pe pat, o mantie de soldat împăturită, ca și cum stăpânul ei ar fi plecat doar până la colț.",
         "imagine": "events/agnes_camera_1.png",
         "urmator": "b"
@@ -6592,7 +6592,7 @@
       "b": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Cizmele tocite lângă ușă, o cană ciobită, o curea cu cataramă de fier. Poate că l-a cunoscut și tata. Poate au căzut unul lângă altul.",
         "urmator": "c"
       },
@@ -6681,7 +6681,7 @@
       },
       "n": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mulțumesc, Vale. Mi-ai luat o piatră de pe inimă. Camera e iar de închiriat. Pentru tine, oricând, la același preț ca pentru oricine. Nu mai mic, că doar n-am înnebunit.",
         "efecte": {
           "stare": {
@@ -6978,7 +6978,7 @@
       },
       "g": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mulțumesc, Vale. Încă o dată. Nu știu ce m-aș face fără tine.",
         "efecte": {
           "stare": {
@@ -7055,21 +7055,21 @@
       },
       "b": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mai încet cu mierea, Vale! Bere facem, nu turtă dulce.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "E prima dată de mult când o văd râzând.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Seara, taverna e plină. Miroase a bere proaspătă, iar cineva a scos de undeva o fluieră.",
         "imagine": "events/agnes_bere_2.png",
         "urmator": "e",
@@ -7079,7 +7079,7 @@
       },
       "e": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Prima cană e a ta. Ai muncit pentru ea.",
         "efecte": {
           "obiect": "bere"
@@ -7088,7 +7088,7 @@
       },
       "f": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru o seară, satul ăsta și-a amintit cum e să râdă. Mulțumesc, Vale.",
         "efecte": {
           "stare": {
@@ -7138,7 +7138,7 @@
       },
       "f": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "...Mama e bolnavă. Tușește de o lună și nu mai doarme nopțile. Iar sora mea mică... de trei zile n-am mai avut ce pune pe masă.",
         "urmator": "g"
       },
@@ -7257,7 +7257,7 @@
       },
       "h": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Finn! Finn s-a întors!",
         "imagine": "events/finn_eliberat_3.png",
         "urmator": "i"
@@ -7295,7 +7295,7 @@
       },
       "n": {
         "vorbitor": "hot",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Nu acum, micuțo. Îți promit că o să găsesc ceva.",
         "urmator": "o"
       },
@@ -7354,12 +7354,12 @@
     "noduri": {
       "salut1": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale! Intră, intră. N-am ce să-ți ofer, dar pragul e al tău."
       },
       "salut2": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ai venit să vezi dacă n-am fugit cu vreo pungă? Glumesc. Glumesc!"
       },
       "f_lucru": {
@@ -7406,7 +7406,7 @@
       },
       "mancare_oferta6": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru noi? E ospăț de nuntă.",
         "alegeri": [
           {
@@ -7425,7 +7425,7 @@
       },
       "mancare_da": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Carne? Carne adevărată?! Finn, ai auzit?"
       },
       "mancare_indiciu": {
@@ -7435,13 +7435,13 @@
       },
       "mancare_predare": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am adus pâine și carne! Trei pâini și două bucăți bune.",
         "urmator": "mancare_predare2"
       },
       "mancare_predare2": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Miroase! Finn, miroase a pâine!",
         "urmator": "mancare_predare3"
       },
@@ -7471,14 +7471,14 @@
       },
       "mama_oferta": {
         "vorbitor": "hot",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "De la începutul iernii. Întâi a fost doar o tuse. Apoi febra, seara, în fiecare seară.",
         "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn” (decis de autor: în locul „Bolnavului” lui Elian).",
         "urmator": "mama_oferta2"
       },
       "mama_oferta2": {
         "vorbitor": "hot",
-        "emotie": "suparat",
+        "emotie": "trist",
         "text": "Am încercat ceaiuri, ventuze, tot ce știa Bătrâna Morwen. Nimic. Slăbește pe zi ce trece.",
         "urmator": "mama_oferta3"
       },
@@ -7630,12 +7630,12 @@
       },
       "f_masa": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Sora mea încă vorbește de masa aia. Zice că a fost cea mai bună zi de când au venit orcii."
       },
       "f_mama": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mama a dormit toată noaptea. Prima oară de la începutul iernii. Nu știu cum să-i mulțumesc preotului."
       },
       "f_contrabandist": {
@@ -7645,7 +7645,7 @@
       },
       "salut_campuri": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale! Uite-mă, muncesc cinstit. Fermierul zice că sap ca doi. Plătește ca pentru unul, dar e un început.",
         "_nota": "CIORNĂ (Claude). La câmpuri, 08–13."
       },
@@ -7711,7 +7711,7 @@
       },
       "f_lada": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Oamenii de la margine au găsit dimineață monede în prag. Nimeni nu știe de unde. Lina zice că a fost un înger. Eu zic să rămână așa."
       },
       "lada_noapte": {
@@ -7976,12 +7976,12 @@
     "noduri": {
       "salut1": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale! Ai venit să te joci cu mine?"
       },
       "salut2": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Finn zice că ești cel mai curajos om din sat!"
       },
       "s_curaj": {
@@ -7996,7 +7996,7 @@
       },
       "s_masa": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Când mai facem carne la ceaun? Mâine? Poimâine? Te rog!"
       },
       "salut_plecat": {
@@ -8007,25 +8007,25 @@
       },
       "salut_coliba": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale! Bătrâna Morwen mă învață plantele! Asta e mușețel, asta e... asta e tot mușețel.",
         "_nota": "CIORNĂ (Claude). La colibă, 14–18."
       },
       "salut_afara": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Vale! Mă joc de-a cavalerii. Eu sunt cavalerul, iar găinile sunt orcii!",
         "_nota": "CIORNĂ (Claude). Afară, 10–14."
       },
       "papusa_salut": {
         "vorbitor": "sora_finn",
-        "emotie": "suparat",
+        "emotie": "plange",
         "text": "Vale...",
         "_nota": "Decis de autor: după „Mama lui Finn”, Lina, în fața casei (10–14), plânge cu păpușa ruptă."
       },
       "papusa_oferta": {
         "vorbitor": "sora_finn",
-        "emotie": "suparat",
+        "emotie": "plange",
         "text": "Păpușa mea... S-a rupt.",
         "alegeri": [
           {
@@ -8051,7 +8051,7 @@
       },
       "papusa_l_gata": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Păpușa mea!",
         "alegeri": [
           {
@@ -8065,7 +8065,7 @@
       },
       "metal_sora_finn": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Eu am un nasture de fier! ...A, trebuie mai mare?"
       }
     },
@@ -8122,7 +8122,7 @@
     "noduri": {
       "a": {
         "vorbitor": "sora_finn",
-        "emotie": "suparat",
+        "emotie": "plange",
         "text": "Mă jucam cu ea de-a cavalerii... și i s-a rupt mâna.",
         "imagine": "events/papusa_lina_1.png",
         "_nota": "Decis de autor: Lina plângând, cu păpușa ruptă (s-a rupt cât se juca).",
@@ -8137,7 +8137,7 @@
       },
       "a3": {
         "vorbitor": "sora_finn",
-        "emotie": "suparat",
+        "emotie": "plange",
         "text": "Mama mi-a făcut-o când eram mică. Dar acum n-are nici ac, nici ață. Orcii au luat tot.",
         "urmator": "a4"
       },
@@ -8190,19 +8190,19 @@
       },
       "b1": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pe bune? Și o să fie ca nouă?",
         "urmator": "b2"
       },
       "b2": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mai frumoasă decât nouă. Mama mi-a cusut toate jucăriile când eram mic.",
         "urmator": "b3"
       },
       "b3": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Atunci ai grijă de ea pe drum. Îi e frică de orci."
       },
       "r1": {
@@ -8236,19 +8236,19 @@
       },
       "c2": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Când erai mic, aveai un cal de lemn. Ți-l cioplise tatăl tău, iar tu i-ai rupt coada chiar a doua zi.",
         "urmator": "c3"
       },
       "c3": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ai plâns o zi întreagă. Seara ți-am cusut o coadă nouă, din lâna mea de la fus. Ai dormit cu calul ăla în brațe până la zece ani.",
         "urmator": "c4"
       },
       "c4": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Îmi amintesc. Era cea mai frumoasă coadă din tot satul.",
         "urmator": "c5"
       },
@@ -8267,13 +8267,13 @@
       },
       "c7": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Gata. Spune-i Linei că acum are și păpușa ei un scut. Și spune-i mamei ei că, dacă are nevoie de ac și de ață, să trimită la mine.",
         "urmator": "c8"
       },
       "c8": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mi-a făcut bine, Vale. De mult n-am mai cusut ceva care să facă pe cineva fericit.",
         "efecte": {
           "obiect": "papusa_lina",
@@ -8293,7 +8293,7 @@
       "e1": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Lina îmi smulge păpușa din mână și o strânge în brațe atât de tare, că mă tem să nu se descoasă din nou.",
         "imagine": "events/papusa_lina_3.png",
         "_nota": "Decis de autor: Lina fericită, cu păpușa în brațe.",
@@ -8301,26 +8301,26 @@
       },
       "e2": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Are un scut! Uite, Vale, are un scut pe umăr!",
         "urmator": "e3"
       },
       "e3": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mama zice că acum e și ea cavaler.",
         "urmator": "e4"
       },
       "e4": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Atunci de azi o cheamă Cavalerița Petic! Mulțumește-i mamei tale din partea mea. Și din partea ei.",
         "urmator": "e5"
       },
       "e5": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Lina fuge să i-o arate lui Finn, cu păpușa ridicată deasupra capului, ca pe un steag.",
         "efecte": {
           "daObiect": "papusa_lina",
@@ -8699,27 +8699,27 @@
       "a": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Mormântul tatei e lângă gardul cimitirului. Pe crucea de lemn, înnegrită de ploi, abia se mai citește: EDWIN LIGHTFINDER.",
         "urmator": "b"
       },
       "b": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Smulg iarba de pe mormânt și mă așez lângă el.",
         "urmator": "c"
       },
       "c": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Tată... satul e tot al lor. Dar nu mai stau cu mâinile în sân. Îți promit.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Vântul trece prin iarbă. Pentru o clipă, parcă îi aud iar vocea.",
         "efecte": {
           "timp": 20
@@ -8786,7 +8786,7 @@
       "i": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Câțiva săteni s-au oprit din lucru și se uită la mine. Unul dă din cap. Altul zâmbește, pentru prima dată de mult.",
         "urmator": "j"
       },
@@ -8813,19 +8813,19 @@
       },
       "a2": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pot să mestec eu? Pot? Promit că nu-l răstorn!",
         "urmator": "a3"
       },
       "a3": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ține lingura cu amândouă mâinile. Așa. Încet, să nu se prindă de fund.",
         "urmator": "a4"
       },
       "a4": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Uite-o. Parcă-i bucătar la castel.",
         "urmator": "a5"
       },
@@ -8845,7 +8845,7 @@
       },
       "a7": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "E cea mai bună mâncare din toată lumea! Din toată!",
         "urmator": "a8"
       },
@@ -8857,14 +8857,14 @@
       },
       "a9": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Nu-mi aduc aminte când am râs ultima oară toți patru. Mersi, frate.",
         "urmator": "a10"
       },
       "a10": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru o seară, la marginea satului nu mai sunt orci. Doar un ceaun gol și o fetiță care adoarme cu capul pe masă.",
         "efecte": {
           "stare": {
@@ -8943,14 +8943,14 @@
       },
       "a10": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Bună seara, Lina. Mă ajuți? Am nevoie de cineva cu mâini mici și atente. Adu-mi oala aceea de lut și apă curată.",
         "urmator": "a11"
       },
       "a11": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Lina aleargă după oală de parcă i s-ar fi dat cea mai importantă misiune din lume.",
         "urmator": "a12"
       },
@@ -8987,7 +8987,7 @@
       },
       "a17": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Din cărți vechi. Și din greșeli. Un preot vede mulți bolnavi, Vale. Unele lucruri le înveți vrând-nevrând.",
         "urmator": "a18"
       },
@@ -9046,13 +9046,13 @@
       },
       "a26": {
         "vorbitor": "sora_finn",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Finn... mama doarme. Doarme și nu tușește!",
         "urmator": "a27"
       },
       "a27": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Văd, Lina. Văd.",
         "urmator": "a28"
       },
@@ -9070,7 +9070,7 @@
       },
       "a30": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pe mine să nu mă pomenești nimănui, doamnă. Un preot care umblă noaptea prin sat dă de vorbit. Noapte bună.",
         "urmator": "a31"
       },
@@ -9554,7 +9554,7 @@
       },
       "d5": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am reușit... Am reușit, Vale! Jumătate din ei îi împart mâine pe la oamenii de la margine. Tu ia-ți partea ta. Ai muncit pentru ea.",
         "urmator": "d6"
       },
@@ -9566,14 +9566,14 @@
       },
       "d7": {
         "vorbitor": "hot",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "O să creadă că a greșit la numărat. Orcii nu prea știu să numere.",
         "urmator": "d8"
       },
       "d8": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Sacul e greu pe umărul meu. Pentru prima oară de când au venit orcii, satul a luat ceva înapoi.",
         "efecte": {
           "stare": {
@@ -9679,7 +9679,7 @@
       "a9": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Bram scoate din jar o bară încinsă și o lovește cu ciocanul. Scântei peste tot. Râde ca un copil. Nu l-am mai văzut râzând așa de când a venit taxa.",
         "urmator": "a10"
       },
@@ -9724,31 +9724,31 @@
       },
       "l3": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Hal. A ținut poarta până n-a mai putut ridica scutul. Avea nepoți cât tine.",
         "urmator": "l4"
       },
       "l4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Tobin, fiul morarului. A mințit că are optsprezece ani, ca să-l primim. Avea șaptesprezece.",
         "urmator": "l5"
       },
       "l5": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Fermierul a zis să aprinzi una și pentru Tobin. Din partea lui.",
         "urmator": "l6"
       },
       "l6": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Atunci Tobin primește două. Le merită.",
         "urmator": "l7"
       },
       "l7": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Frații Corwin. Amândoi. Unul a căzut încercând să-l ridice pe celălalt.",
         "urmator": "l8"
       },
@@ -9761,60 +9761,60 @@
       },
       "l9": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și soldatul din camera de sus a lui Agnes. Nu vorbea mult. Dar când vorbea, tăceam toți și ascultam.",
         "urmator": "l10"
       },
       "l10": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Douăzeci și două de flăcări ard acum pe treapta altarului. Unchiul ține în mână ultima lumânare. Mâna îi tremură atât de tare, încât abia o poate ține.",
         "imagine": "events/roderick_lumanari_2.png",
         "urmator": "l11"
       },
       "l11": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și...",
         "urmator": "l12"
       },
       "l12": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Nu poate. Deschide gura de două ori și nu iese nimic.",
         "urmator": "l13"
       },
       "l13": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Îi iau ușor lumânarea din mână și o aprind eu.",
         "urmator": "l14"
       },
       "l14": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Edwin Lightfinder. Tata.",
         "urmator": "l15"
       },
       "l15": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiul închide ochii. Stăm amândoi în lumina celor douăzeci și trei de flăcări, multă vreme, fără să spunem nimic.",
         "urmator": "l16"
       },
       "l16": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "De șase luni n-am putut să-i rostesc numele cu voce tare. Mulțumesc, băiete.",
         "urmator": "l17"
       },
       "l17": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Arată-mi unde a căzut, unchiule.",
         "urmator": "l18"
       },
@@ -9879,21 +9879,21 @@
       },
       "r5": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Am venit în fiecare noapte. Doar că mă opream la gard.",
         "urmator": "r6"
       },
       "r6": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Câmpul se deschide deodată în fața noastră. Iarba a crescut peste tot, dar nu ascunde nimic: lame ruginite, scuturi crăpate, un steag albastru cu rombul auriu, rupt pe jumătate și înfipt în pământ.",
         "imagine": "events/roderick_locul_3.png",
         "urmator": "r6b"
       },
       "r6b": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Rombul auriu... are forma cristalelor Cercului Luminii. Ziceam că, dacă-l porți, îți dă putere. Edwin chiar credea.",
         "urmator": "r7",
         "_nota": "CIORNĂ (Claude): rombul de pe steag e forma cristalelor mici (decis de autor)."
@@ -9901,77 +9901,77 @@
       "r7": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și la mijloc, copacul. Uriaș, cu frunzele galbene ca focul. E atât de frumos, încât doare să te uiți la el.",
         "urmator": "r8"
       },
       "r8": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Aici ne-am oprit. Ni s-a spus că orcii vin dinspre pădure, așa că ne-am făcut zid de scuturi lângă copac. Douăzeci și trei de oameni care nu mai ținuseră o sabie de ani buni... și doi frați care se credeau încă tineri.",
         "urmator": "r9"
       },
       "r9": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiul se apropie de copac și își pune palma pe scoarță, încet, cum ai pune mâna pe umărul unui om drag.",
         "imagine": "events/roderick_locul_4.png",
         "urmator": "r10"
       },
       "r10": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Vezi creanga aia de jos? Pe ea ne cățăram când eram mici.",
         "urmator": "r11"
       },
       "r11": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Edwin urca primul, mereu. Eu cădeam, el râdea, apoi cobora să mă ridice. Așa a fost toată viața.",
         "urmator": "r12"
       },
       "r12": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și tot aici l-am lăsat.",
         "urmator": "r13"
       },
       "r13": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiul se lasă jos, între rădăcini, ca și cum nu-l mai țin picioarele. Mă așez lângă el.",
         "imagine": "events/roderick_locul_5.png",
         "urmator": "r14"
       },
       "r14": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Era primăvară. Copacul era alb de flori. Când au venit orcii, florile cădeau peste noi ca zăpada, iar noi stăteam în ele și tremuram.",
         "urmator": "r15"
       },
       "r15": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Am ținut linia mai mult decât ar fi crezut oricine. Apoi a căzut Hal, și Tobin, și frații Corwin, și linia s-a rupt în două.",
         "urmator": "r16"
       },
       "r16": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Edwin m-a prins de umăr și m-a întors spre el. Avea sânge pe față și se uita la mine cum se uita când eram mici și cădeam din copac.",
         "urmator": "r17"
       },
       "r17": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Mi-a zis: „Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”",
         "urmator": "r18"
       },
       "r18": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și eu am ascultat. Mi-am lăsat fratele aici, în mijlocul lor, și am fugit.",
         "urmator": "r19"
       },
@@ -10012,20 +10012,20 @@
       },
       "u1": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "plange",
         "text": "Asta... asta ar fi zis și el. Exact așa.",
         "urmator": "u2"
       },
       "u2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Umerii unchiului încep să tremure. Nu spun nimic. Îl las să plângă, poate pentru prima oară de la primăvară.",
         "urmator": "u3"
       },
       "u3": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "plange",
         "text": "Mulțumesc, băiete.",
         "urmator": "w1"
       },
@@ -10038,48 +10038,48 @@
       },
       "v2": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "...Da. Trebuia.",
         "urmator": "v3"
       },
       "v3": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Nu se apără. Nici măcar nu ridică ochii. Parcă de șase luni aștepta să i-o spună cineva.",
         "urmator": "v4"
       },
       "v4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și nu mă simt deloc mai ușor.",
         "urmator": "w1"
       },
       "w1": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Când ne ridicăm să plecăm, o crenguță cade din copac la picioarele mele, cu trei frunze aurii pe ea. O ridic. Nu știu de ce. Poate pentru mama.",
         "imagine": "events/roderick_locul_6.png",
         "urmator": "w2"
       },
       "w2": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Ia-o. Maică-ta iubea copacul ăsta. Venea aici cu Edwin, pe vremea când tu nici nu erai pe lume.",
         "urmator": "w3"
       },
       "w3": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "După ce s-a terminat totul, orcii ne-au lăsat să ne strângem morții. Ca să vedem bine ce pățește cine se pune cu ei. L-am dus pe Edwin în spate, până la cimitir.",
         "urmator": "w4"
       },
       "w4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Ne întoarcem pe întuneric. Unchiul mă ajută din nou să sar gardul. Nu mai spunem nimic tot drumul.",
         "imagine": "events/roderick_locul_7.png",
         "urmator": "w5"
@@ -10215,7 +10215,7 @@
       "c1": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Unchiul stă în prag cu vesta în mâini, ca un băiat chemat la judecată. Bărbierit, cu cămașa curată, cu părul ud și pieptănat. Nu l-am mai văzut așa de... nici nu mai știu de când.",
         "imagine": "events/miriam_cina_1.png",
         "urmator": "c2"
@@ -10241,14 +10241,14 @@
       },
       "c3_2": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Roderick.",
         "urmator": "c3_3"
       },
       "c3_3": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Doar atât: numele lui. Dar felul în care îl spune îmi strânge inima. Nu e nici supărare, nici iertare. E doar oboseală. Și dor.",
         "urmator": "c3_4"
       },
@@ -10260,27 +10260,27 @@
       },
       "c3_5": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Și te-ai bărbierit. Văd.",
         "urmator": "c3_6"
       },
       "c3_6": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Colțul gurii mamei tremură. Aproape un zâmbet. Primul pe care i-l văd de la primăvară încoace.",
         "urmator": "c3_7"
       },
       "c3_7": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Ce mai stai în prag ca un străin? Agață vesta în cuiul de lângă ușă și vino la masă. Fasolea s-a răcit deja o dată, de cât m-am uitat la ușă.",
         "urmator": "c3_8"
       },
       "c3_8": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiul agață vesta în cuiul de lângă ușă. Rămâne o clipă cu mâna pe ea. E cuiul pe care își agăța tata haina, în fiecare seară, când venea acasă.",
         "urmator": "c4"
       },
@@ -10306,26 +10306,26 @@
       },
       "c7": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Și că i-ai spus cum a murit.",
         "urmator": "c8"
       },
       "c8": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "I-am spus. Ție nu ți-am spus niciodată. Și trebuia, Miriam. De la început.",
         "urmator": "c9"
       },
       "c9": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unchiul lasă lingura jos. Mâinile îi tremură, ca atunci, în biserică, la ultima lumânare.",
         "urmator": "c10"
       },
       "c10": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Ultimul lucru pe care mi l-a spus Edwin a fost: „Ai grijă de Miriam și de băiat.”",
         "urmator": "c11"
       },
@@ -10344,20 +10344,20 @@
       },
       "c13": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "plange",
         "text": "Bătrân prost și încăpățânat ce ești. Exact ca el.",
         "imagine": "events/miriam_cina_3.png",
         "urmator": "c14"
       },
       "c14": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "plange",
         "text": "Să știi că te-am urât. Pentru că tu te-ai întors, și el nu. Și mi-a fost rușine de asta în fiecare zi.",
         "urmator": "c15"
       },
       "c15": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Aveai tot dreptul.",
         "urmator": "c16"
       },
@@ -10387,7 +10387,7 @@
       },
       "c20": {
         "vorbitor": "miriam",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Tu taci și mănâncă.",
         "urmator": "c21"
       },
@@ -10406,7 +10406,7 @@
       "c23": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Pentru prima oară de la primăvară, în casa noastră se râde la masă.",
         "efecte": {
           "stare": {
@@ -10448,7 +10448,7 @@
       },
       "a4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Edwin și cu mine am avut unul la fel, în curtea tatălui nostru. L-am ciopârțit până n-a mai rămas din el decât stâlpul.",
         "urmator": "a5"
       },
@@ -10509,12 +10509,12 @@
     "noduri": {
       "bun1": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Nu-i rău. Deloc rău. Ții sabia ca un țăran, dar lovești ca un Lightfinder. Mâine, din nou."
       },
       "bun2": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Mai bine decât ieri. Vezi? Brațul ține minte ce uită capul. Mâine, din nou."
       },
       "slab": {
@@ -10537,13 +10537,13 @@
       },
       "gata3": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Trei dimineți, și nu te-ai plâns nici măcar o dată. Edwin se plângea în fiecare zi, să știi.",
         "urmator": "gata4"
       },
       "gata4": {
         "vorbitor": "soldat",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Încă nu ești soldat. Dar nici băiatul de acum trei zile nu mai ești. Lovești mai bine. Iar eu... eu mă simt mai puțin bătrân.",
         "urmator": "gata5"
       },
@@ -10779,14 +10779,14 @@
       },
       "i3": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Era un dușman.",
         "urmator": "i4"
       },
       "i4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Bram râde. Un râs mare, din burtă, cum nu l-am mai auzit de când au venit orcii.",
         "urmator": "i5"
       },
@@ -10863,7 +10863,7 @@
       "pf1": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Fermierul înhamă boul și înfige plugul în pământ. Brazda iese dreaptă și adâncă, iar sătenii de pe margine încep să râdă și să bată din palme.",
         "imagine": "events/plug_fermier.png",
         "_nota": "Decis de autor: fermierul ară din nou.",
@@ -10924,7 +10924,7 @@
       },
       "c5": {
         "vorbitor": "vale",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "N-aveți nepoți, domnule Bram.",
         "urmator": "c6"
       },
@@ -10945,20 +10945,20 @@
       },
       "d2": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Am auzit că a coborât cineva în pivnița mea fără să mă întrebe.",
         "urmator": "d3"
       },
       "d3": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Prima cană din berea nouă. Pentru cel care mi-a salvat butoaiele.",
         "urmator": "d4"
       },
       "d4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Îi întinde cana lui Bram. Bram o ia cu amândouă mâinile, ca pe ceva care s-ar putea sparge, și se face roșu până în vârful urechilor.",
         "urmator": "d5"
       },
@@ -10970,14 +10970,14 @@
       },
       "d6": {
         "vorbitor": "hangita",
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "Agnes. De câte ori ți-am spus, Bram? Agnes.",
         "urmator": "d7"
       },
       "d7": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "zambet",
         "text": "A doua cană e pentru mine. O beau repede, ca să am un motiv să urc primul.",
         "efecte": {
           "stare": {
@@ -11004,49 +11004,49 @@
       "c2": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Săbii. Culcate una lângă alta pe o pânză albastră, ca niște oameni adormiți.",
         "urmator": "c3"
       },
       "c3": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Unele sunt rupte de la jumătate. Altele au tăișul ciobit, zimțat ca un fierăstrău. Pe câteva gărzi e încă sânge negru, uscat. Nimeni nu l-a curățat. Sau poate nimeni n-a avut puterea.",
         "urmator": "c4"
       },
       "c4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "De mânerul uneia e legată o panglică de păr, de fată, decolorată de ploaie.",
         "urmator": "c5"
       },
       "c5": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Le număr. Douăzeci și două.",
         "urmator": "c6"
       },
       "c6": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Douăzeci și trei de oameni au căzut primăvara trecută, lângă copacul mare. Tata era unul dintre ei.",
         "urmator": "c7"
       },
       "c7": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Caut printre ele sabia lui, cu rombul auriu pe gardă. O caut o dată, de două ori, apoi a treia oară, cu mâinile, prin toate. Nu e aici.",
         "urmator": "c8"
       },
       "c8": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Închid capacul încet, ca să nu le trezesc.",
         "efecte": {
           "stare": {
@@ -11375,7 +11375,7 @@
       },
       "f5": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Pe fiecare îl știu, băiete. După greutate. După cum cântă oțelul pe nicovală.",
         "urmator": "f6"
       },
@@ -11401,7 +11401,7 @@
       },
       "f9": {
         "vorbitor": "fierar",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Du-i-l Fratelui Elian. Și spune-i... spune-i că oțelul e bun. Că l-au ținut în mână oameni buni.",
         "efecte": {
           "obiect": "toiag_fara_cristal",
@@ -11428,7 +11428,7 @@
       },
       "k2": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Oțelul e bun. Îi simt pe toți, Vale. Douăzeci și doi.",
         "urmator": "k3"
       },
@@ -11514,7 +11514,7 @@
       },
       "k15": {
         "vorbitor": "mag",
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.",
         "urmator": "k16"
       },

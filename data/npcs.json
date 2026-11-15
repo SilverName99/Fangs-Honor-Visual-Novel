@@ -10,7 +10,11 @@
     {
       "id": "vale",
       "nume": "Vale",
-      "locuriSprite": []
+      "locuriSprite": [],
+      "stariExtra": [
+        "trist",
+        "zambet"
+      ]
     },
     {
       "id": "miriam",
@@ -145,7 +149,12 @@
           }
         ],
         "cumpara": []
-      }
+      },
+      "stariExtra": [
+        "trist",
+        "zambet",
+        "plange"
+      ]
     },
     {
       "id": "soldat",
@@ -231,7 +240,12 @@
           }
         }
       },
-      "intrebareVorba": "Ce mai faci, unchiule?"
+      "intrebareVorba": "Ce mai faci, unchiule?",
+      "stariExtra": [
+        "trist",
+        "zambet",
+        "plange"
+      ]
     },
     {
       "id": "fierar",
@@ -338,7 +352,8 @@
       "dialog": "fierar",
       "intrebareVorba": "Ce mai faceți, domnule Bram?",
       "stariExtra": [
-        "inrosit"
+        "inrosit",
+        "trist"
       ]
     },
     {
@@ -437,6 +452,10 @@
           "pana": "06:00",
           "ce": "noaptea: la butuc nu se vede; după eliberare doarme acasă (casa e încuiată noaptea)"
         }
+      ],
+      "stariExtra": [
+        "trist",
+        "zambet"
       ]
     },
     {
@@ -589,7 +608,11 @@
       "gandDoarme": "Doarme. Nu vreau s-o trezesc acum.",
       "dialoguriPeLoc": {
         "padure": "kaia_lup_negru"
-      }
+      },
+      "stariExtra": [
+        "trist",
+        "zambet"
+      ]
     },
     {
       "id": "tigru",
@@ -834,7 +857,11 @@
           }
         ],
         "cumpara": []
-      }
+      },
+      "stariExtra": [
+        "trist",
+        "zambet"
+      ]
     },
     {
       "id": "hangita",
@@ -902,7 +929,11 @@
           ],
           "cumpara": []
         }
-      }
+      },
+      "stariExtra": [
+        "zambet",
+        "inrosit"
+      ]
     },
     {
       "id": "negustor",
@@ -1043,6 +1074,10 @@
           "pana": "06:00",
           "ce": "doarme (casa e încuiată noaptea)"
         }
+      ],
+      "stariExtra": [
+        "zambet",
+        "plange"
       ]
     },
     {
