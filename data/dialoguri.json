@@ -5154,28 +5154,29 @@
         "emotie": "normal",
         "text": "Când prima căruță ajunge în dreptul nostru, văd ce trage bizonul după el. O cușcă. O cușcă uriașă, din bârne groase și lanțuri, cât o casă.",
         "imagine": "events/kaia_wyverni_6.png",
-        "_nota": "Decis de autor: convoiul ajunge în dreptul lor; în imagine, doar o cușcă, trasă de un bizon, cu un wyvern în ea, și 3 orci (ca să fie cât mai puține personaje).",
+        "_nota": "Decis de autor: în prim-plan, casca Kaiei; în focus, cușca trasă de un bizon, cu wyvernul liniștit, în lanțuri; restul convoiului, cu mai mulți orci, în spate, neclar.",
         "urmator": "t32"
       },
       "t32": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și în cușcă se mișcă ceva.",
+        "text": "Și în cușcă e ceva viu.",
         "urmator": "t33"
       },
       "t33": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "O aripă se izbește de gratii. O aripă de piele, ca de liliac, dar lungă cât două căruțe. Apoi un cap lung, plin de solzi, se ridică spre lună și scoate un țipăt care îmi îngheață sângele.",
+        "text": "O fiară uriașă stă culcată între gratii, cu aripile de piele, ca de liliac, strânse pe lângă trup, lungi cât două căruțe. Capul ei lung, plin de solzi, stă sprijinit pe gheare.",
         "urmator": "t34"
       },
       "t34": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Fiara e legată cu lanțuri la gât, la aripi și la gheare. Iar mai încolo, pe drum, vine încă o căruță cu o cușcă. Și încă una.",
+        "text": "E legată cu lanțuri la gât, la aripi și la gheare. Și nu se zbate deloc: doar ochii îi urmăresc torțele, liniștiți, ca și cum ar ști încotro merge. Mai încolo, pe drum, vin încă o căruță cu o cușcă și încă una.",
+        "_nota": "Decis de autor: wyvernul stă liniștit, dar legat cu lanțuri.",
         "urmator": "t35"
       },
       "t35": {
@@ -5331,7 +5332,7 @@
       "p5": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Unul a țipat spre lună. Iar Ember s-a lipit de pământ lângă mine și a început să tremure. Ember, care nu s-a temut în viața lui de nimic din ce trăiește.",
+        "text": "Și nu se zbăteau, Vale. Stăteau liniștiți în lanțuri, ca niște câini care știu încotro îi duce stăpânul. Iar Ember s-a lipit de pământ lângă mine și a început să tremure. Ember, care nu s-a temut în viața lui de nimic din ce trăiește.",
         "amintire": true,
         "urmator": "p6"
       },
