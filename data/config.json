@@ -87,6 +87,37 @@
             }
           }
         }
+      ],
+      "blocat": [
+        {
+          "_nota": "Decis de autor: cât e rupt plugul fermierului, nu ară nimeni.",
+          "conditii": {
+            "misiune": {
+              "bram_forja": "terminata"
+            },
+            "stare": {
+              "fermier_deblocat": "da"
+            },
+            "nu": {
+              "oricare": [
+                {
+                  "existaStare": "plug_reparat"
+                },
+                {
+                  "stare": {
+                    "plug": "refuzat"
+                  },
+                  "trecut": {
+                    "plug_refuz": {
+                      "pesteZile": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni."
+        }
       ]
     },
     "munca_porci": {

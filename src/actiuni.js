@@ -90,6 +90,9 @@ export function creeazaActiuni(parinte, joc) {
     if (m.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(m.gandNoapte);
     // Prea obosit: doar gândul lui Vale, fără panou (decis de autor)
     if (prea_obosit()) return joc.gand(m.gandObosit || 'Sunt prea obosit pentru muncă grea. Trebuie să mă odihnesc întâi.');
+    // O muncă poate fi oprită de o întâmplare (plugul fermierului rupt, decis de autor): „blocat” = condițiile și gândul
+    const blocaj = (m.blocat || []).find((b) => verifica(b.conditii, context(joc.stare)));
+    if (blocaj) return joc.gand(blocaj.gand);
     panou(m.nume, (inchide) => {
       const s = joc.stare;
       const cuJoc = m.miniJoc && miniJocuriPornite();

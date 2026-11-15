@@ -1776,6 +1776,149 @@
       },
       "ofertaEveniment": "bram_forja",
       "_nota": "Pornește singură, din evenimentul bram_forja (decis de autor), cu „!” deasupra lui Bram și a fierăriei cât evenimentul ar porni la sosire."
+    },
+    {
+      "id": "fermier_plug",
+      "titlu": "Fierul plugului",
+      "dela": "fermier",
+      "dialog": "fermier",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "plug": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: S-a rupt plugul fermierului: brăzdarul și coarnele. M-a rugat să vorbesc cu Bram, dar i-am spus că n-am timp."
+        },
+        "CIORNĂ: S-a rupt plugul fermierului: brăzdarul și coarnele. Fără el, nu ară nimeni, iar la primăvară satul n-are ce semăna. I-am promis că vorbesc eu cu Bram."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat.",
+        "text": "Ce s-a întâmplat cu plugul?",
+        "nod": "plug_oferta",
+        "conditii": {
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "stare": {
+            "fermier_deblocat": "da"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "plug_reparat"
+              },
+              {
+                "stare": {
+                  "plug": "refuzat"
+                },
+                "trecut": {
+                  "plug_refuz": {
+                    "pesteZile": 2
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îl rog pe Bram să repare plugul",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "plug_bram"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "predare": {
+            "text": "Domnule Bram, poți repara plugul fermierului?",
+            "nod": "plug_b1"
+          }
+        },
+        {
+          "text": "Fac rost de 4 lemne, o frânghie și metal",
+          "la": "fierar",
+          "numara": [
+            {
+              "obiect": "lemn",
+              "n": 4
+            },
+            {
+              "obiect": "franghie",
+              "n": 1
+            },
+            {
+              "obiect": "fier_vechi",
+              "n": 1,
+              "nume": "metal"
+            }
+          ],
+          "sfat": [
+            {
+              "conditii": {
+                "existaStare": "metal_jarek"
+              },
+              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Finn zice că Jarek are fier vechi, la cocioaba lui (18–02)."
+            },
+            "Lemnele, din pădure; frânghia, de la negustorul din piață. Metal... nu știu încă de unde. Poate știe cineva."
+          ],
+          "indiciu": {
+            "text": "Despre plug...",
+            "nod": "plug_ind"
+          }
+        },
+        {
+          "text": "Duc totul la Bram",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "plug_gata"
+          },
+          "sfat": "Cu lemnele, frânghia și fierul, la Bram.",
+          "predare": {
+            "text": "Am adus tot ce trebuie pentru plug.",
+            "nod": "plug_predare",
+            "conditii": {
+              "areCate": {
+                "lemn": 4,
+                "franghie": 1,
+                "fier_vechi": 1
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre plug...",
+            "nod": "plug_ind"
+          }
+        },
+        {
+          "text": "Îi duc plugul fermierului",
+          "gata": {
+            "existaStare": "plug_reparat"
+          },
+          "sfat": "Fermierul e la câmpuri dimineața (06–13).",
+          "predare": {
+            "text": "Uite plugul, reparat de Bram!",
+            "nod": "plug_f1",
+            "conditii": {
+              "areObiect": "plugul_fermierului"
+            }
+          },
+          "indiciu": {
+            "text": "Despre plug...",
+            "nod": "plug_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: după „O zi la forjă”, plugul fermierului e rupt (sprite nou, aratul oprit). Refuzi: după două zile se repară singur, fără +1. Accepți: Bram cere 4 lemne, o frânghie și metal; „De unde pot face rost de niște metal?” apare la toți, doar Finn zice de Jarek (fier vechi, 15 monede); Bram repară plugul (o imagine), Vale i-l duce fermierului (o imagine); +1 Bram."
     }
   ]
 }

@@ -456,6 +456,21 @@
       "pret": 0,
       "descriere": "Păpușa de cârpă a Linei, cu rochiță albastră și păr de lână. A făcut-o Marta, mama ei.",
       "_nota": "Misiunea Miriamei „Păpușa Linei” (decis de autor). Un singur obiect, ruptă sau cusută: starea o ține misiunea."
+    },
+    "fier_vechi": {
+      "nume": "Fier vechi",
+      "tip": "material",
+      "stiva": 5,
+      "pret": 15,
+      "descriere": "Bucăți de fier vechi: o potcoavă, un lanț rupt, o lamă tocită. Nu le-a numărat niciun orc.",
+      "_nota": "Misiunea „Fierul plugului” (decis de autor): îl vinde Jarek, cu 15 monede."
+    },
+    "plugul_fermierului": {
+      "nume": "Plugul fermierului",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Plugul fermierului, reparat de Bram: brăzdar nou, din fier vechi, și coarne noi, legate cu frânghie.",
+      "_nota": "Misiunea „Fierul plugului” (decis de autor)."
     }
   }
 }

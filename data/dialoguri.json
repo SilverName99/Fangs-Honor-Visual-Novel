@@ -706,6 +706,11 @@
         "emotie": "normal",
         "text": "Unchiul Roderick stă în genunchi în fața altarului și nici nu ridică privirea. Parcă nici nu m-ar vedea.",
         "_nota": "La biserică (cerut de autor: acolo n-are cană în mână)."
+      },
+      "metal_r": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Toate armele satului le-au luat orcii după bătălie. Ce-a mai rămas stă îngropat pe câmp, lângă oameni. Lasă-l acolo."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -715,6 +720,29 @@
         "nod": "r_tata_a",
         "conditii": {
           "existaStare": "scandal_taverna"
+        }
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
         }
       }
     ]
@@ -989,6 +1017,11 @@
         "emotie": "normal",
         "text": "Bine, Vale. Doar că mi-e dor de vremurile în care treceau pe aici negustori de la capitală și povesteau de călăreții Ordinului Flăcării. Dragoni adevărați, cât casa! Eu n-am văzut niciunul; pe aici n-a văzut nimeni. Noi aflăm de toate din povești de drum.",
         "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
+      },
+      "metal_r": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Ce metal să am eu, dragule? Oalele mele și cana din care bei."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1027,6 +1060,27 @@
           "inchiriaza": "taverna"
         },
         "spre": "camera"
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ],
     "vorbeste": [
@@ -1749,6 +1803,11 @@
             }
           }
         ]
+      },
+      "metal_r": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Pădurea nu crește fier, Vale. Doar capcanele orcilor."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -1789,6 +1848,27 @@
           }
         },
         "spre": "vanam_impreuna"
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -1960,7 +2040,62 @@
   "fermier": {
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Misiunile fermierului sunt TODO.",
     "partener": "fermier",
-    "start": "a",
+    "start": [
+      {
+        "_nota": "Misiunea „Fierul plugului”: la două zile după refuz, o singură dată.",
+        "nod": "plug_rezolvat",
+        "conditii": {
+          "stare": {
+            "plug": "refuzat"
+          },
+          "trecut": {
+            "plug_refuz": {
+              "pesteZile": 2
+            }
+          },
+          "nu": {
+            "existaStare": "plug_spus"
+          }
+        }
+      },
+      {
+        "nod": "plug_asteapta",
+        "conditii": {
+          "stare": {
+            "plug": "refuzat"
+          },
+          "nu": {
+            "trecut": {
+              "plug_refuz": {
+                "pesteZile": 2
+              }
+            }
+          }
+        }
+      },
+      {
+        "nod": "plug_salut",
+        "conditii": {
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "stare": {
+            "fermier_deblocat": "da"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "plug"
+              },
+              {
+                "existaStare": "plug_reparat"
+              }
+            ]
+          }
+        }
+      },
+      "a"
+    ],
     "noduri": {
       "a": {
         "vorbitor": "fermier",
@@ -1988,6 +2123,114 @@
         "vorbitor": "fermier",
         "emotie": "normal",
         "text": "Pentru berea lui Agnes? Atunci ia de la stupul cel bun. Și spune-i că vreau și eu o cană când e gata."
+      },
+      "plug_salut": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Vezi ce-a rămas din plugul meu?",
+        "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat."
+      },
+      "plug_oferta": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Treizeci de ani l-a tras tata, apoi eu. Azi s-a rupt brăzdarul într-o piatră, iar coarnele au crăpat odată cu el.",
+        "urmator": "plug_o2"
+      },
+      "plug_o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Plugul zace pe brazdă, cu fierul rupt în două și coarnele de lemn despicate. Sătenii stau pe margine, cu mâinile goale.",
+        "urmator": "plug_o3"
+      },
+      "plug_o3": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Fără plug nu arăm. Fără arat, la primăvară nu avem ce semăna. Iar orcii tot o să-și vrea partea.",
+        "urmator": "plug_o4"
+      },
+      "plug_o4": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Bram l-ar putea face la loc, dar acum, cu orcii pe cap... Tu îl știi bine, nu? Pe tine te-ar asculta.",
+        "alegeri": [
+          {
+            "text": "Vorbesc eu cu Bram.",
+            "spre": "plug_da",
+            "efecte": {
+              "misiune": {
+                "fermier_plug": "inceputa"
+              },
+              "stare": {
+                "plug": "acceptat"
+              }
+            }
+          },
+          {
+            "text": "Nu pot acum. Vorbește dumneata cu el.",
+            "spre": "plug_nu",
+            "efecte": {
+              "misiune": {
+                "fermier_plug": "ratata"
+              },
+              "stare": {
+                "plug": "refuzat"
+              },
+              "marcheaza": "plug_refuz"
+            }
+          }
+        ],
+        "_nota": "Decis de autor: dacă refuzi, după două zile plugul e reparat (fermierul a vorbit el cu fierarul) și Bram nu mai dă +1."
+      },
+      "plug_da": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Să te țină Dumnezeu, băiete. Spune-i că plătesc cum pot: cu grâu, la toamnă."
+      },
+      "plug_nu": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Așa o să fac. Doar că pe mine nu mă ascultă nimeni."
+      },
+      "plug_asteapta": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Mă descurc eu cumva. Sau nu."
+      },
+      "plug_rezolvat": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Am vorbit eu cu fierarul. Ne-am descurcat. Plugul ară iar.",
+        "efecte": {
+          "stare": {
+            "plug_spus": "da"
+          }
+        },
+        "_nota": "Decis de autor: la două zile după refuz."
+      },
+      "plug_ind": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Bram a zis că-l face? Atunci aștept. Am așteptat și ploaia, pot s-aștept și plugul."
+      },
+      "plug_f1": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Ăsta e plugul meu? ... E mai bun decât era!",
+        "alegeri": [
+          {
+            "text": "Încearcă-l.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "plug_fermier"
+            }
+          }
+        ]
+      },
+      "metal_r": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Dacă aș avea fier, ți l-aș fi dat de mult."
       }
     },
     "meniu": true,
@@ -2021,6 +2264,27 @@
           ]
         },
         "spre": "miere"
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -2525,6 +2789,11 @@
             }
           }
         ]
+      },
+      "metal_r": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Metal? Avem un cui în perete și un cuțit care nu mai taie. Pe amândouă le-ar lua orcii până să ajungi tu cu ele la Bram."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -2552,6 +2821,27 @@
           }
         },
         "spre": "coase"
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -2866,6 +3156,64 @@
         "gand": true,
         "emotie": "normal",
         "text": "Fierul care prindea căprioare o să zboare acum spre orci. Mi se pare drept."
+      },
+      "plug_b1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Plugul fermierului? Îl știu. I-am pus fierul acum zece ani.",
+        "urmator": "plug_b2"
+      },
+      "plug_b2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Pot să-l fac la loc. Dar îmi trebuie lemn bun pentru coarne, patru bucăți, o frânghie zdravănă, să le leg, și metal.",
+        "urmator": "plug_b3"
+      },
+      "plug_b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Metal? Dumneata ești fierarul.",
+        "urmator": "plug_b4"
+      },
+      "plug_b4": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Orcii îmi numără fierul ca pe ouă. Dacă lipsește o bucată, întreabă unde a plecat. Și n-aș vrea să le spun că a plecat la plug: data viitoare vor și plugul.",
+        "urmator": "plug_b5"
+      },
+      "plug_b5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Fă rost de fier de undeva unde nu se uită ei. Eu nu știu de unde. Dar tu cunoști mai mulți oameni decât mine în ultima vreme.",
+        "efecte": {
+          "stare": {
+            "plug_bram": "cerut"
+          }
+        }
+      },
+      "plug_ind": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Patru lemne, o frânghie și metal pe care să nu-l știe orcii. Restul îl fac eu."
+      },
+      "plug_predare": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ai adus tot? Lemn, frânghie... și fier vechi. Bun. Nici nu vreau să știu de unde.",
+        "alegeri": [
+          {
+            "text": "Hai să-l facem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "plug_bram"
+            }
+          }
+        ]
+      },
+      "metal_r": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Dacă aș avea, nu te-aș trimite pe tine după el."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2887,6 +3235,29 @@
       },
       {
         "nod": "f_fier_a"
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -3095,6 +3466,11 @@
         "gand": true,
         "emotie": "normal",
         "text": "Așa zice toată lumea despre el: un mag mic, bun la ierburi și la vorbe blânde. Și totuși, când e el prin preajmă, lumânările ard altfel."
+      },
+      "metal_r": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Biserica a avut un sfeșnic de fier. L-au luat orcii în prima săptămână. Mă rog să fie singurul lucru pe care îl topesc."
       }
     },
     "meniu": true,
@@ -3141,6 +3517,27 @@
           "magazin": "mag"
         },
         "spre": null
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -6648,6 +7045,17 @@
         "vorbitor": "hot",
         "emotie": "suparat",
         "text": "Nu în noaptea asta, Vale. Orcul ăla e încă cu ochii în patru după ce ne-a văzut umbrele. Mâine noapte."
+      },
+      "metal_r": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Metal? ...Jarek are. Fier vechi, lame rupte, potcoave, tot ce adună de pe drumuri. Doar să nu-i spui că te-am trimis eu.",
+        "efecte": {
+          "stare": {
+            "metal_jarek": "aflat"
+          }
+        },
+        "_nota": "Decis de autor: singurul care îl trimite pe Vale la Jarek."
       }
     },
     "vorbeste": [
@@ -6684,6 +7092,29 @@
         "conditii": {
           "stare": {
             "finn_lada": "luata"
+          }
+        }
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
           }
         }
       }
@@ -6733,6 +7164,11 @@
         "vorbitor": "mama_finn",
         "emotie": "normal",
         "text": "Tusea s-a dus aproape de tot. Am uitat cum e să respiri fără să te doară."
+      },
+      "metal_r": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Întreabă-l pe Finn. Fiul meu știe de unde se găsește orice. Prea bine știe."
       }
     },
     "vorbeste": [
@@ -6752,6 +7188,29 @@
         "conditii": {
           "stare": {
             "mama_finn": "vindecata"
+          }
+        }
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
           }
         }
       }
@@ -6911,6 +7370,11 @@
             }
           }
         ]
+      },
+      "metal_r": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Eu am un nasture de fier! ...A, trebuie mai mare?"
       }
     },
     "vorbeste": [
@@ -6930,6 +7394,29 @@
         "conditii": {
           "stare": {
             "finn_masa": "facuta"
+          }
+        }
+      }
+    ],
+    "optiuni": [
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
           }
         }
       }
@@ -7268,6 +7755,11 @@
         "vorbitor": "contrabandist",
         "emotie": "normal",
         "text": "Finn e un puști bun. Prea bun pentru meseria asta. Dacă te-a adus la mine, înseamnă că ai făcut ceva ce n-a făcut nimeni pentru el."
+      },
+      "metal_r": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Ai venit unde trebuie. Am fier vechi cât să faci zece pluguri. Cincisprezece monede bucata."
       }
     },
     "vorbeste": [
@@ -7288,6 +7780,27 @@
           "magazin": "contrabandist"
         },
         "spre": null
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -7434,6 +7947,11 @@
         "gand": true,
         "emotie": "normal",
         "text": "Borcanul e încă cald în palma mea. Ember așteaptă."
+      },
+      "metal_r": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Fier? Bătrâna Morwen are doar oale de lut, copile. Fierul sperie florile."
       }
     },
     "vorbeste": [
@@ -7457,6 +7975,27 @@
           "magazin": "ierbareasa"
         },
         "spre": null
+      },
+      {
+        "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_r",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -9572,6 +10111,86 @@
         "efecte": {
           "stare": {
             "bram_forja": "gata"
+          }
+        }
+      }
+    }
+  },
+  "plug_bram": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Fierul plugului” (decis de autor): Bram repară plugul cu Vale, peste o imagine.",
+    "grup": "Fierul plugului",
+    "partener": "fierar",
+    "start": "pb1",
+    "noduri": {
+      "pb1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram bate brăzdarul nou din fierul vechi, iar eu cioplesc coarnele din lemn, cum îmi arată el. Frânghia strânge totul la loc, nod lângă nod.",
+        "imagine": "events/plug_bram.png",
+        "_nota": "Decis de autor: Bram și Vale repară plugul.",
+        "urmator": "pb2"
+      },
+      "pb2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mâna mi s-a vindecat destul cât să țină cleștele. Dar nu destul cât să ciocănesc toată ziua. Bine că ești tu aici.",
+        "urmator": "pb3"
+      },
+      "pb3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când terminăm, Bram trece palma peste fierul nou, ca peste coama unui cal.",
+        "urmator": "pb4"
+      },
+      "pb4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Du-i-l. Și spune-i că i-l fac pe datorie. Pe datoria satului.",
+        "efecte": {
+          "consuma": {
+            "lemn": 4,
+            "franghie": 1,
+            "fier_vechi": 1
+          },
+          "obiect": "plugul_fermierului",
+          "stare": {
+            "plug_gata": "da"
+          }
+        }
+      }
+    }
+  },
+  "plug_fermier": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Fierul plugului” (decis de autor): Vale îi duce plugul înapoi fermierului, peste o imagine; +1 Bram.",
+    "grup": "Fierul plugului",
+    "partener": "fermier",
+    "start": "pf1",
+    "noduri": {
+      "pf1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fermierul înhamă boul și înfige plugul în pământ. Brazda iese dreaptă și adâncă, iar sătenii de pe margine încep să râdă și să bată din palme.",
+        "imagine": "events/plug_fermier.png",
+        "_nota": "Decis de autor: fermierul ară din nou.",
+        "urmator": "pf2"
+      },
+      "pf2": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Spune-i lui Bram că la toamnă îi umplu un sac cu grâu, orice ar zice orcii.",
+        "urmator": "pf3"
+      },
+      "pf3": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Și ție, băiete, îți rămân dator.",
+        "efecte": {
+          "daObiect": "plugul_fermierului",
+          "stare": {
+            "plug_reparat": "da"
           }
         }
       }

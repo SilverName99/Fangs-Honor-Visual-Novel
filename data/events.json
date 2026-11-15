@@ -1330,6 +1330,33 @@
           "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: acolo unde îți arată Bram."
         }
       }
+    },
+    {
+      "id": "plug_bram",
+      "nume": "Fierul plugului: la Bram",
+      "grup": "Fierul plugului",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 120,
+        "nevoi": {
+          "stamina": -15
+        }
+      },
+      "dialog": "plug_bram",
+      "_nota": "Decis de autor: Bram repară plugul cu Vale. Ales de Claude: 2 ore, 15 stamina."
+    },
+    {
+      "id": "plug_fermier",
+      "nume": "Fierul plugului: plugul înapoi",
+      "grup": "Fierul plugului",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "plug_fermier",
+      "_nota": "Decis de autor: fermierul ară din nou; +1 Bram."
     }
   ]
 }

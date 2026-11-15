@@ -1044,7 +1044,8 @@
         "vinde": [
           "sageti",
           "arc",
-          "sabie_mare"
+          "sabie_mare",
+          "fier_vechi"
         ],
         "schimburi": [
           {
@@ -1312,6 +1313,38 @@
       ],
       "dialog": "fermier",
       "program": [
+        {
+          "de": "06:00",
+          "pana": "13:00",
+          "loc": "campuri",
+          "sprite": "plug",
+          "conditii": {
+            "misiune": {
+              "bram_forja": "terminata"
+            },
+            "stare": {
+              "fermier_deblocat": "da"
+            },
+            "nu": {
+              "oricare": [
+                {
+                  "existaStare": "plug_reparat"
+                },
+                {
+                  "stare": {
+                    "plug": "refuzat"
+                  },
+                  "trecut": {
+                    "plug_refuz": {
+                      "pesteZile": 2
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "ce": "cu plugul stricat (misiunea „Fierul plugului”, decis de autor)"
+        },
         {
           "de": "06:00",
           "pana": "13:00",
