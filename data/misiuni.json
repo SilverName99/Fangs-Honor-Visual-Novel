@@ -526,7 +526,7 @@
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Un șoim al Străjerilor i-a adus Kaiei o scrisoare de acasă: pădurile de departe au tăcut, iar animalele mor fără nicio rană și nu putrezesc. Ai ei o cheamă acasă. Kaia mi-a cerut două zile, să se gândească dacă pleacă sau rămâne.",
       "oferta": {
-        "_nota": "Decis de autor: după „Rana lui Ember” (K4 și K5 inversate: întâi șoimul, apoi wyvernii). Ales de Claude: din ziua de după vindecare.",
+        "_nota": "Decis de autor: după „Rana lui Ember” (K4 și K5 inversate: întâi șoimul, apoi wyvernii). Decis de autor: din ziua de după vindecare.",
         "text": "Pot să stau puțin cu tine la foc?",
         "nod": "soim_oferta",
         "conditii": {
@@ -587,7 +587,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: 4 imagini (șoimul vine, se pune pe umărul Kaiei, scrisoarea citită împreună, Kaia cere timp); Vale o roagă să rămână sau îi spune să plece; după două zile, oricum, Kaia a hotărât să rămână (replicile diferă după ce i-a spus Vale) și a trimis șoimul înapoi; +1 sigur. Ales de Claude: în cele două zile (48 de ore de la alegere), Kaia și Ember lipsesc din locul de campare."
+      "_nota": "Decis de autor: 4 imagini (șoimul vine, se pune pe umărul Kaiei, scrisoarea citită împreună, Kaia cere timp); Vale o roagă să rămână sau îi spune să plece; după două zile, oricum, Kaia a hotărât să rămână (replicile diferă după ce i-a spus Vale) și a trimis șoimul înapoi; +1 sigur. Decis de autor: în cele două zile (48 de ore de la alegere), Kaia și Ember lipsesc din locul de campare."
     },
     {
       "id": "kaia_wyverni",
@@ -732,7 +732,7 @@
       "recompensa": {
         "text": "Încrederea Kaiei +1, dacă merg cu ea la drumul mare."
       },
-      "_nota": "Decis de autor: doar noaptea de după ce Kaia o propune. Acceptat: noaptea, când Vale ajunge la locul de campare, pornește direct (8 imagini), +1 la final. Refuzat: noaptea aceea Kaia lipsește, iar a doua zi îi povestește ce a văzut, fără +1. Ales de Claude: Kaia îl așteaptă 23–03 (ca Finn la ladă); dacă Vale nu vine, pleacă singură, ca la refuz; povestea ei stă peste imaginea cu cuștile, cu ceața amintirilor."
+      "_nota": "Decis de autor: doar noaptea de după ce Kaia o propune. Acceptat: noaptea, când Vale ajunge la locul de campare, pornește direct (8 imagini), +1 la final. Refuzat: noaptea aceea Kaia lipsește, iar a doua zi îi povestește ce a văzut, fără +1. Decis de autor: Kaia îl așteaptă 23–03 (ca Finn la ladă); dacă Vale nu vine, pleacă singură, ca la refuz; povestea ei stă peste imaginea cu cuștile, cu ceața amintirilor."
     },
     {
       "id": "scandal",

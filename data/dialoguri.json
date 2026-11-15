@@ -4797,7 +4797,7 @@
         "text": "Eram pe urmele unui cerb, lângă pârâul de la marginea pădurii. Am auzit voci și m-am lipit de pământ, după o tufă de alun. Ember s-a culcat lângă mine fără să-i spun.",
         "imagine": "events/kaia_wyverni_orci.png",
         "amintire": true,
-        "_nota": "Decis de autor: prin pădure, Kaia a auzit niște orci vorbind (prima imagine). Ales de Claude: cu ceața amintirilor, ca la povestea despre Ember.",
+        "_nota": "Decis de autor: prin pădure, Kaia a auzit niște orci vorbind (prima imagine). Decis de autor: cu ceața amintirilor, ca la povestea despre Ember.",
         "urmator": "v2"
       },
       "v2": {
@@ -5287,7 +5287,7 @@
     }
   },
   "kaia_wyverni_povestea": {
-    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Convoiul”, dacă Vale n-a mers cu ea (decis de autor: a doua zi îi povestește ce a văzut, fără +1). Ales de Claude: povestea stă peste imaginea cu cuștile (a 6-a), cu ceața amintirilor.",
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Convoiul”, dacă Vale n-a mers cu ea (decis de autor: a doua zi îi povestește ce a văzut, fără +1). Decis de autor: povestea stă peste imaginea cu cuștile (a 6-a), cu ceața amintirilor.",
     "grup": "Kaia: convoiul",
     "partener": "vanatoare",
     "start": "p1",
