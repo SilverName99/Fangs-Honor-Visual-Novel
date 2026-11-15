@@ -5168,14 +5168,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "O fiară uriașă stă culcată între gratii, cu aripile de piele, ca de liliac, strânse pe lângă trup, lungi cât două căruțe. Capul ei lung, plin de solzi, îi stă lăsat pe podeaua cuștii.",
+        "text": "O fiară uriașă stă în picioare între gratii, pe două picioare, cu aripile de piele, ca de liliac, lăsate până la podea. Un gât lung, plin de solzi, și fălci întredeschise, pline de colți.",
         "urmator": "t34"
       },
       "t34": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "E legată cu lanțuri la gât, la aripi și la gheare. Și nu se zbate deloc: doar ochii îi urmăresc torțele, liniștiți, ca și cum ar ști încotro merge. Mai încolo, pe drum, vin încă o căruță cu o cușcă și încă una.",
+        "text": "E legată cu lanțuri la gât, la aripi și la picioare. Și nu se zbate deloc, nu scoate niciun sunet: doar ochii îi urmăresc torțele, liniștiți, ca și cum ar ști încotro merge. Mai încolo, pe drum, vin încă o căruță cu o cușcă și încă una.",
         "_nota": "Decis de autor: wyvernul stă liniștit, dar legat cu lanțuri.",
         "urmator": "t35"
       },
