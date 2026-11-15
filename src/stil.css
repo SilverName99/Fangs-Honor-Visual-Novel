@@ -1844,13 +1844,13 @@ svg.zone {
 .carte .punct-incredere.plin {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
-/* Lipite unele de altele (decis de autor): iconița are loc gol în jurul stelei, așa că se suprapun puțin, ca stelele
-   să se atingă și „x/10” să stea aproape de ele */
+/* Aproape lipite (decis de autor): iconița are loc gol în jurul stelei, așa că se suprapun puțin, ca stelele să stea
+   strâns, cu un spațiu mic între ele, și „x/10” să rămână aproape de ele */
 .carte .romburi {
   gap: 0;
 }
 .carte .punct-incredere + .punct-incredere {
-  margin-left: -7px;
+  margin-left: -3px;
 }
 .descriere-carte {
   font: 500 40px/1.35 Caveat, cursive;
