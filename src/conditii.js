@@ -66,6 +66,19 @@ const tipuri = {
       const zile = (c.minute - la) / 1440;
       return (lim.subZile == null || zile < lim.subZile) && (lim.pesteZile == null || zile >= lim.pesteZile);
     }),
+  // „noapteaDupa: { marcaj, de, pana, cand }” = prima noapte de după marcaj (decis de autor: Kaia îl cheamă pe Vale
+  // „la noapte”, iar noaptea de după e prea târziu). Noaptea începe la primul „de” (implicit 23:00) de după marcaj și
+  // ține până la „pana” (implicit 05:00) din dimineața următoare. cand: "in" (implicit) = acum e în fereastra aceea;
+  // "dupa" = fereastra a trecut. Fără marcaj, condiția nu e îndeplinită (nimeni n-a propus nimic)
+  noapteaDupa: (v, c) => {
+    const la = c.marcaje?.[v.marcaj];
+    if (la == null || c.minute == null) return false;
+    const de = inMinute(v.de || '23:00');
+    let start = Math.floor(la / 1440) * 1440 + de;
+    if (start < la) start += 1440;
+    const sfarsit = start + ((inMinute(v.pana || '05:00') - de + 1440) % 1440 || 1440);
+    return v.cand === 'dupa' ? c.minute >= sfarsit : c.minute >= start && c.minute < sfarsit;
+  },
   // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei)
   marcatAzi: (v, c) => c.marcaje?.[v] != null && c.minute != null && Math.floor(c.marcaje[v] / 1440) === Math.floor(c.minute / 1440),
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)

@@ -326,7 +326,7 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea Kaiei +1 și tabăra ei din pădure (Camp site)."
+        "text": "Încrederea Kaiei +1 și tabăra ei din pădure (locul de campare)."
       }
     },
     {
@@ -353,7 +353,7 @@
               "kaia_capcane": "desfacute"
             }
           },
-          "sfat": "Ziua, cât e Kaia la Camp site (05–10 sau 14–18), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
+          "sfat": "Ziua, cât e Kaia la locul de campare (05–10 sau 14–18), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
           "predare": {
             "text": "Sunt gata. Hai la capcane!",
             "nod": "capcane_pregatit",
@@ -422,7 +422,7 @@
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Un mistreț bătrân l-a sfâșiat pe Ember la coapsă. Kaia nu poate pleca de lângă el, iar rana trebuie unsă cu ceva bun, până nu se infectează. Bătrâna Morwen face cele mai bune alifii.",
       "oferta": {
-        "_nota": "Decis de autor: la cel puțin două zile după „Capcanele”, la Camp site, unde Kaia stă lângă Ember rănit (un singur sprite, până la vindecare). Ales de Claude: și după eliberarea lui Finn (Bătrâna Morwen stă la Marginea satului).",
+        "_nota": "Decis de autor: la cel puțin două zile după „Capcanele”, la locul de campare, unde Kaia stă lângă Ember rănit (un singur sprite, până la vindecare). Ales de Claude: și după eliberarea lui Finn (Bătrâna Morwen stă la Marginea satului).",
         "text": "Ce i s-a întâmplat lui Ember?",
         "nod": "ember_oferta",
         "conditii": {
@@ -502,7 +502,7 @@
               "ember": "vindecat"
             }
           },
-          "sfat": "Kaia nu pleacă de lângă Ember: e la Camp site, zi și noapte.",
+          "sfat": "Kaia nu pleacă de lângă Ember: e la locul de campare, zi și noapte.",
           "predare": {
             "text": "Am adus alifia de la Bătrâna Morwen.",
             "nod": "ember_vindecare"
@@ -518,6 +518,221 @@
         }
       },
       "_nota": "Decis de autor: fără alegeri la vindecare (Vale ține capul tigrului, Kaia povestește peste 2 imagini-amintire). Încrederea +1, ales de Claude, nu se poate rata."
+    },
+    {
+      "id": "kaia_soim",
+      "titlu": "Șoimul Străjerilor",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": "CIORNĂ: Un șoim al Străjerilor i-a adus Kaiei o scrisoare de acasă: pădurile de departe au tăcut, iar animalele mor fără nicio rană și nu putrezesc. Ai ei o cheamă acasă. Kaia mi-a cerut două zile, să se gândească dacă pleacă sau rămâne.",
+      "oferta": {
+        "_nota": "Decis de autor: după „Rana lui Ember” (K4 și K5 inversate: întâi șoimul, apoi wyvernii). Ales de Claude: din ziua de după vindecare.",
+        "text": "Pot să stau puțin cu tine la foc?",
+        "nod": "soim_oferta",
+        "conditii": {
+          "misiuneTerminata": {
+            "kaia_ember": 1
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Aștept hotărârea Kaiei",
+          "gata": {
+            "existaStare": "kaia_soim_hotarare"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "kaia_soim_ales": {
+                    "subZile": 2
+                  }
+                }
+              },
+              "text": "Kaia mi-a cerut două zile și a plecat cu Ember în pădure, să se gândească."
+            },
+            "Au trecut cele două zile. Kaia ar trebui să fie iar la locul de campare."
+          ],
+          "predare": {
+            "text": "Te-ai hotărât, Kaia?",
+            "nod": [
+              {
+                "nod": "soim_r1",
+                "conditii": {
+                  "stare": {
+                    "kaia_soim": "ramai"
+                  }
+                }
+              },
+              {
+                "nod": "soim_p1"
+              }
+            ],
+            "conditii": {
+              "trecut": {
+                "kaia_soim_ales": {
+                  "pesteZile": 2
+                }
+              }
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1, orice i-aș spune.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: 4 imagini (șoimul vine, se pune pe umărul Kaiei, scrisoarea citită împreună, Kaia cere timp); Vale o roagă să rămână sau îi spune să plece; după două zile, oricum, Kaia a hotărât să rămână (replicile diferă după ce i-a spus Vale) și a trimis șoimul înapoi; +1 sigur. Ales de Claude: în cele două zile (48 de ore de la alegere), Kaia și Ember lipsesc din locul de campare."
+    },
+    {
+      "id": "kaia_wyverni",
+      "titlu": "Convoiul",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": "CIORNĂ: Kaia i-a auzit pe orci: la noapte trece pe drumul mare, spre capitală, un convoi cu niște cuști care, zic ei, o să întoarcă războiul. Kaia vrea să vadă cu ochii ei ce e în ele.",
+      "oferta": {
+        "_nota": "Decis de autor: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”).",
+        "text": "Ești tăcută azi, Kaia. S-a întâmplat ceva?",
+        "nod": "wyv_oferta",
+        "conditii": {
+          "misiuneTerminata": {
+            "kaia_soim": 1
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Aflu ce e în cuștile orcilor",
+          "gata": {
+            "existaStare": "kaia_wyverni_vazut"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "noapteaDupa": {
+                  "marcaj": "kaia_wyverni_propus",
+                  "de": "23:00",
+                  "pana": "05:00",
+                  "cand": "dupa"
+                }
+              },
+              "text": "Kaia s-a întors de la drumul mare. O găsesc la locul de campare."
+            },
+            {
+              "conditii": {
+                "stare": {
+                  "kaia_wyverni": "acceptat"
+                },
+                "nu": {
+                  "noapteaDupa": {
+                    "marcaj": "kaia_wyverni_propus",
+                    "de": "23:00",
+                    "pana": "03:00",
+                    "cand": "dupa"
+                  }
+                }
+              },
+              "text": "La noapte, după unsprezece, Kaia mă așteaptă la locul de campare. Până la trei; după aceea pleacă fără mine."
+            },
+            {
+              "conditii": {
+                "noapteaDupa": {
+                  "marcaj": "kaia_wyverni_propus",
+                  "de": "23:00",
+                  "pana": "05:00"
+                }
+              },
+              "text": "Kaia s-a dus singură la drumul mare. Dimineață o întreb ce a văzut."
+            },
+            "La noapte, Kaia se duce singură la drumul mare. Mâine o întreb ce a văzut."
+          ],
+          "predare": {
+            "text": [
+              {
+                "conditii": {
+                  "noapteaDupa": {
+                    "marcaj": "kaia_wyverni_propus",
+                    "de": "23:00",
+                    "pana": "03:00"
+                  }
+                },
+                "text": "Sunt gata, Kaia. Mergem?"
+              },
+              "Ce-ai văzut la drumul mare, Kaia?"
+            ],
+            "nod": [
+              {
+                "nod": "wyv_gata",
+                "conditii": {
+                  "noapteaDupa": {
+                    "marcaj": "kaia_wyverni_propus",
+                    "de": "23:00",
+                    "pana": "03:00"
+                  }
+                }
+              },
+              {
+                "nod": "wyv_aflu_refuz",
+                "conditii": {
+                  "stare": {
+                    "kaia_wyverni": "refuzat"
+                  }
+                }
+              },
+              {
+                "nod": "wyv_aflu_ratat"
+              }
+            ],
+            "conditii": {
+              "oricare": [
+                {
+                  "stare": {
+                    "kaia_wyverni": "acceptat"
+                  },
+                  "noapteaDupa": {
+                    "marcaj": "kaia_wyverni_propus",
+                    "de": "23:00",
+                    "pana": "03:00"
+                  }
+                },
+                {
+                  "noapteaDupa": {
+                    "marcaj": "kaia_wyverni_propus",
+                    "de": "23:00",
+                    "pana": "05:00",
+                    "cand": "dupa"
+                  }
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre la noapte...",
+            "nod": [
+              {
+                "nod": "wyv_indiciu_acc",
+                "conditii": {
+                  "stare": {
+                    "kaia_wyverni": "acceptat"
+                  }
+                }
+              },
+              {
+                "nod": "wyv_indiciu_ref"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1, dacă merg cu ea la drumul mare."
+      },
+      "_nota": "Decis de autor: doar noaptea de după ce Kaia o propune. Acceptat: noaptea, când Vale ajunge la locul de campare, pornește direct (8 imagini), +1 la final. Refuzat: noaptea aceea Kaia lipsește, iar a doua zi îi povestește ce a văzut, fără +1. Ales de Claude: Kaia îl așteaptă 23–03 (ca Finn la ladă); dacă Vale nu vine, pleacă singură, ca la refuz; povestea ei stă peste imaginea cu cuștile, cu ceața amintirilor."
     },
     {
       "id": "scandal",

@@ -2,7 +2,7 @@ import { inMinute, MINUTE_ZI, momentZi } from './timp.js';
 import { minuteInZi, schimbaNevoie, ziua, context } from './stare.js';
 import { verifica } from './conditii.js';
 import { aplicaEfecte } from './efecte.js';
-import { cateAre, listaMisiuni, pasul, numaratori } from './misiuni.js';
+import { cateAre, listaMisiuni, pasul, numaratori, textPotrivit } from './misiuni.js';
 import { baraNevoie } from './baraNevoie.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
@@ -262,14 +262,6 @@ export function creeazaActiuni(parinte, joc) {
     );
   }
 
-  // „intrebare” la cules poate fi și o listă de { conditii, text } (și un text simplu la urmă): îndemnul potrivit
-  // misiunii de acum (florile pentru alifia lui Ember, nu sunătoarea lui Elian)
-  function textPotrivit(t) {
-    if (!Array.isArray(t)) return t;
-    const x = t.find((y) => typeof y === 'string' || verifica(y.conditii, context(joc.stare)));
-    return typeof x === 'string' ? x : x?.text;
-  }
-
   // Florile (altele decât planta bună) pe care le cere acum pasul unei misiuni în lucru („numara”), câte mai lipsesc,
   // cel mult „maxCulese” la o căutare
   function floriCerute(a, buna) {
@@ -316,7 +308,9 @@ export function creeazaActiuni(parinte, joc) {
     if (a.sunet) setTimeout(() => joc.sunet.efect(a.sunet), 150);
     // Orice floare culeasă rămâne în rucsac (decis de autor): cea bună pentru misiune, celelalte pentru poțiunile
     // Bătrânei Morwen
-    mini.culege({ ...a, intrebare: textPotrivit(a.intrebare) }).then(({ culese }) => {
+    // „intrebare” poate fi și o listă { conditii, text }: îndemnul potrivit misiunii de acum (florile pentru alifia
+    // lui Ember, nu sunătoarea lui Elian)
+    mini.culege({ ...a, intrebare: textPotrivit(a.intrebare, joc.stare) }).then(({ culese }) => {
       const numar = {};
       for (const id of culese) numar[id] = (numar[id] || 0) + (id === buna ? a.nPeCorecta || 1 : 1);
       joc.dupaActiune('', Object.entries(numar).map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) })));

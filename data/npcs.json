@@ -423,9 +423,9 @@
       "nume": "Kaia",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Trece prin sat din când în când și toată lumea o știe. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Campsite-ul ei din pădure e acum locul nostru ascuns."
+        "descriere": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Trece prin sat din când în când și toată lumea o știe. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns."
       },
-      "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la campsite-ul ei din pădure, care devine locul ascuns al grupului. Recrutarea: TODO.",
+      "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la tabăra ei din pădure, care devine locul de campare, locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
         "padure/campsite",
         "padure"
@@ -447,6 +447,60 @@
       },
       "dialog": "vanatoare",
       "program": [
+        {
+          "de": "23:00",
+          "pana": "03:00",
+          "loc": "padure/campsite",
+          "sprite": "dupa_amiaza",
+          "conditii": {
+            "misiune": {
+              "kaia_wyverni": "inceputa"
+            },
+            "stare": {
+              "kaia_wyverni": "acceptat"
+            },
+            "noapteaDupa": {
+              "marcaj": "kaia_wyverni_propus",
+              "de": "23:00",
+              "pana": "03:00"
+            },
+            "nu": {
+              "existaStare": "kaia_wyverni_vazut"
+            }
+          },
+          "ce": "trează, îl așteaptă pe Vale ca să plece la drumul mare (misiunea „Convoiul”, noaptea de după ce a acceptat; decis de autor)"
+        },
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "conditii": {
+            "misiune": {
+              "kaia_wyverni": "inceputa"
+            },
+            "noapteaDupa": {
+              "marcaj": "kaia_wyverni_propus",
+              "de": "23:00",
+              "pana": "05:00"
+            },
+            "nu": {
+              "existaStare": "kaia_wyverni_vazut"
+            }
+          },
+          "ce": "plecată singură, cu Ember, la drumul mare (misiunea „Convoiul”: Vale a refuzat sau n-a venit până la 3; decis de autor)"
+        },
+        {
+          "de": "00:00",
+          "pana": "24:00",
+          "conditii": {
+            "existaStare": "kaia_soim",
+            "trecut": {
+              "kaia_soim_ales": {
+                "subZile": 2
+              }
+            }
+          },
+          "ce": "plecată cu Ember în pădure, două zile, să se gândească dacă pleacă acasă (misiunea „Șoimul Străjerilor”; ales de Claude)"
+        },
         {
           "de": "00:00",
           "pana": "24:00",
@@ -527,6 +581,60 @@
       "faraPortret": true,
       "program": [
         {
+          "de": "23:00",
+          "pana": "03:00",
+          "loc": "padure/campsite",
+          "sprite": "dupa_amiaza",
+          "conditii": {
+            "misiune": {
+              "kaia_wyverni": "inceputa"
+            },
+            "stare": {
+              "kaia_wyverni": "acceptat"
+            },
+            "noapteaDupa": {
+              "marcaj": "kaia_wyverni_propus",
+              "de": "23:00",
+              "pana": "03:00"
+            },
+            "nu": {
+              "existaStare": "kaia_wyverni_vazut"
+            }
+          },
+          "ce": "treaz, cu Kaia, gata de drum (misiunea „Convoiul”, noaptea de după ce a acceptat; decis de autor)"
+        },
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "conditii": {
+            "misiune": {
+              "kaia_wyverni": "inceputa"
+            },
+            "noapteaDupa": {
+              "marcaj": "kaia_wyverni_propus",
+              "de": "23:00",
+              "pana": "05:00"
+            },
+            "nu": {
+              "existaStare": "kaia_wyverni_vazut"
+            }
+          },
+          "ce": "plecat cu Kaia la drumul mare (misiunea „Convoiul”: Vale a refuzat sau n-a venit până la 3; decis de autor)"
+        },
+        {
+          "de": "00:00",
+          "pana": "24:00",
+          "conditii": {
+            "existaStare": "kaia_soim",
+            "trecut": {
+              "kaia_soim_ales": {
+                "subZile": 2
+              }
+            }
+          },
+          "ce": "plecat cu Kaia în pădure, două zile, să se gândească dacă pleacă acasă (misiunea „Șoimul Străjerilor”; ales de Claude)"
+        },
+        {
           "de": "00:00",
           "pana": "24:00",
           "conditii": {
@@ -574,7 +682,7 @@
     {
       "id": "kaia_ember",
       "nume": "Kaia și Ember",
-      "_despre": "Decis de autor: misiunea Kaiei „Rana lui Ember”. Un singur sprite, Kaia lângă Ember rănit de un mistreț, la Camp site, zi și noapte, de la două zile după „Capcanele” până la vindecare; atunci Kaia și Ember nu apar separat. Când îl apeși, răspunde Kaia (cineRaspunde), iar semnele misiunilor ei stau deasupra lui (semneDe). Îl aranjează autorul în editor (cu „Arată tot”).",
+      "_despre": "Decis de autor: misiunea Kaiei „Rana lui Ember”. Un singur sprite, Kaia lângă Ember rănit de un mistreț, la locul de campare, zi și noapte, de la două zile după „Capcanele” până la vindecare; atunci Kaia și Ember nu apar separat. Când îl apeși, răspunde Kaia (cineRaspunde), iar semnele misiunilor ei stau deasupra lui (semneDe). Îl aranjează autorul în editor (cu „Arată tot”).",
       "locuriSprite": [
         "padure/campsite"
       ],

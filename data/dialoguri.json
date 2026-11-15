@@ -1139,6 +1139,68 @@
         }
       },
       {
+        "_nota": "Misiunea „Șoimul Străjerilor”: Kaia s-a întors după cele două zile, până îi spune lui Vale ce a hotărât.",
+        "nod": "soim_inapoi",
+        "conditii": {
+          "misiune": {
+            "kaia_soim": "inceputa"
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Convoiul”: după noaptea convoiului, Kaia are ceva de povestit (Vale n-a fost cu ea).",
+        "nod": "wyv_salut_dupa",
+        "conditii": {
+          "misiune": {
+            "kaia_wyverni": "inceputa"
+          },
+          "noapteaDupa": {
+            "marcaj": "kaia_wyverni_propus",
+            "de": "23:00",
+            "pana": "05:00",
+            "cand": "dupa"
+          }
+        }
+      },
+      {
+        "nod": "wyv_salut_noapte",
+        "conditii": {
+          "misiune": {
+            "kaia_wyverni": "inceputa"
+          },
+          "stare": {
+            "kaia_wyverni": "acceptat"
+          },
+          "noapteaDupa": {
+            "marcaj": "kaia_wyverni_propus",
+            "de": "23:00",
+            "pana": "03:00"
+          }
+        }
+      },
+      {
+        "nod": "wyv_salut_acc",
+        "conditii": {
+          "misiune": {
+            "kaia_wyverni": "inceputa"
+          },
+          "stare": {
+            "kaia_wyverni": "acceptat"
+          }
+        }
+      },
+      {
+        "nod": "wyv_salut_ref",
+        "conditii": {
+          "misiune": {
+            "kaia_wyverni": "inceputa"
+          },
+          "stare": {
+            "kaia_wyverni": "refuzat"
+          }
+        }
+      },
+      {
         "aleator": [
           "a",
           "salut2"
@@ -1450,6 +1512,240 @@
             "inchide": true,
             "efecte": {
               "eveniment": "kaia_ember"
+            }
+          }
+        ]
+      },
+      "soim_oferta": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Stai. Lângă foc e loc destul pentru doi. Și pentru un tigru leneș.",
+        "alegeri": [
+          {
+            "text": "Mă așez lângă foc.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_soim"
+            }
+          },
+          {
+            "text": "Altă dată, Kaia.",
+            "spre": "soim_altadata"
+          }
+        ],
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Șoimul Străjerilor” (decis de autor)."
+      },
+      "soim_altadata": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Focul nu pleacă nicăieri. Nici eu."
+      },
+      "soim_inapoi": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Te-am auzit de la marginea luminișului. Tot ca un urs.",
+        "_nota": "Salutul de după cele două zile, până îi spune lui Vale ce a hotărât."
+      },
+      "soim_r1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Două nopți am stat sub un stejar bătrân, cu Ember lipit de mine și cu scrisoarea în mână. Și de câte ori închideam ochii, auzeam ce mi-ai spus: „Rămâi.”",
+        "_nota": "Decis de autor: replicile diferă după ce i-a spus Vale; aici, că a rugat-o să rămână.",
+        "urmator": "soim_r2"
+      },
+      "soim_r2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "La început m-am supărat pe tine. Mi se părea prea ușor de spus. Apoi am înțeles că mă supăram doar pentru că aveai dreptate.",
+        "urmator": "soim_c1"
+      },
+      "soim_p1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Două nopți am stat sub un stejar bătrân, cu Ember lipit de mine și cu scrisoarea în mână. Și de câte ori închideam ochii, auzeam ce mi-ai spus: „Du-te.”",
+        "_nota": "Decis de autor: replicile diferă după ce i-a spus Vale; aici, că i-a spus să plece.",
+        "urmator": "soim_p2"
+      },
+      "soim_p2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Puteai să-mi ceri să rămân. Ai nevoie de mine aici și o știi. Dar te-ai gândit întâi la ai mei.",
+        "urmator": "soim_p3"
+      },
+      "soim_p3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Cine face așa ceva e un om lângă care merită să rămâi.",
+        "urmator": "soim_c1"
+      },
+      "soim_c1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Rămân, Vale. Eu și Ember.",
+        "urmator": "soim_c2"
+      },
+      "soim_c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember se freacă de umărul meu cu capul lui cât un butoi, de mă clatină. Parcă știa de mult.",
+        "urmator": "soim_c3"
+      },
+      "soim_c3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am trimis șoimul înapoi, cu o scrisoare. Le-am scris alor mei că și aici e o pădure care are nevoie de ajutor: pădurea de lângă satul vostru. Că orcii o golesc de tot ce trăiește și că cineva trebuie să stea de pază.",
+        "_nota": "Decis de autor: Kaia a trimis înapoi o scrisoare cu șoimul, că și pădurea de la marginea satului are nevoie de ajutor.",
+        "urmator": "soim_c4"
+      },
+      "soim_c4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă ai tăi nu înțeleg?",
+        "urmator": "soim_c5"
+      },
+      "soim_c5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Străjerii înțeleg pădurile. Pe mine mă înțeleg mai greu.",
+        "urmator": "soim_c6"
+      },
+      "soim_c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Zâmbește, dar privirea îi fuge departe, peste vârfurile copacilor.",
+        "urmator": "soim_c7"
+      },
+      "soim_c7": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și dacă ce a omorât animalele alea vine până aici... vreau să fiu aici când vine.",
+        "efecte": {
+          "stare": {
+            "kaia_soim_hotarare": "da"
+          }
+        }
+      },
+      "wyv_oferta": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ieri, la vânătoare, am ajuns până la marginea pădurii, unde se vede drumul mare. Și am auzit ceva ce n-ar fi trebuit să aud.",
+        "_nota": "CIORNĂ (Claude): misiunea Kaiei „Convoiul” (decis de autor).",
+        "urmator": "wyv_oferta2"
+      },
+      "wyv_oferta2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Stai jos. Îți povestesc de la început.",
+        "alegeri": [
+          {
+            "text": "Te ascult.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_wyverni_vesti"
+            }
+          },
+          {
+            "text": "Nu acum, Kaia.",
+            "spre": "wyv_nu_acum"
+          }
+        ]
+      },
+      "wyv_nu_acum": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci vino curând. Ce am auzit nu așteaptă."
+      },
+      "wyv_salut_acc": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "La noapte, Vale. Nu uita."
+      },
+      "wyv_salut_noapte": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "E destul de întuneric. Când ești gata, plecăm."
+      },
+      "wyv_salut_ref": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu te supăra dacă tac azi. Mă gândesc la noapte."
+      },
+      "wyv_salut_dupa": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Vale... Bine că ai venit."
+      },
+      "wyv_indiciu_acc": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "După unsprezece, aici. Te aștept până la trei; după aceea plec singură. Și mănâncă ceva până atunci: n-o să ne oprim la masă."
+      },
+      "wyv_indiciu_ref": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu-ți cer să vii. Cineva trebuie doar să știe unde am plecat, dacă nu mă întorc."
+      },
+      "wyv_gata": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci hai. Și de aici încolo, doar în șoaptă.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_wyverni"
+            }
+          },
+          {
+            "text": "Mai așteaptă puțin.",
+            "spre": "wyv_astept"
+          }
+        ]
+      },
+      "wyv_astept": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Puțin. Convoiul nu ne așteaptă pe noi."
+      },
+      "wyv_aflu_refuz": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "M-am dus. Singură, cu Ember. Și aș vrea să nu fi văzut ce am văzut.",
+        "alegeri": [
+          {
+            "text": "Spune-mi tot.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_wyverni_povestea"
+            }
+          }
+        ]
+      },
+      "wyv_aflu_ratat": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Te-am așteptat până la trei, Vale. Apoi am plecat fără tine.",
+        "urmator": "wyv_aflu_ratat2"
+      },
+      "wyv_aflu_ratat2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Iartă-mă, Kaia. N-am putut să ajung.",
+        "urmator": "wyv_aflu_ratat3"
+      },
+      "wyv_aflu_ratat3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu mai contează. Contează ce am văzut.",
+        "alegeri": [
+          {
+            "text": "Spune-mi tot.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "kaia_wyverni_povestea"
             }
           }
         ]
@@ -3243,7 +3539,7 @@
     }
   },
   "kaia_tabara": {
-    "_nota": "CIORNĂ: după lupul negru, Kaia îi arată tabăra ei (Camp site).",
+    "_nota": "CIORNĂ: după lupul negru, Kaia îi arată tabăra ei (locul de campare).",
     "partener": "vanatoare",
     "start": "a",
     "noduri": {
@@ -4224,6 +4520,847 @@
             "ember": "vindecat"
           },
           "timp": 60
+        }
+      }
+    }
+  },
+  "kaia_soim": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Șoimul Străjerilor” (decis de autor): 4 imagini cu replici peste ele (șoimul vine, se pune pe umărul Kaiei, scrisoarea citită împreună, Kaia cere timp); Vale o roagă să rămână sau îi spune să plece; Kaia pleacă două zile cu Ember, să se gândească.",
+    "grup": "Kaia: șoimul",
+    "partener": "vanatoare",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă așez pe bușteanul de lângă foc. Kaia întoarce în jar o frigare cu o bucată de carne, iar Ember stă întins la picioarele noastre, cu burta la soare. Rana de pe coapsă s-a închis frumos: doar o dungă de blană mai rară arată pe unde a intrat colțul mistrețului.",
+        "imagine": "events/kaia_soim_1.png",
+        "_nota": "Decis de autor: Vale și Kaia stau la locul de campare și văd cum vine un șoim cu o scrisoare legată de picior.",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Morwen ar trebui să-și vândă alifiile pe bani. Ar ajunge mai bogată decât colectorul.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu-i spune asta. O să-ți ceară câte un coș de flori pentru fiecare zgârietură.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia râde. Apoi tace dintr-odată și ridică ochii spre cer.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Auzi?",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Un țipăt ascuțit, de sus. Un șoim coboară în cercuri largi peste luminiș, tot mai jos, ca și cum ne-ar căuta. La un picior îi atârnă ceva alb.",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "E un șoim de-al nostru. Al Străjerilor.",
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia întinde brațul, dar șoimul trece pe lângă el și i se lasă direct pe umăr, cu ghearele înfipte în pielea vestei. Parcă o știe de-o viață.",
+        "imagine": "events/kaia_soim_2.png",
+        "_nota": "Decis de autor: șoimul pe umărul Kaiei, iar ea ține scrisoarea în mână.",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Gata, gata... Ai zburat mult, nu-i așa? Ești numai pene și oase.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi dezleagă de la picior un sul mic de pergament, legat cu o sfoară subțire. Mâinile, care nu i-au tremurat nici în fața lupilor, acum îi tremură.",
+        "urmator": "b4"
+      },
+      "b4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De unde vine?",
+        "urmator": "b5"
+      },
+      "b5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "De acasă. De la ai mei, de departe.",
+        "urmator": "b6"
+      },
+      "b6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Străjerii nu trimit șoimi pentru vești bune, Vale. Pentru vești bune, vin ei.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Citește cu mine. Nu vreau să fiu singură cu ce scrie aici.",
+        "imagine": "events/kaia_soim_3.png",
+        "_nota": "Decis de autor: vedem scrisoarea și o citim împreună cu Kaia.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă aplec peste umărul ei. Scrisul e mărunt și apăsat, ca al cuiva care a scris în grabă, la lumina focului.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "„Kaia, pădurile de departe au tăcut. Nicio pasăre, niciun greier, de la izvoare până la munte.”",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "„Am găsit animale moarte: cerbi, lupi, păsări, căzute acolo unde stăteau. Fără nicio rană. Și nu putrezesc, Kaia. Nici corbii nu se ating de ele.”",
+        "_nota": "Decis de autor: animale moarte fără nicio rană, care nu putrezesc.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "„Toți Străjerii sunt chemați acasă. Vino cât poți de repede.”",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia citește scrisoarea de două ori. A doua oară, cu buzele mișcându-se fără niciun sunet.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Animale moarte care nu putrezesc... Ce poate face așa ceva?",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Nu știu. Și asta mă sperie cel mai tare. Străjerii cunosc tot ce trăiește într-o pădure.",
+        "urmator": "c9"
+      },
+      "c9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Dar asta nu e boală. Boala lasă urme. Boala putrezește.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai mei mă cheamă acasă, Vale. Pe toți Străjerii, de peste tot.",
+        "imagine": "events/kaia_soim_4.png",
+        "_nota": "Decis de autor: Kaia vorbește cu Vale; are nevoie de timp să se gândească dacă pleacă sau rămâne.",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Dar și pădurea de aici e bolnavă. Capcanele, lupii flămânzi, orcii care taie tot ce le iese în cale. Dacă plec, rămâne fără nimeni.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și dacă rămân, poate ai mei au nevoie de mine cum n-au mai avut niciodată.",
+        "urmator": "d4"
+      },
+      "d4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Șoimul a zburat pe o cracă de deasupra focului. Ne privește cu ochii lui galbeni, ca și cum ar aștepta și el răspunsul.",
+        "urmator": "d5"
+      },
+      "d5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am nevoie de timp. Două zile. Mă duc cu Ember în pădure, departe de foc și de oameni, unde se gândește limpede.",
+        "urmator": "d6"
+      },
+      "d6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Dar înainte să plec... Tu ce-ai face în locul meu?",
+        "alegeri": [
+          {
+            "text": "Rămâi, Kaia. Avem nevoie de tine aici.",
+            "spre": "e1",
+            "efecte": {
+              "misiune": {
+                "kaia_soim": "inceputa"
+              },
+              "stare": {
+                "kaia_soim": "ramai"
+              },
+              "marcheaza": "kaia_soim_ales"
+            }
+          },
+          {
+            "text": "Du-te. Ai tăi au nevoie de tine.",
+            "spre": "f1",
+            "efecte": {
+              "misiune": {
+                "kaia_soim": "inceputa"
+              },
+              "stare": {
+                "kaia_soim": "pleaca"
+              },
+              "marcheaza": "kaia_soim_ales"
+            }
+          }
+        ],
+        "_nota": "Decis de autor: Vale o roagă să rămână sau îi spune să plece; oricum ar alege, după două zile Kaia a hotărât să rămână."
+      },
+      "e1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Știam că o să spui asta. Și o parte din mine voia s-o audă.",
+        "urmator": "e2"
+      },
+      "e2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Dar nu hotărăsc acum. Nu cu scrisoarea asta încă în mână.",
+        "urmator": "g"
+      },
+      "f1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Puțini ar avea curajul să-mi spună asta. Mai ales cineva care are nevoie de mine aici.",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mulțumesc că ai fost sincer cu mine.",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia fluieră scurt. Ember se ridică și se scutură, iar șoimul i se lasă iar pe umăr. Pleacă toți trei spre adâncul pădurii, fără niciun zgomot.",
+        "urmator": "g2"
+      },
+      "g2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rămân singur lângă foc. Pentru prima dată, locul ăsta mi se pare prea mare."
+      }
+    }
+  },
+  "kaia_wyverni_vesti": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Convoiul” (decis de autor): Kaia povestește ce a auzit de la orci, peste o imagine-amintire (cu ceața amintirilor, „amintire” la replică); propune „la noapte”, la drumul mare; Vale acceptă sau refuză.",
+    "grup": "Kaia: convoiul",
+    "partener": "vanatoare",
+    "start": "v1",
+    "noduri": {
+      "v1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eram pe urmele unui cerb, lângă pârâul de la marginea pădurii. Am auzit voci și m-am lipit de pământ, după o tufă de alun. Ember s-a culcat lângă mine fără să-i spun.",
+        "imagine": "events/kaia_wyverni_orci.png",
+        "amintire": true,
+        "_nota": "Decis de autor: prin pădure, Kaia a auzit niște orci vorbind (prima imagine). Ales de Claude: cu ceața amintirilor, ca la povestea despre Ember.",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Erau doi orci, cu un butoiaș de bere între ei. Vorbeau tare, cum vorbesc ei când se cred singuri pe lume.",
+        "amintire": true,
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Mâine noapte trece convoiul pe drumul mare. Cu cuștile. Gorvak vrea fiarele la capitală înainte de prima zăpadă.",
+        "nume": "Orc",
+        "amintire": true,
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Celălalt l-a întrebat ce e în cuști. Primul a râs.",
+        "amintire": true,
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Ceva ce oamenii de pe ziduri n-au văzut nici în cele mai urâte vise ale lor. Cu fiarele alea, capitala cade într-o noapte, iar războiul e al nostru.",
+        "nume": "Orc",
+        "amintire": true,
+        "_nota": "Decis de autor: un convoi cu niște animale care vor întoarce bătălia în favoarea orcilor.",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Apoi au plecat spre poartă. Am stat acolo, cu nasul în pământ, până s-a făcut întuneric.",
+        "amintire": true,
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Fiare care întorc un război... Ce poate fi?",
+        "trezire": true,
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu știu. Dar „mâine noapte” a fost ieri. Asta înseamnă la noapte, Vale.",
+        "urmator": "v9"
+      },
+      "v9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Vreau să văd ce e în cuștile alea. De departe, de pe un deal de lângă drum, din întuneric. Să știm cu ce avem de-a face.",
+        "urmator": "v10"
+      },
+      "v10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Drumul mare pleacă de la poarta satului și merge zile întregi, până la capitală. Pe el pleacă fierul nostru și pieile, în căruțele orcilor. Pe el au venit și ei.",
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mergem pe Ember și ocolim satul pe departe, ca să nu ne vadă cei de pe zid și de la poartă. Dacă vii cu mine, te aștept aici după ce se întunecă de tot. Dacă nu... mă duc singură.",
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Vii, Vale?",
+        "alegeri": [
+          {
+            "text": "Vin cu tine.",
+            "spre": "wa1",
+            "efecte": {
+              "misiune": {
+                "kaia_wyverni": "inceputa"
+              },
+              "stare": {
+                "kaia_wyverni": "acceptat"
+              },
+              "marcheaza": "kaia_wyverni_propus"
+            }
+          },
+          {
+            "text": "E prea periculos, Kaia. Nu vin.",
+            "spre": "wr1",
+            "efecte": {
+              "misiune": {
+                "kaia_wyverni": "inceputa"
+              },
+              "stare": {
+                "kaia_wyverni": "refuzat"
+              },
+              "marcheaza": "kaia_wyverni_propus"
+            }
+          }
+        ],
+        "_nota": "Decis de autor: doar noaptea următoare. Acceptat = noaptea, la locul de campare, pornește drumul (+1 la final); refuzat = Kaia se duce singură, iar a doua zi îi povestește lui Vale ce a văzut, fără +1."
+      },
+      "wa1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Știam. Vino după unsprezece. Te aștept până la trei; după aceea, convoiul nu mai așteaptă pe nimeni.",
+        "urmator": "wa2"
+      },
+      "wa2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și mănâncă ceva până atunci. N-o să ne oprim la masă."
+      },
+      "wr1": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Poate ai dreptate. Dar cineva trebuie să vadă.",
+        "urmator": "wr2"
+      },
+      "wr2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se întoarce spre foc și nu mai spune nimic. Ember se uită lung la mine, ca și cum ar vrea să mă întrebe ceva."
+      }
+    }
+  },
+  "kaia_wyverni": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Convoiul” (decis de autor): noaptea, la locul de campare, pornește direct; 8 imagini cu replici, gândurile lui Vale și descrieri; convoiul se vede de departe (decis de autor, ca imaginile să iasă bine); +1 la Kaia la final.",
+    "grup": "Kaia: convoiul",
+    "partener": "vanatoare",
+    "start": "t1",
+    "noduri": {
+      "t1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Focul e stins. Doar câțiva cărbuni mai mocnesc sub cenușă. Kaia stă în picioare lângă Ember, cu glaive-ul la spate și o mantie închisă la culoare pe umeri.",
+        "imagine": "events/kaia_wyverni_1.png",
+        "_nota": "Decis de autor: Kaia îl întâmpină pe Vale.",
+        "urmator": "t2"
+      },
+      "t2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai venit. Mă temeam că o să te răzgândești.",
+        "urmator": "t3"
+      },
+      "t3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "M-am gândit la asta tot drumul. Dar sunt aici.",
+        "urmator": "t4"
+      },
+      "t4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îmi aruncă o mantie ca a ei, grea și mirosind a fum.",
+        "urmator": "t5"
+      },
+      "t5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Pune-o pe tine. Noaptea, cămașa ta se vede de la o poștă.",
+        "urmator": "t6"
+      },
+      "t6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "De aici încolo, calci doar pe unde calc eu. Dacă auzi ceva, te oprești. Dacă îți fac semn, te lipești de pământ. Bine?",
+        "urmator": "t7"
+      },
+      "t7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bine.",
+        "urmator": "t8"
+      },
+      "t8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pădurea noaptea e alta. Copacii pe care îi știu de-o viață au alte forme, iar fiecare crenguță ruptă sub talpa mea sună ca un tunet. Kaia nu face niciun zgomot. Nici Ember, deși e cât un cal.",
+        "imagine": "events/kaia_wyverni_2.png",
+        "_nota": "Decis de autor: pornesc prin pădure, până la ieșirea din pădure.",
+        "urmator": "t9"
+      },
+      "t9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Calci tot ca un urs.",
+        "urmator": "t10"
+      },
+      "t10": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Un urs care se străduiește.",
+        "urmator": "t11"
+      },
+      "t11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O aud pufnind în râs, încet, cu mâna la gură.",
+        "urmator": "t12"
+      },
+      "t12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ajungem la marginea pădurii. Dincolo de ultimii copaci, câmpul se întinde negru și gol sub lună, iar departe licăresc torțele de pe zidul satului.",
+        "urmator": "t13"
+      },
+      "t13": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Urcă în spatele meu. Și ține-te bine: Ember nu știe să alerge încet.",
+        "imagine": "events/kaia_wyverni_3.png",
+        "_nota": "Decis de autor: călare amândoi pe tigru, până la drumul mare, ocolind cu grijă satul, să nu fie zăriți de orci.",
+        "urmator": "t14"
+      },
+      "t14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Urc pe spinarea lui Ember. E caldă și tare ca o piatră încinsă de soare, iar sub palmele mele îi simt mușchii jucând.",
+        "urmator": "t15"
+      },
+      "t15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember pornește, și câmpul începe să fugă pe sub noi. Ocolim satul pe departe, pe marginea câmpurilor, cât mai departe de zid și de torțele de la poartă.",
+        "urmator": "t16"
+      },
+      "t16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "De aici, satul arată mic. Câteva lumini, un zid, o poartă. Tot ce am pe lume.",
+        "urmator": "t17"
+      },
+      "t17": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Uite-l. Drumul mare.",
+        "urmator": "t18"
+      },
+      "t18": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne oprim pe un deal, sub niște tufe de măceș, departe de drum și de poartă. De aici se vede cum șerpuiește drumul mare, alb sub lună, de la un capăt al lumii la celălalt.",
+        "imagine": "events/kaia_wyverni_4.png",
+        "_nota": "Decis de autor: ascunși, așteaptă puțin.",
+        "urmator": "t19"
+      },
+      "t19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pe aici se ajunge la capitală?",
+        "urmator": "t20"
+      },
+      "t20": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Pe aici se ajunge oriunde. Până la capitală mai sunt multe zile de mers, dar orice căruță care pleacă spre ea trece pe aici.",
+        "urmator": "t21"
+      },
+      "t21": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la căruțele cu fierul nostru, cu grâul și cu pieile luate de orci. Toate au trecut pe drumul ăsta.",
+        "urmator": "t22"
+      },
+      "t22": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Așteptăm. Luna trece de jumătatea cerului. Mi-au amorțit picioarele, iar frigul îmi intră pe sub mantie.",
+        "urmator": "t23"
+      },
+      "t23": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Poate nu mai vin.",
+        "urmator": "t24"
+      },
+      "t24": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Vin. Ember i-a simțit de mult.",
+        "urmator": "t25"
+      },
+      "t25": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember își ridică încet capul. Urechile îi stau întinse spre capătul drumului, iar din piept îi iese un mârâit atât de jos, încât îl simt mai mult decât îl aud.",
+        "urmator": "t26"
+      },
+      "t26": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Departe, la capătul drumului, apare o lumină. Apoi încă una. Apoi zeci, ca un șir de licurici care vin spre noi.",
+        "imagine": "events/kaia_wyverni_5.png",
+        "_nota": "Decis de autor: din capătul drumului se vede convoiul, de departe.",
+        "urmator": "t27"
+      },
+      "t27": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Torțe. Și sub torțe, căruțe mari trase de boi, iar de jur împrejurul lor, orci cu sulițe. Mai mulți decât am văzut vreodată la un loc.",
+        "urmator": "t28"
+      },
+      "t28": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Numără-i, Vale.",
+        "urmator": "t29"
+      },
+      "t29": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu pot. Sunt prea mulți.",
+        "urmator": "t30"
+      },
+      "t30": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pământul începe să tremure ușor sub burta mea. Căruțele sunt atât de grele, încât le aud scârțâind de aici.",
+        "urmator": "t31"
+      },
+      "t31": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când convoiul ajunge în dreptul nostru, văd ce trag boii după ei. Cuști. Cuști uriașe, din bârne groase și lanțuri, cât o casă fiecare.",
+        "imagine": "events/kaia_wyverni_6.png",
+        "_nota": "Decis de autor: convoiul ajunge în dreptul lor; în cuștile mari sunt wyvernii.",
+        "urmator": "t32"
+      },
+      "t32": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și în cuști se mișcă ceva.",
+        "urmator": "t33"
+      },
+      "t33": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O aripă se izbește de gratii. O aripă de piele, ca de liliac, dar lungă cât două căruțe. Apoi un cap lung, plin de solzi, se ridică spre lună și scoate un țipăt care îmi îngheață sângele.",
+        "urmator": "t34"
+      },
+      "t34": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "În spatele ei vine încă o cușcă. Și încă una. În fiecare, câte o fiară, cu lanțuri la gât, la aripi și la gheare.",
+        "urmator": "t35"
+      },
+      "t35": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Kaia... sunt...",
+        "imagine": "events/kaia_wyverni_7.png",
+        "_nota": "Decis de autor: Kaia și Vale, surprinși și uimiți (focus pe fețele lor).",
+        "urmator": "t36"
+      },
+      "t36": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Dragoni.",
+        "urmator": "t37"
+      },
+      "t37": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cuvântul rămâne între noi, ca un fum. Dragonii nu trăiesc aici. Toată lumea știe asta. Trăiesc în lumile lor, dincolo de portaluri, și nimeni din satul nostru n-a văzut vreodată unul.",
+        "urmator": "t38"
+      },
+      "t38": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Nu se poate. Un dragon vine în lumea noastră doar legat de cineva cu darul dragonilor. Așa zic toate poveștile. Iar dragonii legați zboară cu Ordinul, nu stau în cuști la orci.",
+        "urmator": "t39"
+      },
+      "t39": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci de unde i-au luat? Or fi găsit un portal pe care nu-l știe nimeni?",
+        "urmator": "t40"
+      },
+      "t40": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Sau i-au făcut ei, cu cine știe ce vrajă. Din niște fiare obișnuite...",
+        "urmator": "t41"
+      },
+      "t41": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la Ember. Tigrul care a doborât un mistreț bătrân stă lipit de pământ, cu urechile culcate pe spate. Tremură.",
+        "urmator": "t42"
+      },
+      "t42": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Uită-te la el, Vale. Ember nu s-a temut în viața lui de nimic din ce trăiește.",
+        "urmator": "t43"
+      },
+      "t43": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Animale moarte care nu putrezesc, la ai mei. Și acum asta. Ceva se întâmplă în lumea asta, iar orcii știu ce.",
+        "urmator": "t44"
+      },
+      "t44": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "„O să întoarcă războiul”, ziceau orcii. Mă gândesc la capitală, la zidurile ei pe care nu le-am văzut niciodată, și la fiarele astea zburând peste ele.",
+        "urmator": "t45"
+      },
+      "t45": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Așteptăm până trece și ultima torță, apoi încă mult după aceea. Abia când drumul se face iar alb și gol, Kaia îl atinge pe Ember pe gât.",
+        "imagine": "events/kaia_wyverni_8.png",
+        "_nota": "Decis de autor: pe drum înapoi, călare pe tigru.",
+        "urmator": "t46"
+      },
+      "t46": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne întoarcem pe același drum ocolit. Niciunul dintre noi nu spune nimic. Spatele Kaiei e încordat în fața mea, iar Ember aleargă mai repede decât la venire, ca și cum ar fugi de ceva.",
+        "urmator": "t47"
+      },
+      "t47": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Vale... mulțumesc că ai venit. N-aș fi vrut să văd asta singură.",
+        "urmator": "t48"
+      },
+      "t48": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce facem acum?",
+        "urmator": "t49"
+      },
+      "t49": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Deocamdată, nimic. Ținem minte ce am văzut. Și ai mei trebuie să afle.",
+        "urmator": "t50"
+      },
+      "t50": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când ajungem înapoi la locul de campare, focul e de mult rece. Mă întind lângă el, dar nu pot să dorm. De câte ori închid ochii, văd aripile alea izbindu-se de gratii.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          },
+          "stare": {
+            "kaia_wyverni_vazut": "impreuna"
+          }
+        },
+        "_nota": "Decis de autor: +1 la Kaia, doar dacă Vale merge cu ea."
+      }
+    }
+  },
+  "kaia_wyverni_povestea": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Convoiul”, dacă Vale n-a mers cu ea (decis de autor: a doua zi îi povestește ce a văzut, fără +1). Ales de Claude: povestea stă peste imaginea cu cuștile (a 6-a), cu ceața amintirilor.",
+    "grup": "Kaia: convoiul",
+    "partener": "vanatoare",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am stat pe deal, sub tufele de măceș, până a trecut de miezul nopții. Apoi au venit.",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Întâi torțele, zeci de torțe. Apoi căruțele trase de boi și orci cu sulițe, mai mulți decât am văzut vreodată la un loc.",
+        "imagine": "events/kaia_wyverni_6.png",
+        "amintire": true,
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și pe căruțe, cuști cât o casă, din bârne și lanțuri. Iar în cuști...",
+        "amintire": true,
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "vanatoare",
+        "emotie": "speriat",
+        "text": "Vale, erau dragoni. Cu aripi de piele, ca de liliac, și gâturi lungi, pline de solzi. Legați cu lanțuri la gât, la aripi și la gheare.",
+        "amintire": true,
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Unul a țipat spre lună. Iar Ember s-a lipit de pământ lângă mine și a început să tremure. Ember, care nu s-a temut în viața lui de nimic din ce trăiește.",
+        "amintire": true,
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Dragoni? Aici? Un dragon vine în lumea noastră doar legat de cineva cu darul dragonilor. Iar dragonii legați zboară cu Ordinul, nu stau în cuști la orci.",
+        "trezire": true,
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Așa zic poveștile. Atunci ori orcii au găsit un portal pe care nu-l știe nimeni, ori i-au făcut ei, cu cine știe ce vrajă.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Animale moarte care nu putrezesc, la ai mei. Și acum asta. Ceva se întâmplă în lumea asta, Vale, iar orcii știu ce.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ar fi trebuit să fiu acolo, lângă ea. Să văd cu ochii mei.",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Data viitoare, vii cu mine.",
+        "efecte": {
+          "stare": {
+            "kaia_wyverni_vazut": "povestit"
+          }
         }
       }
     }

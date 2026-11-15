@@ -1012,17 +1012,29 @@
                 },
                 "deblocat": "padure/campsite",
                 "nu": {
-                  "stare": {
-                    "hot": "eliberat"
-                  },
-                  "misiuneTerminata": {
-                    "kaia_capcane": 2
-                  },
-                  "nu": {
-                    "misiune": {
-                      "kaia_ember": "terminata"
+                  "oricare": [
+                    {
+                      "stare": {
+                        "hot": "eliberat"
+                      },
+                      "misiuneTerminata": {
+                        "kaia_capcane": 2
+                      },
+                      "nu": {
+                        "misiune": {
+                          "kaia_ember": "terminata"
+                        }
+                      }
+                    },
+                    {
+                      "existaStare": "kaia_soim",
+                      "trecut": {
+                        "kaia_soim_ales": {
+                          "subZile": 2
+                        }
+                      }
                     }
-                  }
+                  ]
                 }
               }
             },
@@ -1067,7 +1079,7 @@
         },
         {
           "id": "campsite",
-          "nume": "Camp site",
+          "nume": "Locul de campare",
           "imagine": "locations/padure_campsite.png",
           "variante": [
             {
@@ -1095,7 +1107,7 @@
               "deblocat": "padure/campsite"
             }
           },
-          "_nota": "Campsite-ul vânătoarei: apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului.",
+          "_nota": "Locul de campare al vânătoarei (tabăra ei): apare după ce te întâlnești cu ea la vânătoare (te duce ea aici). Devine locul ascuns al grupului.",
           "decor": [
             {
               "id": "glaive",

@@ -54,6 +54,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 **Orcii**
 - Trei triburi mari: **Craniile Sângerii** (*Blood Skulls*, steag roșu cu un craniu, căpetenia **Gorvak**), cel mai mare, care atacă acum oamenii; **toți orcii din sat sunt din el**. Al doilea: deocamdată nu contează. **Colții de Fier** (*Iron Tusks*, căpetenia **Urzhal**), cel mai mic, dar puternic: îi vor ajuta pe oameni mai târziu (nu în Actul 1).
 - Orcii n-au dragoni: au **wyverni** (nu dragoni adevărați), cu ritualul lor, și **unelte împotriva dragonilor**. Craniile Sângerii pregătesc **asediul capitalei**.
+- **Drumul mare** pleacă de la poarta satului și merge zile întregi, până la capitală; pe el pleacă, în căruțele orcilor, fierul, grâul și pieile satului. Noaptea, pe el trece spre capitală un **convoi cu wyverni în cuști** (misiunea Kaiei „Convoiul”): Vale și Kaia îi văd de departe și îi cred dragoni.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu.
 
 **Șobolanii și teroarea**
@@ -76,11 +77,11 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 
 **Personajele cu taină**
 - **Fratele Elian**, preotul, e și **magul satului** (fiecare sat are unul, trimis de Cercul Luminii). **Toți, și orcii, îl cred un mag începător**; de fapt e foarte puternic. **Secretul lui:** are la el **un cristal mic** și a fost trimis să găsească **trezirea** simțită în sat, fără să știe a cui. L-a trimis **Cercul Luminii, la cererea Ordinului Flăcării**. Vale află într-o misiune a lui Elian (📝).
-- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor**. Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Fiecare Străjer are **un tovarăș**, un animal care „și-a ales omul” (fără magie: încredere, pe viață; tigrul cu colți de sabie e cel mai rar); cine aduce un pui acasă îl crește singur. Coboară rar prin sate, după sare și fier. Tigrul ei e **Ember** („jar” pe limba veche a Străjerilor), găsit de ea pui, singur, într-o scorbură. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat.
+- **Kaia** (doar Kaia, fără nume de familie) e din clanul **Wild Warden** (în joc: **Străjerii Sălbăticiei**): oamenii născuți cu **darul animalelor**. Clanul trăiește la marginea pădurilor mari, în așezări mici sau mijlocii, ca să apere pădurile și animalele și să țină echilibrul. Fiecare Străjer are **un tovarăș**, un animal care „și-a ales omul” (fără magie: încredere, pe viață; tigrul cu colți de sabie e cel mai rar); cine aduce un pui acasă îl crește singur. Coboară rar prin sate, după sare și fier. Tigrul ei e **Ember** („jar” pe limba veche a Străjerilor), găsit de ea pui, singur, într-o scorbură. **Pădurea de la hotar e chiar pădurea satului**, una obișnuită. **Motivul ei:** orcii strică echilibrul pădurii; odată cu eliberarea satului se întoarce și echilibrul, și ține la sat. Străjerii își trimit vești cu **șoimi**; departe, **pădurile au tăcut** (animale moarte fără nicio rană, care nu putrezesc; ❓ ce le-a omorât), iar Kaia, chemată acasă, a ales să rămână (misiunea „Șoimul Străjerilor”).
 
 **Încrederea și finalul**
 - Încredere au doar 6: **Bram, Elian, Kaia și Roderick** (se recrutează de la 8/10), **Finn** (ajută din umbră în lupta finală) și **Miriam** (echipamentul tatălui, de la 8/10).
-- Finalul: adunarea secretă la Camp site, apoi **lupta de la poartă, în mai multe valuri**. Recrutarea și finalul se fac la urmă. Tonul începe întunecat și se încălzește odată cu încrederea; spre final se vorbește de revoltă.
+- Finalul: adunarea secretă la locul de campare, apoi **lupta de la poartă, în mai multe valuri**. Recrutarea și finalul se fac la urmă. Tonul începe întunecat și se încălzește odată cu încrederea; spre final se vorbește de revoltă.
 
 ## Cum apar misiunile, pe personaje
 
@@ -105,9 +106,11 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 **Kaia (vânătoarea)**
 1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
 2. ✅ **Lupul negru**: imediat după întâlnire (dacă ai ajutat-o); 15–17, la marginea pădurii.
-3. ✅ **Vânătoarea împreună** (nu e misiune): după „Lupul negru”, dimineața (05–10), la Camp site.
-4. ✅ **Capcanele**: imediat după „Lupul negru”, la Kaia, la Camp site: „Ce s-a întâmplat, Kaia? Pari supărată.”.
-5. ✅ **Rana lui Ember**: la cel puțin două zile după „Capcanele” (și după eliberarea lui Finn), la Camp site: Kaia stă lângă Ember rănit (un singur sprite) → „Ce i s-a întâmplat lui Ember? !”.
+3. ✅ **Vânătoarea împreună** (nu e misiune): după „Lupul negru”, dimineața (05–10), la locul de campare.
+4. ✅ **Capcanele**: imediat după „Lupul negru”, la Kaia, la locul de campare: „Ce s-a întâmplat, Kaia? Pari supărată.”.
+5. ✅ **Rana lui Ember**: la cel puțin două zile după „Capcanele” (și după eliberarea lui Finn), la locul de campare: Kaia stă lângă Ember rănit (un singur sprite) → „Ce i s-a întâmplat lui Ember? !”.
+6. ✅ **Șoimul Străjerilor**: din ziua de după „Rana lui Ember”, la locul de campare: „Pot să stau puțin cu tine la foc? !”.
+7. ✅ **Convoiul**: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”): „Ești tăcută azi, Kaia. S-a întâmplat ceva? !”. Apoi, în noaptea de după (23–03), la locul de campare.
 
 **Roderick (unchiul)**
 1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
@@ -146,7 +149,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · 📝 Cheia cufărului · 📝 Platoșa tatălui · 💡 încă 5 | 3 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
-| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · 💡 încă 5 | 5 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
 **De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
@@ -161,7 +164,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 - **Testare misiuni:**
   - „Toți cunoscuți de 3 zile”: sare peste așteptarea de după prima discuție;
   - „+1 vânătoare câștigată”: pentru Kaia.
-- **Misiune:** o alegi din listă, apoi „Pornește” (ca după „Accept”) sau „Resetează”. Lista arată la ce pas ești. **„Resetează” întoarce tot jocul la clipa dinainte să înceapă misiunea** (ora, locul, obiectele, încrederea, acoperișul etc.), așa că o poți juca din nou de la ofertă, fără joc nou. Merge pentru misiunile începute de când ai jocul actualizat; la una mai veche doar o șterge din carte.
+- **Misiune:** o alegi din listă, apoi „Pornește” (ca după „Accept”) sau „Resetează”. Lista arată la ce pas ești. **„Resetează” întoarce tot jocul la clipa dinainte să înceapă misiunea** (ora, locul, obiectele, încrederea, acoperișul etc.), așa că o poți juca din nou de la ofertă, fără joc nou. O misiune care pornește în mijlocul unei discuții (de exemplu „Șoimul Străjerilor”) te întoarce chiar la alegerea de atunci, ca să încerci cealaltă cale. Merge pentru misiunile începute de când ai jocul actualizat; la una mai veche doar o șterge din carte.
 - **Eveniment:** alegi un eveniment din listă și „Pornește”, chiar dacă s-a mai întâmplat (de exemplu imaginile cu fierul lui Bram).
 - **Mergi la:** te duce direct într-un loc. Evenimentele care pornesc la sosire apar doar dacă mergi de pe hartă.
 - **Monede, Obiect → Primește, Stări:** pui ce îți trebuie (de exemplu 60 de monede, 10 lemne).
@@ -349,9 +352,9 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Lupul negru
 - **Pasul:** între 15 și 17, Kaia îl așteaptă pe Vale la **marginea pădurii** (pe imaginea pădurii). „Sunt gata. Hai după lupul negru. ?” duce la lupta cu Kaia contra lupului negru și a doi lupi.
-- **Victorie:** încrederea Kaiei +1, apoi îl duce în **tabăra ei** (Camp site se deblochează).
+- **Victorie:** încrederea Kaiei +1, apoi îl duce în **tabăra ei** (locul de campare se deblochează).
 - **Înfrângere:** „Mâine, aceeași oră”.
-- **Recompensa:** încredere și Camp site.
+- **Recompensa:** încredere și locul de campare.
 
 **Imagini:** `sprites/vanatoare_padure.png`.
 
@@ -359,19 +362,19 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 1. F2 → Misiune: Lupul negru → Pornește (sau vino din întâlnirea cu Kaia).
 2. Timp „Amiază”, apoi de trei ori „+1 oră” (15:00) → zona pădurii: Kaia e acolo.
 3. Vorbește cu ea → „Sunt gata” → „Înainte!” → imaginea adâncului pădurii („Cauți urme de vânat...”, trece o oră) → lupta.
-   - Victorie: replicile și tabăra. Camp site apare apoi în pădure.
+   - Victorie: replicile și tabăra. Locul de campare apare apoi în pădure.
    - Înfrângere: „Mâine, aceeași oră”.
 
 ### ✅ Vânătoarea împreună (nu e misiune, după Lupul negru)
-- **Când:** dimineața, 05–10, la Camp site, Kaia e acolo. În meniul ei apare „Mergem împreună la vânătoare?”.
+- **Când:** dimineața, 05–10, la locul de campare, Kaia e acolo. În meniul ei apare „Mergem împreună la vânătoare?”.
 - „Să mergem.” → vânătoarea obișnuită (lupi sau mistreț), cu Kaia sigur alături în luptă. „Poate altă dată.” te întoarce la meniu.
-- După luptă: un scurt dialog (altul după înfrângere), apoi Kaia se întoarce în pădure (nu mai e la campsite până la 14:00), iar Vale rămâne în tabără.
+- După luptă: un scurt dialog (altul după înfrângere), apoi Kaia se întoarce în pădure (nu mai e la locul de campare până la 14:00), iar Vale rămâne în tabără.
 
-**Cum verifici:** după Lupul negru, mergi la Camp site la 07:00 → apasă pe Kaia → „Mergem împreună la vânătoare?” → „Să mergem.” → lupta are două tabere: Vale și Kaia contra animalelor. La 15:00 opțiunea nu mai apare.
+**Cum verifici:** după Lupul negru, mergi la locul de campare la 07:00 → apasă pe Kaia → „Mergem împreună la vânătoare?” → „Să mergem.” → lupta are două tabere: Vale și Kaia contra animalelor. La 15:00 opțiunea nu mai apare.
 
 ### ✅ Capcanele
-- **Pornește** (decis de autor): imediat după „Lupul negru”, la Kaia, la Camp site: „Ce s-a întâmplat, Kaia? Pari supărată. !”. Ember a scăpat la un fir de păr de o capcană de fier cu craniul Craniilor Sângerii; Kaia a numărat cinci pe poteca de la izvor și îi cere lui Vale să le desfacă împreună → „Le desfacem împreună.” (sau „Altă dată, Kaia.”, iar oferta rămâne în meniu).
-- **Pasul 1: desfaci capcanele cu Kaia.** La Kaia, „Sunt gata. Hai la capcane! ?”, doar ziua (05–10 sau 14–18, cât e ea la Camp site) și odihnit (cel puțin 30 stamina; obosit, Kaia te trimite la odihnă). Apoi, peste **3 imagini**, cu replici peste ele:
+- **Pornește** (decis de autor): imediat după „Lupul negru”, la Kaia, la locul de campare: „Ce s-a întâmplat, Kaia? Pari supărată. !”. Ember a scăpat la un fir de păr de o capcană de fier cu craniul Craniilor Sângerii; Kaia a numărat cinci pe poteca de la izvor și îi cere lui Vale să le desfacă împreună → „Le desfacem împreună.” (sau „Altă dată, Kaia.”, iar oferta rămâne în meniu).
+- **Pasul 1: desfaci capcanele cu Kaia.** La Kaia, „Sunt gata. Hai la capcane! ?”, doar ziua (05–10 sau 14–18, cât e ea la locul de campare) și odihnit (cel puțin 30 stamina; obosit, Kaia te trimite la odihnă). Apoi, peste **3 imagini**, cu replici peste ele:
   1. Kaia îi arată prima capcană, ascunsă sub frunze, cu craniul bătut cu dalta pe arc. Orcii prind tot ce mișcă; carnea și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram. Pădurea e prea liniștită.
   2. Desfacerea: creanga între fălci, Vale apasă arcul, Kaia scoate cuiul. **Mini-jocul** (decis de autor): jocul barei de la arat, peste imaginea asta; trebuie **5 reușite** (cele cinci capcane), cu **cel mult o ratare** („dacă îți scapă o dată, creanga ține; a doua oară nu mai ține”). A doua ratare: capcana se închide (sunetul `capcana`), Vale se zgârie (−10 viață), iar Kaia îl trimite acasă: **se încearcă iar a doua zi**. Cu mini-jocurile oprite, reușește singur. **Cu toate cinci desfăcute: încrederea Kaiei +1**, care urcă pe ecran chiar atunci (decis de autor).
   3. După ce le-a desfăcut, Kaia le însemnează pe arc cu cuțitul („dacă le mai văd în pădure, știu că sunt aceleași”). Lângă izvor, **o căprioară prinsă** într-o capcană pe care n-o văzuseră. Alegi:
@@ -388,7 +391,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **De aranjat în editor:** Aranjare → Ecrane → „Mini-joc: Capcanele orcilor”: muți și mărești bara pe imaginea desfacerii (până atunci stă jos, la mijloc).
 
 **Cum verifici**
-1. F2 → Misiune: Lupul negru → Pornește, apoi termin-o (sau setează starea `lup_negru` = `ucis`). Timp „Dimineață” (07:00) → Pădure → Camp site.
+1. F2 → Misiune: Lupul negru → Pornește, apoi termin-o (sau setează starea `lup_negru` = `ucis`). Timp „Dimineață” (07:00) → Pădure → Locul de campare.
 2. Vorbește cu Kaia → „Ce s-a întâmplat, Kaia? Pari supărată. !” → „Le desfacem împreună.” → în meniu apare „Sunt gata. Hai la capcane! ?” → „Să mergem.”.
 3. Imaginea 1 cu replici → imaginea 2 → „Apăs arcul.” → mini-jocul. Ratează de două ori: capcana se închide, −10 viață; la Kaia, „Despre capcane...” spune „Azi nu mai”. Apasă „Ziua următoare” și încearcă din nou.
 4. Câștigă (5 reușite, cel mult o ratare) → „Toate cinci, desfăcute.” și +1 Kaia urcă pe ecran → imaginea 3, căprioara → „O eliberăm.” → imaginea cu ea fugind, iar la „Eu țin minte sigur.” urcă al doilea +1 → la final, Capcanele orcilor.
@@ -397,23 +400,55 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 7. Încearcă și „E carne bună. O iau.”: 3 carne, fără încredere.
 
 ### ✅ Rana lui Ember
-- **Pornește** (decis de autor): la cel puțin **două zile după „Capcanele”** (ales de Claude: și după eliberarea lui Finn, ca Vale să poată ajunge la Bătrâna Morwen, la Marginea satului), când vii la Camp site. Acolo e **un singur sprite nou: Kaia lângă Ember, rănit de un mistreț**; până la vindecare, Kaia și Ember nu mai apar separat, zi și noapte, iar Kaia nu mai pleacă la vânătoare (nici dimineața, cu Vale, nici 10–14, singură). Când apeși pe el, răspunde Kaia: „Vale... Bine că ai venit.” → „Ce i s-a întâmplat lui Ember? !”. Un mistreț bătrân i-a înfipt colțul în coapsă; rana trebuie unsă până nu se infectează, iar Kaia nu-l poate lăsa singur → „Mă duc chiar acum.” (sau „Nu acum, Kaia.”, iar oferta rămâne).
+- **Pornește** (decis de autor): la cel puțin **două zile după „Capcanele”** (ales de Claude: și după eliberarea lui Finn, ca Vale să poată ajunge la Bătrâna Morwen, la Marginea satului), când vii la locul de campare. Acolo e **un singur sprite nou: Kaia lângă Ember, rănit de un mistreț**; până la vindecare, Kaia și Ember nu mai apar separat, zi și noapte, iar Kaia nu mai pleacă la vânătoare (nici dimineața, cu Vale, nici 10–14, singură). Când apeși pe el, răspunde Kaia: „Vale... Bine că ai venit.” → „Ce i s-a întâmplat lui Ember? !”. Un mistreț bătrân i-a înfipt colțul în coapsă; rana trebuie unsă până nu se infectează, iar Kaia nu-l poate lăsa singur → „Mă duc chiar acum.” (sau „Nu acum, Kaia.”, iar oferta rămâne).
 - **Pasul 1:** la Bătrâna Morwen (Marginea satului, coliba, 06–23): „Bunico, am nevoie de o alifie pentru un tigru. ?”. Morwen o știe pe „fata cu tigrul” și cere florile (decis de autor, fără schimb nou): **2 păpădii, 2 fire de piciorul-cocoșului și 3 de mușețel**.
 - **Pasul 2: culegi florile.** În pădure, „Caută ierburi”, dimineața (locul apare și cât e misiunea asta, chiar fără misiunea lui Elian). Sus, pe ecranul culesului, scrie ce cere Morwen. Cu mini-jocurile oprite, Vale culege singur florile care îi lipsesc (cel mult 4 o dată).
 - **Pasul 3:** cu florile, la Morwen: „Ți-am adus florile, bunico. ?” → **Alifia pentru Ember** (obiect de poveste).
-- **Pasul 4:** la Kaia: „Am adus alifia de la Bătrâna Morwen. ?” → „Îngenunchez lângă Ember.” → **fără alegeri** (decis de autor): Vale ține capul tigrului cât Kaia curăță rana, **peste o imagine** (decis de autor: Vale cu capul lui Ember în brațe, Kaia punând alifia; replicile stau peste ea până la amintiri, iar după amintiri se revine la ea); cât îi pune alifia, Kaia povestește cum l-a găsit pe Ember pui, peste **2 imagini-amintire** (au ceața de la vise, ca să se vadă că e trecutul; decis de autor: Kaia e copil, cu haine de copil, iar în a doua se văd și alți Străjeri, cu tovarășii lor): puiul singur, într-o scorbură (mama lui n-a mai venit), apoi cum a avut grijă de el, de unde îi vine numele („jar” pe limba veche), tovarășii Străjerilor și colțul de la gâtul ei, primul colț de lapte al lui Ember (decis de autor). Apoi înapoi la Camp site: „De atunci n-am mai fost despărțiți.”, iar prima oară când a coborât cu el în sat, doar Edwin nu și-a închis ușa.
+- **Pasul 4:** la Kaia: „Am adus alifia de la Bătrâna Morwen. ?” → „Îngenunchez lângă Ember.” → **fără alegeri** (decis de autor): Vale ține capul tigrului cât Kaia curăță rana, **peste o imagine** (decis de autor: Vale cu capul lui Ember în brațe, Kaia punând alifia; replicile stau peste ea până la amintiri, iar după amintiri se revine la ea); cât îi pune alifia, Kaia povestește cum l-a găsit pe Ember pui, peste **2 imagini-amintire** (au ceața de la vise, ca să se vadă că e trecutul; decis de autor: Kaia e copil, cu haine de copil, iar în a doua se văd și alți Străjeri, cu tovarășii lor): puiul singur, într-o scorbură (mama lui n-a mai venit), apoi cum a avut grijă de el, de unde îi vine numele („jar” pe limba veche), tovarășii Străjerilor și colțul de la gâtul ei, primul colț de lapte al lui Ember (decis de autor). Apoi înapoi la locul de campare: „De atunci n-am mai fost despărțiți.”, iar prima oară când a coborât cu el în sat, doar Edwin nu și-a închis ușa.
 - **Recompensa:** încrederea Kaiei **+1** (ales de Claude, nu se poate rata) și povestea lui Ember. După vindecare, Kaia și Ember apar iar separat, ca înainte.
 
 **Imagini:** `sprites/kaia_ember_padure_campsite.png` (Kaia lângă Ember rănit, fundal transparent), `events/kaia_ember_alifie.png` (Vale ține capul lui Ember, Kaia îi pune alifia), `events/kaia_amintire_1.png`, `events/kaia_amintire_2.png` (galeria: „Kaia: rana lui Ember”), iconița `items/alifie_ember.png`.
 
-**De aranjat în editor:** Aranjare → Camp site → bifează „Arată tot” → „Kaia și Ember”: îl muți și îl mărești, apoi îi desenezi zona (până atunci răspunde pe forma sprite-ului).
+**De aranjat în editor:** Aranjare → Locul de campare → bifează „Arată tot” → „Kaia și Ember”: îl muți și îl mărești, apoi îi desenezi zona (până atunci răspunde pe forma sprite-ului).
 
 **Cum verifici**
 1. Termină „Capcanele” și eliberează-l pe Finn. Apoi apasă „Ziua următoare” de două ori.
-2. Pădure → Camp site: în locul Kaiei și al lui Ember e sprite-ul comun, cu „!” deasupra. Apasă pe el → „Ce i s-a întâmplat lui Ember?” → „Mă duc chiar acum.”.
+2. Pădure → Locul de campare: în locul Kaiei și al lui Ember e sprite-ul comun, cu „!” deasupra. Apasă pe el → „Ce i s-a întâmplat lui Ember?” → „Mă duc chiar acum.”.
 3. Marginea satului → coliba → Morwen → „Bunico, am nevoie de o alifie...” → ea cere florile. „Despre alifie...” le repetă.
 4. Dimineața, în pădure, „Caută ierburi”: culege păpădii, piciorul-cocoșului și mușețel (sau F2 → Obiect). Cu ele, la Morwen → „Ți-am adus florile” → alifia.
-5. La Camp site → „Am adus alifia” → „Îngenunchez lângă Ember.” → replicile, cele 2 amintiri (cu ceață), înapoi la Camp site → +1 Kaia. După dialog, Kaia și Ember sunt iar separat.
+5. La locul de campare → „Am adus alifia” → „Îngenunchez lângă Ember.” → replicile, cele 2 amintiri (cu ceață), înapoi la locul de campare → +1 Kaia. După dialog, Kaia și Ember sunt iar separat.
+
+### ✅ Șoimul Străjerilor
+- **Pornește** (decis de autor: după „Rana lui Ember”; K4 și K5 inversate, întâi șoimul, apoi wyvernii). Ales de Claude: din ziua de după vindecare. La Kaia, la locul de campare: „Pot să stau puțin cu tine la foc? !” → „Mă așez lângă foc.” (sau „Altă dată, Kaia.”, iar oferta rămâne).
+- **Peste 4 imagini** (decis de autor): (1) Vale și Kaia stau la foc și văd cum vine un șoim cu o scrisoare legată de picior; (2) șoimul se pune pe umărul Kaiei, iar ea ține scrisoarea; (3) o citesc împreună: **pădurile de departe au tăcut**, animale moarte **fără nicio rană, care nu putrezesc**, toți Străjerii sunt chemați acasă; (4) Kaia îi spune lui Vale că are nevoie de timp, să se gândească dacă pleacă sau rămâne.
+- **Alegerea** (decis de autor): „Rămâi, Kaia. Avem nevoie de tine aici.” sau „Du-te. Ai tăi au nevoie de tine.”. Misiunea pornește aici.
+- **Cele două zile** (ales de Claude): Kaia pleacă în pădure cu Ember (și cu șoimul), să se gândească. 48 de ore de la alegere, cei doi lipsesc din locul de campare (deci nici vânătoarea împreună, nici întâlnirea de la vânătoare, 10–14).
+- **După două zile** (decis de autor): la locul de campare, Kaia: „Te-am auzit de la marginea luminișului. Tot ca un urs.” → „Te-ai hotărât, Kaia? ?”. Au hotărât să rămână, iar replicile diferă după ce i-a spus Vale (decis de autor). Kaia a trimis șoimul înapoi, cu o scrisoare: și pădurea de la marginea satului are nevoie de ajutor (decis de autor).
+- **Recompensa:** încrederea Kaiei **+1**, orice ar alege Vale (decis de autor).
+
+**Imagini:** `events/kaia_soim_1.png` … `events/kaia_soim_4.png` (galeria: „Kaia: șoimul”).
+
+**Cum verifici**
+1. Termină „Rana lui Ember”, apoi apasă „Ziua următoare”.
+2. Pădure → Locul de campare → Kaia → „Pot să stau puțin cu tine la foc?” → „Mă așez lângă foc.” → cele 4 imagini → alege una dintre replici. Kaia și Ember pleacă.
+3. Calea cealaltă: F2 → Misiune: „Șoimul Străjerilor” → „Resetează”: discuția revine pe loc la alegere.
+4. Apasă „Ziua următoare” de două ori: Kaia și Ember sunt iar la locul de campare (dimineața, 05–10, sau 14–23). La Kaia: „Te-ai hotărât, Kaia?” → replicile (altele, după alegere) → +1 Kaia.
+
+### ✅ Convoiul
+- **Pornește** (decis de autor): la o zi după ce Kaia a hotărât să rămână. La Kaia: „Ești tăcută azi, Kaia. S-a întâmplat ceva? !” → „Te ascult.” (sau „Nu acum, Kaia.”, iar oferta rămâne). Kaia povestește, **peste o imagine-amintire** (decis de autor; ales de Claude: cu ceața amintirilor, ca la povestea despre Ember), cum a auzit, ieri, la vânătoare, doi orci: „mâine noapte” trece pe **drumul mare** un convoi cu cuști, spre capitală, cu niște fiare care „o să întoarcă războiul”. „Mâine noapte” e, deci, **la noapte**: Kaia vrea să vadă cu ochii ei, de pe un deal de lângă drum. Alegi „Vin cu tine.” sau „E prea periculos, Kaia. Nu vin.” (misiunea pornește oricum).
+- **Doar noaptea de după** (decis de autor). **Accepți:** Kaia te așteaptă **23–03** la locul de campare (ales de Claude, ca Finn la ladă); când ajungi acolo, **pornește direct** (decis de autor; dacă ești deja acolo când se face 23, din meniul ei: „Sunt gata, Kaia. Mergem? ?”). Peste **8 imagini**, cu replici, gândurile lui Vale și descrieri (decis de autor): (1) Kaia te întâmpină; (2) prin pădure, până la ieșirea din ea; (3) călare amândoi pe Ember, ocolind satul pe departe, să nu-i vadă orcii; (4) ascunși pe un deal, așteaptă; (5) la capătul drumului apare convoiul, de departe; (6) convoiul ajunge în dreptul lor: cuști mari, cu wyvernii în ele; (7) fețele lor, uimiți: se întreabă dacă orcii au găsit un portal, dacă i-au făcut cu o vrajă, din fiare obișnuite; Ember tremură; (8) drumul înapoi, călare pe Ember. Drumul ține 4 ore și ia 20 stamina (ales de Claude, TODO echilibru). **+1** la Kaia.
+- **Refuzi** (decis de autor): în noaptea aceea (23–05) Kaia nu mai e la locul de campare; a doua zi (de la 05) o găsești: „Ce-ai văzut la drumul mare, Kaia? ?” → îți povestește, **fără +1**. Ales de Claude: povestea stă peste imaginea cu cuștile (a 6-a), cu ceața amintirilor.
+- **Accepți, dar nu vii până la 3** (ales de Claude): Kaia pleacă singură, ca la refuz (lipsește 03–05), iar a doua zi începe cu „Te-am așteptat până la trei, Vale...”; tot fără +1.
+- **Wyvernii nu sunt numiți:** Vale și Kaia îi cred dragoni. Ce sunt de fapt (ritualul orcilor, `docs/lore.md`) rămâne pentru mai târziu.
+
+**Imagini:** `events/kaia_wyverni_orci.png` (amintirea Kaiei: doi orci vorbind, ea ascunsă după o tufă), `events/kaia_wyverni_1.png` … `events/kaia_wyverni_8.png` (galeria: „Kaia: convoiul”).
+
+**Cum verifici**
+1. Termină „Șoimul Străjerilor”, apoi apasă „Ziua următoare”.
+2. La Kaia → „Ești tăcută azi...” → „Te ascult.” → imaginea cu orcii (cu ceață) → „Vin cu tine.”.
+3. Mută ora la 23 (F2) → Pădure → Locul de campare: pornește direct drumul, cu cele 8 imagini → +1 Kaia.
+4. Refuzul: F2 → Misiune: „Convoiul” → „Resetează” (revine la alegere) → „E prea periculos...”. Noaptea, Kaia nu e la locul de campare; dimineața: „Ce-ai văzut la drumul mare, Kaia?” → povestea peste imaginea cu cuștile, fără +1.
+5. „N-am venit”: accepți, apoi lași ora să treacă de 03:00 fără să mergi; dimineața, Kaia începe cu „Te-am așteptat până la trei...”.
 
 ---
 

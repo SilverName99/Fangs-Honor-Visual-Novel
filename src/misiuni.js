@@ -20,6 +20,15 @@ export function pasGata(p, stare) {
 }
 
 export const listaMisiuni = (date) => date.misiuni?.misiuni || [];
+
+// Un text simplu sau o listă { conditii, text } (cu un text simplu la urmă, dacă vrei): primul potrivit stării de
+// acum. Așa sfatul din carte se schimbă după ce a ales Vale (Kaia îl așteaptă la noapte sau s-a dus singură), iar
+// îndemnul de la cules după misiunea de acum
+export function textPotrivit(t, stare) {
+  if (!Array.isArray(t)) return t;
+  const x = t.find((y) => typeof y === 'string' || verifica(y.conditii, context(stare)));
+  return typeof x === 'string' ? x : x?.text;
+}
 export const pasul = (stare, id) => stare.pasiMisiuni?.[id] ?? 0;
 
 // Se cheamă după fiecare schimbare (la redesenarea HUD-ului); întoarce misiunile terminate acum
@@ -72,8 +81,9 @@ export function optiuniMisiuni(joc, idPersonaj, loc) {
     const p = m.pasi[pasul(s, m.id)];
     if (!p || (p.la || m.dela) !== idPersonaj) continue;
     const gata = p.predare && verifica(p.predare.conditii, ctx);
-    if (gata) rez.push({ alegere: { text: p.predare.text, spre: alegeNod(p.predare.nod, ctx), semn: 'gata' }, dialog });
-    else if (p.indiciu) rez.push({ alegere: { text: p.indiciu.text, spre: alegeNod(p.indiciu.nod, ctx), semn: 'lucru' }, dialog });
+    // Și textul opțiunii poate depinde de stare (la „Convoiul” Kaiei: „Mergem?” noaptea, „Ce-ai văzut?” a doua zi)
+    if (gata) rez.push({ alegere: { text: textPotrivit(p.predare.text, s), spre: alegeNod(p.predare.nod, ctx), semn: 'gata' }, dialog });
+    else if (p.indiciu) rez.push({ alegere: { text: textPotrivit(p.indiciu.text, s), spre: alegeNod(p.indiciu.nod, ctx), semn: 'lucru' }, dialog });
   }
   return rez;
 }

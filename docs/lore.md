@@ -84,6 +84,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - Craniile Sângerii își strâng forțele ca să **asedieze capitala** oamenilor.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu.
 - **Vânătorii orcilor** umplu pădurea cu **capcane de fier**, cu craniul lor bătut pe arc, și prind tot ce mișcă; carnea afumată și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram (misiunea Kaiei „Capcanele”, ciornă de Claude).
+- **Drumul mare** (misiunea Kaiei „Convoiul”, decis de autor: e drumul principal spre capitală, iar convoiul trece aproape de sat): pleacă de la poarta satului și merge zile întregi, până la capitală; pe el au venit orcii și pe el pleacă, în căruțele lor, fierul, grâul și pieile satului (ciornă de Claude).
+- **Convoiul cu wyverni** (decis de autor): noaptea, pe drumul mare, spre capitală, un convoi de orci cu cuști mari, în care sunt wyvernii; orcii zic că ce e în cuști „o să întoarcă războiul”, iar Gorvak îi vrea la capitală înainte de prima zăpadă (ciornă de Claude). Vale și Kaia îi văd de departe și îi cred **dragoni**: se întreabă dacă orcii au găsit un portal pe care nu-l știe nimeni sau dacă i-au făcut cu o vrajă, din fiare obișnuite. Ce sunt de fapt (ritualul orcilor) nu află încă.
 
 ## Șobolanii
 
@@ -111,6 +113,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Așezările:** case de lemn la marginea pădurilor mari, fiecare cu un bătrân în frunte. Străjerii coboară rar prin satele oamenilor, după sare și fier.
 - **Limba veche a Străjerilor:** „ember” înseamnă **jar** (ochii puiului ardeau în întuneric ca doi tăciuni).
 - **Ember** (decis de autor): Kaia l-a găsit pui, singur, **într-o scorbură** (decis de autor; părinții lui, probabil uciși), l-a dus acasă și l-a crescut; de atunci sunt nedespărțiți. **Colțul de la gâtul Kaiei** e primul colț de lapte al lui Ember (decis de autor). Prima oară când a coborât cu el în satul lui Vale, după sare, toată lumea și-a închis ușile; Edwin, nu (misiunea „Rana lui Ember”, cu două amintiri; în a doua se văd și alți Străjeri, cu tovarășii lor, iar un bătrân o privește din ușă). Ciorne de Claude: Kaia avea nouă ani; a așteptat-o pe mama puiului trei zile.
+- **Șoimii** (decis de autor, misiunea „Șoimul Străjerilor”): Străjerii își trimit vești cu șoimi, cu scrisoarea legată de picior. Ciornă de Claude: „Străjerii nu trimit șoimi pentru vești bune. Pentru vești bune, vin ei.”
+- **Pădurile care au tăcut** (decis de autor): departe, pădurile au tăcut; acolo sunt **animale moarte fără nicio rană, care nu putrezesc**, iar toți Străjerii sunt chemați acasă. Kaia **rămâne** lângă satul lui Vale și îi scrie alor ei că și pădurea de aici are nevoie de ajutor. Ce le-a omorât: TODO (de lămurit; s-ar potrivi cu „teroarea” lui Narco, moartea și morții vii).
 - De dezvoltat: clanul și așezările lor, prin povestea Kaiei, cu amintiri (flashback-uri).
 
 ## Actele poveștii (decis de autor)

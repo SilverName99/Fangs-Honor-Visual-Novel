@@ -879,6 +879,9 @@ const joc = {
     dialog.inchide();
     salveaza();
     afiseaza();
+    // O misiune pornită în mijlocul unei discuții (șoimul Kaiei, convoiul): discuția revine pe loc la alegerea de
+    // atunci, ca să poată fi încercată și cealaltă cale (altfel revenea abia după un refresh)
+    reiaDupaReincarcare();
     return true;
   },
   uitaInainteDeMisiuni() {

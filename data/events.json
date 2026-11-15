@@ -1176,6 +1176,73 @@
       },
       "dialog": "kaia_ember",
       "_nota": "Decis de autor: fără alegeri; Vale ține capul lui Ember cât Kaia curăță rana, iar cât îi pune alifia, Kaia povestește cum l-a găsit pui, peste 2 imagini-amintire (cu ceața de la vise, „amintire” la replică)."
+    },
+    {
+      "id": "kaia_soim",
+      "nume": "Șoimul Străjerilor",
+      "grup": "Kaia: șoimul",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "kaia_soim",
+      "_nota": "Decis de autor: 4 imagini cu replici peste ele; la final Vale o roagă pe Kaia să rămână sau îi spune să plece."
+    },
+    {
+      "id": "kaia_wyverni_vesti",
+      "nume": "Convoiul: ce au spus orcii",
+      "grup": "Kaia: convoiul",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "kaia_wyverni_vesti",
+      "_nota": "Decis de autor: Kaia povestește ce a auzit de la orci (prima imagine) și îi propune lui Vale să meargă la noapte la drumul mare."
+    },
+    {
+      "id": "kaia_wyverni",
+      "nume": "Convoiul",
+      "grup": "Kaia: convoiul",
+      "repetare": "o_data",
+      "conditii": {
+        "loc": "padure/campsite",
+        "misiune": {
+          "kaia_wyverni": "inceputa"
+        },
+        "stare": {
+          "kaia_wyverni": "acceptat"
+        },
+        "noapteaDupa": {
+          "marcaj": "kaia_wyverni_propus",
+          "de": "23:00",
+          "pana": "03:00"
+        },
+        "nu": {
+          "existaStare": "kaia_wyverni_vazut"
+        }
+      },
+      "efecte": {
+        "timp": 240,
+        "nevoi": {
+          "stamina": -20
+        }
+      },
+      "dialog": "kaia_wyverni",
+      "_nota": "Decis de autor: noaptea de după ce a acceptat, când Vale ajunge la locul de campare, pornește direct; 8 imagini. Ales de Claude: Kaia îl așteaptă 23–03; drumul ține 4 ore și ia 20 stamina (TODO echilibru). Dacă Vale e deja acolo când se face 23, îl pornește din meniul Kaiei („Sunt gata, Kaia. Mergem?”)."
+    },
+    {
+      "id": "kaia_wyverni_povestea",
+      "nume": "Convoiul: povestea Kaiei",
+      "grup": "Kaia: convoiul",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 20
+      },
+      "dialog": "kaia_wyverni_povestea",
+      "_nota": "Decis de autor: dacă Vale n-a mers cu ea, a doua zi Kaia îi povestește ce a văzut (fără +1)."
     }
   ]
 }

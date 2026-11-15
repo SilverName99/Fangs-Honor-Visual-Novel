@@ -1,5 +1,5 @@
 import { elementImagine } from './imagini.js';
-import { listaMisiuni, pasul, numaratori } from './misiuni.js';
+import { listaMisiuni, pasul, numaratori, textPotrivit } from './misiuni.js';
 
 // Cartea personajelor: câte un personaj pe fiecare două pagini (stânga: nume, încredere, descriere; dreapta: schița lui).
 // Fonturile de scris de mână se importă în joc.js (editorul folosește doar numele fișierelor de aici).
@@ -101,8 +101,10 @@ export function creeazaCarte(parinte, joc) {
       const num = facut ? [] : numaratori(p, s);
       const cate = (x) => `${Math.min(x.are, x.n)}/${x.n}`;
       const cat = !num.length ? '' : num.length === 1 ? ` (${cate(num[0])})` : ` (${num.map((x) => `${x.nume || joc.date.items.obiecte[x.obiect]?.nume.toLowerCase() || x.obiect} ${cate(x)}`).join(', ')})`;
-      pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${p.text}${cat}`));
-      if (!facut && p.sfat) pasi.append(div('sfat-misiune', p.sfat));
+      // Textul pasului și sfatul pot depinde de ce a ales Vale (o listă { conditii, text }, ca la „Convoiul” Kaiei)
+      pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${textPotrivit(p.text, s)}${cat}`));
+      const sfat = !facut && textPotrivit(p.sfat, s);
+      if (sfat) pasi.append(div('sfat-misiune', sfat));
     });
     pag.append(pasi);
     if (st === 'terminata') pag.append(div('stare-misiune', 'Gata!'));
