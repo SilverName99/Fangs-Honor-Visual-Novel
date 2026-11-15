@@ -103,6 +103,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     }
     if (!reluat) laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
+    // „arataCastiguri” (decis de autor: punctul de încredere pentru capcanele desfăcute): ce a primit Vale urcă pe
+    // ecran chiar la replica asta, nu abia la capătul discuției; odată cu imaginea ei, dacă încă se încarcă
+    if (nod.arataCastiguri && !reluat) {
+      if (el.classList.contains('asteapta-imaginea')) {
+        const inainte = activ.dupaImagine;
+        activ.dupaImagine = () => (inainte?.(), laCapatulRamurii?.());
+      } else laCapatulRamurii?.();
+    }
     // Jocul ține minte unde a rămas discuția, ca la un refresh să continue de aici (nu să se piardă o misiune)
     laNod?.(activ.original, idNod, activ.imagine);
 
@@ -207,13 +215,15 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   });
 
   return {
-    porneste(dialog, { delaNod = null, imagine = null } = {}) {
+    // „cuEfecte”: discuția continuă după un mini-joc (nu după un refresh), deci replica de la care continuă își
+    // aplică efectele (punctul de încredere pentru capcanele desfăcute)
+    porneste(dialog, { delaNod = null, imagine = null, cuEfecte = false } = {}) {
       activ = { dialog, original: dialog, emotiePartener: 'normal', alegeri: [], imagineReluata: imagine };
       el.hidden = false;
       // Visele (decis de autor): ceață pe marginile ecranului, ca să se vadă că e un vis
       el.classList.toggle('vis', !!dialog.vis);
       parinte.classList.add('in-dialog');
-      if (delaNod) return arataNod(delaNod, true);
+      if (delaNod) return arataNod(delaNod, !cuEfecte);
       // „start” poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire cu un personaj e o prezentare)
       // „aleator”: un nod ales la întâmplare din listă (replicile paznicului de la poartă), ca discuția să nu fie mereu aceeași
       const start = [].concat(dialog.start).find((s) => typeof s === 'string' || verificaConditii(s.conditii));

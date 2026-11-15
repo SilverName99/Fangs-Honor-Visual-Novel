@@ -135,7 +135,9 @@ export function creeazaCarte(parinte, joc) {
     const bara = div('incredere');
     bara.append(div('eticheta-incredere', 'Încredere'));
     const romburi = div('romburi');
-    for (let i = 0; i < max(); i++) romburi.append(div(i < n ? 'romb plin' : 'romb'));
+    // Punctele de încredere (decis de autor): aceeași iconiță ca la recompensele de pe ecran (ui_icon_incredere.png,
+    // până se încarcă rombul auriu), colorată pentru punctele câștigate și decolorată pentru cele care lipsesc
+    for (let i = 0; i < max(); i++) romburi.append(div(`icon-hud icon-incredere punct-incredere${i < n ? ' plin' : ''}`, '◆'));
     bara.append(romburi, div('cifra-incredere', `${n}/${max()}`));
     // Orcii sunt în carte, dar nu au încredere (nu se recrutează)
     pag.append(div('nume-carte', p.carte.nume || p.nume), ...(p.carte.faraIncredere ? [] : [bara]), div('descriere-carte', p.carte.descriere || ''));

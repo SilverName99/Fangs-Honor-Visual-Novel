@@ -146,7 +146,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · 📝 Cheia cufărului · 📝 Platoșa tatălui · 💡 încă 5 | 3 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · 📝 Secretul lui Elian · 💡 încă 6 | 3 / 10 |
-| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅⚠️ Capcanele: **+2** doar dacă eliberezi căprioara (două puncte), iar **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · 💡 încă 5 | 5 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · 💡 încă 5 | 5 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
 **De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
@@ -373,17 +373,17 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Pornește** (decis de autor): imediat după „Lupul negru”, la Kaia, la Camp site: „Ce s-a întâmplat, Kaia? Pari supărată. !”. Ember a scăpat la un fir de păr de o capcană de fier cu craniul Craniilor Sângerii; Kaia a numărat cinci pe poteca de la izvor și îi cere lui Vale să le desfacă împreună → „Le desfacem împreună.” (sau „Altă dată, Kaia.”, iar oferta rămâne în meniu).
 - **Pasul 1: desfaci capcanele cu Kaia.** La Kaia, „Sunt gata. Hai la capcane! ?”, doar ziua (05–10 sau 14–18, cât e ea la Camp site) și odihnit (cel puțin 30 stamina; obosit, Kaia te trimite la odihnă). Apoi, peste **3 imagini**, cu replici peste ele:
   1. Kaia îi arată prima capcană, ascunsă sub frunze, cu craniul bătut cu dalta pe arc. Orcii prind tot ce mișcă; carnea și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram. Pădurea e prea liniștită.
-  2. Desfacerea: creanga între fălci, Vale apasă arcul, Kaia scoate cuiul. **Mini-jocul** (decis de autor): jocul barei de la arat, peste imaginea asta; trebuie **5 reușite** (cele cinci capcane), cu **cel mult o ratare** („dacă îți scapă o dată, creanga ține; a doua oară nu mai ține”). A doua ratare: capcana se închide (sunetul `capcana`), Vale se zgârie (−10 viață), iar Kaia îl trimite acasă: **se încearcă iar a doua zi**. Cu mini-jocurile oprite, reușește singur.
+  2. Desfacerea: creanga între fălci, Vale apasă arcul, Kaia scoate cuiul. **Mini-jocul** (decis de autor): jocul barei de la arat, peste imaginea asta; trebuie **5 reușite** (cele cinci capcane), cu **cel mult o ratare** („dacă îți scapă o dată, creanga ține; a doua oară nu mai ține”). A doua ratare: capcana se închide (sunetul `capcana`), Vale se zgârie (−10 viață), iar Kaia îl trimite acasă: **se încearcă iar a doua zi**. Cu mini-jocurile oprite, reușește singur. **Cu toate cinci desfăcute: încrederea Kaiei +1**, care urcă pe ecran chiar atunci (decis de autor).
   3. După ce le-a desfăcut, Kaia le însemnează pe arc cu cuțitul („dacă le mai văd în pădure, știu că sunt aceleași”). Lângă izvor, **o căprioară prinsă** într-o capcană pe care n-o văzuseră. Alegi:
-     - **„O eliberăm.”**: încrederea Kaiei **+2** (decis de autor);
-     - **„E carne bună. O iau.”**: 3 carne, fără încredere (Kaia: „Fierul orcilor a prins-o, iar tu i-ai terminat treaba.”).
+     - **„O eliberăm.”**: o imagine nouă, căprioara fuge în fundal, iar Kaia și Vale se uită după ea; **al doilea punct de încredere** al Kaiei, care urcă pe ecran chiar atunci (decis de autor);
+     - **„E carne bună. O iau.”**: o imagine nouă, Kaia întoarsă cu spatele, cu o lacrimă pe obraz, iar Vale aplecat în fundal (căprioara nu se vede); 3 carne, fără al doilea punct (Kaia: „Fierul orcilor a prins-o, iar tu i-ai terminat treaba.”).
   - Vale primește **Capcanele orcilor** (obiect de poveste). Trec 3 ore în total, −15 stamina.
 - **Pasul 2: ce faci cu fierul capcanelor** (decis de autor):
   - **la Bram** (oricând îl găsești, ? auriu): „Am niște capcane de fier pentru dumneata.” → Bram le topește pentru vârfuri de săgeți, îi dă lui Vale **10 săgeți** din cele gata și îi trimite vorbă Kaiei că-i mulțumește. **Încrederea lui Bram +1.**
   - **la colector** (la poartă sau când vine acasă după taxă, lângă plata taxei): „Am găsit niște capcane de-ale voastre în pădure.” („le-am găsit așa, dezarmate”) → **20 de monede**. Bram nu primește punctul. **La următoarea discuție cu Kaia**, ea le-a găsit din nou în pădure, armate, cu linia ei pe arc: **încrederea Kaiei −1** (urcă pe ecran cu roșu).
-- **Recompensa:** încrederea Kaiei +2 (căprioara); săgeți și încrederea lui Bram, sau monede de la colector (cifrele, `TODO` echilibru, alese de Claude).
+- **Recompensa:** încrederea Kaiei +1 (capcanele) și încă +1 (căprioara eliberată); săgeți și încrederea lui Bram, sau monede de la colector (cifrele, `TODO` echilibru, alese de Claude).
 
-**Imagini:** `events/kaia_capcane_1.png` (Kaia îi arată capcana de sub frunze), `events/kaia_capcane_2.png` (desfacerea: creanga între fălci, Vale apasă arcul; peste ea stă mini-jocul), `events/kaia_capcane_3.png` (căprioara prinsă, Kaia îi ține palma pe gât); iconița `items/capcane_orci.png` (galeria: „Kaia: capcanele” și „Iconiță: Capcanele orcilor”). Sunetul: `sunete/efecte/capcana.mp3` (capcana care se închide).
+**Imagini:** `events/kaia_capcane_1.png` (Kaia îi arată capcana de sub frunze), `events/kaia_capcane_2.png` (desfacerea: creanga între fălci, Vale apasă arcul; peste ea stă mini-jocul), `events/kaia_capcane_3.png` (căprioara prinsă, Kaia îi ține palma pe gât), `events/kaia_capcane_eliberata.png` (căprioara fuge în fundal, Kaia și Vale se uită după ea), `events/kaia_capcane_carne.png` (Kaia întoarsă cu spatele, cu o lacrimă pe obraz; Vale aplecat în fundal); iconița `items/capcane_orci.png` (galeria: „Kaia: capcanele” și „Iconiță: Capcanele orcilor”). Sunetul: `sunete/efecte/capcana.mp3` (capcana care se închide).
 
 **De aranjat în editor:** Aranjare → Ecrane → „Mini-joc: Capcanele orcilor”: muți și mărești bara pe imaginea desfacerii (până atunci stă jos, la mijloc).
 
@@ -391,7 +391,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 1. F2 → Misiune: Lupul negru → Pornește, apoi termin-o (sau setează starea `lup_negru` = `ucis`). Timp „Dimineață” (07:00) → Pădure → Camp site.
 2. Vorbește cu Kaia → „Ce s-a întâmplat, Kaia? Pari supărată. !” → „Le desfacem împreună.” → în meniu apare „Sunt gata. Hai la capcane! ?” → „Să mergem.”.
 3. Imaginea 1 cu replici → imaginea 2 → „Apăs arcul.” → mini-jocul. Ratează de două ori: capcana se închide, −10 viață; la Kaia, „Despre capcane...” spune „Azi nu mai”. Apasă „Ziua următoare” și încearcă din nou.
-4. Câștigă (5 reușite, cel mult o ratare) → imaginea 3, căprioara → „O eliberăm.” → la final urcă pe ecran +2 Kaia și Capcanele orcilor.
+4. Câștigă (5 reușite, cel mult o ratare) → „Toate cinci, desfăcute.” și +1 Kaia urcă pe ecran → imaginea 3, căprioara → „O eliberăm.” → imaginea cu ea fugind, iar la „Eu țin minte sigur.” urcă al doilea +1 → la final, Capcanele orcilor.
 5. Calea lui Bram: vorbește cu Bram → „Am niște capcane de fier pentru dumneata. ?” → 10 săgeți, +1 Bram, misiunea terminată.
 6. Calea colectorului (F2 → „Resetează” la misiune, apoi refă pașii 2–4): la poartă, apasă pe colector → „Am găsit niște capcane de-ale voastre în pădure.” → 20 de monede. Apoi la Kaia: ea începe cu „Am fost la izvor, Vale...” și pierzi 1 încredere (−1, cu roșu). A doua oară vorbește normal.
 7. Încearcă și „E carne bună. O iau.”: 3 carne, fără încredere.

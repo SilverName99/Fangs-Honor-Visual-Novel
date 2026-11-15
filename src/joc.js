@@ -560,7 +560,7 @@ function miniJocEveniment(v) {
     // Capcana care se închide (decis de autor: a doua ratare): sunetul ei, chiar când se termină jocul
     if (!bine && m.sunetEsuat) sunet.efect(m.sunetEsuat);
     const d = dialoguri[v.dialog];
-    if (d) dialog.porneste(d, { delaNod: bine ? v.reusit : v.esuat });
+    if (d) dialog.porneste(d, { delaNod: bine ? v.reusit : v.esuat, cuEfecte: true });
   }, 0);
 }
 

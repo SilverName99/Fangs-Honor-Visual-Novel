@@ -3704,7 +3704,7 @@
     }
   },
   "kaia_capcane": {
-    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Capcanele” (decis de autor): 3 imagini cu replici peste ele; pe a doua, mini-jocul barei (5 reușite, cel mult o ratare); pe a treia, căprioara.",
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Capcanele” (decis de autor): imagini cu replici peste ele; pe a doua, mini-jocul barei (5 reușite, cel mult o ratare); după capcane +1 Kaia, pe loc; pe a treia, căprioara: eliberată (imaginea cu ea fugind, +1 pe loc) sau luată de carne (imaginea cu Kaia întoarsă, cu o lacrimă).",
     "grup": "Kaia: capcanele",
     "partener": "vanatoare",
     "start": "a",
@@ -3854,7 +3854,13 @@
         "text": "Gata. Vezi? Fierul lor e prost, dar arcul e puternic. Toate cinci, desfăcute.",
         "imagine": "events/kaia_capcane_2.png",
         "urmator": "c2",
-        "_nota": "Prima replică după mini-joc: fără efecte."
+        "_nota": "Decis de autor: după cele 5 capcane, +1 la Kaia, care urcă pe ecran chiar aici (arataCastiguri). E prima replică după mini-joc: efectele ei se aplică (cuEfecte).",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          }
+        },
+        "arataCastiguri": true
       },
       "c2": {
         "vorbitor": "vale",
@@ -3942,7 +3948,9 @@
         "gand": true,
         "emotie": "normal",
         "text": "Căprioara se ridică, șchiopătând. Se uită o clipă la noi, apoi sare peste izvor și dispare printre copaci.",
-        "urmator": "e3"
+        "urmator": "e3",
+        "imagine": "events/kaia_capcane_eliberata.png",
+        "_nota": "Decis de autor: căprioara fuge în fundal, Kaia și Vale se uită după ea."
       },
       "e3": {
         "vorbitor": "vanatoare",
@@ -3957,20 +3965,23 @@
         "urmator": "g",
         "efecte": {
           "relatie": {
-            "vanatoare": 2
+            "vanatoare": 1
           },
           "stare": {
             "kaia_caprioara": "eliberata"
           }
         },
-        "_nota": "Decis de autor: căprioara eliberată = +2 încredere la Kaia."
+        "_nota": "Decis de autor: al doilea punct de încredere, dacă eliberezi căprioara; urcă pe ecran chiar aici.",
+        "arataCastiguri": true
       },
       "f1": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
         "text": "O fac repede, cum m-a învățat tata, ca să nu sufere.",
-        "urmator": "f2"
+        "urmator": "f2",
+        "imagine": "events/kaia_capcane_carne.png",
+        "_nota": "Decis de autor: Kaia, întoarsă cu spatele, cu o lacrimă pe obraz; Vale aplecat în fundal; căprioara nu se vede."
       },
       "f2": {
         "vorbitor": "vanatoare",
@@ -3991,7 +4002,7 @@
             "kaia_caprioara": "carne"
           }
         },
-        "_nota": "TODO echilibru: 3 bucăți de carne (ales de Claude), fără încredere."
+        "_nota": "TODO echilibru: 3 bucăți de carne (ales de Claude); fără al doilea punct de încredere."
       },
       "g": {
         "vorbitor": "vale",

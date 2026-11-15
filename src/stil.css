@@ -1830,15 +1830,19 @@ svg.zone {
   display: flex;
   gap: 8px;
 }
-.romb {
-  width: 22px;
-  height: 22px;
-  transform: rotate(45deg);
-  border: 2px solid #141010;
-  box-sizing: border-box;
+/* Punctele de încredere din carte: iconița încrederii, ca la recompensele de pe ecran; cele care lipsesc sunt
+   decolorate și estompate, ca să se vadă dintr-o privire câte mai sunt până la 10 */
+.carte .punct-incredere {
+  width: 34px;
+  height: 34px;
+  font-size: 30px;
+  line-height: 34px;
+  text-align: center;
+  color: #c99a2e;
+  filter: grayscale(1) opacity(0.28);
 }
-.romb.plin {
-  background: #141010;
+.carte .punct-incredere.plin {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 .descriere-carte {
   font: 500 40px/1.35 Caveat, cursive;

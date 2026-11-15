@@ -411,9 +411,9 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea Kaiei, dacă eliberez căprioara (+2). Pe fierul capcanelor: săgeți de la Bram și încrederea lui, sau monede de la colector."
+        "text": "Încrederea Kaiei +1 pentru capcane și încă +1 dacă eliberez căprioara. Pe fierul capcanelor: săgeți de la Bram și încrederea lui, sau monede de la colector."
       },
-      "_nota": "Decis de autor: căprioara eliberată = +2 Kaia (carnea = fără încredere, ales de Claude). Capcanele: la Bram = 10 săgeți și +1 Bram; la colector = 20 de monede (TODO echilibru), iar la următoarea discuție Kaia le-a găsit din nou armate: −1 Kaia, fără punctul lui Bram."
+      "_nota": "Decis de autor: +1 Kaia după cele 5 capcane și încă +1 dacă eliberezi căprioara, fiecare urcă pe ecran pe loc (carnea = fără al doilea). Capcanele: la Bram = 10 săgeți și +1 Bram; la colector = 20 de monede (TODO echilibru), iar la următoarea discuție Kaia le-a găsit din nou armate: −1 Kaia, fără punctul lui Bram."
     },
     {
       "id": "kaia_ember",
