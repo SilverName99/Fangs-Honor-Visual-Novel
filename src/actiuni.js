@@ -320,6 +320,16 @@ export function creeazaActiuni(parinte, joc) {
     });
   }
 
+  // Un gând: un text, o listă din care se alege unul la întâmplare, sau gânduri cu condiții ({ conditii, text }),
+  // dintre care câștigă primul îndeplinit (ieșirea de la Marginea: alt gând după ce l-a scos Roderick pe acolo)
+  function alegeGand(text) {
+    const lista = [].concat(text);
+    const cuConditii = lista.find((x) => typeof x === 'object' && verifica(x.conditii, context(joc.stare)));
+    if (cuConditii) return joc.gand(cuConditii.text);
+    const simple = lista.filter((x) => typeof x === 'string');
+    return joc.gand(simple[Math.floor(Math.random() * simple.length)]);
+  }
+
   const tipuri = {
     culege,
     cauta,
@@ -331,16 +341,9 @@ export function creeazaActiuni(parinte, joc) {
     taxa: () => joc.platesteTaxa(),
     // Un loc unde Vale doar se gândește la ceva (ieșirea de la Marginea satului) sau unde pornește o scurtă
     // scenă (mormântul tatălui): fără muncă și fără magazin
-    // „text” poate fi și o listă: Vale se gândește de fiecare dată la altceva (Marta, bolnavă, în pat)
-    // „text”: un gând, o listă din care se alege unul la întâmplare, sau gânduri cu condiții ({ conditii, text }),
-    // dintre care câștigă primul îndeplinit (ieșirea de la Marginea: alt gând după ce l-a scos Roderick pe acolo)
-    gand: (a) => {
-      const lista = [].concat(a.text);
-      const cuConditii = lista.find((x) => typeof x === 'object' && verifica(x.conditii, context(joc.stare)));
-      if (cuConditii) return joc.gand(cuConditii.text);
-      const simple = lista.filter((x) => typeof x === 'string');
-      return joc.gand(simple[Math.floor(Math.random() * simple.length)]);
-    },
+    // „text” poate fi și o listă: Vale se gândește de fiecare dată la altceva (Marta, bolnavă, în pat), sau gânduri
+    // cu condiții (vezi alegeGand)
+    gand: (a) => alegeGand(a.text),
     // Cât nu poate reveni (mormântul: o dată pe zi), doar gândul lui Vale
     // „cand”: condițiile fără de care Vale doar se gândește („gandCand”): contrabandistul vine doar 18–02
     // „cand” poate fi și o listă { conditii, gand }: primul neîndeplinit spune de ce nu (lada colectorului: doar
@@ -349,8 +352,9 @@ export function creeazaActiuni(parinte, joc) {
       const ctx = context(joc.stare);
       const cand = Array.isArray(a.cand) ? a.cand : a.cand ? [{ conditii: a.cand, gand: a.gandCand }] : [];
       const opreste = cand.find((c) => !verifica(c.conditii, ctx));
-      if (opreste) return joc.gand(opreste.gand || 'Nu e momentul potrivit.');
-      return joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && joc.gand(a.gandAltfel));
+      if (opreste) return alegeGand(opreste.gand || 'Nu e momentul potrivit.');
+      // Și gândurile de aici pot avea condiții (cufărul lui Bram: altul după ce a văzut săbiile, altul când e gol)
+      return joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && alegeGand(a.gandAltfel));
     },
     lupta: (a) => {
       if (joc.avanseaza(a.minute || 0)) return;

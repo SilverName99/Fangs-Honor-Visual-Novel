@@ -412,10 +412,53 @@
           "actiuni": [
             {
               "id": "cufar_bram",
-              "tip": "gand",
+              "tip": "eveniment",
               "nume": "Cufărul lui Bram",
-              "_nota": "Decis de autor: Bram îi dă lui Vale cheia cufărului după o misiune (TODO care); ce e în cufăr: TODO. Până atunci, doar gândul lui Vale (ciornă). Zona se desenează în editor, pe cufăr.",
-              "text": "Un cufăr vechi, ferecat în fier, cu un lacăt cât pumnul. E al lui Bram; fără cheia lui n-am ce căuta în el."
+              "eveniment": "bram_cufar",
+              "_nota": "Decis de autor: în misiunea „Cufărul”, cu cheia de la Bram, cufărul se deschide peste o imagine (events/bram_cufar.png, săbiile celor căzuți). Altfel, gândul lui Vale (altul după ce a văzut săbiile, altul când cufărul e gol). Zona se desenează în editor, pe cufăr.",
+              "cand": [
+                {
+                  "conditii": {
+                    "misiune": {
+                      "bram_cufar": "inceputa"
+                    },
+                    "areObiect": "cheie_fierar",
+                    "nu": {
+                      "existaStare": "cufar_vazut"
+                    }
+                  },
+                  "gand": [
+                    {
+                      "conditii": {
+                        "existaStare": "toiag_batut"
+                      },
+                      "text": "Cufărul lui Bram e gol acum. Din cele douăzeci și două de săbii a ieșit un singur toiag."
+                    },
+                    {
+                      "conditii": {
+                        "existaStare": "cufar_vazut"
+                      },
+                      "text": "Săbiile celor căzuți dorm în cufăr, pe pânza lor albastră. Nu le mai trezesc."
+                    },
+                    "Un cufăr vechi, ferecat în fier, cu un lacăt cât pumnul. E al lui Bram; fără cheia lui n-am ce căuta în el."
+                  ]
+                }
+              ],
+              "gandAltfel": [
+                {
+                  "conditii": {
+                    "existaStare": "toiag_batut"
+                  },
+                  "text": "Cufărul lui Bram e gol acum. Din cele douăzeci și două de săbii a ieșit un singur toiag."
+                },
+                {
+                  "conditii": {
+                    "existaStare": "cufar_vazut"
+                  },
+                  "text": "Săbiile celor căzuți dorm în cufăr, pe pânza lor albastră. Nu le mai trezesc."
+                },
+                "Un cufăr vechi, ferecat în fier, cu un lacăt cât pumnul. E al lui Bram; fără cheia lui n-am ce căuta în el."
+              ]
             }
           ]
         }

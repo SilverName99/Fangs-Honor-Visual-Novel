@@ -587,6 +587,8 @@ export function imaginiCerute(date, scene) {
       if (ab.imagine) adauga(ab.imagine, `Luptă: ${ab.nume} (efectul puterii lui ${p.nume})`);
     }
   }
+  // Toiagul celor 23 (lupta finală): poza lui Vale când îl ridică; până e încărcată, poza lui de atac
+  for (const o of Object.values(date.items.obiecte)) if (o.luptaFinala?.poza) adauga(o.luptaFinala.poza, `Luptă: Vale ridică ${o.nume} (lupta finală, aceeași pânză 2:3 ca celelalte poze)`, true);
   // Imaginile muncii și ale somnului (câmpul, vacile, moara, lemnele, apa, patul): pe tot ecranul cât durează,
   // ca la vânătoare. Doar muncile care chiar au un loc pe hartă (ferma de porci nu mai există)
   grup = 'Munca și somnul';

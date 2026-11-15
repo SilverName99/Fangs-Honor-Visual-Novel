@@ -60,7 +60,20 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 - E preotul satului și **magul lui** (fiecare sat are cel puțin unul). **Toți, și orcii, îl cred un mag începător**, fără putere.
 - De fapt e **foarte puternic**: a fost trimis aici ca să caute **o nouă trezire**, simțită cu ajutorul cristalului, fără să știe a cui (acela n-a împlinit încă 26 de ani).
-- **Secretul lui:** are la el **un cristal mic**, foarte rar, și misiunea asta. Vale le află într-o misiune a lui Elian (de făcut).
+- **Secretul lui:** are la el **un cristal mic**, foarte rar, și misiunea asta. Vale află **doar o parte** în misiunea „Secretul lui Elian” (decis de autor): că Elian e mag al Cercului Luminii, nu începător, și că are cristalul. **De ce l-a trimis Cercul aici** (trezirea) Elian nu spune: „Unele lucruri, odată spuse, nu se mai pot lua înapoi.” (ciornă de Claude).
+- **De ce își ascunde puterea** (ciornă de Claude): un mag puternic într-un sat ocupat e un mag mort, iar satul ar plăti pentru el; Craniile Sângerii sunt mii, iar orcii ar arde satul ca să-i sperie pe ceilalți. „Un om singur, oricât de puternic, nu eliberează un sat. Un sat se eliberează singur.”
+- **Încăperea de sub biserică** (decis de autor): în spatele bisericii, o trapă ascunsă sub iarbă, crengi și frunze; dedesubt, o încăpere strâmtă, de piatră, cu rădăcini prin tavan, o masă și un raft cu cărțile lui (cele cu **soarele cu raze frânte** pe copertă, din misiunea „Cărțile”). Biserica e mai veche decât satul (ciornă de Claude). Dacă a luat cărțile, Vale s-a ascuns cu ele chiar lângă trapă, fără să știe.
+- **Lumina lui Elian:** o sferă albă care plutește deasupra palmei, fără flacără; o aprinde cu un singur cuvânt, pe o limbă pe care Vale n-o înțelege (ciornă de Claude).
+- **Cristalul și Vale** (ales de Claude, indiciu pentru trezirea lui Vale): cristalul lui Elian se aprinde, alb, orbitor, când Vale se apleacă spre el, și iar când Vale ține toiagul; a doua oară, parcă lumina nu vine doar din cristal. Elian vede, tace și se gândește. Nu-i spune lui Vale nimic.
+
+## Săbiile celor căzuți și Toiagul celor 23 (decis de autor)
+
+- A doua zi după bătălia de lângă copacul mare, înainte să răsară soarele, **Bram** a strâns de pe câmp săbiile celor căzuți și le-a cărat la fierărie, câte patru odată. Le-a ținut de atunci într-un **cufăr**, lângă pat: nu le putea topi, nici da orcilor (ciornă de Claude).
+- Sunt **douăzeci și două** (ales de Claude): **sabia lui Edwin lipsește**. Bram a căutat-o toată noaptea și n-a găsit-o; e la Miriam, cu restul echipamentului lui Edwin (indiciu pentru misiunea ei de la 8/10).
+- Din ele, Bram a bătut **Toiagul celor 23**: oțel negru, cu dungi argintii încolăcite, cu un loc în formă de romb în cap, unde Elian a pus cristalul. „Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.”
+- **Elian i-a dat toiagul lui Vale** (decis de autor): are încredere în el și simte că ceva mare se apropie. Vale nu înțelege de ce el. Îl ține ascuns în cufărul de acasă, până în ziua cea mare.
+- **În lupta finală** (decis de autor): Vale îl ridică o singură dată; lumina orbește toți orcii și pune un scut de lumină pe fiecare aliat. E **prima dată când Vale folosește magia luminii**: un alt indiciu pentru trezirea lui.
+- Bram a jurat pe nicovala tatălui lui că nu spune nimănui despre Elian (ciornă de Claude).
 - L-a trimis **Cercul Luminii, la cererea Ordinului Flăcării** (decis de autor).
 
 ## Narco (decis de autor)

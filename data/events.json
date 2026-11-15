@@ -1389,6 +1389,73 @@
       },
       "dialog": "cercuri_pivnita",
       "_nota": "Decis de autor: seara, în pivniță, peste 2 imagini. Ales de Claude: pornește când Vale intră în pivniță după 22 (cât e taverna deschisă, până la 2), în orice seară după ce a dus cercurile la Bram."
+    },
+    {
+      "id": "bram_cufar",
+      "nume": "Cufărul lui Bram",
+      "grup": "Bram: cufărul",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "bram_cufar",
+      "_nota": "Decis de autor: pornește din cufărul din camera lui Bram (acțiunea cufar_bram), cu cheia, cât e misiunea „Cufărul”."
+    },
+    {
+      "id": "elian_secret",
+      "nume": "Secretul lui Elian",
+      "grup": "Elian: secretul",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "elian_secret",
+      "_nota": "Decis de autor: din discuția cu Elian, cât citește afară; în spatele bisericii și în încăperea de sub ea (3 imagini)."
+    },
+    {
+      "id": "toiag_forja",
+      "nume": "Toiagul celor 23: forja",
+      "grup": "Toiagul celor 23",
+      "repetare": "o_data",
+      "conditii": {
+        "loc": "fierar/interior",
+        "personajIn": {
+          "fierar": [
+            "fierar/interior"
+          ]
+        },
+        "misiune": {
+          "elian_toiag": "inceputa"
+        },
+        "stare": {
+          "toiag_jurat": "da"
+        },
+        "nu": {
+          "existaStare": "toiag_batut"
+        }
+      },
+      "efecte": {
+        "timp": 180,
+        "nevoi": {
+          "stamina": -20
+        }
+      },
+      "dialog": "toiag_forja",
+      "_nota": "Ales de Claude: seara, cât lucrează Bram înăuntru (18–22), când intră Vale în fierărie după jurământ; 3 ore, 20 stamina; fără mini-joc (foalele și ciocanul au fost la „O zi la forjă”)."
+    },
+    {
+      "id": "toiag_cristal",
+      "nume": "Toiagul celor 23: cristalul",
+      "grup": "Toiagul celor 23",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "toiag_cristal",
+      "_nota": "Decis de autor: Elian pune cristalul în toiag și i-l dă lui Vale; în încăperea de sub biserică (2 imagini)."
     }
   ]
 }

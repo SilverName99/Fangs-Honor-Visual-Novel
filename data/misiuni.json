@@ -1446,6 +1446,85 @@
       "_nota": "Decis de autor: berea nouă a sărit cercurile butoaielor; Agnes nu vrea să-l roage pe Bram (ales de Claude: ca să nu aibă el necazuri cu orcii; în taină, îi place de el); Bram bate cercurile vechi din nou, seara le pun în pivniță (2 imagini), Agnes îi aduce o cană de bere și Bram se înroșește; +1 Bram."
     },
     {
+      "id": "bram_cufar",
+      "titlu": "Cufărul",
+      "dela": "fierar",
+      "dialog": "fierar",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "cufar_vazut"
+          },
+          "text": "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. În cufărul din camera lui, Bram ține săbiile celor căzuți primăvara trecută: douăzeci și două. Sabia tatei nu e printre ele. Bram nu le poate topi, nu le poate da orcilor și nici nu le mai poate ține acolo."
+        },
+        "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. Bram mi-a dat cheia cufărului din camera lui și m-a rugat să mă uit înăuntru. El nu mai poate să-l deschidă."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „Fierul plugului”, Bram e îngândurat și pare supărat. Ales de Claude: doar la fierărie, după ce plugul e reparat.",
+        "text": "Ce vă frământă, domnule Bram?",
+        "nod": "cuf_o1",
+        "conditii": {
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "oricare": [
+            {
+              "existaStare": "plug_reparat"
+            },
+            {
+              "stare": {
+                "plug": "refuzat"
+              },
+              "trecut": {
+                "plug_refuz": {
+                  "pesteZile": 2
+                }
+              }
+            }
+          ],
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Deschid cufărul din camera lui Bram",
+          "gata": {
+            "existaStare": "cufar_vazut"
+          },
+          "sfat": "Camera lui Bram e sus: intru din magazin, cât lucrează el (06–12 și 14–22).",
+          "indiciu": {
+            "text": "Despre cufăr...",
+            "nod": "cuf_ind"
+          }
+        },
+        {
+          "text": "Mă întorc la Bram",
+          "gata": {
+            "existaStare": "cufar_spus"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "predare": {
+            "text": "Am deschis cufărul, domnule Bram.",
+            "nod": "cuf_p1"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Bram îi dă cheia cufărului; Vale vede săbiile peste o imagine (unele rupte, altele ciobite); Bram nu știe ce să facă cu ele; +1 Bram; apoi Elian are „!”. Ales de Claude: douăzeci și două de săbii, pentru că sabia lui Edwin e la Miriam."
+    },
+    {
       "id": "agnes_bere",
       "titlu": "Berea",
       "dela": "hangita",
@@ -1735,6 +1814,118 @@
       },
       "ofertaEveniment": "elian_carti",
       "_nota": "Pornește singură, din evenimentul elian_carti; „!” deasupra lui Elian și a bisericii cât evenimentul ar porni la sosire (decis de autor)."
+    },
+    {
+      "id": "elian_secret",
+      "titlu": "Secretul lui Elian",
+      "dela": "mag",
+      "dialog": "mag",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "elian_secret"
+          },
+          "text": "CIORNĂ: Sub biserică e o încăpere ascunsă. Fratele Elian nu e un mag începător, ci un mag al Cercului Luminii, și are un cristal mic, din Inima Luminii. Când m-am aplecat să-l văd, cristalul s-a aprins. De ce l-a trimis Cercul aici, nu mi-a spus. Am promis să tac."
+        },
+        "CIORNĂ: Bram nu știe ce să facă cu săbiile celor căzuți. Fratele Elian zice că are o idee, dar că întâi trebuie să-mi arate ceva."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „Cufărul”, cât Elian citește afară (14–23).",
+        "text": "Frate Elian, am nevoie de un sfat.",
+        "nod": "sec_o1",
+        "conditii": {
+          "misiune": {
+            "bram_cufar": "terminata"
+          },
+          "personajIn": {
+            "mag": [
+              "biserica"
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îl urmez pe Elian în spatele bisericii",
+          "gata": {
+            "existaStare": "elian_secret"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Fratelui Elian +1.",
+        "efecte": {
+          "relatie": {
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: trapa ascunsă în spatele bisericii, încăperea strâmtă, Elian spune o parte din ce este; +1 Elian. Ales de Claude: peste 3 imagini, nu un loc nou pe hartă."
+    },
+    {
+      "id": "elian_toiag",
+      "titlu": "Toiagul celor 23",
+      "dela": "mag",
+      "dialog": "mag",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "toiag_primit"
+          },
+          "text": "CIORNĂ: Din cele douăzeci și două de săbii, Bram a bătut un toiag, iar Elian i-a pus cristalul în cap. Apoi mi l-a dat mie. Zice că simte că o să am nevoie de el, că ceva mare se apropie. N-am înțeles de ce eu. L-am ascuns pe fundul cufărului de acasă, până în ziua aceea."
+        },
+        "CIORNĂ: Fratele Elian are o idee: din săbiile celor căzuți, Bram să bată un toiag, iar el să-i pună cristalul în cap, ca să-i crească puterea, pentru ceva neprevăzut. Întâi Bram trebuie să jure că nu spune nimănui nimic."
+      ],
+      "pasi": [
+        {
+          "text": "Îl pun pe Bram să jure, apoi îi spun de Elian și de toiag",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "toiag_jurat"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "predare": {
+            "text": "Domnule Bram, trebuie să-mi jurați ceva.",
+            "nod": "tg_b1"
+          }
+        },
+        {
+          "text": "Seara, la forjă, cu Bram",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "toiag_batut"
+          },
+          "sfat": "Seara, cât lucrează Bram înăuntru (18–22), intru în fierărie.",
+          "indiciu": {
+            "text": "Despre toiag...",
+            "nod": "tg_b_ind"
+          }
+        },
+        {
+          "text": "Îi duc toiagul Fratelui Elian",
+          "gata": {
+            "existaStare": "toiag_primit"
+          },
+          "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "predare": {
+            "text": "Frate Elian, toiagul e gata.",
+            "nod": "tg_e1",
+            "conditii": {
+              "areObiect": "toiag_fara_cristal"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1 și a Fratelui Elian +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1,
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Vale îl pune pe Bram să jure că tace despre Elian și îi spune ideea toiagului; Bram îl bate; Elian pune cristalul și i-l dă lui Vale, care îl păstrează în cufăr pentru lupta finală; +1 Bram și +1 Elian. Pornește singură, la sfârșitul „Secretului lui Elian”."
     },
     {
       "id": "finn_lada",

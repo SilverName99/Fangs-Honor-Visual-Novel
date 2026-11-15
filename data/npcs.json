@@ -238,7 +238,25 @@
       "nume": "Bram Emberforge",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Fierarul satului. Lucrează de dimineața până seara, afară, la nicovală, iar orcii îi aduc topoarele să le ascută pe gratis. Vorbește puțin, dar ce face, face temeinic."
+        "descriere": [
+          {
+            "conditii": {
+              "misiune": {
+                "elian_toiag": "terminata"
+              }
+            },
+            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A strâns de pe câmp săbiile celor căzuți și le-a ținut ascunse lângă pat. Acum, din ele e un toiag, bătut seara, cu obloanele trase. Am jurat amândoi să tăcem."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "bram_cufar": "terminata"
+              }
+            },
+            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A doua zi după bătălie a strâns de pe câmp săbiile celor căzuți: douăzeci și două. Le ține într-un cufăr, lângă pat. Sabia tatei nu e printre ele."
+          },
+          "Fierarul satului. Lucrează de dimineața până seara, afară, la nicovală, iar orcii îi aduc topoarele să le ascută pe gratis. Vorbește puțin, dar ce face, face temeinic."
+        ]
       },
       "locuriSprite": [
         "fierar",
@@ -722,7 +740,17 @@
       "numeScurt": "F. Elian",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Preotul satului și, ca în orice sat, magul lui: unul mic, zic oamenii, bun la lumânări și la răni ușoare. Tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Când e el prin preajmă, lumânările par să ardă mai frumos."
+        "descriere": [
+          {
+            "conditii": {
+              "misiune": {
+                "elian_secret": "terminata"
+              }
+            },
+            "text": "Preotul satului și magul lui. Toți, și orcii, îl cred un mag mic, bun la lumânări și la răni ușoare. Eu am văzut lumina din palma lui, sub biserică, și cristalul din punga de la gât. Nu e un mag mic. De ce l-a trimis Cercul Luminii tocmai aici, nu mi-a spus încă."
+          },
+          "Preotul satului și, ca în orice sat, magul lui: unul mic, zic oamenii, bun la lumânări și la răni ușoare. Tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Când e el prin preajmă, lumânările par să ardă mai frumos."
+        ]
       },
       "locuriSprite": [
         "biserica/interior",

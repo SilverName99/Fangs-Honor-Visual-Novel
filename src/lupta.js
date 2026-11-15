@@ -237,10 +237,11 @@ export function creeazaLupta(parinte, joc) {
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
 
+  // „p” poate fi și calea unei poze anume (Vale cu toiagul, în lupta finală), cu „atac” ca rezervă până se încarcă
   function poza(f, p) {
     f.cache ||= new Map();
     if (!f.cache.has(p)) {
-      const img = elementImagine(f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
+      const img = elementImagine(p.includes('/') ? [p, ...f.poze('atac')] : f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
       if (f.filtru) img.style.filter = f.filtru;
       // Mărimea fiecărei poze se reglează din galerie (în procente), pentru poze generate puțin mai mari sau mai mici
       img.addEventListener('incarcat', (e) => {
@@ -593,6 +594,27 @@ export function creeazaLupta(parinte, joc) {
       poza(sursa, 'aparare');
       jurnal(`${sursa.nume} se apără.`);
       sursa.bara = 0;
+    } else if (actiune.tip === 'obiect' && inv.def(actiune.id).luptaFinala) {
+      // Toiagul celor 23 (decis de autor): golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații.
+      // E prima dată când Vale folosește magia luminii: lumina iese din cristal, dar și din mâinile lui
+      const d = inv.def(actiune.id);
+      const lf = d.luptaFinala;
+      // Se ține minte în salvare abia la sfârșitul luptei: o luptă reluată după un refresh pornește de la capăt,
+      // deci și toiagul trebuie să fie din nou acolo; valurile de după îl găsesc folosit
+      L.folosite.add(actiune.id);
+      poza(sursa, lf.poza || 'atac');
+      joc.sunet.efect(lf.sunet || 'lupta_magie');
+      el.classList.add('lumina-toiag');
+      await asteapta(500);
+      if (!L) return;
+      for (const x of vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat')) x.bara = 0;
+      for (const x of vii(sursa.tabara)) puneScut(x, lf.scut || 'combat/scut_lumina.png');
+      jurnal(lf.jurnal || `${sursa.nume} ridică ${d.nume}. Lumina orbește inamicii, iar aliații primesc scutul de lumină.`);
+      await asteapta(700);
+      el.classList.remove('lumina-toiag');
+      if (!L) return;
+      poza(sursa, 'idle');
+      sursa.bara = 0;
     } else if (actiune.tip === 'obiect') {
       const d = inv.def(actiune.id);
       const v = d.efecte?.nevoi?.viata || 0;
@@ -784,7 +806,16 @@ export function creeazaLupta(parinte, joc) {
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
     f.el.classList.add('la-rand');
     L.laClic = null;
-    const consumabile = inv.def && joc.stare.inventar.filter((x) => inv.def(x.id).inLupta);
+    // Toiagul celor 23 (decis de autor): stă la obiectele de poveste, iar doar Vale îl poate folosi, doar în lupta
+    // finală și o singură dată; în lupta de test din F2 (bifa „lupta finală”) se poate încerca și fără să-l ai
+    const toiage = Object.entries(joc.date.items.obiecte).filter(([, o]) => o.luptaFinala).map(([id]) => id);
+    const speciale =
+      f.id === 'vale' && L.def.finala
+        ? toiage
+            .filter((id) => (L.def.test || ((joc.stare.poveste || []).includes(id) && !joc.stare.stari?.[`folosit_${id}`])) && !L.folosite.has(id))
+            .map((id) => ({ id, n: 1 }))
+        : [];
+    const consumabile = [...speciale, ...(inv.def ? joc.stare.inventar.filter((x) => inv.def(x.id).inLupta) : [])];
     const m = L.elMeniu;
     m.hidden = false;
     // Fiecare putere are butonul ei (preotul: vindecare, golirea barei, scutul de lumină), fără un „Abilitate” cu listă
@@ -801,7 +832,10 @@ export function creeazaLupta(parinte, joc) {
         m.replaceChildren(
           div('titlu-meniu-lupta', 'Alege obiectul'),
           ...consumabile.map((x) => {
-            const b = buton('', () => alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })));
+            // Toiagul lucrează asupra tuturor, deci n-are țintă de ales
+            const b = buton('', () =>
+              inv.def(x.id).luptaFinala ? executa(f, { tip: 'obiect', id: x.id, tinta: f }) : alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })),
+            );
             b.className = 'buton-lupta obiect-lupta';
             b.append(iconitaObiect(inv, x.id), div('numar-obiect', `×${x.n}`), div('eticheta-lupta', inv.def(x.id).nume));
             return b;
@@ -909,6 +943,8 @@ export function creeazaLupta(parinte, joc) {
       jurnal,
       numar,
       puneScut,
+      // Obiectele de o singură folosire (toiagul) folosite în lupta asta; în lupta de test nu se țin minte în salvare
+      folosite: new Set(),
     };
     L.elOrdine = div('ordine-lupta');
     // Medalioanele sunt o bucată separată, așezată de autor peste bară, ca să stea exact pe lemnul ei
@@ -1078,6 +1114,7 @@ export function creeazaLupta(parinte, joc) {
           L = null;
           return joc.dupaLupta(null, 0);
         }
+        for (const id of L.folosite) s.stari[`folosit_${id}`] = 'da';
         if (vale) s.nevoi.viata = vale.cazut ? cfg.viataDupaCadere : Math.max(1, vale.viata);
         s.nevoi.stamina = Math.max(0, s.nevoi.stamina - cfg.staminaConsumata);
         el.hidden = true;

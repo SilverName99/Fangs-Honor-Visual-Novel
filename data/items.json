@@ -277,8 +277,10 @@
     },
     "cheie_fierar": {
       "nume": "Cheia cufărului lui Bram",
-      "_nota": "Decis de autor: e cheia cufărului din camera lui Bram, nu a camerei. Misiunea care o dă și ce e în cufăr: TODO.",
-      "tip": "poveste"
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Cheia cufărului din camera lui Bram, grea și rece, cu dinții tociți. Mi-a dat-o și n-a mai vrut-o înapoi.",
+      "_nota": "Decis de autor: e cheia cufărului din camera lui Bram, nu a camerei; o dă misiunea „Cufărul”. În cufăr: săbiile celor căzuți (douăzeci și două; a lui Edwin lipsește, e la Miriam)."
     },
     "fier_bram": {
       "nume": "Fierul lui Bram",
@@ -478,6 +480,25 @@
       "pret": 0,
       "descriere": "Cercurile ruginite ale butoaielor lui Agnes, sărite de berea nouă. Bram le bate din nou: fierul vechi nu-l numără niciun orc.",
       "_nota": "Misiunea „Cercurile butoaielor” (decis de autor)."
+    },
+    "toiag_fara_cristal": {
+      "nume": "Toiagul lui Bram",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Oțel negru, bătut din douăzeci și două de săbii, cu dungi argintii încolăcite. În capul lui, un loc gol, în formă de romb. E pentru Fratele Elian.",
+      "_nota": "Misiunea „Toiagul celor 23” (decis de autor): toiagul bătut de Bram, încă fără cristal."
+    },
+    "toiagul_celor_23": {
+      "nume": "Toiagul celor 23",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Oțelul a douăzeci și două de săbii și cristalul lui Elian, în capul lui. L-am ascuns pe fundul cufărului de acasă, învelit într-o pânză veche, până în ziua cea mare. Atunci îl pot ridica o singură dată.",
+      "_nota": "Decis de autor: doar în lupta finală (cu toate valurile ei), o singură dată și doar de Vale: golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații. E prima dată când Vale folosește magia luminii (indiciu pentru trezirea lui). Stă la obiectele de poveste, ca să nu se piardă sau să se vândă (în poveste, e în cufărul de acasă).",
+      "luptaFinala": {
+        "poza": "combat/vale_toiag.png",
+        "scut": "combat/scut_lumina.png",
+        "jurnal": "Vale ridică Toiagul celor 23. Cristalul se aprinde, dar lumina nu vine doar din el: vine și din mâinile lui Vale. Inamicii rămân orbiți, cu barele goale, iar fiecare aliat primește un scut de lumină."
+      }
     }
   }
 }

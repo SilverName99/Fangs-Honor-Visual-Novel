@@ -1742,6 +1742,29 @@ svg.zone {
   color: #ffe9a0;
 }
 
+/* Toiagul celor 23 (decis de autor): o lumină albă-aurie umple o clipă tot câmpul de luptă, din cristal și din
+   mâinile lui Vale (prima lui magie a luminii), apoi se stinge încet; pointer-events: none ca să nu oprească clicuri */
+.lupta.lumina-toiag::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 60%, rgba(255, 252, 230, 0.95), rgba(255, 226, 140, 0.55) 35%, rgba(255, 210, 120, 0) 75%);
+  animation: lumina-toiag calc(1.2s / var(--viteza, 1)) ease-out forwards;
+}
+@keyframes lumina-toiag {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* „display: flex” de mai sus ar anula atributul hidden: meniul trebuie să dispară cât se execută o acțiune */
 /* „Alege locul”: partea din stânga a tablei devine străvezie și lasă clicul să treacă la locurile de sub ea;
    îndemnul și „Înapoi”, la mijloc, rămân întregi și apăsabile */

@@ -2961,6 +2961,49 @@
         }
       },
       {
+        "nod": "cuf_salut",
+        "conditii": {
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "oricare": [
+            {
+              "existaStare": "plug_reparat"
+            },
+            {
+              "stare": {
+                "plug": "refuzat"
+              },
+              "trecut": {
+                "plug_refuz": {
+                  "pesteZile": 2
+                }
+              }
+            }
+          ],
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          },
+          "nu": {
+            "oricare": [
+              {
+                "misiune": {
+                  "bram_cufar": "inceputa"
+                }
+              },
+              {
+                "misiune": {
+                  "bram_cufar": "terminata"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -3410,6 +3453,289 @@
         "vorbitor": "fierar",
         "emotie": "inrosit",
         "text": "Agnes zice să-i spun Agnes. Fără „doamna”. Mi-e greu, băiete. Mi se încurcă limba."
+      },
+      "cuf_salut": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram nu lucrează. Ține ciocanul în poală și se uită în gol. Nici nu mă aude când vin.",
+        "_nota": "CIORNĂ (Claude): misiunea „Cufărul” (decis de autor: Bram e îngândurat și pare supărat)."
+      },
+      "cuf_o1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ce să mă frământe? Nimic. Fierul. Orcii.",
+        "urmator": "cuf_o2"
+      },
+      "cuf_o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram nu ridică ochii. Își freacă palmele una de alta, deși nu-i e frig.",
+        "urmator": "cuf_o3"
+      },
+      "cuf_o3": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Colectorul a fost aici azi-dimineață. A văzut plugul cel nou al fermierului.",
+        "_nota": "Ales de Claude: bănuiala colectorului pornește de la plugul reparat („Fierul plugului”).",
+        "urmator": "cuf_o4"
+      },
+      "cuf_o4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "M-a întrebat de unde am eu fier pentru un brăzdar nou, când fierul meu îl numără ei, bucată cu bucată.",
+        "urmator": "cuf_o5"
+      },
+      "cuf_o5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ce i-ați spus?",
+        "urmator": "cuf_o6"
+      },
+      "cuf_o6": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Că l-am bătut dintr-unul vechi. A râs. A zis că într-o zi vine cu toți orcii și-mi întoarce fierăria pe dos. Și că, dacă găsește fier care nu e al lor, mă leagă la poartă, să mă vadă tot satul.",
+        "urmator": "cuf_o7"
+      },
+      "cuf_o7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Dar n-o să găsească nimic.",
+        "urmator": "cuf_o8"
+      },
+      "cuf_o8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram tace. Se uită în sus, spre camera lui.",
+        "urmator": "cuf_o9"
+      },
+      "cuf_o9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ba o să găsească, băiete.",
+        "alegeri": [
+          {
+            "text": "Ce o să găsească, domnule Bram?",
+            "spre": "cuf_da",
+            "efecte": {
+              "misiune": {
+                "bram_cufar": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Nu vreau să știu. Iertați-mă.",
+            "spre": "cuf_nu"
+          }
+        ]
+      },
+      "cuf_da": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu pot să-ți spun. Nu pot nici să mă uit. Dar tu poți.",
+        "urmator": "cuf_da2"
+      },
+      "cuf_da2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ia cheia asta. E a cufărului de lângă patul meu, sus. Urcă și deschide-l. Apoi vino înapoi. Poate tu vezi ce eu nu mai pot să văd.",
+        "efecte": {
+          "obiect": "cheie_fierar"
+        },
+        "_nota": "Decis de autor: Bram îi dă lui Vale cheia cufărului.",
+        "urmator": "cuf_da3"
+      },
+      "cuf_da3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cheia e grea și rece, cu dinții tociți. După ce mi-o dă, Bram își șterge palma de șorț, de parcă l-ar fi ars."
+      },
+      "cuf_nu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Bine faci. Nici eu n-aș vrea."
+      },
+      "cuf_ind": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cufărul de lângă pat, sus. Cheia o ai. Eu rămân aici."
+      },
+      "cuf_p1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Le-ai văzut.",
+        "urmator": "cuf_p2"
+      },
+      "cuf_p2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Douăzeci și două de săbii, domnule Bram.",
+        "urmator": "cuf_p3"
+      },
+      "cuf_p3": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Le-am strâns a doua zi după bătălie, înainte să răsară soarele. Orcii încă își numărau morții, în partea cealaltă a câmpului.",
+        "urmator": "cuf_p4"
+      },
+      "cuf_p4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Le-am cărat câte patru odată, până aici. Am mers de șase ori. La ultimul drum nu-mi mai simțeam brațele.",
+        "urmator": "cuf_p5"
+      },
+      "cuf_p5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Sabia tatei nu e printre ele.",
+        "urmator": "cuf_p6"
+      },
+      "cuf_p6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Știu. Am căutat-o până s-a luminat de-a binelea. Am răscolit cu mâinile toată iarba din jurul copacului. Nimic.",
+        "_nota": "Ales de Claude: sabia lui Edwin lipsește din cufăr pentru că e la Miriam (echipamentul lui Edwin, decis de autor); indiciu pentru misiunea ei de la 8/10.",
+        "urmator": "cuf_p7"
+      },
+      "cuf_p7": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Poate au luat-o orcii. Poate... Nu știu, băiete. Iartă-mă.",
+        "urmator": "cuf_p8"
+      },
+      "cuf_p8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sabia tatei. Atâta vreme și n-am întrebat niciodată ce s-a întâmplat cu ea. Mi-a fost frică de răspuns.",
+        "urmator": "cuf_p9"
+      },
+      "cuf_p9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu le pot topi. Ar fi ca și cum i-aș îngropa a doua oară. Nu le pot da orcilor, să-și bată din ele topoare. Și nu le mai pot ține sub patul meu, cu colectorul la ușă.",
+        "urmator": "cuf_p10"
+      },
+      "cuf_p10": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Am bătut fier toată viața. Și acum stau în fața a douăzeci și două de săbii și nu știu ce să fac cu ele.",
+        "urmator": "cuf_p11"
+      },
+      "cuf_p11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la Fratele Elian. El îi pomenește pe cei căzuți la fiecare slujbă. Dacă cineva din satul ăsta știe ce se face cu lucrurile morților, el e.",
+        "urmator": "cuf_p12"
+      },
+      "cuf_p12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Lăsați-mă să vorbesc cu Fratele Elian. Nu-i spun mai mult decât trebuie.",
+        "urmator": "cuf_p13"
+      },
+      "cuf_p13": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Elian... Da. Poate. Cheia rămâne la tine, băiete. Mi-e mai ușor așa.",
+        "efecte": {
+          "stare": {
+            "cufar_spus": "da"
+          }
+        }
+      },
+      "b_dupa_cufar": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "De când știi și tu de cufăr, parcă dorm mai ușor. Ciudat, nu?"
+      },
+      "tg_b1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Să jur? Ce să jur, băiete?",
+        "urmator": "tg_b2"
+      },
+      "tg_b2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Că nu spuneți nimănui ce vă spun acum. Nici lui Agnes. Nimănui.",
+        "urmator": "tg_b3"
+      },
+      "tg_b3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram se uită la mine lung. Apoi pune mâna dreaptă pe nicovală, cu palma în jos, cum pui mâna pe o carte sfântă.",
+        "urmator": "tg_b4"
+      },
+      "tg_b4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Pe nicovala asta, care a fost a tatălui meu, și pe săbiile din cufărul de sus. Nu spun nimănui.",
+        "urmator": "tg_b5"
+      },
+      "tg_b5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Fratele Elian nu e un mag mic, domnule Bram. E un mag adevărat, al Cercului Luminii. L-am văzut ținând lumina în palmă.",
+        "urmator": "tg_b6"
+      },
+      "tg_b6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și are un cristal. Mic, auriu, ca rombul de pe steag. Zice că, dacă bateți din săbii un toiag, el îi pune cristalul în cap. Ca să-i crească puterea, pentru ceva neprevăzut.",
+        "_nota": "Decis de autor: ideea toiagului, ca să crească puterea lui Elian, pentru ceva neprevăzut.",
+        "urmator": "tg_b7"
+      },
+      "tg_b7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram nu zice nimic multă vreme. Își trece doar degetul mare peste muchia nicovalei, înainte și înapoi.",
+        "urmator": "tg_b8"
+      },
+      "tg_b8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Fratele Elian... mag adevărat. Și eu care-l credeam bun doar la lumânări.",
+        "urmator": "tg_b9"
+      },
+      "tg_b9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Un toiag, deci. Din oțelul lor. Ca să nu mai doarmă degeaba într-un cufăr.",
+        "urmator": "tg_b10"
+      },
+      "tg_b10": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Bine, băiete. Îl bat. Dar nu ziua, sub ochii orcilor. Vino seara, când lucrez înăuntru, cu obloanele trase, și stai tu la foale. Ai mai stat o dată și n-ai stricat nimic.",
+        "urmator": "tg_b11"
+      },
+      "tg_b11": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Și adu cheia. Coborâm săbiile împreună.",
+        "efecte": {
+          "stare": {
+            "toiag_jurat": "da"
+          }
+        }
+      },
+      "tg_b_ind": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Seara, băiete, cât lucrez înăuntru, de la șase la zece. Cu cheia. Și cu mâinile odihnite."
+      },
+      "b_dupa_toiag": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Uneori mă trezesc noaptea și urc să mă uit în cufăr. E gol. Și parcă mi-e mai ușor."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -3437,6 +3763,27 @@
         "conditii": {
           "misiune": {
             "bram_cercuri": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "b_dupa_cufar",
+        "conditii": {
+          "misiune": {
+            "bram_cufar": "terminata"
+          },
+          "nu": {
+            "misiune": {
+              "elian_toiag": "terminata"
+            }
+          }
+        }
+      },
+      {
+        "nod": "b_dupa_toiag",
+        "conditii": {
+          "misiune": {
+            "elian_toiag": "terminata"
           }
         }
       }
@@ -3675,6 +4022,120 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Biserica a avut un sfeșnic de fier. L-au luat orcii în prima săptămână. Mă rog să fie singurul lucru pe care îl topesc."
+      },
+      "sec_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian închide cartea pe deget, ca să nu piardă pagina, și se uită la mine.",
+        "_nota": "CIORNĂ (Claude): misiunea „Secretul lui Elian” (decis de autor: Vale îi spune de săbii cât Elian citește afară).",
+        "urmator": "sec_o2"
+      },
+      "sec_o2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Spune, Vale.",
+        "urmator": "sec_o3"
+      },
+      "sec_o3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bram are în cufăr douăzeci și două de săbii. Ale celor căzuți primăvara trecută. Le-a strâns de pe câmp a doua zi după bătălie.",
+        "urmator": "sec_o4"
+      },
+      "sec_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Colectorul a văzut plugul nou al fermierului și bănuiește că Bram ascunde fier. Dacă le găsește, le topește pentru topoare. Iar pe Bram îl leagă la poartă.",
+        "urmator": "sec_o5"
+      },
+      "sec_o5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian nu spune nimic. Pune cartea jos, pe treaptă, cu fața în jos. Nu l-am văzut niciodată lăsând o carte așa.",
+        "urmator": "sec_o6"
+      },
+      "sec_o6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Douăzeci și două.",
+        "urmator": "sec_o7"
+      },
+      "sec_o7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu e o întrebare. Buzele i se mișcă fără sunet. Le numără și el, sau se roagă pentru ei.",
+        "urmator": "sec_o8"
+      },
+      "sec_o8": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am o idee, Vale. Una singură. Dar ca s-o înțelegi, trebuie să-ți arăt ceva ce n-a mai văzut nimeni din satul ăsta.",
+        "urmator": "sec_o9"
+      },
+      "sec_o9": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Și după ce vezi, nu mai poți să nu fi văzut. Te întreb o dată, și numai o dată: vrei să vezi?",
+        "alegeri": [
+          {
+            "text": "Vreau.",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "elian_secret": "inceputa"
+              },
+              "eveniment": "elian_secret"
+            }
+          },
+          {
+            "text": "Nu încă, frate Elian.",
+            "spre": "sec_nu"
+          }
+        ]
+      },
+      "sec_nu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Înțeleg. Cartea mea nu pleacă nicăieri. Nici eu."
+      },
+      "e_dupa_secret": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pe scări citesc, Vale. Dar cu un ochi mă uit mereu la poartă."
+      },
+      "tg_e_ind": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Întâi Bram, Vale. Și jurământul lui."
+      },
+      "tg_e1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian se uită la pânza în care am înfășurat toiagul. Nu o desface.",
+        "urmator": "tg_e2"
+      },
+      "tg_e2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu aici, Vale. Vino.",
+        "alegeri": [
+          {
+            "text": "Te urmez.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "toiag_cristal"
+            }
+          }
+        ]
+      },
+      "e_dupa_toiag": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu-mi spune unde l-ai ascuns. E mai bine să nu știu."
       }
     },
     "meniu": true,
@@ -3704,6 +4165,33 @@
         "conditii": {
           "stare": {
             "carti_elian": "refuzat"
+          }
+        }
+      },
+      {
+        "nod": "e_dupa_secret",
+        "conditii": {
+          "misiune": {
+            "elian_secret": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "tg_e_ind",
+        "conditii": {
+          "misiune": {
+            "elian_toiag": "inceputa"
+          },
+          "nu": {
+            "existaStare": "toiag_batut"
+          }
+        }
+      },
+      {
+        "nod": "e_dupa_toiag",
+        "conditii": {
+          "misiune": {
+            "elian_toiag": "terminata"
           }
         }
       }
@@ -6456,7 +6944,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Lângă peretele din fund e o gaură în zid, roasă de curând. Pe acolo au intrat. O astup cu un butoi gol, până o repară cineva cum trebuie.",
+        "text": "Caut cu torța pe unde au intrat. Nicio gaură în zid, nicio crăpătură în podea. Parcă ar fi ieșit din pământ.",
         "urmator": "b2"
       },
       "c": {
@@ -10496,6 +10984,559 @@
             "cercuri_gata": "da"
           }
         }
+      }
+    }
+  },
+  "bram_cufar": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Cufărul” (decis de autor): Vale deschide cufărul din camera lui Bram, peste o imagine cu săbiile din el (unele rupte, altele ciobite).",
+    "grup": "Bram: cufărul",
+    "partener": "fierar",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lacătul se deschide greu, cu un scârțâit lung, ca o ușă pe care n-a mai deschis-o nimeni de mult. Ridic capacul.",
+        "imagine": "events/bram_cufar.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Săbii. Culcate una lângă alta pe o pânză albastră, ca niște oameni adormiți.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unele sunt rupte de la jumătate. Altele au tăișul ciobit, zimțat ca un fierăstrău. Pe câteva gărzi e încă sânge negru, uscat. Nimeni nu l-a curățat. Sau poate nimeni n-a avut puterea.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "De mânerul uneia e legată o panglică de păr, de fată, decolorată de ploaie.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Le număr. Douăzeci și două.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Douăzeci și trei de oameni au căzut primăvara trecută, lângă copacul mare. Tata era unul dintre ei.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Caut printre ele sabia lui, cu rombul auriu pe gardă. O caut o dată, de două ori, apoi a treia oară, cu mâinile, prin toate. Nu e aici.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Închid capacul încet, ca să nu le trezesc.",
+        "efecte": {
+          "stare": {
+            "cufar_vazut": "da"
+          }
+        }
+      }
+    }
+  },
+  "elian_secret": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Secretul lui Elian” (decis de autor): în spatele bisericii, o trapă ascunsă sub iarbă, crengi și frunze; dedesubt, o încăpere strâmtă unde Elian îi spune lui Vale o parte din ce este (nu tot). Ales de Claude: peste 3 imagini, nu un loc nou pe hartă; începutul ține minte cum s-a terminat „Cărțile”; cristalul se aprinde lângă Vale (indiciu pentru trezirea lui), iar Elian tace.",
+    "grup": "Elian: secretul",
+    "partener": "mag",
+    "start": [
+      {
+        "nod": "s1_carti",
+        "conditii": {
+          "stare": {
+            "carti_elian": "ascunse"
+          }
+        }
+      },
+      {
+        "nod": "s1_fuga",
+        "conditii": {
+          "stare": {
+            "carti_elian": "refuzat"
+          }
+        }
+      },
+      "s1"
+    ],
+    "noduri": {
+      "s1_carti": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian mă duce pe după biserică, la zidul din spate. Chiar aici m-am ghemuit cu cărțile lui în brațe, în ziua în care a venit colectorul.",
+        "imagine": "events/elian_secret_1.png",
+        "urmator": "s2"
+      },
+      "s1_fuga": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian mă duce pe după biserică, la zidul din spate. Pe aici a fugit el cu cărțile în brațe, în ziua în care a venit colectorul.",
+        "imagine": "events/elian_secret_1.png",
+        "urmator": "s2"
+      },
+      "s1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian mă duce pe după biserică, la zidul din spate, unde nu vine nimeni. Iarba e până la genunchi.",
+        "imagine": "events/elian_secret_1.png",
+        "urmator": "s2"
+      },
+      "s2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se uită o dată în toate părțile. Apoi îngenunchează și dă la o parte un braț de crengi uscate, de frunze și de iarbă smulsă.",
+        "urmator": "s3"
+      },
+      "s3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sub ele e o trapă de lemn, înnegrită de vreme, cu un inel de fier ruginit.",
+        "urmator": "s4"
+      },
+      "s4": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "O trapă? Sub biserică?",
+        "urmator": "s5"
+      },
+      "s5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Biserica e mai veche decât satul, Vale. Cei care au zidit-o știau că o să vină și vremuri ca astea.",
+        "urmator": "s6"
+      },
+      "s6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Coboară tu primul. Și ai grijă la treapta a treia: e putredă.",
+        "urmator": "s7"
+      },
+      "s7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Coborâm pe o scară strâmtă. Trapa se închide deasupra noastră și, pentru o clipă, e beznă. Apoi Elian șoptește un singur cuvânt, pe care nu-l înțeleg.",
+        "urmator": "s8"
+      },
+      "s8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și se face lumină. Deasupra palmei lui plutește o sferă albă, cât o nucă. Nu arde și nu tremură ca o flacără. Doar luminează.",
+        "imagine": "events/elian_secret_2.png",
+        "urmator": "s9"
+      },
+      "s9": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Frate Elian... Ce e asta?",
+        "urmator": "s10"
+      },
+      "s10": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lumină, Vale. Doar lumină.",
+        "urmator": "s11"
+      },
+      "s11": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Tot satul știe că preotul e și magul satului. Doar că toți cred că magul abia știe să aprindă o lumânare. Și orcii la fel.",
+        "urmator": "s12"
+      },
+      "s12": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Așa am vrut să creadă.",
+        "urmator": "s13"
+      },
+      "s13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Încăperea e strâmtă, cât să stea doi oameni. Pereți de piatră, rădăcini care ies prin tavan, o masă mică și un raft cu cărți vechi și groase. Pe coperta uneia e un soare cu raze frânte.",
+        "urmator": "s14"
+      },
+      "s14": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cine ești, de fapt?",
+        "urmator": "s15"
+      },
+      "s15": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Un mag al Cercului Luminii. Cercul trimite câte unul în fiecare sat, să-i vegheze pe oameni. Pe mine m-a trimis aici.",
+        "urmator": "s16"
+      },
+      "s16": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu sunt un începător. Dar un mag puternic într-un sat ocupat de orci e un mag mort. Și un sat întreg plătește pentru el.",
+        "urmator": "s17"
+      },
+      "s17": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Dacă ești atât de puternic, de ce nu-i alungi?",
+        "urmator": "s18"
+      },
+      "s18": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pe cei de la poartă, poate. Dar după ei vin alții, Vale. Craniile Sângerii sunt mii. Iar primul lucru pe care l-ar face ar fi să ardă satul, ca să vadă toată lumea ce pățește cine ridică mâna împotriva lor.",
+        "urmator": "s19"
+      },
+      "s19": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Un om singur, oricât de puternic, nu eliberează un sat. Un sat se eliberează singur.",
+        "urmator": "s20"
+      },
+      "s20": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și de ce te-a trimis Cercul tocmai aici? În satul ăsta nu e nimic.",
+        "urmator": "s21"
+      },
+      "s21": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "...Asta nu ți-o pot spune. Nu încă. Unele lucruri, odată spuse, nu se mai pot lua înapoi.",
+        "_nota": "Decis de autor: Elian spune doar o parte; de ce l-a trimis Cercul (trezirea) nu spune încă.",
+        "urmator": "s22"
+      },
+      "s22": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian scoate de sub haină o pungă mică de piele, legată la gât cu o sfoară. O desface. Pe palma lui stă un cristal cât unghia mea, auriu, tăiat în romb.",
+        "imagine": "events/elian_secret_3.png",
+        "urmator": "s23"
+      },
+      "s23": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rombul. Ca rombul auriu de pe steagul satului, de la biserică. Ca pe platoșa tatei.",
+        "urmator": "s24"
+      },
+      "s24": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Steagurile poartă forma lui de sute de ani, dar puțini au văzut vreodată unul adevărat. E un cristal mic, din Inima Luminii. Cu el, lumina mea e de zece ori mai puternică.",
+        "urmator": "s25"
+      },
+      "s25": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă aplec să-l văd mai bine. Și cristalul se aprinde: alb, orbitor, ca jarul în care a suflat cineva. O clipă, toată încăperea e albă.",
+        "_nota": "Ales de Claude: indiciu pentru trezirea lui Vale; Elian vede și tace.",
+        "urmator": "s26"
+      },
+      "s26": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian își strânge repede degetele peste el. Se uită la mine lung, fără să spună nimic. Nu știu ce i-a trecut prin cap.",
+        "urmator": "s27"
+      },
+      "s27": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "...Se mai întâmplă. Uneori.",
+        "urmator": "s28"
+      },
+      "s28": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu cred că se mai întâmplă. Dar nu-l întreb.",
+        "urmator": "s29"
+      },
+      "s29": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ideea ta? Pentru săbii?",
+        "urmator": "s30"
+      },
+      "s30": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Să nu le ascundem. Să le dăm un rost.",
+        "urmator": "s31"
+      },
+      "s31": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Din oțelul lor, Bram poate bate un toiag. Un toiag de preot nu-l numără niciun orc: e doar un băț pe care se sprijină un om slab.",
+        "urmator": "s32"
+      },
+      "s32": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Iar în capul lui pun cristalul. Oțelul celor care au murit pentru sat și lumina Cercului, într-un singur lucru. Pentru ceva neprevăzut.",
+        "urmator": "s33"
+      },
+      "s33": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce anume?",
+        "urmator": "s34"
+      },
+      "s34": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu știu încă. Dar simt că vine. Cum simți ploaia înainte să cadă.",
+        "urmator": "s35"
+      },
+      "s35": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Spune-i lui Bram. Doar lui. Dar întâi pune-l să jure că nu suflă o vorbă despre ce ai văzut aici. Nici lui Agnes, nici lui Roderick. Nici mamei tale.",
+        "urmator": "s36"
+      },
+      "s36": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ies din încăpere cu ochii mijiți, de parcă soarele de afară ar fi mai slab decât sfera aceea mică de lumină. Elian pune crengile și frunzele la loc, peste trapă, de parcă n-ar fi fost niciodată acolo.",
+        "efecte": {
+          "misiune": {
+            "elian_toiag": "inceputa"
+          },
+          "stare": {
+            "elian_secret": "aflat"
+          }
+        }
+      }
+    }
+  },
+  "toiag_forja": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Toiagul celor 23” (decis de autor): seara, în fierărie, cu obloanele trase, Bram bate toiagul din săbiile celor căzuți, iar Vale stă la foale; peste 3 imagini.",
+    "grup": "Toiagul celor 23",
+    "partener": "fierar",
+    "start": "f1",
+    "noduri": {
+      "f1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram trage obloanele și pune drugul la ușă. Urcăm amândoi în camera lui și coborâm săbiile câte patru odată, cum le-a cărat el de pe câmp.",
+        "imagine": "events/toiag_forja_1.png",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Acum stai la foale. Și nu te opri până nu-ți spun.",
+        "urmator": "f3"
+      },
+      "f3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Săbiile intră în jar una câte una. Se înroșesc, apoi se fac galbene, apoi albe. Bram le scoate cu cleștele și le bate laolaltă, două câte două, până nu mai știi care a fost a cui.",
+        "imagine": "events/toiag_forja_2.png",
+        "urmator": "f4"
+      },
+      "f4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ciocanul lui sună altfel acum. Mai rar și mai greu. După fiecare lovitură, Bram tace o clipă, de parcă ar asculta ceva.",
+        "urmator": "f5"
+      },
+      "f5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Pe fiecare îl știu, băiete. După greutate. După cum cântă oțelul pe nicovală.",
+        "urmator": "f6"
+      },
+      "f6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Târziu, pe nicovală stă un toiag lung cât un om, din oțel negru, cu dungi argintii încolăcite, ca nervurile unei frunze. În capul lui, Bram a lăsat un loc gol, în formă de romb.",
+        "imagine": "events/toiag_forja_3.png",
+        "urmator": "f7"
+      },
+      "f7": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cel mai frumos lucru pe care l-am bătut vreodată. Și n-o să-l vadă nimeni.",
+        "urmator": "f8"
+      },
+      "f8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "O să-l vadă cine trebuie, domnule Bram.",
+        "urmator": "f9"
+      },
+      "f9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Du-i-l Fratelui Elian. Și spune-i... spune-i că oțelul e bun. Că l-au ținut în mână oameni buni.",
+        "efecte": {
+          "obiect": "toiag_fara_cristal",
+          "stare": {
+            "toiag_batut": "da"
+          }
+        }
+      }
+    }
+  },
+  "toiag_cristal": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Toiagul celor 23” (decis de autor): Elian pune cristalul în capul toiagului, în încăperea de sub biserică, și i-l dă lui Vale, pentru că simte că ceva mare se apropie; peste 2 imagini. Ales de Claude: cristalul se aprinde iar în mâinile lui Vale.",
+    "grup": "Toiagul celor 23",
+    "partener": "mag",
+    "start": "k1",
+    "noduri": {
+      "k1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sub biserică, în încăperea strâmtă, Elian desface pânza și ține toiagul în lumina sferei. Își trece degetele peste oțel, încet, ca peste o carte pe care o citește cu mâna.",
+        "imagine": "events/toiag_cristal_1.png",
+        "urmator": "k2"
+      },
+      "k2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Oțelul e bun. Îi simt pe toți, Vale. Douăzeci și doi.",
+        "urmator": "k3"
+      },
+      "k3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Scoate cristalul din punga de la gât și îl așază în locul gol din capul toiagului. Se potrivește perfect, de parcă Bram ar fi știut de la început cât e de mare.",
+        "urmator": "k4"
+      },
+      "k4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian șoptește ceva lung, pe limba aceea pe care n-o înțeleg. Oțelul se încălzește. Pe dungile argintii urcă o lumină, de jos în sus, ca seva printr-o creangă.",
+        "urmator": "k5"
+      },
+      "k5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Gata. Acum sunt un singur lucru.",
+        "urmator": "k6"
+      },
+      "k6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mi-l întinde. Când îl iau în mână, cristalul se aprinde iar, ca atunci: alb, orbitor. Și, pentru o clipă, parcă lumina nu vine doar din el.",
+        "imagine": "events/toiag_cristal_2.png",
+        "_nota": "Ales de Claude: al doilea indiciu pentru trezirea lui Vale (lumina vine și din mâinile lui).",
+        "urmator": "k7"
+      },
+      "k7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian se uită la mâinile mele. Apoi la mine.",
+        "urmator": "k8"
+      },
+      "k8": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Păstrează-l tu.",
+        "urmator": "k9"
+      },
+      "k9": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Eu? Tu ești magul, frate Elian.",
+        "urmator": "k10"
+      },
+      "k10": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pe mine mă urmăresc orcii, Vale. Colectorul mă pândește la slujbă și mă numără din ochi. Pe tine nu te bagă nimeni în seamă.",
+        "urmator": "k11"
+      },
+      "k11": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Și am încredere în tine. Simt că o să ai nevoie de el. Ceva mare se apropie.",
+        "_nota": "Decis de autor: Elian îi dă toiagul lui Vale pentru că simte că ceva mare se va întâmpla.",
+        "urmator": "k12"
+      },
+      "k12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce anume? Și ce fac eu cu un toiag de mag?",
+        "urmator": "k13"
+      },
+      "k13": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Când o să vină ziua aceea, o să știi. Ridică-l, atâta tot. Lumina știe singură ce are de făcut.",
+        "urmator": "k14"
+      },
+      "k14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu înțeleg. Nu înțeleg nimic. Dar strâng toiagul în mână și dau din cap.",
+        "urmator": "k15"
+      },
+      "k15": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.",
+        "urmator": "k16"
+      },
+      "k16": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Toiagul celor douăzeci și trei. Ai grijă de el. Și el o să aibă grijă de tine.",
+        "urmator": "k17"
+      },
+      "k17": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O să-l duc acasă, înfășurat într-o pânză veche, pe fundul cufărului meu. Nu știu pentru ce zi l-am primit. Dar o să stea acolo până vine.",
+        "efecte": {
+          "daObiect": "toiag_fara_cristal",
+          "obiect": "toiagul_celor_23",
+          "stare": {
+            "toiag_primit": "da"
+          }
+        },
+        "_nota": "Decis de autor: Vale îl păstrează în cufărul lui pentru lupta finală (în joc stă la obiectele de poveste)."
       }
     }
   }
