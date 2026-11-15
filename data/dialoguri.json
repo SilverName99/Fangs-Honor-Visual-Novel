@@ -9391,5 +9391,190 @@
         "text": "Monedele îmi stau grele în palmă. Mai grele decât ar trebui."
       }
     }
+  },
+  "bram_forja": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „O zi la forjă” (decis de autor): Bram și-a ars mâna grăbindu-se cu topoarele orcilor; Vale lucrează în locul lui, la foale și la ciocan (două mini-jocuri, peste imaginile lor); fără eșec; +1 Bram.",
+    "grup": "Bram: o zi la forjă",
+    "partener": "fierar",
+    "start": "f1",
+    "noduri": {
+      "f1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Din fierărie nu se aude ciocanul. Bram stă pe butuc, cu mâna dreaptă înfășurată într-o cârpă udă, și se uită la grămada de topoare de lângă nicovală.",
+        "imagine": "events/bram_forja_1.png",
+        "_nota": "Decis de autor: Bram s-a ars pentru că se grăbea; orcii i-au dat foarte mult de lucru.",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "fierar",
+        "emotie": "ranit",
+        "text": "Nu te uita așa. Am fost prost. M-am grăbit și am apucat cleștele de partea greșită.",
+        "urmator": "f3"
+      },
+      "f3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Arată-mi mâna.",
+        "urmator": "f4"
+      },
+      "f4": {
+        "vorbitor": "fierar",
+        "emotie": "ranit",
+        "text": "Las-o. Mâna se vindecă. Topoarele nu se fac singure.",
+        "urmator": "f5"
+      },
+      "f5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Douăzeci de topoare de orc. Unele ciobite, altele cu coada ruptă, câteva încă negre de sânge uscat.",
+        "urmator": "f6"
+      },
+      "f6": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Colectorul le vrea diseară, ascuțite și călite. Dacă nu sunt gata, nu plătesc doar eu. Plătește tot satul.",
+        "urmator": "f7"
+      },
+      "f7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Spune-mi ce să fac, domnule Bram.",
+        "urmator": "f8"
+      },
+      "f8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Tu? ...Bine. Ai mai stat o dată la foalele mele. Azi stai o zi întreagă.",
+        "alegeri": [
+          {
+            "text": "Trag de foale.",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "bram_forja": "inceputa"
+              },
+              "miniJoc": {
+                "eveniment": "bram_forja",
+                "joc": "foale",
+                "dialog": "bram_forja",
+                "reusit": "g1",
+                "esuat": "g1"
+              }
+            }
+          }
+        ]
+      },
+      "g1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Foalele gem sub mâinile mele, iar jarul se face din roșu galben, apoi alb. Bram nu zice nimic. Doar dă din cap, încet, în ritmul meu.",
+        "imagine": "events/bram_forja_2.png",
+        "_nota": "Prima replică după mini-jocul foalelor.",
+        "urmator": "g2"
+      },
+      "g2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Așa. Nici prea repede, nici prea încet. Focul trebuie să respire ca un om.",
+        "urmator": "g3"
+      },
+      "g3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram scoate primul topor din jar cu mâna stângă și îl pune pe nicovală. Apoi se uită la mine, și la ciocan.",
+        "urmator": "g4"
+      },
+      "g4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cu stânga nu nimeresc nici nicovala. Ia ciocanul. Lovești unde îți arăt eu, când îți spun eu.",
+        "alegeri": [
+          {
+            "text": "Iau ciocanul.",
+            "inchide": true,
+            "efecte": {
+              "miniJoc": {
+                "eveniment": "bram_forja",
+                "joc": "ciocan",
+                "dialog": "bram_forja",
+                "reusit": "h1",
+                "esuat": "h1"
+              }
+            }
+          }
+        ]
+      },
+      "h1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lovitură după lovitură, toporul își schimbă forma sub ciocan. Brațul mă arde și umerii mi s-au făcut de plumb, dar Bram îmi arată locul și eu lovesc.",
+        "imagine": "events/bram_forja_3.png",
+        "_nota": "Prima replică după mini-jocul ciocanului.",
+        "urmator": "h2"
+      },
+      "h2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mai ușor la vârf. Așa! Încă unul. Și încă unul.",
+        "urmator": "h3"
+      },
+      "h3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai știu de câte ori am auzit „încă unul”. Soarele trece de fereastră, apoi pleacă de tot.",
+        "urmator": "i1"
+      },
+      "i1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Seara, douăzeci de topoare stau aliniate pe bancă, ascuțite și lucioase. Eu stau pe jos, cu spatele de perete. Bram, pe butuc, lângă mine.",
+        "imagine": "events/bram_forja_4.png",
+        "_nota": "Decis de autor: Vale l-a ajutat să termine la timp.",
+        "urmator": "i2"
+      },
+      "i2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cel mai urât topor pe care l-am văzut vreodată e al patrulea. L-ai bătut ca pe un dușman.",
+        "urmator": "i3"
+      },
+      "i3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Era un dușman.",
+        "urmator": "i4"
+      },
+      "i4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram râde. Un râs mare, din burtă, cum nu l-am mai auzit de când au venit orcii.",
+        "urmator": "i5"
+      },
+      "i5": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mâine o să te doară tot. Asta e plata fierarului: pe tine te doare tot, iar topoarele pleacă la alții.",
+        "urmator": "i6"
+      },
+      "i6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mulțumesc, băiete. Azi ai ținut fierăria în picioare.",
+        "efecte": {
+          "stare": {
+            "bram_forja": "gata"
+          }
+        }
+      }
+    }
   }
 }

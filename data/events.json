@@ -1279,6 +1279,57 @@
       },
       "dialog": "papusa_lina_bucurie",
       "_nota": "Decis de autor: Lina strânge păpușa în brațe; +1 la Miriam."
+    },
+    {
+      "id": "bram_forja",
+      "nume": "O zi la forjă",
+      "grup": "Bram: o zi la forjă",
+      "_nota": "Decis de autor: după „Foalele stricate”, când Vale vine la fierărie și Bram lucrează afară. Ales de Claude: după-amiaza (14–18), ca ziua de muncă să se termine seara; ține 4 ore și ia 30 stamina. Fără eșec (decis de autor).",
+      "conditii": {
+        "loc": "fierar",
+        "personajIn": {
+          "fierar": [
+            "fierar"
+          ]
+        },
+        "misiune": {
+          "bram_foale": "terminata"
+        },
+        "ora": {
+          "min": "14:00",
+          "max": "17:59"
+        }
+      },
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 240,
+        "nevoi": {
+          "stamina": -30
+        }
+      },
+      "dialog": "bram_forja",
+      "miniJocuri": {
+        "foale": {
+          "tip": "muls",
+          "imagine": "events/bram_forja_2.png",
+          "titlu": "Foalele",
+          "indemn": "Trage de foale în ritm, când cercul e cel mai mare: focul trebuie să respire ca un om.",
+          "texte": {
+            "ritm": "Suflări bune",
+            "bine": "Bine!",
+            "rau": "Prea repede",
+            "final": "Suflări bune"
+          }
+        },
+        "ciocan": {
+          "tip": "cerc",
+          "imagine": "events/bram_forja_3.png",
+          "titlu": "Ciocanul",
+          "incercari": 3,
+          "sunet": "nicovala",
+          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: acolo unde îți arată Bram."
+        }
+      }
     }
   ]
 }

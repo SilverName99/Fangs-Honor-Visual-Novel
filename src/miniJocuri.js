@@ -202,10 +202,11 @@ export function creeazaMiniJocuri(parinte, joc) {
     return reusite / RUNDE;
   }
 
-  // Mulsul: un cerc pulsează; clic când e cel mai mare (pe ritm). Câte o șansă pe puls, scorul 0–1
-  async function muls({ imagine, titlu }) {
-    const e = ecran(imagine, titlu, 'Apasă în ritm, când cercul e cel mai mare.');
-    const { el: loc } = piesa(e, 'minijoc_muls', 'puls');
+  // Mulsul: un cerc pulsează; clic când e cel mai mare (pe ritm). Câte o șansă pe puls, scorul 0–1.
+  // Același joc la foalele lui Bram (decis de autor, „O zi la forjă”), pe ecranul lui („idEcran”), cu cuvintele lui
+  async function muls({ imagine, titlu, idEcran = 'minijoc_muls', indemn, texte = {} }) {
+    const e = ecran(imagine, titlu, indemn || 'Apasă în ritm, când cercul e cel mai mare.');
+    const { el: loc } = piesa(e, idEcran, 'puls');
     const puls = div('mini-puls');
     // Inelul stins arată cât de mare e cercul pe bătaie
     loc.append(div('mini-puls-tinta'), puls);
@@ -213,7 +214,8 @@ export function creeazaMiniJocuri(parinte, joc) {
     const PERIOADA = 1000;
     const FEREASTRA = 170;
     let reusite = 0;
-    e.scor.textContent = `Ritmul: 0 din ${BATAI}`;
+    const ritm = texte.ritm || 'Ritmul';
+    e.scor.textContent = `${ritm}: 0 din ${BATAI}`;
     await e.incepe();
     const start = performance.now() + PERIOADA / 2;
     let cadru;
@@ -236,8 +238,8 @@ export function creeazaMiniJocuri(parinte, joc) {
       folosite.add(bataie);
       const bine = Math.abs(t - bataie * PERIOADA) <= FEREASTRA;
       if (bine) reusite++;
-      clipa(e.el, bine ? 'Bine!' : 'Pe lângă', bine);
-      e.scor.textContent = `Ritmul: ${reusite} din ${BATAI}`;
+      clipa(e.el, bine ? texte.bine || 'Bine!' : texte.rau || 'Pe lângă', bine);
+      e.scor.textContent = `${ritm}: ${reusite} din ${BATAI}`;
     };
     e.el.addEventListener('pointerdown', laClic);
     addEventListener('keydown', laClic);
@@ -245,7 +247,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     e.el.removeEventListener('pointerdown', laClic);
     removeEventListener('keydown', laClic);
     cancelAnimationFrame(cadru);
-    await e.incheie(`În ritm: ${reusite} din ${BATAI}`);
+    await e.incheie(`${texte.final || 'În ritm'}: ${reusite} din ${BATAI}`);
     return reusite / BATAI;
   }
 

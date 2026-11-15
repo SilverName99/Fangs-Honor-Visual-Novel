@@ -1751,6 +1751,31 @@
           }
         }
       }
+    },
+    {
+      "id": "bram_forja",
+      "titlu": "O zi la forjă",
+      "dela": "fierar",
+      "dialog": "bram_forja",
+      "descriere": "CIORNĂ: Bram și-a ars mâna grăbindu-se cu topoarele orcilor. Colectorul le vrea diseară, iar dacă nu sunt gata, plătește tot satul. Am lucrat o zi întreagă la forjă în locul lui.",
+      "pasi": [
+        {
+          "text": "Lucrez la forjă în locul lui Bram",
+          "gata": {
+            "existaStare": "bram_forja"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "ofertaEveniment": "bram_forja",
+      "_nota": "Pornește singură, din evenimentul bram_forja (decis de autor), cu „!” deasupra lui Bram și a fierăriei cât evenimentul ar porni la sosire."
     }
   ]
 }

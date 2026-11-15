@@ -537,26 +537,25 @@ function furisare(v) {
   }, 0);
 }
 
-// Mini-jocul barei, pornit din discuție (capcanele Kaiei, decis de autor): jocul de la arat, peste imaginea
-// evenimentului, cu regulile lui („miniJoc” la eveniment: câte reușite trebuie, câte ratări ai voie, textele).
-// Discuția continuă de la „reusit” sau de la „esuat”. Cu mini-jocurile oprite din Opțiuni, reușește singur, ca
-// la furișat (fără risc)
+// Un mini-joc pornit din discuție, peste o imagine a evenimentului (decis de autor): bara de la arat la capcanele
+// Kaiei („miniJoc” la eveniment: câte reușite trebuie, câte ratări ai voie, textele), iar la forja lui Bram mai
+// multe, pe nume („miniJocuri”, ales cu „joc” la efect): foalele în ritm (ca la muls) și ciocanul pe inel (ca la
+// lemne). Discuția continuă de la „reusit” sau de la „esuat”. Cu mini-jocurile oprite din Opțiuni, reușește singur,
+// ca la furișat (fără risc)
 function miniJocEveniment(v) {
   const ev = evenimente.find((e) => e.id === v.eveniment);
-  const m = ev?.miniJoc;
+  const m = v.joc ? ev?.miniJocuri?.[v.joc] : ev?.miniJoc;
   if (!m) return;
+  const idEcran = v.joc ? `minijoc_${ev.id}_${v.joc}` : `minijoc_${ev.id}`;
+  const titlu = m.titlu || ev.nume;
+  const joaca = () => {
+    if (m.tip === 'muls') return actiuni.mini.muls({ imagine: m.imagine, titlu, idEcran, indemn: m.indemn, texte: m.texte }).then((s) => s >= (m.minim ?? 0));
+    if (m.tip === 'cerc')
+      return actiuni.mini.cerc({ imagine: m.imagine, titlu, idEcran, indemn: m.indemn, incercari: m.incercari, sunet: m.sunet, imagineLovitura: m.imagineLovitura }).then((n) => n >= (m.minim ?? 0));
+    return actiuni.mini.arat({ imagine: m.imagine, titlu, idEcran, indemn: m.indemn, reusiteCerute: m.reusite, rateuriVoie: m.ratari ?? 0, texte: m.texte });
+  };
   setTimeout(async () => {
-    const bine = miniJocuriPornite()
-      ? await actiuni.mini.arat({
-          imagine: m.imagine,
-          titlu: m.titlu || ev.nume,
-          idEcran: `minijoc_${ev.id}`,
-          indemn: m.indemn,
-          reusiteCerute: m.reusite,
-          rateuriVoie: m.ratari ?? 0,
-          texte: m.texte,
-        })
-      : true;
+    const bine = miniJocuriPornite() ? await joaca() : true;
     // Capcana care se închide (decis de autor: a doua ratare): sunetul ei, chiar când se termină jocul
     if (!bine && m.sunetEsuat) sunet.efect(m.sunetEsuat);
     const d = dialoguri[v.dialog];

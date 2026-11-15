@@ -334,6 +334,27 @@ export function construiesteLumea(date) {
       tinte: [],
       obiecte: [piesaMini('bara', 'Bara cu zona verde', 1000 / 46, { x: 0.5, y: 0.82, scara: 0.0426 })],
     });
+  // Mai multe mini-jocuri pe nume la un eveniment (forja lui Bram, decis de autor): fiecare cu ecranul lui, ca bucata
+  // (cercul în ritm al foalelor, inelul ciocanului) să se pună pe imaginea lui
+  const piesaDupaTip = {
+    muls: () => piesaMini('puls', 'Cercul care pulsează (la cea mai mare mărime)', 1, { x: 0.5, y: 0.5, scara: 0.2778 }),
+    cerc: () => piesaMini('inel', 'Inelul auriu (cercul pornește de 3 ori mai mare)', 1, { x: 0.5, y: 0.5, scara: 0.2037 }),
+    arat: () => piesaMini('bara', 'Bara cu zona verde', 1000 / 46, { x: 0.5, y: 0.82, scara: 0.0426 }),
+  };
+  for (const ev of date.events?.evenimente || [])
+    for (const [nume, m] of Object.entries(ev.miniJocuri || {}))
+      scene.set(`minijoc_${ev.id}_${nume}`, {
+        id: `minijoc_${ev.id}_${nume}`,
+        tip: 'ecran',
+        titlu: `Mini-joc: ${m.titlu || ev.nume}`,
+        titluObiecte: 'Bucățile mini-jocului',
+        titluFundal: 'Imaginea mini-jocului',
+        imagine: m.imagine || null,
+        variante: [],
+        parinte: null,
+        tinte: [],
+        obiecte: [(piesaDupaTip[m.tip] || piesaDupaTip.arat)()],
+      });
   // Furișatul (decis de autor, lada colectorului): pe fiecare imagine a pasului, autorul desenează cele două locuri
   for (const ev of date.events?.evenimente || [])
     (ev.furisare || []).forEach((f, i) =>
