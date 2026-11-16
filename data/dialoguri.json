@@ -11601,10 +11601,10 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "O umbră. Mă acoperă pe mine, drumul, cușca, torțele. Mă uit în jos: pe pământ, două aripi întinse, de la un capăt al drumului la celălalt.",
+        "text": "O umbră. Mă acoperă pe mine, drumul, torțele. Cușca nu mai e acolo. Mă uit în jos: pe pământ, două aripi întinse, de la un capăt al drumului la celălalt.",
         "imagine": "events/vis_3_2.png",
         "trecere": 1600,
-        "_nota": "Decis de autor: Vale, văzut de sus, se uită în jos, acoperit de o umbră; se vede doar umbra dragonului.",
+        "_nota": "Decis de autor: Vale, văzut de sus, se uită în jos, acoperit de o umbră; se vede doar umbra dragonului; pe imaginea asta nu mai e cușca.",
         "urmator": "w9"
       },
       "w9": {
