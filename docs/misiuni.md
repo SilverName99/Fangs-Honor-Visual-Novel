@@ -379,7 +379,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Pornește** (decis de autor): după „Cufărul” (Bram), cât Elian citește afară, pe scări (14–23): „Frate Elian, am nevoie de un sfat. !”. Vale îi spune de cele douăzeci și două de săbii. Elian are o singură idee, dar întâi trebuie să-i arate ceva: „Vreau.” pornește misiunea; „Nu încă” o lasă în meniu.
 - **Peste 3 imagini** (ales de Claude: imagini, nu un loc nou pe hartă):
   1. în spatele bisericii, Elian dă la o parte crengi, frunze și iarbă: o **trapă ascunsă** (decis de autor). Dacă în „Cărțile” Vale s-a ascuns cu ele, își amintește că s-a ghemuit chiar acolo; dacă a refuzat, că pe acolo a fugit Elian;
-  2. jos, o **încăpere strâmtă**, luminată de o sferă albă din palma lui Elian; pe raft, cărțile cu soarele cu raze frânte;
+  2. jos, o **încăpere strâmtă**, luminată de lumina care îi iese lui Elian direct din palme (decis de autor); pe raft, cărțile cu soarele cu raze frânte;
   3. Elian arată **cristalul** (mic, auriu, în romb, ca pe steagul satului).
 - **Ce spune Elian** (decis de autor: doar o parte): e mag al Cercului Luminii, nu un începător; își ascunde puterea, pentru că un mag puternic într-un sat ocupat e un mag mort și satul plătește pentru el; „Un om singur nu eliberează un sat. Un sat se eliberează singur.” **De ce l-a trimis Cercul aici nu spune** (trezirea rămâne secret).
 - **Indiciul** (ales de Claude): când Vale se apleacă, cristalul se aprinde, alb, orbitor. Elian își strânge degetele peste el și tace: „Se mai întâmplă. Uneori.”

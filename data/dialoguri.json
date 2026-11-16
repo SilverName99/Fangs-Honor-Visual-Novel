@@ -11147,7 +11147,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și se face lumină. Deasupra palmei lui plutește o sferă albă, cât o nucă. Nu arde și nu tremură ca o flacără. Doar luminează.",
+        "text": "Și se face lumină. Palmele lui Elian se aprind: lumina îi iese chiar din mâini, albă și aurie, ca soarele de dimineață. Nu arde și nu tremură ca o flacără. Doar luminează.",
         "imagine": "events/elian_secret_2.png",
         "urmator": "s9"
       },
@@ -11326,7 +11326,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Ies din încăpere cu ochii mijiți, de parcă soarele de afară ar fi mai slab decât sfera aceea mică de lumină. Elian pune crengile și frunzele la loc, peste trapă, de parcă n-ar fi fost niciodată acolo.",
+        "text": "Ies din încăpere cu ochii mijiți, de parcă soarele de afară ar fi mai slab decât lumina aceea din palmele lui. Elian pune crengile și frunzele la loc, peste trapă, de parcă n-ar fi fost niciodată acolo.",
         "efecte": {
           "misiune": {
             "elian_toiag": "inceputa"
@@ -11422,7 +11422,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Sub biserică, în încăperea strâmtă, Elian desface pânza și ține toiagul în lumina sferei. Își trece degetele peste oțel, încet, ca peste o carte pe care o citește cu mâna.",
+        "text": "Sub biserică, în încăperea strâmtă, Elian desface pânza și ține toiagul în lumina care îi iese din palme. Își trece degetele peste oțel, încet, ca peste o carte pe care o citește cu mâna.",
         "imagine": "events/toiag_cristal_1.png",
         "urmator": "k2"
       },
