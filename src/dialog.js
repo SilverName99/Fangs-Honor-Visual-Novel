@@ -41,8 +41,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     el.classList.toggle('ascuns-text');
   };
   el.addEventListener('click', () => ascuns() && el.classList.remove('ascuns-text'));
-  // Un clic oriunde sare filmulețul (decis de autor), ca jocul să nu oblige pe nimeni să-l vadă din nou
-  el.addEventListener('click', () => video && activ?.nod === video.nod && arataNod(video.nod.urmator ?? null));
+  // Un clic oriunde sare bucata de filmuleț care merge (decis de autor: nimeni nu e obligat să-l vadă din nou);
+  // nu și clicul care tocmai a pornit-o (cel de pe chenar, care a trecut la replica ei)
+  el.addEventListener('click', (e) => film?.bucata && e.timeStamp > film.bucata.start && film.bucata.sari());
   el.append(fundal, stanga, dreapta, caseta, ochi);
   parinte.append(el);
 
@@ -58,32 +59,30 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   let activ = null;
 
-  // Filmulețul de acum (visele, decis de autor). Când discuția trece mai departe, se oprește, ca să nu se mai
-  // audă sub replici; unul care pornise rămâne ca fundal, oprit pe cadrul lui, până îl acoperă imaginea
-  // replicii următoare, iar unul care încă nu pornise nu mai are ce căuta pe ecran
-  let video = null;
-  function opresteVideo() {
-    if (!video) return;
-    clearTimeout(video.asteptare);
-    video.el.pause();
-    if (!video.pornit) {
-      video.strat.remove();
-      // Replica următoare nu mai așteaptă un filmuleț care nu vine (o pune înapoi, dacă are o imagine a ei)
-      el.classList.remove('asteapta-imaginea');
-    }
-    video = null;
+  // Filmulețele din vise (decis de autor: câte unul la fiecare vis). Un singur <video> pe vis, care merge pe
+  // bucăți, de la o replică la alta: „video” la replică = filmulețul; „de” / „pana” (secunde) = bucata pe care o
+  // arată replica (fără „pana”, până la sfârșit). Textul replicii apare abia când bucata ajunge la capăt, pe cadrul
+  // ei, ca la imagini (al doilea vis: filmulețul se oprește la fiecare imagine-cheie, cu replicile peste ea).
+  // Un filmuleț care lipsește: replica își arată imaginea, ca înainte; fără imagine și fără text, se sare
+  // („faraVideo” = replica de la care merge visul atunci)
+  const filmeLipsa = new Set();
+  let film = null;
+
+  // Oprește bucata care merge (s-a trecut mai departe); filmulețul rămâne ca fundal, pe cadrul lui
+  function opresteFilmul() {
+    if (!film) return;
+    cancelAnimationFrame(film.raf);
+    if (film.bucata) film.el.pause();
+    film.bucata = null;
+    film.laGata = null;
+  }
+  function lasaFilmul() {
+    opresteFilmul();
+    film = null;
   }
 
-  // „video” la replică (decis de autor: câte un filmuleț la fiecare vis): pe tot ecranul, fără text și fără
-  // portrete, cu ceața visului peste el; la sfârșit (sau la un clic) discuția trece singură mai departe.
-  // Un filmuleț care lipsește (sau nu merge) se sare, iar visul merge cu imaginile lui, ca înainte: „faraVideo”
-  // e replica de la care continuă atunci (al doilea vis: cele două imagini pe care filmulețul le înlocuiește)
-  function arataVideo(nod, idNod) {
-    const mai = (lipsa = false) => activ?.nod === nod && arataNod((lipsa && nod.faraVideo) || (nod.urmator ?? null));
-    activ.alegeri = [];
-    el.classList.add('cu-imagine', 'asteapta-imaginea', 'fara-caseta');
-    // După un refresh, filmulețul pornește din nou de la început
-    laNod?.(activ.original, idNod, activ.imagine);
+  function filmNou(src, deLa) {
+    lasaFilmul();
     const strat = div('strat-video');
     const v = document.createElement('video');
     v.playsInline = true;
@@ -93,44 +92,118 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     v.muted = nivel <= 0;
     strat.append(v);
     fundal.append(strat);
-    const acum = (video = { nod, el: v, strat, pornit: false });
-    const sari = () => {
-      if (video !== acum || acum.pornit) return;
-      opresteVideo();
-      mai(true);
-    };
-    v.onerror = sari;
-    // Un filmuleț care nu vine deloc (rețeaua) nu ține visul pe loc
-    acum.asteptare = setTimeout(sari, 12000);
-    v.oncanplay = () => {
-      if (video !== acum || acum.pornit) return;
-      acum.pornit = true;
-      clearTimeout(acum.asteptare);
-      // Cele de dinainte (imaginea de sub replica veche) dispar abia când se vede filmulețul
-      for (const x of [...fundal.children]) if (x !== strat) x.remove();
-      strat.classList.add('vizibil');
+    const f = { src, el: v, strat, pornit: false, gata: false };
+    film = f;
+    const lipsa = () => {
+      if (film !== f || f.gata) return;
+      filmeLipsa.add(src);
+      const bucata = f.bucata;
+      strat.remove();
+      lasaFilmul();
       el.classList.remove('asteapta-imaginea');
+      // Replica se arată din nou, fără filmuleț (cu imaginea ei), fără să-și mai aplice efectele
+      if (!activ || !bucata || activ.nod !== bucata.nod) return;
+      activ.imagine = null;
+      arataNod(bucata.idNod, false, true);
+    };
+    v.onerror = lipsa;
+    // Un filmuleț care nu vine deloc (rețeaua) nu ține visul pe loc
+    f.asteptare = setTimeout(lipsa, 12000);
+    v.oncanplay = () => {
+      if (f.gata) return;
+      f.gata = true;
+      clearTimeout(f.asteptare);
+      const laGata = f.laGata;
+      f.laGata = null;
+      laGata?.();
+    };
+    v.src = urlImagine(src);
+    // Pornește direct de la bucata cerută (după un refresh în mijlocul visului), fără să arate întâi începutul
+    if (deLa) v.currentTime = deLa;
+    return f;
+  }
+
+  function arataFilmul(nod, idNod) {
+    const deLa = nod.de ?? 0;
+    const f = film?.src === nod.video ? film : filmNou(nod.video, deLa);
+    const v = f.el;
+    const bucata = { nod, idNod, start: performance.now() };
+    f.bucata = bucata;
+    el.classList.add('cu-imagine', 'asteapta-imaginea');
+    const ajuns = () => {
+      if (f.bucata !== bucata) return;
+      cancelAnimationFrame(f.raf);
+      f.bucata = null;
+      if (nod.pana != null) {
+        v.pause();
+        v.currentTime = nod.pana;
+      }
+      el.classList.remove('asteapta-imaginea');
+      const dupa = activ?.dupaImagine;
+      if (activ) activ.dupaImagine = null;
+      dupa?.();
+      // O bucată fără text (filmulețul de la începutul visului, ultima bucată) trece singură mai departe, după ce
+      // ultimul ei cadru mai stă puțin pe ecran („tine”, ms)
+      if (!nod.text && activ?.nod === nod) setTimeout(() => activ?.nod === nod && arataNod(nod.urmator ?? null), nod.tine || 0);
+    };
+    // Clicul (sau Spațiu, Enter): o bucată cu „pana” sare la capătul ei; una până la sfârșit, peste tot ce a rămas
+    bucata.sari = () => {
+      if (f.bucata !== bucata) return;
+      if (nod.pana != null) return ajuns();
+      opresteFilmul();
+      arataNod(nod.urmator ?? null);
+    };
+    const porneste = () => {
+      if (f.bucata !== bucata) return;
+      if (!f.pornit) {
+        f.pornit = true;
+        // Cele de dinainte (imaginea de sub replica veche) dispar abia când se vede filmulețul
+        for (const x of [...fundal.children]) if (x !== f.strat) x.remove();
+        f.strat.classList.add('vizibil');
+      }
+      // Imaginea-cheie a replicii intră în galeria din meniu și rămâne fundalul ei după un refresh
+      if (nod.imagine && activ) {
+        activ.imagine = nod.imagine;
+        laImagine?.(nod.imagine);
+        laNod?.(activ.original, idNod, activ.imagine);
+      }
+      if (Math.abs(v.currentTime - deLa) > 0.25) v.currentTime = deLa;
+      // „de” = „pana”: doar cadrul acela, oprit (începutul visului, cu prima replică peste el)
+      if (nod.pana != null && v.currentTime >= nod.pana - 0.05) return ajuns();
+      v.onended = () => f.bucata === bucata && ajuns();
       // Fără un clic în pagină, browserul nu lasă sunetul: atunci merge fără sunet, nu deloc
       v.play()?.catch(() => {
         v.muted = true;
         v.play()?.catch(() => {});
       });
+      if (nod.pana != null) {
+        const urmareste = () => {
+          if (f.bucata !== bucata) return;
+          if (v.currentTime >= nod.pana - 0.03) return ajuns();
+          f.raf = requestAnimationFrame(urmareste);
+        };
+        f.raf = requestAnimationFrame(urmareste);
+      }
     };
-    v.onended = () => video === acum && mai();
-    v.src = urlImagine(nod.video);
+    if (f.gata) porneste();
+    else f.laGata = porneste;
   }
 
   // „reluat”: discuția continuă după un refresh al paginii, de la replica la care rămăsese; efectele ei s-au
-  // aplicat deja (și s-au salvat), deci nu se mai aplică o dată
-  function arataNod(idNod, reluat = false) {
-    opresteVideo();
+  // aplicat deja (și s-au salvat), deci nu se mai aplică o dată. „faraFilm”: aceeași replică, arătată din nou
+  // fiindcă filmulețul ei lipsește (efectele s-au aplicat deja)
+  function arataNod(idNod, reluat = false, faraFilm = false) {
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
     activ.nod = nod;
     activ.dupaImagine = null;
-    if (nod.video) return arataVideo(nod, idNod);
+    // O bucată de filmuleț care încă mergea se oprește pe cadrul ei
+    opresteFilmul();
+    const cuFilm = !!nod.video && !filmeLipsa.has(nod.video);
+    if (nod.video && !cuFilm && !nod.imagine && !nod.text) return arataNod(nod.faraVideo ?? nod.urmator ?? null, reluat);
     // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
     if (nod.trezire) {
+      lasaFilmul();
       fundal.replaceChildren();
       el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis');
       activ.imagine = null;
@@ -140,8 +213,11 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // se vadă că e trecutul; o pune fiecare replică din amintire (și după un refresh), o ia „trezire”
     if (nod.amintire) el.classList.add('vis');
     // La reluare, imaginea de sub replici e cea de dinainte de refresh (replica de acum poate să n-o aibă pe a ei)
-    const imagine = nod.imagine || (reluat ? activ.imagineReluata : null);
-    if (imagine && imagine !== activ.imagine) {
+    const imagine = cuFilm ? null : nod.imagine || (reluat ? activ.imagineReluata : null);
+    if (cuFilm) arataFilmul(nod, idNod);
+    else if (imagine && imagine !== activ.imagine) {
+      // O imagine nouă acoperă filmulețul (care se scoate odată cu imaginea veche, când se vede cea nouă)
+      lasaFilmul();
       activ.imagine = imagine;
       // Galeria din meniu ține minte și imaginile de sub replici (scandalul din tavernă se petrece peste ele)
       laImagine?.(imagine);
@@ -162,13 +238,13 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     }
     // „durata” (ochiul de dragon din vis, decis de autor): imaginea stă doar câteva secunde, fără text și fără
     // portrete, apoi discuția trece singură mai departe; ceasul pornește abia când se vede imaginea
-    el.classList.toggle('fara-caseta', !!nod.durata);
+    el.classList.toggle('fara-caseta', !!nod.durata || (cuFilm && !nod.text));
     if (nod.durata) {
       const porneste = () => setTimeout(() => activ?.nod === nod && arataNod(nod.urmator ?? null), nod.durata);
       if (el.classList.contains('asteapta-imaginea')) activ.dupaImagine = porneste;
       else porneste();
     }
-    if (!reluat) laEfecte(nod.efecte);
+    if (!reluat && !faraFilm) laEfecte(nod.efecte);
     if (!activ) return; // un efect (de exemplu leșinul) poate închide dialogul
     // „arataCastiguri” (decis de autor: punctul de încredere pentru capcanele desfăcute): ce a primit Vale urcă pe
     // ecran chiar la replica asta, nu abia la capătul discuției; odată cu imaginea ei, dacă încă se încarcă
@@ -254,13 +330,15 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   function continua() {
     // Cu dialogul ascuns (ochiul), prima apăsare doar îl arată înapoi, nu sare peste replică
     if (ascuns()) return el.classList.remove('ascuns-text');
+    // Cât merge o bucată de filmuleț, Spațiu și Enter o sar, ca și clicul
+    if (film?.bucata) return film.bucata.sari();
     if (el.classList.contains('asteapta-imaginea')) return;
     if (activ && !activ.alegeri.length) arataNod(activ.nod.urmator ?? null);
   }
 
   function inchide() {
     if (!activ) return;
-    opresteVideo();
+    lasaFilmul();
     el.hidden = true;
     fundal.replaceChildren();
     el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis', 'fara-caseta', 'ascuns-text');

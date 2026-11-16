@@ -10376,7 +10376,7 @@
     }
   },
   "vis_2": {
-    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește.",
+    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește. Filmulețul (decis de autor): events/vis_2.mp4, făcut în Dreamina cu „Cadre multiple” din cele 5 imagini, trecerile de 3, 3, 3, 4 secunde; se oprește la imaginile 1, 2 și 3, cu replicile peste ele.",
     "grup": "Al doilea vis",
     "partener": null,
     "vis": true,
@@ -10389,7 +10389,10 @@
         "text": "Copacul e alb. Alb de flori. Și aerul miroase a primăvară.",
         "imagine": "events/vis_2_1.png",
         "urmator": "v2",
-        "trecere": 1000
+        "trecere": 1000,
+        "video": "events/vis_2.mp4",
+        "de": 0,
+        "pana": 0
       },
       "v2": {
         "vorbitor": "vale",
@@ -10411,7 +10414,10 @@
         "emotie": "normal",
         "text": "Fier pe fier. Florile cad peste noi ca zăpada. Și în mijlocul lor, cu coiful strâmb și sabia ridicată... tata.",
         "imagine": "events/vis_2_2.png",
-        "urmator": "v5"
+        "urmator": "v5",
+        "video": "events/vis_2.mp4",
+        "de": 0,
+        "pana": 3
       },
       "v5": {
         "vorbitor": "vale",
@@ -10432,7 +10438,10 @@
         "emotie": "speriat",
         "text": "Un orc mai mare decât toți ceilalți. O singură lovitură, drept în piept. Platoșa tatei se crapă în două, iar el se clatină printre flori.",
         "imagine": "events/vis_2_3.png",
-        "urmator": "v8"
+        "urmator": "v8",
+        "video": "events/vis_2.mp4",
+        "de": 3,
+        "pana": 6
       },
       "v8": {
         "vorbitor": "vale",
@@ -10442,9 +10451,11 @@
       },
       "film": {
         "video": "events/vis_2.mp4",
+        "de": 6,
+        "tine": 2500,
         "urmator": "v10",
         "faraVideo": "v8b",
-        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; locul ales de Claude): Edwin căzut, camera intră în ochiul lui, care devine ochiul dragonului (din vis_2_4.png în vis_2_5.png). Înlocuiește cele două imagini; fără el, visul merge cu ele."
+        "_nota": "Ultima bucată din filmulețul visului (decis de autor: „Cadre multiple”, prin toate cele 5 imagini): Edwin căzut, apoi ochiul dragonului, fără oprire; ochiul mai stă 2,5 secunde (ales de Claude). Fără filmuleț, visul merge cu imaginile 4 și 5, ca înainte."
       },
       "v8b": {
         "imagine": "events/vis_2_4.png",
