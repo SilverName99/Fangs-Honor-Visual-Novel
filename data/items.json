@@ -499,6 +499,13 @@
         "scut": "combat/scut_lumina.png",
         "jurnal": "Vale ridică Toiagul celor 23. Cristalul se aprinde, dar lumina nu vine doar din el: vine și din mâinile lui Vale. Inamicii rămân orbiți, cu barele goale, iar fiecare aliat primește un scut de lumină."
       }
+    },
+    "vrabia_linei": {
+      "nume": "Vrabia Linei",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "O vrabie cu o aripă ruptă, ghemuită în căciula mea. Lina zice că o cheamă Ciripel. Trebuie s-o duc la Fratele Elian.",
+      "_nota": "Misiunea „Pasărea Linei” (decis de autor). Numele vrabiei e ciornă de Claude."
     }
   }
 }

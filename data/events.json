@@ -1471,6 +1471,57 @@
       },
       "dialog": "toiag_cristal",
       "_nota": "Decis de autor: Elian pune cristalul în toiag și i-l dă lui Vale; în încăperea de sub biserică (2 imagini)."
+    },
+    {
+      "id": "pasarea_lina",
+      "nume": "Pasărea Linei: vrabia rănită",
+      "grup": "Elian: pasărea Linei",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "pasarea_lina",
+      "_nota": "Decis de autor: Lina cu vrabia rănită; Vale o duce la Elian sau refuză."
+    },
+    {
+      "id": "pasarea_elian",
+      "nume": "Pasărea Linei: Elian",
+      "grup": "Elian: pasărea Linei",
+      "manual": true,
+      "repetare": "mereu",
+      "efecte": {
+        "timp": 15
+      },
+      "dialog": "pasarea_elian",
+      "_nota": "Decis de autor: Elian vindecă vrabia; lumina dintre degete."
+    },
+    {
+      "id": "lumina_padure",
+      "nume": "Lumina din pădure",
+      "grup": "Elian: lumina din pădure",
+      "repetare": "o_data",
+      "conditii": {
+        "loc": "padure",
+        "misiune": {
+          "elian_lumina": "inceputa"
+        },
+        "ora": {
+          "min": "18:00",
+          "max": "22:59"
+        },
+        "nu": {
+          "existaStare": "lumina_padure"
+        }
+      },
+      "efecte": {
+        "timp": 180,
+        "nevoi": {
+          "stamina": -20
+        }
+      },
+      "dialog": "lumina_padure",
+      "_nota": "Decis de autor: seara, în pădure, lupii, lumina, trezirea cu Elian. Ales de Claude: pornește când ajunge Vale în pădure seara (18–23), cât e misiunea; 3 ore, 20 stamina; fără luptă."
     }
   ]
 }

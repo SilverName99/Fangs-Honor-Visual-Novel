@@ -1460,12 +1460,13 @@
         "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. Bram mi-a dat cheia cufărului din camera lui și m-a rugat să mă uit înăuntru. El nu mai poate să-l deschidă."
       ],
       "oferta": {
-        "_nota": "Decis de autor: după „Fierul plugului”, Bram e îngândurat și pare supărat. Ales de Claude: doar la fierărie, după ce plugul e reparat.",
+        "_nota": "Decis de autor: după „Fierul plugului” (plugul reparat) și după misiunile lui Elian până la „Lumina din pădure”; Bram e îngândurat și pare supărat. Ales de Claude: doar la fierărie.",
         "text": "Ce vă frământă, domnule Bram?",
         "nod": "cuf_o1",
         "conditii": {
           "misiune": {
-            "bram_forja": "terminata"
+            "bram_forja": "terminata",
+            "elian_lumina": "terminata"
           },
           "oricare": [
             {
@@ -1814,6 +1815,170 @@
       },
       "ofertaEveniment": "elian_carti",
       "_nota": "Pornește singură, din evenimentul elian_carti; „!” deasupra lui Elian și a bisericii cât evenimentul ar porni la sosire (decis de autor)."
+    },
+    {
+      "id": "elian_pasarea",
+      "titlu": "Pasărea Linei",
+      "dela": "sora_finn",
+      "dialog": "sora_finn",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "pasarea": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă și m-a rugat s-o duc la Fratele Elian. I-am spus că n-am timp."
+        },
+        {
+          "conditii": {
+            "existaStare": "pasarea_vindecata"
+          },
+          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă. Am dus-o la Fratele Elian. A ținut-o în palme, printre degetele lui a trecut o lumină, iar vrabia a zburat. „Era doar speriată”, zice el. Dar aripa îi fusese ruptă."
+        },
+        "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă, Ciripel. N-are voie să meargă singură până la biserică, așa că i-am promis că o duc eu la Fratele Elian."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: misiunea lui Elian (+1 la el), după „Cărțile”; de la Lina, când se joacă în fața casei (10–14). Ales de Claude: după „Păpușa Linei”, ca Lina să nu ceară două lucruri deodată.",
+        "text": "Ce ai acolo, Lina?",
+        "nod": "pasare_oferta",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_mama": "terminata"
+          },
+          "oricare": [
+            {
+              "misiune": {
+                "elian_carti": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "elian_carti": "ratata"
+              }
+            }
+          ],
+          "nu": {
+            "oricare": [
+              {
+                "misiune": {
+                  "miriam_papusa": "inceputa"
+                }
+              },
+              {
+                "nu": {
+                  "existaStare": "papusa"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Duc vrabia la Fratele Elian",
+          "la": "mag",
+          "gata": {
+            "existaStare": "pasarea_vindecata"
+          },
+          "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "predare": {
+            "text": "Frate Elian, Lina ți-a trimis o vrabie rănită.",
+            "nod": "pas_e1",
+            "conditii": {
+              "areObiect": "vrabia_linei"
+            }
+          }
+        },
+        {
+          "text": "Îi spun Linei că vrabia a zburat",
+          "gata": {
+            "existaStare": "pasarea_spusa"
+          },
+          "sfat": "Lina e acasă dimineața și seara, în fața casei 10–14, la Bătrâna Morwen 14–18.",
+          "predare": {
+            "text": "Lina, vrabia ta a zburat!",
+            "nod": "pasare_l1"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Fratelui Elian +1.",
+        "efecte": {
+          "relatie": {
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Lina găsește o vrabie cu aripa ruptă; Vale i-o duce lui Elian, care o vindecă în palme (o lumină printre degete); „Era doar speriată.” Se poate refuza: atunci, fără +1, iar a doua zi Lina îi spune că vrabia a zburat."
+    },
+    {
+      "id": "elian_lumina",
+      "titlu": "Lumina din pădure",
+      "dela": "mag",
+      "dialog": "mag",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "lumina_padure"
+          },
+          "text": "CIORNĂ: Seara, în pădure, m-au încercuit lupii. M-au mușcat, am căzut, apoi a venit o lumină orbitoare și lupii au fugit. M-am trezit la marginea pădurii, cu rănile închise, cu Fratele Elian lângă mine, într-un cerc de iarbă arsă. Zice că m-a găsit așa. Dar palmele încă îi luceau."
+        },
+        "CIORNĂ: Vine iarna, iar la Marginea copiii tușesc nopțile. Fratele Elian face din luminița-nopții un ceai care le alină tusea. Floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica. I-am promis trei flori."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „Pasărea Linei” (oricum s-a terminat); nu se poate refuza.",
+        "text": "Pari îngrijorat, frate Elian.",
+        "nod": "lum_o1",
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "elian_pasarea": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "elian_pasarea": "ratata"
+              }
+            }
+          ]
+        }
+      },
+      "pasi": [
+        {
+          "text": "Seara, în pădure, culeg trei flori de luminița-nopții",
+          "gata": {
+            "existaStare": "lumina_padure"
+          },
+          "sfat": "Luminița-nopții se deschide la apus: seara (18–23), în pădure.",
+          "indiciu": {
+            "text": "Despre luminița-nopții...",
+            "nod": "lum_ind"
+          }
+        },
+        {
+          "text": "Îl întreb pe Fratele Elian ce s-a întâmplat în pădure",
+          "gata": {
+            "existaStare": "lumina_intrebat"
+          },
+          "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "predare": {
+            "text": "Frate Elian, ce s-a întâmplat în pădure?",
+            "nod": "lum_q1"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Fratelui Elian +1.",
+        "efecte": {
+          "relatie": {
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Elian îi cere luminița-nopții; seara, în pădure, lupii, o lumină orbitoare, trezirea cu Elian lângă el, mâinile ascunse, iarba arsă în cerc; nu se poate refuza; +1 Elian. După ea apare „Cufărul” lui Bram."
     },
     {
       "id": "elian_secret",

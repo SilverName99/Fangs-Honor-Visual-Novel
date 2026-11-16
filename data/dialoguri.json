@@ -2964,7 +2964,8 @@
         "nod": "cuf_salut",
         "conditii": {
           "misiune": {
-            "bram_forja": "terminata"
+            "bram_forja": "terminata",
+            "elian_lumina": "terminata"
           },
           "oricare": [
             {
@@ -4136,6 +4137,119 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Nu-mi spune unde l-ai ascuns. E mai bine să nu știu."
+      },
+      "pas_e1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "O vrabie? Ia s-o vedem.",
+        "alegeri": [
+          {
+            "text": "Uite-o.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "pasarea_elian"
+            }
+          }
+        ]
+      },
+      "lum_o1": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Se vede?",
+        "_nota": "CIORNĂ (Claude): misiunea „Lumina din pădure” (decis de autor; nu se poate refuza).",
+        "urmator": "lum_o2"
+      },
+      "lum_o2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Vine iarna, Vale. La Marginea, copiii tușesc deja nopțile. Din luminița-nopții fac un ceai care le alină tusea, dar nu mai am deloc.",
+        "urmator": "lum_o3"
+      },
+      "lum_o3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Floarea se deschide doar la apus, în pădure. Iar eu nu pot lăsa biserica seara: orcii se uită la mine mai atent decât crezi.",
+        "urmator": "lum_o4"
+      },
+      "lum_o4": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Mi-ai aduce trei flori? Doar trei. Și ai grijă: noaptea, pădurea nu mai e a noastră.",
+        "alegeri": [
+          {
+            "text": "Ți le aduc diseară, frate Elian.",
+            "spre": "lum_o5",
+            "efecte": {
+              "misiune": {
+                "elian_lumina": "inceputa"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: misiunea asta nu se poate refuza."
+      },
+      "lum_o5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Mulțumesc. Pleacă din pădure cum le-ai cules. Nu zăbovi."
+      },
+      "lum_ind": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Seara, Vale. Florile se deschid doar la apus. Și nu zăbovi în pădure după aceea."
+      },
+      "lum_q1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Frate Elian. În pădure... cercul acela de iarbă arsă.",
+        "urmator": "lum_q2"
+      },
+      "lum_q2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian tace multă vreme. Își ține mâinile împreunate, de parcă i-ar fi frig.",
+        "urmator": "lum_q3"
+      },
+      "lum_q3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pădurea e plină de lucruri ciudate noaptea, Vale. Focuri de vânători. Fulgere fără ploaie.",
+        "urmator": "lum_q4"
+      },
+      "lum_q4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Lupii nu fug de un fulger. Și rănile nu se închid singure peste noapte.",
+        "urmator": "lum_q5"
+      },
+      "lum_q5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian ridică ochii spre mine. Nu mai zâmbește.",
+        "urmator": "lum_q6"
+      },
+      "lum_q6": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Unele lucruri le vezi abia când ești gata să le vezi, Vale. Iar eu nu știu încă dacă ești.",
+        "urmator": "lum_q7"
+      },
+      "lum_q7": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Dar îți mulțumesc pentru flori. Copiii de la Marginea o să doarmă mai ușor la iarnă.",
+        "efecte": {
+          "stare": {
+            "lumina_intrebat": "da"
+          }
+        }
+      },
+      "e_dupa_lumina": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ceaiul a ajuns la Marginea. Copiii dorm. Tu ai grijă pe unde umbli noaptea."
       }
     },
     "meniu": true,
@@ -4192,6 +4306,14 @@
         "conditii": {
           "misiune": {
             "elian_toiag": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "e_dupa_lumina",
+        "conditii": {
+          "misiune": {
+            "elian_lumina": "terminata"
           }
         }
       }
@@ -7914,6 +8036,83 @@
     "meniu": true,
     "start": [
       {
+        "_nota": "Misiunea „Pasărea Linei”: în ziua refuzului.",
+        "nod": "pasare_refuz_azi",
+        "conditii": {
+          "marcatAzi": "pasarea_refuz"
+        }
+      },
+      {
+        "_nota": "Misiunea „Pasărea Linei”: a doua zi după refuz, o singură dată.",
+        "nod": "pasare_dupa_refuz",
+        "conditii": {
+          "stare": {
+            "pasarea": "refuzat"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "marcatAzi": "pasarea_refuz"
+              },
+              {
+                "existaStare": "pasarea_auzit"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Pasărea Linei”: Lina îl cheamă, până vorbește Vale cu ea despre vrabie.",
+        "nod": "pasare_salut",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_mama": "terminata"
+          },
+          "oricare": [
+            {
+              "misiune": {
+                "elian_carti": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "elian_carti": "ratata"
+              }
+            }
+          ],
+          "nu": {
+            "oricare": [
+              {
+                "misiune": {
+                  "miriam_papusa": "inceputa"
+                }
+              },
+              {
+                "nu": {
+                  "existaStare": "papusa"
+                }
+              },
+              {
+                "existaStare": "pasarea"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "_nota": "Cât vrabia e încă la Vale: Lina îl întreabă dacă a dus-o.",
+        "nod": "pasare_astept",
+        "conditii": {
+          "misiune": {
+            "elian_pasarea": "inceputa"
+          },
+          "nu": {
+            "existaStare": "pasarea_vindecata"
+          }
+        }
+      },
+      {
         "_nota": "Misiunea „Păpușa Linei”: în ziua refuzului, Lina e supărată.",
         "nod": "papusa_refuz_azi",
         "conditii": {
@@ -8067,6 +8266,76 @@
         "vorbitor": "sora_finn",
         "emotie": "zambet",
         "text": "Eu am un nasture de fier! ...A, trebuie mai mare?"
+      },
+      "pasare_salut": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Vale! Vino repede! Adică... încet. Dar repede!",
+        "_nota": "Decis de autor: Lina a găsit o vrabie rănită (misiunea „Pasărea Linei”)."
+      },
+      "pasare_oferta": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Am găsit ceva sub gard. Nu poate să zboare.",
+        "alegeri": [
+          {
+            "text": "Arată-mi.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "pasarea_lina"
+            }
+          }
+        ]
+      },
+      "pasare_refuz_azi": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Ciripel doarme. Nu vorbi tare."
+      },
+      "pasare_dupa_refuz": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Finn a dus-o pe Ciripel la Fratele Elian! A zburat! Fratele Elian zice că era doar speriată.",
+        "efecte": {
+          "stare": {
+            "pasarea_auzit": "da"
+          }
+        },
+        "_nota": "Decis de autor: dacă Vale a refuzat, a doua zi Lina îi spune că vrabia a zburat."
+      },
+      "pasare_astept": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Ai dus-o pe Ciripel la Fratele Elian? Încă nu? Să nu uiți să-i ții căciula caldă."
+      },
+      "pasare_l1": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "A zburat? Pe bune? Ciripel a zburat?!",
+        "urmator": "pasare_l2"
+      },
+      "pasare_l2": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Drept spre lumină, cu amândouă aripile. Fratele Elian zice că i-a mulțumit.",
+        "urmator": "pasare_l3"
+      },
+      "pasare_l3": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Știam eu! Fratele Elian face bine orice. Și pe mama, și pe Ciripel!",
+        "urmator": "pasare_l4"
+      },
+      "pasare_l4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Lina se uită la cer, după toate vrăbiile din sat, de parcă ar căuta-o pe a ei.",
+        "efecte": {
+          "stare": {
+            "pasarea_spusa": "da"
+          }
+        }
       }
     },
     "vorbeste": [
@@ -11641,6 +11910,344 @@
         "gand": true,
         "emotie": "normal",
         "text": "Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?"
+      }
+    }
+  },
+  "pasarea_lina": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Pasărea Linei” (decis de autor): Lina a găsit o vrabie cu aripa ruptă și îl roagă pe Vale s-o ducă la Fratele Elian; Vale poate refuza (atunci fără +1).",
+    "grup": "Elian: pasărea Linei",
+    "partener": "sora_finn",
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Uite. O vrăbiuță.",
+        "imagine": "events/pasarea_lina_1.png",
+        "_nota": "Decis de autor: Lina cu vrabia rănită.",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "În căușul palmelor ei mici tremură o vrabie. O aripă îi atârnă strâmb, iar pieptul îi bate repede, repede, ca o inimă de șoarece.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Am găsit-o sub gard. Am încercat s-o hrănesc cu firimituri, dar nu vrea. Și nici nu poate să zboare.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Mama zice că Fratele Elian a făcut-o bine pe ea. Poate o face bine și pe vrabie. Dar eu n-am voie să merg singură până la biserică.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Mi-o duci tu? Te rog!",
+        "alegeri": [
+          {
+            "text": "I-o duc eu Fratelui Elian.",
+            "spre": "b1",
+            "efecte": {
+              "misiune": {
+                "elian_pasarea": "inceputa"
+              },
+              "stare": {
+                "pasarea": "acceptat"
+              },
+              "obiect": "vrabia_linei"
+            }
+          },
+          {
+            "text": "N-am timp acum, Lina.",
+            "spre": "r1",
+            "efecte": {
+              "misiune": {
+                "elian_pasarea": "ratata"
+              },
+              "stare": {
+                "pasarea": "refuzat"
+              },
+              "marcheaza": "pasarea_refuz"
+            }
+          }
+        ],
+        "_nota": "Decis de autor: misiunea se poate refuza; atunci, fără +1 la Elian."
+      },
+      "b1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O iau în căciula mea, încet. Vrabia se ghemuiește în lâna caldă și nu se mai zbate.",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Să nu alergi cu ea! Și să-i spui Fratelui Elian că o cheamă Ciripel."
+      },
+      "r1": {
+        "vorbitor": "sora_finn",
+        "emotie": "trist",
+        "text": "Bine... O duc eu, mâine. Când vine Finn acasă.",
+        "urmator": "r2"
+      },
+      "r2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lina se întoarce în prag, cu vrabia strânsă la piept, și îi suflă ușor în pene, ca să nu-i fie frig."
+      }
+    }
+  },
+  "pasarea_elian": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Pasărea Linei” (decis de autor): Elian ține vrabia în căușul palmelor; printre degete se vede o clipă o lumină, apoi vrabia zboară; „Era doar speriată.” Indiciu mic despre puterea lui.",
+    "grup": "Elian: pasărea Linei",
+    "partener": "mag",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian ia vrabia din căciula mea cu amândouă mâinile, ca pe ceva care s-ar putea sparge, și o închide în căușul palmelor.",
+        "imagine": "events/pasarea_lina_2.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Liniștește-te, mică. Nu-ți face nimeni niciun rău.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Își apleacă fruntea spre mâini și șoptește ceva. Un singur cuvânt, pe care nu-l înțeleg.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și, pentru o clipă, printre degetele lui se strecoară o lumină. Albă și aurie, ca soarele care intră printre scânduri.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Apoi Elian își deschide palmele.",
+        "imagine": "events/pasarea_lina_3.png",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Vrabia sare pe degetul lui, își scutură penele, își întinde aripile, amândouă, drepte, și zboară spre lumină.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Era doar speriată, Vale.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Speriată. Dar aripa îi fusese ruptă. Am văzut-o cu ochii mei, atârnând strâmb.",
+        "urmator": "c9"
+      },
+      "c9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și lumina aceea, dintre degetele tale?",
+        "urmator": "c10"
+      },
+      "c10": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Ți s-a părut, Vale. Ochii joacă feste după o zi lungă.",
+        "urmator": "c11"
+      },
+      "c11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mi s-a părut. Și nici aripa nu mi s-a părut.",
+        "urmator": "c12"
+      },
+      "c12": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Spune-i Linei că Ciripel a zburat acasă. Și că i-a mulțumit.",
+        "efecte": {
+          "daObiect": "vrabia_linei",
+          "stare": {
+            "pasarea_vindecata": "da"
+          }
+        }
+      }
+    }
+  },
+  "lumina_padure": {
+    "_nota": "CIORNĂ (Claude). Misiunea „Lumina din pădure” (decis de autor): seara, în pădure, lupii îl încercuiesc pe Vale și îl rănesc; o lumină albă, orbitoare, îi alungă; Vale se trezește la marginea pădurii, vindecat, cu Elian lângă el, cu mâinile ascunse în mâneci, într-un cerc de iarbă arsă. Peste 4 imagini, fără luptă (nu se poate pierde).",
+    "grup": "Elian: lumina din pădure",
+    "partener": "mag",
+    "start": "l1",
+    "noduri": {
+      "l1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Soarele apune când ajung în pădure. Luminița-nopții își deschide florile galbene, una câte una, în iarba de sub stejari, ca niște lumânări mici.",
+        "imagine": "events/lumina_padure_1.png",
+        "urmator": "l2"
+      },
+      "l2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Culeg trei flori, cu grijă, cum m-a învățat Elian. Când mă ridic, pădurea s-a făcut neagră de tot.",
+        "urmator": "l3"
+      },
+      "l3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și în negrul dintre copaci se aprind ochi. Doi. Patru. Șase.",
+        "urmator": "l4"
+      },
+      "l4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lupii ies din întuneric fără niciun sunet. Mă încercuiesc încet, cu capetele jos, cu colții la vedere.",
+        "imagine": "events/lumina_padure_2.png",
+        "urmator": "l5"
+      },
+      "l5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Primul sare. Îi simt colții în braț, apoi pământul în spate. Al doilea mă apucă de picior.",
+        "urmator": "l6"
+      },
+      "l6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lovesc orbește, cu pumnii, cu picioarele. Nu mai văd nimic. Doar ochii lor, peste tot.",
+        "urmator": "l7"
+      },
+      "l7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și atunci, dintre copaci...",
+        "urmator": "l8"
+      },
+      "l8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lumina. Albă, orbitoare, de parcă ar fi răsărit soarele în mijlocul pădurii, în toiul nopții.",
+        "imagine": "events/lumina_padure_3.png",
+        "urmator": "l9"
+      },
+      "l9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lupii schelălăie și fug, cu cozile între picioare. Iar eu nu mai văd nimic. Nici pădurea, nici lupii, nici lumina.",
+        "urmator": "l10"
+      },
+      "l10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă trezesc la marginea pădurii. E încă noapte. Brațul nu mă mai doare.",
+        "imagine": "events/lumina_padure_4.png",
+        "urmator": "l11"
+      },
+      "l11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe mânecă e sânge, dar sub ea pielea e întreagă. Doar o dungă roz, subțire, ca o rană veche de câteva săptămâni.",
+        "urmator": "l12"
+      },
+      "l12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lângă mine, în genunchi, stă Fratele Elian. E palid și obosit, de parcă ar fi alergat toată noaptea. Își ține mâinile ascunse în mâneci.",
+        "urmator": "l13"
+      },
+      "l13": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Te-am găsit așa, Vale. Ai avut noroc.",
+        "urmator": "l14"
+      },
+      "l14": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Lupii... erau mulți. Și apoi lumina...",
+        "urmator": "l15"
+      },
+      "l15": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ce lumină? Eu doar am trecut pe aici, după ierburi. Lupii fugiseră deja.",
+        "urmator": "l16"
+      },
+      "l16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la iarba din jurul nostru. E arsă. Arsă într-un cerc perfect rotund, cu noi doi în mijloc.",
+        "urmator": "l17"
+      },
+      "l17": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Iar pe sub mânecile lui Elian, palmele încă îi lucesc. Slab, auriu, ca jarul care se stinge.",
+        "urmator": "l18"
+      },
+      "l18": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Florile, Vale. Le-ai cules?",
+        "urmator": "l19"
+      },
+      "l19": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Le am încă în pumn, strivite. Trei. Elian le ia cu grijă, de parcă în pădure n-ar fi fost nimic altceva în noaptea asta.",
+        "urmator": "l20"
+      },
+      "l20": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Hai acasă. Și să nu-i spui mamei tale de lupi. S-ar speria degeaba.",
+        "efecte": {
+          "stare": {
+            "lumina_padure": "da"
+          }
+        }
       }
     }
   }

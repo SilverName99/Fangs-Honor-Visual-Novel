@@ -99,15 +99,17 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 3. ✅ **O zi la forjă**: pornește singură, după „Foalele stricate”, când vii la fierărie și Bram lucrează afară, după-amiaza (14–18); „!” deasupra lui Bram și a fierăriei.
 4. ✅ **Fierul plugului** (a fermierului, +1 la Bram): după „O zi la forjă”, la fermier: „Ce s-a întâmplat cu plugul? !”.
 5. ✅ **Cercurile butoaielor** (a lui Agnes, +1 la Bram): după „Pivnița” și după „Fierul lui Bram”, la Agnes: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
-6. ✅ **Cufărul**: după ce plugul fermierului e reparat (la „Fierul plugului” acceptat, imediat; refuzat, după cele 2 zile), la fierărie: Bram e îngândurat → „Ce vă frământă, domnule Bram? !”.
+6. ✅ **Cufărul**: după ce plugul fermierului e reparat (la „Fierul plugului” acceptat, imediat; refuzat, după cele 2 zile) și după „Lumina din pădure” (Elian, decis de autor), la fierărie: Bram e îngândurat → „Ce vă frământă, domnule Bram? !”.
 7. ✅ **Toiagul celor 23** (a lui Elian, +1 la Bram și la Elian): pornește singură, la sfârșitul „Secretului lui Elian”.
 8. 📝 **Platoșa tatălui**: după misiunea specială a Miriamei (echipamentul tatălui), Bram repară platoșa crăpată.
 
 **Fratele Elian (preotul)**
 1. ✅ **Ierburile lui Elian**: la o zi după prima discuție, când Elian citește afară, pe scările bisericii (14–23): „Ce citești, frate Elian?”.
 2. ✅ **Cărțile**: pornește singură, din ziua 8, când mergi la biserică între 14 și 18 și Elian e afară (semnul „!” pe biserică).
-3. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
-4. ✅ **Toiagul celor 23**: pornește singură, la sfârșitul „Secretului lui Elian”.
+3. ✅ **Pasărea Linei** (de la Lina, se poate refuza): după „Cărțile” și după „Păpușa Linei”, la Lina, în fața casei (10–14): „Ce ai acolo, Lina? !”.
+4. ✅ **Lumina din pădure** (nu se poate refuza): după „Pasărea Linei”, la Elian: „Pari îngrijorat, frate Elian. !”. Apoi, seara, în pădure.
+5. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
+6. ✅ **Toiagul celor 23**: pornește singură, la sfârșitul „Secretului lui Elian”.
 
 **Kaia (vânătoarea)**
 1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
@@ -156,7 +158,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · 💡 încă 7 (la 8/10: misiunea specială, echipamentul tatălui) | 3 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
-| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · 💡 încă 5 | 5 / 10 |
+| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · 💡 încă 3 | 7 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
@@ -313,7 +315,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 **Cum verifici:** după „Foalele stricate”, între 14:00 și 17:59, intră de pe **hartă** la fierărie, cu Bram afară: pornește singură.
 
 ### ✅ Cufărul
-- **Pornește** (decis de autor: Bram e îngândurat și pare supărat): după „Fierul plugului”, când plugul fermierului e reparat (dacă ai acceptat, imediat; dacă ai refuzat, după cele 2 zile). Doar la fierărie (ales de Claude). Bram ține ciocanul în poală și se uită în gol (salutul de dinaintea meniului) → „Ce vă frământă, domnule Bram? !”.
+- **Pornește** (decis de autor: Bram e îngândurat și pare supărat): după „Fierul plugului”, când plugul fermierului e reparat (dacă ai acceptat, imediat; dacă ai refuzat, după cele 2 zile), și după „Lumina din pădure” (misiunile lui Elian, decis de autor). Doar la fierărie (ales de Claude). Bram ține ciocanul în poală și se uită în gol (salutul de dinaintea meniului) → „Ce vă frământă, domnule Bram? !”.
 - **Ce s-a întâmplat** (ales de Claude): colectorul a văzut plugul nou al fermierului și bănuiește că Bram ascunde fier; a zis că vine într-o zi să-i întoarcă fierăria pe dos. „Ce o să găsească?” pornește misiunea; „Nu vreau să știu” o lasă în meniu.
 - Bram îi dă lui Vale **cheia cufărului** (`cheie_fierar`, obiect de poveste) și îl roagă să urce și să-l deschidă: el nu mai poate.
 - **Pasul 1:** în camera lui Bram (sus, din magazin, cât lucrează Bram), un clic pe cufăr → imaginea cu cufărul deschis și **săbiile celor căzuți** (decis de autor: unele rupte, altele ciobite). Vale le numără: douăzeci și două. Caută sabia tatei, cu rombul auriu pe gardă: nu e acolo (ales de Claude: e la Miriam, cu echipamentul lui Edwin).
@@ -374,6 +376,32 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 - **Imagini:** `events/elian_carti_1.png` … `elian_carti_6.png`, `elian_carti_refuz.png` (galeria: „Elian: cărțile”).
 
 **Cum verifici:** din ziua 8, 14:00–17:59, intră pe imaginea bisericii (Elian e afară) → evenimentul pornește singur. Pentru a doua variantă: F2 → „Resetează” la misiune (sau joc nou).
+
+### ✅ Pasărea Linei (de la Lina, +1 la Elian)
+- **Pornește** (decis de autor): după „Cărțile” (oricum s-a terminat), la Lina, când se joacă în fața casei (10–14). Ales de Claude: și după „Păpușa Linei”, ca Lina să nu ceară două lucruri deodată. Lina îl cheamă („Vino repede! Adică... încet. Dar repede!”) → „Ce ai acolo, Lina? !” → „Arată-mi.”
+- **Peste o imagine:** Lina ține în palme o vrabie cu aripa ruptă (o cheamă Ciripel, ciornă de Claude). N-are voie să meargă singură până la biserică.
+  - **o duci** (misiunea pornește): vrabia ajunge în căciula lui Vale (obiect de poveste);
+  - **refuzi** (decis de autor: se poate refuza): misiunea e ratată, fără +1. În ziua aceea Lina e tristă („Ciripel doarme. Nu vorbi tare.”), iar a doua zi îți spune că Finn a dus-o la Elian și că vrabia a zburat.
+- **Pasul 1:** la Elian (oriunde e treaz), „Frate Elian, Lina ți-a trimis o vrabie rănită.” → „Uite-o.” → peste 2 imagini, Elian ține vrabia în căușul palmelor și șoptește un cuvânt; printre degete se vede o clipă o lumină albă și aurie, apoi vrabia zboară. „Era doar speriată, Vale.” Dar aripa îi fusese ruptă (indiciul mic, decis de autor).
+- **Pasul 2:** la Lina, „Lina, vrabia ta a zburat!”.
+- **Recompensa:** încrederea lui Elian +1.
+- **Imagini:** `events/pasarea_lina_1.png` (Lina cu vrabia), `pasarea_lina_2.png` (lumina dintre degetele lui Elian), `pasarea_lina_3.png` (vrabia zboară), iconița `items/vrabia_linei.png` (galeria: „Elian: pasărea Linei”).
+
+**Cum verifici:** după „Cărțile” și „Păpușa Linei”, la Marginea satului, 10–14, la Lina, în fața casei → „Ce ai acolo, Lina?” → „Arată-mi” → „I-o duc eu” → Elian → Lina. Pentru refuz: F2 → „Resetează”, apoi „N-am timp acum”; a doua zi, Lina îți spune ce s-a întâmplat.
+
+### ✅ Lumina din pădure (+1)
+- **Pornește** (decis de autor: **nu se poate refuza**): după „Pasărea Linei” (dusă sau refuzată), la Elian: „Pari îngrijorat, frate Elian. !” → vine iarna, la Marginea copiii tușesc, iar din luminița-nopții face un ceai; floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica → „Ți le aduc diseară, frate Elian.” (singura alegere).
+- **Pasul 1:** seara (18–23), când Vale ajunge în pădure, pornește singură, peste 4 imagini (ales de Claude: fără luptă, ca să nu se poată pierde):
+  1. la apus, Vale culege trei flori; în întuneric se aprind ochi;
+  2. lupii îl încercuiesc, îl mușcă, Vale cade;
+  3. dintre copaci, o lumină albă, orbitoare; lupii fug schelălăind;
+  4. Vale se trezește la marginea pădurii, cu rănile închise; lângă el, Elian, palid, cu mâinile ascunse în mâneci: „Te-am găsit așa. Ai avut noroc.” Iarba e arsă într-un cerc perfect, iar pe sub mâneci palmele lui încă lucesc (indiciul mare, decis de autor).
+  Ține 3 ore și ia 20 stamina (ales de Claude).
+- **Pasul 2:** la Elian, „Frate Elian, ce s-a întâmplat în pădure?” → „Unele lucruri le vezi abia când ești gata să le vezi, Vale. Iar eu nu știu încă dacă ești.”
+- **Recompensa:** încrederea lui Elian +1. **După ea apare „Cufărul” lui Bram** (decis de autor).
+- **Imagini:** `events/lumina_padure_1.png` … `lumina_padure_4.png` (galeria: „Elian: lumina din pădure”).
+
+**Cum verifici:** după „Pasărea Linei”, la Elian → „Pari îngrijorat” → „Ți le aduc diseară”. De pe hartă, în pădure, la 19:00 (la 17:40 nu pornește) → cele 4 imagini → Elian → „ce s-a întâmplat în pădure?” → +1. Abia acum Bram are „Ce vă frământă, domnule Bram? !”.
 
 ### ✅ Secretul lui Elian
 - **Pornește** (decis de autor): după „Cufărul” (Bram), cât Elian citește afară, pe scări (14–23): „Frate Elian, am nevoie de un sfat. !”. Vale îi spune de cele douăzeci și două de săbii. Elian are o singură idee, dar întâi trebuie să-i arate ceva: „Vreau.” pornește misiunea; „Nu încă” o lasă în meniu.
