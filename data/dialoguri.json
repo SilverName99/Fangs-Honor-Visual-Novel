@@ -11828,13 +11828,8 @@
     "grup": "Al treilea vis",
     "partener": null,
     "vis": true,
-    "start": "film",
+    "start": "w1",
     "noduri": {
-      "film": {
-        "video": "events/vis_3.mp4",
-        "urmator": "w1",
-        "_nota": "Decis de autor: filmulețul visului, la început, pe tot ecranul, fără text (un clic îl sare). Lipsește = visul începe cu imaginea, ca înainte."
-      },
       "w1": {
         "vorbitor": "vale",
         "gand": true,
@@ -11884,7 +11879,12 @@
         "gand": true,
         "emotie": "normal",
         "text": "Torțele se apleacă toate deodată, ca sub o suflare. Și peste drum se lasă întunericul.",
-        "urmator": "w8"
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_3.mp4",
+        "urmator": "w8",
+        "_nota": "Filmulețul visului (decis de autor): din fața cuștii, umbra iese de sub Vale, sfărâmă cușca și wyvernul, iar camera urcă deasupra lui (vis_3_1.png → vis_3_2.png). Fără el, visul trece direct la a doua imagine."
       },
       "w8": {
         "vorbitor": "vale",
