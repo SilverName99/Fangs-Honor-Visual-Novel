@@ -533,8 +533,8 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Al treilea vis (nu e misiune)
 - **Când** (decis de autor): după „Convoiul”, dacă Vale a mers cu Kaia și a văzut wyvernii, la somnul de după. Misiunea se termină noaptea târziu, deci ajunge **o oră de somn noaptea** (ales de Claude; celelalte vise cer 4). Dacă se culcă ziua, visul vine la noapte.
 - **Peste 2 imagini, cu ceață** (ciornă de Claude):
-  1. drumul mare, gol, cu torțele înfipte în pământ; Vale stă în fața cuștii, iar wyvernul se trage înapoi și tremură, ca Ember, uitându-se **în spatele lui Vale**;
-  2. Vale se întoarce: o aripă acoperă tot cerul și, între solzi, **ochiul auriu din al doilea vis**. Nu e legat de nimic. Căldura din piept, „ca un al doilea foc”, ca în primul vis.
+  1. drumul mare, gol, cu torțele înfipte în pământ; Vale stă în fața cuștii, iar wyvernul se trage înapoi și tremură, ca Ember, uitându-se **deasupra lui Vale**;
+  2. (decis de autor) **Vale, văzut de sus**, se uită în jos: peste el, peste drum și peste cușcă cade **umbra unui dragon**, cu aripile întinse de la un capăt al drumului la celălalt; dragonul nu se vede. Vale nu ridică ochii, dar simte că îl privește, cu ochiul auriu din al doilea vis. Căldura din piept, „ca un al doilea foc”, ca în primul vis.
 - La trezire: „Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?” (un indiciu că wyvernii nu sunt dragoni, fără să afle ce sunt).
 - **Imagini:** `events/vis_3_1.png`, `events/vis_3_2.png` (galeria: „Visele lui Vale”).
 

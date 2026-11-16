@@ -11541,7 +11541,7 @@
     }
   },
   "vis_3": {
-    "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Ales de Claude: wyvernul se teme de ceva din spatele lui Vale; Vale se întoarce și vede un dragon adevărat (aripa peste cer și ochiul din al doilea vis). Căldura din piept rămâne ca în primul vis.",
+    "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Decis de autor: pe a doua imagine, Vale văzut de sus, se uită în jos, acoperit de umbra unui dragon (se vede doar umbra). Ales de Claude: wyvernul se teme de ceva de deasupra lui Vale; Vale nu ridică ochii, dar simte ochiul din al doilea vis. Căldura din piept rămâne ca în primul vis.",
     "grup": "Visele lui Vale",
     "partener": null,
     "vis": true,
@@ -11587,37 +11587,38 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu se uită la mine. Se uită în spatele meu.",
+        "text": "Nu se uită la mine. Se uită deasupra mea.",
         "urmator": "w7"
       },
       "w7": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mă întorc.",
+        "text": "Torțele se apleacă toate deodată, ca sub o suflare. Și peste drum se lasă întunericul.",
         "urmator": "w8"
       },
       "w8": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Cerul nu mai e cer. E o aripă. O aripă atât de mare, încât acoperă stelele de la un capăt al drumului la celălalt.",
+        "text": "O umbră. Mă acoperă pe mine, drumul, cușca, torțele. Mă uit în jos: pe pământ, două aripi întinse, de la un capăt al drumului la celălalt.",
         "imagine": "events/vis_3_2.png",
         "trecere": 1600,
+        "_nota": "Decis de autor: Vale, văzut de sus, se uită în jos, acoperit de o umbră; se vede doar umbra dragonului.",
         "urmator": "w9"
       },
       "w9": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și, între solzii întunecați, un ochi auriu, cu pupila subțire ca o tăietură de cuțit. Ochiul din visul de dinainte.",
+        "text": "Nu ridic ochii. Nu pot. Dar știu că e acolo, deasupra mea. Și știu că mă privește, cu ochiul acela auriu din visul de dinainte.",
         "urmator": "w10"
       },
       "w10": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu e legat de nimic. Nu stă în nicio cușcă. Doar mă privește. Și nu mi-e frică.",
+        "text": "Nu e legat de nimic. Nu stă în nicio cușcă. Și nu mi-e frică.",
         "urmator": "w11"
       },
       "w11": {
