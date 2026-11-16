@@ -12204,7 +12204,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Lumina. Albă, orbitoare, de parcă ar fi răsărit soarele în mijlocul pădurii, în toiul nopții.",
+        "text": "Abia mai văd, printre gene. Dintre copaci taie noaptea niște raze albe-aurii, subțiri, fierbinți ca fierul scos din foc.",
         "imagine": "events/lumina_padure_3.png",
         "urmator": "l9"
       },
@@ -12212,7 +12212,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Lupii schelălăie și fug, cu cozile între picioare. Iar eu nu mai văd nimic. Nici pădurea, nici lupii, nici lumina.",
+        "text": "Unde ating lupii, blana lor fumegă. Schelălăie și fug, cu cozile între picioare. Iar eu nu mai pot ține ochii deschiși. Totul se stinge.",
         "urmator": "l10"
       },
       "l10": {

@@ -396,7 +396,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   1. la apus, Vale culege trei flori;
   2. (decis de autor, ca atacul să nu vină prea brusc) se face întuneric și e prea liniște; lupii se arată printre copaci și îi dau târcoale, iar Vale îi simte și vrea să se uite în spate; când se uită, în întuneric se aprind ochi;
   3. lupii îl încercuiesc, îl mușcă, Vale cade;
-  4. dintre copaci, o lumină albă, orbitoare; lupii fug schelălăind;
+  4. (decis de autor) dintre copaci, raze albe-aurii, arzătoare, care ard lupii; lupii fug schelălăind, cu blana fumegând; Vale, plin de sânge, aproape leșinat, cu ochii dați peste cap; fără nicio siluetă în lumină;
   5. Vale se trezește la marginea pădurii, cu rănile închise; lângă el, Elian, palid, cu mâinile ascunse în mâneci: „Te-am găsit așa. Ai avut noroc.” Iarba e arsă într-un cerc perfect, iar pe sub mâneci palmele lui încă lucesc (indiciul mare, decis de autor).
   Ține 3 ore și ia 20 stamina (ales de Claude).
 - **Pasul 2:** la Elian, „Frate Elian, ce s-a întâmplat în pădure?” → „Unele lucruri le vezi abia când ești gata să le vezi, Vale. Iar eu nu știu încă dacă ești.”
