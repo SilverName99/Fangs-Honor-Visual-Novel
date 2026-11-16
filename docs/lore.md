@@ -64,7 +64,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **De ce își ascunde puterea** (ciornă de Claude): un mag puternic într-un sat ocupat e un mag mort, iar satul ar plăti pentru el; Craniile Sângerii sunt mii, iar orcii ar arde satul ca să-i sperie pe ceilalți. „Un om singur, oricât de puternic, nu eliberează un sat. Un sat se eliberează singur.”
 - **Încăperea de sub biserică** (decis de autor): în spatele bisericii, o trapă ascunsă sub iarbă, crengi și frunze; dedesubt, o încăpere strâmtă, de piatră, cu rădăcini prin tavan, o masă și un raft cu cărțile lui (cele cu **soarele cu raze frânte** pe copertă, din misiunea „Cărțile”). Biserica e mai veche decât satul (ciornă de Claude). Dacă a luat cărțile, Vale s-a ascuns cu ele chiar lângă trapă, fără să știe.
 - **Lumina lui Elian** (decis de autor): îi iese direct din palme, albă și aurie, fără flacără; o aprinde cu un singur cuvânt, pe o limbă pe care Vale n-o înțelege (ciornă de Claude).
-- **Cristalul și Vale** (ales de Claude, indiciu pentru trezirea lui Vale): cristalul lui Elian se aprinde, alb, orbitor, când Vale se apleacă spre el, și iar când Vale ține toiagul; a doua oară, parcă lumina nu vine doar din cristal. Elian vede, tace și se gândește. Nu-i spune lui Vale nimic.
+- **Cristalul și Vale** (ales de Claude, indiciu pentru trezirea lui Vale): cristalul lui Elian începe să lucească ușor, auriu, când Vale se apleacă spre el (decis de autor: puterile lui Vale abia se trezesc), și ceva mai tare când Vale ține toiagul; a doua oară, palmele lui Vale lucesc și ele, abia văzut. Elian vede, tace și se gândește. Nu-i spune lui Vale nimic.
 
 ## Săbiile celor căzuți și Toiagul celor 23 (decis de autor)
 
