@@ -10380,13 +10380,8 @@
     "grup": "Al doilea vis",
     "partener": null,
     "vis": true,
-    "start": "film",
+    "start": "v1",
     "noduri": {
-      "film": {
-        "video": "events/vis_2.mp4",
-        "urmator": "v1",
-        "_nota": "Decis de autor: filmulețul visului, la început, pe tot ecranul, fără text (un clic îl sare). Lipsește = visul începe cu imaginea, ca înainte."
-      },
       "v1": {
         "vorbitor": "vale",
         "gand": true,
@@ -10443,7 +10438,13 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "text": "Nu... nu, nu, nu!",
-        "urmator": "v8b"
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_2.mp4",
+        "urmator": "v10",
+        "faraVideo": "v8b",
+        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; locul ales de Claude): Edwin căzut, camera intră în ochiul lui, care devine ochiul dragonului (din vis_2_4.png în vis_2_5.png). Înlocuiește cele două imagini; fără el, visul merge cu ele."
       },
       "v8b": {
         "imagine": "events/vis_2_4.png",

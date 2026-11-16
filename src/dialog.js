@@ -76,9 +76,10 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   // „video” la replică (decis de autor: câte un filmuleț la fiecare vis): pe tot ecranul, fără text și fără
   // portrete, cu ceața visului peste el; la sfârșit (sau la un clic) discuția trece singură mai departe.
-  // Un filmuleț care lipsește (sau nu merge) se sare, iar visul începe cu imaginea lui, ca înainte
+  // Un filmuleț care lipsește (sau nu merge) se sare, iar visul merge cu imaginile lui, ca înainte: „faraVideo”
+  // e replica de la care continuă atunci (al doilea vis: cele două imagini pe care filmulețul le înlocuiește)
   function arataVideo(nod, idNod) {
-    const mai = () => activ?.nod === nod && arataNod(nod.urmator ?? null);
+    const mai = (lipsa = false) => activ?.nod === nod && arataNod((lipsa && nod.faraVideo) || (nod.urmator ?? null));
     activ.alegeri = [];
     el.classList.add('cu-imagine', 'asteapta-imaginea', 'fara-caseta');
     // După un refresh, filmulețul pornește din nou de la început
@@ -96,7 +97,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     const sari = () => {
       if (video !== acum || acum.pornit) return;
       opresteVideo();
-      mai();
+      mai(true);
     };
     v.onerror = sari;
     // Un filmuleț care nu vine deloc (rețeaua) nu ține visul pe loc

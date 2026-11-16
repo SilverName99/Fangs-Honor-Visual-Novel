@@ -548,7 +548,7 @@ export function imaginiCerute(date, scene) {
     const filme = [...new Set(Object.values(d.noduri || {}).map((n) => n.video).filter(Boolean))];
     if (!imagini.length && !filme.length) continue;
     grup = `Eveniment: ${d.grup || id}`;
-    filme.forEach((cale) => adauga(cale, `${d.grup || id}: filmulețul (MP4, la început; fără el, visul începe cu imaginea)`, true));
+    filme.forEach((cale) => adauga(cale, `${d.grup || id}: filmulețul (MP4; fără el, visul merge doar cu imaginile)`, true));
     imagini.forEach((cale, i) => adauga(cale, `${d.grup || id}: imaginea ${i + 1} (sub replici)`));
   }
   grup = 'Portrete';
