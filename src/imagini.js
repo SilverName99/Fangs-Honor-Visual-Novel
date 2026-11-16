@@ -99,7 +99,11 @@ export function schimbaImagine(container, el, gata, trecere = 0) {
     if (trecere) {
       el.style.animationDuration = `${trecere}ms`;
       el.classList.add('trecere-lenta');
-      setTimeout(() => vechi.forEach((v) => v.remove()), trecere);
+      // După trecere, imaginea nouă stă pe loc: își pierde clasa, ca ceața visului s-o poată estompa iar pe margini
+      setTimeout(() => {
+        vechi.forEach((v) => v.remove());
+        el.classList.remove('trecere-lenta');
+      }, trecere);
     } else for (const v of vechi) v.remove();
     gata?.();
   };
