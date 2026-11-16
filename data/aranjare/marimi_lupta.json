@@ -812,6 +812,15 @@
       "lupta_fierar": 110,
       "lupta_campuri": 110,
       "lupta_taverna_pivnita": 110
+    },
+    "combat/vale_toiag.png": {
+      "lupta_taverna_parter": 113,
+      "lupta_padure_interior": 113,
+      "lupta_poarta": 113,
+      "lupta_piata": 113,
+      "lupta_fierar": 113,
+      "lupta_campuri": 113,
+      "lupta_taverna_pivnita": 113
     }
   }
 }
