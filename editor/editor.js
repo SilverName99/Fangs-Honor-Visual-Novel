@@ -47,10 +47,17 @@ for (const b of document.querySelectorAll('.taburi button')) {
   };
 }
 
+// „Pornește visul” din galerie (cerut de autor): Testarea se deschide cu visul cerut, o singură dată
+let visCerut = null;
 function incarcaTestul() {
-  cadru.src = `index.html?debug=1&test=1&t=${Date.now()}`;
+  cadru.src = `index.html?debug=1&test=1&t=${Date.now()}${visCerut ? `&vis=${encodeURIComponent(visCerut)}` : ''}`;
+  visCerut = null;
 }
-document.getElementById('reincarca-test').onclick = incarcaTestul;
+document.getElementById('reincarca-test').onclick = () => incarcaTestul();
+document.addEventListener('porneste-vis', (e) => {
+  visCerut = e.detail;
+  document.querySelector('.taburi button[data-tab="testare"]').click();
+});
 
 // ----- starea sincronizării (build + GitHub) -----
 const elStare = document.getElementById('stare-sincronizare');

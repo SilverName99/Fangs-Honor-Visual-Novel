@@ -1,4 +1,5 @@
-import { elementImagine, schimbaImagine } from './imagini.js';
+import { elementImagine, schimbaImagine, urlImagine } from './imagini.js';
+import { volumEfecte } from './sunet.js';
 
 const div = (clasa) => Object.assign(document.createElement('div'), { className: clasa });
 
@@ -40,6 +41,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     el.classList.toggle('ascuns-text');
   };
   el.addEventListener('click', () => ascuns() && el.classList.remove('ascuns-text'));
+  // Un clic oriunde sare filmulețul (decis de autor), ca jocul să nu oblige pe nimeni să-l vadă din nou
+  el.addEventListener('click', () => video && activ?.nod === video.nod && arataNod(video.nod.urmator ?? null));
   el.append(fundal, stanga, dreapta, caseta, ochi);
   parinte.append(el);
 
@@ -55,13 +58,76 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   let activ = null;
 
+  // Filmulețul de acum (visele, decis de autor). Când discuția trece mai departe, se oprește, ca să nu se mai
+  // audă sub replici; unul care pornise rămâne ca fundal, oprit pe cadrul lui, până îl acoperă imaginea
+  // replicii următoare, iar unul care încă nu pornise nu mai are ce căuta pe ecran
+  let video = null;
+  function opresteVideo() {
+    if (!video) return;
+    clearTimeout(video.asteptare);
+    video.el.pause();
+    if (!video.pornit) {
+      video.strat.remove();
+      // Replica următoare nu mai așteaptă un filmuleț care nu vine (o pune înapoi, dacă are o imagine a ei)
+      el.classList.remove('asteapta-imaginea');
+    }
+    video = null;
+  }
+
+  // „video” la replică (decis de autor: câte un filmuleț la fiecare vis): pe tot ecranul, fără text și fără
+  // portrete, cu ceața visului peste el; la sfârșit (sau la un clic) discuția trece singură mai departe.
+  // Un filmuleț care lipsește (sau nu merge) se sare, iar visul începe cu imaginea lui, ca înainte
+  function arataVideo(nod, idNod) {
+    const mai = () => activ?.nod === nod && arataNod(nod.urmator ?? null);
+    activ.alegeri = [];
+    el.classList.add('cu-imagine', 'asteapta-imaginea', 'fara-caseta');
+    // După un refresh, filmulețul pornește din nou de la început
+    laNod?.(activ.original, idNod, activ.imagine);
+    const strat = div('strat-video');
+    const v = document.createElement('video');
+    v.playsInline = true;
+    v.preload = 'auto';
+    const nivel = volumEfecte();
+    v.volume = Math.min(1, nivel);
+    v.muted = nivel <= 0;
+    strat.append(v);
+    fundal.append(strat);
+    const acum = (video = { nod, el: v, strat, pornit: false });
+    const sari = () => {
+      if (video !== acum || acum.pornit) return;
+      opresteVideo();
+      mai();
+    };
+    v.onerror = sari;
+    // Un filmuleț care nu vine deloc (rețeaua) nu ține visul pe loc
+    acum.asteptare = setTimeout(sari, 12000);
+    v.oncanplay = () => {
+      if (video !== acum || acum.pornit) return;
+      acum.pornit = true;
+      clearTimeout(acum.asteptare);
+      // Cele de dinainte (imaginea de sub replica veche) dispar abia când se vede filmulețul
+      for (const x of [...fundal.children]) if (x !== strat) x.remove();
+      strat.classList.add('vizibil');
+      el.classList.remove('asteapta-imaginea');
+      // Fără un clic în pagină, browserul nu lasă sunetul: atunci merge fără sunet, nu deloc
+      v.play()?.catch(() => {
+        v.muted = true;
+        v.play()?.catch(() => {});
+      });
+    };
+    v.onended = () => video === acum && mai();
+    v.src = urlImagine(nod.video);
+  }
+
   // „reluat”: discuția continuă după un refresh al paginii, de la replica la care rămăsese; efectele ei s-au
   // aplicat deja (și s-au salvat), deci nu se mai aplică o dată
   function arataNod(idNod, reluat = false) {
+    opresteVideo();
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
     activ.nod = nod;
     activ.dupaImagine = null;
+    if (nod.video) return arataVideo(nod, idNod);
     // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
     if (nod.trezire) {
       fundal.replaceChildren();
@@ -193,6 +259,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   function inchide() {
     if (!activ) return;
+    opresteVideo();
     el.hidden = true;
     fundal.replaceChildren();
     el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis', 'fara-caseta', 'ascuns-text');

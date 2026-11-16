@@ -16,13 +16,21 @@ const CATEGORII = [
   ['sunete/efecte', 'Sunete: efecte'],
   ['sunete/muzica', 'Sunete: muzică'],
 ];
-const NUME_OK = /^[a-z0-9]+(?:_[a-z0-9]+)*\.(png|mp3)$/;
+const NUME_OK = /^[a-z0-9]+(?:_[a-z0-9]+)*\.(png|mp3|mp4)$/;
 // Sunetele se încarcă la fel ca imaginile, dar doar ca MP3 (merg în orice browser și în .exe)
 const eSunet = (nume) => /\.mp3$/i.test(nume);
-const fisierBun = (f) => f.type === 'image/png' || f.type === 'audio/mpeg' || /\.(png|mp3)$/i.test(f.name);
-// Cartonașul: imaginea, sau pentru un sunet butonul de ascultat
+// Filmulețele din vise (decis de autor): doar MP4, la evenimente
+const eVideo = (nume) => /\.mp4$/i.test(nume);
+const fisierBun = (f) => ['image/png', 'audio/mpeg', 'video/mp4'].includes(f.type) || /\.(png|mp3|mp4)$/i.test(f.name);
+// Cartonașul: imaginea, pentru un sunet butonul de ascultat, pentru un filmuleț filmulețul (cu butonul de pornit)
 const previzualizare = (cale, v) =>
-  eSunet(cale) ? `<audio class="sunet-card" controls preload="none" src="${urlImagine(cale)}?v=${v}"></audio>` : `<img loading="lazy" src="${urlImagine(cale)}?v=${v}">`;
+  eSunet(cale)
+    ? `<audio class="sunet-card" controls preload="none" src="${urlImagine(cale)}?v=${v}"></audio>`
+    : eVideo(cale)
+      ? `<video class="video-card" controls preload="metadata" src="${urlImagine(cale)}?v=${v}"></video>`
+      : `<img loading="lazy" src="${urlImagine(cale)}?v=${v}">`;
+// Ce fel de fișier cere un cartonaș lipsă (pentru textul „trage ... aici” și fereastra de ales fișierul)
+const felFisier = (cale) => (eSunet(cale) ? { nume: 'MP3-ul', accept: 'audio/mpeg,.mp3' } : eVideo(cale) ? { nume: 'MP4-ul', accept: 'video/mp4,.mp4' } : { nume: 'PNG-ul', accept: 'image/png' });
 
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
@@ -32,10 +40,10 @@ export function numeCorect(nume) {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
-    .replace(/\.(png|jpe?g|webp|mp3)$/, '')
+    .replace(/\.(png|jpe?g|webp|mp3|mp4)$/, '')
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '');
-  return eSunet(nume) ? `${baza || 'sunet'}.mp3` : `${baza || 'imagine'}.png`;
+  return eSunet(nume) ? `${baza || 'sunet'}.mp3` : eVideo(nume) ? `${baza || 'film'}.mp4` : `${baza || 'imagine'}.png`;
 }
 
 export function creeazaGalerie(container, comun, reincarcaImagini) {
@@ -64,15 +72,16 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       const nume = numeCorect(f.name);
       asteptare.push({ fisier: f, nume, categorie: ghicesteCategoria(nume), url: URL.createObjectURL(f) });
     }
-    if (respinse.length) alert(`Doar imagini PNG și sunete MP3. Nu am adăugat:\n${respinse.join('\n')}`);
+    if (respinse.length) alert(`Doar imagini PNG, sunete MP3 și filmulețe MP4. Nu am adăugat:\n${respinse.join('\n')}`);
     arata();
   }
 
   function verificaRand(r) {
     const cale = `${r.categorie}/${r.nume}`;
-    if (!NUME_OK.test(r.nume)) return { ok: false, text: 'Nume invalid: doar litere mici, cifre și _ (fără diacritice), terminat în .png (sau .mp3 la sunete)' };
+    if (!NUME_OK.test(r.nume)) return { ok: false, text: 'Nume invalid: doar litere mici, cifre și _ (fără diacritice), terminat în .png (.mp3 la sunete, .mp4 la filmulețe)' };
     if (!r.categorie) return { ok: false, text: 'Alege categoria.' };
     if (eSunet(r.nume) !== r.categorie.startsWith('sunete/')) return { ok: false, text: 'Sunetele merg la categoriile „Sunete”, imaginile la celelalte.' };
+    if (eVideo(r.nume) && r.categorie !== 'events') return { ok: false, text: 'Filmulețele (MP4) merg la categoria „Evenimente”.' };
     const c = cerutePeCale().get(cale);
     const exista = comun.imagini.has(cale);
     const parti = [];
@@ -86,8 +95,12 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
 
   async function incarcaDirect(cale, fisier) {
     if (!fisier) return;
-    if (eSunet(cale) ? !/\.mp3$/i.test(fisier.name) && fisier.type !== 'audio/mpeg' : fisier.type !== 'image/png' && !fisier.name.toLowerCase().endsWith('.png'))
-      return alert(eSunet(cale) ? 'Aici merge doar un fișier MP3.' : 'Doar fișiere PNG.');
+    const potrivit = eSunet(cale)
+      ? /\.mp3$/i.test(fisier.name) || fisier.type === 'audio/mpeg'
+      : eVideo(cale)
+        ? /\.mp4$/i.test(fisier.name) || fisier.type === 'video/mp4'
+        : fisier.type === 'image/png' || fisier.name.toLowerCase().endsWith('.png');
+    if (!potrivit) return alert(eSunet(cale) ? 'Aici merge doar un fișier MP3.' : eVideo(cale) ? 'Aici merge doar un filmuleț MP4.' : 'Doar fișiere PNG.');
     try {
       await api(`imagini/${cale}`, { method: 'PUT', body: fisier });
     } catch (e) {
@@ -190,13 +203,19 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
                 ${extraCard(c)}
               </div>`
             : `<div class="card card-lipsa ${c.optional ? 'optional' : ''}" data-cale="${esc(c.cale)}" title="Trage un PNG aici: se încarcă direct cu numele ăsta">
-                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage ${eSunet(c.cale) ? 'MP3-ul' : 'PNG-ul'} aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
+                <div class="loc-lipsa">${c.optional ? 'opțional' : 'lipsă'}<br><small>trage ${felFisier(c.cale).nume} aici<br>sau</small><button class="btn alege-aici">Alege fișierul</button></div>
                 <div class="cale"><a href="#" class="copiaza" data-nume="${esc(c.cale.split('/').pop())}">${esc(c.cale)}</a></div>
                 <div class="sumar">${esc(c.scop)}</div>
                 ${c.grup === 'Hărți de luptă' ? extraCard(c) : ''}
               </div>`,
         )
         .join('');
+    // Visele (cerut de autor): fiecare vis în grupul lui, cu un buton care îl pornește în Testare, ca după somn
+    const vise = new Map(
+      (comun.date.events?.evenimente || [])
+        .filter((ev) => ev.laTrezire && ev.dialog)
+        .map((ev) => [`Eveniment: ${comun.date.dialoguri?.[ev.dialog]?.grup || ev.dialog}`, ev]),
+    );
     const sectiuneGrup = (g) => {
       // Încărcate primele, apoi ce lipsește (obligatoriile înaintea opționalelor)
       const lista = cerute
@@ -208,10 +227,13 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       const complet = gataObl === obl.length;
       // Un grup cu tot încărcat (și opționalele) stă închis (cerut de autor): nu mai e nimic de făcut acolo
       const totul = lista.every((c) => comun.imagini.has(c.cale));
-      if (totul && ascundeComplete) return '';
+      // Un vis rămâne la vedere și când e complet: are butonul lui
+      const vis = vise.get(g);
+      if (totul && ascundeComplete && !vis) return '';
       return `<details class="grup-galerie" data-grup="${esc(g)}" ${(inchiseImplicit.has(g) || totul) && !deschise.has(g) ? '' : 'open'}>
         <summary><b>${esc(g)}</b> <span class="${complet ? 'bine' : 'avertisment'}">${gataObl} / ${obl.length} obligatorii</span>
-        <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span></summary>
+        <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span>
+        ${vis ? `<button class="btn principal porneste-vis" data-vis="${esc(vis.id)}" title="Deschide Testarea: Vale se culcă în camera lui, apoi vine visul (cu filmulețul, dacă e încărcat)">▶ Pornește visul</button>` : ''}</summary>
         <div class="grila">${carduri(lista)}</div></details>`;
     };
     const nefolosite = incarcate.filter((c) => !cerutSet.has(c));
@@ -222,15 +244,15 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     container.innerHTML = `
       <div class="galerie-impartita"><aside class="coloana-incarcare">
       <h2>Încarcă imagini și sunete</h2>
-      <div class="zona-drop">Trage aici fișierele PNG (sau sunetele MP3) ori apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _). Poți trage multe deodată.</small></div>
-      <input type="file" multiple accept="image/png,audio/mpeg,.mp3" hidden>
+      <div class="zona-drop">Trage aici fișierele PNG (sau sunetele MP3, filmulețele MP4) ori apasă ca să le alegi.<br><small>Numele se corectează singure (litere mici, fără diacritice, cu _). Poți trage multe deodată.</small></div>
+      <input type="file" multiple accept="image/png,audio/mpeg,.mp3,video/mp4,.mp4" hidden>
       ${
         asteptare.length
           ? `<div class="asteptare">${asteptare
               .map((r, i) => {
                 const v = verificaRand(r);
                 return `<div class="rand-asteptare" data-i="${i}">
-                  ${eSunet(r.nume) ? `<audio class="miniatura" controls preload="none" src="${r.url}"></audio>` : `<img class="miniatura" src="${r.url}">`}
+                  ${eSunet(r.nume) ? `<audio class="miniatura" controls preload="none" src="${r.url}"></audio>` : eVideo(r.nume) ? `<video class="miniatura" muted preload="metadata" src="${r.url}"></video>` : `<img class="miniatura" src="${r.url}">`}
                   <div class="campuri-asteptare">
                     <input type="text" class="nume" value="${esc(r.nume)}">
                     <select class="categorie"><option value="">Alege categoria...</option>${CATEGORII.map(([c, e]) => `<option value="${c}" ${c === r.categorie ? 'selected' : ''}>${esc(e)}</option>`).join('')}</select>
@@ -279,7 +301,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       card.querySelector('.alege-aici').onclick = () => {
         const i = document.createElement('input');
         i.type = 'file';
-        i.accept = eSunet(cale) ? 'audio/mpeg,.mp3' : 'image/png';
+        i.accept = felFisier(cale).accept;
         i.onchange = () => incarcaDirect(cale, i.files[0]);
         i.click();
       };
@@ -337,6 +359,14 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
         e.preventDefault();
         await navigator.clipboard?.writeText(a.dataset.nume).catch(() => {});
         a.textContent = `${a.textContent.replace(/ ✓ copiat$/, '')} ✓ copiat`;
+      };
+    }
+    // „Pornește visul”: butonul stă pe titlul grupului, deci clicul nu trebuie să-l și deschidă sau închidă
+    for (const b of container.querySelectorAll('.porneste-vis')) {
+      b.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        document.dispatchEvent(new CustomEvent('porneste-vis', { detail: b.dataset.vis }));
       };
     }
     for (const b of container.querySelectorAll('.locuri-lupta')) {

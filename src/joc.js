@@ -1465,9 +1465,28 @@ addEventListener('keydown', (e) => {
   if (!dialog.activ() && d.parinte) mergi(d.parinte);
 });
 
+// Din galerie (editor), „Pornește visul” (cerut de autor): jocul de test îl culcă pe Vale în camera lui și, după
+// imaginea somnului, pornește visul, ca după o noapte dormită; așa visele (și filmulețele lor) se văd oricând
+const visCerut = evenimente.find((e) => e.id === parametri.get('vis') && e.laTrezire);
+function pornesteVisulCerut(ev) {
+  // Un refresh al jocului de test nu mai pornește visul încă o dată
+  const url = new URL(location.href);
+  url.searchParams.delete('vis');
+  history.replaceState(null, '', url);
+  stare.reluare = null;
+  stare.luptaInCurs = null;
+  stare.scena = cfg.start.scena;
+  afiseaza();
+  const pat = lume.get(stare.scena)?.tinte?.find((t) => t.act?.tip === 'dormi')?.act;
+  const v = (pat?.varianteImagine || []).find((x) => verifica(x.conditii, context(stare))) || pat;
+  secventa.arata([v?.imagine].filter(Boolean), () => pornesteEveniment(ev.id, true), { automat: 2500, text: pat?.text || '' });
+}
+
 afiseaza();
-reiaDupaReincarcare();
-if (parametri.has('debug')) debug.comuta();
+if (visCerut) pornesteVisulCerut(visCerut);
+else reiaDupaReincarcare();
+// La un vis pornit din galerie, panoul debug rămâne închis (s-ar vedea peste filmuleț); se deschide cu F2
+if (parametri.has('debug') && !visCerut) debug.comuta();
 
 // Toate imaginile jocului se încarcă de la pornire (decis de autor), ca trecerile (noaptea pe hartă, imaginile
 // evenimentelor) să nu se mai vadă încărcându-se. Întâi scena de acum, apoi restul; un ecran arată cât s-a ajuns.

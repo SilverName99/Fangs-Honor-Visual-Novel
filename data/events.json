@@ -850,7 +850,7 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Primul vis",
-      "grup": "Visele lui Vale",
+      "grup": "Primul vis",
       "dialog": "vis_1",
       "conditii": {
         "stare": {
@@ -907,7 +907,7 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Al doilea vis",
-      "grup": "Visele lui Vale",
+      "grup": "Al doilea vis",
       "dialog": "vis_2",
       "conditii": {
         "stare": {
@@ -921,7 +921,7 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Al treilea vis",
-      "grup": "Visele lui Vale",
+      "grup": "Al treilea vis",
       "dialog": "vis_3",
       "conditii": {
         "stare": {

@@ -73,6 +73,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 **Indiciile despre dragoni, în Actul 1**
 - **Hârtiile soldatului** (camera de sus a tavernei; fostul chiriaș, prietenul lui Roderick, căzut în bătălie): un solz cât palma, „pe care nu-l zgâria nicio sabie”, găsit „departe, dincolo de pădure”; semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; o hartă până la o crăpătură în pământ însemnată cu X: **portalul morții**. Roderick: „Ca și cum l-aș mai fi văzut undeva.”
 - **Visele**, doar după un somn peste noapte, cu ceață pe margini: primul (purtat de ceva uriaș care zboară, o căldură în piept „ca un al doilea foc”); al doilea (bătălia, Edwin căzut, ochiul lui trece în ochiul unui dragon); mai vin vise după anumite misiuni. **Semnele nu vin prin tigrul Kaiei.**
+- **Filmulețele din vise** (decis de autor): fiecare vis poate începe cu un filmuleț (`events/vis_N.mp4`, MP4, încărcat din galerie, la grupul visului): pe tot ecranul, fără text, cu ceața visului; un clic îl sare; fără el, visul începe cu imaginea, ca înainte. **Cum verifici:** galeria → grupul visului → „▶ Pornește visul” (Testarea: Vale doarme, apoi visul).
 - 📝 **Solzii de dragon**, cu Roderick, dincolo de gard: arată spre portalul morții.
 
 **Personajele cu taină**
@@ -565,7 +566,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
   1. drumul mare, gol, cu torțele înfipte în pământ; Vale stă în fața cuștii, iar wyvernul se trage înapoi și tremură, ca Ember, uitându-se **deasupra lui Vale**;
   2. (decis de autor) **Vale, văzut de sus**, se uită în jos: peste el și peste drum cade **umbra unui dragon**, cu aripile întinse de la un capăt al drumului la celălalt; dragonul nu se vede, iar cușca nu mai e acolo (decis de autor). Vale nu ridică ochii, dar simte că îl privește, cu ochiul auriu din al doilea vis. Căldura din piept, „ca un al doilea foc”, ca în primul vis.
 - La trezire: „Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?” (un indiciu că wyvernii nu sunt dragoni, fără să afle ce sunt).
-- **Imagini:** `events/vis_3_1.png`, `events/vis_3_2.png` (galeria: „Visele lui Vale”).
+- **Imagini:** `events/vis_3_1.png`, `events/vis_3_2.png`; filmulețul `events/vis_3.mp4` (opțional; galeria: „Al treilea vis”).
 
 **Cum verifici:** F2 → Stări: `kaia_wyverni_vazut` = `impreuna` (sau joacă „Convoiul” cu Kaia). Timp 03:30, acasă, în camera ta → Dormi → „Dormi până dimineața” → visul la trezire.
 
@@ -599,6 +600,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 ### ✅ Primul vis (nu e misiune)
 - **Prima noapte dormită** după discuția despre hârtii (oriunde; decis de autor: visele vin doar după un somn peste noapte, care prinde cel puțin 4 ore din 23–05, nu după câteva ore): Vale visează că e purtat de ceva uriaș care zboară, simte o căldură în piept „ca un al doilea foc”, apoi se trezește speriat.
 - **Imagine:** `events/vis_1.png`. Ca toate visele, cu ceață pe marginile ecranului (`vis: true` la dialog).
+- **Filmulețul** (decis de autor): `events/vis_1.mp4`, 15 secunde: ochii lui Vale de aproape, care se deschid încet, ca la trezire; apoi camera se dă înapoi până la încadrarea din `vis_1.png` (Vale pe spatele dragonului, deasupra norilor) și, la sfârșit, dragonul plonjează. Galeria: „Primul vis”.
 
 **Cum verifici:** după „Hârtiile soldatului”, acasă, seara sau noaptea → „Dormi până dimineața” (sau „Dormi 6 ore” de la 22:00) → după imaginea somnului, visul. „Dormi 2 ore” nu aduce visul.
 
@@ -631,7 +633,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Al doilea vis (nu e misiune)
 - **La primul somn peste noapte** după „Locul unde a căzut tata” (decis de autor), cu ceață: copacul **înflorit** și soldații satului, orcii care vin în fugă; lupta, cu **Edwin** în prim-plan; un orc mare îl lovește pe Edwin drept în piept și îi crapă platoșa pe mijloc (decis de autor: de aici, misiunea lui Bram cu platoșa); apoi Edwin căzut cu fața la pământ, cu ochii deschiși spre noi (imaginea se apropie încet, `apropiere`), din care ochiul lui trece în **ochiul uriaș al unui dragon** (`trecere`), care stă doar câteva secunde, fără text, și trece singur (`durata` la replică). Vale se trezește ud de sudoare (`trezire`: imaginea și ceața dispar).
-- **Imaginile:** `events/vis_2_1.png` … `vis_2_5.png` (4 = Edwin căzut, 5 = ochiul dragonului). Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
+- **Imaginile:** `events/vis_2_1.png` … `vis_2_5.png` (4 = Edwin căzut, 5 = ochiul dragonului); filmulețul `events/vis_2.mp4` (opțional; galeria: „Al doilea vis”). Edwin poartă echipamentul lui (`items/coif_tata.png`, `platosa_tata.png`, `jambiere_tata.png`, `sabia_tata.png`).
 
 **Cum verifici:** după „Locul”, acasă, seara → „Dormi până dimineața”.
 

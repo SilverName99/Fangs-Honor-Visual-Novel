@@ -792,3 +792,20 @@ svg.editor-zone.desen {
 
 /* Întâmplările care nu sunt misiuni (visele, bandajul): mai șterse, ca să nu pară misiuni în plus */
 .misiune-casuta.nu-misiune > summary { opacity: 0.55; }
+
+/* Visele (cerut de autor): butonul de pe titlul grupului pornește visul în Testare */
+.grup-galerie summary .porneste-vis {
+  margin-left: 12px;
+  padding: 2px 10px;
+  font-size: 0.85em;
+  vertical-align: middle;
+}
+/* Filmulețul din cartonaș: cât o imagine, cu butoanele lui */
+.card .video-card {
+  display: block;
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 4px;
+}

@@ -2778,16 +2778,35 @@ svg.zone {
   inset: 0;
   pointer-events: none;
 }
+/* Ceața stă peste tot ce e în fundal, și peste ce e pus deasupra (filmulețul, imaginea care trece încet peste alta) */
 .dialog.vis .fundal-dialog::before {
+  z-index: 1;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, transparent 55%, #000 100%);
   mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, transparent 55%, #000 100%);
 }
 .dialog.vis .fundal-dialog::after {
+  z-index: 2;
   background:
     radial-gradient(ellipse 62% 58% at 50% 46%, transparent 50%, rgba(205, 214, 230, 0.35) 78%, rgba(225, 230, 240, 0.8) 100%);
   animation: ceata-vis 7s ease-in-out infinite alternate;
+}
+/* Filmulețul din vis (decis de autor): pe tot ecranul, sub ceață; apare lin peste ce era înainte */
+.fundal-dialog .strat-video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity calc(0.6s / var(--viteza, 1)) ease-out;
+}
+.fundal-dialog .strat-video.vizibil {
+  opacity: 1;
+}
+.fundal-dialog .strat-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* Visul (decis de autor): imaginea lui Edwin se apropie încet, apoi ochiul dragonului apare peste ea */
 .fundal-dialog .apropiere-lenta {

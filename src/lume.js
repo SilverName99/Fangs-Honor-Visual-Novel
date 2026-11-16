@@ -544,8 +544,11 @@ export function imaginiCerute(date, scene) {
   // Imaginile de sub replici (un dialog care se petrece peste o imagine, de exemplu orcul care ia fierul lui Bram)
   for (const [id, d] of Object.entries(date.dialoguri || {})) {
     const imagini = [...new Set(Object.values(d.noduri || {}).map((n) => n.imagine).filter(Boolean))];
-    if (!imagini.length) continue;
+    // Filmulețele din vise (MP4): opționale, fiindcă fără ele visul începe cu imaginea lui, ca înainte
+    const filme = [...new Set(Object.values(d.noduri || {}).map((n) => n.video).filter(Boolean))];
+    if (!imagini.length && !filme.length) continue;
     grup = `Eveniment: ${d.grup || id}`;
+    filme.forEach((cale) => adauga(cale, `${d.grup || id}: filmulețul (MP4, la început; fără el, visul începe cu imaginea)`, true));
     imagini.forEach((cale, i) => adauga(cale, `${d.grup || id}: imaginea ${i + 1} (sub replici)`));
   }
   grup = 'Portrete';

@@ -6657,18 +6657,24 @@
   },
   "vis_1": {
     "_nota": "CIORNĂ (Claude). Decis de autor: primul vis, data următoare când doarme Vale, după discuția cu Roderick despre hârtii. Doar un semn: Vale nu știe încă nimic.",
-    "grup": "Visele lui Vale",
+    "grup": "Primul vis",
     "partener": null,
     "vis": true,
-    "start": "a",
+    "start": "film",
     "noduri": {
+      "film": {
+        "video": "events/vis_1.mp4",
+        "urmator": "a",
+        "_nota": "Decis de autor: filmulețul visului, la început, pe tot ecranul, fără text (un clic îl sare). Lipsește = visul începe cu imaginea, ca înainte."
+      },
       "a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
         "text": "Vânt. Un vânt rece, puternic, și pământul departe, foarte departe sub mine.",
         "imagine": "events/vis_1.png",
-        "urmator": "b"
+        "urmator": "b",
+        "trecere": 1000
       },
       "b": {
         "vorbitor": "vale",
@@ -10371,18 +10377,24 @@
   },
   "vis_2": {
     "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește.",
-    "grup": "Visele lui Vale",
+    "grup": "Al doilea vis",
     "partener": null,
     "vis": true,
-    "start": "v1",
+    "start": "film",
     "noduri": {
+      "film": {
+        "video": "events/vis_2.mp4",
+        "urmator": "v1",
+        "_nota": "Decis de autor: filmulețul visului, la început, pe tot ecranul, fără text (un clic îl sare). Lipsește = visul începe cu imaginea, ca înainte."
+      },
       "v1": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
         "text": "Copacul e alb. Alb de flori. Și aerul miroase a primăvară.",
         "imagine": "events/vis_2_1.png",
-        "urmator": "v2"
+        "urmator": "v2",
+        "trecere": 1000
       },
       "v2": {
         "vorbitor": "vale",
@@ -11811,18 +11823,24 @@
   },
   "vis_3": {
     "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Decis de autor: pe a doua imagine, Vale văzut de sus, se uită în jos, acoperit de umbra unui dragon (se vede doar umbra). Ales de Claude: wyvernul se teme de ceva de deasupra lui Vale; Vale nu ridică ochii, dar simte ochiul din al doilea vis. Căldura din piept rămâne ca în primul vis.",
-    "grup": "Visele lui Vale",
+    "grup": "Al treilea vis",
     "partener": null,
     "vis": true,
-    "start": "w1",
+    "start": "film",
     "noduri": {
+      "film": {
+        "video": "events/vis_3.mp4",
+        "urmator": "w1",
+        "_nota": "Decis de autor: filmulețul visului, la început, pe tot ecranul, fără text (un clic îl sare). Lipsește = visul începe cu imaginea, ca înainte."
+      },
       "w1": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
         "text": "Drumul mare, noaptea. Praful nu se mai așază: plutește în aer ca ceața.",
         "imagine": "events/vis_3_1.png",
-        "urmator": "w2"
+        "urmator": "w2",
+        "trecere": 1000
       },
       "w2": {
         "vorbitor": "vale",

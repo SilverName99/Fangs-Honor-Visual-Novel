@@ -208,6 +208,8 @@ export function creeazaSunet(date) {
 
 // Volumele din Opțiuni
 export const volumeSunet = () => ({ ...volume });
+// Filmulețele din vise se aud cât efectele (și tac cu „Fără sunet”)
+export const volumEfecte = () => nivel('efecte');
 export function seteazaVolum(cheie, valoare) {
   volume[cheie] = valoare;
   try {
