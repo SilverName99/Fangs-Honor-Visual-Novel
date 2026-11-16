@@ -1,6 +1,6 @@
 # Lumea jocului (lore)
 
-Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 apar doar indicii (CLAUDE.md, secțiunea 6). Se completează când autorul mai adaugă ceva; nimic de aici nu se inventează. „De lămurit” = încă nehotărât.
+Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 apar doar indicii (CLAUDE.md, secțiunea 6). Se completează când autorul mai adaugă ceva; nimic de aici nu se inventează. „De lămurit” = încă nehotărât. Pe scurt, în ordine (ce s-a întâmplat până începe povestea lui Vale): `docs/misiuni.md`, „Lumea, pe scurt”.
 
 ## Familia Lightfinder și bătălia de la copac
 
