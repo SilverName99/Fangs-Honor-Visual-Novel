@@ -10376,7 +10376,7 @@
     }
   },
   "vis_2": {
-    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește. Filmulețul (decis de autor): events/vis_2.mp4, doar ultima secvență, Edwin căzut → ochiul dragonului, după „Nu... nu, nu, nu!”.",
+    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 5 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi rămâne pentru câteva replici ale lui Vale (decis de autor: ca visul să nu se închidă prea repede), apoi Vale se trezește. Filmulețul (decis de autor): events/vis_2.mp4, doar ultima secvență, Edwin căzut → ochiul dragonului, după „Nu... nu, nu, nu!”.",
     "grup": "Al doilea vis",
     "partener": null,
     "vis": true,
@@ -10443,9 +10443,9 @@
       "film": {
         "video": "events/vis_2.mp4",
         "tine": 2500,
-        "urmator": "v10",
+        "urmator": "o1",
         "faraVideo": "v8b",
-        "_nota": "Filmulețul visului (decis de autor: doar ultima secvență): Edwin căzut, camera intră în ochiul lui, care devine ochiul dragonului (Dreamina, „Primul și ultimul cadru”, vis_2_4.png → vis_2_5.png). Ochiul mai stă 2,5 secunde (ales de Claude). Fără filmuleț, visul merge cu imaginile 4 și 5."
+        "_nota": "Filmulețul visului (decis de autor: doar ultima secvență): Edwin căzut, camera intră în ochiul lui, care devine ochiul dragonului (Dreamina, „Primul și ultimul cadru”, vis_2_4.png → vis_2_5.png). Ochiul mai stă 2,5 secunde (ales de Claude), apoi rămâne pentru câteva replici ale lui Vale (decis de autor). Fără filmuleț, visul merge cu imaginile 4 și 5."
       },
       "v8b": {
         "imagine": "events/vis_2_4.png",
@@ -10458,8 +10458,45 @@
         "imagine": "events/vis_2_5.png",
         "durata": 3000,
         "trecere": 1600,
-        "urmator": "v10",
-        "_nota": "Ochiul de dragon (decis de autor): apare încet peste ochiul lui Edwin, stă câteva secunde, fără text; trece singur."
+        "urmator": "o1",
+        "_nota": "Ochiul de dragon (decis de autor): apare încet peste ochiul lui Edwin, stă câteva secunde, fără text, apoi rămâne pentru replicile lui Vale."
+      },
+      "o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Tata nu mai e. Acolo unde era ochiul lui s-a deschis altul. Uriaș.",
+        "imagine": "events/vis_2_5.png",
+        "trecere": 1000,
+        "_nota": "Decis de autor: după filmuleț, ochiul dragonului rămâne pentru câteva replici ale lui Vale (ciorne de Claude), ca visul să nu se închidă prea repede.",
+        "urmator": "o2"
+      },
+      "o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Liniște. Nu mai aud nici fierul, nici strigătele. Nimic.",
+        "urmator": "o3"
+      },
+      "o3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Nu clipește. Vreau să fug și nu pot. Nu pot nici măcar să mă uit în altă parte.",
+        "urmator": "o4"
+      },
+      "o4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ar trebui să-mi fie frică. Și totuși... în ochiul ăsta nu e ură. E ca și cum m-ar fi așteptat.",
+        "urmator": "o5"
+      },
+      "o5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cine... ce ești?",
+        "urmator": "v10"
       },
       "v10": {
         "vorbitor": "vale",
@@ -11884,7 +11921,7 @@
       "film": {
         "video": "events/vis_3.mp4",
         "urmator": "w8",
-        "_nota": "Filmulețul visului (decis de autor): din fața cuștii, umbra iese de sub Vale, sfărâmă cușca și wyvernul, iar camera urcă deasupra lui (vis_3_1.png → vis_3_2.png). Fără el, visul trece direct la a doua imagine."
+        "_nota": "Filmulețul visului (decis de autor): close-up cu fața lui Vale, care se uită atent, încercând să înțeleagă ce are în față; camera trece în spatele lui, ca în prima imagine; umbra crește de sub el și sfărâmă cușca, iar wyvernul, speriat, țipă; imediat după, praful acoperă tot (camera nu se mai ridică). Dreamina, „Orice tip de referință”, cu vis_3_1.png și vis_3_2.png. După praf, a doua imagine apare încet. Fără el, visul trece direct la a doua imagine."
       },
       "w8": {
         "vorbitor": "vale",
