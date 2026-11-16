@@ -13,6 +13,7 @@ import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog, poateReveni } from './evenimente.js';
 import * as salvare from './salvare.js';
 import { creeazaDialog } from './dialog.js';
+import { preincarcaFilm, progresFilme, filmeleDialogului } from './filme.js';
 import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
@@ -470,10 +471,17 @@ function verificaEvenimente() {
   if (ev) pornesteEveniment(ev.id);
 }
 
+// Visul care vine după un somn (sau niciunul): „laTrezire”, cu condițiile lui și destule ore de noapte dormite
+function visulDupaSomn(minuteNoapte) {
+  const ctx = context(stare);
+  const destul = (ev) => minuteNoapte >= (ev.oreNoapte ?? cfg.somn?.oreNoaptePentruVis ?? 4) * 60;
+  return evenimente.find((ev) => ev.laTrezire && destul(ev) && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) || null;
+}
+
 // „fortat” (din panoul debug): pornește și un eveniment care s-a întâmplat deja
 function pornesteEveniment(id, fortat = false) {
   const ev = evenimente.find((e) => e.id === id);
-  if (!ev || dialog.activ() || secventa.activa()) return;
+  if (!ev || dialog.activ() || secventa.activa() || seDescarcaFilmul) return;
   // Și un eveniment pornit dintr-un efect respectă „repetare” (întâlnirea cu vânătoarea e o singură dată)
   if (!fortat && !poateReveni(ev, stare.evenimente[ev.id], ziua(stare))) return;
   noteazaEveniment(stare, ev, ziua(stare));
@@ -488,7 +496,7 @@ function pornesteEveniment(id, fortat = false) {
     if (ev.dialog) {
       aplicaEfecte(ev.efecte, joc);
       actualizeazaHud();
-      return vorbesteCu(null, ev.dialog);
+      return cuFilmele(ev.dialog, () => vorbesteCu(null, ev.dialog));
     }
     // „vorbesteCu”: după efecte, discuția obișnuită cu un personaj care tocmai a apărut (contrabandistul, după
     // așteptarea pe scăunel), ca și cum Vale l-ar fi apăsat: cu meniul, misiunile și intrarea în carte
@@ -508,6 +516,44 @@ function pornesteEveniment(id, fortat = false) {
   return true;
 }
 
+// Visele cu filmuleț (decis de autor): filmulețul se descarcă întreg înainte să pornească visul, ca să nu se oprească
+// apoi la jumătate ca să se mai încarce. Dacă durează, un ecran arată cât s-a descărcat (ca la pornirea jocului);
+// dacă e gata repede (sau era descărcat dinainte, în timpul somnului), ecranul nici nu apare
+let seDescarcaFilmul = false;
+function cuFilmele(idDialog, apoi) {
+  const filme = filmeleDialogului(dialoguri[idDialog]);
+  if (!filme.length) return apoi();
+  seDescarcaFilmul = true;
+  let ecran = null;
+  let umplere = null;
+  let text = null;
+  const arata = setTimeout(() => {
+    ecran = div('ecran-incarcare');
+    text = div('text-incarcare', 'Se pregătește visul...');
+    const bara = div('bara-incarcare');
+    umplere = div('umplere-incarcare');
+    bara.append(umplere);
+    ecran.append(text, bara);
+    ui.append(ecran);
+  }, 250);
+  const ceas = setInterval(() => {
+    if (!ecran) return;
+    const p = progresFilme(filme);
+    umplere.style.width = `${p * 100}%`;
+    text.textContent = `Se pregătește visul... ${Math.round(p * 100)}%`;
+  }, 100);
+  Promise.all(filme.map(preincarcaFilm)).then(() => {
+    clearTimeout(arata);
+    clearInterval(ceas);
+    seDescarcaFilmul = false;
+    if (ecran) {
+      ecran.classList.add('gata');
+      setTimeout(() => ecran.remove(), 400);
+    }
+    apoi();
+  });
+}
+
 // După un refresh: lupta în curs o ia de la capăt, discuția continuă de la replica la care rămăsese,
 // iar un eveniment oprit în timpul imaginilor se arată din nou (efectele lui nu se aplicaseră încă)
 function reiaDupaReincarcare() {
@@ -515,7 +561,7 @@ function reiaDupaReincarcare() {
   const r = stare.reluare;
   if (!r) return;
   stare.reluare = null;
-  if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine });
+  if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }));
   const ev = r.eveniment && evenimente.find((e) => e.id === r.eveniment);
   if (!ev) return;
   if (r.text) return dialog.porneste({ ...caDialog(ev), _eveniment: ev.id }, { delaNod: 'e' });
@@ -794,10 +840,14 @@ const joc = {
   // un somn peste noapte (decis de autor: cel puțin „oreNoaptePentruVis” din 23–05, nu un pui de somn); un vis poate
   // cere mai puțin („oreNoapte” la eveniment): după convoiul Kaiei, Vale se culcă abia spre dimineață
   dupaSomn(minuteNoapte = 0) {
-    const ctx = context(stare);
-    const destul = (ev) => minuteNoapte >= (ev.oreNoapte ?? cfg.somn?.oreNoaptePentruVis ?? 4) * 60;
-    const vis = evenimente.find((ev) => ev.laTrezire && destul(ev) && verifica(ev.conditii, ctx) && poateReveni(ev, stare.evenimente[ev.id], ziua(stare)));
+    const vis = visulDupaSomn(minuteNoapte);
     if (vis) setTimeout(() => pornesteEveniment(vis.id), 0);
+  },
+  // Cât se vede imaginea somnului, filmulețul visului care urmează se descarcă deja (decis de autor: visul nu are
+  // voie să se oprească la jumătate); de obicei e gata până se trezește Vale
+  pregatesteVisul(minuteNoapte = 0) {
+    const vis = visulDupaSomn(minuteNoapte);
+    if (vis?.dialog) filmeleDialogului(dialoguri[vis.dialog]).forEach(preincarcaFilm);
   },
   // Ce a adus acțiunea urcă pe ecran, ca prada după vânătoare (decis de autor): monedele și ce mai dă munca,
   // lemnele, apa, florile; plus ce au dat efectele ei (carnea friptă de acasă). Fără câștig, doar mesajul
@@ -1477,6 +1527,7 @@ function pornesteVisulCerut(ev) {
   stare.luptaInCurs = null;
   stare.scena = cfg.start.scena;
   afiseaza();
+  if (ev.dialog) filmeleDialogului(dialoguri[ev.dialog]).forEach(preincarcaFilm);
   const pat = lume.get(stare.scena)?.tinte?.find((t) => t.act?.tip === 'dormi')?.act;
   const v = (pat?.varianteImagine || []).find((x) => verifica(x.conditii, context(stare))) || pat;
   secventa.arata([v?.imagine].filter(Boolean), () => pornesteEveniment(ev.id, true), { automat: 2500, text: pat?.text || '' });

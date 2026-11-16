@@ -143,6 +143,8 @@ export function creeazaActiuni(parinte, joc) {
       let minuteNoapte = 0;
       for (let t = 0; t < minute; t += 15) if (momentZi((acum + t) % MINUTE_ZI) === 'noaptea') minuteNoapte += Math.min(15, minute - t);
       const deZi = minuteNoapte === 0;
+      // Filmulețul visului care urmează (dacă vine unul) se descarcă cât se vede imaginea somnului
+      if (minuteNoapte > 0) joc.pregatesteVisul?.(minuteNoapte);
       cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => {
         joc.dupaActiune('Te-ai odihnit.');
         // Visele lui Vale vin la trezire (decis de autor: după anumite misiuni, data următoare când doarme), doar

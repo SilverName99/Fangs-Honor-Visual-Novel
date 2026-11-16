@@ -1,5 +1,6 @@
-import { elementImagine, schimbaImagine, urlImagine } from './imagini.js';
+import { elementImagine, schimbaImagine } from './imagini.js';
 import { volumEfecte } from './sunet.js';
+import { urlFilm, filmLipsa } from './filme.js';
 
 const div = (clasa) => Object.assign(document.createElement('div'), { className: clasa });
 
@@ -117,7 +118,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       f.laGata = null;
       laGata?.();
     };
-    v.src = urlImagine(src);
+    // Filmulețul descărcat întreg înainte de vis (din memorie), altfel cel de pe server
+    v.src = urlFilm(src);
     // Pornește direct de la bucata cerută (după un refresh în mijlocul visului), fără să arate întâi începutul
     if (deLa) v.currentTime = deLa;
     return f;
@@ -199,7 +201,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     activ.dupaImagine = null;
     // O bucată de filmuleț care încă mergea se oprește pe cadrul ei
     opresteFilmul();
-    const cuFilm = !!nod.video && !filmeLipsa.has(nod.video);
+    const cuFilm = !!nod.video && !filmeLipsa.has(nod.video) && !filmLipsa(nod.video);
     if (nod.video && !cuFilm && !nod.imagine && !nod.text) return arataNod(nod.faraVideo ?? nod.urmator ?? null, reluat);
     // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
     if (nod.trezire) {
