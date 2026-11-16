@@ -70,7 +70,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 - A doua zi după bătălia de lângă copacul mare, înainte să răsară soarele, **Bram** a strâns de pe câmp săbiile celor căzuți și le-a cărat la fierărie, câte patru odată. Le-a ținut de atunci într-un **cufăr**, lângă pat: nu le putea topi, nici da orcilor (ciornă de Claude).
 - Sunt **douăzeci și două** (ales de Claude): **sabia lui Edwin lipsește**. Bram a căutat-o toată noaptea și n-a găsit-o; e la Miriam, cu restul echipamentului lui Edwin (indiciu pentru misiunea ei de la 8/10).
-- Din ele, Bram a bătut **Toiagul celor 23**: oțel negru, cu dungi argintii încolăcite, cu un loc în formă de romb în cap, unde Elian a pus cristalul. „Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.”
+- Din ele, Bram a bătut **Toiagul celor 23**: oțel negru, cu dungi argintii încolăcite, cu un romb gol în cap, în mijlocul căruia cristalul lui Elian plutește, fără să-l țină nimic (ales de Claude, după toiagul desenat de autor). „Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.”
 - **Elian i-a dat toiagul lui Vale** (decis de autor): are încredere în el și simte că ceva mare se apropie. Vale nu înțelege de ce el. Îl ține ascuns în cufărul de acasă, până în ziua cea mare.
 - **În lupta finală** (decis de autor): Vale îl ridică o singură dată; lumina orbește toți orcii și pune un scut de lumină pe fiecare aliat. E **prima dată când Vale folosește magia luminii**: un alt indiciu pentru trezirea lui.
 - Bram a jurat pe nicovala tatălui lui că nu spune nimănui despre Elian (ciornă de Claude).
