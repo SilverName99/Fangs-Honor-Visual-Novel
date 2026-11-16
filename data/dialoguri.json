@@ -12101,7 +12101,7 @@
     }
   },
   "lumina_padure": {
-    "_nota": "CIORNĂ (Claude). Misiunea „Lumina din pădure” (decis de autor): seara, în pădure, lupii îl încercuiesc pe Vale și îl rănesc; o lumină albă, orbitoare, îi alungă; Vale se trezește la marginea pădurii, vindecat, cu Elian lângă el, cu mâinile ascunse în mâneci, într-un cerc de iarbă arsă. Peste 4 imagini, fără luptă (nu se poate pierde).",
+    "_nota": "CIORNĂ (Claude). Misiunea „Lumina din pădure” (decis de autor): seara, în pădure, lupii îl încercuiesc pe Vale și îl rănesc; o lumină albă, orbitoare, îi alungă; Vale se trezește la marginea pădurii, vindecat, cu Elian lângă el, cu mâinile ascunse în mâneci, într-un cerc de iarbă arsă. Peste 5 imagini, fără luptă (nu se poate pierde).",
     "grup": "Elian: lumina din pădure",
     "partener": "mag",
     "start": "l1",
@@ -12119,20 +12119,43 @@
         "gand": true,
         "emotie": "normal",
         "text": "Culeg trei flori, cu grijă, cum m-a învățat Elian. Când mă ridic, pădurea s-a făcut neagră de tot.",
+        "urmator": "l2b"
+      },
+      "l2b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și e prea liniște. Nicio pasăre, niciun greier. Doar frunzele foșnesc undeva în spatele meu, deși nu bate vântul.",
+        "imagine": "events/lumina_padure_1b.png",
+        "_nota": "Decis de autor: lupii se arată întâi printre copaci și îi dau târcoale, iar Vale îi simte și vrea să se uite în spate.",
+        "urmator": "l2c"
+      },
+      "l2c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Printre trunchiuri trece o umbră cenușie. Apoi încă una, de partea cealaltă. Se rotesc în jurul meu, încet, la marginea întunericului, fără grabă.",
+        "urmator": "l2d"
+      },
+      "l2d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Simt o privire în ceafă. Strâng florile în pumn până se strivesc. Vreau să mă uit în spate. Știu că n-ar trebui.",
         "urmator": "l3"
       },
       "l3": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și în negrul dintre copaci se aprind ochi. Doi. Patru. Șase.",
+        "text": "Mă uit. Și în negrul dintre copaci se aprind ochi. Doi. Patru. Șase.",
         "urmator": "l4"
       },
       "l4": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Lupii ies din întuneric fără niciun sunet. Mă încercuiesc încet, cu capetele jos, cu colții la vedere.",
+        "text": "Lupii ies din întuneric fără niciun sunet. Cercul se strânge, cu capetele jos, cu colții la vedere.",
         "imagine": "events/lumina_padure_2.png",
         "urmator": "l5"
       },

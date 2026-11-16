@@ -391,17 +391,18 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Lumina din pădure (+1)
 - **Pornește** (decis de autor: **nu se poate refuza**): după „Pasărea Linei” (dusă sau refuzată), la Elian: „Pari îngrijorat, frate Elian. !” → vine iarna, la Marginea copiii tușesc, iar din luminița-nopții face un ceai; floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica → „Ți le aduc diseară, frate Elian.” (singura alegere).
-- **Pasul 1:** seara (18–23), când Vale ajunge în pădure, pornește singură, peste 4 imagini (ales de Claude: fără luptă, ca să nu se poată pierde):
-  1. la apus, Vale culege trei flori; în întuneric se aprind ochi;
-  2. lupii îl încercuiesc, îl mușcă, Vale cade;
-  3. dintre copaci, o lumină albă, orbitoare; lupii fug schelălăind;
-  4. Vale se trezește la marginea pădurii, cu rănile închise; lângă el, Elian, palid, cu mâinile ascunse în mâneci: „Te-am găsit așa. Ai avut noroc.” Iarba e arsă într-un cerc perfect, iar pe sub mâneci palmele lui încă lucesc (indiciul mare, decis de autor).
+- **Pasul 1:** seara (18–23), când Vale ajunge în pădure, pornește singură, peste 5 imagini (ales de Claude: fără luptă, ca să nu se poată pierde):
+  1. la apus, Vale culege trei flori;
+  2. (decis de autor, ca atacul să nu vină prea brusc) se face întuneric și e prea liniște; lupii se arată printre copaci și îi dau târcoale, iar Vale îi simte și vrea să se uite în spate; când se uită, în întuneric se aprind ochi;
+  3. lupii îl încercuiesc, îl mușcă, Vale cade;
+  4. dintre copaci, o lumină albă, orbitoare; lupii fug schelălăind;
+  5. Vale se trezește la marginea pădurii, cu rănile închise; lângă el, Elian, palid, cu mâinile ascunse în mâneci: „Te-am găsit așa. Ai avut noroc.” Iarba e arsă într-un cerc perfect, iar pe sub mâneci palmele lui încă lucesc (indiciul mare, decis de autor).
   Ține 3 ore și ia 20 stamina (ales de Claude).
 - **Pasul 2:** la Elian, „Frate Elian, ce s-a întâmplat în pădure?” → „Unele lucruri le vezi abia când ești gata să le vezi, Vale. Iar eu nu știu încă dacă ești.”
 - **Recompensa:** încrederea lui Elian +1. **După ea apare „Cufărul” lui Bram** (decis de autor).
-- **Imagini:** `events/lumina_padure_1.png` … `lumina_padure_4.png` (galeria: „Elian: lumina din pădure”).
+- **Imagini:** `events/lumina_padure_1.png`, `lumina_padure_1b.png` (lupii printre copaci), `lumina_padure_2.png`, `lumina_padure_3.png`, `lumina_padure_4.png` (galeria: „Elian: lumina din pădure”, în ordinea din joc).
 
-**Cum verifici:** după „Pasărea Linei”, la Elian → „Pari îngrijorat” → „Ți le aduc diseară”. De pe hartă, în pădure, la 19:00 (la 17:40 nu pornește) → cele 4 imagini → Elian → „ce s-a întâmplat în pădure?” → +1. Abia acum Bram are „Ce vă frământă, domnule Bram? !”.
+**Cum verifici:** după „Pasărea Linei”, la Elian → „Pari îngrijorat” → „Ți le aduc diseară”. De pe hartă, în pădure, la 19:00 (la 17:40 nu pornește) → cele 5 imagini → Elian → „ce s-a întâmplat în pădure?” → +1. Abia acum Bram are „Ce vă frământă, domnule Bram? !”.
 
 ### ✅ Secretul lui Elian
 - **Pornește** (decis de autor): după „Cufărul” (Bram), cât Elian citește afară, pe scări (14–23): „Frate Elian, am nevoie de un sfat. !”. Vale îi spune de cele douăzeci și două de săbii. Elian are o singură idee, dar întâi trebuie să-i arate ceva: „Vreau.” pornește misiunea; „Nu încă” o lasă în meniu.
