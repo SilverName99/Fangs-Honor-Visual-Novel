@@ -12121,7 +12121,7 @@
     }
   },
   "lumina_padure": {
-    "_nota": "CIORNĂ (Claude). Misiunea „Lumina din pădure” (decis de autor): seara, în pădure, lupii îl încercuiesc pe Vale și îl rănesc; o lumină albă, orbitoare, îi alungă; Vale se trezește la marginea pădurii, vindecat, cu Elian lângă el, cu mâinile ascunse în mâneci, într-un cerc de iarbă arsă. Peste 5 imagini, fără luptă (nu se poate pierde).",
+    "_nota": "CIORNĂ (Claude). Misiunea „Lumina din pădure” (decis de autor): seara, în pădure, lupii îl încercuiesc pe Vale și îl rănesc; Vale crede că e pierdut (o scenă tensionată, decis de autor); prim-planul feței lui, aproape leșinat; raze de lumină arzătoare alungă lupii; Vale se trezește la marginea pădurii, vindecat, cu Elian lângă el, cu mâinile ascunse în mâneci, într-un cerc de iarbă arsă. Peste 6 imagini, fără luptă (nu se poate pierde).",
     "grup": "Elian: lumina din pădure",
     "partener": "mag",
     "start": "l1",
@@ -12174,29 +12174,87 @@
       "l4": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "speriat",
         "text": "Lupii ies din întuneric fără niciun sunet. Cercul se strânge, cu capetele jos, cu colții la vedere.",
         "imagine": "events/lumina_padure_2.png",
+        "urmator": "l4b"
+      },
+      "l4b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Caut din ochi un băț, o piatră, orice. În mână am doar trei flori strivite.",
         "urmator": "l5"
       },
       "l5": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "ranit",
         "text": "Primul sare. Îi simt colții în braț, apoi pământul în spate. Al doilea mă apucă de picior.",
+        "urmator": "l5b"
+      },
+      "l5b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Strig. Nu mă aude nimeni. Satul e prea departe, iar pădurea înghite tot.",
         "urmator": "l6"
       },
       "l6": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
-        "text": "Lovesc orbește, cu pumnii, cu picioarele. Nu mai văd nimic. Doar ochii lor, peste tot.",
+        "emotie": "ranit",
+        "text": "Lovesc orbește, cu pumnii, cu picioarele. Unul se trage înapoi, scheunând. În locul lui vin alți doi.",
+        "urmator": "l6b"
+      },
+      "l6b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Sunt prea mulți. N-am unde să fug. Nu de data asta.",
+        "urmator": "l6c"
+      },
+      "l6c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Brațul nu mă mai ascultă. Sângele e cald, iar pământul de sub mine, tot mai rece.",
+        "urmator": "l7a"
+      },
+      "l7a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Crengile se învârt deasupra mea. Mârâitul lor se aude tot mai departe, ca prin apă.",
+        "imagine": "events/lumina_padure_2b.png",
+        "trecere": 1200,
+        "urmator": "l7b"
+      },
+      "l7b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "ranit",
+        "text": "Deci așa se termină. În pădure, singur, pentru trei flori.",
+        "urmator": "l7c"
+      },
+      "l7c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Mama o să mă aștepte acasă. Cum l-a așteptat și pe tata.",
+        "urmator": "l7d"
+      },
+      "l7d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Iartă-mă, mamă...",
         "urmator": "l7"
       },
       "l7": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "ranit",
         "text": "Și atunci, dintre copaci...",
         "urmator": "l8"
       },
