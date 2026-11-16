@@ -10376,7 +10376,7 @@
     }
   },
   "vis_2": {
-    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește. Filmulețul (decis de autor): events/vis_2.mp4, făcut în Dreamina cu „Cadre multiple” din cele 5 imagini, trecerile de 3, 3, 3, 4 secunde; se oprește la imaginile 1, 2 și 3, cu replicile peste ele.",
+    "_nota": "CIORNĂ (Claude). Al doilea vis (decis de autor): la primul somn peste noapte după „Locul unde a căzut tata”; 4 imagini, cu ceață; ochiul de dragon stă câteva secunde, apoi Vale se trezește. Filmulețul (decis de autor): events/vis_2.mp4, făcut în Dreamina cu „Cadre multiple” din cele 5 imagini, trecerile de 2.5, 3.5, 3, 3 secunde; se oprește la imaginile 1, 2 și 3, cu replicile peste ele.",
     "grup": "Al doilea vis",
     "partener": null,
     "vis": true,
@@ -10417,7 +10417,7 @@
         "urmator": "v5",
         "video": "events/vis_2.mp4",
         "de": 0,
-        "pana": 3
+        "pana": 2.5
       },
       "v5": {
         "vorbitor": "vale",
@@ -10440,8 +10440,8 @@
         "imagine": "events/vis_2_3.png",
         "urmator": "v8",
         "video": "events/vis_2.mp4",
-        "de": 3,
-        "pana": 6
+        "de": 2.5,
+        "pana": 6.0
       },
       "v8": {
         "vorbitor": "vale",
@@ -10451,7 +10451,7 @@
       },
       "film": {
         "video": "events/vis_2.mp4",
-        "de": 6,
+        "de": 6.0,
         "tine": 2500,
         "urmator": "v10",
         "faraVideo": "v8b",
