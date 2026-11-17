@@ -542,8 +542,8 @@ export function creeazaLupta(parinte, joc) {
     joc.sunet.efect('lupta_cazut');
     f.el.classList.add('cazut');
     poza(f, 'cazut');
-    // Toboșarul răpus nu mai bate: ceilalți nu mai lovesc mai tare
-    if (f.toba) marcheazaToba();
+    // Cel căzut nu mai strălucește roșu; iar toboșarul răpus nu mai bate, deci nici ceilalți nu mai lovesc mai tare
+    marcheazaToba();
   }
 
   // Cât lovesc în plus cei din tabăra unui toboșar care a început să bată (și încă stă în picioare)
@@ -763,8 +763,9 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = true;
     await asteapta(300);
     if (!L) return;
-    // Toboșarul nu lovește și nu trece în față: bate tobele, de oriunde ar sta
-    if (f.toba) return executa(f, { tip: 'toba' });
+    // Toboșarul nu lovește și nu trece în față: bate tobele, de oriunde ar sta. Rămas singur, n-are pe cine întări:
+    // atunci se bate și el, cu bețele (altfel, cu un aliat care nu poate lovi, ca Elian, lupta nu s-ar mai termina)
+    if (f.toba && vii(f.tabara).some((x) => !x.toba)) return executa(f, { tip: 'toba' });
     const ci = cfg.inamici || {};
     if (!poateAtaca(f)) {
       const loc = locInFata(f);

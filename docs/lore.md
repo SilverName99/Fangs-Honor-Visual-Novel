@@ -147,7 +147,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Șoimii** (decis de autor, misiunea „Șoimul Străjerilor”): Străjerii își trimit vești cu șoimi, cu scrisoarea legată de picior. Ciornă de Claude: „Străjerii nu trimit șoimi pentru vești bune. Pentru vești bune, vin ei.”
 - **Pădurile care au tăcut** (decis de autor): departe, pădurile au tăcut; acolo sunt **animale moarte fără nicio rană, care nu putrezesc**, iar toți Străjerii sunt chemați acasă. Kaia **rămâne** lângă satul lui Vale și îi scrie alor ei că și pădurea de aici are nevoie de ajutor. Ce le-a omorât: TODO (de lămurit; s-ar potrivi cu „teroarea” lui Narco, moartea și morții vii).
 - **Glaive-ul Kaiei** (după imaginea autorului): un inel octogonal din opt bucăți de fier forjat, cu patru vârfuri de bronz, ca niște piramide, sus, jos și în părți.
-- **În Groapă** (decis de autor): Kaia vine pe jos, înfășurată în capă, cu gluga trasă și fața acoperită, fără Ember: dacă orcii l-ar vedea, l-ar vrea în cușcă, ca pe bestiile din convoi.
+- **În Groapă** (decis de autor): Kaia vine pe jos, deghizată, fără Ember: vânătorii orcilor îi caută urmele de când le desface capcanele (dacă o văd la față, îi ard tabăra), iar pe Ember l-ar vrea în cușcă, ca pe bestiile din convoi. Deghizarea i-o coase Miriam: o capă subțire, din blană de lup, strânsă pe corp, cu glugă adâncă, o fâșie peste față și brațele libere, ca să poată arunca.
 - De dezvoltat: clanul și așezările lor, prin povestea Kaiei, cu amintiri (flashback-uri).
 
 ## Actele poveștii (decis de autor)

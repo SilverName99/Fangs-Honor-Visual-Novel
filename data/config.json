@@ -276,7 +276,7 @@
       "_nota": "CIORNĂ (Claude).",
       "intro": "Torțele ard în jurul Groapei, iar orcii de pe bănci bat cu pumnii în scânduri. Câte valuri înfrunți?",
       "aliati": "Cine intră cu tine? Cel mult {max}.",
-      "singur": "N-am încă pe cine lua cu mine: nimeni nu are destulă încredere în mine. Intru singur."
+      "singur": "Încă nu intră nimeni cu mine. Poate dacă îi întreb pe cei care au încredere în mine..."
     },
     "inel": {
       "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): prima victorie în Groapă, oricare nivel, aduce verigheta înapoi.",
@@ -294,7 +294,8 @@
         },
         "eveniment": "inel_primit"
       }
-    }
+    },
+    "_notaAcord": "Decis de autor: în panoul Groapei apar doar cei care au spus da la întrebarea lor („Vrei să luptăm în Groapă împreună?”, stările groapa_aliat_<id>); Kaia, abia după capa de la Miriam."
   },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",

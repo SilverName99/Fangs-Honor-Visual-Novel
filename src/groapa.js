@@ -2,6 +2,7 @@ import { elementImagine } from './imagini.js';
 import { aplicaEfecte } from './efecte.js';
 import { context } from './stare.js';
 import { verifica } from './conditii.js';
+import { undeEste, intrareProgram } from './rutine.js';
 
 // Groapa (cerută de autor): arena orcilor de lângă poartă. Se intră apăsând pe poartă, seara; alegi nivelul (câte
 // valuri de orci) și cel mult doi aliați cu încrederea cerută, apoi lupta. Regulile și cifrele stau în config.json
@@ -23,10 +24,22 @@ export function creeazaGroapa(parinte, joc) {
   const nivel = (id) => (cfg().niveluri || []).find((n) => n.id === id);
   const personaj = (id) => joc.date.npcs.personaje.find((p) => p.id === id);
 
-  // Cine poate intra cu Vale: cei din listă care luptă și au încrederea cerută (decis de autor: cel puțin 4)
+  // Cine poate intra cu Vale: cei din listă care luptă, au încrederea cerută (decis de autor: cel puțin 4) și au
+  // spus da când i-a întrebat (decis de autor: întrebarea lor din meniu; Kaia, abia după capa de la Miriam)
   function aliatiPosibili() {
     const s = joc.stare;
-    return (cfg().aliati || []).filter((id) => personaj(id)?.lupta && (s.relatii?.[id] || 0) >= (cfg().incredereMin ?? 4));
+    return (cfg().aliati || []).filter(
+      (id) => personaj(id)?.lupta && (s.relatii?.[id] || 0) >= (cfg().incredereMin ?? 4) && s.stari?.[`groapa_aliat_${id}`] === 'da',
+    );
+  }
+  // Și trebuie să fie prin preajmă acum: nu cine doarme (Bram, după 22) sau e plecat (Kaia, cât lipsește după
+  // șoim sau stă lângă Ember rănit); ei apar stinși, cu motivul, ca jucătorul să știe de ce
+  function deCeLipseste(id) {
+    const ctx = context(joc.stare);
+    const p = personaj(id);
+    if (intrareProgram(p, ctx)?.doarme) return 'doarme acum';
+    if (undeEste(p, ctx) == null) return 'nu e prin preajmă acum';
+    return null;
   }
 
   // Ecranul Groapei: imaginea ei pe tot ecranul, iar peste ea panoul mic, cu pașii pe rând (nivelul, apoi aliații)
@@ -62,21 +75,23 @@ export function creeazaGroapa(parinte, joc) {
       const alesi = [];
       const note = cfg().note || {};
       const randuri = posibili.map((id) => {
+        const lipsa = deCeLipseste(id);
         const b = buton(personaj(id).nume, () => {
+          if (lipsa) return;
           const i = alesi.indexOf(id);
           if (i >= 0) alesi.splice(i, 1);
           else if (alesi.length < max) alesi.push(id);
           actualizeaza();
         });
-        if (note[id]) b.append(div('detaliu-groapa', note[id]));
-        return [id, b];
+        if (lipsa || note[id]) b.append(div('detaliu-groapa', lipsa || note[id]));
+        return [id, b, lipsa];
       });
       const intra = buton(posibili.length ? 'Intră în Groapă' : 'Intru singur', () => incepe(n, alesi));
       const indemn = div('text-panou-groapa');
       function actualizeaza() {
-        for (const [id, b] of randuri) {
+        for (const [id, b, lipsa] of randuri) {
           b.classList.toggle('ales', alesi.includes(id));
-          b.disabled = !alesi.includes(id) && alesi.length >= max;
+          b.disabled = !!lipsa || (!alesi.includes(id) && alesi.length >= max);
         }
         indemn.textContent = posibili.length
           ? (t.aliati || 'Cine intră cu tine? Cel mult {max}.').replace('{max}', String(max)) + (alesi.length ? ` (${alesi.length}/${max})` : '')

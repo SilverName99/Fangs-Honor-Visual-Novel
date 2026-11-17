@@ -2420,6 +2420,132 @@
         }
       },
       "_nota": "Decis de autor: colectorul ia verigheta Miriamei „pentru Groapă” (nu se poate refuza); la poartă îi spune lui Vale că o poate câștiga înapoi doar luptând o dată în Groapă, oricare nivel; atunci Groapa apare pe poartă și rămâne. +1 la Miriam."
+    },
+    {
+      "id": "miriam_capa",
+      "titlu": "Capa Kaiei",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": "CIORNĂ: Kaia ar lupta cu mine în Groapă, dar nu vrea ca orcii s-o recunoască. Mama i-a promis o capă subțire, cu glugă și o fâșie pentru față, dacă îi aduc blănile și sfoara.",
+      "oferta": {
+        "_nota": "Decis de autor: după ce Kaia nu vrea să se arate orcilor și Vale îi propune o deghizare.",
+        "text": "Mamă, mi-ai putea coase o capă?",
+        "nod": "capa_o1",
+        "conditii": {
+          "stare": {
+            "kaia_capa": "ceruta"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Adun 3 blăni de lup și un ghem de sfoară",
+          "numara": [
+            {
+              "obiect": "blana_lup",
+              "n": 3,
+              "nume": "blăni de lup"
+            },
+            {
+              "obiect": "sfoara",
+              "n": 1,
+              "nume": "sfoară"
+            }
+          ],
+          "sfat": "Blănile, de la vânătoarea de lupi. Sfoara, de la negustorul din piață.",
+          "indiciu": {
+            "text": "Despre capa Kaiei...",
+            "nod": "capa_ind"
+          }
+        },
+        {
+          "text": "Le duc mamei",
+          "gata": {
+            "existaStare": "capa_la_miriam"
+          },
+          "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, am adus blănile și sfoara.",
+            "nod": "capa_m1",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              },
+              "areCate": {
+                "blana_lup": 3,
+                "sfoara": 1
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre capa Kaiei...",
+            "nod": "capa_ind2"
+          }
+        },
+        {
+          "text": "Iau capa de la mama, a doua zi",
+          "gata": {
+            "existaStare": "capa_cusuta"
+          },
+          "sfat": "Mama o coase mâine, la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, e gata capa?",
+            "nod": "capa_g1",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              },
+              "nu": {
+                "marcatAzi": "capa_data"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre capa Kaiei...",
+            "nod": [
+              {
+                "nod": "capa_m_maine",
+                "conditii": {
+                  "marcatAzi": "capa_data"
+                }
+              },
+              {
+                "nod": "capa_ind2"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Îi duc capa Kaiei",
+          "la": "vanatoare",
+          "gata": {
+            "stare": {
+              "groapa_aliat_vanatoare": "da"
+            }
+          },
+          "sfat": "Kaia e la locul de campare dimineața (5–10) și după-amiaza (14–23).",
+          "predare": {
+            "text": "Kaia, ți-am adus ceva.",
+            "nod": "capa_k1",
+            "conditii": {
+              "areObiect": "capa_kaia"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1: i-a făcut plăcere să coasă pentru fata cu tigrul. Kaia vine cu mine în Groapă.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Kaia nu vrea să se arate orcilor în Groapă; Miriam îi coase o capă subțire, strânsă pe corp, cu glugă și o fâșie pentru față, din 3 blăni de lup și un ghem de sfoară (cantitățile: alese de Claude, TODO echilibru); a doua zi, ca la păpușă; i-o duci Kaiei, care de atunci vine cu tine în Groapă. +1 la Miriam."
     }
   ]
 }

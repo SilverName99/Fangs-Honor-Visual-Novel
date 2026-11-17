@@ -3531,7 +3531,7 @@ svg.zone {
 }
 
 /* Toba orcilor: cei întăriți au o strălucire roșiatică, iar toboșarul se scutură când bate */
-.luptator.intarit-toba .corp {
+.luptator.intarit-toba:not(.cazut) .corp:not(.lovit) {
   filter: drop-shadow(0 0 10px rgba(230, 60, 30, 0.85));
 }
 .luptator .corp.bate-toba {

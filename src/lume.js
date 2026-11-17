@@ -551,7 +551,13 @@ export function imaginiCerute(date, scene) {
     if (!imagini.length && !filme.length) continue;
     grup = `Eveniment: ${d.grup || id}`;
     filme.forEach((cale) => adauga(cale, `${d.grup || id}: filmulețul (MP4; fără el, visul merge doar cu imaginile)`, true));
-    imagini.forEach((cale, i) => adauga(cale, `${d.grup || id}: imaginea ${i + 1} (sub replici)`));
+    // Un nod poate trimite imaginea lui la alt grup („grupGalerie”): dialogul Miriamei are scene din mai multe misiuni
+    // (inelul, capa Kaiei), iar fiecare stă la misiunea ei
+    imagini.forEach((cale, i) => {
+      const g = Object.values(d.noduri).find((n) => n.imagine === cale && n.grupGalerie)?.grupGalerie;
+      grup = `Eveniment: ${g || d.grup || id}`;
+      adauga(cale, `${g || d.grup || id}: imaginea ${i + 1} (sub replici)`);
+    });
   }
   grup = 'Portrete';
   for (const p of date.npcs.personaje) {

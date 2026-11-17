@@ -1525,7 +1525,7 @@
     },
     {
       "id": "inel_colector",
-      "_nota": "Decis de autor: misiunea Miriamei „Inelul mamei”, nu se poate refuza. Pornește când Vale intră dimineața în bucătărie, cât mama e acolo, după ce poarta s-a deschis (fierul lui Bram), din ziua 9 (aleasă de Claude, după ce încep evenimentele cu orci).",
+      "_nota": "Decis de autor: misiunea Miriamei „Inelul mamei”, nu se poate refuza. Pornește când Vale intră dimineața în bucătărie, cât mama e acolo, după ce poarta s-a deschis (fierul lui Bram), din ziua 9 (aleasă de Claude, după ce încep evenimentele cu orci). Nu duminica: atunci e ziua taxei, iar colectorul vine oricum acasă.",
       "nume": "Inelul mamei: colectorul ia verigheta",
       "grup": "Misiunea Miriamei: inelul",
       "conditii": {
@@ -1544,6 +1544,11 @@
         },
         "misiune": {
           "bram_fier": "terminata"
+        },
+        "nu": {
+          "zileSaptamana": [
+            "duminica"
+          ]
         }
       },
       "repetare": "o_data",

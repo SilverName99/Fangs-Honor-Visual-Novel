@@ -513,6 +513,21 @@
       "pret": 0,
       "descriere": "Un inel subțire de aur, tocit pe margini. Tata i l-a pus mamei pe deget sub copacul mare.",
       "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): colectorul o ia „pentru Groapă”; Vale o câștigă înapoi acolo. Iconița: items/inel_miriam.png."
+    },
+    "sfoara": {
+      "nume": "Sfoară",
+      "tip": "material",
+      "stiva": 5,
+      "pret": 2,
+      "descriere": "Un ghem de sfoară de cânepă, subțire și tare.",
+      "_nota": "Pentru capa Kaiei (misiunea Miriamei „Capa Kaiei”); o vinde negustorul din piață (preț ales de Claude, TODO echilibru)."
+    },
+    "capa_kaia": {
+      "nume": "Capa Kaiei",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "O capă subțire, cenușie, din blană de lup, strânsă în talie, cu glugă adâncă și o fâșie pentru față. Cusută de mama, pentru Kaia.",
+      "_nota": "Misiunea Miriamei „Capa Kaiei” (decis de autor): deghizarea Kaiei pentru Groapă."
     }
   }
 }
