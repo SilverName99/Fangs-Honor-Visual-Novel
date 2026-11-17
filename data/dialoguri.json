@@ -11397,22 +11397,6 @@
           }
         },
         "spre": "capcane_a"
-      },
-      {
-        "_nota": "Misiunea „Inelul mamei” (decis de autor): colectorul îi spune de Groapă, iar Groapa apare pe poartă.",
-        "text": "Am venit pentru inelul mamei mele.",
-        "conditii": {
-          "loc": "poarta",
-          "misiune": {
-            "miriam_inel": "inceputa"
-          },
-          "nu": {
-            "stare": {
-              "groapa": "deschisa"
-            }
-          }
-        },
-        "spre": "inel1"
       }
     ],
     "noduri": {
@@ -12968,7 +12952,8 @@
         "efecte": {
           "stare": {
             "lumina_padure": "da"
-          }
+          },
+          "mergi": "casa"
         }
       }
     }

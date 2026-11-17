@@ -344,7 +344,14 @@ function dialogTaxa(text) {
   // lor): de exemplu să-i vândă capcanele desfăcute cu Kaia (decis de autor). Lângă plata taxei, nu în locul ei
   const extra = dialoguri.orc_colector;
   const ctx = context(stare);
-  const optiuni = (extra?.optiuni || []).filter((o) => verifica(o.conditii, ctx)).map(({ text, spre, efecte }) => ({ text, spre, efecte }));
+  // Și pașii de misiune care sunt la el („la”: colectorul; „Inelul mamei”), cu semnul lor, ca la ceilalți
+  // (decis de autor: „?” auriu deasupra colectorului); nodurile lor vin din dialogul misiunii și din al lui
+  const misiuni = optiuniMisiuni(joc, 'orc_colector');
+  const noduriMisiuni = Object.assign({}, ...misiuni.map((x) => dialoguri[x.dialog]?.noduri));
+  const optiuni = [
+    ...misiuni.map((x) => x.alegere),
+    ...(extra?.optiuni || []).filter((o) => verifica(o.conditii, ctx)).map(({ text, spre, efecte }) => ({ text, spre, efecte })),
+  ];
   const nod = stare.taxa.platita
     ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit, ...(optiuni.length ? { alegeri: [...optiuni, { text: 'Plec.', spre: null }] } : {}) }
     : {
@@ -357,7 +364,7 @@ function dialogTaxa(text) {
           { text: 'Nu am bani acum.', spre: null },
         ],
       };
-  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { ...(extra?.noduri || {}), c: nod } });
+  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { ...noduriMisiuni, ...(extra?.noduri || {}), c: nod } });
 }
 
 // ---------- pedepsele orcilor ----------
@@ -1461,7 +1468,6 @@ function afiseaza() {
     setTimeout(() => el.classList.contains('lipsa') && puneZona(), 600);
   }
 
-  puneSemneMisiuni(d, r, ctx, prezenti);
   baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));
 
   butoaneHud.replaceChildren(
@@ -1488,6 +1494,9 @@ function afiseaza() {
   }
 
   actualizeazaHud();
+  // Semnele după HUD: acolo se bifează pașii misiunilor, iar un pas făcut chiar acum (discuția cu colectorul despre
+  // inel) nu mai lasă „?” deasupra personajului până la următoarea redesenare
+  puneSemneMisiuni(d, r, ctx, prezenti);
   debug.arata();
 
   // Vecinii se preîncarcă în fundal, ca trecerea la ei să fie instantanee

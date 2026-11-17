@@ -2371,15 +2371,19 @@
       "pasi": [
         {
           "text": "Vorbesc cu colectorul despre inel",
+          "la": "orc_colector",
           "gata": {
             "stare": {
               "groapa": "deschisa"
             }
           },
           "sfat": "Colectorul stă dimineața la masa taxei (6–12), iar seara face de pază cu o torță (18–23).",
-          "indiciu": {
-            "text": "Despre inel...",
-            "nod": "inel_ind"
+          "predare": {
+            "text": "Am venit pentru inelul mamei mele.",
+            "nod": "inel1",
+            "conditii": {
+              "loc": "poarta"
+            }
           }
         },
         {
@@ -2419,7 +2423,8 @@
           }
         }
       },
-      "_nota": "Decis de autor: colectorul ia verigheta Miriamei „pentru Groapă” (nu se poate refuza); la poartă îi spune lui Vale că o poate câștiga înapoi doar luptând o dată în Groapă, oricare nivel; atunci Groapa apare pe poartă și rămâne. +1 la Miriam."
+      "_nota": "Decis de autor: colectorul ia verigheta Miriamei „pentru Groapă” (nu se poate refuza); la poartă îi spune lui Vale că o poate câștiga înapoi doar luptând o dată în Groapă, oricare nivel; atunci Groapa apare pe poartă și rămâne. +1 la Miriam. Semnele (decis de autor): „!” deasupra Miriamei și a bucătăriei cât evenimentul ar porni la sosire (ofertaEveniment); apoi „?” auriu deasupra colectorului, la poartă (pasul 1, „la” colector).",
+      "ofertaEveniment": "inel_colector"
     },
     {
       "id": "miriam_capa",
