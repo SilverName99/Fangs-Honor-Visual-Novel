@@ -196,10 +196,14 @@ export function creeazaDebug(parinte, joc) {
       const inamici = Object.entries(test.inamici).flatMap(([id, n]) => Array(n).fill(id)).slice(0, 6).map((id, i) => ({ id, ...LOCURI[i] }));
       if (!inamici.length) return joc.mesaj('Alege măcar un inamic.');
       el.hidden = true;
+      const fundal = test.fundal || joc.stare.scena;
       joc.pornesteLupta({
         nume: 'Luptă de test',
         test: true,
-        fundal: test.fundal || joc.stare.scena,
+        fundal,
+        // Pe harta unei lupte cu variantă (Groapa: Kaia pe jos, fără Ember; Elian doar cu vindecarea), aliații luptă
+        // ca acolo, ca testul să arate pozele și puterile din lupta adevărată
+        varianta: Object.values(joc.date.lupte.lupte).find((l) => l.fundal === fundal && l.varianta)?.varianta,
         fuga: true,
         armaVale: test.arma === '__echipat' ? undefined : test.arma,
         scutVale: test.scut,

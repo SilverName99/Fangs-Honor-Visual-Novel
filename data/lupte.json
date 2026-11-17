@@ -747,6 +747,7 @@
       "_nota": "Groapa (decisă de autor): nivelul ușor, un val; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Ușor",
       "fundal": "poarta.arena",
+      "varianta": "groapa",
       "fuga": false,
       "valuri": [
         [
@@ -773,6 +774,7 @@
       "_nota": "Groapa (decisă de autor): nivelul mediu, două valuri; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Mediu",
       "fundal": "poarta.arena",
+      "varianta": "groapa",
       "fuga": false,
       "valuri": [
         [
@@ -811,6 +813,7 @@
       "_nota": "Groapa (decisă de autor): nivelul greu, trei valuri, cu Campionul Groapei la sfârșit; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Greu",
       "fundal": "poarta.arena",
+      "varianta": "groapa",
       "fuga": false,
       "valuri": [
         [

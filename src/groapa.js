@@ -113,7 +113,6 @@ export function creeazaGroapa(parinte, joc) {
         ...def,
         id: n.lupta,
         aliatiAlesi: alesi,
-        varianta: 'groapa',
         victorie: cu(def.victorie, 'victorie'),
         infrangere: cu(def.infrangere, 'infrangere'),
       });
