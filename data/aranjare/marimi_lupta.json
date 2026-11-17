@@ -12,7 +12,8 @@
     "combat/vanatoare_idle.png": 202,
     "combat/vanatoare_lovit.png": 102,
     "combat/vanatoare_atac.png": 102,
-    "combat/scut_lumina.png": 200
+    "combat/scut_lumina.png": 200,
+    "combat/topor_aruncat.png": 90
   },
   "harti": {
     "lupta_taverna_parter": 115,
@@ -922,6 +923,36 @@
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
       "lupta_poarta_arena": 130
+    },
+    "combat/orc_aruncator_idle.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110,
+      "lupta_poarta_arena": 110
+    },
+    "combat/orc_aruncator_aparare.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110,
+      "lupta_poarta_arena": 110
+    },
+    "combat/orc_aruncator_atac.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110,
+      "lupta_poarta_arena": 110
     }
   }
 }
