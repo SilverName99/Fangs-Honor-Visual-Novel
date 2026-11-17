@@ -554,6 +554,22 @@ export function creeazaLupta(parinte, joc) {
     for (const f of L.toti) f.el.classList.toggle('intarit-toba', !f.cazut && bonusToba(f) > 0);
   }
 
+  // Toboșarul (decis de autor: e gras și nu poate lupta deloc): când nu mai rămâne în picioare niciun orc care să
+  // lovească, se prăbușește singur. Așa lupta se termină și când nimeni din echipă n-ar mai putea lovi (Elian).
+  // Întoarce true dacă a căzut cineva acum
+  function tobosariSinguri() {
+    let cazuti = false;
+    for (const tabara of ['inamic', 'aliat']) {
+      const ramasi = vii(tabara);
+      if (!ramasi.length || !ramasi.every((x) => x.toba)) continue;
+      for (const x of ramasi) cade(x);
+      jurnal(`${ramasi.map((x) => x.nume).join(', ')} rămâne singur. Gâfâie, se împiedică de tobă și se prăbușește.`);
+      cazuti = true;
+    }
+    if (cazuti) actualizeazaBare();
+    return cazuti;
+  }
+
   // Inamicii unui val sunt toți jos: vine valul următor (Groapa, lupta finală), altfel e victorie
   const inamiciInvinsi = () => (L.def.valuri && L.val + 1 < L.def.valuri.length ? valulUrmator() : termina('victorie'));
 
@@ -600,6 +616,7 @@ export function creeazaLupta(parinte, joc) {
     }
     if (f.viata > 0) return false;
     cade(f);
+    tobosariSinguri();
     f.bara = 0;
     actualizeazaBare();
     if (!vii('aliat').length) {
@@ -721,6 +738,10 @@ export function creeazaLupta(parinte, joc) {
       joc.sunet.efect('echipare');
       jurnal(`${sursa.nume} își schimbă arma: ${actiune.nume}.`);
       sursa.bara = 0;
+    } else if (actiune.tip === 'toba' && tobosariSinguri()) {
+      // Rămas singur (de exemplu chiar de la începutul unui val), toboșarul nu mai bate: cade
+      await asteapta(700);
+      if (!L) return;
     } else if (actiune.tip === 'toba') {
       // Toboșarul bate tobele: de acum, cât stă în picioare, ceilalți din tabăra lui lovesc mai tare
       poza(sursa, 'atac');
@@ -743,6 +764,11 @@ export function creeazaLupta(parinte, joc) {
     actualizeazaBare();
     await asteapta(250);
     if (!L) return;
+    // Ultimul orc care lovea a căzut: toboșarul rămas singur se prăbușește și el (o clipă, ca să se vadă)
+    if (tobosariSinguri()) {
+      await asteapta(800);
+      if (!L) return;
+    }
     if (!vii('aliat').length) return termina('infrangere');
     if (!vii('inamic').length) return inamiciInvinsi();
     L.pauza = false;
@@ -763,9 +789,9 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = true;
     await asteapta(300);
     if (!L) return;
-    // Toboșarul nu lovește și nu trece în față: bate tobele, de oriunde ar sta. Rămas singur, n-are pe cine întări:
-    // atunci se bate și el, cu bețele (altfel, cu un aliat care nu poate lovi, ca Elian, lupta nu s-ar mai termina)
-    if (f.toba && vii(f.tabara).some((x) => !x.toba)) return executa(f, { tip: 'toba' });
+    // Toboșarul nu lovește niciodată și nu trece în față (decis de autor: e gras): bate tobele, de oriunde ar sta;
+    // rămas singur, cade (executa, „toba”)
+    if (f.toba) return executa(f, { tip: 'toba' });
     const ci = cfg.inamici || {};
     if (!poateAtaca(f)) {
       const loc = locInFata(f);

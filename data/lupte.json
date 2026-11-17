@@ -175,7 +175,7 @@
       "grupGalerie": "Groapa (arena)"
     },
     "orc_toba": {
-      "_nota": "Decis de autor: toboșarul nu lovește; bate tobele de război (poza „atac”), iar de atunci, cât stă în picioare, ceilalți orci din tabăra lui lovesc mai tare (toba.atac). Stă în spate. Cifre de pornire (TODO echilibru). Rămas singur, se bate și el cu bețele tobei (atac slab, de aproape), ca lupta să se poată termina.",
+      "_nota": "Decis de autor: toboșarul e gras și nu atacă niciodată; bate tobele de război (poza „atac”), iar de atunci, cât stă în picioare, ceilalți orci din tabăra lui lovesc mai tare (toba.atac). Stă în spate. Rămas fără niciun orc care să lovească, se prăbușește singur. Cifre de pornire (TODO echilibru).",
       "nume": "Toboșarul",
       "numeScurt": "Toboșar",
       "viata": 35,
@@ -183,12 +183,6 @@
       "toba": {
         "atac": 3,
         "sunet": "toba"
-      },
-      "atac": {
-        "min": 2,
-        "max": 4,
-        "tip": "apropiat",
-        "sunet": "lupta_pumn"
       },
       "armura": 5,
       "grupGalerie": "Groapa (arena)"
