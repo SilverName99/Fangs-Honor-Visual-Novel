@@ -13116,8 +13116,8 @@
       },
       "p2": {
         "vorbitor": "orc_colector",
-        "emotie": "rade",
-        "text": "Ha! Omulețul are colți! Am pierdut trei monede pe tine, dar a meritat.",
+        "emotie": "suparat",
+        "text": "Hm. Omulețul are colți. Am pierdut trei monede pe tine.",
         "urmator": "p3"
       },
       "p3": {
@@ -13138,8 +13138,8 @@
       },
       "p5": {
         "vorbitor": "orc_colector",
-        "emotie": "rade",
-        "text": "Să mai vii. Băieților le place să vadă oameni care se ridică după ce cad.",
+        "emotie": "suparat",
+        "text": "Și să nu te obișnuiești, omulețule. Data viitoare nu mai ai noroc.",
         "urmator": "p6"
       },
       "p6": {

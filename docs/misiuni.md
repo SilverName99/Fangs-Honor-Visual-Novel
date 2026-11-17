@@ -275,7 +275,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Pasul 2:** o victorie în Groapă, **oricare nivel** (decis de autor). După luptă, peste o imagine, colectorul îi aruncă inelul: „Ce e al Groapei se câștigă în Groapă.”
 - **Pasul 3:** la mama, oriunde e: „Mamă... uite ce ți-am adus.” Peste o imagine, Vale îi pune verigheta în palmă; mama povestește cum i-a pus-o Edwin pe deget, sub copacul mare.
 - **Recompensa:** încrederea mamei **+1**.
-- **Imagini:** `events/inel_colector.png`, `events/inel_primit.png`, `events/inel_miriam.png` (galeria: „Misiunea Miriamei: inelul”); iconița `items/inel_miriam.png`.
+- **Imagini:** `events/inel_colector.png`, `events/inel_primit.png` (decis de autor: doar colectorul, de aproape, supărat, aruncând inelul), `events/inel_miriam.png` (galeria: „Misiunea Miriamei: inelul”); iconița `items/inel_miriam.png`.
 
 **Cum verifici**
 1. F2: starea `poarta_deschisa` = `da` (sau termină „Fierul lui Bram”), treci la ziua 9, „Dimineață”; mergi de pe hartă în casă, apoi în bucătărie → imaginea cu colectorul → „Ți-l aduc înapoi, mamă.”
