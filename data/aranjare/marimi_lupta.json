@@ -822,6 +822,16 @@
       "lupta_fierar": 113,
       "lupta_campuri": 113,
       "lupta_taverna_pivnita": 113
+    },
+    "combat/orc_zdrobitor_atac.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110,
+      "lupta_poarta_arena": 110
     }
   }
 }
