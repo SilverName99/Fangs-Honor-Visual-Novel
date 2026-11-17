@@ -11493,7 +11493,7 @@
       "inel5": {
         "vorbitor": "orc_colector",
         "emotie": "normal",
-        "text": "Groapa. Aici, lângă poartă. Seara, când se aprind torțele, coboară cine are curaj, iar ceilalți pariază pe sânge. Câștigă o dată acolo, oricât de greu alegi, și ți-o arunc înapoi.",
+        "text": "Groapa. Chiar dincolo de poartă. Seara, când se aprind torțele, coboară cine are curaj, iar ceilalți pariază pe sânge. Câștigă o dată acolo, oricât de greu alegi, și ți-o arunc înapoi.",
         "urmator": "inel6"
       },
       "inel6": {
@@ -11518,7 +11518,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "O groapă săpată lângă poartă, din lemnele satului. Seara, când se aprind torțele.",
+        "text": "O groapă săpată dincolo de poartă, din lemnele satului. Seara, când se aprind torțele.",
         "efecte": {
           "stare": {
             "groapa": "deschisa"
@@ -13002,7 +13002,7 @@
       "a4": {
         "vorbitor": "orc_colector",
         "emotie": "normal",
-        "text": "Taxa e taxă. Azi strâng pentru Groapă. Am săpat o groapă frumoasă lângă poartă, iar băieții din convoaie au nevoie să-și treacă serile. Fiecare casă dă ceva.",
+        "text": "Taxa e taxă. Azi strâng pentru Groapă. Am săpat o groapă frumoasă dincolo de poartă, iar băieții din convoaie au nevoie să-și treacă serile. Fiecare casă dă ceva.",
         "urmator": "a5"
       },
       "a5": {
