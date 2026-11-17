@@ -710,7 +710,7 @@
       "metal_soldat": {
         "vorbitor": "soldat",
         "emotie": "suparat",
-        "text": "Toate armele satului le-au luat orcii după bătălie. Ce-a mai rămas stă îngropat pe câmp, lângă oameni. Lasă-l acolo."
+        "text": "Toate armele satului le-au luat orcii după bătălie. Ce-a mai rămas a ruginit pe câmp, unde au căzut oamenii. Lasă-l acolo."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -2136,7 +2136,7 @@
       "g6": {
         "vorbitor": "paznic_orc_1",
         "emotie": "rade",
-        "text": "Ce te uiți la cer, pui de om? Dragonii voștri nu mai vin. Ultimul a crăpat odată cu regele vostru cel bătrân.",
+        "text": "Ce te uiți la cer, pui de om? Dragonii voștri nu mai vin. Cel mare a crăpat odată cu regele vostru cel bătrân.",
         "_nota": "CIORNĂ (Claude): regele și dragonul focului au murit acum 20 de ani (decis de autor)."
       }
     }
@@ -10183,7 +10183,7 @@
       "r8": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Aici ne-am oprit. Ni s-a spus că orcii vin dinspre pădure, așa că ne-am făcut zid de scuturi lângă copac. Douăzeci și trei de oameni care nu mai ținuseră o sabie de ani buni... și doi frați care se credeau încă tineri.",
+        "text": "Aici ne-am oprit. Ni s-a spus că orcii vin dinspre pădure, așa că ne-am făcut zid de scuturi lângă copac. Douăzeci și doi de oameni care nu mai ținuseră o sabie de ani buni... și doi frați care se credeau încă tineri.",
         "urmator": "r9"
       },
       "r9": {
@@ -11569,7 +11569,7 @@
       "s24": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Steagurile poartă forma lui de sute de ani, dar puțini au văzut vreodată unul adevărat. E un cristal mic, din Inima Luminii. Cu el, lumina mea e de zece ori mai puternică.",
+        "text": "Steagurile poartă forma lui de două sute de ani, dar puțini au văzut vreodată unul adevărat. E un cristal mic, din Inima Luminii. Cu el, lumina mea e de zece ori mai puternică.",
         "urmator": "s25"
       },
       "s25": {
