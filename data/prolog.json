@@ -1,10 +1,10 @@
 {
-  "_nota": "Prologul (decis de autor): pagini de carte la începutul jocului, cu o voce de cronică: tot ce știu oamenii din Aldaria, până la primăvara în care a căzut Baum. Textul e scris de Claude și verificat cu lore-ul (de confirmat de autor); se lucrează în documentul „Fangs&Honor: Prologul” (Claude Docs). Engleza, „The Chronicle of Aldaria”, e traducerea lui (cerută de autor, făcută de Claude), cu aceleași paragrafe, în aceeași ordine. În joc nu intră încă (decis de autor: întâi textul); se citește în editor, la tab-ul „Prolog”.",
+  "_nota": "Prologul (decis de autor): o carte la începutul jocului, împărțită pe capitole (decis de autor: pe capitole, nu pe pagini), cu o voce de cronică: tot ce știu oamenii din Aldaria, până la primăvara în care a căzut Baum. Textul e scris de Claude și verificat cu lore-ul (de confirmat de autor); se lucrează în documentul „Fangs&Honor: Prologul” (Claude Docs). Engleza, „The Chronicle of Aldaria”, e traducerea lui (cerută de autor, făcută de Claude), cu aceleași capitole și paragrafe, în aceeași ordine. În joc nu intră încă (decis de autor: întâi textul); se citește în editor, la tab-ul „Prolog”.",
   "titlu": {
     "ro": "Cronica Aldariei",
     "en": "The Chronicle of Aldaria"
   },
-  "pagini": [
+  "capitole": [
     {
       "titlu": {
         "ro": "Tărâmurile celelalte",

@@ -699,7 +699,7 @@ svg.editor-zone.desen {
   overflow-y: auto;
 }
 
-/* Tab-ul „Prolog”: paginile cărții, ușor de citit, cu comutatorul de limbă mereu la vedere, sus */
+/* Tab-ul „Prolog”: capitolele cărții, ușor de citit, cu comutatorul de limbă și lista capitolelor mereu la vedere, sus */
 #prolog.tab.activ {
   overflow: hidden;
 }
@@ -714,7 +714,8 @@ svg.editor-zone.desen {
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 10px 16px;
   padding: 10px 24px;
   background: #1b1d22;
   border-bottom: 1px solid #333;
@@ -744,6 +745,16 @@ svg.editor-zone.desen {
   color: #1b1d22;
   font-weight: 600;
 }
+.cuprins-prolog {
+  background: #121317;
+  color: #eee;
+  border: 1px solid #444a5c;
+  border-radius: 6px;
+  padding: 5px 8px;
+  max-width: 320px;
+  flex: none;
+  cursor: pointer;
+}
 .nota-prolog {
   color: #999;
   font-size: 13px;
@@ -765,8 +776,8 @@ svg.editor-zone.desen {
   color: #e8c97a;
   margin: 10px 0 34px;
 }
-.pagina-prolog + .pagina-prolog::before {
-  /* Rombul auriu de pe steagul satului desparte paginile */
+.capitol-prolog + .capitol-prolog::before {
+  /* Rombul auriu de pe steagul satului desparte capitolele */
   content: '◆';
   display: block;
   text-align: center;
@@ -775,21 +786,21 @@ svg.editor-zone.desen {
   margin: 28px 0 22px;
   opacity: 0.8;
 }
-.nr-pagina {
+.nr-capitol {
   text-align: center;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #9a8f74;
 }
-.pagina-prolog h2 {
+.capitol-prolog h2 {
   text-align: center;
   font-weight: normal;
   font-size: 24px;
   margin: 6px 0 22px;
   color: #f0e6cc;
 }
-.pagina-prolog p {
+.capitol-prolog p {
   margin: 0 0 14px;
 }
 .lipsa-prolog {
