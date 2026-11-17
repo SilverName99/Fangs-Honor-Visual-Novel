@@ -13139,13 +13139,15 @@
     "_nota": "CIORNĂ (Claude). Decis de autor: de fiecare dată când intră în Groapă, Vale se gândește la ceva, din 3 gânduri diferite, de câte 2-3 replici; peste imaginea Groapei, înainte de panou. Alt gând decât data trecută (src/groapa.js). Fără galerie: e imaginea locului, nu o ilustrație.",
     "partener": null,
     "faraGalerie": true,
-    "start": {
-      "aleator": [
-        "a1",
-        "b1",
-        "c1"
-      ]
-    },
+    "start": [
+      {
+        "aleator": [
+          "a1",
+          "b1",
+          "c1"
+        ]
+      }
+    ],
     "noduri": {
       "a1": {
         "vorbitor": "vale",
