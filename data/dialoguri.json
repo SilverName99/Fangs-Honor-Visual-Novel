@@ -12984,7 +12984,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Când intru în bucătărie, ușa dinspre drum e larg deschisă. În prag stă colectorul, cu umerii cât pragul. Mama ține o mână strânsă la piept.",
+        "text": "Când ajung în bucătăria de afară, colectorul e deja acolo, sub streașină, aplecat ca să nu dea cu capul de grinzi. Mama ține o mână strânsă la piept.",
         "urmator": "a2"
       },
       "a2": {
@@ -13059,7 +13059,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "suparat",
-        "text": "Ușa se trântește în urma lui. Pe podea a rămas noroiul de pe cizmele lui.",
+        "text": "Portița din gard se trântește în urma lui. Pe pământul bătătorit au rămas urmele cizmelor lui, pline de noroi.",
         "urmator": "a14"
       },
       "a14": {
