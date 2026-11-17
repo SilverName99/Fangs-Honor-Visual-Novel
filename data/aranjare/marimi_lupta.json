@@ -862,6 +862,19 @@
       "lupta_campuri": 110,
       "lupta_taverna_pivnita": 110,
       "lupta_poarta_arena": 110
+    },
+    "combat/orc_zdrobitor_cazut.png": {
+      "lupta_taverna_parter": 110,
+      "lupta_padure_interior": 110,
+      "lupta_poarta": 110,
+      "lupta_piata": 110,
+      "lupta_fierar": 110,
+      "lupta_campuri": 110,
+      "lupta_taverna_pivnita": 110,
+      "lupta_poarta_arena": 110
+    },
+    "combat/orc_toba_atac.png": {
+      "lupta_taverna_parter": 110
     }
   }
 }
