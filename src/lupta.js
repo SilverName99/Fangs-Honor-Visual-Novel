@@ -546,9 +546,9 @@ export function creeazaLupta(parinte, joc) {
     marcheazaToba();
   }
 
-  // Cât lovesc în plus cei din tabăra unui toboșar care a început să bată (și încă stă în picioare)
-  const bonusToba = (sursa) =>
-    L.toti.filter((x) => x !== sursa && x.tabara === sursa.tabara && x.toba && x.tobaPornita && !x.cazut).reduce((s, x) => s + (x.toba.atac || 0), 0);
+  // Cât lovește în plus un orc pentru care a bătut un toboșar care încă stă în picioare (decis de autor: toboșarul
+  // întărește câte un orc anume, la fiecare tură a lui; dacă toboșarul cade, întărirea se duce)
+  const bonusToba = (sursa) => (sursa.intaritDe || []).filter((x) => !x.cazut).reduce((s, x) => s + (x.toba?.atac || 0), 0);
   // Cei întăriți de tobă au o strălucire roșiatică, ca jucătorul să vadă de ce lovesc mai tare
   function marcheazaToba() {
     for (const f of L.toti) f.el.classList.toggle('intarit-toba', !f.cazut && bonusToba(f) > 0);
@@ -743,18 +743,27 @@ export function creeazaLupta(parinte, joc) {
       await asteapta(700);
       if (!L) return;
     } else if (actiune.tip === 'toba') {
-      // Toboșarul bate tobele: de acum, cât stă în picioare, ceilalți din tabăra lui lovesc mai tare
+      // Toboșarul bate toba pentru un orc anume (decis de autor), întâi pentru cel care lovește cel mai tare dintre
+      // cei pe care nu i-a întărit încă: orcul ales pulsează roșu, primește „+3 atac” și rămâne întărit cât stă
+      // toboșarul în picioare. Dacă i-a întărit pe toți, doar ține ritmul
+      const tinta = vii(sursa.tabara)
+        .filter((x) => !x.toba && !(x.intaritDe || []).includes(sursa))
+        .sort((a, b) => (b.atac?.max || 0) - (a.atac?.max || 0))[0];
       poza(sursa, 'atac');
       joc.sunet.efect(sursa.toba.sunet || 'toba');
       sursa.corp.classList.add('bate-toba');
-      await asteapta(550);
+      await asteapta(450);
       if (!L) return;
-      const prima = !sursa.tobaPornita;
-      sursa.tobaPornita = true;
-      marcheazaToba();
-      jurnal(prima ? `${sursa.nume} bate tobele de război: ceilalți orci lovesc mai tare (+${sursa.toba.atac}).` : `${sursa.nume} ține ritmul: ceilalți orci lovesc în continuare mai tare.`);
-      await asteapta(300);
+      if (tinta) {
+        (tinta.intaritDe ||= []).push(sursa);
+        tinta.el.classList.add('primeste-toba');
+        numar(tinta, `+${sursa.toba.atac} atac`, 'toba');
+        marcheazaToba();
+        jurnal(`${sursa.nume} bate toba pentru ${tinta.nume}: lovește mai tare (+${sursa.toba.atac}).`);
+      } else jurnal(`${sursa.nume} ține ritmul: orcii lui lovesc în continuare mai tare.`);
+      await asteapta(700);
       sursa.corp.classList.remove('bate-toba');
+      tinta?.el.classList.remove('primeste-toba');
       if (!L) return;
       poza(sursa, 'idle');
       sursa.bara = 0;
