@@ -51,7 +51,6 @@ export function creeazaGroapa(parinte, joc) {
     const inchide = () => fundal.remove();
     fundal.onclick = (e) => e.target === fundal && inchide();
     parinte.append(fundal);
-    joc.sunet.efect('arena');
 
     const t = cfg().texte || {};
     function alegeNivelul() {
