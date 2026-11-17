@@ -824,24 +824,24 @@
       "lupta_taverna_pivnita": 113
     },
     "combat/orc_zdrobitor_atac.png": {
-      "lupta_taverna_parter": 120,
-      "lupta_padure_interior": 120,
-      "lupta_poarta": 120,
-      "lupta_piata": 120,
-      "lupta_fierar": 120,
-      "lupta_campuri": 120,
-      "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_taverna_parter": 140,
+      "lupta_padure_interior": 140,
+      "lupta_poarta": 140,
+      "lupta_piata": 140,
+      "lupta_fierar": 140,
+      "lupta_campuri": 140,
+      "lupta_taverna_pivnita": 140,
+      "lupta_poarta_arena": 140
     },
     "combat/orc_zdrobitor_idle.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110,
-      "lupta_poarta": 110,
-      "lupta_piata": 110,
-      "lupta_fierar": 110,
-      "lupta_campuri": 110,
-      "lupta_taverna_pivnita": 110,
-      "lupta_poarta_arena": 110
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     },
     "combat/orc_zdrobitor_aparare.png": {
       "lupta_taverna_parter": 110,
