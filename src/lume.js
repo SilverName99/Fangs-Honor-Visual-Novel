@@ -80,7 +80,9 @@ export function construiesteLumea(date) {
   const neclicabili = new Set(personaje.filter((p) => p.clicabil === false).map((p) => p.id));
   const zonePersonaje = (obiecte) =>
     obiecte.filter((o) => !neclicabili.has(o.id)).map((o) => ({ id: `personaj_${o.id}`, nume: o.nume, personaj: o.id }));
-  const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a, ascuns: a.ascuns || null }));
+  // „incuiat” la o acțiune: zona rămâne de apăsat, dar Vale doar se gândește de ce nu acum (decis de autor: pâinea și
+  // găleata din bucătărie, seara și noaptea), ca la locurile încuiate
+  const actiuniCaTinte = (actiuni) => (actiuni || []).map((a, i) => ({ id: a.id || `actiune_${i}`, nume: a.nume, act: a, ascuns: a.ascuns || null, incuiat: a.incuiat || null }));
 
   const decor = (x) => ({ id: x.id, tip: 'decor', nume: x.nume, imagine: x.imagine, variante: x.variante || [], apare: x.apare || null });
   for (const z of zone) {

@@ -208,8 +208,8 @@
               "text": "Scoți apă de la fântână...",
               "maxPeZi": 2,
               "mesajMaxPeZi": "Am cărat deja de două ori apă azi. Fântâna mai poate aștepta până mâine.",
-              "ascuns": {
-                "_nota": "Decis de autor: seara și noaptea nu se mai poate lua (zona nu se mai apasă).",
+              "incuiat": {
+                "_nota": "Decis de autor: seara și noaptea nu se mai ia, dar zona rămâne de apăsat, cu gândul lui Vale (ciornă, Claude).",
                 "conditii": {
                   "nu": {
                     "moment": [
@@ -217,7 +217,8 @@
                       "noaptea"
                     ]
                   }
-                }
+                },
+                "mesaj": "Găleata e goală, iar la fântână nu mai ies pe întuneric. Mâine dimineață."
               }
             },
             {
@@ -232,8 +233,8 @@
               "text": "Iei o pâine caldă de pe masă...",
               "maxPeZi": 1,
               "mesajMaxPeZi": "Am luat deja pâinea de azi. Restul e pentru mama.",
-              "ascuns": {
-                "_nota": "Decis de autor: seara și noaptea nu se mai poate lua (zona nu se mai apasă).",
+              "incuiat": {
+                "_nota": "Decis de autor: seara și noaptea nu se mai ia, dar zona rămâne de apăsat, cu gândul lui Vale (ciornă, Claude).",
                 "conditii": {
                   "nu": {
                     "moment": [
@@ -241,7 +242,8 @@
                       "noaptea"
                     ]
                   }
-                }
+                },
+                "mesaj": "Pâinea de pe masă mama a pus-o deoparte pentru mâine dimineață. Nu mă apuc acum s-o ciupesc."
               }
             },
             {
