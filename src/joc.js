@@ -21,7 +21,7 @@ import { creeazaEcranInventar, iconita as iconitaObiect } from './ecranInventar.
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
-import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj } from './misiuni.js';
+import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj, evenimentOferit } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
@@ -773,6 +773,10 @@ function vorbesteCu(id, idDialog) {
   const p = personaje.get(id);
   // Cine doarme nu e trezit: Vale doar se gândește (Kaia noaptea, la campsite)
   if (p?.gandDoarme && intrareProgram(p, context(stare))?.doarme) return gand(p.gandDoarme);
+  // „!” deasupra lui pentru o misiune care pornește dintr-un eveniment: apăsarea pe el o pornește (la sosire putea să
+  // fi pornit alt eveniment, de exemplu orcul de la fierărie, iar Vale a rămas pe loc)
+  const oferit = evenimentOferit(joc, id);
+  if (oferit) return pornesteEveniment(oferit.id);
   // Colectorul de la poartă nu are un dialog scris: cere taxa
   if (p?.dialogTaxa) return dialogTaxa(cfg.taxa.textColectorPoarta);
   deCunoscut = [...new Set([apasat, id])];

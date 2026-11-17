@@ -88,17 +88,24 @@ export function optiuniMisiuni(joc, idPersonaj, loc) {
   return rez;
 }
 
-// Semnul cel mai important al unui personaj, pentru scenă și hartă: ? auriu (de predat), ! (nouă), ? gri (în lucru)
-export function semnPersonaj(joc, idPersonaj, loc) {
-  const semne = optiuniMisiuni(joc, idPersonaj, loc).map((x) => x.alegere.semn);
-  // O misiune care pornește singură, dintr-un eveniment („ofertaEveniment”: cărțile lui Elian), are și ea „!” cât
-  // evenimentul ar porni la sosire (decis de autor: ca jucătorul să nu fie luat prin surprindere); nu e și în meniu
+// O misiune care pornește singură, dintr-un eveniment („ofertaEveniment”: cărțile lui Elian, ziua la forjă a lui
+// Bram), cu evenimentul ei gata să pornească acum: are și ea „!” (decis de autor: ca jucătorul să nu fie luat prin
+// surprindere), iar apăsarea pe personaj o pornește. Altfel, dacă la sosire pornise alt eveniment (orcul care cere
+// toporul ascuțit la fierărie), semnul promitea o misiune pe care discuția nu o avea
+export function evenimentOferit(joc, idPersonaj, loc) {
   const s = joc.stare;
   const ctx = loc ? { ...context(s), loc } : context(s);
   for (const m of listaMisiuni(joc.date)) {
     if (!m.ofertaEveniment || m.dela !== idPersonaj || s.misiuni[m.id]) continue;
     const ev = (joc.date.events?.evenimente || []).find((e) => e.id === m.ofertaEveniment);
-    if (ev && s.evenimente?.[ev.id] == null && verifica(ev.conditii, ctx)) semne.push('nou');
+    if (ev && s.evenimente?.[ev.id] == null && verifica(ev.conditii, ctx)) return ev;
   }
+  return null;
+}
+
+// Semnul cel mai important al unui personaj, pentru scenă și hartă: ? auriu (de predat), ! (nouă), ? gri (în lucru)
+export function semnPersonaj(joc, idPersonaj, loc) {
+  const semne = optiuniMisiuni(joc, idPersonaj, loc).map((x) => x.alegere.semn);
+  if (evenimentOferit(joc, idPersonaj, loc)) semne.push('nou');
   return ['gata', 'nou', 'lucru'].find((s) => semne.includes(s)) || null;
 }
