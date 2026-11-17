@@ -39,7 +39,8 @@
       "lupta_piata": 125,
       "lupta_poarta": 125,
       "lupta_taverna_parter": 125,
-      "lupta_taverna_pivnita": 125
+      "lupta_taverna_pivnita": 125,
+      "lupta_poarta_arena": 125
     },
     "combat/fierar_atac.png": {
       "lupta_campuri": 130,
@@ -75,7 +76,8 @@
       "lupta_piata": 105,
       "lupta_poarta": 105,
       "lupta_taverna_parter": 105,
-      "lupta_taverna_pivnita": 105
+      "lupta_taverna_pivnita": 105,
+      "lupta_poarta_arena": 105
     },
     "combat/vanatoare_atac.png": {
       "lupta_campuri": 105,
@@ -129,7 +131,8 @@
       "lupta_piata": 120,
       "lupta_poarta": 120,
       "lupta_taverna_parter": 120,
-      "lupta_taverna_pivnita": 120
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120
     },
     "combat/soldat_aparare.png": {
       "lupta_campuri": 120,
@@ -498,7 +501,8 @@
       "lupta_piata": 155,
       "lupta_poarta": 155,
       "lupta_taverna_parter": 155,
-      "lupta_taverna_pivnita": 155
+      "lupta_taverna_pivnita": 155,
+      "lupta_poarta_arena": 155
     },
     "combat/vale_sabie_scut_aparare.png": {
       "lupta_campuri": 115,
@@ -507,7 +511,8 @@
       "lupta_piata": 115,
       "lupta_poarta": 115,
       "lupta_taverna_parter": 115,
-      "lupta_taverna_pivnita": 115
+      "lupta_taverna_pivnita": 115,
+      "lupta_poarta_arena": 115
     },
     "combat/vale_sabie_scut_lovit.png": {
       "lupta_campuri": 105,
@@ -516,7 +521,8 @@
       "lupta_piata": 105,
       "lupta_poarta": 105,
       "lupta_taverna_parter": 105,
-      "lupta_taverna_pivnita": 105
+      "lupta_taverna_pivnita": 105,
+      "lupta_poarta_arena": 105
     },
     "combat/vale_sabie_doua_maini_idle.png": {
       "lupta_campuri": 105,
@@ -525,7 +531,8 @@
       "lupta_piata": 105,
       "lupta_poarta": 105,
       "lupta_taverna_parter": 105,
-      "lupta_taverna_pivnita": 105
+      "lupta_taverna_pivnita": 105,
+      "lupta_poarta_arena": 105
     },
     "combat/vale_sabie_doua_maini_atac.png": {
       "lupta_campuri": 105,
@@ -534,7 +541,8 @@
       "lupta_piata": 105,
       "lupta_poarta": 105,
       "lupta_taverna_parter": 105,
-      "lupta_taverna_pivnita": 105
+      "lupta_taverna_pivnita": 105,
+      "lupta_poarta_arena": 105
     },
     "combat/vale_sabie_doua_maini_aparare.png": {
       "lupta_campuri": 110,
@@ -561,7 +569,8 @@
       "lupta_piata": 130,
       "lupta_poarta": 130,
       "lupta_taverna_parter": 130,
-      "lupta_taverna_pivnita": 130
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     },
     "combat/vale_sabie_cazut.png": {
       "lupta_campuri": 130,
@@ -687,7 +696,8 @@
       "lupta_piata": 100,
       "lupta_fierar": 100,
       "lupta_campuri": 100,
-      "lupta_taverna_pivnita": 100
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100
     },
     "combat/vale_pumni_lovit.png": {
       "lupta_taverna_parter": 100,
