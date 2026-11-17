@@ -12,16 +12,26 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 ## Ce știu oamenii (decis de autor)
 
 - Neamul omenesc știe de **magie**, de **dragoni**, de **Ordinul Flăcării** și de **Inima Luminii**: nu sunt secrete.
-- Satul lui Vale e **retras, la marginea regatului**, și n-a luat parte la războaie: nimeni de aici **n-a văzut vreodată un dragon**. Află de toate din povești de drum.
-- Oamenii au **un rege**; elfii de pădure au **un împărat**.
+- Satul lui Vale, **Baum** (decis de autor), e **retras, la marginea regatului**, și n-a luat parte la războaie: nimeni de aici **n-a văzut vreodată un dragon**. Află de toate din povești de drum. Trăia **mai ales din agricultură**: unul dintre motivele pentru care orcii l-au cruțat și l-au ocupat (decis de autor).
+- Lumea pe care o știu oamenii se numește **Aldaria**; regatul oamenilor, **Aldenor**, cu capitala **Altaris** (decis de autor). Oamenii au **un rege**; elfii de pădure au **un împărat**.
+
+## Istoria, pe ani (decis de autor)
+
+- **Acum ~2000 de ani**, elfii de pădure găsesc **primul portal, al aerului**. Multă vreme nu știe nimeni de el, până când, într-o luptă între elfi și oameni, elfii vin cu un dragon: **Karzor**, cu primul elf legat de el.
+- **Cam 500 de ani mai târziu**, oamenii găsesc **portalul focului**.
+- **Încă ~1000 de ani**, se află ce sunt porțile, cum funcționează și cine are trezirea, mică sau mare.
+- **Acum 200 de ani**, oamenii găsesc **Inima Luminii** și se înființează **Cercul Luminii**, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc.
+- **Acum 20 de ani** moare regele **Aldric**; de atunci domnește fiul lui, **Cedric**.
+- **De 10 ani**, Craniile Sângerii sunt în război cu oamenii; nimeni nu știe exact de ce.
+- **Primăvara trecută** cade apărarea satului Baum: doar 23 de oameni.
 
 ## Lumile dragonilor și portalurile (decis de autor)
 
 - Dragonii nu trăiesc în lumea oamenilor și a orcilor, ci **în lumile lor**, câte una pentru fiecare fel de dragon: lumea dragonilor de foc (o lume aproape obișnuită, dar pârjolită; dragoni roșii și portocalii), a celor de aer (de exemplu cu munți plutitori; dragoni albi), **a morții** (peste tot doar moarte; dragoni din oase) și așa mai departe.
 - Sunt **5 dragoni primordiali**, fiecare cu una dintre cele 5 puteri ale naturii: **apă, foc, pământ, aer, moarte** (cel al morții e un fel de dragon necromant). Fiecare are lumea lui și **un portal** spre ea, în lumea noastră.
 - Se știe de **două portaluri**:
-  - al **focului**: cunoscut, controlat și păzit de oameni;
-  - al **aerului**: controlat de elfii de pădure, adânc într-o pădure, foarte greu de ajuns; numai ei au acces.
+  - al **focului**: cunoscut, controlat și păzit de oameni, care l-au găsit cam la 500 de ani după cel al aerului (decis de autor);
+  - al **aerului**: controlat de elfii de pădure, adânc într-o pădure, foarte greu de ajuns; numai ei au acces. E primul găsit, acum ~2000 de ani (decis de autor).
 - Al **treilea**, al **morții**, nu-l știe nimeni: e adânc într-o crăpătură din pământ, unde duce harta din hârtiile soldatului (misiunea lui Roderick „Solzii de dragon” arată spre el). Celelalte două (apa, pământul): nedescoperite.
 - Un portal îl pot deschide, foarte greu, doar **magi foarte puternici**. Prin el poate trece **doar cine are darul dragonilor**; ceilalți mor. Din lumea dragonilor **nu ieși decât legat cu un dragon**.
 
@@ -37,21 +47,21 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 ## Ordinul Flăcării și regele (decis de autor)
 
-- **Ordinul Flăcării** e ordinul **călăreților de dragoni** ai oamenilor. **Nu e secret.** **Mai are călăreți**, cu dragoni mai mici (decis de autor). Satele de la margine nu le apără: de 10 ani e război (decis de autor; propunerea lui Claude, de confirmat: țin frontul și apără capitala).
-- **Regele oamenilor** era mag-războinic și legat cu **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon (vezi Narco); odată cu el a murit și dragonul, care, primordial fiind, a renăscut în lumea focului. De atunci domnește **fiul regelui**.
+- **Ordinul Flăcării** e ordinul **călăreților de dragoni** ai oamenilor. **Nu e secret.** **Mai are călăreți**, cu dragoni mai mici (decis de autor). Călăreții se folosesc **doar la nevoie mare** (decis de autor): de 10 ani e război, totul se cântărește, iar resursele se drămuiesc cu grijă; de aceea satele de la margine au rămas singure.
+- **Regele oamenilor**, **Aldric** (decis de autor; „regele cel bătrân”), era mag-războinic și legat cu **Ardrax**, **primordialul focului** (decis de autor). A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon (vezi Narco); odată cu el a murit și dragonul, care, primordial fiind, a renăscut în lumea focului. De atunci domnește fiul lui, **Cedric** (decis de autor).
 - De atunci oamenii n-au mai găsit pe nimeni cu trezirea mare: îl caută.
 
 ## Karzor și elfii de pădure (decis de autor)
 
-- **Karzor**, primordialul **aerului**: foarte puternic, folosește multe fulgere, ca atacuri și ca puteri speciale. Lumea crede că e mort.
+- **Karzor**, primordialul **aerului**: foarte puternic, folosește multe fulgere, ca atacuri și ca puteri speciale. Lumea crede că e mort (așa apare și în prolog, decis de autor). E primul dragon văzut de oameni: acum ~2000 de ani, într-o luptă între elfi și oameni, cu primul elf legat de el (decis de autor).
 - **Împăratul elfilor de pădure (wood elves)** are încă legământul cu Karzor. E **singura organizație secretă** care a rămas: o organizație secretă a elfilor de pădure știe că trăiește. Mai târziu, într-o bătălie, apariția lui poate fi o întorsătură mare.
 - **Cum arată Karzor** (după imaginea autorului; arată ca un dragon al pădurii pentru că legământul cu împăratul elfilor de pădure i-a dat înfățișarea lor): solzi ca scoarța și frunze verzi peste tot corpul, aripi ca de pânză verde-maronie întinsă pe oase ca niște ramuri, coarne ca niște crengi, iar pe piept un scut auriu cu un copac (semnul elfilor de pădure).
 
 ## Inima Luminii, cristalele mici și Cercul Luminii (decis de autor)
 
-- Oamenii, săpând într-o **mină** după minerale, au dat de o încăpere mare. În mijlocul ei stătea **un singur cristal**: mare, dar nu uriaș (încape pe un piedestal; îl pot căra patru oameni). Cum l-au scos la lumina zilei, a început să radieze foarte multă putere. E **Inima Luminii**.
+- **Acum 200 de ani** (decis de autor), oamenii, săpând într-o **mină** după minerale, au dat de o încăpere mare. În mijlocul ei stătea **un singur cristal**: mare, dar nu uriaș (încape pe un piedestal; îl pot căra patru oameni). Cum l-au scos la lumina zilei, a început să radieze foarte multă putere. E **Inima Luminii**.
 - În **lumina soarelui**, Inima Luminii **creează cristale mai mici**, dar **foarte rar**. Cristalele mici fac **magia luminii** mult mai puternică; puțini oameni au acces la ele.
-- **Cercul Luminii**, asociația magilor luminii, **nu e secret**. Trimite câte un mag în fiecare sat.
+- **Cercul Luminii**, asociația magilor luminii, **nu e secret**. S-a înființat tot acum 200 de ani, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc (decis de autor). Trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și de pe scuturi (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma cristalelor mici**. Doar pus acolo, le dă oamenilor încredere și putere în luptă.
 - **Inima Luminii** e cea mai mare putere magică a oamenilor. Necromanția o poate **corupe**.
 - E păzită în **clădirea principală a capitalei** (decis de autor), aceeași în care a încercat Arcon s-o corupă.
@@ -98,7 +108,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Războiul a început acum 10 ani** (decis de autor), la 10 ani după moartea regelui: de atunci, Craniile Sângerii luptă împotriva regatului oamenilor. **Nimeni nu știe exact de ce.**
 - **Orcii nu pot folosi magia luminii** (decis de autor): se bizuie pe **magia naturii**, iar **șamanii** le întăresc trupele și cheamă animalele în ajutor (sau le folosesc).
 - Craniile Sângerii își strâng forțele ca să **asedieze capitala** oamenilor.
-- **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
+- **De ce n-au distrus satul:** trăia mai ales din agricultură (decis de autor); cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
 - **Vânătorii orcilor** umplu pădurea cu **capcane de fier**, cu craniul lor bătut pe arc, și prind tot ce mișcă; carnea afumată și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram (misiunea Kaiei „Capcanele”, ciornă de Claude).
 - **Drumul mare** (misiunea Kaiei „Convoiul”, decis de autor: e drumul principal spre capitală, iar convoiul trece aproape de sat): pleacă de la poarta satului și merge zile întregi, până la capitală; pe el au venit orcii și pe el pleacă, în căruțele lor, fierul, grâul și pieile satului (decis de autor).
 - **Convoiul cu wyverni** (decis de autor): noaptea, pe drumul mare, spre capitală, un convoi de orci cu cuști mari, în care sunt wyvernii; orcii zic că ce e în cuști „o să întoarcă războiul”, iar Gorvak îi vrea la capitală înainte de prima zăpadă (ciornă de Claude). Vale și Kaia îi văd de departe și îi cred **dragoni** (decis de autor): se întreabă dacă orcii au găsit un portal pe care nu-l știe nimeni sau dacă i-au făcut cu o vrajă, din fiare obișnuite. Ce sunt de fapt (ritualul orcilor) nu află încă.

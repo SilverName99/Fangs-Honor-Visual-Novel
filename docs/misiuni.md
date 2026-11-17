@@ -23,22 +23,23 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 
 **În ordine: ce s-a întâmplat până începe povestea lui Vale** (adunat din deciziile de mai jos; nimic nou)
 - **Demult:** dragonii trăiesc în lumile lor. Sunt 5 primordiali (apă, foc, pământ, aer, moarte), fiecare cu un portal în lumea noastră: al focului îl păzesc oamenii, al aerului elfii de pădure, iar al morții nu-l știe nimeni (o crăpătură în pământ). Darul dragonilor se trezește la 26 de ani: trezirea mică sau, foarte rar, cea mare.
-- **Demult:** într-o mină, oamenii găsesc **Inima Luminii**, care, în lumina soarelui, face foarte rar cristale mici. **Cercul Luminii** trimite câte un mag în fiecare sat; rombul auriu de pe steaguri e forma cristalelor. **Ordinul Flăcării**, călăreții de dragoni, îi caută pe cei cu trezirea.
-- **Regele oamenilor** e legat cu primordialul focului; **împăratul elfilor de pădure**, în taină, cu **Karzor**, primordialul aerului (lumea îl crede mort).
-- **Acum 20 de ani:** **Arcon**, mag al Cercului Luminii corupt de necromanție, încearcă să corupă Inima Luminii. Regele îl oprește, sacrificându-se (dragonul focului moare odată cu el și renaște în lumea lui). De atunci domnește fiul regelui, iar trezirea mare n-a mai fost găsită la nimeni. Arcon scapă cu o vrajă interzisă și devine **Narco**; nimeni nu știe că trăiește.
+- **Acum ~2000 de ani** (decis de autor): elfii de pădure găsesc **primul portal, al aerului**. Multă vreme nu știe nimeni de el, până când, într-o luptă între elfi și oameni, elfii vin cu un dragon: **Karzor**, cu primul elf legat de el. **Cam 500 de ani mai târziu**, oamenii găsesc **portalul focului**; **încă ~1000 de ani** se află ce sunt porțile, cum funcționează și cine are trezirea.
+- **Acum 200 de ani** (decis de autor): într-o mină, oamenii găsesc **Inima Luminii**, care, în lumina soarelui, face foarte rar cristale mici. Se înființează **Cercul Luminii**, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc; trimite câte un mag în fiecare sat; rombul auriu de pe steaguri e forma cristalelor. **Ordinul Flăcării**, călăreții de dragoni, îi caută pe cei cu trezirea.
+- **Regele Aldric** (decis de autor) e legat cu **Ardrax**, primordialul focului; **împăratul elfilor de pădure**, în taină, cu **Karzor**, primordialul aerului (lumea îl crede mort).
+- **Acum 20 de ani:** **Arcon**, mag al Cercului Luminii corupt de necromanție, încearcă să corupă Inima Luminii. Regele îl oprește, sacrificându-se (dragonul focului moare odată cu el și renaște în lumea lui). De atunci domnește fiul lui, **Cedric**, iar trezirea mare n-a mai fost găsită la nimeni. Arcon scapă cu o vrajă interzisă și devine **Narco**; nimeni nu știe că trăiește.
 - **Acum 10 ani, războiul** (decis de autor): Narco îi spune lui **Gorvak**, căpetenia Craniilor Sângerii: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Orcii pornesc războiul și pregătesc asediul capitalei, cu wyverni; nimeni nu știe că Narco e în spatele lor. Lumea nu înțelege de ce au pornit orcii războiul: magia luminii nu le folosește la nimic (decis de autor). Departe, pădurile au tăcut: animale moarte fără nicio rană, care nu putrezesc (Kaia află abia în timpul poveștii; ❓ de când și ce le-a omorât).
-- **În satul lui Vale** (retras, la marginea regatului; nimeni de aici n-a văzut un dragon): Cercul Luminii, la cererea Ordinului Flăcării, îl trimite pe **Elian**, cu un cristal mic, să găsească trezirea simțită aici; toți îl cred un preot-mag începător (❓ când a venit). Un soldat, chiriașul din camera de sus a tavernei și prietenul lui Roderick, găsise departe un solz de dragon și desenase o hartă până la o crăpătură în pământ: portalul morții.
+- **În satul lui Vale, Baum** (retras, la marginea regatului; nimeni de aici n-a văzut un dragon): Cercul Luminii, la cererea Ordinului Flăcării, îl trimite pe **Elian**, cu un cristal mic, să găsească trezirea simțită aici; toți îl cred un preot-mag începător (❓ când a venit). Un soldat, chiriașul din camera de sus a tavernei și prietenul lui Roderick, găsise departe un solz de dragon și desenase o hartă până la o crăpătură în pământ: portalul morții.
 - **Primăvara trecută:** lângă **copacul mare**, dincolo de gardul Marginii, cad **23 de oameni ai satului** care încercau să oprească orcii, printre ei **Edwin Lightfinder** și soldatul. Edwin îi poruncește lui Roderick să fugă: „Ai grijă de Miriam și de băiat.” Roderick îl duce pe Edwin în spate până la cimitir; de atunci bea și nu se mai poate uita în ochii Miriamei. **A doua zi, satul cade.** Înainte de răsărit, Bram strânge de pe câmp **22 de săbii**; a lui Edwin e la Miriam, care îi ascunde echipamentul.
-- **De atunci:** orcii îi cruță pe săteni în schimbul unei **taxe săptămânale**, ridică zidul și păzesc ieșirea. Satul stă pe drumul mare spre capitală și muncește pentru asediul lor (grâu, fier, piei).
+- **De atunci:** orcii îi cruță pe săteni în schimbul unei **taxe săptămânale**, ridică zidul și păzesc ieșirea. Satul trăia mai ales din agricultură, unul dintre motivele pentru care a fost cruțat și ocupat (decis de autor); stă pe drumul mare spre capitală și muncește pentru asediul lor (grâu, fier, piei).
 - **Când începe jocul:** Vale are 25 de ani și **trezirea mare**, dar nu știe; se va lega cu **primordialul morții** (Actul 2). Finn stă legat la butuc, în piață, pentru că a furat ca să-și hrănească mama bolnavă și sora.
 
 **Universul și Actul 1**
 - *Fangs&Honor* e lumea jocului principal al autorului (de acolo vin unele personaje; Kaia e Huntress). Jocul pe care îl facem e **Actul 1: Recuperarea satului**; în **Actul 2** (idee), Vale trece prin portalul morții și se leagă cu dragonul lui. În Actul 1 **nu** apar dragoni adevărați (doar indicii), altă magie decât a preotului, harta mare și fortăreața.
-- **Ce știu oamenii:** neamul omenesc știe de magie, de dragoni, de Ordinul Flăcării și de Inima Luminii. Satul lui Vale e retras, la marginea regatului, și n-a luat parte la războaie: **nimeni de aici n-a văzut vreodată un dragon**. Oamenii au **un rege**; elfii de pădure, **un împărat**.
+- **Ce știu oamenii:** neamul omenesc știe de magie, de dragoni, de Ordinul Flăcării și de Inima Luminii. Satul lui Vale e retras, la marginea regatului, și n-a luat parte la războaie: **nimeni de aici n-a văzut vreodată un dragon**. Lumea lor e **Aldaria**; regatul, **Aldenor**, cu capitala **Altaris**; satul lui Vale, **Baum** (decis de autor). Oamenii au **un rege**; elfii de pădure, **un împărat**.
 
 **Dragonii, lumile lor și portalurile**
 - Dragonii trăiesc **în lumile lor**, câte una pentru fiecare fel: a focului (pârjolită, dragoni roșii și portocalii), a aerului (munți plutitori, dragoni albi), **a morții** (doar moarte, dragoni din oase) etc.
-- **Cei 5 dragoni primordiali:** apă, foc, pământ, aer și moarte (al morții e un fel de dragon necromant). Fiecare are lumea lui și **un portal** în lumea noastră. Se știe de două: al **focului** (păzit de oameni) și al **aerului** (al elfilor de pădure, adânc în pădure). Al **morții** nu-l știe nimeni: e adânc într-o crăpătură din pământ, unde duce harta soldatului. Apa și pământul: nedescoperite.
+- **Cei 5 dragoni primordiali:** apă, foc, pământ, aer și moarte (al morții e un fel de dragon necromant). Fiecare are lumea lui și **un portal** în lumea noastră. Se știe de două: al **aerului** (al elfilor de pădure, adânc în pădure; primul găsit, acum ~2000 de ani) și al **focului** (păzit de oameni, găsit cam 500 de ani mai târziu). Al **morții** nu-l știe nimeni: e adânc într-o crăpătură din pământ, unde duce harta soldatului. Apa și pământul: nedescoperite.
 - Un portal îl deschid, greu, doar magi foarte puternici. Prin el trece **doar cine are darul dragonilor** (ceilalți mor), iar din lumea dragonilor **nu ieși decât legat cu un dragon**.
 
 **Trezirea și legământul**
@@ -46,15 +47,15 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - **Legământul:** dragonul **ia înfățișarea rasei** celui cu care se leagă; sunt **legați pe viață și pe moarte** (moare unul, moare și celălalt), dar **un primordial renaște** în lumea lui. Dragonul îți spune **o incantație** cu care îl chemi printr-un portal; telepatic vorbiți oricând.
 
 **Ordinul Flăcării și regele**
-- **Ordinul Flăcării**: călăreții de dragoni ai oamenilor; **nu e secret**. Îi caută mereu pe cei cu trezirea. **Mai are călăreți**, cu dragoni mai mici (decis de autor), dar de 10 ani e război, iar satele de la margine au rămas singure.
-- **Regele**, mag-războinic, era legat cu **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon; odată cu el a murit și dragonul (care a renăscut în lumea focului). De atunci domnește **fiul regelui**, iar oamenii n-au mai găsit pe cineva cu trezirea mare.
+- **Ordinul Flăcării**: călăreții de dragoni ai oamenilor; **nu e secret**. Îi caută mereu pe cei cu trezirea. **Mai are călăreți**, cu dragoni mai mici (decis de autor), folosiți **doar la nevoie mare**: de 10 ani e război, totul se cântărește și resursele se drămuiesc, iar satele de la margine au rămas singure.
+- **Regele Aldric** (decis de autor), mag-războinic, era legat cu **Ardrax**, **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon; odată cu el a murit și dragonul (care a renăscut în lumea focului). De atunci domnește fiul lui, **Cedric** (decis de autor), iar oamenii n-au mai găsit pe cineva cu trezirea mare.
 
 **Karzor și elfii de pădure**
-- **Karzor**, primordialul **aerului**, cu fulgere: lumea îl crede mort. E legat cu **împăratul elfilor de pădure**; știe doar **organizația secretă a elfilor**, singura organizație secretă rămasă (mai târziu, o întorsătură mare într-o bătălie). Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac.
+- **Karzor**, primordialul **aerului**, cu fulgere: lumea îl crede mort. E primul dragon văzut de oameni: acum ~2000 de ani, într-o luptă între elfi și oameni, cu primul elf legat de el (decis de autor). E legat cu **împăratul elfilor de pădure**; știe doar **organizația secretă a elfilor**, singura organizație secretă rămasă (mai târziu, o întorsătură mare într-o bătălie). Arată ca un dragon al pădurii: solzi ca scoarța și frunze, aripi verzi-maronii pe oase ca ramurile, coarne ca niște crengi, pe piept un scut auriu cu un copac.
 
 **Inima Luminii și Cercul Luminii**
-- Într-o **mină**, oamenii au găsit **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni): **Inima Luminii**. La lumina soarelui radiază putere și, foarte rar, **creează cristale mici**, care fac **magia luminii** mult mai puternică. E cea mai mare putere magică a oamenilor; necromanția o poate corupe. E păzită în **clădirea principală a capitalei**.
-- **Cercul Luminii**, asociația magilor, nu e secret; trimite câte un mag în fiecare sat.
+- **Acum 200 de ani** (decis de autor), într-o **mină**, oamenii au găsit **un singur cristal** (cât să stea pe un piedestal; îl pot căra patru oameni): **Inima Luminii**. La lumina soarelui radiază putere și, foarte rar, **creează cristale mici**, care fac **magia luminii** mult mai puternică. E cea mai mare putere magică a oamenilor; necromanția o poate corupe. E păzită în **clădirea principală a capitalei**.
+- **Cercul Luminii**, asociația magilor, nu e secret: s-a înființat tot atunci, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc (decis de autor); trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și scuturi (steagul albastru al satului, platoșa și sabia lui Edwin) e **forma cristalelor mici**: doar pus acolo, le dă oamenilor încredere și putere.
 
 **Narco**
@@ -67,7 +68,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - Orcii n-au dragoni: au **wyverni** (nu dragoni adevărați), cu ritualul lor, și **unelte împotriva dragonilor**. Craniile Sângerii pregătesc **asediul capitalei**.
 - **Războiul a început acum 10 ani** (decis de autor), la 10 ani după moartea regelui, și nimeni nu știe exact de ce. Orcii **nu pot folosi magia luminii**: se bizuie pe **magia naturii**, iar **șamanii** le întăresc trupele și cheamă animalele în ajutor.
 - **Drumul mare** (decis de autor) pleacă de la poarta satului și merge zile întregi, până la capitală; pe el pleacă, în căruțele orcilor, fierul, grâul și pieile satului. Noaptea, pe el trece spre capitală un **convoi cu wyverni în cuști** (misiunea Kaiei „Convoiul”): Vale și Kaia îi văd de departe și îi cred dragoni.
-- **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
+- **De ce n-au distrus satul:** trăia mai ales din agricultură (decis de autor); cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
 
 **Șobolanii și teroarea**
 - **Un clan de șobolani mutanți care vorbesc**, aliat cu **„teroarea” care vine**: „cerul se face negru, iar morții ies din morminte”. **Teroarea e ce poate face Narco** (moartea, morții vii, magia interzisă); ei îi zic „Stăpânul-oaselor”. Îl avertizează pe Vale să se gândească de partea cui stă. În jocul principal, trei unități de șobolani îi ajută pe morți (Undead); în Actul 1, cei care scuipă bale acide revin în lupta finală, de partea orcilor.
@@ -205,16 +206,9 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ## Prologul 📝
 
-**Decis de autor:** jocul pornește cu **câteva pagini de carte** (cam 5), cu o **voce de cronică**: ce știu oamenii că s-a întâmplat în ultimii 200 de ani (dragonii, Inima Luminii, regele și noaptea de acum 20 de ani, războiul de acum 10 ani, căderea satului), cu descrieri frumoase și suspans în jurul regelui. Nu spune nimic din ce se descoperă în joc. Textul se scrie întâi în documentul „Fangs&Honor: Prologul” (Claude Docs), apoi intră în joc. **De lămurit:** numele (tărâmul, regatul, capitala, satul, regii, primordialul focului) și dacă mai rămâne visul cu bătălia de mai jos.
-
-Planul de dinainte, visul cu bătălia: 5–7 imagini cu text peste ele.
-1. Orcii vin spre sat.
-2. Soldații satului, printre ei tatăl lui Vale, încearcă să-l apere.
-3. Sunt răpuși (soldatul din prim-plan e tatăl lui Vale).
-4. Orcii pun taxe pe satul cucerit.
-5. Orcii ridică zidul.
-
-Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tatăl lui. Abia acum se înțelege că imaginile au fost visul lui.
+**Decis de autor:** jocul pornește cu **pagini de carte** (acum 7), cu o **voce de cronică**: tot ce știu oamenii din Aldaria, de la primul portal, acum ~2000 de ani, până la primăvara în care a căzut apărarea satului Baum (doar 23 de oameni), cu descrieri frumoase și suspans în jurul regelui. Nu spune nimic din ce se descoperă în joc: Karzor apare mort, cum îl știu oamenii, iar vârsta lui Vale nu se spune. Textul se scrie întâi în documentul „Fangs&Honor: Prologul” (Claude Docs), apoi intră în joc.
+- **Numele** (decis de autor): tărâmul **Aldaria**, regatul **Aldenor**, capitala **Altaris**, satul **Baum**, regele cel bătrân **Aldric**, fiul lui, regele de acum, **Cedric**, primordialul focului **Ardrax**.
+- **Visul cu bătălia** (decis de autor) rămâne **al doilea vis**, coșmarul lui Vale de după misiunea lui Roderick, „Locul unde a căzut tata”. Planul vechi, cu imaginile bătăliei la începutul jocului, nu mai e.
 
 ---
 
