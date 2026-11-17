@@ -1,0 +1,159 @@
+{
+  "_nota": "Prologul (decis de autor): pagini de carte la începutul jocului, cu o voce de cronică: tot ce știu oamenii din Aldaria, până la primăvara în care a căzut Baum. Textul e scris de Claude și verificat cu lore-ul (de confirmat de autor); se lucrează în documentul „Fangs&Honor: Prologul” (Claude Docs). Engleza e traducerea lui (cerută de autor), cu aceleași paragrafe, în aceeași ordine. În joc nu intră încă (decis de autor: întâi textul); se citește în editor, la tab-ul „Prolog”.",
+  "titlu": {
+    "ro": "Cronica Aldariei",
+    "en": ""
+  },
+  "pagini": [
+    {
+      "titlu": {
+        "ro": "Tărâmurile celelalte",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Într-o seară senină, cerul Aldariei e plin. Stolurile se întorc spre păduri, fumul vetrelor urcă drept, se aprind primele stele. Undeva latră un câine, undeva scârțâie un car întârziat. Doar dragoni nu sunt. Cei mai mulți oameni trăiesc o viață întreagă fără să vadă vreunul, deși toți au auzit de ei.",
+          "Aldaria e lumea pe care o știm: a oamenilor, a elfilor de pădure și a orcilor. Are cetăți și sate, drumuri și râuri, secerișuri și ierni, cântece și războaie. Dragonii însă nu sunt de aici. Trăiesc în lumile lor, câte una pentru fiecare fel de dragon. Nu le găsești nici în cer, nici la capătul pământului. Sunt dincolo de lumea noastră, ca o încăpere din spatele unei uși pe care n-ai deschis-o niciodată. Oamenii le spun, ca în basme, tărâmurile celelalte.",
+          "La focul de seară se spune că lumea nu se sfârșește acolo unde se sfârșesc drumurile. Când copiii întreabă unde zboară dragonii, bătrânii arată cu bărbia spre întuneric. „Pe tărâmul celălalt”, zic ei. Focul trosnește, iar copiii se uită multă vreme în noapte, ca și cum ar putea vedea până acolo.",
+          "Cronicile vechi spun mai mult. Sunt cinci dragoni primordiali, fiecare cu una dintre cele cinci puteri ale naturii: apa, focul, pământul, aerul și moartea. Fiecare primordial are lumea lui. Și fiecare lume are, undeva în Aldaria, o poartă.",
+          "O poartă se deschide greu și numai sub mâna unui mag foarte puternic. Dar nici deschisă nu e drum pentru oricine. Prin ea trece doar cine are darul dragonilor.",
+          "Ceilalți mor.",
+          "Iar cine a trecut nu se mai întoarce cum a plecat. Din lumea dragonilor nu ieși decât legat cu un dragon.",
+          "Dintre cele cinci porți, oamenii știu doar de două. Unde sunt celelalte trei, nu știe nimeni, iar nicio cronică nu spune ce e dincolo de ele.",
+          "Pe prima dintre cele două n-au găsit-o oamenii."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Prima poartă",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Acum cam două mii de ani, elfii de pădure au găsit primul portal, poarta aerului. Stă adânc în pădurea lor, acolo unde lumina zilei abia mai ajunge la rădăcinile copacilor. Drumul până la ea e lung și întortocheat, iar pe el nu trec decât elfii.",
+          "N-au spus nimănui. Multă vreme, dincolo de hotarele lor, nimeni n-a știut ce păzesc.",
+          "Apoi, într-o zi, elfii și oamenii s-au înfruntat în luptă. Pentru ce se luptau și cine a învins, poveștile nu spun. Ele țin minte cerul.",
+          "Era senin până în zare. Și s-a auzit un tunet.",
+          "Aerul s-a răcit dintr-odată și a prins miros de ploaie, deși nu ploua. Deasupra elfilor s-a înălțat o umbră. Părea o pădure care își luase zborul. Solzii îi erau ca scoarța copacilor bătrâni, iar printre ei creșteau frunze. Aripile, ca de pânză verde și brună, stăteau întinse pe oase subțiri ca ramurile, iar coarnele răsucite semănau cu niște crengi. Când bătea din aripi, foșnea ca un codru în vânt.",
+          "Oamenii au ridicat ochii. Un ostaș din primul rând a scăpat sulița și nici n-a băgat de seamă. Elfii nu s-au uitat în sus. Ei știau.",
+          "Era Karzor, primordialul aerului, cel dintâi dragon pe care îl vedeau oamenii. Pe spinarea lui, mic cât o pasăre în vârful unui stejar, stătea un elf: primul care se legase vreodată cu el.",
+          "Și au căzut fulgerele. Din cerul fără nori, unul, apoi încă unul, apoi atâtea, încât nu le mai număra nimeni. Lumina lor albă trecea și prin pleoapele închise, iar unde loveau, pământul rămânea fumegând.",
+          "Poarta aerului e și azi a elfilor. Despre lumea de dincolo, oamenii știu doar din auzite: munți care plutesc și dragoni albi, greu de deosebit de nori. Karzor a murit.",
+          "Dar oamenii n-au uitat ziua în care au ridicat pentru prima oară ochii spre un dragon. De atunci n-au mai putut să-i coboare."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Focul oamenilor",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Cam cinci sute de ani mai târziu, au găsit și oamenii o poartă: poarta focului. De atunci o păzesc, zi și noapte.",
+          "Călăreții care au trecut prin ea povestesc despre o lume aproape ca a noastră, doar că pârjolită. Iarba e neagră, piatra e caldă sub tălpi, iar vântul miroase a cenușă. Pe cer zboară dragoni roșii și portocalii, ca scânteile deasupra unui foc mare.",
+          "A urmat o ucenicie lungă, de încă vreo mie de ani. Încet, oamenii au deslușit ce sunt porțile, cum se deschid și cine poate trece prin ele. Învățătura s-a plătit cu vieți.",
+          "Au aflat că darul dragonilor doarme în om, ca sămânța sub zăpadă, până la douăzeci și șase de ani. Abia atunci se trezește, iar trezirea poate fi mică sau mare.",
+          "Cu trezirea mică, vorbești cu dragonii și afli de la ei lucruri ascunse oamenilor. Te poți lega cu un dragon mai slab, dar anii tăi rămân anii unui om: cam o sută.",
+          "Trezirea mare vine foarte rar, cum dai de aur când sapi o fântână. Cine o are se poate lega cu un primordial. Legat cu el, un om trăiește până pe la trei sute de ani.",
+          "Legământul vă împletește, pe tine și pe dragon, ca două fire într-o funie. Îl călărești și luptați împreună, iar în gând vă vorbiți oricând. El îți spune o incantație. Cu ea deschizi o trecere doar pentru el și îl chemi la tine. Înfățișarea lui se schimbă după neamul celui cu care s-a legat: de aceea semăna Karzor cu pădurea elfilor.",
+          "E un legământ pe viață și pe moarte. Moare omul, moare și dragonul. Moare dragonul, moare și omul. Numai primordialii renasc, fiecare în lumea lui. Dragonii mai slabi se duc de tot.",
+          "În Aldenor, regatul oamenilor, călăreții de dragoni alcătuiesc Ordinul Flăcării, de care a auzit orice copil. Nu încetează nici azi să-i caute pe cei care se trezesc."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Inima Luminii",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Acum două sute de ani, într-o mină, niște oameni săpau după minerale. Era o muncă oarbă: praf, lămpi care fumegau, lovituri de târnăcop în piatră, zile la rând.",
+          "Într-o zi, târnăcopul n-a mai dat de piatră, ci de gol. Dincolo se deschidea o încăpere mare, cu pereții pierduți în întuneric. Aerul nu se mișca deloc, iar fiecare pas se întorcea, târziu, în ecou.",
+          "În mijlocul ei stătea un singur cristal.",
+          "La flacăra lămpilor, cristalul părea doar o piatră limpede și rece. Era mare, dar nu uriaș: patru oameni l-au urcat spre ieșire, încet, cu genunchii tremurând sub greutate. Afară, la prima rază de soare, s-a umplut de lumină, iar din el a început să curgă putere. Cei din jur o simțeau pe piele, ca pe căldura unui cuptor deschis, deși nu ardea. Nimeni n-a scos o vorbă.",
+          "Așa a fost găsită Inima Luminii.",
+          "Tot atunci, cei mai puternici magi ai oamenilor au întemeiat Cercul Luminii, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc. Căci un mare mag simte trezirile, așa cum simți o privire în ceafă.",
+          "Sub soare, Inima naște, foarte rar, cristale mici. Un astfel de cristal întărește mult magia luminii, dar puțini ajung să țină vreunul în mână. Forma lor e un romb. De aceea rombul auriu e cusut pe steaguri și bătut pe scuturi. Și chiar fără cristal, simplul semn le dă oamenilor încredere și putere în luptă.",
+          "Ca și Ordinul Flăcării, Cercul nu se ascunde de nimeni: în fiecare sat, oricât de mic, slujește la biserică un preot-mag trimis de el.",
+          "Inima Luminii a rămas cea mai mare putere magică a oamenilor. Se vorbește despre ea cum se vorbește despre soare: cu evlavie și de departe. E păzită la Altaris, capitala Aldenorului, în cea mai de seamă clădire a cetății.",
+          "Acolo, acum douăzeci de ani, cineva a încercat să-i întunece lumina."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Regele cel bătrân",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Pe atunci, Aldenor avea încă un rege cu dragon.",
+          "Aldric domnise atâta vreme, încât puțini își mai aminteau de altul. Lumea îi spunea „regele cel bătrân”. Era mag și războinic deopotrivă, iar dragonul lui era Ardrax, primordialul focului. Se spune că, de câte ori regele îl chema, cerul Altarisului se înroșea ca la apus. Părinții își ridicau copiii pe umeri, să-l vadă.",
+          "Primejdia a venit de unde n-o căuta nimeni: din Cercul Luminii.",
+          "Arcon era unul dintre cei mai puternici magi ai lui. A descoperit necromanția, magia interzisă la oameni, la elfi, la toți. Iar magia aceea l-a corupt încet, cum roade rugina fierul.",
+          "A cerut ca Inima Luminii să slujească necromanției. I s-a spus „nu”.",
+          "N-a mai cerut.",
+          "Într-o noapte, au urlat câinii, în toată cetatea deodată. Ferestrele marii clădiri se aprindeau și se stingeau, într-o lumină care nu mai semăna cu lumina. Zidurile crăpau cu un sunet de gheață pe râu, primăvara. Oamenii ieșeau pe străzi, desculți, și nu îndrăzneau să se apropie.",
+          "Înăuntru, Arcon încerca să corupă Inima cu forța.",
+          "Regele a urcat treptele și a intrat.",
+          "Lumina din ferestre s-a zbătut ca flacăra unei lumânări în curent. Dintr-odată s-a făcut albă, mai albă decât ziua, și a trecut prin ziduri.",
+          "Apoi, liniște. Atât de adâncă, încât se auzea cum cade praful.",
+          "Regele cel bătrân a făcut ce fac regii doar în cântece: și-a dat viața ca să-l oprească. Și l-a oprit. Au murit amândoi, regele și magul. La răsărit, Inima Luminii strălucea ca întotdeauna.",
+          "Odată cu regele a murit și Ardrax. „Unde se duce călărețul, se duce și dragonul”, spun oamenii. Dar Ardrax e primordial: a renăscut în lumea focului, fără călăreț. N-a mai rămas cine să-l cheme. Cerul Altarisului nu se mai înroșește decât la apus.",
+          "De douăzeci de ani, oamenii caută pe cineva cu trezirea mare. N-au găsit pe nimeni. Pe tron stă fiul regelui, Cedric. A moștenit coroana.",
+          "Dragonul, nu."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Steagul roșu",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "La zece ani după moartea regelui, a început războiul.",
+          "Orcii trăiesc împărțiți în triburi. Cel mai mare dintre ele, Craniile Sângerii, ascultă de căpetenia Gorvak. Sub steagul lor roșu, cu un craniu, au venit asupra oamenilor.",
+          "De ce anume, nu știe nimeni. Orcii nu pot stăpâni magia luminii, așa că lumina oamenilor nu le-ar fi de niciun folos. Ei se bizuie pe altă magie, a naturii. Șamanii le întăresc trupele și cheamă fiarele în ajutor.",
+          "Cei care au stat în fața lor povestesc mereu la fel. Întâi vezi steagul roșu, cu craniul. Apoi auzi cântecul șamanilor, gros și adânc, ca un mârâit care urcă din pământ. Pe urmă ies fiarele din păduri, iar orcii vin după ele, mai iuți și mai tari decât ar trebui să fie.",
+          "Zece ani de fum la orizont și de clopote trase noaptea. Zece ani de căruțe cu răniți pe drumuri și de vești care ajung la margini târziu și pe jumătate. În multe case din Aldenor, masa se pune cu o farfurie mai puțin. Craniile Sângerii își strâng oștile spre capitală, cum se strâng norii deasupra unui lan, înaintea grindinei.",
+          "Ordinul Flăcării mai are călăreți, cu dragoni mai mici decât primordialii. Dar într-un război atât de lung, totul se cântărește și se drămuiește: fiecare om, fiecare sac de grâu, fiecare dragon. Călăreții pleacă doar la nevoie mare. Iar un sat mic, departe de toate, nu e o nevoie mare.",
+          "Așa au rămas singure satele de la margine. Nu din răutate, ci din socoteală. Oamenii de acolo știu că dragonii există. Știu și că nu vin.",
+          "Deasupra lor, cerul e gol."
+        ],
+        "en": []
+      }
+    },
+    {
+      "titlu": {
+        "ro": "Baum",
+        "en": ""
+      },
+      "paragrafe": {
+        "ro": [
+          "Drumul mare trece prin Aldenor ca o cusătură prin pânză. Pornește din Altaris și merge zile întregi spre marginea regatului. Acolo, chiar pe drum, se află satul Baum.",
+          "Baum trăiește mai ales din câmpurile de grâu, din vaci și din moara care își întoarce aripile în vânt. La biserică se înalță steagul satului, albastru, cu rombul auriu. Ca în orice sat, slujește și aici un preot-mag trimis de Cercul Luminii.",
+          "E un sat retras, care a rămas departe de războaie. Nimeni de aici n-a văzut vreodată un dragon. Tot ce stă scris în paginile dinainte se știe la Baum doar din poveștile de drum.",
+          "La capătul satului, în locul pe care sătenii îl numesc Marginea, e un gard vechi de lemn. Dincolo de el se întinde un câmp, iar în mijlocul câmpului stă copacul mare. Primăvara înflorește alb.",
+          "Primăvara trecută, Baum a încercat să-i oprească pe orci lângă copacul mare. Atâta era toată apărarea satului: oameni care țineau mai des în mână coasa decât sabia.",
+          "Copacul era în floare. Au căzut douăzeci și trei.",
+          "Printre ei era și Edwin Lightfinder. Acasă îl așteptau o soție, Miriam, și un fiu, Vale.",
+          "Orcii le-au îngăduit sătenilor să-și strângă morții. În cimitirul de la Marginea s-au săpat douăzeci și trei de morminte.",
+          "A doua zi după bătălie, satul a căzut.",
+          "De atunci, orcii îi cruță pe oameni în schimbul unei taxe plătite în fiecare săptămână. Grâul de aici le e mai de folos decât cenușa. Au ridicat un zid și păzesc ieșirea. Pe drumul mare, pe care veneau odată poveștile, pleacă acum, în căruțele orcilor, grâul, fierul și pieile satului.",
+          "Pe zid flutură steagul roșu, cu craniul. Satul plătește. Satul tace. Iar la biserică, steagul albastru flutură mai departe.",
+          "Aici se oprește cronica. Ce urmează nu e încă istorie."
+        ],
+        "en": []
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { normalizeaza } from '../src/date.js';
 import { construiesteLumea } from '../src/lume.js';
 import { creeazaGalerie } from './galerie.js';
 import { arataMisiunile } from './misiuni.js';
+import { arataPrologul } from './prolog.js';
 import { creeazaAranjare } from './aranjare.js';
 import { creeazaInterfata } from './interfata.js';
 
@@ -31,6 +32,7 @@ document.addEventListener('deschide-aranjare', (e) => {
 const interfata = creeazaInterfata(document.getElementById('interfata'), comun, reincarcaImagini, verificaSincronizarea);
 
 const cadru = document.getElementById('cadru-test');
+let prologDesenat = false;
 for (const b of document.querySelectorAll('.taburi button')) {
   b.onclick = () => {
     document.querySelectorAll('.taburi button').forEach((x) => x.classList.toggle('activ', x === b));
@@ -41,6 +43,11 @@ for (const b of document.querySelectorAll('.taburi button')) {
     aranjare.ascunde();
     if (b.dataset.tab === 'galerie') galerie.arata();
     if (b.dataset.tab === 'misiuni') arataMisiunile(document.getElementById('misiuni'));
+    // Prologul se desenează o singură dată: datele nu se schimbă cât e editorul deschis, iar locul citit rămâne
+    if (b.dataset.tab === 'prolog' && !prologDesenat) {
+      arataPrologul(document.getElementById('prolog'), comun.date.prolog);
+      prologDesenat = true;
+    }
     if (b.dataset.tab === 'interfata') interfata.arata();
     // Jocul de test se încarcă abia când e deschis tab-ul, ca să pornească mereu de la ultima variantă
     if (b.dataset.tab === 'testare') incarcaTestul();
