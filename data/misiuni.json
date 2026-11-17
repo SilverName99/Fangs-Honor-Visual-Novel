@@ -1390,17 +1390,13 @@
           }
         },
         {
-          "text": "Iau cercurile vechi de la Agnes",
+          "text": "Iau cercurile vechi din pivnița lui Agnes",
           "gata": {
             "existaStare": "cercuri_luate"
           },
-          "sfat": "Agnes e la tavernă (09–02).",
-          "predare": {
-            "text": "Bram vrea cercurile vechi, doamna Agnes.",
-            "nod": "cer_cercuri"
-          },
+          "sfat": "Pivnița e sub sala tavernei (09–02); cercurile stau lângă butoaie.",
           "indiciu": {
-            "text": "Despre butoaie...",
+            "text": "Unde sunt cercurile vechi, doamna Agnes?",
             "nod": "cer_ind"
           }
         },
@@ -1428,7 +1424,7 @@
           "gata": {
             "existaStare": "cercuri_gata"
           },
-          "sfat": "Seara, după 22 (cât e taverna deschisă, până la 2), cobor în pivnița lui Agnes.",
+          "sfat": "După ora 22 (cât e taverna deschisă, până la 2), cobor direct în pivnița lui Agnes, ferit de ochii din sală.",
           "indiciu": {
             "text": "Despre diseară...",
             "nod": "cer_seara"
@@ -1443,7 +1439,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: berea nouă a sărit cercurile butoaielor; Agnes nu vrea să-l roage pe Bram (ales de Claude: ca să nu aibă el necazuri cu orcii; în taină, îi place de el); Bram bate cercurile vechi din nou, seara le pun în pivniță (2 imagini), Agnes îi aduce o cană de bere și Bram se înroșește; +1 Bram."
+      "_nota": "Decis de autor: berea nouă a sărit cercurile butoaielor; Agnes nu vrea să-l roage pe Bram (ales de Claude: ca să nu aibă el necazuri cu orcii; în taină, îi place de el); Bram bate cercurile vechi din nou, seara le pun în pivniță (2 imagini), Agnes îi aduce o cană de bere și Bram se înroșește; +1 Bram. Decis de autor: cercurile vechi le ia Vale din pivniță (zona o desenează autorul), nu de la Agnes."
     },
     {
       "id": "bram_cufar",

@@ -771,7 +771,27 @@
                 }
               ]
             }
-          }
+          },
+          "actiuni": [
+            {
+              "id": "cercuri_vechi",
+              "tip": "eveniment",
+              "nume": "Cercurile vechi",
+              "eveniment": "cercuri_pivnita_luate",
+              "_nota": "Decis de autor: cercurile vechi se iau de aici, din pivniță (zona o desenează autorul, lângă butoaie); apare după ce Vale l-a rugat pe Bram și dispare după ce le-a luat.",
+              "ascuns": {
+                "conditii": {
+                  "misiune": {
+                    "bram_cercuri": "inceputa"
+                  },
+                  "existaStare": "cercuri_bram",
+                  "nu": {
+                    "existaStare": "cercuri_luate"
+                  }
+                }
+              }
+            }
+          ]
         }
       ]
     },

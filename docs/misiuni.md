@@ -735,13 +735,13 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Pornește** (decis de autor): după „Pivnița” (ales de Claude: și după „Fierul lui Bram”, când e deschis magazinul lui), la Agnes: „Doamna Agnes, de ce miroase toată taverna a bere? !”. Berea nouă a fermentat prea tare și a sărit cercurile ruginite ale butoaielor.
 - **De ce nu-l roagă ea pe Bram** (decis de autor: nu-i datorează nimic; motivul, ales de Claude): orcii îi numără fierul lui Bram și nu vrea să aibă el necazuri din cauza ei. În taină, Bram îi place (decis de autor).
 - **Pasul 1:** la Bram, „Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.” → Bram se încurcă (îi place de Agnes); fierul vechi nu-l numără orcii: îi trebuie cercurile vechi.
-- **Pasul 2:** la Agnes, „Bram vrea cercurile vechi, doamna Agnes.”
+- **Pasul 2** (decis de autor): cercurile vechi le iei **din pivniță**, de lângă butoaie: zona „Cercurile vechi”, o desenezi tu în pivniță, la Aranjare (până atunci e un buton jos); apare după ce l-ai rugat pe Bram și dispare după ce le-ai luat. Vale se gândește puțin („s-au strâns singure”) și le ia pe umăr. La Agnes, „Unde sunt cercurile vechi, doamna Agnes?” te trimite în pivniță.
 - **Pasul 3:** la Bram, „Uite cercurile vechi.” → le bate din nou; seara vine în pivniță.
-- **Pasul 4:** seara, după 22 (cât e taverna deschisă, până la 2), cobori în pivniță → peste 2 imagini, Bram și Vale pun cercurile, iar Agnes îi aduce lui Bram prima cană din berea nouă. **Bram se înroșește** (portretul nou `fierar_inrosit.png`).
+- **Pasul 4:** la Agnes, „Despre diseară...”: să se ferească de ochii din sală și să vină **direct în pivniță, după ora 22** (decis de autor). Seara, după 22 (cât e taverna deschisă, până la 2), cobori în pivniță → peste 2 imagini, Bram și Vale pun cercurile, iar Agnes îi aduce lui Bram prima cană din berea nouă. **Bram se înroșește** (portretul nou `fierar_inrosit.png`).
 - **Recompensa:** încrederea lui Bram +1 (Agnes n-are încredere).
 - **Imagini:** `events/cercuri_pivnita_1.png`, `cercuri_pivnita_2.png`, `items/cercuri_vechi.png`, `portraits/fierar_inrosit.png` (galeria: „Cercurile butoaielor”).
 
-**Cum verifici:** după „Pivnița”, în tavernă → Agnes → „de ce miroase...” → Bram → Agnes → Bram → seara, după 22, ușa „Pivnița”.
+**Cum verifici:** după „Pivnița”, în tavernă → Agnes → „de ce miroase...” → Bram → pivnița, zona „Cercurile vechi” → Bram → seara, după 22, ușa „Pivnița”.
 
 ---
 

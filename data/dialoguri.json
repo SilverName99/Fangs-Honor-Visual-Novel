@@ -1180,28 +1180,30 @@
       "cer_ind": {
         "vorbitor": "hangita",
         "emotie": "inrosit",
-        "text": "Bram a zis ceva? ...Nu că m-ar interesa. Mă interesează butoaiele."
-      },
-      "cer_cercuri": {
-        "vorbitor": "hangita",
-        "emotie": "inrosit",
-        "text": "Cercurile vechi? Le-am strâns de azi-dimineață. Știam eu că o să vină vorba de ele.",
-        "efecte": {
-          "obiect": "cercuri_vechi",
-          "stare": {
-            "cercuri_luate": "da"
-          }
-        }
+        "text": "Le-am strâns lângă butoaie, în pivniță. Ia-le de acolo.",
+        "urmator": "cer_ind2"
       },
       "cer_seara": {
         "vorbitor": "hangita",
-        "emotie": "zambet",
-        "text": "Diseară? Atunci las ușa pivniței deschisă. Și pun deoparte o cană din berea nouă."
+        "emotie": "normal",
+        "text": "Diseară, Vale. Dar nu pe aici, prin sală: sunt prea mulți ochi la mesele mele, și nu toți sunt prieteni.",
+        "urmator": "cer_seara2",
+        "_nota": "Decis de autor: să se ferească de prea mulți ochi și să vină direct în pivniță, după ora 22. Ciornă (Claude)."
       },
       "a_dupa_cercuri": {
         "vorbitor": "hangita",
         "emotie": "inrosit",
         "text": "Bram a trecut azi la prânz. A mâncat de două ori. Cred că i-a plăcut berea."
+      },
+      "cer_ind2": {
+        "vorbitor": "hangita",
+        "emotie": "inrosit",
+        "text": "Și dacă Bram întreabă... nu le-am strâns eu. S-au strâns singure."
+      },
+      "cer_seara2": {
+        "vorbitor": "hangita",
+        "emotie": "inrosit",
+        "text": "Vino direct în pivniță, după ora 22, când vine și Bram. Las ușa deschisă. Și pun deoparte o cană din berea nouă... pentru el."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -13339,6 +13341,40 @@
         "gand": true,
         "emotie": "zambet",
         "text": "Atunci să le dau un motiv să zâmbească."
+      }
+    }
+  },
+  "cercuri_pivnita_luate": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: cercurile vechi se iau din pivniță, de la zona desenată de autor; Vale doar se gândește, apoi le ia.",
+    "grup": "Cercurile butoaielor",
+    "partener": null,
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cercurile vechi stau grămadă lângă butoaie, roșii de rugină. Câteva s-au crăpat de tot.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Cineva le-a pus frumos unul într-altul și le-a legat cu o sfoară. Care va să zică, „s-au strâns singure”.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Le iau pe umăr. Sunt mai grele decât arată. Acum, la Bram.",
+        "efecte": {
+          "obiect": "cercuri_vechi",
+          "stare": {
+            "cercuri_luate": "da"
+          }
+        }
       }
     }
   }
