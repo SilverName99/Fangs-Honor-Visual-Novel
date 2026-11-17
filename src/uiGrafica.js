@@ -75,7 +75,8 @@ export const ELEMENTE_UI = [
         `padding:${h * 0.25}px ${w * 0.12}px ${h * 0.12}px;flex-direction:row;flex-wrap:wrap;align-content:center;justify-content:center;gap:14px;border:none;border-image:none;border-radius:0;box-shadow:none;` +
         `background:url("${url}") center / 100% 100% no-repeat;color:#2a1a0e}` +
         `.panou-actiune .titlu-meniu{position:absolute;left:50%;top:${h * 0.105}px;transform:translate(-50%,-50%);margin:0;white-space:nowrap;font:700 34px Georgia,serif;color:#f3dfae;text-shadow:0 2px 4px #000}` +
-        `.panou-actiune .text-anunt,.panou-anunt .text-anunt{color:#2a1a0e;font-size:28px;text-align:center}` +
+        // Și textul Groapei (intro, cine intră): închis la culoare pe pergament, ca să se citească
+        `.panou-actiune .text-anunt,.panou-anunt .text-anunt,.panou-actiune .text-panou-groapa{color:#2a1a0e;font-size:28px;text-align:center}` +
         `${p.split(',').map((x) => `${x} > :not(.buton)`).join(',')}{flex-basis:100%}`
       );
     } },

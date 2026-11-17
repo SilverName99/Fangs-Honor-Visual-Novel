@@ -323,6 +323,42 @@ svg.zone {
   left: 24px;
   top: 22px;
 }
+/* Sub butonul lui Vale, aliații care vin cu el în Groapă (decis de autor): pătrățele mai mici, una sub alta, cu fața
+   lor în fereastra ramei; nu se apasă, doar se văd (numele la hover) */
+.aliati-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.buton.buton-hud.aliat-hud {
+  position: relative;
+  min-width: 0;
+  width: 78px;
+  height: 78px;
+  padding: 0;
+  cursor: default;
+}
+.aliat-hud .fata-aliat-hud {
+  position: absolute;
+  inset: 13%;
+  /* !important: imaginea își pune singură forma pozei (portretul de dialog e 4:5) și ar ieși din ramă */
+  aspect-ratio: auto !important;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #1a140e;
+}
+.aliat-hud .fata-aliat-hud img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+.aliat-hud .fata-aliat-hud.lipsa {
+  font-size: 11px;
+  padding: 2px;
+}
 .buton.buton-hud.apasat {
   border-color: #e0bd7a;
 }
@@ -3494,11 +3530,21 @@ svg.zone {
   line-height: 1.35;
   color: #f3e6c8;
 }
-/* Pe butoanele de pergament, al doilea rând (ce câștigi, ce face aliatul acolo) e mai mic */
+/* Butoanele pe două rânduri (decis de autor: scrisul să încapă bine): sus ce alegi, pe un singur rând, dedesubt,
+   mai mic, ce câștigi sau ce face aliatul acolo. Selectorul e mai tare decât al pergamentului (uiGrafica.js), care
+   pune textul pe un singur rând, unul lângă altul */
+.panou-actiune.panou-groapa .buton.buton-groapa {
+  flex-direction: column;
+  gap: 2px;
+}
+.panou-groapa .titlu-buton-groapa {
+  font: 700 22px Georgia, serif;
+  white-space: nowrap;
+}
 .panou-groapa .buton .detaliu-groapa {
-  font: italic 400 20px Georgia, serif;
+  font: italic 400 17px Georgia, serif;
+  line-height: 1.1;
   color: #5a3c22;
-  margin-top: 4px;
 }
 .panou-groapa .buton:disabled {
   opacity: 0.45;

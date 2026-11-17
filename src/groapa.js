@@ -17,21 +17,35 @@ function buton(text, clic, dezactivat = false) {
   b.disabled = dezactivat;
   return b;
 }
+// Buton pe două rânduri (decis de autor: scrisul să încapă bine în pergament): sus ce alegi, dedesubt, mai mic,
+// ce câștigi sau ce face aliatul acolo
+function buton2(titlu, detaliu, clic) {
+  const b = buton('', clic);
+  b.classList.add('buton-groapa');
+  b.append(div('titlu-buton-groapa', titlu));
+  if (detaliu) b.append(div('detaliu-groapa', detaliu));
+  return b;
+}
 const valuri = (n) => (n === 1 ? '1 val' : `${n} valuri`);
+
+// Cine poate intra cu Vale: cei din listă care luptă, au încrederea cerută (decis de autor: cel puțin 4) și au
+// spus da când i-a întrebat (decis de autor: întrebarea lor din meniu; Kaia, abia după capa de la Miriam).
+// Tot de aici ia și HUD-ul pătrățelele cu fețele lor, sub butonul lui Vale (decis de autor: să vezi cine vine)
+export function aliatiGroapa(joc) {
+  const cfg = joc.date.config.groapa || {};
+  const s = joc.stare;
+  return (cfg.aliati || []).filter((id) => {
+    const p = joc.date.npcs.personaje.find((x) => x.id === id);
+    return p?.lupta && (s.relatii?.[id] || 0) >= (cfg.incredereMin ?? 4) && s.stari?.[`groapa_aliat_${id}`] === 'da';
+  });
+}
 
 export function creeazaGroapa(parinte, joc) {
   const cfg = () => joc.date.config.groapa || {};
   const nivel = (id) => (cfg().niveluri || []).find((n) => n.id === id);
   const personaj = (id) => joc.date.npcs.personaje.find((p) => p.id === id);
 
-  // Cine poate intra cu Vale: cei din listă care luptă, au încrederea cerută (decis de autor: cel puțin 4) și au
-  // spus da când i-a întrebat (decis de autor: întrebarea lor din meniu; Kaia, abia după capa de la Miriam)
-  function aliatiPosibili() {
-    const s = joc.stare;
-    return (cfg().aliati || []).filter(
-      (id) => personaj(id)?.lupta && (s.relatii?.[id] || 0) >= (cfg().incredereMin ?? 4) && s.stari?.[`groapa_aliat_${id}`] === 'da',
-    );
-  }
+  const aliatiPosibili = () => aliatiGroapa(joc);
   // Și trebuie să fie prin preajmă acum: nu cine doarme (Bram, după 22) sau e plecat (Kaia, cât lipsește după
   // șoim sau stă lângă Ember rănit); ei apar stinși, cu motivul, ca jucătorul să știe de ce
   function deCeLipseste(id) {
@@ -42,8 +56,20 @@ export function creeazaGroapa(parinte, joc) {
     return null;
   }
 
-  // Ecranul Groapei: imaginea ei pe tot ecranul, iar peste ea panoul mic, cu pașii pe rând (nivelul, apoi aliații)
+  // La fiecare intrare, întâi un gând al lui Vale peste imaginea Groapei (decis de autor: 3 gânduri diferite, de
+  // câte 2-3 replici), apoi panoul. Alt gând decât data trecută, ca să nu pară că se repetă
   function deschide(loc) {
+    const d = cfg().ganduri && joc.date.dialoguri?.[cfg().ganduri];
+    const toate = [].concat(d?.start || []).find((x) => x?.aleator)?.aleator || [];
+    if (!toate.length) return arataPanoul(loc);
+    const altele = toate.filter((x) => x !== joc.stare.stari?.groapa_gand);
+    const nod = (altele.length ? altele : toate)[Math.floor(Math.random() * (altele.length || toate.length))];
+    aplicaEfecte({ stare: { groapa_gand: nod } }, joc);
+    joc.dialogApoi({ ...d, start: nod }, () => arataPanoul(loc));
+  }
+
+  // Ecranul Groapei: imaginea ei pe tot ecranul, iar peste ea panoul mic, cu pașii pe rând (nivelul, apoi aliații)
+  function arataPanoul(loc) {
     const fundal = div('acoperitor ecran-groapa');
     if (loc?.imagine) fundal.append(elementImagine([loc.imagine], { clasa: 'fundal fundal-groapa', fundal: true }));
     const panou = div('panou-actiune panou-groapa');
@@ -59,10 +85,9 @@ export function creeazaGroapa(parinte, joc) {
         div('text-panou-groapa', t.intro || 'Câte valuri înfrunți?'),
         ...(cfg().niveluri || []).map((n) => {
           const lupta = joc.date.lupte.lupte[n.lupta];
-          const b = buton(`${n.nume} · ${valuri(lupta?.valuri?.length || 1)}`, () => alegeAliatii(n));
-          // Ce câștigi, pe rândul al doilea al butonului
-          b.append(div('detaliu-groapa', `${n.bani} monede${joc.stare.stari?.[`groapa_${n.id}`] === 'castigat' ? '' : ' · prima dată și o răsplată'}`));
-          return b;
+          // Ce câștigi, pe rândul al doilea; răsplata se dă doar la prima victorie pe nivel, deci apare cât mai e de luat
+          const prima = joc.stare.stari?.[`groapa_${n.id}`] !== 'castigat';
+          return buton2(`${n.nume} · ${valuri(lupta?.valuri?.length || 1)}`, `${n.bani} monede${prima ? ' + o răsplată' : ''}`, () => alegeAliatii(n));
         }),
         buton('Pleacă', inchide),
       );
@@ -75,14 +100,13 @@ export function creeazaGroapa(parinte, joc) {
       const note = cfg().note || {};
       const randuri = posibili.map((id) => {
         const lipsa = deCeLipseste(id);
-        const b = buton(personaj(id).nume, () => {
+        const b = buton2(personaj(id).nume, lipsa || note[id], () => {
           if (lipsa) return;
           const i = alesi.indexOf(id);
           if (i >= 0) alesi.splice(i, 1);
           else if (alesi.length < max) alesi.push(id);
           actualizeaza();
         });
-        if (lipsa || note[id]) b.append(div('detaliu-groapa', lipsa || note[id]));
         return [id, b, lipsa];
       });
       const intra = buton(posibili.length ? 'Intră în Groapă' : 'Intru singur', () => incepe(n, alesi));

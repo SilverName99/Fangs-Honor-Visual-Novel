@@ -13134,5 +13134,82 @@
         "text": "Mama nici n-o să creadă."
       }
     }
+  },
+  "groapa_ganduri": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: de fiecare dată când intră în Groapă, Vale se gândește la ceva, din 3 gânduri diferite, de câte 2-3 replici; peste imaginea Groapei, înainte de panou. Alt gând decât data trecută (src/groapa.js). Fără galerie: e imaginea locului, nu o ilustrație.",
+    "partener": null,
+    "faraGalerie": true,
+    "start": {
+      "aleator": [
+        "a1",
+        "b1",
+        "c1"
+      ]
+    },
+    "noduri": {
+      "a1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă opresc la marginea Groapei. Noroiul de pe fund e mai închis la culoare decât ar trebui.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Încerc să nu mă gândesc de ce.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Respir adânc. Tata n-ar fi dat înapoi. Nici eu nu dau."
+      },
+      "b1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sus, pe margine, orcii bat cu pumnii în pari și strigă ceva în limba lor.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Nu le înțeleg cuvintele, dar le înțeleg râsul: pun pariuri pe cât rezist.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Să parieze. Eu nu cad ușor."
+      },
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Printre parii porții se zăresc câteva fețe din sat. Se uită încoace.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pentru ei, fiecare orc căzut aici e o mică bucurie, una pe care n-o spun cu voce tare.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Atunci să le dau un motiv să zâmbească."
+      }
+    }
   }
 }

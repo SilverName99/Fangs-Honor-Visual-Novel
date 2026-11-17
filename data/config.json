@@ -295,7 +295,8 @@
         "eveniment": "inel_primit"
       }
     },
-    "_notaAcord": "Decis de autor: în panoul Groapei apar doar cei care au spus da la întrebarea lor („Vrei să luptăm în Groapă împreună?”, stările groapa_aliat_<id>); Kaia, abia după capa de la Miriam."
+    "_notaAcord": "Decis de autor: în panoul Groapei apar doar cei care au spus da la întrebarea lor („Vrei să luptăm în Groapă împreună?”, stările groapa_aliat_<id>); Kaia, abia după capa de la Miriam.",
+    "ganduri": "groapa_ganduri"
   },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",

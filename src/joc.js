@@ -28,7 +28,7 @@ import '@fontsource/dancing-script/600.css';
 import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
-import { creeazaGroapa } from './groapa.js';
+import { creeazaGroapa, aliatiGroapa } from './groapa.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
 import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor, seteazaSemneMisiuni, semneMisiuniPornite, miniJocuriPornite, seteazaMiniJocuri } from './uiGrafica.js';
 
@@ -223,7 +223,17 @@ function actualizeazaHud() {
   const b = butonHud('vale', '👤', 'Vale', comutaPanoul);
   b.classList.toggle('apasat', panouDeschis);
   b.classList.toggle('avertizare', grav && !panouDeschis);
-  butonVale.replaceChildren(b);
+  // Sub butonul lui Vale, câte un pătrățel cu fața fiecăruia care a spus da la Groapă (decis de autor: să vezi cine
+  // vine cu tine); fața e cea din portretul de dialog, ca în medalioanele din luptă
+  const aliati = aliatiGroapa(joc).map((id) => {
+    const p = personaje.get(id);
+    const x = div('buton buton-hud aliat-hud');
+    x.title = `${p?.nume || id} vine cu tine în Groapă`;
+    x.append(elementImagine([`portraits/${id}_normal.png`], { clasa: 'fata-aliat-hud', raport: 1, eticheta: p?.nume || id }));
+    return x;
+  });
+  butonVale.replaceChildren(b, ...(aliati.length ? [div('aliati-hud')] : []));
+  butonVale.querySelector('.aliati-hud')?.append(...aliati);
   hud.hidden = !panouDeschis;
   hud.replaceChildren(
     div('nume-hud', 'Vale'),
@@ -786,6 +796,11 @@ const joc = {
   sunet,
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
+  // Un dialog, iar după el ce urmează (gândul lui Vale la intrarea în Groapă, apoi panoul ei)
+  dialogApoi: (d, dupa) => {
+    dupaDialog = dupa;
+    dialog.porneste(d);
+  },
   // Imagini pe tot ecranul (munca, ca ecranul de încărcare de la vânătoare)
   arataImagini: (imagini, gata, opt) => secventa.arata(imagini, gata, opt),
   date,
@@ -1115,8 +1130,10 @@ function deschideMeniul() {
     };
     for (const ev of evenimente) if (ev.imagini?.length && stare.evenimente[ev.id]) ev.imagini.forEach((c) => adauga(ev.nume || ev.grup || ev.id, c));
     const vazuteSub = new Set(stare.imaginiVazute || []);
+    // „faraGalerie”: imaginea de sub replici e a unui loc, nu o ilustrație (gândurile de la intrarea în Groapă)
     for (const [id, d] of Object.entries(dialoguri))
-      for (const n of Object.values(d.noduri || {})) if (n.imagine && vazuteSub.has(n.imagine)) adauga(d.grup || id, n.imagine);
+      if (!d.faraGalerie)
+        for (const n of Object.values(d.noduri || {})) if (n.imagine && vazuteSub.has(n.imagine)) adauga(d.grup || id, n.imagine);
     const continut = div('continut-meniu galerie-meniu');
     if (!grupuri.size) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
     for (const [nume, imagini] of grupuri) {
