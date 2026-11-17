@@ -229,7 +229,16 @@ function actualizeazaHud() {
     const p = personaje.get(id);
     const x = div('buton buton-hud aliat-hud');
     x.title = `${p?.nume || id} vine cu tine în Groapă`;
-    x.append(elementImagine([`portraits/${id}_normal.png`], { clasa: 'fata-aliat-hud', raport: 1, eticheta: p?.nume || id }));
+    // „x” din colț (decis de autor): îl scoate; ca să vină din nou, trebuie întrebat din nou (o întrebare scurtă în
+    // meniul lui, cât e „scos”, în dialoguri.json)
+    const scoate = buton('×', 'scoate-aliat', (e) => {
+      e.stopPropagation();
+      stare.stari[`groapa_aliat_${id}`] = 'scos';
+      salveaza();
+      actualizeazaHud();
+    });
+    scoate.title = `Scoate-l pe ${p?.nume || id}`;
+    x.append(elementImagine([`portraits/${id}_normal.png`], { clasa: 'fata-aliat-hud', raport: 1, eticheta: p?.nume || id }), scoate);
     return x;
   });
   butonVale.replaceChildren(b, ...(aliati.length ? [div('aliati-hud')] : []));

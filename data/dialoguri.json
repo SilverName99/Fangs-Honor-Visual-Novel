@@ -745,6 +745,28 @@
             "groapa_aliat_soldat": "da"
           }
         }
+      },
+      "groapa_din_nou_r": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, mai vii cu mine în Groapă?",
+        "urmator": "groapa_din_nou_r2"
+      },
+      "groapa_din_nou_r2": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Ți-am zis o dată: unde mergi tu, merg și eu. Nu mai întreba.",
+        "urmator": "groapa_din_nou_r3",
+        "efecte": {
+          "stare": {
+            "groapa_aliat_soldat": "da"
+          }
+        }
+      },
+      "groapa_din_nou_r3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Bine, unchiule. N-o să mai întreb."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -796,6 +818,16 @@
           }
         },
         "spre": "groapa_r1"
+      },
+      {
+        "_nota": "Decis de autor: un aliat scos din pătrățelele de sub butonul lui Vale (x-ul din colț) trebuie întrebat din nou; atunci, o întrebare scurtă, cu un răspuns scurt (ciorne, Claude), nu toată discuția de prima dată.",
+        "text": "Unchiule, mai vii cu mine în Groapă?",
+        "conditii": {
+          "stare": {
+            "groapa_aliat_soldat": "scos"
+          }
+        },
+        "spre": "groapa_din_nou_r"
       }
     ]
   },
@@ -2016,6 +2048,28 @@
             "kaia_capa": "ceruta"
           }
         }
+      },
+      "groapa_din_nou_k": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia, mai lupți cu mine în Groapă?",
+        "urmator": "groapa_din_nou_k2"
+      },
+      "groapa_din_nou_k2": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Am capa, am glaive-ul. Ember o să bombăne că rămâne în tabără... dar vin.",
+        "urmator": "groapa_din_nou_k3",
+        "efecte": {
+          "stare": {
+            "groapa_aliat_vanatoare": "da"
+          }
+        }
+      },
+      "groapa_din_nou_k3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Îi aduc ceva bun de la Agnes, să nu se mai supere."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2102,6 +2156,16 @@
           }
         },
         "spre": "groapa_k1"
+      },
+      {
+        "_nota": "Decis de autor: un aliat scos din pătrățelele de sub butonul lui Vale (x-ul din colț) trebuie întrebat din nou; atunci, o întrebare scurtă, cu un răspuns scurt (ciorne, Claude), nu toată discuția de prima dată.",
+        "text": "Kaia, mai lupți cu mine în Groapă?",
+        "conditii": {
+          "stare": {
+            "groapa_aliat_vanatoare": "scos"
+          }
+        },
+        "spre": "groapa_din_nou_k"
       }
     ]
   },
@@ -4176,6 +4240,28 @@
         "gand": true,
         "emotie": "zambet",
         "text": "Bram în Groapă. Orcii n-or să știe ce i-a lovit."
+      },
+      "groapa_din_nou_b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Domnule Bram, mai veniți cu mine în Groapă?",
+        "urmator": "groapa_din_nou_b2"
+      },
+      "groapa_din_nou_b2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ciocanul meu e tot aici, băiete. Spune-mi doar seara și vin.",
+        "urmator": "groapa_din_nou_b3",
+        "efecte": {
+          "stare": {
+            "groapa_aliat_fierar": "da"
+          }
+        }
+      },
+      "groapa_din_nou_b3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Atunci ne vedem la poartă."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -4267,6 +4353,16 @@
           }
         },
         "spre": "groapa_b1"
+      },
+      {
+        "_nota": "Decis de autor: un aliat scos din pătrățelele de sub butonul lui Vale (x-ul din colț) trebuie întrebat din nou; atunci, o întrebare scurtă, cu un răspuns scurt (ciorne, Claude), nu toată discuția de prima dată.",
+        "text": "Domnule Bram, mai veniți cu mine în Groapă?",
+        "conditii": {
+          "stare": {
+            "groapa_aliat_fierar": "scos"
+          }
+        },
+        "spre": "groapa_din_nou_b"
       }
     ]
   },
@@ -4741,6 +4837,28 @@
             "groapa_aliat_mag": "da"
           }
         }
+      },
+      "groapa_din_nou_e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Frate Elian, mai vii cu mine în Groapă?",
+        "urmator": "groapa_din_nou_e2"
+      },
+      "groapa_din_nou_e2": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Cineva trebuie să vă oblojească. Vin, Vale. Dar tot doar ca vraci.",
+        "urmator": "groapa_din_nou_e3",
+        "efecte": {
+          "stare": {
+            "groapa_aliat_mag": "da"
+          }
+        }
+      },
+      "groapa_din_nou_e3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Doar ca vraci. Înțeleg."
       }
     },
     "meniu": true,
@@ -4861,6 +4979,16 @@
           }
         },
         "spre": "groapa_e1"
+      },
+      {
+        "_nota": "Decis de autor: un aliat scos din pătrățelele de sub butonul lui Vale (x-ul din colț) trebuie întrebat din nou; atunci, o întrebare scurtă, cu un răspuns scurt (ciorne, Claude), nu toată discuția de prima dată.",
+        "text": "Frate Elian, mai vii cu mine în Groapă?",
+        "conditii": {
+          "stare": {
+            "groapa_aliat_mag": "scos"
+          }
+        },
+        "spre": "groapa_din_nou_e"
       }
     ]
   },
