@@ -874,44 +874,54 @@
       "lupta_poarta_arena": 110
     },
     "combat/orc_toba_atac.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110,
-      "lupta_poarta": 110,
-      "lupta_piata": 110,
-      "lupta_fierar": 110,
-      "lupta_campuri": 110,
-      "lupta_taverna_pivnita": 110,
-      "lupta_poarta_arena": 110
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     },
     "combat/orc_toba_aparare.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110,
-      "lupta_poarta": 110,
-      "lupta_piata": 110,
-      "lupta_fierar": 110,
-      "lupta_campuri": 110,
-      "lupta_taverna_pivnita": 110,
-      "lupta_poarta_arena": 110
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     },
     "combat/orc_toba_lovit.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110,
-      "lupta_poarta": 110,
-      "lupta_piata": 110,
-      "lupta_fierar": 110,
-      "lupta_campuri": 110,
-      "lupta_taverna_pivnita": 110,
-      "lupta_poarta_arena": 110
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     },
     "combat/orc_toba_cazut.png": {
-      "lupta_taverna_parter": 110,
-      "lupta_padure_interior": 110,
-      "lupta_poarta": 110,
-      "lupta_piata": 110,
-      "lupta_fierar": 110,
-      "lupta_campuri": 110,
-      "lupta_taverna_pivnita": 110,
-      "lupta_poarta_arena": 110
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
+    },
+    "combat/orc_toba_idle.png": {
+      "lupta_taverna_parter": 130,
+      "lupta_padure_interior": 130,
+      "lupta_poarta": 130,
+      "lupta_piata": 130,
+      "lupta_fierar": 130,
+      "lupta_campuri": 130,
+      "lupta_taverna_pivnita": 130,
+      "lupta_poarta_arena": 130
     }
   }
 }
