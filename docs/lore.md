@@ -37,7 +37,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 ## Ordinul Flăcării și regele (decis de autor)
 
-- **Ordinul Flăcării** e ordinul **călăreților de dragoni** ai oamenilor. **Nu e secret.**
+- **Ordinul Flăcării** e ordinul **călăreților de dragoni** ai oamenilor. **Nu e secret.** **Mai are călăreți**, cu dragoni mai mici (decis de autor). Satele de la margine nu le apără: de 10 ani e război (decis de autor; propunerea lui Claude, de confirmat: țin frontul și apără capitala).
 - **Regele oamenilor** era mag-războinic și legat cu **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon (vezi Narco); odată cu el a murit și dragonul, care, primordial fiind, a renăscut în lumea focului. De atunci domnește **fiul regelui**.
 - De atunci oamenii n-au mai găsit pe nimeni cu trezirea mare: îl caută.
 
@@ -85,7 +85,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Cum arată acum** (după imaginea autorului): un **schelet**, cu ochi verzi, aprinși, sub o glugă mov; armură cu cranii; pe spate, **un sarcofag** cu cranii; într-o mână, **un felinar cu un cristal corupt**, verde; în cealaltă, un toiag cu un craniu și oase, de care atârnă un **steag mov cu un semn alb** (o linie verticală cu trei brațe).
 - **Sarcofagul** (decis de autor): în el sunt **sufletele și oasele celor mai puternici luptători răpuși**. Când îl deschide, prin puterea lui, ele se adună într-un **monstru** pe care îl controlează: un uriaș din oase și foc verde de suflete, cu cranii pe umeri, pe piept și pe genunchi, cu brățări de fier ghintuite și cu fâșii din steagul mov, cu semnul lui (după imaginea autorului; numele monstrului: de ales).
 - **Ce vrea:** doar **Inima Luminii**, ca să-i corupă puterea.
-- **Cum a pornit războiul:** i-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Aproape adevărat, de-asta îl crede. **Nimeni nu știe** că Narco e în spatele războiului.
+- **Cum a pornit războiul** (acum 10 ani, decis de autor): i-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Aproape adevărat, de-asta îl crede. **Nimeni nu știe** că Narco e în spatele războiului.
 - **Teroarea** de care vorbesc șobolanii e **ce poate face Narco**: moartea, morții vii, magia interzisă. Șobolanii îi zic „Stăpânul-oaselor” (ciornă de Claude).
 
 ## Orcii (decis de autor)
@@ -95,6 +95,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
   2. al doilea trib: deocamdată nu contează;
   3. **Colții de Fier** (*Iron Tusks*): cel mai mic dintre cele trei, dar puternic. Căpetenia: **Urzhal**. Îi vor ajuta pe oameni să lupte împotriva Craniilor Sângerii (mai târziu; nu în Actul 1).
 - Orcii **n-au dragoni**. Au **wyverni** (bestii zburătoare, nu dragoni adevărați), cu ritualul lor ca să-i folosească în luptă, și **unelte de luptă împotriva dragonilor**.
+- **Războiul a început acum 10 ani** (decis de autor), la 10 ani după moartea regelui: de atunci, Craniile Sângerii luptă împotriva regatului oamenilor. **Nimeni nu știe exact de ce.**
+- **Orcii nu pot folosi magia luminii** (decis de autor): se bizuie pe **magia naturii**, iar **șamanii** le întăresc trupele și cheamă animalele în ajutor (sau le folosesc).
 - Craniile Sângerii își strâng forțele ca să **asedieze capitala** oamenilor.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
 - **Vânătorii orcilor** umplu pădurea cu **capcane de fier**, cu craniul lor bătut pe arc, și prind tot ce mișcă; carnea afumată și pieile pleacă în căruțe pe drumul mare, ca fierul lui Bram (misiunea Kaiei „Capcanele”, ciornă de Claude).

@@ -26,7 +26,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - **Demult:** într-o mină, oamenii găsesc **Inima Luminii**, care, în lumina soarelui, face foarte rar cristale mici. **Cercul Luminii** trimite câte un mag în fiecare sat; rombul auriu de pe steaguri e forma cristalelor. **Ordinul Flăcării**, călăreții de dragoni, îi caută pe cei cu trezirea.
 - **Regele oamenilor** e legat cu primordialul focului; **împăratul elfilor de pădure**, în taină, cu **Karzor**, primordialul aerului (lumea îl crede mort).
 - **Acum 20 de ani:** **Arcon**, mag al Cercului Luminii corupt de necromanție, încearcă să corupă Inima Luminii. Regele îl oprește, sacrificându-se (dragonul focului moare odată cu el și renaște în lumea lui). De atunci domnește fiul regelui, iar trezirea mare n-a mai fost găsită la nimeni. Arcon scapă cu o vrajă interzisă și devine **Narco**; nimeni nu știe că trăiește.
-- **Războiul:** Narco îi spune lui **Gorvak**, căpetenia Craniilor Sângerii: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Orcii pornesc războiul și pregătesc asediul capitalei, cu wyverni; nimeni nu știe că Narco e în spatele lor. Departe, pădurile au tăcut: animale moarte fără nicio rană, care nu putrezesc (Kaia află abia în timpul poveștii; ❓ de când și ce le-a omorât).
+- **Acum 10 ani, războiul** (decis de autor): Narco îi spune lui **Gorvak**, căpetenia Craniilor Sângerii: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Orcii pornesc războiul și pregătesc asediul capitalei, cu wyverni; nimeni nu știe că Narco e în spatele lor. Lumea nu înțelege de ce au pornit orcii războiul: magia luminii nu le folosește la nimic (decis de autor). Departe, pădurile au tăcut: animale moarte fără nicio rană, care nu putrezesc (Kaia află abia în timpul poveștii; ❓ de când și ce le-a omorât).
 - **În satul lui Vale** (retras, la marginea regatului; nimeni de aici n-a văzut un dragon): Cercul Luminii, la cererea Ordinului Flăcării, îl trimite pe **Elian**, cu un cristal mic, să găsească trezirea simțită aici; toți îl cred un preot-mag începător (❓ când a venit). Un soldat, chiriașul din camera de sus a tavernei și prietenul lui Roderick, găsise departe un solz de dragon și desenase o hartă până la o crăpătură în pământ: portalul morții.
 - **Primăvara trecută:** lângă **copacul mare**, dincolo de gardul Marginii, cad **23 de oameni ai satului** care încercau să oprească orcii, printre ei **Edwin Lightfinder** și soldatul. Edwin îi poruncește lui Roderick să fugă: „Ai grijă de Miriam și de băiat.” Roderick îl duce pe Edwin în spate până la cimitir; de atunci bea și nu se mai poate uita în ochii Miriamei. **A doua zi, satul cade.** Înainte de răsărit, Bram strânge de pe câmp **22 de săbii**; a lui Edwin e la Miriam, care îi ascunde echipamentul.
 - **De atunci:** orcii îi cruță pe săteni în schimbul unei **taxe săptămânale**, ridică zidul și păzesc ieșirea. Satul stă pe drumul mare spre capitală și muncește pentru asediul lor (grâu, fier, piei).
@@ -46,7 +46,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 - **Legământul:** dragonul **ia înfățișarea rasei** celui cu care se leagă; sunt **legați pe viață și pe moarte** (moare unul, moare și celălalt), dar **un primordial renaște** în lumea lui. Dragonul îți spune **o incantație** cu care îl chemi printr-un portal; telepatic vorbiți oricând.
 
 **Ordinul Flăcării și regele**
-- **Ordinul Flăcării**: călăreții de dragoni ai oamenilor; **nu e secret**. Îi caută mereu pe cei cu trezirea.
+- **Ordinul Flăcării**: călăreții de dragoni ai oamenilor; **nu e secret**. Îi caută mereu pe cei cu trezirea. **Mai are călăreți**, cu dragoni mai mici (decis de autor), dar de 10 ani e război, iar satele de la margine au rămas singure.
 - **Regele**, mag-războinic, era legat cu **primordialul focului**. A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon; odată cu el a murit și dragonul (care a renăscut în lumea focului). De atunci domnește **fiul regelui**, iar oamenii n-au mai găsit pe cineva cu trezirea mare.
 
 **Karzor și elfii de pădure**
@@ -65,6 +65,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 **Orcii**
 - Trei triburi mari: **Craniile Sângerii** (*Blood Skulls*, steag roșu cu un craniu, căpetenia **Gorvak**), cel mai mare, care atacă acum oamenii; **toți orcii din sat sunt din el**. Al doilea: deocamdată nu contează. **Colții de Fier** (*Iron Tusks*, căpetenia **Urzhal**), cel mai mic, dar puternic: îi vor ajuta pe oameni mai târziu (nu în Actul 1).
 - Orcii n-au dragoni: au **wyverni** (nu dragoni adevărați), cu ritualul lor, și **unelte împotriva dragonilor**. Craniile Sângerii pregătesc **asediul capitalei**.
+- **Războiul a început acum 10 ani** (decis de autor), la 10 ani după moartea regelui, și nimeni nu știe exact de ce. Orcii **nu pot folosi magia luminii**: se bizuie pe **magia naturii**, iar **șamanii** le întăresc trupele și cheamă animalele în ajutor.
 - **Drumul mare** (decis de autor) pleacă de la poarta satului și merge zile întregi, până la capitală; pe el pleacă, în căruțele orcilor, fierul, grâul și pieile satului. Noaptea, pe el trece spre capitală un **convoi cu wyverni în cuști** (misiunea Kaiei „Convoiul”): Vale și Kaia îi văd de departe și îi cred dragoni.
 - **De ce n-au distrus satul:** cucerit și pus să muncească pentru ei (taxa, grâul, fierul, topoarele ascuțite de Bram), satul îi ajută să se pregătească de asediu. În plus, stă chiar pe drumul mare spre capitală, pe unde trec convoaiele lor (decis de autor).
 
@@ -204,7 +205,9 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ## Prologul 📝
 
-La un joc nou, înainte de orice: 5–7 imagini cu text peste ele.
+**Decis de autor:** jocul pornește cu **câteva pagini de carte** (cam 5), cu o **voce de cronică**: ce știu oamenii că s-a întâmplat în ultimii 200 de ani (dragonii, Inima Luminii, regele și noaptea de acum 20 de ani, războiul de acum 10 ani, căderea satului), cu descrieri frumoase și suspans în jurul regelui. Nu spune nimic din ce se descoperă în joc. Textul se scrie întâi în documentul „Fangs&Honor: Prologul” (Claude Docs), apoi intră în joc. **De lămurit:** numele (tărâmul, regatul, capitala, satul, regii, primordialul focului) și dacă mai rămâne visul cu bătălia de mai jos.
+
+Planul de dinainte, visul cu bătălia: 5–7 imagini cu text peste ele.
 1. Orcii vin spre sat.
 2. Soldații satului, printre ei tatăl lui Vale, încearcă să-l apere.
 3. Sunt răpuși (soldatul din prim-plan e tatăl lui Vale).
@@ -604,7 +607,7 @@ Apoi Vale se trezește în camera lui: câteva replici despre visul urât cu tat
 
 ### ✅ Hârtiile soldatului
 - **Pornește:** după „Camera de sus”, cu hârtiile la Vale, **doar în tavernă** (Roderick e acolo 14–00; la biserică nu), în meniul lui Roderick: „Unchiule, am găsit niște hârtii... !”.
-- Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii pe care toată lumea îi crede pieriți; dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
+- Toată discuția stă peste o imagine: Roderick recunoaște scrisul prietenului lui, povestea solzului pe care „nu-l zgâria nicio sabie”, dragonii, pe care în sat nu i-a văzut nimeni (sunt ai călăreților Ordinului, de la capitală); dacă e adevărat, ar fi ceva de folosit împotriva orcilor, dar drumul trece dincolo de zid.
 - Fără încredere (doar discuție); după ea vine **primul vis**.
 - **Imagine:** `events/roderick_hartii.png` (Vale și Roderick la o masă din tavernă, aplecați peste hârtii, la lumina lumânării).
 
