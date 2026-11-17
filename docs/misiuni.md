@@ -105,7 +105,8 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 1. ✅ **Acoperișul**: dimineața (până la 11), cât mama e în bucătărie. Acoperișul trebuie să fie încă stricat.
 2. ✅ **Cina în familie**: după „Locul unde a căzut tata” (Roderick), dimineața, cât mama e în bucătărie.
 3. ✅ **Păpușa Linei**: după „Mama lui Finn”, la Lina, când se joacă în fața casei (10–14): „Ce s-a întâmplat, Lina? De ce plângi? !”.
-4. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
+4. ✅ **Inelul mamei**: pornește singură (nu se poate refuza), din ziua 9, după „Fierul lui Bram”, dimineața (7–11), când intri în bucătărie și mama e acolo. Deschide **Groapa**.
+5. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
@@ -169,7 +170,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
 | Personaj | De unde vine +1 | Acum |
 |---|---|---|
-| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · 💡 încă 7 (la 8/10: misiunea specială, echipamentul tatălui) | 3 / 10 |
+| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · 💡 încă 6 (la 8/10: misiunea specială, echipamentul tatălui) | 4 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · 💡 încă 3 | 7 / 10 |
@@ -266,6 +267,20 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 4. „Ziua următoare” → 12:00 → camera mamei → „Mamă, ai cusut păpușa?” → imaginea → păpușa e iar la tine.
 5. La Lina (afară 10–14 sau la colibă 14–18) → „Uite-o, Lina. Ca nouă!” → imaginea → +1 la mama.
 6. Refuzul: F2 → Misiune: „Păpușa Linei” → „Resetează” (revine la alegere) → „N-am timp acum, Lina.” → în carte, misiunea e „Ratată”.
+
+### ✅ Inelul mamei
+- **Pornește singură** (decis de autor: nu se poate refuza): din **ziua 9**, după „Fierul lui Bram” (poarta trebuie să fie deschisă), **dimineața (7–11), când intri în bucătărie și mama e acolo** (ziua și condițiile, alese de Claude). Peste o imagine: colectorul stă în prag și strânge „pentru Groapă” câte ceva de la fiecare casă; mama nu mai are nimic, așa că îi ia **verigheta**, de pe deget. Singura alegere: „Ți-l aduc înapoi, mamă.”
+- **Pasul 1:** la **colector**, la poartă (dimineața la masa taxei, 6–12, sau seara cu torța, 18–23), „Am venit pentru inelul mamei mele.” (lângă plata taxei). Colectorul îi spune de **Groapă**: o câștigi o dată acolo, oricât de greu alegi, și ți-o aruncă înapoi; poți aduce doi de-ai tăi, iar popa vostru poate coborî să vă oblojească. De acum **Groapa apare pe poartă** și rămâne.
+- **Pasul 2:** o victorie în Groapă, **oricare nivel** (decis de autor). După luptă, peste o imagine, colectorul îi aruncă inelul: „Ce e al Groapei se câștigă în Groapă.”
+- **Pasul 3:** la mama, oriunde e: „Mamă... uite ce ți-am adus.” Peste o imagine, Vale îi pune verigheta în palmă; mama povestește cum i-a pus-o Edwin pe deget, sub copacul mare.
+- **Recompensa:** încrederea mamei **+1**.
+- **Imagini:** `events/inel_colector.png`, `events/inel_primit.png`, `events/inel_miriam.png` (galeria: „Misiunea Miriamei: inelul”); iconița `items/inel_miriam.png`.
+
+**Cum verifici**
+1. F2: starea `poarta_deschisa` = `da` (sau termină „Fierul lui Bram”), treci la ziua 9, „Dimineață”; mergi de pe hartă în casă, apoi în bucătărie → imaginea cu colectorul → „Ți-l aduc înapoi, mamă.”
+2. La poartă, 19:00 (sau dimineața), apeși pe colector → „Am venit pentru inelul mamei mele.” → pe poartă apare **Groapa** (până desenezi zona, e un buton jos: „Groapa”).
+3. Apeși pe Groapa → „Ușor” → (aliații, dacă ai pe cineva cu încredere 4) → „Intră în Groapă” → câștigă → imaginea cu inelul.
+4. A doua zi, la mama: „Mamă... uite ce ți-am adus.” → imaginea → +1.
 
 ### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
 - Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
@@ -795,6 +810,21 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/finn_lada_1.png` … `finn_lada_6.png`, `finn_lada_esec.png` (galeria: „Finn: lada colectorului”).
 
 **Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → apasă pe Finn → „Să mergem.” Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
+
+---
+
+## Groapa (arena orcilor)
+
+### ✅ Groapa
+- **Ce e** (decis de autor): arena săpată de orci lângă poartă, din lemnele satului, ca orcii din convoaie să-și treacă serile. Seara, la torțe, oamenii coboară să se bată cu orcii, iar ceilalți pariază; sătenii se uită de după gard.
+- **Cum intri:** apeși pe **poartă**, pe imaginea zonei porții (zona „Groapa”, o desenezi tu în editor, la Aranjare → Poarta; până atunci e un buton jos). Apare după ce colectorul îți spune de ea („Inelul mamei”) și rămâne. **Doar seara (18–23)** și **o luptă pe seară** (altfel, gândul lui Vale).
+- **Nivelurile:** **ușor** = 1 val (doi orci), **mediu** = 2 valuri (orc + Aruncătorul, apoi Zdrobitorul + Toboșarul), **greu** = 3 valuri, cu **Campionul Groapei** la sfârșit. Între valuri aliații nu se refac. Fără fugă.
+- **Aliații:** cel mult **2**, dintre cei cu **încredere de cel puțin 4**: Bram, Roderick, Kaia, Elian. **Kaia** vine pe jos, cu glugă, fără Ember. **Elian** vine ca vraci: doar vindecarea; celelalte puteri sunt stinse („Nu în fața lor, Vale.”).
+- **Orcii:** paznicul (topor), **Zdrobitorul** (măciucă, multă armură), **Aruncătorul** (topoare aruncate, de la distanță), **Toboșarul** (nu lovește; după ce bate tobele, ceilalți orci lovesc cu +3 cât stă el în picioare, cu o strălucire roșiatică), **Campionul** (Zdrobitorul, mai mare și mai întunecat).
+- **Câștigul** (TODO echilibru, ales de Claude): 10 / 25 / 50 de monede și reputație +1 / +2 / +3; la prima victorie pe fiecare nivel, o răsplată: poțiunea de viață / pielea de piatră / furia și încă o poțiune de viață. **Înfrângerea:** te trezești în noroi, lângă Groapă, cu puțină viață.
+- **Imagini:** locul `locations/poarta_arena.png` (ce vezi când intri; peste ea, panoul), harta de luptă `locations/lupta_poarta_arena.png`; galeria, la grupul **„Groapa (arena)”**: Kaia pe jos (`combat/vanatoare_pejos_*.png`), Zdrobitorul, Aruncătorul, Toboșarul (câte 5 poze de luptă și un portret pentru medalion), toporul aruncat (`combat/topor_aruncat.png`). Sunetele: `toba`, `lupta_val` (cornul unui val nou), `arena` (mulțimea, când intri).
+
+**Cum verifici:** F2: starea `groapa` = `deschisa`, încrederea cu Bram / Kaia / Elian pe 4 sau mai mult, ora 19:00, „Mergi la” Poarta → apasă pe Groapa → alege nivelul și aliații → lupta. A doua oară în aceeași seară: „Pentru azi am luptat destul.” O luptă din Groapă se poate porni și din F2 → Luptă (`Groapa · Mediu` etc.), cu grupul obișnuit.
 
 ---
 

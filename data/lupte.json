@@ -7,7 +7,8 @@
     "piata",
     "fierar",
     "campuri",
-    "taverna.pivnita"
+    "taverna.pivnita",
+    "poarta.arena"
   ],
   "inamici": {
     "lup": {
@@ -139,6 +140,69 @@
       "armura": 0,
       "sunet": "sobolan",
       "_nota": "Decis de autor: scuipă bale acide de la distanță, care otrăvesc (3 viață la fiecare tură a țintei, 3 ture, trece de armură). Revine în lupta finală, la orci. Cifre de pornire (TODO echilibru)."
+    },
+    "orc_zdrobitor": {
+      "_nota": "Decis de autor: orc de aproape, uriaș, cu o măciucă grea și multă armură; lovește rar, dar tare. Cifre de pornire (TODO echilibru). Pozele: combat/orc_zdrobitor_*.png; fața din medalion: portraits/orc_zdrobitor_normal.png.",
+      "nume": "Zdrobitorul",
+      "numeScurt": "Zdrobitor",
+      "viata": 70,
+      "staminaMax": 60,
+      "atac": {
+        "min": 9,
+        "max": 14,
+        "tip": "apropiat",
+        "sunet": "lupta_topor"
+      },
+      "armura": 20,
+      "grupGalerie": "Groapa (arena)"
+    },
+    "orc_aruncator": {
+      "_nota": "Decis de autor: orc de la distanță, aruncă topoare mici; toporul zboară rotindu-se până în țintă și nu se mai întoarce (seIntoarce: false). Cifre de pornire (TODO echilibru).",
+      "nume": "Aruncătorul",
+      "numeScurt": "Aruncător",
+      "viata": 32,
+      "staminaMax": 95,
+      "atac": {
+        "min": 4,
+        "max": 7,
+        "tip": "distanta",
+        "proiectil": "combat/topor_aruncat.png",
+        "numeProiectil": "toporul aruncat",
+        "seIntoarce": false,
+        "sunet": "lupta_topor"
+      },
+      "armura": 4,
+      "grupGalerie": "Groapa (arena)"
+    },
+    "orc_toba": {
+      "_nota": "Decis de autor: toboșarul nu lovește; bate tobele de război (poza „atac”), iar de atunci, cât stă în picioare, ceilalți orci din tabăra lui lovesc mai tare (toba.atac). Stă în spate. Cifre de pornire (TODO echilibru).",
+      "nume": "Toboșarul",
+      "numeScurt": "Toboșar",
+      "viata": 35,
+      "staminaMax": 70,
+      "toba": {
+        "atac": 3,
+        "sunet": "toba"
+      },
+      "armura": 5,
+      "grupGalerie": "Groapa (arena)"
+    },
+    "orc_campion": {
+      "_nota": "Campionul Groapei (ales de Claude): ultimul val al nivelului greu. Pozele Zdrobitorului, întunecate și roșiatice, cu 20% mai mari, ca lupul negru. Cifre de pornire (TODO echilibru).",
+      "nume": "Campionul Groapei",
+      "numeScurt": "Campion",
+      "poze": "orc_zdrobitor",
+      "filtru": "brightness(0.6) sepia(0.6) saturate(1.8) hue-rotate(-25deg)",
+      "marime": 120,
+      "viata": 120,
+      "staminaMax": 70,
+      "atac": {
+        "min": 12,
+        "max": 17,
+        "tip": "apropiat",
+        "sunet": "lupta_topor"
+      },
+      "armura": 30
     }
   },
   "lupte": {
@@ -677,6 +741,140 @@
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
+      }
+    },
+    "groapa_usor": {
+      "_nota": "Groapa (decisă de autor): nivelul ușor, un val; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
+      "nume": "Groapa · Ușor",
+      "fundal": "poarta.arena",
+      "fuga": false,
+      "valuri": [
+        [
+          {
+            "id": "orc_taverna",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          }
+        ]
+      ],
+      "victorie": {
+        "text": "Ultimul orc cade în noroi. Băncile tac o clipă, apoi urlă mai tare ca înainte. De după gard, câțiva săteni au văzut totul."
+      },
+      "infrangere": {
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+      }
+    },
+    "groapa_mediu": {
+      "_nota": "Groapa (decisă de autor): nivelul mediu, două valuri; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
+      "nume": "Groapa · Mediu",
+      "fundal": "poarta.arena",
+      "fuga": false,
+      "valuri": [
+        [
+          {
+            "id": "orc_taverna",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_zdrobitor",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ]
+      ],
+      "victorie": {
+        "text": "Ultimul orc cade în noroi. Băncile tac o clipă, apoi urlă mai tare ca înainte. De după gard, câțiva săteni au văzut totul."
+      },
+      "infrangere": {
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+      }
+    },
+    "groapa_greu": {
+      "_nota": "Groapa (decisă de autor): nivelul greu, trei valuri, cu Campionul Groapei la sfârșit; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
+      "nume": "Groapa · Greu",
+      "fundal": "poarta.arena",
+      "fuga": false,
+      "valuri": [
+        [
+          {
+            "id": "orc_taverna",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_zdrobitor",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 0,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 2,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_campion",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 1,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 0,
+            "rand": "spate"
+          }
+        ]
+      ],
+      "victorie": {
+        "text": "Ultimul orc cade în noroi. Băncile tac o clipă, apoi urlă mai tare ca înainte. De după gard, câțiva săteni au văzut totul."
+      },
+      "infrangere": {
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
       }
     }
   },

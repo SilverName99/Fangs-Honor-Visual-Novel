@@ -2898,6 +2898,72 @@
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Metal? Avem un cui în perete și un cuțit care nu mai taie. Pe amândouă le-ar lua orcii până să ajungi tu cu ele la Bram."
+      },
+      "inel_ind": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Mi-e mai frică pentru tine decât pentru inel, Vale. Promite-mi că nu faci nimic prostesc."
+      },
+      "inel_m1": {
+        "imagine": "events/inel_miriam.png",
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă. Întinde mâna.",
+        "urmator": "inel_m2"
+      },
+      "inel_m2": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Vale... Ce-ai făcut? De unde...",
+        "urmator": "inel_m3"
+      },
+      "inel_m3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Din Groapă. L-am câștigat înapoi. Cinstit, pe cât de cinstit se poate cu orcii.",
+        "urmator": "inel_m4"
+      },
+      "inel_m4": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Te-ai bătut cu ei? Pentru un inel?",
+        "urmator": "inel_m5"
+      },
+      "inel_m5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pentru tata. Și pentru tine.",
+        "urmator": "inel_m6"
+      },
+      "inel_m6": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Edwin mi l-a pus pe deget sub copacul mare. Avea mâinile pline de rășină și tremura mai rău decât mine. Zicea că inelul e prea subțire pentru cât mă iubește.",
+        "urmator": "inel_m7"
+      },
+      "inel_m7": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Semeni cu el, știi? Încăpățânarea. Și felul în care stai când crezi că nu te vede nimeni.",
+        "urmator": "inel_m8"
+      },
+      "inel_m8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama își pune inelul pe deget și strânge pumnul, de parcă n-ar mai lăsa pe nimeni să i-l ia.",
+        "urmator": "inel_m9"
+      },
+      "inel_m9": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Mulțumesc, puiul mamei. Dar să nu mai intri în groapa aia decât dacă trebuie, auzi?",
+        "efecte": {
+          "daObiect": "inel_miriam",
+          "stare": {
+            "inel": "inapoi"
+          }
+        }
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -10888,6 +10954,21 @@
           }
         },
         "spre": "capcane_a"
+      },
+      {
+        "_nota": "Misiunea „Inelul mamei” (decis de autor): colectorul îi spune de Groapă, iar Groapa apare pe poartă.",
+        "text": "Am venit pentru inelul mamei mele.",
+        "conditii": {
+          "misiune": {
+            "miriam_inel": "inceputa"
+          },
+          "nu": {
+            "stare": {
+              "groapa": "deschisa"
+            }
+          }
+        },
+        "spre": "inel1"
       }
     ],
     "noduri": {
@@ -10940,6 +11021,65 @@
         "gand": true,
         "emotie": "normal",
         "text": "Monedele îmi stau grele în palmă. Mai grele decât ar trebui."
+      },
+      "inel1": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Am venit pentru inelul mamei mele.",
+        "urmator": "inel2"
+      },
+      "inel2": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ah, verigheta! Uite-o, o țin la brâu. Strălucește frumos la torțe.",
+        "urmator": "inel3"
+      },
+      "inel3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cât vrei pe ea?",
+        "urmator": "inel4"
+      },
+      "inel4": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Bani? Nu, nu, nu. Banii îi iau oricum, în fiecare săptămână. Pe asta trebuie s-o câștigi.",
+        "urmator": "inel5"
+      },
+      "inel5": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Groapa. Aici, lângă poartă. Seara, când se aprind torțele, coboară cine are curaj, iar ceilalți pariază pe sânge. Câștigă o dată acolo, oricât de greu alegi, și ți-o arunc înapoi.",
+        "urmator": "inel6"
+      },
+      "inel6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă pierd?",
+        "urmator": "inel7"
+      },
+      "inel7": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Atunci râdem. Băieții n-au mai râs de mult.",
+        "urmator": "inel8"
+      },
+      "inel8": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Poți aduce doi de-ai tăi, dacă au curaj. Mai mulți oameni, mai mult sânge, mai multe pariuri. Și popa vostru poate să coboare să vă oblojească. Măcar la ceva să fie bun.",
+        "urmator": "inel9"
+      },
+      "inel9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O groapă săpată lângă poartă, din lemnele satului. Seara, când se aprind torțele.",
+        "efecte": {
+          "stare": {
+            "groapa": "deschisa"
+          }
+        }
       }
     }
   },
@@ -12386,6 +12526,183 @@
             "lumina_padure": "da"
           }
         }
+      }
+    }
+  },
+  "inel_colector": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Inelul mamei” (decis de autor: nu se poate refuza). Colectorul ia verigheta „pentru Groapă”; replicile stau peste imagine.",
+    "grup": "Misiunea Miriamei: inelul",
+    "partener": "orc_colector",
+    "start": "a1",
+    "noduri": {
+      "a1": {
+        "imagine": "events/inel_colector.png",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când intru în bucătărie, ușa dinspre drum e larg deschisă. În prag stă colectorul, cu umerii cât pragul. Mama ține o mână strânsă la piept.",
+        "urmator": "a2"
+      },
+      "a2": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ia uite, a venit și omulețul. Fix la timp, să vadă și el.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Ce cauți aici? Nu e ziua taxei.",
+        "urmator": "a4"
+      },
+      "a4": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Taxa e taxă. Azi strâng pentru Groapă. Am săpat o groapă frumoasă lângă poartă, iar băieții din convoaie au nevoie să-și treacă serile. Fiecare casă dă ceva.",
+        "urmator": "a5"
+      },
+      "a5": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "V-am dat lemnele de la șopron. V-am dat ultimul sac de fasole. Nu mai avem nimic.",
+        "urmator": "a6"
+      },
+      "a6": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ba mai ai. Uite-l, pe deget. Strălucește.",
+        "urmator": "a7"
+      },
+      "a7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Verigheta. Mama n-a scos-o de pe deget nici în ziua în care l-am îngropat pe tata.",
+        "urmator": "a8"
+      },
+      "a8": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Vă rog... E tot ce mi-a rămas de la el.",
+        "urmator": "a9"
+      },
+      "a9": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Atunci o să fie cea mai frumoasă miză din Groapă.",
+        "urmator": "a10"
+      },
+      "a10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Colectorul îi apucă încheietura și trage. Inelul iese greu, cu piele cu tot. Mama nu scoate niciun sunet.",
+        "urmator": "a11"
+      },
+      "a11": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Dă-i-l înapoi.",
+        "urmator": "a12"
+      },
+      "a12": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Altfel ce? Vrei să mi-l iei? Vino la poartă, omulețule, și mai vorbim. Poate chiar îți spun cum.",
+        "urmator": "a13"
+      },
+      "a13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Ușa se trântește în urma lui. Pe podea a rămas noroiul de pe cizmele lui.",
+        "urmator": "a14"
+      },
+      "a14": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Lasă, Vale. Nu te pune cu ei. Nu pentru un inel.",
+        "urmator": "a15"
+      },
+      "a15": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu e doar un inel, mamă.",
+        "alegeri": [
+          {
+            "text": "Ți-l aduc înapoi, mamă.",
+            "spre": "a16"
+          }
+        ]
+      },
+      "a16": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ți-l aduc înapoi. Îți promit.",
+        "urmator": "a17"
+      },
+      "a17": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "...Edwin mi l-a pus pe deget sub copacul mare. Ai grijă de tine mai întâi, auzi? Inelul poate să aștepte. Tu nu.",
+        "efecte": {
+          "misiune": {
+            "miriam_inel": "inceputa"
+          },
+          "stare": {
+            "inel": "luat"
+          }
+        }
+      }
+    }
+  },
+  "inel_primit": {
+    "_nota": "CIORNĂ (Claude). Prima victorie în Groapă, cât e misiunea „Inelul mamei”: colectorul îi aruncă lui Vale verigheta.",
+    "grup": "Misiunea Miriamei: inelul",
+    "partener": "orc_colector",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "imagine": "events/inel_primit.png",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Gâfâi în mijlocul Groapei. Băncile urlă, iar noroiul îmi intră în cizme.",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Ha! Omulețul are colți! Am pierdut trei monede pe tine, dar a meritat.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Ține. Ce e al Groapei se câștigă în Groapă.",
+        "efecte": {
+          "obiect": "inel_miriam"
+        },
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Inelul se rotește prin aer, sclipind la torțe. Îl prind din zbor. E cald.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Să mai vii. Băieților le place să vadă oameni care se ridică după ce cad.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Mama nici n-o să creadă."
       }
     }
   }

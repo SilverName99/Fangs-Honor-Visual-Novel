@@ -159,6 +159,8 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
     // și săgeata arcului lui Vale
     const proiectile = new Set([
       ...comun.date.npcs.personaje.map((p) => p.lupta?.atac?.proiectil),
+      // Și armele aruncate de inamici (toporul Aruncătorului din Groapă)
+      ...Object.values(comun.date.lupte?.inamici || {}).map((x) => x.atac?.proiectil),
       ...Object.values(comun.date.items?.obiecte || {}).map((o) => o.atac?.sageata),
     ].filter(Boolean));
     // La fel efectele puterilor (scutul de lumină)

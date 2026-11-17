@@ -1522,6 +1522,41 @@
       },
       "dialog": "lumina_padure",
       "_nota": "Decis de autor: seara, în pădure, lupii, lumina, trezirea cu Elian. Ales de Claude: pornește când ajunge Vale în pădure seara (18–23), cât e misiunea; 3 ore, 20 stamina; fără luptă."
+    },
+    {
+      "id": "inel_colector",
+      "_nota": "Decis de autor: misiunea Miriamei „Inelul mamei”, nu se poate refuza. Pornește când Vale intră dimineața în bucătărie, cât mama e acolo, după ce poarta s-a deschis (fierul lui Bram), din ziua 9 (aleasă de Claude, după ce încep evenimentele cu orci).",
+      "nume": "Inelul mamei: colectorul ia verigheta",
+      "grup": "Misiunea Miriamei: inelul",
+      "conditii": {
+        "loc": "casa/bucatarie",
+        "personajIn": {
+          "miriam": [
+            "casa/bucatarie"
+          ]
+        },
+        "ora": {
+          "min": "07:00",
+          "max": "10:59"
+        },
+        "zi": {
+          "min": 9
+        },
+        "misiune": {
+          "bram_fier": "terminata"
+        }
+      },
+      "repetare": "o_data",
+      "dialog": "inel_colector"
+    },
+    {
+      "id": "inel_primit",
+      "_nota": "Decis de autor: prima victorie în Groapă, cât e misiunea „Inelul mamei” (pornit din src/groapa.js, „inel” în config.json).",
+      "nume": "Inelul mamei: colectorul aruncă inelul",
+      "grup": "Misiunea Miriamei: inelul",
+      "manual": true,
+      "repetare": "o_data",
+      "dialog": "inel_primit"
     }
   ]
 }

@@ -28,6 +28,7 @@ import '@fontsource/dancing-script/600.css';
 import '@fontsource/caveat/500.css';
 import { creeazaActiuni } from './actiuni.js';
 import { creeazaLupta } from './lupta.js';
+import { creeazaGroapa } from './groapa.js';
 import { undeEste, intrareProgram, registreazaConditiiPersonaje } from './rutine.js';
 import { aplicaGraficaUi, aplicaMeniu, MARIME_CURSOR, marimeCursor, seteazaMarimeCursor, seteazaSemneMisiuni, semneMisiuniPornite, miniJocuriPornite, seteazaMiniJocuri } from './uiGrafica.js';
 
@@ -653,6 +654,7 @@ function activeaza(tinta, ctx) {
   }
   if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.vanatoare) return vaneaza(tinta.vanatoare);
+  if (tinta.groapa) return groapa.deschide(tinta.groapa);
   if (tinta.personaj) return vorbesteCu(tinta.personaj);
   if (tinta.actiune) return actiuni.munca(tinta.actiune);
   mergi(tinta.spre);
@@ -870,6 +872,8 @@ const joc = {
     lupta.porneste(id);
   },
   pornesteZaruri: () => zaruri.porneste(),
+  // După o luptă în Groapă: banii, prima victorie, inelul mamei (src/groapa.js)
+  rezultatGroapa: (v) => groapa.rezultat(v),
   conditii: (c) => verifica(c, context(stare)),
   // Pentru panoul debug (misiunile pornite direct, contoarele)
   aplicaEfecte: (e) => aplicaEfecte(e, joc),
@@ -1029,6 +1033,7 @@ const carte = creeazaCarte(ui, joc);
 const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
+const groapa = creeazaGroapa(ui, joc);
 
 function inventarPlin(id, n) {
   const fundal = div('acoperitor');

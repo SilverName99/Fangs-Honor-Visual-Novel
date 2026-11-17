@@ -88,9 +88,11 @@ export function construiesteLumea(date) {
       id: l.id,
       nume: l.nume,
       // Un loc de vânătoare nu se deschide: arată imaginea lui câteva secunde și pornește lupta
-      spre: l.actiune || l.vanatoare ? null : `${z.id}.${l.id}`,
+      // Groapa nici ea: peste imaginea ei apare panoul în care alegi nivelul și aliații
+      spre: l.actiune || l.vanatoare || l.groapa ? null : `${z.id}.${l.id}`,
       actiune: l.actiune || null,
       vanatoare: l.vanatoare ? { ...l.vanatoare, imagine: l.imagine } : null,
+      groapa: l.groapa ? { imagine: l.imagine, nume: l.nume } : null,
       incuiat: l.incuiat || null,
       ascuns: l.ascuns || null,
       zoneVariante: l.zoneVariante || null,
@@ -576,13 +578,31 @@ export function imaginiCerute(date, scene) {
   // Săgeata care zboară din arcul lui Vale (o singură imagine, pentru orice arc)
   for (const s of new Set(Object.values(date.items.obiecte).map((o) => o.atac?.sageata).filter(Boolean))) adauga(s, 'Luptă: săgeata trasă cu arcul (vârful spre dreapta)');
   // Cine nu atacă normal (preotul, doar puteri) nu are nevoie de poza „atac”
-  const luptatori = [...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume, p.lupta.faraAtac]), ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume, x.faraAtac])];
+  // „grupGalerie”: luptătorii Groapei (orcii ei, Kaia pe jos) stau la un loc, ca să fie ușor de găsit
+  const luptatori = [
+    ...date.npcs.personaje.filter((p) => p.lupta).map((p) => [p.id, p.nume, p.lupta.faraAtac]),
+    ...Object.entries(date.lupte?.inamici || {}).filter(([, x]) => !x.poze).map(([id, x]) => [id, x.nume, x.faraAtac, x.grupGalerie]),
+  ];
   // Pozele refolosite (orcii din tavernă arată ca paznicul de la poartă) trebuie cerute și ele, o singură dată
   for (const x of Object.values(date.lupte?.inamici || {})) {
     if (!x.poze || luptatori.some(([id]) => id === x.poze)) continue;
     luptatori.push([x.poze, date.npcs.personaje.find((p) => p.id === x.poze)?.nume || x.poze, false]);
   }
-  for (const [id, nume, faraAtac] of luptatori) for (const p of POZE) if (!(faraAtac && p === 'atac')) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  // Un recrut care luptă altfel într-un loc (Kaia pe jos, în Groapă) are setul lui de poze
+  for (const p of date.npcs.personaje)
+    for (const v of Object.values(p.lupta?.variante || {})) if (v.poze) luptatori.push([v.poze, `${p.nume}, ${v.nume || v.poze}`, p.lupta.faraAtac, v.grupGalerie]);
+  for (const [id, nume, faraAtac, g] of luptatori) {
+    grup = g || 'Luptă';
+    for (const p of POZE) if (!(faraAtac && p === 'atac')) adauga(`combat/${id}_${p}.png`, `Luptă: ${nume} (${p})`, p !== 'idle');
+  }
+  // Inamicii noi (orcii Groapei) au și o față pentru medalionul din rândul turelor; până e încărcată, se vede poza idle
+  for (const [id, x] of Object.entries(date.lupte?.inamici || {})) {
+    if (!x.grupGalerie || x.poze) continue;
+    grup = x.grupGalerie;
+    adauga(`portraits/${id}_normal.png`, `Luptă: ${x.nume}, fața pentru medalion (portret 4:5, de exemplu 1024 × 1280, fundal transparent)`, true);
+    if (x.atac?.proiectil) adauga(x.atac.proiectil, `Luptă: ${x.nume}, ${x.atac.numeProiectil || 'arma aruncată'} (512 × 512, fundal transparent; rotirea o face jocul)`);
+  }
+  grup = 'Luptă';
   // Puterile: poza personajului când o folosește (altfel „atac”) și, unde e cazul, imaginea efectului (scutul de lumină)
   for (const p of date.npcs.personaje) {
     for (const ab of p.lupta?.abilitati || []) {

@@ -3470,3 +3470,75 @@ svg.zone {
   justify-content: center;
   gap: 40px;
 }
+
+/* ----- Groapa (arena orcilor, cerută de autor) ----- */
+/* Imaginea Groapei pe tot ecranul, iar peste ea panoul mic, ca la Dormi */
+.acoperitor.ecran-groapa {
+  background: transparent;
+}
+/* Imaginea stă în spatele panoului (primul în pagină), puțin întunecată, ca panoul să se citească */
+.ecran-groapa > .fundal-groapa {
+  position: absolute;
+}
+.ecran-groapa > .fundal-groapa img {
+  filter: brightness(0.7);
+}
+.ecran-groapa > .panou-groapa {
+  position: relative;
+}
+.panou-groapa {
+  max-width: 900px;
+}
+.text-panou-groapa {
+  font-size: 26px;
+  line-height: 1.35;
+  color: #f3e6c8;
+}
+/* Pe butoanele de pergament, al doilea rând (ce câștigi, ce face aliatul acolo) e mai mic */
+.panou-groapa .buton .detaliu-groapa {
+  font: italic 400 20px Georgia, serif;
+  color: #5a3c22;
+  margin-top: 4px;
+}
+.panou-groapa .buton:disabled {
+  opacity: 0.45;
+}
+
+/* Valurile: anunțul valului nou, mare, la mijlocul câmpului de luptă */
+.val-lupta {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  z-index: 250;
+  transform: translate(-50%, -50%);
+  padding: 18px 60px;
+  font: 700 64px Georgia, serif;
+  color: #f6dfa8;
+  text-shadow: 0 3px 10px #000, 0 0 30px rgba(200, 60, 30, 0.8);
+  background: radial-gradient(ellipse, rgba(60, 10, 5, 0.75), transparent 70%);
+  pointer-events: none;
+  animation: val-apare 1.1s ease-out;
+}
+@keyframes val-apare {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Toba orcilor: cei întăriți au o strălucire roșiatică, iar toboșarul se scutură când bate */
+.luptator.intarit-toba .corp {
+  filter: drop-shadow(0 0 10px rgba(230, 60, 30, 0.85));
+}
+.luptator .corp.bate-toba {
+  animation: bate-toba 0.18s ease-in-out 3;
+}
+@keyframes bate-toba {
+  50% {
+    transform: translateY(6px);
+  }
+}

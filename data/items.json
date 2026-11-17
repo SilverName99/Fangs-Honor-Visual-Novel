@@ -506,6 +506,13 @@
       "pret": 0,
       "descriere": "O vrabie cu o aripă ruptă, ghemuită în căciula mea. Lina zice că o cheamă Ciripel. Trebuie s-o duc la Fratele Elian.",
       "_nota": "Misiunea „Pasărea Linei” (decis de autor). Numele vrabiei e ciornă de Claude."
+    },
+    "inel_miriam": {
+      "nume": "Verigheta mamei",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Un inel subțire de aur, tocit pe margini. Tata i l-a pus mamei pe deget sub copacul mare.",
+      "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): colectorul o ia „pentru Groapă”; Vale o câștigă înapoi acolo. Iconița: items/inel_miriam.png."
     }
   }
 }

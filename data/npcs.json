@@ -483,7 +483,18 @@
           "sunet": "glaive"
         },
         "armura": 8,
-        "locuri": 2
+        "locuri": 2,
+        "variante": {
+          "groapa": {
+            "_nota": "Decis de autor: în Groapă, Kaia vine pe jos, cu glugă, fără Ember (dacă orcii îl văd, îl vor în cușcă, ca pe bestiile din convoi). Pozele ei pe jos: combat/vanatoare_pejos_*.png (2:3); fața din medalion rămâne a ei. Viața, mai mică fără tigru: TODO echilibru.",
+            "nume": "pe jos, cu glugă",
+            "poze": "vanatoare_pejos",
+            "portret": "vanatoare",
+            "locuri": 1,
+            "viata": 60,
+            "grupGalerie": "Groapa (arena)"
+          }
+        }
       },
       "dialog": "vanatoare",
       "program": [
@@ -840,7 +851,16 @@
             "imagine": "combat/scut_lumina.png",
             "poza": "scut_lumina"
           }
-        ]
+        ],
+        "variante": {
+          "groapa": {
+            "_nota": "Decis de autor: în Groapă, Elian vine ca vraci și folosește doar vindecarea, o lumină mică, de începător; celelalte puteri stau stinse, ca orcii să-l creadă în continuare un începător. Ciornă (motivul).",
+            "doarAbilitati": [
+              "vindecare"
+            ],
+            "motivBlocat": "Nu în fața lor, Vale. Aici sunt doar un preot începător."
+          }
+        }
       },
       "dialog": "mag",
       "magazin": {

@@ -1395,7 +1395,43 @@
           }
         }
       ],
-      "locuri": [],
+      "locuri": [
+        {
+          "id": "arena",
+          "nume": "Groapa",
+          "imagine": "locations/poarta_arena.png",
+          "_nota": "Decis de autor: arena orcilor, lângă poartă; se intră apăsând pe poartă (zona o desenează autorul pe imaginea porții). Apare când colectorul îi spune lui Vale de ea (misiunea „Inelul mamei”) și rămâne. Nu e un loc în care stai: peste imaginea ei apare panoul în care alegi nivelul și aliații (src/groapa.js, „groapa” în config.json).",
+          "ascuns": {
+            "conditii": {
+              "stare": {
+                "groapa": "deschisa"
+              }
+            }
+          },
+          "incuiat": [
+            {
+              "_nota": "Doar seara (decis de autor). Ciornă.",
+              "conditii": {
+                "ora": {
+                  "min": "18:00",
+                  "max": "22:59"
+                }
+              },
+              "mesaj": "Groapa e goală acum. Orcii coboară acolo doar seara, după ce se aprind torțele."
+            },
+            {
+              "_nota": "O singură luptă pe seară (decis de autor). Ciornă.",
+              "conditii": {
+                "nu": {
+                  "marcatAzi": "groapa"
+                }
+              },
+              "mesaj": "Pentru azi am luptat destul. Orcii nu mă mai lasă în Groapă până mâine seară."
+            }
+          ],
+          "groapa": true
+        }
+      ],
       "incuiat": [
         {
           "_nota": "Decis de autor: noaptea, cât poarta e încă închisă (până e gata misiunea fierului lui Bram), Vale nici nu ajunge acolo: doar gândul lui. Ciornă.",

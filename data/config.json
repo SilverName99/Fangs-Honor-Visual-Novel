@@ -225,6 +225,77 @@
       }
     ]
   },
+  "groapa": {
+    "_nota": "Groapa (cerută de autor): arena orcilor de lângă poartă. Se intră apăsând pe poartă (zona „Groapa”, desenată de autor pe imaginea porții), doar seara (lacătul din locations.json) și o singură luptă pe seară. Cel mult 2 aliați, cu încredere de cel puțin 4: Bram, Roderick, Kaia (pe jos, cu glugă, fără Ember) și Elian (doar vindecarea, ca orcii să-l creadă în continuare un începător). Nivelurile = câte valuri (lupte.json). Banii, reputația și răsplata primei victorii: TODO echilibru, alese de Claude.",
+    "incredereMin": 4,
+    "maxAliati": 2,
+    "aliati": [
+      "fierar",
+      "soldat",
+      "vanatoare",
+      "mag"
+    ],
+    "note": {
+      "vanatoare": "pe jos, cu glugă, fără Ember",
+      "mag": "doar vindecarea"
+    },
+    "niveluri": [
+      {
+        "id": "usor",
+        "nume": "Ușor",
+        "lupta": "groapa_usor",
+        "bani": 10,
+        "reputatie": 1,
+        "primaData": {
+          "potiune_viata": 1
+        }
+      },
+      {
+        "id": "mediu",
+        "nume": "Mediu",
+        "lupta": "groapa_mediu",
+        "bani": 25,
+        "reputatie": 2,
+        "primaData": {
+          "potiune_piatra": 1
+        }
+      },
+      {
+        "id": "greu",
+        "nume": "Greu",
+        "lupta": "groapa_greu",
+        "bani": 50,
+        "reputatie": 3,
+        "primaData": {
+          "potiune_furie": 1,
+          "potiune_viata": 1
+        }
+      }
+    ],
+    "texte": {
+      "_nota": "CIORNĂ (Claude).",
+      "intro": "Torțele ard în jurul Groapei, iar orcii de pe bănci bat cu pumnii în scânduri. Câte valuri înfrunți?",
+      "aliati": "Cine intră cu tine? Cel mult {max}.",
+      "singur": "N-am încă pe cine lua cu mine: nimeni nu are destulă încredere în mine. Intru singur."
+    },
+    "inel": {
+      "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): prima victorie în Groapă, oricare nivel, aduce verigheta înapoi.",
+      "conditii": {
+        "misiune": {
+          "miriam_inel": "inceputa"
+        },
+        "nu": {
+          "existaStare": "inel_castigat"
+        }
+      },
+      "efecte": {
+        "stare": {
+          "inel_castigat": "da"
+        },
+        "eveniment": "inel_primit"
+      }
+    }
+  },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",
     "zaruri": 3,

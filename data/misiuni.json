@@ -2361,6 +2361,65 @@
         }
       },
       "_nota": "Decis de autor: după „O zi la forjă”, plugul fermierului e rupt (sprite nou, aratul oprit). Refuzi: după două zile se repară singur, fără +1. Accepți: Bram cere 4 lemne, o frânghie și metal; „De unde pot face rost de niște metal?” apare la toți, doar Finn zice de Jarek (fier vechi, 15 monede); Bram repară plugul (o imagine), Vale i-l duce fermierului (o imagine); +1 Bram."
+    },
+    {
+      "id": "miriam_inel",
+      "titlu": "Inelul mamei",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": "CIORNĂ: Colectorul i-a luat mamei verigheta, „pentru Groapă”. Mama n-a scos-o de pe deget nici în ziua în care l-am îngropat pe tata. I-am promis că i-o aduc înapoi.",
+      "pasi": [
+        {
+          "text": "Vorbesc cu colectorul despre inel",
+          "gata": {
+            "stare": {
+              "groapa": "deschisa"
+            }
+          },
+          "sfat": "Colectorul stă dimineața la masa taxei (6–12), iar seara face de pază cu o torță (18–23).",
+          "indiciu": {
+            "text": "Despre inel...",
+            "nod": "inel_ind"
+          }
+        },
+        {
+          "text": "Câștig o luptă în Groapă",
+          "gata": {
+            "existaStare": "inel_castigat"
+          },
+          "sfat": "Groapa e la poartă, seara (18–23): apăs pe poartă. Oricare nivel; o singură luptă pe seară.",
+          "indiciu": {
+            "text": "Despre inel...",
+            "nod": "inel_ind"
+          }
+        },
+        {
+          "text": "Îi duc mamei inelul",
+          "la": "miriam",
+          "gata": {
+            "stare": {
+              "inel": "inapoi"
+            }
+          },
+          "sfat": "Mama e dimineața și seara în bucătărie, la amiază în camera ei, după-amiaza în piață.",
+          "predare": {
+            "text": "Mamă... uite ce ți-am adus.",
+            "nod": "inel_m1",
+            "conditii": {
+              "areObiect": "inel_miriam"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: colectorul ia verigheta Miriamei „pentru Groapă” (nu se poate refuza); la poartă îi spune lui Vale că o poate câștiga înapoi doar luptând o dată în Groapă, oricare nivel; atunci Groapa apare pe poartă și rămâne. +1 la Miriam."
     }
   ]
 }
