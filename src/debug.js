@@ -175,7 +175,7 @@ export function creeazaDebug(parinte, joc) {
         .join(' ')}</div>
       <div class="rand-d"><label><input type="checkbox" class="tl-puternici" ${test.puternici ? 'checked' : ''}> Inamici foarte puternici (lovesc de 10 ori mai tare)</label></div>
       <div class="rand-d"><label><input type="checkbox" class="tl-slabi" ${test.slabi ? 'checked' : ''}> Inamici foarte slabi (cad dintr-o lovitură)</label></div>
-      <div class="rand-d"><label><input type="checkbox" class="tl-finala" ${test.finala ? 'checked' : ''}> Ca în lupta finală (Vale are toiagul celor 23 la „Obiect”, chiar dacă nu l-a primit încă)</label></div>
+      <div class="rand-d"><label><input type="checkbox" class="tl-finala" ${test.finala ? 'checked' : ''}> Ca în lupta finală (Vale are toiagul celor 23 la „Obiect”, iar Roderick, steagul satului, chiar dacă nu le-au primit încă)</label></div>
       <div class="rand-d"><button class="tl-porneste">Pornește lupta de test</button> <small>(nu schimbă viața, timpul sau echipamentul)</small></div>
     </details>`;
   }

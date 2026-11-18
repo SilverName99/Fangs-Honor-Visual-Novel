@@ -1572,6 +1572,42 @@
       "repetare": "o_data",
       "dialog": "cercuri_pivnita_luate",
       "_nota": "Decis de autor: Vale ia cercurile vechi din pivniță (zona „Cercurile vechi” din pivniță, desenată de autor)."
+    },
+    {
+      "id": "miriam_paine",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Miriam: pâinea văduvelor",
+      "grup": "Pâinea văduvelor",
+      "efecte": {
+        "timp": 240
+      },
+      "dialog": "miriam_paine",
+      "_nota": "Decis de autor: Miriam și Vale coc pâinea (o imagine), apoi Vale o împarte prin sat (3 imagini). Ales de Claude: patru ore."
+    },
+    {
+      "id": "miriam_visele",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Miriam: vorbele din somn",
+      "grup": "Vorbele din somn",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "miriam_visele",
+      "_nota": "Decis de autor: după al doilea vis, Miriam îl duce pe Vale la Elian. Ales de Claude: o oră; Vale rămâne în biserică."
+    },
+    {
+      "id": "roderick_steag",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Roderick: steagul de pe câmp",
+      "grup": "Steagul satului",
+      "efecte": {
+        "timp": 90
+      },
+      "dialog": "roderick_steag",
+      "_nota": "Decis de autor: seara, Roderick și Vale aduc steagul satului de pe câmpul bătăliei. Ales de Claude: o oră și jumătate; Vale ajunge apoi în camera lui."
     }
   ]
 }

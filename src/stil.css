@@ -3605,6 +3605,10 @@ svg.zone {
 .luptator.intarit-toba:not(.cazut) .corp:not(.lovit) {
   filter: drop-shadow(0 0 10px rgba(230, 60, 30, 0.85));
 }
+/* Steagul satului (lupta finală): cei care luptă sub el au o strălucire aurie, cât stă în picioare cel cu steagul */
+.luptator.intarit-steag:not(.cazut) .corp:not(.lovit) {
+  filter: drop-shadow(0 0 10px rgba(240, 196, 80, 0.8));
+}
 /* Orcul pentru care bate toba pulsează roșu o clipă, cât apare „+3 atac” deasupra lui */
 .luptator.primeste-toba .corp {
   animation: primeste-toba 0.7s ease-out;

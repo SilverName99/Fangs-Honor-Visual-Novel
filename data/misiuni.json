@@ -2547,6 +2547,278 @@
         }
       },
       "_nota": "Decis de autor: Kaia nu vrea să se arate orcilor în Groapă; Miriam îi coase o capă subțire, strânsă pe corp, cu glugă și o fâșie pentru față, din 3 blăni de lup și un ghem de sfoară (cantitățile: alese de Claude, TODO echilibru); a doua zi, ca la păpușă; i-o duci Kaiei, care de atunci vine cu tine în Groapă. +1 la Miriam."
+    },
+    {
+      "id": "miriam_paine",
+      "titlu": "Pâinea văduvelor",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": "CIORNĂ: Mama vrea să coacă pâine pentru familiile celor douăzeci și trei căzuți în bătălie. Orcii au luat grâul, dar morarul le mai dă câte un pumn de făină celor care îi cară sacii.",
+      "oferta": {
+        "_nota": "Ales de Claude: după „Lumânările” (cele 23 de lumânări pentru cei căzuți), dimineața, cât e Miriam în bucătărie.",
+        "text": "Mamă, la ce te gândești?",
+        "nod": "paine_o1",
+        "conditii": {
+          "misiune": {
+            "roderick_lumanari": "terminata"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "05:00",
+            "max": "10:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Adun 4 măsuri de făină de la moară",
+          "numara": {
+            "obiect": "faina",
+            "n": 4
+          },
+          "sfat": "Cât muncesc la moară, morarul îmi dă și făină (2 la fiecare muncă).",
+          "indiciu": {
+            "text": "Despre pâine...",
+            "nod": "paine_ind"
+          }
+        },
+        {
+          "text": "Coc pâinea cu mama și o împart prin sat",
+          "gata": {
+            "existaStare": "paine_impartita"
+          },
+          "sfat": "Cu făina, dimineața, în bucătărie, cu mama.",
+          "predare": {
+            "text": "Mamă, am adus făina.",
+            "nod": "paine_p1",
+            "conditii": {
+              "areCate": {
+                "faina": 4
+              },
+              "loc": "casa/bucatarie",
+              "ora": {
+                "min": "05:00",
+                "max": "10:59"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre pâine...",
+            "nod": [
+              {
+                "nod": "paine_ind",
+                "conditii": {
+                  "nu": {
+                    "areCate": {
+                      "faina": 4
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "paine_ind_dim"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1. Iar în sat, cineva a spus cu voce tare ce gândesc toți.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Miriam coace pâine pentru familiile celor 23; făina vine de la moară (2 la fiecare muncă, până la 4, cât e misiunea: ales de Claude); o imagine cu ea și Vale făcând pâinea, apoi 3 imagini în care Vale o împarte prin sat, cu câte un sătean fără portret; la ultima, prima scânteie de revoltă („Dacă ar mai fi bărbați în sat...”). +1 la Miriam."
+    },
+    {
+      "id": "miriam_visele",
+      "titlu": "Vorbele din somn",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": "CIORNĂ: Mama m-a auzit vorbind în somn, mai multe nopți la rând, într-o limbă pe care n-o știe nimeni. M-a luat de mână, ca pe un copil, și m-a dus la Fratele Elian.",
+      "oferta": {
+        "_nota": "Decis de autor: după al doilea vis. Ales de Claude: dimineața, cât e Miriam în bucătărie (Elian e atunci în biserică).",
+        "text": "Mamă, de ce te uiți așa la mine?",
+        "nod": "vise_o1",
+        "conditii": {
+          "stare": {
+            "vis_2": "vazut"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "05:00",
+            "max": "10:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Merg cu mama la Fratele Elian",
+          "gata": {
+            "existaStare": "visele_elian"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1 și a Fratelui Elian +1. Elian mi-a dat un ceai pentru somn. Și nu mi-a spus tot ce știe.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1,
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: după al doilea vis, Miriam îl aude pe Vale vorbind în somn o limbă pe care n-o știe nimeni; merg la Elian, care pălește, îi dă un ceai și nu spune nimic (de acum bănuiește că trezirea e a lui Vale). +1 la Miriam și la Elian. O imagine (ales de Claude)."
+    },
+    {
+      "id": "miriam_steag",
+      "titlu": "Steagul satului",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "steag_cusut"
+          },
+          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick, iar mama l-a cusut. Vrea ca unchiul să-l poarte de acum. Zice că i-l dă ea, nu eu."
+        },
+        "CIORNĂ: Steagul satului, cel albastru cu rombul auriu, zace și acum pe câmpul bătăliei, lângă copacul mare. Mama l-a brodat cu mâna ei. Vrea să-l aduc acasă, dar nu singur: cu unchiul Roderick."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: după „Cina în familie” (la cină, Roderick i-a spus Miriamei că steagul e tot pe câmp), seara, cât e Miriam în bucătărie.",
+        "text": "Mamă... te gândești la tata?",
+        "nod": "steag_o1",
+        "conditii": {
+          "misiune": {
+            "miriam_cina": "terminata"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îi cer unchiului Roderick să vină cu mine",
+          "la": "soldat",
+          "gata": {
+            "existaStare": "steag_roderick_stie"
+          },
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "predare": {
+            "text": "Unchiule, mama vrea steagul de la copac.",
+            "nod": "steag_r1"
+          }
+        },
+        {
+          "text": "Seara, mă întâlnesc cu unchiul la gardul putred de la Marginea satului",
+          "la": "soldat",
+          "gata": {
+            "existaStare": "steag_luat"
+          },
+          "sfat": "Seara (19–23), la Ieșirea de la Marginea satului.",
+          "predare": {
+            "text": "Sunt gata, unchiule.",
+            "nod": "steag_g1",
+            "conditii": {
+              "loc": "iesirea"
+            }
+          },
+          "indiciu": {
+            "text": "Despre steag...",
+            "nod": "steag_ind"
+          }
+        },
+        {
+          "text": "Îi duc steagul mamei",
+          "gata": {
+            "existaStare": "steag_la_miriam"
+          },
+          "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, am adus steagul.",
+            "nod": "steag_m1",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              },
+              "areObiect": "steag_rupt"
+            }
+          },
+          "indiciu": {
+            "text": "Despre steag...",
+            "nod": "steag_m_unde"
+          }
+        },
+        {
+          "text": "Iau steagul de la mama, a doua zi",
+          "gata": {
+            "existaStare": "steag_cusut"
+          },
+          "sfat": "Mama îl coase mâine, la amiază (11–14), în camera ei.",
+          "predare": {
+            "text": "Mamă, e gata steagul?",
+            "nod": "steag_c1",
+            "conditii": {
+              "loc": "casa/camera_mama",
+              "ora": {
+                "min": "11:00",
+                "max": "13:59"
+              },
+              "nu": {
+                "marcatAzi": "steag_dat"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre steag...",
+            "nod": [
+              {
+                "nod": "steag_m_maine",
+                "conditii": {
+                  "marcatAzi": "steag_dat"
+                }
+              },
+              {
+                "nod": "steag_m_unde"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Îi duc steagul unchiului Roderick",
+          "la": "soldat",
+          "gata": {
+            "stare": {
+              "steag": "roderick"
+            }
+          },
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "predare": {
+            "text": "Unchiule, mama ți-a trimis ceva.",
+            "nod": "steag_d1",
+            "conditii": {
+              "areObiect": "steagul_satului"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1 și a unchiului Roderick +1. De acum, unchiul poartă steagul satului.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1,
+            "soldat": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: steagul satului zace pe câmpul bătăliei; Roderick și Vale îl aduc noaptea (2 imagini), Miriam îl coase a doua zi (o imagine), apoi Roderick îl primește (o imagine) și îl ține; în lupta finală luptă cu steagul în mână (varianta „steag” din npcs.json). +1 la Miriam și la Roderick. După „Cina în familie” (ales de Claude)."
     }
   ]
 }

@@ -767,6 +767,12 @@
         "vorbitor": "vale",
         "emotie": "zambet",
         "text": "Bine, unchiule. N-o să mai întreb."
+      },
+      "r_steag": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Steagul stă pe peretele de deasupra patului meu. Unde dorm, nu-ți spun nici ție. Dar acolo stă, și îl văd în fiecare seară înainte să închid ochii.",
+        "_nota": "CIORNĂ (Claude): după misiunea „Steagul satului”."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -776,6 +782,14 @@
         "nod": "r_tata_a",
         "conditii": {
           "existaStare": "scandal_taverna"
+        }
+      },
+      {
+        "nod": "r_steag",
+        "conditii": {
+          "stare": {
+            "steag": "roderick"
+          }
         }
       }
     ],
@@ -3360,6 +3374,508 @@
           "daObiect": "capa_kaia",
           "stare": {
             "groapa_aliat_vanatoare": "da"
+          }
+        }
+      },
+      "paine_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama stă aplecată peste sacul de făină. Scutură pânza, iar pe masă cade doar un firicel alb.",
+        "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Pâinea văduvelor” (decis de autor): făina de la moară, pâinea, apoi Vale o împarte prin sat.",
+        "urmator": "paine_o2"
+      },
+      "paine_o2": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Atât a mai rămas. Ne ajunge nouă, la doi, până la sfârșitul săptămânii. Dacă mâncăm puțin.",
+        "urmator": "paine_o3"
+      },
+      "paine_o3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și te uiți la sacul ăla de parcă ar fi o rană.",
+        "urmator": "paine_o4"
+      },
+      "paine_o4": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Mă gândesc la femeile celor douăzeci și trei. Ieri am văzut-o pe una dintre ele la fântână, cu doi copii agățați de fustă. N-aveau ce mânca, Vale. Se vedea pe ei.",
+        "urmator": "paine_o5"
+      },
+      "paine_o5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Unchiul tău mi-a spus de lumânări. Douăzeci și trei de lumânări pentru douăzeci și trei de oameni. E frumos ce ați făcut. Dar morții nu mai au nevoie de nimic.",
+        "urmator": "paine_o6"
+      },
+      "paine_o6": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Cei rămași în urma lor au nevoie de pâine.",
+        "urmator": "paine_o7"
+      },
+      "paine_o7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Orcii au luat grâul de la moară. Tot.",
+        "urmator": "paine_o8"
+      },
+      "paine_o8": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Nu tot. Morarul le mai dă câte un pumn de făină, pe ascuns, celor care îi cară sacii. Tatăl tău căra pentru el în fiecare toamnă.",
+        "urmator": "paine_o9"
+      },
+      "paine_o9": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Adu-mi patru măsuri de făină și coacem pâine pentru toate casele lor. Câte o pâine pentru fiecare, cum făceam pe vremuri, de sărbători.",
+        "alegeri": [
+          {
+            "text": "Aduc eu făina, mamă.",
+            "efecte": {
+              "misiune": {
+                "miriam_paine": "inceputa"
+              }
+            },
+            "spre": "paine_o10"
+          },
+          {
+            "text": "Altă dată, mamă.",
+            "spre": "paine_o_nu"
+          }
+        ]
+      },
+      "paine_o10": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bun. Și Vale... nu spune nimănui pentru cine e făina. Orcii n-au de ce să știe."
+      },
+      "paine_o_nu": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Bine. Dar nu lăsa prea mult. Iarna nu așteaptă pe nimeni."
+      },
+      "paine_ind": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Patru măsuri de făină, de la moară. Morarul îți dă câte puțin când îi cari sacii."
+      },
+      "paine_ind_dim": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Pâinea se face dimineața, Vale, cât se încinge cuptorul. Vino mâine devreme, cu făina."
+      },
+      "paine_p1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă, am adus făina. Patru măsuri, cum ai zis.",
+        "urmator": "paine_p2"
+      },
+      "paine_p2": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Pune-o pe masă. Și suflecă-ți mânecile: azi frămânți și tu.",
+        "alegeri": [
+          {
+            "text": "Îmi suflec mânecile.",
+            "inchide": true,
+            "efecte": {
+              "consuma": {
+                "faina": 4
+              },
+              "eveniment": "miriam_paine"
+            }
+          }
+        ]
+      },
+      "vise_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama stă la masă cu o cană în mâini, dar nu bea din ea. Se uită la mine de când am intrat pe ușă.",
+        "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Vorbele din somn” (decis de autor: după al doilea vis; Vale vorbește în somn o limbă pe care n-o știe nimeni; merg la Elian, +1 la Miriam și la Elian).",
+        "urmator": "vise_o2"
+      },
+      "vise_o2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă, de ce te uiți așa la mine?",
+        "urmator": "vise_o3"
+      },
+      "vise_o3": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Te aud vorbind în somn, Vale. Nu e prima noapte.",
+        "urmator": "vise_o4"
+      },
+      "vise_o4": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Toată lumea vorbește în somn. Tata sforăia de tremurau ferestrele.",
+        "urmator": "vise_o5"
+      },
+      "vise_o5": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Nu glumi. Nu vorbeai ca tine.",
+        "urmator": "vise_o6"
+      },
+      "vise_o6": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Nu era limba noastră. Nici a orcilor, nici a negustorilor care trec pe drumul mare. Am auzit multe limbi la viața mea. Pe asta n-am mai auzit-o.",
+        "urmator": "vise_o7"
+      },
+      "vise_o7": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Era veche. Grea. De parcă ar fi vorbit cineva foarte bătrân prin gura ta. Am stat lângă patul tău până s-a luminat și n-am avut curaj să te trezesc.",
+        "urmator": "vise_o8"
+      },
+      "vise_o8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îmi amintesc visul. Copacul înflorit. Tata. Și ochiul acela, la sfârșit, care nu era al lui. Dar de vorbit... nu-mi amintesc nimic.",
+        "urmator": "vise_o9"
+      },
+      "vise_o9": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mergem la Fratele Elian. Acum. El a citit cărțile pe care noi nu le-am citit.",
+        "alegeri": [
+          {
+            "text": "Bine, mamă. Mergem.",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "miriam_visele": "inceputa"
+              },
+              "eveniment": "miriam_visele"
+            }
+          },
+          {
+            "text": "Mamă, a fost doar un vis.",
+            "spre": "vise_o_nu"
+          }
+        ]
+      },
+      "vise_o_nu": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Atunci n-o să te coste nimic să i-l spui și lui. Când ești gata, te aștept aici."
+      },
+      "steag_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama spală vasele de la cină. Se oprește cu mâinile în apă și se uită pe fereastră, spre gardul Marginii.",
+        "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Steagul satului” (decis de autor: steagul satului zace pe câmpul bătăliei; Roderick și Vale îl aduc noaptea, Miriam îl coase, iar Roderick îl ține de atunci și luptă cu el în lupta finală; +1 la Miriam și la Roderick).",
+        "urmator": "steag_o2"
+      },
+      "steag_o2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă... te gândești la tata?",
+        "urmator": "steag_o3"
+      },
+      "steag_o3": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Mă gândesc la steag.",
+        "urmator": "steag_o4"
+      },
+      "steag_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Steagul satului? Cel albastru, cu rombul?",
+        "urmator": "steag_o5"
+      },
+      "steag_o5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Femeile satului l-am cusut aici, la masa asta, în iarna dinaintea bătăliei. Rombul l-am brodat eu, cu firul de aur pe care îl păstram pentru nunta ta.",
+        "urmator": "steag_o6"
+      },
+      "steag_o6": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Roderick mi-a spus la cină că e tot acolo. Lângă copac, sub scuturi, în noroi.",
+        "urmator": "steag_o7"
+      },
+      "steag_o7": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "L-am văzut. Când m-a dus unchiul acolo.",
+        "urmator": "steag_o8"
+      },
+      "steag_o8": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Nu vreau să putrezească acolo, Vale. Ca ei. Adu-l acasă.",
+        "urmator": "steag_o9"
+      },
+      "steag_o9": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Dar nu singur. Cere-i lui Roderick să meargă cu tine. Și să nu vă vadă orcii.",
+        "alegeri": [
+          {
+            "text": "Îl aduc acasă, mamă.",
+            "efecte": {
+              "misiune": {
+                "miriam_steag": "inceputa"
+              }
+            },
+            "spre": "steag_o10"
+          },
+          {
+            "text": "Nu acum, mamă.",
+            "spre": "steag_o_nu"
+          }
+        ]
+      },
+      "steag_o10": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Du-te la unchiul tău. El știe drumul și pe întuneric."
+      },
+      "steag_o_nu": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Atunci altă dată. A așteptat până acum, mai poate aștepta."
+      },
+      "steag_r1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, mama vrea steagul de la copac. Vrea să-l aducem acasă.",
+        "urmator": "steag_r2"
+      },
+      "steag_r2": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Steagul...",
+        "urmator": "steag_r3"
+      },
+      "steag_r3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul tace multă vreme. Se uită la mâinile lui.",
+        "urmator": "steag_r4"
+      },
+      "steag_r4": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "L-a ținut cel mai tânăr dintre noi. Fiul bătrânului de la capătul uliței. Când a căzut băiatul, l-am ridicat eu. Iar când Edwin mi-a strigat să fug... l-am lăsat jos.",
+        "urmator": "steag_r5"
+      },
+      "steag_r5": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "L-am lăsat în noroi și am fugit.",
+        "urmator": "steag_r6"
+      },
+      "steag_r6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ai făcut ce ți-a cerut tata.",
+        "urmator": "steag_r7"
+      },
+      "steag_r7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...Seara, la gardul putred, după ce se întunecă. Te aștept de pe la șapte până pe la unsprezece. Adu un sac, să nu se vadă ce cărăm.",
+        "efecte": {
+          "stare": {
+            "steag_roderick_stie": "da"
+          }
+        }
+      },
+      "steag_ind": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Seara, la gardul putred de la Marginea satului. De pe la șapte până pe la unsprezece."
+      },
+      "steag_g1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai adus sacul?",
+        "urmator": "steag_g2"
+      },
+      "steag_g2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "L-am adus.",
+        "urmator": "steag_g3"
+      },
+      "steag_g3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Atunci hai. Calcă unde calc eu.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "roderick_steag"
+            }
+          }
+        ]
+      },
+      "steag_m1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mamă... am adus steagul.",
+        "urmator": "steag_m2"
+      },
+      "steag_m2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îl desfac pe patul ei. Mama nu spune nimic. Își trece degetele peste rombul brodat, apoi peste ruptura de pe margine.",
+        "urmator": "steag_m3"
+      },
+      "steag_m3": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "E tot aici. Tot.",
+        "urmator": "steag_m4"
+      },
+      "steag_m4": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Lasă-l la mine. Îl spăl la noapte și mâine îl cos. Vino mâine la amiază.",
+        "efecte": {
+          "consuma": {
+            "steag_rupt": 1
+          },
+          "stare": {
+            "steag_la_miriam": "da"
+          },
+          "marcheaza": "steag_dat"
+        }
+      },
+      "steag_m_unde": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Adu-l la mine la amiază, când cos în camera mea. Atunci am lumină bună la fereastră."
+      },
+      "steag_m_maine": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mâine, Vale. Pânza trebuie să se usuce întâi."
+      },
+      "steag_c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama stă la fereastră cu steagul întins pe genunchi. Pânza e spălată, iar ruptura de pe margine a dispărut sub o cusătură măruntă, aproape nevăzută.",
+        "imagine": "events/steag_miriam.png",
+        "grupGalerie": "Steagul satului",
+        "urmator": "steag_c2"
+      },
+      "steag_c2": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Am pus un petic din rochia mea albastră. Nu se vede decât dacă știi unde să te uiți.",
+        "urmator": "steag_c3"
+      },
+      "steag_c3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "E ca nou, mamă.",
+        "urmator": "steag_c4"
+      },
+      "steag_c4": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Nu e nou. Are cicatrici, ca noi toți. Dar e întreg.",
+        "urmator": "steag_c5"
+      },
+      "steag_c5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Du-i-l lui Roderick. El l-a lăsat acolo, el să-l poarte de acum. Spune-i că i-l dau eu, nu tu.",
+        "urmator": "steag_c6"
+      },
+      "steag_c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Înțeleg. Nu e doar un steag. E iertarea ei.",
+        "efecte": {
+          "obiect": "steagul_satului",
+          "stare": {
+            "steag_cusut": "da"
+          }
+        }
+      },
+      "steag_d1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule, mama ți-a trimis ceva.",
+        "urmator": "steag_d2"
+      },
+      "steag_d2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Desfac steagul în fața lui. Unchiul se ridică încet, ca atunci când intră cineva important pe ușă.",
+        "imagine": "events/steag_roderick.png",
+        "grupGalerie": "Steagul satului",
+        "urmator": "steag_d3"
+      },
+      "steag_d3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "L-a cusut.",
+        "urmator": "steag_d4"
+      },
+      "steag_d4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Zice că ți-l dă ea, nu eu. Că tu l-ai lăsat acolo, deci tu să-l porți de acum.",
+        "urmator": "steag_d5"
+      },
+      "steag_d5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul ia steagul în mâini. Degetele lui groase, crăpate de frig și de sabie, se opresc pe cusătura de pe margine.",
+        "urmator": "steag_d6"
+      },
+      "steag_d6": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "Miriam...",
+        "urmator": "steag_d7"
+      },
+      "steag_d7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Spune-i... nu. O să-i spun eu. În ochi.",
+        "urmator": "steag_d8"
+      },
+      "steag_d8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De azi încolo nu-l mai las jos, băiete. Nici dacă mă taie în bucăți.",
+        "urmator": "steag_d9"
+      },
+      "steag_d9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe față îi trece ceva ce n-am mai văzut de la bătălie încoace. Nu e bucurie. E mândrie.",
+        "efecte": {
+          "consuma": {
+            "steagul_satului": 1
+          },
+          "stare": {
+            "steag": "roderick"
           }
         }
       }
@@ -13374,6 +13890,435 @@
           "stare": {
             "cercuri_luate": "da"
           }
+        }
+      }
+    }
+  },
+  "miriam_paine": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Pâinea văduvelor” (decis de autor): o imagine cu Miriam și Vale făcând pâinea, apoi 3 imagini în care Vale o împarte prin sat și vorbește la fiecare cu cineva. Sătenii n-au imagini proprii: doar un nume, fără portret („faraPortret”); Vale are portretul lui. La a treia, prima scânteie de revoltă.",
+    "grup": "Pâinea văduvelor",
+    "partener": "miriam",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cuptorul din curte duduie de la prima geană de lumină. Mama frământă cu toată greutatea trupului, iar eu încerc să țin pasul cu ea.",
+        "imagine": "events/paine_vaduve_1.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Nu așa. Cu podul palmei, nu cu degetele. Aluatul trebuie să simtă că ții la el, altfel nu crește.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Asta ți-a spus-o bunica?",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Asta i-am spus-o eu tatălui tău, în prima noastră iarnă. Frământa ca un fierar. Pâinea îi ieșea tare ca o potcoavă.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Râde. Un râs scurt, care se oprește singur, ca și cum și-ar fi adus aminte că n-are voie.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Douăzeci și trei de pâini. Câte una pentru fiecare casă. Unde n-a mai rămas nimeni, o dăm vecinilor.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Le scoatem din cuptor una câte una, rumene și fierbinți. Mama le învelește într-un ștergar curat și le așază în coș, ca pe niște prunci.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Du-le cât sunt calde, Vale. Pâinea rece e pomană. Pâinea caldă e de la vecini.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Prima casă e a unei femei pe care o știu de când eram mic. Bărbatul ei cânta în strana bisericii. Acum ușa i se deschide doar cât să încapă un ochi.",
+        "imagine": "events/paine_vaduve_2.png",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "satean",
+        "nume": "Văduva",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Vale Lightfinder? Ce cauți la ușa mea?",
+        "urmator": "p11"
+      },
+      "p11": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mama a copt azi. Zice că e prea multă pâine pentru doi oameni.",
+        "urmator": "p12"
+      },
+      "p12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe după fusta ei se uită doi copii. Cel mic n-are mai mult de patru ani. Se uită la coș, nu la mine.",
+        "urmator": "p13"
+      },
+      "p13": {
+        "vorbitor": "satean",
+        "nume": "Băiețelul",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "E pâine adevărată? Din aia cu coajă?",
+        "urmator": "p14"
+      },
+      "p14": {
+        "vorbitor": "satean",
+        "nume": "Văduva",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Spune-i Miriamei că n-am uitat. Nici de Edwin, nici de ea.",
+        "urmator": "p15"
+      },
+      "p15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bătrânul de la capătul uliței stă pe banca din fața casei, ca în fiecare zi. Fiul lui a fost cel mai tânăr dintre cei douăzeci și trei.",
+        "imagine": "events/paine_vaduve_3.png",
+        "urmator": "p16"
+      },
+      "p16": {
+        "vorbitor": "satean",
+        "nume": "Bătrânul",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "N-am cerut nimic de la nimeni, băiete. Nici de la orci, nici de la vecini.",
+        "urmator": "p17"
+      },
+      "p17": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu e pentru dumneavoastră. E pentru nepoți.",
+        "urmator": "p18"
+      },
+      "p18": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se uită lung la pâine. Apoi o ia cu amândouă mâinile, încet, cum iei un lucru care se poate sparge.",
+        "urmator": "p19"
+      },
+      "p19": {
+        "vorbitor": "satean",
+        "nume": "Bătrânul",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Fiul meu avea vârsta ta. Ținea partea lui Edwin la orice ceartă. S-ar fi dus după el și în foc.",
+        "urmator": "p20"
+      },
+      "p20": {
+        "vorbitor": "satean",
+        "nume": "Bătrânul",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "S-a dus după el și acolo.",
+        "urmator": "p21"
+      },
+      "p21": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "La fântână se strâng câteva femei în jurul coșului. Ultima pâine o dau unei femei cu ochii uscați, care nici nu plânge, nici nu mulțumește.",
+        "imagine": "events/paine_vaduve_4.png",
+        "urmator": "p22"
+      },
+      "p22": {
+        "vorbitor": "satean",
+        "nume": "Săteanca",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Pâine. Mulțumesc. Dar pâinea nu mi-l aduce înapoi.",
+        "urmator": "p23"
+      },
+      "p23": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Știu.",
+        "urmator": "p24"
+      },
+      "p24": {
+        "vorbitor": "satean",
+        "nume": "Săteanca",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Orcii ne iau grâul, ne iau marfa, ne iau tot ce avem. Iar noi coacem pâine și ne-o împărțim între noi, cu ușile închise.",
+        "urmator": "p25"
+      },
+      "p25": {
+        "vorbitor": "satean",
+        "nume": "Săteanca",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Dacă ar mai fi bărbați în sat...",
+        "urmator": "p26"
+      },
+      "p26": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu termină. Nici n-are nevoie. Celelalte femei se uită în pământ, dar niciuna nu-i spune să tacă.",
+        "urmator": "p27"
+      },
+      "p27": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "E prima oară când aud pe cineva din Baum vorbind așa, cu voce tare. Mă întorc acasă cu coșul gol și cu vorbele ei în cap.",
+        "urmator": "p28"
+      },
+      "p28": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama mă așteaptă în prag. Nu mă întreabă nimic. Îmi ia coșul gol din mână și mă sărută pe frunte.",
+        "efecte": {
+          "stare": {
+            "paine_impartita": "da"
+          }
+        }
+      }
+    }
+  },
+  "miriam_visele": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Vorbele din somn” (decis de autor): Miriam îl duce pe Vale la Elian; Elian o liniștește și îi dă un ceai, dar pălește când Vale îi spune de ochiul din vis și îi cere să vină întâi la el dacă mai visează ceva (de acum bănuiește că trezirea e a lui Vale). O imagine (ales de Claude).",
+    "grup": "Vorbele din somn",
+    "partener": "mag",
+    "start": "v1",
+    "noduri": {
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Biserica miroase a tămâie și a ceară rece. Fratele Elian ne ascultă stând pe bancă, cu mâinile împreunate, cât mama îi povestește tot, de la prima noapte până la ultima vorbă.",
+        "imagine": "events/visele_elian.png",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Și n-ai înțeles nimic din ce spunea? Niciun cuvânt?",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Nimic, părinte. Doar că suna ca un clopot crăpat. Și o dată, spre ziuă, a spus același lucru de trei ori la rând.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian tace. Mâna i se duce încet la piept, sub haină, și rămâne acolo, strânsă.",
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Visele grele vin după o pierdere grea, Miriam. Mintea vorbește cum poate. Uneori și în limbi pe care nu le știe.",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Și o să treacă?",
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "O să treacă. Am un ceai pentru asta: mușețel, sunătoare și puțină valeriană. Câte o cană seara, înainte de culcare.",
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se ridică și pune ibricul pe jarul din spatele altarului. Îi tremură puțin mâinile când toarnă apa.",
+        "urmator": "v9"
+      },
+      "v9": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Mulțumesc, părinte. Mi-ai luat o piatră de pe inimă.",
+        "urmator": "v10"
+      },
+      "v10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama se duce să aprindă o lumânare pentru tata. Elian se apleacă spre mine, cu cana fierbinte în mână, și vorbește încet, să nu-l audă ea.",
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Vale. Ce vezi în visele acelea?",
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pe tata. Bătălia de la copac. Iar la sfârșit... un ochi. Uriaș, cu pupila tăiată, ca de șarpe. Nu era al lui.",
+        "urmator": "v13"
+      },
+      "v13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian nu spune nimic. Dar se face alb la față, ca peretele din spatele lui.",
+        "urmator": "v14"
+      },
+      "v14": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Dacă mai visezi ceva... orice... vino întâi la mine. Să nu spui nimănui altcuiva. Nici mamei tale, dacă poți.",
+        "urmator": "v15"
+      },
+      "v15": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De ce?",
+        "urmator": "v16"
+      },
+      "v16": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Pentru că oamenii se sperie ușor de ce nu înțeleg. Bea ceaiul, Vale. Și dormi.",
+        "urmator": "v17"
+      },
+      "v17": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Zâmbește. Dar ochii nu-i zâmbesc. Se uită la mine cum se uită un om la un cer de vară care începe să se întunece.",
+        "efecte": {
+          "stare": {
+            "visele_elian": "da"
+          },
+          "mergi": "biserica.interior"
+        }
+      }
+    }
+  },
+  "roderick_steag": {
+    "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Steagul satului” (decis de autor): seara, Roderick și Vale sar gardul putred și aduc steagul de pe câmpul bătăliei; 2 imagini (ales de Claude). Se întorc acasă noaptea.",
+    "grup": "Steagul satului",
+    "partener": "soldat",
+    "start": "s1",
+    "noduri": {
+      "s1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Luna e aproape plină. Câmpul de dincolo de gard e argintiu și liniștit, iar copacul mare stă negru în mijlocul lui, ca o umbră care așteaptă.",
+        "imagine": "events/steag_camp_1.png",
+        "urmator": "s2"
+      },
+      "s2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aici. Lângă rădăcini. Am trecut pe aici de o sută de ori în somn.",
+        "urmator": "s3"
+      },
+      "s3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lamele ruginite sclipesc în iarbă. Unchiul calcă printre ele cu grijă, ca printre morminte. Poate că asta și sunt.",
+        "urmator": "s4"
+      },
+      "s4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sub un scut crăpat, pe jumătate îngropat în pământ, se vede ceva albastru. Unchiul îngenunchează și trage de pânză încet, cum ai trage de o mână.",
+        "imagine": "events/steag_camp_2.png",
+        "urmator": "s5"
+      },
+      "s5": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Iată-l.",
+        "urmator": "s6"
+      },
+      "s6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Steagul iese din noroi rupt pe o margine, înnegrit de ploi și de sânge vechi. Dar rombul auriu din mijloc strălucește în lumina lunii, de parcă nu l-ar fi atins nimic.",
+        "urmator": "s7"
+      },
+      "s7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Șase luni a stat aici. Și firul ăsta de aur nici nu s-a înnegrit.",
+        "urmator": "s8"
+      },
+      "s8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "L-a brodat mama.",
+        "urmator": "s9"
+      },
+      "s9": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Știu. Edwin a zis atunci că îl ducem în fiecare bătălie de acum încolo. Că așa ne ține Miriam pe toți aproape.",
+        "urmator": "s10"
+      },
+      "s10": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "N-a mai fost decât una.",
+        "urmator": "s11"
+      },
+      "s11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Împăturim steagul în sac, fără să mai spunem nimic. La întoarcere, unchiul merge înaintea mea, cu sacul strâns la piept.",
+        "urmator": "s12"
+      },
+      "s12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Acasă, ascund sacul sub pat. Mâine i-l duc mamei.",
+        "efecte": {
+          "obiect": "steag_rupt",
+          "stare": {
+            "steag_luat": "da"
+          },
+          "mergi": "casa.camera_vale"
         }
       }
     }

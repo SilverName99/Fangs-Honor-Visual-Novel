@@ -4,6 +4,10 @@
     "ro": "Cronica Aldariei",
     "en": "The Chronicle of Aldaria"
   },
+  "harta": {
+    "imagine": "map/aldenor_harta.png",
+    "_nota": "Decis de autor: harta Aldenorului, prima pagină a cronicii (ce știu oamenii: fără poarta morții). Imaginea e fără niciun scris (AI-ul strică literele); numele le va pune jocul peste ea, în română și în engleză. Locurile (decis de autor): Stepele Roșii (orcii, la răsărit, dincolo de munți), Sylvareth (pădurea elfilor de pădure, la apus), Caldrath (orașul dragonilor, cu Ordinul Flăcării, în craterul din nord)."
+  },
   "capitole": [
     {
       "titlu": {

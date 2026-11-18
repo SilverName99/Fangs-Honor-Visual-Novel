@@ -107,7 +107,10 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 3. ✅ **Păpușa Linei**: după „Mama lui Finn”, la Lina, când se joacă în fața casei (10–14): „Ce s-a întâmplat, Lina? De ce plângi? !”.
 4. ✅ **Inelul mamei**: pornește singură (nu se poate refuza), din ziua 9, după „Fierul lui Bram”, dimineața (7–11), când intri în bucătărie și mama e acolo (nu duminica, ziua taxei). Deschide **Groapa**.
 5. ✅ **Capa Kaiei**: după ce Kaia nu vrea să vină în Groapă fără deghizare, la mama: „Mamă, mi-ai putea coase o capă? !”.
-6. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
+6. ✅ **Pâinea văduvelor**: după „Lumânările” (Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”.
+7. ✅ **Vorbele din somn** (+1 și la Elian): după al doilea vis, dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”.
+8. ✅ **Steagul satului** (+1 și la Roderick): după „Cina în familie”, seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”.
+9. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut).
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
@@ -126,6 +129,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 4. ✅ **Lumina din pădure** (nu se poate refuza): după „Pasărea Linei”, la Elian: „Pari îngrijorat, frate Elian. !”. Apoi, seara, în pădure.
 5. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
 6. ✅ **Toiagul celor 23**: pornește singură, la sfârșitul „Secretului lui Elian”.
+7. ✅ **Vorbele din somn** (a Miriamei, +1 la Elian): după al doilea vis, la mama, dimineața.
 
 **Kaia (vânătoarea)**
 1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
@@ -142,7 +146,8 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 3. ✅ **Lumânările**: după scandal (oricum s-a terminat), la biserică, cât se roagă Roderick (10–14).
 4. ✅ **Locul unde a căzut tata**: după „Lumânările”, când Vale știe drumul spre Marginea satului (după eliberarea lui Finn). Apoi, la primul somn peste noapte, **al doilea vis**.
 5. ✅ **Antrenamentul**: pornește singur, la sfârșitul „Cinei în familie” (Miriam).
-6. 📝 **Solzii de dragon**: după „Antrenamentul” (decis de autor: după cele 4 misiuni, Roderick îi povestește de solzi), dincolo de gardul de la Marginea satului.
+6. ✅ **Steagul satului** (a Miriamei, +1 la Roderick): după „Cina în familie”, la mama, seara; apoi la Roderick și, seara, la gardul de la Marginea satului.
+7. 📝 **Solzii de dragon**: după „Antrenamentul” (decis de autor: după cele 4 misiuni, Roderick îi povestește de solzi), dincolo de gardul de la Marginea satului.
 
 **Agnes (hangița)**
 1. ✅ **Camera de sus**: la 2 zile după prima discuție cu Agnes, în tavernă, cât e ea acolo.
@@ -171,10 +176,10 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
 | Personaj | De unde vine +1 | Acum |
 |---|---|---|
-| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · ✅ Capa Kaiei · 💡 încă 5 (la 8/10: misiunea specială, echipamentul tatălui) | 5 / 10 |
-| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · 💡 încă 5 (Hârtiile soldatului nu dau, decis) | 5 / 10 |
+| **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · ✅ Capa Kaiei · ✅ Pâinea văduvelor · ✅ Vorbele din somn · ✅ Steagul satului · 💡 încă 2 (la 8/10: misiunea specială, echipamentul tatălui) | 8 / 10 |
+| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · 💡 încă 4 (Hârtiile soldatului nu dau, decis) | 6 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
-| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · 💡 încă 3 | 7 / 10 |
+| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · 💡 încă 2 | 8 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
@@ -212,6 +217,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Numele** (decis de autor): tărâmul **Aldaria**, regatul **Aldenor**, capitala **Altaris**, satul **Baum**, regele cel bătrân **Aldric**, fiul lui, regele de acum, **Cedric**, primordialul focului **Ardrax**.
 - **Textul** (decis de autor): autorul a **rescris prologul în engleză**, „The Chronicle of Aldaria”, pornind de la ciorna lui Claude, cu completări cerute de el (lumile de dincolo și legământul, diferite pentru fiecare; lupta elfilor cu oamenii pentru pădure, câștigată de elfi; regele bătrân care a trimis expediția spre poarta focului și fiul lui, care a apucat s-o vadă deschisă; dialogul regelui cu Arcon). Claude a corectat greșelile de tipar și l-a **tradus în română**, „Cronica Aldariei”, cu aceleași capitole și paragrafe: (1) Tărâmurile celelalte, (2) Prima poartă, (3) Focul oamenilor, (4) Inima Luminii, (5) Regele cel bătrân, (6) Steagul roșu, (7) Baum. Amândouă limbile stau în `data/prolog.json`. Prima ciornă (în română, de Claude) a rămas în documentul „Fangs&Honor: Prologul”. În capitolul 7 cad „douăzeci și trei de viteji”, nu „toți”: Roderick a fost și el lângă copac și a scăpat.
 - **Numele în engleză** (alese de Claude; aceleași dacă jocul se traduce vreodată): tărâmurile celelalte = *the Otherworlds* (ca în basme), Marginea = *the Edge*, Craniile Sângerii = *the Blood Skulls*, Ordinul Flăcării = *the Order of the Flame*, Cercul Luminii = *the Circle of Light*, Inima Luminii = *the Heart of Light*, trezirea mică / mare = *the lesser / greater awakening*, primordialii = *the primordials*, darul dragonilor = *the gift of dragons*, legământul = *the bond*, preotul-mag = *priest-mage*, rombul auriu = *the golden diamond*, drumul mare = *the great road*, copacul mare = *the great tree*. Dragonii în general sunt „it”, iar Karzor și Ardrax „he” (ales de Claude: așa nu se dă un gen primordialului morții). **Cum verifici:** editorul → tab-ul **Prolog** → comutatorul **Română / English** de sus și, lângă el, lista capitolelor (alegi unul și sari la el); limba aleasă rămâne ținută minte, iar la schimbare rămâi în același capitol.
+- **Harta Aldenorului** (decis de autor): prima pagină a cronicii e o hartă cu **Aldenor**, regatul oamenilor, și, la hotare, ținuturile elfilor și ale orcilor: **Stepele Roșii** (orcii, la răsărit, dincolo de munții de lângă Baum; satul e „ușa din spate” spre capitală, de-aia trec convoaiele pe lângă el), **Sylvareth** (marea pădure a elfilor de pădure, la apus) și **Caldrath** (decis de autor: orașul dragonilor oamenilor, construit în craterul unui vulcan stins din nord, în jurul porții focului: cetatea **Ordinului Flăcării**, școala călăreților, turnurile dragonilor și bibliotecile despre ei). Pe hartă nu apare poarta morții (n-o știe nimeni). Imaginea e fără scris (AI-ul strică literele): `map/aldenor_harta.png`, în galerie la „Prologul”; numele le va pune jocul peste ea, în română și în engleză. Propuse de Claude, încă neconfirmate: munții de lângă Baum = **Munții Colților**, cei din nord = **Coroana de Cenușă**. Din prolog: mina Inimii Luminii e **la Kor**, iar Inima stă în **biblioteca Sol** din Altaris.
 - **Visul cu bătălia** (decis de autor) rămâne **al doilea vis**, coșmarul lui Vale de după misiunea lui Roderick, „Locul unde a căzut tata”. Planul vechi, cu imaginile bătăliei la începutul jocului, nu mai e.
 
 ---
@@ -293,6 +299,46 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/capa_miriam.png`, `events/capa_kaia.png` (galeria: „Misiunea Miriamei: capa Kaiei”); iconițele `items/capa_kaia.png`, `items/sfoara.png`.
 
 **Cum verifici:** cu Groapa deschisă și încrederea Kaiei 4, la locul de campare (14–23): „Kaia... ai lupta cu mine în Groapa orcilor?” → refuzul. La mama: „Mamă, mi-ai putea coase o capă?” → F2 → Obiect: 3 blăni de lup și o sfoară → la amiază, în camera mamei: „Mamă, am adus blănile și sfoara.” → „Ziua următoare”, amiază: „Mamă, e gata capa?” → la Kaia: „Kaia, ți-am adus ceva.” → în panoul Groapei apare Kaia.
+
+### ✅ Pâinea văduvelor
+- **Pornește** (ales de Claude): după „Lumânările” (Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”. Mama scutură sacul gol de făină: s-a gândit la femeile celor 23, care n-au ce le da copiilor. „Aduc eu făina, mamă.” pornește misiunea; „Altă dată, mamă.” o lasă în meniu.
+- **Pasul 1** (decis de autor: făina vine de la moară): **4 măsuri de făină**. Cât e misiunea, fiecare muncă la moară dă și **2 făină** (ca orzul la bere; ales de Claude, TODO echilibru), până ai 4. Făina stă la obiectele de poveste și se numără.
+- **Pasul 2:** cu făina, dimineața, în bucătărie: „Mamă, am adus făina.” → „Îmi suflec mânecile.” → **peste o imagine**, Vale și mama frământă și coc 23 de pâini în cuptorul din curte (decis de autor), apoi **peste 3 imagini** Vale le împarte prin sat și vorbește la fiecare cu cineva (decis de autor): o văduvă cu doi copii, bătrânul de la capătul uliței (fiul lui a fost cel mai tânăr dintre cei 23) și o femeie la fântână, care spune primul cuvânt de revoltă: **„Dacă ar mai fi bărbați în sat...”**. Sătenii **n-au imagini și nici portrete** (decis de autor): doar numele („Văduva”, „Băiețelul”, „Bătrânul”, „Săteanca”); Vale își are portretul lui. Trec 4 ore (ales de Claude).
+- **Recompensa:** încrederea mamei **+1**.
+- **Imagini:** `events/paine_vaduve_1.png` (Miriam și Vale frământând pâinea), `events/paine_vaduve_2.png` (la ușa văduvei), `events/paine_vaduve_3.png` (bătrânul de pe bancă), `events/paine_vaduve_4.png` (femeile de la fântână), galeria: „Pâinea văduvelor”; iconița `items/faina.png`.
+
+**Cum verifici**
+1. Termină „Lumânările” (sau F2 → Misiune: „Lumânările” → terminată). Dimineața, în bucătărie, la mama: „Mamă, la ce te gândești?” → „Aduc eu făina, mamă.”.
+2. La moară, de două ori „Muncește 1 oră”: după fiecare urcă pe ecran „+2 Făină”.
+3. Seara, la mama: doar „Despre pâine...” (pâinea se face dimineața).
+4. Dimineața, în bucătărie: „Mamă, am adus făina.” → „Îmi suflec mânecile.” → cele 4 imagini → +1 la mama.
+
+### ✅ Vorbele din somn (+1 și la Elian)
+- **Pornește** (decis de autor: după **al doilea vis**): dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”. Mama îl aude vorbind în somn, de mai multe nopți, **într-o limbă pe care n-o știe nimeni**: veche, grea, „de parcă ar fi vorbit cineva foarte bătrân prin gura ta”. „Bine, mamă. Mergem.” → pornește; „Mamă, a fost doar un vis.” o lasă în meniu.
+- **La biserică, peste o imagine** (ales de Claude): mama îi povestește tot lui Elian. Elian îi spune că visele grele vin după o pierdere grea și îi dă un **ceai pentru somn** (mușețel, sunătoare, valeriană). Când mama se duce să aprindă o lumânare, Elian îl întreabă pe Vale ce vede în vise; la **ochiul cu pupila tăiată**, se face alb la față și îi cere să vină întâi la el dacă mai visează ceva, fără să spună altcuiva. **De acum Elian bănuiește că trezirea e a lui Vale** (decis de autor), dar nu spune nimic. Trece o oră; Vale rămâne în biserică.
+- **Recompensa:** încrederea mamei **+1** și a lui Elian **+1**.
+- **Imagine:** `events/visele_elian.png` (în biserică: Elian pe bancă, ascultând, Miriam și Vale lângă el), galeria: „Vorbele din somn”.
+
+**Cum verifici:** F2 → starea `vis_2` = `vazut` (sau visează al doilea vis). Dimineața, în bucătărie: „Mamă, de ce te uiți așa la mine?” → „Bine, mamă. Mergem.” → imaginea → ajungi în biserică, +1 la mama și la Elian.
+
+### ✅ Steagul satului (+1 și la Roderick)
+- **Pornește** (ales de Claude): după **„Cina în familie”** (la cină, Roderick i-a spus mamei că steagul e tot pe câmp), seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”. Steagul albastru cu rombul auriu l-au cusut femeile satului în iarna dinaintea bătăliei, iar rombul l-a brodat mama, cu firul de aur pe care îl păstra pentru nunta lui Vale (ciornă de Claude). Mama vrea steagul acasă, dar nu-l lasă pe Vale singur: cu Roderick. „Nu acum, mamă.” o lasă în meniu.
+- **Pasul 1:** la Roderick (biserica 10–14, taverna după-amiaza și seara): „Unchiule, mama vrea steagul de la copac.”. Roderick își amintește: steagul l-a ținut cel mai tânăr dintre ei (fiul bătrânului de la „Pâinea văduvelor”), apoi el, până când Edwin i-a strigat să fugă, și l-a lăsat în noroi.
+- **Pasul 2:** seara (19–23), la gardul putred de la Marginea satului (Roderick e acolo cât e pasul ăsta): „Sunt gata, unchiule.” → **peste 2 imagini**, câmpul în lumina lunii și Roderick care scoate steagul de sub un scut crăpat: rupt și înnegrit, dar rombul strălucește ca nou. Trece o oră și jumătate; Vale ajunge în camera lui, cu steagul.
+- **Pasul 3:** la mama, cât coase (11–14, în camera ei): „Mamă, am adus steagul.”. Îl spală și îl coase **a doua zi**, ca la păpușă.
+- **Pasul 4:** a doua zi, 11–14: „Mamă, e gata steagul?” → **peste o imagine**, mama la fereastră, cu steagul pe genunchi; ruptura e acoperită cu un petic din rochia ei. „Du-i-l lui Roderick. El l-a lăsat acolo, el să-l poarte de acum.”
+- **Pasul 5:** la Roderick: „Unchiule, mama ți-a trimis ceva.” → **peste o imagine**, Roderick ia steagul în mâini: „De azi încolo nu-l mai las jos.” Steagul rămâne la el (starea `steag` = `roderick`).
+- **Recompensa:** încrederea mamei **+1** și a lui Roderick **+1**.
+- **În lupta finală** (decis de autor): **Roderick luptă cu steagul în mână**, cu alte poze, `combat/soldat_steag_*.png` (5, ca de obicei, aceeași pânză 2:3; galeria: „Lupta finală”). Cât stă el în picioare, **ceilalți aliați lovesc cu +2** și au o strălucire aurie (ales de Claude, TODO echilibru; rombul de pe steag e forma cristalelor). În Groapă luptă fără el.
+- **Imagini:** `events/steag_camp_1.png` (câmpul bătăliei noaptea, cu copacul mare), `events/steag_camp_2.png` (Roderick scoate steagul din noroi), `events/steag_miriam.png` (Miriam cu steagul cusut, la fereastră), `events/steag_roderick.png` (Roderick cu steagul în mâini), galeria: „Steagul satului”; iconițele `items/steag_rupt.png` și `items/steagul_satului.png`.
+
+**Cum verifici**
+1. Termină „Cina în familie”. Seara, în bucătărie: „Mamă... te gândești la tata?” → „Îl aduc acasă, mamă.”.
+2. La Roderick: „Unchiule, mama vrea steagul de la copac.”.
+3. Seara, 19–23, Marginea satului → Ieșirea → Roderick: „Sunt gata, unchiule.” → „Să mergem.” → 2 imagini → ajungi acasă.
+4. Amiaza, camera mamei: „Mamă, am adus steagul.” → „Ziua următoare”, amiază: „Mamă, e gata steagul?” → imaginea.
+5. La Roderick: „Unchiule, mama ți-a trimis ceva.” → imaginea → +1 la mama și la Roderick.
+6. Lupta: F2 → Lupta de test → bifează Roderick și „Ca în lupta finală” → în jurnal: „Roderick ridică steagul satului...”.
 
 ### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
 - Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
@@ -687,6 +733,9 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imaginile:** zona `locations/antrenament_zona.png` (+ `_manechin`), piesa `map/piese/antrenament.png` (+ `_noapte`, `_manechin`, `_manechin_noapte`), `events/antrenament_constructie.png`, `events/antrenament_pregatire.png`, `events/antrenament_lovitura.png`. Obiecte: `items/paie.png`, `items/franghie.png`. Sunetul loviturii: același ca lovitura de sabie din luptă (`lupta_sabie`, decis de autor).
 
 **Cum verifici:** după cină, F2 → Mergi la Marginea satului → locul de antrenament, ora 08:00 → Roderick („Despre manechin...”). Obiect → Primește: 6 lemne, 1 frânghie; paiele: munca la arat (sau F2 → Obiect → paie de 3 ori) → la tavernă, după-amiaza, „Unchiule, am adunat tot” (te cheamă dimineața la loc) → a doua zi, 08:00, la locul de antrenament, „Am adus tot” → construcția → a doua zi „Să ne antrenăm” → încă două zile.
+
+### ✅ Steagul satului (a Miriamei, +1 la Roderick)
+- Detaliile, la Miriam. Pe scurt: Roderick și Vale aduc noaptea steagul satului de pe câmpul bătăliei, Miriam îl coase, iar Roderick îl primește de la ea și îl poartă de atunci; în lupta finală luptă cu el în mână (ceilalți lovesc cu +2 cât stă el în picioare).
 
 ### 📝 Solzii de dragon
 - **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. **Arată spre portalul morții** (decis de autor): crăpătura din pământ de pe harta soldatului. Restul: de discutat.

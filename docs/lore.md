@@ -64,6 +64,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - În **lumina soarelui**, Inima Luminii **creează cristale mai mici**, dar **foarte rar**. Cristalele mici fac **magia luminii** mult mai puternică; puțini oameni au acces la ele.
 - **Cercul Luminii**, asociația magilor luminii, **nu e secret**. S-a înființat tot acum 200 de ani, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc (decis de autor). Trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și de pe scuturi (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma cristalelor mici**. Doar pus acolo, le dă oamenilor încredere și putere în luptă.
+- **Steagul satului** (decis de autor, misiunea „Steagul satului”): l-au cusut femeile satului în iarna dinaintea bătăliei, iar rombul l-a brodat Miriam, cu firul de aur păstrat pentru nunta lui Vale (ciornă de Claude). În bătălie l-a ținut cel mai tânăr dintre cei 23, apoi Roderick, care l-a lăsat în noroi când Edwin i-a strigat să fugă. Șase luni a stat pe câmp, dar rombul n-a pălit deloc. Miriam l-a cusut din nou și i l-a dat lui Roderick, care îl poartă în lupta finală.
 - **Inima Luminii** e cea mai mare putere magică a oamenilor. Necromanția o poate **corupe**.
 - E păzită în **marea bibliotecă Sol** din Altaris, cea mai mare minune de arhitectură a capitalei (prologul rescris de autor), aceeași în care a încercat Arcon s-o corupă. Înainte, Arcon le propusese magilor din sfatul Cercului s-o facă „mai mare, mai tare, mai puternică decât oricând”; în noaptea aceea, regele i-a strigat să se oprească, iar toată capitala a auzit.
 
@@ -77,6 +78,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Indiciile dinaintea secretului** (decis de autor): vrabia Linei, cu aripa ruptă, zboară din palmele lui după o lumină printre degete („Era doar speriată”); în pădure, niște raze de lumină arzătoare ard lupii și îi alungă de pe Vale, aproape leșinat, care se trezește vindecat lângă Elian, într-un cerc de iarbă arsă, cu palmele lui Elian încă lucind sub mâneci („Unele lucruri le vezi abia când ești gata să le vezi.”).
 - **În Groapă** (decis de autor): Elian coboară ca vraci și folosește doar vindecarea, o lumină mică, de începător, ca orcii să-l creadă în continuare un preot fără putere („Nu în fața lor, Vale.”, ciornă de Claude).
 - **Lumina lui Elian** (decis de autor): îi iese direct din palme, albă și aurie, fără flacără; o aprinde cu un singur cuvânt, pe o limbă pe care Vale n-o înțelege (ciornă de Claude).
+- **Elian bănuiește** (decis de autor, misiunea „Vorbele din somn”): după al doilea vis, Miriam îl aude pe Vale vorbind în somn, de mai multe nopți, într-o limbă pe care n-o știe nimeni, veche și grea. Elian o liniștește („visele grele vin după o pierdere grea”) și îi dă un ceai, dar se face alb la față când Vale îi spune de ochiul cu pupila tăiată și îi cere să vină întâi la el dacă mai visează ceva. De acum bănuiește că trezirea pe care a fost trimis s-o găsească e a lui Vale. Nu spune nimic. (CIORNĂ de Claude: limba din somn ar fi a tărâmurilor celelalte, a dragonului care îl cheamă; Cercul îi învață pe magi semnele trezirii; de lămurit.)
 - **Cristalul și Vale** (ales de Claude, indiciu pentru trezirea lui Vale): cristalul lui Elian începe să lucească ușor, auriu, când Vale se apleacă spre el (decis de autor: puterile lui Vale abia se trezesc), și ceva mai tare când Vale ține toiagul; a doua oară, palmele lui Vale lucesc și ele, abia văzut. Elian vede, tace și se gândește. Nu-i spune lui Vale nimic.
 
 ## Săbiile celor căzuți și Toiagul celor 23 (decis de autor)
@@ -99,6 +101,15 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Ce vrea:** doar **Inima Luminii**, ca să-i corupă puterea.
 - **Cum a pornit războiul** (acum 10 ani, decis de autor): i-a spus lui **Gorvak**: „Oamenii și-au pierdut dragonul. Loviți capitala acum, înainte să găsească altul, și luați-le Inima Luminii.” Aproape adevărat, de-asta îl crede. **Nimeni nu știe** că Narco e în spatele războiului.
 - **Teroarea** de care vorbesc șobolanii e **ce poate face Narco**: moartea, morții vii, magia interzisă. Șobolanii îi zic „Stăpânul-oaselor” (ciornă de Claude).
+
+## Harta Aldenorului (decis de autor)
+
+- **Aldenor**, regatul oamenilor, la mijloc, cu **Altaris**, capitala (biblioteca Sol, unde stă Inima Luminii), și mina de la **Kor**. Drumul mare duce de la Altaris spre răsărit, până la **Baum**, la marginea regatului, sub munții de dincolo de care vin orcii.
+- **Stepele Roșii** (decis de autor): ținutul Craniilor Sângerii, la răsărit, dincolo de munți. Baum stă lângă trecătoare: e „ușa din spate” spre capitală, de-aia trec convoaiele pe lângă el (propunerea lui Claude, acceptată odată cu numele).
+- **Sylvareth** (decis de autor): marea pădure a elfilor de pădure, la apus, cu granița pentru care s-au luptat cu oamenii (și au câștigat). Portalul aerului nu apare pe hartă: îl știu doar ei.
+- **Caldrath** (decis de autor): orașul dragonilor oamenilor, construit în craterul unui vulcan stins din nord, în jurul **porții focului**: cetatea **Ordinului Flăcării**, școala călăreților, turnurile dragonilor și bibliotecile despre ei.
+- Propuse de Claude, încă neconfirmate: munții de lângă Baum = **Munții Colților**; munții vulcanici din nord = **Coroana de Cenușă**; Colții de Fier ar sta în minele de fier din munți.
+- Poarta morții **nu apare** pe hartă: n-o știe nimeni.
 
 ## Orcii (decis de autor)
 

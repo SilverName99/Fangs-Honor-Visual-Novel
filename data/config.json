@@ -166,6 +166,17 @@
               "agnes_bere": "terminata"
             }
           }
+        },
+        {
+          "_nota": "Decis de autor: cât e misiunea Miriamei „Pâinea văduvelor”, munca la moară dă și făină (2 pe muncă, până la 4: ales de Claude, TODO echilibru).",
+          "obiect": "faina",
+          "n": 2,
+          "max": 4,
+          "conditii": {
+            "misiune": {
+              "miriam_paine": "inceputa"
+            }
+          }
         }
       ]
     }

@@ -178,7 +178,25 @@
           "max": 12,
           "tip": "apropiat"
         },
-        "armura": 15
+        "armura": 15,
+        "variante": {
+          "steag": {
+            "_nota": "Decis de autor: după misiunea „Steagul satului”, în lupta finală Roderick luptă cu steagul satului în mână (alte poze, combat/soldat_steag_*.png, aceeași pânză 2:3; fața din medalion rămâne a lui). Ales de Claude: cât stă el în picioare, ceilalți aliați lovesc cu +2 (TODO echilibru). Se vede din F2, lupta de test, bifa „Ca în lupta finală”.",
+            "nume": "cu steagul satului",
+            "poze": "soldat_steag",
+            "portret": "soldat",
+            "luptaFinala": true,
+            "conditii": {
+              "stare": {
+                "steag": "roderick"
+              }
+            },
+            "steag": {
+              "atac": 2
+            },
+            "grupGalerie": "Lupta finală"
+          }
+        }
       },
       "_despre": "Roderick Lightfinder, fratele lui Edwin (tatăl lui Vale), unchiul. Fost soldat; a luptat lângă Edwin în bătălia cu orcii și a supraviețuit pentru că Edwin i-a poruncit să fugă în sat („Ai grijă de Miriam și de băiat.”, decis de autor). Se poate recruta de la 8/10 încredere (cum anume: TODO).",
       "dialog": "soldat",
@@ -222,6 +240,18 @@
             }
           },
           "ce": "cât e misiunea „Locul unde a căzut tata”, îl așteaptă pe Vale seara la gardul putred de la Marginea satului"
+        },
+        {
+          "de": "19:00",
+          "pana": "23:00",
+          "loc": "iesirea",
+          "conditii": {
+            "existaStare": "steag_roderick_stie",
+            "nu": {
+              "existaStare": "steag_luat"
+            }
+          },
+          "ce": "cât e de adus steagul satului de pe câmp (misiunea „Steagul satului”), îl așteaptă pe Vale seara la gardul putred de la Marginea satului"
         },
         {
           "de": "18:00",

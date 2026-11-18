@@ -188,6 +188,8 @@ export function creeazaLupta(parinte, joc) {
       motivBlocat: x.motivBlocat || '',
       // Toboșarul orcilor (cerut de autor): nu lovește; bate tobele, iar ceilalți din tabăra lui lovesc mai tare
       toba: x.toba || null,
+      // Steagul satului (decis de autor: Roderick îl poartă în lupta finală): cât stă în picioare, ceilalți lovesc mai tare
+      steag: x.steag || null,
       // Strigătul inamicului când atacă (lupul mârâie, orcul răcnește) și sunetul loviturii lui
       sunet: x.sunet || null,
       sunetAtac: x.atac?.sunet || (x.atac?.tip === 'distanta' ? 'lupta_arc' : 'lupta_sabie'),
@@ -511,7 +513,7 @@ export function creeazaLupta(parinte, joc) {
       numar(tinta, 'blocat', 'scut');
       return 0;
     }
-    let d = intre(sursa.atac.min, sursa.atac.max) + bonusToba(sursa);
+    let d = intre(sursa.atac.min, sursa.atac.max) + bonusToba(sursa) + bonusSteag(sursa);
     if (tinta.apara) d = Math.max(1, Math.round(d * (1 - tinta.blocare)));
     // Lovitura golește întâi armura (bara gri), apoi viața
     const dinArmura = Math.min(tinta.armura, d);
@@ -549,9 +551,17 @@ export function creeazaLupta(parinte, joc) {
   // Cât lovește în plus un orc pentru care a bătut un toboșar care încă stă în picioare (decis de autor: toboșarul
   // întărește câte un orc anume, la fiecare tură a lui; dacă toboșarul cade, întărirea se duce)
   const bonusToba = (sursa) => (sursa.intaritDe || []).filter((x) => !x.cazut).reduce((s, x) => s + (x.toba?.atac || 0), 0);
-  // Cei întăriți de tobă au o strălucire roșiatică, ca jucătorul să vadă de ce lovesc mai tare
+  // Steagul satului (decis de autor): cât stă în picioare cel care îl poartă (Roderick, în lupta finală), ceilalți din
+  // tabăra lui lovesc mai tare (ales de Claude: +2, TODO echilibru); când cade el, cade și steagul
+  const bonusSteag = (sursa) =>
+    L.toti.filter((x) => x.steag && x !== sursa && !x.cazut && x.tabara === sursa.tabara).reduce((s, x) => s + (x.steag.atac || 0), 0);
+  // Cei întăriți de tobă au o strălucire roșiatică, iar cei de sub steag una aurie, ca jucătorul să vadă de ce lovesc
+  // mai tare (se reface și când cade cineva: toboșarul sau cel cu steagul)
   function marcheazaToba() {
-    for (const f of L.toti) f.el.classList.toggle('intarit-toba', !f.cazut && bonusToba(f) > 0);
+    for (const f of L.toti) {
+      f.el.classList.toggle('intarit-toba', !f.cazut && bonusToba(f) > 0);
+      f.el.classList.toggle('intarit-steag', !f.cazut && bonusSteag(f) > 0);
+    }
   }
 
   // Toboșarul (decis de autor: e gras și nu poate lupta deloc): când nu mai rămâne în picioare niciun orc care să
@@ -1033,10 +1043,16 @@ export function creeazaLupta(parinte, joc) {
     const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
     // Un recrut poate lupta altfel într-un anumit loc („varianta” luptei, „variante” la statisticile lui): în Groapă,
     // Kaia vine pe jos, fără Ember, iar Elian folosește doar vindecarea (decis de autor)
+    // În lupta finală, un recrut poate veni altfel, după ce s-a întâmplat în joc („luptaFinala” și „conditii” la
+    // varianta lui): Roderick, cu steagul satului (decis de autor). Lupta de test „Ca în lupta finală” îl aduce oricum,
+    // ca toiagul lui Vale, ca să se vadă pozele
+    const variantaFinala = (p) =>
+      def.finala ? Object.keys(p.lupta.variante || {}).find((k) => p.lupta.variante[k].luptaFinala && (def.test || verifica(p.lupta.variante[k].conditii || {}, context(s)))) : null;
     const recrut = (id) => {
       const p = personaje.get(id);
       if (!p?.lupta) return null;
-      return { ...luptatorDinDate(id, cuVarianta(p.lupta, def.varianta), p.nume), numeScurt: p.numeScurt };
+      const varianta = p.lupta.variante?.[def.varianta] ? def.varianta : variantaFinala(p);
+      return { ...luptatorDinDate(id, cuVarianta(p.lupta, varianta), p.nume), numeScurt: p.numeScurt };
     };
     // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
     // „doarVale”: o bătaie unu la unu, fără grup (bețivul din tavernă, decis de autor)
@@ -1164,6 +1180,9 @@ export function creeazaLupta(parinte, joc) {
     L.elJurnal.hidden = false;
     L.pune(L.elMeniu, 'actiuni');
     L.elMeniu.hidden = true;
+    // Cel cu steagul satului îl ridică de la început: ceilalți știu de ce lovesc mai tare
+    for (const f of L.toti.filter((x) => x.steag && !x.cazut)) jurnal(`${f.nume} ridică steagul satului: ceilalți lovesc cu +${f.steag.atac} cât stă el în picioare.`);
+    marcheazaToba();
     L.pauza = false;
     requestAnimationFrame(bucla);
   }

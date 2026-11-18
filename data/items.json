@@ -528,6 +528,28 @@
       "pret": 0,
       "descriere": "O capă subțire, cenușie, din blană de lup, strânsă în talie, cu glugă adâncă și o fâșie pentru față. Cusută de mama, pentru Kaia.",
       "_nota": "Misiunea Miriamei „Capa Kaiei” (decis de autor): deghizarea Kaiei pentru Groapă."
+    },
+    "faina": {
+      "nume": "Făină",
+      "tip": "poveste",
+      "numarabil": true,
+      "pret": 0,
+      "descriere": "Făină albă, măcinată pe ascuns. Morarul le mai dă câte un pumn celor care cară saci la moară. E pentru pâinea mamei.",
+      "_nota": "Misiunea Miriamei „Pâinea văduvelor” (decis de autor: făina vine de la moară). Obiect de poveste care se numără, ca mierea de la bere: 2 la fiecare muncă la moară cât e misiunea, până la 4 (ales de Claude, TODO echilibru)."
+    },
+    "steag_rupt": {
+      "nume": "Steagul satului",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Steagul albastru al satului, adus de pe câmpul bătăliei. Rupt pe o margine, înnegrit de ploi. Doar rombul auriu din mijloc strălucește ca nou.",
+      "_nota": "Misiunea „Steagul satului” (decis de autor): steagul luat de pe câmp, încă nereparat."
+    },
+    "steagul_satului": {
+      "nume": "Steagul satului, cusut",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Steagul satului, spălat și cusut de mama. Ruptura de pe margine s-a ascuns sub un petic din rochia ei albastră. E pentru unchiul Roderick.",
+      "_nota": "Misiunea „Steagul satului” (decis de autor): după ce îl coase Miriam, Vale i-l duce lui Roderick, care îl păstrează (în lupta finală luptă cu el în mână)."
     }
   }
 }
