@@ -3601,12 +3601,14 @@ svg.zone {
   }
 }
 
-/* Toba orcilor: cei întăriți au o strălucire roșiatică, iar toboșarul se scutură când bate */
-.luptator.intarit-toba:not(.cazut) .corp:not(.lovit) {
+/* Toba orcilor: cei întăriți au o strălucire roșiatică, iar toboșarul se scutură când bate. Cel de sub mouse și cel
+   otrăvit își păstrează semnul lor (altfel strălucirea asta l-ar acoperi și nu s-ar vedea pe cine apeși) */
+.luptator.intarit-toba:not(.cazut):not(.otravit):not(.sub-mouse) .corp:not(.lovit) {
   filter: drop-shadow(0 0 10px rgba(230, 60, 30, 0.85));
 }
-/* Steagul satului (lupta finală): cei care luptă sub el au o strălucire aurie, cât stă în picioare cel cu steagul */
-.luptator.intarit-steag:not(.cazut) .corp:not(.lovit) {
+/* Steagul satului (lupta finală): cei care luptă sub el au o strălucire aurie, cât stă în picioare cel cu steagul;
+   ca la tobă, nu acoperă semnul țintei, al celui de sub mouse sau al otrăvii */
+.luptator.intarit-steag:not(.cazut):not(.otravit):not(.tinta-valida):not(.sub-mouse) .corp:not(.lovit) {
   filter: drop-shadow(0 0 10px rgba(240, 196, 80, 0.8));
 }
 /* Orcul pentru care bate toba pulsează roșu o clipă, cât apare „+3 atac” deasupra lui */

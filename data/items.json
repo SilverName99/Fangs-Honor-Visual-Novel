@@ -541,14 +541,14 @@
       "nume": "Steagul satului",
       "tip": "poveste",
       "pret": 0,
-      "descriere": "Steagul albastru al satului, adus de pe câmpul bătăliei. Rupt pe o margine, înnegrit de ploi. Doar rombul auriu din mijloc strălucește ca nou.",
+      "descriere": "Steagul albastru al satului, adus de pe câmpul bătăliei. Rupt pe jumătate, înnegrit de ploi. Doar rombul auriu din mijloc strălucește ca nou.",
       "_nota": "Misiunea „Steagul satului” (decis de autor): steagul luat de pe câmp, încă nereparat."
     },
     "steagul_satului": {
       "nume": "Steagul satului, cusut",
       "tip": "poveste",
       "pret": 0,
-      "descriere": "Steagul satului, spălat și cusut de mama. Ruptura de pe margine s-a ascuns sub un petic din rochia ei albastră. E pentru unchiul Roderick.",
+      "descriere": "Steagul satului, spălat și cusut de mama. Cele două jumătăți sunt prinse la loc, iar unde lipsea pânza e un petic din rochia ei albastră. E pentru unchiul Roderick.",
       "_nota": "Misiunea „Steagul satului” (decis de autor): după ce îl coase Miriam, Vale i-l duce lui Roderick, care îl păstrează (în lupta finală luptă cu el în mână)."
     }
   }

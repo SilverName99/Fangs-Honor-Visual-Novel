@@ -2490,7 +2490,7 @@
           "gata": {
             "existaStare": "capa_cusuta"
           },
-          "sfat": "Mama o coase mâine, la amiază (11–14), în camera ei.",
+          "sfat": "Mama o coase a doua zi după ce îi duc blănile, la amiază (11–14), în camera ei.",
           "predare": {
             "text": "Mamă, e gata capa?",
             "nod": "capa_g1",
@@ -2515,7 +2515,7 @@
                 }
               },
               {
-                "nod": "capa_ind2"
+                "nod": "capa_m_azi"
               }
             ]
           }
@@ -2684,6 +2684,12 @@
           },
           "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick, iar mama l-a cusut. Vrea ca unchiul să-l poarte de acum. Zice că i-l dă ea, nu eu."
         },
+        {
+          "conditii": {
+            "existaStare": "steag_luat"
+          },
+          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick. Era tot acolo, înfipt lângă copac, rupt pe jumătate. Mama o să-l spele și o să-l coasă."
+        },
         "CIORNĂ: Steagul satului, cel albastru cu rombul auriu, zace și acum pe câmpul bătăliei, lângă copacul mare. Mama l-a brodat cu mâna ei. Vrea să-l aduc acasă, dar nu singur: cu unchiul Roderick."
       ],
       "oferta": {
@@ -2761,7 +2767,7 @@
           "gata": {
             "existaStare": "steag_cusut"
           },
-          "sfat": "Mama îl coase mâine, la amiază (11–14), în camera ei.",
+          "sfat": "Mama îl coase a doua zi după ce i-l duc, la amiază (11–14), în camera ei.",
           "predare": {
             "text": "Mamă, e gata steagul?",
             "nod": "steag_c1",
@@ -2786,7 +2792,7 @@
                 }
               },
               {
-                "nod": "steag_m_unde"
+                "nod": "steag_m_azi"
               }
             ]
           }

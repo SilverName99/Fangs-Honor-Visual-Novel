@@ -262,6 +262,25 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // În dreapta stă cel care vorbește (într-o scenă cu mai mulți, de exemplu orcul și Bram); cât vorbește Vale,
     // rămâne ultimul dintre ei
     const vorbesteVale = nod.vorbitor === 'vale';
+    // După un refresh, cine stătea în dreapta se află din replicile de dinainte (de la sătenii fără portret: nimeni),
+    // nu din partenerul dialogului, care poate fi altcineva (mama, care a rămas acasă)
+    if (reluat && !nod.faraPartener && !(nod.vorbitor && !vorbesteVale)) {
+      for (let id = idNod, i = 0; id && i < 80; i++) {
+        const n = activ.dialog.noduri[id];
+        if (n?.faraPartener || n?.faraPortret) {
+          activ.dreaptaGoala = true;
+          break;
+        }
+        if (n?.vorbitor && n.vorbitor !== 'vale') {
+          activ.inDreapta = n.vorbitor;
+          activ.emotiePartener = n.emotie || 'normal';
+          break;
+        }
+        id = Object.keys(activ.dialog.noduri).find((k) => activ.dialog.noduri[k].urmator === id);
+      }
+    }
+    // „faraPartener”: de la replica asta, în dreapta nu mai stă nimeni (Vale pleacă de acasă cu pâinea), până vorbește altcineva
+    if (nod.faraPartener) activ.dreaptaGoala = true;
     if (nod.vorbitor && !vorbesteVale) {
       activ.emotiePartener = nod.emotie || 'normal';
       activ.inDreapta = nod.vorbitor;

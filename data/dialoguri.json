@@ -3406,7 +3406,7 @@
       "paine_o5": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Unchiul tău mi-a spus de lumânări. Douăzeci și trei de lumânări pentru douăzeci și trei de oameni. E frumos ce ați făcut. Dar morții nu mai au nevoie de nimic.",
+        "text": "Fratele Elian mi-a spus de lumânări. Douăzeci și trei de lumânări pentru douăzeci și trei de oameni. E frumos ce ați făcut, tu și unchiul tău. Dar morții nu mai au nevoie de nimic.",
         "urmator": "paine_o6"
       },
       "paine_o6": {
@@ -3465,7 +3465,7 @@
       "paine_ind_dim": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Pâinea se face dimineața, Vale, cât se încinge cuptorul. Vino mâine devreme, cu făina."
+        "text": "Pâinea se face dimineața, Vale, în bucătărie, cât se încinge cuptorul. Vino atunci cu făina."
       },
       "paine_p1": {
         "vorbitor": "vale",
@@ -3602,7 +3602,7 @@
       "steag_o6": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Roderick mi-a spus la cină că e tot acolo. Lângă copac, sub scuturi, în noroi.",
+        "text": "Roderick mi-a spus la cină că e tot acolo. Înfipt în pământ, lângă copac, rupt pe jumătate.",
         "urmator": "steag_o7"
       },
       "steag_o7": {
@@ -3669,13 +3669,13 @@
       "steag_r4": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "L-a ținut cel mai tânăr dintre noi. Fiul bătrânului de la capătul uliței. Când a căzut băiatul, l-am ridicat eu. Iar când Edwin mi-a strigat să fug... l-am lăsat jos.",
+        "text": "L-a ținut Tobin, băiatul morarului. Cel mai tânăr dintre noi. Când a căzut, l-am luat eu și l-am înfipt în pământ, lângă copac, să-l vadă toți. Iar când Edwin mi-a strigat să fug... l-am lăsat acolo.",
         "urmator": "steag_r5"
       },
       "steag_r5": {
         "vorbitor": "soldat",
         "emotie": "suparat",
-        "text": "L-am lăsat în noroi și am fugit.",
+        "text": "L-am lăsat acolo și am fugit.",
         "urmator": "steag_r6"
       },
       "steag_r6": {
@@ -3735,7 +3735,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Îl desfac pe patul ei. Mama nu spune nimic. Își trece degetele peste rombul brodat, apoi peste ruptura de pe margine.",
+        "text": "Îl desfac pe patul ei. Mama nu spune nimic. Își trece degetele peste rombul brodat, apoi peste ruptura care taie pânza în două.",
         "urmator": "steag_m3"
       },
       "steag_m3": {
@@ -3772,7 +3772,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama stă la fereastră cu steagul întins pe genunchi. Pânza e spălată, iar ruptura de pe margine a dispărut sub o cusătură măruntă, aproape nevăzută.",
+        "text": "Mama stă la fereastră cu steagul întins pe genunchi. Pânza e spălată, iar cele două jumătăți sunt prinse la loc cu o cusătură măruntă, aproape nevăzută.",
         "imagine": "events/steag_miriam.png",
         "grupGalerie": "Steagul satului",
         "urmator": "steag_c2"
@@ -3780,7 +3780,7 @@
       "steag_c2": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Am pus un petic din rochia mea albastră. Nu se vede decât dacă știi unde să te uiți.",
+        "text": "Unde lipsea pânza, am pus un petic din rochia mea albastră. Nu se vede decât dacă știi unde să te uiți.",
         "urmator": "steag_c3"
       },
       "steag_c3": {
@@ -3844,7 +3844,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Unchiul ia steagul în mâini. Degetele lui groase, crăpate de frig și de sabie, se opresc pe cusătura de pe margine.",
+        "text": "Unchiul ia steagul în mâini. Degetele lui groase, crăpate de frig și de sabie, se opresc pe cusătura care trece prin mijlocul pânzei.",
         "urmator": "steag_d6"
       },
       "steag_d6": {
@@ -3878,6 +3878,16 @@
             "steag": "roderick"
           }
         }
+      },
+      "steag_m_azi": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Vino la amiază, în camera mea. Atunci îl termin."
+      },
+      "capa_m_azi": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Vino la amiază, în camera mea. Atunci o termin."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -13958,6 +13968,7 @@
         "emotie": "normal",
         "text": "Prima casă e a unei femei pe care o știu de când eram mic. Bărbatul ei cânta în strana bisericii. Acum ușa i se deschide doar cât să încapă un ochi.",
         "imagine": "events/paine_vaduve_2.png",
+        "faraPartener": true,
         "urmator": "p10"
       },
       "p10": {
@@ -14001,7 +14012,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Bătrânul de la capătul uliței stă pe banca din fața casei, ca în fiecare zi. Fiul lui a fost cel mai tânăr dintre cei douăzeci și trei.",
+        "text": "Bătrânul de la capătul uliței stă pe banca din fața casei, ca în fiecare zi. Fiul lui, Hal, a fost unul dintre cei douăzeci și trei.",
         "imagine": "events/paine_vaduve_3.png",
         "urmator": "p16"
       },
@@ -14031,7 +14042,7 @@
         "nume": "Bătrânul",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Fiul meu avea vârsta ta. Ținea partea lui Edwin la orice ceartă. S-ar fi dus după el și în foc.",
+        "text": "Hal avea vârsta ta. Ținea partea lui Edwin la orice ceartă. S-ar fi dus după el și în foc.",
         "urmator": "p20"
       },
       "p20": {
@@ -14260,7 +14271,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Sub un scut crăpat, pe jumătate îngropat în pământ, se vede ceva albastru. Unchiul îngenunchează și trage de pânză încet, cum ai trage de o mână.",
+        "text": "Steagul e tot acolo unde l-am văzut data trecută: înfipt în pământ, între rădăcini. Unchiul îl prinde de prăjină cu amândouă mâinile și îl scoate încet din pământ, cum ai ridica pe cineva de jos.",
         "imagine": "events/steag_camp_2.png",
         "urmator": "s5"
       },
@@ -14274,7 +14285,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Steagul iese din noroi rupt pe o margine, înnegrit de ploi și de sânge vechi. Dar rombul auriu din mijloc strălucește în lumina lunii, de parcă nu l-ar fi atins nimic.",
+        "text": "Pânza e ruptă pe jumătate, înnegrită de ploi și de sânge vechi. Dar rombul auriu din mijloc strălucește în lumina lunii, de parcă nu l-ar fi atins nimic.",
         "urmator": "s7"
       },
       "s7": {

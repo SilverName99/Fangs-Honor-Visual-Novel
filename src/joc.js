@@ -598,6 +598,14 @@ function reiaDupaReincarcare() {
   if (!r) return;
   stare.reluare = null;
   if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }));
+  // Replica unei misiuni a altcuiva, din meniul personajului (pașii „Steagului satului” la Roderick stau în dialogul
+  // Miriamei): discuția continuă tot cu el, cu replicile misiunii adăugate, și își ține minte mai departe locul
+  const alMisiunii = r.dialog && dialoguri[r.dialog] && Object.values(dialoguri).find((d) => d.noduri?.[r.nod]);
+  if (alMisiunii) {
+    const d = { ...dialoguri[r.dialog], noduri: { ...alMisiunii.noduri, ...dialoguri[r.dialog].noduri } };
+    iduriDialog.set(d, r.dialog);
+    return dialog.porneste(d, { delaNod: r.nod, imagine: r.imagine });
+  }
   const ev = r.eveniment && evenimente.find((e) => e.id === r.eveniment);
   if (!ev) return;
   if (r.text) return dialog.porneste({ ...caDialog(ev), _eveniment: ev.id }, { delaNod: 'e' });
