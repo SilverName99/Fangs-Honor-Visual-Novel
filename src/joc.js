@@ -498,6 +498,15 @@ function verificaEvenimente() {
   if (ev) pornesteEveniment(ev.id);
 }
 
+// „siPeLoc” la un eveniment (cerut de autor: seara cu cercurile din pivniță): pornește și când Vale e deja acolo și
+// se împlinesc condițiile pe loc (trece de ora 22 cât stă în pivniță), nu doar când ajunge. Se verifică după fiecare
+// redesenare a scenei, deci și după ce trece timpul; cât e deschis altceva (o discuție, imagini, o luptă), așteaptă
+function verificaEvenimentePeLoc() {
+  if (dialog.activ() || secventa.activa() || stare.luptaInCurs) return;
+  const ev = alegeEveniment(evenimente.filter((e) => e.siPeLoc), stare, context(stare), cfg.categoriiEvenimente);
+  if (ev) pornesteEveniment(ev.id);
+}
+
 // Visul care vine după un somn (sau niciunul): „laTrezire”, cu condițiile lui și destule ore de noapte dormite
 function visulDupaSomn(minuteNoapte) {
   const ctx = context(stare);
@@ -1528,6 +1537,7 @@ function afiseaza() {
   // inel) nu mai lasă „?” deasupra personajului până la următoarea redesenare
   puneSemneMisiuni(d, r, ctx, prezenti);
   debug.arata();
+  setTimeout(verificaEvenimentePeLoc, 0);
 
   // Vecinii se preîncarcă în fundal, ca trecerea la ei să fie instantanee
   const vecini = [d.parinte, ...d.tinte.map((t) => t.spre)].filter(Boolean).map((id) => lume.get(id));

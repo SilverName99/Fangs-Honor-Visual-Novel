@@ -1403,7 +1403,8 @@
         "timp": 60
       },
       "dialog": "cercuri_pivnita",
-      "_nota": "Decis de autor: seara, în pivniță, peste 2 imagini. Ales de Claude: pornește când Vale intră în pivniță după 22 (cât e taverna deschisă, până la 2), în orice seară după ce a dus cercurile la Bram. Decis de autor: Agnes îi spune lui Vale („Despre diseară...”) să se ferească de ochii din sală și să vină direct în pivniță, după ora 22."
+      "_nota": "Decis de autor: seara, în pivniță, peste 2 imagini. Ales de Claude: pornește când Vale intră în pivniță după 22 (cât e taverna deschisă, până la 2), în orice seară după ce a dus cercurile la Bram. Decis de autor: Agnes îi spune lui Vale („Despre diseară...”) să se ferească de ochii din sală și să vină direct în pivniță, după ora 22. Cerut de autor: pornește și dacă Vale e deja în pivniță când trece de ora 22 („siPeLoc”).",
+      "siPeLoc": true
     },
     {
       "id": "bram_cufar",
