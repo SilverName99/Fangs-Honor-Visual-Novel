@@ -107,8 +107,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Aldenor**, regatul oamenilor, la mijloc, cu **Altaris**, capitala (biblioteca Sol, unde stă Inima Luminii), și mina de la **Kor**. Drumul mare duce de la Altaris spre răsărit, până la **Baum**, la marginea regatului, sub munții de dincolo de care vin orcii.
 - **Stepele Roșii** (decis de autor): ținutul Craniilor Sângerii, la răsărit, dincolo de munți. Baum stă lângă trecătoare: e „ușa din spate” spre capitală, de-aia trec convoaiele pe lângă el (propunerea lui Claude, acceptată odată cu numele).
 - **Sylvareth** (decis de autor): marea pădure a elfilor de pădure, la apus, cu granița pentru care s-au luptat cu oamenii (și au câștigat). Portalul aerului nu apare pe hartă: îl știu doar ei.
-- **Caldrath** (decis de autor): orașul dragonilor oamenilor, construit în craterul unui vulcan stins din nord, în jurul **porții focului**: cetatea **Ordinului Flăcării**, școala călăreților, turnurile dragonilor și bibliotecile despre ei.
-- Propuse de Claude, încă neconfirmate: munții de lângă Baum = **Munții Colților**; munții vulcanici din nord = **Coroana de Cenușă**; Colții de Fier ar sta în minele de fier din munți.
+- **Caldrath** (decis de autor): orașul dragonilor oamenilor, **alb cu roșu**, fără vulcan (decis de autor): piatră albă, acoperișuri și steaguri roșii. E construit în jurul **porții focului**, cu cetatea **Ordinului Flăcării**, școala călăreților, turnurile dragonilor și bibliotecile despre ei. Ales de Claude: în nord, pe stânci înalte.
+- Propuse de Claude, încă neconfirmate: munții de lângă Baum = **Munții Colților**; Colții de Fier ar sta în minele de fier din munți.
 - Poarta morții **nu apare** pe hartă: n-o știe nimeni.
 
 ## Orcii (decis de autor)
