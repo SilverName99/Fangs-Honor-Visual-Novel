@@ -55,7 +55,7 @@ export function arataPrologul(container, prolog) {
         ${Object.entries(LIMBI).map(([id, l]) => `<button type="button" data-limba="${id}">${l.nume}</button>`).join('')}
       </div>
       <select class="cuprins-prolog" aria-label="Sari la capitol"></select>
-      <span class="nota-prolog">${n} capitole, la începutul jocului. Textul se lucrează în documentul „Fangs&amp;Honor: Prologul”; în joc nu intră încă.</span>
+      <span class="nota-prolog">${n} capitole, la începutul jocului. Engleza e textul autorului; româna e traducerea lui. În joc nu intră încă.</span>
     </header>
     <article class="document-prolog"></article>
   </div>`;

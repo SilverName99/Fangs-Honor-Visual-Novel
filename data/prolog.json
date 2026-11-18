@@ -1,5 +1,5 @@
 {
-  "_nota": "Prologul (decis de autor): o carte la începutul jocului, împărțită pe capitole (decis de autor: pe capitole, nu pe pagini), cu o voce de cronică: tot ce știu oamenii din Aldaria, până la primăvara în care a căzut Baum. Textul e scris de Claude și verificat cu lore-ul (de confirmat de autor); se lucrează în documentul „Fangs&Honor: Prologul” (Claude Docs). Engleza, „The Chronicle of Aldaria”, e traducerea lui (cerută de autor, făcută de Claude), cu aceleași capitole și paragrafe, în aceeași ordine. În joc nu intră încă (decis de autor: întâi textul); se citește în editor, la tab-ul „Prolog”.",
+  "_nota": "Prologul (decis de autor): o carte la începutul jocului, împărțită pe capitole (decis de autor: pe capitole, nu pe pagini), cu o voce de cronică: tot ce știu oamenii din Aldaria, până la primăvara în care a căzut Baum. Engleza („The Chronicle of Aldaria”) e textul rescris de autor, cu greșelile de tipar corectate de Claude; româna („Cronica Aldariei”) e traducerea lui Claude, cu aceleași capitole și paragrafe, în aceeași ordine. Se citește în editor, la tab-ul „Prolog”; în joc nu intră încă.",
   "titlu": {
     "ro": "Cronica Aldariei",
     "en": "The Chronicle of Aldaria"
@@ -11,27 +11,35 @@
         "en": "The Otherworlds"
       },
       "paragrafe": {
-        "ro": [
-          "Într-o seară senină, cerul Aldariei e plin. Stolurile se întorc spre păduri, fumul vetrelor urcă drept, se aprind primele stele. Undeva latră un câine, undeva scârțâie un car întârziat. Doar dragoni nu sunt. Cei mai mulți oameni trăiesc o viață întreagă fără să vadă vreunul, deși toți au auzit de ei.",
-          "Aldaria e lumea pe care o știm: a oamenilor, a elfilor de pădure și a orcilor. Are cetăți și sate, drumuri și râuri, secerișuri și ierni, cântece și războaie. Dragonii însă nu sunt de aici. Trăiesc în lumile lor, câte una pentru fiecare fel de dragon. Nu le găsești nici în cer, nici la capătul pământului. Sunt dincolo de lumea noastră, ca o încăpere din spatele unei uși pe care n-ai deschis-o niciodată. Oamenii le spun, ca în basme, tărâmurile celelalte.",
-          "La focul de seară se spune că lumea nu se sfârșește acolo unde se sfârșesc drumurile. Când copiii întreabă unde zboară dragonii, bătrânii arată cu bărbia spre întuneric. „Pe tărâmul celălalt”, zic ei. Focul trosnește, iar copiii se uită multă vreme în noapte, ca și cum ar putea vedea până acolo.",
-          "Cronicile vechi spun mai mult. Sunt cinci dragoni primordiali, fiecare cu una dintre cele cinci puteri ale naturii: apa, focul, pământul, aerul și moartea. Fiecare primordial are lumea lui. Și fiecare lume are, undeva în Aldaria, o poartă.",
-          "O poartă se deschide greu și numai sub mâna unui mag foarte puternic. Dar nici deschisă nu e drum pentru oricine. Prin ea trece doar cine are darul dragonilor.",
-          "Ceilalți mor.",
-          "Iar cine a trecut nu se mai întoarce cum a plecat. Din lumea dragonilor nu ieși decât legat cu un dragon.",
-          "Dintre cele cinci porți, oamenii știu doar de două. Unde sunt celelalte trei, nu știe nimeni, iar nicio cronică nu spune ce e dincolo de ele.",
-          "Pe prima dintre cele două n-au găsit-o oamenii."
-        ],
         "en": [
-          "On a clear evening, the sky over Aldaria is full. Birds flock back to the forests, hearth smoke rises straight up, and the first stars kindle. Somewhere a dog barks, somewhere a late cart creaks. Only the dragons are missing. Most people live their whole lives without ever seeing one, though everyone has heard of them.",
-          "Aldaria is the world we know: the world of humans, of wood elves, and of orcs. It has cities and villages, roads and rivers, harvests and winters, songs and wars. But dragons are not from here. They live in worlds of their own, one for each kind of dragon. You will find those worlds neither in the sky nor at the ends of the earth. They lie beyond our world, like a chamber behind a door you have never opened. As in fairy tales, people call them the Otherworlds.",
-          "By the evening fire, it is said that the world does not end where the roads end. When children ask where the dragons fly, the elders point their chins toward the dark. “In the Otherworld,” they say. The fire crackles, and the children gaze long into the night, as if they could see that far.",
-          "The old chronicles tell more. There are five primordial dragons, each with one of the five powers of nature: water, fire, earth, air, and death. Each primordial has a world of its own. And each world has, somewhere in Aldaria, a gate.",
-          "A gate is hard to open, and it opens only under the hand of a very powerful mage. But even open, it is no road for just anyone. Only those with the gift of dragons pass through it.",
-          "The others die.",
-          "And whoever passes through never comes back the way they left. You do not leave the world of dragons unless bonded with a dragon.",
-          "Of the five gates, humans know of only two. Where the other three are, no one knows, and no chronicle tells what lies beyond them.",
+          "On a clear evening, the sky over Aldaria is full of life. Birds flock back to the forests, hearth smoke rises straight up from the chimneys and the first stars start to kindle. Somewhere in the distance a dog barks, somewhere closer a late cart creaks. Something about all this is soothing. Peaceful, even.",
+          "Aldaria is the world we know. Humans, elves, orcs and many other kinds of beasts. Beasts of all sizes, shapes and forms. Cities and villages, roads and rivers, harvests and winters, ballads and wars, steel and magic.",
+          "But there are some beasts not found here. Tall and large, winged, with many scales. Almost impenetrable. By normal means, in any case… Most people live their whole lives without ever seeing one, though everyone has heard of them.",
+          "Dragons are not from here. They live in worlds of their own, one for each kind. You will find those worlds neither in the sky nor at the ends of the earth. They lie beyond our world, like a chamber behind a door you have never opened. As in fairy tales, people call them the Otherworlds.",
+          "Fables passed down through generations say that the world has no end. Some curious children may ask where the dragons fly, what one eats, how a beast can conjure spells and bring some unfortunate fool from death’s door, struck down by an arrow, back on his feet with just a simple breath… The elders nod and point their chins toward the dark. The fire crackles, and the children gaze long into the night, as if they could see that far.",
+          "The old chronicles tell more. There are five primordial dragons, each with one of the five powers of nature: water, fire, earth, air, and death. Each primordial has a world of its own. And each world has, somewhere in Aldaria, a gate. A magical portal, some may say.",
+          "Such a gate is hard to open, and it opens only under the hand of a very powerful mage. But even open, it is no road for just anyone. Only those with the gift of dragons pass through it.",
+          "The others… die.",
+          "And whoever passes through never comes back the way they left. You do not leave the world of dragons unless bonded with one.",
+          "No two who have crossed tell the same story. Each world beyond a gate is a world of its own, as different from the others as fire is from air. And no path is the same, no lesson to be learned beforehand. Some were tested for days, others were chosen at a single glance. Some had to fight, others only had to wait. The bond is a meeting between one human and one dragon, and no two meetings are alike.",
+          "Those who come back speak little of it. But from then on, they are never alone.",
+          "Of the five gates, humans know of only two. Where the other three are, no human knows, and no one can say for certain what lies beyond them.",
           "It was not humans who found the first of the two."
+        ],
+        "ro": [
+          "Într-o seară senină, cerul Aldariei e plin de viață. Stolurile de păsări se întorc spre păduri, fumul vetrelor urcă drept din hornuri, iar primele stele încep să se aprindă. Undeva, departe, latră un câine; undeva mai aproape scârțâie un car întârziat. Toate acestea au ceva liniștitor. Ba chiar pașnic.",
+          "Aldaria e lumea pe care o știm. Oameni, elfi, orci și multe alte soiuri de făpturi. Făpturi de toate mărimile, formele și chipurile. Cetăți și sate, drumuri și râuri, secerișuri și ierni, balade și războaie, oțel și magie.",
+          "Dar sunt și făpturi care nu se găsesc aici. Înalte și mari, înaripate, acoperite de solzi. Aproape de nepătruns. Cel puțin, cu mijloace obișnuite… Cei mai mulți oameni trăiesc o viață întreagă fără să vadă vreuna, deși toți au auzit de ele.",
+          "Dragonii nu sunt de aici. Trăiesc în lumile lor, câte una pentru fiecare fel. Nu le găsești nici în cer, nici la capătul pământului. Sunt dincolo de lumea noastră, ca o încăpere din spatele unei uși pe care n-ai deschis-o niciodată. Ca în basme, oamenii le spun tărâmurile celelalte.",
+          "Poveștile lăsate din moși-strămoși spun că lumea n-are capăt. Unii copii curioși întreabă unde zboară dragonii, ce mănâncă unul, cum poate o asemenea făptură să facă vrăji și să-l aducă înapoi de la porțile morții pe vreun biet nefericit doborât de o săgeată, punându-l pe picioare doar cu o simplă suflare… Bătrânii dau din cap și arată cu bărbia spre întuneric. Focul trosnește, iar copiii se uită multă vreme în noapte, ca și cum ar putea vedea până acolo.",
+          "Cronicile vechi spun mai mult. Sunt cinci dragoni primordiali, fiecare cu una dintre cele cinci puteri ale naturii: apa, focul, pământul, aerul și moartea. Fiecare primordial are lumea lui. Și fiecare lume are, undeva în Aldaria, o poartă. Un portal magic, ar spune unii.",
+          "O asemenea poartă se deschide greu și numai sub mâna unui mag foarte puternic. Dar nici deschisă nu e drum pentru oricine. Prin ea trec doar cei care au darul dragonilor.",
+          "Ceilalți… mor.",
+          "Iar cine trece nu se mai întoarce cum a plecat. Din lumea dragonilor nu ieși decât legat cu un dragon.",
+          "Dintre cei care au trecut, nu sunt doi care să povestească la fel. Fiecare lume de dincolo de o poartă e o lume aparte, la fel de diferită de celelalte cum e focul de aer. Și nicio cărare nu seamănă cu alta, nicio lecție nu se poate învăța dinainte. Unii au fost puși la încercare zile întregi, alții au fost aleși dintr-o singură privire. Unii au trebuit să lupte, alții doar să aștepte. Legământul e o întâlnire între un om și un dragon, și nu există două întâlniri la fel.",
+          "Cei care se întorc vorbesc puțin despre asta. Dar de atunci încolo nu mai sunt niciodată singuri.",
+          "Dintre cele cinci porți, oamenii știu doar de două. Unde sunt celelalte trei, nu știe niciun om, și nimeni nu poate spune sigur ce e dincolo de ele.",
+          "Pe prima dintre cele două n-au găsit-o oamenii."
         ]
       }
     },
@@ -41,29 +49,31 @@
         "en": "The First Gate"
       },
       "paragrafe": {
-        "ro": [
-          "Acum cam două mii de ani, elfii de pădure au găsit primul portal, poarta aerului. Stă adânc în pădurea lor, acolo unde lumina zilei abia mai ajunge la rădăcinile copacilor. Drumul până la ea e lung și întortocheat, iar pe el nu trec decât elfii.",
-          "N-au spus nimănui. Multă vreme, dincolo de hotarele lor, nimeni n-a știut ce păzesc.",
-          "Apoi, într-o zi, elfii și oamenii s-au înfruntat în luptă. Pentru ce se luptau și cine a învins, poveștile nu spun. Ele țin minte cerul.",
-          "Era senin până în zare. Și s-a auzit un tunet.",
-          "Aerul s-a răcit dintr-odată și a prins miros de ploaie, deși nu ploua. Deasupra elfilor s-a înălțat o umbră. Părea o pădure care își luase zborul. Solzii îi erau ca scoarța copacilor bătrâni, iar printre ei creșteau frunze. Aripile, ca de pânză verde și brună, stăteau întinse pe oase subțiri ca ramurile, iar coarnele răsucite semănau cu niște crengi. Când bătea din aripi, foșnea ca un codru în vânt.",
-          "Oamenii au ridicat ochii. Un ostaș din primul rând a scăpat sulița și nici n-a băgat de seamă. Elfii nu s-au uitat în sus. Ei știau.",
-          "Era Karzor, primordialul aerului, cel dintâi dragon pe care îl vedeau oamenii. Pe spinarea lui, mic cât o pasăre în vârful unui stejar, stătea un elf: primul care se legase vreodată cu el.",
-          "Și au căzut fulgerele. Din cerul fără nori, unul, apoi încă unul, apoi atâtea, încât nu le mai număra nimeni. Lumina lor albă trecea și prin pleoapele închise, iar unde loveau, pământul rămânea fumegând.",
-          "Poarta aerului e și azi a elfilor. Despre lumea de dincolo, oamenii știu doar din auzite: munți care plutesc și dragoni albi, greu de deosebit de nori. Karzor a murit.",
-          "Dar oamenii n-au uitat ziua în care au ridicat pentru prima oară ochii spre un dragon. De atunci n-au mai putut să-i coboare."
-        ],
         "en": [
-          "Some two thousand years ago, the wood elves found the first portal, the gate of air. It stands deep in their forest, where daylight barely reaches the roots of the trees. The road to it is long and twisting, and only elves walk it.",
+          "Some two thousand years ago, the wood elves found the first portal, the gate of air. It stands deep in their forest, where daylight barely reaches the roots of the trees. The road to it is long and twisting, and only elves know how to walk it. Safely, that is.",
           "They told no one. For a long time, no one beyond their borders knew what they guarded.",
-          "Then, one day, elves and humans clashed in battle. What they fought for, and who won, the stories do not say. What they remember is the sky.",
+          "Then, one day, elves and humans clashed in battle. They fought over the forest itself. The humans were many and hungry for land, and year after year their axes bit deeper into the elven woods. At last, a whole human army marched in under the trees, toward the heart of the forest, where no human had ever set foot before. They marched right toward the gate of air, though they did not know it at the time. The elves could give up a border, maybe a river, or even an entire forest for the right reasons. But giving up the power of the portal was not on that list. What the humans remember of that day is the sky.",
           "It was clear to the horizon. And then came a clap of thunder.",
-          "The air turned cold all at once and began to smell of rain, though no rain fell. Above the elves, a shadow rose. It looked like a forest that had taken flight. Its scales were like the bark of old trees, and leaves grew between them. Its wings were like green and brown cloth stretched over bones as thin as branches, and its twisted horns resembled boughs. When it beat its wings, it rustled like deep woods in the wind.",
-          "The humans raised their eyes. A soldier in the front rank dropped his spear and did not even notice. The elves did not look up. They knew.",
-          "It was Karzor, the primordial of air, the first dragon humans had ever seen. On his back, no bigger than a bird at the top of an oak, sat an elf: the first ever to bond with him.",
-          "And the lightning fell. Out of the cloudless sky came one bolt, then another, then so many that no one kept count. Their white light shone even through closed eyelids, and where they struck, the ground was left smoking.",
-          "To this day, the gate of air belongs to the elves. What humans know of the world beyond is only hearsay: mountains that float, and white dragons hard to tell from clouds. Karzor died.",
-          "But humans have not forgotten the day they first raised their eyes to a dragon. They have never been able to lower them since."
+          "The air turned cold. The smell of rain quickly followed, though no rain fell. Above the elves, a shadow rose. It looked like a forest that had taken flight. Its scales were like the bark of old trees, and leaves grew between them. Its wings were like green and brown cloth stretched over bones as thin as branches, and its twisted horns resembled boughs. When it beat its wings, it rustled like deep woods in the wind.",
+          "The humans raised their eyes. Terrified, they dropped their spears… their swords… their hope. The elves did not look up. They knew.",
+          "It was Karzor, the primordial dragon of air, the first dragon humans had ever seen. On his back, no bigger than a bird at the top of an oak, sat the pride of the wood elves: the first ever to bond with him.",
+          "Then lightning fell. Out of the cloudless sky came one bolt, then another, then so many that no one kept count. White lights shone even through closed eyelids, and where they struck the ground was left burnt and smoking.",
+          "When the thunder fell silent, the battle was over. The humans who could still walk fled back the way they had come, and no human army has entered so deep into the elven woods since.",
+          "To this day, the gate of air belongs to the elves. What humans know of the world of air is only hearsay: mountains that float, white dragons hard to tell from clouds.",
+          "No human has ever forgotten the day they first raised their eyes to a dragon. How could they?"
+        ],
+        "ro": [
+          "Acum vreo două mii de ani, elfii de pădure au găsit primul portal, poarta aerului. Stă adânc în pădurea lor, acolo unde lumina zilei abia mai ajunge la rădăcinile copacilor. Drumul până la ea e lung și întortocheat, iar numai elfii știu să-l străbată. Teferi, adică.",
+          "N-au spus nimănui. Multă vreme, dincolo de hotarele lor, nimeni n-a știut ce păzesc.",
+          "Apoi, într-o zi, elfii și oamenii s-au înfruntat în luptă. S-au luptat chiar pentru pădure. Oamenii erau mulți și flămânzi de pământ, iar an de an topoarele lor mușcau tot mai adânc din codrii elfilor. În cele din urmă, o întreagă oaste omenească a intrat sub copaci, spre inima pădurii, acolo unde niciun om nu mai călcase până atunci. Mergeau drept spre poarta aerului, deși pe atunci nu știau. Elfii puteau ceda o graniță, poate un râu, ba chiar o pădure întreagă, dacă aveau motive bune. Dar puterea portalului nu era pe lista aceea. Ce țin minte oamenii din ziua aceea e cerul.",
+          "Era senin până în zare. Și atunci s-a auzit un tunet.",
+          "Aerul s-a răcit. Mirosul de ploaie a venit repede după, deși nu ploua. Deasupra elfilor s-a înălțat o umbră. Părea o pădure care își luase zborul. Solzii îi erau ca scoarța copacilor bătrâni, iar printre ei creșteau frunze. Aripile erau ca o pânză verde și brună, întinsă pe oase subțiri ca ramurile, iar coarnele răsucite semănau cu niște crengi. Când bătea din aripi, foșnea ca un codru adânc în vânt.",
+          "Oamenii au ridicat ochii. Îngroziți, și-au scăpat sulițele… săbiile… speranța. Elfii nu s-au uitat în sus. Ei știau.",
+          "Era Karzor, dragonul primordial al aerului, cel dintâi dragon pe care îl vedeau oamenii. Pe spinarea lui, nu mai mare decât o pasăre în vârful unui stejar, stătea mândria elfilor de pădure: primul care se legase vreodată cu el.",
+          "Și au căzut fulgerele. Din cerul fără nori a căzut unul, apoi încă unul, apoi atâtea, încât nimeni nu le mai ținea socoteala. Lumina lor albă trecea și prin pleoapele închise, iar unde loveau, pământul rămânea ars și fumegând.",
+          "Când tunetul a amuțit, bătălia se sfârșise. Oamenii care mai puteau merge au fugit înapoi pe unde veniseră, iar de atunci nicio oaste omenească n-a mai intrat atât de adânc în codrii elfilor.",
+          "Poarta aerului e și azi a elfilor. Ce știu oamenii despre lumea aerului sunt doar vorbe din auzite: munți care plutesc, dragoni albi, greu de deosebit de nori.",
+          "Oamenii n-au uitat niciodată ziua în care au ridicat pentru prima oară ochii spre un dragon. Cum ar putea?"
         ]
       }
     },
@@ -73,27 +83,31 @@
         "en": "The Fire of Humankind"
       },
       "paragrafe": {
-        "ro": [
-          "Cam cinci sute de ani mai târziu, au găsit și oamenii o poartă: poarta focului. De atunci o păzesc, zi și noapte.",
-          "Călăreții care au trecut prin ea povestesc despre o lume aproape ca a noastră, doar că pârjolită. Iarba e neagră, piatra e caldă sub tălpi, iar vântul miroase a cenușă. Pe cer zboară dragoni roșii și portocalii, ca scânteile deasupra unui foc mare.",
-          "A urmat o ucenicie lungă, de încă vreo mie de ani. Încet, oamenii au deslușit ce sunt porțile, cum se deschid și cine poate trece prin ele. Învățătura s-a plătit cu vieți.",
-          "Au aflat că darul dragonilor doarme în om, ca sămânța sub zăpadă, până la douăzeci și șase de ani. Abia atunci se trezește, iar trezirea poate fi mică sau mare.",
-          "Cu trezirea mică, vorbești cu dragonii și afli de la ei lucruri ascunse oamenilor. Te poți lega cu un dragon mai slab, dar anii tăi rămân anii unui om: cam o sută.",
-          "Trezirea mare vine foarte rar, cum dai de aur când sapi o fântână. Cine o are se poate lega cu un primordial. Legat cu el, un om trăiește până pe la trei sute de ani.",
-          "Legământul vă împletește, pe tine și pe dragon, ca două fire într-o funie. Îl călărești și luptați împreună, iar în gând vă vorbiți oricând. El îți spune o incantație. Cu ea deschizi o trecere doar pentru el și îl chemi la tine. Înfățișarea lui se schimbă după neamul celui cu care s-a legat: de aceea semăna Karzor cu pădurea elfilor.",
-          "E un legământ pe viață și pe moarte. Moare omul, moare și dragonul. Moare dragonul, moare și omul. Numai primordialii renasc, fiecare în lumea lui. Dragonii mai slabi se duc de tot.",
-          "În Aldenor, regatul oamenilor, călăreții de dragoni alcătuiesc Ordinul Flăcării, de care a auzit orice copil. Nu încetează nici azi să-i caute pe cei care se trezesc."
-        ],
         "en": [
-          "Some five hundred years later, humans, too, found a gate: the gate of fire. They have guarded it ever since, day and night.",
-          "The riders who have passed through it tell of a world almost like ours, only scorched. The grass is black, the stone is warm underfoot, and the wind smells of ash. Across its sky fly red and orange dragons, like sparks above a bonfire.",
+          "Almost five hundred years later, humans, too, found a gate: the gate of fire. It was the king of those days who sent out the expedition that came upon it, an aging king who wanted, before he died, to see his people stand as tall as the elves.",
+          "But finding a gate is not the same as opening it. Each gate opens in its own way, as each lock has its own key, and it took the human mages long years to find the key to this one. The aging king did not live to see it. By the time the gate of fire first opened, his son wore the crown.",
+          "Humans have guarded it ever since.",
+          "The riders who have passed through it tell of a world almost like ours, only scorched. The grass is black, the stone is warm underfoot, and the wind smells of ash. Across its sky fly red, orange and golden dragons, like sparks above a bonfire.",
           "A long apprenticeship followed, lasting another thousand years or so. Slowly, humans worked out what the gates are, how they open, and who can pass through them. The lessons were paid for in lives.",
           "They learned that the gift of dragons sleeps within a person, like a seed beneath the snow, until the age of twenty-six. Only then does it awaken, and the awakening may be lesser or greater.",
-          "With the lesser awakening, you speak with dragons and learn things from them that are hidden from humans. You can bond with a weaker dragon, but your years remain a human’s: about a hundred.",
-          "The greater awakening comes as rarely as striking gold while digging a well. Whoever has it can bond with a primordial. Bonded with one, a human lives to be about three hundred.",
-          "The bond braids you together, you and the dragon, like two strands of a rope. You ride the dragon, the two of you fight together, and you speak mind to mind at any hour. It teaches you an incantation. With that incantation, you open a passage for it alone and call it to your side. Its appearance changes to match the race of the one it has bonded with: that is why Karzor looked like the forest of the elves.",
-          "It is a bond for life and for death. When the rider dies, the dragon dies. When the dragon dies, the rider dies. Only the primordials are reborn, each in its own world. The weaker dragons are gone for good.",
-          "In Aldenor, the kingdom of humans, the dragon riders make up the Order of the Flame, which every child has heard of. Even now, they have not stopped searching for those who awaken."
+          "With the lesser awakening, you speak with dragons and learn things from them that are hidden from other humans. A bond can be formed with a weaker dragon, but your years remain the same.",
+          "The greater awakening comes as rarely as striking gold while digging a well. Whoever has it can bond with a primordial. Bonded with one, a human lives to be about three hundred years old.",
+          "The bond braids you together, you and the dragon, like two strands of a rope. You ride the dragon, the two of you fight together, and you speak mind to mind at any hour. It teaches you an incantation. With that incantation, you open a passage through which the dragon is summoned by your side. Its appearance changes to match the race of the one it has bonded with: that is why Karzor looked like the forest of the elves.",
+          "It is a bond for life and for death. When the rider dies, the dragon dies. When the dragon dies, the rider dies. Only the primordials are reborn, each in its own world.",
+          "In Aldenor, the kingdom of humans, the dragon riders make up the Order of the Flame, which every child has heard stories of. Even now, they have not stopped searching for those who awaken."
+        ],
+        "ro": [
+          "Cam cinci sute de ani mai târziu, au găsit și oamenii o poartă: poarta focului. Expediția care a dat peste ea fusese trimisă de regele de atunci, un rege îmbătrânit, care voia, înainte să moară, să-și vadă poporul la fel de sus ca elfii.",
+          "Dar a găsi o poartă nu e totuna cu a o deschide. Fiecare poartă se deschide în felul ei, cum fiecare lacăt are cheia lui, iar magii oamenilor au avut nevoie de ani lungi ca să găsească cheia acesteia. Regele îmbătrânit n-a mai apucat să vadă. Când poarta focului s-a deschis pentru prima oară, coroana o purta fiul lui.",
+          "De atunci, oamenii o păzesc.",
+          "Călăreții care au trecut prin ea povestesc despre o lume aproape ca a noastră, doar că pârjolită. Iarba e neagră, piatra e caldă sub tălpi, iar vântul miroase a cenușă. Pe cerul ei zboară dragoni roșii, portocalii și aurii, ca scânteile deasupra unui foc mare.",
+          "A urmat o ucenicie lungă, de încă vreo mie de ani. Încet, oamenii au deslușit ce sunt porțile, cum se deschid și cine poate trece prin ele. Învățătura s-a plătit cu vieți.",
+          "Au aflat că darul dragonilor doarme în om, ca sămânța sub zăpadă, până la douăzeci și șase de ani. Abia atunci se trezește, iar trezirea poate fi mică sau mare.",
+          "Cu trezirea mică, vorbești cu dragonii și afli de la ei lucruri ascunse celorlalți oameni. Te poți lega cu un dragon mai slab, dar anii tăi rămân aceiași.",
+          "Trezirea mare vine la fel de rar cum dai de aur când sapi o fântână. Cine o are se poate lega cu un primordial. Legat cu el, un om trăiește până pe la trei sute de ani.",
+          "Legământul vă împletește, pe tine și pe dragon, ca două fire într-o funie. Îl călărești, luptați împreună și vă vorbiți în gând la orice ceas. El te învață o incantație. Cu incantația aceea deschizi o trecere prin care dragonul e chemat lângă tine. Înfățișarea lui se schimbă după neamul celui cu care s-a legat: de aceea semăna Karzor cu pădurea elfilor.",
+          "E un legământ pe viață și pe moarte. Moare călărețul, moare și dragonul. Moare dragonul, moare și călărețul. Numai primordialii renasc, fiecare în lumea lui.",
+          "În Aldenor, regatul oamenilor, călăreții de dragoni alcătuiesc Ordinul Flăcării, despre care a auzit povești orice copil. Nici azi n-au încetat să-i caute pe cei care se trezesc."
         ]
       }
     },
@@ -103,29 +117,29 @@
         "en": "The Heart of Light"
       },
       "paragrafe": {
-        "ro": [
-          "Acum două sute de ani, într-o mină, niște oameni săpau după minerale. Era o muncă oarbă: praf, lămpi care fumegau, lovituri de târnăcop în piatră, zile la rând.",
-          "Într-o zi, târnăcopul n-a mai dat de piatră, ci de gol. Dincolo se deschidea o încăpere mare, cu pereții pierduți în întuneric. Aerul nu se mișca deloc, iar fiecare pas se întorcea, târziu, în ecou.",
-          "În mijlocul ei stătea un singur cristal.",
-          "La flacăra lămpilor, cristalul părea doar o piatră limpede și rece. Era mare, dar nu uriaș: patru oameni l-au urcat spre ieșire, încet, cu genunchii tremurând sub greutate. Afară, la prima rază de soare, s-a umplut de lumină, iar din el a început să curgă putere. Cei din jur o simțeau pe piele, ca pe căldura unui cuptor deschis, deși nu ardea. Nimeni n-a scos o vorbă.",
-          "Așa a fost găsită Inima Luminii.",
-          "Tot atunci, cei mai puternici magi ai oamenilor au întemeiat Cercul Luminii, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc. Căci un mare mag simte trezirile, așa cum simți o privire în ceafă.",
-          "Sub soare, Inima naște, foarte rar, cristale mici. Un astfel de cristal întărește mult magia luminii, dar puțini ajung să țină vreunul în mână. Forma lor e un romb. De aceea rombul auriu e cusut pe steaguri și bătut pe scuturi. Și chiar fără cristal, simplul semn le dă oamenilor încredere și putere în luptă.",
-          "Ca și Ordinul Flăcării, Cercul nu se ascunde de nimeni: în fiecare sat, oricât de mic, slujește la biserică un preot-mag trimis de el.",
-          "Inima Luminii a rămas cea mai mare putere magică a oamenilor. Se vorbește despre ea cum se vorbește despre soare: cu evlavie și de departe. E păzită la Altaris, capitala Aldenorului, în cea mai de seamă clădire a cetății.",
-          "Acolo, acum douăzeci de ani, cineva a încercat să-i întunece lumina."
-        ],
         "en": [
-          "Two hundred years ago, in a mine, some men were digging for minerals. It was blind work: dust, smoking lamps, pickaxe blows on stone, day after day.",
+          "Two hundred years ago, in the mine of Kor, men were digging for minerals and ores. It was blind work: dust, smoking lamps, pickaxe blows on stone, day after day.",
           "One day, the pickaxe struck not stone but emptiness. Beyond, a great chamber opened out, its walls lost in darkness. The air did not stir at all, and every footstep came back, late, as an echo.",
           "At its center stood a single crystal.",
-          "By lamplight, the crystal seemed no more than a clear, cold stone. It was large, but not huge: four men carried it up and out, slowly, their knees trembling under the weight. Outside, at the first ray of sunlight, it filled with light, and power began to flow from it. Those nearby felt it on their skin, like the heat of an open oven, though it did not burn. No one said a word.",
+          "By lamplight, the crystal seemed no more than a clear, cold stone. It was large, but not huge: four men carried it up and out, slowly, their knees trembling under the weight. Outside, at the first ray of sunlight, it filled with light, and power began to flow from it. Those nearby felt it on their skin, like the heat of an open oven, though it did not burn.",
           "That is how the Heart of Light was found.",
           "It was then, too, that the most powerful human mages founded the Circle of Light, to help the Order of the Flame find those who awaken. For a great mage feels awakenings the way you feel eyes on the back of your neck.",
-          "Under the sun, the Heart gives birth, very rarely, to small crystals. Such a crystal greatly strengthens the magic of light, but few ever get to hold one in their hand. They are diamond-shaped. That is why the golden diamond is sewn onto banners and hammered onto shields. And even without a crystal, the sign alone gives people confidence and strength in battle.",
-          "Like the Order of the Flame, the Circle hides from no one: in every village, however small, a priest-mage it has sent serves at the church.",
-          "The Heart of Light has remained the greatest magical power of humankind. People speak of it as they speak of the sun: with reverence, and from afar. It is guarded in Altaris, the capital of Aldenor, in the city’s greatest building.",
+          "Under the sun, the Heart gives birth, very rarely, to small diamond-shaped crystals. Such a crystal greatly strengthens the magic of light, but few ever get to hold one in their hand. That is why the golden diamond is sewn onto banners and hammered onto shields. Even without a crystal, the sign alone gives people confidence and strength in battle.",
+          "Like the Order of the Flame, the Circle hides from no one: in every village, however small, a priest-mage serves at the church.",
+          "The Heart of Light has remained the greatest magical power of humankind. People speak of it as they speak of the sun: with reverence, and from afar. It is guarded in Altaris, the capital of Aldenor, in the city’s greatest architectural marvel. The great library of Sol.",
           "There, twenty years ago, someone tried to darken its light."
+        ],
+        "ro": [
+          "Acum două sute de ani, în mina de la Kor, niște oameni săpau după minerale și minereuri. Era o muncă oarbă: praf, lămpi care fumegau, lovituri de târnăcop în piatră, zi după zi.",
+          "Într-o zi, târnăcopul n-a mai dat de piatră, ci de gol. Dincolo se deschidea o încăpere mare, cu pereții pierduți în întuneric. Aerul nu se mișca deloc, iar fiecare pas se întorcea, târziu, în ecou.",
+          "În mijlocul ei stătea un singur cristal.",
+          "La lumina lămpilor, cristalul părea doar o piatră limpede și rece. Era mare, dar nu uriaș: patru oameni l-au urcat spre ieșire, încet, cu genunchii tremurând sub greutate. Afară, la prima rază de soare, s-a umplut de lumină, iar din el a început să curgă putere. Cei din jur o simțeau pe piele, ca pe căldura unui cuptor deschis, deși nu ardea.",
+          "Așa a fost găsită Inima Luminii.",
+          "Tot atunci, cei mai puternici magi ai oamenilor au întemeiat Cercul Luminii, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc. Căci un mare mag simte trezirile așa cum simți o privire în ceafă.",
+          "Sub soare, Inima naște, foarte rar, cristale mici, în formă de romb. Un astfel de cristal întărește mult magia luminii, dar puțini ajung să țină vreunul în mână. De aceea rombul auriu e cusut pe steaguri și bătut pe scuturi. Chiar și fără cristal, simplul semn le dă oamenilor încredere și putere în luptă.",
+          "Ca și Ordinul Flăcării, Cercul nu se ascunde de nimeni: în fiecare sat, oricât de mic, slujește la biserică un preot-mag.",
+          "Inima Luminii a rămas cea mai mare putere magică a oamenilor. Se vorbește despre ea cum se vorbește despre soare: cu evlavie și de departe. E păzită la Altaris, capitala Aldenorului, în cea mai mare minune de arhitectură a cetății. Marea bibliotecă Sol.",
+          "Acolo, acum douăzeci de ani, cineva a încercat să-i întunece lumina."
         ]
       }
     },
@@ -135,39 +149,51 @@
         "en": "The Old King"
       },
       "paragrafe": {
-        "ro": [
-          "Pe atunci, Aldenor avea încă un rege cu dragon.",
-          "Aldric domnise atâta vreme, încât puțini își mai aminteau de altul. Lumea îi spunea „regele cel bătrân”. Era mag și războinic deopotrivă, iar dragonul lui era Ardrax, primordialul focului. Se spune că, de câte ori regele îl chema, cerul Altarisului se înroșea ca la apus. Părinții își ridicau copiii pe umeri, să-l vadă.",
-          "Primejdia a venit de unde n-o căuta nimeni: din Cercul Luminii.",
-          "Arcon era unul dintre cei mai puternici magi ai lui. A descoperit necromanția, magia interzisă la oameni, la elfi, la toți. Iar magia aceea l-a corupt încet, cum roade rugina fierul.",
-          "A cerut ca Inima Luminii să slujească necromanției. I s-a spus „nu”.",
-          "N-a mai cerut.",
-          "Într-o noapte, au urlat câinii, în toată cetatea deodată. Ferestrele marii clădiri se aprindeau și se stingeau, într-o lumină care nu mai semăna cu lumina. Zidurile crăpau cu un sunet de gheață pe râu, primăvara. Oamenii ieșeau pe străzi, desculți, și nu îndrăzneau să se apropie.",
-          "Înăuntru, Arcon încerca să corupă Inima cu forța.",
-          "Regele a urcat treptele și a intrat.",
-          "Lumina din ferestre s-a zbătut ca flacăra unei lumânări în curent. Dintr-odată s-a făcut albă, mai albă decât ziua, și a trecut prin ziduri.",
-          "Apoi, liniște. Atât de adâncă, încât se auzea cum cade praful.",
-          "Regele cel bătrân a făcut ce fac regii doar în cântece: și-a dat viața ca să-l oprească. Și l-a oprit. Au murit amândoi, regele și magul. La răsărit, Inima Luminii strălucea ca întotdeauna.",
-          "Odată cu regele a murit și Ardrax. „Unde se duce călărețul, se duce și dragonul”, spun oamenii. Dar Ardrax e primordial: a renăscut în lumea focului, fără călăreț. N-a mai rămas cine să-l cheme. Cerul Altarisului nu se mai înroșește decât la apus.",
-          "De douăzeci de ani, oamenii caută pe cineva cu trezirea mare. N-au găsit pe nimeni. Pe tron stă fiul regelui, Cedric. A moștenit coroana.",
-          "Dragonul, nu."
-        ],
         "en": [
-          "In those days, Aldenor still had a king with a dragon.",
-          "Aldric had reigned so long that few still remembered any other. People called him “the old king.” He was both mage and warrior, and his dragon was Ardrax, the primordial of fire. It is said that whenever the king called him, the sky over Altaris turned red, as at sunset. Parents would lift their children onto their shoulders to see him.",
-          "Danger came from where no one was looking: from the Circle of Light.",
-          "Arcon was one of its most powerful mages. He discovered necromancy, the magic forbidden to humans, to elves, to all. And that magic corrupted him slowly, as rust gnaws at iron.",
-          "He asked that the Heart of Light serve necromancy. He was told “no.”",
+          "In those days, Aldenor still had a king bonded with a dragon.",
+          "King Aldric had reigned so long that few still remembered any other. People called him “the old king.” He was both mage and warrior, and his dragon was Ardrax, the primordial of fire. It is said that whenever the king called him, the sky over Altaris turned red, as at sunset. Parents would lift their children onto their shoulders to see him.",
+          "Danger came from where no one was expecting it… the Circle of Light.",
+          "Arcon was one of its most powerful mages. So powerful that every other mage bowed before him. Even some dragons did. But his thirst for power was never quenched.",
+          "He discovered necromancy, the magic forbidden to humans, to elves, to all. And that magic corrupted him slowly, as rust gnaws at iron.",
+          "He convened a meeting with the council of the Circle of Light, telling the other mages how he could make the Heart greater, stronger, more powerful than ever! He even asked that the Heart of Light serve necromancy. He was told “no.”",
           "He did not ask again.",
-          "One night, the dogs howled, all over the city at once. The windows of the great building kept flaring and going dark, with a light that no longer looked like light. The walls cracked with the sound of river ice in spring. People came out into the streets, barefoot, and did not dare go near.",
+          "One night, the windows of the library kept flaring and going dark, with a light that no longer looked real. The walls cracked with the sound of river ice in spring. People came out into the streets, barefoot, and did not dare go near.",
           "Inside, Arcon was trying to corrupt the Heart by force.",
-          "The king climbed the steps and went in.",
-          "The light in the windows writhed like a candle flame in a draft. All at once it turned white, whiter than day, and passed through the walls.",
+          "The king was there to protect it. His voice rose like the roar of a lion, so loud that the whole capital heard it:",
+          "“You have gone far enough, Arcon. Stop, while there is still time for redemption!”",
+          "From inside came a laugh, cold as cellar stone.",
+          "“Redemption? I am about to make the Heart greater than it has ever been. Light that never fades, life that never ends! And you would keep it shut away in a library… Pathetic!”",
+          "“That is not light, Arcon. It is only death and darkness!”",
+          "“Then I’ll make darkness shine brighter than any light!”",
+          "“Not while I still draw breath.”",
+          "The light in the windows writhed like a candle flame in a draft. All at once it turned white, whiter than day, and passed even through the walls.",
           "Then, silence. So deep you could hear the dust fall.",
-          "The old king did what kings do only in songs: he gave his life to stop him. And he did stop him. Both of them died, the king and the mage. At sunrise, the Heart of Light shone as it always had.",
-          "Ardrax died with the king. “Where the rider goes, the dragon goes,” people say. But Ardrax is a primordial: he was reborn in the world of fire, without a rider. There is no one left to call him. The sky over Altaris no longer turns red, except at sunset.",
-          "For twenty years, people have been searching for someone with the greater awakening. They have found no one. On the throne sits the king’s son, Cedric. He inherited the crown.",
-          "Not the dragon."
+          "The old king did what kings do only in cheerful ballads: he gave his life to stop evil. And he did stop him. Both of them died, the king and the mage. At sunrise, the Heart of Light shone as it always had.",
+          "Ardrax died with the king. “Where the rider goes, the dragon goes,” people say. But Ardrax is a primordial: he was reborn in the world of fire, without a rider. There is no one left to call him. The sky over Altaris no longer turns red at midday.",
+          "For twenty years, mages have been searching for someone with the greater awakening. They have found no one. On the throne sits the king’s son, Cedric. He inherited the crown, ruling with the same determination as his father. But he is past twenty-six, and he never awakened."
+        ],
+        "ro": [
+          "Pe atunci, Aldenor avea încă un rege legat cu un dragon.",
+          "Regele Aldric domnise atâta vreme, încât puțini își mai aminteau de altul. Lumea îi spunea „regele cel bătrân”. Era mag și războinic deopotrivă, iar dragonul lui era Ardrax, primordialul focului. Se spune că, de câte ori regele îl chema, cerul Altarisului se înroșea ca la apus. Părinții își ridicau copiii pe umeri, să-l vadă.",
+          "Primejdia a venit de unde n-o aștepta nimeni… din Cercul Luminii.",
+          "Arcon era unul dintre cei mai puternici magi ai lui. Atât de puternic, încât toți ceilalți magi se plecau în fața lui. Chiar și unii dragoni. Dar setea lui de putere nu se potolea niciodată.",
+          "A descoperit necromanția, magia interzisă la oameni, la elfi, la toți. Iar magia aceea l-a corupt încet, cum roade rugina fierul.",
+          "A strâns sfatul Cercului Luminii și le-a povestit celorlalți magi cum ar putea face Inima mai mare, mai tare, mai puternică decât fusese vreodată! Ba chiar a cerut ca Inima Luminii să slujească necromanției. I s-a spus „nu”.",
+          "N-a mai cerut.",
+          "Într-o noapte, ferestrele bibliotecii se tot aprindeau și se stingeau, într-o lumină care nu mai semăna cu lumina. Zidurile crăpau cu un sunet de gheață pe râu, primăvara. Oamenii ieșeau pe străzi, desculți, și nu îndrăzneau să se apropie.",
+          "Înăuntru, Arcon încerca să corupă Inima cu forța.",
+          "Regele era acolo s-o apere. Glasul lui s-a ridicat ca răgetul unui leu, atât de tare, încât l-a auzit toată capitala:",
+          "„Ai mers destul de departe, Arcon. Oprește-te, cât mai e timp de mântuire!”",
+          "Dinăuntru a venit un râs, rece ca piatra unei pivnițe.",
+          "„Mântuire? Sunt pe cale să fac Inima mai mare decât a fost vreodată. Lumină care nu se stinge, viață care nu se sfârșește! Iar tu ai vrea s-o ții închisă într-o bibliotecă… Jalnic!”",
+          "„Aceea nu e lumină, Arcon. E doar moarte și întuneric!”",
+          "„Atunci voi face întunericul să strălucească mai tare decât orice lumină!”",
+          "„Nu cât timp mai am suflare.”",
+          "Lumina din ferestre s-a zbătut ca flacăra unei lumânări în curent. Dintr-odată s-a făcut albă, mai albă decât ziua, și a trecut până și prin ziduri.",
+          "Apoi, liniște. Atât de adâncă, încât se auzea cum cade praful.",
+          "Regele cel bătrân a făcut ce fac regii doar în baladele vesele: și-a dat viața ca să oprească răul. Și chiar l-a oprit. Au murit amândoi, regele și magul. La răsărit, Inima Luminii strălucea ca întotdeauna.",
+          "Odată cu regele a murit și Ardrax. „Unde se duce călărețul, se duce și dragonul”, spun oamenii. Dar Ardrax e primordial: a renăscut în lumea focului, fără călăreț. N-a mai rămas nimeni care să-l cheme. Cerul Altarisului nu se mai înroșește la amiază.",
+          "De douăzeci de ani, magii caută pe cineva cu trezirea mare. N-au găsit pe nimeni. Pe tron stă fiul regelui, Cedric. A moștenit coroana și domnește cu aceeași hotărâre ca tatăl lui. Doar că a trecut de douăzeci și șase de ani și nu s-a trezit."
         ]
       }
     },
@@ -177,25 +203,25 @@
         "en": "The Red Banner"
       },
       "paragrafe": {
-        "ro": [
-          "La zece ani după moartea regelui, a început războiul.",
-          "Orcii trăiesc împărțiți în triburi. Cel mai mare dintre ele, Craniile Sângerii, ascultă de căpetenia Gorvak. Sub steagul lor roșu, cu un craniu, au venit asupra oamenilor.",
-          "De ce anume, nu știe nimeni. Orcii nu pot stăpâni magia luminii, așa că lumina oamenilor nu le-ar fi de niciun folos. Ei se bizuie pe altă magie, a naturii. Șamanii le întăresc trupele și cheamă fiarele în ajutor.",
-          "Cei care au stat în fața lor povestesc mereu la fel. Întâi vezi steagul roșu, cu craniul. Apoi auzi cântecul șamanilor, gros și adânc, ca un mârâit care urcă din pământ. Pe urmă ies fiarele din păduri, iar orcii vin după ele, mai iuți și mai tari decât ar trebui să fie.",
-          "Zece ani de fum la orizont și de clopote trase noaptea. Zece ani de căruțe cu răniți pe drumuri și de vești care ajung la margini târziu și pe jumătate. În multe case din Aldenor, masa se pune cu o farfurie mai puțin. Craniile Sângerii își strâng oștile spre capitală, cum se strâng norii deasupra unui lan, înaintea grindinei.",
-          "Ordinul Flăcării mai are călăreți, cu dragoni mai mici decât primordialii. Dar într-un război atât de lung, totul se cântărește și se drămuiește: fiecare om, fiecare sac de grâu, fiecare dragon. Călăreții pleacă doar la nevoie mare. Iar un sat mic, departe de toate, nu e o nevoie mare.",
-          "Așa au rămas singure satele de la margine. Nu din răutate, ci din socoteală. Oamenii de acolo știu că dragonii există. Știu și că nu vin.",
-          "Deasupra lor, cerul e gol."
-        ],
         "en": [
           "Ten years after the king’s death, the war began.",
-          "Orcs live divided into tribes. The largest of them is the Blood Skulls, who answer to the chieftain Gorvak. Under their red banner with a skull, they came against the humans.",
-          "Why, exactly, no one knows. Orcs cannot master the magic of light, so the light of humankind would be of no use to them. They rely on a different magic, the magic of nature. The shamans strengthen their troops and call the beasts to their aid.",
-          "Those who have faced them always tell it the same way. First you see the red banner with the skull. Then you hear the song of the shamans, thick and deep, like a growl rising out of the earth. After that, the beasts come out of the forests, and the orcs follow, swifter and stronger than they should be.",
+          "Orcs live divided into tribes. The largest of them is the Blood Skulls, who answer to the chieftain Gorvak, under their red banner with a skull.",
+          "It all started with pillaging small villages and killing innocents at the border of Aldenor. Why exactly, no one knows. Orcs cannot master the magic of light, so the light of humankind would be of no use to them. They rely on a different magic, the magic of nature. The shamans strengthen their troops and call the beasts to their aid.",
+          "Those who have faced them always tell it the same way. First you see the red banner with the skull. Then you hear the song of the shamans, drums thick and deep, like a growl rising out of the earth. After that, the beasts come out of the forests or the earth, and the orcs follow, swifter and stronger than they should be.",
           "Ten years of smoke on the horizon and of bells rung in the night. Ten years of carts full of wounded on the roads, and of news that reaches the edges late and half-told. In many homes in Aldenor, the table is set with one plate fewer. The Blood Skulls are gathering their armies toward the capital, the way clouds gather over a field of grain before the hail.",
-          "The Order of the Flame still has riders, with dragons smaller than the primordials. But in a war this long, everything is weighed and rationed: every man, every sack of wheat, every dragon. The riders set out only when the need is great. And a small village, far from everything, is not a great need.",
+          "The Order of the Flame still has riders, with dragons smaller than the primordials. But in a war this long and harsh, everything is weighed and rationed: every man, every sack of wheat, every dragon. The riders set out only when the need is great. And a small village, far from everything, is not a great need.",
           "That is how the villages at the edge were left on their own. Not out of malice, but out of calculation. The people there know that dragons exist. They know, too, that the dragons are not coming.",
-          "Above them, the sky is empty."
+          "Above them, an empty sky."
+        ],
+        "ro": [
+          "La zece ani după moartea regelui, a început războiul.",
+          "Orcii trăiesc împărțiți în triburi. Cel mai mare dintre ele sunt Craniile Sângerii, care ascultă de căpetenia Gorvak, sub steagul lor roșu, cu un craniu.",
+          "Totul a început cu jefuirea satelor mici de la granița Aldenorului și cu uciderea celor nevinovați. De ce anume, nu știe nimeni. Orcii nu pot stăpâni magia luminii, așa că lumina oamenilor nu le-ar fi de niciun folos. Ei se bizuie pe altă magie, magia naturii. Șamanii le întăresc trupele și cheamă fiarele în ajutor.",
+          "Cei care i-au înfruntat povestesc mereu la fel. Întâi vezi steagul roșu, cu craniul. Apoi auzi cântecul șamanilor, tobe groase și adânci, ca un mârâit care urcă din pământ. Pe urmă ies fiarele din păduri sau din pământ, iar orcii vin după ele, mai iuți și mai tari decât ar trebui să fie.",
+          "Zece ani de fum la orizont și de clopote trase noaptea. Zece ani de căruțe pline de răniți pe drumuri și de vești care ajung la margini târziu și pe jumătate. În multe case din Aldenor, masa se pune cu o farfurie mai puțin. Craniile Sângerii își strâng oștile spre capitală, cum se strâng norii deasupra unui lan de grâu, înaintea grindinei.",
+          "Ordinul Flăcării mai are călăreți, cu dragoni mai mici decât primordialii. Dar într-un război atât de lung și de greu, totul se cântărește și se drămuiește: fiecare om, fiecare sac de grâu, fiecare dragon. Călăreții pleacă doar la nevoie mare. Iar un sat mic, departe de toate, nu e o nevoie mare.",
+          "Așa au rămas singure satele de la margine. Nu din răutate, ci din socoteală. Oamenii de acolo știu că dragonii există. Știu și că dragonii nu vin.",
+          "Deasupra lor, un cer gol."
         ]
       }
     },
@@ -205,33 +231,33 @@
         "en": "Baum"
       },
       "paragrafe": {
-        "ro": [
-          "Drumul mare trece prin Aldenor ca o cusătură prin pânză. Pornește din Altaris și merge zile întregi spre marginea regatului. Acolo, chiar pe drum, se află satul Baum.",
-          "Baum trăiește mai ales din câmpurile de grâu, din vaci și din moara care își întoarce aripile în vânt. La biserică se înalță steagul satului, albastru, cu rombul auriu. Ca în orice sat, slujește și aici un preot-mag trimis de Cercul Luminii.",
-          "E un sat retras, care a rămas departe de războaie. Nimeni de aici n-a văzut vreodată un dragon. Tot ce stă scris în paginile dinainte se știe la Baum doar din poveștile de drum.",
-          "La capătul satului, în locul pe care sătenii îl numesc Marginea, e un gard vechi de lemn. Dincolo de el se întinde un câmp, iar în mijlocul câmpului stă copacul mare. Primăvara înflorește alb.",
-          "Primăvara trecută, Baum a încercat să-i oprească pe orci lângă copacul mare. Atâta era toată apărarea satului: oameni care țineau mai des în mână coasa decât sabia.",
-          "Copacul era în floare. Au căzut douăzeci și trei.",
-          "Printre ei era și Edwin Lightfinder. Acasă îl așteptau o soție, Miriam, și un fiu, Vale.",
-          "Orcii le-au îngăduit sătenilor să-și strângă morții. În cimitirul de la Marginea s-au săpat douăzeci și trei de morminte.",
-          "A doua zi după bătălie, satul a căzut.",
-          "De atunci, orcii îi cruță pe oameni în schimbul unei taxe plătite în fiecare săptămână. Grâul de aici le e mai de folos decât cenușa. Au ridicat un zid și păzesc ieșirea. Pe drumul mare, pe care veneau odată poveștile, pleacă acum, în căruțele orcilor, grâul, fierul și pieile satului.",
-          "Pe zid flutură steagul roșu, cu craniul. Satul plătește. Satul tace. Iar la biserică, steagul albastru flutură mai departe.",
-          "Aici se oprește cronica. Ce urmează nu e încă istorie."
-        ],
         "en": [
-          "The great road runs through Aldenor like a seam through cloth. It sets out from Altaris and goes on for days toward the edge of the kingdom. There, right on the road, lies the village of Baum.",
+          "The great road runs through Aldenor like a seam through cloth. It sets out from Altaris and goes on for weeks toward the edge of the kingdom. There, right on the road, lies the village of Baum.",
           "Baum lives mostly off its wheat fields, its cows, and the mill that turns its sails in the wind. At the church rises the village banner, blue, with the golden diamond. As in every village, a priest-mage sent by the Circle of Light serves here too.",
-          "It is a secluded village that has stayed far from the wars. No one here has ever seen a dragon. Everything written in the pages before this one is known in Baum only from tales that came down the road.",
+          "It is a secluded village that has stayed far from the wars. No one here has ever seen a dragon. Everything written in these pages is known in Baum only from tales that came down the road.",
           "At the end of the village, in the place the villagers call the Edge, there is an old wooden fence. Beyond it stretches a field, and in the middle of the field stands the great tree. In spring it blooms white.",
           "Last spring, Baum tried to stop the orcs at the great tree. That was all the defense the village had: men whose hands held the scythe more often than the sword.",
-          "The tree was in bloom. Twenty-three fell.",
+          "The tree was in bloom. Twenty-three brave souls fell.",
           "Among them was Edwin Lightfinder. Waiting for him at home were a wife, Miriam, and a son, Vale.",
-          "The orcs let the villagers gather their dead. In the graveyard at the Edge, twenty-three graves were dug.",
+          "The orcs let the villagers gather their dead. In the graveyard at the Edge, twenty-three new graves were dug.",
           "The day after the battle, the village fell.",
           "Since then, the orcs have spared the people in exchange for a tax paid every week. The wheat here is of more use to them than ashes. They have raised a wall and guard the way out. Along the great road that once brought the tales, the orcs’ carts now carry away the village’s wheat, its iron, and its hides.",
           "On the wall flies the red banner with the skull. The village pays. The village keeps silent. And at the church, the blue banner flies on.",
           "Here the chronicle stops. What follows is not yet history."
+        ],
+        "ro": [
+          "Drumul mare trece prin Aldenor ca o cusătură prin pânză. Pornește din Altaris și merge săptămâni întregi spre marginea regatului. Acolo, chiar pe drum, se află satul Baum.",
+          "Baum trăiește mai ales din câmpurile de grâu, din vaci și din moara care își întoarce aripile în vânt. La biserică se înalță steagul satului, albastru, cu rombul auriu. Ca în orice sat, slujește și aici un preot-mag trimis de Cercul Luminii.",
+          "E un sat retras, care a rămas departe de războaie. Nimeni de aici n-a văzut vreodată un dragon. Tot ce stă scris în paginile acestea se știe la Baum doar din poveștile venite pe drum.",
+          "La capătul satului, în locul pe care sătenii îl numesc Marginea, e un gard vechi de lemn. Dincolo de el se întinde un câmp, iar în mijlocul câmpului stă copacul mare. Primăvara înflorește alb.",
+          "Primăvara trecută, Baum a încercat să-i oprească pe orci lângă copacul mare. Atâta era toată apărarea satului: oameni care țineau mai des în mână coasa decât sabia.",
+          "Copacul era în floare. Au căzut douăzeci și trei de suflete viteze.",
+          "Printre ei era și Edwin Lightfinder. Acasă îl așteptau o soție, Miriam, și un fiu, Vale.",
+          "Orcii le-au îngăduit sătenilor să-și strângă morții. În cimitirul de la Marginea s-au săpat douăzeci și trei de morminte noi.",
+          "A doua zi după bătălie, satul a căzut.",
+          "De atunci, orcii îi cruță pe oameni în schimbul unei taxe plătite în fiecare săptămână. Grâul de aici le e mai de folos decât cenușa. Au ridicat un zid și păzesc ieșirea. Pe drumul mare, pe care veneau odată poveștile, căruțele orcilor duc acum grâul, fierul și pieile satului.",
+          "Pe zid flutură steagul roșu, cu craniul. Satul plătește. Satul tace. Iar la biserică, steagul albastru flutură mai departe.",
+          "Aici se oprește cronica. Ce urmează nu e încă istorie."
         ]
       }
     }

@@ -18,8 +18,8 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 ## Istoria, pe ani (decis de autor)
 
-- **Acum ~2000 de ani**, elfii de pădure găsesc **primul portal, al aerului**. Multă vreme nu știe nimeni de el, până când, într-o luptă între elfi și oameni, elfii vin cu un dragon: **Karzor**, cu primul elf legat de el.
-- **Cam 500 de ani mai târziu**, oamenii găsesc **portalul focului**.
+- **Acum ~2000 de ani**, elfii de pădure găsesc **primul portal, al aerului**. Multă vreme nu știe nimeni de el, până când, într-o luptă între elfi și oameni, elfii vin cu un dragon: **Karzor**, cu primul elf legat de el. Din prologul rescris de autor: oamenii, mulți și flămânzi de pământ, tăiau tot mai adânc în pădurea elfilor, iar o oaste a pornit spre inima ei, fără să știe, spre poartă; elfii au scos atunci dragonul și au câștigat, iar de atunci nicio oaste omenească n-a mai intrat atât de adânc.
+- **Cam 500 de ani mai târziu**, oamenii găsesc **portalul focului** (prologul rescris de autor): o expediție trimisă de un rege îmbătrânit; locul e secretul cel mai bine păzit al regatului. Fiecare poartă se deschide în felul ei, cum fiecare lacăt are cheia lui; magii au căutat cheia ani lungi, iar când s-a deschis prima oară domnea fiul acelui rege.
 - **Încă ~1000 de ani**, se află ce sunt porțile, cum funcționează și cine are trezirea, mică sau mare.
 - **Acum 200 de ani**, oamenii găsesc **Inima Luminii** și se înființează **Cercul Luminii**, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc.
 - **Acum 20 de ani** moare regele **Aldric**; de atunci domnește fiul lui, **Cedric**.
@@ -50,22 +50,22 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 - **Ordinul Flăcării** e ordinul **călăreților de dragoni** ai oamenilor. **Nu e secret.** **Mai are călăreți**, cu dragoni mai mici (decis de autor). Călăreții se folosesc **doar la nevoie mare** (decis de autor): de 10 ani e război, totul se cântărește, iar resursele se drămuiesc cu grijă; de aceea satele de la margine au rămas singure.
 - **Regele oamenilor**, **Aldric** (decis de autor; „regele cel bătrân”), era mag-războinic și legat cu **Ardrax**, **primordialul focului** (decis de autor). A murit **acum 20 de ani**, sacrificându-se ca să-l oprească pe Arcon (vezi Narco); odată cu el a murit și dragonul, care, primordial fiind, a renăscut în lumea focului. De atunci domnește fiul lui, **Cedric** (decis de autor).
-- De atunci oamenii n-au mai găsit pe nimeni cu trezirea mare: îl caută.
+- De atunci oamenii n-au mai găsit pe nimeni cu trezirea mare: îl caută. **Cedric** a trecut de 26 de ani și nu s-a trezit (prologul rescris de autor).
 
 ## Karzor și elfii de pădure (decis de autor)
 
-- **Karzor**, primordialul **aerului**: foarte puternic, folosește multe fulgere, ca atacuri și ca puteri speciale. Lumea crede că e mort (așa apare și în prolog, decis de autor). E primul dragon văzut de oameni: acum ~2000 de ani, într-o luptă între elfi și oameni, cu primul elf legat de el (decis de autor).
+- **Karzor**, primordialul **aerului**: foarte puternic, folosește multe fulgere, ca atacuri și ca puteri speciale. Lumea crede că e mort; prologul nu spune nimic despre soarta lui (decis de autor: „lăsăm așa”). E primul dragon văzut de oameni: acum ~2000 de ani, într-o luptă între elfi și oameni, cu primul elf legat de el (decis de autor).
 - **Împăratul elfilor de pădure (wood elves)** are încă legământul cu Karzor. E **singura organizație secretă** care a rămas: o organizație secretă a elfilor de pădure știe că trăiește. Mai târziu, într-o bătălie, apariția lui poate fi o întorsătură mare.
 - **Cum arată Karzor** (după imaginea autorului; arată ca un dragon al pădurii pentru că legământul cu împăratul elfilor de pădure i-a dat înfățișarea lor): solzi ca scoarța și frunze verzi peste tot corpul, aripi ca de pânză verde-maronie întinsă pe oase ca niște ramuri, coarne ca niște crengi, iar pe piept un scut auriu cu un copac (semnul elfilor de pădure).
 
 ## Inima Luminii, cristalele mici și Cercul Luminii (decis de autor)
 
-- **Acum 200 de ani** (decis de autor), oamenii, săpând într-o **mină** după minerale, au dat de o încăpere mare. În mijlocul ei stătea **un singur cristal**: mare, dar nu uriaș (încape pe un piedestal; îl pot căra patru oameni). Cum l-au scos la lumina zilei, a început să radieze foarte multă putere. E **Inima Luminii**.
+- **Acum 200 de ani** (decis de autor), oamenii, săpând în **mina de la Kor** (prologul rescris de autor) după minerale, au dat de o încăpere mare. În mijlocul ei stătea **un singur cristal**: mare, dar nu uriaș (încape pe un piedestal; îl pot căra patru oameni). Cum l-au scos la lumina zilei, a început să radieze foarte multă putere. E **Inima Luminii**.
 - În **lumina soarelui**, Inima Luminii **creează cristale mai mici**, dar **foarte rar**. Cristalele mici fac **magia luminii** mult mai puternică; puțini oameni au acces la ele.
 - **Cercul Luminii**, asociația magilor luminii, **nu e secret**. S-a înființat tot acum 200 de ani, din cei mai puternici magi, ca să ajute Ordinul Flăcării să-i găsească pe cei care se trezesc (decis de autor). Trimite câte un mag în fiecare sat.
 - **Rombul auriu** de pe steaguri și de pe scuturi (steagul albastru al satului, la biserică și pe câmpul bătăliei; platoșa și sabia lui Edwin) e **forma cristalelor mici**. Doar pus acolo, le dă oamenilor încredere și putere în luptă.
 - **Inima Luminii** e cea mai mare putere magică a oamenilor. Necromanția o poate **corupe**.
-- E păzită în **clădirea principală a capitalei** (decis de autor), aceeași în care a încercat Arcon s-o corupă.
+- E păzită în **marea bibliotecă Sol** din Altaris, cea mai mare minune de arhitectură a capitalei (prologul rescris de autor), aceeași în care a încercat Arcon s-o corupă. Înainte, Arcon le propusese magilor din sfatul Cercului s-o facă „mai mare, mai tare, mai puternică decât oricând”; în noaptea aceea, regele i-a strigat să se oprească, iar toată capitala a auzit.
 
 ## Fratele Elian (decis de autor)
 
