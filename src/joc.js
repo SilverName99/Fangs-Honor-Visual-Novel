@@ -21,6 +21,7 @@ import { creeazaEcranInventar, iconita as iconitaObiect } from './ecranInventar.
 import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
+import { creeazaPrologul } from './prolog.js';
 import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj, evenimentOferit } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
@@ -110,7 +111,11 @@ if (cfg.ceasRapid) {
 }
 aplicaGraficaUi(date.aranjare.ui);
 
-let stare = salvare.citeste(CHEIE) || stareNoua(cfg);
+const salvata = salvare.citeste(CHEIE);
+let stare = salvata || stareNoua(cfg);
+// Prima pornire (fără salvare) începe cu prologul, ca un joc nou (cerut de autor); jocul de test și editorul, care
+// deschid jocul direct într-o scenă, nu, ca să nu stea cartea în calea testelor (acolo se vede din „Joc nou” sau Galerie)
+if (!salvata && !parametri.has('test') && !parametri.get('scena')) stare.prolog = 'deschis';
 if (!lume.has(stare.scena)) stare.scena = cfg.start.scena;
 // Salvările de dinainte de cartea personajelor n-au lista celor cunoscuți: pornesc cu cei cunoscuți de la început (Miriam)
 stare.cunoscuti ??= [...(cfg.start.cunoscuti || [])];
@@ -1003,10 +1008,13 @@ const joc = {
     // Momentele ținute minte pentru „Resetează” sunt din jocul vechi: nu trebuie să ducă înapoi în el
     joc.uitaInainteDeMisiuni();
     stare = stareNoua(cfg);
+    // Jocul nou începe cu prologul (cerut de autor); se ține minte în salvare, ca după un refresh cartea să revină
+    stare.prolog = 'deschis';
     ecranInventar.inchide();
     dialog.inchide();
     salveaza();
     afiseaza();
+    deschidePrologul();
   },
 };
 
@@ -1082,6 +1090,16 @@ const ecranMagazin = creeazaEcranMagazin(ui, joc);
 // Săgețile cărții au doar sunetul paginii (decis de autor), fără clic peste el
 addEventListener('click', (e) => e.target.closest?.('.buton, .alegere') && !e.target.closest('.inapoi-carte, .inainte-carte') && sunet.efect('clic'), { capture: true });
 const carte = creeazaCarte(ui, joc);
+const prologul = creeazaPrologul(ui, joc);
+// La un joc nou, cartea se închide cu „Începe povestea” sau „Sari peste”, și de atunci nu mai apare singură
+function deschidePrologul() {
+  prologul.deschide({
+    laFinal: () => {
+      stare.prolog = 'citit';
+      salveaza();
+    },
+  });
+}
 const zaruri = creeazaZaruri(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
@@ -1165,6 +1183,13 @@ function deschideMeniul() {
       if (!d.faraGalerie)
         for (const n of Object.values(d.noduri || {})) if (n.imagine && vazuteSub.has(n.imagine)) adauga(d.grup || id, n.imagine);
     const continut = div('continut-meniu galerie-meniu');
+    // Prologul se poate reciti oricând de aici (cerut de autor), fără să strice grila de 6 butoane a meniului
+    continut.append(
+      buton('📜 Cronica Aldariei (prologul)', 'buton-mic-meniu recitire-prolog', () => {
+        inchide();
+        prologul.deschide({ recitire: true });
+      }),
+    );
     if (!grupuri.size) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
     for (const [nume, imagini] of grupuri) {
       const grup = div('grup-galerie');
@@ -1598,6 +1623,7 @@ function pornesteVisulCerut(ev) {
 afiseaza();
 if (visCerut) pornesteVisulCerut(visCerut);
 else reiaDupaReincarcare();
+if (stare.prolog === 'deschis' && !visCerut) deschidePrologul();
 // La un vis pornit din galerie, panoul debug rămâne închis (s-ar vedea peste filmuleț); se deschide cu F2
 if (parametri.has('debug') && !visCerut) debug.comuta();
 

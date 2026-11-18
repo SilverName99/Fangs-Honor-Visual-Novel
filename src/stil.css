@@ -3638,3 +3638,253 @@ svg.zone {
     transform: translateY(6px);
   }
 }
+
+/* ----- Prologul din joc: cartea pe masă (cerut de autor) ----- */
+/* Peste dialoguri și ferestre (un eveniment de la începutul jocului așteaptă dedesubt), sub panoul debug */
+.ecran-carte.ecran-prolog {
+  z-index: 25;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, #3a2a1a 0%, #120b05 80%);
+}
+/* Masa (ui_prolog_masa.png); până se încarcă, fundalul întunecat de mai sus */
+.masa-prolog {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+/* Cadrul are locul și mărimea cărții deschise; închisă, coperta (jumătatea dreaptă) stă la mijlocul ecranului */
+.cadru-prolog {
+  position: relative;
+  width: 1600px;
+  height: 1000px;
+  flex: none;
+  transform: translateY(-58px) scale(0.9);
+  transition: transform 1.4s ease-in-out;
+  perspective: 5000px;
+}
+.cadru-prolog.inchisa {
+  /* Închisă, puțin mai mică, ca îndemnul de dedesubt să nu atingă coperta */
+  transform: translateY(-75px) scale(0.8) translateX(-400px);
+}
+.cadru-prolog .carte-prolog {
+  position: absolute;
+  inset: 0;
+  transform: none;
+  transition: opacity 0.7s ease 0.45s;
+}
+.cadru-prolog.inchisa .carte-prolog {
+  opacity: 0;
+}
+.masurare-prolog {
+  visibility: hidden;
+  pointer-events: none;
+}
+/* Coperta: se întoarce spre stânga în jurul cotorului, ca o foaie */
+.coperta-prolog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  z-index: 3;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+}
+.cadru-prolog.se-deschide .coperta-prolog {
+  animation: deschide-coperta 1.4s ease-in-out forwards;
+}
+@keyframes deschide-coperta {
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+.fata-coperta,
+.spate-coperta {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 6px 16px 16px 6px;
+  overflow: hidden;
+}
+/* Rezerva din CSS, până se încarcă ui_prolog_coperta.png: piele, chenar auriu și rombul în mijloc */
+.fata-coperta {
+  cursor: pointer;
+  background: radial-gradient(ellipse at 40% 35%, #6e3d1f, #3a1c0b 75%);
+  box-shadow: inset 0 0 0 16px #2a1407, inset 0 0 0 20px #b8902f, inset 0 0 70px rgba(0, 0, 0, 0.6), 0 30px 70px rgba(0, 0, 0, 0.65);
+  transition: filter 0.2s;
+}
+.fata-coperta::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  font-size: 170px;
+  color: #d4a83c;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+.fata-coperta:hover {
+  filter: brightness(1.08) drop-shadow(0 0 18px rgba(255, 210, 120, 0.35));
+}
+.imagine-coperta-prolog {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/* Titlul îl scrie jocul, în limba aleasă, cu auriu */
+.titlu-coperta-prolog {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 15%;
+  z-index: 2;
+  text-align: center;
+  font: 600 88px/1.1 'Dancing Script', cursive;
+  color: #ecc96a;
+  text-shadow: 0 2px 0 #4f3409, 0 0 22px rgba(255, 210, 120, 0.35);
+  pointer-events: none;
+}
+/* Pe dosul copertei, hârtia veche a paginilor */
+.spate-coperta {
+  transform: rotateY(180deg);
+  background: linear-gradient(90deg, #e9dcc0, #f3e9d2 60%, #ecdfc4);
+}
+.indemn-prolog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 118px;
+  text-align: center;
+  font: 500 42px Caveat, cursive;
+  color: #f3e2b8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  animation: pulseaza-indemn 2.4s ease-in-out infinite;
+}
+@keyframes pulseaza-indemn {
+  50% {
+    opacity: 0.55;
+  }
+}
+.ecran-prolog:not(.inchisa) .indemn-prolog,
+.ecran-prolog.inchisa .inapoi-carte,
+.ecran-prolog.inchisa .inainte-carte {
+  display: none;
+}
+/* Paginile: textul cronicii, așezat larg, cu alineate, ca într-o carte tipărită; un capitol lung trece pe pagina următoare */
+.carte-prolog .pagina.dreapta {
+  display: block;
+}
+.text-prolog {
+  height: 100%;
+  overflow: hidden;
+  font: 400 25px/1.62 Georgia, 'Times New Roman', serif;
+  color: #22170e;
+  text-align: justify;
+  hyphens: auto;
+}
+.text-prolog p {
+  margin: 0 0 0.5em;
+  text-indent: 1.6em;
+}
+.text-prolog p.continuare {
+  text-indent: 0;
+}
+.nr-capitol-prolog {
+  margin-top: 6px;
+  text-align: center;
+  font: italic 400 22px Georgia, serif;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a5a2a;
+}
+.titlu-capitol-prolog {
+  margin: 4px 0 6px;
+  text-align: center;
+  font: 600 56px/1.15 'Dancing Script', cursive;
+  color: #2a1a0e;
+}
+.titlu-capitol-prolog::after {
+  content: '◆';
+  display: block;
+  margin: 8px 0 22px;
+  font: 18px Georgia, serif;
+  color: #b08a3a;
+}
+.folio-prolog {
+  position: absolute;
+  bottom: 24px;
+  text-align: center;
+  font: italic 22px Georgia, serif;
+  color: #7a5a2a;
+}
+.pagina.stanga .folio-prolog {
+  left: 136px;
+  right: 104px;
+}
+.pagina.dreapta .folio-prolog {
+  left: 50px;
+  right: 150px;
+}
+.pagina-titlu-prolog {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  text-align: center;
+}
+.titlu-carte-prolog {
+  font: 600 88px/1.15 'Dancing Script', cursive;
+  color: #2a1a0e;
+}
+.ornament-prolog {
+  font-size: 30px;
+  color: #b08a3a;
+}
+/* Harta Aldenorului, pe foaia de după ultimul capitol (decis de autor), întinsă peste amândouă paginile */
+.harta-prolog {
+  position: absolute;
+  inset: 80px 120px 90px 120px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+}
+.harta-prolog .imagine-harta-prolog {
+  width: 100%;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+.harta-mare-prolog {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+.harta-mare-prolog .imagine-harta-prolog {
+  width: 96%;
+}
+.carte-prolog.apare-prolog {
+  animation: apare-prolog 0.6s ease-out;
+}
+@keyframes apare-prolog {
+  from {
+    opacity: 0.2;
+  }
+}
+/* „Începe povestea”, la hartă: butonul strălucește ușor, ca să se vadă că de aici pornește jocul */
+.buton.incepe-prolog {
+  filter: drop-shadow(0 0 12px rgba(255, 210, 120, 0.75));
+}

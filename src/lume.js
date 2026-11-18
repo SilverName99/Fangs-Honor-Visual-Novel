@@ -1,3 +1,4 @@
+import { IMAGINI_PROLOG } from './prolog.js';
 import { verifica } from './conditii.js';
 import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
 import { caleSunet } from './sunet.js';
@@ -651,6 +652,9 @@ export function imaginiCerute(date, scene) {
   // Harta Aldenorului (decis de autor): prima pagină a cronicii din prolog, cu numele scrise chiar pe imagine
   grup = 'Prologul';
   if (date.prolog?.harta?.imagine) adauga(date.prolog.harta.imagine, 'Prologul: harta Aldenorului, cu numele scrise pe ea (1920 × 1080)');
+  // Cartea prologului pe masă (cerut de autor): masa din spate și coperta închisă; până se încarcă, sunt din CSS
+  adauga(IMAGINI_PROLOG.masa, 'Prologul: masa pe care stă cartea, văzută de sus, cu locul gol la mijloc (1920 × 1080)', true);
+  adauga(IMAGINI_PROLOG.coperta, 'Prologul: coperta cărții închise, fără niciun scris (4:5, de exemplu 1024 × 1280; titlul îl scrie jocul)', true);
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';
