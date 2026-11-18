@@ -6,7 +6,7 @@
   },
   "harta": {
     "imagine": "map/aldenor_harta.png",
-    "_nota": "Decis de autor: harta Aldenorului, prima pagină a cronicii (ce știu oamenii: fără poarta morții). Imaginea e fără niciun scris (AI-ul strică literele); numele le va pune jocul peste ea, în română și în engleză. Locurile (decis de autor): Stepele Roșii (orcii, la răsărit, dincolo de munți), Sylvareth (pădurea elfilor de pădure, la apus), Caldrath (orașul dragonilor, alb cu roșu, fără vulcan, cu Ordinul Flăcării, în jurul porții focului, în nord)."
+    "_nota": "Decis de autor: harta Aldenorului, prima pagină a cronicii (ce știu oamenii: fără poarta morții). Decis de autor: numele sunt scrise chiar pe imagine (ALDENOR sus, cu auriu; ALTARIS, BAUM, CALDRATH, KOR, SYLVARETH, THE RED STEPPES pe hartă), iar Caldrath e un oraș construit în munte. Fără hotare desenate. Locurile (decis de autor): Stepele Roșii (orcii, la răsărit, dincolo de munți), Sylvareth (pădurea elfilor de pădure, la apus), Caldrath (orașul dragonilor, alb cu roșu, fără vulcan, cu Ordinul Flăcării, în jurul porții focului, în nord)."
   },
   "capitole": [
     {

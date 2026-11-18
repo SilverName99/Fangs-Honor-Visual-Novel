@@ -648,9 +648,9 @@ export function imaginiCerute(date, scene) {
   // Paharul și zarurile sunt elemente de interfață, dar stau aici, lângă restul jocului, ca să fie ușor de găsit
   adauga(fisierUi('pahar_zaruri'), 'Zaruri: paharul, răsturnat cu gura în jos (256 × 256, fundal transparent)', true);
   for (let f = 1; f <= 6; f++) adauga(fisierUi(`zar_${f}`), `Zaruri: zarul cu fața ${f} (128 × 128, fundal transparent)`, true);
-  // Harta Aldenorului (decis de autor): prima pagină a cronicii din prolog; fără scris, numele le pune jocul peste ea
+  // Harta Aldenorului (decis de autor): prima pagină a cronicii din prolog, cu numele scrise chiar pe imagine
   grup = 'Prologul';
-  if (date.prolog?.harta?.imagine) adauga(date.prolog.harta.imagine, 'Prologul: harta Aldenorului, fără niciun scris (1920 × 1080; numele le pune jocul peste ea)');
+  if (date.prolog?.harta?.imagine) adauga(date.prolog.harta.imagine, 'Prologul: harta Aldenorului, cu numele scrise pe ea (1920 × 1080)');
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';
