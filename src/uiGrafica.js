@@ -149,7 +149,11 @@ export const ELEMENTE_UI = [
       `.carte{box-shadow:none;border-radius:0}.carte .pagina{background:none;box-shadow:none}` +
       `.carte .foaie .pagina{background:url("${url}") no-repeat;background-size:1600px 1000px}` +
       `.foaie.spre-stanga .fata-foaie .pagina,.foaie.spre-dreapta .spate-foaie .pagina{background-position:-800px -34px}` +
-      `.foaie.spre-stanga .spate-foaie .pagina,.foaie.spre-dreapta .fata-foaie .pagina{background-position:-40px -34px}`,
+      `.foaie.spre-stanga .spate-foaie .pagina,.foaie.spre-dreapta .fata-foaie .pagina{background-position:-40px -34px}` +
+      // Foaia care se întoarce e doar hârtia (cerut de autor): se taie marginile foilor de dedesubt și pielea copertei,
+      // care altfel se întorceau și ele odată cu pagina (dreapta: foile și coperta sunt la marginea din afară)
+      `.foaie.spre-stanga .fata-foaie .pagina,.foaie.spre-dreapta .spate-foaie .pagina{clip-path:inset(3px 80px 22px 5px round 10px)}` +
+      `.foaie.spre-stanga .spate-foaie .pagina,.foaie.spre-dreapta .fata-foaie .pagina{clip-path:inset(3px 5px 22px 80px round 10px)}`,
   },
   // Săgețile cărții: o singură imagine, cu vârful spre dreapta; cea din stânga e aceeași, întoarsă din cod
   // Imaginea își păstrează forma (contain), oricât de lată ar fi generată

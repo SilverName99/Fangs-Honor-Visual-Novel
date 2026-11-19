@@ -14333,5 +14333,47 @@
         }
       }
     }
+  },
+  "inceput_joc": {
+    "_nota": "CIORNĂ (Claude). Începutul jocului (cerut de autor): după prolog, Vale se trezește dintr-un coșmar (tata plecând la bătălie) și se gândește să meargă la mama, în bucătărie, la masa de dimineață. Doar gânduri, în camera lui; pornește la închiderea prologului, la un joc nou.",
+    "partener": null,
+    "start": "i1",
+    "faraGalerie": true,
+    "noduri": {
+      "i1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Mă trezesc dintr-odată, cu inima bătându-mi în gât. Cămașa mi s-a lipit de spate.",
+        "urmator": "i2"
+      },
+      "i2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Iar visul acela. Clopotul bisericii bătând fără oprire, strigăte dinspre Marginea satului și tata ieșind pe ușă cu sabia în mână. Mă uitam după el și nu puteam să-l strig.",
+        "urmator": "i3"
+      },
+      "i3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Șase luni de atunci. Și tot îl visez aproape în fiecare noapte.",
+        "urmator": "i4"
+      },
+      "i4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Prin perete se aude mama trebăluind în bucătărie. Miroase a foc de vreascuri și a pâine încălzită.",
+        "urmator": "i5"
+      },
+      "i5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mai bine mă duc la ea. Măcar la masa de dimineață să nu stea singură."
+      }
+    }
   }
 }

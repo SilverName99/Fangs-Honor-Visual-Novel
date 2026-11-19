@@ -3750,10 +3750,17 @@ svg.zone {
   text-shadow: 0 2px 0 #4f3409, 0 0 22px rgba(255, 210, 120, 0.35);
   pointer-events: none;
 }
-/* Pe dosul copertei, hârtia veche a paginilor */
+/* Pe dosul copertei, jumătatea stângă a cărții deschise (o carte întreagă, tăiată de marginea copertei) */
 .spate-coperta {
   transform: rotateY(180deg);
-  background: linear-gradient(90deg, #e9dcc0, #f3e9d2 60%, #ecdfc4);
+  border-radius: 0;
+}
+.cadru-prolog .spate-carte-prolog {
+  inset: 0 auto auto 0;
+  width: 1600px;
+  height: 1000px;
+  opacity: 1;
+  transition: none;
 }
 .indemn-prolog {
   position: absolute;
@@ -3887,4 +3894,57 @@ svg.zone {
 /* „Începe povestea”, la hartă: butonul strălucește ușor, ca să se vadă că de aici pornește jocul */
 .buton.incepe-prolog {
   filter: drop-shadow(0 0 12px rgba(255, 210, 120, 0.75));
+}
+
+/* Coperta încărcată (cu fundal transparent la colțuri): fără pielea și chenarul din CSS de dedesubt, doar o umbră pe masă */
+.fata-coperta.cu-imagine {
+  background: none;
+  box-shadow: none;
+}
+.fata-coperta.cu-imagine::after {
+  display: none;
+}
+.fata-coperta.cu-imagine .imagine-coperta-prolog {
+  object-fit: contain;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.6));
+}
+/* Titlul lung (în engleză, pe două rânduri) stă mai sus și puțin mai mic, ca să nu atingă rombul (cerut de autor) */
+.titlu-coperta-prolog.titlu-lung {
+  top: 6%;
+  font-size: 74px;
+}
+/* Un capitol care începe sub sfârșitul celui de dinainte are puțin loc deasupra titlului */
+.nr-capitol-prolog.dupa-text {
+  margin-top: 36px;
+}
+.sfarsit-prolog {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 30px Georgia, serif;
+  color: #b08a3a;
+}
+.se-da-prolog {
+  cursor: pointer;
+}
+/* Butoanele de jos: limba, „Sari peste” (sau „Începe povestea”) și sunetul, unul lângă altul, la mijloc; la hartă doar
+   „Începe povestea” (cerut de autor) */
+.butoane-prolog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  pointer-events: none;
+}
+.butoane-prolog .buton {
+  position: static;
+  pointer-events: auto;
+}
+.ecran-prolog.la-harta .comuta-carte,
+.ecran-prolog.la-harta .sunet-prolog {
+  display: none;
 }

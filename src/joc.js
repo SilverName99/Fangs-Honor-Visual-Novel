@@ -1097,6 +1097,8 @@ function deschidePrologul() {
     laFinal: () => {
       stare.prolog = 'citit';
       salveaza();
+      // Apoi Vale se trezește din coșmar, cu gândurile lui (cerut de autor: o mică introducere, nu direct în cameră)
+      if (dialoguri.inceput_joc && !dialog.activ()) dialog.porneste(dialoguri.inceput_joc);
     },
   });
 }

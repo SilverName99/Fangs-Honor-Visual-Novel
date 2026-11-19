@@ -12,8 +12,8 @@ import { elementImagine, urlImagine } from './imagini.js';
 
 const CHEIE_LIMBA = 'joc-prolog-limba';
 const LIMBI = {
-  ro: { capitol: 'Capitolul', alta: 'English', sari: 'Sari peste', incepe: 'Începe povestea', inchide: 'Închide', deschide: 'Apasă pe carte ca s-o deschizi' },
-  en: { capitol: 'Chapter', alta: 'Română', sari: 'Skip', incepe: 'Begin the story', inchide: 'Close', deschide: 'Click the book to open it' },
+  ro: { capitol: 'Capitolul', alta: 'English', sari: 'Sari peste', incepe: 'Începe povestea', inchide: 'Închide', deschide: 'Apasă pe carte ca s-o deschizi', fara: '🔇 Fără muzică', cu: '🔊 Pornește muzica' },
+  en: { capitol: 'Chapter', alta: 'Română', sari: 'Skip', incepe: 'Begin the story', inchide: 'Close', deschide: 'Click the book to open it', fara: '🔇 Mute music', cu: '🔊 Play music' },
 };
 const ROMANE = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 
@@ -22,10 +22,12 @@ export const IMAGINI_PROLOG = { masa: 'ui/ui_prolog_masa.png', coperta: 'ui/ui_p
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 const buton = (clasa, text, clic) => Object.assign(document.createElement('button'), { className: `buton ${clasa}`, textContent: text, onclick: clic });
 
-// O imagine care, dacă lipsește, pur și simplu nu se vede (dedesubt rămâne rezerva din CSS), fără dreptunghiul cu numele
-function imagineOptionala(cale, clasa) {
+// O imagine care, dacă lipsește, pur și simplu nu se vede (dedesubt rămâne rezerva din CSS), fără dreptunghiul cu numele;
+// „laIncarcare”: când se încarcă, rezerva se ascunde (coperta transparentă la colțuri nu mai arată pielea din CSS)
+function imagineOptionala(cale, clasa, laIncarcare) {
   const img = Object.assign(document.createElement('img'), { className: clasa, alt: '', draggable: false });
   img.onerror = () => img.remove();
+  img.onload = () => laIncarcare?.();
   img.src = urlImagine(cale);
   return img;
 }
@@ -50,7 +52,7 @@ function salveazaLimba(l) {
 export function creeazaPrologul(parinte, joc) {
   let el = null;
   let limba = limbaSalvata();
-  // Paginile cărții, pe rând: { tip: 'titlu' | 'text' | 'gol' | 'harta', noduri, capitol }; perechile sunt foile deschise
+  // Paginile cărții, pe rând: { tip: 'titlu' | 'text' | 'sfarsit' | 'harta', noduri, capitol }; perechile sunt foile deschise
   let pagini = [];
   let foaie = 0;
   let inceputCapitol = [];
@@ -58,6 +60,7 @@ export function creeazaPrologul(parinte, joc) {
   let laFinal = null;
   let recitire = false;
   let inchisa = true;
+  let faraMuzica = false;
 
   const prolog = () => joc.date.prolog || { capitole: [] };
   const numarFoi = () => Math.ceil(pagini.length / 2);
@@ -79,22 +82,44 @@ export function creeazaPrologul(parinte, joc) {
     inceputCapitol = [];
     const masura = () => masuri[rezultat.length % 2];
     const incape = (m) => m.scrollHeight <= m.clientHeight + 1;
+    // Textul curge de la un capitol la altul, ca într-o carte tipărită (cerut de autor): fără pagini goale sau cu un
+    // singur cuvânt; un capitol nou începe sub cel de dinainte dacă mai e loc pentru titlu și primele rânduri
+    let m = null;
+    let capitolPagina = null;
+    const paginaNoua = () => {
+      m = masura();
+      m.replaceChildren();
+      capitolPagina = null;
+    };
+    const inchidePagina = () => {
+      rezultat.push({ tip: 'text', capitol: capitolPagina, noduri: [...m.childNodes].map((n) => n.cloneNode(true)) });
+      paginaNoua();
+    };
+    paginaNoua();
     prolog().capitole.forEach((c, i) => {
+      const paragrafe = c.paragrafe?.[limba] || [];
+      const antet = () => [
+        div(`nr-capitol-prolog${m.childNodes.length ? ' dupa-text' : ''}`, `${LIMBI[limba].capitol} ${ROMANE[i] || i + 1}`),
+        div('titlu-capitol-prolog', c.titlu?.[limba] || ''),
+      ];
+      if (m.childNodes.length) {
+        const proba = [...antet(), Object.assign(document.createElement('p'), { textContent: (paragrafe[0] || '').slice(0, 140) })];
+        m.append(...proba);
+        const incapeAici = incape(m);
+        proba.forEach((n) => n.remove());
+        if (!incapeAici) inchidePagina();
+      }
       inceputCapitol[i] = Math.floor(rezultat.length / 2);
-      let m = masura();
-      m.replaceChildren(div('nr-capitol-prolog', `${LIMBI[limba].capitol} ${ROMANE[i] || i + 1}`), div('titlu-capitol-prolog', c.titlu?.[limba] || ''));
-      const inchidePagina = () => {
-        rezultat.push({ tip: 'text', capitol: i, noduri: [...m.childNodes].map((n) => n.cloneNode(true)) });
-        m = masura();
-        m.replaceChildren();
-      };
-      for (const text of c.paragrafe?.[limba] || []) {
+      capitolPagina ??= i;
+      m.append(...antet());
+      for (const text of paragrafe) {
         let rest = text;
         let continuare = false;
         while (rest) {
           const p = document.createElement('p');
           if (continuare) p.className = 'continuare';
           p.textContent = rest;
+          capitolPagina ??= i;
           m.append(p);
           if (incape(m)) break;
           // Paragraful nu încape tot: atâtea cuvinte câte încap rămân aici, restul trece pe pagina următoare
@@ -120,10 +145,10 @@ export function creeazaPrologul(parinte, joc) {
           inchidePagina();
         }
       }
-      if (m.childNodes.length) inchidePagina();
-      // Fiecare capitol începe pe o foaie nouă, cu titlul pe pagina din stânga
-      if (rezultat.length % 2) rezultat.push({ tip: 'gol' });
     });
+    if (m.childNodes.length) inchidePagina();
+    // Dacă ultima pagină cu text e în stânga, pe dreapta stă semnul de sfârșit al cronicii, nu o pagină goală
+    if (rezultat.length % 2) rezultat.push({ tip: 'sfarsit' });
     // Harta, pe foaia de după ultimul capitol (decis de autor), întinsă pe amândouă paginile
     rezultat.push({ tip: 'harta' }, { tip: 'harta' });
     return rezultat;
@@ -140,7 +165,16 @@ export function creeazaPrologul(parinte, joc) {
   function pagina(i) {
     const p = pagini[i];
     const pag = div(`pagina ${i % 2 ? 'dreapta' : 'stanga'}`);
-    if (!p || p.tip === 'gol' || p.tip === 'harta') return pag;
+    // Un clic pe pagina din dreapta dă pagina, pe cea din stânga se întoarce (cerut de autor)
+    if (p && p.tip !== 'harta') {
+      pag.classList.add('se-da-prolog');
+      pag.onclick = () => intoarce(i % 2 ? 1 : -1);
+    }
+    if (!p || p.tip === 'harta') return pag;
+    if (p.tip === 'sfarsit') {
+      pag.append(div('sfarsit-prolog', '◆  ◆  ◆'));
+      return pag;
+    }
     if (p.tip === 'titlu') {
       const t = div('pagina-titlu-prolog');
       t.append(div('ornament-prolog', '◆'), div('titlu-carte-prolog', prolog().titlu?.[limba] || ''), div('ornament-prolog', '◆'));
@@ -183,13 +217,29 @@ export function creeazaPrologul(parinte, joc) {
     el.querySelector('.inapoi-carte').disabled = foaie <= 0 || inchisa;
     el.querySelector('.inainte-carte').disabled = foaie >= numarFoi() - 1 || inchisa;
     el.querySelector('.comuta-carte').textContent = LIMBI[limba].alta;
-    el.querySelector('.titlu-coperta-prolog') && (el.querySelector('.titlu-coperta-prolog').textContent = prolog().titlu?.[limba] || '');
-    el.querySelector('.indemn-prolog') && (el.querySelector('.indemn-prolog').textContent = LIMBI[limba].deschide);
-    // La recitire (din galerie) e doar „Închide”; la joc nou, „Sari peste”, iar la hartă „Începe povestea”
-    const gata = el.querySelector('.inchide-carte');
+    const titlu = el.querySelector('.titlu-coperta-prolog');
+    if (titlu) {
+      titlu.textContent = prolog().titlu?.[limba] || '';
+      // Un titlu lung (în engleză, pe două rânduri) urcă mai sus și e puțin mai mic, ca să nu atingă rombul (cerut de autor)
+      titlu.classList.toggle('titlu-lung', titlu.textContent.length > 18);
+    }
+    const indemn = el.querySelector('.indemn-prolog');
+    if (indemn) indemn.textContent = LIMBI[limba].deschide;
+    // La un joc nou: „Sari peste”, iar pe ultima foaie „Începe povestea”; la recitire (din galerie): „Închide”.
+    // Lângă el, muzica de fundal a cărții (cerut de autor): se oprește doar aici; în joc, sunetele merg ca de obicei.
+    // La hartă rămâne doar „Începe povestea”
     const ultima = !inchisa && foaie >= numarFoi() - 1;
+    const gata = el.querySelector('.inchide-carte');
     gata.textContent = recitire ? LIMBI[limba].inchide : ultima ? LIMBI[limba].incepe : LIMBI[limba].sari;
     gata.classList.toggle('incepe-prolog', !recitire && ultima);
+    el.querySelector('.sunet-prolog').textContent = faraMuzica ? LIMBI[limba].cu : LIMBI[limba].fara;
+    el.classList.toggle('la-harta', !inchisa && eHarta(foaie));
+  }
+
+  function comutaSunetul() {
+    faraMuzica = !faraMuzica;
+    joc.sunet.muzica(faraMuzica ? null : 'meniu');
+    butoane();
   }
 
   // Coperta se întoarce spre stânga în jurul cotorului, iar pe spatele ei e pagina cu titlul; cartea alunecă la
@@ -200,7 +250,11 @@ export function creeazaPrologul(parinte, joc) {
     joc.sunet.efect('pagina');
     const cadru = el.querySelector('.cadru-prolog');
     const coperta = el.querySelector('.coperta-prolog');
-    coperta.querySelector('.spate-coperta').replaceChildren(pagina(0));
+    // Pe dosul copertei e chiar jumătatea stângă a cărții deschise (imaginea ei și pagina cu titlul), nu o hârtie
+    // din CSS: la sfârșitul întoarcerii stă exact peste ea, fără o pată albă (cerut de autor)
+    const spateCarte = div('carte carte-prolog spate-carte-prolog');
+    spateCarte.append(pagina(0));
+    coperta.querySelector('.spate-coperta').replaceChildren(spateCarte);
     // Cartea alunecă la mijloc și se mărește cât se întoarce coperta; paginile apar pe la jumătatea întoarcerii
     cadru.classList.remove('inchisa');
     cadru.classList.add('se-deschide');
@@ -307,12 +361,13 @@ export function creeazaPrologul(parinte, joc) {
     recitire = !!opt.recitire;
     laFinal = opt.laFinal || null;
     inchisa = true;
+    faraMuzica = false;
     el = div('ecran-carte ecran-prolog inchisa');
     // Cadrul are mărimea și locul cărții deschise; coperta stă peste jumătatea dreaptă (cotorul e la mijloc)
     const cadru = div('cadru-prolog inchisa');
     const coperta = div('coperta-prolog');
     const fata = div('fata-coperta');
-    fata.append(imagineOptionala(IMAGINI_PROLOG.coperta, 'imagine-coperta-prolog'), div('titlu-coperta-prolog', prolog().titlu?.[limba] || ''));
+    fata.append(imagineOptionala(IMAGINI_PROLOG.coperta, 'imagine-coperta-prolog', () => fata.classList.add('cu-imagine')), div('titlu-coperta-prolog'));
     fata.onclick = deschideCartea;
     coperta.append(fata, div('spate-coperta'));
     cadru.append(div('carte carte-prolog'), coperta);
@@ -322,8 +377,13 @@ export function creeazaPrologul(parinte, joc) {
       div('indemn-prolog', LIMBI[limba].deschide),
       buton('inapoi-carte', '◀', () => intoarce(-1)),
       buton('inainte-carte', '▶', () => intoarce(1)),
+      // Butoanele de jos stau unul lângă altul, la mijloc; cele ascunse (la hartă) nu lasă loc gol
+      Object.assign(div('butoane-prolog'), {}),
+    );
+    el.querySelector('.butoane-prolog').append(
       buton('buton-mic-meniu comuta-carte', '', schimbaLimba),
       buton('buton-mic-meniu inchide-carte', '', inchide),
+      buton('buton-mic-meniu sunet-prolog', '', comutaSunetul),
     );
     parinte.append(el);
     addEventListener('keydown', taste, true);
