@@ -220,8 +220,6 @@ export function creeazaPrologul(parinte, joc) {
   }
 
   function butoane() {
-    el.querySelector('.inapoi-carte').disabled = foaie <= 0 || inchisa;
-    el.querySelector('.inainte-carte').disabled = foaie >= numarFoi() - 1 || inchisa;
     el.querySelector('.comuta-carte').textContent = LIMBI[limba].alta;
     const titlu = el.querySelector('.titlu-coperta-prolog');
     if (titlu) {
@@ -397,8 +395,7 @@ export function creeazaPrologul(parinte, joc) {
       imagineOptionala(IMAGINI_PROLOG.masa, 'masa-prolog'),
       cadru,
       div('indemn-prolog', LIMBI[limba].deschide),
-      buton('inapoi-carte', '◀', () => intoarce(-1)),
-      buton('inainte-carte', '▶', () => intoarce(1)),
+      // Fără săgeți (cerut de autor): paginile se dau cu un clic pe ele (sau cu tastele ← →)
       // Butoanele de jos stau unul lângă altul, la mijloc; cele ascunse (la hartă) nu lasă loc gol
       Object.assign(div('butoane-prolog'), {}),
     );
