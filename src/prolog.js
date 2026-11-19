@@ -89,7 +89,7 @@ export function creeazaPrologul(parinte, joc) {
     const masura = () => masuri[rezultat.length % 2];
     const incape = (m) => m.scrollHeight <= m.clientHeight + 1;
     // Textul curge de la un capitol la altul, ca într-o carte tipărită (cerut de autor): fără pagini goale sau cu un
-    // singur cuvânt; un capitol nou începe sub cel de dinainte dacă mai e loc pentru titlu și primele rânduri
+    // singur cuvânt; un capitol nou începe sub cel de dinainte doar dacă acela s-a terminat în prima parte a paginii
     let m = null;
     let capitolPagina = null;
     const paginaNoua = () => {
@@ -109,9 +109,13 @@ export function creeazaPrologul(parinte, joc) {
         div('titlu-capitol-prolog', c.titlu?.[limba] || ''),
       ];
       if (m.childNodes.length) {
+        // Dacă textul de dinainte trece de aproape jumătatea paginii, capitolul nou începe pe pagina următoare (cerut de
+        // autor); sub un capitol care s-a terminat sus pe pagină, începe chiar acolo, ca să nu rămână pagina goală
+        const ultim = m.lastElementChild;
+        const folosit = ultim ? ultim.offsetTop + ultim.offsetHeight - m.offsetTop : 0;
         const proba = [...antet(), Object.assign(document.createElement('p'), { textContent: (paragrafe[0] || '').slice(0, 140) })];
         m.append(...proba);
-        const incapeAici = incape(m);
+        const incapeAici = incape(m) && folosit < m.clientHeight * 0.35;
         proba.forEach((n) => n.remove());
         if (!incapeAici) inchidePagina();
       }

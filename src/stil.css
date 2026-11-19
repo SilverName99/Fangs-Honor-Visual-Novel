@@ -3826,7 +3826,8 @@ svg.zone {
 }
 .folio-prolog {
   position: absolute;
-  bottom: 24px;
+  /* Puțin mai sus de marginea hârtiei (cerut de autor) */
+  bottom: 36px;
   text-align: center;
   font: italic 22px Georgia, serif;
   color: #7a5a2a;
