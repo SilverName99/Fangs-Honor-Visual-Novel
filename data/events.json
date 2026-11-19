@@ -1608,6 +1608,54 @@
       },
       "dialog": "roderick_steag",
       "_nota": "Decis de autor: seara, Roderick și Vale aduc steagul satului de pe câmpul bătăliei. Ales de Claude: o oră și jumătate; Vale ajunge apoi în camera lui."
+    },
+    {
+      "id": "lemne_iarna_1",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Lemne pentru iarnă: Hanna",
+      "grup": "Lemne pentru iarnă",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "lemne_iarna_1",
+      "_nota": "Decis de autor: Vale duce 5 lemne la Hanna. Ales de Claude: o oră."
+    },
+    {
+      "id": "lemne_iarna_2",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Lemne pentru iarnă: Ilse",
+      "grup": "Lemne pentru iarnă",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "lemne_iarna_2",
+      "_nota": "Decis de autor: Vale duce 5 lemne la Ilse. Ales de Claude: o oră."
+    },
+    {
+      "id": "lemne_iarna_3",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Lemne pentru iarnă: Greta",
+      "grup": "Lemne pentru iarnă",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "lemne_iarna_3",
+      "_nota": "Decis de autor: la ultima casă, Vale stivuiește lemnele, iar copiii se uită la el. Ales de Claude: o oră."
+    },
+    {
+      "id": "miriam_nastere",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Miriam: noaptea nașterii",
+      "grup": "Noaptea nașterii",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "miriam_nastere",
+      "_nota": "Decis de autor: Vale o duce pe Bătrâna Morwen la Hanna, noaptea, ferindu-se de orci; copilul se naște în zori. Ales de Claude: la sfârșit e ora 6 dimineața, iar Vale ajunge în camera lui."
     }
   ]
 }

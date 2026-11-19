@@ -1834,13 +1834,33 @@
           "nume": "Coliba ierbăresei",
           "imagine": "locations/coliba_interior.png",
           "incuiat": {
-            "_nota": "Ales de Claude: noaptea bătrâna doarme.",
+            "_nota": "Ales de Claude: noaptea bătrâna doarme. Decis de autor: în noaptea nașterii („Noaptea nașterii”), până se luminează, Vale bate la ușă și o trezește.",
             "conditii": {
-              "nu": {
-                "moment": [
-                  "noaptea"
-                ]
-              }
+              "oricare": [
+                {
+                  "nu": {
+                    "moment": [
+                      "noaptea"
+                    ]
+                  }
+                },
+                {
+                  "stare": {
+                    "nastere": "acceptat"
+                  },
+                  "misiune": {
+                    "miriam_nastere": "inceputa"
+                  },
+                  "nu": {
+                    "noapteaDupa": {
+                      "marcaj": "nastere_chemat",
+                      "de": "05:00",
+                      "pana": "05:01",
+                      "cand": "dupa"
+                    }
+                  }
+                }
+              ]
             },
             "mesaj": "E întuneric la geam. Bătrâna doarme; mă întorc mâine.",
             "mesajIesire": "Bătrâna Morwen stinge opaițul. E vremea să plec."

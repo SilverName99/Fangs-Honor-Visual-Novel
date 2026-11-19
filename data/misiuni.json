@@ -2825,6 +2825,464 @@
         }
       },
       "_nota": "Decis de autor: steagul satului zace pe câmpul bătăliei; Roderick și Vale îl aduc noaptea (2 imagini), Miriam îl coase a doua zi (o imagine), apoi Roderick îl primește (o imagine) și îl ține; în lupta finală luptă cu steagul în mână (varianta „steag” din npcs.json). +1 la Miriam și la Roderick. După „Cina în familie” (ales de Claude)."
+    },
+    {
+      "id": "miriam_lemne",
+      "titlu": "Lemne pentru iarnă",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "lemne_iarna": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc. Mama m-a rugat să le duc câte cinci lemne. I-am spus că n-am timp."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "lemne_iarna": "ratat"
+            }
+          },
+          "text": "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc. Mama m-a rugat să le duc câte cinci lemne, în trei zile. N-am apucat. A venit gerul înaintea mea."
+        },
+        "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc: Hanna, care așteaptă un copil, Ilse, de la fântână, și Greta, cu cei doi copii. Mama m-a rugat să le duc câte cinci lemne. Am trei zile."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: la o zi după „Pâinea văduvelor”, dimineața, cât e Miriam în bucătărie.",
+        "text": "Mamă, ți-e frig?",
+        "nod": "lemne_o1",
+        "conditii": {
+          "misiuneTerminata": {
+            "miriam_paine": 1
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "05:00",
+            "max": "10:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Duc cinci lemne la Hanna",
+          "gata": {
+            "existaStare": "lemne_casa_1"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "lemne_iarna": {
+                    "pesteZile": 3
+                  }
+                }
+              },
+              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+            },
+            "Strâng cinci lemne din pădure și merg cu ele la mama. Ea îmi spune unde să le duc."
+          ],
+          "predare": {
+            "text": [
+              {
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                "text": "Mamă... a venit gerul?"
+              },
+              "Am cinci lemne, mamă."
+            ],
+            "nod": [
+              {
+                "nod": "lemne_r1",
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "lemne_p1"
+              }
+            ],
+            "conditii": {
+              "oricare": [
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "subZile": 3
+                    }
+                  },
+                  "areCate": {
+                    "lemn": 5
+                  },
+                  "ora": {
+                    "max": "21:59"
+                  }
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre lemne...",
+            "nod": "lemne_ind"
+          }
+        },
+        {
+          "text": "Duc cinci lemne la Ilse, de la fântână",
+          "gata": {
+            "existaStare": "lemne_casa_2"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "lemne_iarna": {
+                    "pesteZile": 3
+                  }
+                }
+              },
+              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+            },
+            "Încă cinci lemne din pădure, apoi la mama."
+          ],
+          "predare": {
+            "text": [
+              {
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                "text": "Mamă... a venit gerul?"
+              },
+              "Am încă cinci, mamă."
+            ],
+            "nod": [
+              {
+                "nod": "lemne_r2",
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "lemne_p2"
+              }
+            ],
+            "conditii": {
+              "oricare": [
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "subZile": 3
+                    }
+                  },
+                  "areCate": {
+                    "lemn": 5
+                  },
+                  "ora": {
+                    "max": "21:59"
+                  }
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre lemne...",
+            "nod": "lemne_ind"
+          }
+        },
+        {
+          "text": "Duc cinci lemne la Greta, cea cu doi copii",
+          "gata": {
+            "existaStare": "lemne_casa_3"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "lemne_iarna": {
+                    "pesteZile": 3
+                  }
+                }
+              },
+              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+            },
+            "Ultimele cinci lemne, apoi la mama."
+          ],
+          "predare": {
+            "text": [
+              {
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                "text": "Mamă... a venit gerul?"
+              },
+              "Ultimele cinci, mamă."
+            ],
+            "nod": [
+              {
+                "nod": "lemne_r3",
+                "conditii": {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "lemne_p3"
+              }
+            ],
+            "conditii": {
+              "oricare": [
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "pesteZile": 3
+                    }
+                  }
+                },
+                {
+                  "trecut": {
+                    "lemne_iarna": {
+                      "subZile": 3
+                    }
+                  },
+                  "areCate": {
+                    "lemn": 5
+                  },
+                  "ora": {
+                    "max": "21:59"
+                  }
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre lemne...",
+            "nod": "lemne_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1. Trei case au foc la iarnă.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: trei văduve n-au lemne de foc; Vale duce câte 5 lemne la fiecare, în 3 zile (mini-jocul lemnelor), câte o imagine la fiecare casă; la ultima, Vale stivuiește lemnele, iar copiii se uită la el. Refuzul sau cele 3 zile trecute = ratată, fără +1 (decis de autor: penalizarea pentru cine nu ajută). Livrările pornesc de la mama, ca să știe unde (ales de Claude)."
+    },
+    {
+      "id": "miriam_nastere",
+      "titlu": "Noaptea nașterii",
+      "dela": "miriam",
+      "dialog": "miriam",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "nastere": "gata"
+            }
+          },
+          "text": "CIORNĂ: Am adus-o pe Bătrâna Morwen la Hanna, noaptea, pe lângă orci. În zori s-a născut Owen, primul copil din Baum de la bătălie."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "nastere": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună prea devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am vrut să ies pe întuneric. S-a dus ea, singură."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "nastere": "ratat"
+            }
+          },
+          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună prea devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am adus-o la timp."
+        },
+        "CIORNĂ: Hanna, văduva lui Owen, naște în noaptea asta, cu o lună prea devreme. Mama s-a dus la ea și m-a trimis după Bătrâna Morwen, la Marginea satului. Trebuie s-o aduc până se luminează."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: după „Lemne pentru iarnă” (dusă la capăt de o zi sau ratată), seara, cât e Miriam în bucătărie, până la 22 (ca Vale să aibă timp); Marginea satului trebuie să fie deschisă (după eliberarea lui Finn).",
+        "text": "Mamă? Unde pleci la ora asta?",
+        "nod": "nastere_o1",
+        "conditii": {
+          "oricare": [
+            {
+              "misiuneTerminata": {
+                "miriam_lemne": 1
+              }
+            },
+            {
+              "misiune": {
+                "miriam_lemne": "ratata"
+              }
+            }
+          ],
+          "misiune": {
+            "finn_eliberare": "terminata"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "18:00",
+            "max": "21:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Aduc Bătrâna Morwen la Hanna, până se luminează",
+          "la": "ierbareasa",
+          "gata": {
+            "stare": {
+              "nastere": "gata"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "stare": {
+                  "nastere": "acceptat"
+                },
+                "misiune": {
+                  "miriam_nastere": "inceputa"
+                },
+                "noapteaDupa": {
+                  "marcaj": "nastere_chemat",
+                  "de": "05:00",
+                  "pana": "05:01",
+                  "cand": "dupa"
+                }
+              },
+              "text": "S-a luminat. Am ajuns prea târziu. O întreb pe mama sau pe bătrână cum a fost."
+            },
+            "Coliba Bătrânei Morwen e la Marginea satului. În noaptea asta bat la ușă și o trezesc, dacă trebuie. Până la 5 dimineața."
+          ],
+          "predare": {
+            "text": "Bunico, mama m-a trimis după dumneata!",
+            "conditii": {
+              "stare": {
+                "nastere": "acceptat"
+              },
+              "misiune": {
+                "miriam_nastere": "inceputa"
+              },
+              "nu": {
+                "noapteaDupa": {
+                  "marcaj": "nastere_chemat",
+                  "de": "05:00",
+                  "pana": "05:01",
+                  "cand": "dupa"
+                }
+              }
+            },
+            "nod": [
+              {
+                "nod": "nastere_m0",
+                "conditii": {
+                  "moment": [
+                    "noaptea"
+                  ]
+                }
+              },
+              {
+                "nod": "nastere_m1"
+              }
+            ]
+          },
+          "indiciu": {
+            "text": [
+              {
+                "conditii": {
+                  "stare": {
+                    "nastere": "acceptat"
+                  },
+                  "misiune": {
+                    "miriam_nastere": "inceputa"
+                  },
+                  "noapteaDupa": {
+                    "marcaj": "nastere_chemat",
+                    "de": "05:00",
+                    "pana": "05:01",
+                    "cand": "dupa"
+                  }
+                },
+                "text": "Bunico... ce s-a întâmplat cu Hanna?"
+              },
+              "Bunico..."
+            ],
+            "nod": [
+              {
+                "nod": "nastere_rm1",
+                "conditii": {
+                  "stare": {
+                    "nastere": "acceptat"
+                  },
+                  "misiune": {
+                    "miriam_nastere": "inceputa"
+                  },
+                  "noapteaDupa": {
+                    "marcaj": "nastere_chemat",
+                    "de": "05:00",
+                    "pana": "05:01",
+                    "cand": "dupa"
+                  }
+                }
+              },
+              {
+                "nod": "nastere_ind"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea mamei +1. Primul copil născut în Baum de la bătălie.",
+        "efecte": {
+          "relatie": {
+            "miriam": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Hanna, o văduvă (bărbatul ei, Owen, e unul dintre cei 23), naște noaptea; Miriam se duce la ea și îl trimite pe Vale după Bătrâna Morwen, la Marginea satului, ferindu-se de orci; 3 imagini; în zori se naște copilul, care primește numele tatălui. Refuzul sau bătrâna neadusă până la 5 dimineața = ratată, fără +1. Cât e misiunea, coliba nu e încuiată noaptea, iar Miriam e la Hanna până la 7 (ales de Claude)."
     }
   ]
 }
