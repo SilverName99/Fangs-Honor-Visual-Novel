@@ -2642,6 +2642,35 @@
         }
       },
       {
+        "_nota": "Misiunea „Noaptea nașterii”: seara, fata vecinei bate la ușă chiar când Vale vorbește cu mama, deci discuția începe direct cu vestea (nu cu salutul de la cină).",
+        "nod": "nastere_o1",
+        "conditii": {
+          "oricare": [
+            {
+              "misiuneTerminata": {
+                "miriam_lemne": 1
+              }
+            },
+            {
+              "misiune": {
+                "miriam_lemne": "ratata"
+              }
+            }
+          ],
+          "misiune": {
+            "finn_eliberare": "terminata"
+          },
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "18:00",
+            "max": "21:59"
+          },
+          "nu": {
+            "existaStare": "nastere"
+          }
+        }
+      },
+      {
         "nod": "cina",
         "conditii": {
           "ora": {
@@ -3980,7 +4009,8 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama se întoarce spre foc și nu mai spune nimic. Tăcerea ei e mai grea decât orice ceartă."
+        "text": "Mama se întoarce spre foc și nu mai spune nimic. Tăcerea ei e mai grea decât orice ceartă.",
+        "sfarsit": true
       },
       "lemne_ind": {
         "vorbitor": "miriam",
@@ -4104,20 +4134,20 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama își leagă șalul pe cap cu mâini grăbite. Pe masă, cina a rămas neatinsă.",
+        "text": "Abia mă așez la masă, când cineva bate grăbit în ușă. E fata vecinei Hannei, fără suflare. Îi spune ceva mamei la ureche, iar mama își ia șalul din cui, cu mâini grăbite.",
         "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Noaptea nașterii” (decis de autor: o văduvă naște noaptea; Vale o aduce pe Bătrâna Morwen până se luminează, ferindu-se de orci; copilul primește numele tatălui; se poate rata).",
         "urmator": "nastere_o2"
       },
       "nastere_o2": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Mamă? Unde pleci la ora asta?",
+        "text": "Mamă? Ce s-a întâmplat?",
         "urmator": "nastere_o3"
       },
       "nastere_o3": {
         "vorbitor": "miriam",
         "emotie": "speriat",
-        "text": "A venit fata vecinei, în fugă. Hanna... a venit vremea copilului. Prea devreme, Vale. Cu o lună prea devreme.",
+        "text": "Hannei i-a venit sorocul. Prea devreme, Vale. Cu o lună mai devreme.",
         "urmator": "nastere_o4"
       },
       "nastere_o4": {
@@ -4162,7 +4192,8 @@
       "nastere_o6": {
         "vorbitor": "miriam",
         "emotie": "speriat",
-        "text": "Până se luminează, Vale. Te rog."
+        "text": "Până se luminează, Vale. Te rog.",
+        "sfarsit": true
       },
       "nastere_o_nu": {
         "vorbitor": "miriam",
@@ -4173,21 +4204,15 @@
       "nastere_o_nu2": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Atunci mă duc eu după ea, după ce o las pe Hanna cu fata vecinei. Și o să alerg cât pot.",
+        "text": "Atunci mă duc eu după ea, dar întâi o las pe Hanna cu fata vecinei. Și o să alerg cât pot.",
         "urmator": "nastere_o_nu3"
       },
       "nastere_o_nu3": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pleacă fără să se uite înapoi. Ușa rămâne deschisă în urma ei, iar frigul intră în bucătărie."
-      },
-      "nastere_m0": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Bat în ușa colibei până se aprinde un opaiț la geam.",
-        "urmator": "nastere_m1"
+        "text": "Pleacă fără să se uite înapoi. Ușa rămâne deschisă în urma ei, iar frigul intră în bucătărie.",
+        "sfarsit": true
       },
       "nastere_m1": {
         "vorbitor": "vale",
@@ -4231,7 +4256,7 @@
       "nastere_rm2": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Am ajuns târziu. Copilul trăiește, și Hanna la fel. Dar a fost aproape, băiete. Foarte aproape.",
+        "text": "Am ajuns târziu. Copilul trăiește, și Hanna la fel. Dar puțin a lipsit, băiete. Foarte puțin.",
         "urmator": "nastere_rm3"
       },
       "nastere_rm3": {
@@ -4269,7 +4294,7 @@
       "nastere_rmi4": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Trăiesc amândoi. Dar puteau să nu.",
+        "text": "Trăiesc amândoi. Dar puțin a lipsit să-i pierdem pe amândoi.",
         "urmator": "nastere_rmi5"
       },
       "nastere_rmi5": {
@@ -4294,7 +4319,7 @@
       "d_lemne_da": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Greta zice că cei mici dorm acum lângă sobă, toți trei într-un pat. N-a mai văzut-o nimeni zâmbind de la bătălie. Ieri a zâmbit.",
+        "text": "Greta zice că cei mici dorm acum lângă sobă, amândoi într-un pat, lipiți de ea. N-a mai văzut-o nimeni zâmbind de la bătălie. Acum zâmbește.",
         "_nota": "CIORNĂ (Claude): după „Lemne pentru iarnă”, dusă la capăt."
       },
       "d_lemne_nu": {
@@ -4312,8 +4337,19 @@
       "d_nastere_nu": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Hanna se ridică greu din pat. Bătrâna zice că a fost aproape. Copilul trăiește... dar n-a fost nimeni lângă ea când a avut nevoie.",
+        "text": "Hanna se ridică greu din pat. Bătrâna zice că puțin a lipsit. Copilul trăiește... dar bătrâna n-a ajuns la ea când avea mai mare nevoie.",
         "_nota": "CIORNĂ (Claude): după „Noaptea nașterii”, ratată."
+      },
+      "d_lemne_nu2": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Am dus eu niște vreascuri la Greta, în șorț. Atât am putut căra.",
+        "_nota": "CIORNĂ (Claude): după „Lemne pentru iarnă”, ratată după ce Hanna primise lemnele."
+      },
+      "lemne_ind_tarziu": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "E prea târziu să mai bați la ușile oamenilor, Vale. Du-le mâine dimineață."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -4341,7 +4377,19 @@
         "conditii": {
           "misiune": {
             "miriam_lemne": "ratata"
+          },
+          "nu": {
+            "existaStare": "lemne_casa_1"
           }
+        }
+      },
+      {
+        "nod": "d_lemne_nu2",
+        "conditii": {
+          "misiune": {
+            "miriam_lemne": "ratata"
+          },
+          "existaStare": "lemne_casa_1"
         }
       },
       {
@@ -10419,6 +10467,47 @@
     "meniu": true,
     "start": [
       {
+        "nod": "nastere_trezita",
+        "conditii": {
+          "stare": {
+            "nastere": "acceptat"
+          },
+          "misiune": {
+            "miriam_nastere": "inceputa"
+          },
+          "nu": {
+            "noapteaDupa": {
+              "marcaj": "nastere_chemat",
+              "de": "05:00",
+              "pana": "05:01",
+              "cand": "dupa"
+            }
+          },
+          "moment": [
+            "noaptea"
+          ]
+        }
+      },
+      {
+        "nod": "nastere_seara",
+        "conditii": {
+          "stare": {
+            "nastere": "acceptat"
+          },
+          "misiune": {
+            "miriam_nastere": "inceputa"
+          },
+          "nu": {
+            "noapteaDupa": {
+              "marcaj": "nastere_chemat",
+              "de": "05:00",
+              "pana": "05:01",
+              "cand": "dupa"
+            }
+          }
+        }
+      },
+      {
         "nod": "prezentare",
         "conditii": {
           "nuStare": {
@@ -10567,6 +10656,36 @@
         "emotie": "normal",
         "text": "Băiatul Hannei are plămâni buni. Așa țipa și tatăl lui, când l-am adus pe lume, acum douăzeci și ceva de ani.",
         "_nota": "CIORNĂ (Claude): după „Noaptea nașterii”, dusă la capăt."
+      },
+      "nastere_trezita": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bat în ușa colibei până se aprinde un opaiț la geam. Bătrâna deschide, cu un șal aruncat peste cămașa de noapte.",
+        "urmator": "nastere_trezita2",
+        "efecte": {
+          "stare": {
+            "cunoscut_ierbareasa": "da"
+          }
+        },
+        "_nota": "CIORNĂ (Claude). „Noaptea nașterii”: după 23, Vale o trezește pe bătrână."
+      },
+      "nastere_trezita2": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Un Lightfinder, la ora asta? Cine a murit?"
+      },
+      "nastere_seara": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Intru în colibă fără să bat, cu suflarea tăiată. Bătrâna ridică ochii de la ierburi.",
+        "efecte": {
+          "stare": {
+            "cunoscut_ierbareasa": "da"
+          }
+        },
+        "_nota": "CIORNĂ (Claude). „Noaptea nașterii”: seara, bătrâna e trează."
       }
     },
     "vorbeste": [
@@ -11656,7 +11775,7 @@
       "l3": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Hal. A ținut poarta până n-a mai putut ridica scutul. Avea nepoți cât tine.",
+        "text": "Hal. A ținut poarta până n-a mai putut ridica scutul. Avea vârsta ta, iar taică-su încă îl așteaptă pe bancă.",
         "urmator": "l4"
       },
       "l4": {
@@ -14557,7 +14676,7 @@
         "nume": "Săteanca",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Pâine. Mulțumesc. Dar pâinea nu mi-l aduce înapoi.",
+        "text": "Pâine. Dar pâinea nu mi-l aduce înapoi.",
         "urmator": "p23"
       },
       "p23": {
@@ -14907,7 +15026,7 @@
         "nume": "Hanna",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Owen tăia lemne pentru toată ulița. Zicea că până vine copilul îi face un pătuț din lemn de cireș. A rămas doar scândura, în șopron.",
+        "text": "Owen tăia lemne pentru toată ulița. Zicea că, până vine copilul, îi face un pătuț din lemn de cireș. A rămas doar scândura, în șopron.",
         "urmator": "h6"
       },
       "h6": {
@@ -15050,14 +15169,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Cei mici nu se mișcă din prag până nu pun și ultimul lemn. Când termin, băiatul vine și pune și el unul, cel mai mic, în vârful stivei. Ca să fie și al lui.",
+        "text": "Cei mici nu se mișcă din prag cât stivuiesc lemnele. Când mai rămâne unul, băiatul vine și îl pune el, cel mai mic, în vârful stivei. Ca să fie și al lui.",
         "urmator": "g8"
       },
       "g8": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mă întorc acasă cu spinarea frântă și cu mâinile pline de așchii. Și n-am mai fost așa de mulțumit de mult.",
+        "text": "Mă întorc acasă cu spinarea frântă și cu mâinile pline de așchii. Și de mult n-am mai fost atât de mulțumit.",
         "efecte": {
           "stare": {
             "lemne_casa_3": "da"
@@ -15090,7 +15209,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "La capătul uliței trece o torță. Doi orci, în rondul de noapte. Ne lipim de gardul unei curți și nu respirăm până nu se pierde lumina după colț.",
+        "text": "La capătul uliței se aprinde o torță. Doi orci. Ne lipim de gardul unei curți și nu respirăm până nu se pierde lumina după colț.",
         "urmator": "n4"
       },
       "n4": {
@@ -15123,21 +15242,21 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Stau pe prag toată noaptea, cu spatele lipit de ușă. Aud gemetele Hannei, vocea mamei, care îi spune să respire, și vocea bătrânei, care nu se grăbește niciodată.",
+        "text": "Stau pe prag până se crapă de ziuă, cu spatele lipit de ușă. Aud gemetele Hannei, vocea mamei, care îi spune să respire, și vocea bătrânei, care nu se grăbește niciodată.",
         "urmator": "n9"
       },
       "n9": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "O dată, pe la miezul nopții, trece iar torța orcilor. Se oprește în dreptul casei. Îmi țin răsuflarea. Apoi pleacă mai departe.",
+        "text": "O dată, torța orcilor trece iar și se oprește în dreptul casei. Îmi țin răsuflarea. Apoi pleacă mai departe.",
         "urmator": "n10"
       },
       "n10": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și apoi, când cerul se face cenușiu peste acoperișuri... un țipăt subțire, supărat pe toată lumea.",
+        "text": "Iar când cerul se face cenușiu peste acoperișuri... un țipăt subțire, supărat pe toată lumea.",
         "urmator": "n11"
       },
       "n11": {
@@ -15183,7 +15302,7 @@
       "n17": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "O să-l lăsăm noi, Morwen.",
+        "text": "O să avem noi grijă să crească, Morwen.",
         "urmator": "n18"
       },
       "n18": {
@@ -15197,7 +15316,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mergem acasă în zori, amândoi, fără să vorbim. Pentru prima oară de mult, tăcerea nu doare.",
+        "text": "Mergem acasă în zori, amândoi, fără să vorbim. Pentru prima oară după multă vreme, tăcerea nu doare.",
         "efecte": {
           "stare": {
             "nastere": "gata"

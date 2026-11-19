@@ -989,9 +989,11 @@ const joc = {
       inainte = null;
     }
     if (!inainte) return false;
-    stare = inainte;
+    // Întâi se închide ce era deschis: închiderea discuției șterge „reluare” din stare, iar dacă stare era deja cea
+    // de dinainte, se pierdea chiar alegerea la care trebuia să revină discuția
     ecranInventar.inchide();
     dialog.inchide();
+    stare = inainte;
     salveaza();
     afiseaza();
     // O misiune pornită în mijlocul unei discuții (șoimul Kaiei, convoiul): discuția revine pe loc la alegerea de

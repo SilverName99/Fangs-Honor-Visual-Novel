@@ -111,7 +111,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 7. ✅ **Vorbele din somn** (+1 și la Elian): după al doilea vis, dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”.
 8. ✅ **Steagul satului** (+1 și la Roderick): după „Cina în familie”, seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”.
 9. ✅⚠️ **Lemne pentru iarnă**: la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. Se ratează dacă refuzi sau dacă treci de cele 3 zile.
-10. ✅⚠️ **Noaptea nașterii**: după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn, seara (18–22), cât mama e în bucătărie: „Mamă? Unde pleci la ora asta? !”. Se ratează dacă refuzi sau dacă nu aduci bătrâna până la 5 dimineața.
+10. ✅⚠️ **Noaptea nașterii**: după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn, seara (18–22), când vorbești cu mama în bucătărie, fata vecinei bate la ușă (pe mama: „!”). Se ratează dacă refuzi sau dacă n-o aduci pe bătrână până la 5 dimineața.
 11. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut; nu dă încredere, decis de autor).
 
 **Bram (fierarul)**
@@ -347,7 +347,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ### ✅⚠️ Lemne pentru iarnă (se poate rata)
 - **Pornește** (ales de Claude): la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. E brumă pe geam; bătrânii zic că în trei zile vine gerul cel mare. Trei văduve n-au lemne de foc (decis de autor): **Hanna**, nevasta lui Owen, care așteaptă un copil; **Ilse**, femeia de la fântână (cea cu „Dacă ar mai fi bărbați în sat...”); **Greta**, văduva cu cei doi copii (amândouă din „Pâinea văduvelor”). Numele sunt ciorne de Claude.
 - **„Le duc eu, mamă.”** pornește misiunea; **„N-am timp de asta, mamă.”** o **ratează** pe loc (decis de autor: cine nu ajută pierde punctul): „Tatăl tău n-a întrebat niciodată dacă are timp, când era vorba de un vecin.”
-- **Pașii** (decis de autor: câte 5 lemne la fiecare, în 3 zile): lemnele le aduni din pădure („Adună lemne”, cu mini-jocul). Cu 5 lemne, la mama (oriunde e ea, până la 22): „Am cinci lemne, mamă.” → ea îți spune unde să le duci → „Mă duc.” → **peste o imagine** (ales de Claude: câte una la fiecare casă), Vale le duce: întâi la Hanna, apoi la Ilse, apoi la Greta, unde le stivuiește sub streașină, iar copiii se uită la el (decis de autor). Fiecare casă: o oră. Sătenii n-au portret, doar numele, ca la pâine.
+- **Pașii** (decis de autor: câte 5 lemne la fiecare, în 3 zile): lemnele le aduni din pădure („Adună lemne”, cu mini-jocul). Cu 5 lemne, la mama (oriunde e ea, până la 22; mai târziu îți spune să le duci mâine): „Am cinci lemne, mamă.” → ea îți spune unde să le duci → „Mă duc.” → **peste o imagine** (ales de Claude: câte una la fiecare casă), Vale le duce: întâi la Hanna, apoi la Ilse, apoi la Greta, unde le stivuiește sub streașină, iar copiii se uită la el (decis de autor). Fiecare casă: o oră. Sătenii n-au portret, doar numele, ca la pâine.
 - **Ratată și dacă trec cele 3 zile** (3 × 24 de ore de când ai acceptat): la mama apare „Mamă... a venit gerul?”, iar ea îți spune cum s-au descurcat (cine a primit lemne și cine și-a ars scaunele).
 - **Recompensa:** încrederea mamei **+1**. După, la „Ce mai faci, mamă?”, o replică despre Greta (sau, dacă ai ratat-o, despre vreascurile duse de mama în șorț).
 - **Imagini:** `events/lemne_iarna_1.png` (la Hanna), `events/lemne_iarna_2.png` (la Ilse), `events/lemne_iarna_3.png` (la Greta, cu copiii), galeria: „Lemne pentru iarnă”.
@@ -355,23 +355,24 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici**
 1. Termină „Pâinea văduvelor”, apoi „Ziua următoare”. Dimineața, în bucătărie: „Mamă, ți-e frig?” → „Le duc eu, mamă.”.
 2. F2 → Obiect: 5 lemne → la mama: „Am cinci lemne, mamă.” → „Mă duc.” → imaginea de la Hanna. De încă două ori, pentru Ilse și Greta → +1 la mama.
-3. Ratarea: pornește-o din nou (F2 → Resetează), acceptă, apoi „Ziua următoare” de 3 ori → la mama: „Mamă... a venit gerul?”. Sau refuz-o de la început.
+3. Ratarea: pornește-o din nou (F2 → Resetează), acceptă, apoi „Ziua următoare” de 4 ori → la mama: „Mamă... a venit gerul?”.
+4. Amândouă misiunile (și „Noaptea nașterii”) se pornesc doar din discuția cu mama, nu din F2 → „Pornește”: alegerea din discuție pune și ora de la care curge termenul. Sau refuză-o de la început.
 
 ### ✅⚠️ Noaptea nașterii (se poate rata)
-- **Pornește** (ales de Claude): după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn (Marginea satului e deschisă), seara (18–22), cât mama e în bucătărie: „Mamă? Unde pleci la ora asta? !”. A venit fata vecinei în fugă: **Hanna naște, cu o lună prea devreme**. Mama se duce la ea și îl trimite pe Vale după **Bătrâna Morwen**, la Marginea satului, pe drumul din spate, ferindu-se de orci (decis de autor).
+- **Pornește** (ales de Claude): după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn (Marginea satului e deschisă), seara (18–22), când vorbești cu mama în bucătărie (pe ea e „!”), fata vecinei bate grăbită la ușă: **Hanna naște, cu o lună mai devreme**. Mama se duce la ea și îl trimite pe Vale după **Bătrâna Morwen**, la Marginea satului, pe drumul din spate, ferindu-se de orci (decis de autor).
 - **„Alerg după ea.”** pornește misiunea; **„Mamă, e noapte. Orcii...”** o **ratează** pe loc: mama se duce singură. În noaptea aceea, mama e la Hanna (nu e acasă până la 7 dimineața).
-- **Pasul** (decis de autor: „până se luminează”): la Bătrâna Morwen, **până la 5 dimineața**: „Bunico, mama m-a trimis după dumneata!”. În noaptea asta **coliba nu e încuiată**, iar după 23 bătrâna e trează (Vale bate la ușă până se aprinde un opaiț). → „Să mergem.” → **peste 3 imagini**: drumul pe întuneric, cu felinarul stins când trece torța orcilor; casa Hannei, cu mama și bătrâna lângă pat, iar Vale pe prag toată noaptea; în zori, mama iese cu copilul în brațe. **Copilul primește numele tatălui lui, Owen** (decis de autor; numele e ciornă), unul dintre cei 23: primul copil născut în Baum de la bătălie. Mama: „O să-l lăsăm noi să crească, Morwen.” La sfârșit e ora 6 dimineața, iar Vale ajunge în camera lui.
-- **Ratată și dacă nu aduci bătrâna până la 5:** a doua zi, la mama („Mamă... cum a fost la Hanna?”) sau la bătrână („Bunico... ce s-a întâmplat cu Hanna?”): fata vecinei a alergat după Morwen în zori, copilul s-a născut greu și Hanna aproape s-a dus; trăiesc amândoi.
+- **Pasul** (decis de autor: „până se luminează”): la Bătrâna Morwen, **până la 5 dimineața**: „Bunico, mama m-a trimis după dumneata!”. În noaptea asta **coliba nu e încuiată**, iar după 23 Vale o trezește pe bătrână (discuția începe cu bătaia în ușă). → „Să mergem.” → **peste 3 imagini**: drumul pe întuneric, cu felinarul stins când trece torța orcilor; casa Hannei, cu mama și bătrâna lângă pat, iar Vale pe prag toată noaptea; în zori, mama iese cu copilul în brațe. **Copilul primește numele tatălui lui, Owen**, unul dintre cei 23 (decis de autor; numele e ciornă). E primul copil născut în Baum de la bătălie. Mama: „O să avem noi grijă să crească, Morwen.” La sfârșit e ora 6 dimineața, iar Vale ajunge în camera lui.
+- **Ratată și dacă n-o aduci pe bătrână până la 5:** a doua zi, la mama („Mamă... cum a fost la Hanna?”) sau la bătrână („Bunico... ce s-a întâmplat cu Hanna?”): fata vecinei a alergat după Morwen în zori, copilul s-a născut greu și Hanna aproape s-a dus; trăiesc amândoi.
 - **Recompensa:** încrederea mamei **+1**. După, replici noi la mama și la bătrână, despre micul Owen.
 - **Imagini:** `events/nastere_1.png` (Vale și bătrâna pe ulița întunecată), `events/nastere_2.png` (casa Hannei, noaptea), `events/nastere_3.png` (în zori, mama cu copilul), galeria: „Noaptea nașterii”.
 
 **Cum verifici**
-1. Termină „Lemne pentru iarnă” (sau ratează-o) și eliberează-l pe Finn. Seara (18–22), în bucătărie: „Mamă? Unde pleci la ora asta?” → „Alerg după ea.”. Mama nu mai e în bucătărie.
+1. Termină „Lemne pentru iarnă” (sau ratează-o) și eliberează-l pe Finn. Seara (18–22), în bucătărie: apasă pe mama: fata vecinei bate la ușă → „Alerg după ea.”. Mama nu mai e în bucătărie.
 2. Marginea satului → Coliba ierbăresei (și după 23 se intră) → „Bunico, mama m-a trimis după dumneata!” → „Să mergem.” → cele 3 imagini → în camera ta, la 6 dimineața, +1 la mama.
-3. Ratarea: acceptă, apoi nu te duce; a doua zi după 7, la mama: „Mamă... cum a fost la Hanna?”. Sau refuz-o de la început.
+3. Ratarea: acceptă, apoi nu te duce; a doua zi după 7, la mama: „Mamă... cum a fost la Hanna?”. Sau refuză-o de la început.
 
 ### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
-- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). **Nu dă încredere** (decis de autor): doar echipamentul (și emoții). Vine abia după ce toți au cele 10 întâmplări (misiunile speciale la urmă). Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
+- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). **Nu dă încredere** (decis de autor): doar echipamentul (și emoții). O scriem după ce toți au cele 10 întâmplări (misiunile speciale la urmă), dar în joc apare de cum ajunge Miriam la 8/10. Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
 - **Legături:** platoșa o repară Bram („Platoșa tatălui”).
 
 ---
