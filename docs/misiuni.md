@@ -170,7 +170,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 ## Încrederea: de unde vine fiecare punct
 
-**Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Câteva dintre ele se pot **rata** (o alegere greșită, un refuz), iar recrutarea se face de la **8/10**, deci jucătorul are voie să piardă cel mult 2 puncte. **Încredere au doar 6 personaje** (decis de autor): Bram, Elian, Kaia și Roderick (se recrutează), Finn (ajută în lupta finală, care are mai multe valuri) și Miriam (de la 8/10, echipamentul tatălui). Agnes, fermierul și ceilalți n-au încredere.
+**Regula** (decis de autor): fiecare personaj important trebuie să aibă **10 întâmplări** care îi pot da câte +1 încredere, ca să poată ajunge la 10/10. Dintre ele, **cel puțin 3 se pot rata** (decis de autor: un refuz sau o alegere rea; cine nu e un sătean bun și refuză să ajute pierde punctul pentru totdeauna), iar recrutarea se face de la **8/10**. **Încredere au doar 6 personaje** (decis de autor): Bram, Elian, Kaia și Roderick (se recrutează), Finn (ajută în lupta finală, care are mai multe valuri) și Miriam (de la 8/10, echipamentul tatălui). Agnes, fermierul și ceilalți n-au încredere.
 
 Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 
@@ -183,7 +183,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
 
-**De decis:** unde se poate rata câte un punct la Finn (acum toate patru se iau sigur) și la ceilalți, ca fiecare să aibă 1–2 puncte „⚠️” (Roderick are deja două).
+**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Încep cu Miriam: încă 2 misiuni, amândouă ⚠️.
 
 ---
 
