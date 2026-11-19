@@ -2555,12 +2555,24 @@
       "dialog": "miriam",
       "descriere": "CIORNĂ: Mama vrea să coacă pâine pentru familiile celor douăzeci și trei căzuți în bătălie. Orcii au luat grâul, dar morarul le mai dă câte un pumn de făină celor care îi cară sacii.",
       "oferta": {
-        "_nota": "Ales de Claude: după „Lumânările” (cele 23 de lumânări pentru cei căzuți), dimineața, cât e Miriam în bucătărie.",
+        "_nota": "Decis de autor: firul satului al Miriamei nu mai așteaptă după Roderick; din ziua 6 (ales de Claude), dimineața, cât e ea în bucătărie. Dacă Vale a făcut deja „Lumânările”, mama pomenește de ele.",
         "text": "Mamă, la ce te gândești?",
-        "nod": "paine_o1",
+        "nod": [
+          {
+            "nod": "paine_o1",
+            "conditii": {
+              "misiune": {
+                "roderick_lumanari": "terminata"
+              }
+            }
+          },
+          {
+            "nod": "paine_f1"
+          }
+        ],
         "conditii": {
-          "misiune": {
-            "roderick_lumanari": "terminata"
+          "zi": {
+            "min": 6
           },
           "loc": "casa/bucatarie",
           "ora": {
@@ -2639,12 +2651,15 @@
       "dialog": "miriam",
       "descriere": "CIORNĂ: Mama m-a auzit vorbind în somn, mai multe nopți la rând, într-o limbă pe care n-o știe nimeni. M-a luat de mână, ca pe un copil, și m-a dus la Fratele Elian.",
       "oferta": {
-        "_nota": "Decis de autor: după al doilea vis. Ales de Claude: dimineața, cât e Miriam în bucătărie (Elian e atunci în biserică).",
+        "_nota": "Decis de autor: după al doilea vis și la o zi după „Cina în familie” (ca să nu apară în aceeași dimineață cu ea), dimineața, cât e Miriam în bucătărie.",
         "text": "Mamă, de ce te uiți așa la mine?",
         "nod": "vise_o1",
         "conditii": {
           "stare": {
             "vis_2": "vazut"
+          },
+          "misiuneTerminata": {
+            "miriam_cina": 1
           },
           "loc": "casa/bucatarie",
           "ora": {
@@ -3186,19 +3201,36 @@
         "CIORNĂ: Hanna, văduva lui Owen, naște în noaptea asta, cu o lună mai devreme. Mama s-a dus la ea și m-a trimis după Bătrâna Morwen, la Marginea satului. Trebuie s-o aduc până se luminează."
       ],
       "oferta": {
-        "_nota": "Ales de Claude: după „Lemne pentru iarnă” (dusă la capăt de o zi sau ratată), seara, cât e Miriam în bucătărie, până la 22 (ca Vale să aibă timp); Marginea satului trebuie să fie deschisă (după eliberarea lui Finn).",
+        "_nota": "Decis de autor: la 3–4 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată; ales de Claude: 3 zile), ca misiunile să nu vină grămadă, seara, cât e Miriam în bucătărie, până la 22; Marginea satului trebuie să fie deschisă (după eliberarea lui Finn).",
         "text": "Mamă? Ce s-a întâmplat?",
         "nod": "nastere_o1",
         "conditii": {
           "oricare": [
             {
               "misiuneTerminata": {
-                "miriam_lemne": 1
+                "miriam_lemne": 3
               }
             },
             {
               "misiune": {
                 "miriam_lemne": "ratata"
+              },
+              "trecut": {
+                "lemne_iarna_gata": {
+                  "pesteZile": 3
+                }
+              }
+            },
+            {
+              "misiune": {
+                "miriam_lemne": "ratata"
+              },
+              "nu": {
+                "trecut": {
+                  "lemne_iarna_gata": {
+                    "pesteZile": 0
+                  }
+                }
               }
             }
           ],

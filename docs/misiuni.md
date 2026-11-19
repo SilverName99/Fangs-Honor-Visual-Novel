@@ -107,11 +107,11 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 3. ✅ **Păpușa Linei**: după „Mama lui Finn”, la Lina, când se joacă în fața casei (10–14): „Ce s-a întâmplat, Lina? De ce plângi? !”.
 4. ✅ **Inelul mamei**: pornește singură (nu se poate refuza), din ziua 9, după „Fierul lui Bram”, dimineața (7–11), când intri în bucătărie și mama e acolo (nu duminica, ziua taxei). Deschide **Groapa**.
 5. ✅ **Capa Kaiei**: după ce Kaia nu vrea să vină în Groapă fără deghizare, la mama: „Mamă, mi-ai putea coase o capă? !”.
-6. ✅ **Pâinea văduvelor**: după „Lumânările” (Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”.
-7. ✅ **Vorbele din somn** (+1 și la Elian): după al doilea vis, dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”.
+6. ✅ **Pâinea văduvelor**: din ziua 6 (nu mai așteaptă după Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”.
+7. ✅ **Vorbele din somn** (+1 și la Elian): după al doilea vis și la o zi după „Cina în familie”, dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”.
 8. ✅ **Steagul satului** (+1 și la Roderick): după „Cina în familie”, seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”.
 9. ✅⚠️ **Lemne pentru iarnă**: la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. Se ratează dacă refuzi sau dacă treci de cele 3 zile.
-10. ✅⚠️ **Noaptea nașterii**: după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn, seara (18–22), când vorbești cu mama în bucătărie, fata vecinei bate la ușă (pe mama: „!”). Se ratează dacă refuzi sau dacă n-o aduci pe bătrână până la 5 dimineața.
+10. ✅⚠️ **Noaptea nașterii**: la 3 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată) și după eliberarea lui Finn, seara (18–22), când vorbești cu mama în bucătărie, fata vecinei bate la ușă (pe mama: „!”). Se ratează dacă refuzi sau dacă n-o aduci pe bătrână până la 5 dimineața.
 11. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut; nu dă încredere, decis de autor).
 
 **Bram (fierarul)**
@@ -131,7 +131,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 4. ✅ **Lumina din pădure** (nu se poate refuza): după „Pasărea Linei”, la Elian: „Pari îngrijorat, frate Elian. !”. Apoi, seara, în pădure.
 5. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
 6. ✅ **Toiagul celor 23**: pornește singură, la sfârșitul „Secretului lui Elian”.
-7. ✅ **Vorbele din somn** (a Miriamei, +1 la Elian): după al doilea vis, la mama, dimineața.
+7. ✅ **Vorbele din somn** (a Miriamei, +1 la Elian): după al doilea vis și la o zi după „Cina în familie”, la mama, dimineața.
 
 **Kaia (vânătoarea)**
 1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
@@ -305,25 +305,25 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici:** cu Groapa deschisă și încrederea Kaiei 4, la locul de campare (14–23): „Kaia... ai lupta cu mine în Groapa orcilor?” → refuzul. La mama: „Mamă, mi-ai putea coase o capă?” → F2 → Obiect: 3 blăni de lup și o sfoară → la amiază, în camera mamei: „Mamă, am adus blănile și sfoara.” → „Ziua următoare”, amiază: „Mamă, e gata capa?” → la Kaia: „Kaia, ți-am adus ceva.” → în panoul Groapei apare Kaia.
 
 ### ✅ Pâinea văduvelor
-- **Pornește** (ales de Claude): după „Lumânările” (Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”. Mama scutură sacul gol de făină: s-a gândit la femeile celor 23, care n-au ce le da copiilor. „Aduc eu făina, mamă.” pornește misiunea; „Altă dată, mamă.” o lasă în meniu.
+- **Pornește** (decis de autor: firul satului al Miriamei nu mai așteaptă după Roderick): din ziua 6 (ales de Claude), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”. Dacă Vale a făcut deja „Lumânările”, mama pomenește de ele („Fratele Elian mi-a spus de lumânări...”); altfel, aceeași discuție, fără ele. Mama scutură sacul gol de făină: s-a gândit la femeile celor 23, care n-au ce le da copiilor. „Aduc eu făina, mamă.” pornește misiunea; „Altă dată, mamă.” o lasă în meniu.
 - **Pasul 1** (decis de autor: făina vine de la moară): **4 măsuri de făină**. Cât e misiunea, fiecare muncă la moară dă și **2 făină** (ca orzul la bere; ales de Claude, TODO echilibru), până ai 4. Făina stă la obiectele de poveste și se numără.
 - **Pasul 2:** cu făina, dimineața, în bucătărie: „Mamă, am adus făina.” → „Îmi suflec mânecile.” → **peste o imagine**, Vale și mama frământă și coc 23 de pâini în cuptorul din curte (decis de autor), apoi **peste 3 imagini** Vale le împarte prin sat și vorbește la fiecare cu cineva (decis de autor): o văduvă cu doi copii, bătrânul de la capătul uliței (fiul lui, Hal, a căzut printre cei 23) și o femeie la fântână, care spune primul cuvânt de revoltă: **„Dacă ar mai fi bărbați în sat...”**. Sătenii **n-au imagini și nici portrete** (decis de autor): doar numele („Văduva”, „Băiețelul”, „Bătrânul”, „Săteanca”); Vale își are portretul lui. Trec 4 ore (ales de Claude).
 - **Recompensa:** încrederea mamei **+1**.
 - **Imagini:** `events/paine_vaduve_1.png` (Miriam și Vale frământând pâinea), `events/paine_vaduve_2.png` (la ușa văduvei), `events/paine_vaduve_3.png` (bătrânul de pe bancă), `events/paine_vaduve_4.png` (femeile de la fântână), galeria: „Pâinea văduvelor”; iconița `items/faina.png`.
 
 **Cum verifici**
-1. Joacă „Lumânările” până la capăt. Dimineața, în bucătărie, la mama: „Mamă, la ce te gândești?” → „Aduc eu făina, mamă.”.
+1. Din ziua 6, dimineața, în bucătărie, la mama: „Mamă, la ce te gândești?” → „Aduc eu făina, mamă.”.
 2. La moară, de două ori „Muncește 1 oră”: după fiecare urcă pe ecran „+2 Făină”.
 3. Seara, la mama: doar „Despre pâine...” (pâinea se face dimineața).
 4. Dimineața, în bucătărie: „Mamă, am adus făina.” → „Îmi suflec mânecile.” → cele 4 imagini → +1 la mama.
 
 ### ✅ Vorbele din somn (+1 și la Elian)
-- **Pornește** (decis de autor: după **al doilea vis**): dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”. Mama îl aude vorbind în somn, de mai multe nopți, **într-o limbă pe care n-o știe nimeni**: veche, grea, „de parcă ar fi vorbit cineva foarte bătrân prin gura ta”. „Bine, mamă. Mergem.” → pornește; „Mamă, a fost doar un vis.” o lasă în meniu.
+- **Pornește** (decis de autor: după **al doilea vis** și la o zi după „Cina în familie”, ca să nu vină în aceeași dimineață cu ea): dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”. Mama îl aude vorbind în somn, de mai multe nopți, **într-o limbă pe care n-o știe nimeni**: veche, grea, „de parcă ar fi vorbit cineva foarte bătrân prin gura ta”. „Bine, mamă. Mergem.” → pornește; „Mamă, a fost doar un vis.” o lasă în meniu.
 - **La biserică, peste o imagine** (ales de Claude): mama îi povestește tot lui Elian. Elian îi spune că visele grele vin după o pierdere grea și îi dă un **ceai pentru somn** (mușețel, sunătoare, valeriană). Când mama se duce să aprindă o lumânare, Elian îl întreabă pe Vale ce vede în vise; la **ochiul cu pupila tăiată**, se face alb la față și îi cere să vină întâi la el dacă mai visează ceva, fără să spună altcuiva. **De acum Elian bănuiește că trezirea e a lui Vale** (decis de autor), dar nu spune nimic. Trece o oră; Vale rămâne în biserică.
 - **Recompensa:** încrederea mamei **+1** și a lui Elian **+1**.
 - **Imagine:** `events/visele_elian.png` (în biserică: Elian pe bancă, ascultând, Miriam și Vale lângă el), galeria: „Vorbele din somn”.
 
-**Cum verifici:** F2 → starea `vis_2` = `vazut` (sau visează al doilea vis). Dimineața, în bucătărie: „Mamă, de ce te uiți așa la mine?” → „Bine, mamă. Mergem.” → imaginea → ajungi în biserică, +1 la mama și la Elian.
+**Cum verifici:** F2 → starea `vis_2` = `vazut` (sau visează al doilea vis), cu „Cina în familie” terminată de cel puțin o zi. Dimineața, în bucătărie: „Mamă, de ce te uiți așa la mine?” → „Bine, mamă. Mergem.” → imaginea → ajungi în biserică, +1 la mama și la Elian.
 
 ### ✅ Steagul satului (+1 și la Roderick)
 - **Pornește** (ales de Claude): după **„Cina în familie”** (la cină, Roderick i-a spus mamei că steagul e tot pe câmp), seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”. Steagul albastru cu rombul auriu l-au cusut femeile satului în iarna dinaintea bătăliei, iar rombul l-a brodat mama, cu firul de aur din salba mamei ei (decis de autor). Mama vrea steagul acasă, dar nu-l lasă pe Vale singur: cu Roderick. „Nu acum, mamă.” o lasă în meniu.
@@ -359,7 +359,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 4. Amândouă misiunile (și „Noaptea nașterii”) se pornesc doar din discuția cu mama, nu din F2 → „Pornește”: alegerea din discuție pune și ora de la care curge termenul. Sau refuză-o de la început.
 
 ### ✅⚠️ Noaptea nașterii (se poate rata)
-- **Pornește** (ales de Claude): după „Lemne pentru iarnă” (dusă la capăt de o zi, sau ratată) și după eliberarea lui Finn (Marginea satului e deschisă), seara (18–22), când vorbești cu mama în bucătărie (pe ea e „!”), fata vecinei bate grăbită la ușă: **Hanna naște, cu o lună mai devreme**. Mama se duce la ea și îl trimite pe Vale după **Bătrâna Morwen**, la Marginea satului, pe drumul din spate, ferindu-se de orci (decis de autor).
+- **Pornește** (decis de autor: la 3–4 zile după „Lemne pentru iarnă”, ca misiunile să nu vină grămadă; ales de Claude: 3 zile; dusă la capăt sau ratată) și după eliberarea lui Finn (Marginea satului e deschisă), seara (18–22), când vorbești cu mama în bucătărie (pe ea e „!”), fata vecinei bate grăbită la ușă: **Hanna naște, cu o lună mai devreme**. Mama se duce la ea și îl trimite pe Vale după **Bătrâna Morwen**, la Marginea satului, pe drumul din spate, ferindu-se de orci (decis de autor).
 - **„Alerg după ea.”** pornește misiunea; **„Mamă, e noapte. Orcii...”** o **ratează** pe loc: mama se duce singură. În noaptea aceea, mama e la Hanna (nu e acasă până la 7 dimineața).
 - **Pasul** (decis de autor: „până se luminează”): la Bătrâna Morwen, **până la 5 dimineața**: „Bunico, mama m-a trimis după dumneata!”. În noaptea asta **coliba nu e încuiată**, iar după 23 Vale o trezește pe bătrână (discuția începe cu bătaia în ușă). → „Să mergem.” → **peste 3 imagini**: drumul pe întuneric, cu felinarul stins când trece torța orcilor; casa Hannei, cu mama și bătrâna lângă pat, iar Vale pe prag toată noaptea; în zori, mama iese cu copilul în brațe. **Copilul primește numele tatălui lui, Owen**, unul dintre cei 23 (decis de autor; numele e ciornă). E primul copil născut în Baum de la bătălie. Mama: „O să avem noi grijă să crească, Morwen.” La sfârșit e ora 6 dimineața, iar Vale ajunge în camera lui.
 - **Ratată și dacă n-o aduci pe bătrână până la 5:** a doua zi, la mama („Mamă... cum a fost la Hanna?”) sau la bătrână („Bunico... ce s-a întâmplat cu Hanna?”): fata vecinei a alergat după Morwen în zori, copilul s-a născut greu și Hanna aproape s-a dus; trăiesc amândoi.
@@ -367,7 +367,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/nastere_1.png` (Vale și bătrâna pe ulița întunecată), `events/nastere_2.png` (casa Hannei, noaptea), `events/nastere_3.png` (în zori, mama cu copilul), galeria: „Noaptea nașterii”.
 
 **Cum verifici**
-1. Termină „Lemne pentru iarnă” (sau ratează-o) și eliberează-l pe Finn. Seara (18–22), în bucătărie: apasă pe mama: fata vecinei bate la ușă → „Alerg după ea.”. Mama nu mai e în bucătărie.
+1. Termină „Lemne pentru iarnă” (sau ratează-o), eliberează-l pe Finn și treci 3 zile („Ziua următoare”). Seara (18–22), în bucătărie: apasă pe mama: fata vecinei bate la ușă → „Alerg după ea.”. Mama nu mai e în bucătărie.
 2. Marginea satului → Coliba ierbăresei (și după 23 se intră) → „Bunico, mama m-a trimis după dumneata!” → „Să mergem.” → cele 3 imagini → în camera ta, la 6 dimineața, +1 la mama.
 3. Ratarea: acceptă, apoi nu te duce; a doua zi după 7, la mama: „Mamă... cum a fost la Hanna?”. Sau refuză-o de la început.
 
