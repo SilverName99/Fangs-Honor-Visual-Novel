@@ -17,7 +17,13 @@ const LIMBI = {
 };
 const ROMANE = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 
-export const IMAGINI_PROLOG = { masa: 'ui/ui_prolog_masa.png', coperta: 'ui/ui_prolog_coperta.png' };
+export const IMAGINI_PROLOG = {
+  masa: 'ui/ui_prolog_masa.png',
+  coperta: 'ui/ui_prolog_coperta.png',
+  // Butonul muzicii (făcut de autor): cât merge muzica și cu muzica oprită; până se încarcă, pergament cu text
+  muzica: 'ui/ui_prolog_muzica.png',
+  faraMuzica: 'ui/ui_prolog_fara_muzica.png',
+};
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 const buton = (clasa, text, clic) => Object.assign(document.createElement('button'), { className: `buton ${clasa}`, textContent: text, onclick: clic });
@@ -232,8 +238,24 @@ export function creeazaPrologul(parinte, joc) {
     const gata = el.querySelector('.inchide-carte');
     gata.textContent = recitire ? LIMBI[limba].inchide : ultima ? LIMBI[limba].incepe : LIMBI[limba].sari;
     gata.classList.toggle('incepe-prolog', !recitire && ultima);
-    el.querySelector('.sunet-prolog').textContent = faraMuzica ? LIMBI[limba].cu : LIMBI[limba].fara;
+    const bs = el.querySelector('.sunet-prolog');
+    bs.querySelector('.text-sunet-prolog').textContent = faraMuzica ? LIMBI[limba].cu : LIMBI[limba].fara;
+    bs.title = (faraMuzica ? LIMBI[limba].cu : LIMBI[limba].fara).replace(/^\S+\s/, '');
+    bs.querySelector('.img-muzica')?.classList.toggle('activ', !faraMuzica);
+    bs.querySelector('.img-fara-muzica')?.classList.toggle('activ', faraMuzica);
     el.classList.toggle('la-harta', !inchisa && eHarta(foaie));
+  }
+
+  // Butonul muzicii: textul pe pergament sau, când autorul a încărcat imaginile lui, chiar imaginea (fără pergament)
+  function butonMuzica() {
+    const b = buton('buton-mic-meniu sunet-prolog', '', comutaSunetul);
+    const cuImagine = () => b.classList.add('cu-imagine');
+    b.append(
+      Object.assign(document.createElement('span'), { className: 'text-sunet-prolog' }),
+      imagineOptionala(IMAGINI_PROLOG.muzica, 'img-muzica', cuImagine),
+      imagineOptionala(IMAGINI_PROLOG.faraMuzica, 'img-fara-muzica', cuImagine),
+    );
+    return b;
   }
 
   function comutaSunetul() {
@@ -383,8 +405,15 @@ export function creeazaPrologul(parinte, joc) {
     el.querySelector('.butoane-prolog').append(
       buton('buton-mic-meniu comuta-carte', '', schimbaLimba),
       buton('buton-mic-meniu inchide-carte', '', inchide),
-      buton('buton-mic-meniu sunet-prolog', '', comutaSunetul),
+      butonMuzica(),
     );
+    // Ecranul complet, ca în joc, în colțul dreapta-sus (cerut de autor)
+    const ecran = joc.butonEcranComplet?.();
+    if (ecran) {
+      const colt = div('butoane-hud colt-prolog');
+      colt.append(ecran);
+      el.append(colt);
+    }
     parinte.append(el);
     addEventListener('keydown', taste, true);
     // Cartea are melodia meniului, ca o pauză înainte de poveste

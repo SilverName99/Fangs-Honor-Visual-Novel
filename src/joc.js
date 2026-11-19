@@ -831,6 +831,8 @@ const joc = {
   sunet,
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
+  // Butonul de ecran complet din HUD, ca să apară și peste cartea prologului (cerut de autor), în colțul dreapta-sus
+  butonEcranComplet: () => butonHud('ecran', '⤢', 'Ecran complet', comutaEcranComplet),
   // Un dialog, iar după el ce urmează (gândul lui Vale la intrarea în Groapă, apoi panoul ei)
   dialogApoi: (d, dupa) => {
     dupaDialog = dupa;

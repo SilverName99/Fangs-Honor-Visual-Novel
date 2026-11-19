@@ -655,6 +655,8 @@ export function imaginiCerute(date, scene) {
   // Cartea prologului pe masă (cerut de autor): masa din spate și coperta închisă; până se încarcă, sunt din CSS
   adauga(IMAGINI_PROLOG.masa, 'Prologul: masa pe care stă cartea, văzută de sus, cu locul gol la mijloc (1920 × 1080)', true);
   adauga(IMAGINI_PROLOG.coperta, 'Prologul: coperta cărții închise, fără niciun scris (4:5, de exemplu 1024 × 1280; titlul îl scrie jocul)', true);
+  adauga(IMAGINI_PROLOG.muzica, 'Prologul: butonul muzicii, cât merge muzica (apeși ca s-o oprești; fundal transparent)', true);
+  adauga(IMAGINI_PROLOG.faraMuzica, 'Prologul: butonul muzicii, cu muzica oprită (apeși ca s-o pornești; fundal transparent)', true);
   grup = 'Obiecte';
   for (const [id, o] of Object.entries(date.items?.obiecte || {})) adauga(`items/${id}.png`, `Iconiță: ${o.nume}`);
   grup = 'Interfață';

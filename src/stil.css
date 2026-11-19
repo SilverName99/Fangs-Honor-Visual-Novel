@@ -3948,3 +3948,30 @@ svg.zone {
 .ecran-prolog.la-harta .sunet-prolog {
   display: none;
 }
+
+/* Butonul muzicii din prolog: cu imaginile autorului, butonul e chiar imaginea (fără pergament, fără text), înalt cât
+   butoanele de lângă el; imaginea potrivită stării (muzica merge sau e oprită) */
+.sunet-prolog img {
+  display: none;
+  height: 100%;
+  width: auto;
+}
+.ecran-prolog .buton.sunet-prolog.cu-imagine,
+.ecran-prolog .buton.sunet-prolog.cu-imagine:hover {
+  height: 72px;
+  min-width: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+}
+.ecran-prolog .buton.sunet-prolog.cu-imagine:hover {
+  filter: brightness(1.12) drop-shadow(0 0 10px rgba(255, 210, 120, 0.7));
+}
+.sunet-prolog.cu-imagine .text-sunet-prolog {
+  display: none;
+}
+.sunet-prolog.cu-imagine img.activ {
+  display: block;
+}
