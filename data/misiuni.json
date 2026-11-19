@@ -2838,7 +2838,7 @@
               "lemne_iarna": "refuzat"
             }
           },
-          "text": "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc. Mama m-a rugat să le duc câte cinci lemne. I-am spus că n-am timp."
+          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne. I-am spus că n-am timp."
         },
         {
           "conditii": {
@@ -2846,9 +2846,9 @@
               "lemne_iarna": "ratat"
             }
           },
-          "text": "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc. Mama m-a rugat să le duc câte cinci lemne, în trei zile. N-am apucat. A venit gerul înaintea mea."
+          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne, în trei zile. N-am apucat. Ploile au venit înaintea mea."
         },
-        "CIORNĂ: Vine gerul, iar trei văduve n-au lemne de foc: Hanna, care așteaptă un copil; Ilse, de la fântână; și Greta, cu cei doi copii. Mama m-a rugat să le duc câte cinci lemne. Am trei zile."
+        "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc: Hanna, care așteaptă un copil; Ilse, de la fântână; și Greta, cu cei doi copii. Mama m-a rugat să le duc câte cinci lemne, înainte de ploi. Am trei zile."
       ],
       "oferta": {
         "_nota": "Ales de Claude: la o zi după „Pâinea văduvelor”, dimineața, cât e Miriam în bucătărie.",
@@ -2880,7 +2880,7 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
             },
             "Strâng cinci lemne din pădure și merg cu ele la mama. Ea îmi spune unde să le duc."
           ],
@@ -2894,7 +2894,7 @@
                     }
                   }
                 },
-                "text": "Mamă... a venit gerul?"
+                "text": "Mamă... au venit ploile?"
               },
               "Am cinci lemne, mamă."
             ],
@@ -2972,7 +2972,7 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
             },
             "Încă cinci lemne din pădure, apoi la mama."
           ],
@@ -2986,7 +2986,7 @@
                     }
                   }
                 },
-                "text": "Mamă... a venit gerul?"
+                "text": "Mamă... au venit ploile?"
               },
               "Am încă cinci, mamă."
             ],
@@ -3064,7 +3064,7 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. A venit gerul. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
             },
             "Ultimele cinci lemne, apoi la mama."
           ],
@@ -3078,7 +3078,7 @@
                     }
                   }
                 },
-                "text": "Mamă... a venit gerul?"
+                "text": "Mamă... au venit ploile?"
               },
               "Ultimele cinci, mamă."
             ],
@@ -3144,14 +3144,14 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea mamei +1. Trei case au foc la iarnă.",
+        "text": "Încrederea mamei +1. Trei case au lemne uscate pentru zilele reci.",
         "efecte": {
           "relatie": {
             "miriam": 1
           }
         }
       },
-      "_nota": "Decis de autor: trei văduve n-au lemne de foc; Vale duce câte 5 lemne la fiecare, în 3 zile (mini-jocul lemnelor), câte o imagine la fiecare casă; la ultima, Vale stivuiește lemnele, iar copiii se uită la el. Refuzul sau cele 3 zile trecute = ratată, fără +1 (decis de autor: penalizarea pentru cine nu ajută). Livrările pornesc de la mama, ca să știe unde (ales de Claude)."
+      "_nota": "Decis de autor: trei văduve n-au lemne de foc; Vale duce câte 5 lemne la fiecare, în 3 zile, înainte de ploile de toamnă (decis de autor: e toamnă, nu iarnă) (mini-jocul lemnelor), câte o imagine la fiecare casă; la ultima, Vale stivuiește lemnele, iar copiii se uită la el. Refuzul sau cele 3 zile trecute = ratată, fără +1 (decis de autor: penalizarea pentru cine nu ajută). Livrările pornesc de la mama, ca să știe unde (ales de Claude)."
     },
     {
       "id": "miriam_nastere",

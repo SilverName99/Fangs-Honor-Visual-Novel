@@ -3922,20 +3922,20 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe geamul bucătăriei e brumă. Mama stă lângă vatră, cu șalul pe umeri, și ține palmele întinse spre foc.",
+        "text": "Afară cade o ploaie măruntă de toamnă. Mama stă lângă vatră, cu șalul pe umeri, și ține palmele întinse spre foc.",
         "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Lemne pentru iarnă” (decis de autor: trei văduve n-au lemne de foc; câte 5 lemne la fiecare, în 3 zile; se poate rata). Numele Hanna, Ilse, Greta și Owen sunt ciorne.",
         "urmator": "lemne_o2"
       },
       "lemne_o2": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Ai simțit ce rece a fost azi-noapte? Bătrânii zic că în trei zile vine gerul cel mare.",
+        "text": "Nopțile s-au făcut reci, Vale. Iar bătrânii zic că în trei zile vin ploile cele lungi de toamnă. După ele, lemnul din pădure se îmbibă de apă și nu mai arde.",
         "urmator": "lemne_o3"
       },
       "lemne_o3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Atunci mă duc după lemne în pădure. Să nu ne prindă gerul.",
+        "text": "Atunci mă duc după lemne în pădure. Să nu ne prindă ploile.",
         "urmator": "lemne_o4"
       },
       "lemne_o4": {
@@ -3959,7 +3959,7 @@
       "lemne_o7": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Câte cinci lemne la fiecare. Înainte de ger. Ai trei zile.",
+        "text": "Câte cinci lemne la fiecare, uscate, înainte de ploi. Ai trei zile.",
         "alegeri": [
           {
             "text": "Le duc eu, mamă.",
@@ -4015,7 +4015,7 @@
       "lemne_ind": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Câte cinci lemne, Vale. Le aduni din pădure. Și grăbește-te: gerul nu așteaptă pe nimeni."
+        "text": "Câte cinci lemne, Vale. Le aduni din pădure. Și grăbește-te: ploile nu așteaptă pe nimeni."
       },
       "lemne_p1": {
         "vorbitor": "vale",
@@ -4072,7 +4072,7 @@
       "lemne_p3b": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "La Greta. Cei mici au dormit îmbrăcați azi-noapte, cu căciulile pe cap.",
+        "text": "La Greta. Azi-noapte, cei mici au tremurat de frig până dimineață.",
         "alegeri": [
           {
             "text": "Mă duc.",
@@ -4089,25 +4089,25 @@
       "lemne_r1": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "A venit gerul, Vale. Azi-noapte a înghețat apa în găleată.",
+        "text": "Au venit ploile, Vale. A turnat toată noaptea, iar pădurea s-a făcut o mlaștină.",
         "urmator": "lemne_r1b"
       },
       "lemne_r1b": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Greta și-a ars scaunele, ca să-i țină pe cei mici la cald. Hanna a stat toată noaptea înfășurată în pături, lângă un foc de paie.",
+        "text": "Greta și-a ars scaunele, ca să-i țină pe cei mici la cald. Hanna a stat toată noaptea înfășurată în pături, lângă un foc de vreascuri ude, care mai mult fumega.",
         "urmator": "lemne_r_fin"
       },
       "lemne_r2": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "A venit gerul, Vale. Hanna are foc, mulțumită ție. Dar Greta și-a ars scaunele, ca să-i țină pe cei mici la cald. Iar Ilse n-a cerut nimic nimănui.",
+        "text": "Au venit ploile, Vale. Hanna are lemne uscate, mulțumită ție. Dar Greta și-a ars scaunele, ca să-i țină pe cei mici la cald. Iar Ilse n-a cerut nimic nimănui.",
         "urmator": "lemne_r_fin"
       },
       "lemne_r3": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "A venit gerul, Vale. Hanna și Ilse au foc. Dar Greta și-a ars scaunele, ca să-i țină pe cei mici la cald.",
+        "text": "Au venit ploile, Vale. Hanna și Ilse au lemne uscate. Dar Greta și-a ars scaunele, ca să-i țină pe cei mici la cald.",
         "urmator": "lemne_r_fin"
       },
       "lemne_r_fin": {
@@ -4250,7 +4250,7 @@
       "nastere_rm1": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Ai venit să mă întrebi de Hanna? Fata vecinei a bătut la ușa mea în zori, cu mâinile vinete de frig.",
+        "text": "Ai venit să mă întrebi de Hanna? Fata vecinei a bătut la ușa mea în zori, cu picioarele ude de rouă și fără suflare.",
         "urmator": "nastere_rm2"
       },
       "nastere_rm2": {
@@ -15011,7 +15011,7 @@
       "h3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Mama zice că vine gerul. Și că dumneata n-ai voie să cari nimic.",
+        "text": "Mama zice că vin ploile. Și că dumneata n-ai voie să cari nimic.",
         "urmator": "h4"
       },
       "h4": {
@@ -15146,7 +15146,7 @@
         "nume": "Fetița",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Mama zice că azi-noapte am dormit îmbrăcați. Cu căciula.",
+        "text": "Mama zice că azi-noapte am dormit îmbrăcați, că era frig în casă.",
         "urmator": "g5"
       },
       "g5": {
@@ -15154,7 +15154,7 @@
         "nume": "Băiețelul",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Eu nu mi-am dat-o jos nici dimineața!",
+        "text": "Eu am dormit și cu ciorapii de lână!",
         "urmator": "g6"
       },
       "g6": {

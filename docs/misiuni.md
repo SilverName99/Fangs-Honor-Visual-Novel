@@ -345,17 +345,17 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 6. Lupta: F2 → Lupta de test → bifează Roderick și „Ca în lupta finală” → în jurnal: „Roderick ridică steagul satului...”.
 
 ### ✅⚠️ Lemne pentru iarnă (se poate rata)
-- **Pornește** (ales de Claude): la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. E brumă pe geam; bătrânii zic că în trei zile vine gerul cel mare. Trei văduve n-au lemne de foc (decis de autor): **Hanna**, nevasta lui Owen, care așteaptă un copil; **Ilse**, femeia de la fântână (cea cu „Dacă ar mai fi bărbați în sat...”); **Greta**, văduva cu cei doi copii (amândouă din „Pâinea văduvelor”). Numele sunt ciorne de Claude.
+- **Pornește** (ales de Claude): la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. E toamnă (decis de autor: peste tot e toamnă, nu iarnă): plouă mărunt, nopțile s-au răcit, iar bătrânii zic că în trei zile vin ploile lungi, după care lemnul din pădure nu mai arde. Trei văduve n-au lemne uscate de foc (decis de autor): **Hanna**, nevasta lui Owen, care așteaptă un copil; **Ilse**, femeia de la fântână (cea cu „Dacă ar mai fi bărbați în sat...”); **Greta**, văduva cu cei doi copii (amândouă din „Pâinea văduvelor”). Numele sunt ciorne de Claude.
 - **„Le duc eu, mamă.”** pornește misiunea; **„N-am timp de asta, mamă.”** o **ratează** pe loc (decis de autor: cine nu ajută pierde punctul): „Tatăl tău n-a întrebat niciodată dacă are timp, când era vorba de un vecin.”
 - **Pașii** (decis de autor: câte 5 lemne la fiecare, în 3 zile): lemnele le aduni din pădure („Adună lemne”, cu mini-jocul). Cu 5 lemne, la mama (oriunde e ea, până la 22; mai târziu îți spune să le duci mâine): „Am cinci lemne, mamă.” → ea îți spune unde să le duci → „Mă duc.” → **peste o imagine** (ales de Claude: câte una la fiecare casă), Vale le duce: întâi la Hanna, apoi la Ilse, apoi la Greta, unde le stivuiește sub streașină, iar copiii se uită la el (decis de autor). Fiecare casă: o oră. Sătenii n-au portret, doar numele, ca la pâine.
-- **Ratată și dacă trec cele 3 zile** (3 × 24 de ore de când ai acceptat): la mama apare „Mamă... a venit gerul?”, iar ea îți spune cum s-au descurcat (cine a primit lemne și cine și-a ars scaunele).
+- **Ratată și dacă trec cele 3 zile** (3 × 24 de ore de când ai acceptat): la mama apare „Mamă... au venit ploile?”, iar ea îți spune cum s-au descurcat (cine are lemne uscate și cine și-a ars scaunele).
 - **Recompensa:** încrederea mamei **+1**. După, la „Ce mai faci, mamă?”, o replică despre Greta (sau, dacă ai ratat-o, despre vreascurile duse de mama în șorț).
 - **Imagini:** `events/lemne_iarna_1.png` (la Hanna), `events/lemne_iarna_2.png` (la Ilse), `events/lemne_iarna_3.png` (la Greta, cu copiii), galeria: „Lemne pentru iarnă”.
 
 **Cum verifici**
 1. Termină „Pâinea văduvelor”, apoi „Ziua următoare”. Dimineața, în bucătărie: „Mamă, ți-e frig?” → „Le duc eu, mamă.”.
 2. F2 → Obiect: 5 lemne → la mama: „Am cinci lemne, mamă.” → „Mă duc.” → imaginea de la Hanna. De încă două ori, pentru Ilse și Greta → +1 la mama.
-3. Ratarea: pornește-o din nou (F2 → Resetează), acceptă, apoi „Ziua următoare” de 4 ori → la mama: „Mamă... a venit gerul?”.
+3. Ratarea: pornește-o din nou (F2 → Resetează), acceptă, apoi „Ziua următoare” de 4 ori → la mama: „Mamă... au venit ploile?”.
 4. Amândouă misiunile (și „Noaptea nașterii”) se pornesc doar din discuția cu mama, nu din F2 → „Pornește”: alegerea din discuție pune și ora de la care curge termenul. Sau refuză-o de la început.
 
 ### ✅⚠️ Noaptea nașterii (se poate rata)
