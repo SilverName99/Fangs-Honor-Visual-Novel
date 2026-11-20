@@ -8,7 +8,8 @@
     "fierar",
     "campuri",
     "taverna.pivnita",
-    "poarta.arena"
+    "poarta.arena",
+    "cimitir"
   ],
   "inamici": {
     "lup": {
@@ -878,6 +879,54 @@
       },
       "infrangere": {
         "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+      }
+    },
+    "cimitir_sobolani": {
+      "_nota": "Decis de autor: Vale și Finn împotriva șobolanilor de la cimitir (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă torța și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
+      "nume": "Cimitirul",
+      "fundal": "cimitir",
+      "fuga": false,
+      "aliati": [
+        {
+          "id": "hot",
+          "linie": 1,
+          "rand": "fata"
+        }
+      ],
+      "inamici": [
+        {
+          "id": "sobolan_gheare",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "sobolan_gheare",
+          "linie": 2,
+          "rand": "fata"
+        },
+        {
+          "id": "sobolan_scuipa",
+          "linie": 1,
+          "rand": "spate"
+        }
+      ],
+      "victorie": {
+        "text": "Ultimul șobolan o ia la fugă printre cruci.",
+        "efecte": {
+          "stare": {
+            "cimitir_lupta": "castigat"
+          },
+          "eveniment": "finn_cimitir_dupa"
+        }
+      },
+      "infrangere": {
+        "text": "Cazi în genunchi între morminte. Dar Finn nu fuge.",
+        "efecte": {
+          "stare": {
+            "cimitir_lupta": "pierdut"
+          },
+          "eveniment": "finn_cimitir_dupa"
+        }
       }
     }
   },

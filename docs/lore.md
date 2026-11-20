@@ -132,6 +132,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 
 - În jocul principal există **3 unități de șobolani** care îi ajută în luptă pe Undead. În Actul 1 apar în pivnița tavernei (unul care scuipă bale acide, doi care atacă cu ghearele), iar cei care scuipă revin în lupta finală ca ajutoare de la distanță ale orcilor.
 - **Șobolanii vorbesc** (decis de autor): sunt un clan de șobolani mutanți care s-a aliat cu **teroarea care se apropie**, adică cu Narco. În pivnița lui Agnes îi spun lui Vale despre ea: sună a bazaconii, dar îl avertizează să se gândească bine de partea cui stă.
+- **Șobolanii de la cimitir** (decis de autor, misiunea lui Finn „Noaptea de la cimitir”): noaptea sapă la mormintele celor 23: „Stăpânul vrea morții, da-da!”. Narco adună morți (ciornă de Claude: cei 23, neputreziți, i-ar fi buni ca morți vii); Vale și Finn îi alungă, iar Finn îi spune Linei că erau licurici.
 - **Cum vorbesc șobolanii** (decis de autor, peste tot în univers): repede și nervos, repetă cuvintele („da-da!”, „repede-repede!”, „rupe-rupe!”), leagă cuvintele cu cratimă (oamenii sunt „oameni-lucruri”, un om e „om-lucru”, ei sunt „cei-mulți”), șuieră („Ssss!”); lăudăroși și lași în același timp.
 
 ## Vale și dragonul lui (decis de autor)
@@ -139,6 +140,7 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Vale** (25 de ani) are **trezirea mare**. Încă nu știe.
 - Se va lega cu **primordialul morții**: întorsătura cea mare a poveștii. În vise apare așa cum a fost descris până acum (ochiul din al doilea vis; solzi maronii, după autor). **Primul vis rămâne cu focul** („o căldură în piept, ca un al doilea foc”, decis de autor): jucătorul se gândește la foc, iar întorsătura e moartea.
 - **Al treilea vis** (decis de autor: după „Convoiul”, wyvernii, apoi ceva cu dragoni; ciornă de Claude): wyvernul din cușcă se teme de ceva de deasupra lui Vale, ca Ember: umbra unui dragon adevărat îl acoperă pe Vale (decis de autor: văzut de sus, Vale se uită în jos, la umbră; dragonul nu se vede), iar Vale simte că îl privește, cu ochiul din al doilea vis. Căldura din piept revine (tot focul, ca să nu se ghicească moartea). Vale se întreabă de ce s-ar teme un dragon de alt dragon: un indiciu că wyvernii nu sunt dragoni.
+- **Al patrulea vis** (decis de autor: după „Noaptea de la cimitir”; ciornă de Claude pentru replici): cei 23 se ridică din morminte ca soldați, verzi și ușor strălucitori, neputreziți (ca animalele din scrisoarea Străjerilor); Vale nu se poate mișca, plutește în urma lor spre nord, spre o crăpătură în pământ (portalul morții, de pe harta soldatului); la intrare, Edwin se întoarce și îi vorbește în limba din „Vorbele din somn”, pe care Vale o înțelege în vis: „Încă nu, Vale. Dar te așteaptă.” Sub pământ se mișcă ceva uriaș, ca pieptul cuiva care doarme (primordialul morții; nu se spune).
 - Drumul spre el trece prin **portalul morții**, din crăpătura de pe harta soldatului.
 - De lămurit (mai târziu): cum arată primordialul morții după legământul cu un om (dragonul ia înfățișarea rasei celui cu care se leagă).
 

@@ -424,7 +424,8 @@
         "piata",
         "casa_finn/interior",
         "campuri",
-        "casa_finn"
+        "casa_finn",
+        "iesirea"
       ],
       "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
       "cineRaspunde": {
@@ -486,12 +487,51 @@
         {
           "de": "18:00",
           "pana": "23:00",
+          "loc": "casa_finn",
+          "sprite": "ziua",
+          "conditii": {
+            "misiune": {
+              "finn_lina": "inceputa"
+            },
+            "zileDeLa": {
+              "ziua_linei": {
+                "min": 3,
+                "max": 3
+              }
+            }
+          },
+          "ce": "în seara zilei Linei, îl așteaptă pe Vale în fața casei, cu mâinile goale (decis de autor: misiunea „Ziua Linei”)"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
           "conditii": {
             "stare": {
               "hot": "eliberat"
             }
           },
           "ce": "plecat pe ascuns, lucrează pentru Jarek (decis de autor): nu e nicăieri"
+        },
+        {
+          "de": "23:00",
+          "pana": "03:00",
+          "loc": "iesirea",
+          "conditii": {
+            "misiune": {
+              "finn_datoria": "inceputa"
+            },
+            "stare": {
+              "datoria_saci": "da"
+            },
+            "nu": {
+              "trecut": {
+                "datoria_jarek": {
+                  "pesteZile": 5
+                }
+              }
+            }
+          },
+          "ce": "cât e misiunea „Datoria la Jarek”, după ce Vale a adus blănile, îl așteaptă în fiecare noapte la ieșire (decis de autor)"
         },
         {
           "de": "23:00",
@@ -513,7 +553,18 @@
       "stariExtra": [
         "trist",
         "zambet"
-      ]
+      ],
+      "lupta": {
+        "_nota": "Decis de autor: Finn luptă o singură dată, alături de Vale, la cimitir (misiunea „Noaptea de la cimitir”), ca aliat de o luptă. Cu un cuțit, iute și ușor de doborât (ales de Claude, TODO echilibru). Pozele: combat/hot_idle/atac/aparare/lovit/cazut.png.",
+        "viata": 55,
+        "staminaMax": 130,
+        "atac": {
+          "min": 4,
+          "max": 7,
+          "tip": "apropiat"
+        },
+        "armura": 0
+      }
     },
     {
       "id": "vanatoare",

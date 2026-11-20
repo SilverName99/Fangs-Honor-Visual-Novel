@@ -2544,6 +2544,12 @@
         "vorbitor": "fermier",
         "emotie": "normal",
         "text": "Dacă aș avea fier, ți l-aș fi dat de mult."
+      },
+      "miere_lina": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Pentru tortul fetiței lui Finn? Atunci ia de la stupul cel bun. Și să-i spui că e și de la mine.",
+        "_nota": "CIORNĂ (Claude): misiunea lui Finn „Ziua Linei”."
       }
     },
     "meniu": true,
@@ -2577,6 +2583,37 @@
           ]
         },
         "spre": "miere"
+      },
+      {
+        "_nota": "Decis de autor: mierea pentru tortul Linei, de la fermier (5 monede, ca la bere).",
+        "text": "Îmi vinzi o măsură de miere? (5 monede)",
+        "spre": "miere_lina",
+        "conditii": {
+          "misiune": {
+            "finn_lina": "inceputa"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "areCate": {
+                  "miere": 1
+                }
+              },
+              {
+                "stare": {
+                  "lina_tort": "gata"
+                }
+              }
+            ]
+          },
+          "bani": {
+            "min": 5
+          }
+        },
+        "efecte": {
+          "bani": -5,
+          "obiect": "miere"
+        }
       },
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
@@ -9191,6 +9228,33 @@
     "meniu": true,
     "start": [
       {
+        "_nota": "Misiunea „Ziua Linei”: în seara zilei, Finn îl așteaptă în fața casei.",
+        "nod": "lina_seara",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_lina": "inceputa"
+          },
+          "zileDeLa": {
+            "ziua_linei": {
+              "min": 3,
+              "max": 3
+            }
+          },
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Datoria la Jarek”: noaptea, la ieșire.",
+        "nod": "datoria_noapte",
+        "conditii": {
+          "loc": "iesirea"
+        }
+      },
+      {
         "nod": "lada_noapte_nu",
         "conditii": {
           "loc": "casa_finn",
@@ -9617,6 +9681,488 @@
           }
         },
         "_nota": "Decis de autor: singurul care îl trimite pe Vale la Jarek."
+      },
+      "lina_o1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Vale, pot să te întreb ceva? Dar să nu râzi.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Ziua Linei” (decis de autor: în 3 zile e ziua Linei; panglica de la negustor, tortul de la Agnes; seara zilei, Finn îl așteaptă în fața casei). Vârsta Linei e ciornă.",
+        "urmator": "lina_o2"
+      },
+      "lina_o2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "În trei zile e ziua Linei. Face opt ani.",
+        "urmator": "lina_o3"
+      },
+      "lina_o3": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Anul trecut n-am avut nimic să-i dau. Nici măcar o pâine întreagă. Am mâncat supă de urzici și i-am zis că e supă de sărbătoare.",
+        "urmator": "lina_o4"
+      },
+      "lina_o4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "La negustor e o panglică albastră, de mătase. Lina s-a uitat la ea o zi întreagă. N-a cerut-o. Nu cere niciodată nimic.",
+        "urmator": "lina_o5"
+      },
+      "lina_o5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Și m-am gândit la un tort. Ca la oamenii cu noroc. Doamna Agnes face cele mai bune din sat.",
+        "urmator": "lina_o6"
+      },
+      "lina_o6": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Dar am promis că nu mai fur. Iar ce câștig la câmpuri se duce tot pe mâncare.",
+        "alegeri": [
+          {
+            "text": "Te ajut, Finn.",
+            "efecte": {
+              "misiune": {
+                "finn_lina": "inceputa"
+              },
+              "marcheaza": "ziua_linei",
+              "stare": {
+                "lina": "acceptat"
+              }
+            },
+            "spre": "lina_o7"
+          },
+          {
+            "text": "N-am timp de așa ceva.",
+            "efecte": {
+              "misiune": {
+                "finn_lina": "ratata"
+              },
+              "stare": {
+                "lina": "refuzat"
+              }
+            },
+            "spre": "lina_o_nu"
+          }
+        ]
+      },
+      "lina_o7": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Știam eu! În seara zilei ei, după șase, te aștept în fața casei. Mama știe. Lina nu. Să nu-i spui nimic!",
+        "urmator": "lina_o8"
+      },
+      "lina_o8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O panglică de la negustor și un tort de la doamna Agnes. În trei zile."
+      },
+      "lina_o_nu": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Înțeleg. E doar o zi. Ca toate celelalte."
+      },
+      "lina_f_ind": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Panglica de la negustor, tortul de la doamna Agnes. Și în seara zilei ei, după șase, în fața casei."
+      },
+      "lina_f_azi": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "E diseară, Vale! Mai ai până la unsprezece. Panglica și tortul, nu uita!"
+      },
+      "lina_seara": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Ai venit! Lina pune masa. De trei zile tot zice că azi nu e nicio zi deosebită."
+      },
+      "lina_z0": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am tot, Finn. Panglica și tortul.",
+        "alegeri": [
+          {
+            "text": "Intrăm.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "lina_ziua"
+            }
+          }
+        ]
+      },
+      "lina_r1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "A trecut.",
+        "urmator": "lina_r2"
+      },
+      "lina_r2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "I-am cântat. Mama a făcut o turtă din ce aveam. Lina a zis că a fost cea mai frumoasă zi.",
+        "urmator": "lina_r3"
+      },
+      "lina_r3": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Dar s-a uitat toată seara la ușă.",
+        "urmator": "lina_r4"
+      },
+      "lina_r4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu-mi cere socoteală. Și asta doare mai tare decât dacă m-ar fi certat.",
+        "efecte": {
+          "misiune": {
+            "finn_lina": "ratata"
+          },
+          "stare": {
+            "lina": "ratat"
+          }
+        }
+      },
+      "lina_a1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Doamna Agnes, ați putea face un tort? E ziua Linei, sora lui Finn.",
+        "urmator": "lina_a2"
+      },
+      "lina_a2": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Un tort? Pentru fetița aia cu ochii mari, care o ajută pe Morwen la ierburi? Vai, Vale, de când n-am mai făcut un tort!",
+        "urmator": "lina_a3"
+      },
+      "lina_a3": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Pe vremuri făceam unul la fiecare nuntă din sat. Acum nu mai sunt nunți. Nici făină, nici miere, nici chef.",
+        "urmator": "lina_a4"
+      },
+      "lina_a4": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Dar pentru un copil... Adu-mi două măsuri de făină de la moară, două căni de lapte de la vaci și o măsură de miere de la fermier. Restul îl pun eu.",
+        "urmator": "lina_a5"
+      },
+      "lina_a5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Le aduc.",
+        "efecte": {
+          "stare": {
+            "lina_tort": "cerut"
+          }
+        }
+      },
+      "lina_a_ind": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Două măsuri de făină, două căni de lapte și o măsură de miere. Moara, vacile, fermierul. Hai, că nu se coace singur!"
+      },
+      "lina_a_tarziu": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "A trecut ziua fetei? Of... Du-te măcar la Finn și spune-i ceva. Nu-l lăsa să se gândească singur."
+      },
+      "lina_b1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus tot pentru tort.",
+        "urmator": "lina_b2"
+      },
+      "lina_b2": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Pune-le aici. Și ieși din bucătăria mea, că mă încurci!",
+        "urmator": "lina_b3"
+      },
+      "lina_b3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stau o oră în sală, cu nasul în mirosul de miere și de coajă rumenă. Până și bețivii de la masa din colț tac și trag aer în piept.",
+        "urmator": "lina_b4"
+      },
+      "lina_b4": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Gata. Să nu-l strici pe drum. Și spune-i fetei că e de la Agnes.",
+        "efecte": {
+          "consuma": {
+            "faina": 2,
+            "lapte": 2,
+            "miere": 1
+          },
+          "obiect": "tort_lina",
+          "timp": 60,
+          "stare": {
+            "lina_tort": "gata"
+          }
+        }
+      },
+      "datoria_o1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Nu știu cum să-ți spun asta, Vale.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Datoria la Jarek” (decis de autor: Finn are o datorie, Vale îl ajută; în 5 zile; noaptea, la ieșire, sar gardul și îi duc lui Jarek sacul). Ales de Claude: datoria se plătește în 3 blăni de lup.",
+        "urmator": "datoria_o2"
+      },
+      "datoria_o2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Spune-o pur și simplu.",
+        "urmator": "datoria_o3"
+      },
+      "datoria_o3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Cât a fost mama bolnavă, Jarek ne-a dat de mâncare. Pâine, slănină, lemne. Pe datorie. N-a zis niciodată nimic.",
+        "urmator": "datoria_o4"
+      },
+      "datoria_o4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Acum zice că a venit vremea. Vrea trei blăni de lup. Le vinde dincolo de zid, unde orcii plătesc bine pe ele.",
+        "urmator": "datoria_o5"
+      },
+      "datoria_o5": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Mi-a dat cinci zile. Iar eu n-am pus mâna pe un arc în viața mea.",
+        "alegeri": [
+          {
+            "text": "Te ajut. Aduc eu blănile.",
+            "efecte": {
+              "misiune": {
+                "finn_datoria": "inceputa"
+              },
+              "marcheaza": "datoria_jarek",
+              "stare": {
+                "datoria": "acceptat"
+              }
+            },
+            "spre": "datoria_o6"
+          },
+          {
+            "text": "Descurcă-te singur, Finn.",
+            "efecte": {
+              "misiune": {
+                "finn_datoria": "ratata"
+              },
+              "stare": {
+                "datoria": "refuzat"
+              }
+            },
+            "spre": "datoria_o_nu"
+          }
+        ]
+      },
+      "datoria_o6": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Când le ai, vino la mine. Îi ducem noaptea, pe la ieșire. Jarek nu intră în sat."
+      },
+      "datoria_o_nu": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Da. Așa am făcut mereu."
+      },
+      "datoria_ind": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Trei blăni de lup, întregi. Și nu uita: cinci zile."
+      },
+      "datoria_b1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am blănile pentru Jarek.",
+        "urmator": "datoria_b2"
+      },
+      "datoria_b2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Trei. Toate trei.",
+        "urmator": "datoria_b3"
+      },
+      "datoria_b3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece, la ieșire. Te aștept acolo. Jarek ne așteaptă dincolo de gard, mai încolo.",
+        "efecte": {
+          "consuma": {
+            "blana_lup": 3
+          },
+          "stare": {
+            "datoria_saci": "da"
+          }
+        }
+      },
+      "datoria_ind2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece, la ieșire. Sacul e la mine."
+      },
+      "datoria_noapte": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ai venit. Hai, cât dorm paznicii."
+      },
+      "datoria_j0": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Să mergem.",
+        "alegeri": [
+          {
+            "text": "Sar gardul.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "datoria_jarek"
+            }
+          }
+        ]
+      },
+      "datoria_r1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Nimic. M-am lovit.",
+        "urmator": "datoria_r2"
+      },
+      "datoria_r2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Are buza spartă și un ochi vânăt.",
+        "urmator": "datoria_r3"
+      },
+      "datoria_r3": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Am dus singur ce aveam. Jarek a zis că datoria a crescut cât am întârziat. Oamenii lui au zis-o mai apăsat.",
+        "urmator": "datoria_r4"
+      },
+      "datoria_r4": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "E plătită acum. Altfel.",
+        "efecte": {
+          "misiune": {
+            "finn_datoria": "ratata"
+          },
+          "stare": {
+            "datoria": "ratat"
+          }
+        }
+      },
+      "cimitir_o1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Lina nu mai doarme, Vale.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Noaptea de la cimitir” (decis de autor: lumini noaptea la cimitir; șobolanii sapă la mormintele celor 23; lupta nu se poate pierde; după ea, al patrulea vis; nu se ratează).",
+        "urmator": "cimitir_o2"
+      },
+      "cimitir_o2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "De trei nopți zice că vede lumini la cimitir. Mici, jos, lângă morminte. Și că aude pe cineva săpând.",
+        "urmator": "cimitir_o3"
+      },
+      "cimitir_o3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Poate visează.",
+        "urmator": "cimitir_o4"
+      },
+      "cimitir_o4": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Așa am zis și eu. Până azi-dimineață. Am trecut pe lângă zid: pe mormintele celor douăzeci și trei, pământul era răscolit.",
+        "urmator": "cimitir_o5"
+      },
+      "cimitir_o5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Cine sapă noaptea la morminte nu caută nimic bun.",
+        "alegeri": [
+          {
+            "text": "La noapte mergem să vedem.",
+            "efecte": {
+              "misiune": {
+                "finn_cimitir": "inceputa"
+              }
+            },
+            "spre": "cimitir_o6"
+          },
+          {
+            "text": "Altă dată, Finn.",
+            "spre": "cimitir_o_alt"
+          }
+        ]
+      },
+      "cimitir_o6": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "După unsprezece. Te aștept după zidul cimitirului. Și ia ceva cu tine. Ceva care taie."
+      },
+      "cimitir_o_alt": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Bine. Dar nu lăsa prea mult. Lina nu mai doarme deloc."
+      },
+      "cimitir_ind": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "După unsprezece, la cimitir. Te aștept după zid."
+      },
+      "zaruri_o1": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Vino încoace. Vreau să-ți arăt ceva.",
+        "alegeri": [
+          {
+            "text": "Arată-mi.",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "finn_zaruri": "inceputa"
+              },
+              "eveniment": "finn_zaruri"
+            }
+          }
+        ],
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Zarurile orcilor” (decis de autor: de la 4/10 încredere, acasă; o imagine; fără încredere): trucul pentru jocul de zaruri cu paznicii."
+      },
+      "f_lina_da": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Lina doarme cu panglica sub pernă. Zice că, dacă o poartă în fiecare zi, se rupe.",
+        "_nota": "CIORNĂ (Claude): după „Ziua Linei”."
+      },
+      "f_lina_nu": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Lina zice că a fost cea mai frumoasă zi. Eu știu că s-a uitat toată seara la ușă.",
+        "_nota": "CIORNĂ (Claude): după „Ziua Linei”, ratată."
+      },
+      "f_datoria_da": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Jarek mă salută acum pe nume. Înainte îmi zicea doar „băiete”.",
+        "_nota": "CIORNĂ (Claude): după „Datoria la Jarek”."
+      },
+      "f_datoria_nu": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Jarek și-a luat datoria. În felul lui. Nu mai vorbim de asta.",
+        "_nota": "CIORNĂ (Claude): după „Datoria la Jarek”, ratată."
+      },
+      "f_cimitir": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lina doarme iar noaptea. Îi place să creadă că erau licurici. Eu mă uit spre cimitir în fiecare seară, înainte să închid obloanele.",
+        "_nota": "CIORNĂ (Claude): după „Noaptea de la cimitir”."
       }
     },
     "vorbeste": [
@@ -9655,6 +10201,46 @@
             "finn_lada": "luata"
           }
         }
+      },
+      {
+        "nod": "f_lina_da",
+        "conditii": {
+          "misiune": {
+            "finn_lina": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "f_lina_nu",
+        "conditii": {
+          "misiune": {
+            "finn_lina": "ratata"
+          }
+        }
+      },
+      {
+        "nod": "f_datoria_da",
+        "conditii": {
+          "misiune": {
+            "finn_datoria": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "f_datoria_nu",
+        "conditii": {
+          "misiune": {
+            "finn_datoria": "ratata"
+          }
+        }
+      },
+      {
+        "nod": "f_cimitir",
+        "conditii": {
+          "misiune": {
+            "finn_cimitir": "terminata"
+          }
+        }
       }
     ],
     "optiuni": [
@@ -9676,6 +10262,41 @@
                 "existaStare": "plug_gata"
               }
             ]
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Ziua Linei”: a trecut ziua, iar Vale n-a apucat nici măcar să-i ceară tortul lui Agnes (de la tort încolo, pasul e la Finn și se închide de acolo).",
+        "text": "Finn... ziua Linei.",
+        "spre": "lina_r1",
+        "conditii": {
+          "misiune": {
+            "finn_lina": "inceputa"
+          },
+          "oricare": [
+            {
+              "zileDeLa": {
+                "ziua_linei": {
+                  "min": 4
+                }
+              }
+            },
+            {
+              "zileDeLa": {
+                "ziua_linei": {
+                  "min": 3,
+                  "max": 3
+                }
+              },
+              "ora": {
+                "min": "23:00"
+              }
+            }
+          ],
+          "nu": {
+            "stare": {
+              "lina_tort": "gata"
+            }
           }
         }
       }
@@ -15374,6 +15995,667 @@
           },
           "panaLaOra": "06:00",
           "mergi": "casa.camera_vale"
+        }
+      }
+    }
+  },
+  "lina_ziua": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Ziua Linei” (decis de autor): 3 imagini: Vale și Finn se pregătesc să intre în casă; înăuntru, mama lui Finn bucuroasă (știa de surpriză) și Lina surprinsă; apoi toți la masă.",
+    "grup": "Finn: ziua Linei",
+    "partener": "hot",
+    "start": "z1",
+    "noduri": {
+      "z1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn ține tortul cu amândouă mâinile, ca pe o comoară. Eu am panglica în buzunar. În geam se vede umbra Linei, care pune masa.",
+        "imagine": "events/lina_ziua_1.png",
+        "urmator": "z2"
+      },
+      "z2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Când intrăm, tu ții ușa. Eu intru primul. Nu, tu primul. Nu... intrăm amândoi.",
+        "urmator": "z3"
+      },
+      "z3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Finn. Respiră.",
+        "urmator": "z4"
+      },
+      "z4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ușa se deschide. Lina se întoarce cu o lingură în mână și rămâne așa, cu gura deschisă.",
+        "imagine": "events/lina_ziua_2.png",
+        "urmator": "z5"
+      },
+      "z5": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Ce... ce e ăla?",
+        "urmator": "z6"
+      },
+      "z6": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Ăla, puiul mamei, e un tort. Iar ăștia doi sunt cei mai mari mincinoși din sat. M-au pus să tac trei zile.",
+        "urmator": "z7"
+      },
+      "z7": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "La mulți ani, Lina.",
+        "urmator": "z8"
+      },
+      "z8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Scot panglica din buzunar. Lina o atinge cu un deget, ca și cum ar putea să dispară.",
+        "urmator": "z9"
+      },
+      "z9": {
+        "vorbitor": "sora_finn",
+        "emotie": "plange",
+        "text": "E aia albastră... De unde ați știut?",
+        "urmator": "z10"
+      },
+      "z10": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Te-ai uitat la ea o zi întreagă. Credeai că nu te-a văzut nimeni?",
+        "urmator": "z11"
+      },
+      "z11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stăm toți patru la masa mică și mâncăm tort cu degetele. Lina nu-și scoate panglica din păr nici când îi cade în farfurie.",
+        "imagine": "events/lina_ziua_3.png",
+        "urmator": "z12"
+      },
+      "z12": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "E cel mai bun tort din toată lumea!",
+        "urmator": "z13"
+      },
+      "z13": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Tatăl tău venea și el la noi cu mâinile pline, Vale. Nu-l mai văzusem pe Finn râzând de mult.",
+        "urmator": "z14"
+      },
+      "z14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și abia acum îmi dau seama că nici eu nu mă mai văzusem râzând de mult.",
+        "urmator": "z15"
+      },
+      "z15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când se întunecă de-a binelea, Finn mă conduce până la poartă.",
+        "efecte": {
+          "consuma": {
+            "panglica_lina": 1,
+            "tort_lina": 1
+          },
+          "stare": {
+            "lina_ziua": "da"
+          },
+          "mergi": "casa_finn"
+        }
+      }
+    }
+  },
+  "lina_panglica": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Ziua Linei” (decis de autor): cât e misiunea (până la ziua Linei) și Vale n-are încă panglica, negustorul îl oprește de fiecare dată când intră în piață.",
+    "partener": "negustor",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Lightfinder! Stai puțin. Cauți ceva anume azi?",
+        "alegeri": [
+          {
+            "text": "Aveți o panglică pentru o fetiță?",
+            "conditii": {
+              "bani": {
+                "min": 5
+              }
+            },
+            "spre": "p2"
+          },
+          {
+            "text": "Aveți o panglică pentru o fetiță?",
+            "conditii": {
+              "bani": {
+                "max": 4
+              }
+            },
+            "spre": "p_bani"
+          },
+          {
+            "text": "Nu, mulțumesc.",
+            "spre": "p_nu"
+          }
+        ]
+      },
+      "p2": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Pentru fetița lui Finn? A stat o zi întreagă cu nasul lipit de taraba mea. Cea albastră, de mătase. Cinci monede.",
+        "alegeri": [
+          {
+            "text": "O iau.",
+            "efecte": {
+              "bani": -5,
+              "obiect": "panglica_lina"
+            },
+            "spre": "p3"
+          },
+          {
+            "text": "Mai vin.",
+            "spre": "p_nu"
+          }
+        ]
+      },
+      "p3": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Și spune-i lui Finn că, dacă-l mai prind la taraba mea, de data asta îl iau la lucru, nu la butuc."
+      },
+      "p_bani": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Cinci monede, tinere. Vino când le ai. O păstrez eu până atunci."
+      },
+      "p_nu": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Cum vrei. Știi unde mă găsești."
+      }
+    }
+  },
+  "datoria_jarek": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Datoria la Jarek” (decis de autor): 2 imagini: Vale și Finn sar gardul la ieșire, noaptea; mai încolo, pe lângă gard, îi dau lui Jarek sacul.",
+    "grup": "Finn: datoria la Jarek",
+    "partener": "hot",
+    "start": "j1",
+    "noduri": {
+      "j1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn sare primul, ușor, ca o pisică. Eu îi dau sacul peste gard și sar după el. Lemnul putred trosnește sub mine.",
+        "imagine": "events/datoria_jarek_1.png",
+        "urmator": "j2"
+      },
+      "j2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Încet! Paznicii au urechi de lup.",
+        "urmator": "j3"
+      },
+      "j3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mergem pe lângă gard, prin iarba udă, până unde se termină satul și începe întunericul.",
+        "urmator": "j4"
+      },
+      "j4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Jarek ne așteaptă sub un copac strâmb, cu gluga pe ochi. Nu-l aud venind. Pur și simplu e acolo.",
+        "imagine": "events/datoria_jarek_2.png",
+        "urmator": "j5"
+      },
+      "j5": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Lightfinder. Credeam că Finn n-are prieteni.",
+        "urmator": "j6"
+      },
+      "j6": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Trei blăni, Jarek. Datoria e plătită.",
+        "urmator": "j7"
+      },
+      "j7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Jarek le pipăie una câte una, cu degete de negustor.",
+        "urmator": "j8"
+      },
+      "j8": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Bune. Orcii le cumpără pentru iarnă. Fac din ele haine pentru cei care pleacă spre capitală.",
+        "urmator": "j9"
+      },
+      "j9": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Ai un prieten bun, băiete. Să nu-l pierzi.",
+        "urmator": "j10"
+      },
+      "j10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și dispare în întuneric la fel cum a venit. Finn răsuflă de parcă ar fi ținut aerul în piept de o lună.",
+        "urmator": "j11"
+      },
+      "j11": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Nu mai datorez nimic nimănui, Vale. Nimănui. Decât ție.",
+        "efecte": {
+          "stare": {
+            "datoria_jarek": "platita"
+          }
+        }
+      }
+    }
+  },
+  "finn_cimitir": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Noaptea de la cimitir” (decis de autor): noaptea, Vale și Finn îi prind pe șobolanii din pivniță săpând la mormintele celor 23: „Stăpânul vrea morții, da-da!”; apoi lupta.",
+    "grup": "Finn: noaptea de la cimitir",
+    "partener": "hot",
+    "start": "n1",
+    "noduri": {
+      "n1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn mă trage după zid. Pe deasupra lui se văd mormintele, crucile strâmbe, iar printre ele... luminițele Linei.",
+        "imagine": "events/finn_cimitir_1.png",
+        "urmator": "n2"
+      },
+      "n2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Acolo. Vezi?",
+        "urmator": "n3"
+      },
+      "n3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Numai că nu sunt luminițe. Sunt ochi. Ochi mici și roșii, care se mișcă.",
+        "urmator": "n4"
+      },
+      "n4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Șobolanii. Ca cei din pivnița doamnei Agnes, mari cât niște câini. Sapă cu ghearele la mormintele celor douăzeci și trei. Unul ține un felinar în dinți.",
+        "imagine": "events/finn_cimitir_2.png",
+        "urmator": "n5"
+      },
+      "n5": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "rade",
+        "text": "Sapă-sapă! Mai adânc, da-da! Stăpânul vrea morții. Toți, toți douăzeci și trei!",
+        "urmator": "n6"
+      },
+      "n6": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "rade",
+        "text": "Ssss! Morții-lucru buni! Morții nu mănâncă, nu fug, nu mint! Stăpânul-oaselor îi trezește, da-da!",
+        "urmator": "n7"
+      },
+      "n7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Al treilea mormânt de la poartă e al tatei. Pământul de pe el e deja dat la o parte.",
+        "urmator": "n8"
+      },
+      "n8": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Vale... Vale, nu!",
+        "urmator": "n9"
+      },
+      "n9": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Lăsați-l în pace!",
+        "alegeri": [
+          {
+            "text": "(Sar peste zid.)",
+            "inchide": true,
+            "efecte": {
+              "lupta": "cimitir_sobolani"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "finn_cimitir_dupa": {
+    "_nota": "CIORNĂ (Claude). După lupta de la cimitir. Decis de autor: lupta nu se poate pierde; la înfrângere, Finn aruncă torța în iarba uscată și șobolanii fug (ales de Claude; imaginea finn_cimitir_torta.png, doar atunci). Apoi, la amândouă, pământul pus la loc; la somnul de după vine al patrulea vis.",
+    "grup": "Finn: noaptea de la cimitir",
+    "partener": "hot",
+    "start": [
+      {
+        "nod": "p1",
+        "conditii": {
+          "stare": {
+            "cimitir_lupta": "pierdut"
+          }
+        }
+      },
+      {
+        "nod": "w1"
+      }
+    ],
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ghearele lor sunt peste tot. Apoi, deodată, o lumină portocalie.",
+        "imagine": "events/finn_cimitir_torta.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Afară! Afară de aici, javrelor!",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn a aruncat torța în iarba uscată dintre ei. Șobolanii se risipesc chițăind printre cruci, cu blana pârlită.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "normal",
+        "text": "Foc-foc! Fugi-fugi! Stăpânul vine oricum, da-da! Vine oricum!",
+        "urmator": "c1"
+      },
+      "w1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ultimul șobolan se strecoară printre cruci, cu coada între picioare.",
+        "urmator": "w2"
+      },
+      "w2": {
+        "vorbitor": "sobolan_gheare",
+        "emotie": "normal",
+        "text": "Fugi-fugi! Stăpânul vine oricum, da-da! Vine oricum!",
+        "urmator": "c1"
+      },
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Punem pământul la loc cu mâinile, mormânt cu mormânt. La al treilea de la poartă, Finn se oprește și mă lasă singur.",
+        "imagine": "events/finn_cimitir_3.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ce voiau, Vale? Ce să faci cu niște morți?",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu știu.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Dar nu e prima oară când îi aud vorbind de stăpânul lor. În pivniță spuneau același lucru: că vine ceva. Și că ar trebui să știu de partea cui sunt.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Linei îi spun că erau licurici. Și tu să nu-i spui altceva.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă întorc acasă pe întuneric. Mâinile îmi miros a pământ de cimitir.",
+        "efecte": {
+          "stare": {
+            "cimitir_gata": "da",
+            "vis_4": "asteapta"
+          },
+          "mergi": "casa.camera_vale"
+        }
+      }
+    }
+  },
+  "vis_4": {
+    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, verzi și ușor strălucitori; Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește în limba din „Vorbele din somn”, pe care Vale o înțelege în vis; filmulețul (opțional) e între a doua și a treia imagine.",
+    "grup": "Al patrulea vis",
+    "partener": null,
+    "vis": true,
+    "start": "v1",
+    "noduri": {
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cimitirul. Ceața stă jos, până la genunchi, și nu se mișcă deloc.",
+        "imagine": "events/vis_4_1.png",
+        "trecere": 1000,
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pământul de pe morminte se crapă încet, fără niciun sunet. Ca o pâine care se rupe.",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se ridică unul câte unul. Douăzeci și trei. În hainele de bătălie, cu armurile strâmbe și cu rombul satului pe piept.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu sunt putreziți. Sunt ca în ziua în care au plecat. Doar că lumina din ei e verde și rece, ca focul de pe mlaștini.",
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Iar ultimul care se ridică... e tata.",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Vreau să alerg la el. Picioarele nu mă ascultă. Nici nu mai ating pământul.",
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pornesc spre nord, în șir, fără să se uite înapoi. Iar eu plutesc în urma lor, ca o frunză dusă de apă.",
+        "imagine": "events/vis_4_2.png",
+        "trecere": 1000,
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Trecem de gard, de copacul mare, de pădure. Iarba nu se îndoaie sub pașii lor.",
+        "urmator": "v9"
+      },
+      "v9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Departe, pământul e despicat. O crăpătură lungă, din care urcă o lumină palidă și un frig care nu e de pe lumea asta.",
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_4.mp4",
+        "urmator": "v10",
+        "faraVideo": "v10",
+        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; ales de Claude: între a doua și a treia imagine): șirul de soldați verzi ajunge la crăpătură și coboară în ea, unul câte unul; ultimul, Edwin, se oprește la margine și se întoarce. Lipsește = visul merge direct la a treia imagine."
+      },
+      "v10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Coboară în ea unul câte unul. Tata e ultimul. La margine se oprește. Și se întoarce spre mine.",
+        "imagine": "events/vis_4_3.png",
+        "trecere": 1200,
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îmi vorbește în limba aceea veche, pe care mama m-a auzit vorbind-o în somn. Și, în vis, o înțeleg.",
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "edwin",
+        "nume": "Tata",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Încă nu, Vale. Dar te așteaptă.",
+        "urmator": "v13"
+      },
+      "v13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cine? vreau să strig. Nu am glas. Tata coboară în lumină, iar crăpătura se închide în urma lui.",
+        "urmator": "v14"
+      },
+      "v14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sub mine, pământul se ridică și coboară încet, ca pieptul cuiva uriaș care doarme.",
+        "urmator": "v15"
+      },
+      "v15": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă trezesc cu mâinile reci ca gheața, strânse pe pătură.",
+        "trezire": true,
+        "urmator": "v16"
+      },
+      "v16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Șobolanii voiau morții noștri. Iar în vis, morții noștri plecau singuri. Spre ceva care îi așteaptă.",
+        "efecte": {
+          "stare": {
+            "vis_4": "vazut"
+          }
+        }
+      }
+    }
+  },
+  "finn_zaruri": {
+    "_nota": "CIORNĂ (Claude). „Zarurile orcilor” (decis de autor): Finn îl învață pe Vale un truc de la Jarek: o dată pe joc, la zaruri, vede sub paharul unui orc. Ales de Claude: în lama toporului lustruit, pe care orcii îl pun pe masă.",
+    "grup": "Finn: zarurile orcilor",
+    "partener": "hot",
+    "start": "t1",
+    "noduri": {
+      "t1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn stă la masă cu un pahar de lut întors și trei zaruri. Lângă ele, cuțitul lui, lustruit până strălucește.",
+        "imagine": "events/finn_zaruri.png",
+        "urmator": "t2"
+      },
+      "t2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Am auzit că joci zaruri cu paznicii de la poartă.",
+        "urmator": "t3"
+      },
+      "t3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Uneori. Și pierd mai des decât câștig.",
+        "urmator": "t4"
+      },
+      "t4": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Jarek m-a învățat ceva. Nu e furat. E... privit atent.",
+        "urmator": "t5"
+      },
+      "t5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Când joacă, orcii își pun toporul pe masă, lângă ei, să se știe cine e stăpânul. Și îl țin lustruit, că sunt mândri de el.",
+        "urmator": "t6"
+      },
+      "t6": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Stai în stânga, cu focul în spate. Când ridică paharul să-l scuture, te uiți în lamă, nu în pahar. O clipă. Atât îți trebuie.",
+        "urmator": "t7"
+      },
+      "t7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă mă prinde?",
+        "urmator": "t8"
+      },
+      "t8": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "O dată nu te prinde. A doua oară, da. Deci o singură dată, Vale. Alege bine când.",
+        "urmator": "t9"
+      },
+      "t9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Încerc de zece ori pe paharul lui Finn, până văd zarurile în lama cuțitului. A unsprezecea oară, Lina strigă din colț că trișez.",
+        "efecte": {
+          "stare": {
+            "zaruri_hot": "da"
+          }
         }
       }
     }

@@ -2,6 +2,56 @@
   "_nota": "3-4 evenimente de test pentru sistem. Textele marcate (TODO) se înlocuiesc cu cele scrise de autor. manual: true = evenimentul nu pornește singur, ci doar dintr-un efect („eveniment”: id), de exemplu dintr-un dialog sau după o luptă. imagini = scenele arătate pe tot ecranul înainte (fără text). dialog = după imagini pornește un dialog din dialoguri.json. efecte = se aplică la eveniment (fără alegeri). grup = secțiunea din galerie unde stau imaginile.",
   "evenimente": [
     {
+      "id": "lina_panglica",
+      "nume": "Ziua Linei: negustorul",
+      "repetare": "mereu",
+      "dialog": "lina_panglica",
+      "conditii": {
+        "loc": "piata",
+        "moment": [
+          "dimineata",
+          "amiaza",
+          "seara"
+        ],
+        "misiune": {
+          "finn_lina": "inceputa"
+        },
+        "nu": {
+          "oricare": [
+            {
+              "oricare": [
+                {
+                  "zileDeLa": {
+                    "ziua_linei": {
+                      "min": 4
+                    }
+                  }
+                },
+                {
+                  "zileDeLa": {
+                    "ziua_linei": {
+                      "min": 3,
+                      "max": 3
+                    }
+                  },
+                  "ora": {
+                    "min": "23:00"
+                  }
+                }
+              ]
+            },
+            {
+              "areObiect": "panglica_lina"
+            },
+            {
+              "existaStare": "lina_ziua"
+            }
+          ]
+        }
+      },
+      "_nota": "Decis de autor: cât e misiunea lui Finn „Ziua Linei” (până la ziua ei) și Vale n-are panglica, negustorul îl oprește de fiecare dată când intră în piață. Stă primul în listă, ca să aibă întâietate față de sacii negustorului; după ziua Linei rămâne doar misiunea lui obișnuită, cu sacii."
+    },
+    {
       "id": "test_barfa_taverna",
       "conditii": {
         "loc": "taverna/parter",
@@ -1656,6 +1706,92 @@
       },
       "dialog": "miriam_nastere",
       "_nota": "Decis de autor: Vale o duce pe Bătrâna Morwen la Hanna, noaptea, ferindu-se de orci; copilul se naște în zori. Ales de Claude: la sfârșit e ora 6 dimineața, iar Vale ajunge în camera lui."
+    },
+    {
+      "id": "lina_ziua",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: ziua Linei",
+      "grup": "Finn: ziua Linei",
+      "efecte": {
+        "timp": 120
+      },
+      "dialog": "lina_ziua",
+      "_nota": "Decis de autor: 3 imagini cu surpriza. Ales de Claude: două ore; Vale ajunge apoi în fața casei lui Finn."
+    },
+    {
+      "id": "datoria_jarek",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: datoria la Jarek",
+      "grup": "Finn: datoria la Jarek",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "datoria_jarek",
+      "_nota": "Decis de autor: 2 imagini, gardul și Jarek. Ales de Claude: o oră; Vale rămâne la ieșire."
+    },
+    {
+      "id": "finn_cimitir_noapte",
+      "repetare": "o_data",
+      "nume": "Finn: noaptea de la cimitir",
+      "grup": "Finn: noaptea de la cimitir",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "finn_cimitir",
+      "conditii": {
+        "loc": "cimitir",
+        "moment": [
+          "noaptea"
+        ],
+        "misiune": {
+          "finn_cimitir": "inceputa"
+        },
+        "nu": {
+          "existaStare": "cimitir_gata"
+        }
+      },
+      "_nota": "Decis de autor: noaptea, când Vale ajunge la cimitir, pornește singură (Finn e deja după zid)."
+    },
+    {
+      "id": "finn_cimitir_dupa",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: după lupta de la cimitir",
+      "grup": "Finn: noaptea de la cimitir",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "finn_cimitir_dupa",
+      "_nota": "După lupta de la cimitir, câștigată sau pierdută (decis de autor: nu se poate pierde)."
+    },
+    {
+      "id": "vis_4",
+      "laTrezire": true,
+      "repetare": "o_data",
+      "nume": "Al patrulea vis",
+      "grup": "Al patrulea vis",
+      "dialog": "vis_4",
+      "oreNoapte": 1,
+      "conditii": {
+        "stare": {
+          "vis_4": "asteapta"
+        }
+      },
+      "_nota": "Decis de autor: după „Noaptea de la cimitir”, la somnul de după. Ales de Claude: ajunge o oră de somn noaptea (Vale se culcă după miezul nopții)."
+    },
+    {
+      "id": "finn_zaruri",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Finn: zarurile orcilor",
+      "grup": "Finn: zarurile orcilor",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "finn_zaruri",
+      "_nota": "Decis de autor: o imagine, trucul pentru zaruri."
     }
   ]
 }

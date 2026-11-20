@@ -79,6 +79,16 @@ const tipuri = {
     const sfarsit = start + ((inMinute(v.pana || '05:00') - de + 1440) % 1440 || 1440);
     return v.cand === 'dupa' ? c.minute >= sfarsit : c.minute >= start && c.minute < sfarsit;
   },
+  // „zileDeLa: { ziua_linei: { min: 3, max: 3 } }” = câte zile din calendar au trecut de la marcaj, oricât de devreme
+  // sau de târziu în zi s-a întâmplat (decis de autor: Finn spune „în 3 zile e ziua Linei”, deci a treia zi de după,
+  // nu după 72 de ore). Fără marcaj, condiția nu e îndeplinită
+  zileDeLa: (v, c) =>
+    Object.entries(v).every(([k, lim]) => {
+      const la = c.marcaje?.[k];
+      if (la == null || c.minute == null) return false;
+      const zile = Math.floor(c.minute / 1440) - Math.floor(la / 1440);
+      return (lim.min == null || zile >= lim.min) && (lim.max == null || zile <= lim.max);
+    }),
   // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei)
   marcatAzi: (v, c) => c.marcaje?.[v] != null && c.minute != null && Math.floor(c.marcaje[v] / 1440) === Math.floor(c.minute / 1440),
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)

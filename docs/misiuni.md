@@ -85,7 +85,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 
 **Indiciile despre dragoni, în Actul 1**
 - **Hârtiile soldatului** (camera de sus a tavernei; fostul chiriaș, prietenul lui Roderick, căzut în bătălie): un solz cât palma, „pe care nu-l zgâria nicio sabie”, găsit „departe, dincolo de pădure”; semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; o hartă până la o crăpătură în pământ însemnată cu X: **portalul morții**. Roderick: „Ca și cum l-aș mai fi văzut undeva.”
-- **Visele**, doar după un somn peste noapte, cu ceață pe margini: primul (purtat de ceva uriaș care zboară, o căldură în piept „ca un al doilea foc”); al doilea (bătălia, Edwin căzut, ochiul lui trece în ochiul unui dragon); mai vin vise după anumite misiuni. **Semnele nu vin prin tigrul Kaiei.**
+- **Visele**, doar după un somn peste noapte, cu ceață pe margini: primul (purtat de ceva uriaș care zboară, o căldură în piept „ca un al doilea foc”); al doilea (bătălia, Edwin căzut, ochiul lui trece în ochiul unui dragon); al treilea (după „Convoiul”: wyvernul din cușcă și umbra unui dragon peste Vale); al patrulea (după „Noaptea de la cimitir”: cei 23 se ridică din morminte, verzi și reci, și pleacă spre o crăpătură în pământ; Edwin se întoarce la margine: „Încă nu, Vale. Dar te așteaptă.”). **Semnele nu vin prin tigrul Kaiei.**
 - **Filmulețele din vise** (decis de autor): fiecare vis are un filmuleț (primul la început; al doilea la sfârșit, ochiul lui Edwin → ochiul dragonului; al treilea între imagini, cușca → umbra; `events/vis_N.mp4`, MP4, încărcat din galerie, la grupul visului): pe tot ecranul, fără text, cu ceața visului; un clic îl sare; fără el, visul începe cu imaginea, ca înainte. Se descarcă întreg înainte să înceapă visul (decis de autor), încă din timpul somnului; dacă nu e gata, apare „Se pregătește visul... %”. **Cum verifici:** galeria → grupul visului → „▶ Pornește visul” (Testarea: Vale doarme, apoi visul).
 - 📝 **Solzii de dragon**, cu Roderick, dincolo de gard: arată spre portalul morții.
 
@@ -166,7 +166,10 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 1. ✅ **Eliberarea**: în piață, apeși pe Finn, legat la butuc → „Pot să vorbesc cu el?”.
 2. ✅ **Mâncarea** și ✅ **Mama lui Finn**: amândouă deodată, imediat după eliberare, la Finn acasă.
 3. ✅ **Lada colectorului**: după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?”. Apoi, după miezul nopții, Finn te așteaptă în fața casei.
-4. 💡 **Puterea de la zaruri**: după „Lada colectorului”.
+4. ✅⚠️ **Ziua Linei**: la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. Se ratează dacă refuzi sau dacă trece ziua Linei.
+5. ✅⚠️ **Datoria la Jarek**: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată), la Finn: „Finn, ce te apasă? !”. Se ratează dacă refuzi sau dacă trec cele 5 zile.
+6. ✅ **Noaptea de la cimitir** (nu se ratează; după ea, **al patrulea vis**): după „Camera de sus”, „Hârtiile soldatului” și „Pivnița”, și după „Datoria la Jarek” (dusă la capăt de o zi, sau ratată), la Finn: „Ce-i cu Lina? Pare obosită. !”.
+7. ✅ **Zarurile orcilor** (fără încredere): de la 4/10 încredere cu Finn, acasă: „Ce meșterești acolo, Finn? !”.
 
 ---
 
@@ -183,7 +186,7 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · 💡 încă 2 | 8 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
-| **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · 📝 puterea de la zaruri · 💡 încă 5 | 4 / 10 |
+| **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · 💡 încă 3 (cel puțin unul ⚠️) | 7 / 10 |
 
 **Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii).
 
@@ -902,6 +905,48 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/finn_lada_1.png` … `finn_lada_6.png`, `finn_lada_esec.png` (galeria: „Finn: lada colectorului”).
 
 **Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → apasă pe Finn → „Să mergem.” Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
+
+### ✅⚠️ Ziua Linei (se poate rata)
+- **Pornește** (ales de Claude): la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. **În 3 zile e ziua Linei** (decis de autor; face 8 ani, ciornă). Finn vrea să-i dea panglica albastră de la negustor și un tort de la Agnes, dar a promis că nu mai fură și n-are bani. „Te ajut, Finn.” pornește misiunea; „N-am timp de așa ceva.” o **ratează** pe loc.
+- **Panglica** (decis de autor: în piață nu se vorbește direct cu negustorul): de cum ai misiunea, **negustorul te oprește de fiecare dată când intri în piață** (ziua și seara), până cumperi panglica sau trece ziua Linei: „Aveți o panglică pentru o fetiță?” → 5 monede (ales de Claude) → „O iau.”, sau „Nu, mulțumesc.”, și te oprește data viitoare. După ziua Linei rămân doar sacii lui obișnuiți.
+- **Tortul** (decis de autor), la Agnes: „Doamna Agnes, ați putea face un tort?”. Agnes e încântată și cere **2 măsuri de făină** (moara), **2 căni de lapte** (vacile) și **o măsură de miere** (fermierul, 5 monede). Cât e misiunea, munca la moară dă și 2 făină, iar mulsul 2 lapte (ales de Claude). Cu toate: „Am adus tot pentru tort.” → o oră → tortul.
+- **Seara zilei** (decis de autor: în a treia zi de după discuție), **după 18 (până la 23), Finn te așteaptă în fața casei lui**, cu alt sprite: „Am tot, Finn. Panglica și tortul.” → „Intrăm.” → **peste 3 imagini**: Vale și Finn în fața ușii; înăuntru, Marta bucuroasă (știa de surpriză) și Lina, uimită; apoi toți patru la masă, Lina cu panglica în păr. Trec două ore; Vale iese în fața casei.
+- **Ratată** dacă refuzi sau dacă trece seara zilei ei fără daruri: la Finn, „Finn... ziua Linei.” → „I-am cântat... Dar s-a uitat toată seara la ușă.”
+- **Recompensa:** încrederea lui Finn **+1**.
+- **Imagini:** `events/lina_ziua_1.png`, `_2.png`, `_3.png` (galeria: „Finn: ziua Linei”); sprite-ul `sprites/hot_casa_finn_ziua.png` (Finn în fața casei, cu mâinile goale); iconițele `items/panglica_lina.png`, `items/tort_lina.png`, `items/lapte.png`.
+
+**Cum verifici**
+1. Termină „Mama lui Finn”, apoi „Ziua următoare”. La Finn: „Ce-i cu tine, Finn?” → „Te ajut, Finn.”.
+2. Intră în piață de pe hartă: te oprește negustorul → „Aveți o panglică...” → „O iau.”. Intră din nou: nu te mai oprește.
+3. La Agnes: „Doamna Agnes, ați putea face un tort?” → F2 → Obiect: 2 Făină, 2 Lapte, 1 Miere → „Am adus tot pentru tort.”.
+4. „Ziua următoare” de 3 ori, „Seară”, Marginea satului → casa lui Finn (afară) → Finn → „Am tot, Finn.” → „Intrăm.” → cele 3 imagini → +1.
+5. Ratarea: refuză-o, sau lasă să treacă ziua și vorbește apoi cu Finn.
+
+### ✅⚠️ Datoria la Jarek (se poate rata)
+- **Pornește** (ales de Claude): după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată), la Finn: „Finn, ce te apasă? !”. Cât i-a fost mama bolnavă, Jarek i-a dat mâncare pe datorie; acum vrea **3 blăni de lup** (ales de Claude: le vinde orcilor, dincolo de zid), **în 5 zile** (decis de autor). „Te ajut. Aduc eu blănile.” pornește misiunea; „Descurcă-te singur, Finn.” o **ratează** pe loc.
+- **Pasul 1:** cu 3 blăni de lup, la Finn: „Am blănile pentru Jarek.”.
+- **Pasul 2** (decis de autor): **în fiecare noapte (23–03), Finn te așteaptă la Ieșire** (sprite nou, `sprites/hot_iesirea.png`, pe imaginea de noapte): „Să mergem.” → „Sar gardul.” → **peste 2 imagini**: sar gardul putred și, mai încolo, pe lângă gard, îi dau lui Jarek sacul. Trece o oră.
+- **Ratată** dacă refuzi sau dacă trec cele 5 zile: la Finn, „Finn... ce ai pe față?”: buza spartă, un ochi vânăt; Jarek și-a luat datoria „altfel”.
+- **Recompensa:** încrederea lui Finn **+1**.
+- **Imagini:** `events/datoria_jarek_1.png` (gardul, noaptea), `events/datoria_jarek_2.png` (Jarek, mai încolo, lângă gard) (galeria: „Finn: datoria la Jarek”); sprite-ul `sprites/hot_iesirea.png`.
+
+**Cum verifici:** cu „Lada colectorului” și „Ziua Linei” gata, la Finn: „Finn, ce te apasă?” → „Te ajut.” → F2 → Obiect: 3 Blăni de lup → „Am blănile pentru Jarek.” → „Noapte” → Marginea satului → Ieșirea → Finn → „Să mergem.” → „Sar gardul.” → cele 2 imagini → +1.
+
+### ✅ Noaptea de la cimitir (nu se ratează; după ea, al patrulea vis)
+- **Pornește** (decis de autor: doar după „Camera de sus”, „Hârtiile soldatului” și „Pivnița”; ales de Claude: și după „Datoria la Jarek”), la Finn: „Ce-i cu Lina? Pare obosită. !”. Lina vede noaptea lumini la cimitir, iar Finn a găsit pământul răscolit pe mormintele celor 23. „La noapte mergem să vedem.” pornește misiunea; „Altă dată, Finn.” o lasă în meniu.
+- **Noaptea** (după 23), când ajungi la cimitir, pornește singură (Finn e deja după zid), **peste 2 imagini**: luminițele Linei sunt ochii șobolanilor din pivniță, care sapă la mormintele celor 23: „Stăpânul vrea morții, da-da!”. Al treilea mormânt de la poartă e al lui Edwin → „Sar peste zid.” → **lupta**: Vale și **Finn** (decis de autor: Finn luptă de data asta, cu un cuțit; poze de luptă noi) împotriva a doi șobolani cu gheare și unul care scuipă, pe harta de luptă nouă a cimitirului.
+- **Lupta nu se poate pierde** (decis de autor): la înfrângere, **Finn aruncă torța** în iarba uscată și șobolanii fug (ales de Claude; o imagine în plus, doar atunci). Apoi, la amândouă, pun pământul la loc, peste o imagine; Vale ajunge acasă, noaptea.
+- **Recompensa:** încrederea lui Finn **+1**.
+- **Al patrulea vis** (decis de autor), la somnul de după (ajunge o oră de somn noaptea, ales de Claude), cu ceață, **peste 3 imagini**: cei 23 se ridică din morminte ca soldați, verzi și ușor strălucitori, neputreziți; Vale vrea să alerge la tatăl lui, dar nu se poate mișca, doar plutește în urma lor; pleacă spre nord, spre o crăpătură în pământ; la intrare, **Edwin se întoarce** și îi vorbește în limba din „Vorbele din somn”, pe care Vale o înțelege în vis: „Încă nu, Vale. Dar te așteaptă.” (ciornă). Filmulețul (opțional, ca la celelalte vise) stă între a doua și a treia imagine.
+- **Imagini:** `events/finn_cimitir_1.png` (după zid, ochii roșii printre morminte), `_2.png` (șobolanii săpând), `_3.png` (pământul pus la loc), `events/finn_cimitir_torta.png` (doar la înfrângere: torța lui Finn) (galeria: „Finn: noaptea de la cimitir”); harta de luptă `locations/lupta_cimitir.png`; pozele de luptă ale lui Finn `combat/hot_idle/atac/aparare/lovit/cazut.png` (galeria: „Luptă”); visul `events/vis_4_1.png`, `_2.png`, `_3.png`, `events/vis_4.mp4` (galeria: „Al patrulea vis”).
+
+**Cum verifici:** F2 → misiunile „Camera de sus”, „Hârtiile soldatului”, „Pivnița” terminate (sau joacă-le) și „Datoria la Jarek” gata. La Finn: „Ce-i cu Lina?” → „La noapte mergem să vedem.” → „Noapte” → Marginea satului → Cimitirul → imaginile → „Sar peste zid.” → lupta (câștigată sau pierdută) → acasă. „Dormi până dimineața” → al patrulea vis. (Visul se poate porni și din F2 → Eveniment → `vis_4`.)
+
+### ✅ Zarurile orcilor (fără încredere)
+- **Pornește** (decis de autor): de la **4/10 încredere** cu Finn, când e acasă: „Ce meșterești acolo, Finn? !” → „Arată-mi.” → **peste o imagine**, Finn îi arată trucul lui Jarek: la zaruri, cu focul în spate, te uiți în lama toporului lustruit de pe masă și vezi ce e sub paharul unui orc. **O singură dată pe joc.** Nu dă încredere (decis de autor).
+- **Imagine:** `events/finn_zaruri.png` (galeria: „Finn: zarurile orcilor”).
+
+**Cum verifici:** cu încrederea lui Finn 4, acasă la el, ziua: „Ce meșterești acolo, Finn?” → „Arată-mi.” → la zaruri, la poartă (14–18), apare puterea.
 
 ---
 

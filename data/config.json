@@ -135,7 +135,25 @@
       "imagine": "locations/munca_vaci.png",
       "text": "Îngrijești vacile...",
       "gandNoapte": "E noapte. Vacile dorm, nu are rost să le deranjez. Revin mâine.",
-      "miniJoc": "muls"
+      "miniJoc": "muls",
+      "bonus": [
+        {
+          "_nota": "Decis de autor: cât e misiunea lui Finn „Ziua Linei”, mulsul dă și lapte pentru tortul lui Agnes (2 pe muncă, până la 2: ales de Claude).",
+          "obiect": "lapte",
+          "n": 2,
+          "max": 2,
+          "conditii": {
+            "misiune": {
+              "finn_lina": "inceputa"
+            },
+            "nu": {
+              "stare": {
+                "lina_tort": "gata"
+              }
+            }
+          }
+        }
+      ]
     },
     "munca_moara": {
       "nume": "Moara",
@@ -175,6 +193,22 @@
           "conditii": {
             "misiune": {
               "miriam_paine": "inceputa"
+            }
+          }
+        },
+        {
+          "_nota": "Decis de autor: cât e misiunea lui Finn „Ziua Linei”, munca la moară dă și făină pentru tortul lui Agnes (2 pe muncă, până la 2: ales de Claude).",
+          "obiect": "faina",
+          "n": 2,
+          "max": 2,
+          "conditii": {
+            "misiune": {
+              "finn_lina": "inceputa"
+            },
+            "nu": {
+              "stare": {
+                "lina_tort": "gata"
+              }
             }
           }
         }
@@ -356,7 +390,7 @@
       "max": 4.5
     },
     "putere": {
-      "_nota": "Puterea de la hoț: o dată pe joc, Vale se uită sub paharul unui orc fără ca el să-și dea seama. Se primește după misiunea hoțului (TODO), care pune starea de mai jos.",
+      "_nota": "Puterea de la hoț: o dată pe joc, Vale se uită sub paharul unui orc fără ca el să-și dea seama. Se primește în misiunea lui Finn „Zarurile orcilor” (decis de autor: de la 4/10 încredere), care pune starea de mai jos.",
       "conditii": {
         "stare": {
           "zaruri_hot": "da"

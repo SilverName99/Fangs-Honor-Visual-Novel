@@ -3348,6 +3348,667 @@
         }
       },
       "_nota": "Decis de autor: Hanna, o văduvă (bărbatul ei, Owen, e unul dintre cei 23), naște noaptea; Miriam se duce la ea și îl trimite pe Vale după Bătrâna Morwen, la Marginea satului, ferindu-se de orci; 3 imagini; în zori se naște copilul, care primește numele tatălui. Refuzul sau bătrâna neadusă până la 5 dimineața = ratată, fără +1. Cât e misiunea, coliba nu e încuiată noaptea, iar Miriam e la Hanna până la 7 (ales de Claude)."
+    },
+    {
+      "id": "finn_lina",
+      "titlu": "Ziua Linei",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "lina_ziua": "da"
+            }
+          },
+          "text": "CIORNĂ: Lina a împlinit opt ani. Am adus panglica albastră de la negustor, iar doamna Agnes a făcut un tort cu miere. Am mâncat toți patru cu degetele."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "lina": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. I-am spus că n-am timp."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "lina": "ratat"
+            }
+          },
+          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. N-am ajuns la timp. Lina s-a uitat toată seara la ușă."
+        },
+        "CIORNĂ: În trei zile e ziua Linei. Finn vrea să-i dea panglica albastră de la negustor și un tort de la doamna Agnes, dar n-are bani și a promis că nu mai fură. În seara zilei ei, mă așteaptă în fața casei."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: la o zi după „Mama lui Finn” (cu mama vindecată, de la care știe toată casa).",
+        "text": "Ce-i cu tine, Finn? Pari cu gândul în altă parte.",
+        "nod": "lina_o1",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_mama": 1
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "O rog pe doamna Agnes să facă un tort",
+          "la": "hangita",
+          "gata": {
+            "existaStare": "lina_tort"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 4
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 3,
+                        "max": 3
+                      }
+                    },
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  }
+                ]
+              },
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+            },
+            "Doamna Agnes e la tavernă. Iar panglica o are negustorul: mă oprește el când intru în piață."
+          ],
+          "predare": {
+            "text": "Doamna Agnes, ați putea face un tort?",
+            "nod": "lina_a1",
+            "conditii": {
+              "nu": {
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 4
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 3,
+                        "max": 3
+                      }
+                    },
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre ziua Linei...",
+            "nod": "lina_a_tarziu"
+          }
+        },
+        {
+          "text": "Îi duc doamnei Agnes 2 măsuri de făină, 2 căni de lapte și o măsură de miere",
+          "la": "hangita",
+          "gata": {
+            "stare": {
+              "lina_tort": "gata"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 4
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 3,
+                        "max": 3
+                      }
+                    },
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  }
+                ]
+              },
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+            },
+            "Făina de la moară și laptele de la vaci (cât e misiunea, munca îmi dă și din ele), mierea de la fermier (5 monede)."
+          ],
+          "predare": {
+            "text": "Am adus tot pentru tort.",
+            "nod": "lina_b1",
+            "conditii": {
+              "areCate": {
+                "faina": 2,
+                "lapte": 2,
+                "miere": 1
+              },
+              "nu": {
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 4
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 3,
+                        "max": 3
+                      }
+                    },
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Ce trebuia pentru tort?",
+            "nod": [
+              {
+                "nod": "lina_a_tarziu",
+                "conditii": {
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 4
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 3,
+                          "max": 3
+                        }
+                      },
+                      "ora": {
+                        "min": "23:00"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "nod": "lina_a_ind"
+              }
+            ]
+          }
+        },
+        {
+          "text": "În seara zilei ei, cu panglica și cu tortul, la Finn, în fața casei",
+          "la": "hot",
+          "gata": {
+            "stare": {
+              "lina_ziua": "da"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 4
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "ziua_linei": {
+                        "min": 3,
+                        "max": 3
+                      }
+                    },
+                    "ora": {
+                      "min": "23:00"
+                    }
+                  }
+                ]
+              },
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+            },
+            {
+              "conditii": {
+                "zileDeLa": {
+                  "ziua_linei": {
+                    "min": 3,
+                    "max": 3
+                  }
+                }
+              },
+              "text": "E azi! Diseară, după șase, Finn mă așteaptă în fața casei. Cu panglica și cu tortul."
+            },
+            "În seara zilei ei (a treia zi de când mi-a spus), după șase, Finn mă așteaptă în fața casei. Panglica o are negustorul: mă oprește când intru în piață."
+          ],
+          "predare": {
+            "text": "Am tot, Finn. Panglica și tortul.",
+            "nod": "lina_z0",
+            "conditii": {
+              "loc": "casa_finn",
+              "zileDeLa": {
+                "ziua_linei": {
+                  "min": 3,
+                  "max": 3
+                }
+              },
+              "ora": {
+                "min": "18:00",
+                "max": "22:59"
+              },
+              "areObiect": "panglica_lina",
+              "oricare": [
+                {
+                  "areObiect": "tort_lina"
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": [
+              {
+                "conditii": {
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 4
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 3,
+                          "max": 3
+                        }
+                      },
+                      "ora": {
+                        "min": "23:00"
+                      }
+                    }
+                  ]
+                },
+                "text": "Finn... ziua Linei."
+              },
+              "Despre ziua Linei..."
+            ],
+            "nod": [
+              {
+                "nod": "lina_r1",
+                "conditii": {
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 4
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 3,
+                          "max": 3
+                        }
+                      },
+                      "ora": {
+                        "min": "23:00"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "nod": "lina_f_azi",
+                "conditii": {
+                  "zileDeLa": {
+                    "ziua_linei": {
+                      "min": 3,
+                      "max": 3
+                    }
+                  },
+                  "ora": {
+                    "min": "18:00",
+                    "max": "22:59"
+                  }
+                }
+              },
+              {
+                "nod": "lina_f_ind"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1. Lina a avut cea mai frumoasă zi.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Finn îi spune că în 3 zile e ziua Linei; panglica de la negustor (care îl oprește pe Vale în piață), tortul de la Agnes (2 făină de la moară, 2 lapte de la muls, o miere de la fermier); în seara zilei, Finn îl așteaptă în fața casei; 3 imagini. Se poate rata: refuzul sau ziua trecută (decis de autor). Prețul panglicii și ora întâlnirii, alese de Claude."
+    },
+    {
+      "id": "finn_datoria",
+      "titlu": "Datoria la Jarek",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "datoria_jarek": "platita"
+            }
+          },
+          "text": "CIORNĂ: Am sărit gardul cu Finn, noaptea, și i-am dus lui Jarek trei blăni de lup. Datoria lui Finn e plătită."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "datoria": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Finn îi datorează lui Jarek de când i-a fost mama bolnavă. Mi-a cerut ajutorul, iar eu i-am spus să se descurce singur."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "datoria": "ratat"
+            }
+          },
+          "text": "CIORNĂ: Finn îi datora lui Jarek de când i-a fost mama bolnavă. N-am ajuns la timp, iar oamenii lui Jarek și-au luat restul din Finn."
+        },
+        "CIORNĂ: Cât i-a fost mama bolnavă, Jarek i-a dat lui Finn mâncare pe datorie. Acum vrea trei blăni de lup, în cinci zile. Le ducem noaptea, peste gardul de la ieșire."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată).",
+        "text": "Finn, ce te apasă?",
+        "nod": "datoria_o1",
+        "conditii": {
+          "misiune": {
+            "finn_lada": "terminata"
+          },
+          "oricare": [
+            {
+              "misiuneTerminata": {
+                "finn_lina": 1
+              }
+            },
+            {
+              "misiune": {
+                "finn_lina": "ratata"
+              }
+            }
+          ]
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îi aduc lui Finn 3 blăni de lup",
+          "gata": {
+            "existaStare": "datoria_saci"
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "datoria_jarek": {
+                    "pesteZile": 5
+                  }
+                }
+              },
+              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
+            },
+            "Blănile le iau de la lupi, la vânătoare, în pădure. Am cinci zile."
+          ],
+          "predare": {
+            "text": "Am blănile pentru Jarek.",
+            "nod": "datoria_b1",
+            "conditii": {
+              "areCate": {
+                "blana_lup": 3
+              },
+              "nu": {
+                "trecut": {
+                  "datoria_jarek": {
+                    "pesteZile": 5
+                  }
+                }
+              }
+            }
+          },
+          "indiciu": {
+            "text": [
+              {
+                "conditii": {
+                  "trecut": {
+                    "datoria_jarek": {
+                      "pesteZile": 5
+                    }
+                  }
+                },
+                "text": "Finn... ce ai pe față?"
+              },
+              "Despre Jarek..."
+            ],
+            "nod": [
+              {
+                "nod": "datoria_r1",
+                "conditii": {
+                  "trecut": {
+                    "datoria_jarek": {
+                      "pesteZile": 5
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "datoria_ind"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Noaptea, la ieșire, îi ducem lui Jarek blănile",
+          "gata": {
+            "stare": {
+              "datoria_jarek": "platita"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "trecut": {
+                  "datoria_jarek": {
+                    "pesteZile": 5
+                  }
+                }
+              },
+              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
+            },
+            "După unsprezece, la ieșirea de la Marginea satului. Finn mă așteaptă acolo în fiecare noapte."
+          ],
+          "predare": {
+            "text": "Să mergem.",
+            "nod": "datoria_j0",
+            "conditii": {
+              "loc": "iesirea",
+              "nu": {
+                "trecut": {
+                  "datoria_jarek": {
+                    "pesteZile": 5
+                  }
+                }
+              }
+            }
+          },
+          "indiciu": {
+            "text": [
+              {
+                "conditii": {
+                  "trecut": {
+                    "datoria_jarek": {
+                      "pesteZile": 5
+                    }
+                  }
+                },
+                "text": "Finn... ce ai pe față?"
+              },
+              "Despre Jarek..."
+            ],
+            "nod": [
+              {
+                "nod": "datoria_r1",
+                "conditii": {
+                  "trecut": {
+                    "datoria_jarek": {
+                      "pesteZile": 5
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "datoria_ind2"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1. Nu mai datorează nimic nimănui.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Finn are o datorie la Jarek, iar Vale îl ajută; în 5 zile; noaptea, Finn îl așteaptă la ieșire (sprite nou), sar gardul și îi dau lui Jarek sacul, mai încolo pe lângă gard (2 imagini). Ales de Claude: datoria e de 3 blăni de lup. Se poate rata: refuzul sau cele 5 zile trecute."
+    },
+    {
+      "id": "finn_cimitir",
+      "titlu": "Noaptea de la cimitir",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "cimitir_gata"
+          },
+          "text": "CIORNĂ: Noaptea, la cimitir, i-am prins cu Finn pe șobolani săpând la mormintele celor douăzeci și trei. Spuneau că stăpânul lor vrea morții. Am pus pământul la loc."
+        },
+        "CIORNĂ: Lina vede lumini noaptea la cimitir, iar Finn a găsit pământul răscolit pe mormintele celor douăzeci și trei. La noapte, după unsprezece, mergem să vedem cine sapă."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: doar după ce Vale a găsit hârtiile soldatului („Camera de sus”), Roderick s-a uitat peste ele („Hârtiile soldatului”) și pivnița e curățată de șobolani („Pivnița”). Ales de Claude: și după „Datoria la Jarek” (dusă la capăt de o zi, sau ratată).",
+        "text": "Ce-i cu Lina? Pare obosită.",
+        "nod": "cimitir_o1",
+        "conditii": {
+          "misiune": {
+            "agnes_camera": "terminata",
+            "roderick_hartii": "terminata",
+            "agnes_pivnita": "terminata"
+          },
+          "oricare": [
+            {
+              "misiuneTerminata": {
+                "finn_datoria": 1
+              }
+            },
+            {
+              "misiune": {
+                "finn_datoria": "ratata"
+              }
+            }
+          ]
+        }
+      },
+      "pasi": [
+        {
+          "text": "La noapte, după unsprezece, la cimitir, cu Finn",
+          "gata": {
+            "existaStare": "cimitir_gata"
+          },
+          "sfat": "Cimitirul e la Marginea satului. Finn mă așteaptă după zid, noaptea.",
+          "indiciu": {
+            "text": "Despre cimitir...",
+            "nod": "cimitir_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: nu se ratează; lupta cu șobolanii nu se poate pierde (la înfrângere, Finn aruncă torța; ales de Claude); după ea, la somn, al patrulea vis. Finn luptă alături de Vale (poze de luptă noi)."
+    },
+    {
+      "id": "finn_zaruri",
+      "titlu": "Zarurile orcilor",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": "CIORNĂ: Finn m-a învățat un truc de la Jarek: la zaruri, cu focul în spate, mă uit în lama toporului de pe masă și văd ce e sub paharul unui orc. O singură dată.",
+      "oferta": {
+        "_nota": "Decis de autor: de la 4/10 încredere cu Finn, când e acasă.",
+        "text": "Ce meșterești acolo, Finn?",
+        "nod": "zaruri_o1",
+        "conditii": {
+          "relatie": {
+            "hot": {
+              "min": 4
+            }
+          },
+          "loc": "casa_finn/interior"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Învăț trucul lui Finn",
+          "gata": {
+            "stare": {
+              "zaruri_hot": "da"
+            }
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Trucul lui Finn: o dată pe joc, la zaruri, văd sub paharul unui orc. (Fără încredere.)"
+      },
+      "_nota": "Decis de autor: puterea de la zaruri; o imagine; nu dă încredere."
     }
   ]
 }

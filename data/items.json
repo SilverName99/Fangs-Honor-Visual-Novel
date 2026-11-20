@@ -342,7 +342,7 @@
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
-      "descriere": "Miere de la fermier, pentru berea lui Agnes.",
+      "descriere": "Miere de la fermier, de la stupul cel bun.",
       "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
     },
     "luminita_noptii": {
@@ -534,7 +534,7 @@
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
-      "descriere": "Făină albă, măcinată pe ascuns. Morarul le mai dă câte un pumn celor care cară saci la moară. E pentru pâinea mamei.",
+      "descriere": "Făină albă, măcinată pe ascuns. Morarul le mai dă câte un pumn celor care cară saci la moară.",
       "_nota": "Misiunea Miriamei „Pâinea văduvelor” (decis de autor: făina vine de la moară). Obiect de poveste care se numără, ca mierea de la bere: 2 la fiecare muncă la moară cât e misiunea, până la 4 (ales de Claude, TODO echilibru)."
     },
     "steag_rupt": {
@@ -550,6 +550,28 @@
       "pret": 0,
       "descriere": "Steagul satului, spălat și cusut de mama. Cele două jumătăți sunt prinse la loc, iar unde lipsea pânza e un petic din rochia ei albastră. E pentru unchiul Roderick.",
       "_nota": "Misiunea „Steagul satului” (decis de autor): după ce îl coase Miriam, Vale i-l duce lui Roderick, care îl păstrează (în lupta finală luptă cu el în mână)."
+    },
+    "lapte": {
+      "nume": "Lapte",
+      "tip": "poveste",
+      "numarabil": true,
+      "pret": 0,
+      "descriere": "Lapte proaspăt de la ferma de vaci. Pentru tortul Linei.",
+      "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: laptele vine de la muls). Obiect de poveste care se numără, ca făina: 2 la o muncă la vaci cât e misiunea (ales de Claude)."
+    },
+    "panglica_lina": {
+      "nume": "Panglică albastră",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "O panglică de mătase albastră, de la negustor. Lina s-a uitat la ea o zi întreagă, fără s-o ceară.",
+      "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: de la negustorul din piață). 5 monede (ales de Claude, TODO echilibru)."
+    },
+    "tort_lina": {
+      "nume": "Tort cu miere",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Tortul doamnei Agnes, cu miere și coajă rumenă. Pentru ziua Linei.",
+      "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: îl face Agnes din 2 făină, 2 lapte și o miere)."
     }
   }
 }
