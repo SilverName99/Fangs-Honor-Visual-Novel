@@ -882,14 +882,14 @@
       }
     },
     "cimitir_sobolani": {
-      "_nota": "Decis de autor: Vale și Finn împotriva șobolanilor de la cimitir (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă torța și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
+      "_nota": "Decis de autor: Vale și Finn împotriva șobolanilor de la cimitir (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă felinarul unui șobolan în iarba uscată și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
       "nume": "Cimitirul",
       "fundal": "cimitir",
       "fuga": false,
       "aliati": [
         {
           "id": "hot",
-          "linie": 1,
+          "linie": 0,
           "rand": "fata"
         }
       ],
@@ -911,7 +911,7 @@
         }
       ],
       "victorie": {
-        "text": "Ultimul șobolan o ia la fugă printre cruci.",
+        "text": "Șobolanii se risipesc printre morminte.",
         "efecte": {
           "stare": {
             "cimitir_lupta": "castigat"
@@ -920,7 +920,7 @@
         }
       },
       "infrangere": {
-        "text": "Cazi în genunchi între morminte. Dar Finn nu fuge.",
+        "text": "Cazi între morminte. Lângă tine, Finn se ridică în genunchi.",
         "efecte": {
           "stare": {
             "cimitir_lupta": "pierdut"

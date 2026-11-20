@@ -334,7 +334,9 @@ function platesteTaxa() {
 function verificaColectorul() {
   const t = stare.taxa;
   const ctx = context(stare);
-  if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !stare.scena.startsWith('casa')) return false;
+  // Doar acasă la Vale („casa” și locurile ei), nu și la casa lui Finn („casa_finn”), care începe la fel
+  const acasa = stare.scena === 'casa' || stare.scena.startsWith('casa.');
+  if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !acasa) return false;
   if (ctx.minuteZi < inMinute(cfg.taxa.oraColector)) return false;
   t.colectorZi = ctx.zi;
   dialogTaxa(cfg.taxa.textColector);

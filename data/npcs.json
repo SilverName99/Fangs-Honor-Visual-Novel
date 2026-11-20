@@ -427,7 +427,7 @@
         "casa_finn",
         "iesirea"
       ],
-      "_rol": "Nu luptă (decis): cele 6 locuri din luptă sunt pline. Ajută din umbră: înainte de lupta finală se strecoară la poartă și fură cheia sau strică ceva (lupta e mai ușoară), iar până atunci aduce zvonuri și indicii sau deschide lucruri încuiate. Toate TODO.",
+      "_rol": "Tânărul hoț (Finn). Nu luptă, decât o dată (decis de autor): la cimitir, în „Noaptea de la cimitir”, alături de Vale, ca aliat de o luptă; altfel ajută din umbră.",
       "cineRaspunde": {
         "personaj": "negustor",
         "conditii": {
@@ -524,11 +524,26 @@
               "datoria_saci": "da"
             },
             "nu": {
-              "trecut": {
-                "datoria_jarek": {
-                  "pesteZile": 5
+              "oricare": [
+                {
+                  "zileDeLa": {
+                    "datoria_jarek": {
+                      "min": 6
+                    }
+                  }
+                },
+                {
+                  "zileDeLa": {
+                    "datoria_jarek": {
+                      "min": 5,
+                      "max": 5
+                    }
+                  },
+                  "ora": {
+                    "min": "03:00"
+                  }
                 }
-              }
+              ]
             }
           },
           "ce": "cât e misiunea „Datoria la Jarek”, după ce Vale a adus blănile, îl așteaptă în fiecare noapte la ieșire (decis de autor)"

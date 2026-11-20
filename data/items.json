@@ -563,14 +563,14 @@
       "nume": "Panglică albastră",
       "tip": "poveste",
       "pret": 0,
-      "descriere": "O panglică de mătase albastră, de la negustor. Lina s-a uitat la ea o zi întreagă, fără s-o ceară.",
+      "descriere": "O panglică de mătase albastră, de la negustor. Lina s-a uitat la ea o zi întreagă, în primăvară, fără s-o ceară.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: de la negustorul din piață). 5 monede (ales de Claude, TODO echilibru)."
     },
     "tort_lina": {
       "nume": "Tort cu miere",
       "tip": "poveste",
       "pret": 0,
-      "descriere": "Tortul doamnei Agnes, cu miere și coajă rumenă. Pentru ziua Linei.",
+      "descriere": "Tortul doamnei Agnes, cu miere și blat rumen. Pentru ziua Linei.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: îl face Agnes din 2 făină, 2 lapte și o miere)."
     }
   }

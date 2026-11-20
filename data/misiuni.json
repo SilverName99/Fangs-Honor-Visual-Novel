@@ -3379,7 +3379,7 @@
           },
           "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. N-am ajuns la timp. Lina s-a uitat toată seara la ușă."
         },
-        "CIORNĂ: În trei zile e ziua Linei. Finn vrea să-i dea panglica albastră de la negustor și un tort de la doamna Agnes, dar n-are bani și a promis că nu mai fură. În seara zilei ei, mă așteaptă în fața casei."
+        "CIORNĂ: Peste trei zile e ziua Linei. Finn vrea să-i dea panglica albastră de la negustor și un tort de la doamna Agnes, dar n-are bani și a promis că nu mai fură. În seara zilei ei, mă așteaptă în fața casei."
       ],
       "oferta": {
         "_nota": "Ales de Claude: la o zi după „Mama lui Finn” (cu mama vindecată, de la care știe toată casa).",
@@ -3433,11 +3433,26 @@
               "nu": {
                 "oricare": [
                   {
-                    "zileDeLa": {
-                      "ziua_linei": {
-                        "min": 4
+                    "oricare": [
+                      {
+                        "zileDeLa": {
+                          "ziua_linei": {
+                            "min": 4
+                          }
+                        }
+                      },
+                      {
+                        "zileDeLa": {
+                          "ziua_linei": {
+                            "min": 3,
+                            "max": 3
+                          }
+                        },
+                        "ora": {
+                          "min": "23:00"
+                        }
                       }
-                    }
+                    ]
                   },
                   {
                     "zileDeLa": {
@@ -3447,7 +3462,7 @@
                       }
                     },
                     "ora": {
-                      "min": "23:00"
+                      "min": "21:30"
                     }
                   }
                 ]
@@ -3456,7 +3471,36 @@
           },
           "indiciu": {
             "text": "Despre ziua Linei...",
-            "nod": "lina_a_tarziu"
+            "nod": [
+              {
+                "nod": "lina_a_tarziu",
+                "conditii": {
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 4
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "ziua_linei": {
+                          "min": 3,
+                          "max": 3
+                        }
+                      },
+                      "ora": {
+                        "min": "23:00"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "nod": "lina_a_acum"
+              }
+            ]
           }
         },
         {
@@ -3507,11 +3551,26 @@
               "nu": {
                 "oricare": [
                   {
-                    "zileDeLa": {
-                      "ziua_linei": {
-                        "min": 4
+                    "oricare": [
+                      {
+                        "zileDeLa": {
+                          "ziua_linei": {
+                            "min": 4
+                          }
+                        }
+                      },
+                      {
+                        "zileDeLa": {
+                          "ziua_linei": {
+                            "min": 3,
+                            "max": 3
+                          }
+                        },
+                        "ora": {
+                          "min": "23:00"
+                        }
                       }
-                    }
+                    ]
                   },
                   {
                     "zileDeLa": {
@@ -3521,7 +3580,7 @@
                       }
                     },
                     "ora": {
-                      "min": "23:00"
+                      "min": "21:30"
                     }
                   }
                 ]
@@ -3554,6 +3613,20 @@
                       }
                     }
                   ]
+                }
+              },
+              {
+                "nod": "lina_a_acum",
+                "conditii": {
+                  "zileDeLa": {
+                    "ziua_linei": {
+                      "min": 3,
+                      "max": 3
+                    }
+                  },
+                  "ora": {
+                    "min": "21:30"
+                  }
                 }
               },
               {
@@ -3739,7 +3812,7 @@
               "datoria": "refuzat"
             }
           },
-          "text": "CIORNĂ: Finn îi datorează lui Jarek de când i-a fost mama bolnavă. Mi-a cerut ajutorul, iar eu i-am spus să se descurce singur."
+          "text": "CIORNĂ: Finn are o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. Mi-a cerut ajutorul, iar eu i-am spus să se descurce singur."
         },
         {
           "conditii": {
@@ -3747,9 +3820,9 @@
               "datoria": "ratat"
             }
           },
-          "text": "CIORNĂ: Finn îi datora lui Jarek de când i-a fost mama bolnavă. N-am ajuns la timp, iar oamenii lui Jarek și-au luat restul din Finn."
+          "text": "CIORNĂ: Finn avea o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. N-am ajuns la timp, iar Finn a plătit-o cu pielea lui."
         },
-        "CIORNĂ: Cât i-a fost mama bolnavă, Jarek i-a dat lui Finn mâncare pe datorie. Acum vrea trei blăni de lup, în cinci zile. Le ducem noaptea, peste gardul de la ieșire."
+        "CIORNĂ: În noaptea în care l-a prins negustorul, Finn ducea în sac și trei blăni de-ale lui Jarek, pe care negustorul le-a vândut. Acum Jarek vrea trei blăni de lup înapoi, în cinci zile. I le ducem noaptea, peste gardul de la ieșire."
       ],
       "oferta": {
         "_nota": "Ales de Claude: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată).",
@@ -3782,11 +3855,26 @@
           "sfat": [
             {
               "conditii": {
-                "trecut": {
-                  "datoria_jarek": {
-                    "pesteZile": 5
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 6
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 5,
+                        "max": 5
+                      }
+                    },
+                    "ora": {
+                      "min": "03:00"
+                    }
                   }
-                }
+                ]
               },
               "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
             },
@@ -3800,11 +3888,26 @@
                 "blana_lup": 3
               },
               "nu": {
-                "trecut": {
-                  "datoria_jarek": {
-                    "pesteZile": 5
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 6
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 5,
+                        "max": 5
+                      }
+                    },
+                    "ora": {
+                      "min": "03:00"
+                    }
                   }
-                }
+                ]
               }
             }
           },
@@ -3812,11 +3915,26 @@
             "text": [
               {
                 "conditii": {
-                  "trecut": {
-                    "datoria_jarek": {
-                      "pesteZile": 5
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 6
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 5,
+                          "max": 5
+                        }
+                      },
+                      "ora": {
+                        "min": "03:00"
+                      }
                     }
-                  }
+                  ]
                 },
                 "text": "Finn... ce ai pe față?"
               },
@@ -3826,11 +3944,26 @@
               {
                 "nod": "datoria_r1",
                 "conditii": {
-                  "trecut": {
-                    "datoria_jarek": {
-                      "pesteZile": 5
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 6
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 5,
+                          "max": 5
+                        }
+                      },
+                      "ora": {
+                        "min": "03:00"
+                      }
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -3849,11 +3982,26 @@
           "sfat": [
             {
               "conditii": {
-                "trecut": {
-                  "datoria_jarek": {
-                    "pesteZile": 5
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 6
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 5,
+                        "max": 5
+                      }
+                    },
+                    "ora": {
+                      "min": "03:00"
+                    }
                   }
-                }
+                ]
               },
               "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
             },
@@ -3865,11 +4013,26 @@
             "conditii": {
               "loc": "iesirea",
               "nu": {
-                "trecut": {
-                  "datoria_jarek": {
-                    "pesteZile": 5
+                "oricare": [
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 6
+                      }
+                    }
+                  },
+                  {
+                    "zileDeLa": {
+                      "datoria_jarek": {
+                        "min": 5,
+                        "max": 5
+                      }
+                    },
+                    "ora": {
+                      "min": "03:00"
+                    }
                   }
-                }
+                ]
               }
             }
           },
@@ -3877,11 +4040,26 @@
             "text": [
               {
                 "conditii": {
-                  "trecut": {
-                    "datoria_jarek": {
-                      "pesteZile": 5
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 6
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 5,
+                          "max": 5
+                        }
+                      },
+                      "ora": {
+                        "min": "03:00"
+                      }
                     }
-                  }
+                  ]
                 },
                 "text": "Finn... ce ai pe față?"
               },
@@ -3889,13 +4067,28 @@
             ],
             "nod": [
               {
-                "nod": "datoria_r1",
+                "nod": "datoria_rs1",
                 "conditii": {
-                  "trecut": {
-                    "datoria_jarek": {
-                      "pesteZile": 5
+                  "oricare": [
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 6
+                        }
+                      }
+                    },
+                    {
+                      "zileDeLa": {
+                        "datoria_jarek": {
+                          "min": 5,
+                          "max": 5
+                        }
+                      },
+                      "ora": {
+                        "min": "03:00"
+                      }
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -3913,7 +4106,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: Finn are o datorie la Jarek, iar Vale îl ajută; în 5 zile; noaptea, Finn îl așteaptă la ieșire (sprite nou), sar gardul și îi dau lui Jarek sacul, mai încolo pe lângă gard (2 imagini). Ales de Claude: datoria e de 3 blăni de lup. Se poate rata: refuzul sau cele 5 zile trecute."
+      "_nota": "Decis de autor: Finn are o datorie la Jarek, iar Vale îl ajută; în 5 zile; noaptea, Finn îl așteaptă la ieșire (sprite nou), sar gardul și îi dau lui Jarek sacul, mai încolo pe lângă gard (2 imagini). Ales de Claude: datoria sunt 3 blăni de lup, pierdute când negustorul l-a prins pe Finn; cele 5 zile se numără în zile din calendar, cu tot cu ultima noapte (până la 3 dimineața din ziua a cincea). Se poate rata: refuzul sau cele 5 zile trecute."
     },
     {
       "id": "finn_cimitir",
@@ -3925,7 +4118,7 @@
           "conditii": {
             "existaStare": "cimitir_gata"
           },
-          "text": "CIORNĂ: Noaptea, la cimitir, i-am prins cu Finn pe șobolani săpând la mormintele celor douăzeci și trei. Spuneau că stăpânul lor vrea morții. Am pus pământul la loc."
+          "text": "CIORNĂ: Noaptea, la cimitir, i-am prins cu Finn pe șobolani săpând la mormintele celor douăzeci și trei. Spuneau că Stăpânul-oaselor vrea morții. Am pus pământul la loc."
         },
         "CIORNĂ: Lina vede lumini noaptea la cimitir, iar Finn a găsit pământul răscolit pe mormintele celor douăzeci și trei. La noapte, după unsprezece, mergem să vedem cine sapă."
       ],
@@ -3959,7 +4152,7 @@
           "gata": {
             "existaStare": "cimitir_gata"
           },
-          "sfat": "Cimitirul e la Marginea satului. Finn mă așteaptă după zid, noaptea.",
+          "sfat": "Cimitirul e la Marginea satului. Finn mă așteaptă după gard, noaptea.",
           "indiciu": {
             "text": "Despre cimitir...",
             "nod": "cimitir_ind"
@@ -3981,7 +4174,7 @@
       "titlu": "Zarurile orcilor",
       "dela": "hot",
       "dialog": "hot",
-      "descriere": "CIORNĂ: Finn m-a învățat un truc de la Jarek: la zaruri, cu focul în spate, mă uit în lama toporului de pe masă și văd ce e sub paharul unui orc. O singură dată.",
+      "descriere": "CIORNĂ: Finn m-a învățat un truc de la Jarek: la zaruri, cu soarele în spate, mă uit în lama toporului de pe masă și văd ce e sub paharul unui orc. O dată la fiecare partidă.",
       "oferta": {
         "_nota": "Decis de autor: de la 4/10 încredere cu Finn, când e acasă.",
         "text": "Ce meșterești acolo, Finn?",
@@ -4006,7 +4199,7 @@
         }
       ],
       "recompensa": {
-        "text": "Trucul lui Finn: o dată pe joc, la zaruri, văd sub paharul unui orc. (Fără încredere.)"
+        "text": "Trucul lui Finn: la zaruri, o dată la fiecare partidă, văd sub paharul unui orc. (Fără încredere.)"
       },
       "_nota": "Decis de autor: puterea de la zaruri; o imagine; nu dă încredere."
     }
