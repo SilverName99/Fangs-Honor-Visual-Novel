@@ -1163,15 +1163,15 @@
       "lupta_cimitir": 155
     },
     "combat/hot_lovit.png": {
-      "lupta_taverna_parter": 125,
-      "lupta_padure_interior": 125,
-      "lupta_poarta": 125,
-      "lupta_piata": 125,
-      "lupta_fierar": 125,
-      "lupta_campuri": 125,
-      "lupta_taverna_pivnita": 125,
-      "lupta_poarta_arena": 125,
-      "lupta_cimitir": 125
+      "lupta_taverna_parter": 128,
+      "lupta_padure_interior": 128,
+      "lupta_poarta": 128,
+      "lupta_piata": 128,
+      "lupta_fierar": 128,
+      "lupta_campuri": 128,
+      "lupta_taverna_pivnita": 128,
+      "lupta_poarta_arena": 128,
+      "lupta_cimitir": 128
     },
     "combat/hot_atac.png": {
       "lupta_taverna_parter": 132,
