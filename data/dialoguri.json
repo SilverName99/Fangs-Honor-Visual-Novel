@@ -16540,7 +16540,7 @@
     }
   },
   "vis_4": {
-    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, verzi și ușor strălucitori; Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); filmulețul (opțional) e între a doua și a treia imagine.",
+    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, fantome verzi, străvezii, cu armurile lovite în luptă (decis de autor); Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); filmulețul (opțional) e între a doua și a treia imagine.",
     "grup": "Al patrulea vis",
     "partener": null,
     "vis": true,
@@ -16566,14 +16566,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Se ridică unul câte unul. Douăzeci și trei. În hainele de bătălie, cu armurile strâmbe și cu rombul satului pe piept.",
+        "text": "Se ridică unul câte unul, prin pământ, fără să-l miște. În hainele de bătălie, cu armurile lovite și strâmbe, cu rombul satului pe piept.",
         "urmator": "v4"
       },
       "v4": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu sunt putreziți. Sunt ca în ziua în care au plecat. Doar că lumina din ei e verde și rece, ca focul de pe mlaștini.",
+        "text": "Nu sunt trupuri. Sunt umbre verzi, străvezii, prin care se văd crucile din spate. Lumina din ei e rece, ca focul de pe mlaștini.",
         "urmator": "v5"
       },
       "v5": {
