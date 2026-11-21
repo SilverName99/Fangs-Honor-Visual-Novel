@@ -833,6 +833,19 @@ svg.editor-zone.desen {
   margin-left: auto;
   font-size: 12px;
 }
+/* Intervalele din programul unui personaj, în panou: un clic arată personajul la ora aceea, cu sprite-ul ei */
+.rand .interval {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 0 5px;
+  margin: 2px 2px 0 0;
+  cursor: pointer;
+}
+.rand .interval:hover { border-color: rgba(255, 255, 255, 0.5); }
+.rand .interval.activ { border-color: #d9b45a; color: #f0d58a; }
 
 /* Tab-ul „Misiuni” pe căsuțe (cerut de autor): întâi personajele, apoi titlurile, apoi detaliile */
 .casute-misiuni { max-width: 1200px; }

@@ -65,8 +65,17 @@ export function pozitieImplicita(index, tip) {
 export function sufixVarianta(descriere, idObiect, context) {
   const o = descriere.obiecte.find((x) => x.id === idObiect);
   if (o?.tip !== 'sprite') return '';
-  const v = (o.variante || []).find((x) => x.nume && verifica(x.conditii, context));
+  const v = varianteEfective(o, context).find((x) => x.nume && verifica(x.conditii, context));
   return v ? `@${v.nume}` : '';
+}
+
+// În editor, sprite-ul unui personaj urmează intervalul din program pe care îl arată editorul („spriteEditor”:
+// id → numele sprite-ului, null = cel de bază). Altfel o variantă legată de o misiune (Finn în seara zilei Linei)
+// n-ar apărea niciodată acolo, pentru că editorul nu are misiuni pornite, deci n-ar putea fi aranjată
+function varianteEfective(o, context) {
+  const ales = context?.spriteEditor;
+  if (o.tip !== 'sprite' || !ales || !(o.id in ales)) return o.variante || [];
+  return (o.variante || []).flatMap((v) => (!v.nume ? [v] : v.nume === ales[o.id] ? [{ ...v, conditii: {} }] : []));
 }
 
 // Zona unei ținte poate avea altă formă după condiții (decis de autor: ușa colibei ierbăresei e în alt loc
@@ -112,7 +121,7 @@ export function randeaza(strat, descriere, aranjare, context) {
 
   const obiecte = new Map();
   descriere.obiecte.forEach((o, i) => {
-    const el = elementImagine(candidati(o.imagine, o.variante, context), {
+    const el = elementImagine(candidati(o.imagine, varianteEfective(o, context), context), {
       clasa: `obiect ${o.tip}`,
       // Un obiect poate avea raportul lui până se încarcă imaginea (paharul de zaruri e pătrat, orcul de la masă 4:5)
       raport: o.raport ?? (o.tip === 'sprite' ? 0.45 : o.tip === 'loc-lupta' ? 0.6 : 1.2),

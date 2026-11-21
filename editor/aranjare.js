@@ -1,6 +1,6 @@
 import { api } from './api.js';
 import { elementLaPunct } from '../src/lovire.js';
-import { undeEste, registreazaConditiiPersonaje } from '../src/rutine.js';
+import { undeEste, intrareProgram, registreazaConditiiPersonaje } from '../src/rutine.js';
 import { verifica, registreazaConditie } from '../src/conditii.js';
 import { ZILE, NUME_ZILE, momentZi } from '../src/timp.js';
 
@@ -48,11 +48,19 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   try {
     tot = localStorage.getItem(CHEIE_TOT) === 'da';
   } catch {}
-  const vedere = { zi: 'luni', ora: 12 };
+  // „fortat”: intervalul din program ales cu un clic în panou (id personaj → al câtelea interval); se uită la schimbarea orei
+  const vedere = { zi: 'luni', ora: 12, fortat: {} };
   const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
   const context = () => {
     const minuteZi = vedere.ora * 60;
-    return { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [], arataTot: tot, locEditor: locScena() };
+    const ctx = { moment: momentZi(minuteZi), minuteZi, zi: ZILE.indexOf(vedere.zi) + 1, ziSaptamana: vedere.zi, stari: {}, obiecte: [], misiuni: {}, relatii: {}, deblocate: [], arataTot: tot, locEditor: locScena(), intrareFortata: vedere.fortat };
+    // Sprite-ul fiecărui personaj din scenă e cel al intervalului arătat acum (vezi varianteEfective în scena.js)
+    const spriteEditor = {};
+    for (const p of personaje.values()) {
+      const x = p.program ? intrareProgram(p, ctx) : null;
+      if (x?.loc === ctx.locEditor) spriteEditor[p.id] = x.sprite || null;
+    }
+    return { ...ctx, spriteEditor };
   };
   function locScena() {
     return idScena.replace('.', '/');
@@ -75,16 +83,23 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     const m = Object.entries(p.rutina || {}).find(([, r]) => r.loc === loc)?.[0];
     return m ? { ora: inceput[m], zi: vedere.zi } : null;
   }
-  // Când apare un personaj în scena asta, pe scurt (pentru panou)
+  // Când apare un personaj în scena asta, pe scurt (pentru panou), ca HTML: la programul pe ore, fiecare interval
+  // e un buton care mută editorul la ora lui și îl arată (cu sprite-ul lui), ca să poată fi aranjat
   function candEAici(p) {
     const loc = locScena();
     if (p.program) {
+      const arata = intrareProgram(p, context());
       return p.program
-        .filter((x) => x.loc === loc)
-        .map((x) => `${x.de}–${x.pana}${x.zile ? ` (${x.zile.map((z) => ZILE_SCURT[z]).join(',')})` : ''}${x.sprite ? ` [${x.sprite}]` : ''}`)
-        .join(', ');
+        .map((x, i) => [x, i])
+        .filter(([x]) => x.loc === loc)
+        .map(([x, i]) => {
+          const text = `${x.de}–${x.pana}${x.zile ? ` (${x.zile.map((z) => ZILE_SCURT[z]).join(',')})` : ''}${x.sprite ? ` [${x.sprite}]` : ''}`;
+          const titlu = x.ce ? `${x.ce}. Clic: arată-l aici, la ora asta` : 'Clic: arată-l aici, la ora asta';
+          return `<button class="interval ${x === arata ? 'activ' : ''}" data-i="${i}" title="${esc(titlu)}">${esc(text)}</button>`;
+        })
+        .join(' ');
     }
-    if (p.rutina) return Object.entries(p.rutina).filter(([, r]) => r.loc === loc).map(([m]) => m).join(', ');
+    if (p.rutina) return esc(Object.entries(p.rutina).filter(([, r]) => r.loc === loc).map(([m]) => m).join(', '));
     return 'mereu';
   }
 
@@ -170,6 +185,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function deschide(id) {
     if (desen) desen = null;
     idScena = id;
+    vedere.fortat = {};
     lucru = copieDeLucru(id);
     selectie = null;
     arataScena();
@@ -509,7 +525,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
             const varianta = ko(o.id) !== o.id ? ` <span class="sumar">(${esc(ko(o.id).split('@')[1])})</span>` : '';
             return `<div class="rand ${sel ? 'selectat' : ''} ${absent ? 'absent' : ''}" data-obiect="${esc(o.id)}">
               <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}${varianta}
-              ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${esc(candEAici(personaje.get(o.id)))}${absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
+              ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${candEAici(personaje.get(o.id))}${absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
               ${o.tip === 'sprite' && absent && oraLui(personaje.get(o.id)) ? '<button class="btn la-ora" title="Mută ziua și ora editorului când e el aici">La ora lui</button>' : ''}
             </div>${
               sel && !absent
@@ -551,13 +567,28 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     elPanou.querySelector('.zoom-minus').onclick = () => (ecranul.zoomLa(ecranul.vedere.zoom / 1.5, ...centru()), arataZoom());
     elPanou.querySelector('.zi-ed').onchange = (e) => {
       vedere.zi = e.target.value;
+      vedere.fortat = {};
       arataScena();
     };
     // Ora trece peste miezul nopții în ambele sensuri (23 → 0 și 0 → 23)
     const schimbaOra = (cu) => {
       vedere.ora = (vedere.ora + cu + 24) % 24;
+      vedere.fortat = {};
       arataScena();
     };
+    // Un interval din program, apăsat: editorul sare la prima oră plină din el și îl arată pe acela
+    for (const b of elPanou.querySelectorAll('.interval')) {
+      b.onclick = (e) => {
+        e.stopPropagation();
+        const id = b.closest('[data-obiect]').dataset.obiect;
+        const x = personaje.get(id).program[Number(b.dataset.i)];
+        const [h, m] = x.de.split(':').map(Number);
+        vedere.ora = (h + (m ? 1 : 0)) % 24;
+        if (x.zile && !x.zile.includes(vedere.zi)) vedere.zi = x.zile[0];
+        vedere.fortat = { [id]: Number(b.dataset.i) };
+        arataScena();
+      };
+    }
     elPanou.querySelector('.tot').onchange = (e) => {
       tot = e.target.checked;
       try {
@@ -569,7 +600,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       b.onclick = (e) => {
         e.stopPropagation();
         const ora = oraLui(personaje.get(b.closest('[data-obiect]').dataset.obiect));
-        Object.assign(vedere, ora);
+        Object.assign(vedere, ora, { fortat: {} });
         arataScena();
       };
     }

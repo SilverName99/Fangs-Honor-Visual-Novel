@@ -17,17 +17,21 @@ export function intrareProgram(personaj, ctx) {
     const [h, m] = hhmm.split(':').map(Number);
     return h * 60 + m;
   };
+  // În editor, un clic pe un interval din panou îl alege pe acela, chiar dacă la aceeași oră s-ar potrivi și altul
+  // (fermierul cu plugul rupt / fermierul obișnuit, 06–13), sau dacă ține de o misiune
+  const ales = personaj.program[ctx.intrareFortata?.[personaj.id] ?? -1];
   const potrivite = personaj.program.filter((p) => {
     if (p.zile && !p.zile.includes(ctx.ziSaptamana)) return false;
     // „conditii”: intervalul ține doar cât sunt îndeplinite (de exemplu o întâlnire dintr-o misiune)
     // În editor, cu „Arată tot” bifat, intervalele din misiuni se văd și fără misiune (ca să poată fi aranjate)
-    if (p.conditii && !ctx.arataTot && !verifica(p.conditii, ctx)) return false;
+    if (p.conditii && !ctx.arataTot && p !== ales && !verifica(p.conditii, ctx)) return false;
     const de = min(p.de);
     const pana = min(p.pana);
     return de < pana ? minuteZi >= de && minuteZi < pana : minuteZi >= de || minuteZi < pana;
   });
   // În editor, cu „Arată tot”, se pot potrivi la aceeași oră intervale care în joc se exclud (Finn la butuc / Finn acasă,
   // după eliberare): câștigă cel din scena deschisă, ca personajul să poată fi aranjat acolo
+  if (ales && potrivite.includes(ales)) return ales;
   if (ctx.arataTot && ctx.locEditor) return potrivite.find((p) => p.loc === ctx.locEditor) || potrivite[0] || null;
   return potrivite[0] || null;
 }
