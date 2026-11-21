@@ -16352,7 +16352,7 @@
     }
   },
   "finn_cimitir": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Noaptea de la cimitir” (decis de autor): noaptea, Vale și Finn îi prind pe șobolanii din pivniță săpând la mormintele celor 23: „Stăpânul vrea morții, da-da!”; apoi lupta.",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Noaptea de la cimitir” (decis de autor): noaptea, Vale și Finn îi prind pe șobolani săpând la mormintele celor 23: „Stăpânul-oaselor vrea morții, da-da!”; apoi lupta. Decis de autor: în prima imagine se văd chiar cei patru șobolani din luptă (doi cu gheare, doi care scuipă), cu spatele, săpând la morminte; a doua imagine e mormântul lui Edwin (ales de Claude).",
     "grup": "Finn: noaptea de la cimitir",
     "partener": "hot",
     "start": "n1",
@@ -16361,7 +16361,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Finn mă trage după gardul cimitirului. Printre scânduri se văd mormintele, crucile strâmbe și, printre ele... luminițele Linei.",
+        "text": "Finn mă trage după gardul cimitirului. Printre scânduri se văd mormintele, crucile strâmbe și, printre ele, o lumină mică, jos, lângă pământ. Luminițele Linei.",
         "imagine": "events/finn_cimitir_1.png",
         "urmator": "n2"
       },
@@ -16375,15 +16375,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Numai că nu sunt luminițe. Sunt ochi. Ochi mici și roșii, care se mișcă.",
+        "text": "Nu e o luminiță. E un felinar. Și în jurul lui, cu spatele la noi, patru spinări mari cât niște câini.",
         "urmator": "n4"
       },
       "n4": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Șobolanii. Ca cei din pivnița doamnei Agnes, mari cât niște câini. Sapă cu ghearele la mormintele celor douăzeci și trei. Unul ține un felinar în dinți.",
-        "imagine": "events/finn_cimitir_2.png",
+        "text": "Șobolani, ca cei din pivnița doamnei Agnes. Doi sapă cu ghearele la mormintele celor douăzeci și trei. Ceilalți doi scuipă în gropi bale verzi, care fac pământul să fumege. Unul ține felinarul în dinți.",
         "urmator": "n5"
       },
       "n5": {
@@ -16403,7 +16402,8 @@
         "gand": true,
         "emotie": "normal",
         "text": "Al treilea mormânt de la poartă e al tatei. Pământul de pe el e deja dat la o parte.",
-        "urmator": "n8"
+        "urmator": "n8",
+        "imagine": "events/finn_cimitir_2.png"
       },
       "n8": {
         "vorbitor": "hot",

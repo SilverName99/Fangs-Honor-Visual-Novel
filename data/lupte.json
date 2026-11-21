@@ -882,7 +882,7 @@
       }
     },
     "cimitir_sobolani": {
-      "_nota": "Decis de autor: Vale și Finn împotriva șobolanilor de la cimitir (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă felinarul unui șobolan în iarba uscată și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
+      "_nota": "Decis de autor: Vale și Finn împotriva a patru șobolani, doi cu gheare și doi care scuipă, aceiași din prima imagine (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă felinarul unui șobolan în iarba uscată și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
       "nume": "Cimitirul",
       "fundal": "cimitir",
       "fuga": false,
@@ -906,7 +906,12 @@
         },
         {
           "id": "sobolan_scuipa",
-          "linie": 1,
+          "linie": 0,
+          "rand": "spate"
+        },
+        {
+          "id": "sobolan_scuipa",
+          "linie": 2,
           "rand": "spate"
         }
       ],
