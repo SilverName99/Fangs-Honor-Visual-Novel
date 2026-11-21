@@ -16620,13 +16620,7 @@
         "text": "Coboară în ea unul câte unul. Tata e ultimul. La margine se oprește, cu spatele la mine.",
         "imagine": "events/vis_4_3.png",
         "trecere": 1200,
-        "urmator": "film"
-      },
-      "film": {
-        "video": "events/vis_4.mp4",
-        "urmator": "v10c",
-        "faraVideo": "v10c",
-        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; între a treia și a patra imagine, decis de autor): Edwin, cu spatele, la marginea prăpastiei, se întoarce încet spre Vale. Lipsește = visul merge direct la a patra imagine."
+        "urmator": "v10c"
       },
       "v10c": {
         "vorbitor": "vale",
@@ -16662,7 +16656,22 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Vreau să strig: „Cine?”. Nu am glas. Tata coboară în lumină, iar lumina se stinge în urma lui.",
+        "text": "Vreau să strig: „Cine?”. Nu am glas.",
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_4.mp4",
+        "urmator": "v13b",
+        "faraVideo": "v13b",
+        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; între a patra și a cincea imagine, decis de autor): Edwin, cu fața spre Vale la marginea prăpastiei, coboară plutind în prăpastie. Lipsește = visul merge direct la a cincea imagine."
+      },
+      "v13b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tata coboară în prăpastie, plutind, tot mai adânc, până când lumina îl înghite.",
+        "imagine": "events/vis_4_5.png",
+        "trecere": 1200,
         "urmator": "v14"
       },
       "v14": {
