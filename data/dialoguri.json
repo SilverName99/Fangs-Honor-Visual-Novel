@@ -16611,20 +16611,29 @@
         "gand": true,
         "emotie": "normal",
         "text": "La capătul lui, pământul e despicat: o prăpastie adâncă, între stânci, din care urcă o lumină palidă și un frig care nu e de pe lumea asta.",
-        "urmator": "film"
-      },
-      "film": {
-        "video": "events/vis_4.mp4",
-        "urmator": "v10",
-        "faraVideo": "v10",
-        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; ales de Claude: între a doua și a treia imagine): șirul de soldați verzi ajunge la crăpătură și coboară în ea, unul câte unul; ultimul, Edwin, se oprește la margine și se întoarce. Lipsește = visul merge direct la a treia imagine."
+        "urmator": "v10"
       },
       "v10": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Coboară în ea unul câte unul. Tata e ultimul. La margine se oprește. Și se întoarce spre mine.",
+        "text": "Coboară în ea unul câte unul. Tata e ultimul. La margine se oprește, cu spatele la mine.",
         "imagine": "events/vis_4_3.png",
+        "trecere": 1200,
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_4.mp4",
+        "urmator": "v10c",
+        "faraVideo": "v10c",
+        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; între a treia și a patra imagine, decis de autor): Edwin, cu spatele, la marginea prăpastiei, se întoarce încet spre Vale. Lipsește = visul merge direct la a patra imagine."
+      },
+      "v10c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și se întoarce spre mine.",
+        "imagine": "events/vis_4_4.png",
         "trecere": 1200,
         "urmator": "v10b"
       },
