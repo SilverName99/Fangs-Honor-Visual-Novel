@@ -16566,21 +16566,21 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Se ridică unul câte unul, prin pământ, fără să-l miște. În hainele de bătălie, cu armurile lovite și strâmbe, cu rombul satului pe piept.",
+        "text": "Se ridică unul câte unul, încet, ca niște oameni care ies dintr-o groapă. În hainele de bătălie, cu armurile lovite și strâmbe, cu rombul satului pe piept.",
         "urmator": "v4"
       },
       "v4": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu sunt trupuri. Sunt umbre verzi, străvezii, prin care se văd crucile din spate. Lumina din ei e rece, ca focul de pe mlaștini.",
+        "text": "Nu sunt trupuri. Sunt umbre verzi, străvezii, prin care se văd crucile din spate. Fețele lor nu spun nimic. Iar ochii le sunt albi, fără nimic în ei.",
         "urmator": "v5"
       },
       "v5": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Iar ultimul care se ridică... e tata.",
+        "text": "Iar ultimul care se ridică... e tata. Cu platoșa crăpată pe mijloc, ca în celălalt vis.",
         "urmator": "v6"
       },
       "v6": {
