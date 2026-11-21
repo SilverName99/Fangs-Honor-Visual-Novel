@@ -16540,7 +16540,7 @@
     }
   },
   "vis_4": {
-    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, fantome verzi, străvezii, cu armurile lovite în luptă (decis de autor); Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); filmulețul (opțional) e între a doua și a treia imagine.",
+    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, fantome verzi, străvezii și putrezite, sinistre, cu ochii albi și armurile lovite în luptă; Edwin se întoarce la crăpătură cu jumătate de față întreagă și jumătate putrezită (decis de autor); Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); filmulețul (opțional) e între a doua și a treia imagine.",
     "grup": "Al patrulea vis",
     "partener": null,
     "vis": true,
@@ -16573,14 +16573,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu sunt trupuri. Sunt umbre verzi, străvezii, prin care se văd crucile din spate. Fețele lor nu spun nimic. Iar ochii le sunt albi, fără nimic în ei.",
+        "text": "Nu sunt trupuri. Sunt umbre verzi, străvezii, prin care se văd crucile din spate. Și sunt putrede: pielea le atârnă pe oase, iar ochii le sunt albi, fără nimic în ei.",
         "urmator": "v5"
       },
       "v5": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Iar ultimul care se ridică... e tata. Cu platoșa crăpată pe mijloc, ca în celălalt vis.",
+        "text": "Iar ultimul care se ridică... e tata. Nu după față. După platoșa crăpată pe mijloc, ca în celălalt vis.",
         "urmator": "v6"
       },
       "v6": {
@@ -16626,6 +16626,12 @@
         "text": "Coboară în ea unul câte unul. Tata e ultimul. La margine se oprește. Și se întoarce spre mine.",
         "imagine": "events/vis_4_3.png",
         "trecere": 1200,
+        "urmator": "v10b"
+      },
+      "v10b": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Jumătate din fața lui e fața tatei, așa cum o țin minte. Cealaltă jumătate e putredă până la os.",
         "urmator": "v11"
       },
       "v11": {
