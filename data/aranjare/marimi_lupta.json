@@ -1196,15 +1196,15 @@
       "lupta_cimitir": 115
     },
     "combat/hot_idle.png": {
-      "lupta_taverna_parter": 135,
-      "lupta_padure_interior": 135,
-      "lupta_poarta": 135,
-      "lupta_piata": 135,
-      "lupta_fierar": 135,
-      "lupta_campuri": 135,
-      "lupta_taverna_pivnita": 135,
-      "lupta_poarta_arena": 135,
-      "lupta_cimitir": 135
+      "lupta_taverna_parter": 132,
+      "lupta_padure_interior": 132,
+      "lupta_poarta": 132,
+      "lupta_piata": 132,
+      "lupta_fierar": 132,
+      "lupta_campuri": 132,
+      "lupta_taverna_pivnita": 132,
+      "lupta_poarta_arena": 132,
+      "lupta_cimitir": 132
     }
   }
 }
