@@ -16603,14 +16603,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Trecem de gard, de copacul mare, de pădure. Iarba nu se îndoaie sub pașii lor.",
+        "text": "Trecem de gard, de copacul mare, de râu, de pădure, de o poartă de piatră surpată. Iarba nu se îndoaie sub pașii lor. Drumul ăsta îl știu. E drumul de pe harta soldatului.",
         "urmator": "v9"
       },
       "v9": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Departe, pământul e despicat. O crăpătură lungă, din care urcă o lumină palidă și un frig care nu e de pe lumea asta.",
+        "text": "La capătul lui, pământul e despicat: o prăpastie adâncă, între stânci, din care urcă o lumină palidă și un frig care nu e de pe lumea asta.",
         "urmator": "film"
       },
       "film": {
@@ -16653,7 +16653,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Vreau să strig: „Cine?”. Nu am glas. Tata coboară în lumină, iar crăpătura se închide în urma lui.",
+        "text": "Vreau să strig: „Cine?”. Nu am glas. Tata coboară în lumină, iar lumina se stinge în urma lui.",
         "urmator": "v14"
       },
       "v14": {
