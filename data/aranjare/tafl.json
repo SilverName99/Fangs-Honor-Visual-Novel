@@ -2,14 +2,14 @@
   "zone": {},
   "obiecte": {
     "luate_aparatori": {
-      "x": 0.1644,
-      "y": 0.6795,
-      "scara": 0.3473
+      "x": 0.1666,
+      "y": 0.6705,
+      "scara": 0.3308
     },
     "luate_atacatori": {
       "x": 0.8766,
-      "y": 0.8561,
-      "scara": 0.4887
+      "y": 0.8291,
+      "scara": 0.4432
     }
   },
   "primPlan": []
