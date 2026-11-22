@@ -16686,15 +16686,22 @@
       "v15": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "speriat",
         "text": "Mă trezesc cu mâinile reci ca gheața, strânse pe pătură.",
         "trezire": true,
+        "urmator": "v15b"
+      },
+      "v15b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": "Inima îmi bate să-mi spargă pieptul. Mă uit spre ușă, spre fereastră, de parcă tata ar mai fi acolo, cu fața aceea pe jumătate putredă.",
         "urmator": "v16"
       },
       "v16": {
         "vorbitor": "vale",
         "gand": true,
-        "emotie": "normal",
+        "emotie": "trist",
         "text": "Șobolanii voiau morții noștri. Iar în vis, morții noștri plecau singuri. Spre ceva care îi așteaptă.",
         "efecte": {
           "stare": {
