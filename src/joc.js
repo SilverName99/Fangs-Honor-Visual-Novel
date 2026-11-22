@@ -24,6 +24,7 @@ import { creeazaCarte } from './carte.js';
 import { creeazaPrologul } from './prolog.js';
 import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj, evenimentOferit } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
+import { creeazaTafl } from './tafl.js';
 // Fonturile de scris de mână ale cărții intră în build (@fontsource), ca jocul să meargă offline; au și diacriticele românești
 import '@fontsource/dancing-script/600.css';
 import '@fontsource/caveat/500.css';
@@ -933,6 +934,8 @@ const joc = {
     lupta.porneste(id);
   },
   pornesteZaruri: () => zaruri.porneste(),
+  // Masa regelui (cerut de autor): bătrânul din tavernă, după ce Vale alege cât de tare să joace
+  pornesteTafl: (v) => tafl.porneste(v?.nivel),
   // După o luptă în Groapă: banii, prima victorie, inelul mamei (src/groapa.js)
   rezultatGroapa: (v) => groapa.rezultat(v),
   conditii: (c) => verifica(c, context(stare)),
@@ -949,6 +952,14 @@ const joc = {
     afiseaza();
     if (eveniment) return pornesteEvenimentDupa(eveniment);
     joc.replica('paznic_orc_1', aCastigat ? 'suparat' : 'rade', text);
+  },
+  // După Masa regelui: trece ora partidei, apoi bătrânul spune ce crede despre ea
+  dupaTafl(rezultat, minute) {
+    if (avanseaza(minute)) return;
+    salveaza();
+    afiseaza();
+    const lista = [].concat(date.config.jocTafl?.replici?.dupa?.[rezultat] || []);
+    if (lista.length) joc.replica('batran', rezultat === 'castig' ? 'normal' : 'zambet', lista[Math.floor(Math.random() * lista.length)]);
   },
   dupaLupta(efecte, minute) {
     stare.luptaInCurs = null;
@@ -1109,6 +1120,7 @@ function deschidePrologul() {
   });
 }
 const zaruri = creeazaZaruri(ui, joc);
+const tafl = creeazaTafl(ui, joc);
 const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
 const groapa = creeazaGroapa(ui, joc);
@@ -1250,7 +1262,7 @@ function deschideMeniul() {
       }),
     );
     const randViteza = div('rand-optiune');
-    randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri)'));
+    randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri, Masa regelui)'));
     const alegeri = div('alegeri-optiune');
     for (const x of VITEZE) {
       const b = buton(`×${x}`, `buton-mic-meniu${x === viteza() ? ' ales' : ''}`, () => {
@@ -1590,7 +1602,7 @@ addEventListener('keydown', (e) => {
     e.preventDefault();
     return debug.comuta();
   }
-  if (lupta.activa() || zaruri.activ()) return;
+  if (lupta.activa() || zaruri.activ() || tafl.activ()) return;
   // Literele scrise într-un câmp (panoul debug) nu deschid inventarul sau cartea
   if (e.target.closest?.('input, textarea, select')) return;
   if ((e.key === 'v' || e.key === 'V') && !dialog.activ()) return comutaPanoul();

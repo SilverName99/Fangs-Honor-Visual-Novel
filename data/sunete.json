@@ -387,7 +387,9 @@
     "nicovala": "ciocanul pe nicovală (forja lui Bram, la fiecare lovitură din mini-jocul ciocanului; un clinchet scurt de metal)",
     "toba": "Toboșarul orcilor: câteva bătăi grele de tobă de război (în Groapă și la poartă)",
     "lupta_val": "Un val nou de inamici (Groapa, lupta finală): un corn de război scurt",
-    "fluier": "Fluierul lui Finn, un fluierat subțire, ca al unei păsări de noapte (lupta finală)"
+    "fluier": "Fluierul lui Finn, un fluierat subțire, ca al unei păsări de noapte (lupta finală)",
+    "tafl_piesa": "O piesă de lemn pusă pe tablă (Masa regelui, la fiecare mutare)",
+    "tafl_captura": "O piesă luată de pe tablă (Masa regelui, la o captură)"
   },
   "muzica": {
     "meniu": "Meniul: temă liniștită, medievală",

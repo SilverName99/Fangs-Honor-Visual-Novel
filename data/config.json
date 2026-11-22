@@ -507,5 +507,73 @@
     }
   },
   "incarcareLaPornire": false,
-  "_notaIncarcare": "Decis de autor: încărcarea tuturor imaginilor la pornire (ecranul cu procente) e oprită deocamdată; se pornește (true) la finalul jocului."
+  "_notaIncarcare": "Decis de autor: încărcarea tuturor imaginilor la pornire (ecranul cu procente) e oprită deocamdată; se pornește (true) la finalul jocului.",
+  "jocTafl": {
+    "_nota": "Masa regelui (Fetlar Hnefatafl) cu bătrânul din tavernă (cerut de autor; regulile de pe aagenielsen.dk, cu ce lipsea ales de autor). Replicile sunt CIORNĂ (Claude). Ales de Claude (TODO echilibru): mizele; cât câștigi peste miză după nivel (castig: ușor jumătate, mediu cât ai pus, greu de două ori cât ai pus); cât ține o partidă; după o victorie bătrânul nu mai joacă în ziua aceea (ca paznicii la zaruri). Nivelurile minții lui: NIVELURI în src/taflReguli.js.",
+    "mize": [
+      5,
+      10,
+      20
+    ],
+    "castig": {
+      "usor": 0.5,
+      "mediu": 1,
+      "greu": 2
+    },
+    "minute": 60,
+    "gandire": {
+      "min": 700,
+      "max": 1600
+    },
+    "texte": {
+      "oferta": "Alege-ți tabăra și cât pui. Atacatorii mută primii.",
+      "faraBani": "N-ai destule monede nici pentru cea mai mică miză."
+    },
+    "reguli": "Regele stă pe tronul din mijloc, cu cei 12 apărători ai lui în jur. Cei 24 de atacatori pornesc de pe margini și mută primii.\n\nToate piesele merg în linie dreaptă, oricât, ca tura la șah, fără să sară peste altele. Tronul și cele patru colțuri sunt doar ale regelui: prin tronul gol pot trece toți, dar numai regele se oprește pe el.\n\nO piesă e luată când o prinzi între două piese ale tale, pe aceeași linie. Colțurile și tronul gol țin loc de o piesă dușmană. Între două piese dușmane poți intra fără grijă. Regele ajută și el la capturi.\n\nRegele e prins doar din toate cele patru părți (din trei, lângă tron); pe margine nu poate fi prins. Apărătorii câștigă dacă regele ajunge într-un colț. Atacatorii câștigă dacă îl prind, dacă îi închid pe toți apărătorii într-un inel sau dacă celălalt nu mai poate muta. Aceeași poziție a treia oară înseamnă remiză.",
+    "replici": {
+      "_nota": "CIORNĂ (Claude). Ce spune bătrânul la masă (în balon) și după partidă (dupa).",
+      "euIncep": [
+        "Încep eu. Atacatorii mută primii.",
+        "Eu asediez, tu aperi. Să vedem cât ține regele tău."
+      ],
+      "tuIncepi": [
+        "Tu începi, băiete. Atacatorii mută primii.",
+        "Tu asediezi, eu țin regele. Hai, mută."
+      ],
+      "valeIa": [
+        "Hm. Bine văzut.",
+        "Mi-ai luat-o. Bravo.",
+        "Așa, băiete. Așa."
+      ],
+      "batranIa": [
+        "Una mai puțin.",
+        "Ai lăsat-o singură.",
+        "Ha! Asta te-a costat."
+      ],
+      "castig": [
+        "Ei, uite! M-ai bătut.",
+        "Bine jucat. Foarte bine."
+      ],
+      "pierdere": [
+        "Asediul e o meserie, băiete.",
+        "Răbdare. Asta îți lipsește."
+      ],
+      "remiza": [
+        "Nici tu, nici eu.",
+        "Remiză. Mai bine decât nimic."
+      ],
+      "dupa": {
+        "castig": [
+          "Ia-ți monedele, le-ai meritat. Pentru azi ajunge; vino mâine să-mi iau revanșa."
+        ],
+        "pierdere": [
+          "Nu te supăra, băiete. Și eu am pierdut ani de zile până am înțeles jocul.",
+          "Mai vino. Fiecare partidă pierdută te învață ceva."
+        ],
+        "remiza": [
+          "Remiză. Poate data viitoare unul dintre noi o să aibă mai mult noroc."
+        ]
+      }
+    }
+  }
 }

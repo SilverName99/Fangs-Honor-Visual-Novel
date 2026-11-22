@@ -18679,5 +18679,187 @@
         "text": "Nu mai sunt nicăieri. Doar săgețile înfipte în scuturi și în carne arată că au fost acolo."
       }
     }
+  },
+  "batran": {
+    "_nota": "CIORNĂ (Claude). Bătrânul cu Masa regelui, din tavernă (cerut de autor): la fiecare clic, una din 3 discuții scurte (2–3 replici), apoi întrebarea „cât de tare să joc?” (Ușor, Mediu, Greu). Prima dată se prezintă și explică jocul. După o victorie, în ziua aceea nu mai joacă.",
+    "partener": "batran",
+    "start": [
+      {
+        "nod": "prezentare",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_batran": "da"
+          }
+        }
+      },
+      {
+        "nod": "gata_azi",
+        "conditii": {
+          "marcatAzi": "tafl_castig"
+        }
+      },
+      {
+        "aleator": [
+          "v1",
+          "v2",
+          "v3"
+        ]
+      }
+    ],
+    "noduri": {
+      "prezentare": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "La masa din colț stă un bătrân cu barba albă, tunsă scurt, ca la soldați. În fața lui, o tablă de lemn cu pătrățele, și pe ea piese mici, albe și negre, așezate în cruce.",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Nu te uita așa, băiete. Nu mușcă. E doar o tablă.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce joc e ăsta?",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Masa regelui. L-am învățat în garnizoana din Altaris, acum patruzeci de ani. Soldații îl jucau toată iarna, la foc. Mă cheamă Hagen.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Regele stă la mijloc, cu ai lui în jur. Ceilalți, de două ori mai mulți, îl asediază. Regele trebuie să scape într-un colț; ceilalți trebuie să-l prindă.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Piesele merg drept, oricât, ca un turn. Una prinsă între două dușmane iese de pe tablă. Regele îl prinzi doar din patru părți. Pe margine, deloc.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Un rege asediat, cu dușmani de două ori mai mulți. Parcă ar fi satul nostru.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "batran",
+        "emotie": "zambet",
+        "text": "Văd că te-a prins. Hai, stai jos. Jucăm pe câteva monede, ca să aibă gust.",
+        "urmator": "nivel",
+        "efecte": {
+          "stare": {
+            "cunoscut_batran": "da"
+          }
+        }
+      },
+      "v1": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Iar tu, Lightfinder? Bine. Mă plictisisem să joc singur cu mine.",
+        "urmator": "v1b"
+      },
+      "v1b": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Și cine câștigă când jucați singur?",
+        "urmator": "v1c"
+      },
+      "v1c": {
+        "vorbitor": "batran",
+        "emotie": "zambet",
+        "text": "Eu. De fiecare dată.",
+        "urmator": "nivel"
+      },
+      "v2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bătrânul mută piesele de unul singur, încruntat, de parcă ar purta o bătălie adevărată.",
+        "urmator": "v2b"
+      },
+      "v2b": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Știi de ce pierde regele, băiete? Pentru că fuge prea devreme. Răbdarea câștigă asediile.",
+        "urmator": "v2c"
+      },
+      "v2c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "O să țin minte.",
+        "urmator": "nivel"
+      },
+      "v3": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Ai venit să pierzi niște monede?",
+        "urmator": "v3b"
+      },
+      "v3b": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Am venit să vă iau câteva.",
+        "urmator": "v3c"
+      },
+      "v3c": {
+        "vorbitor": "batran",
+        "emotie": "zambet",
+        "text": "Ha! Așa vorbea și căpitanul meu. A murit sărac.",
+        "urmator": "nivel"
+      },
+      "nivel": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Ei, spune: cât de tare să joc?",
+        "alegeri": [
+          {
+            "text": "Ușor, vă rog.",
+            "inchide": true,
+            "efecte": {
+              "tafl": {
+                "nivel": "usor"
+              }
+            }
+          },
+          {
+            "text": "Mediu.",
+            "inchide": true,
+            "efecte": {
+              "tafl": {
+                "nivel": "mediu"
+              }
+            }
+          },
+          {
+            "text": "Greu. Nu mă cruțați.",
+            "inchide": true,
+            "efecte": {
+              "tafl": {
+                "nivel": "greu"
+              }
+            }
+          },
+          {
+            "text": "Altă dată.",
+            "inchide": true
+          }
+        ]
+      },
+      "gata_azi": {
+        "vorbitor": "batran",
+        "emotie": "zambet",
+        "text": "Pentru azi ajunge, băiete. M-ai bătut o dată, și bătrânii au și ei mândria lor. Vino mâine."
+      }
+    }
   }
 }

@@ -212,6 +212,22 @@ export const ELEMENTE_UI = [
     ['goleste_bara', 'Puterea preotului: golește bara inamicului (clepsidra)'],
     ['scut_lumina', 'Puterea preotului: Scutul de lumină'],
   ].map(([id, nume]) => ({ id: `icon_${id}`, grup: 'Luptă: interfața', nume: `Iconiță: ${nume}`, marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: `.icon-hud.icon-${id}`, extra: `.icon-hud.icon-${id}{color:transparent;text-shadow:none;background-size:contain;background-position:center}` })),
+  // Masa regelui din tavernă (cerut de autor): cu imaginile încărcate, lemnul, liniile și cercurile din cod nu se mai văd
+  { id: 'tafl_tabla', grup: 'Masa regelui (tavernă)', nume: 'Masa regelui: tabla (11 × 11 pătrate, văzută drept de sus)', marime: '1024 × 1024 px', tip: 'fundal', selector: '.tabla-tafl',
+    extra: '.tabla-tafl{border:none;box-shadow:none;border-radius:0}.grila-tafl .celula-tafl{border-color:transparent}.grila-tafl .celula-tafl.tron::after,.grila-tafl .celula-tafl.colt::after{display:none}' },
+  ...[
+    ['atacator', 'piesa atacatorilor (24 pe tablă)'],
+    ['aparator', 'piesa apărătorilor (12 pe tablă)'],
+    ['rege', 'regele apărătorilor'],
+  ].map(([id, nume]) => ({
+    id: `tafl_${id}`,
+    grup: 'Masa regelui (tavernă)',
+    nume: `Masa regelui: ${nume}, văzută de sus`,
+    marime: '256 × 256 px, fundal transparent',
+    tip: 'fundal',
+    selector: `.piesa-tafl.${id}`,
+    extra: `.piesa-tafl.${id}{background-size:contain;background-position:center}.piesa-tafl.${id} .forma{display:none}`,
+  })),
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({
     id: `zar_${f}`,

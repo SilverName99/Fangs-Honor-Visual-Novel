@@ -322,6 +322,24 @@ export function construiesteLumea(date) {
       })),
     ],
   });
+  // Masa regelui din tavernă (cerut de autor): tabla, căsuțele (grila de 11 × 11, așezată peste pătratele desenate pe
+  // tablă) și bătrânul. În joc stau peste sala tavernei întunecată, deci în editor fundalul e sala
+  scene.set('tafl', {
+    id: 'tafl',
+    tip: 'ecran',
+    titlu: 'Masa regelui (tavernă)',
+    titluObiecte: 'Tabla, căsuțele și bătrânul',
+    titluFundal: 'Sala tavernei (în joc, întunecată, în spatele tablei)',
+    imagine: 'locations/taverna_parter.png',
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      { id: 'tabla', tip: 'tafl-tabla', nume: 'Tabla', imagine: fisierUi('tafl_tabla'), raport: 1, variante: [], implicit: { x: 0.5, y: 0.97, scara: 0.88 } },
+      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele (11 × 11: trage-le peste pătratele de pe tablă)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: { x: 0.5, y: 0.926, scara: 0.792 } },
+      { id: 'batran', tip: 'tafl-batran', nume: 'Bătrânul (portretul lui, cu balonul deasupra)', imagine: 'portraits/batran_normal.png', raport: 0.8, variante: [], implicit: { x: 0.87, y: 0.95, scara: 0.55 } },
+    ],
+  });
   // Mini-jocurile muncii (decis de autor): autorul mută și mărește bucata fiecăruia pe imaginea muncii, ca în joc.
   // Fundalul e imaginea primei munci care folosește mini-jocul (lemnele, aratul, vacile, moara)
   const toateActiunile = zone.flatMap((z) => [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])]);

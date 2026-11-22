@@ -83,6 +83,8 @@ const efecte = {
   lupta: (v, joc) => joc.pornesteLupta(v),
   // Jocul de zaruri cu paznicii pornește după ce se închide dialogul (ca să nu stea peste el)
   zaruri: (v, joc) => setTimeout(() => joc.pornesteZaruri(), 0),
+  // Masa regelui cu bătrânul din tavernă (nivelul ales în discuție), tot după ce se închide dialogul
+  tafl: (v, joc) => setTimeout(() => joc.pornesteTafl(v), 0),
   // După o luptă în Groapă (nivelul și rezultatul): banii, reputația, prima victorie, inelul mamei
   groapa: (v, joc) => joc.rezultatGroapa(v),
   plataTaxa: (v, joc) => joc.platesteTaxa(),

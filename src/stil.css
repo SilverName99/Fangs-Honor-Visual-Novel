@@ -3992,3 +3992,209 @@ svg.zone {
 .sunet-prolog.cu-imagine img.activ {
   display: block;
 }
+
+/* ----- Masa regelui (tavernă): tabla, piesele, bătrânul, panoul ----- */
+.ecran-tafl {
+  position: absolute;
+  inset: 0;
+  z-index: 13;
+  /* Peste sala tavernei, întunecată și estompată, ca la magazin */
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ecran-tafl > .obiect {
+  position: absolute;
+}
+/* Tabla din cod, până se încarcă imaginea: lemn închis, cu ramă */
+.tabla-tafl {
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border: 18px solid #3b2414;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #b98a55, #8c6236);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+.grila-tafl {
+  aspect-ratio: 1;
+  display: grid;
+  grid-template: repeat(11, 1fr) / repeat(11, 1fr);
+}
+.celula-tafl {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid rgba(40, 22, 10, 0.55);
+}
+/* Tronul și colțurile, desenate din cod (cu imaginea tablei, sunt pe desen) */
+.celula-tafl.tron::after,
+.celula-tafl.colt::after {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border: 3px solid rgba(40, 22, 10, 0.7);
+  transform: rotate(45deg);
+}
+.celula-tafl.de-ales,
+.celula-tafl.tinta {
+  cursor: pointer;
+}
+.celula-tafl.selectata {
+  box-shadow: inset 0 0 0 4px #ffd36a, inset 0 0 18px rgba(255, 211, 106, 0.6);
+}
+.celula-tafl.ultima {
+  background: rgba(255, 230, 150, 0.22);
+}
+/* Unde poate merge piesa aleasă: un punct auriu */
+.celula-tafl.tinta::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28%;
+  height: 28%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 211, 106, 0.85);
+  box-shadow: 0 0 10px rgba(255, 211, 106, 0.9);
+  z-index: 2;
+}
+.strat-piese-tafl {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.piesa-tafl {
+  position: absolute;
+  width: calc(100% / 11);
+  height: calc(100% / 11);
+  transition: left 0.32s ease, top 0.32s ease, opacity 0.35s, transform 0.35s;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.55));
+}
+.piesa-tafl.capturata {
+  opacity: 0;
+  transform: scale(0.6);
+}
+/* Piesele din cod: atacatorii închiși la culoare, apărătorii deschiși, regele cu o coroană */
+.piesa-tafl .forma {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.piesa-tafl.atacator .forma {
+  background: radial-gradient(circle at 35% 30%, #5a4a3e, #1d1510);
+  border: 3px solid #0c0806;
+}
+.piesa-tafl.aparator .forma {
+  background: radial-gradient(circle at 35% 30%, #fff8e6, #cdbb94);
+  border: 3px solid #8a7550;
+}
+.piesa-tafl.rege .forma {
+  inset: 6%;
+  background: radial-gradient(circle at 35% 30%, #fff8e6, #d8c08a);
+  border: 4px solid #c9a227;
+}
+.piesa-tafl.rege .forma::after {
+  content: '♔';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  color: #7a5a10;
+}
+.batran-tafl {
+  aspect-ratio: 0.8;
+}
+.batran-tafl .imagine-stare {
+  position: absolute;
+  inset: 0;
+}
+.batran-tafl.stare-normal .imagine-stare:not(.normal),
+.batran-tafl.stare-zambet .imagine-stare:not(.zambet) {
+  visibility: hidden;
+}
+.ecran-tafl .balon-tafl {
+  z-index: 20;
+}
+.strat-ui-tafl {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+.strat-ui-tafl > * {
+  pointer-events: auto;
+}
+/* Panoul din stânga, cu ce se întâmplă în partidă */
+.panou-tafl {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  box-sizing: border-box;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(20, 14, 8, 0.92);
+  border: 2px solid #6b4a2a;
+  border-radius: 14px;
+  color: #f3e9d2;
+  text-align: center;
+}
+.panou-tafl .buton {
+  width: 100%;
+}
+.titlu-tafl {
+  font: 600 30px Georgia, serif;
+}
+.rand-tafl {
+  font: 21px/1.35 Georgia, serif;
+}
+.rand-tafl.mic {
+  font-size: 18px;
+  opacity: 0.85;
+}
+.rand-tafl.acum {
+  font-weight: 600;
+  color: #ffd36a;
+}
+.rezultat-tafl {
+  font: 600 34px Georgia, serif;
+  color: #ffd36a;
+}
+/* Alegerea taberei, deasupra mizelor */
+.alegere-tabara {
+  display: flex;
+  gap: 14px;
+}
+.alegere-tabara .buton {
+  width: 330px;
+}
+.alegere-tabara .buton.ales {
+  outline: 4px solid #ffd36a;
+  outline-offset: 2px;
+}
+.ecran-tafl .buton.buton-mic-meniu.buton-intrebare {
+  width: 52px;
+  height: 52px;
+  min-width: 0;
+  padding: 0;
+  border-radius: 50%;
+  font: 700 30px Georgia, serif;
+}
+/* Regulile Masei regelui sunt mai lungi: pe paragrafe, puțin mai mici, aliniate la stânga */
+.ecran-tafl .text-reguli {
+  font-size: 19px;
+  line-height: 1.45;
+  text-align: left;
+  white-space: pre-line;
+}

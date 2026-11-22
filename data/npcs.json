@@ -1623,6 +1623,45 @@
           }
         }
       }
+    },
+    {
+      "id": "batran",
+      "nume": "Bătrânul Hagen",
+      "_despre": "Decis de autor: un om în tavernă, cu o tablă de „Masa regelui” (Fetlar Hnefatafl); stă acolo ziua, cât e lume puțină, și seara, până se închide taverna; sprite-ul îl așază autorul. CIORNĂ (Claude): numele și povestea lui (fost soldat în garnizoana din Altaris, a învățat jocul în armată).",
+      "dialog": "batran",
+      "locuriSprite": [
+        "taverna/parter"
+      ],
+      "stariPortret": [
+        "normal"
+      ],
+      "stariExtra": [
+        "zambet"
+      ],
+      "program": [
+        {
+          "de": "09:00",
+          "pana": "12:00",
+          "loc": "taverna/parter",
+          "ce": "la masa lui din colț, cu tabla, cât taverna e goală"
+        },
+        {
+          "de": "12:00",
+          "pana": "14:00",
+          "ce": "la prânz, cât e taverna plină, nu stă la masă (ales de Claude)"
+        },
+        {
+          "de": "14:00",
+          "pana": "02:00",
+          "loc": "taverna/parter",
+          "ce": "după-amiaza și seara, până se închide taverna"
+        },
+        {
+          "de": "02:00",
+          "pana": "09:00",
+          "ce": "acasă, doarme"
+        }
+      ]
     }
   ]
 }
