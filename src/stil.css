@@ -4073,10 +4073,12 @@ svg.zone {
   transition: left 0.32s ease, top 0.32s ease, opacity 0.35s, transform 0.35s;
   background-repeat: no-repeat;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.55));
+  /* Piesele, cu 5% mai mici decât căsuța (cerut de autor), și cele din imagini, și cele din cod */
+  transform: scale(0.95);
 }
 .piesa-tafl.capturata {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.57);
 }
 /* Piesele din cod: atacatorii închiși la culoare, apărătorii deschiși, regele cu o coroană */
 .piesa-tafl .forma {
@@ -4251,4 +4253,20 @@ svg.zone {
 }
 .ecran-tafl .buton.intrebare-tafl.deschis {
   color: #ffd46b;
+}
+/* Alegerea setului de piese, în panoul „?” de la Masa regelui (cerut de autor) */
+.panou-tafl .alegere-piese {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.panou-tafl .alegere-piese .buton {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+.panou-tafl .alegere-piese .buton.ales {
+  outline: 3px solid #ffd36a;
+  outline-offset: 2px;
 }

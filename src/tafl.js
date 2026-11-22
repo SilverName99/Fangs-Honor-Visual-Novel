@@ -23,6 +23,24 @@ const TIP = { [ATAC]: 'atacator', [APAR]: 'aparator', [REGE]: 'rege' };
 const NUME_NIVEL = { usor: 'Ușor', mediu: 'Mediu', greu: 'Greu' };
 const NUME_TABARA = { d: 'Regele și apărătorii', a: 'Atacatorii' };
 
+// Setul de piese ales din panoul „?” (cerut de autor: două seturi): o preferință a jucătorului, ca viteza, deci stă în
+// browser, nu în salvare; fără localStorage, rămâne până se închide jocul
+const CHEIE_PIESE = 'fangs-vn-tafl-piese';
+let setPiese = 1;
+try {
+  setPiese = localStorage.getItem(CHEIE_PIESE) === '2' ? 2 : 1;
+} catch {
+  // fără localStorage
+}
+function alegeSetPiese(n) {
+  setPiese = n;
+  try {
+    localStorage.setItem(CHEIE_PIESE, String(n));
+  } catch {
+    // fără localStorage
+  }
+}
+
 export function creeazaTafl(parinte, joc) {
   let el = null;
   let s = null; // partida de acum: nivelul, tabăra lui Vale, miza, starea tablei, piesa aleasă
@@ -40,7 +58,7 @@ export function creeazaTafl(parinte, joc) {
   // Pornit din discuția cu bătrânul, după ce Vale alege cât de tare să joace
   function porneste(nivel = 'mediu') {
     if (el) return;
-    el = div('ecran-tafl');
+    el = div(`ecran-tafl${setPiese === 2 ? ' piese-2' : ''}`);
     parinte.append(el);
     s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false, panou: false, replica: null };
     construieste();
@@ -325,6 +343,17 @@ export function creeazaTafl(parinte, joc) {
     const numara = (f) => s.p.tabla.reduce((n, p) => n + (f(p) ? 1 : 0), 0);
     panou.append(div('titlu-tafl', `Masa regelui · ${NUME_NIVEL[s.nivel]}`), div('rand-tafl', `Joci cu: ${NUME_TABARA[s.vale]}`), div('rand-tafl', `Miza: ${s.miza} monede`));
     panou.append(div('rand-tafl mic', `Atacatori: ${numara((p) => p === ATAC)} · Apărători: ${numara((p) => p === APAR)}`));
+    // Cele două seturi de piese (cerut de autor): se schimbă pe loc, chiar în mijlocul partidei
+    const seturi = div('alegere-piese');
+    seturi.append(div('rand-tafl mic', 'Piesele:'));
+    for (const n of [1, 2]) {
+      seturi.append(buton(`Setul ${n}`, () => {
+        alegeSetPiese(n);
+        el.classList.toggle('piese-2', n === 2);
+        deseneaza();
+      }, setPiese === n ? 'ales' : ''));
+    }
+    panou.append(seturi);
     if (s.rezultat) {
       const titlu = { castig: 'Ai câștigat!', pierdere: 'Ai pierdut.', remiza: 'Remiză.' }[s.rezultat];
       const bani = { castig: `Primești ${s.primit} monede.`, pierdere: `Pierzi cele ${s.miza} monede.`, remiza: `Îți iei înapoi cele ${s.miza} monede.` }[s.rezultat];
