@@ -16540,7 +16540,7 @@
     }
   },
   "vis_4": {
-    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, fantome verzi, străvezii și putrezite, sinistre, cu ochii albi și armurile lovite în luptă; Edwin se întoarce la crăpătură cu jumătate de față întreagă și jumătate putrezită (decis de autor); Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); filmulețul (opțional) e între a doua și a treia imagine.",
+    "_nota": "CIORNĂ (Claude). Al patrulea vis (decis de autor: după „Noaptea de la cimitir”; cei 23 se ridică din morminte ca soldați, fantome verzi, străvezii și putrezite, sinistre, cu ochii albi și armurile lovite în luptă; Edwin se întoarce la crăpătură cu jumătate de față întreagă și jumătate putrezită (decis de autor); Vale nu se poate mișca, plutește în urma lor; la intrarea în crăpătură, Edwin se întoarce și îi spune ceva). Ales de Claude: îi vorbește într-o limbă veche, pe care Vale o înțelege în vis (dacă a jucat „Vorbele din somn”, o recunoaște); întâi cimitirul în ceață, cu lumina verde deasupra mormintelor (vis_4_0, decis de autor), apoi stafiile; filmulețul (opțional) e între Edwin întors spre Vale și Edwin plutind în prăpastie.",
     "grup": "Al patrulea vis",
     "partener": null,
     "vis": true,
@@ -16551,7 +16551,7 @@
         "gand": true,
         "emotie": "normal",
         "text": "Cimitirul. Ceața stă jos, până la genunchi, și nu se mișcă deloc.",
-        "imagine": "events/vis_4_1.png",
+        "imagine": "events/vis_4_0.png",
         "trecere": 1000,
         "urmator": "v2"
       },
@@ -16559,7 +16559,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pământul de pe morminte se crapă încet, fără niciun sunet. Ca o pâine care se rupe.",
+        "text": "Pământul de pe morminte se crapă încet, fără niciun sunet. Ca o pâine care se rupe. Prin crăpături iese o lumină verde.",
         "urmator": "v3"
       },
       "v3": {
@@ -16567,7 +16567,9 @@
         "gand": true,
         "emotie": "normal",
         "text": "Se ridică unul câte unul, încet, ca niște oameni care ies dintr-o groapă. În hainele de bătălie, cu armurile lovite și strâmbe, cu rombul satului pe piept.",
-        "urmator": "v4"
+        "urmator": "v4",
+        "imagine": "events/vis_4_1.png",
+        "trecere": 1200
       },
       "v4": {
         "vorbitor": "vale",
