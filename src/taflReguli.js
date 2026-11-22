@@ -6,6 +6,9 @@
 // (doar înconjurat cu toți ai lui, sau blocat de tot); piesele obișnuite nu intră în colțuri; aceeași poziție a treia
 // oară înseamnă remiză.
 
+// Masa de sub tablă (cerut de autor): aici, nu în tafl.js, ca editorul s-o poată lua fără ecranul jocului
+export const IMAGINE_MASA = 'locations/tafl_masa.png';
+
 export const N = 11;
 export const GOL = 0;
 export const ATAC = 1;

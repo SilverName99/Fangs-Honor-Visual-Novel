@@ -6,7 +6,7 @@
 import { elementImagine } from './imagini.js';
 import { pozitie, aplicaPozitie } from './scena.js';
 import { asteapta, viteza, butonViteza } from './viteza.js';
-import { partidaNoua, joaca, alegeMutarea, destinatii, N, ATAC, APAR, REGE, TRON, COLTURI } from './taflReguli.js';
+import { partidaNoua, joaca, alegeMutarea, destinatii, N, ATAC, APAR, REGE, TRON, COLTURI, IMAGINE_MASA } from './taflReguli.js';
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
 function buton(text, clic, clasa = '', pergament = true) {
@@ -47,6 +47,11 @@ export function creeazaTafl(parinte, joc) {
 
   // ---------- tabla ----------
   function construieste() {
+    // Masa de sub tablă (cerut de autor), văzută de sus, ca tabla; până se încarcă imaginea, se vede sala tavernei,
+    // întunecată, ca înainte (fără dreptunghiul cu numele fișierului, care ar acoperi toată scena)
+    const masa = elementImagine([IMAGINE_MASA], { clasa: 'fundal-tafl', fundal: true });
+    const scoateDacaLipseste = () => masa.classList.contains('lipsa') && masa.remove();
+    masa.addEventListener('gata', scoateDacaLipseste);
     // Tabla e un element de interfață: până se încarcă imaginea (ui_tafl_tabla.png), lemnul și liniile sunt din CSS
     const tabla = div('obiect tabla-tafl');
     aplicaPozitie(tabla, poz('tabla'));
@@ -69,7 +74,8 @@ export function creeazaTafl(parinte, joc) {
       const candidati = st === 'normal' ? ['portraits/batran_normal.png'] : ['portraits/batran_zambet.png', 'portraits/batran_normal.png'];
       batran.append(elementImagine(candidati, { clasa: `imagine-stare ${st}`, raport: 0.8, eticheta: candidati[0] }));
     }
-    el.replaceChildren(tabla, grila, batran, div('strat-ui-tafl'));
+    el.replaceChildren(masa, tabla, grila, batran, div('strat-ui-tafl'));
+    scoateDacaLipseste();
   }
 
   const celula = (i) => el?.querySelector(`.celula-tafl[data-i="${i}"]`);

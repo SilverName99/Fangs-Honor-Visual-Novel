@@ -4212,3 +4212,13 @@ svg.zone {
   margin-top: 6px;
   flex-shrink: 0;
 }
+/* Masa de sub tablă, pe tot ecranul (acoperă sala tavernei întunecată, care rămâne doar până se încarcă masa) */
+.ecran-tafl .fundal-tafl {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.ecran-tafl .fundal-tafl img {
+  object-fit: cover;
+}

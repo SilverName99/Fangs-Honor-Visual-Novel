@@ -4,6 +4,7 @@ import { ELEMENTE_UI, fisierUi } from './uiGrafica.js';
 import { caleSunet } from './sunet.js';
 import { fisierCarte } from './carte.js';
 import { SLOTURI, NUME_SLOTURI } from './inventar.js';
+import { IMAGINE_MASA as IMAGINE_MASA_TAFL } from './taflReguli.js';
 
 // Transformă arborele din locations.json într-o listă plată de scene, cu care lucrează și jocul, și editorul
 // Un interval din programul unui personaj poate cere alt sprite în același loc (Miriam la cină):
@@ -323,14 +324,14 @@ export function construiesteLumea(date) {
     ],
   });
   // Masa regelui din tavernă (cerut de autor): tabla, căsuțele (grila de 11 × 11, așezată peste pătratele desenate pe
-  // tablă) și bătrânul. În joc stau peste sala tavernei întunecată, deci în editor fundalul e sala
+  // tablă) și bătrânul, peste masa văzută de sus (în joc, până se încarcă masa, se vede sala tavernei întunecată)
   scene.set('tafl', {
     id: 'tafl',
     tip: 'ecran',
     titlu: 'Masa regelui (tavernă)',
     titluObiecte: 'Tabla, căsuțele și bătrânul',
-    titluFundal: 'Sala tavernei (în joc, întunecată, în spatele tablei)',
-    imagine: 'locations/taverna_parter.png',
+    titluFundal: 'Masa de sub tablă (până o încarci, în joc se vede sala tavernei întunecată)',
+    imagine: IMAGINE_MASA_TAFL,
     variante: [],
     parinte: null,
     tinte: [],
@@ -694,6 +695,9 @@ export function imaginiCerute(date, scene) {
   // Paharul și zarurile sunt elemente de interfață, dar stau aici, lângă restul jocului, ca să fie ușor de găsit
   adauga(fisierUi('pahar_zaruri'), 'Zaruri: paharul, răsturnat cu gura în jos (256 × 256, fundal transparent)', true);
   for (let f = 1; f <= 6; f++) adauga(fisierUi(`zar_${f}`), `Zaruri: zarul cu fața ${f} (128 × 128, fundal transparent)`, true);
+  // Masa regelui: masa de sub tablă (cerut de autor); opțională, fiindcă fără ea se vede sala tavernei
+  grup = 'Masa regelui (tavernă)';
+  adauga(IMAGINE_MASA_TAFL, 'Masa regelui: masa din tavernă văzută drept de sus, goală la mijloc, unde stă tabla (1920 × 1080)', true);
   // Harta Aldenorului (decis de autor): prima pagină a cronicii din prolog, cu numele scrise chiar pe imagine
   grup = 'Prologul';
   if (date.prolog?.harta?.imagine) adauga(date.prolog.harta.imagine, 'Prologul: harta Aldenorului, cu numele scrise pe ea (1920 × 1080)');
