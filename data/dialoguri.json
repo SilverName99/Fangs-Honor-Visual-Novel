@@ -18670,6 +18670,8 @@
         "gand": true,
         "emotie": "normal",
         "text": "Săgețile cad peste orci ca o ploaie neagră. Orcii urlă și se întorc spre ei, dar umbrele au dispărut deja.",
+        "_nota": "Decis de autor: a doua imagine, cu săgețile în zbor și orcii loviți; rămâne și la ultima replică.",
+        "imagine": "events/fluier_ambuscada_2.png",
         "urmator": "f5"
       },
       "f5": {
