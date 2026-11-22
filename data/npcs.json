@@ -427,7 +427,7 @@
         "casa_finn",
         "iesirea"
       ],
-      "_rol": "Tânărul hoț (Finn). Nu luptă, decât o dată (decis de autor): la cimitir, în „Noaptea de la cimitir”, alături de Vale, ca aliat de o luptă; altfel ajută din umbră.",
+      "_rol": "Tânărul hoț (Finn). Luptă doar alături de Vale, în misiunile lui (decis de autor: are toate pozele de luptă); în lupta finală nu luptă, ci face o ambuscadă la un val mare (TODO).",
       "cineRaspunde": {
         "personaj": "negustor",
         "conditii": {
