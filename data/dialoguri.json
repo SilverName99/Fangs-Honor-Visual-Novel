@@ -16657,6 +16657,21 @@
         "gand": true,
         "emotie": "normal",
         "text": "Vreau să strig: „Cine?”. Nu am glas.",
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_4.mp4",
+        "urmator": "v13b",
+        "faraVideo": "v13b",
+        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; între a patra și a cincea imagine): Edwin, la marginea prăpastiei, se întoarce cu spatele la Vale, cu fața spre prăpastie, și coboară plutind în ea. Lipsește = visul merge direct la a cincea imagine."
+      },
+      "v13b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tata coboară în prăpastie, plutind, tot mai adânc, până când lumina îl înghite.",
+        "imagine": "events/vis_4_5.png",
+        "trecere": 1200,
         "urmator": "v14"
       },
       "v14": {
@@ -16664,14 +16679,7 @@
         "gand": true,
         "emotie": "normal",
         "text": "Sub mine, pământul se ridică și coboară încet, ca pieptul cuiva uriaș care doarme.",
-        "urmator": "film"
-      },
-      "film": {
-        "video": "events/vis_4.mp4",
-        "urmator": "v15",
-        "faraVideo": "v15",
-        "_nota": "Filmulețul visului (decis de autor: câte unul la fiecare vis; după a patra imagine, decis de autor): Edwin, la marginea prăpastiei, se întoarce cu spatele la Vale, cu fața spre prăpastie, și coboară plutind în ea (decis de autor); imediat după el, Vale se trezește (fără a cincea imagine). „tine” (ales de Claude): ultimul cadru mai stă 1,5 secunde. Lipsește = Vale se trezește direct.",
-        "tine": 1500
+        "urmator": "v15"
       },
       "v15": {
         "vorbitor": "vale",
