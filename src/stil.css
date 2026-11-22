@@ -4198,3 +4198,17 @@ svg.zone {
   text-align: left;
   white-space: pre-line;
 }
+/* Foaia regulilor de la Masa regelui: textul e mai lung decât la zaruri, așa că foaia crește după el (altfel
+   „Am înțeles” ieșea tăiat jos) */
+.ecran-tafl .foaie-inv.hartie-reguli {
+  aspect-ratio: auto;
+  width: 820px;
+  height: auto;
+  max-height: 1060px;
+  padding: 110px 100px 80px;
+  gap: 20px;
+}
+.ecran-tafl .hartie-reguli .buton.inchide-reguli {
+  margin-top: 6px;
+  flex-shrink: 0;
+}

@@ -18681,21 +18681,42 @@
     }
   },
   "batran": {
-    "_nota": "CIORNĂ (Claude). Bătrânul cu Masa regelui, din tavernă (cerut de autor): la fiecare clic, una din 3 discuții scurte (2–3 replici), apoi întrebarea „cât de tare să joc?” (Ușor, Mediu, Greu). Prima dată se prezintă și explică jocul. După o victorie, în ziua aceea nu mai joacă.",
+    "_nota": "CIORNĂ (Claude). Bătrânul cu Masa regelui, din tavernă (cerut de autor): la fiecare clic, una din 3 discuții scurte (2–3 replici), apoi întrebarea „cât de tare să joc?” (Ușor, Mediu, Greu). Prima dată se prezintă și explică jocul. După o victorie, în ziua aceea nu mai joacă. Cu mai puțin de o oră până pleacă (la prânz, la 12, și noaptea, la 02, când se închide taverna) nu mai începe o partidă (ales de Claude). Ziua lui începe la 05:00: o victorie de la 23:30 ține și după miezul nopții.",
     "partener": "batran",
     "start": [
+      {
+        "nod": "gata_azi",
+        "conditii": {
+          "marcatAzi": {
+            "id": "tafl_castig",
+            "deLa": "05:00"
+          }
+        }
+      },
+      {
+        "nod": "tarziu_noapte",
+        "conditii": {
+          "ora": {
+            "min": "01:00",
+            "max": "01:59"
+          }
+        }
+      },
+      {
+        "nod": "tarziu_pranz",
+        "conditii": {
+          "ora": {
+            "min": "11:00",
+            "max": "11:59"
+          }
+        }
+      },
       {
         "nod": "prezentare",
         "conditii": {
           "nuStare": {
             "cunoscut_batran": "da"
           }
-        }
-      },
-      {
-        "nod": "gata_azi",
-        "conditii": {
-          "marcatAzi": "tafl_castig"
         }
       },
       {
@@ -18859,6 +18880,16 @@
         "vorbitor": "batran",
         "emotie": "zambet",
         "text": "Pentru azi ajunge, băiete. M-ai bătut o dată, și bătrânii au și ei mândria lor. Vino mâine."
+      },
+      "tarziu_noapte": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "E prea târziu pentru o partidă, băiete. Una bună ține cât o oră, iar Agnes închide curând. Vino mâine."
+      },
+      "tarziu_pranz": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Nu acum, băiete. Se apropie prânzul și se umple taverna; o partidă bună ține cât o oră. Vino după-amiază."
       }
     }
   }

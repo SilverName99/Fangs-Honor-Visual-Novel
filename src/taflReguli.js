@@ -115,9 +115,10 @@ export function incercuiti(tabla) {
 }
 
 // Face o mutare pe o copie a tablei: capturile (prins între două piese dușmane sau între una și o căsuță dușmană, doar
-// de cel care mută: între două piese poți intra fără grijă) și sfârșitul care vine din ea. Încercuirea se verifică doar
-// în partidă („inel”), nu și în căutarea bătrânului, unde ar costa prea mult la fiecare poziție încercată
-export function aplica(tabla, de, la, inel = true) {
+// de cel care mută: între două piese poți intra fără grijă) și sfârșitul care vine din ea. Încercuirea se verifică și
+// în căutarea bătrânului (altfel nu vedea un inel închis dintr-o mutare); costă puțin, pentru că doar o mutare a
+// atacatorilor poate închide un inel
+export function aplica(tabla, de, la) {
   const t = tabla.slice();
   const p = t[de];
   const cine = p === ATAC ? 'a' : 'd';
@@ -142,7 +143,7 @@ export function aplica(tabla, de, la, inel = true) {
     if (DIRECTII.some((d) => vecin(la, d) === k) && regePrins(t, k)) {
       t[k] = GOL;
       final = { castiga: 'a', motiv: 'rege', rege: k };
-    } else if (inel && incercuiti(t)) final = { castiga: 'a', motiv: 'incercuit' };
+    } else if (incercuiti(t)) final = { castiga: 'a', motiv: 'incercuit' };
   }
   return { tabla: t, capturate, final };
 }
@@ -243,7 +244,7 @@ function cauta(tabla, t, adancime, alfa, beta, ply, limita) {
   if (adancime === 0) return t === 'd' ? evalueaza(tabla) : -evalueaza(tabla);
   let best = -Infinity;
   for (const [de, la] of ordoneaza(tabla, lista, t)) {
-    const r = aplica(tabla, de, la, false);
+    const r = aplica(tabla, de, la);
     let v;
     if (r.final) v = r.final.castiga === t ? CASTIG - ply : -CASTIG + ply;
     else v = -cauta(r.tabla, t === 'a' ? 'd' : 'a', adancime - 1, -beta, -alfa, ply + 1, limita);
@@ -267,11 +268,21 @@ export const NIVELURI = {
 export function alegeMutarea(s, nivel = 'mediu', aleator = Math.random) {
   const n = NIVELURI[nivel] || NIVELURI.mediu;
   const t = s.rand;
-  const lista = ordoneaza(s.tabla, mutari(s.tabla, t), t);
+  let lista = ordoneaza(s.tabla, mutari(s.tabla, t), t);
   if (!lista.length) return null;
-  // Un câștig pe loc: îl ia (la ușor, nu chiar mereu)
-  const castig = lista.find(([de, la]) => aplica(s.tabla, de, la, false).final?.castiga === t);
-  if (castig && aleator() >= n.ratareCastig) return castig;
+  // Un câștig pe loc: îl ia (la ușor, nu chiar mereu: când îl scapă, mutările câștigătoare ies din listă, altfel
+  // căutarea le-ar găsi din nou și le-ar juca oricum)
+  const castigaPeLoc = ([de, la]) => aplica(s.tabla, de, la).final?.castiga === t;
+  const castig = lista.find(castigaPeLoc);
+  if (castig) {
+    if (aleator() >= n.ratareCastig) return castig;
+    const rest = lista.filter((m) => !castigaPeLoc(m));
+    if (rest.length) lista = rest;
+  }
+  // O mutare care aduce aceeași poziție a treia oară (sau ultima mutare îngăduită) e remiză: scor 0, ca bătrânul s-o
+  // caute când pierde și s-o ocolească când câștigă
+  const altul = t === 'a' ? 'd' : 'a';
+  const remiza = (tabla) => (s.vazute?.get(cheie(tabla, altul)) || 0) >= 2 || s.mutari + 1 >= LIMITA_MUTARI;
   if (aleator() < n.gresala) return lista[Math.floor(aleator() * lista.length)];
   // Adâncire treptată: fiecare nivel terminat la timp își păstrează scorurile; ce n-a apucat, rămâne la cel de dinainte
   const pana = Date.now() + n.timp;
@@ -280,8 +291,8 @@ export function alegeMutarea(s, nivel = 'mediu', aleator = Math.random) {
     const limita = { pana, noduri: 0, depasit: false };
     const acum = [];
     for (const [de, la] of lista) {
-      const r = aplica(s.tabla, de, la, false);
-      const v = r.final ? (r.final.castiga === t ? CASTIG : -CASTIG) : -cauta(r.tabla, t === 'a' ? 'd' : 'a', ad - 1, -Infinity, Infinity, 1, limita);
+      const r = aplica(s.tabla, de, la);
+      const v = r.final ? (r.final.castiga === t ? CASTIG : -CASTIG) : remiza(r.tabla) ? 0 : -cauta(r.tabla, altul, ad - 1, -Infinity, Infinity, 1, limita);
       if (limita.depasit) break;
       acum.push([v, [de, la]]);
     }

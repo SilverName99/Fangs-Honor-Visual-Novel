@@ -105,14 +105,17 @@ export function creeazaTafl(parinte, joc) {
     e.style.top = `${(p.y - p.scara - 0.02) * 100}%`;
     el.append(e);
   }
-  // Ce spune bătrânul la masă (ciorne în config.json, „replici”); rămâne puțin, apoi dispare
+  // Ce spune bătrânul la masă (ciorne în config.json, „replici”); rămâne puțin, apoi dispare. „vorbestePana” ține
+  // balonul pe ecran cât să poată fi citit, chiar dacă bătrânul începe să se gândească la mutarea lui
   let pana = 0;
+  let vorbestePana = 0;
   function spune(cheie, stare = 'normal') {
     const lista = cfg().replici?.[cheie];
     if (!lista?.length) return;
     seteazaBatran(stare, alege([].concat(lista)));
     const acum = ++pana;
-    setTimeout(() => acum === pana && s && !s.gandeste && seteazaBatran('normal'), 2600 / viteza());
+    vorbestePana = Date.now() + 2200 / viteza();
+    setTimeout(() => acum === pana && s && !s.gandeste && !s.rezultat && seteazaBatran('normal'), 2600 / viteza());
   }
 
   // ---------- miza și tabăra ----------
@@ -202,6 +205,7 @@ export function creeazaTafl(parinte, joc) {
       setTimeout(() => x?.remove(), 400);
     }
     joc.sunet.efect(capturate.length ? 'tafl_captura' : 'tafl_piesa');
+    if (s.rezultat) return;
     if (capturate.length && !s.p.final) spune(cine === s.vale ? 'valeIa' : 'batranIa', cine === s.vale ? 'normal' : 'zambet');
     await asteapta(capturate.length ? 380 : 120);
     if (!s) return;
@@ -217,11 +221,14 @@ export function creeazaTafl(parinte, joc) {
     // Bătrânul se gândește (cât îl lasă viteza animațiilor), apoi mută
     s.gandeste = true;
     s.ocupat = true;
-    seteazaBatran('normal', '...');
+    // O replică abia spusă (de exemplu „Încep eu.”) rămâne pe ecran cât se gândește; altfel apare „...”
+    const ramas = vorbestePana - Date.now();
+    if (ramas <= 0) seteazaBatran('normal', '...');
     deseneaza();
     const g = cfg().gandire || { min: 700, max: 1600 };
-    await asteapta(g.min + Math.random() * (g.max - g.min));
-    if (!s) return;
+    await asteapta(Math.max(g.min + Math.random() * (g.max - g.min), ramas * viteza()));
+    // Partida s-a putut termina cât se gândea („Renunț”): atunci nu mai mută
+    if (!s || s.rezultat || s.p.final) return;
     const m = alegeMutarea(s.p, s.nivel);
     s.gandeste = false;
     seteazaBatran('normal');
@@ -248,10 +255,14 @@ export function creeazaTafl(parinte, joc) {
     if (s.rezultat === 'castig') {
       s.primit = s.miza + castigPeste(s.miza, s.nivel);
       st.bani += s.primit;
-      // După o victorie, bătrânul nu mai joacă în ziua aceea (ca paznicii la zaruri)
-      joc.aplicaEfecte({ marcheaza: 'tafl_castig' });
+      // După o victorie, bătrânul nu mai joacă în ziua aceea (ca paznicii la zaruri). Marcajul ia ora de la sfârșitul
+      // partidei (ora ei se adaugă abia la plecarea de la masă), ca un câștig de la 23:30 să nu cadă în ziua de dinainte
+      (st.marcaje ||= {}).tafl_castig = st.minute + (cfg().minute || 0);
     } else if (s.rezultat === 'remiza') st.bani += s.miza;
     joc.actualizeazaHud();
+    // Replicile de dinainte nu mai au voie să șteargă balonul cu rezultatul
+    pana++;
+    vorbestePana = 0;
     seteazaBatran(s.rezultat === 'castig' ? 'normal' : 'zambet', alege([].concat(cfg().replici?.[s.rezultat] || [])));
     deseneaza();
   }

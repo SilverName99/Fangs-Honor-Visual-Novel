@@ -89,8 +89,14 @@ const tipuri = {
       const zile = Math.floor(c.minute / 1440) - Math.floor(la / 1440);
       return (lim.min == null || zile >= lim.min) && (lim.max == null || zile <= lim.max);
     }),
-  // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei)
-  marcatAzi: (v, c) => c.marcaje?.[v] != null && c.minute != null && Math.floor(c.marcaje[v] / 1440) === Math.floor(c.minute / 1440),
+  // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei).
+  // „marcatAzi: { id, deLa: '05:00' }” = ziua începe la ora aceea, pentru cine stă și după miezul nopții (bătrânul de
+  // la Masa regelui, 14–02: „vino mâine” spus la 00:30 înseamnă după ce se face ziuă, nu peste o jumătate de oră)
+  marcatAzi: (v, c) => {
+    const id = typeof v === 'string' ? v : v.id;
+    const dupa = typeof v === 'string' ? 0 : inMinute(v.deLa || '00:00');
+    return c.marcaje?.[id] != null && c.minute != null && Math.floor((c.marcaje[id] - dupa) / 1440) === Math.floor((c.minute - dupa) / 1440);
+  },
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)
   // „taxaRatata: true” = Vale a rămas dator cel puțin o dată (paznicul îi aduce aminte)
   taxaRatata: (v, c) => ((c.taxa?.ratari || 0) > 0) === v,
