@@ -324,12 +324,12 @@ export function construiesteLumea(date) {
     ],
   });
   // Masa regelui din tavernă (cerut de autor): tabla, căsuțele (grila de 11 × 11, așezată peste pătratele desenate pe
-  // tablă) și bătrânul, peste masa văzută de sus (în joc, până se încarcă masa, se vede taverna întunecată)
+  // tablă) și rândul cu ce spune bătrânul, peste masa văzută de sus (în joc, până se încarcă masa, se vede taverna întunecată)
   scene.set('tafl', {
     id: 'tafl',
     tip: 'ecran',
     titlu: 'Masa regelui (tavernă)',
-    titluObiecte: 'Tabla, căsuțele și bătrânul',
+    titluObiecte: 'Tabla, căsuțele și ce spune bătrânul',
     titluFundal: 'Masa de sub tablă (până o încarci, în joc se vede taverna întunecată)',
     imagine: IMAGINE_MASA_TAFL,
     variante: [],
@@ -338,7 +338,8 @@ export function construiesteLumea(date) {
     obiecte: [
       { id: 'tabla', tip: 'tafl-tabla', nume: 'Tabla', imagine: fisierUi('tafl_tabla'), raport: 1, variante: [], implicit: { x: 0.5, y: 0.97, scara: 0.88 } },
       { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele (11 × 11: trage-le peste pătratele de pe tablă)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: { x: 0.5, y: 0.926, scara: 0.792 } },
-      { id: 'batran', tip: 'tafl-batran', nume: 'Bătrânul (portretul lui, cu balonul deasupra)', imagine: 'portraits/batran_normal.png', raport: 0.8, variante: [], implicit: { x: 0.87, y: 0.95, scara: 0.55 } },
+      // Fără portretul bătrânului pe ecran (decis de autor): doar rândul cu ce spune el, deasupra tablei
+      { id: 'balon', tip: 'tafl-balon', nume: 'Ce spune bătrânul (rândul de deasupra tablei)', eticheta: 'Ce spune bătrânul', imagine: 'ui/text_tafl_balon.png', raport: 12, variante: [], implicit: { x: 0.5, y: 0.085, scara: 0.06 } },
     ],
   });
   // Mini-jocurile muncii (decis de autor): autorul mută și mărește bucata fiecăruia pe imaginea muncii, ca în joc.

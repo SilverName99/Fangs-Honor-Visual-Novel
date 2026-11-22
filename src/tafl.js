@@ -1,7 +1,9 @@
 // „Masa regelui” (Fetlar Hnefatafl) la tavernă (cerut de autor): Vale joacă cu bătrânul de la masa din fața tavernei.
 // Regulile și mintea bătrânului stau în taflReguli.js; aici e doar ecranul: miza, tabăra, tabla, piesele, mutările.
-// Tabla, grila (căsuțele peste desenul tablei) și bătrânul se mută și se măresc în editor (Aranjare → Ecrane →
-// „Masa regelui (tavernă)”); până se încarcă imaginile, tabla și piesele sunt desenate din cod.
+// Tabla, grila (căsuțele peste desenul tablei) și rândul cu ce spune bătrânul se mută și se măresc în editor
+// (Aranjare → Ecrane → „Masa regelui (tavernă)”); până se încarcă imaginile, tabla și piesele sunt desenate din cod.
+// Fără portretul bătrânului pe ecran (decis de autor): ce spune el stă într-un rând deasupra tablei, iar panoul cu
+// partida (miza, „? Regulile”, „Renunț”) se deschide din butonul „?” din stânga-sus.
 
 import { elementImagine } from './imagini.js';
 import { pozitie, aplicaPozitie } from './scena.js';
@@ -40,7 +42,7 @@ export function creeazaTafl(parinte, joc) {
     if (el) return;
     el = div('ecran-tafl');
     parinte.append(el);
-    s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false };
+    s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false, panou: false, replica: null };
     construieste();
     arataMiza();
   }
@@ -66,15 +68,14 @@ export function creeazaTafl(parinte, joc) {
       grila.append(c);
     }
     grila.append(div('strat-piese-tafl'));
-    // Bătrânul, cu fața lui: liniștit sau zâmbind (când îi merge bine); balonul cu ce spune stă deasupra lui
-    const batran = div('obiect batran-tafl stare-normal');
-    aplicaPozitie(batran, poz('batran'));
-    batran.style.zIndex = '3';
-    for (const st of ['normal', 'zambet']) {
-      const candidati = st === 'normal' ? ['portraits/batran_normal.png'] : ['portraits/batran_zambet.png', 'portraits/batran_normal.png'];
-      batran.append(elementImagine(candidati, { clasa: `imagine-stare ${st}`, raport: 0.8, eticheta: candidati[0] }));
-    }
-    el.replaceChildren(masa, tabla, grila, batran, div('strat-ui-tafl'));
+    // Rândul de deasupra tablei: ce spune bătrânul, că se gândește sau că e rândul lui Vale (în locul portretului)
+    const replica = div('obiect replica-tafl');
+    const p = poz('balon');
+    aplicaPozitie(replica, p);
+    replica.style.zIndex = '3';
+    // Scena are 1080 px pe înălțime: scrisul crește odată cu rândul mutat și mărit în editor
+    replica.style.fontSize = `${Math.round(p.scara * 1080 * 0.42)}px`;
+    el.replaceChildren(masa, tabla, grila, replica, div('strat-ui-tafl'));
     scoateDacaLipseste();
   }
 
@@ -99,17 +100,27 @@ export function creeazaTafl(parinte, joc) {
     });
   }
 
+  // Ce scrie în rândul de deasupra tablei: replica bătrânului, dacă tocmai a spus ceva; altfel al cui e rândul
+  function arataReplica() {
+    const r = el?.querySelector('.replica-tafl');
+    if (!r || !s) return;
+    r.classList.remove('gand', 'indemn');
+    if (s.replica) {
+      r.replaceChildren(Object.assign(document.createElement('span'), { className: 'cine', textContent: 'Bătrânul Hagen: ' }), `„${s.replica}”`);
+    } else if (s.gandeste) {
+      r.classList.add('gand');
+      r.textContent = 'Bătrânul se gândește...';
+    } else if (s.p && s.miza != null && !s.p.final && s.p.rand === s.vale) {
+      r.classList.add('indemn');
+      r.textContent = s.selectat != null ? 'Alege unde o muți.' : 'E rândul tău: alege o piesă.';
+    } else r.textContent = '';
+    r.hidden = !r.textContent;
+  }
+  // „stare” (fața bătrânului) a rămas din vremea portretului; acum contează doar ce spune
   function seteazaBatran(stare, balon) {
-    const b = el?.querySelector('.batran-tafl');
-    if (!b) return;
-    b.className = `obiect batran-tafl stare-${stare}`;
-    el.querySelector('.balon-tafl')?.remove();
-    if (!balon) return;
-    const p = poz('batran');
-    const e = div(`balon balon-tafl${balon === '...' ? ' gand' : ''}`, balon);
-    e.style.left = `${p.x * 100}%`;
-    e.style.top = `${(p.y - p.scara - 0.02) * 100}%`;
-    el.append(e);
+    if (!s) return;
+    s.replica = balon && balon !== '...' ? balon : null;
+    arataReplica();
   }
   // Ce spune bătrânul la masă (ciorne în config.json, „replici”); rămâne puțin, apoi dispare. „vorbestePana” ține
   // balonul pe ecran cât să poată fi citit, chiar dacă bătrânul începe să se gândească la mutarea lui
@@ -302,8 +313,14 @@ export function creeazaTafl(parinte, joc) {
       const alLui = s.vale === 'a' ? p === ATAC : p === APAR || p === REGE;
       c.classList.toggle('de-ales', s.miza != null && !s.p.final && !s.ocupat && s.p.rand === s.vale && alLui);
     }
+    arataReplica();
     if (s.miza == null) return;
     const strat = el.querySelector('.strat-ui-tafl');
+    // Butonul „?” din stânga-sus deschide și închide panoul (decis de autor); la sfârșit panoul se deschide singur,
+    // pentru rezultat și „Pleacă de la masă”
+    const intrebare = buton('?', () => ((s.panou = !s.panou), deseneaza()), `intrebare-tafl${s.panou || s.rezultat ? ' deschis' : ''}`, false);
+    intrebare.title = 'Partida';
+    if (!s.panou && !s.rezultat) return strat.replaceChildren(intrebare, butonViteza());
     const panou = div('panou-tafl');
     const numara = (f) => s.p.tabla.reduce((n, p) => n + (f(p) ? 1 : 0), 0);
     panou.append(div('titlu-tafl', `Masa regelui · ${NUME_NIVEL[s.nivel]}`), div('rand-tafl', `Joci cu: ${NUME_TABARA[s.vale]}`), div('rand-tafl', `Miza: ${s.miza} monede`));
@@ -316,7 +333,7 @@ export function creeazaTafl(parinte, joc) {
       const randul = s.p.rand === s.vale ? (s.selectat != null ? 'Alege unde o muți.' : 'E rândul tău: alege o piesă.') : 'Bătrânul se gândește...';
       panou.append(div('rand-tafl acum', randul), buton('? Regulile', arataRegulile), buton('Renunț', renunta));
     }
-    strat.replaceChildren(panou, butonViteza());
+    strat.replaceChildren(intrebare, panou, butonViteza());
   }
 
   return { porneste, activ: () => !!el };

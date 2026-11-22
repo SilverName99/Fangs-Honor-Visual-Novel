@@ -4108,19 +4108,34 @@ svg.zone {
   font-size: 44px;
   color: #7a5a10;
 }
-.batran-tafl {
-  aspect-ratio: 0.8;
+/* Rândul de deasupra tablei (în locul portretului bătrânului, decis de autor): ce spune el, că se gândește sau că e
+   rândul lui Vale; pe o fâșie întunecată, ca să se citească pe orice masă */
+.replica-tafl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.1em;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-family: Georgia, serif;
+  color: #f3e6c8;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  background: radial-gradient(ellipse at center, rgba(15, 10, 5, 0.78) 55%, rgba(15, 10, 5, 0) 100%);
+  pointer-events: none;
 }
-.batran-tafl .imagine-stare {
-  position: absolute;
-  inset: 0;
+.replica-tafl[hidden] {
+  display: none;
 }
-.batran-tafl.stare-normal .imagine-stare:not(.normal),
-.batran-tafl.stare-zambet .imagine-stare:not(.zambet) {
-  visibility: hidden;
+.replica-tafl .cine {
+  color: #e8c46a;
+  margin-right: 0.35em;
 }
-.ecran-tafl .balon-tafl {
-  z-index: 20;
+.replica-tafl.gand {
+  font-style: italic;
+  color: #d8c9a8;
+}
+.replica-tafl.indemn {
+  color: #ffd46b;
 }
 .strat-ui-tafl {
   position: absolute;
@@ -4134,9 +4149,8 @@ svg.zone {
 /* Panoul din stânga, cu ce se întâmplă în partidă */
 .panou-tafl {
   position: absolute;
-  left: 30px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 24px;
+  top: 132px;
   width: 400px;
   box-sizing: border-box;
   padding: 24px 26px;
@@ -4221,4 +4235,20 @@ svg.zone {
 }
 .ecran-tafl .fundal-tafl img {
   object-fit: cover;
+}
+/* Butonul „?” din stânga-sus de la Masa regelui (decis de autor): deschide și închide panoul partidei; are pielea
+   butonului pătrat de lemn, ca butonul de viteză din colțul opus */
+.ecran-tafl .buton.intrebare-tafl {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 96px;
+  height: 96px;
+  min-width: 0;
+  padding: 0;
+  font: 700 46px Georgia, serif;
+  pointer-events: auto;
+}
+.ecran-tafl .buton.intrebare-tafl.deschis {
+  color: #ffd46b;
 }
