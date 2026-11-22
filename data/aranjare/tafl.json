@@ -1,0 +1,16 @@
+{
+  "zone": {},
+  "obiecte": {
+    "luate_aparatori": {
+      "x": 0.1678,
+      "y": 0.6565,
+      "scara": 0.3
+    },
+    "luate_atacatori": {
+      "x": 0.8328,
+      "y": 0.6605,
+      "scara": 0.3
+    }
+  },
+  "primPlan": []
+}
