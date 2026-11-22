@@ -1792,6 +1792,178 @@
       },
       "dialog": "finn_zaruri",
       "_nota": "Decis de autor: o imagine, trucul pentru zaruri."
+    },
+    {
+      "id": "kaia_baza",
+      "nume": "Baza",
+      "grup": "Kaia: baza",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "kaia_baza",
+      "_nota": "Decis de autor: seara, la foc, Vale și Kaia hotărăsc revolta; 2 imagini."
+    },
+    {
+      "id": "finn_custi_tabara",
+      "nume": "Cuștile vânătorilor: la foc",
+      "grup": "Finn: cuștile vânătorilor",
+      "repetare": "o_data",
+      "siPeLoc": true,
+      "conditii": {
+        "loc": "padure/campsite",
+        "ora": {
+          "min": "18:00",
+          "max": "22:59"
+        },
+        "misiune": {
+          "finn_custi": "inceputa"
+        },
+        "personajLa": {
+          "vanatoare": [
+            "padure/campsite"
+          ]
+        },
+        "nu": {
+          "existaStare": "finn_custi_plan"
+        }
+      },
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "finn_custi_tabara",
+      "_nota": "Decis de autor: seara, când Vale ajunge la locul de campare (Finn vine cu el), pornește direct; 2 imagini."
+    },
+    {
+      "id": "finn_custi_noapte",
+      "nume": "Cuștile vânătorilor",
+      "grup": "Finn: cuștile vânătorilor",
+      "repetare": "o_data",
+      "siPeLoc": true,
+      "conditii": {
+        "loc": "padure/campsite",
+        "misiune": {
+          "finn_custi": "inceputa"
+        },
+        "existaStare": "finn_custi_plan",
+        "nu": {
+          "existaStare": "finn_custi_gata"
+        },
+        "oricare": [
+          {
+            "zileDeLa": {
+              "finn_custi_plan": {
+                "min": 1
+              }
+            },
+            "ora": {
+              "min": "23:00"
+            }
+          },
+          {
+            "zileDeLa": {
+              "finn_custi_plan": {
+                "min": 2
+              }
+            },
+            "ora": {
+              "max": "02:59"
+            }
+          }
+        ]
+      },
+      "efecte": {
+        "timp": 120,
+        "nevoi": {
+          "stamina": -20
+        }
+      },
+      "dialog": "finn_custi",
+      "furisare": [
+        {
+          "pas": 3,
+          "imagine": "events/finn_custi_3.png"
+        },
+        {
+          "pas": 4,
+          "imagine": "events/finn_custi_4.png"
+        },
+        {
+          "pas": 5,
+          "imagine": "events/finn_custi_5.png"
+        }
+      ],
+      "_nota": "Decis de autor: noaptea de după, pe furiș (3 imagini, cu câte două locuri desenate în editor: Aranjare → Ecrane → „Furișatul: Cuștile vânătorilor”). Ales de Claude: Kaia și Finn îl așteaptă în fiecare noapte (23–03) până vine; drumul ține 2 ore și ia 20 stamina."
+    },
+    {
+      "id": "finn_custi_dupa",
+      "nume": "Cuștile vânătorilor: după luptă",
+      "grup": "Finn: cuștile vânătorilor",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "finn_custi_dupa",
+      "_nota": "După lupta din tabăra vânătorilor, câștigată sau pierdută."
+    },
+    {
+      "id": "finn_jarek",
+      "nume": "Ultima treabă pentru Jarek",
+      "grup": "Finn: ultima treabă pentru Jarek",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 20
+      },
+      "dialog": "finn_jarek",
+      "_nota": "Decis de autor: o imagine, biletul lui Jarek, și alegerea."
+    },
+    {
+      "id": "finn_jarek_noapte",
+      "nume": "Ultima treabă pentru Jarek: la cocioabă",
+      "grup": "Finn: ultima treabă pentru Jarek",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "finn_jarek_noapte",
+      "_nota": "Noaptea, după „Ai promis”: o imagine, la Jarek. Vale rămâne în fața casei lui Finn."
+    },
+    {
+      "id": "finn_prieteni",
+      "nume": "Prietenii lui Finn",
+      "grup": "Finn: prietenii lui Finn",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "finn_prieteni",
+      "_nota": "Decis de autor: Finn vorbește cu cei trei prieteni; o imagine."
+    },
+    {
+      "id": "finn_prieteni_fluier",
+      "nume": "Prietenii lui Finn: fluierul",
+      "grup": "Finn: prietenii lui Finn",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "finn_prieteni_fluier",
+      "_nota": "Decis de autor: Finn îi dă lui Vale fluierul; o imagine."
+    },
+    {
+      "id": "dinte_orc",
+      "nume": "Dintele de orc",
+      "grup": "Finn: prietenii lui Finn",
+      "manual": true,
+      "repetare": "o_data",
+      "dialog": "dinte_orc",
+      "_nota": "Decis de autor: după o victorie în Groapă, cât e misiunea „Prietenii lui Finn” (pornit din src/groapa.js, „dupaVictorie” în config.json)."
     }
   ]
 }

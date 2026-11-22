@@ -153,8 +153,11 @@ export function creeazaGroapa(parinte, joc) {
     if (r !== 'victorie') return aplicaEfecte({ contor: { groapa_infrangeri: 1 } }, joc);
     const prima = s.stari?.[`groapa_${id}`] !== 'castigat';
     aplicaEfecte({ bani: n.bani || 0, reputatie: n.reputatie || 0, contor: { groapa_victorii: 1 }, stare: { [`groapa_${id}`]: 'castigat' }, ...(prima && n.primaData ? { obiect: n.primaData } : {}) }, joc);
-    const inel = cfg().inel;
-    if (inel && verifica(inel.conditii, context(s))) aplicaEfecte(inel.efecte, joc);
+    // „inel” (verigheta mamei) și „dupaVictorie” (ce mai cer misiunile: dintele de orc pentru Wil, prietenul lui Finn).
+    // Condițiile se verifică toate înainte, ca o victorie să nu dea deodată două lucruri care se bat cap în cap
+    const ctx = context(s);
+    const deDat = [cfg().inel, ...(cfg().dupaVictorie || [])].filter((x) => x && verifica(x.conditii, ctx));
+    for (const x of deDat) aplicaEfecte(x.efecte, joc);
   }
 
   return { deschide, rezultat };

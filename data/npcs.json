@@ -505,6 +505,17 @@
         {
           "de": "18:00",
           "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "misiune": {
+              "finn_jarek": "terminata"
+            }
+          },
+          "ce": "după ce s-a lăsat de Jarek („Ultima treabă pentru Jarek”), seara stă acasă (ales de Claude)"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
           "conditii": {
             "stare": {
               "hot": "eliberat"
@@ -558,6 +569,20 @@
             }
           },
           "ce": "cât e misiunea „Lada colectorului”, îl așteaptă pe Vale în fața casei, cu sacul (decis de autor)"
+        },
+        {
+          "de": "23:00",
+          "pana": "03:00",
+          "loc": "casa_finn",
+          "conditii": {
+            "misiune": {
+              "finn_jarek": "inceputa"
+            },
+            "stare": {
+              "finn_jarek": "promis"
+            }
+          },
+          "ce": "cât e misiunea „Ultima treabă pentru Jarek” (după „Ai promis”), îl așteaptă pe Vale în fața casei, ca să meargă împreună la Jarek"
         },
         {
           "de": "23:00",

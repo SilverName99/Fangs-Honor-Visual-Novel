@@ -933,7 +933,76 @@
           "eveniment": "finn_cimitir_dupa"
         }
       }
+    },
+    "custi_vanatori": {
+      "_nota": "Decis de autor: Vale, Finn și Kaia (pe jos, fără Ember: pozele ei din Groapă) împotriva celor 5 orci din tabăra vânătorilor (ales de Claude: 3 orci și 2 aruncători). Fără fugă. Câștigată: cuștile se deschid; pierdută: fug toți trei. Încrederea vine oricum.",
+      "nume": "Tabăra vânătorilor",
+      "fundal": "tabara_vanatori",
+      "fuga": false,
+      "doarVale": true,
+      "varianta": "groapa",
+      "aliati": [
+        {
+          "id": "hot",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "vanatoare",
+          "linie": 2,
+          "rand": "spate"
+        }
+      ],
+      "inamici": [
+        {
+          "id": "orc_taverna",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "orc_taverna",
+          "linie": 1,
+          "rand": "fata"
+        },
+        {
+          "id": "orc_taverna",
+          "linie": 2,
+          "rand": "fata"
+        },
+        {
+          "id": "orc_aruncator",
+          "linie": 0,
+          "rand": "spate"
+        },
+        {
+          "id": "orc_aruncator",
+          "linie": 2,
+          "rand": "spate"
+        }
+      ],
+      "victorie": {
+        "text": "Ultimul orc cade cu fața în cenușa focului.",
+        "efecte": {
+          "stare": {
+            "finn_custi_lupta": "castigat"
+          },
+          "eveniment": "finn_custi_dupa"
+        }
+      },
+      "infrangere": {
+        "text": "Orcii sunt prea mulți. Cineva strigă „Fugi!”.",
+        "efecte": {
+          "stare": {
+            "finn_custi_lupta": "pierdut"
+          },
+          "eveniment": "finn_custi_dupa"
+        }
+      }
     }
   },
-  "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)"
+  "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)",
+  "hartiNoi": {
+    "_nota": "Hărți de luptă fără un loc al lor în sat (id → nume): imaginea locations/lupta_<id>.png, cu locurile luptătorilor mutate în editor.",
+    "tabara_vanatori": "Tabăra vânătorilor"
+  }
 }

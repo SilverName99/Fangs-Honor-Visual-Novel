@@ -4,6 +4,7 @@ import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { context } from './stare.js';
 import { verifica } from './conditii.js';
+import { creeazaDialog } from './dialog.js';
 // Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
 import { asteapta, viteza, butonViteza } from './viteza.js';
 
@@ -639,6 +640,69 @@ export function creeazaLupta(parinte, joc) {
     return true;
   }
 
+  // O discuție peste luptă (gândurile lui Vale peste imaginea ambuscadei): aceeași fereastră de dialog ca în joc, pusă
+  // peste ecranul de luptă, cât timp lupta stă pe loc. Nu se ține minte în salvare: după un refresh, lupta pornește
+  // oricum de la capăt
+  function discutieInLupta(idDialog) {
+    const d = joc.date.dialoguri?.[idDialog];
+    if (!d) return Promise.resolve();
+    const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
+    return new Promise((gata) => {
+      const strat = div('strat-dialog-lupta');
+      el.append(strat);
+      const dlg = creeazaDialog(strat, {
+        numeVorbitor: (id) => (id === 'vale' ? 'Vale' : personaje.get(id)?.nume || id),
+        emotieVale: () => 'normal',
+        verificaConditii: (c) => verifica(c, context(joc.stare)),
+        laEfecte: () => {},
+        optiuniMeniu: () => ({ alegeri: [], noduri: {} }),
+        tabaraVorbitor: () => 'aliat',
+        // Și imaginea ambuscadei intră în galeria din meniu, ca toate imaginile văzute
+        laImagine: (cale) => {
+          const s = joc.stare;
+          s.imaginiVazute ||= [];
+          if (!s.imaginiVazute.includes(cale)) s.imaginiVazute.push(cale);
+        },
+        laFinal: () => {
+          strat.remove();
+          gata();
+        },
+      });
+      dlg.porneste(d);
+    });
+  }
+
+  // Fluierul lui Finn (decis de autor): o singură dată, în lupta finală, pe valul ales de jucător. Peste luptă apare
+  // imaginea cu cei patru băieți care trag cu arcul din umbră, cu gândurile lui Vale, apoi toți inamicii valului de
+  // acum sunt răniți cu jumătate din viața lor întreagă (ales de Claude: săgețile trec de armură, iar cine era deja
+  // slăbit poate cădea; TODO echilibru, „rana” la obiect)
+  async function ambuscada(sursa, id) {
+    const d = inv.def(id);
+    const lf = d.luptaFinala;
+    L.folosite.add(id);
+    joc.sunet.efect(lf.sunet || 'fluier');
+    await discutieInLupta(lf.dialog);
+    if (!L) return;
+    const tinte = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat');
+    joc.sunet.efect('lupta_arc');
+    for (const t of tinte) {
+      const r = Math.max(1, Math.round(t.viataMax * (lf.rana ?? 0.5)));
+      t.viata = Math.max(0, t.viata - r);
+      numar(t, `−${r}`);
+      poza(t, 'lovit');
+      t.corp.classList.add('lovit');
+    }
+    jurnal(lf.jurnal || `Din umbră, săgețile prietenilor lui Finn cad peste inamici.`);
+    actualizeazaBare();
+    await asteapta(650);
+    if (!L) return;
+    for (const t of tinte) {
+      t.corp.classList.remove('lovit');
+      if (t.viata <= 0) cade(t);
+      else if (!t.apara) poza(t, 'idle');
+    }
+  }
+
   async function executa(sursa, actiune) {
     L.pauza = true;
     ascundeMeniul();
@@ -675,6 +739,10 @@ export function creeazaLupta(parinte, joc) {
       sursa.apara = true;
       poza(sursa, 'aparare');
       jurnal(`${sursa.nume} se apără.`);
+      sursa.bara = 0;
+    } else if (actiune.tip === 'obiect' && inv.def(actiune.id).luptaFinala?.tip === 'fluier') {
+      await ambuscada(sursa, actiune.id);
+      if (!L) return;
       sursa.bara = 0;
     } else if (actiune.tip === 'obiect' && inv.def(actiune.id).luptaFinala) {
       // Toiagul celor 23 (decis de autor): golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații.
@@ -926,8 +994,9 @@ export function creeazaLupta(parinte, joc) {
     L.toti.forEach((x) => x.el.classList.remove('tinta-valida'));
     f.el.classList.add('la-rand');
     L.laClic = null;
-    // Toiagul celor 23 (decis de autor): stă la obiectele de poveste, iar doar Vale îl poate folosi, doar în lupta
-    // finală și o singură dată; în lupta de test din F2 (bifa „lupta finală”) se poate încerca și fără să-l ai
+    // Toiagul celor 23 și fluierul lui Finn (decis de autor): stau la obiectele de poveste, iar doar Vale le poate
+    // folosi, doar în lupta finală și o singură dată; în lupta de test din F2 (bifa „lupta finală”) se pot încerca și
+    // fără să le ai
     const toiage = Object.entries(joc.date.items.obiecte).filter(([, o]) => o.luptaFinala).map(([id]) => id);
     const speciale =
       f.id === 'vale' && L.def.finala

@@ -173,6 +173,31 @@ export function construiesteLumea(date) {
       })),
     });
   }
+  // Hărți de luptă fără un loc al lor în sat („hartiNoi” în lupte.json: id → nume), de exemplu tabăra vânătorilor de
+  // orci din pădure (misiunea lui Finn „Cuștile vânătorilor”): doar imaginea de luptă, cu cele 12 locuri
+  for (const [fundal, nume] of Object.entries(date.lupte?.hartiNoi || {})) {
+    if (fundal.startsWith('_')) continue;
+    const id = idHartaLupta(fundal);
+    scene.set(id, {
+      id,
+      tip: 'lupta',
+      titlu: `Luptă: ${nume}`,
+      imagine: `locations/${id}.png`,
+      harta: `locations/${id}.png`,
+      variante: [],
+      parinte: null,
+      tinte: [],
+      obiecte: LOCURI_LUPTA.map((l) => ({
+        id: l.id,
+        tip: 'loc-lupta',
+        nume: l.nume,
+        eticheta: l.nume,
+        imagine: l.tabara === 'aliat' ? 'combat/vale_pumni_idle.png' : 'combat/paznic_orc_1_idle.png',
+        variante: [],
+        implicit: { x: l.x, y: l.y, scara: l.scara },
+      })),
+    });
+  }
   // Ecranul de inventar (designul autorului) se aranjează în editor ca o scenă: în stânga Vale și sloturile de echipament,
   // în dreapta foaia de pergament cu inventarul, semnul de carte, titlurile și butonul „Închide”
   // În editor, tot ce nu e figura sau foaia stă peste ele (ca în joc), ca să poată fi apucat cu mouse-ul

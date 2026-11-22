@@ -572,6 +572,34 @@
       "pret": 0,
       "descriere": "Tortul doamnei Agnes, cu miere și blat rumen. Pentru ziua Linei.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: îl face Agnes din 2 făină, 2 lapte și o miere)."
+    },
+    "arc_ned": {
+      "nume": "Arcul lui Ned",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Un arc de tisă, făcut de Kaia peste noapte, cu trei săgeți cu pene de gâscă. E pentru Ned, prietenul lui Finn.",
+      "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor: arcul lui Ned, făcut de Kaia)."
+    },
+    "dinte_orc": {
+      "nume": "Dinte de orc",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Un colț galben, lung cât degetul, luat de la un orc doborât în Groapă. Dovada pentru Wil.",
+      "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor: după o victorie în Groapă)."
+    },
+    "fluier": {
+      "nume": "Fluierul lui Finn",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Un fluier mic, cioplit de Finn dintr-un os de gâscă. În lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, iar Finn și prietenii lui trag cu arcul din umbră.",
+      "_nota": "Decis de autor: doar în lupta finală, doar Vale, o singură dată, pe valul ales: imaginea cu cei patru băieți și gândurile lui Vale, apoi toți inamicii valului sunt răniți cu 50% (ales de Claude: din viața întreagă, trecând de armură; TODO echilibru, „rana”). Se încearcă din F2, lupta de test, bifa „Ca în lupta finală”.",
+      "luptaFinala": {
+        "tip": "fluier",
+        "dialog": "fluier_ambuscada",
+        "rana": 0.5,
+        "sunet": "fluier",
+        "jurnal": "Vale suflă în fluier. Din umbră, săgețile lui Finn, Tobin, Ned și Wil cad peste orci: fiecare pierde jumătate din viață."
+      }
     }
   }
 }

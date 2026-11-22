@@ -4202,6 +4202,334 @@
         "text": "Trucul lui Finn: la zaruri, o dată la fiecare partidă, văd sub paharul unui orc. (Fără încredere.)"
       },
       "_nota": "Decis de autor: puterea de la zaruri; o imagine; nu dă încredere."
+    },
+    {
+      "id": "kaia_baza",
+      "titlu": "Baza",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "revolta"
+          },
+          "text": "CIORNĂ: Seara, la foc, Kaia și cu mine am hotărât: ne ridicăm împotriva orcilor. Tabăra ei din pădure e de acum baza noastră. Aici o să-i strâng pe toți, pe rând."
+        },
+        "CIORNĂ: Kaia are ceva de vorbit cu mine, la foc."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „Convoiul”, seara, la foc.",
+        "text": "Kaia... la ce te gândești?",
+        "nod": "baza_o1",
+        "conditii": {
+          "misiune": {
+            "kaia_wyverni": "terminata"
+          },
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          },
+          "loc": "padure/campsite"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Stau de vorbă cu Kaia la foc",
+          "gata": {
+            "existaStare": "revolta"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1. Tabăra ei e de acum baza noastră.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: misiune nouă a Kaiei, după „Convoiul”, care nu se ratează: hotărăsc revolta, iar tabăra ei devine baza (starea „revolta: hotarata”). 2 imagini."
+    },
+    {
+      "id": "finn_custi",
+      "titlu": "Cuștile vânătorilor",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "finn_custi": "eliberate"
+            }
+          },
+          "text": "CIORNĂ: Vânătorii de orci țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Noaptea, cu Kaia și Finn, ne-am strecurat în tabăra lor. Lupoaica și-a dus puii acasă."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "finn_custi": "pierdut"
+            }
+          },
+          "text": "CIORNĂ: Vânătorii de orci țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Ne-au prins în tabăra lor și abia am scăpat cu viață. Cuștile au rămas închise."
+        },
+        {
+          "conditii": {
+            "existaStare": "finn_custi_plan"
+          },
+          "text": "CIORNĂ: Kaia a aflat că vânătorii de orci țin în cuști o lupoaică și puii ei, ca să-i crească pentru asediu. Finn deschide orice lacăt. Mâine noapte ne strecurăm toți trei în tabăra lor."
+        },
+        "CIORNĂ: Kaia și cu mine punem ceva la cale. I-am spus lui Finn doar atât, în șoaptă, și l-am chemat diseară la locul de campare, să afle restul."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: de la 5/10 încredere cu Finn și după „Baza” Kaiei; acasă, în șoaptă.",
+        "text": "Finn... pot să-ți spun ceva? Dar încet.",
+        "nod": "custi_o1",
+        "conditii": {
+          "relatie": {
+            "hot": {
+              "min": 5
+            }
+          },
+          "misiune": {
+            "kaia_baza": "terminata"
+          },
+          "loc": "casa_finn/interior"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Diseară, îl duc pe Finn la locul de campare",
+          "gata": {
+            "existaStare": "finn_custi_plan"
+          },
+          "sfat": "Seara (18–23), la locul de campare din pădure. Finn vine cu mine.",
+          "indiciu": {
+            "text": "Despre diseară...",
+            "nod": "custi_ind1"
+          }
+        },
+        {
+          "text": "Noaptea, ne strecurăm toți trei în tabăra vânătorilor",
+          "gata": {
+            "existaStare": "finn_custi_gata"
+          },
+          "sfat": "Din noaptea de după, între 23 și 3, la locul de campare: Kaia și Finn mă așteaptă acolo. Unde bate lumina focului, nu călcăm.",
+          "indiciu": {
+            "text": "Despre cuști...",
+            "nod": "custi_ind2"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1 și a Kaiei +1, oricum s-ar termina.",
+        "efecte": {
+          "relatie": {
+            "hot": 1,
+            "vanatoare": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: Finn, Kaia și Vale, toți trei. Acasă, Finn află doar o parte; seara, la locul de campare, planul (2 imagini); noaptea de după, pe furiș (3 imagini, ca la lada colectorului). Greșit: lupta cu 5 orci (ales de Claude: 3 orci și 2 aruncători; Kaia pe jos, fără Ember). Pierdută: imaginea fugii, iar a doua zi Finn și Kaia au câte o replică. Încrederea vine oricum (decis de autor: „am făcut tot ce s-a putut”)."
+    },
+    {
+      "id": "finn_jarek",
+      "titlu": "Ultima treabă pentru Jarek",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "finn_jarek": "gata"
+            }
+          },
+          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. Am mers amândoi la cocioaba lui, iar Finn și-a lăsat sculele pe masă: a terminat cu furtul."
+        },
+        {
+          "conditii": {
+            "oricare": [
+              {
+                "stare": {
+                  "finn_jarek": "furt"
+                }
+              },
+              {
+                "stare": {
+                  "finn_jarek": "dat"
+                }
+              }
+            ]
+          },
+          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A doua zi mi-a adus cincisprezece monede și nu s-a mai uitat în ochii mei."
+        },
+        "CIORNĂ: Jarek îi cere lui Finn o ultimă treabă: caseta cu bani a negustorului. I-am adus aminte lui Finn că a promis. La noapte mergem amândoi la Jarek, ca să-i spună în față."
+      ],
+      "oferta": {
+        "_nota": "Ales de Claude: după „Noaptea de la cimitir” și după „Datoria la Jarek” (dusă la capăt sau ratată), acasă.",
+        "text": "Ce-i hârtia aia, Finn?",
+        "nod": "jarek_o1",
+        "conditii": {
+          "misiune": {
+            "finn_cimitir": "terminata"
+          },
+          "oricare": [
+            {
+              "misiune": {
+                "finn_datoria": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "finn_datoria": "ratata"
+              }
+            }
+          ],
+          "loc": "casa_finn/interior"
+        }
+      },
+      "pasi": [
+        {
+          "text": [
+            {
+              "conditii": {
+                "stare": {
+                  "finn_jarek": "furt"
+                }
+              },
+              "text": "Finn se ocupă singur de treaba lui Jarek"
+            },
+            "La noapte, mergem amândoi la cocioaba lui Jarek"
+          ],
+          "gata": {
+            "stare": {
+              "finn_jarek": "gata"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "stare": {
+                  "finn_jarek": "furt"
+                }
+              },
+              "text": "Finn a zis „mâine”. N-am ce face până atunci."
+            },
+            "După unsprezece (23–03), Finn mă așteaptă în fața casei lui."
+          ],
+          "indiciu": {
+            "text": "Despre Jarek...",
+            "nod": [
+              {
+                "nod": "jarek_ind_furt",
+                "conditii": {
+                  "stare": {
+                    "finn_jarek": "furt"
+                  }
+                }
+              },
+              {
+                "nod": "jarek_ind"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1, dacă îl țin de promisiune.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor (⚠️): o imagine cu biletul lui Jarek; „Nu, Finn. Ai promis.” = noaptea, la cocioaba lui Jarek, Finn își lasă sculele pe masă (o imagine), +1; „Avem nevoie de bani.” = a doua zi Finn îi dă lui Vale 15 monede, rușinat, fără +1 (ratată). Ales de Claude: după ce s-a lăsat de Jarek, seara Finn stă acasă."
+    },
+    {
+      "id": "finn_prieteni",
+      "titlu": "Prietenii lui Finn",
+      "dela": "hot",
+      "dialog": "hot",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "prieteni_fluier"
+          },
+          "text": "CIORNĂ: Tobin, Ned și Wil, prietenii lui Finn din copilărie, sunt cu noi. Finn mi-a dat un fluier: în lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, și ei trag cu arcul din umbră."
+        },
+        {
+          "conditii": {
+            "misiune": {
+              "finn_prieteni": "inceputa"
+            }
+          },
+          "text": "CIORNĂ: Finn are trei prieteni din copilărie, de la Marginea satului: Tobin, Ned și Wil. Ne ajută în lupta cea mare, dar fiecare vrea ceva înainte."
+        },
+        "CIORNĂ: Finn vrea să vorbească cu trei prieteni de-ai lui."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: de la 8/10 încredere cu Finn; ales de Claude: și după „Cuștile vânătorilor”, ca Finn să știe de revoltă.",
+        "text": "Finn, pari că pui ceva la cale.",
+        "nod": "prieteni_o1",
+        "conditii": {
+          "relatie": {
+            "hot": {
+              "min": 8
+            }
+          },
+          "misiune": {
+            "finn_custi": "terminata"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Le aduc lui Finn ce au cerut prietenii lui",
+          "subpasi": [
+            {
+              "text": "Pentru Tobin: 3 carne friptă și 3 pâini",
+              "gata": {
+                "existaStare": "prieteni_tobin"
+              }
+            },
+            {
+              "text": "Pentru Ned: un arc, cu 3 săgeți",
+              "gata": {
+                "existaStare": "prieteni_ned"
+              }
+            },
+            {
+              "text": "Pentru Wil: un dinte de orc din Groapă",
+              "gata": {
+                "existaStare": "prieteni_wil"
+              }
+            }
+          ],
+          "sfat": "Carnea friptă o face Agnes, sau o frig acasă, pe vatră. Arcul îl cumpăr de la Jarek, cu trei săgeți, sau îl face Kaia din 4 lemne și o sfoară. Dintele îl iau de la un orc bătut în Groapă, seara.",
+          "indiciu": {
+            "text": "Despre prietenii tăi...",
+            "nod": "prieteni_ind"
+          }
+        },
+        {
+          "text": "Finn are ceva pentru mine",
+          "gata": {
+            "existaStare": "prieteni_fluier"
+          },
+          "predare": {
+            "text": "Ce zic prietenii tăi, Finn?",
+            "nod": "prieteni_f1"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Finn +1 și fluierul lui, pentru lupta cea mare.",
+        "efecte": {
+          "relatie": {
+            "hot": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: pentru lupta finală, de la 8/10. Finn vorbește cu trei prieteni din copilărie (puțin mai mici decât el), care ajută doar dacă primește fiecare ceva (ciorne de Claude: Tobin, carne friptă și pâine; Ned, un arc, de la Kaia sau cumpărat, cu 3 săgeți; Wil, un dinte de orc, după o victorie în Groapă, oricare nivel). Apoi Finn îi dă lui Vale fluierul (2 imagini)."
     }
   ]
 }

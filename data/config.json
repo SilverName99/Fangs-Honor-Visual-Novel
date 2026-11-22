@@ -341,7 +341,38 @@
       }
     },
     "_notaAcord": "Decis de autor: în panoul Groapei apar doar cei care au spus da la întrebarea lor („Vrei să luptăm în Groapă împreună?”, stările groapa_aliat_<id>); Kaia, abia după capa de la Miriam.",
-    "ganduri": "groapa_ganduri"
+    "ganduri": "groapa_ganduri",
+    "dupaVictorie": [
+      {
+        "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor): după o victorie în Groapă, oricare nivel (ales de Claude), Vale ia un dinte de orc, dovada pentru Wil. Nu în aceeași seară în care câștigă verigheta mamei.",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "prieteni_wil"
+              },
+              {
+                "areObiect": "dinte_orc"
+              },
+              {
+                "misiune": {
+                  "miriam_inel": "inceputa"
+                },
+                "nu": {
+                  "existaStare": "inel_castigat"
+                }
+              }
+            ]
+          }
+        },
+        "efecte": {
+          "eveniment": "dinte_orc"
+        }
+      }
+    ]
   },
   "jocZaruri": {
     "_nota": "Jocul de zaruri cu paznicii de la poartă (Liar's Dice, fiecare pe cont propriu, câștigă unul). Replicile sunt CIORNĂ (Claude). premii = ce pun orcii pe masă pentru fiecare miză (TODO de ales de autor); un obiect luat de orci la o pedeapsă are întâietate, iar miza lui e jumătate din preț.",

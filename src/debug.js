@@ -152,10 +152,13 @@ export function creeazaDebug(parinte, joc) {
   function optiuniTest() {
     const s = joc.stare;
     // Doar zonele de luptă (hărțile din „harti”, lupte.json), nu toate locurile
-    const harti = joc.date.lupte?.harti || [];
+    // și hărțile fără un loc al lor în sat („hartiNoi”: tabăra vânătorilor de orci)
+    const noi = Object.entries(joc.date.lupte?.hartiNoi || {}).filter(([id]) => !id.startsWith('_'));
+    const harti = [...(joc.date.lupte?.harti || []), ...noi.map(([id]) => id)];
+    const titlu = (id) => joc.lume.get(id)?.titlu || noi.find(([x]) => x === id)?.[1] || id;
     if (!harti.includes(test.fundal)) test.fundal = harti[0] || s.scena;
     return {
-      scene: harti.map((id) => `<option value="${id}" ${id === test.fundal ? 'selected' : ''}>${joc.lume.get(id)?.titlu || id}</option>`).join(''),
+      scene: harti.map((id) => `<option value="${id}" ${id === test.fundal ? 'selected' : ''}>${titlu(id)}</option>`).join(''),
       arme: Object.entries(joc.date.items.obiecte).filter(([, o]) => o.slot === 'arma_primara').map(([id, o]) => `<option value="${id}" ${test.arma === id ? 'selected' : ''}>${o.nume}</option>`).join(''),
     };
   }
@@ -175,7 +178,7 @@ export function creeazaDebug(parinte, joc) {
         .join(' ')}</div>
       <div class="rand-d"><label><input type="checkbox" class="tl-puternici" ${test.puternici ? 'checked' : ''}> Inamici foarte puternici (lovesc de 10 ori mai tare)</label></div>
       <div class="rand-d"><label><input type="checkbox" class="tl-slabi" ${test.slabi ? 'checked' : ''}> Inamici foarte slabi (cad dintr-o lovitură)</label></div>
-      <div class="rand-d"><label><input type="checkbox" class="tl-finala" ${test.finala ? 'checked' : ''}> Ca în lupta finală (Vale are toiagul celor 23 la „Obiect”, iar Roderick, steagul satului, chiar dacă nu le-au primit încă)</label></div>
+      <div class="rand-d"><label><input type="checkbox" class="tl-finala" ${test.finala ? 'checked' : ''}> Ca în lupta finală (Vale are toiagul celor 23 și fluierul lui Finn la „Obiect”, iar Roderick, steagul satului, chiar dacă nu le-au primit încă)</label></div>
       <div class="rand-d"><button class="tl-porneste">Pornește lupta de test</button> <small>(nu schimbă viața, timpul sau echipamentul)</small></div>
     </details>`;
   }

@@ -1351,6 +1351,39 @@
     "partener": "vanatoare",
     "start": [
       {
+        "_nota": "Misiunea „Cuștile vânătorilor”: a doua zi, Kaia foarte supărată (decis de autor) sau bucuroasă.",
+        "nod": "custi_k_rau1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "pierdut"
+          },
+          "nuStare": {
+            "custi_salut_kaia": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25
+            }
+          }
+        }
+      },
+      {
+        "nod": "custi_k_bine1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "eliberate"
+          },
+          "nuStare": {
+            "custi_salut_kaia": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25
+            }
+          }
+        }
+      },
+      {
         "_nota": "Decis de autor: după ce Vale a vândut capcanele colectorului, la următoarea discuție Kaia le-a găsit din nou armate (−1).",
         "nod": "capcane_aflat",
         "conditii": {
@@ -2086,6 +2119,177 @@
         "vorbitor": "vale",
         "emotie": "zambet",
         "text": "Îi aduc ceva bun de la Agnes, să nu se mai supere."
+      },
+      "baza_o1": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "La cuștile alea. La ce-o să facă orcii cu ele.",
+        "urmator": "baza_o2",
+        "_nota": "CIORNĂ (Claude). Misiunea „Baza”: seara, la foc."
+      },
+      "baza_o2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Stai puțin cu mine la foc, Vale. Am ceva de vorbit cu tine.",
+        "alegeri": [
+          {
+            "text": "(Mă așez lângă ea.)",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "kaia_baza": "inceputa"
+              },
+              "eveniment": "kaia_baza"
+            }
+          },
+          {
+            "text": "Altă dată, Kaia."
+          }
+        ]
+      },
+      "k_baza_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Am mai tăiat niște bușteni pentru foc. Dacă o să ne strângem aici mai mulți, trebuie să aibă unde să stea.",
+        "_nota": "„Ce mai faci?”, după „Baza”."
+      },
+      "custi_k_bine1": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Azi-dimineață am găsit urme lângă pârâu. Una mare și două mici. Merg spre miazănoapte, departe de orci.",
+        "_nota": "A doua zi după „Cuștile vânătorilor”, dacă lupoaica a scăpat (o singură dată).",
+        "urmator": "custi_k_bine2"
+      },
+      "custi_k_bine2": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Ai făcut ceva bun azi-noapte, Vale. Și hoțul tău... spune-i că poate veni la foc oricând. Ember s-a hotărât să-l placă.",
+        "efecte": {
+          "stare": {
+            "custi_salut_kaia": "da"
+          }
+        }
+      },
+      "custi_k_rau1": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Nu, Vale. Nu acum.",
+        "_nota": "Decis de autor: a doua zi după lupta pierdută la cuști, Kaia e foarte supărată (o singură dată).",
+        "urmator": "custi_k_rau2"
+      },
+      "custi_k_rau2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia...",
+        "urmator": "custi_k_rau3"
+      },
+      "custi_k_rau3": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Toată noaptea am auzit-o urlând, de aici, din tabără. Ne-a văzut venind și ne-a văzut fugind.",
+        "urmator": "custi_k_rau4"
+      },
+      "custi_k_rau4": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Finn zice că erau doar niște animale. Pentru el, poate. Pentru mine, ea era pădurea asta.",
+        "urmator": "custi_k_rau5"
+      },
+      "custi_k_rau5": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Am făcut tot ce s-a putut.",
+        "urmator": "custi_k_rau6"
+      },
+      "custi_k_rau6": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Știu. Și tocmai asta doare cel mai tare.",
+        "urmator": "custi_k_rau7"
+      },
+      "custi_k_rau7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Se întoarce cu spatele și ascute glaive-ul, fără să se mai uite la mine. Ember își lipește capul de piciorul ei.",
+        "efecte": {
+          "stare": {
+            "custi_salut_kaia": "da"
+          }
+        }
+      },
+      "arc_k1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pentru un prieten de-al lui Finn. Ned. Trage cu o crenguță legată cu sfoară.",
+        "_nota": "CIORNĂ (Claude). „Prietenii lui Finn”: Kaia face arcul lui Ned din 4 lemne și o sfoară, a doua zi (ales de Claude).",
+        "urmator": "arc_k2"
+      },
+      "arc_k2": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Cu o crenguță? Atunci merită unul adevărat.",
+        "urmator": "arc_k3"
+      },
+      "arc_k3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Adu-mi patru lemne drepte și un ghem de sfoară. Restul îl fac eu, peste noapte. Și trei săgeți, din ce rămâne.",
+        "efecte": {
+          "stare": {
+            "arc_kaia": "cerut"
+          }
+        }
+      },
+      "arc_k5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi las Kaiei lemnele și sfoara lângă foc. Le cântărește în mână pe fiecare și pune deoparte unul.",
+        "efecte": {
+          "consuma": {
+            "lemn": 4,
+            "sfoara": 1
+          },
+          "stare": {
+            "arc_kaia": "facut"
+          },
+          "marcheaza": "arc_kaia"
+        },
+        "urmator": "arc_k6"
+      },
+      "arc_k6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bune. Ăsta e cel mai drept. Vino mâine; până atunci e gata."
+      },
+      "arc_k8": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Tisă de pe malul pârâului, coardă din sfoara ta, răsucită de trei ori. Și trei săgeți cu pene de gâscă.",
+        "efecte": {
+          "obiect": "arc_ned",
+          "stare": {
+            "arc_kaia": "dat"
+          }
+        },
+        "urmator": "arc_k9"
+      },
+      "arc_k9": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Spune-i lui Ned să nu-l lase în ploaie. Și să nu tragă în ciori. Ciorile țin minte."
+      },
+      "arc_k_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mâine, Vale. Un arc bun nu se face cât ai clipi."
+      },
+      "arc_k0": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Un arc? Pentru cine?",
+        "urmator": "arc_k1"
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -2099,6 +2303,12 @@
       },
       {
         "nod": "k_padure_a"
+      },
+      {
+        "nod": "k_baza_a",
+        "conditii": {
+          "existaStare": "revolta"
+        }
       }
     ],
     "optiuni": [
@@ -2182,6 +2392,72 @@
           }
         },
         "spre": "groapa_din_nou_k"
+      },
+      {
+        "_nota": "Misiunea „Prietenii lui Finn”: arcul lui Ned (o cale; cealaltă e un arc cumpărat).",
+        "text": "Kaia, ai putea face un arc?",
+        "spre": "arc_k0",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "prieteni_ned"
+              },
+              {
+                "existaStare": "arc_kaia"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "text": "Am adus lemnele și sfoara pentru arc.",
+        "spre": "arc_k5",
+        "conditii": {
+          "stare": {
+            "arc_kaia": "cerut"
+          },
+          "areCate": {
+            "lemn": 4,
+            "sfoara": 1
+          },
+          "nu": {
+            "existaStare": "prieteni_ned"
+          }
+        }
+      },
+      {
+        "text": "E gata arcul?",
+        "spre": "arc_k8",
+        "conditii": {
+          "stare": {
+            "arc_kaia": "facut"
+          },
+          "zileDeLa": {
+            "arc_kaia": {
+              "min": 1
+            }
+          }
+        }
+      },
+      {
+        "text": "E gata arcul?",
+        "spre": "arc_k_nu",
+        "conditii": {
+          "stare": {
+            "arc_kaia": "facut"
+          },
+          "nu": {
+            "zileDeLa": {
+              "arc_kaia": {
+                "min": 1
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -9228,6 +9504,69 @@
     "meniu": true,
     "start": [
       {
+        "_nota": "Misiunea „Cuștile vânătorilor”: a doua zi, o replică (decis de autor la înfrângere).",
+        "nod": "custi_rau1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "pierdut"
+          },
+          "nuStare": {
+            "custi_salut_hot": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25
+            }
+          }
+        }
+      },
+      {
+        "nod": "custi_bine1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "eliberate"
+          },
+          "nuStare": {
+            "custi_salut_hot": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Ultima treabă pentru Jarek”: a doua zi după „Avem nevoie de bani” (decis de autor).",
+        "nod": "jarek_bani1",
+        "conditii": {
+          "misiune": {
+            "finn_jarek": "inceputa"
+          },
+          "stare": {
+            "finn_jarek": "furt"
+          },
+          "zileDeLa": {
+            "finn_jarek_furt": {
+              "min": 1
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Ultima treabă pentru Jarek”: noaptea, în fața casei.",
+        "nod": "jarek_noapte",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_jarek": "inceputa"
+          },
+          "stare": {
+            "finn_jarek": "promis"
+          }
+        }
+      },
+      {
         "_nota": "Misiunea „Ziua Linei”: în seara zilei, Finn îl așteaptă în fața casei.",
         "nod": "lina_seara",
         "conditii": {
@@ -10204,6 +10543,359 @@
           }
         },
         "_nota": "Ratată după ce Vale adusese blănile, dar n-a venit noaptea la ieșire în cele cinci zile."
+      },
+      "custi_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Marta coase lângă foc, iar Lina se joacă în colț cu păpușa. Mă aplec spre Finn, ca să nu mă audă decât el.",
+        "_nota": "CIORNĂ (Claude). Misiunea „Cuștile vânătorilor” (decis de autor): acasă, Finn află doar o parte, în șoaptă.",
+        "urmator": "custi_o2"
+      },
+      "custi_o2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia și cu mine punem ceva la cale. Nu aici. Vino diseară cu mine la locul de campare.",
+        "urmator": "custi_o3"
+      },
+      "custi_o3": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "La locul de campare? În pădure? Acolo unde e... tigrul?",
+        "urmator": "custi_o4"
+      },
+      "custi_o4": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Ember. Și nu mușcă. De obicei.",
+        "urmator": "custi_o5"
+      },
+      "custi_o5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "„De obicei”... Bine. Pentru tine, vin. Dar dacă mă mănâncă, să-i spui Linei că am murit ca un erou.",
+        "alegeri": [
+          {
+            "text": "Diseară, după șase.",
+            "spre": "custi_o6",
+            "efecte": {
+              "misiune": {
+                "finn_custi": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mai bine altă dată."
+          }
+        ]
+      },
+      "custi_o6": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Diseară. Și Vale... dacă nu mai vin înapoi, ai grijă de Lina."
+      },
+      "custi_ind1": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Diseară, la locul de campare. Vin, vin... doar ține tigrul ăla departe de mine."
+      },
+      "custi_ind2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece, la locul de campare. Am sârmele cu mine, unse, să nu scârțâie. Tu ai grijă doar să nu calci pe crengi."
+      },
+      "custi_bine1": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Lina m-a întrebat de ce zâmbesc de azi-dimineață. I-am zis că am visat lupi. Nu era chiar o minciună.",
+        "_nota": "A doua zi după „Cuștile vânătorilor”, dacă lupoaica a scăpat (o singură dată).",
+        "urmator": "custi_bine2"
+      },
+      "custi_bine2": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Și Ember?",
+        "urmator": "custi_bine3"
+      },
+      "custi_bine3": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Ember... cred că mă place. Mi-a lins mâna când am plecat. Sau m-a gustat. Nu sunt sigur.",
+        "efecte": {
+          "stare": {
+            "custi_salut_hot": "da"
+          }
+        }
+      },
+      "custi_rau1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "N-am închis ochii toată noaptea, Vale. M-am tot gândit.",
+        "_nota": "Decis de autor: a doua zi după lupta pierdută la cuști (o singură dată).",
+        "urmator": "custi_rau2"
+      },
+      "custi_rau2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "A fost o încercare bună. Dar nu putem risca soarta satului pentru niște animale.",
+        "urmator": "custi_rau3"
+      },
+      "custi_rau3": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Dacă ne prindeau, cine mai rămânea pentru ce punem la cale? Lina? Mama mea?",
+        "urmator": "custi_rau4"
+      },
+      "custi_rau4": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Știu, Finn.",
+        "urmator": "custi_rau5"
+      },
+      "custi_rau5": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Kaia n-o să vadă lucrurile așa. Las-o câteva zile.",
+        "efecte": {
+          "stare": {
+            "custi_salut_hot": "da"
+          }
+        }
+      },
+      "jarek_o1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Nimic. Adică... ba da. Stai jos, Vale.",
+        "alegeri": [
+          {
+            "text": "(Mă așez lângă el.)",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "finn_jarek"
+            }
+          }
+        ],
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Ultima treabă pentru Jarek” (decis de autor, ⚠️)."
+      },
+      "jarek_ind": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "După unsprezece, în fața casei mele. Jarek e la cocioabă în fiecare noapte. Și lasă-mă pe mine să vorbesc."
+      },
+      "jarek_ind_furt": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Nu-ți face griji, Vale. Mâine."
+      },
+      "jarek_noapte": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ai venit. Jarek e la cocioabă în noaptea asta, i-am văzut lumânarea. Mergem?",
+        "_nota": "CIORNĂ (Claude). Noaptea, în fața casei, cât e misiunea „Ultima treabă pentru Jarek” (după „Ai promis”).",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "finn_jarek_noapte"
+            }
+          },
+          {
+            "text": "Mai așteaptă puțin.",
+            "inchide": true
+          }
+        ]
+      },
+      "jarek_bani1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn nu se uită la mine. Îmi pune în palmă o punguță grea și își trage mâna repede înapoi, de parcă l-ar fi ars.",
+        "_nota": "Decis de autor: a doua zi după „Avem nevoie de bani”: 15 monede, fără încredere, misiunea e ratată.",
+        "urmator": "jarek_bani2"
+      },
+      "jarek_bani2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Partea ta. Cincisprezece. Jarek a luat restul.",
+        "urmator": "jarek_bani3"
+      },
+      "jarek_bani3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Finn...",
+        "urmator": "jarek_bani4"
+      },
+      "jarek_bani4": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Lina m-a întrebat de unde sunt banii. I-am zis că i-am găsit.",
+        "urmator": "jarek_bani5"
+      },
+      "jarek_bani5": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "N-a zis nimic. S-a uitat doar la mine. Cum se uita mama, înainte să se îmbolnăvească, când știa că o mint.",
+        "efecte": {
+          "bani": 15,
+          "misiune": {
+            "finn_jarek": "ratata"
+          },
+          "stare": {
+            "finn_jarek": "dat"
+          }
+        }
+      },
+      "f_jarek": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Seara stau acasă acum. Mama zice că nu mă mai recunoaște. Lina zice că am devenit plictisitor. Amândouă zâmbesc când o zic.",
+        "_nota": "„Ce mai faci?”, după ce Finn s-a lăsat de Jarek."
+      },
+      "prieteni_o1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Mă tot gândesc la ce-a zis Kaia. Că nu-ți trebuie o armată, doar câțiva oameni care nu mai au ce pierde.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Prietenii lui Finn” (decis de autor: de la 8/10; pentru lupta finală).",
+        "urmator": "prieteni_o2"
+      },
+      "prieteni_o2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Eu știu câțiva. Tobin, Ned și Wil. Am crescut împreună aici, la Marginea. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
+        "urmator": "prieteni_o3"
+      },
+      "prieteni_o3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ar lupta?",
+        "urmator": "prieteni_o4"
+      },
+      "prieteni_o4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu cu sabia. Dar cu arcul... Ned trage cu arcul de când era cât Lina. Ceilalți învață repede. Și nimeni nu se uită de două ori la trei băieți zdrențăroși de la margine.",
+        "urmator": "prieteni_o5"
+      },
+      "prieteni_o5": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Doar că nu fac nimic pe degeaba. Nici eu n-aș face, în locul lor. Lasă-mă să vorbesc cu ei.",
+        "alegeri": [
+          {
+            "text": "Vorbește cu ei.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "finn_prieteni"
+            }
+          },
+          {
+            "text": "Mai târziu, Finn."
+          }
+        ]
+      },
+      "prieteni_ind": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Carne friptă și pâine pentru Tobin, câte trei. Un arc pentru Ned, cu măcar trei săgeți. Și un dinte de orc pentru Wil, din Groapă. Mie mi le aduci; eu le duc."
+      },
+      "prieteni_f1": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Le-am dus tot. Vino cu mine; vor să te vadă.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "finn_prieteni_fluier"
+            }
+          }
+        ]
+      },
+      "prieteni_tobin": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi dau lui Finn carnea friptă, învelită într-o cârpă, și cele trei pâini.",
+        "efecte": {
+          "consuma": {
+            "carne_gatita": 3,
+            "paine": 3
+          },
+          "stare": {
+            "prieteni_tobin": "da"
+          }
+        },
+        "urmator": "prieteni_tobin2"
+      },
+      "prieteni_tobin2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Le duc chiar acum. O să se prefacă că nu-i pasă, dar frații lui n-au mai mâncat carne din primăvară."
+      },
+      "prieteni_ned_kaia": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi întind lui Finn arcul de tisă al Kaiei și cele trei săgeți cu pene de gâscă.",
+        "efecte": {
+          "daObiect": "arc_ned",
+          "stare": {
+            "prieteni_ned": "da"
+          }
+        },
+        "urmator": "prieteni_ned_kaia2"
+      },
+      "prieteni_ned_kaia2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Ned o să doarmă cu el în brațe. Tisă... de unde a știut Kaia că tisa e cea mai bună?",
+        "urmator": "prieteni_ned_kaia3"
+      },
+      "prieteni_ned_kaia3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Kaia știe tot ce ține de pădure."
+      },
+      "prieteni_ned_arc": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îi dau lui Finn arcul și trei săgeți.",
+        "efecte": {
+          "consuma": {
+            "arc": 1,
+            "sageti": 3
+          },
+          "stare": {
+            "prieteni_ned": "da"
+          }
+        },
+        "urmator": "prieteni_ned_arc2"
+      },
+      "prieteni_ned_arc2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Un arc adevărat! Ned o să se laude o lună întreagă, să știi."
+      },
+      "prieteni_wil": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pun colțul galben în palma lui Finn. Încă miroase a noroiul din Groapă.",
+        "efecte": {
+          "daObiect": "dinte_orc",
+          "stare": {
+            "prieteni_wil": "da"
+          }
+        },
+        "urmator": "prieteni_wil2"
+      },
+      "prieteni_wil2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Wil o să-l poarte la gât, să știi. Și o să le spună tuturor că l-a smuls el, cu mâna lui."
       }
     },
     "vorbeste": [
@@ -10322,6 +11014,14 @@
             "finn_cimitir": "terminata"
           }
         }
+      },
+      {
+        "nod": "f_jarek",
+        "conditii": {
+          "misiune": {
+            "finn_jarek": "terminata"
+          }
+        }
       }
     ],
     "optiuni": [
@@ -10378,6 +11078,75 @@
             "stare": {
               "lina_tort": "gata"
             }
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Prietenii lui Finn”: Tobin vrea carne friptă și pâine pentru frații lui.",
+        "text": "Am carnea și pâinea pentru Tobin.",
+        "spre": "prieteni_tobin",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "areCate": {
+            "carne_gatita": 3,
+            "paine": 3
+          },
+          "nu": {
+            "existaStare": "prieteni_tobin"
+          }
+        }
+      },
+      {
+        "_nota": "Ned: arcul făcut de Kaia.",
+        "text": "Am arcul făcut de Kaia, pentru Ned.",
+        "spre": "prieteni_ned_kaia",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "areObiect": "arc_ned",
+          "nu": {
+            "existaStare": "prieteni_ned"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor: Ned, sau un arc cumpărat (de la Jarek), cu 3 săgeți.",
+        "text": "Am un arc și trei săgeți pentru Ned.",
+        "spre": "prieteni_ned_arc",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "areCate": {
+            "arc": 1,
+            "sageti": 3
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "prieteni_ned"
+              },
+              {
+                "areObiect": "arc_ned"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor: Wil vrea dovada că Vale a bătut un orc în Groapă: un dinte de orc.",
+        "text": "Am dintele de orc pentru Wil.",
+        "spre": "prieteni_wil",
+        "conditii": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          },
+          "areObiect": "dinte_orc",
+          "nu": {
+            "existaStare": "prieteni_wil"
           }
         }
       }
@@ -16777,6 +17546,1196 @@
             "zaruri_hot": "da"
           }
         }
+      }
+    }
+  },
+  "kaia_baza": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Baza” (decis de autor): după „Convoiul”, seara la foc, Vale și Kaia hotărăsc revolta; Kaia propune ca tabăra ei să fie baza și desenează în cenușă satul și poarta. 2 imagini.",
+    "grup": "Kaia: baza",
+    "partener": "vanatoare",
+    "start": "b1",
+    "noduri": {
+      "b1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Focul trosnește. Ember doarme cu botul pe labe, dar urechile i se mișcă la fiecare pârâit de creangă. Kaia n-a mai zis nimic de când m-am așezat.",
+        "imagine": "events/kaia_baza_1.png",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Mă tot gândesc la cuștile alea, Vale. La cum se zbăteau bestiile înăuntru.",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și eu. Dacă orcii au așa ceva... capitala n-o să reziste.",
+        "urmator": "b4"
+      },
+      "b4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Capitala e departe. Dar orcii de aici sunt aproape. Și tot mai mulți. Am numărat focurile din tabăra lor, de lângă zid: acum o lună erau șase. Azi-noapte, nouă.",
+        "urmator": "b5"
+      },
+      "b5": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Și ce putem face? Să așteptăm să vină regele să ne scape?",
+        "urmator": "b6"
+      },
+      "b6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Regele are războiul lui. Nu vine nimeni, Vale. Nici pentru pădurea asta, nici pentru satul tău.",
+        "urmator": "b7"
+      },
+      "b7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O spune încet, fără nicio urmă de frică. Ca pe un lucru știut demult.",
+        "urmator": "b8"
+      },
+      "b8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Atunci... ne ridicăm noi.",
+        "urmator": "b9"
+      },
+      "b9": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Asta voiam să aud. Și voiam s-o aud de la tine, nu de la mine.",
+        "urmator": "b10"
+      },
+      "b10": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cu cine, Kaia? Satul e plin de văduve, de copii și de bătrâni. Bărbații care au rămas abia se mai uită orcilor în ochi.",
+        "urmator": "b11"
+      },
+      "b11": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu-ți trebuie o armată. Îți trebuie câțiva oameni buni, care nu mai au ce pierde. Și un loc unde orcii nu calcă.",
+        "urmator": "b12"
+      },
+      "b12": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Locul ăsta. Orcii nu intră noaptea în pădure: se tem de ce n-au văzut. Și dacă intră, Ember îi simte de departe.",
+        "urmator": "b13"
+      },
+      "b13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember deschide un ochi, de parcă ar fi auzit că e vorba de el, apoi îl închide la loc.",
+        "urmator": "b14"
+      },
+      "b14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia scoate din foc un băț înnegrit și desenează în cenușa caldă: un cerc strâmb pentru gard, o cruce pentru biserică, o moară cât un purice. Iar sus, la capăt, două linii groase: poarta.",
+        "imagine": "events/kaia_baza_2.png",
+        "urmator": "b15"
+      },
+      "b15": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Aici sunt ei. Lângă poartă, dincolo de zid, e tabăra lor. Acolo dorm, acolo mănâncă, acolo își țin armele.",
+        "urmator": "b16"
+      },
+      "b16": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și aici suntem noi. Departe de ochii lor. De aici plecăm, aici ne întoarcem, aici ne strângem când o să fie timpul.",
+        "urmator": "b17"
+      },
+      "b17": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Tabăra ta... baza noastră.",
+        "urmator": "b18"
+      },
+      "b18": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Baza noastră. Sună bine, nu?",
+        "urmator": "b19"
+      },
+      "b19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bram ar veni. Știu că ar veni. Unchiul meu... poate, dacă lasă băutura. Și Fratele Elian are mai mult curaj decât pare.",
+        "urmator": "b20"
+      },
+      "b20": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și mai e cineva. Un băiat de la Marginea satului. Finn. Deschide orice lacăt.",
+        "urmator": "b21"
+      },
+      "b21": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Un hoț? Adu-l. Dar nu-i spune nimic până nu-l văd cu ochii mei.",
+        "urmator": "b22"
+      },
+      "b22": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Adu-i pe rând, pe fiecare când e gata. Și Vale... nimeni nu trebuie să știe de locul ăsta. Nici mama ta.",
+        "urmator": "b23"
+      },
+      "b23": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Mama ar afla oricum. Mama află tot.",
+        "urmator": "b24"
+      },
+      "b24": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Atunci măcar să nu afle de la tine.",
+        "urmator": "b25"
+      },
+      "b25": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia șterge desenul cu palma, până nu mai rămâne decât cenușă. Dar eu încă îl văd, ori de câte ori închid ochii: poarta, zidul, tabăra lor. Și, pentru prima oară, și pe noi.",
+        "efecte": {
+          "stare": {
+            "revolta": "hotarata"
+          }
+        }
+      }
+    }
+  },
+  "finn_custi_tabara": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Cuștile vânătorilor” (decis de autor): seara, la locul de campare, Finn se sperie de Ember, Kaia râde, îi spun de revoltă, Finn: „Eu deschid orice lacăt”, iar Kaia povestește de lupoaica din cuștile vânătorilor de orci. 2 imagini.",
+    "grup": "Finn: cuștile vânătorilor",
+    "partener": "vanatoare",
+    "start": "t1",
+    "noduri": {
+      "t1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn merge lipit de mine tot drumul prin pădure. La marginea poienii se oprește brusc: Ember s-a ridicat de lângă foc și vine spre noi, încet, cu capul jos.",
+        "imagine": "events/finn_custi_1.png",
+        "urmator": "t2"
+      },
+      "t2": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Vale... Vale, nu se oprește.",
+        "urmator": "t3"
+      },
+      "t3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember îl adulmecă pe Finn de la picioare până în creștet, apoi îi suflă cald în față. Finn nu mai respiră deloc.",
+        "urmator": "t4"
+      },
+      "t4": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Ha! Ce-ai adus, Vale? Un iepure? Uite-l cum tremură!",
+        "urmator": "t5"
+      },
+      "t5": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Spune-i... spune-i să nu...",
+        "urmator": "t6"
+      },
+      "t6": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Ember, lasă-l. E prea slab, nu-ți ajunge nici de o gustare.",
+        "urmator": "t7"
+      },
+      "t7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember strănută, se întoarce și se tolănește iar lângă foc. Finn se prăbușește pe un buștean, alb ca varul, iar Kaia râde atât de tare că-i dau lacrimile.",
+        "urmator": "t8"
+      },
+      "t8": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Foarte amuzant. Mi-a stat inima, să știți.",
+        "urmator": "t9"
+      },
+      "t9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Și ăsta e hoțul tău? Cel care deschide lacăte?",
+        "urmator": "t10"
+      },
+      "t10": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Finn. Prietenul meu. Finn, ea e Kaia.",
+        "urmator": "t11"
+      },
+      "t11": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ți-a spus Vale de ce ești aici?",
+        "urmator": "t12"
+      },
+      "t12": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Mi-a spus că puneți ceva la cale. Atât.",
+        "urmator": "t13"
+      },
+      "t13": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ne ridicăm împotriva orcilor, Finn. Nu mâine, nu poimâine. Dar ne ridicăm. Strângem oameni aici, unde orcii nu vin.",
+        "urmator": "t14"
+      },
+      "t14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn se uită lung la mine, apoi la Kaia, apoi la foc. Mă aștept să râdă. Sau să fugă.",
+        "urmator": "t15"
+      },
+      "t15": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Eu nu știu să lupt ca voi. Știu doar să mă strecor și să deschid ce e încuiat.",
+        "urmator": "t16"
+      },
+      "t16": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Dar asta știu bine. Eu deschid orice lacăt.",
+        "urmator": "t17"
+      },
+      "t17": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Atunci ai venit exact când trebuia.",
+        "urmator": "t18"
+      },
+      "t18": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "La o oră de aici, spre răsărit, orcii au o tabără de vânători. Am stat două nopți pe burtă în ferigi și i-am urmărit.",
+        "imagine": "events/finn_custi_2.png",
+        "urmator": "t19"
+      },
+      "t19": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Au prins o lupoaică cu puii ei. Îi țin în cuști, ca pe bestiile din convoi. I-am auzit ce zic: îi cresc pentru asediu. Îi înfometează și îi bat, până ajung să sfâșie orice le iese în cale.",
+        "urmator": "t20"
+      },
+      "t20": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Pentru asediul capitalei...",
+        "urmator": "t21"
+      },
+      "t21": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Lupoaica asta e din pădurea mea, Vale. Am văzut-o de când era pui. Nu-i las pe orci să facă din ea o fiară de-a lor.",
+        "urmator": "t22"
+      },
+      "t22": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Cuștile au lacăte de fier. Le-aș putea sparge, dar s-ar auzi până la poartă.",
+        "urmator": "t23"
+      },
+      "t23": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Lacătele lasă-le pe mine. Câți orci sunt?",
+        "urmator": "t24"
+      },
+      "t24": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Cinci. Trei dorm la foc, doi stau de pază, cu topoare de aruncat la brâu. Mâine noapte e lună nouă. Mai întuneric de atât nu prindem.",
+        "urmator": "t25"
+      },
+      "t25": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mâine noapte, deci.",
+        "urmator": "t26"
+      },
+      "t26": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "După unsprezece, aici. Mergem pe jos; Ember rămâne la tabără. Un tigru nu se poate furișa printre orci, oricât s-ar strădui.",
+        "urmator": "t27"
+      },
+      "t27": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember mârâie încet, supărat, de parcă ar fi înțeles.",
+        "urmator": "t28"
+      },
+      "t28": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Și dacă ne văd?",
+        "urmator": "t29"
+      },
+      "t29": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci nu mai e vorba de furișat. Atunci luptăm.",
+        "urmator": "t30"
+      },
+      "t30": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn înghite în sec, dar nu mai tremură. Când plecăm, se uită înapoi spre foc și, pentru prima oară de când îl știu, îl văd zâmbind fără să glumească.",
+        "efecte": {
+          "stare": {
+            "finn_custi_plan": "da"
+          },
+          "marcheaza": "finn_custi_plan"
+        }
+      }
+    }
+  },
+  "finn_custi": {
+    "_nota": "CIORNĂ (Claude). „Cuștile vânătorilor”, noaptea de după: pe furiș, ca la lada colectorului (3 imagini cu câte două locuri desenate de autor, unul sigur). Greșit: orcii dau alarma și urmează lupta cu cei cinci (decis de autor).",
+    "grup": "Finn: cuștile vânătorilor",
+    "partener": "hot",
+    "start": "n1",
+    "noduri": {
+      "n1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu e lună deloc. Mergem o oră prin pădure, după Kaia, care vede în întuneric mai bine decât noi ziua. Apoi ne lăsăm pe burtă, în ferigi.",
+        "imagine": "events/finn_custi_3.png",
+        "urmator": "n2"
+      },
+      "n2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Acolo. Două cuști, lângă copacul cel mare. Trei dorm la foc. Doi se plimbă, cu topoarele la brâu.",
+        "urmator": "n3"
+      },
+      "n3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Din cușca mai mică se aude un scâncet subțire. Un pui. Apoi un mârâit gros îl face să tacă.",
+        "urmator": "n4"
+      },
+      "n4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Eu merg în față, la lacăte. Voi, după mine. Primul salt: lemnele din stânga sau căruța cu blăni din mijloc. Unde bate lumina focului, nu călcăm.",
+        "alegeri": [
+          {
+            "text": "Mă strecor mai departe.",
+            "inchide": true,
+            "efecte": {
+              "furisare": {
+                "eveniment": "finn_custi_noapte",
+                "dialog": "finn_custi",
+                "pas": 3,
+                "reusit": "s1",
+                "esuat": "alarma",
+                "indemn": "Pe unde o iei? Unde bate lumina focului, nu călcăm."
+              }
+            }
+          }
+        ]
+      },
+      "s1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Am ajuns. Unul dintre paznici trece la doi pași de noi, scărpinându-se în ceafă. Mirosul de blană udă și de fum mă înțeapă în nas.",
+        "imagine": "events/finn_custi_4.png",
+        "urmator": "s2"
+      },
+      "s2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Acum: butoaiele de lângă cort sau tufele de pe malul pârâului. Uită-te încotro se uită paznicul.",
+        "alegeri": [
+          {
+            "text": "Mă strecor mai departe.",
+            "inchide": true,
+            "efecte": {
+              "furisare": {
+                "eveniment": "finn_custi_noapte",
+                "dialog": "finn_custi",
+                "pas": 4,
+                "reusit": "s3",
+                "esuat": "alarma",
+                "indemn": "Pe unde o iei acum?"
+              }
+            }
+          }
+        ]
+      },
+      "s3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cuștile sunt chiar în fața noastră. Lupoaica ne-a simțit: stă nemișcată, cu ochii galbeni ațintiți asupra noastră, și nu scoate niciun sunet. Parcă știe.",
+        "imagine": "events/finn_custi_5.png",
+        "urmator": "s4"
+      },
+      "s4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ultimul pas: pe după copacul cel mare, prin umbră, sau drept pe lângă foc, cât dorm ăia. Dacă ne văd acum...",
+        "alegeri": [
+          {
+            "text": "Mă strecor mai departe.",
+            "inchide": true,
+            "efecte": {
+              "furisare": {
+                "eveniment": "finn_custi_noapte",
+                "dialog": "finn_custi",
+                "pas": 5,
+                "reusit": "d1",
+                "esuat": "alarma",
+                "indemn": "Ultimul pas. Pe unde?"
+              }
+            }
+          }
+        ]
+      },
+      "d1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn bagă două sârme subțiri în lacăt. Un clic. Al doilea lacăt. Încă un clic. Ușile cuștilor se deschid fără un scârțâit.",
+        "imagine": "events/finn_custi_6.png",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Du-te, fato. Du-ți puii acasă.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lupoaica iese prima, cu un pui în gură. Al doilea se rostogolește după ea. Se oprește o clipă lângă Kaia, o adulmecă, apoi dispare în întuneric fără niciun zgomot.",
+        "urmator": "d4"
+      },
+      "d4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne strecurăm înapoi pe același drum. Abia la tabără, lângă foc, Finn începe să râdă încet, cu mâinile încă tremurând.",
+        "urmator": "d5"
+      },
+      "d5": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Am deschis cușca unui lup. Eu! Dacă-i spun Linei, nu mă crede.",
+        "urmator": "d6"
+      },
+      "d6": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Să nu-i spui. Dar ai făcut-o. Mâine dimineață orcii o să găsească cuștile goale și o să se certe între ei până la prânz.",
+        "urmator": "d7"
+      },
+      "d7": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ai fost bun, hoțule. Dacă vrei, focul ăsta e și al tău de acum.",
+        "urmator": "d8"
+      },
+      "d8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Finn se uită spre Ember, care doarme lângă foc, și pentru prima oară se așază lângă el fără să tremure. Ei bine... aproape fără.",
+        "efecte": {
+          "stare": {
+            "finn_custi": "eliberate",
+            "finn_custi_gata": "da"
+          },
+          "marcheaza": "finn_custi_final"
+        }
+      },
+      "alarma": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Hei! Cine-i acolo?! Sus! Sus, toți!",
+        "nume": "Orc",
+        "imagine": "events/finn_custi_alarma.png",
+        "urmator": "alarma2"
+      },
+      "alarma2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cei trei de lângă foc sar în picioare și apucă topoarele. Nu mai avem unde să ne ascundem.",
+        "urmator": "alarma3"
+      },
+      "alarma3": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Prea târziu să fugim. Spate în spate!",
+        "urmator": "alarma4"
+      },
+      "alarma4": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "Eu... eu am doar un cuțit!",
+        "alegeri": [
+          {
+            "text": "(Scot arma.)",
+            "inchide": true,
+            "efecte": {
+              "lupta": "custi_vanatori"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "finn_custi_dupa": {
+    "_nota": "CIORNĂ (Claude). După lupta din tabăra vânătorilor. Câștigată: cuștile se deschid (aceeași imagine ca la furișatul reușit). Pierdută (decis de autor): imaginea cu cei trei care fug; a doua zi, Finn și Kaia au câte o replică. Încrederea (+1 Finn, +1 Kaia) vine oricum.",
+    "grup": "Finn: cuștile vânătorilor",
+    "partener": "hot",
+    "start": [
+      {
+        "nod": "v1",
+        "conditii": {
+          "stare": {
+            "finn_custi_lupta": "castigat"
+          }
+        }
+      },
+      "f1"
+    ],
+    "noduri": {
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când cade și ultimul, pădurea rămâne mută. Finn se repede la cuști, cu mâinile pline de noroi, și le deschide pe amândouă.",
+        "imagine": "events/finn_custi_6.png",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Du-te, fato. Du-ți puii acasă.",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lupoaica iese prima, cu un pui în gură. Al doilea se rostogolește după ea. Se oprește o clipă lângă Kaia, o adulmecă, apoi dispare în întuneric.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "hot",
+        "emotie": "speriat",
+        "text": "N-a fost chiar cum am plănuit.",
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Niciodată nu e. Dar uite-i cum fug.",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Ne întoarcem la tabără plini de zgârieturi, sprijinindu-ne unul de altul. Ember ne iese în întâmpinare și îi linge lui Finn obrazul plin de sânge. De data asta, Finn nici nu tresare.",
+        "efecte": {
+          "stare": {
+            "finn_custi": "eliberate",
+            "finn_custi_gata": "da"
+          },
+          "marcheaza": "finn_custi_final"
+        }
+      },
+      "f1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai știu cine a strigat primul „Fugi!”. Știu doar că alergăm: Kaia îl trage pe Finn de guler, iar eu vin în urma lor, cu sângele șiroind pe frunte. În spatele nostru, orcii urlă și aruncă topoare în întuneric.",
+        "imagine": "events/finn_custi_fuga.png",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu ne urmăresc dincolo de pârâu. Abia la tabără ne oprim. Ember sare în picioare și mârâie spre pădure până se liniștește.",
+        "urmator": "f3"
+      },
+      "f3": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Cuștile... au rămas închise.",
+        "urmator": "f4"
+      },
+      "f4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Nimeni nu mai zice nimic în noaptea aceea.",
+        "efecte": {
+          "stare": {
+            "finn_custi": "pierdut",
+            "finn_custi_gata": "da"
+          },
+          "marcheaza": "finn_custi_final"
+        }
+      }
+    }
+  },
+  "finn_jarek": {
+    "_nota": "CIORNĂ (Claude). „Ultima treabă pentru Jarek” (decis de autor, ⚠️): Finn are un bilet de la Jarek, care vrea să-i golească negustorului caseta cu bani. O imagine.",
+    "grup": "Finn: ultima treabă pentru Jarek",
+    "partener": "hot",
+    "start": "j1",
+    "noduri": {
+      "j1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn stă la masă și întoarce pe toate părțile o bucată de hârtie mototolită. Când mă vede, vrea s-o ascundă, apoi se răzgândește.",
+        "imagine": "events/finn_jarek_1.png",
+        "urmator": "j2"
+      },
+      "j2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "E de la Jarek. Mi-a lăsat-o sub piatra de la gard, cum face când are o treabă pentru mine.",
+        "urmator": "j3"
+      },
+      "j3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce treabă?",
+        "urmator": "j4"
+      },
+      "j4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Negustorul din piață își ține banii într-o casetă de fier, sub tarabă. Seara o ia cu el, dar în zilele de târg o lasă acolo până la închidere. Jarek vrea caseta. Toată.",
+        "urmator": "j5"
+      },
+      "j5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Zice că e ultima. Că după asta mă lasă în pace și nu-i mai datorez nimic, niciodată.",
+        "urmator": "j6"
+      },
+      "j6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și negustorul?",
+        "urmator": "j7"
+      },
+      "j7": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "Negustorul m-a ținut legat la butuc trei zile, Vale. M-a scuipat în față. Nu-mi pare rău de el.",
+        "urmator": "j8"
+      },
+      "j8": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Și... avem nevoie de bani. Pentru ce punem la cale, pentru arme, pentru mâncare. Pentru Lina, la iarnă.",
+        "urmator": "j9"
+      },
+      "j9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la el. Știu că nu-i e frică de negustor. Îi e frică de ce-o să zic eu.",
+        "alegeri": [
+          {
+            "text": "Nu, Finn. Ai promis.",
+            "spre": "j_nu1",
+            "efecte": {
+              "misiune": {
+                "finn_jarek": "inceputa"
+              },
+              "stare": {
+                "finn_jarek": "promis"
+              }
+            }
+          },
+          {
+            "text": "Avem nevoie de bani.",
+            "spre": "j_da1",
+            "efecte": {
+              "misiune": {
+                "finn_jarek": "inceputa"
+              },
+              "stare": {
+                "finn_jarek": "furt"
+              },
+              "marcheaza": "finn_jarek_furt"
+            }
+          }
+        ]
+      },
+      "j_nu1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "...Am promis. Lina era de față când am promis.",
+        "urmator": "j_nu2"
+      },
+      "j_nu2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Dar lui Jarek nu-i spui „nu” pe o hârtie. Nu după tot ce-a făcut pentru noi.",
+        "urmator": "j_nu3"
+      },
+      "j_nu3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Atunci îi spunem în față. Amândoi. La noapte.",
+        "urmator": "j_nu4"
+      },
+      "j_nu4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece. Te aștept în fața casei."
+      },
+      "j_da1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "...Da. Avem.",
+        "urmator": "j_da2"
+      },
+      "j_da2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn împăturește hârtia și o bagă în sân. Nu se mai uită la mine.",
+        "urmator": "j_da3"
+      },
+      "j_da3": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Lasă pe mine. Tu nici nu trebuie să știi când."
+      }
+    }
+  },
+  "finn_jarek_noapte": {
+    "_nota": "CIORNĂ (Claude). „Ultima treabă pentru Jarek”, noaptea, după „Ai promis”: la cocioaba lui Jarek, Finn își lasă sculele pe masă („Am terminat.”), iar Jarek îl lasă să plece. O imagine.",
+    "grup": "Finn: ultima treabă pentru Jarek",
+    "partener": "contrabandist",
+    "start": "n1",
+    "noduri": {
+      "n1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cocioaba lui Jarek miroase a fum, a piele netăbăcită și a ceară. Jarek stă la masă, cu o lumânare în față, și numără ceva într-o pungă. Nu ridică ochii când intrăm.",
+        "imagine": "events/finn_jarek_2.png",
+        "urmator": "n2"
+      },
+      "n2": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Finn. Și Lightfinder. Ați venit amândoi după o casetă care nu e aici.",
+        "urmator": "n3"
+      },
+      "n3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "N-am venit după casetă, Jarek.",
+        "urmator": "n4"
+      },
+      "n4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn scoate din sân un mănunchi de sârme subțiri, cârlige și cuie îndoite, legate cu o sfoară, și le pune pe masă, în fața lui Jarek. Sculele lui. L-am văzut deschizând cu ele lacăte pe care nici Bram nu le-ar fi deschis.",
+        "urmator": "n5"
+      },
+      "n5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Am terminat.",
+        "urmator": "n6"
+      },
+      "n6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Jarek se uită lung la ele. Apoi la Finn. Apoi la mine. Lumânarea pâlpâie.",
+        "urmator": "n7"
+      },
+      "n7": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Știi ce înseamnă asta, băiete? Fără mine, n-ai fi avut ce pune pe masă iarna trecută.",
+        "urmator": "n8"
+      },
+      "n8": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Știu. Și îți mulțumesc. Dar i-am promis Linei. Și lui.",
+        "urmator": "n9"
+      },
+      "n9": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "...Bine.",
+        "urmator": "n10"
+      },
+      "n10": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Bine. Măcar ai un prieten care te ține drept. Eu n-am avut.",
+        "urmator": "n11"
+      },
+      "n11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Împinge sculele înapoi spre Finn, peste masă.",
+        "urmator": "n12"
+      },
+      "n12": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Ia-le. Un lacăt deschis nu e întotdeauna un furt. Poate o să ai nevoie de ele pentru altceva.",
+        "urmator": "n13"
+      },
+      "n13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Afară, Finn se oprește în mijlocul drumului și respiră adânc, cu capul dat pe spate, de parcă aerul nopții ar avea alt gust.",
+        "urmator": "n14"
+      },
+      "n14": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Gata, Vale. Nu mai lucrez pentru nimeni. Doar pentru noi.",
+        "efecte": {
+          "stare": {
+            "finn_jarek": "gata"
+          }
+        }
+      }
+    }
+  },
+  "finn_prieteni": {
+    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn” (decis de autor): Finn vorbește cu trei prieteni din copilărie, puțin mai mici decât el; fiecare vrea ceva. Numele (Tobin, Ned, Wil) și ce cer sunt ciorne de Claude (decis de autor: Ned, un arc, de la Kaia sau cumpărat; Wil, un dinte de orc din Groapă). Fără portrete: doar numele, ca sătenii. O imagine.",
+    "grup": "Finn: prietenii lui Finn",
+    "partener": "hot",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne întâlnim după șopronul dărăpănat din capătul Marginii. Trei băieți stau pe o bârnă căzută și se uită la mine ca la un orc: unul înalt și slab ca un băț, unul cu nasul turtit și pumni mari, și unul mic, cu ochi iuți, care nu stă o clipă locului.",
+        "imagine": "events/finn_prieteni_1.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "El e Vale. Cel de care v-am zis.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "satean",
+        "nume": "Tobin",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Cel care te-a scos de la butuc? Mama zice că e un prost cu inimă bună.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Mama ta nu greșește prea des.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "satean",
+        "nume": "Ned",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Finn zice că vreți să vă bateți cu orcii. Voi doi și o vânătoare cu un tigru.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu doar noi. Dar avem nevoie de ochi și de mâini iuți. Și de arcuri.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "satean",
+        "nume": "Wil",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Și noi ce primim?",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "satean",
+        "nume": "Tobin",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Eu vreau mâncare. Nu pentru mine. Am patru frați mai mici, iar de când au venit orcii mâncăm o dată pe zi, când mâncăm. Trei bucăți de carne friptă și trei pâini. Atunci te ascult.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "satean",
+        "nume": "Ned",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Eu vreau un arc. Unul adevărat, nu crenguța mea legată cu sfoară. Și măcar trei săgeți.",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "satean",
+        "nume": "Wil",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Eu nu vreau nimic de mâncat. Vreau să văd că nu ești doar gură. Bate un orc în Groapă și adu-mi un dinte de-al lui. Atunci te cred.",
+        "urmator": "p11"
+      },
+      "p11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn se uită la mine și ridică din umeri, ca și cum ar zice: ți-am spus eu.",
+        "urmator": "p12"
+      },
+      "p12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Carne și pâine pentru Tobin. Un arc pentru Ned. Un dinte de orc pentru Wil. Le aduc.",
+        "urmator": "p13"
+      },
+      "p13": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Mie mi le aduci. Eu i-am adus pe ei, eu le duc ce le trebuie.",
+        "efecte": {
+          "misiune": {
+            "finn_prieteni": "inceputa"
+          }
+        }
+      }
+    }
+  },
+  "finn_prieteni_fluier": {
+    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn”, la sfârșit: cei trei sunt de acord, iar Finn îi dă lui Vale fluierul (decis de autor), pentru lupta finală. O imagine.",
+    "grup": "Finn: prietenii lui Finn",
+    "partener": "hot",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn mă duce în spatele șopronului. Tobin, Ned și Wil stau pe gard, cu picioarele atârnând. Ned își ține arcul în brațe ca pe un pui de pisică.",
+        "imagine": "events/finn_prieteni_2.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "satean",
+        "nume": "Tobin",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Frații mei au mâncat carne trei zile la rând. Mama a plâns. Bine. Te ascult.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "satean",
+        "nume": "Ned",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Trage drept. Am nimerit o cioară de la cincizeci de pași. Ei bine... aproape am nimerit-o.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "satean",
+        "nume": "Wil",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Și dintele e adevărat. L-am mușcat, să văd. E adevărat.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Am vorbit între noi. Când o să vină ziua cea mare, nu stăm ascunși prin case. Dar nici nu ne vede nimeni.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn scoate din sân un fluier mic, cioplit din os, legat de o sfoară.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Ține. L-am făcut eu, dintr-un os de gâscă. Are un sunet pe care nu-l scoate nicio pasăre din pădurea asta.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Când o să fie greu, când o să vină prea mulți deodată, suflă în el. O singură dată. Și noi o să fim acolo.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă vă prind?",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "satean",
+        "nume": "Wil",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Pe noi? Pe noi nu ne-a prins nimeni niciodată.",
+        "urmator": "p11"
+      },
+      "p11": {
+        "vorbitor": "satean",
+        "nume": "Tobin",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Pe Finn l-au prins.",
+        "urmator": "p12"
+      },
+      "p12": {
+        "vorbitor": "hot",
+        "emotie": "suparat",
+        "text": "O dată! Și eram cu sacul plin!",
+        "urmator": "p13"
+      },
+      "p13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Râdem toți cinci, înăbușit, cu mâinile la gură, ca niște copii care au furat mere. Fluierul îmi atârnă la gât, ușor ca o pană.",
+        "efecte": {
+          "obiect": "fluier",
+          "stare": {
+            "prieteni_fluier": "da"
+          }
+        }
+      }
+    }
+  },
+  "dinte_orc": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: după o victorie în Groapă, cât e misiunea „Prietenii lui Finn”, Vale ia un dinte de orc, dovada pentru Wil. Peste imaginea Groapei (fără galerie).",
+    "grup": "Finn: prietenii lui Finn",
+    "partener": null,
+    "faraGalerie": true,
+    "start": "d1",
+    "noduri": {
+      "d1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Orcul pe care l-am doborât ultimul zace cu fața în noroi. Când îl întorc, îi văd un colț crăpat, care abia mai stă în gingie.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Orcii de pe margine râd și bat în pari când mă văd aplecat peste el. Cred că își închipuie că-i caut prin buzunare.",
+        "urmator": "d3"
+      },
+      "d3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O smucitură, și colțul e în palma mea: galben, lung cât degetul. Wil voia o dovadă? Uite dovada.",
+        "efecte": {
+          "obiect": "dinte_orc"
+        }
+      }
+    }
+  },
+  "fluier_ambuscada": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: în lupta finală, când Vale suflă în fluierul lui Finn, peste luptă apare imaginea cu cei patru băieți (Finn, Tobin, Ned, Wil, în haine rupte, cu glugi, trăgând cu arcul), cu gândurile lui Vale; apoi toți orcii valului sunt răniți cu 50% (src/lupta.js).",
+    "grup": "Lupta finală: fluierul",
+    "partener": null,
+    "start": "f1",
+    "noduri": {
+      "f1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Duc fluierul la buze și suflu din toate puterile. Un fluierat subțire, ca al unei păsări de noapte, taie zgomotul luptei.",
+        "imagine": "events/fluier_ambuscada.png",
+        "urmator": "f2"
+      },
+      "f2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O clipă nu se întâmplă nimic. Apoi, de pe acoperișuri și de după garduri, se ridică patru umbre, cu glugile trase pe ochi.",
+        "urmator": "f3"
+      },
+      "f3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn, Tobin, Ned și Wil. Patru băieți zdrențăroși de la Marginea satului, cu arcuri strâmbe și săgeți cu pene de gâscă.",
+        "urmator": "f4"
+      },
+      "f4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Săgețile cad peste orci ca o ploaie neagră. Orcii urlă și se întorc spre ei, dar umbrele au dispărut deja.",
+        "urmator": "f5"
+      },
+      "f5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai sunt nicăieri. Doar săgețile înfipte în scuturi și în carne arată că au fost acolo."
       }
     }
   }

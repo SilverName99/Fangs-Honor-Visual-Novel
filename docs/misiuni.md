@@ -141,6 +141,8 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 5. ✅ **Rana lui Ember**: la cel puțin două zile după „Capcanele” (și după eliberarea lui Finn), la locul de campare: Kaia stă lângă Ember rănit (un singur sprite) → „Ce i s-a întâmplat lui Ember? !”.
 6. ✅ **Șoimul Străjerilor**: din ziua de după „Rana lui Ember”, la locul de campare: „Pot să stau puțin cu tine la foc? !”.
 7. ✅ **Convoiul**: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”): „Ești tăcută azi, Kaia. S-a întâmplat ceva? !”. Apoi, în noaptea de după (23–03), la locul de campare. Dacă ai mers cu ea, la somnul de după vine **al treilea vis**.
+8. ✅ **Baza**: după „Convoiul”, seara (18–23), la locul de campare: „Kaia... la ce te gândești? !”. Hotărăsc revolta; tabăra ei devine baza.
+9. ✅ **Cuștile vânătorilor** (a lui Finn, +1 și la Kaia): vezi la Finn.
 
 **Roderick (unchiul)**
 1. ✅ **Scandalul din tavernă**: din ziua 3, în tavernă, cât e și Agnes acolo (16–00).
@@ -170,6 +172,9 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 5. ✅⚠️ **Datoria la Jarek**: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată), la Finn: „Finn, ce te apasă? !”. Se ratează dacă refuzi sau dacă trec cele 5 zile.
 6. ✅ **Noaptea de la cimitir** (nu se ratează; după ea, **al patrulea vis**): după „Camera de sus”, „Hârtiile soldatului” și „Pivnița”, și după „Datoria la Jarek” (dusă la capăt de o zi, sau ratată), la Finn: „Ce-i cu Lina? Pare obosită. !”.
 7. ✅ **Zarurile orcilor** (fără încredere): de la 4/10 încredere cu Finn, acasă: „Ce meșterești acolo, Finn? !”.
+8. ✅ **Cuștile vânătorilor** (+1 și la Kaia): de la 5/10 încredere cu Finn și după „Baza” (Kaia), acasă: „Finn... pot să-ți spun ceva? Dar încet. !”. Seara, la locul de campare; noaptea de după, pe furiș.
+9. ✅⚠️ **Ultima treabă pentru Jarek**: după „Noaptea de la cimitir” și după „Datoria la Jarek” (dusă la capăt sau ratată), acasă: „Ce-i hârtia aia, Finn? !”. Se ratează dacă alegi „Avem nevoie de bani.”.
+10. ✅ **Prietenii lui Finn** (pentru lupta finală, fluierul): de la 8/10 încredere cu Finn și după „Cuștile vânătorilor”: „Finn, pari că pui ceva la cale. !”.
 
 ---
 
@@ -185,10 +190,10 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · 💡 încă 4 (Hârtiile soldatului nu dau, decis) | 6 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · 💡 încă 2 | 8 / 10 |
-| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · 💡 încă 3 | 7 / 10 |
-| **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · 💡 încă 3 (cel puțin unul ⚠️) | 7 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
+| **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · ✅ Cuștile vânătorilor (+1 oricum s-ar termina lupta, decis de autor) · ✅⚠️ Ultima treabă pentru Jarek (doar „Nu, Finn. Ai promis.”) · ✅ Prietenii lui Finn (de la 8/10) | 10 / 10 |
 
-**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii).
+**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek).
 
 ---
 
@@ -689,6 +694,14 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici:** F2 → Stări: `kaia_wyverni_vazut` = `impreuna` (sau joacă „Convoiul” cu Kaia). Timp 03:30, acasă, în camera ta → Dormi → „Dormi până dimineața” → visul la trezire.
 
+### ✅ Baza
+- **Pornește** (decis de autor): după „Convoiul” (oricum s-a terminat), **seara (18–23)**, la locul de campare, la foc: „Kaia... la ce te gândești? !” → „(Mă așez lângă ea.)” (sau „Altă dată, Kaia.”, iar oferta rămâne). Nu se ratează.
+- **Peste 2 imagini** (ciornă de Claude): (1) seara, la foc, Vale și Kaia, cu Ember dormind; Kaia vorbește despre cuști și despre focurile orcilor, tot mai multe; „Nu vine nimeni, Vale.” → Vale: „Atunci... ne ridicăm noi.” (2) Kaia desenează cu un băț înnegrit, în cenușă, satul, gardul și poarta, cu tabăra orcilor dincolo de zid: **tabăra ei devine baza** (decis de autor), unde orcii nu calcă noaptea, iar Ember îi simte de departe. Vale se gândește la Bram, la unchiul lui, la Elian și la Finn („Adu-l. Dar nu-i spune nimic până nu-l văd cu ochii mei.”). „Nimeni nu trebuie să știe de locul ăsta. Nici mama ta.”
+- **Recompensa:** încrederea Kaiei **+1**; starea `revolta` = `hotarata` (de aici pornesc misiunile despre revoltă, de exemplu „Cuștile vânătorilor”).
+- **Imagini:** `events/kaia_baza_1.png`, `events/kaia_baza_2.png` (galeria: „Kaia: baza”).
+
+**Cum verifici:** cu „Convoiul” terminat, ora 19:00 → Pădure → Locul de campare → Kaia → „Kaia... la ce te gândești?” → „(Mă așez lângă ea.)” → cele 2 imagini → +1 Kaia.
+
 ---
 
 ## Roderick Lightfinder (unchiul)
@@ -949,6 +962,38 @@ Din F2 → Misiuni, „Pornește” nu ajunge aici (și nici la „Datoria la Ja
 - **Imagine:** `events/finn_zaruri.png` (galeria: „Finn: zarurile orcilor”).
 
 **Cum verifici:** cu încrederea lui Finn 4, acasă la el, ziua: „Ce meșterești acolo, Finn?” → „Arată-mi.” → la zaruri, la poartă (14–18), apare puterea. Pornește-o din discuție, nu din F2 (puterea vine din imaginea de la Finn).
+
+### ✅ Cuștile vânătorilor (+1 și la Kaia; nu se ratează)
+- **Pornește** (decis de autor): de la **5/10 încredere** cu Finn și după „Baza” (Kaia), acasă la Finn (06–08 sau 13–18): „Finn... pot să-ți spun ceva? Dar încet. !”. **Acasă, Finn află doar o parte** (decis de autor), în șoaptă, cât Marta coase și Lina se joacă: „Kaia și cu mine punem ceva la cale. Nu aici. Vino diseară cu mine la locul de campare.” → „Diseară, după șase.” (sau „Mai bine altă dată.”, iar oferta rămâne).
+- **Seara (18–23), la locul de campare** (decis de autor), când ajungi acolo pornește direct (Finn vine cu tine), **peste 2 imagini**: (1) Finn încremenit, cu Ember care îl adulmecă, iar Kaia râde („Ce-ai adus, Vale? Un iepure?”); îi spun de revoltă; Finn: „Eu deschid orice lacăt.” (2) La foc, Kaia povestește de **tabăra vânătorilor de orci**, la o oră spre răsărit: țin în cuști **o lupoaică și puii ei** (ales de Claude: doi pui), ca s-o crească pentru asediu, ca pe bestiile din convoi. Cinci orci: trei dorm la foc, doi stau de pază, cu topoare de aruncat. „Mâine noapte e lună nouă.”
+- **Noaptea de după** (decis de autor; ales de Claude: din noaptea de după, **în fiecare noapte, 23–03**, Kaia și Finn te așteaptă la locul de campare, până vii), pornește direct: pe furiș, **ca la lada colectorului**, peste **3 imagini, cu câte două locuri desenate de tine** (unul sigur, unul unde te văd orcii; Aranjare → Ecrane → „Furișatul: Cuștile vânătorilor (1–3)”). Ember rămâne la tabără. Drumul ține 2 ore și ia 20 stamina.
+  - **Reușit:** Finn deschide lacătele, peste o imagine (cuștile deschise, lupoaica iese cu un pui în gură); lupoaica și puii fug în pădure.
+  - **Prinși** (o alegere greșită): orcii dau alarma, peste o imagine → **lupta**: Vale, Finn și **Kaia pe jos** (decis de autor: pozele ei din Groapă, fără Ember) împotriva celor **5 orci** (ales de Claude: 3 orci și 2 aruncători), fără fugă, pe harta de luptă nouă a taberei. **Câștigată:** cuștile se deschid (aceeași imagine ca la reușită). **Pierdută** (decis de autor): o imagine cu cei trei care fug; cuștile rămân închise; **a doua zi**, Finn: „A fost o încercare bună. Dar nu putem risca soarta satului pentru niște animale.”, iar Kaia, foarte supărată: „Finn zice că erau doar niște animale. Pentru el, poate. Pentru mine, ea era pădurea asta.”
+  - Când lupoaica scapă, a doua zi Finn și Kaia au și ei câte o replică (Kaia a găsit urmele lor lângă pârâu).
+- **Recompensa** (decis de autor): încrederea lui Finn **+1** și a Kaiei **+1**, **oricum s-ar termina** („am făcut tot ce s-a putut”).
+- **Imagini:** `events/finn_custi_1.png` (Finn și Ember, Kaia râde), `_2.png` (la foc, Kaia desenează tabăra vânătorilor), `_3.png`, `_4.png`, `_5.png` (furișatul, cu locurile de desenat), `_6.png` (cuștile deschise), `events/finn_custi_alarma.png` (prinși), `events/finn_custi_fuga.png` (fuga, doar la înfrângere) (galeria: „Finn: cuștile vânătorilor”); harta de luptă `locations/lupta_tabara_vanatori.png` (galeria: „Hărți de luptă”; locurile luptătorilor, la Aranjare → Hărți de luptă → „Tabăra vânătorilor”).
+
+**Cum verifici:** cu „Baza” gata și încrederea lui Finn 5, acasă la Finn (14:00): „Finn... pot să-ți spun ceva?” → „Diseară, după șase.” → ora 19:00 → Pădure → Locul de campare → cele 2 imagini. Apoi „Ziua următoare” și ora 23:00 → Locul de campare → furișatul (cu mini-jocurile oprite din Opțiuni, trece singur; cu ele pornite și zonele nedesenate, apar două butoane: „Pe aici te vede orcul” duce la luptă).
+
+### ✅⚠️ Ultima treabă pentru Jarek (se poate rata)
+- **Pornește** (ales de Claude: după „Noaptea de la cimitir” și după „Datoria la Jarek”, dusă la capăt sau ratată), acasă la Finn: „Ce-i hârtia aia, Finn? !” → „(Mă așez lângă el.)” → **peste o imagine** (decis de autor): Finn, la masă, cu un bilet de la Jarek, lăsat sub piatra de la gard: Jarek vrea ca Finn să-i golească negustorului **caseta cu bani** de sub tarabă, „ultima treabă”. Alegi:
+  - **„Nu, Finn. Ai promis.”** (a promis că nu mai fură, la „Ziua Linei”): în noaptea aceea (sau în oricare de după), după 23, Finn te așteaptă în fața casei: „Să mergem.” → **peste o imagine**, la cocioaba lui Jarek, Finn își pune sculele pe masă: „Am terminat.” Jarek: „Bine. Măcar ai un prieten care te ține drept. Eu n-am avut.” și îi lasă sculele („Un lacăt deschis nu e întotdeauna un furt.”). **+1**. De atunci, seara (18–23) Finn stă acasă, nu mai lucrează pentru Jarek (ales de Claude).
+  - **„Avem nevoie de bani.”** (decis de autor): a doua zi, Finn îi dă lui Vale **15 monede**, rușinat: „Lina m-a întrebat de unde sunt banii.” Fără +1; misiunea e **ratată**.
+- **Imagini:** `events/finn_jarek_1.png` (Finn cu biletul), `events/finn_jarek_2.png` (la Jarek, sculele pe masă) (galeria: „Finn: ultima treabă pentru Jarek”).
+
+**Cum verifici:** cu „Noaptea de la cimitir” și „Datoria la Jarek” gata, acasă la Finn: „Ce-i hârtia aia, Finn?” → imaginea → „Nu, Finn. Ai promis.” → ora 23:30 → Marginea satului → Casa lui Finn (afară) → Finn → „Să mergem.” → imaginea → +1. Cealaltă alegere: F2 → Misiune „Ultima treabă pentru Jarek” → „Resetează” → „Avem nevoie de bani.” → „Ziua următoare” → la Finn: cele 15 monede.
+
+### ✅ Prietenii lui Finn (de la 8/10; pentru lupta finală)
+- **Pornește** (decis de autor): de la **8/10 încredere** cu Finn (ales de Claude: și după „Cuștile vânătorilor”, ca Finn să știe de revoltă): „Finn, pari că pui ceva la cale. !” → Finn are **trei prieteni din copilărie**, de la Marginea satului, puțin mai mici decât el, care ar ajuta în ziua cea mare, dar doar dacă primește fiecare ceva → „Vorbește cu ei.” → **peste o imagine**, după un șopron, cei trei își spun ce vor (numele și ce cer: ciorne de Claude; fără portrete, ca sătenii):
+  - **Tobin:** 3 **carne friptă** și 3 **pâini**, pentru frații lui mai mici;
+  - **Ned:** un **arc**, cu 3 săgeți (decis de autor: ori îi duci **Kaiei 4 lemne și o sfoară** și ea îl face peste noapte, „Kaia, ai putea face un arc?”, ori **cumperi un arc** de la Jarek și 3 săgeți);
+  - **Wil:** vrea să vadă că Vale nu e doar gură: un **dinte de orc** (decis de autor), luat după ce **câștigi o luptă în Groapă**, după ce ai primit misiunea (ales de Claude: oricare nivel; nu în seara în care câștigi verigheta mamei).
+  Le duci lui Finn, în orice ordine; în carte se bifează pe rând.
+- **La sfârșit**, „Ce zic prietenii tăi, Finn?” → **peste o imagine**, cei trei sunt de acord, iar Finn îi dă lui Vale **fluierul** (decis de autor), cioplit dintr-un os de gâscă: „Când o să vină prea mulți deodată, suflă în el. O singură dată. Și noi o să fim acolo.” **+1**.
+- **Fluierul în lupta finală** (decis de autor): la „Obiect”, doar Vale, **o singură dată**, pe valul ales de tine: peste luptă apare **imaginea cu cei patru băieți** (Finn și ceilalți trei, în haine rupte, cu glugi, trăgând cu arcul), cu gândurile lui Vale, apoi **toți orcii din valul acela sunt răniți cu 50%** (ales de Claude: jumătate din viața lor întreagă, trecând de armură; cine era deja slăbit poate cădea; TODO echilibru). Se încearcă din F2 → Testare luptă → „Ca în lupta finală” (ca toiagul).
+- **Imagini:** `events/finn_prieteni_1.png` (cei trei băieți, cu Finn), `events/finn_prieteni_2.png` (Finn îi dă fluierul) (galeria: „Finn: prietenii lui Finn”); `events/fluier_ambuscada.png` (cei patru, în lupta finală; galeria: „Lupta finală: fluierul”); iconițele `items/arc_ned.png`, `items/dinte_orc.png`, `items/fluier.png`. Sunetul `fluier` (efect).
+
+**Cum verifici:** cu încrederea lui Finn 8 și „Cuștile vânătorilor” gata: „Finn, pari că pui ceva la cale.” → „Vorbește cu ei.” → imaginea. F2 → Obiect: 3 Carne friptă și 3 Pâini → la Finn, „Am carnea și pâinea pentru Tobin.”. La Kaia: „Kaia, ai putea face un arc?” → 4 Lemne și o Sfoară → „Am adus lemnele...” → „Ziua următoare” → „E gata arcul?” → la Finn. Seara, la Groapă, o victorie → dintele → la Finn. Apoi „Ce zic prietenii tăi, Finn?” → fluierul. În luptă: F2 → Testare luptă → bifa „Ca în lupta finală” → Obiect → Fluierul lui Finn.
 
 ---
 
