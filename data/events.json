@@ -1971,6 +1971,65 @@
       "repetare": "o_data",
       "dialog": "dinte_orc",
       "_nota": "Decis de autor: după o victorie în Groapă, cât e misiunea „Prietenii lui Finn” (pornit din src/groapa.js, „dupaVictorie” în config.json)."
+    },
+    {
+      "id": "miriam_tata_lada",
+      "_nota": "Decis de autor: misiunea specială a Miriamei, de la încredere 8/10; seara, la cină. Ales de Claude: doar după al doilea vis (crăpătura din vis), cât e mama în bucătărie (18–23); „!” deasupra mamei (ofertaEveniment), iar apăsarea pe ea o pornește.",
+      "nume": "Echipamentul tatălui: lada mamei",
+      "grup": "Miriam: echipamentul tatălui",
+      "conditii": {
+        "loc": "casa/bucatarie",
+        "personajIn": {
+          "miriam": [
+            "casa/bucatarie"
+          ]
+        },
+        "ora": {
+          "min": "18:00",
+          "max": "22:59"
+        },
+        "relatie": {
+          "miriam": {
+            "min": 8
+          }
+        },
+        "stare": {
+          "vis_2": "vazut"
+        }
+      },
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 30
+      },
+      "dialog": "miriam_tata"
+    },
+    {
+      "id": "bram_platosa_forja",
+      "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; seara, cu ușa închisă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi.",
+      "nume": "Platoșa tatălui: forja",
+      "grup": "Bram: platoșa tatălui",
+      "manual": true,
+      "repetare": "o_data",
+      "efecte": {
+        "timp": 180,
+        "nevoi": {
+          "stamina": -20
+        },
+        "consuma": {
+          "fier_vechi": 2
+        }
+      },
+      "dialog": "bram_platosa",
+      "miniJocuri": {
+        "ciocan": {
+          "tip": "cerc",
+          "imagine": "events/bram_platosa_1.png",
+          "titlu": "Platoșa tatălui",
+          "incercari": 3,
+          "sunet": "nicovala",
+          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: de-a lungul crăpăturii, unde ține Bram cleștele."
+        }
+      }
     }
   ]
 }

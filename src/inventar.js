@@ -158,6 +158,28 @@ export function creeazaInventar(date, getStare) {
       if (i >= 0) return s.poveste.splice(i, 1);
       scoateDin(s.inventar, id, n);
     },
+    // Un dar care nu are voie să se piardă (echipamentul tatei, de la mama) merge direct în cufărul de acasă: cu
+    // rucsacul plin, „Lasă-l” l-ar fi aruncat pentru totdeauna. Întoarce câte n-au încăput
+    adaugaInCufar: (id, n = 1) => adaugaIn(getStare().cufar, cfg.cufar, id, n),
+    // Bram îi pune platoșa pe umeri (decis de autor): se echipează pe loc, fără să treacă prin rucsac. Ce era pe slot
+    // trece în rucsac, iar dacă nu încape, în cufărul de acasă, ca să nu se piardă. Întoarce unde a ajuns fiecare
+    imbraca(id) {
+      const s = getStare();
+      const d = def(id);
+      const josDe = new Set([d.slot]);
+      if (d.douaMaini) josDe.add('arma_secundara');
+      if (d.slot === 'arma_secundara' && def(s.echipat.arma_primara).douaMaini) josDe.add('arma_primara');
+      const unde = { rucsac: [], cufar: [] };
+      for (const sl of josDe) {
+        const vechi = s.echipat[sl];
+        if (!vechi) continue;
+        delete s.echipat[sl];
+        if (adaugaIn(s.inventar, capacitate(), vechi, 1) === 0) unde.rucsac.push(vechi);
+        else if (adaugaIn(s.cufar, cfg.cufar, vechi, 1) === 0) unde.cufar.push(vechi);
+      }
+      s.echipat[d.slot] = id;
+      return unde;
+    },
     spreCufar: (index) => mutaStiva(getStare().inventar, getStare().cufar, cfg.cufar, index),
     dinCufar: (index) => mutaStiva(getStare().cufar, getStare().inventar, capacitate(), index),
     echipeaza,

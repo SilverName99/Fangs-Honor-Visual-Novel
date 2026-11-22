@@ -1,6 +1,9 @@
 import { schimbaNevoie } from './stare.js';
 import { MINUTE_ZI, inMinute } from './timp.js';
 
+// Un id sau o listă de id-uri = câte una din fiecare; „{ sageti: 10 }” = mai multe deodată (săgețile de la Bram)
+const perObiect = (v) => (v && typeof v === 'object' && !Array.isArray(v) ? Object.entries(v) : [].concat(v).map((id) => [id, 1]));
+
 // Registru de efecte: evenimentele, dialogurile (și mai târziu abilitățile din luptă) folosesc aceleași funcții.
 // Un efect nou = o funcție nouă aici, fără să atingi restul codului.
 const efecte = {
@@ -29,12 +32,26 @@ const efecte = {
       if (cu > 0) joc.inregistreazaCastig?.({ tip: 'incredere', id, n: cu });
       else if (joc.stare.relatii[id] < inainte) joc.inregistreazaCastig?.({ tip: 'incredere', id, n: joc.stare.relatii[id] - inainte });
     }),
-  // Un id sau o listă de id-uri = câte una din fiecare; „{ sageti: 10 }” = mai multe deodată (săgețile de la Bram)
   obiect: (v, joc) =>
-    (v && typeof v === 'object' && !Array.isArray(v) ? Object.entries(v) : [].concat(v).map((id) => [id, 1])).forEach(([id, n]) => {
+    perObiect(v).forEach(([id, n]) => {
       const primit = joc.primeste(id, n);
       if (primit > 0) joc.inregistreazaCastig?.({ tip: 'obiect', id, n: primit });
     }),
+  // Un dar care nu are voie să se piardă (echipamentul tatei, de la mama, decis de autor): direct în cufărul de acasă,
+  // nu în rucsac, unde un rucsac plin l-ar fi lăsat pe jos; doar dacă și cufărul e plin, încearcă rucsacul
+  obiectCufar: (v, joc) =>
+    perObiect(v).forEach(([id, n]) => {
+      const rest = joc.inventar.adaugaInCufar(id, n);
+      if (n - rest > 0) joc.inregistreazaCastig?.({ tip: 'obiect', id, n: n - rest });
+      if (rest > 0) efecte.obiect({ [id]: rest }, joc);
+    }),
+  // Bram îi pune lui Vale platoșa pe umeri (decis de autor): se echipează pe loc; ce purta înainte merge în rucsac
+  // sau, dacă nu încape, în cufărul de acasă (spus pe ecran, ca să știe unde s-o caute)
+  imbraca: (v, joc) => {
+    const unde = joc.inventar.imbraca(v);
+    joc.inregistreazaCastig?.({ tip: 'obiect', id: v, n: 1 });
+    if (unde.cufar.length) joc.mesaj(`N-ai loc în rucsac: ${unde.cufar.map((id) => joc.inventar.def(id).nume).join(', ')} te așteaptă în cufărul de acasă.`);
+  },
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
   // Lucrul confiscat ajunge înapoi la Vale (plătit, câștigat), deci nu mai e la orci

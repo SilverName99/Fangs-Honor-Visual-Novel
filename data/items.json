@@ -397,14 +397,14 @@
       "armura": 8,
       "pret": 0,
       "descriere": "Coiful de oțel al tatei, cu apărătoare pentru nas și creasta albastră, decolorată. Mama l-a curățat și l-a uns, ca pe ceva de care nu te desparți.",
-      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "platosa_tata_crapata": {
       "nume": "Platoșa crăpată a lui Edwin",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Platoșa tatei, crăpată pe mijloc de o lovitură de topor, chiar prin rombul auriu. Așa nu se poate purta. Poate o poate repara Bram.",
-      "_nota": "Decis de autor: lovitura din al doilea vis; Miriam i-o dă lui Vale crăpată (misiunea ei specială), iar Bram o repară într-o misiune (de făcut); după reparație devine „platosa_tata”."
+      "_nota": "Decis de autor: lovitura din al doilea vis; Miriam i-o dă lui Vale crăpată (misiunea ei specială, „Echipamentul tatălui”), iar Bram o repară în misiunea „Platoșa tatălui”; după reparație devine „platosa_tata”, pe care Bram i-o pune lui Vale pe umeri."
     },
     "platosa_tata": {
       "nume": "Platoșa lui Edwin",
@@ -412,8 +412,8 @@
       "slot": "armura",
       "armura": 15,
       "pret": 0,
-      "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Are o adâncitură aproape de inimă.",
-      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită). Platoșa e întâi crăpată („platosa_tata_crapata”); asta e cea reparată de Bram."
+      "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Pe mijloc, prin romb, o dungă mai închisă, ca o cicatrice: crăpătura pe care am închis-o cu Bram, la nicovală.",
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită). Platoșa e întâi crăpată („platosa_tata_crapata”); asta e cea reparată de Bram."
     },
     "jambiere_tata": {
       "nume": "Jambierele lui Edwin",
@@ -422,7 +422,7 @@
       "armura": 8,
       "pret": 0,
       "descriere": "Jambierele de oțel ale tatei, cu apărători pentru genunchi.",
-      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "sabia_tata": {
       "nume": "Sabia lui Edwin",
@@ -436,7 +436,7 @@
       },
       "pret": 0,
       "descriere": "Sabia tatei. Pe măciulie, un romb mic, auriu, ca pe steagul satului. Ciupită de luptă, dar lustruită de curând.",
-      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei (de la încredere 8/10, de făcut). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
+      "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "capcane_orci": {
       "nume": "Capcanele orcilor",

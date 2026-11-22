@@ -5687,6 +5687,193 @@
         "vorbitor": "vale",
         "emotie": "zambet",
         "text": "Atunci ne vedem la poartă."
+      },
+      "plat_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pun platoșa pe nicovală. Bram se oprește cu ciocanul în aer.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui” (decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, seara lucrează cu Bram la forjă, mini-jocul ciocanului, peste o imagine; a doua zi Bram îi pune platoșa pe umeri: „Arăți ca el.”, peste o imagine; +1 Bram). Ales de Claude: 2 bucăți de fier vechi; Bram a bătut platoșa pentru Edwin.",
+        "urmator": "plat_o2"
+      },
+      "plat_o2": {
+        "vorbitor": "fierar",
+        "emotie": "speriat",
+        "text": "De unde ai asta?",
+        "urmator": "plat_o3"
+      },
+      "plat_o3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De la mama. A ținut-o ascunsă de atunci, sub pat.",
+        "urmator": "plat_o4"
+      },
+      "plat_o4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram își trece degetul gros de-a lungul crăpăturii, încet, cum ai mângâia o rană. Se oprește la romb.",
+        "urmator": "plat_o5"
+      },
+      "plat_o5": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Am bătut-o eu, pentru Edwin. Tatăl tău venea aici în fiecare primăvară să-i ascut sabia și să-i ung curelele.",
+        "urmator": "plat_o6"
+      },
+      "plat_o6": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Și uite ce-au făcut din ea.",
+        "urmator": "plat_o7"
+      },
+      "plat_o7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Se poate repara?",
+        "urmator": "plat_o8"
+      },
+      "plat_o8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Se poate. Dar nu cu fierul meu: ăla e moale, bun de potcoave. Îmi trebuie fier vechi, călit, care a mai ținut la lovituri. Două bucăți.",
+        "urmator": "plat_o9"
+      },
+      "plat_o9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Jarek are. Știi tu unde. Și nu-i spune pentru ce.",
+        "urmator": "plat_o10"
+      },
+      "plat_o10": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Când le ai, vino seara, după ce închid ușa. O platoșă pe nicovala mea, ziua, la vedere... orcii ar întreba repede pentru cine e.",
+        "urmator": "plat_o11"
+      },
+      "plat_o11": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Și vii să lucrezi, nu să te uiți. E platoșa tatălui tău. O s-o bați și tu.",
+        "alegeri": [
+          {
+            "text": "Aduc fierul.",
+            "spre": "plat_da",
+            "efecte": {
+              "misiune": {
+                "bram_platosa": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mai târziu.",
+            "spre": "plat_nu"
+          }
+        ]
+      },
+      "plat_ind1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Două bucăți de fier vechi, de la Jarek. Și seara, nu ziua."
+      },
+      "plat_ind2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Seara, după ce închid ușa. Cu fierul. Te aștept."
+      },
+      "plat_f1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus fierul, domnule Bram.",
+        "urmator": "plat_f2"
+      },
+      "plat_f2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Bun. Pune drugul la ușă.",
+        "alegeri": [
+          {
+            "text": "Pun drugul.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "bram_platosa_forja"
+            }
+          }
+        ]
+      },
+      "plat_ind3": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "E la mine, în fierărie, pe un cui. Treci pe acolo."
+      },
+      "plat_m_maine": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mâine, ți-am zis. Fierul se răcește încet, altfel crapă din nou."
+      },
+      "plat_g1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram ia platoșa de pe un cui din perete. Curelele sunt noi, de piele groasă, iar rombul de pe piept lucește, frecat cu cenușă.",
+        "imagine": "events/bram_platosa_2.png",
+        "grupGalerie": "Bram: platoșa tatălui",
+        "urmator": "plat_g2"
+      },
+      "plat_g2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Stai drept.",
+        "urmator": "plat_g3"
+      },
+      "plat_g3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mi-o pune pe umeri și strânge curelele una câte una, cu degetele lui groase, fără grabă. Apoi face un pas înapoi și se uită la mine.",
+        "efecte": {
+          "imbraca": "platosa_tata"
+        },
+        "urmator": "plat_g4"
+      },
+      "plat_g4": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Arăți ca el.",
+        "urmator": "plat_g5"
+      },
+      "plat_g5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai spune nimic. Nici eu. Bram se întoarce la nicovală, dar nu lovește. Doar stă cu ciocanul în mână.",
+        "urmator": "plat_g6"
+      },
+      "plat_g6": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Mulțumesc, domnule Bram.",
+        "urmator": "plat_g7"
+      },
+      "plat_g7": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu-mi mulțumi. Ai grijă de ea. Și ea o să aibă grijă de tine.",
+        "efecte": {
+          "stare": {
+            "platosa_gata": "da"
+          }
+        }
+      },
+      "plat_da": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Bine. Las-o la tine până atunci. Și ține-o învelită."
+      },
+      "plat_nu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cum vrei. Dar nu purta fierul ăla crăpat prin sat. Te întreabă orcii de unde-l ai."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -18875,6 +19062,216 @@
         "vorbitor": "batran",
         "emotie": "normal",
         "text": "Se lasă seara, băiete. O partidă bună ține cât o oră, iar eu la zece plec acasă. Vino mâine."
+      }
+    }
+  },
+  "miriam_tata": {
+    "_nota": "CIORNĂ (Claude). Misiunea specială a Miriamei, „Echipamentul tatălui”: pornește singură (evenimentul miriam_tata_lada), seara, în bucătărie.",
+    "grup": "Miriam: echipamentul tatălui",
+    "partener": "miriam",
+    "start": "t1",
+    "noduri": {
+      "t1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama a pus pe masă două străchini, ca în fiecare seară. Dar nu se așază. Stă în picioare, cu mâinile pe spătarul scaunului tatei.",
+        "_nota": "CIORNĂ (Claude). Misiunea specială a Miriamei, „Echipamentul tatălui” (decis de autor: de la încredere 8/10, fără încredere în plus; seara, la cină, mama îi spune că e timpul, îl duce în camera ei și deschide lada de sub pat, peste 2 imagini). Ales de Claude: doar după al doilea vis, ca Vale să recunoască crăpătura din vis; coiful, jambierele și sabia ajung în cufărul de acasă, ca să nu se piardă cu rucsacul plin.",
+        "urmator": "t2"
+      },
+      "t2": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Vale... lasă mâncarea. Vino cu mine.",
+        "efecte": {
+          "misiune": {
+            "miriam_tata": "inceputa"
+          }
+        },
+        "urmator": "t3"
+      },
+      "t3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce s-a întâmplat, mamă?",
+        "urmator": "t4"
+      },
+      "t4": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Nimic rău. E ceva ce trebuia să-ți dau de mult. N-am avut putere.",
+        "urmator": "t5"
+      },
+      "t5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "În camera ei, mama îngenunchează lângă pat și trage afară lada de zestre. Ridică un capac greu. Înăuntru, învelite în pânză albă, lucruri de fier.",
+        "imagine": "events/miriam_tata_1.png",
+        "urmator": "t6"
+      },
+      "t6": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Le-a adus Roderick, odată cu tatăl tău. Le-am spălat, le-am uns și le-am ascuns aici. Dacă le găseau orcii, le luau, ca pe toate.",
+        "urmator": "t7"
+      },
+      "t7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Coiful cu creasta albastră. Jambierele. Sabia cu rombul auriu pe măciulie. Le știu. Le purta tata în dimineața aceea de primăvară, când a plecat spre copac.",
+        "urmator": "t8"
+      },
+      "t8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Dedesubt, platoșa. O ridic. E grea și rece, iar pe mijloc, chiar prin romb, o crăpătură lungă, cu marginile îndoite spre înăuntru.",
+        "imagine": "events/miriam_tata_2.png",
+        "urmator": "t9"
+      },
+      "t9": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Am visat-o, mamă. Crăpătura asta. Exact așa.",
+        "urmator": "t10"
+      },
+      "t10": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Nu-mi spune ce-ai visat. Te rog.",
+        "urmator": "t11"
+      },
+      "t11": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Tatăl tău ar fi vrut să fie ale tale. Eu n-am vrut. Am vrut să rămâi băiatul meu, nu încă un bărbat sub copacul ăla.",
+        "urmator": "t12"
+      },
+      "t12": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Și acum?",
+        "urmator": "t13"
+      },
+      "t13": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Acum te văd cum pleci în fiecare zi: în pădure, la poartă, în Groapa aia. Dacă tot pleci, măcar să ai pe tine fierul tatălui tău.",
+        "urmator": "t14"
+      },
+      "t14": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Platoșa, așa cum e, nu te apără. Du-o la Bram. Tatăl tău nu lăsa pe nimeni altcineva să-i atingă fierul.",
+        "urmator": "t15"
+      },
+      "t15": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Mulțumesc, mamă.",
+        "urmator": "t16"
+      },
+      "t16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O strâng în brațe. Pânza albă rămâne între noi și miroase a ulei și a lavandă. Duc coiful, jambierele și sabia în cufărul din camera mea. Platoșa o țin cu mine.",
+        "efecte": {
+          "obiectCufar": [
+            "coif_tata",
+            "jambiere_tata",
+            "sabia_tata"
+          ],
+          "obiect": "platosa_tata_crapata",
+          "stare": {
+            "tata_echipament": "primit"
+          }
+        }
+      }
+    }
+  },
+  "bram_platosa": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: forja de seară, pornită de evenimentul bram_platosa_forja.",
+    "grup": "Bram: platoșa tatălui",
+    "partener": "fierar",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram pune platoșa în jar până se înroșește crăpătura. Apoi o întinde pe nicovală, o ține cu cleștele și pune lângă ea cele două bucăți de fier vechi, albe de căldură.",
+        "imagine": "events/bram_platosa_1.png",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: seara, în fierărie, Vale bate platoșa cu ciocanul (mini-jocul ciocanului din „O zi la forjă”, peste imaginea lui; fără eșec).",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Eu țin, tu lovești. Unde-ți arăt eu, nu unde vrei tu. Fierul ăsta trebuie să intre în crăpătură ca firul într-o cusătură.",
+        "alegeri": [
+          {
+            "text": "Iau ciocanul.",
+            "inchide": true,
+            "efecte": {
+              "miniJoc": {
+                "eveniment": "bram_platosa_forja",
+                "joc": "ciocan",
+                "dialog": "bram_platosa",
+                "reusit": "p3",
+                "esuat": "p3"
+              }
+            }
+          }
+        ]
+      },
+      "p3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lovitură după lovitură, crăpătura se strânge. Fierul vechi intră în ea și se face una cu platoșa. Rombul, strâmbat de lovitura orcului, se îndreaptă încet sub ciocan.",
+        "imagine": "events/bram_platosa_1.png",
+        "_nota": "Prima replică după mini-jocul ciocanului.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Gata. Destul.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe mijlocul platoșei a rămas o dungă mai închisă la culoare, ca o cicatrice. Bram se uită mult la ea.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "N-o să mai fie ca nouă. O să se vadă mereu unde a fost lovit.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Așa e și bine. Să se vadă.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Las-o la mine peste noapte. Trebuie să se răcească încet, altfel crapă din nou. Și îi mai fac curelele. Vino mâine.",
+        "efecte": {
+          "daObiect": "platosa_tata_crapata",
+          "stare": {
+            "platosa_batuta": "da"
+          },
+          "marcheaza": "platosa_data"
+        }
       }
     }
   }

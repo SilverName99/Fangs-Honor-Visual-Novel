@@ -1522,6 +1522,118 @@
       "_nota": "Decis de autor: Bram îi dă cheia cufărului; Vale vede săbiile peste o imagine (unele rupte, altele ciobite); Bram nu știe ce să facă cu ele; +1 Bram; apoi Elian are „!”. Ales de Claude: douăzeci și două de săbii, pentru că sabia lui Edwin e la Miriam."
     },
     {
+      "id": "bram_platosa",
+      "titlu": "Platoșa tatălui",
+      "dela": "fierar",
+      "dialog": "fierar",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "platosa_batuta"
+          },
+          "text": "CIORNĂ: Am bătut platoșa tatei cu Bram, seara, cu ușa închisă. Crăpătura s-a închis, dar a rămas o dungă mai închisă, ca o cicatrice. Bram o ține peste noapte, să se răcească încet, și îi face curele noi."
+        },
+        "CIORNĂ: Bram a bătut platoșa tatei cu mâna lui, acum mulți ani. O poate repara, dar îi trebuie fier vechi, călit, de la Jarek. Și vrea s-o batem împreună, seara, cu ușa închisă, ca să nu vadă orcii."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după misiunea specială a Miriamei (Vale are platoșa crăpată). Ales de Claude: la fierărie, cât lucrează Bram.",
+        "text": "Domnule Bram... ați putea repara platoșa tatei?",
+        "nod": "plat_o1",
+        "conditii": {
+          "areObiect": "platosa_tata_crapata",
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Aduc 2 bucăți de fier vechi de la Jarek",
+          "numara": [
+            {
+              "obiect": "fier_vechi",
+              "n": 2,
+              "nume": "fier vechi"
+            }
+          ],
+          "sfat": "Jarek vinde fier vechi (15 monede bucata), în cocioaba lui de la Marginea satului: aștept pe scăunel, seara (18–02).",
+          "indiciu": {
+            "text": "Despre platoșă...",
+            "nod": "plat_ind1"
+          }
+        },
+        {
+          "text": "Seara, bat platoșa cu Bram, în fierărie",
+          "gata": {
+            "existaStare": "platosa_batuta"
+          },
+          "sfat": "Bram lucrează în fierărie seara (18–22).",
+          "predare": {
+            "text": "Am adus fierul, domnule Bram.",
+            "nod": "plat_f1",
+            "conditii": {
+              "loc": "fierar/interior",
+              "areCate": {
+                "fier_vechi": 2
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre platoșă...",
+            "nod": "plat_ind2"
+          }
+        },
+        {
+          "text": "Iau platoșa de la Bram, a doua zi",
+          "gata": {
+            "existaStare": "platosa_gata"
+          },
+          "sfat": "Bram o ține peste noapte, să se răcească. A doua zi, la fierărie, cât lucrează el.",
+          "predare": {
+            "text": "Domnule Bram, e gata platoșa?",
+            "nod": "plat_g1",
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              },
+              "nu": {
+                "marcatAzi": "platosa_data"
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre platoșă...",
+            "nod": [
+              {
+                "nod": "plat_m_maine",
+                "conditii": {
+                  "marcatAzi": "platosa_data"
+                }
+              },
+              {
+                "nod": "plat_ind3"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Platoșa tatei, reparată, pe mine. Încrederea lui Bram +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, apoi seara lucrează cu Bram la forjă (mini-jocul ciocanului, peste o imagine); a doua zi Bram îi pune platoșa pe umeri, la fierărie: „Arăți ca el.” (o imagine); +1 Bram. Ales de Claude: 2 bucăți de fier vechi; platoșa se echipează pe loc (efectul imbraca)."
+    },
+    {
       "id": "agnes_bere",
       "titlu": "Berea",
       "dela": "hangita",
@@ -3348,6 +3460,27 @@
         }
       },
       "_nota": "Decis de autor: Hanna, o văduvă (bărbatul ei, Owen, e unul dintre cei 23), naște noaptea; Miriam se duce la ea și îl trimite pe Vale după Bătrâna Morwen, la Marginea satului, ferindu-se de orci; 3 imagini; în zori se naște copilul, care primește numele tatălui. Refuzul sau bătrâna neadusă până la 5 dimineața = ratată, fără +1. Cât e misiunea, coliba nu e încuiată noaptea, iar Miriam e la Hanna până la 7 (ales de Claude)."
+    },
+    {
+      "id": "miriam_tata",
+      "titlu": "Echipamentul tatălui",
+      "dela": "miriam",
+      "dialog": "miriam_tata",
+      "descriere": "CIORNĂ: Mama a ținut ascuns sub patul ei, într-o ladă, echipamentul tatei: coiful, jambierele, sabia și platoșa, crăpată pe mijloc, chiar prin romb, ca în visul meu. Mi le-a dat. Coiful, jambierele și sabia sunt în cufărul din camera mea. Platoșa o duc la Bram.",
+      "pasi": [
+        {
+          "text": "Primesc lucrurile tatei de la mama",
+          "gata": {
+            "existaStare": "tata_echipament"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Coiful, jambierele și sabia tatei (în cufărul din camera mea) și platoșa lui, crăpată. Fără încredere în plus: e un dar, nu o misiune.",
+        "efecte": {}
+      },
+      "ofertaEveniment": "miriam_tata_lada",
+      "_nota": "Decis de autor: misiunea specială a Miriamei, de la 8/10, fără încredere; seara, la cină, mama îl duce în camera ei și deschide lada de sub pat, peste 2 imagini. Pornește singură (evenimentul miriam_tata_lada), cu „!” deasupra mamei."
     },
     {
       "id": "finn_lina",

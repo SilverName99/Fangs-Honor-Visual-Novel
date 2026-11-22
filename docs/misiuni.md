@@ -81,7 +81,7 @@ Tot ce e mare în universul *Fangs&Honor*, pe scurt, ca să nu uităm nimic (dec
 **Satul și familia Lightfinder**
 - Primăvara trecută, **23 de oameni ai satului** au încercat să oprească orcii pe câmpul de dincolo de gardul Marginii, lângă **copacul mare** (acolo se cățărau Edwin și Roderick când erau copii; tot acolo a cerut-o Edwin pe Miriam). Au căzut, printre ei **Edwin Lightfinder**, tatăl lui Vale. Edwin i-a poruncit fratelui lui: **„Fugi în sat, Roderick. Ai grijă de Miriam și de băiat.”** Roderick a ascultat; de atunci bea și nu se mai poate uita în ochii Miriamei. L-a dus pe Edwin în spate până la cimitirul de la Marginea.
 - Satul a căzut a doua zi. Orcii i-au cruțat pe oameni în schimbul unei **taxe săptămânale**, au ridicat zidul și păzesc ieșirea.
-- **Echipamentul lui Edwin** (coiful cu creasta albastră, platoșa cu rombul auriu, crăpată pe mijloc de lovitura care l-a doborât, jambierele, sabia cu rombul pe măciulie) l-a ascuns Miriam; i-l dă lui Vale de la 8/10 încredere, iar platoșa o repară Bram.
+- **Echipamentul lui Edwin** (coiful cu creasta albastră, platoșa cu rombul auriu, crăpată pe mijloc de lovitura care l-a doborât, jambierele, sabia cu rombul pe măciulie) l-a ascuns Miriam; i-l dă lui Vale de la 8/10 încredere, iar platoșa o repară Bram (amândouă făcute).
 
 **Indiciile despre dragoni, în Actul 1**
 - **Hârtiile soldatului** (camera de sus a tavernei; fostul chiriaș, prietenul lui Roderick, căzut în bătălie): un solz cât palma, „pe care nu-l zgâria nicio sabie”, găsit „departe, dincolo de pădure”; semne ciudate copiate de pe o piatră înaltă și urme de gheare uriașe în stâncă; o hartă până la o crăpătură în pământ însemnată cu X: **portalul morții**. Roderick: „Ca și cum l-aș mai fi văzut undeva.”
@@ -112,7 +112,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 8. ✅ **Steagul satului** (+1 și la Roderick): după „Cina în familie”, seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”.
 9. ✅⚠️ **Lemne pentru iarnă**: la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. Se ratează dacă refuzi sau dacă treci de cele 3 zile.
 10. ✅⚠️ **Noaptea nașterii**: la 3 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată) și după eliberarea lui Finn, seara (18–22), când vorbești cu mama în bucătărie, fata vecinei bate la ușă (pe mama: „!”). Se ratează dacă refuzi sau dacă n-o aduci pe bătrână până la 5 dimineața.
-11. 📝 **Echipamentul tatălui**: misiunea ei specială, de la încredere 8/10 (de făcut; nu dă încredere, decis de autor).
+11. ✅ **Echipamentul tatălui**: misiunea ei specială (nu dă încredere, decis de autor): de la încredere 8/10 și după al doilea vis, pornește singură seara (18–23), când intri în bucătărie și mama e acolo; „!” deasupra mamei.
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
@@ -122,7 +122,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 5. ✅ **Cercurile butoaielor** (a lui Agnes, +1 la Bram): după „Pivnița” și după „Fierul lui Bram”, la Agnes: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
 6. ✅ **Cufărul**: după ce plugul fermierului e reparat (la „Fierul plugului” acceptat, imediat; refuzat, după cele 2 zile) și după „Lumina din pădure” (Elian, decis de autor), la fierărie: Bram e îngândurat → „Ce vă frământă, domnule Bram? !”.
 7. ✅ **Toiagul celor 23** (a lui Elian, +1 la Bram și la Elian): pornește singură, la sfârșitul „Secretului lui Elian”.
-8. 📝 **Platoșa tatălui**: după misiunea specială a Miriamei (echipamentul tatălui), Bram repară platoșa crăpată.
+8. ✅ **Platoșa tatălui**: după misiunea specială a Miriamei, cu platoșa crăpată la tine, la fierărie, cât lucrează Bram: „Domnule Bram... ați putea repara platoșa tatei? !”.
 
 **Fratele Elian (preotul)**
 1. ✅ **Ierburile lui Elian**: la o zi după prima discuție, când Elian citește afară, pe scările bisericii (14–23): „Ce citești, frate Elian?”.
@@ -188,12 +188,12 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · ✅ Capa Kaiei · ✅ Pâinea văduvelor · ✅ Vorbele din somn · ✅ Steagul satului · ✅⚠️ Lemne pentru iarnă (refuz sau 3 zile trecute) · ✅⚠️ Noaptea nașterii (refuz sau bătrâna neadusă până la 5) · (de la 8/10, misiunea specială, echipamentul tatălui, fără încredere) | 10 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · 💡 încă 4 (Hârtiile soldatului nu dau, decis) | 6 / 10 |
-| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · 📝 Platoșa tatălui · 💡 încă 1 | 8 / 10 |
+| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · ✅ Platoșa tatălui · 💡 încă 1 | 9 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · 💡 încă 2 | 8 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · ✅ Cuștile vânătorilor (+1 oricum s-ar termina lupta, decis de autor) · ✅⚠️ Ultima treabă pentru Jarek (doar „Nu, Finn. Ai promis.”) · ✅ Prietenii lui Finn (de la 8/10) | 10 / 10 |
 
-**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek).
+**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Echipamentul tatălui și platoșa au venit mai devreme (cerut de autor), înaintea celorlalte. Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek).
 
 ---
 
@@ -379,9 +379,15 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 2. Marginea satului → Coliba ierbăresei (și după 23 se intră) → „Bunico, mama m-a trimis după dumneata!” → „Să mergem.” → cele 3 imagini → în camera ta, la 6 dimineața, +1 la mama.
 3. Ratarea: acceptă, apoi nu te duce; a doua zi după 7, la mama: „Mamă... cum a fost la Hanna?”. Sau refuză-o de la început.
 
-### 📝 Echipamentul tatălui (misiunea specială a Miriamei)
-- Decis de autor: **de la încredere 8/10**, Miriam îi dă lui Vale echipamentul lui Edwin, ascuns de ea: coiful, jambierele, sabia (`coif_tata`, `jambiere_tata`, `sabia_tata`) și **platoșa crăpată pe mijloc** (`platosa_tata_crapata`, obiect de poveste: lovitura orcului din al doilea vis). **Nu dă încredere** (decis de autor): doar echipamentul (și emoții). O scriem după ce toți au cele 10 întâmplări (misiunile speciale la urmă), dar în joc apare de cum ajunge Miriam la 8/10. Cum anume: de făcut. Cifrele obiectelor: TODO echilibru.
+### ✅ Echipamentul tatălui (misiunea specială a Miriamei)
+- **Pornește singură** (decis de autor: de la încredere 8/10, seara, la cină): când intri în bucătărie seara (18–23) și mama e acolo; „!” deasupra mamei cât ar porni, iar apăsarea pe ea o pornește. Ales de Claude: doar **după al doilea vis**, ca Vale să recunoască crăpătura din vis. Nu se poate refuza.
+- **Ce se întâmplă** (decis de autor): mama nu se așază la masă; îl ia pe Vale în camera ei și trage de sub pat **lada de zestre**. **Peste 2 imagini**: lada deschisă, cu lucrurile tatei învelite în pânză albă; apoi Vale ridică **platoșa crăpată pe mijloc, prin romb**, „Am visat-o, mamă.”. Roderick le-a adus odată cu Edwin, iar mama le-a ascuns de orci. „Dacă tot pleci, măcar să ai pe tine fierul tatălui tău.” Platoșa o trimite la Bram.
+- **Ce primești:** coiful, jambierele și sabia lui Edwin (`coif_tata`, `jambiere_tata`, `sabia_tata`), **direct în cufărul din camera ta** (ales de Claude: ca să nu se piardă cu rucsacul plin; efectul `obiectCufar`), și **platoșa crăpată** (`platosa_tata_crapata`), la obiectele de poveste. **Fără încredere** (decis de autor). 30 de minute.
+- **Imagini:** `events/miriam_tata_1.png` (mama în genunchi lângă lada deschisă), `events/miriam_tata_2.png` (Vale cu platoșa crăpată în mâini); galeria: „Miriam: echipamentul tatălui”.
 - **Legături:** platoșa o repară Bram („Platoșa tatălui”).
+- Cifrele obiectelor (TODO echilibru, alese de Claude): coiful 8 armură, jambierele 8, sabia 13–16, platoșa reparată 15.
+
+**Cum verifici:** F2 → încrederea mamei 8, starea `vis_2` = `vazut`; seara (18–22), intră în bucătărie cu mama acolo: pornește singură. La sfârșit: coiful, jambierele și sabia în cufărul din camera ta, platoșa crăpată la obiectele de poveste (semnul de carte din inventar).
 
 ---
 
@@ -452,9 +458,15 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ### ✅ Toiagul celor 23 (a lui Elian)
 - Vine după „Cufărul” și „Secretul lui Elian”; Bram bate toiagul din săbii. +1 la Bram și la Elian. Pe larg, la Elian.
 
-### 📝 Platoșa tatălui
-- Decis de autor: după misiunea specială a Miriamei, Bram repară platoșa crăpată a lui Edwin (`platosa_tata_crapata` → `platosa_tata`). Ce cere și cum: de făcut. (Bram îl știa pe Edwin: „Tatăl tău venea aici să-i ascut sabia.”)
-- **Imagini:** `items/platosa_tata_crapata.png` (aceeași platoșă, crăpată pe mijloc, prin romb).
+### ✅ Platoșa tatălui
+- **Pornește** (decis de autor: după misiunea specială a Miriamei): cu platoșa crăpată la tine, la fierărie, cât lucrează Bram (afară ziua, înăuntru seara): „Domnule Bram... ați putea repara platoșa tatei? !”. Bram o recunoaște: **a bătut-o el, pentru Edwin** (ales de Claude; „Tatăl tău venea aici în fiecare primăvară să-i ascut sabia”). „Aduc fierul.” pornește misiunea; „Mai târziu.” o lasă în meniu.
+- **Pasul 1:** **2 bucăți de fier vechi** (ales de Claude: fier călit, care a mai ținut la lovituri), de la Jarek (15 monede bucata, în cocioaba lui, seara, pe scăunel).
+- **Pasul 2** (decis de autor): **seara, în fierărie** (18–22), cu fierul: „Am adus fierul, domnule Bram.” → „Pun drugul.” (ușa închisă, ca să nu vadă orcii) → **peste o imagine**, Bram ține platoșa cu cleștele, iar Vale lovește cu ciocanul: **mini-jocul ciocanului** din „O zi la forjă” (fără eșec). Crăpătura se închide, dar rămâne o dungă mai închisă, ca o cicatrice. 3 ore, 20 stamina, fierul se consumă; Bram ține platoșa peste noapte.
+- **Pasul 3** (decis de autor): **a doua zi**, la fierărie, cât lucrează Bram: „Domnule Bram, e gata platoșa?” → **peste o imagine**, Bram i-o pune pe umeri și strânge curelele: **„Arăți ca el.”**. Platoșa (`platosa_tata`) se **echipează pe loc** (efectul `imbraca`); ce purta Vale înainte trece în rucsac sau, dacă nu încape, în cufărul de acasă (mesaj pe ecran).
+- **Recompensa:** încrederea lui Bram **+1**.
+- **Imagini:** `events/bram_platosa_1.png` (la nicovală, seara: Bram ține platoșa cu cleștele, Vale lovește; și sub mini-jocul ciocanului), `events/bram_platosa_2.png` (Bram îi pune platoșa pe umeri); galeria: „Bram: platoșa tatălui”. Inelul mini-jocului se pune pe imagine în editor, la Aranjare → Ecrane → „Mini-joc: Platoșa tatălui”. Iconițele: `items/platosa_tata_crapata.png`, `items/platosa_tata.png`.
+
+**Cum verifici:** după „Echipamentul tatălui” (sau F2: obiectul `platosa_tata_crapata`), la fierărie, ziua: „ați putea repara platoșa tatei?” → „Aduc fierul.”. Cumpără 2 fier vechi de la Jarek. Seara (18–22), în fierărie: „Am adus fierul” → „Pun drugul.” → „Iau ciocanul.”. A doua zi, la Bram: „e gata platoșa?” → platoșa pe tine, +1 la Bram.
 
 ---
 
