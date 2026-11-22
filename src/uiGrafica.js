@@ -4,8 +4,11 @@ import { SLOTURI, NUME_SLOTURI } from './inventar.js';
 // Lățimea chenarului de dialog pe scenă; celelalte piese ale dialogului se micșorează cu același factor ca el
 const LATIME_DIALOG = 1640;
 // Butoanele de pe panoul mic își păstrează forma imaginii (decis de autor: întinse arătau turtite): late de 300 px,
-// câte două pe rând; textul lung trece pe două rânduri
-const SELECTOR_BUTON_PANOU = '.panou-actiune .buton.buton-mic-meniu,.panou-anunt .buton.buton-mic-meniu';
+// câte două pe rând; textul lung trece pe două rânduri. La fel pe panourile Masei regelui (cerut de autor: lungite,
+// arătau turtite), afară de „?”-ul rotund de lângă titlu
+const SELECTOR_BUTON_PANOU =
+  '.panou-actiune .buton.buton-mic-meniu,.panou-anunt .buton.buton-mic-meniu,' +
+  '.panou-tafl-miza .buton.buton-mic-meniu:not(.buton-intrebare),.panou-tafl .buton.buton-mic-meniu';
 const LATIME_BUTON_PANOU = 300;
 function butonPanou(url, img) {
   return (

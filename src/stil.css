@@ -4277,7 +4277,8 @@ svg.zone {
   }
 }
 /* Panoul de la începutul Masei regelui (cerut de autor: butoanele mai bine așezate): tabăra și miza pe rânduri, cu
-   eticheta deasupra, butoane de aceeași mărime pe rând, scrisul pe un singur rând, „Nu acum” mai mic, dedesubt */
+   eticheta deasupra, „Nu acum” dedesubt. Butoanele au toate aceeași mărime și forma pergamentului (300 px, ca pe
+   panoul mic; cu imaginea încărcată, mărimea o dă uiGrafica.js) */
 .ecran-tafl .panou-zaruri-miza.panou-tafl-miza {
   width: 1060px;
   gap: 12px;
@@ -4290,33 +4291,24 @@ svg.zone {
   letter-spacing: 0.06em;
   color: #e8c46a;
 }
-.panou-tafl-miza .alegere-tabara {
-  gap: 20px;
-}
-.panou-tafl-miza .alegere-tabara .buton {
-  width: 400px;
-  white-space: nowrap;
-}
-/* Tabăra aleasă strălucește, cealaltă e puțin stinsă (fără chenarul dreptunghiular, care nu urma forma pergamentului) */
-.panou-tafl-miza .alegere-tabara .buton.ales {
-  outline: none;
-  filter: drop-shadow(0 0 10px rgba(255, 211, 106, 0.85));
-}
-.panou-tafl-miza .alegere-tabara .buton:not(.ales) {
-  filter: brightness(0.72) saturate(0.7);
-}
-.panou-tafl-miza .alegere-tabara .buton:not(.ales):hover {
-  filter: brightness(0.9);
-}
+.panou-tafl-miza .alegere-tabara,
 .ecran-tafl .panou-tafl-miza .alegeri-miza {
-  gap: 20px;
+  gap: 24px;
 }
+.panou-tafl-miza .alegere-tabara .buton,
 .ecran-tafl .panou-tafl-miza .alegeri-miza .buton {
   width: 300px;
-  white-space: nowrap;
 }
-.ecran-tafl .panou-zaruri-miza .buton.nu-acum-tafl {
-  width: 240px;
-  margin-top: 8px;
-  font-size: 20px;
+/* Tabăra aleasă are pergamentul aprins (ca la mouse), cealaltă e puțin stinsă */
+.panou-tafl-miza .alegere-tabara .buton.ales {
+  outline: none;
+}
+.panou-tafl-miza .alegere-tabara .buton:not(.ales) {
+  filter: brightness(0.8) saturate(0.8);
+}
+.panou-tafl-miza .alegere-tabara .buton:not(.ales):hover {
+  filter: none;
+}
+.panou-tafl-miza .nu-acum-tafl {
+  margin-top: 6px;
 }

@@ -932,3 +932,19 @@ svg.editor-zone.desen {
   background: #000;
   border-radius: 4px;
 }
+
+/* Căsuțele Masei regelui (ambele seturi): în editor se văd ca o grilă de 11 × 11, galbenă și străvezie, ca să poată fi
+   trase și mărite exact peste pătratele desenate pe tablă (un dreptunghi plin ar acoperi tabla) */
+.obiect.tafl-grila.lipsa {
+  background-color: transparent !important;
+  background-image:
+    linear-gradient(to right, rgba(255, 220, 60, 0.95) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 220, 60, 0.95) 2px, transparent 2px) !important;
+  background-size: calc(100% / 11) calc(100% / 11) !important;
+  box-shadow: inset -2px -2px 0 rgba(255, 220, 60, 0.95), 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+.obiect.tafl-grila.lipsa span {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

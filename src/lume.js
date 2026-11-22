@@ -337,7 +337,8 @@ export function construiesteLumea(date) {
     tinte: [],
     obiecte: [
       { id: 'tabla', tip: 'tafl-tabla', nume: 'Tabla', imagine: fisierUi('tafl_tabla'), raport: 1, variante: [], implicit: { x: 0.5, y: 0.97, scara: 0.88 } },
-      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele (11 × 11: trage-le peste pătratele de pe tablă)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: { x: 0.5, y: 0.926, scara: 0.792 } },
+      // Căsuțele stau în editor peste tablă (altfel tabla, mai jos pe ecran, le acoperea și nu se puteau așeza)
+      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele (11 × 11: trage-le peste pătratele de pe tablă)', imagine: 'ui/text_tafl_grila.png', raport: 1, deasupra: true, variante: [], implicit: { x: 0.5, y: 0.926, scara: 0.792 } },
       // Fără portretul bătrânului pe ecran (decis de autor): doar rândul cu ce spune el, deasupra tablei
       { id: 'balon', tip: 'tafl-balon', nume: 'Ce spune bătrânul (rândul de deasupra tablei)', eticheta: 'Ce spune bătrânul', imagine: 'ui/text_tafl_balon.png', raport: 12, variante: [], implicit: { x: 0.5, y: 0.085, scara: 0.06 } },
       // Piesele luate (cerut de autor): cad la întâmplare în aceste două zone, lângă tablă
@@ -360,7 +361,7 @@ export function construiesteLumea(date) {
     tinte: [],
     obiecte: [
       { id: 'tabla', tip: 'tafl-tabla', nume: 'Tabla 2', imagine: fisierUi('tafl_tabla_2'), raport: 1, variante: [], implicit: taflSet1.tabla || { x: 0.5, y: 0.97, scara: 0.88 } },
-      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele tablei 2 (trage-le peste pătratele ei)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: taflSet1.grila || { x: 0.5, y: 0.926, scara: 0.792 } },
+      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele tablei 2 (trage-le peste pătratele ei)', imagine: 'ui/text_tafl_grila.png', raport: 1, deasupra: true, variante: [], implicit: taflSet1.grila || { x: 0.5, y: 0.926, scara: 0.792 } },
     ],
   });
   // Mini-jocurile muncii (decis de autor): autorul mută și mărește bucata fiecăruia pe imaginea muncii, ca în joc.
