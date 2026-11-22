@@ -509,12 +509,13 @@
   "incarcareLaPornire": false,
   "_notaIncarcare": "Decis de autor: încărcarea tuturor imaginilor la pornire (ecranul cu procente) e oprită deocamdată; se pornește (true) la finalul jocului.",
   "jocTafl": {
-    "_nota": "Masa regelui (Fetlar Hnefatafl) cu bătrânul din tavernă (cerut de autor; regulile de pe aagenielsen.dk, cu ce lipsea ales de autor). Replicile sunt CIORNĂ (Claude). Ales de Claude (TODO echilibru): mizele; cât câștigi peste miză după nivel (castig: ușor jumătate, mediu cât ai pus, greu de două ori cât ai pus); cât ține o partidă; după o victorie bătrânul nu mai joacă în ziua aceea (ca paznicii la zaruri). Nivelurile minții lui: NIVELURI în src/taflReguli.js.",
+    "_nota": "Masa regelui (Fetlar Hnefatafl) cu bătrânul din tavernă (cerut de autor; regulile de pe aagenielsen.dk, cu ce lipsea ales de autor). Replicile sunt CIORNĂ (Claude). Ales de Claude (TODO echilibru): mizele; cât câștigi peste miză după nivel (castig: ușor jumătate, mediu cât ai pus, greu de două ori cât ai pus); cât ține o partidă; după două victorii într-o zi bătrânul nu mai joacă în ziua aceea (decis de autor: de două ori pe zi; maxCastiguriPeZi). Nivelurile minții lui: NIVELURI în src/taflReguli.js.",
     "mize": [
       5,
       10,
       20
     ],
+    "maxCastiguriPeZi": 2,
     "castig": {
       "usor": 0.5,
       "mediu": 1,
@@ -564,7 +565,8 @@
       ],
       "dupa": {
         "castig": [
-          "Ia-ți monedele, le-ai meritat. Pentru azi ajunge; vino mâine să-mi iau revanșa."
+          "Ia-ți monedele, le-ai meritat. Mai stai? Vreau revanșa.",
+          "Bine jucat, băiete. Încă una, dacă ai curaj."
         ],
         "pierdere": [
           "Nu te supăra, băiete. Și eu am pierdut ani de zile până am înțeles jocul.",
@@ -572,6 +574,9 @@
         ],
         "remiza": [
           "Remiză. Poate data viitoare unul dintre noi o să aibă mai mult noroc."
+        ],
+        "castigUltim": [
+          "Ia-ți monedele, le-ai meritat. Pentru azi ajunge; vino mâine să-mi iau revanșa."
         ]
       }
     }

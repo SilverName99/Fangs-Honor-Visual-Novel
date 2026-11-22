@@ -347,9 +347,14 @@ export function creeazaTafl(parinte, joc) {
     if (s.rezultat === 'castig') {
       s.primit = s.miza + castigPeste(s.miza, s.nivel);
       st.bani += s.primit;
-      // După o victorie, bătrânul nu mai joacă în ziua aceea (ca paznicii la zaruri). Marcajul ia ora de la sfârșitul
-      // partidei (ora ei se adaugă abia la plecarea de la masă), ca un câștig de la 23:30 să nu cadă în ziua de dinainte
-      (st.marcaje ||= {}).tafl_castig = st.minute + (cfg().minute || 0);
+      // De două ori pe zi poate câștiga (decis de autor, maxCastiguriPeZi): la ultima victorie bătrânul pune marcajul și
+      // nu mai joacă în ziua aceea. Ziua și marcajul iau ora de la sfârșitul partidei (ora ei se adaugă abia la plecare)
+      const sfarsit = st.minute + (cfg().minute || 0);
+      const zi = Math.floor(sfarsit / 1440);
+      if (st.tafl?.zi !== zi) st.tafl = { zi, castiguri: 0 };
+      st.tafl.castiguri++;
+      s.ultimaVictorie = st.tafl.castiguri >= (cfg().maxCastiguriPeZi || 1);
+      if (s.ultimaVictorie) (st.marcaje ||= {}).tafl_castig = sfarsit;
     } else if (s.rezultat === 'remiza') st.bani += s.miza;
     joc.actualizeazaHud();
     // Replicile de dinainte nu mai au voie să șteargă balonul cu rezultatul
@@ -369,11 +374,13 @@ export function creeazaTafl(parinte, joc) {
 
   function inchide() {
     const rezultat = s?.rezultat;
+    const ultimaVictorie = s?.ultimaVictorie;
     el?.remove();
     el = null;
     s = null;
     if (!rezultat) return joc.dupaActiune();
-    joc.dupaTafl(rezultat, cfg().minute);
+    // După prima victorie bătrânul cere revanșa; după ultima din ziua aceea, spune că ajunge
+    joc.dupaTafl(rezultat, cfg().minute, rezultat === 'castig' && ultimaVictorie ? 'castigUltim' : rezultat);
   }
 
   // ---------- desenul ----------

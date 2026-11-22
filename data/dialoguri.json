@@ -18681,7 +18681,7 @@
     }
   },
   "batran": {
-    "_nota": "CIORNĂ (Claude). Bătrânul cu Masa regelui, afară, în fața tavernei, 11–22 (decis de autor): la fiecare clic, una din 3 discuții scurte (2–3 replici), apoi întrebarea „cât de tare să joc?” (Ușor, Mediu, Greu). Prima dată se prezintă și explică jocul. După o victorie, în ziua aceea nu mai joacă. Cu mai puțin de o oră până pleacă (21–22) nu mai începe o partidă (ales de Claude).",
+    "_nota": "CIORNĂ (Claude). Bătrânul cu Masa regelui, afară, în fața tavernei, 11–22 (decis de autor): la fiecare clic, una din 3 discuții scurte (2–3 replici), apoi întrebarea „cât de tare să joc?” (Ușor, Mediu, Greu). Prima dată se prezintă și explică jocul. După două victorii, în ziua aceea nu mai joacă (decis de autor). Cu mai puțin de o oră până pleacă (21–22) nu mai începe o partidă (ales de Claude).",
     "partener": "batran",
     "start": [
       {
@@ -18867,7 +18867,7 @@
       "gata_azi": {
         "vorbitor": "batran",
         "emotie": "zambet",
-        "text": "Pentru azi ajunge, băiete. M-ai bătut o dată, și bătrânii au și ei mândria lor. Vino mâine."
+        "text": "Pentru azi ajunge, băiete. M-ai bătut de două ori, și bătrânii au și ei mândria lor. Vino mâine."
       },
       "tarziu": {
         "vorbitor": "batran",

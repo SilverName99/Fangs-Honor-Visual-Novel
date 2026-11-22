@@ -954,11 +954,11 @@ const joc = {
     joc.replica('paznic_orc_1', aCastigat ? 'suparat' : 'rade', text);
   },
   // După Masa regelui: trece ora partidei, apoi bătrânul spune ce crede despre ea
-  dupaTafl(rezultat, minute) {
+  dupaTafl(rezultat, minute, cheieReplica = rezultat) {
     if (avanseaza(minute)) return;
     salveaza();
     afiseaza();
-    const lista = [].concat(date.config.jocTafl?.replici?.dupa?.[rezultat] || []);
+    const lista = [].concat(date.config.jocTafl?.replici?.dupa?.[cheieReplica] || date.config.jocTafl?.replici?.dupa?.[rezultat] || []);
     if (lista.length) joc.replica('batran', rezultat === 'castig' ? 'normal' : 'zambet', lista[Math.floor(Math.random() * lista.length)]);
   },
   dupaLupta(efecte, minute) {
