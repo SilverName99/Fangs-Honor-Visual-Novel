@@ -90,8 +90,8 @@ const tipuri = {
       return (lim.min == null || zile >= lim.min) && (lim.max == null || zile <= lim.max);
     }),
   // „marcatAzi: bandaj_miriam” = marcajul (efectul „marcheaza”) e din ziua de azi (o dată pe zi, ca bandajul mamei).
-  // „marcatAzi: { id, deLa: '05:00' }” = ziua începe la ora aceea, pentru cine stă și după miezul nopții (bătrânul de
-  // la Masa regelui, 14–02: „vino mâine” spus la 00:30 înseamnă după ce se face ziuă, nu peste o jumătate de oră)
+  // „marcatAzi: { id, deLa: '05:00' }” = ziua începe la ora aceea, pentru cine stă și după miezul nopții („vino mâine”
+  // spus la 00:30 înseamnă după ce se face ziuă, nu peste o jumătate de oră)
   marcatAzi: (v, c) => {
     const id = typeof v === 'string' ? v : v.id;
     const dupa = typeof v === 'string' ? 0 : inMinute(v.deLa || '00:00');

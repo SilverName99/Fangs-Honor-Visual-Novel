@@ -1,4 +1,4 @@
-// „Masa regelui” (Fetlar Hnefatafl) în tavernă (cerut de autor): Vale joacă cu bătrânul de la masa din colț.
+// „Masa regelui” (Fetlar Hnefatafl) la tavernă (cerut de autor): Vale joacă cu bătrânul de la masa din fața tavernei.
 // Regulile și mintea bătrânului stau în taflReguli.js; aici e doar ecranul: miza, tabăra, tabla, piesele, mutările.
 // Tabla, grila (căsuțele peste desenul tablei) și bătrânul se mută și se măresc în editor (Aranjare → Ecrane →
 // „Masa regelui (tavernă)”); până se încarcă imaginile, tabla și piesele sunt desenate din cod.
@@ -47,7 +47,7 @@ export function creeazaTafl(parinte, joc) {
 
   // ---------- tabla ----------
   function construieste() {
-    // Masa de sub tablă (cerut de autor), văzută de sus, ca tabla; până se încarcă imaginea, se vede sala tavernei,
+    // Masa de sub tablă (cerut de autor), văzută de sus, ca tabla; până se încarcă imaginea, se vede taverna,
     // întunecată, ca înainte (fără dreptunghiul cu numele fișierului, care ar acoperi toată scena)
     const masa = elementImagine([IMAGINE_MASA], { clasa: 'fundal-tafl', fundal: true });
     const scoateDacaLipseste = () => masa.classList.contains('lipsa') && masa.remove();

@@ -3998,7 +3998,7 @@ svg.zone {
   position: absolute;
   inset: 0;
   z-index: 13;
-  /* Peste sala tavernei, întunecată și estompată, ca la magazin */
+  /* Peste taverna, întunecată și estompată, ca la magazin (până se încarcă masa) */
   background: rgba(0, 0, 0, 0.62);
   backdrop-filter: blur(4px);
   pointer-events: auto;
@@ -4212,7 +4212,7 @@ svg.zone {
   margin-top: 6px;
   flex-shrink: 0;
 }
-/* Masa de sub tablă, pe tot ecranul (acoperă sala tavernei întunecată, care rămâne doar până se încarcă masa) */
+/* Masa de sub tablă, pe tot ecranul (acoperă taverna întunecată, care rămâne doar până se încarcă masa) */
 .ecran-tafl .fundal-tafl {
   inset: 0;
   width: 100%;
