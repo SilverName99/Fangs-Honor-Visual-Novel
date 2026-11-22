@@ -2005,20 +2005,11 @@
     },
     {
       "id": "bram_platosa_forja",
-      "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; seara, cu ușa închisă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi.",
+      "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; seara, cu ușa închisă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi, toate la sfârșitul discuției (nodul p8): un refresh în timpul mini-jocului nu consumă fierul, iar Bram nu se culcă la 22 în mijlocul scenei. „mereu”: după un refresh se poate relua; pornește doar din pasul 2 al misiunii, care dispare după.",
       "nume": "Platoșa tatălui: forja",
       "grup": "Bram: platoșa tatălui",
       "manual": true,
-      "repetare": "o_data",
-      "efecte": {
-        "timp": 180,
-        "nevoi": {
-          "stamina": -20
-        },
-        "consuma": {
-          "fier_vechi": 2
-        }
-      },
+      "repetare": "mereu",
       "dialog": "bram_platosa",
       "miniJocuri": {
         "ciocan": {

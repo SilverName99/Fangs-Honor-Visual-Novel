@@ -19266,11 +19266,18 @@
         "emotie": "normal",
         "text": "Las-o la mine peste noapte. Trebuie să se răcească încet, altfel crapă din nou. Și îi mai fac curelele. Vino mâine.",
         "efecte": {
+          "marcheaza": "platosa_data",
           "daObiect": "platosa_tata_crapata",
+          "consuma": {
+            "fier_vechi": 2
+          },
           "stare": {
             "platosa_batuta": "da"
           },
-          "marcheaza": "platosa_data"
+          "nevoi": {
+            "stamina": -20
+          },
+          "timp": 180
         }
       }
     }

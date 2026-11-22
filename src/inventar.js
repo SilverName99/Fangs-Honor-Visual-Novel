@@ -162,20 +162,22 @@ export function creeazaInventar(date, getStare) {
     // rucsacul plin, „Lasă-l” l-ar fi aruncat pentru totdeauna. Întoarce câte n-au încăput
     adaugaInCufar: (id, n = 1) => adaugaIn(getStare().cufar, cfg.cufar, id, n),
     // Bram îi pune platoșa pe umeri (decis de autor): se echipează pe loc, fără să treacă prin rucsac. Ce era pe slot
-    // trece în rucsac, iar dacă nu încape, în cufărul de acasă, ca să nu se piardă. Întoarce unde a ajuns fiecare
+    // trece în rucsac, iar dacă nu încape, în cufărul de acasă, ca să nu se piardă. Întoarce unde a ajuns fiecare;
+    // „rest” = ce n-a încăput nicăieri, pe care efectul îl dă mai departe ca pe un obiect primit („N-ai loc pentru...”)
     imbraca(id) {
       const s = getStare();
       const d = def(id);
       const josDe = new Set([d.slot]);
       if (d.douaMaini) josDe.add('arma_secundara');
       if (d.slot === 'arma_secundara' && def(s.echipat.arma_primara).douaMaini) josDe.add('arma_primara');
-      const unde = { rucsac: [], cufar: [] };
+      const unde = { rucsac: [], cufar: [], rest: [] };
       for (const sl of josDe) {
         const vechi = s.echipat[sl];
         if (!vechi) continue;
         delete s.echipat[sl];
         if (adaugaIn(s.inventar, capacitate(), vechi, 1) === 0) unde.rucsac.push(vechi);
         else if (adaugaIn(s.cufar, cfg.cufar, vechi, 1) === 0) unde.cufar.push(vechi);
+        else unde.rest.push(vechi);
       }
       s.echipat[d.slot] = id;
       return unde;

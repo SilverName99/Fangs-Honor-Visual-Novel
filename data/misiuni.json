@@ -1603,7 +1603,10 @@
                 ]
               },
               "nu": {
-                "marcatAzi": "platosa_data"
+                "marcatAzi": {
+                  "id": "platosa_data",
+                  "deLa": "05:00"
+                }
               }
             }
           },
@@ -1613,7 +1616,10 @@
               {
                 "nod": "plat_m_maine",
                 "conditii": {
-                  "marcatAzi": "platosa_data"
+                  "marcatAzi": {
+                    "id": "platosa_data",
+                    "deLa": "05:00"
+                  }
                 }
               },
               {

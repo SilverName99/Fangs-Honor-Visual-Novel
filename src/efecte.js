@@ -51,6 +51,8 @@ const efecte = {
     const unde = joc.inventar.imbraca(v);
     joc.inregistreazaCastig?.({ tip: 'obiect', id: v, n: 1 });
     if (unde.cufar.length) joc.mesaj(`N-ai loc în rucsac: ${unde.cufar.map((id) => joc.inventar.def(id).nume).join(', ')} te așteaptă în cufărul de acasă.`);
+    // Rucsacul și cufărul pline: panoul obișnuit „N-ai loc pentru...”, ca jucătorul să aleagă, nu să piardă piesa pe ascuns
+    unde.rest.forEach((id) => joc.primeste(id, 1));
   },
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
