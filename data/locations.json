@@ -1624,8 +1624,9 @@
                 "E palidă ca varul. Mâinile îi tremură pe pătură, chiar și în somn."
               ],
               "ascuns": {
+                "_nota": "Zona patului se vede doar cât e Marta bolnavă (ascuns = se vede doar cu condițiile îndeplinite).",
                 "conditii": {
-                  "stare": {
+                  "nuStare": {
                     "mama_finn": "vindecata"
                   }
                 }
