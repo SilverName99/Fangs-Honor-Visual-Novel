@@ -329,7 +329,7 @@ export function construiesteLumea(date) {
     id: 'tafl',
     tip: 'ecran',
     titlu: 'Masa regelui (tavernă)',
-    titluObiecte: 'Tabla, căsuțele și ce spune bătrânul',
+    titluObiecte: 'Tabla, căsuțele, ce spune bătrânul și unde cad piesele luate',
     titluFundal: 'Masa de sub tablă (până o încarci, în joc se vede taverna întunecată)',
     imagine: IMAGINE_MASA_TAFL,
     variante: [],
@@ -340,6 +340,9 @@ export function construiesteLumea(date) {
       { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele (11 × 11: trage-le peste pătratele de pe tablă)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: { x: 0.5, y: 0.926, scara: 0.792 } },
       // Fără portretul bătrânului pe ecran (decis de autor): doar rândul cu ce spune el, deasupra tablei
       { id: 'balon', tip: 'tafl-balon', nume: 'Ce spune bătrânul (rândul de deasupra tablei)', eticheta: 'Ce spune bătrânul', imagine: 'ui/text_tafl_balon.png', raport: 12, variante: [], implicit: { x: 0.5, y: 0.085, scara: 0.06 } },
+      // Piesele luate (cerut de autor): cad la întâmplare în aceste două zone, lângă tablă
+      { id: 'luate_aparatori', tip: 'tafl-luate', nume: 'Piesele luate: apărătorii și regele (unde cad)', eticheta: 'Apărătorii luați', imagine: 'ui/text_tafl_luate_aparatori.png', raport: 0.75, variante: [], implicit: { x: 0.17, y: 0.93, scara: 0.3 } },
+      { id: 'luate_atacatori', tip: 'tafl-luate', nume: 'Piesele luate: atacatorii (unde cad)', eticheta: 'Atacatorii luați', imagine: 'ui/text_tafl_luate_atacatori.png', raport: 0.75, variante: [], implicit: { x: 0.83, y: 0.93, scara: 0.3 } },
     ],
   });
   // Setul 2 al Masei regelui (cerut de autor: a doua tablă, cu piesele ei): tabla 2 poate avea pătratele în alt loc,

@@ -76,7 +76,7 @@ export function creeazaTafl(parinte, joc) {
     if (el) return;
     el = div(`ecran-tafl${setPiese === 2 ? ' set-2' : ''}`);
     parinte.append(el);
-    s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false, panou: false, replica: null };
+    s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false, panou: false, replica: null, luate: [] };
     construieste();
     arataMiza();
   }
@@ -105,7 +105,7 @@ export function creeazaTafl(parinte, joc) {
     replica.style.zIndex = '3';
     // Scena are 1080 px pe înălțime: scrisul crește odată cu rândul mutat și mărit în editor
     replica.style.fontSize = `${Math.round(p.scara * 1080 * 0.42)}px`;
-    el.replaceChildren(masa, tabla, grila, replica, div('strat-ui-tafl'));
+    el.replaceChildren(masa, tabla, grila, div('gramezi-tafl'), replica, div('strat-ui-tafl'));
     aseazaTabla();
     scoateDacaLipseste();
   }
@@ -116,10 +116,42 @@ export function creeazaTafl(parinte, joc) {
     piesa.style.top = `${(Math.floor(i / N) * 100) / N}%`;
   };
 
+  // Piesele luate stau lângă tablă (cerut de autor), în două grămezi: apărătorii (și regele) într-o parte, atacatorii în
+  // cealaltă; locul grămezilor se mută în editor. Fiecare piesă cade la întâmplare, ușor rotită, cât mai departe de cele
+  // căzute deja (dintre câteva locuri încercate îl alege pe cel mai liber), ca grămada să arate răsfirată, nu în rând
+  function puneDeoparte(tip) {
+    const id = tip === 'atacator' ? 'luate_atacatori' : 'luate_aparatori';
+    const o = ecran().obiecte.find((x) => x.id === id);
+    const p = poz(id);
+    // Scena are 1920 × 1080 px; zona e lată cât îi spune raportul și înaltă cât scara
+    const h = p.scara * 1080;
+    const w = h * (o.raport || 1);
+    const zona = { x: p.x * 1920 - w / 2, y: p.y * 1080 - h, w, h };
+    // Cât o piesă de pe tablă (căsuța, cu 5% mai mică)
+    const d = (pozSet('grila').scara * 1080) / 11 * 0.95;
+    const aici = s.luate.filter((l) => l.gramada === id);
+    let ales = null;
+    for (let k = 0; k < 14; k++) {
+      const c = { x: zona.x + d / 2 + Math.random() * Math.max(0, zona.w - d), y: zona.y + d / 2 + Math.random() * Math.max(0, zona.h - d) };
+      const loc = aici.length ? Math.min(...aici.map((l) => Math.hypot(l.x - c.x, l.y - c.y))) : 1e9;
+      if (!ales || loc > ales.loc) ales = { ...c, loc };
+    }
+    const l = { gramada: id, tip, x: ales.x, y: ales.y, rot: Math.round(Math.random() * 50 - 25) };
+    s.luate.push(l);
+    const e = div(`piesa-tafl luata ${tip}`);
+    e.append(div('forma'));
+    Object.assign(e.style, { left: `${l.x - d / 2}px`, top: `${l.y - d / 2}px`, width: `${d}px`, height: `${d}px`, zIndex: String(2 + s.luate.length), animationDuration: `${380 / viteza()}ms` });
+    e.style.setProperty('--rot', `${l.rot}deg`);
+    el.querySelector('.gramezi-tafl')?.append(e);
+  }
+
   // Piesele se fac o dată, la începutul partidei; la fiecare mutare doar se deplasează, ca să se vadă cum merg
   function puneSPiesele() {
     const strat = el.querySelector('.strat-piese-tafl');
     strat.replaceChildren();
+    // O partidă nouă pornește cu grămezile goale
+    s.luate = [];
+    el.querySelector('.gramezi-tafl')?.replaceChildren();
     s.piese = new Map();
     s.p.tabla.forEach((p, i) => {
       if (!p) return;
@@ -193,9 +225,18 @@ export function creeazaTafl(parinte, joc) {
       b.disabled = joc.stare.bani < m;
       alegeri.append(b);
     }
-    alegeri.append(buton('Nu acum', inchide, 'renunta'));
     const faraBani = joc.stare.bani < Math.min(...cfg().mize);
-    panou.append(titlu, div('text-zaruri', faraBani ? cfg().texte.faraBani : cfg().texte.oferta), tabere, alegeri);
+    // Pe rânduri, fiecare cu eticheta lui (cerut de autor: butoanele mai bine așezate): tabăra, miza, apoi „Nu acum”,
+    // mai mic, pe rândul lui
+    panou.append(
+      titlu,
+      div('text-zaruri', faraBani ? cfg().texte.faraBani : cfg().texte.oferta),
+      div('eticheta-miza-tafl', 'Tabăra ta'),
+      tabere,
+      div('eticheta-miza-tafl', 'Miza'),
+      alegeri,
+      buton('Nu acum', inchide, 'renunta nu-acum-tafl'),
+    );
     strat.replaceChildren(panou);
     // În spatele panoului se vede deja tabla, cu piesele la locul lor
     s.p = partidaNoua();
@@ -251,6 +292,9 @@ export function creeazaTafl(parinte, joc) {
       s.piese.delete(c);
       x?.classList.add('capturata');
       setTimeout(() => x?.remove(), 400);
+      // Piesa luată se așază lângă tablă, în grămada ei
+      const tip = ['atacator', 'aparator', 'rege'].find((t) => x?.classList.contains(t));
+      if (tip) puneDeoparte(tip);
     }
     joc.sunet.efect(capturate.length ? 'tafl_captura' : 'tafl_piesa');
     if (s.rezultat) return;
@@ -356,25 +400,22 @@ export function creeazaTafl(parinte, joc) {
     const numara = (f) => s.p.tabla.reduce((n, p) => n + (f(p) ? 1 : 0), 0);
     panou.append(div('titlu-tafl', `Masa regelui · ${NUME_NIVEL[s.nivel]}`), div('rand-tafl', `Joci cu: ${NUME_TABARA[s.vale]}`), div('rand-tafl', `Miza: ${s.miza} monede`));
     panou.append(div('rand-tafl mic', `Atacatori: ${numara((p) => p === ATAC)} · Apărători: ${numara((p) => p === APAR)}`));
-    // Cele două seturi, tabla și piesele (cerut de autor): se schimbă pe loc, chiar în mijlocul partidei
-    const seturi = div('alegere-piese');
-    seturi.append(div('rand-tafl mic', 'Tabla și piesele:'));
-    for (const n of [1, 2]) {
-      seturi.append(buton(`Setul ${n}`, () => {
-        alegeSetPiese(n);
-        el.classList.toggle('set-2', n === 2);
-        aseazaTabla();
-        deseneaza();
-      }, setPiese === n ? 'ales' : ''));
-    }
-    panou.append(seturi);
+    // Cele două seturi, tabla și piesele (cerut de autor): un singur buton, cât celelalte din panou (două butoane
+    // înguste nu încăpeau pe pergament), care trece de la un set la celălalt, pe loc, chiar în mijlocul partidei
+    const seturi = buton(`Piesele: setul ${setPiese}`, () => {
+      alegeSetPiese(setPiese === 2 ? 1 : 2);
+      el.classList.toggle('set-2', setPiese === 2);
+      aseazaTabla();
+      deseneaza();
+    }, 'set-piese');
+    seturi.title = 'Schimbă tabla și piesele';
     if (s.rezultat) {
       const titlu = { castig: 'Ai câștigat!', pierdere: 'Ai pierdut.', remiza: 'Remiză.' }[s.rezultat];
       const bani = { castig: `Primești ${s.primit} monede.`, pierdere: `Pierzi cele ${s.miza} monede.`, remiza: `Îți iei înapoi cele ${s.miza} monede.` }[s.rezultat];
       panou.append(div('rezultat-tafl', titlu), div('rand-tafl', MOTIVE[s.p.final.motiv] || ''), div('rand-tafl', bani), buton('Pleacă de la masă', inchide));
     } else {
       const randul = s.p.rand === s.vale ? (s.selectat != null ? 'Alege unde o muți.' : 'E rândul tău: alege o piesă.') : 'Bătrânul se gândește...';
-      panou.append(div('rand-tafl acum', randul), buton('? Regulile', arataRegulile), buton('Renunț', renunta));
+      panou.append(div('rand-tafl acum', randul), buton('? Regulile', arataRegulile), seturi, buton('Renunț', renunta));
     }
     strat.replaceChildren(intrebare, panou, butonViteza());
   }
