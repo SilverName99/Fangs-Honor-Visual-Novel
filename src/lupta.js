@@ -642,33 +642,42 @@ export function creeazaLupta(parinte, joc) {
 
   // O discuție peste luptă (gândurile lui Vale peste imaginea ambuscadei): aceeași fereastră de dialog ca în joc, pusă
   // peste ecranul de luptă, cât timp lupta stă pe loc. Nu se ține minte în salvare: după un refresh, lupta pornește
-  // oricum de la capăt
+  // oricum de la capăt. Fereastra se face o singură dată și se refolosește (fiecare dialog nou ar lăsa în urmă un
+  // ascultător de taste)
+  let dialogLupta = null;
   function discutieInLupta(idDialog) {
     const d = joc.date.dialoguri?.[idDialog];
     if (!d) return Promise.resolve();
-    const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
-    return new Promise((gata) => {
+    if (!dialogLupta) {
+      const personaje = new Map(joc.date.npcs.personaje.map((p) => [p.id, p]));
       const strat = div('strat-dialog-lupta');
-      el.append(strat);
-      const dlg = creeazaDialog(strat, {
+      dialogLupta = { strat, gata: null };
+      dialogLupta.dlg = creeazaDialog(strat, {
         numeVorbitor: (id) => (id === 'vale' ? 'Vale' : personaje.get(id)?.nume || id),
         emotieVale: () => 'normal',
         verificaConditii: (c) => verifica(c, context(joc.stare)),
         laEfecte: () => {},
         optiuniMeniu: () => ({ alegeri: [], noduri: {} }),
         tabaraVorbitor: () => 'aliat',
-        // Și imaginea ambuscadei intră în galeria din meniu, ca toate imaginile văzute
+        // Imaginea ambuscadei intră în galeria din meniu, ca toate imaginile văzute; din lupta de test, nu
         laImagine: (cale) => {
+          if (!L || L.def.test) return;
           const s = joc.stare;
           s.imaginiVazute ||= [];
           if (!s.imaginiVazute.includes(cale)) s.imaginiVazute.push(cale);
         },
         laFinal: () => {
           strat.remove();
-          gata();
+          const g = dialogLupta.gata;
+          dialogLupta.gata = null;
+          g?.();
         },
       });
-      dlg.porneste(d);
+    }
+    return new Promise((gata) => {
+      dialogLupta.gata = gata;
+      el.append(dialogLupta.strat);
+      dialogLupta.dlg.porneste(d);
     });
   }
 
@@ -679,28 +688,34 @@ export function creeazaLupta(parinte, joc) {
   async function ambuscada(sursa, id) {
     const d = inv.def(id);
     const lf = d.luptaFinala;
+    const lupta = L;
     L.folosite.add(id);
     joc.sunet.efect(lf.sunet || 'fluier');
     await discutieInLupta(lf.dialog);
-    if (!L) return;
+    // Lupta s-a închis sau a pornit alta (din F2) cât stătea discuția pe ecran: săgețile nu mai cad nicăieri
+    if (!L || L !== lupta) return false;
     const tinte = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat');
     joc.sunet.efect('lupta_arc');
     for (const t of tinte) {
       const r = Math.max(1, Math.round(t.viataMax * (lf.rana ?? 0.5)));
       t.viata = Math.max(0, t.viata - r);
       numar(t, `−${r}`);
-      poza(t, 'lovit');
-      t.corp.classList.add('lovit');
+      // Cine se apără rămâne în poza de apărare (ca la o lovitură obișnuită)
+      if (!t.apara) {
+        poza(t, 'lovit');
+        t.corp.classList.add('lovit');
+      }
     }
     jurnal(lf.jurnal || `Din umbră, săgețile prietenilor lui Finn cad peste inamici.`);
     actualizeazaBare();
     await asteapta(650);
-    if (!L) return;
+    if (!L || L !== lupta) return false;
     for (const t of tinte) {
       t.corp.classList.remove('lovit');
       if (t.viata <= 0) cade(t);
       else if (!t.apara) poza(t, 'idle');
     }
+    return true;
   }
 
   async function executa(sursa, actiune) {
@@ -741,8 +756,7 @@ export function creeazaLupta(parinte, joc) {
       jurnal(`${sursa.nume} se apără.`);
       sursa.bara = 0;
     } else if (actiune.tip === 'obiect' && inv.def(actiune.id).luptaFinala?.tip === 'fluier') {
-      await ambuscada(sursa, actiune.id);
-      if (!L) return;
+      if (!(await ambuscada(sursa, actiune.id))) return;
       sursa.bara = 0;
     } else if (actiune.tip === 'obiect' && inv.def(actiune.id).luptaFinala) {
       // Toiagul celor 23 (decis de autor): golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații.
@@ -1103,6 +1117,7 @@ export function creeazaLupta(parinte, joc) {
 
   // Primește id-ul unei lupte din lupte.json sau direct o luptă (cea de test, alcătuită în panoul debug)
   function porneste(idLupta) {
+    if (dialogLupta?.dlg.activ()) dialogLupta.dlg.inchide();
     const def = typeof idLupta === 'object' ? idLupta : joc.date.lupte?.lupte?.[idLupta];
     if (!def) return joc.mesaj(`Lupta „${idLupta}” nu există.`);
     const s = joc.stare;

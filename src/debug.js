@@ -152,7 +152,7 @@ export function creeazaDebug(parinte, joc) {
   function optiuniTest() {
     const s = joc.stare;
     // Doar zonele de luptă (hărțile din „harti”, lupte.json), nu toate locurile
-    // și hărțile fără un loc al lor în sat („hartiNoi”: tabăra vânătorilor de orci)
+    // și hărțile fără un loc al lor în sat („hartiNoi”: tabăra orcilor vânători)
     const noi = Object.entries(joc.date.lupte?.hartiNoi || {}).filter(([id]) => !id.startsWith('_'));
     const harti = [...(joc.date.lupte?.harti || []), ...noi.map(([id]) => id)];
     const titlu = (id) => joc.lume.get(id)?.titlu || noi.find(([x]) => x === id)?.[1] || id;

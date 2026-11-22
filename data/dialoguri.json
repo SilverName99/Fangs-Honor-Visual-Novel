@@ -1362,7 +1362,8 @@
           },
           "trecut": {
             "finn_custi_final": {
-              "pesteZile": 0.25
+              "pesteZile": 0.25,
+              "subZile": 2
             }
           }
         }
@@ -1378,7 +1379,8 @@
           },
           "trecut": {
             "finn_custi_final": {
-              "pesteZile": 0.25
+              "pesteZile": 0.25,
+              "subZile": 2
             }
           }
         }
@@ -2192,7 +2194,7 @@
       "custi_k_rau4": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "Finn zice că erau doar niște animale. Pentru el, poate. Pentru mine, ea era pădurea asta.",
+        "text": "Știu ce-o să zică Finn: că erau doar niște animale. Pentru el, poate. Pentru mine, ea era pădurea asta.",
         "urmator": "custi_k_rau5"
       },
       "custi_k_rau5": {
@@ -2440,6 +2442,9 @@
             "arc_kaia": {
               "min": 1
             }
+          },
+          "misiune": {
+            "finn_prieteni": "inceputa"
           }
         }
       },
@@ -2456,6 +2461,9 @@
                 "min": 1
               }
             }
+          },
+          "misiune": {
+            "finn_prieteni": "inceputa"
           }
         }
       }
@@ -9504,56 +9512,6 @@
     "meniu": true,
     "start": [
       {
-        "_nota": "Misiunea „Cuștile vânătorilor”: a doua zi, o replică (decis de autor la înfrângere).",
-        "nod": "custi_rau1",
-        "conditii": {
-          "stare": {
-            "finn_custi": "pierdut"
-          },
-          "nuStare": {
-            "custi_salut_hot": "da"
-          },
-          "trecut": {
-            "finn_custi_final": {
-              "pesteZile": 0.25
-            }
-          }
-        }
-      },
-      {
-        "nod": "custi_bine1",
-        "conditii": {
-          "stare": {
-            "finn_custi": "eliberate"
-          },
-          "nuStare": {
-            "custi_salut_hot": "da"
-          },
-          "trecut": {
-            "finn_custi_final": {
-              "pesteZile": 0.25
-            }
-          }
-        }
-      },
-      {
-        "_nota": "Misiunea „Ultima treabă pentru Jarek”: a doua zi după „Avem nevoie de bani” (decis de autor).",
-        "nod": "jarek_bani1",
-        "conditii": {
-          "misiune": {
-            "finn_jarek": "inceputa"
-          },
-          "stare": {
-            "finn_jarek": "furt"
-          },
-          "zileDeLa": {
-            "finn_jarek_furt": {
-              "min": 1
-            }
-          }
-        }
-      },
-      {
         "_nota": "Misiunea „Ultima treabă pentru Jarek”: noaptea, în fața casei.",
         "nod": "jarek_noapte",
         "conditii": {
@@ -9608,6 +9566,58 @@
         "nod": "lada_noapte",
         "conditii": {
           "loc": "casa_finn"
+        }
+      },
+      {
+        "_nota": "Misiunea „Cuștile vânătorilor”: a doua zi, o replică (decis de autor la înfrângere).",
+        "nod": "custi_rau1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "pierdut"
+          },
+          "nuStare": {
+            "custi_salut_hot": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25,
+              "subZile": 2
+            }
+          }
+        }
+      },
+      {
+        "nod": "custi_bine1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "eliberate"
+          },
+          "nuStare": {
+            "custi_salut_hot": "da"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 0.25,
+              "subZile": 2
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Misiunea „Ultima treabă pentru Jarek”: a doua zi după „Avem nevoie de bani” (decis de autor).",
+        "nod": "jarek_bani1",
+        "conditii": {
+          "misiune": {
+            "finn_jarek": "inceputa"
+          },
+          "stare": {
+            "finn_jarek": "furt"
+          },
+          "zileDeLa": {
+            "finn_jarek_furt": {
+              "min": 1
+            }
+          }
         }
       },
       {
@@ -10548,7 +10558,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Marta coase lângă foc, iar Lina se joacă în colț cu păpușa. Mă aplec spre Finn, ca să nu mă audă decât el.",
+        "text": "Marta coase lângă foc. Mă aplec spre Finn, ca să nu mă audă decât el.",
         "_nota": "CIORNĂ (Claude). Misiunea „Cuștile vânătorilor” (decis de autor): acasă, Finn află doar o parte, în șoaptă.",
         "urmator": "custi_o2"
       },
@@ -10762,7 +10772,7 @@
       "prieteni_o2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Eu știu câțiva. Tobin, Ned și Wil. Am crescut împreună aici, la Marginea. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
+        "text": "Eu știu câțiva. Tobin, Ned și Wil. Am crescut împreună la Marginea satului. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
         "urmator": "prieteni_o3"
       },
       "prieteni_o3": {
@@ -11078,75 +11088,6 @@
             "stare": {
               "lina_tort": "gata"
             }
-          }
-        }
-      },
-      {
-        "_nota": "Misiunea „Prietenii lui Finn”: Tobin vrea carne friptă și pâine pentru frații lui.",
-        "text": "Am carnea și pâinea pentru Tobin.",
-        "spre": "prieteni_tobin",
-        "conditii": {
-          "misiune": {
-            "finn_prieteni": "inceputa"
-          },
-          "areCate": {
-            "carne_gatita": 3,
-            "paine": 3
-          },
-          "nu": {
-            "existaStare": "prieteni_tobin"
-          }
-        }
-      },
-      {
-        "_nota": "Ned: arcul făcut de Kaia.",
-        "text": "Am arcul făcut de Kaia, pentru Ned.",
-        "spre": "prieteni_ned_kaia",
-        "conditii": {
-          "misiune": {
-            "finn_prieteni": "inceputa"
-          },
-          "areObiect": "arc_ned",
-          "nu": {
-            "existaStare": "prieteni_ned"
-          }
-        }
-      },
-      {
-        "_nota": "Decis de autor: Ned, sau un arc cumpărat (de la Jarek), cu 3 săgeți.",
-        "text": "Am un arc și trei săgeți pentru Ned.",
-        "spre": "prieteni_ned_arc",
-        "conditii": {
-          "misiune": {
-            "finn_prieteni": "inceputa"
-          },
-          "areCate": {
-            "arc": 1,
-            "sageti": 3
-          },
-          "nu": {
-            "oricare": [
-              {
-                "existaStare": "prieteni_ned"
-              },
-              {
-                "areObiect": "arc_ned"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "_nota": "Decis de autor: Wil vrea dovada că Vale a bătut un orc în Groapă: un dinte de orc.",
-        "text": "Am dintele de orc pentru Wil.",
-        "spre": "prieteni_wil",
-        "conditii": {
-          "misiune": {
-            "finn_prieteni": "inceputa"
-          },
-          "areObiect": "dinte_orc",
-          "nu": {
-            "existaStare": "prieteni_wil"
           }
         }
       }
@@ -17627,7 +17568,7 @@
       "b12": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Locul ăsta. Orcii nu intră noaptea în pădure: se tem de ce n-au văzut. Și dacă intră, Ember îi simte de departe.",
+        "text": "Locul ăsta. Orcii nu vin niciodată atât de adânc în pădure: se tem de ce n-au văzut. Și dacă vin, Ember îi simte de departe.",
         "urmator": "b13"
       },
       "b13": {
@@ -17719,7 +17660,7 @@
     }
   },
   "finn_custi_tabara": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Cuștile vânătorilor” (decis de autor): seara, la locul de campare, Finn se sperie de Ember, Kaia râde, îi spun de revoltă, Finn: „Eu deschid orice lacăt”, iar Kaia povestește de lupoaica din cuștile vânătorilor de orci. 2 imagini.",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Finn „Cuștile vânătorilor” (decis de autor): seara, la locul de campare, Finn se sperie de Ember, Kaia râde, îi spun de revoltă, Finn: „Eu deschid orice lacăt”, iar Kaia povestește de lupoaica din cuștile orcilor vânători. 2 imagini.",
     "grup": "Finn: cuștile vânătorilor",
     "partener": "vanatoare",
     "start": "t1",
@@ -17834,7 +17775,7 @@
       "t18": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "La o oră de aici, spre răsărit, orcii au o tabără de vânători. Am stat două nopți pe burtă în ferigi și i-am urmărit.",
+        "text": "La o oră de aici, spre răsărit, la marginea pădurii, lângă drumul mare, orcii au o tabără de vânători. Am stat două nopți pe burtă în ferigi și i-am urmărit.",
         "imagine": "events/finn_custi_2.png",
         "urmator": "t19"
       },
@@ -18229,7 +18170,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Finn stă la masă și întoarce pe toate părțile o bucată de hârtie mototolită. Când mă vede, vrea s-o ascundă, apoi se răzgândește.",
+        "text": "Finn netezește biletul pe masă cu palma, de parcă ar vrea să șteargă ce scrie pe el.",
         "imagine": "events/finn_jarek_1.png",
         "urmator": "j2"
       },
@@ -18266,13 +18207,13 @@
       "j7": {
         "vorbitor": "hot",
         "emotie": "suparat",
-        "text": "Negustorul m-a ținut legat la butuc trei zile, Vale. M-a scuipat în față. Nu-mi pare rău de el.",
+        "text": "Negustorul m-a ținut legat la butuc ca pe un câine, Vale. M-a scuipat în față. Nu-mi pare rău de el.",
         "urmator": "j8"
       },
       "j8": {
         "vorbitor": "hot",
         "emotie": "trist",
-        "text": "Și... avem nevoie de bani. Pentru ce punem la cale, pentru arme, pentru mâncare. Pentru Lina, la iarnă.",
+        "text": "Și... avem nevoie de bani. Pentru mâncare. Pentru Lina, la iarnă. Pentru tine, când n-o să mai ai cu ce plăti taxa.",
         "urmator": "j9"
       },
       "j9": {
@@ -18347,7 +18288,7 @@
       "j_da3": {
         "vorbitor": "hot",
         "emotie": "trist",
-        "text": "Lasă pe mine. Tu nici nu trebuie să știi când."
+        "text": "Lasă pe mine. Până mâine e gata. Tu nici nu trebuie să știi cum."
       }
     }
   },

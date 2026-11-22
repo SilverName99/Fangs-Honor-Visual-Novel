@@ -85,6 +85,13 @@ export function optiuniMisiuni(joc, idPersonaj, loc) {
     if (st !== 'inceputa') continue;
     const p = m.pasi[pasul(s, m.id)];
     if (!p || (p.la || m.dela) !== idPersonaj) continue;
+    // Bucățile pasului care se fac în orice ordine au fiecare predarea ei (una sau mai multe căi: arcul lui Ned, de la
+    // Kaia sau cumpărat), cu ? auriu cât se poate preda acum
+    for (const sp of p.subpasi || []) {
+      if (subpasGata(sp, s)) continue;
+      for (const pr of [].concat(sp.predare || []))
+        if (verifica(pr.conditii, ctx)) rez.push({ alegere: { text: textPotrivit(pr.text, s), spre: alegeNod(pr.nod, ctx), semn: 'gata' }, dialog });
+    }
     const gata = p.predare && verifica(p.predare.conditii, ctx);
     // Și textul opțiunii poate depinde de stare (la „Convoiul” Kaiei: „Mergem?” noaptea, „Ce-ai văzut?” a doua zi)
     if (gata) rez.push({ alegere: { text: textPotrivit(p.predare.text, s), spre: alegeNod(p.predare.nod, ctx), semn: 'gata' }, dialog });

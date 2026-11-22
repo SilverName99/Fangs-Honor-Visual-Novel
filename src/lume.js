@@ -173,8 +173,8 @@ export function construiesteLumea(date) {
       })),
     });
   }
-  // Hărți de luptă fără un loc al lor în sat („hartiNoi” în lupte.json: id → nume), de exemplu tabăra vânătorilor de
-  // orci din pădure (misiunea lui Finn „Cuștile vânătorilor”): doar imaginea de luptă, cu cele 12 locuri
+  // Hărți de luptă fără un loc al lor în sat („hartiNoi” în lupte.json: id → nume), de exemplu tabăra orcilor
+  // vânători de la marginea pădurii (misiunea lui Finn „Cuștile vânătorilor”): doar imaginea de luptă, cu cele 12 locuri
   for (const [fundal, nume] of Object.entries(date.lupte?.hartiNoi || {})) {
     if (fundal.startsWith('_')) continue;
     const id = idHartaLupta(fundal);
@@ -184,6 +184,8 @@ export function construiesteLumea(date) {
       titlu: `Luptă: ${nume}`,
       imagine: `locations/${id}.png`,
       harta: `locations/${id}.png`,
+      // Fără un loc al ei: până e încărcată, lupta arată doar dreptunghiul cu numele fișierului
+      faraLoc: true,
       variante: [],
       parinte: null,
       tinte: [],
@@ -541,7 +543,7 @@ export function imaginiCerute(date, scene) {
     if (s.tip === 'ecran') continue;
     if (s.tip === 'lupta') {
       grup = 'Hărți de luptă';
-      adauga(s.harta, `Hartă de luptă: ${s.titlu.replace('Luptă: ', '')} (până o încarci, se vede scena locului)`);
+      adauga(s.harta, `Hartă de luptă: ${s.titlu.replace('Luptă: ', '')} (${s.faraLoc ? 'fără ea, lupta n-are fundal' : 'până o încarci, se vede scena locului'})`);
       continue;
     }
     const tipScena = { harta: 'Harta', zona: 'Zona', loc: 'Loc' }[s.tip];

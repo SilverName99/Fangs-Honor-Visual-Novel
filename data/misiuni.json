@@ -4262,7 +4262,7 @@
               "finn_custi": "eliberate"
             }
           },
-          "text": "CIORNĂ: Vânătorii de orci țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Noaptea, cu Kaia și Finn, ne-am strecurat în tabăra lor. Lupoaica și-a dus puii acasă."
+          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Noaptea, cu Kaia și Finn, ne-am strecurat în tabăra lor. Lupoaica și-a dus puii acasă."
         },
         {
           "conditii": {
@@ -4270,15 +4270,15 @@
               "finn_custi": "pierdut"
             }
           },
-          "text": "CIORNĂ: Vânătorii de orci țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Ne-au prins în tabăra lor și abia am scăpat cu viață. Cuștile au rămas închise."
+          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Ne-au prins în tabăra lor și abia am scăpat cu viață. Cuștile au rămas închise."
         },
         {
           "conditii": {
             "existaStare": "finn_custi_plan"
           },
-          "text": "CIORNĂ: Kaia a aflat că vânătorii de orci țin în cuști o lupoaică și puii ei, ca să-i crească pentru asediu. Finn deschide orice lacăt. Mâine noapte ne strecurăm toți trei în tabăra lor."
+          "text": "CIORNĂ: Kaia a aflat că orcii vânători țin în cuști o lupoaică și puii ei, ca să-i crească pentru asediu. Finn deschide orice lacăt. Noaptea, după unsprezece, ne strecurăm toți trei în tabăra lor."
         },
-        "CIORNĂ: Kaia și cu mine punem ceva la cale. I-am spus lui Finn doar atât, în șoaptă, și l-am chemat diseară la locul de campare, să afle restul."
+        "CIORNĂ: Kaia și cu mine punem ceva la cale. I-am spus lui Finn doar atât, în șoaptă, și l-am chemat seara la locul de campare, să afle restul."
       ],
       "oferta": {
         "_nota": "Decis de autor: de la 5/10 încredere cu Finn și după „Baza” Kaiei; acasă, în șoaptă.",
@@ -4298,7 +4298,7 @@
       },
       "pasi": [
         {
-          "text": "Diseară, îl duc pe Finn la locul de campare",
+          "text": "Seara, îl duc pe Finn la locul de campare",
           "gata": {
             "existaStare": "finn_custi_plan"
           },
@@ -4347,20 +4347,19 @@
         },
         {
           "conditii": {
-            "oricare": [
-              {
-                "stare": {
-                  "finn_jarek": "furt"
-                }
-              },
-              {
-                "stare": {
-                  "finn_jarek": "dat"
-                }
-              }
-            ]
+            "stare": {
+              "finn_jarek": "dat"
+            }
           },
           "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A doua zi mi-a adus cincisprezece monede și nu s-a mai uitat în ochii mei."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "finn_jarek": "furt"
+            }
+          },
+          "text": "CIORNĂ: Jarek vrea ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A băgat biletul în sân și mi-a zis să las totul pe el."
         },
         "CIORNĂ: Jarek îi cere lui Finn o ultimă treabă: caseta cu bani a negustorului. I-am adus aminte lui Finn că a promis. La noapte mergem amândoi la Jarek, ca să-i spună în față."
       ],
@@ -4412,7 +4411,7 @@
                   "finn_jarek": "furt"
                 }
               },
-              "text": "Finn a zis „mâine”. N-am ce face până atunci."
+              "text": "Finn a zis că până mâine e gata. N-am ce face până atunci."
             },
             "După unsprezece (23–03), Finn mă așteaptă în fața casei lui."
           ],
@@ -4467,7 +4466,7 @@
         "CIORNĂ: Finn vrea să vorbească cu trei prieteni de-ai lui."
       ],
       "oferta": {
-        "_nota": "Decis de autor: de la 8/10 încredere cu Finn; ales de Claude: și după „Cuștile vânătorilor”, ca Finn să știe de revoltă.",
+        "_nota": "Decis de autor: de la 8/10 încredere cu Finn; ales de Claude: și după „Cuștile vânătorilor”, ca Finn să știe de revoltă, și cu Groapa deschisă („Inelul mamei”), de unde vine dintele pentru Wil.",
         "text": "Finn, pari că pui ceva la cale.",
         "nod": "prieteni_o1",
         "conditii": {
@@ -4478,6 +4477,9 @@
           },
           "misiune": {
             "finn_custi": "terminata"
+          },
+          "stare": {
+            "groapa": "deschisa"
           }
         }
       },
@@ -4486,21 +4488,70 @@
           "text": "Le aduc lui Finn ce au cerut prietenii lui",
           "subpasi": [
             {
-              "text": "Pentru Tobin: 3 carne friptă și 3 pâini",
+              "text": "Pentru Tobin: 3 bucăți de carne friptă și 3 pâini",
               "gata": {
                 "existaStare": "prieteni_tobin"
+              },
+              "predare": {
+                "text": "Am carnea și pâinea pentru Tobin.",
+                "nod": "prieteni_tobin",
+                "conditii": {
+                  "areCate": {
+                    "carne_gatita": 3,
+                    "paine": 3
+                  }
+                }
               }
             },
             {
               "text": "Pentru Ned: un arc, cu 3 săgeți",
               "gata": {
                 "existaStare": "prieteni_ned"
-              }
+              },
+              "predare": [
+                {
+                  "text": "Am arcul făcut de Kaia, pentru Ned.",
+                  "nod": "prieteni_ned_kaia",
+                  "conditii": {
+                    "areObiect": "arc_ned"
+                  }
+                },
+                {
+                  "_nota": "Decis de autor: sau un arc cumpărat (de la Jarek), cu 3 săgeți; nu cât face Kaia arcul.",
+                  "text": "Am un arc și trei săgeți pentru Ned.",
+                  "nod": "prieteni_ned_arc",
+                  "conditii": {
+                    "areCate": {
+                      "arc": 1,
+                      "sageti": 3
+                    },
+                    "nu": {
+                      "oricare": [
+                        {
+                          "areObiect": "arc_ned"
+                        },
+                        {
+                          "stare": {
+                            "arc_kaia": "facut"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             },
             {
               "text": "Pentru Wil: un dinte de orc din Groapă",
               "gata": {
                 "existaStare": "prieteni_wil"
+              },
+              "predare": {
+                "text": "Am dintele de orc pentru Wil.",
+                "nod": "prieteni_wil",
+                "conditii": {
+                  "areObiect": "dinte_orc"
+                }
               }
             }
           ],

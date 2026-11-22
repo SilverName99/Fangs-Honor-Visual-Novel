@@ -1839,7 +1839,7 @@
       "id": "finn_custi_noapte",
       "nume": "Cuștile vânătorilor",
       "grup": "Finn: cuștile vânătorilor",
-      "repetare": "o_data",
+      "repetare": "mereu",
       "siPeLoc": true,
       "conditii": {
         "loc": "padure/campsite",
@@ -1848,7 +1848,14 @@
         },
         "existaStare": "finn_custi_plan",
         "nu": {
-          "existaStare": "finn_custi_gata"
+          "oricare": [
+            {
+              "existaStare": "finn_custi_gata"
+            },
+            {
+              "existaStare": "finn_custi_lupta"
+            }
+          ]
         },
         "oricare": [
           {
@@ -1894,7 +1901,7 @@
           "imagine": "events/finn_custi_5.png"
         }
       ],
-      "_nota": "Decis de autor: noaptea de după, pe furiș (3 imagini, cu câte două locuri desenate în editor: Aranjare → Ecrane → „Furișatul: Cuștile vânătorilor”). Ales de Claude: Kaia și Finn îl așteaptă în fiecare noapte (23–03) până vine; drumul ține 2 ore și ia 20 stamina."
+      "_nota": "Decis de autor: noaptea de după, pe furiș (3 imagini, cu câte două locuri desenate în editor: Aranjare → Ecrane → „Furișatul: Cuștile vânătorilor”). Ales de Claude: Kaia și Finn îl așteaptă în fiecare noapte (23–03) până vine; drumul ține 2 ore și ia 20 stamina. Revine (repetare „mereu”) dacă pagina se reîncarcă în timpul furișatului, până la luptă sau până la cuștile deschise."
     },
     {
       "id": "finn_custi_dupa",
