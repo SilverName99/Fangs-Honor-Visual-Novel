@@ -52,34 +52,6 @@
       "_nota": "Decis de autor: cât e misiunea lui Finn „Ziua Linei” (până la ziua ei) și Vale n-are panglica, negustorul îl oprește de fiecare dată când intră în piață. Stă primul în listă, ca să aibă întâietate față de sacii negustorului; după ziua Linei rămâne doar misiunea lui obișnuită, cu sacii."
     },
     {
-      "id": "test_barfa_taverna",
-      "conditii": {
-        "loc": "taverna/parter",
-        "moment": [
-          "seara"
-        ],
-        "sansa": 0.5
-      },
-      "repetare": {
-        "pauzaZile": 3
-      },
-      "vorbitor": "hangita",
-      "emotie": "normal",
-      "text": "Ai auzit? Orcii au mai luat o căruță de grâu de la moară. Dacă mai iau una, la iarnă mâncăm scoarță de copac.",
-      "alegeri": [
-        {
-          "text": "Mai spune-mi.",
-          "efecte": {
-            "timp": 20
-          }
-        },
-        {
-          "text": "N-am timp de bârfe acum, Agnes.",
-          "efecte": {}
-        }
-      ]
-    },
-    {
       "id": "test_saci_piata",
       "conditii": {
         "loc": "piata",
