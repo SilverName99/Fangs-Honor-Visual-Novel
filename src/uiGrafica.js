@@ -228,7 +228,10 @@ export const ELEMENTE_UI = [
     selector: `.piesa-tafl.${id}`,
     extra: `.piesa-tafl.${id}{background-size:contain;background-position:center}.piesa-tafl.${id} .forma{display:none}`,
   })),
-  // Al doilea set de piese (cerut de autor), ales din panoul „?” al jocului; până se încarcă, rămâne primul set
+  // Al doilea set (cerut de autor): tabla 2 și piesele ei, alese din panoul „?” al jocului; până se încarcă, rămâne
+  // primul set
+  { id: 'tafl_tabla_2', grup: 'Masa regelui (tavernă)', nume: 'Masa regelui, al doilea set: tabla (11 × 11 pătrate, văzută drept de sus)', marime: '1024 × 1024 px', tip: 'fundal', selector: '.ecran-tafl.set-2 .tabla-tafl',
+    extra: '.ecran-tafl.set-2 .tabla-tafl{border:none;box-shadow:none;border-radius:0}.ecran-tafl.set-2 .grila-tafl .celula-tafl{border-color:transparent}.ecran-tafl.set-2 .grila-tafl .celula-tafl.tron::after,.ecran-tafl.set-2 .grila-tafl .celula-tafl.colt::after{display:none}' },
   ...[
     ['atacator', 'piesa atacatorilor'],
     ['aparator', 'piesa apărătorilor'],
@@ -239,8 +242,8 @@ export const ELEMENTE_UI = [
     nume: `Masa regelui, al doilea set: ${nume}, văzută de sus`,
     marime: '256 × 256 px, fundal transparent',
     tip: 'fundal',
-    selector: `.ecran-tafl.piese-2 .piesa-tafl.${id}`,
-    extra: `.ecran-tafl.piese-2 .piesa-tafl.${id}{background-size:contain;background-position:center}.ecran-tafl.piese-2 .piesa-tafl.${id} .forma{display:none}`,
+    selector: `.ecran-tafl.set-2 .piesa-tafl.${id}`,
+    extra: `.ecran-tafl.set-2 .piesa-tafl.${id}{background-size:contain;background-position:center}.ecran-tafl.set-2 .piesa-tafl.${id} .forma{display:none}`,
   })),
   { id: 'pahar_zaruri', nume: 'Paharul de zaruri (răsturnat, cu gura în jos)', marime: '256 × 256 px, fundal transparent', tip: 'fundal', selector: '.pahar-zar', extra: '.pahar-zar{border:none;border-radius:0;box-shadow:none}' },
   ...[1, 2, 3, 4, 5, 6].map((f) => ({

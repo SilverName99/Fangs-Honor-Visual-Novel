@@ -23,8 +23,8 @@ const TIP = { [ATAC]: 'atacator', [APAR]: 'aparator', [REGE]: 'rege' };
 const NUME_NIVEL = { usor: 'Ușor', mediu: 'Mediu', greu: 'Greu' };
 const NUME_TABARA = { d: 'Regele și apărătorii', a: 'Atacatorii' };
 
-// Setul de piese ales din panoul „?” (cerut de autor: două seturi): o preferință a jucătorului, ca viteza, deci stă în
-// browser, nu în salvare; fără localStorage, rămâne până se închide jocul
+// Setul ales din panoul „?” (cerut de autor: două seturi, fiecare cu tabla și piesele lui): o preferință a jucătorului,
+// ca viteza, deci stă în browser, nu în salvare; fără localStorage, rămâne până se închide jocul
 const CHEIE_PIESE = 'fangs-vn-tafl-piese';
 let setPiese = 1;
 try {
@@ -52,13 +52,29 @@ export function creeazaTafl(parinte, joc) {
     const i = ecran().obiecte.findIndex((o) => o.id === id);
     return pozitie(aranjare(), ecran().obiecte[i], i);
   };
+  // Tabla și căsuțele setului ales: setul 2 are ecranul lui în editor („Masa regelui: setul 2”)
+  const pozSet = (id) => {
+    if (setPiese !== 2) return poz(id);
+    const e = joc.lume.get('tafl_2');
+    const i = e.obiecte.findIndex((o) => o.id === id);
+    return pozitie(joc.date.aranjare.tafl_2, e.obiecte[i], i);
+  };
+  function aseazaTabla() {
+    const tabla = el?.querySelector('.tabla-tafl');
+    const grila = el?.querySelector('.grila-tafl');
+    if (!tabla || !grila) return;
+    aplicaPozitie(tabla, pozSet('tabla'));
+    tabla.style.zIndex = '1';
+    aplicaPozitie(grila, pozSet('grila'));
+    grila.style.zIndex = '2';
+  }
   // Cât câștigă Vale peste miză, după cât de tare joacă bătrânul (TODO echilibru, ales de Claude)
   const castigPeste = (miza, nivel) => Math.round(miza * (cfg().castig?.[nivel] ?? 1));
 
   // Pornit din discuția cu bătrânul, după ce Vale alege cât de tare să joace
   function porneste(nivel = 'mediu') {
     if (el) return;
-    el = div(`ecran-tafl${setPiese === 2 ? ' piese-2' : ''}`);
+    el = div(`ecran-tafl${setPiese === 2 ? ' set-2' : ''}`);
     parinte.append(el);
     s = { nivel, vale: 'd', miza: null, p: null, selectat: null, tinte: [], piese: new Map(), ocupat: false, panou: false, replica: null };
     construieste();
@@ -74,11 +90,7 @@ export function creeazaTafl(parinte, joc) {
     masa.addEventListener('gata', scoateDacaLipseste);
     // Tabla e un element de interfață: până se încarcă imaginea (ui_tafl_tabla.png), lemnul și liniile sunt din CSS
     const tabla = div('obiect tabla-tafl');
-    aplicaPozitie(tabla, poz('tabla'));
-    tabla.style.zIndex = '1';
     const grila = div('obiect grila-tafl');
-    aplicaPozitie(grila, poz('grila'));
-    grila.style.zIndex = '2';
     for (let i = 0; i < N * N; i++) {
       const c = div(`celula-tafl${i === TRON ? ' tron' : ''}${COLTURI.includes(i) ? ' colt' : ''}`);
       c.dataset.i = i;
@@ -94,6 +106,7 @@ export function creeazaTafl(parinte, joc) {
     // Scena are 1080 px pe înălțime: scrisul crește odată cu rândul mutat și mărit în editor
     replica.style.fontSize = `${Math.round(p.scara * 1080 * 0.42)}px`;
     el.replaceChildren(masa, tabla, grila, replica, div('strat-ui-tafl'));
+    aseazaTabla();
     scoateDacaLipseste();
   }
 
@@ -343,13 +356,14 @@ export function creeazaTafl(parinte, joc) {
     const numara = (f) => s.p.tabla.reduce((n, p) => n + (f(p) ? 1 : 0), 0);
     panou.append(div('titlu-tafl', `Masa regelui · ${NUME_NIVEL[s.nivel]}`), div('rand-tafl', `Joci cu: ${NUME_TABARA[s.vale]}`), div('rand-tafl', `Miza: ${s.miza} monede`));
     panou.append(div('rand-tafl mic', `Atacatori: ${numara((p) => p === ATAC)} · Apărători: ${numara((p) => p === APAR)}`));
-    // Cele două seturi de piese (cerut de autor): se schimbă pe loc, chiar în mijlocul partidei
+    // Cele două seturi, tabla și piesele (cerut de autor): se schimbă pe loc, chiar în mijlocul partidei
     const seturi = div('alegere-piese');
-    seturi.append(div('rand-tafl mic', 'Piesele:'));
+    seturi.append(div('rand-tafl mic', 'Tabla și piesele:'));
     for (const n of [1, 2]) {
       seturi.append(buton(`Setul ${n}`, () => {
         alegeSetPiese(n);
-        el.classList.toggle('piese-2', n === 2);
+        el.classList.toggle('set-2', n === 2);
+        aseazaTabla();
         deseneaza();
       }, setPiese === n ? 'ales' : ''));
     }

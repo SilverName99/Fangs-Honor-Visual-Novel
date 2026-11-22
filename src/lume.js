@@ -342,6 +342,24 @@ export function construiesteLumea(date) {
       { id: 'balon', tip: 'tafl-balon', nume: 'Ce spune bătrânul (rândul de deasupra tablei)', eticheta: 'Ce spune bătrânul', imagine: 'ui/text_tafl_balon.png', raport: 12, variante: [], implicit: { x: 0.5, y: 0.085, scara: 0.06 } },
     ],
   });
+  // Setul 2 al Masei regelui (cerut de autor: a doua tablă, cu piesele ei): tabla 2 poate avea pătratele în alt loc,
+  // deci are căsuțele ei; până le aranjează autorul, tabla și căsuțele stau unde sunt cele ale setului 1
+  const taflSet1 = date.aranjare?.tafl?.obiecte || {};
+  scene.set('tafl_2', {
+    id: 'tafl_2',
+    tip: 'ecran',
+    titlu: 'Masa regelui: setul 2 (tabla 2)',
+    titluObiecte: 'Tabla 2 și căsuțele ei',
+    titluFundal: 'Masa de sub tablă',
+    imagine: IMAGINE_MASA_TAFL,
+    variante: [],
+    parinte: null,
+    tinte: [],
+    obiecte: [
+      { id: 'tabla', tip: 'tafl-tabla', nume: 'Tabla 2', imagine: fisierUi('tafl_tabla_2'), raport: 1, variante: [], implicit: taflSet1.tabla || { x: 0.5, y: 0.97, scara: 0.88 } },
+      { id: 'grila', tip: 'tafl-grila', nume: 'Căsuțele tablei 2 (trage-le peste pătratele ei)', imagine: 'ui/text_tafl_grila.png', raport: 1, variante: [], implicit: taflSet1.grila || { x: 0.5, y: 0.926, scara: 0.792 } },
+    ],
+  });
   // Mini-jocurile muncii (decis de autor): autorul mută și mărește bucata fiecăruia pe imaginea muncii, ca în joc.
   // Fundalul e imaginea primei munci care folosește mini-jocul (lemnele, aratul, vacile, moara)
   const toateActiunile = zone.flatMap((z) => [...(z.actiuni || []), ...(z.locuri || []).flatMap((l) => l.actiuni || [])]);
