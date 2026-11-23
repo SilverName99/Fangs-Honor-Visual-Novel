@@ -563,12 +563,23 @@ export function creeazaLupta(parinte, joc) {
   // tabăra lui lovesc mai tare (ales de Claude: +2, TODO echilibru); când cade el, cade și steagul
   const bonusSteag = (sursa) =>
     L.toti.filter((x) => x.steag && x !== sursa && !x.cazut && x.tabara === sursa.tabara).reduce((s, x) => s + (x.steag.atac || 0), 0);
-  // Cei întăriți de tobă au o strălucire roșiatică, iar cei de sub steag una aurie, ca jucătorul să vadă de ce lovesc
-  // mai tare (se reface și când cade cineva: toboșarul sau cel cu steagul)
+  // Cei întăriți de tobă au o strălucire roșiatică, iar cei de sub steag un semn mic sub bare, cu steagul și „+2”, ca
+  // jucătorul să vadă de ce lovesc mai tare (cerut de autor: o strălucire aurie se confunda cu semnul celui care e la
+  // rând); se reface și când cade cineva: toboșarul sau cel cu steagul
   function marcheazaToba() {
     for (const f of L.toti) {
       f.el.classList.toggle('intarit-toba', !f.cazut && bonusToba(f) > 0);
-      f.el.classList.toggle('intarit-steag', !f.cazut && bonusSteag(f) > 0);
+      const steag = f.cazut ? 0 : bonusSteag(f);
+      let semn = f.el.querySelector('.semn-steag');
+      if (!steag) {
+        semn?.remove();
+        continue;
+      }
+      if (!semn) {
+        semn = div('semn-steag');
+        f.el.querySelector('.bare-luptator')?.append(semn);
+      }
+      semn.textContent = `⚑ +${steag}`;
     }
   }
 
