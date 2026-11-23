@@ -1298,6 +1298,66 @@
       "lupta_poarta_arena": 132,
       "lupta_cimitir": 132,
       "lupta_tabara_vanatori": 132
+    },
+    "combat/vale_tata_idle.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
+    },
+    "combat/vale_tata_atac.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
+    },
+    "combat/vale_tata_aparare.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
+    },
+    "combat/vale_tata_lovit.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
+    },
+    "combat/vale_tata_cazut.png": {
+      "lupta_taverna_parter": 120,
+      "lupta_padure_interior": 120,
+      "lupta_poarta": 120,
+      "lupta_piata": 120,
+      "lupta_fierar": 120,
+      "lupta_campuri": 120,
+      "lupta_taverna_pivnita": 120,
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     }
   }
 }
