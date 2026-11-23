@@ -691,7 +691,11 @@ export function imaginiCerute(date, scene) {
     }
   }
   // Toiagul celor 23 (lupta finală): poza lui Vale când îl ridică; până e încărcată, poza lui de atac
-  for (const o of Object.values(date.items.obiecte)) if (o.luptaFinala?.poza) adauga(o.luptaFinala.poza, `Luptă: Vale ridică ${o.nume} (lupta finală, aceeași pânză 2:3 ca celelalte poze)`, true);
+  for (const o of Object.values(date.items.obiecte)) {
+    if (o.luptaFinala?.poza) adauga(o.luptaFinala.poza, `Luptă: Vale ridică ${o.nume} (lupta finală, aceeași pânză 2:3 ca celelalte poze)`, true);
+    // În echipamentul tatei (cerut de autor): aceeași poză, cu Vale în armura lui Edwin
+    if (o.luptaFinala?.pozaTata) adauga(o.luptaFinala.pozaTata, `Luptă: Vale, în echipamentul tatălui, ridică ${o.nume} (lupta finală, 2:3)`, true);
+  }
   // Imaginile muncii și ale somnului (câmpul, vacile, moara, lemnele, apa, patul): pe tot ecranul cât durează,
   // ca la vânătoare. Doar muncile care chiar au un loc pe hartă (ferma de porci nu mai există)
   grup = 'Munca și somnul';

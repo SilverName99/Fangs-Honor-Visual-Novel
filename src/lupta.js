@@ -146,6 +146,8 @@ export function creeazaLupta(parinte, joc) {
   // Tot ce ține de arma din mână; separat, ca Vale să-și poată schimba arma în timpul luptei
   function dupaArma(arma, scut, tipArma) {
     return {
+      // Ținut minte pentru pozele anume (Vale în echipamentul tatei ridică toiagul altfel)
+      tipArma,
       atac: cuBonusVale(arma?.atac || cfg.pumni),
       blocare: scut?.blocare ?? cfg.blocareImplicita,
       // Sunetul loviturii, după arma din mână
@@ -255,11 +257,14 @@ export function creeazaLupta(parinte, joc) {
     f.el.style.zIndex = String(10 + f.linie * 10 + (f.rand === 'fata' ? 5 : 0));
   }
 
-  // „p” poate fi și calea unei poze anume (Vale cu toiagul, în lupta finală), cu „atac” ca rezervă până se încarcă
+  // „p” poate fi și calea unei poze anume (Vale cu toiagul, în lupta finală) sau o listă de căi, încercate pe rând
+  // (în echipamentul tatei, apoi cea obișnuită), cu „atac” ca rezervă până se încarcă
   function poza(f, p) {
     f.cache ||= new Map();
-    if (!f.cache.has(p)) {
-      const img = elementImagine(p.includes('/') ? [p, ...f.poze('atac')] : f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${p})` });
+    const cheie = Array.isArray(p) ? p.join('|') : p;
+    if (!f.cache.has(cheie)) {
+      const cai = Array.isArray(p) ? p : p.includes('/') ? [p] : null;
+      const img = elementImagine(cai ? [...cai, ...f.poze('atac')] : f.poze(p), { clasa: 'poza-luptator', raport: 0.6, eticheta: `${f.nume} (${cai ? cai[0].split('/').pop() : p})` });
       if (f.filtru) img.style.filter = f.filtru;
       // Mărimea fiecărei poze se reglează din galerie (în procente), pentru poze generate puțin mai mari sau mai mici
       img.addEventListener('incarcat', (e) => {
@@ -271,9 +276,9 @@ export function creeazaLupta(parinte, joc) {
       });
       // Cu poza lui de răpus, personajul nu se mai înclină din cod: poza arată deja căderea
       if (p === 'cazut') img.addEventListener('incarcat', (e) => f.el.classList.toggle('poza-cazut', e.detail.endsWith('_cazut.png')));
-      f.cache.set(p, img);
+      f.cache.set(cheie, img);
     }
-    f.corp.replaceChildren(f.cache.get(p));
+    f.corp.replaceChildren(f.cache.get(cheie));
   }
 
   // Bara verticală (designul autorului): umplerea crește de jos în sus, rama de fier stă peste ea
@@ -798,7 +803,8 @@ export function creeazaLupta(parinte, joc) {
       // Se ține minte în salvare abia la sfârșitul luptei: o luptă reluată după un refresh pornește de la capăt,
       // deci și toiagul trebuie să fie din nou acolo; valurile de după îl găsesc folosit
       L.folosite.add(actiune.id);
-      poza(sursa, lf.poza || 'atac');
+      // În echipamentul tatei, poza lui anume cu toiagul (cerut de autor); până se încarcă, cea obișnuită
+      poza(sursa, sursa.tipArma === 'tata' && lf.pozaTata ? [lf.pozaTata, ...(lf.poza ? [lf.poza] : [])] : lf.poza || 'atac');
       joc.sunet.efect(lf.sunet || 'lupta_magie');
       el.classList.add('lumina-toiag');
       await asteapta(500);

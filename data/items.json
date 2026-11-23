@@ -496,6 +496,7 @@
       "_nota": "Decis de autor: doar în lupta finală (cu toate valurile ei), o singură dată și doar de Vale: golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații. E prima dată când Vale folosește magia luminii (indiciu pentru trezirea lui). Stă la obiectele de poveste, ca să nu se piardă sau să se vândă (în poveste, e în cufărul de acasă).",
       "luptaFinala": {
         "poza": "combat/vale_toiag.png",
+        "pozaTata": "combat/vale_tata_toiag.png",
         "scut": "combat/scut_lumina.png",
         "jurnal": "Vale ridică Toiagul celor 23. Cristalul se aprinde, dar lumina nu vine doar din el: vine și din mâinile lui Vale. Inamicii rămân orbiți, cu barele goale, iar fiecare aliat primește un scut de lumină."
       }
