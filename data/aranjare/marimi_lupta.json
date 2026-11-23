@@ -1379,16 +1379,16 @@
       "lupta_tabara_vanatori": 130
     },
     "combat/vale_tata_cazut.png": {
-      "lupta_taverna_parter": 150,
-      "lupta_padure_interior": 150,
-      "lupta_poarta": 150,
-      "lupta_piata": 150,
-      "lupta_fierar": 150,
-      "lupta_campuri": 150,
-      "lupta_taverna_pivnita": 150,
-      "lupta_poarta_arena": 150,
-      "lupta_cimitir": 150,
-      "lupta_tabara_vanatori": 150
+      "lupta_taverna_parter": 160,
+      "lupta_padure_interior": 160,
+      "lupta_poarta": 160,
+      "lupta_piata": 160,
+      "lupta_fierar": 160,
+      "lupta_campuri": 160,
+      "lupta_taverna_pivnita": 160,
+      "lupta_poarta_arena": 160,
+      "lupta_cimitir": 160,
+      "lupta_tabara_vanatori": 160
     },
     "combat/vanatoare_pejos_idle.png": {
       "lupta_taverna_parter": 100,
