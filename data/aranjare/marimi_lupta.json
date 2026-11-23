@@ -1463,16 +1463,16 @@
       "lupta_tabara_vanatori": 165
     },
     "combat/soldat_steag_atac.png": {
-      "lupta_taverna_parter": 165,
-      "lupta_padure_interior": 165,
-      "lupta_poarta": 165,
-      "lupta_piata": 165,
-      "lupta_fierar": 165,
-      "lupta_campuri": 165,
-      "lupta_taverna_pivnita": 165,
-      "lupta_poarta_arena": 165,
-      "lupta_cimitir": 165,
-      "lupta_tabara_vanatori": 165
+      "lupta_taverna_parter": 175,
+      "lupta_padure_interior": 175,
+      "lupta_poarta": 175,
+      "lupta_piata": 175,
+      "lupta_fierar": 175,
+      "lupta_campuri": 175,
+      "lupta_taverna_pivnita": 175,
+      "lupta_poarta_arena": 175,
+      "lupta_cimitir": 175,
+      "lupta_tabara_vanatori": 175
     },
     "combat/soldat_steag_aparare.png": {
       "lupta_taverna_parter": 165,
