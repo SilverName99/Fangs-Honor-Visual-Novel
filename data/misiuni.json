@@ -1320,6 +1320,97 @@
       }
     },
     {
+      "id": "roderick_sticla",
+      "titlu": "Ultima sticlă",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "sticla": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Unchiul Roderick vrea să se lase de băut, iar Fratele Elian mi-a cerut să stau cu el o noapte, cât e cea mai grea. Le-am spus că n-am timp. Unchiul s-a întors spre altar și n-a mai zis nimic."
+        },
+        "CIORNĂ: De când poartă steagul satului, unchiul Roderick vrea să se lase de băut. Fratele Elian zice că primele nopți sunt cele mai grele: tremură, arde de febră, vede lucruri care nu sunt acolo. Unchiul nu vrea să-l vadă nimeni așa. Doar eu."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: misiunea lui Roderick și a lui Elian, care se poate rata (refuzul = −1 la amândoi). Ales de Claude: după „Steagul satului”, la biserică, cât sunt amândoi înăuntru (10–14).",
+        "text": "Unchiule... Frate Elian... s-a întâmplat ceva?",
+        "nod": "sticla_o1",
+        "conditii": {
+          "misiune": {
+            "miriam_steag": "terminata"
+          },
+          "loc": "biserica/interior",
+          "personajLa": {
+            "soldat": [
+              "biserica/interior"
+            ],
+            "mag": [
+              "biserica/interior"
+            ]
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Culeg trei fire de mușețel",
+          "la": "mag",
+          "numara": {
+            "obiect": "musetel",
+            "n": 3
+          },
+          "sfat": "În pădure, la „Caută ierburi”, dimineața (5–10).",
+          "indiciu": {
+            "text": "Ce fel de mușețel, Frate Elian?",
+            "nod": "sticla_e_flori"
+          }
+        },
+        {
+          "text": "Îi duc mușețelul Fratelui Elian",
+          "la": "mag",
+          "gata": {
+            "existaStare": "sticla_ceai"
+          },
+          "sfat": "Elian e la biserică: înăuntru până la 14, apoi pe scări, până seara.",
+          "predare": {
+            "text": "Am adus mușețelul, Frate Elian.",
+            "nod": "sticla_e1",
+            "conditii": {
+              "areCate": {
+                "musetel": 3
+              }
+            }
+          }
+        },
+        {
+          "text": "Noaptea, la biserică, stau cu unchiul",
+          "gata": {
+            "existaStare": "sticla_gata"
+          },
+          "sfat": "Noaptea (22–03), la biserică. Elian îl aduce pe unchiul de la tavernă.",
+          "indiciu": {
+            "text": "Despre la noapte...",
+            "nod": "sticla_ind_noapte"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea unchiului Roderick +1 și a Fratelui Elian +1. Unchiul și-a vărsat sticla în noroi.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1,
+            "mag": 1
+          },
+          "stare": {
+            "roderick_treaz": "da"
+          }
+        }
+      }
+    },
+    {
       "id": "agnes_pivnita",
       "titlu": "Pivnița",
       "dela": "hangita",
@@ -1703,6 +1794,145 @@
       "recompensa": {
         "text": "Prima cană din berea nouă.",
         "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
+      }
+    },
+    {
+      "id": "agnes_socoteala",
+      "titlu": "Socoteala",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "socoteala": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes m-a rugat să vorbesc cu el, cu blândețe. I-am spus că nu mă bag între ei."
+        },
+        "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes n-a vrut niciodată să-i ceară banii, dar orcii i-au mărit dările și nu mai face față. M-a rugat să vorbesc cu el, cu blândețe."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: a lui Agnes, dar punctul e al lui Roderick (se poate rata). Ales de Claude: după „Ultima sticlă” (făcută sau ratată).",
+        "text": "Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva?",
+        "nod": "soc_o1",
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "roderick_sticla": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "roderick_sticla": "ratata"
+              }
+            }
+          ]
+        }
+      },
+      "pasi": [
+        {
+          "text": "Vorbesc cu unchiul despre socoteală",
+          "la": "soldat",
+          "gata": {
+            "existaStare": "soc_roderick"
+          },
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "predare": {
+            "text": "Unchiule... despre socoteala de la Agnes.",
+            "nod": "soc_r1"
+          }
+        },
+        {
+          "text": "A doua zi dimineață, muncesc cu unchiul la tavernă",
+          "gata": {
+            "existaStare": "soc_gata"
+          },
+          "sfat": "Mâine dimineață (9–12), la tavernă: unchiul mă așteaptă acolo.",
+          "indiciu": {
+            "text": "Despre mâine...",
+            "nod": "soc_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea unchiului Roderick +1. Agnes a șters socoteala de pe tablă.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "agnes_seara",
+      "titlu": "Seara celor 23",
+      "dela": "hangita",
+      "dialog": "hangita",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "seara_23": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Agnes voia o seară pentru cei douăzeci și trei, în tavernă, cu tot satul, iar unchiul să povestească bătălia. I-am spus să-l lase în pace."
+        },
+        "CIORNĂ: Nimeni din sat nu i-a plâns împreună pe cei douăzeci și trei. Fiecare și-a plâns mortul lui, cu ușa închisă. Agnes vrea o seară pentru ei, în tavernă, cu tot satul. Dar trebuie să vorbească cineva care a fost acolo, iar acela e doar unchiul."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: a doua misiune a lui Agnes cu Roderick, frumoasă și emoțională; punctul e al lui Roderick (se poate rata). Ales de Claude: după „Socoteala” (făcută sau ratată).",
+        "text": "Doamna Agnes, la ce vă gândiți?",
+        "nod": "seara_o1",
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "agnes_socoteala": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "agnes_socoteala": "ratata"
+              }
+            }
+          ]
+        }
+      },
+      "pasi": [
+        {
+          "text": "Îl rog pe unchiul să povestească bătălia",
+          "la": "soldat",
+          "gata": {
+            "existaStare": "seara_roderick"
+          },
+          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "predare": {
+            "text": "Unchiule... Agnes vrea o seară pentru cei douăzeci și trei.",
+            "nod": "seara_r1"
+          }
+        },
+        {
+          "text": "Mâine seară, la tavernă, cu tot satul",
+          "gata": {
+            "existaStare": "seara_gata"
+          },
+          "sfat": "Mâine seară (19–23), la tavernă.",
+          "indiciu": {
+            "text": "Despre mâine seară...",
+            "nod": "seara_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea unchiului Roderick +1. Tot satul a ridicat cănile pentru cei douăzeci și trei.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1
+          },
+          "reputatie": 2
+        }
       }
     },
     {

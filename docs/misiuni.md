@@ -132,6 +132,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 5. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
 6. ✅ **Toiagul celor 23**: pornește singură, la sfârșitul „Secretului lui Elian”.
 7. ✅ **Vorbele din somn** (a Miriamei, +1 la Elian): după al doilea vis și la o zi după „Cina în familie”, la mama, dimineața.
+8. ✅⚠️ **Ultima sticlă** (a lui Roderick, +1 la Elian; se poate rata): după „Steagul satului”, la biserică (10–14), cât sunt amândoi înăuntru.
 
 **Kaia (vânătoarea)**
 1. ✅ **Întâlnirea cu Kaia**: după o vânătoare câștigată, din ziua 4, la următoarea vânătoare.
@@ -151,13 +152,18 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 4. ✅ **Locul unde a căzut tata**: după „Lumânările”, când Vale știe drumul spre Marginea satului (după eliberarea lui Finn). Apoi, la primul somn peste noapte, **al doilea vis**.
 5. ✅ **Antrenamentul**: pornește singur, la sfârșitul „Cinei în familie” (Miriam).
 6. ✅ **Steagul satului** (a Miriamei, +1 la Roderick): după „Cina în familie”, la mama, seara; apoi la Roderick și, seara, la gardul de la Marginea satului.
-7. 📝 **Solzii de dragon**: după „Antrenamentul” (decis de autor: după cele 4 misiuni, Roderick îi povestește de solzi), dincolo de gardul de la Marginea satului.
+7. ✅⚠️ **Ultima sticlă** (+1 și la Elian; se poate rata): după „Steagul satului”, la biserică (10–14), cât sunt amândoi înăuntru: „Unchiule... Frate Elian... s-a întâmplat ceva? !”.
+8. ✅⚠️ **Socoteala** (a lui Agnes, +1 la Roderick; se poate rata): după „Ultima sticlă” (făcută sau ratată), la Agnes.
+9. ✅⚠️ **Seara celor 23** (a lui Agnes, +1 la Roderick; se poate rata): după „Socoteala” (făcută sau ratată), la Agnes.
+10. 📝 **Solzii de dragon** (nu se ratează): după „Antrenamentul”, drumul lung până la crăpătura din pământ de pe harta soldatului.
 
 **Agnes (hangița)**
 1. ✅ **Camera de sus**: la 2 zile după prima discuție cu Agnes, în tavernă, cât e ea acolo.
 2. ✅ **Berea**: imediat după „Camera de sus”.
 3. ✅ **Pivnița**: după „Berea”, doar 09–11, cât taverna e goală.
 4. ✅ **Cercurile butoaielor** (+1 la Bram): după „Pivnița” și după „Fierul lui Bram”, în tavernă: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
+5. ✅⚠️ **Socoteala** (+1 la Roderick; se poate rata): după „Ultima sticlă” (Roderick, făcută sau ratată): „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”.
+6. ✅⚠️ **Seara celor 23** (+1 la Roderick; se poate rata): după „Socoteala” (făcută sau ratată): „Doamna Agnes, la ce vă gândiți? !”.
 
 **Fermierul**
 1. ✅ **Patrula de orci** (deblocarea lui): din ziua 3, dimineața, la câmpuri. Abia după ea poți vorbi cu el.
@@ -187,9 +193,9 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | Personaj | De unde vine +1 | Acum |
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · ✅ Capa Kaiei · ✅ Pâinea văduvelor · ✅ Vorbele din somn · ✅ Steagul satului · ✅⚠️ Lemne pentru iarnă (refuz sau 3 zile trecute) · ✅⚠️ Noaptea nașterii (refuz sau bătrâna neadusă până la 5) · (de la 8/10, misiunea specială, echipamentul tatălui, fără încredere) | 10 / 10 |
-| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · 💡 încă 4 (Hârtiile soldatului nu dau, decis) | 6 / 10 |
+| **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · ✅⚠️ Ultima sticlă (doar dacă accepți) · ✅⚠️ Socoteala (a lui Agnes, doar dacă accepți) · ✅⚠️ Seara celor 23 (a lui Agnes, doar dacă accepți) · 📝 Solzii de dragon (Hârtiile soldatului nu dau, decis) | 9 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · ✅ Platoșa tatălui · 💡 încă 1 | 9 / 10 |
-| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · 💡 încă 2 | 8 / 10 |
+| **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · ✅⚠️ Ultima sticlă (a lui Roderick, doar dacă accepți) · 💡 încă 1 | 9 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · ✅ Cuștile vânătorilor (+1 oricum s-ar termina lupta, decis de autor) · ✅⚠️ Ultima treabă pentru Jarek (doar „Nu, Finn. Ai promis.”) · ✅ Prietenii lui Finn (de la 8/10) | 10 / 10 |
 
@@ -555,6 +561,9 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici:** după „Cufărul”, la biserică, 14–23 (Elian afară) → „am nevoie de un sfat” → „Vreau.” → cele 3 imagini. Înăuntru, dimineața, oferta nu apare.
 
+### ✅⚠️ Ultima sticlă (a lui Roderick, +1 la Elian; se poate rata)
+- Detaliile, la Roderick. Pe scurt: Elian face ceaiul din mușețelul adus de Vale și stă de veghe cu ei toată noaptea în biserică.
+
 ### ✅ Toiagul celor 23 (+1 la Bram și la Elian)
 - **Pornește singură**, la sfârșitul „Secretului lui Elian”.
 - **Pasul 1** (decis de autor): la Bram, „Domnule Bram, trebuie să-mi jurați ceva.” → Bram jură pe nicovala tatălui lui; Vale îi spune că Elian e mag adevărat, cu un cristal, și ideea toiagului, ca să-i crească puterea, pentru ceva neprevăzut. Bram îl bate seara, cu obloanele trase.
@@ -796,8 +805,22 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ### ✅ Steagul satului (a Miriamei, +1 la Roderick)
 - Detaliile, la Miriam. Pe scurt: Roderick și Vale aduc noaptea steagul satului de pe câmpul bătăliei, Miriam îl coase, iar Roderick îl primește de la ea și îl poartă de atunci; în lupta finală luptă cu el în mână (ceilalți lovesc cu +2 cât stă el în picioare).
 
-### 📝 Solzii de dragon
-- **După „Antrenamentul”** (decis de autor: după cele 4 misiuni, Roderick are destulă încredere ca să-i povestească de solzi), dincolo de gardul de la Marginea satului. **Arată spre portalul morții** (decis de autor): crăpătura din pământ de pe harta soldatului. Restul: de discutat.
+### ✅⚠️ Ultima sticlă (+1 și la Elian; se poate rata)
+- **Pornește** (decis de autor: misiunea lui Roderick și a lui Elian, care se poate rata; ales de Claude: după „Steagul satului”): la biserică, cât sunt amândoi înăuntru (10–14): „Unchiule... Frate Elian... s-a întâmplat ceva? !”. De când poartă steagul, Roderick vrea să se lase de băut, dar primele nopți sunt cele mai grele, iar el nu vrea să-l vadă nimeni așa. Alegi „Rămân cu tine, unchiule.” sau „Nu pot, unchiule. Am prea multe pe cap acum.” (**refuzul = ratată, fără +1 la amândoi**, decis de autor).
+- **Pașii:** 3 fire de mușețel (din pădure, „Caută ierburi”), duse lui Elian (le fierbe pentru ceai); apoi **noaptea (22–03), la biserică**, pornește direct (și dacă Vale e deja acolo, `siPeLoc`), **peste 3 imagini** (ciornă de Claude): (1) biserica goală, o lumânare, Roderick sub o pătură, cu febră și tremurând; vrea să plece după o sticlă, iar Vale îl oprește; (2) Elian îi dă ceaiul, Roderick îl ține cu amândouă mâinile, iar Vale îi ține mâinile; (3) în zori, pe scările bisericii, Roderick își varsă sticla în noroi. Vale stă de veghe toată noaptea: dimineața e 06:00, cu −25 stamina (ales de Claude).
+- **Recompensa:** încrederea lui Roderick **+1** și a lui Elian **+1**; starea `roderick_treaz` = `da`.
+- **Imagini:** `events/roderick_sticla_1.png`, `_2.png`, `_3.png` (galeria: „Roderick: ultima sticlă”).
+
+**Cum verifici:** cu „Steagul satului” gata, ora 11:00 → Biserică → Interior → Roderick → „s-a întâmplat ceva?” → „Rămân cu tine” → Elian → „Am adus mușețelul” (F2 → Obiecte: Mușețel +5) → ora 22:30 → Biserică → cele 3 imagini.
+
+### ✅⚠️ Socoteala (a lui Agnes, +1 la Roderick; se poate rata)
+- Detaliile, la Agnes.
+
+### ✅⚠️ Seara celor 23 (a lui Agnes, +1 la Roderick; se poate rata)
+- Detaliile, la Agnes.
+
+### 📝 Solzii de dragon (nu se ratează)
+- **După „Antrenamentul”**, spre **crăpătura din pământ de pe harta soldatului**, care arată spre portalul morții (decis de autor). **Plan nou** (decis de autor): drumul e lung, deci întâi Vale strânge provizii (carne friptă, apă, sfoară); apoi pleacă împreună, iar pe drum e o poveste mai adâncă: noaptea, la focul de popas, Roderick povestește despre creaturile întâlnite departe de sat. Restul: de discutat.
 
 ---
 
@@ -850,6 +873,22 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/cercuri_pivnita_1.png`, `cercuri_pivnita_2.png`, `items/cercuri_vechi.png`, `portraits/fierar_inrosit.png` (galeria: „Cercurile butoaielor”).
 
 **Cum verifici:** după „Pivnița”, în tavernă → Agnes → „de ce miroase...” → Bram → pivnița, zona „Cercurile vechi” → Bram → seara, după 22, ușa „Pivnița”.
+
+### ✅⚠️ Socoteala (+1 la Roderick; se poate rata)
+- **Pornește** (decis de autor: a lui Agnes, dar punctul e al lui Roderick; ales de Claude: după „Ultima sticlă”, făcută sau ratată): la Agnes: „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”. Pe tabla neagră din spatele tejghelei e un an întreg de căni ale lui Roderick, pe datorie; Agnes nu i-a cerut niciodată nimic, dar orcii i-au mărit dările. Te roagă să vorbești tu cu el, cu blândețe. Alegi „Vorbesc eu cu el, doamna Agnes.” sau „Nu mă bag între voi, doamna Agnes.” (**refuzul = ratată, fără +1**).
+- **Pașii:** vorbești cu Roderick („Unchiule... despre socoteala de la Agnes.”): rușinat, vrea să-și muncească datoria; **a doua zi dimineață (9–12), la tavernă**, pornește direct, **peste 2 imagini** (ciornă de Claude): (1) în spatele tavernei, Roderick despică lemne, iar Vale le stivuiește; (2) înăuntru, Agnes șterge tabla de cretă: „Suntem chit, Roderick Lightfinder.” Trei ore de muncă (−20 stamina), apoi Agnes îi hrănește (+30 foame) (ales de Claude).
+- **Recompensa:** încrederea lui Roderick **+1**.
+- **Imagini:** `events/roderick_socoteala_1.png`, `_2.png` (galeria: „Agnes: socoteala”).
+
+**Cum verifici:** cu „Ultima sticlă” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „arătați îngrijorată?” → „Vorbesc eu cu el” → Roderick → „despre socoteala” → „Ziua următoare” → ora 10:00 → Taverna → cele 2 imagini.
+
+### ✅⚠️ Seara celor 23 (+1 la Roderick; se poate rata)
+- **Pornește** (decis de autor: a doua a lui Agnes cu Roderick, frumoasă și emoțională; ales de Claude: după „Socoteala”, făcută sau ratată): la Agnes: „Doamna Agnes, la ce vă gândiți? !”. Pe cei douăzeci și trei nu i-a plâns nimeni împreună; Agnes vrea o seară pentru ei, în tavernă, cu tot satul, dar trebuie să vorbească cineva care a fost acolo: doar Roderick. Alegi „O să-l rog, doamna Agnes.” sau „Lăsați-l, doamna Agnes. Încă îl doare.” (**refuzul = ratată, fără +1**).
+- **Pașii:** îl rogi pe Roderick: întâi nu poate, apoi acceptă, dacă Vale stă lângă el; **a doua zi seara (19–23), la tavernă**, pornește direct (și dacă Vale e deja acolo), **peste 3 imagini** (ciornă de Claude): (1) taverna plină, o lumânare pe fiecare masă, Roderick se ridică lângă foc; (2) Roderick povestește bătălia: copacul înflorit, Owen care a căzut primul (Hanna, văduva lui, e în sală), cuvintele lui Edwin, „Fugi în sat. Ai grijă de Miriam și de băiat.”, apoi spune cele douăzeci și trei de nume; (3) Bătrânul Hagen ridică cana: „Pentru cei douăzeci și trei.”, iar toată taverna se ridică; un sătean: „Încă mai sunt bărbați în satul ăsta, Roderick.” (o scânteie de revoltă). Două ore.
+- **Recompensa:** încrederea lui Roderick **+1**, reputația +2 (ales de Claude).
+- **Imagini:** `events/roderick_seara_1.png`, `_2.png`, `_3.png` (galeria: „Agnes: seara celor 23”). Sătenii n-au portret (`faraPortret`), ca la „Pâinea văduvelor”.
+
+**Cum verifici:** cu „Socoteala” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „la ce vă gândiți?” → „O să-l rog” → Roderick → „Agnes vrea o seară” → „Ziua următoare” → ora 20:00 → Taverna → cele 3 imagini.
 
 ---
 

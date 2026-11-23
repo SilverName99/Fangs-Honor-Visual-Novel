@@ -1993,6 +1993,104 @@
           "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: de-a lungul crăpăturii, unde ține Bram cleștele."
         }
       }
+    },
+    {
+      "id": "roderick_sticla",
+      "repetare": "o_data",
+      "nume": "Roderick: ultima sticlă",
+      "grup": "Roderick: ultima sticlă",
+      "dialog": "roderick_sticla",
+      "_nota": "Ales de Claude: după ce i-a dus lui Elian mușețelul, când Vale ajunge noaptea (22–03) la biserică, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
+      "conditii": {
+        "oricare": [
+          {
+            "loc": "biserica"
+          },
+          {
+            "loc": "biserica/interior"
+          }
+        ],
+        "nu": {
+          "ora": {
+            "min": "03:00",
+            "max": "21:59"
+          }
+        },
+        "stare": {
+          "sticla_ceai": "da"
+        },
+        "misiune": {
+          "roderick_sticla": "inceputa"
+        }
+      },
+      "siPeLoc": true
+    },
+    {
+      "id": "agnes_socoteala",
+      "repetare": "o_data",
+      "nume": "Agnes: socoteala",
+      "grup": "Agnes: socoteala",
+      "dialog": "agnes_socoteala",
+      "_nota": "Ales de Claude: a doua zi după ce Roderick a aflat de socoteală, când Vale ajunge dimineața (9–12) la tavernă, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
+      "conditii": {
+        "oricare": [
+          {
+            "loc": "taverna"
+          },
+          {
+            "loc": "taverna/parter"
+          }
+        ],
+        "ora": {
+          "min": "09:00",
+          "max": "11:59"
+        },
+        "stare": {
+          "soc_roderick": "da"
+        },
+        "nu": {
+          "marcatAzi": {
+            "id": "soc_roderick",
+            "deLa": "05:00"
+          }
+        },
+        "misiune": {
+          "agnes_socoteala": "inceputa"
+        }
+      },
+      "siPeLoc": true
+    },
+    {
+      "id": "agnes_seara",
+      "repetare": "o_data",
+      "nume": "Agnes: seara celor 23",
+      "grup": "Agnes: seara celor 23",
+      "dialog": "agnes_seara",
+      "_nota": "Ales de Claude: a doua zi după ce Roderick a acceptat, când Vale ajunge seara (19–23) la tavernă, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
+      "conditii": {
+        "oricare": [
+          {
+            "loc": "taverna"
+          },
+          {
+            "loc": "taverna/parter"
+          }
+        ],
+        "ora": {
+          "min": "19:00",
+          "max": "22:59"
+        },
+        "stare": {
+          "seara_roderick": "da"
+        },
+        "nu": {
+          "marcatAzi": "seara_roderick"
+        },
+        "misiune": {
+          "agnes_seara": "inceputa"
+        }
+      },
+      "siPeLoc": true
     }
   ]
 }

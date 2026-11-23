@@ -773,6 +773,152 @@
         "emotie": "normal",
         "text": "Steagul stă pe peretele de deasupra patului meu. Unde dorm, nu-ți spun nici ție. Dar acolo stă, și îl văd în fiecare seară înainte să închid ochii.",
         "_nota": "CIORNĂ (Claude): după misiunea „Steagul satului”."
+      },
+      "sticla_o1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul și Fratele Elian stau pe aceeași bancă, aproape umăr la umăr. Vorbesc încet, iar când mă văd, tac amândoi.",
+        "urmator": "sticla_o2"
+      },
+      "sticla_o2": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Vale. Bine că ai venit. Stai jos.",
+        "urmator": "sticla_o3"
+      },
+      "sticla_o3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "De când îmi bate steagul ăla pe umăr, mă uit în cana de bere și mi-e rușine. Edwin n-ar fi purtat steagul satului cu o mână care tremură.",
+        "urmator": "sticla_o4"
+      },
+      "sticla_o4": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Roderick vrea să se lase de băut. De tot.",
+        "urmator": "sticla_o5"
+      },
+      "sticla_o5": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Dar trupul lui s-a obișnuit cu băutura. Primele nopți fără ea sunt cele mai grele: tremură, arde de febră, vede lucruri care nu sunt acolo.",
+        "urmator": "sticla_o6"
+      },
+      "sticla_o6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la mâinile unchiului. Le ține strânse între genunchi, ca să nu se vadă cum tremură.",
+        "urmator": "sticla_o7"
+      },
+      "sticla_o7": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Nu vreau să mă vadă nimeni așa. Nici Agnes, nici mama ta. Dar dacă rămân singur în noaptea aia... mă duc după o sticlă. Știu sigur.",
+        "urmator": "sticla_o8"
+      },
+      "sticla_o8": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pot face un ceai care îi stinge febra. Îmi lipsește doar mușețelul: trei fire. Iar el are nevoie de cineva lângă el, o noapte întreagă. Cineva în care are încredere.",
+        "urmator": "sticla_o9"
+      },
+      "sticla_o9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am încredere doar în tine, băiete.",
+        "alegeri": [
+          {
+            "text": "Rămân cu tine, unchiule. Cât e nevoie.",
+            "spre": "sticla_da1",
+            "efecte": {
+              "misiune": {
+                "roderick_sticla": "inceputa"
+              },
+              "stare": {
+                "sticla": "acceptat"
+              }
+            }
+          },
+          {
+            "text": "Nu pot, unchiule. Am prea multe pe cap acum.",
+            "spre": "sticla_nu1",
+            "efecte": {
+              "misiune": {
+                "roderick_sticla": "ratata"
+              },
+              "stare": {
+                "sticla": "refuzat"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: se poate rata; refuzul = fără +1 la Roderick și la Elian (amândoi au cerut ajutorul)."
+      },
+      "sticla_da1": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Mulțumesc. Nu știu dacă o să-ți mai spun asta și la noapte.",
+        "urmator": "sticla_da2"
+      },
+      "sticla_da2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Adu-mi mușețelul, Vale: îl găsești în pădure, unde ai cules și sunătoarea. Când e ceaiul gata, stăm toți trei de veghe."
+      },
+      "sticla_nu1": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Înțeleg. Ai și tu viața ta.",
+        "urmator": "sticla_nu2"
+      },
+      "sticla_nu2": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Nu-i nimic, Roderick. Găsim noi o cale.",
+        "urmator": "sticla_nu3"
+      },
+      "sticla_nu3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se întoarce spre altar. Fratele Elian nu se mai uită la mine."
+      },
+      "sticla_e_flori": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Mușețel, Vale: floarea mică, albă, cu mijlocul galben, care miroase a fân. Trei fire ajung. Îl găsești în pădure, dimineața, unde ai cules și sunătoarea."
+      },
+      "sticla_e1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus mușețelul, Frate Elian. Trei fire.",
+        "urmator": "sticla_e2"
+      },
+      "sticla_e2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "E bun. Îl fierb cu încă ceva, din rezerva mea. Ceva amar, care ține febra în frâu.",
+        "urmator": "sticla_e3"
+      },
+      "sticla_e3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "La noapte, după zece, vino la biserică. Eu îl aduc pe Roderick de la tavernă, înainte să-și comande a doua cană.",
+        "efecte": {
+          "consuma": {
+            "musetel": 3
+          },
+          "stare": {
+            "sticla_ceai": "da"
+          }
+        }
+      },
+      "sticla_ind_noapte": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "La noapte, la biserică. Și dacă mă vezi că plec spre ușă... nu mă lăsa, băiete."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -1224,6 +1370,270 @@
         "emotie": "normal",
         "text": "Ai auzit? Orcii au mai luat o căruță de grâu de la moară. Dacă mai iau una, la iarnă mâncăm scoarță de copac.",
         "_nota": "Fost eveniment de test (test_barfa_taverna), care pornea singur la intrarea în tavernă, seara (decis de autor: nu mai oprește; replica a rămas în „Ce mai faceți, doamna Agnes?”)."
+      },
+      "soc_o1": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Vino mai aproape, Vale. Nu vreau să audă nimeni.",
+        "urmator": "soc_o2"
+      },
+      "soc_o2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Agnes se uită spre tabla neagră de pe peretele din spatele tejghelei. E plină de linii de cretă, rânduri întregi.",
+        "urmator": "soc_o3"
+      },
+      "soc_o3": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Liniile alea sunt ale unchiului tău. Un an întreg de căni. N-am vrut niciodată să-i cer nimic, după ce a adus... după tot ce s-a întâmplat.",
+        "urmator": "soc_o4"
+      },
+      "soc_o4": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Dar orcii mi-au mărit dările. Iar butoaiele nu se umplu singure.",
+        "urmator": "soc_o5"
+      },
+      "soc_o5": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Nu vreau să-l rușinez. Dacă-i spun eu, n-o să mai calce pe aici, iar asta ar fi mai rău decât toată datoria. Pe tine te ascultă.",
+        "alegeri": [
+          {
+            "text": "Vorbesc eu cu el, doamna Agnes.",
+            "spre": "soc_da1",
+            "efecte": {
+              "misiune": {
+                "agnes_socoteala": "inceputa"
+              },
+              "stare": {
+                "socoteala": "acceptat"
+              }
+            }
+          },
+          {
+            "text": "Nu mă bag între voi, doamna Agnes.",
+            "spre": "soc_nu1",
+            "efecte": {
+              "misiune": {
+                "agnes_socoteala": "ratata"
+              },
+              "stare": {
+                "socoteala": "refuzat"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: se poate rata; refuzul = fără +1 la Roderick."
+      },
+      "soc_da1": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Cu blândețe, Vale. E un om bun. Doar că a uitat de el."
+      },
+      "soc_nu1": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Înțeleg. Nu e treaba ta.",
+        "urmator": "soc_nu2"
+      },
+      "soc_nu2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Agnes ia o cârpă și începe să frece tejgheaua, deși e curată."
+      },
+      "soc_r1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... despre socoteala de la Agnes.",
+        "urmator": "soc_r2"
+      },
+      "soc_r2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul ridică ochii spre tabla neagră din spatele tejghelei. Pe fața lui se vede că o vede pentru prima oară.",
+        "urmator": "soc_r3"
+      },
+      "soc_r3": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Toate alea... sunt ale mele?",
+        "urmator": "soc_r4"
+      },
+      "soc_r4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Agnes n-a vrut să-ți spună. Dar orcii i-au mărit dările.",
+        "urmator": "soc_r5"
+      },
+      "soc_r5": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Și eu am stat aici un an și am băut din puțul ei.",
+        "urmator": "soc_r6"
+      },
+      "soc_r6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bani n-am, Vale. Dar am mâini. Mâine dimineață, înainte să se umple taverna, vin să-i muncesc toată socoteala.",
+        "urmator": "soc_r7"
+      },
+      "soc_r7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Vin și eu, unchiule. Patru mâini muncesc mai repede.",
+        "urmator": "soc_r8"
+      },
+      "soc_r8": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Atunci mâine dimineață. Și nu-i spune nimic lui Agnes. Vreau să vadă cu ochii ei.",
+        "efecte": {
+          "stare": {
+            "soc_roderick": "da"
+          },
+          "marcheaza": "soc_roderick"
+        }
+      },
+      "soc_ind": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mâine dimineață, la tavernă, între nouă și prânz. Adu-ți mâinile, băiete."
+      },
+      "seara_o1": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Știi ce-mi lipsește cel mai mult, Vale? Cântecele.",
+        "urmator": "seara_o2"
+      },
+      "seara_o2": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Înainte de orci, taverna asta cânta în fiecare seară. Acum oamenii beau în tăcere și pleacă acasă înainte să se întunece.",
+        "urmator": "seara_o3"
+      },
+      "seara_o3": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Pe cei douăzeci și trei nu i-a plâns nimeni împreună. Fiecare și-a plâns mortul lui, cu ușa închisă.",
+        "urmator": "seara_o4"
+      },
+      "seara_o4": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Vreau o seară pentru ei. Aici, cu tot satul. O lumânare pe fiecare masă, și să le spunem numele cu voce tare.",
+        "urmator": "seara_o5"
+      },
+      "seara_o5": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Dar trebuie să vorbească cineva care a fost acolo. Și n-a fost decât unchiul tău.",
+        "urmator": "seara_o6"
+      },
+      "seara_o6": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "N-a vorbit niciodată despre ziua aceea. Nici cu mine. Pe tine poate te ascultă.",
+        "alegeri": [
+          {
+            "text": "O să-l rog, doamna Agnes.",
+            "spre": "seara_da1",
+            "efecte": {
+              "misiune": {
+                "agnes_seara": "inceputa"
+              },
+              "stare": {
+                "seara_23": "acceptat"
+              }
+            }
+          },
+          {
+            "text": "Lăsați-l, doamna Agnes. Încă îl doare.",
+            "spre": "seara_nu1",
+            "efecte": {
+              "misiune": {
+                "agnes_seara": "ratata"
+              },
+              "stare": {
+                "seara_23": "refuzat"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: se poate rata; refuzul = fără +1 la Roderick."
+      },
+      "seara_da1": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Mulțumesc, Vale. Eu pregătesc lumânările."
+      },
+      "seara_nu1": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Poate ai dreptate... Poate e prea devreme."
+      },
+      "seara_r1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... Agnes vrea o seară pentru cei douăzeci și trei. Cu tot satul.",
+        "urmator": "seara_r2"
+      },
+      "seara_r2": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Știu ce vrea. Să vorbesc. Să le spun cum au murit.",
+        "urmator": "seara_r3"
+      },
+      "seara_r3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Nu pot, Vale. Când închid ochii, sunt tot acolo, sub copac.",
+        "urmator": "seara_r4"
+      },
+      "seara_r4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Hanna nu știe nici azi cum a căzut Owen. Nici Ilse, nici Greta. Doar tu știi.",
+        "urmator": "seara_r5"
+      },
+      "seara_r5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul tace mult. Își freacă palmele una de alta, ca și cum ar încerca să le încălzească.",
+        "urmator": "seara_r6"
+      },
+      "seara_r6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dacă stai lângă mine... Dacă îmi tremură vocea și tu stai lângă mine, poate pot.",
+        "urmator": "seara_r7"
+      },
+      "seara_r7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Stau lângă tine, unchiule. Ca atunci, la biserică.",
+        "urmator": "seara_r8"
+      },
+      "seara_r8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Atunci mâine seară, când se umple taverna. Spune-i lui Agnes.",
+        "efecte": {
+          "stare": {
+            "seara_roderick": "da"
+          },
+          "marcheaza": "seara_roderick"
+        }
+      },
+      "seara_ind": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Mâine seară, la tavernă. Și stai lângă mine, băiete."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -19341,6 +19751,404 @@
           },
           "timp": 180
         }
+      }
+    }
+  },
+  "roderick_sticla": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick și a lui Elian „Ultima sticlă”: noaptea, în biserică, peste 3 imagini.",
+    "grup": "Roderick: ultima sticlă",
+    "partener": "soldat",
+    "start": "s1",
+    "noduri": {
+      "s1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Biserica e goală. Doar o lumânare arde lângă altar. Fratele Elian l-a adus pe unchiul de la tavernă și l-a așezat pe banca din spate, sub o pătură.",
+        "imagine": "events/roderick_sticla_1.png",
+        "urmator": "s2"
+      },
+      "s2": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Ar trebui să fiu acolo acum. La a treia cană. Așa trec nopțile de un an încoace.",
+        "urmator": "s3"
+      },
+      "s3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu mai e nevoie, unchiule. Sunt aici.",
+        "urmator": "s4"
+      },
+      "s4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe la miezul nopții începe tremuratul. Întâi mâinile, apoi tot trupul. Fruntea îi arde, deși dinții îi clănțăne de frig.",
+        "urmator": "s5"
+      },
+      "s5": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Îl aud, Vale. Pe Edwin. Mă strigă de dincolo de gard. „Roderick, fugi!” Și eu fug. Fug de fiecare dată.",
+        "urmator": "s6"
+      },
+      "s6": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "E doar febra, unchiule. Tata nu e aici. Eu sunt.",
+        "urmator": "s7"
+      },
+      "s7": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "O sticlă. Una singură, băiete. Agnes ține una sub tejghea, pentru mine. Mă duc și mă întorc. Promit.",
+        "urmator": "s8"
+      },
+      "s8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se ridică și se clatină spre ușă. Îl prind de umăr. E mai puternic decât mine, chiar și așa, dar nu mă împinge.",
+        "urmator": "s9"
+      },
+      "s9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Dacă ieși pe ușa aia, vin după tine. Și o să ne vadă orcii pe amândoi. Alegi tu, unchiule.",
+        "urmator": "s10"
+      },
+      "s10": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "...Ești ca el. Exact ca el. Nici el nu-mi lăsa nicio cale.",
+        "urmator": "s11"
+      },
+      "s11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fratele Elian se apropie fără zgomot, cu o cană din care iese abur. Miroase a mușețel și a ceva amar, pe care nu-l cunosc.",
+        "imagine": "events/roderick_sticla_2.png",
+        "urmator": "s12"
+      },
+      "s12": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Bea încet, Roderick. N-o să-ți ia durerea, dar o face destul de mică încât s-o poți duce.",
+        "urmator": "s13"
+      },
+      "s13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul ține cana cu amândouă mâinile, ca să nu verse. Eu îi țin mâinile într-ale mele.",
+        "urmator": "s14"
+      },
+      "s14": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "În ziua bătăliei aveam sticla la brâu. Am băut din ea înainte să urcăm la copac, ca să nu-mi fie frică. Poate dacă n-aș fi băut...",
+        "urmator": "s15"
+      },
+      "s15": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Ai fi murit și tu, unchiule. Și cine ne-ar mai fi adus steagul acasă?",
+        "urmator": "s16"
+      },
+      "s16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu-mi mai răspunde. Spre dimineață, tremuratul se stinge, iar unchiul adoarme cu capul pe umărul meu. Fratele Elian stă de veghe lângă noi, fără să spună nimic.",
+        "urmator": "s17"
+      },
+      "s17": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când se crapă de ziuă, ieșim pe scările bisericii. Unchiul scoate din haină o sticlă plată, pe jumătate plină. O poartă la el de un an.",
+        "imagine": "events/roderick_sticla_3.png",
+        "urmator": "s18"
+      },
+      "s18": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Asta era pentru zilele grele.",
+        "urmator": "s19"
+      },
+      "s19": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O destupă, se uită lung la ea și o răstoarnă în noroi, picătură cu picătură.",
+        "urmator": "s20"
+      },
+      "s20": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "De azi, zilele grele le duc cu mâinile goale. Și cu tine lângă mine.",
+        "urmator": "s21"
+      },
+      "s21": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Mai sunt nopți grele înainte, Roderick. Dar cea mai grea a trecut.",
+        "efecte": {
+          "stare": {
+            "sticla_gata": "da"
+          },
+          "panaLaOra": "06:00",
+          "nevoi": {
+            "stamina": -25
+          },
+          "mergi": "biserica"
+        },
+        "_nota": "Ales de Claude: Vale stă de veghe toată noaptea (fără somn, −25 stamina), iar dimineața iese cu ei pe scările bisericii."
+      }
+    }
+  },
+  "agnes_socoteala": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Agnes „Socoteala”: dimineața, la tavernă, peste 2 imagini.",
+    "grup": "Agnes: socoteala",
+    "partener": "soldat",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul e deja în spatele tavernei când ajung. Și-a suflecat mânecile și a scos toporul din șopron. Pare treaz, pentru prima oară la ora asta.",
+        "imagine": "events/roderick_socoteala_1.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Lemne pentru o săptămână, butoaiele din pivniță sus, banca ruptă de la fereastră. Asta e lista lui Agnes. Și o facem până la prânz.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "O facem, unchiule.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Muncim fără să vorbim. Unchiul despică buștenii dintr-o lovitură, ca și cum fiecare ar avea o datorie scrisă pe el. Eu car și stivuiesc.",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Edwin și cu mine tăiam lemne pentru tatăl lui Agnes, când eram copii. Pentru un colac și o cană de lapte. Nu mi-am închipuit că o să ajung să tai pentru o socoteală.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu tai pentru o socoteală, unchiule. Tai pentru Agnes.",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "...Ai dreptate. Așa sună mai bine.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Spre prânz, Agnes ne cheamă înăuntru. Tabla neagră din spatele tejghelei e tot acolo, plină de linii de cretă.",
+        "imagine": "events/roderick_socoteala_2.png",
+        "urmator": "c9"
+      },
+      "c9": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Roderick... n-am vrut niciodată să te rușinez. După tot ce s-a întâmplat, nu puteam să-ți cer nimic.",
+        "urmator": "c10"
+      },
+      "c10": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Trebuia să-mi ceri, Agnes. Eu trebuia să văd. Un an întreg n-am văzut nimic, decât fundul cănii.",
+        "urmator": "c11"
+      },
+      "c11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Agnes înmoaie o cârpă în găleată și șterge tabla. Linie cu linie, până rămâne neagră și curată.",
+        "urmator": "c12"
+      },
+      "c12": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Lemnele mele ajung până după ploi. Butoaiele sunt sus. Banca nu mai scârțâie. Suntem chit, Roderick Lightfinder.",
+        "urmator": "c13"
+      },
+      "c13": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Suntem chit.",
+        "urmator": "c14"
+      },
+      "c14": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Și acum stați jos amândoi. N-a plecat nimeni de la mine flămând după o zi de muncă.",
+        "efecte": {
+          "stare": {
+            "soc_gata": "da"
+          },
+          "timp": 180,
+          "nevoi": {
+            "stamina": -20,
+            "foame": 30
+          }
+        },
+        "_nota": "Ales de Claude: trei ore de muncă (−20 stamina), apoi Agnes îi hrănește (+30 foame)."
+      }
+    }
+  },
+  "agnes_seara": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Agnes „Seara celor 23”: seara, în taverna plină, peste 3 imagini. Roderick povestește bătălia și spune numele celor căzuți.",
+    "grup": "Agnes: seara celor 23",
+    "partener": "soldat",
+    "start": "v1",
+    "noduri": {
+      "v1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Taverna e plină cum n-am mai văzut-o de la venirea orcilor. Văduvele stau în față, apoi fermierul, Bram, morarul, Bătrânul Hagen. Nimeni nu bea. Pe fiecare masă arde câte o lumânare.",
+        "imagine": "events/roderick_seara_1.png",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Mulțumesc că ați venit. Știți de ce suntem aici. Roderick?",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul se ridică încet. Îi văd mâna căutând sprijin pe masă. O găsește pe a mea.",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "N-am vorbit niciodată despre ziua aceea. Nici cu voi, nici cu mine. Agnes zice că v-o datorez. Are dreptate.",
+        "urmator": "v5"
+      },
+      "v5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Era primăvară. Copacul cel mare înflorise. Eram douăzeci și patru. Douăzeci și patru de bărbați cu săbii vechi și furci, în fața unei hoarde.",
+        "imagine": "events/roderick_seara_2.png",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Owen a căzut primul. Cu o clipă înainte râdea. Râdea de frica mea.",
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "satean",
+        "nume": "Hanna",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Ăsta era Owen al meu...",
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Am ținut linia până la amiază. Apoi au venit prea mulți.",
+        "urmator": "v9"
+      },
+      "v9": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "Edwin m-a prins de umăr și mi-a zis: „Fugi în sat. Ai grijă de Miriam și de băiat.” Și eu am fugit. Toată viața am crezut că am fugit de frică.",
+        "urmator": "v10"
+      },
+      "v10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu se aude nimic în tavernă. Nici măcar focul.",
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Dar azi știu: el m-a trimis acasă. Ca să rămână cineva care să vă spună numele lor.",
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și le spune. Pe toate. Douăzeci și trei de nume, încet, unul după altul. La fiecare nume, cineva din sală își lasă capul în jos.",
+        "urmator": "v13"
+      },
+      "v13": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Pentru cei douăzeci și trei.",
+        "imagine": "events/roderick_seara_3.png",
+        "urmator": "v14"
+      },
+      "v14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și toată taverna se ridică. Ridică cănile spre foc, fără un cuvânt.",
+        "urmator": "v15"
+      },
+      "v15": {
+        "vorbitor": "hangita",
+        "emotie": "plange",
+        "text": "Pentru cei douăzeci și trei.",
+        "urmator": "v16"
+      },
+      "v16": {
+        "vorbitor": "satean",
+        "nume": "Un sătean",
+        "faraPortret": true,
+        "emotie": "normal",
+        "text": "Și pentru noi, cei care am mai rămas. Încă mai sunt bărbați în satul ăsta, Roderick.",
+        "urmator": "v17"
+      },
+      "v17": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit la fețele lor. Pentru prima oară de când au venit orcii, nimeni nu pare speriat.",
+        "urmator": "v18"
+      },
+      "v18": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Mulțumesc, băiete. N-aș fi putut fără tine lângă mine.",
+        "efecte": {
+          "stare": {
+            "seara_gata": "da"
+          },
+          "timp": 120
+        },
+        "_nota": "Ales de Claude: două ore."
       }
     }
   }
