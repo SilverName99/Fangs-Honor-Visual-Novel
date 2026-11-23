@@ -978,6 +978,7 @@
           {
             "id": "vindecare",
             "nume": "Vindecare",
+            "scurt": "+{min}–{max} viață unui aliat",
             "tinta": "aliat",
             "min": 12,
             "max": 18,
@@ -986,7 +987,8 @@
           },
           {
             "id": "golesteBara",
-            "nume": "Lumină orbitoare (TODO nume)",
+            "nume": "Lumină orbitoare",
+            "scurt": "golește bara unui inamic",
             "tinta": "inamic",
             "cost": 60,
             "poza": "goleste_bara"
@@ -994,6 +996,7 @@
           {
             "id": "scutLumina",
             "nume": "Scut de lumină",
+            "scurt": "oprește următoarea lovitură",
             "tinta": "aliat",
             "cost": 40,
             "imagine": "combat/scut_lumina.png",

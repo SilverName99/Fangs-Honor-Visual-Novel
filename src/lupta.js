@@ -1100,10 +1100,12 @@ export function creeazaLupta(parinte, joc) {
         : [butonActiune('atac', '⚔', 'Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f) || faraSageti, faraSageti ? 'N-ai săgeți' : poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
       ...f.abilitati.map((a) => {
         const blocata = f.abilitatiBlocate.includes(a.id);
+        // Pe eticheta de la hover, numele și, în paranteză, pe scurt ce face (cerut de autor); {min}/{max} vin din date
+        const scurt = a.scurt?.replace('{min}', a.min).replace('{max}', a.max);
         return butonActiune(
           caFisier(a.id),
           '✦',
-          a.nume,
+          scurt ? `${a.nume} (${scurt})` : a.nume,
           () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (t) => executa(f, { tip: 'abilitate', abilitate: a, tinta: t })),
           blocata,
           blocata ? f.motivBlocat || 'Nu acum.' : '',
