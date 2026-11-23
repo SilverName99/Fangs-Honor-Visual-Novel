@@ -3835,7 +3835,34 @@ svg.zone {
   border: 2px solid #b8923a;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+/* Cât se vede explicația, luptătorul trece peste ceilalți, ca să nu i-o acopere cel din rândul din față */
+.luptator.cu-info {
+  z-index: 100 !important;
+}
+.semn-steag .text-semn {
+  display: inline;
+}
+/* Ce înseamnă semnul: pe pânza albastră a numelor din luptă, sub semn, după o secundă cu mouse-ul deasupra */
+.semn-steag .info-semn {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  width: 300px;
+  padding: 8px 12px;
+  white-space: normal;
+  font: 400 18px/1.35 Georgia, serif;
+  color: #f3e6c8;
+  background: #1e2a4a;
+  border: 2px solid #6b5a3a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
   pointer-events: none;
+  z-index: 50;
+}
+.semn-steag.arata-info .info-semn {
+  display: block;
 }
 /* Orcul pentru care bate toba pulsează roșu o clipă, cât apare „+3 atac” deasupra lui */
 .luptator.primeste-toba .corp {

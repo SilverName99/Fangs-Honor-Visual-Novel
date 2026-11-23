@@ -577,9 +577,23 @@ export function creeazaLupta(parinte, joc) {
       }
       if (!semn) {
         semn = div('semn-steag');
+        semn.append(div('text-semn'), div('info-semn'));
+        // Explicația apare după o secundă cu mouse-ul deasupra (cerut de autor), nu la orice trecere peste el
+        semn.onmouseenter = () =>
+          (semn.ceas = setTimeout(() => {
+            semn.classList.add('arata-info');
+            f.el.classList.add('cu-info');
+          }, 1000));
+        semn.onmouseleave = () => {
+          clearTimeout(semn.ceas);
+          semn.classList.remove('arata-info');
+          f.el.classList.remove('cu-info');
+        };
         f.el.querySelector('.bare-luptator')?.append(semn);
       }
-      semn.textContent = `⚑ +${steag}`;
+      const purtatori = L.toti.filter((x) => x.steag && x !== f && !x.cazut && x.tabara === f.tabara).map((x) => x.nume);
+      semn.querySelector('.text-semn').textContent = `⚑ +${steag}`;
+      semn.querySelector('.info-semn').textContent = `Steagul satului: cât stă ${purtatori.join(' și ')} în picioare, ${f.nume} lovește cu +${steag}.`;
     }
   }
 
@@ -913,17 +927,28 @@ export function creeazaLupta(parinte, joc) {
 
   // Cel care lovește de departe și toboșarul, ajunși în față, se retrag în spate (cerut de autor), ca să lase locul
   // celor care lovesc de aproape: întâi schimbă locul cu unul de aproape din spatele lor (amândoi câștigă), apoi trec
-  // pe un loc liber din spate, dar doar unde îi apără cineva din față; altfel rămân și luptă de unde sunt
+  // pe un loc liber din spate, dar doar unde îi apără cineva din față; altfel cel de departe rămâne și luptă de unde e.
+  // Toboșarul caută oricum spatele (cerut de autor): orice loc din spate (liber sau cu un căzut), întâi pe linia lui,
+  // apoi schimb cu cel din spatele lui; iar din spate, dacă nu-l apără nimeni din față, trece în spatele unuia care-l apără
   function locInSpate(f) {
-    if (f.lat || f.rand !== 'fata' || deAproape(f)) return null;
+    if (f.lat || deAproape(f)) return null;
+    const pazit = (l) => {
+      const p = laLoc(f.tabara, l, 'fata');
+      return !!p && p !== f && !p.cazut && !p.lat && deAproape(p);
+    };
+    const liber = (l) => {
+      const x = laLoc(f.tabara, l, 'spate');
+      return !x || (!!f.toba && x.cazut && !x.lat);
+    };
+    const pazitSiLiber = [0, 1, 2].find((l) => l !== f.linie && liber(l) && pazit(l));
+    if (f.rand === 'spate') return f.toba && !pazit(f.linie) && pazitSiLiber !== undefined ? { linie: pazitSiLiber, rand: 'spate' } : null;
     const inSpate = laLoc(f.tabara, f.linie, 'spate');
     if (inSpate && inSpate !== f && !inSpate.cazut && !inSpate.lat && deAproape(inSpate)) return { linie: f.linie, rand: 'spate' };
-    const linie = [0, 1, 2].find((l) => {
-      if (l === f.linie || laLoc(f.tabara, l, 'spate')) return false;
-      const paza = laLoc(f.tabara, l, 'fata');
-      return paza && !paza.cazut && !paza.lat && deAproape(paza);
-    });
-    return linie === undefined ? null : { linie, rand: 'spate' };
+    if (pazitSiLiber !== undefined) return { linie: pazitSiLiber, rand: 'spate' };
+    if (!f.toba) return null;
+    const oricare = [f.linie, ...[0, 1, 2].filter((l) => l !== f.linie)].find(liber);
+    if (oricare !== undefined) return { linie: oricare, rand: 'spate' };
+    return inSpate && inSpate !== f && !inSpate.lat && !inSpate.toba ? { linie: f.linie, rand: 'spate' } : null;
   }
 
   // Inamicii (cerut de autor): nu doar atacă; își fac loc între ei (cei de aproape în față, cei de departe și
