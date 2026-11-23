@@ -1098,7 +1098,9 @@
       "lupta_fierar": 140,
       "lupta_campuri": 140,
       "lupta_taverna_pivnita": 140,
-      "lupta_poarta_arena": 140
+      "lupta_poarta_arena": 140,
+      "lupta_cimitir": 140,
+      "lupta_tabara_vanatori": 140
     },
     "combat/orc_zdrobitor_idle.png": {
       "lupta_taverna_parter": 130,
@@ -1108,7 +1110,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_zdrobitor_aparare.png": {
       "lupta_taverna_parter": 130,
@@ -1118,7 +1122,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_zdrobitor_lovit.png": {
       "lupta_taverna_parter": 130,
@@ -1128,7 +1134,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_zdrobitor_cazut.png": {
       "lupta_taverna_parter": 130,
@@ -1138,7 +1146,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_toba_atac.png": {
       "lupta_taverna_parter": 130,
@@ -1148,7 +1158,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_toba_aparare.png": {
       "lupta_taverna_parter": 130,
@@ -1158,7 +1170,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_toba_lovit.png": {
       "lupta_taverna_parter": 130,
@@ -1168,7 +1182,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_toba_cazut.png": {
       "lupta_taverna_parter": 130,
@@ -1178,7 +1194,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_toba_idle.png": {
       "lupta_taverna_parter": 130,
@@ -1188,7 +1206,9 @@
       "lupta_fierar": 130,
       "lupta_campuri": 130,
       "lupta_taverna_pivnita": 130,
-      "lupta_poarta_arena": 130
+      "lupta_poarta_arena": 130,
+      "lupta_cimitir": 130,
+      "lupta_tabara_vanatori": 130
     },
     "combat/orc_aruncator_idle.png": {
       "lupta_taverna_parter": 120,
@@ -1198,7 +1218,9 @@
       "lupta_fierar": 120,
       "lupta_campuri": 120,
       "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/orc_aruncator_aparare.png": {
       "lupta_taverna_parter": 120,
@@ -1208,7 +1230,9 @@
       "lupta_fierar": 120,
       "lupta_campuri": 120,
       "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/orc_aruncator_atac.png": {
       "lupta_taverna_parter": 120,
@@ -1218,7 +1242,9 @@
       "lupta_fierar": 120,
       "lupta_campuri": 120,
       "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/orc_aruncator_lovit.png": {
       "lupta_taverna_parter": 120,
@@ -1228,7 +1254,9 @@
       "lupta_fierar": 120,
       "lupta_campuri": 120,
       "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/orc_aruncator_cazut.png": {
       "lupta_taverna_parter": 120,
@@ -1238,7 +1266,9 @@
       "lupta_fierar": 120,
       "lupta_campuri": 120,
       "lupta_taverna_pivnita": 120,
-      "lupta_poarta_arena": 120
+      "lupta_poarta_arena": 120,
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/hot_cazut.png": {
       "lupta_taverna_parter": 155,
@@ -1359,6 +1389,78 @@
       "lupta_poarta_arena": 300,
       "lupta_cimitir": 300,
       "lupta_tabara_vanatori": 300
+    },
+    "combat/vanatoare_pejos_idle.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
+    },
+    "combat/vanatoare_pejos_atac.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
+    },
+    "combat/vanatoare_pejos_aparare.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
+    },
+    "combat/vanatoare_pejos_lovit.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
+    },
+    "combat/vanatoare_pejos_cazut.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
+    },
+    "combat/soldat_steag_idle.png": {
+      "lupta_taverna_parter": 100,
+      "lupta_padure_interior": 100,
+      "lupta_poarta": 100,
+      "lupta_piata": 100,
+      "lupta_fierar": 100,
+      "lupta_campuri": 100,
+      "lupta_taverna_pivnita": 100,
+      "lupta_poarta_arena": 100,
+      "lupta_cimitir": 100,
+      "lupta_tabara_vanatori": 100
     }
   }
 }
