@@ -1079,16 +1079,16 @@
       "lupta_tabara_vanatori": 110
     },
     "combat/vale_toiag.png": {
-      "lupta_taverna_parter": 113,
-      "lupta_padure_interior": 113,
-      "lupta_poarta": 113,
-      "lupta_piata": 113,
-      "lupta_fierar": 113,
-      "lupta_campuri": 113,
-      "lupta_taverna_pivnita": 113,
-      "lupta_poarta_arena": 113,
-      "lupta_cimitir": 113,
-      "lupta_tabara_vanatori": 113
+      "lupta_taverna_parter": 200,
+      "lupta_padure_interior": 200,
+      "lupta_poarta": 200,
+      "lupta_piata": 200,
+      "lupta_fierar": 200,
+      "lupta_campuri": 200,
+      "lupta_taverna_pivnita": 200,
+      "lupta_poarta_arena": 200,
+      "lupta_cimitir": 200,
+      "lupta_tabara_vanatori": 200
     },
     "combat/orc_zdrobitor_atac.png": {
       "lupta_taverna_parter": 140,
