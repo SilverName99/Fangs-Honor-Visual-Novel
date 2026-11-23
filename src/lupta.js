@@ -1139,10 +1139,11 @@ export function creeazaLupta(parinte, joc) {
     // ca toiagul lui Vale, ca să se vadă pozele
     const variantaFinala = (p) =>
       def.finala ? Object.keys(p.lupta.variante || {}).find((k) => p.lupta.variante[k].luptaFinala && (def.test || verifica(p.lupta.variante[k].conditii || {}, context(s)))) : null;
-    const recrut = (id) => {
+    // „alta”: varianta cerută anume pentru un aliat de o luptă (F2, lupta de test: Roderick cu steagul, Kaia pe jos)
+    const recrut = (id, alta) => {
       const p = personaje.get(id);
       if (!p?.lupta) return null;
-      const varianta = p.lupta.variante?.[def.varianta] ? def.varianta : variantaFinala(p);
+      const varianta = p.lupta.variante?.[alta] ? alta : p.lupta.variante?.[def.varianta] ? def.varianta : variantaFinala(p);
       return { ...luptatorDinDate(id, cuVarianta(p.lupta, varianta), p.nume), numeScurt: p.numeScurt };
     };
     // Lupta de test are doar aliații aleși în panou, nu grupul din salvare
@@ -1169,7 +1170,7 @@ export function creeazaLupta(parinte, joc) {
     // Aliații de o singură luptă (unchiul în scandalul din tavernă) nu intră în grup și nu-și salvează locul
     for (const x of def.aliati || []) {
       if (aliati.some((f) => f.id === x.id)) continue;
-      const r = recrut(x.id);
+      const r = recrut(x.id, x.varianta);
       if (!r) continue;
       const f = { ...r, temporar: true };
       asaza(f, x);

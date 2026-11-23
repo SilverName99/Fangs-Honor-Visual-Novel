@@ -335,6 +335,9 @@ export function creeazaDebug(parinte, joc) {
         <option value="__tata" ${test.arma === '__tata' ? 'selected' : ''}>tot echipamentul tatălui</option></select>
         <label><input type="checkbox" data-ch="tl-scut" ${test.scut ? 'checked' : ''}> cu scut</label></div>
       <div class="d-rand"><span class="d-eticheta">Aliați</span>${recruti.map((p) => `<label><input type="checkbox" data-tl-aliat="${p.id}" ${test.aliati.has(p.id) ? 'checked' : ''}> ${esc(p.nume)}</label>`).join('')}</div>
+      <div class="d-rand"><span class="d-eticheta">Altfel</span>${recruti
+        .flatMap((p) => Object.entries(p.lupta.variante || {}).map(([k, v]) => `<label><input type="checkbox" data-tl-aliat="${p.id}:${k}" ${test.aliati.has(`${p.id}:${k}`) ? 'checked' : ''}> ${esc(p.nume)} ${esc(v.nume || `(${k})`)}</label>`))
+        .join('')}</div>
       <div class="d-eticheta">Inamici (câți din fiecare, cel mult 6 în total)</div>
       <div class="d-grila">${inamici.map(([id, x]) => `<label class="d-rand d-inamic" title="${id}"><span>${esc(x.nume)}${dubluri.has(x.nume) ? `<small>${id}</small>` : ''}</span><input type="number" min="0" max="6" data-tl-inamic="${id}" value="${test.inamici[id] || 0}"></label>`).join('')}</div>
       <label class="d-rand"><input type="checkbox" data-ch="tl-puternici" ${test.puternici ? 'checked' : ''}> Inamici foarte puternici (lovesc de 10 ori mai tare)</label>
@@ -366,7 +369,11 @@ export function creeazaDebug(parinte, joc) {
       inamiciPuternici: test.puternici,
       inamiciSlabi: test.slabi,
       finala: test.finala,
-      aliati: [...test.aliati].slice(0, 5).map((id) => ({ id })),
+      // „soldat:steag” = Roderick cu steagul satului: aliatul cu varianta lui, aleasă anume
+      aliati: [...test.aliati].slice(0, 5).map((cheie) => {
+        const [id, varianta] = cheie.split(':');
+        return { id, varianta };
+      }),
       inamici,
       victorie: { text: 'Lupta de test s-a terminat.' },
       infrangere: { text: 'Lupta de test s-a terminat.' },
@@ -493,7 +500,13 @@ export function creeazaDebug(parinte, joc) {
       s.grup = t.checked ? [...new Set([...s.grup, id])].slice(0, 6) : s.grup.filter((x) => x !== id);
       return joc.dupaSchimbare(false);
     }
-    if (t.dataset.tlAliat) return t.checked ? test.aliati.add(t.dataset.tlAliat) : test.aliati.delete(t.dataset.tlAliat);
+    if (t.dataset.tlAliat) {
+      // Un personaj vine o singură dată: alegerea lui „altfel” (cu steagul, pe jos) o scoate pe cea obișnuită, și invers
+      const id = t.dataset.tlAliat.split(':')[0];
+      for (const k of [...test.aliati]) if (k.split(':')[0] === id) test.aliati.delete(k);
+      if (t.checked) test.aliati.add(t.dataset.tlAliat);
+      return deseneazaCorp();
+    }
     if (t.dataset.tlInamic) return (test.inamici[t.dataset.tlInamic] = Math.max(0, Math.min(6, Number(t.value) || 0)));
     if (t.classList.contains('d-bani')) {
       s.bani = Math.max(0, Number(t.value) || 0);
