@@ -66,7 +66,7 @@ export const ELEMENTE_UI = [
     extra: (url, m, img) => `.continua{width:${marimeDialog(img.naturalWidth * 0.5)};height:${marimeDialog(img.naturalHeight * 0.5)};color:transparent}` },
   // Panoul mic (Dormi, Muncă, anunțurile): tabla cu banda titlului, întreagă, cu forma imaginii (fără să se turtească);
   // titlul stă pe banda albastră, iar butoanele sunt pergamentul din meniu. Restul panourilor îl folosesc ca ramă (9-slice)
-  { id: 'panou', nume: 'Panoul mic (Dormi, Muncă, anunțuri): tabla cu banda titlului, goală', marime: '900 × 700 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-inv, .debug',
+  { id: 'panou', nume: 'Panoul mic (Dormi, Muncă, anunțuri): tabla cu banda titlului, goală', marime: '900 × 700 px, fundal transparent', tip: '9-slice', margine: 40, selector: '.hud, .panou-meniu, .panou-inv',
     extra: (url, m, img) => {
       const k = Math.min(1, LATIME_PANOU / img.naturalWidth);
       const w = img.naturalWidth * k;

@@ -662,44 +662,239 @@ svg.zone {
   line-height: 1.45;
 }
 
-/* ----- Panoul debug ----- */
+/* ----- Panoul debug (F2) -----
+   Întunecat și simplu, fără grafica jocului (cerut de autor: să se citească și să se găsească ușor);
+   pe taburi, cu căutare, și se poate muta în dreapta ca să nu acopere ce testezi */
 .debug {
   position: absolute;
-  left: 30px;
-  top: 120px;
-  bottom: 30px;
-  width: 560px;
+  left: 24px;
+  top: 100px;
+  bottom: 20px;
+  width: 700px;
   z-index: 30;
-  overflow: auto;
-  padding: 16px 20px;
-  background: rgba(10, 12, 18, 0.94);
+  display: flex;
+  flex-direction: column;
+  background: rgba(14, 17, 24, 0.97);
   border: 2px solid #4a6fa5;
   border-radius: 10px;
-  color: #dde;
-  font: 20px system-ui, sans-serif;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  color: #e4e8f0;
+  font: 19px/1.3 system-ui, sans-serif;
+  cursor: auto;
 }
-.debug h4 {
-  margin: 0 0 10px;
-  font-size: 24px;
+.debug[hidden] {
+  display: none;
 }
-.debug .rand-d {
+.debug.dreapta {
+  left: auto;
+  right: 24px;
+}
+.debug .d-cap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 6px;
+}
+.debug .d-cap b {
+  font-size: 22px;
+}
+.debug .d-acum {
+  flex: 1;
+  color: #9fb4d6;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.debug .d-taburi {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0;
+  gap: 4px;
+  padding: 0 12px 8px;
+  border-bottom: 1px solid #2c3a52;
 }
-.debug .rand-d > span:first-child {
-  min-width: 110px;
+.debug .d-taburi button {
+  background: #1d2533;
+  border-color: #2c3a52;
+  color: #b9c6dc;
+}
+.debug .d-taburi button.activ,
+.debug .d-filtre button.activ {
+  background: #4a6fa5;
+  border-color: #6d92c9;
+  color: #fff;
+}
+.debug .d-cauta {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px 0;
+}
+.debug .d-cauta[hidden] {
+  display: none;
+}
+.debug .d-cauta input {
+  flex: 1;
+  padding: 6px 10px;
+}
+.debug .d-corp {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 12px 16px;
 }
 .debug button,
 .debug select,
 .debug input {
   font: inherit;
-  font-size: 18px;
+  font-size: 17px;
+  color: #e4e8f0;
+  background: #222b3b;
+  border: 1px solid #3b4a63;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
 }
-.debug input[type='range'] {
+.debug input[type='number'],
+.debug input[type='time'] {
+  width: 90px;
+  cursor: text;
+}
+.debug input[type='time'] {
+  width: 140px;
+}
+.debug input[type='search'] {
+  cursor: text;
+}
+.debug input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  vertical-align: -3px;
+}
+.debug button:hover {
+  background: #2f3c53;
+  border-color: #6d92c9;
+}
+.debug .d-principal {
+  background: #2f5a2f;
+  border-color: #4f8a4f;
+}
+.debug .d-periculos {
+  background: #5a2626;
+  border-color: #8a4040;
+}
+.debug .d-sectiune {
+  margin: 10px 0 4px;
+}
+.debug h5 {
+  margin: 14px 0 6px;
+  padding-bottom: 3px;
+  font-size: 17px;
+  color: #f0c870;
+  border-bottom: 1px solid #2c3a52;
+}
+.debug .d-rand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 6px 0;
+}
+.debug .d-rand label {
+  white-space: nowrap;
+}
+/* O bifă cu text lung: textul trece pe rândul următor lângă bifă, nu sub ea */
+.debug label.d-rand {
+  flex-wrap: nowrap;
+}
+.debug .d-inamic small {
+  display: block;
+}
+/* Un rând de listă (misiune, stare, loc, obiect): numele în stânga, butoanele în dreapta */
+.debug .d-element {
+  flex-wrap: nowrap;
+  margin: 2px 0;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+.debug .d-element:hover {
+  background: #1b2230;
+}
+.debug .d-nume {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.debug .d-nume small {
+  display: block;
+  color: #8a97ad;
+  font-size: 14px;
+}
+.debug .d-inceputa .d-nume,
+.debug .d-setata .d-nume,
+.debug .d-are .d-nume {
+  color: #ffd98a;
+}
+.debug .d-terminata .d-nume,
+.debug .d-vazut .d-nume {
+  color: #8fd08f;
+}
+.debug .d-ratata .d-nume {
+  color: #e08a8a;
+}
+.debug .d-aici {
+  background: #22324d;
+}
+.debug .d-harta .d-nume {
+  font-weight: 700;
+}
+/* Iconița apare doar când s-a încărcat (fără semnul de imagine stricată, cât lipsește) */
+.debug .d-iconita {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: none;
+  visibility: hidden;
+}
+.debug .d-nevoie span {
+  width: 90px;
+}
+.debug .d-nevoie input[type='range'] {
+  flex: 1;
+  padding: 0;
+}
+.debug .d-nevoie b {
+  width: 40px;
+  text-align: right;
+}
+.debug .d-grila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+.debug .d-incredere span,
+.debug .d-inamic span {
+  flex: 1;
+}
+.debug .d-incredere b {
+  width: 26px;
+  text-align: center;
+}
+.debug .d-inamic input {
+  width: 70px;
+}
+.debug .d-eticheta {
+  min-width: 120px;
+  color: #9fb4d6;
+}
+.debug .d-info,
+.debug .d-gol,
+.debug small {
+  color: #8a97ad;
+  font-size: 15px;
+}
+.debug .d-gol {
+  padding: 20px 0;
+  text-align: center;
 }
 
 /* În dialog, butoanele și plăcuțele de jos dispar (ar sta sub chenarul de dialog);
