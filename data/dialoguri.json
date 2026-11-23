@@ -5868,11 +5868,7 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Nu-mi mulțumi. Ai grijă de ea. Și ea o să aibă grijă de tine.",
-        "efecte": {
-          "stare": {
-            "platosa_gata": "da"
-          }
-        }
+        "urmator": "plat_m1"
       },
       "plat_da": {
         "vorbitor": "fierar",
@@ -5883,6 +5879,56 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Cum vrei. Dar nu purta fierul ăla crăpat prin sat. Te întreabă orcii de unde-l ai."
+      },
+      "plat_m1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ies din fierărie cu platoșa pe mine. În mijlocul drumului stă mama, cu coșul lăsat jos lângă ea. Se oprește. Își duce mâinile la gură.",
+        "imagine": "events/platosa_miriam_1.png",
+        "grupGalerie": "Bram: platoșa tatălui",
+        "_nota": "CIORNĂ (Claude). Decis de autor: imediat ce iese din fierărie cu platoșa pe el, Vale o găsește pe Miriam acolo; ea își duce mâinile la gură, apoi îl îmbrățișează și plânge (2 imagini).",
+        "urmator": "plat_m2"
+      },
+      "plat_m2": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Doamne... pentru o clipă am crezut că...",
+        "urmator": "plat_m3"
+      },
+      "plat_m3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu apucă să termine. Vine la mine și mă strânge în brațe, cu obrazul lipit de fierul rece al platoșei. O simt cum tremură.",
+        "imagine": "events/platosa_miriam_2.png",
+        "grupGalerie": "Bram: platoșa tatălui",
+        "urmator": "plat_m4"
+      },
+      "plat_m4": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Să te întorci mereu acasă cu ea pe tine. Auzi? Mereu.",
+        "urmator": "plat_m5"
+      },
+      "plat_m5": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Mereu, mamă.",
+        "urmator": "plat_m6"
+      },
+      "plat_m6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rămânem așa, în mijlocul drumului. Pe la ferestre se mai trage câte o perdea. Nu-mi pasă cine se uită.",
+        "efecte": {
+          "stare": {
+            "platosa_gata": "da"
+          },
+          "mergi": "fierar"
+        },
+        "sfarsit": true
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
