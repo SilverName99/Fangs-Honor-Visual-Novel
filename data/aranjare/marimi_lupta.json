@@ -179,16 +179,16 @@
       "lupta_tabara_vanatori": 120
     },
     "combat/soldat_atac.png": {
-      "lupta_campuri": 250,
-      "lupta_fierar": 250,
-      "lupta_padure_interior": 250,
-      "lupta_piata": 250,
-      "lupta_poarta": 250,
-      "lupta_taverna_parter": 250,
-      "lupta_taverna_pivnita": 250,
-      "lupta_poarta_arena": 250,
-      "lupta_cimitir": 250,
-      "lupta_tabara_vanatori": 250
+      "lupta_campuri": 245,
+      "lupta_fierar": 245,
+      "lupta_padure_interior": 245,
+      "lupta_piata": 245,
+      "lupta_poarta": 245,
+      "lupta_taverna_parter": 245,
+      "lupta_taverna_pivnita": 245,
+      "lupta_poarta_arena": 245,
+      "lupta_cimitir": 245,
+      "lupta_tabara_vanatori": 245
     },
     "combat/soldat_lovit.png": {
       "lupta_campuri": 120,
