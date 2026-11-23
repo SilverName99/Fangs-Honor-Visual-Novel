@@ -560,8 +560,8 @@ Unele personaje vin din jocul *Fangs&Honor*. Numele celorlalți recruți și mot
 **Recrutarea și finalul:**
 1. Fiecare om se alătură pe drumul lui (relație, questline sau plată).
 2. Întâlnirea cu vânătoarea deblochează **locul de campare** (tabăra ei din pădure), locul unde se întâlnește grupul.
-3. **Adunarea secretă:** ora 19:30, cu minimum 3 recruți și relație suficientă cu fiecare. Fiecare spune cum se simte, în scene de dialog. Apoi apare opțiunea „Recuperarea satului nostru!".
-4. **Lupta finală:** la poartă, grupul lui Vale împotriva orcilor, **în mai multe valuri** (decis de autor); Finn ajută din umbră, cu prietenii lui (fluierul). Victorie înseamnă sat liber și finalul Actului 1. Înfrângerea e `TODO`. **Recrutarea și finalul se fac printre ultimele** (decis de autor: fără grabă).
+3. **Adunarea secretă** (decis de autor; planul pe larg în `docs/misiuni.md`, „Revolta”): misiunea „Revolta” de la Kaia, în carte, cu câte o bucată pentru fiecare (tăiată la cine nu mai poate ajunge la 8/10); de la 8/10 îi spui de revoltă; îi chemi ziua, iar ei vin la locul de campare **noaptea, 23–05** (Kaia trează, câte un sprite nou pentru fiecare, 2–3 replici); Kaia, noaptea: „Pornim revolta?”, cu cei de față, **minimum Vale, Kaia și încă unul**; da = fără întoarcere: focul, câte o imagine pentru fiecare de față (Vale ultimul), zorii, Vale și Kaia vorbesc grupului. Roderick vine fără steag și apare cu el când începe lupta (dacă l-a primit).
+4. **Lupta finală:** la poartă, a doua zi dimineață, cu **cei care au fost la locul de campare în noaptea aceea**, **în mai multe valuri** (decis de autor); Finn ajută din umbră, cu prietenii lui (fluierul). Victorie înseamnă sat liber și finalul Actului 1. **Înfrângerea** (decis de autor): două imagini cu orcul colector care râde deasupra lui Vale și îl lovește cu bâta, apoi „Reia din dimineața zilei în care ai hotărât revolta” sau „Joc nou”. **Recrutarea și finalul se fac printre ultimele** (decis de autor: fără grabă).
 
 ## 17. Etape de construcție
 
@@ -605,7 +605,7 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 Pune `TODO` în date și întreabă când e nevoie:
 
 - Numele recruților și motivul lor personal.
-- Ce se întâmplă la înfrângerea în lupta finală.
+- Cum arată pierderea jocului când nu mai poate fi recrutat nimeni (decis doar că e un fel de a pierde).
 - Treptele pentru taxa ratată: ce obiect iau orcii, care e pedeapsa a doua.
 - Ce efect are reputația în sat.
 - Ce pierde Vale la leșin.

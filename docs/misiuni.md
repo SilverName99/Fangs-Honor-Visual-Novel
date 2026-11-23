@@ -1037,6 +1037,21 @@ Din F2 → Misiuni, „Pornește” nu ajunge aici (și nici la „Datoria la Ja
 
 ---
 
+## Revolta: recrutarea și lupta finală 📝
+
+Decis de autor (planul; se face după ce fiecare dintre cei 6 are 10 puncte posibile):
+
+- **Misiunea „Revolta”** (de la Kaia, după „Baza”), în carte: un pas cu câte o bucată pentru fiecare (Bram, Elian, Roderick, Finn), bifată când i-ai spus de revoltă; **cine nu mai poate ajunge la 8/10 apare cu un rând scris și tăiat**. Ultimul pas: noaptea, la locul de campare, vorbești cu Kaia.
+- **Le spui de revoltă de la 8/10.** Fiecare reacționează în felul lui, dar toți acceptă; de atunci au în meniu invitația. Finn știe deja (din „Cuștile vânătorilor”); Kaia e în revoltă din „Baza”.
+- **Invitația** (decis de autor): îi chemi în timpul zilei („Ne vedem la noapte la locul de campare”), iar ei vin **la noapte, 23:00–05:00**, apoi pleacă fiecare la treaba lui. Poți chema pe cine vrei (de exemplu doar pe Elian). **Dacă e chemat măcar unul, Kaia nu mai doarme** (sprite nou, trează, noaptea), iar locul de campare are imaginea de noapte, cu focul, și **câte un sprite nou pentru fiecare** (Bram, Elian, Roderick, Finn); fiecare are 2–3 replici acolo.
+- **Kaia, noaptea:** „Pornim revolta?”, cu cine e de față („În seara asta sunt aici...”), și întrebarea dacă ești sigur. **Minimum trei: Vale, Kaia și încă unul** (decis de autor). Dacă nu mai poate ajunge nimeni la 8/10, e **încă un fel de a pierde jocul** (TODO: cum arată).
+- **Da = fără cale de întoarcere** (decis de autor): o imagine cu focul de tabără, apoi **câte o imagine pentru fiecare dintre cei de față**, care spune ceva (cine nu e acolo nu are imaginea lui); **Vale vorbește ultimul**; apoi zorii, printre copaci; apoi Vale și Kaia vorbesc grupului (doar ei doi, siguri în echipă). Restul: de văzut.
+- **Roderick** (decis de autor): la locul de campare vine fără steag. Dacă a primit steagul, în zori le spune să o ia înainte, că el se duce să ia „mândria satului”, iar **când începe lupta apare cu steagul**.
+- **Lupta finală**, a doua zi dimineață, la poartă, în valuri: luptă **doar cei care au fost la locul de campare în noaptea aceea**. Finn nu luptă (ajută cu fluierul).
+- **Înfrângerea** (decis de autor): două imagini: orcul colector râde, deasupra lui Vale, și îl lovește cu bâta de sus; apoi două alegeri: **reiei din dimineața zilei în care ai hotărât revolta** sau **joc nou**.
+
+---
+
 ## Dragonii
 
 - Doar indicii în Actul 1. Prima apariție: **hârtiile din camera de la tavernă** (misiunea lui Agnes), apoi căutarea solzilor cu Roderick, spre **portalul morții**. Lumea mare: `docs/lore.md`.
