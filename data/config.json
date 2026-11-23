@@ -253,7 +253,7 @@
     "staminaConsumata": 15,
     "minute": 30,
     "inamici": {
-      "_nota": "Cum se poartă inamicii (TODO echilibru): sansaAparare = cât de des se apără fără motiv; sub pragRanit din viață se apără mai des (sansaAparareRanit). Un inamic din spate care nu poate ataca de acolo trece în față, dacă e loc.",
+      "_nota": "Cum se poartă inamicii (TODO echilibru): sansaAparare = cât de des se apără fără motiv; sub pragRanit din viață se apără mai des (sansaAparareRanit). Un inamic din spate care nu poate ataca de acolo trece în față, pe un loc liber sau în locul celui din fața lui care lovește de departe, bate toba sau a căzut; cei de departe și toboșarul, ajunși în față, se retrag în spate (cerut de autor).",
       "sansaAparare": 0.1,
       "pragRanit": 0.35,
       "sansaAparareRanit": 0.35

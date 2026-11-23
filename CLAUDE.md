@@ -476,7 +476,7 @@ Același sistem e folosit peste tot: vânătoare, bătăi la tavernă, salvarea 
 
 **Căderea:** la viață 0, personajul **cade**, dar nu moare. După luptă se ridică: recruții cu viața plină, Vale cu puțină viață (`TODO` cât).
 
-**Inamicii** aleg o țintă validă la întâmplare. **Se și apără** (decis de autor): uneori (10%), mai des când sunt răniți (35% sub 35% din viață); un inamic din spate care nu poate lovi de acolo **trece în față**, pe un loc liber (întâi pe linia lui), altfel se apără (`lupta.inamici` în `config.json`, `TODO` echilibru). Unii pot avea preferințe în JSON (de exemplu „lovește pe cel mai slăbit”).
+**Inamicii** aleg o țintă validă la întâmplare. **Se și apără** (decis de autor): uneori (10%), mai des când sunt răniți (35% sub 35% din viață); un inamic din spate care nu poate lovi de acolo **trece în față**, pe un loc liber (întâi pe linia lui) sau în locul celui din fața lui, dacă acela lovește de departe, bate toba sau a căzut, altfel se apără. **Își fac loc între ei** (cerut de autor): cel care lovește de departe (Aruncătorul, șobolanul care scuipă) și Toboșarul, ajunși în față, se retrag în spate, întâi schimbând locul cu unul de aproape din spatele lor, apoi pe un loc liber din spate apărat de cineva din față; mutarea se vede pe ecran și în jurnal („se retrage în spate”) (`lupta.inamici` în `config.json`, `TODO` echilibru). Unii pot avea preferințe în JSON (de exemplu „lovește pe cel mai slăbit”).
 
 ### Valurile și Groapa (decis de autor)
 

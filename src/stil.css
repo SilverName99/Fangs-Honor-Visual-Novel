@@ -1425,6 +1425,8 @@ svg.zone {
   position: absolute;
   aspect-ratio: 0.6;
   transform: translate(-50%, -100%);
+  /* Când își schimbă locul (inamicii își fac loc între ei), se vede cum merge, nu sare dintr-odată */
+  transition: left calc(0.45s / var(--viteza, 1)), top calc(0.45s / var(--viteza, 1)), height calc(0.45s / var(--viteza, 1));
 }
 .luptator .corp {
   position: absolute;

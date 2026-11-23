@@ -815,10 +815,12 @@ export function creeazaLupta(parinte, joc) {
       sursa.bara = 0;
     } else if (actiune.tip === 'muta') {
       const altul = laLoc(sursa.tabara, actiune.linie, actiune.rand);
+      // În jurnal, încotro: ca jucătorul să înțeleagă de ce s-au mutat inamicii (cel de departe se ferește în spate)
+      const incotro = actiune.rand === sursa.rand ? 'își schimbă locul' : actiune.rand === 'spate' ? 'se retrage în spate' : 'trece în față';
       if (altul) Object.assign(altul, { linie: sursa.linie, rand: sursa.rand });
       Object.assign(sursa, { linie: actiune.linie, rand: actiune.rand });
       L.toti.forEach(aseaza);
-      jurnal(`${sursa.nume} își schimbă locul.`);
+      jurnal(`${sursa.nume} ${incotro}${altul && altul !== sursa ? `, în locul lui ${altul.nume}` : ''}.`);
       sursa.bara = 0;
     } else if (actiune.tip === 'abilitate') {
       const a = actiune.abilitate;
@@ -882,29 +884,56 @@ export function creeazaLupta(parinte, joc) {
     L.pauza = false;
   }
 
-  // Un loc din față unde poate trece un inamic din spate care nu poate lovi de acolo: întâi pe linia lui,
-  // apoi pe alta; doar locuri libere, ca să nu-l împingă în spate pe unul care atacă deja
+  // Cine are ce căuta în față: cel care lovește de aproape (nu toboșarul, care nu lovește deloc, și nici cel care
+  // aruncă toporul de departe)
+  const deAproape = (x) => !x.toba && x.atac?.tip === 'apropiat';
+
+  // Un loc din față unde poate trece un inamic din spate care nu poate lovi de acolo: întâi un loc liber, pe linia lui,
+  // apoi pe alta; altfel schimbă locul cu cel din fața lui, dacă acela n-are ce căuta acolo (lovește de departe, bate
+  // toba) sau a căzut (cerut de autor: inamicii se mută între ei)
   function locInFata(f) {
     if (f.lat) return null;
     const linii = [f.linie, ...[0, 1, 2].filter((l) => l !== f.linie)];
     const linie = linii.find((l) => !laLoc(f.tabara, l, 'fata'));
-    return linie === undefined ? null : { linie, rand: 'fata' };
+    if (linie !== undefined) return { linie, rand: 'fata' };
+    const inFata = laLoc(f.tabara, f.linie, 'fata');
+    return inFata && !inFata.lat && (inFata.cazut || !deAproape(inFata)) ? { linie: f.linie, rand: 'fata' } : null;
   }
 
-  // Inamicii (cerut de autor): nu doar atacă; din spate trec în față când n-au cum lovi, iar uneori, mai ales
-  // când sunt răniți, se apără
+  // Cel care lovește de departe și toboșarul, ajunși în față, se retrag în spate (cerut de autor), ca să lase locul
+  // celor care lovesc de aproape: întâi schimbă locul cu unul de aproape din spatele lor (amândoi câștigă), apoi trec
+  // pe un loc liber din spate, dar doar unde îi apără cineva din față; altfel rămân și luptă de unde sunt
+  function locInSpate(f) {
+    if (f.lat || f.rand !== 'fata' || deAproape(f)) return null;
+    const inSpate = laLoc(f.tabara, f.linie, 'spate');
+    if (inSpate && inSpate !== f && !inSpate.cazut && !inSpate.lat && deAproape(inSpate)) return { linie: f.linie, rand: 'spate' };
+    const linie = [0, 1, 2].find((l) => {
+      if (l === f.linie || laLoc(f.tabara, l, 'spate')) return false;
+      const paza = laLoc(f.tabara, l, 'fata');
+      return paza && !paza.cazut && !paza.lat && deAproape(paza);
+    });
+    return linie === undefined ? null : { linie, rand: 'spate' };
+  }
+
+  // Inamicii (cerut de autor): nu doar atacă; își fac loc între ei (cei de aproape în față, cei de departe și
+  // toboșarul în spate), iar uneori, mai ales când sunt răniți, se apără
   async function randInamic(f) {
     L.pauza = true;
     await asteapta(300);
     if (!L) return;
-    // Toboșarul nu lovește niciodată și nu trece în față (decis de autor: e gras): bate tobele, de oriunde ar sta;
+    // Toboșarul nu lovește niciodată (decis de autor: e gras): se retrage în spate dacă e în față, altfel bate tobele;
     // rămas singur, cade (executa, „toba”)
-    if (f.toba) return executa(f, { tip: 'toba' });
+    if (f.toba) {
+      const spate = !vii(f.tabara).every((x) => x.toba) && locInSpate(f);
+      return executa(f, spate ? { tip: 'muta', ...spate } : { tip: 'toba' });
+    }
     const ci = cfg.inamici || {};
     if (!poateAtaca(f)) {
       const loc = locInFata(f);
       return executa(f, loc ? { tip: 'muta', ...loc } : { tip: 'aparare' });
     }
+    const spate = locInSpate(f);
+    if (spate) return executa(f, { tip: 'muta', ...spate });
     const tinte = tintePosibile(f, f.atac.tip);
     if (!tinte.length) return executa(f, { tip: 'aparare' });
     const ranit = f.viata < f.viataMax * (ci.pragRanit ?? 0.35);
