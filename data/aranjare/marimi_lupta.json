@@ -175,7 +175,8 @@
       "lupta_taverna_parter": 120,
       "lupta_taverna_pivnita": 120,
       "lupta_poarta_arena": 120,
-      "lupta_cimitir": 120
+      "lupta_cimitir": 120,
+      "lupta_tabara_vanatori": 120
     },
     "combat/soldat_atac.png": {
       "lupta_campuri": 250,
