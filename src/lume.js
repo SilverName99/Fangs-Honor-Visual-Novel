@@ -653,6 +653,8 @@ export function imaginiCerute(date, scene) {
   for (const arma of ['pumni', 'sabie', 'sabie_scut', 'sabie_doua_maini', 'topor_doua_maini', 'arc']) {
     for (const p of POZE) adauga(`combat/vale_${arma}_${p}.png`, `Luptă: Vale cu ${arma.replaceAll('_', ' ')} (${p})`, arma !== 'pumni' || p !== 'idle');
   }
+  // Vale cu tot echipamentul tatei (coif, platoșă, jambiere, sabie): setul lui de poze
+  for (const p of POZE) adauga(`combat/vale_tata_${p}.png`, `Luptă: Vale în echipamentul tatălui (${p})`, true);
   // Săgeata care zboară din arcul lui Vale (o singură imagine, pentru orice arc)
   for (const s of new Set(Object.values(date.items.obiecte).map((o) => o.atac?.sageata).filter(Boolean))) adauga(s, 'Luptă: săgeata trasă cu arcul (vârful spre dreapta)');
   // Cine nu atacă normal (preotul, doar puteri) nu are nevoie de poza „atac”

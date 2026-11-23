@@ -170,7 +170,8 @@ export function creeazaDebug(parinte, joc) {
       <label class="rand-d"><span>Zona de luptă</span><select class="tl-fundal">${scene}</select></label>
       <div class="rand-d"><span>Arma lui Vale</span><select class="tl-arma">
         <option value="__echipat" ${test.arma === '__echipat' ? 'selected' : ''}>ce are echipat</option>
-        <option value="" ${test.arma === '' ? 'selected' : ''}>pumni</option>${arme}</select>
+        <option value="" ${test.arma === '' ? 'selected' : ''}>pumni</option>${arme}
+        <option value="__tata" ${test.arma === '__tata' ? 'selected' : ''}>tot echipamentul tatălui</option></select>
         <label><input type="checkbox" class="tl-scut" ${test.scut ? 'checked' : ''}> cu scut</label></div>
       <div class="rand-d"><span>Aliați</span>${recruti.map((p) => `<label><input type="checkbox" data-tl-aliat="${p.id}" ${test.aliati.has(p.id) ? 'checked' : ''}> ${p.nume}</label>`).join(' ')}</div>
       <div class="rand-d"><span>Inamici</span>${inamici

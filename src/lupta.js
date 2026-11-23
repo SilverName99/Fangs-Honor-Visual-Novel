@@ -4,6 +4,7 @@ import { candidati, LOCURI_LUPTA, idHartaLupta } from './lume.js';
 import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { context } from './stare.js';
 import { verifica } from './conditii.js';
+import { SET_TATA } from './inventar.js';
 import { creeazaDialog } from './dialog.js';
 // Pauzele din luptă se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
 import { asteapta, viteza, butonViteza } from './viteza.js';
@@ -105,18 +106,20 @@ export function creeazaLupta(parinte, joc) {
 
   function luptatorVale(def) {
     const s = joc.stare;
-    const piese = Object.values(s.echipat).filter(Boolean).map((id) => inv.def(id));
+    const piese = (def?.test && def.armaVale === '__tata' ? Object.values(SET_TATA) : Object.values(s.echipat).filter(Boolean)).map((id) => inv.def(id));
     // În lupta de test, arma lui Vale se alege din panou (ca să se vadă fiecare set de poze), fără să-i schimbe echipamentul
     const deTest = def?.test && def.armaVale !== undefined;
+    // „__tata”: în lupta de test, tot echipamentul tatei (ca să se vadă pozele lui), fără să-l echipeze de-adevăratelea
+    const tataTest = deTest && def.armaVale === '__tata';
     // „faraArme”: Vale se bate doar cu pumnii (bătaia cu colectorul pentru fierul lui Bram, decis de autor);
     // „faraEchipament”: și fără armură (bătaia cu bețivul din tavernă, decis de autor)
     const faraArme = def?.faraArme || def?.faraEchipament;
-    const idArma = faraArme ? null : deTest ? def.armaVale : s.echipat.arma_primara;
+    const idArma = faraArme ? null : tataTest ? SET_TATA.arma_primara : deTest ? def.armaVale : s.echipat.arma_primara;
     const arma = idArma ? inv.def(idArma) : null;
-    const idScut = faraArme ? null : deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
+    const idScut = faraArme || tataTest ? null : deTest ? (def.scutVale && !arma?.douaMaini ? 'scut_lemn' : null) : s.echipat.arma_secundara;
     const scut = idScut ? inv.def(idScut) : null;
     const tipDeBaza = arma?.tipArma || 'pumni';
-    const tipArma = faraArme ? 'pumni' : deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
+    const tipArma = faraArme ? 'pumni' : tataTest ? 'tata' : deTest ? (tipDeBaza === 'sabie' && scut?.scut ? 'sabie_scut' : tipDeBaza) : inv.tipArmaVale();
     return {
       ...dupaArma(arma, scut, tipArma),
       id: 'vale',
@@ -147,7 +150,11 @@ export function creeazaLupta(parinte, joc) {
       blocare: scut?.blocare ?? cfg.blocareImplicita,
       // Sunetul loviturii, după arma din mână
       sunetAtac: { pumni: 'lupta_pumn', topor_doua_maini: 'lupta_topor', arc: 'lupta_arc' }[tipArma] || 'lupta_sabie',
-      poze: (p) => [...cuRezerva(p).map((x) => `combat/vale_${tipArma}_${x}.png`), `combat/vale_${tipArma}_idle.png`, `combat/vale_pumni_idle.png`],
+      // Setul tatei, cât lipsesc pozele lui, împrumută pozele cu sabie (tot o sabie de o mână ține)
+      poze: (p) => {
+        const seturi = tipArma === 'tata' ? ['tata', 'sabie'] : [tipArma];
+        return [...seturi.flatMap((t) => cuRezerva(p).map((x) => `combat/vale_${t}_${x}.png`)), ...seturi.map((t) => `combat/vale_${t}_idle.png`), `combat/vale_pumni_idle.png`];
+      },
     };
   }
 

@@ -19255,19 +19255,20 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe mijlocul platoșei a rămas o dungă mai închisă la culoare, ca o cicatrice. Bram se uită mult la ea.",
-        "urmator": "p6"
+        "text": "Bram o răsucește în lumina focului. Crăpătura s-a închis de tot: nu se mai vede unde a fost lovită. Rombul e iar întreg.",
+        "urmator": "p6",
+        "_nota": "Decis de autor: după reparație nu se mai vede locul crăpăturii."
       },
       "p6": {
         "vorbitor": "fierar",
         "emotie": "trist",
-        "text": "N-o să mai fie ca nouă. O să se vadă mereu unde a fost lovit.",
+        "text": "Ca în ziua în care i-am dat-o lui Edwin.",
         "urmator": "p7"
       },
       "p7": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Așa e și bine. Să se vadă.",
+        "text": "Nici nu-ți dai seama că a fost crăpată.",
         "urmator": "p8"
       },
       "p8": {

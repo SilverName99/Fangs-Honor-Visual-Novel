@@ -10,6 +10,9 @@ export const NUME_SLOTURI = {
   rucsac: 'Rucsac',
 };
 
+// Echipamentul lui Edwin, pe sloturi: purtat tot, Vale luptă cu pozele „tata” (vale_tata_*.png)
+export const SET_TATA = { cap: 'coif_tata', armura: 'platosa_tata', jambiere: 'jambiere_tata', arma_primara: 'sabia_tata' };
+
 export function creeazaInventar(date, getStare) {
   const defs = date.items.obiecte;
   const cfg = date.config.inventar;
@@ -187,9 +190,12 @@ export function creeazaInventar(date, getStare) {
     echipeaza,
     echipeazaDinCufar,
     dezechipeaza,
-    // Ce poză de luptă folosește Vale: după arma primară, plus scutul din mâna a doua
+    // Ce poză de luptă folosește Vale: după arma primară, plus scutul din mâna a doua. Cu tot echipamentul tatei pe el
+    // (coiful, platoșa reparată, jambierele și sabia, fără scut), are setul lui de poze (decis de autor: în lupta finală
+    // arată ca Edwin; ales de Claude: doar cu toate patru, ca pozele să se potrivească cu ce poartă)
     tipArmaVale() {
       const e = getStare().echipat;
+      if (Object.entries(SET_TATA).every(([sl, id]) => e[sl] === id) && !e.arma_secundara) return 'tata';
       const tip = e.arma_primara ? def(e.arma_primara).tipArma || 'pumni' : 'pumni';
       return tip === 'sabie' && e.arma_secundara && def(e.arma_secundara).scut ? 'sabie_scut' : tip;
     },
