@@ -1343,16 +1343,16 @@
       "lupta_tabara_vanatori": 132
     },
     "combat/vale_tata_atac.png": {
-      "lupta_taverna_parter": 300,
-      "lupta_padure_interior": 300,
-      "lupta_poarta": 300,
-      "lupta_piata": 300,
-      "lupta_fierar": 300,
-      "lupta_campuri": 300,
-      "lupta_taverna_pivnita": 300,
-      "lupta_poarta_arena": 300,
-      "lupta_cimitir": 300,
-      "lupta_tabara_vanatori": 300
+      "lupta_taverna_parter": 285,
+      "lupta_padure_interior": 285,
+      "lupta_poarta": 285,
+      "lupta_piata": 285,
+      "lupta_fierar": 285,
+      "lupta_campuri": 285,
+      "lupta_taverna_pivnita": 285,
+      "lupta_poarta_arena": 285,
+      "lupta_cimitir": 285,
+      "lupta_tabara_vanatori": 285
     },
     "combat/vale_tata_aparare.png": {
       "lupta_taverna_parter": 132,
