@@ -605,6 +605,9 @@ function reiaDupaReincarcare() {
   const r = stare.reluare;
   if (!r) return;
   stare.reluare = null;
+  if (r.miniJoc) return miniJocEveniment(r.miniJoc);
+  if (r.furisare) return furisare(r.furisare);
+  if (r.antrenament) return antrenament(r.antrenament);
   if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }));
   // Replica unei misiuni a altcuiva, din meniul personajului (pașii „Steagului satului” la Roderick stau în dialogul
   // Miriamei): discuția continuă tot cu el, cu replicile misiunii adăugate, și își ține minte mai departe locul
@@ -629,10 +632,19 @@ function pornesteEvenimentDupa(id) {
 // potrivit. Cu mini-jocurile oprite din Opțiuni, trece singur (ca la celelalte, fără risc)
 function furisare(v) {
   setTimeout(async () => {
+    tineMinteMiniJocul({ furisare: v });
     const r = miniJocuriPornite() ? await actiuni.mini.furisare(`furis_${v.eveniment}_${v.pas}`, v.indemn) : 'sigur';
     const d = dialoguri[v.dialog];
     if (d) dialog.porneste(d, { delaNod: r === 'sigur' ? v.reusit : v.esuat });
   }, 0);
+}
+
+// Un mini-joc pornit din discuție începe după ce discuția s-a închis (care a șters „reluare”): îl ținem minte noi, ca
+// un refresh în timpul lui să-l pornească din nou, nu să lase misiunea fără continuare (cerut de autor: o misiune nu
+// are voie să se blocheze). Discuția de după el își scrie singură, la prima replică, locul ei
+function tineMinteMiniJocul(r) {
+  stare.reluare = r;
+  salveaza();
 }
 
 // Un mini-joc pornit din discuție, peste o imagine a evenimentului (decis de autor): bara de la arat la capcanele
@@ -653,6 +665,7 @@ function miniJocEveniment(v) {
     return actiuni.mini.arat({ imagine: m.imagine, titlu, idEcran, indemn: m.indemn, reusiteCerute: m.reusite, rateuriVoie: m.ratari ?? 0, texte: m.texte });
   };
   setTimeout(async () => {
+    tineMinteMiniJocul({ miniJoc: v });
     const bine = miniJocuriPornite() ? await joaca() : true;
     // Capcana care se închide (decis de autor: a doua ratare): sunetul ei, chiar când se termină jocul
     if (!bine && m.sunetEsuat) sunet.efect(m.sunetEsuat);
@@ -670,6 +683,7 @@ function antrenament(idEv) {
   const a = ev?.antrenament;
   if (!a) return;
   setTimeout(async () => {
+    tineMinteMiniJocul({ antrenament: idEv });
     noteazaEveniment(stare, ev, ziua(stare));
     let reusite;
     if (miniJocuriPornite()) {
