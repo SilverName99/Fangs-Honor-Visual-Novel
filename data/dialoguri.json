@@ -20651,13 +20651,35 @@
         "vorbitor": "soldat",
         "emotie": "zambet",
         "text": "Vezi? Nu te-a luat. Râurile n-au răbdare cu cei care se uită în jos. Hai, încă zece pași.",
+        "urmator": "p16b"
+      },
+      "p16b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pe celălalt mal ne dezlegăm și ne uităm înapoi. De aici, bârna pare un fir de ață peste apă. Unchiul își strânge frânghia pe umăr, fără o vorbă, și pornim spre pădurea de la vale.",
+        "imagine": "events/drum_dupa_pod.png",
+        "efecte": {
+          "panaLaOra": "14:00"
+        },
+        "urmator": "p16c"
+      },
+      "p16c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ajungem la marginea pădurii când soarele cade după dealuri. Totul se face roșu, apoi cenușiu. Unchiul se mai uită o clipă înapoi, spre pod, apoi intră primul printre fagi.",
+        "imagine": "events/drum_padure_seara.png",
+        "efecte": {
+          "panaLaOra": "18:30"
+        },
         "urmator": "p17"
       },
       "p17": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Seara ne retragem în pădurea de lângă pod și facem focul între fagi, ferit de drum. Carnea friptă de acasă are gust de duminică.",
+        "text": "Facem focul mai înăuntru, între fagi, ferit de drum. Carnea friptă de acasă are gust de duminică.",
         "imagine": "events/drum_foc_1.png",
         "efecte": {
           "panaLaOra": "20:00",
