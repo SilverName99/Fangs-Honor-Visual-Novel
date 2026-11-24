@@ -1,5 +1,7 @@
 // Viteza animațiilor din luptă și din jocul de zaruri (×1, ×2, ×4): jucătorul care nu vrea să aștepte nu e obligat.
 // E o preferință a jucătorului, nu ține de salvare, deci stă separat în localStorage (dacă browserul îl permite).
+// Numele butonului (la hover) e în limba jocului; se cere când se face butonul, ca să urmeze limba aleasă
+import { t } from './limba.js';
 
 const CHEIE = 'fangs-vn-viteza';
 export const VITEZE = [1, 2, 4];
@@ -34,7 +36,7 @@ export function seteazaViteza(nou) {
 export function butonViteza() {
   const b = document.createElement('button');
   b.className = 'buton viteza-joc';
-  b.title = 'Viteza animațiilor';
+  b.title = t('Viteza animațiilor');
   b.textContent = `×${v}`;
   b.onclick = (e) => {
     e.stopPropagation();

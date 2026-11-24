@@ -829,7 +829,7 @@ export function creeazaLupta(parinte, joc) {
       if (!L) return;
       for (const x of vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat')) x.bara = 0;
       for (const x of vii(sursa.tabara)) puneScut(x, lf.scut || 'combat/scut_lumina.png');
-      jurnal(lf.jurnal || `${sursa.nume} ridică ${d.nume}. Lumina orbește inamicii, iar aliații primesc scutul de lumină.`);
+      jurnal(lf.jurnal || t('{nume} ridică {obiect}. Lumina orbește inamicii, iar aliații primesc scutul de lumină.', { nume: sursa.nume, obiect: d.nume }));
       await asteapta(700);
       el.classList.remove('lumina-toiag');
       if (!L) return;
@@ -847,29 +847,36 @@ export function creeazaLupta(parinte, joc) {
       if (d.lupta?.armura) {
         actiune.tinta.armura += d.lupta.armura;
         actiune.tinta.armuraMax += d.lupta.armura;
-        numar(actiune.tinta, `+${d.lupta.armura} armură`, 'vindecare');
+        numar(actiune.tinta, t('+{n} armură', { n: d.lupta.armura }), 'vindecare');
       }
       if (d.lupta?.atac) {
         const a = actiune.tinta.atac;
         actiune.tinta.atac = { ...a, min: a.min + d.lupta.atac, max: a.max + d.lupta.atac };
-        numar(actiune.tinta, `+${d.lupta.atac} atac`, 'vindecare');
+        numar(actiune.tinta, t('+{n} atac', { n: d.lupta.atac }), 'vindecare');
       }
       // Leacul de otravă (decis de autor): oprește otrava șobolanilor pe loc
       if (d.vindecaOtrava && actiune.tinta.otrava) {
         actiune.tinta.otrava = null;
         actiune.tinta.el.classList.remove('otravit');
-        numar(actiune.tinta, 'Vindecat', 'vindecare');
+        numar(actiune.tinta, t('Vindecat'), 'vindecare');
       }
-      jurnal(`${sursa.nume} folosește ${d.nume} pe ${actiune.tinta.nume}.`);
+      jurnal(t('{sursa} folosește {obiect} pe {tinta}.', { sursa: sursa.nume, obiect: d.nume, tinta: actiune.tinta.nume }));
       sursa.bara = 0;
     } else if (actiune.tip === 'muta') {
       const altul = laLoc(sursa.tabara, actiune.linie, actiune.rand);
-      // În jurnal, încotro: ca jucătorul să înțeleagă de ce s-au mutat inamicii (cel de departe se ferește în spate)
-      const incotro = actiune.rand === sursa.rand ? 'își schimbă locul' : actiune.rand === 'spate' ? 'se retrage în spate' : 'trece în față';
+      // În jurnal, încotro: ca jucătorul să înțeleagă de ce s-au mutat inamicii (cel de departe se ferește în spate).
+      // Fiecare caz e o propoziție întreagă, ca engleza să-și poată așeza cuvintele în altă ordine; se alege înainte de
+      // mutare, cât „sursa.rand” e încă locul de unde pleacă
+      const cuSchimb = altul && altul !== sursa;
+      const valori = { nume: sursa.nume, altul: altul?.nume };
+      let text;
+      if (actiune.rand === sursa.rand) text = cuSchimb ? t('{nume} își schimbă locul, în locul lui {altul}.', valori) : t('{nume} își schimbă locul.', valori);
+      else if (actiune.rand === 'spate') text = cuSchimb ? t('{nume} se retrage în spate, în locul lui {altul}.', valori) : t('{nume} se retrage în spate.', valori);
+      else text = cuSchimb ? t('{nume} trece în față, în locul lui {altul}.', valori) : t('{nume} trece în față.', valori);
       if (altul) Object.assign(altul, { linie: sursa.linie, rand: sursa.rand });
       Object.assign(sursa, { linie: actiune.linie, rand: actiune.rand });
       L.toti.forEach(aseaza);
-      jurnal(`${sursa.nume} ${incotro}${altul && altul !== sursa ? `, în locul lui ${altul.nume}` : ''}.`);
+      jurnal(text);
       sursa.bara = 0;
     } else if (actiune.tip === 'abilitate') {
       const a = actiune.abilitate;
@@ -886,7 +893,7 @@ export function creeazaLupta(parinte, joc) {
     } else if (actiune.tip === 'arma') {
       armaNouaVale(sursa);
       joc.sunet.efect('echipare');
-      jurnal(`${sursa.nume} își schimbă arma: ${actiune.nume}.`);
+      jurnal(t('{nume} își schimbă arma: {arma}.', { nume: sursa.nume, arma: actiune.nume }));
       sursa.bara = 0;
     } else if (actiune.tip === 'toba' && tobosariSinguri()) {
       // Rămas singur (de exemplu chiar de la începutul unui val), toboșarul nu mai bate: cade
@@ -907,10 +914,10 @@ export function creeazaLupta(parinte, joc) {
       if (tinta) {
         (tinta.intaritDe ||= []).push(sursa);
         tinta.el.classList.add('primeste-toba');
-        numar(tinta, `+${sursa.toba.atac} atac`, 'toba');
+        numar(tinta, t('+{n} atac', { n: sursa.toba.atac }), 'toba');
         marcheazaToba();
-        jurnal(`${sursa.nume} bate toba pentru ${tinta.nume}: lovește mai tare (+${sursa.toba.atac}).`);
-      } else jurnal(`${sursa.nume} ține ritmul: orcii lui lovesc în continuare mai tare.`);
+        jurnal(t('{sursa} bate toba pentru {tinta}: lovește mai tare (+{plus}).', { sursa: sursa.nume, tinta: tinta.nume, plus: sursa.toba.atac }));
+      } else jurnal(t('{nume} ține ritmul: orcii lui lovesc în continuare mai tare.', { nume: sursa.nume }));
       await asteapta(700);
       sursa.corp.classList.remove('bate-toba');
       tinta?.el.classList.remove('primeste-toba');
@@ -1010,12 +1017,12 @@ export function creeazaLupta(parinte, joc) {
   }
 
   // Pe tablă, cât alegi ceva pe câmp: îndemnul și butonul „Înapoi”
-  const inapoi = (f) => butonActiune('inapoi', '↩', 'Înapoi', () => meniu(f));
+  const inapoi = (f) => butonActiune('inapoi', '↩', t('Înapoi'), () => meniu(f));
 
   function alegeTinta(lista, laAlegere) {
     L.toti.forEach((f) => f.el.classList.toggle('tinta-valida', lista.includes(f)));
     L.laClic = (f) => lista.includes(f) && laAlegere(f);
-    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege ținta'), inapoi(L.activ));
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', t('Alege ținta')), inapoi(L.activ));
   }
 
   // Marcajul pentru o linie întreagă (unde poate merge un personaj lat)
@@ -1036,7 +1043,7 @@ export function creeazaLupta(parinte, joc) {
     if (f.lat) {
       // Personajul lat se mută doar pe o linie întreagă liberă
       for (const linie of [0, 1, 2]) if (linie !== f.linie && linieGoala('aliat', linie, f)) marcajLinie(linie, () => executa(f, { tip: 'muta', linie, rand: 'fata' }));
-      L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege linia'), inapoi(f));
+      L.elMeniu.replaceChildren(div('titlu-meniu-lupta', t('Alege linia')), inapoi(f));
       return;
     }
     for (const linie of [0, 1, 2]) {
@@ -1053,7 +1060,7 @@ export function creeazaLupta(parinte, joc) {
         L.elLocuri.append(loc);
       }
     }
-    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Alege locul'), inapoi(f));
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', t('Alege locul')), inapoi(f));
   }
 
   // Armele (și scutul) din rucsac, cu locul lor în inventar, ca să se poată echipa
@@ -1061,7 +1068,7 @@ export function creeazaLupta(parinte, joc) {
     joc.stare.inventar.map((x, index) => ({ ...x, index })).filter((x) => ['arma_primara', 'arma_secundara'].includes(inv.def(x.id).slot));
 
   function alegeArma(f) {
-    const titlu = div('titlu-meniu-lupta', 'Alege arma');
+    const titlu = div('titlu-meniu-lupta', t('Alege arma'));
     L.elMeniu.replaceChildren(
       titlu,
       ...armeInRucsac().map((x) => {
@@ -1118,10 +1125,20 @@ export function creeazaLupta(parinte, joc) {
     const m = L.elMeniu;
     m.hidden = false;
     // Fiecare putere are butonul ei (preotul: vindecare, golirea barei, scutul de lumină), fără un „Abilitate” cu listă
+    // Ținta aleasă se cheamă „x”, nu „t”: „t” e traducerea textelor (limba.js)
     m.replaceChildren(
       ...(f.faraAtac
         ? []
-        : [butonActiune('atac', '⚔', 'Atac', () => alegeTinta(tintePosibile(f, f.atac.tip), (t) => executa(f, { tip: 'atac', tinta: t })), !poateAtaca(f) || faraSageti, faraSageti ? 'N-ai săgeți' : poateAtaca(f) ? '' : 'Din spate nu poți ataca apropiat')]),
+        : [
+            butonActiune(
+              'atac',
+              '⚔',
+              t('Atac'),
+              () => alegeTinta(tintePosibile(f, f.atac.tip), (x) => executa(f, { tip: 'atac', tinta: x })),
+              !poateAtaca(f) || faraSageti,
+              faraSageti ? t('N-ai săgeți') : poateAtaca(f) ? '' : t('Din spate nu poți ataca apropiat'),
+            ),
+          ]),
       ...f.abilitati.map((a) => {
         const blocata = f.abilitatiBlocate.includes(a.id);
         // Pe eticheta de la hover, numele și, în paranteză, pe scurt ce face (cerut de autor); {min}/{max} vin din date
@@ -1130,20 +1147,20 @@ export function creeazaLupta(parinte, joc) {
           caFisier(a.id),
           '✦',
           scurt ? `${a.nume} (${scurt})` : a.nume,
-          () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (t) => executa(f, { tip: 'abilitate', abilitate: a, tinta: t })),
+          () => alegeTinta(a.tinta === 'aliat' ? vii('aliat') : vii('inamic'), (x) => executa(f, { tip: 'abilitate', abilitate: a, tinta: x })),
           blocata,
-          blocata ? f.motivBlocat || 'Nu acum.' : '',
+          blocata ? f.motivBlocat || t('Nu acum.') : '',
         );
       }),
-      butonActiune('aparare', '🛡', 'Apărare', () => executa(f, { tip: 'aparare' })),
-      butonActiune('obiect', '🧪', 'Obiect', () => {
+      butonActiune('aparare', '🛡', t('Apărare'), () => executa(f, { tip: 'aparare' })),
+      butonActiune('obiect', '🧪', t('Obiect'), () => {
         // Obiectele de luptă: câte un buton cu iconița obiectului și câte bucăți ai
         m.replaceChildren(
-          div('titlu-meniu-lupta', 'Alege obiectul'),
+          div('titlu-meniu-lupta', t('Alege obiectul')),
           ...consumabile.map((x) => {
             // Toiagul lucrează asupra tuturor, deci n-are țintă de ales
             const b = buton('', () =>
-              inv.def(x.id).luptaFinala ? executa(f, { tip: 'obiect', id: x.id, tinta: f }) : alegeTinta(vii('aliat'), (t) => executa(f, { tip: 'obiect', id: x.id, tinta: t })),
+              inv.def(x.id).luptaFinala ? executa(f, { tip: 'obiect', id: x.id, tinta: f }) : alegeTinta(vii('aliat'), (y) => executa(f, { tip: 'obiect', id: x.id, tinta: y })),
             );
             b.className = 'buton-lupta obiect-lupta';
             b.append(iconitaObiect(inv, x.id), div('numar-obiect', `×${x.n}`), div('eticheta-lupta', inv.def(x.id).nume));
@@ -1151,13 +1168,13 @@ export function creeazaLupta(parinte, joc) {
           }),
           inapoi(f),
         );
-      }, !consumabile.length, consumabile.length ? '' : 'N-ai nimic de folosit în luptă'),
+      }, !consumabile.length, consumabile.length ? '' : t('N-ai nimic de folosit în luptă')),
       // Doar Vale își schimbă arma: recruții au arma lor, din npcs.json
       ...(f.id === 'vale' && !L.def.faraArme && !L.def.faraEchipament
-        ? [butonActiune('schimba_arma', '⟳', 'Schimbă arma', () => alegeArma(f), !armeInRucsac().length, armeInRucsac().length ? '' : 'N-ai altă armă în rucsac')]
+        ? [butonActiune('schimba_arma', '⟳', t('Schimbă arma'), () => alegeArma(f), !armeInRucsac().length, armeInRucsac().length ? '' : t('N-ai altă armă în rucsac'))]
         : []),
-      butonActiune('schimba', '⇄', 'Schimbă locul', () => alegeLoc(f)),
-      ...(L.def.fuga ? [butonActiune('fugi', '🏃', 'Fugi', () => executa(f, { tip: 'fuga' }))] : []),
+      butonActiune('schimba', '⇄', t('Schimbă locul'), () => alegeLoc(f)),
+      ...(L.def.fuga ? [butonActiune('fugi', '🏃', t('Fugi'), () => executa(f, { tip: 'fuga' }))] : []),
     );
   }
 
@@ -1217,7 +1234,7 @@ export function creeazaLupta(parinte, joc) {
   function porneste(idLupta) {
     if (dialogLupta?.dlg.activ()) dialogLupta.dlg.inchide();
     const def = typeof idLupta === 'object' ? idLupta : joc.date.lupte?.lupte?.[idLupta];
-    if (!def) return joc.mesaj(`Lupta „${idLupta}” nu există.`);
+    if (!def) return joc.mesaj(t('Lupta „{id}” nu există.', { id: idLupta }));
     const s = joc.stare;
     // Muzica de luptă ține locul ambianței până se termină lupta; „faraMuzica”: rămâne ambianța locului
     // (bătaia cu bețivul, decis de autor: se aude tot muzica tavernei)
@@ -1292,7 +1309,7 @@ export function creeazaLupta(parinte, joc) {
     L.elOrdine = div('ordine-lupta');
     // Medalioanele sunt o bucată separată, așezată de autor peste bară, ca să stea exact pe lemnul ei
     L.elMedalioane = div('medalioane-lupta');
-    L.elJurnal = div('jurnal-lupta', def.valuri ? `${def.nume} · Valul 1 din ${def.valuri.length}` : def.nume);
+    L.elJurnal = div('jurnal-lupta', def.valuri ? t('{nume} · Valul {n} din {total}', { nume: def.nume, n: 1, total: def.valuri.length }) : def.nume);
     L.elMeniu = div('lupta-meniu');
     L.elLocuri = div('locuri-lupta');
     const scenaLupta = div('scena-lupta');
@@ -1364,7 +1381,7 @@ export function creeazaLupta(parinte, joc) {
     L.pune(L.elMeniu, 'actiuni');
     L.elMeniu.hidden = true;
     // Cel cu steagul satului îl ridică de la început: ceilalți știu de ce lovesc mai tare
-    for (const f of L.toti.filter((x) => x.steag && !x.cazut)) jurnal(`${f.nume} ridică steagul satului: ceilalți lovesc cu +${f.steag.atac} cât stă el în picioare.`);
+    for (const f of L.toti.filter((x) => x.steag && !x.cazut)) jurnal(t('{nume} ridică steagul satului: ceilalți lovesc cu +{plus} cât stă el în picioare.', { nume: f.nume, plus: f.steag.atac }));
     marcheazaToba();
     L.pauza = false;
     requestAnimationFrame(bucla);
@@ -1424,14 +1441,14 @@ export function creeazaLupta(parinte, joc) {
       arataLocuri();
     };
     L.elMeniu.hidden = false;
-    const incepe = buton('Începe lupta', () => {
+    const incepe = buton(t('Începe lupta'), () => {
         L.laClic = null;
         L.elLocuri.replaceChildren();
         L.toti.forEach((f) => f.el.classList.remove('la-rand'));
         start();
       });
     incepe.className = 'buton buton-mic-meniu';
-    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', 'Formația: click pe un aliat, apoi pe locul nou'), incepe);
+    L.elMeniu.replaceChildren(div('titlu-meniu-lupta', t('Formația: click pe un aliat, apoi pe locul nou')), incepe);
   }
 
   function termina(rezultat) {
@@ -1441,7 +1458,7 @@ export function creeazaLupta(parinte, joc) {
     if (!L.def.test) for (const f of L.toti.filter((x) => x.tabara === 'aliat' && !x.temporar)) s.formatie[f.id] = { linie: f.linie, rand: f.rand };
     // „dupaFuga”: unde ajunge Vale când fuge (din pivniță fuge sus, nu rămâne lângă șobolani)
     const parte = rezultat === 'victorie' ? L.def.victorie : rezultat === 'infrangere' ? L.def.infrangere : L.def.dupaFuga || null;
-    const titlu = { victorie: 'Victorie!', infrangere: 'Înfrângere', fuga: 'Ai fugit' }[rezultat];
+    const titlu = { victorie: t('Victorie!'), infrangere: t('Înfrângere'), fuga: t('Ai fugit') }[rezultat];
     // Un jingle scurt la victorie și la înfrângere; la fugă revine direct ambianța
     if (rezultat === 'fuga') joc.sunet.muzica(null);
     else if (!L.def.faraMuzica) joc.sunet.muzica(rezultat, { repetat: false });
@@ -1451,7 +1468,7 @@ export function creeazaLupta(parinte, joc) {
     const panou = div('panou-actiune');
     fundalRezultat.append(panou);
     el.append(fundalRezultat);
-    const continua = buton('Continuă', () => {
+    const continua = buton(t('Continuă'), () => {
         joc.sunet.muzica(null);
         // Lupta de test nu lasă urme: nici viață pierdută, nici timp trecut
         if (L.def.test) {

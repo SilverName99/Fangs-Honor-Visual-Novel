@@ -1,4 +1,6 @@
 import { VERSIUNE_SALVARE } from './stare.js';
+// Mesajele de mai jos ajung pe ecran (Meniu → Încarcă), deci sunt în limba jocului
+import { t } from './limba.js';
 
 // Fiecare migrare duce o salvare de la versiunea n la n+1, ca un joc început mai demult să meargă mai departe
 const migrari = {
@@ -70,12 +72,12 @@ export function cheieSalvare(test) {
 }
 
 export function pregateste(s) {
-  if (!s || typeof s !== 'object' || typeof s.versiuneSalvare !== 'number') throw new Error('Fișierul nu e o salvare a acestui joc.');
-  if (s.versiuneSalvare > VERSIUNE_SALVARE) throw new Error('Salvarea e dintr-o versiune mai nouă a jocului.');
+  if (!s || typeof s !== 'object' || typeof s.versiuneSalvare !== 'number') throw new Error(t('Fișierul nu e o salvare a acestui joc.'));
+  if (s.versiuneSalvare > VERSIUNE_SALVARE) throw new Error(t('Salvarea e dintr-o versiune mai nouă a jocului.'));
   let x = s;
   while (x.versiuneSalvare < VERSIUNE_SALVARE) {
     const m = migrari[x.versiuneSalvare];
-    if (!m) throw new Error(`Salvarea e dintr-o versiune veche (${x.versiuneSalvare}) care nu mai poate fi încărcată.`);
+    if (!m) throw new Error(t('Salvarea e dintr-o versiune veche ({versiune}) care nu mai poate fi încărcată.', { versiune: x.versiuneSalvare }));
     x = m(x);
   }
   return x;
@@ -117,7 +119,7 @@ export function importa() {
       try {
         rezolva(pregateste(JSON.parse(await input.files[0].text())));
       } catch (e) {
-        respinge(e instanceof SyntaxError ? new Error('Fișierul nu e o salvare validă.') : e);
+        respinge(e instanceof SyntaxError ? new Error(t('Fișierul nu e o salvare validă.')) : e);
       }
     };
     input.click();

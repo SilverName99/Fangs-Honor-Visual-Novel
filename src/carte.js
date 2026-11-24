@@ -1,5 +1,8 @@
 import { elementImagine } from './imagini.js';
 import { listaMisiuni, pasul, numaratori, textPotrivit, subpasGata } from './misiuni.js';
+// Textele cărții sunt în limba jocului; se cer la fiecare desenare, ca să urmeze limba aleasă (misiunile, numele și
+// descrierile vin deja traduse din date)
+import { t } from './limba.js';
 
 // Cartea personajelor: câte un personaj pe fiecare două pagini (stânga: nume, încredere, descriere; dreapta: schița lui).
 // Fonturile de scris de mână se importă în joc.js (editorul folosește doar numele fișierelor de aici).
@@ -60,9 +63,9 @@ export function creeazaCarte(parinte, joc) {
 
   function paginaListaMisiuni({ inLucru, gata }) {
     const { pag: cadru, continut: pag } = paginaDerulata('pagina stanga lista-misiuni');
-    pag.append(div('nume-carte', 'Misiuni'));
+    pag.append(div('nume-carte', t('Misiuni')));
     if (!inLucru.length && !gata.length) {
-      pag.append(div('descriere-carte', 'Încă n-am nicio misiune.'));
+      pag.append(div('descriere-carte', t('Încă n-am nicio misiune.')));
       return cadru;
     }
     const sectiune = (titlu, lista, clasa) => {
@@ -78,8 +81,8 @@ export function creeazaCarte(parinte, joc) {
         pag.append(r);
       }
     };
-    sectiune('În lucru', inLucru, 'in-lucru');
-    sectiune('Terminate', gata, 'terminata');
+    sectiune(t('În lucru'), inLucru, 'in-lucru');
+    sectiune(t('Terminate'), gata, 'terminata');
     return cadru;
   }
 
@@ -91,7 +94,7 @@ export function creeazaCarte(parinte, joc) {
     // O misiune ratată arată doar pașii făcuți cu adevărat (refuzată de la început: niciunul), nu pe toți bifați
     const i = st === 'terminata' ? m.pasi.length : pasul(s, m.id);
     pag.append(div('nume-carte titlu-misiune', m.titlu));
-    if (m.dela) pag.append(div('dela-misiune', `De la: ${numeDela(m.dela)}`));
+    if (m.dela) pag.append(div('dela-misiune', t('De la: {nume}', { nume: numeDela(m.dela) })));
     // Și descrierea poate depinde de ce a ales Vale (o listă { conditii, text }: la un refuz, nu mai zice „i-am promis”)
     pag.append(div('descriere-carte', (textPotrivit(m.descriere, s) || '').replace(/^CIORNĂ:\s*/, '')));
     const pasi = div('pasi-misiune');
@@ -114,9 +117,9 @@ export function creeazaCarte(parinte, joc) {
       if (sfat) pasi.append(div('sfat-misiune', sfat));
     });
     pag.append(pasi);
-    if (st === 'terminata') pag.append(div('stare-misiune', 'Gata!'));
-    if (st === 'ratata') pag.append(div('stare-misiune ratata', 'Ratată.'));
-    if (m.recompensa?.text) pag.append(div('recompensa-misiune', `Recompensă: ${m.recompensa.text}`));
+    if (st === 'terminata') pag.append(div('stare-misiune', t('Gata!')));
+    if (st === 'ratata') pag.append(div('stare-misiune ratata', t('Ratată.')));
+    if (m.recompensa?.text) pag.append(div('recompensa-misiune', t('Recompensă: {text}', { text: m.recompensa.text })));
     return cadru;
   }
 
@@ -137,12 +140,12 @@ export function creeazaCarte(parinte, joc) {
   function paginaStanga(p) {
     const pag = div('pagina stanga');
     if (!p) {
-      pag.append(div('descriere-carte', 'Încă n-am cunoscut pe nimeni.'));
+      pag.append(div('descriere-carte', t('Încă n-am cunoscut pe nimeni.')));
       return pag;
     }
     const n = incredere(p.id);
     const bara = div('incredere');
-    bara.append(div('eticheta-incredere', 'Încredere'));
+    bara.append(div('eticheta-incredere', t('Încredere')));
     const romburi = div('romburi');
     // Punctele de încredere (decis de autor): aceeași iconiță ca la recompensele de pe ecran (ui_icon_incredere.png,
     // până se încarcă rombul auriu), colorată pentru punctele câștigate și decolorată pentru cele care lipsesc
@@ -155,7 +158,7 @@ export function creeazaCarte(parinte, joc) {
 
   function paginaDreapta(p, index, total) {
     const pag = div('pagina dreapta');
-    if (p) pag.append(elementImagine([fisierCarte(p.id)], { clasa: 'schita', raport: 0.8, eticheta: `${p.carte.nume || p.nume} (schiță)` }));
+    if (p) pag.append(elementImagine([fisierCarte(p.id)], { clasa: 'schita', raport: 0.8, eticheta: t('{nume} (schiță)', { nume: p.carte.nume || p.nume }) }));
     pag.append(div('numar-pagina', total ? `${index + 1} / ${total}` : ''));
     return pag;
   }
@@ -164,7 +167,9 @@ export function creeazaCarte(parinte, joc) {
     // Săgețile de răsfoit sunt doar la personaje; misiunile se aleg din listă
     el.querySelector('.inapoi-carte').hidden = mod !== 'personaje';
     el.querySelector('.inainte-carte').hidden = mod !== 'personaje';
-    el.querySelector('.comuta-carte').textContent = mod === 'misiuni' ? 'Personaje' : 'Misiuni';
+    // Textele butoanelor se scriu la fiecare desenare, ca să urmeze limba jocului și cât stă cartea deschisă
+    el.querySelector('.comuta-carte').textContent = mod === 'misiuni' ? t('Personaje') : t('Misiuni');
+    el.querySelector('.inchide-carte').textContent = t('Închide');
     if (mod === 'misiuni') return arataMisiunile();
     const lista = personajeCunoscute(joc.date, joc.stare);
     pagina = Math.max(0, Math.min(pagina, lista.length - 1));
@@ -227,7 +232,7 @@ export function creeazaCarte(parinte, joc) {
       const carte = div('carte');
       const inapoi = Object.assign(document.createElement('button'), { className: 'buton inapoi-carte', textContent: '◀' });
       const inainte = Object.assign(document.createElement('button'), { className: 'buton inainte-carte', textContent: '▶' });
-      const inchideB = Object.assign(document.createElement('button'), { className: 'buton buton-mic-meniu inchide-carte', textContent: 'Închide' });
+      const inchideB = Object.assign(document.createElement('button'), { className: 'buton buton-mic-meniu inchide-carte' });
       inapoi.onclick = () => intoarce(-1);
       inainte.onclick = () => intoarce(1);
       inchideB.onclick = inchide;

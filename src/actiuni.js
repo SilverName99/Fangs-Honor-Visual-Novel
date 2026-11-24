@@ -8,6 +8,9 @@ import { pozitie, aplicaPozitie, INALTIME } from './scena.js';
 import { RAPORT_BARA_INV } from './lume.js';
 import { creeazaMiniJocuri } from './miniJocuri.js';
 import { miniJocuriPornite } from './uiGrafica.js';
+// Textele panourilor și gândurile implicite sunt în limba jocului; cele din date (numele muncii, gândurile din
+// config.json) vin deja traduse
+import { t } from './limba.js';
 
 // Cât stă imaginea muncii pe ecran (ca ecranul de încărcare de la vânătoare); un clic o sare
 const SECUNDE_IMAGINE = 2.5;
@@ -33,7 +36,7 @@ export function creeazaActiuni(parinte, joc) {
     const fundal = div('acoperitor');
     const p = div('panou-actiune');
     const inchide = () => fundal.remove();
-    p.append(div('titlu-meniu', titlu), ...continut(inchide), buton('Închide', inchide));
+    p.append(div('titlu-meniu', titlu), ...continut(inchide), buton(t('Închide'), inchide));
     fundal.append(p);
     fundal.onclick = (e) => e.target === fundal && inchide();
     parinte.append(fundal);
@@ -89,16 +92,24 @@ export function creeazaActiuni(parinte, joc) {
     // Noaptea nu se lucrează la câmp, la vaci sau la moară (decis de autor): doar gândul lui Vale
     if (m.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(m.gandNoapte);
     // Prea obosit: doar gândul lui Vale, fără panou (decis de autor)
-    if (prea_obosit()) return joc.gand(m.gandObosit || 'Sunt prea obosit pentru muncă grea. Trebuie să mă odihnesc întâi.');
+    if (prea_obosit()) return joc.gand(m.gandObosit || t('Sunt prea obosit pentru muncă grea. Trebuie să mă odihnesc întâi.'));
     // O muncă poate fi oprită de o întâmplare (plugul fermierului rupt, decis de autor): „blocat” = condițiile și gândul
     const blocaj = (m.blocat || []).find((b) => verifica(b.conditii, context(joc.stare)));
     if (blocaj) return joc.gand(blocaj.gand);
     panou(m.nume, (inchide) => {
       const s = joc.stare;
       const cuJoc = m.miniJoc && miniJocuriPornite();
-      const info = div('text-anunt', `${m.monedePeOra} monede și −${m.staminaPeOra} stamina pe oră.${cuJoc ? ' Cât de bine lucrezi: de la jumătate până la +50%.' : ''}`);
+      // Cu mini-jocul și fără, câte o propoziție întreagă, ca traducerea să nu fie lipită din bucăți
+      const peOra = { bani: m.monedePeOra, stamina: m.staminaPeOra };
+      const textInfo = cuJoc
+        ? t('{bani} monede și −{stamina} stamina pe oră. Cât de bine lucrezi: de la jumătate până la +50%.', peOra)
+        : t('{bani} monede și −{stamina} stamina pe oră.', peOra);
+      const info = div('text-anunt', textInfo);
+      // O oră / mai multe ore: câte un text întreg pentru fiecare formă, ca în română
+      const eticheta = (h) =>
+        h === 1 ? t('Muncește {h} oră (+{bani} monede)', { h, bani: h * m.monedePeOra }) : t('Muncește {h} ore (+{bani} monede)', { h, bani: h * m.monedePeOra });
       const ore = [1, 2, 4].map((h) =>
-        cuBaraStamina(buton(`Muncește ${h} ${h === 1 ? 'oră' : 'ore'} (+${h * m.monedePeOra} monede)`, async () => {
+        cuBaraStamina(buton(eticheta(h), async () => {
           inchide();
           if (joc.avanseaza(h * 60)) return;
           schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
@@ -122,7 +133,7 @@ export function creeazaActiuni(parinte, joc) {
 
   function dormi(a) {
     const s = joc.stare;
-    if (a.cost && s.bani < a.cost) return joc.gand(`N-am destui bani. Îmi trebuie ${a.cost} monede.`);
+    if (a.cost && s.bani < a.cost) return joc.gand(t('N-am destui bani. Îmi trebuie {n} monede.', { n: a.cost }));
     // Foamea mare face somnul mai puțin odihnitor (pedeapsă moale); „factorRefacere” la acțiune îl face mai
     // odihnitor după condiții (acasă, cu acoperișul reparat: recompensa misiunii, decis de autor)
     const refacereSomn = (minute) => {
@@ -141,12 +152,12 @@ export function creeazaActiuni(parinte, joc) {
       // Imaginea de noapte dacă somnul prinde măcar o bucată de noapte (decis de autor: seara, „până dimineața”
       // sau 6 ore trec peste 23:00); altfel cea de zi
       let minuteNoapte = 0;
-      for (let t = 0; t < minute; t += 15) if (momentZi((acum + t) % MINUTE_ZI) === 'noaptea') minuteNoapte += Math.min(15, minute - t);
+      for (let k = 0; k < minute; k += 15) if (momentZi((acum + k) % MINUTE_ZI) === 'noaptea') minuteNoapte += Math.min(15, minute - k);
       const deZi = minuteNoapte === 0;
       // Filmulețul visului care urmează (dacă vine unul) se descarcă cât se vede imaginea somnului
       if (minuteNoapte > 0) joc.pregatesteVisul?.(minuteNoapte);
       cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => {
-        joc.dupaActiune('Te-ai odihnit.');
+        joc.dupaActiune(t('Te-ai odihnit.'));
         // Visele lui Vale vin la trezire (decis de autor: după anumite misiuni, data următoare când doarme), doar
         // după un somn peste noapte; câte ore de noapte îi trebuie fiecărui vis se hotărăște la vis (joc.dupaSomn)
         if (minuteNoapte > 0) joc.dupaSomn?.(minuteNoapte);
@@ -158,10 +169,10 @@ export function creeazaActiuni(parinte, joc) {
     const ziua = momentZi(acum) === 'dimineata' || momentZi(acum) === 'amiaza';
     const tinta = ziua ? inMinute('23:00') : inMinute(cfg.somn.oraTrezire);
     const pana = (tinta - acum + MINUTE_ZI) % MINUTE_ZI || MINUTE_ZI;
-    panou(a.nume || 'Dormi', (inchide) => [
-      cuBaraStamina(buton('Dormi 2 ore', () => (inchide(), somn(120))), () => refacereSomn(120)),
-      cuBaraStamina(buton('Dormi 6 ore', () => (inchide(), somn(360))), () => refacereSomn(360)),
-      cuBaraStamina(buton(ziua ? 'Dormi până noaptea' : 'Dormi până dimineața', () => (inchide(), somn(pana))), () => refacereSomn(pana)),
+    panou(a.nume || t('Dormi'), (inchide) => [
+      cuBaraStamina(buton(t('Dormi 2 ore'), () => (inchide(), somn(120))), () => refacereSomn(120)),
+      cuBaraStamina(buton(t('Dormi 6 ore'), () => (inchide(), somn(360))), () => refacereSomn(360)),
+      cuBaraStamina(buton(ziua ? t('Dormi până noaptea') : t('Dormi până dimineața'), () => (inchide(), somn(pana))), () => refacereSomn(pana)),
     ]);
   }
 
@@ -179,8 +190,8 @@ export function creeazaActiuni(parinte, joc) {
   function obtine(a) {
     // Noaptea nu se adună lemne (decis de autor): doar gândul lui Vale, ca la muncă
     if (a.gandNoapte && momentZi(minuteInZi(joc.stare)) === 'noaptea') return joc.gand(a.gandNoapte);
-    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
-    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    if (a.stamina && prea_obosit()) return joc.gand(t('Sunt prea obosit. Trebuie să mă odihnesc întâi.'));
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || t('Destul pentru azi. Mâine din nou.'));
     // Cu „variante” (lemnele: o oră sau două), întâi alegi cât stai, pe panoul mic
     if (a.variante && !a.alesa) {
       return panou(a.titlu || a.nume, (inchide) =>
@@ -228,11 +239,11 @@ export function creeazaActiuni(parinte, joc) {
     if (a.gandNoapte && momentZi(minuteInZi(s)) === 'noaptea') return joc.gand(a.gandNoapte);
     for (const [id, n] of Object.entries(a.consuma || {})) {
       const are = inv.numar(s.inventar, id);
-      if (are < n) return joc.gand(`Îmi mai trebuie ${n - are} × ${inv.def(id).nume}. Am ${are} din ${n}.`);
+      if (are < n) return joc.gand(t('Îmi mai trebuie {lipsa} × {obiect}. Am {are} din {n}.', { lipsa: n - are, obiect: inv.def(id).nume, are, n }));
     }
-    if (a.stamina && s.nevoi.stamina < a.stamina) return joc.gand('Sunt prea obosit pentru asta. Trebuie să mă odihnesc întâi.');
+    if (a.stamina && s.nevoi.stamina < a.stamina) return joc.gand(t('Sunt prea obosit pentru asta. Trebuie să mă odihnesc întâi.'));
     // „maxPeZi” (gătitul de acasă: o dată pe zi, decis de autor)
-    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || t('Destul pentru azi. Mâine din nou.'));
     if (a.maxPeZi) folosiriAzi(a).n++;
     if (joc.avanseaza(a.minute || 0)) return;
     for (const [id, n] of Object.entries(a.consuma || {})) inv.scoate(id, n);
@@ -246,12 +257,12 @@ export function creeazaActiuni(parinte, joc) {
   function cauta(a) {
     const s = joc.stare;
     if (a.gandNoapte && momentZi(minuteInZi(s)) === 'noaptea') return joc.gand(a.gandNoapte);
-    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
-    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    if (a.stamina && prea_obosit()) return joc.gand(t('Sunt prea obosit. Trebuie să mă odihnesc întâi.'));
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || t('Destul pentru azi. Mâine din nou.'));
     if (a.maxPeZi) folosiriAzi(a).n++;
     if (joc.avanseaza(a.minute || 60)) return;
     if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
-    let z = Math.random() * a.tabel.reduce((t, x) => t + x.sansa, 0);
+    let z = Math.random() * a.tabel.reduce((suma, x) => suma + x.sansa, 0);
     const n = (a.tabel.find((x) => (z -= x.sansa) < 0) || a.tabel.at(-1)).n;
     const prima = a.primaData && !s.stari[`cautat_${a.id}`];
     if (prima) s.stari[`cautat_${a.id}`] = 'da';
@@ -293,9 +304,9 @@ export function creeazaActiuni(parinte, joc) {
   // Doar la orele din „ora” (sunătoarea se culege dimineața, cu roua pe ea)
   function culege(a) {
     const s = joc.stare;
-    if (a.ora && !verifica({ ora: a.ora }, context(s))) return joc.gand(a.gandOra || 'Nu e momentul potrivit.');
-    if (a.stamina && prea_obosit()) return joc.gand('Sunt prea obosit. Trebuie să mă odihnesc întâi.');
-    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || 'Destul pentru azi. Mâine din nou.');
+    if (a.ora && !verifica({ ora: a.ora }, context(s))) return joc.gand(a.gandOra || t('Nu e momentul potrivit.'));
+    if (a.stamina && prea_obosit()) return joc.gand(t('Sunt prea obosit. Trebuie să mă odihnesc întâi.'));
+    if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || t('Destul pentru azi. Mâine din nou.'));
     if (a.maxPeZi) folosiriAzi(a).n++;
     if (joc.avanseaza(a.minute || 60)) return;
     if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
@@ -353,7 +364,7 @@ export function creeazaActiuni(parinte, joc) {
       const ctx = context(joc.stare);
       const cand = Array.isArray(a.cand) ? a.cand : a.cand ? [{ conditii: a.cand, gand: a.gandCand }] : [];
       const opreste = cand.find((c) => !verifica(c.conditii, ctx));
-      if (opreste) return alegeGand(opreste.gand || 'Nu e momentul potrivit.');
+      if (opreste) return alegeGand(opreste.gand || t('Nu e momentul potrivit.'));
       // Și gândurile de aici pot avea condiții (cufărul lui Bram: altul după ce a văzut săbiile, altul când e gol)
       return joc.pornesteEveniment(a.eveniment) || (a.gandAltfel && alegeGand(a.gandAltfel));
     },

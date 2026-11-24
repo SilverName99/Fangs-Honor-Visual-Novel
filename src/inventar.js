@@ -1,3 +1,5 @@
+import { t } from './limba.js';
+
 // Logica inventarului: stive, sloturi, echipament, cufăr. Fără interfață, ca s-o poată folosi și lupta, și magazinul.
 // Sloturile de echipament (decis de autor): armura se îmbunătățește din coif, armură și jambiere; fără mănuși și bocanci în Actul 1
 export const SLOTURI = ['cap', 'armura', 'jambiere', 'arma_primara', 'arma_secundara', 'rucsac'];
@@ -9,6 +11,11 @@ export const NUME_SLOTURI = {
   arma_secundara: 'Armă secundară',
   rucsac: 'Rucsac',
 };
+// Numele sloturilor pe ecranul jocului, în limba de acum. NUME_SLOTURI rămâne în română, pentru editor (Aranjare,
+// galeria), care e mereu în română; aici t() se cheamă la fiecare desenare, ca ecranul să urmeze limba aleasă în
+// Opțiuni. Cheile stau scrise întregi, ca să le găsească scriptul traducerilor (tools/traduceri.mjs)
+export const numeSlot = (slot) =>
+  ({ cap: t('Coif'), armura: t('Armură'), jambiere: t('Jambiere'), arma_primara: t('Armă primară'), arma_secundara: t('Armă secundară'), rucsac: t('Rucsac') })[slot];
 
 // Echipamentul lui Edwin, pe sloturi: purtat tot, Vale luptă cu pozele „tata” (vale_tata_*.png)
 export const SET_TATA = { cap: 'coif_tata', armura: 'platosa_tata', jambiere: 'jambiere_tata', arma_primara: 'sabia_tata' };
@@ -63,18 +70,18 @@ export function creeazaInventar(date, getStare) {
   // Mută o stivă întreagă dintr-o listă în alta (inventar ↔ cufăr)
   function mutaStiva(din, spre, capSpre, index) {
     const x = din[index];
-    if (!x) return 'Nu există.';
+    if (!x) return t('Nu există.');
     const rest = adaugaIn(spre, capSpre, x.id, x.n);
     x.n = rest;
     if (rest === 0) din.splice(index, 1);
-    return rest ? 'Nu e loc pentru tot.' : null;
+    return rest ? t('Nu e loc pentru tot.') : null;
   }
 
   function echipeaza(index) {
     const s = getStare();
     const x = s.inventar[index];
     const d = def(x?.id);
-    if (!x || d.tip !== 'echipament') return 'Obiectul ăsta nu se poate echipa.';
+    if (!x || d.tip !== 'echipament') return t('Obiectul ăsta nu se poate echipa.');
     const slot = d.slot;
     // Ce trebuie dat jos: ce e deja în slot, plus cealaltă mână dacă una dintre arme e cu două mâini
     const josDe = new Set([slot]);
@@ -85,8 +92,8 @@ export function creeazaInventar(date, getStare) {
     const proba = structuredClone(s.inventar);
     proba.splice(index, 1);
     const capNoua = slot === 'rucsac' ? d.capacitate - LOC_BANI : capacitate();
-    for (const id of dateJos) if (adaugaIn(proba, capNoua, id, 1) > 0) return slot === 'rucsac' ? `Rucsacul e prea mic: golește mai întâi ${ocupate(proba) + 1 - capNoua} sloturi.` : 'Nu e loc în inventar pentru ce dai jos.';
-    if (ocupate(proba) > capNoua) return `Rucsacul e prea mic: golește mai întâi ${ocupate(proba) - capNoua} sloturi.`;
+    for (const id of dateJos) if (adaugaIn(proba, capNoua, id, 1) > 0) return slot === 'rucsac' ? t('Rucsacul e prea mic: golește mai întâi {n} sloturi.', { n: ocupate(proba) + 1 - capNoua }) : t('Nu e loc în inventar pentru ce dai jos.');
+    if (ocupate(proba) > capNoua) return t('Rucsacul e prea mic: golește mai întâi {n} sloturi.', { n: ocupate(proba) - capNoua });
 
     s.inventar = proba;
     for (const sl of josDe) delete s.echipat[sl];
@@ -99,15 +106,15 @@ export function creeazaInventar(date, getStare) {
     const s = getStare();
     const x = s.cufar[index];
     const d = def(x?.id);
-    if (!x || d.tip !== 'echipament') return 'Obiectul ăsta nu se poate echipa.';
+    if (!x || d.tip !== 'echipament') return t('Obiectul ăsta nu se poate echipa.');
     const slot = d.slot;
     const josDe = new Set([slot]);
     if (d.douaMaini) josDe.add('arma_secundara');
     if (slot === 'arma_secundara' && def(s.echipat.arma_primara).douaMaini) josDe.add('arma_primara');
-    if (slot === 'rucsac' && ocupate(s.inventar) > d.capacitate - LOC_BANI) return `Rucsacul e prea mic: golește mai întâi ${ocupate(s.inventar) - d.capacitate + LOC_BANI} sloturi.`;
+    if (slot === 'rucsac' && ocupate(s.inventar) > d.capacitate - LOC_BANI) return t('Rucsacul e prea mic: golește mai întâi {n} sloturi.', { n: ocupate(s.inventar) - d.capacitate + LOC_BANI });
     const cufar = structuredClone(s.cufar);
     if (--cufar[index].n <= 0) cufar.splice(index, 1);
-    for (const id of [...josDe].map((sl) => s.echipat[sl]).filter(Boolean)) if (adaugaIn(cufar, cfg.cufar, id, 1) > 0) return 'Nu e loc în cufăr pentru ce dai jos.';
+    for (const id of [...josDe].map((sl) => s.echipat[sl]).filter(Boolean)) if (adaugaIn(cufar, cfg.cufar, id, 1) > 0) return t('Nu e loc în cufăr pentru ce dai jos.');
     s.cufar = cufar;
     for (const sl of josDe) delete s.echipat[sl];
     s.echipat[slot] = x.id;
@@ -120,7 +127,7 @@ export function creeazaInventar(date, getStare) {
     if (!id) return null;
     const proba = structuredClone(s.inventar);
     const cap = slot === 'rucsac' ? cfg.faraRucsac - LOC_BANI : capacitate();
-    if (adaugaIn(proba, cap, id, 1) > 0 || ocupate(proba) > cap) return slot === 'rucsac' ? 'Fără rucsac nu încape tot ce ai. Golește întâi inventarul.' : 'Nu e loc în inventar.';
+    if (adaugaIn(proba, cap, id, 1) > 0 || ocupate(proba) > cap) return slot === 'rucsac' ? t('Fără rucsac nu încape tot ce ai. Golește întâi inventarul.') : t('Nu e loc în inventar.');
     s.inventar = proba;
     delete s.echipat[slot];
     return null;

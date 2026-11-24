@@ -2,6 +2,7 @@ import { elementImagine } from './imagini.js';
 import { iconita } from './ecranInventar.js';
 import { LATIME, INALTIME, pozitie, aplicaPozitie, randeaza } from './scena.js';
 import { context } from './stare.js';
+import { t } from './limba.js';
 
 // Mini-jocurile de la muncă și de la cules (decis de autor): fiecare stă pe tot ecranul, peste imaginea muncii,
 // și întoarce un scor. Se pot opri din Opțiuni; atunci munca dă cât dădea înainte (codul din actiuni.js).
@@ -41,7 +42,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     parinte.append(el);
     const incepe = () =>
       new Promise((r) => {
-        const b = buton('Începe', () => (b.remove(), r()));
+        const b = buton(t('Începe'), () => (b.remove(), r()));
         b.classList.add('mini-incepe');
         el.append(b);
       });
@@ -90,7 +91,7 @@ export function creeazaMiniJocuri(parinte, joc) {
   // Același joc la antrenamentul cu Roderick (decis de autor), pe ecranul lui („idEcran”, inelul pus pe manechin),
   // cu sunetul lui; „imagineLovitura”: la o lovitură reușită se vede o clipă imaginea loviturii (la ratare, nu)
   async function cerc({ imagine, titlu, incercari = 3, idEcran = 'minijoc_cerc', imagineLovitura = null, sunet = 'topor_copac', indemn }) {
-    const e = ecran(imagine, titlu, indemn || 'Lovește când cercul care se strânge ajunge pe inelul auriu.');
+    const e = ecran(imagine, titlu, indemn || t('Lovește când cercul care se strânge ajunge pe inelul auriu.'));
     // Imaginea loviturii stă gata încărcată peste fundal, ascunsă, ca să apară fără să clipească
     const lovitura = imagineLovitura && elementImagine([imagineLovitura], { clasa: 'fundal mini-lovitura', fundal: true });
     if (lovitura) e.el.children[0].after(lovitura);
@@ -105,13 +106,13 @@ export function creeazaMiniJocuri(parinte, joc) {
     const TOLERANTA = R * 0.2;
     const DURATA = 1700;
     let lovituri = 0;
-    const arataScor = (i) => (e.scor.textContent = `Lovitura ${Math.min(i + 1, incercari)} din ${incercari} · reușite: ${lovituri}`);
+    const arataScor = (i) => (e.scor.textContent = t('Lovitura {n} din {total} · reușite: {reusite}', { n: Math.min(i + 1, incercari), total: incercari, reusite: lovituri }));
     arataScor(0);
     await e.incepe();
     for (let i = 0; i < incercari; i++) {
       arataScor(i);
       const start = performance.now();
-      const raza = (t) => 3 * R * (1 - (t - start) / DURATA);
+      const raza = (ms) => 3 * R * (1 - (ms - start) / DURATA);
       let cadru;
       const anima = () => {
         const r = Math.max(0, raza(performance.now()));
@@ -119,14 +120,15 @@ export function creeazaMiniJocuri(parinte, joc) {
         if (r > 0) cadru = requestAnimationFrame(anima);
       };
       anima();
-      const t = await Promise.race([clic(e.el), pauza(DURATA).then(() => null)]);
+      // „moment”, nu „t”: altfel ar acoperi t()-ul traducerii de mai jos
+      const moment = await Promise.race([clic(e.el), pauza(DURATA).then(() => null)]);
       cancelAnimationFrame(cadru);
       // La fiecare clic, toporul lovește copacul (decis de autor), reușită sau nu
-      if (t !== null) joc.sunet.efect(sunet);
-      const r = t === null ? 0 : raza(t);
+      if (moment !== null) joc.sunet.efect(sunet);
+      const r = moment === null ? 0 : raza(moment);
       const bine = Math.abs(r - R) <= TOLERANTA;
       if (bine) lovituri++;
-      clipa(e.el, bine ? 'Lovit!' : r > R ? 'Prea devreme' : 'Prea târziu', bine);
+      clipa(e.el, bine ? t('Lovit!') : r > R ? t('Prea devreme') : t('Prea târziu'), bine);
       cercul.style.width = cercul.style.height = '0px';
       if (bine && lovitura) {
         lovitura.classList.add('vazuta');
@@ -136,7 +138,7 @@ export function creeazaMiniJocuri(parinte, joc) {
       await pauza(750);
     }
     arataScor(incercari);
-    await e.incheie(`Reușite: ${lovituri} din ${incercari}`);
+    await e.incheie(t('Reușite: {n} din {total}', { n: lovituri, total: incercari }));
     return lovituri;
   }
 
@@ -146,7 +148,7 @@ export function creeazaMiniJocuri(parinte, joc) {
   // jocul; atunci întoarce dacă a reușit (true / false), nu scorul. „texte”: cuvintele potrivite jocului
   async function arat({ imagine, titlu, idEcran = 'minijoc_arat', indemn, reusiteCerute = 0, rateuriVoie = 0, texte = {} }) {
     const cuTinta = reusiteCerute > 0;
-    const e = ecran(imagine, titlu, indemn || 'Oprește semnul în zona verde: plugul merge drept doar dacă îl ții bine.');
+    const e = ecran(imagine, titlu, indemn || t('Oprește semnul în zona verde: plugul merge drept doar dacă îl ții bine.'));
     const { el: bara, h } = piesa(e, idEcran, 'bara');
     bara.classList.add('mini-bara');
     const verde = div('mini-verde');
@@ -160,12 +162,21 @@ export function creeazaMiniJocuri(parinte, joc) {
     const TRECERE = 1100;
     let reusite = 0;
     let ratate = 0;
-    const scorTinta = () => `${texte.reusite || 'Reușite'}: ${reusite} din ${reusiteCerute} · ${texte.ratari || 'ratări'}: ${ratate} din ${rateuriVoie}`;
-    e.scor.textContent = cuTinta ? scorTinta() : `Brazda 1 din ${RUNDE}`;
+    // Etichetele vin din date („texte”, deja în limba aleasă); propoziția din jurul lor e un singur t()
+    const scorTinta = () =>
+      t('{textReusite}: {reusite} din {cerute} · {textRatari}: {ratate} din {voie}', {
+        textReusite: texte.reusite || t('Reușite'),
+        reusite,
+        cerute: reusiteCerute,
+        textRatari: texte.ratari || t('ratări'),
+        ratate,
+        voie: rateuriVoie,
+      });
+    e.scor.textContent = cuTinta ? scorTinta() : t('Brazda {n} din {total}', { n: 1, total: RUNDE });
     await e.incepe();
     for (let i = 0; i < RUNDE; i++) {
       if (cuTinta && (reusite >= reusiteCerute || ratate > rateuriVoie)) break;
-      e.scor.textContent = cuTinta ? scorTinta() : `Brazda ${i + 1} din ${RUNDE} · drepte: ${reusite}`;
+      e.scor.textContent = cuTinta ? scorTinta() : t('Brazda {n} din {total} · drepte: {drepte}', { n: i + 1, total: RUNDE, drepte: reusite });
       const st = 0.1 + Math.random() * (0.9 - LATIME_VERDE - 0.1);
       verde.style.left = `${st * 100}%`;
       verde.style.width = `${LATIME_VERDE * 100}%`;
@@ -173,8 +184,8 @@ export function creeazaMiniJocuri(parinte, joc) {
       // Merge dus-întors; la fiecare rundă puțin mai repede, iar la ultima e cu un sfert mai repede decât la prima,
       // oricâte runde ar fi (la arat: 1, 0,88, 0,76, ca până acum)
       const grabire = 1 - (i * 0.24) / Math.max(1, RUNDE - 1);
-      const pozitieSemn = (t) => {
-        const f = ((t - start) / (TRECERE * grabire)) % 2;
+      const pozitieSemn = (ms) => {
+        const f = ((ms - start) / (TRECERE * grabire)) % 2;
         return f < 1 ? f : 2 - f;
       };
       let cadru;
@@ -189,23 +200,23 @@ export function creeazaMiniJocuri(parinte, joc) {
       const bine = p >= st && p <= st + LATIME_VERDE;
       if (bine) reusite++;
       else ratate++;
-      clipa(e.el, bine ? texte.bine || 'Drept!' : texte.rau || 'Strâmb', bine);
+      clipa(e.el, bine ? texte.bine || t('Drept!') : texte.rau || t('Strâmb'), bine);
       if (cuTinta) e.scor.textContent = scorTinta();
       await pauza(800);
     }
     if (cuTinta) {
       const reusit = reusite >= reusiteCerute;
-      await e.incheie(reusit ? texte.reusit || 'Reușit!' : texte.esuat || 'Ratat!');
+      await e.incheie(reusit ? texte.reusit || t('Reușit!') : texte.esuat || t('Ratat!'));
       return reusit;
     }
-    await e.incheie(`Brazde drepte: ${reusite} din ${RUNDE}`);
+    await e.incheie(t('Brazde drepte: {n} din {total}', { n: reusite, total: RUNDE }));
     return reusite / RUNDE;
   }
 
   // Mulsul: un cerc pulsează; clic când e cel mai mare (pe ritm). Câte o șansă pe puls, scorul 0–1.
   // Același joc la foalele lui Bram (decis de autor, „O zi la forjă”), pe ecranul lui („idEcran”), cu cuvintele lui
   async function muls({ imagine, titlu, idEcran = 'minijoc_muls', indemn, texte = {} }) {
-    const e = ecran(imagine, titlu, indemn || 'Apasă în ritm, când cercul e cel mai mare.');
+    const e = ecran(imagine, titlu, indemn || t('Apasă în ritm, când cercul e cel mai mare.'));
     const { el: loc } = piesa(e, idEcran, 'puls');
     const puls = div('mini-puls');
     // Inelul stins arată cât de mare e cercul pe bătaie
@@ -214,8 +225,8 @@ export function creeazaMiniJocuri(parinte, joc) {
     const PERIOADA = 1000;
     const FEREASTRA = 170;
     let reusite = 0;
-    const ritm = texte.ritm || 'Ritmul';
-    e.scor.textContent = `${ritm}: 0 din ${BATAI}`;
+    const ritm = texte.ritm || t('Ritmul');
+    e.scor.textContent = t('{eticheta}: {n} din {total}', { eticheta: ritm, n: 0, total: BATAI });
     await e.incepe();
     const start = performance.now() + PERIOADA / 2;
     let cadru;
@@ -232,14 +243,15 @@ export function creeazaMiniJocuri(parinte, joc) {
       if (ev.type === 'keydown' && ev.key !== ' ' && ev.key !== 'Enter') return;
       if (ev.type === 'pointerdown' && ev.button !== 0) return;
       ev.preventDefault?.();
-      const t = performance.now() - start;
-      const bataie = Math.round(t / PERIOADA);
+      // „scurs”, nu „t”: altfel ar acoperi t()-ul traducerii de mai jos
+      const scurs = performance.now() - start;
+      const bataie = Math.round(scurs / PERIOADA);
       if (bataie < 0 || bataie >= BATAI || folosite.has(bataie)) return;
       folosite.add(bataie);
-      const bine = Math.abs(t - bataie * PERIOADA) <= FEREASTRA;
+      const bine = Math.abs(scurs - bataie * PERIOADA) <= FEREASTRA;
       if (bine) reusite++;
-      clipa(e.el, bine ? texte.bine || 'Bine!' : texte.rau || 'Pe lângă', bine);
-      e.scor.textContent = `${ritm}: ${reusite} din ${BATAI}`;
+      clipa(e.el, bine ? texte.bine || t('Bine!') : texte.rau || t('Pe lângă'), bine);
+      e.scor.textContent = t('{eticheta}: {n} din {total}', { eticheta: ritm, n: reusite, total: BATAI });
     };
     e.el.addEventListener('pointerdown', laClic);
     addEventListener('keydown', laClic);
@@ -247,13 +259,13 @@ export function creeazaMiniJocuri(parinte, joc) {
     e.el.removeEventListener('pointerdown', laClic);
     removeEventListener('keydown', laClic);
     cancelAnimationFrame(cadru);
-    await e.incheie(`${texte.final || 'În ritm'}: ${reusite} din ${BATAI}`);
+    await e.incheie(t('{eticheta}: {n} din {total}', { eticheta: texte.final || t('În ritm'), n: reusite, total: BATAI }));
     return reusite / BATAI;
   }
 
   // Moara: clic repede ca să umpli sacul înainte să se termine timpul; sacul se mai și scurge puțin. Scorul 0–1
   async function moara({ imagine, titlu }) {
-    const e = ecran(imagine, titlu, 'Apasă repede ca să umpli sacul cu făină înainte să treacă timpul.');
+    const e = ecran(imagine, titlu, t('Apasă repede ca să umpli sacul cu făină înainte să treacă timpul.'));
     const { el: sac } = piesa(e, 'minijoc_moara', 'sac');
     sac.classList.add('mini-sac');
     const plin = div('mini-sac-plin');
@@ -266,7 +278,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     const PE_CLIC = 0.05;
     const SCURGERE = 0.04;
     let umplere = 0;
-    e.scor.textContent = 'Sacul: 0%';
+    e.scor.textContent = t('Sacul: {procent}%', { procent: 0 });
     await e.incepe();
     const start = performance.now();
     let inainte = start;
@@ -286,7 +298,7 @@ export function creeazaMiniJocuri(parinte, joc) {
         const ramas = Math.max(0, SECUNDE - (acum - start) / 1000);
         plin.style.height = `${umplere * 100}%`;
         timp.textContent = `${ramas.toFixed(1)} s`;
-        e.scor.textContent = `Sacul: ${Math.round(umplere * 100)}%`;
+        e.scor.textContent = t('Sacul: {procent}%', { procent: Math.round(umplere * 100) });
         if (umplere >= 1 || ramas <= 0) return gata();
         requestAnimationFrame(anima);
       };
@@ -294,7 +306,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     });
     e.el.removeEventListener('pointerdown', laClic);
     removeEventListener('keydown', laClic);
-    await e.incheie(umplere >= 1 ? 'Sacul e plin!' : `Sacul: ${Math.round(umplere * 100)}%`);
+    await e.incheie(umplere >= 1 ? t('Sacul e plin!') : t('Sacul: {procent}%', { procent: Math.round(umplere * 100) }));
     return umplere;
   }
 
@@ -308,7 +320,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     // Până desenează autorul zona, plantele stau în jumătatea de jos a imaginii
     const poligon = aranjare?.zone?.plante?.length >= 3 ? aranjare.zone.plante : [[0.1, 0.55], [0.9, 0.55], [0.9, 0.95], [0.1, 0.95]];
     const max = a.maxCulese || 4;
-    const e = ecran(a.imagine, a.titlu || a.nume, a.intrebare || 'Care e planta?');
+    const e = ecran(a.imagine, a.titlu || a.nume, a.intrebare || t('Care e planta?'));
     e.el.classList.add('mini-culege');
     const lista = a.plante.flatMap((p) => Array.from({ length: p.cate || 1 }, () => p));
     lista.sort(() => Math.random() - 0.5);
@@ -342,7 +354,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     let corecte = 0;
     let gresite = 0;
     const culese = [];
-    e.scor.textContent = `Culese: 0 / ${max}`;
+    e.scor.textContent = t('Culese: {n} / {max}', { n: 0, max });
     let gata;
     const terminat = new Promise((r) => (gata = r));
     // Cele de mai jos stau în față, ca într-o poză
@@ -364,12 +376,12 @@ export function creeazaMiniJocuri(parinte, joc) {
         if (p.corecta) corecte++;
         else gresite++;
         culese.push(p.id);
-        e.scor.textContent = `Culese: ${corecte + gresite} / ${max}`;
+        e.scor.textContent = t('Culese: {n} / {max}', { n: corecte + gresite, max });
         if (corecte + gresite >= max) setTimeout(gata, 450);
       };
       e.loc.append(el);
     }
-    const bGata = buton('Gata', () => gata());
+    const bGata = buton(t('Gata'), () => gata());
     bGata.classList.add('mini-gata');
     e.el.append(bGata);
     await terminat;
@@ -390,7 +402,7 @@ export function creeazaMiniJocuri(parinte, joc) {
     parinte.append(el);
     const { poligoane } = randeaza(strat, d, joc.date.aranjare[idEcran], context(joc.stare));
     const sus = div('mini-sus');
-    sus.append(div('mini-indemn', indemn || 'Pe unde o iei?'));
+    sus.append(div('mini-indemn', indemn || t('Pe unde o iei?')));
     el.append(sus);
     const ales = await new Promise((r) => {
       if (poligoane.has('sigur') && poligoane.has('periculos')) {
@@ -401,7 +413,7 @@ export function creeazaMiniJocuri(parinte, joc) {
         return;
       }
       const jos = div('mini-butoane-furis');
-      jos.append(buton('Pe aici e sigur (zona nedesenată)', () => r('sigur')), buton('Pe aici te vede orcul (zona nedesenată)', () => r('periculos')));
+      jos.append(buton(t('Pe aici e sigur (zona nedesenată)'), () => r('sigur')), buton(t('Pe aici te vede orcul (zona nedesenată)'), () => r('periculos')));
       el.append(jos);
     });
     el.remove();

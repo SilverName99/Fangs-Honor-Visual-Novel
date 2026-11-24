@@ -182,11 +182,16 @@ export function laSchimbareaLimbii(f) {
   return () => ascultatori.delete(f);
 }
 
+// Același text românesc cu două înțelesuri primește în cheie un context, după „|”, ca fiecare să-și aibă engleza lui
+// (dicționarul are o singură engleză pe cheie): „Renunț” de la jocul nou e „Cancel”, dar „Renunț|la partidă”, de la
+// Masa regelui, e „Give Up”. Româna arată doar ce e înainte de „|”, deci pe ecran rămâne „Renunț” în ambele locuri.
+const faraContext = (text) => text.replace(/\|[^|]*$/, '');
+
 // Un text din cod, în limba de acum. Cheia e textul românesc (așa codul rămâne ușor de citit); „{nume}” se
 // înlocuiește cu valorile date. Fără traducere în dicționar, rămâne româna (scriptul de verificare o arată).
 export function t(ro, valori) {
   const s = suprascrieriUi[ro];
-  let text = limbaJoc() === 'en' ? (s?.en?.trim() ? s.en : dictionar[ro] ?? ro) : s?.ro?.trim() ? s.ro : ro;
+  let text = limbaJoc() === 'en' ? (s?.en?.trim() ? s.en : dictionar[ro] ?? faraContext(ro)) : faraContext(s?.ro?.trim() ? s.ro : ro);
   if (valori) text = text.replace(/\{(\w+)\}/g, (m, k) => (valori[k] != null ? String(valori[k]) : m));
   return text;
 }

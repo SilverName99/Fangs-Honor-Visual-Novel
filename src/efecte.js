@@ -1,5 +1,7 @@
 import { schimbaNevoie } from './stare.js';
 import { MINUTE_ZI, inMinute } from './timp.js';
+// Mesajele de pe ecran sunt în limba jocului; numele obiectelor și titlurile misiunilor vin deja traduse din date
+import { t } from './limba.js';
 
 // Un id sau o listă de id-uri = câte una din fiecare; „{ sageti: 10 }” = mai multe deodată (săgețile de la Bram)
 const perObiect = (v) => (v && typeof v === 'object' && !Array.isArray(v) ? Object.entries(v) : [].concat(v).map((id) => [id, 1]));
@@ -50,7 +52,7 @@ const efecte = {
   imbraca: (v, joc) => {
     const unde = joc.inventar.imbraca(v);
     joc.inregistreazaCastig?.({ tip: 'obiect', id: v, n: 1 });
-    if (unde.cufar.length) joc.mesaj(`N-ai loc în rucsac: ${unde.cufar.map((id) => joc.inventar.def(id).nume).join(', ')} te așteaptă în cufărul de acasă.`);
+    if (unde.cufar.length) joc.mesaj(t('N-ai loc în rucsac: {obiecte} te așteaptă în cufărul de acasă.', { obiecte: unde.cufar.map((id) => joc.inventar.def(id).nume).join(', ') }));
     // Rucsacul și cufărul pline: panoul obișnuit „N-ai loc pentru...”, ca jucătorul să aleagă, nu să piardă piesa pe ascuns
     unde.rest.forEach((id) => joc.primeste(id, 1));
   },
@@ -95,7 +97,7 @@ const efecte = {
         joc.retineInainteDeMisiune?.(id);
         (s.ordineMisiuni ||= []).push(id);
         const m = joc.date.misiuni?.misiuni?.find((x) => x.id === id);
-        if (m) joc.mesaj(`Misiune nouă: ${m.titlu} (în carte)`);
+        if (m) joc.mesaj(t('Misiune nouă: {titlu} (în carte)', { titlu: m.titlu }));
       }
       s.misiuni[id] = st;
     }),

@@ -6,6 +6,7 @@ import { elementImagine } from './imagini.js';
 import { pozitie, aplicaPozitie } from './scena.js';
 // Pauzele (amestecat, gândit, citit) se scurtează cu viteza aleasă de jucător (×1 / ×2 / ×4)
 import { asteapta, butonViteza } from './viteza.js';
+import { t } from './limba.js';
 
 // Stările unui orc la masă: stă, amestecă zarurile în pahar, se gândește înainte să liciteze
 const STARI_ORC = ['normal', 'amesteca', 'gandeste'];
@@ -25,8 +26,13 @@ function buton(text, clic, clasa = '', pergament = false) {
 const zarAleator = () => 1 + Math.floor(Math.random() * 6);
 const alege = (lista) => lista[Math.floor(Math.random() * lista.length)];
 
-const CANTITATI = ['', 'un zar', 'două zaruri', 'trei zaruri', 'patru zaruri', 'cinci zaruri', 'șase zaruri', 'șapte zaruri', 'opt zaruri', 'nouă zaruri'];
-export const textLicitatie = (l) => `${CANTITATI[l.q] || `${l.q} zaruri`} de ${l.f}`;
+// Câte zaruri, în cuvinte. Cerut la fiecare desen (nu o listă făcută la pornire), ca să urmeze limba aleasă; fiecare
+// formă are t()-ul ei scris întreg, ca scriptul de verificare a traducerilor să le găsească
+const cateZaruri = (q) =>
+  [null, t('un zar'), t('două zaruri'), t('trei zaruri'), t('patru zaruri'), t('cinci zaruri'), t('șase zaruri'), t('șapte zaruri'), t('opt zaruri'), t('nouă zaruri')][q] ||
+  t('{n} zaruri', { n: q });
+// Licitația, întreagă într-un singur t(), ca engleza să-și poată pune cuvintele în ordinea ei
+export const textLicitatie = (l) => t('{cate} de {fata}', { cate: cateZaruri(l.q), fata: l.f });
 
 // O licitație e mai mare dacă are mai multe zaruri, sau tot atâtea, dar cu o față mai mare
 export const maiMare = (l, fata) => !fata || l.q > fata.q || (l.q === fata.q && l.f > fata.f);
@@ -120,7 +126,7 @@ export function creeazaZaruri(parinte, joc) {
   function arataRegulile() {
     const fundal = div('fundal-reguli');
     const foaie = div('foaie-inv hartie-reguli');
-    foaie.append(div('titlu-reguli', 'Regulile'), div('text-reguli', regulile), buton('Am înțeles', () => fundal.remove(), 'inchide-reguli', true));
+    foaie.append(div('titlu-reguli', t('Regulile')), div('text-reguli', regulile()), buton(t('Am înțeles'), () => fundal.remove(), 'inchide-reguli', true));
     fundal.append(foaie);
     fundal.onclick = (e) => e.target === fundal && fundal.remove();
     el.append(fundal);
@@ -129,26 +135,27 @@ export function creeazaZaruri(parinte, joc) {
   function arataMiza(lista) {
     const panou = div('panou-zaruri-miza');
     const titlu = div('rand-titlu-zaruri');
-    titlu.append(div('titlu-zaruri', 'Zaruri cu paznicii'), Object.assign(buton('?', arataRegulile, 'mic buton-intrebare', true), { title: 'Regulile' }));
+    titlu.append(div('titlu-zaruri', t('Zaruri cu paznicii')), Object.assign(buton('?', arataRegulile, 'mic buton-intrebare', true), { title: t('Regulile') }));
     panou.append(titlu, div('text-zaruri', cfg().replici.oferta));
     // Alegerile una lângă alta (decis de autor), pe două rânduri de text: miza ta, apoi ce pun ei
     const alegeri = div('alegeri-miza');
     for (const o of lista) {
       const b = buton('', () => incepe(o), 'miza', true);
-      b.append(div('', `Pui ${o.miza} monede`), div('ce-pun', `Ei pun: ${nume(o.premiu)}`));
+      b.append(div('', t('Pui {n} monede', { n: o.miza })), div('ce-pun', t('Ei pun: {premiu}', { premiu: nume(o.premiu) })));
       b.disabled = joc.stare.bani < o.miza;
       alegeri.append(b);
     }
-    alegeri.append(buton('Nu acum', inchide, 'renunta', true));
+    alegeri.append(buton(t('Nu acum'), inchide, 'renunta', true));
     panou.append(alegeri);
     // Masa se vede deja în spatele panoului cu miza
     construiesteMasa();
     el.querySelector('.strat-ui-zaruri').replaceChildren(panou);
   }
 
-  const regulile =
-    'Fiecare aruncă 3 zaruri sub pahar și le vede doar pe ale lui. Pe rând, spuneți câte zaruri cu o față crezi că sunt pe toată masa (de exemplu „două zaruri de 5”). ' +
-    'Următorul spune mai multe zaruri, sau tot atâtea cu o față mai mare, ori strigă „Mincinosule!”. Atunci se ridică paharele: dacă sunt cel puțin atâtea, pierde un zar cel care a strigat; dacă nu, cel care a mințit. Câștigă ultimul rămas cu zaruri.';
+  // O funcție, nu un text făcut o dată (creeazaZaruri rulează la pornirea jocului), ca să urmeze limba aleasă; cheia
+  // stă într-o singură bucată, ca s-o găsească scriptul de verificare a traducerilor
+  const regulile = () =>
+    t('Fiecare aruncă 3 zaruri sub pahar și le vede doar pe ale lui. Pe rând, spuneți câte zaruri cu o față crezi că sunt pe toată masa (de exemplu „două zaruri de 5”). Următorul spune mai multe zaruri, sau tot atâtea cu o față mai mare, ori strigă „Mincinosule!”. Atunci se ridică paharele: dacă sunt cel puțin atâtea, pierde un zar cel care a strigat; dacă nu, cel care a mințit. Câștigă ultimul rămas cu zaruri.');
 
   function incepe(oferta) {
     joc.stare.bani -= oferta.miza;
@@ -172,7 +179,7 @@ export function creeazaZaruri(parinte, joc) {
   }
 
   const activi = () => s.jucatori.filter((j) => j.ramase > 0);
-  const total = () => activi().reduce((t, j) => t + j.ramase, 0);
+  const total = () => activi().reduce((n, j) => n + j.ramase, 0);
   const urmatorul = (i) => {
     for (let k = 1; k <= s.jucatori.length; k++) {
       const j = (i + k) % s.jucatori.length;
@@ -241,13 +248,21 @@ export function creeazaZaruri(parinte, joc) {
   async function verifica(acuzator) {
     const l = s.licitatie;
     const bidder = s.jucatori.find((j) => j.id === l.cine);
-    const gasite = activi().reduce((t, j) => t + j.zaruri.filter((x) => x === l.f).length, 0);
+    const gasite = activi().reduce((n, j) => n + j.zaruri.filter((x) => x === l.f).length, 0);
     const adevarat = gasite >= l.q;
     const pierde = adevarat ? acuzator : bidder;
     const castiga = adevarat ? bidder : acuzator;
     s.dezvaluit = true;
-    const cate = gasite === 0 ? `Pe masă nu e niciun zar de ${l.f}.` : `Pe masă ${gasite === 1 ? 'e' : 'sunt'} ${CANTITATI[gasite] || `${gasite} zaruri`} de ${l.f}.`;
-    s.rezultat = `${cate} ${bidder.nume} ${adevarat ? 'a spus adevărul' : 'a mințit'}: ${pierde.nume} pierde un zar.`;
+    // Propoziții întregi, câte una pentru fiecare formă (e / sunt, adevărul / a mințit), ca engleza să le poată
+    // așeza altfel
+    const cate =
+      gasite === 0
+        ? t('Pe masă nu e niciun zar de {fata}.', { fata: l.f })
+        : gasite === 1
+          ? t('Pe masă e {cate} de {fata}.', { cate: cateZaruri(gasite), fata: l.f })
+          : t('Pe masă sunt {cate} de {fata}.', { cate: cateZaruri(gasite), fata: l.f });
+    const valori = { masa: cate, cine: bidder.nume, pierde: pierde.nume };
+    s.rezultat = adevarat ? t('{masa} {cine} a spus adevărul: {pierde} pierde un zar.', valori) : t('{masa} {cine} a mințit: {pierde} pierde un zar.', valori);
     if (castiga.id !== 'vale') s.baloane = { ...s.baloane, [castiga.id]: alege(cfg().replici.castigaRunda) };
     if (pierde.id !== 'vale') s.baloane = { ...s.baloane, [pierde.id]: alege(cfg().replici.pierdeRunda) };
     s.pierde = pierde;
@@ -381,11 +396,11 @@ export function creeazaZaruri(parinte, joc) {
         for (const f of j.zaruri) rand.append(zar(f, s.dezvaluit && f === s.licitatie?.f ? 'potrivit' : ''));
         elemente.push(rand);
       }
-      if (s.privit === j.id && !s.dezvaluit) elemente.push(Object.assign(peste('nota-privit', pp, pp.scara * 1.1), { textContent: 'Te-ai uitat pe furiș. Nu și-a dat seama.' }));
+      if (s.privit === j.id && !s.dezvaluit) elemente.push(Object.assign(peste('nota-privit', pp, pp.scara * 1.1), { textContent: t('Te-ai uitat pe furiș. Nu și-a dat seama.') }));
       // Plăcuța cu numele și zarurile rămase, sub orc
       const placa = peste(`placa-jucator${laRand ? ' la-rand' : ''}${j.ramase === 0 ? ' iesit' : ''}`, po, po.scara);
       placa.append(div('nume-jucator', j.nume), jetoane(j));
-      if (j.ramase === 0) placa.append(div('text-iesit', 'a ieșit din joc'));
+      if (j.ramase === 0) placa.append(div('text-iesit', t('a ieșit din joc')));
       elemente.push(placa);
       if (s.baloane[j.id]) {
         const b = peste('balon', po, po.scara + 0.06);
@@ -398,12 +413,12 @@ export function creeazaZaruri(parinte, joc) {
     // Vale (privirea noastră): zarurile lui, jos, deasupra panoului
     const sub = div('zona-vale');
     sub.append(div(`placa-jucator${s.jucatori[s.rand] === vale && !s.dezvaluit && s.final === undefined ? ' la-rand' : ''}`));
-    sub.firstChild.append(div('nume-jucator', 'Tu'), jetoane(vale));
+    sub.firstChild.append(div('nume-jucator', t('Tu')), jetoane(vale));
     const randVale = div('rand-zaruri');
     if (vale.ramase > 0) for (const f of vale.zaruri) randVale.append(zar(f, `${s.aruncare ? 'rostogolire' : ''}${s.dezvaluit && f === s.licitatie?.f ? ' potrivit' : ''}`));
     sub.append(randVale);
     // Regulile stau ascunse sub un buton, ca să nu acopere orcii
-    const ajutor = buton('? Regulile', arataRegulile, 'mic buton-reguli');
+    const ajutor = buton(t('? Regulile'), arataRegulile, 'mic buton-reguli');
     // Fără titlu și istoric sus (decis de autor): licitațiile se văd în baloane, interfața rămâne curată
     strat.replaceChildren(...elemente, sub, panouVale(), ajutor, butonViteza());
   }
@@ -417,21 +432,27 @@ export function creeazaZaruri(parinte, joc) {
   function panouVale() {
     const p = div('panou-zaruri');
     if (s.final !== undefined) {
-      p.append(div('text-zaruri mare', s.final ? `Ai câștigat! Primești ${nume(s.oferta.premiu)} și îți iei înapoi cele ${s.oferta.miza} monede.` : `Ai pierdut cele ${s.oferta.miza} monede.`));
-      p.append(buton('Pleacă de la masă', inchide));
+      p.append(
+        div(
+          'text-zaruri mare',
+          s.final ? t('Ai câștigat! Primești {premiu} și îți iei înapoi cele {n} monede.', { premiu: nume(s.oferta.premiu), n: s.oferta.miza }) : t('Ai pierdut cele {n} monede.', { n: s.oferta.miza }),
+        ),
+      );
+      p.append(buton(t('Pleacă de la masă'), inchide));
       return p;
     }
     if (s.dezvaluit) {
-      p.append(div('text-zaruri mare', s.rezultat), buton('Continuă', continua));
+      p.append(div('text-zaruri mare', s.rezultat), buton(t('Continuă'), continua));
       return p;
     }
     const j = s.jucatori[s.rand];
     if (s.citire) {
-      p.append(div('text-zaruri mare', `${s.citire.nume}: „${s.citire.text}”`));
+      // Ghilimelele trec și ele prin t(): engleza le are pe ale ei (“...”)
+      p.append(div('text-zaruri mare', t('{nume}: „{text}”', { nume: s.citire.nume, text: s.citire.text })));
       return p;
     }
     if (j.id !== 'vale' || s.aruncare) {
-      p.append(div('text-zaruri', s.aruncare ? 'Se aruncă zarurile...' : `${j.nume} se gândește...`));
+      p.append(div('text-zaruri', s.aruncare ? t('Se aruncă zarurile...') : t('{nume} se gândește...', { nume: j.nume })));
       return p;
     }
     // Rândul lui Vale: alege câte zaruri și ce față, pornind de la cea mai mică licitație permisă
@@ -441,7 +462,7 @@ export function creeazaZaruri(parinte, joc) {
     const cantitate = div('alegere-cantitate');
     const minus = buton('−', () => ((a.q = Math.max(1, a.q - 1)), deseneaza()), 'mic plus-minus');
     const plus = buton('+', () => ((a.q = Math.min(total(), a.q + 1)), deseneaza()), 'mic plus-minus');
-    cantitate.append(minus, div('cantitate', CANTITATI[a.q] || `${a.q} zaruri`), plus, div('de', 'de'));
+    cantitate.append(minus, div('cantitate', cateZaruri(a.q)), plus, div('de', t('de')));
     const fete = div('alegere-fata');
     for (let f = 1; f <= 6; f++) {
       const z = zar(f, f === a.f ? 'ales' : '');
@@ -449,7 +470,7 @@ export function creeazaZaruri(parinte, joc) {
       fete.append(z);
     }
     const ok = maiMare(a, l) && a.q <= total();
-    const lic = buton(`Licitează: ${textLicitatie(a)}`, () => {
+    const lic = buton(t('Licitează: {licitatie}', { licitatie: textLicitatie(a) }), () => {
       s.alegere = null;
       liciteaza(s.jucatori[0], { q: a.q, f: a.f });
     });
@@ -457,7 +478,7 @@ export function creeazaZaruri(parinte, joc) {
     const randButoane = div('butoane-zaruri');
     randButoane.append(lic);
     if (l) {
-      const m = buton('Mincinosule!', () => {
+      const m = buton(t('Mincinosule!'), () => {
         s.alegere = null;
         s.baloane = {};
         verifica(s.jucatori[0]);
@@ -465,11 +486,11 @@ export function creeazaZaruri(parinte, joc) {
       randButoane.append(m);
     }
     if (s.putere && !s.putereFolosita) {
-      randButoane.append(buton(s.alegePahar ? 'Alege un pahar...' : '👁 Uită-te sub un pahar', () => ((s.alegePahar = !s.alegePahar), deseneaza()), 'putere'));
+      randButoane.append(buton(s.alegePahar ? t('Alege un pahar...') : t('👁 Uită-te sub un pahar'), () => ((s.alegePahar = !s.alegePahar), deseneaza()), 'putere'));
     }
-    const ultima = l && `${s.jucatori.find((x) => x.id === l.cine).nume} a spus: ${textLicitatie(l)}. Licitează mai sus sau strigă „Mincinosule!”.`;
-    p.append(div('text-zaruri', ultima || 'Tu începi. Câte zaruri de o față crezi că sunt pe masă?'), cantitate, fete, randButoane);
-    if (!ok) p.append(div('nota-zaruri', l ? `Trebuie mai mult decât „${textLicitatie(l)}”.` : ''));
+    const ultima = l && t('{nume} a spus: {licitatie}. Licitează mai sus sau strigă „Mincinosule!”.', { nume: s.jucatori.find((x) => x.id === l.cine).nume, licitatie: textLicitatie(l) });
+    p.append(div('text-zaruri', ultima || t('Tu începi. Câte zaruri de o față crezi că sunt pe masă?')), cantitate, fete, randButoane);
+    if (!ok) p.append(div('nota-zaruri', l ? t('Trebuie mai mult decât „{licitatie}”.', { licitatie: textLicitatie(l) }) : ''));
     return p;
   }
 

@@ -1,6 +1,8 @@
 import { elementImagine, schimbaImagine } from './imagini.js';
 import { volumEfecte } from './sunet.js';
 import { urlFilm, filmLipsa } from './filme.js';
+// Numele ochiului (pentru cititoarele de ecran) e în limba jocului; replicile vin deja traduse din date
+import { t } from './limba.js';
 
 const div = (clasa) => Object.assign(document.createElement('div'), { className: clasa });
 
@@ -33,8 +35,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   const fundal = div('fundal-dialog');
   // Ochiul din colțul stânga-jos (cerut de autor): ascunde chenarul și portretele, ca să se vadă toată imaginea;
   // încă un clic oriunde (sau pe ochi) le aduce înapoi
+  // Numele lui (aria-label) se pune la fiecare dialog nou, în porneste(), ca să urmeze limba aleasă
   const ochi = Object.assign(document.createElement('button'), { className: 'buton-ochi' });
-  ochi.setAttribute('aria-label', 'Ascunde dialogul');
   ochi.append(Object.assign(div('icon-hud icon-ochi'), { textContent: '👁' }));
   const ascuns = () => el.classList.contains('ascuns-text');
   ochi.onclick = (e) => {
@@ -390,6 +392,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     porneste(dialog, { delaNod = null, imagine = null, cuEfecte = false } = {}) {
       activ = { dialog, original: dialog, emotiePartener: 'normal', alegeri: [], imagineReluata: imagine };
       el.hidden = false;
+      ochi.setAttribute('aria-label', t('Ascunde dialogul'));
       // Visele (decis de autor): ceață pe marginile ecranului, ca să se vadă că e un vis
       el.classList.toggle('vis', !!dialog.vis);
       parinte.classList.add('in-dialog');

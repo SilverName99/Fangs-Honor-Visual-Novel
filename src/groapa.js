@@ -3,6 +3,8 @@ import { aplicaEfecte } from './efecte.js';
 import { context } from './stare.js';
 import { verifica } from './conditii.js';
 import { undeEste, intrareProgram } from './rutine.js';
+// Textele panoului sunt în limba jocului; cele din config.json („texte”) și numele vin deja traduse din date
+import { t } from './limba.js';
 
 // Groapa (cerută de autor): arena orcilor de lângă poartă. Se intră apăsând pe poartă, seara; alegi nivelul (câte
 // valuri de orci) și cel mult doi aliați cu încrederea cerută, apoi lupta. Regulile și cifrele stau în config.json
@@ -26,7 +28,7 @@ function buton2(titlu, detaliu, clic) {
   if (detaliu) b.append(div('detaliu-groapa', detaliu));
   return b;
 }
-const valuri = (n) => (n === 1 ? '1 val' : `${n} valuri`);
+const valuri = (n) => (n === 1 ? t('1 val') : t('{n} valuri', { n }));
 
 // Cine poate intra cu Vale: cei din listă care luptă, au încrederea cerută (decis de autor: cel puțin 4) și au
 // spus da când i-a întrebat (decis de autor: întrebarea lor din meniu; Kaia, abia după capa de la Miriam).
@@ -51,8 +53,8 @@ export function creeazaGroapa(parinte, joc) {
   function deCeLipseste(id) {
     const ctx = context(joc.stare);
     const p = personaj(id);
-    if (intrareProgram(p, ctx)?.doarme) return 'doarme acum';
-    if (undeEste(p, ctx) == null) return 'nu e prin preajmă acum';
+    if (intrareProgram(p, ctx)?.doarme) return t('doarme acum');
+    if (undeEste(p, ctx) == null) return t('nu e prin preajmă acum');
     return null;
   }
 
@@ -78,18 +80,19 @@ export function creeazaGroapa(parinte, joc) {
     fundal.onclick = (e) => e.target === fundal && inchide();
     parinte.append(fundal);
 
-    const t = cfg().texte || {};
+    // Textele din config.json („texte”), cu numele lor; nu „t”, ca să nu ascundă t() din limba.js
+    const texte = cfg().texte || {};
     function alegeNivelul() {
       panou.replaceChildren(
-        div('titlu-meniu', loc?.nume || 'Groapa'),
-        div('text-panou-groapa', t.intro || 'Câte valuri înfrunți?'),
+        div('titlu-meniu', loc?.nume || t('Groapa')),
+        div('text-panou-groapa', texte.intro || t('Câte valuri înfrunți?')),
         ...(cfg().niveluri || []).map((n) => {
           const lupta = joc.date.lupte.lupte[n.lupta];
           // Ce câștigi, pe rândul al doilea; răsplata se dă doar la prima victorie pe nivel, deci apare cât mai e de luat
           const prima = joc.stare.stari?.[`groapa_${n.id}`] !== 'castigat';
-          return buton2(`${n.nume} · ${valuri(lupta?.valuri?.length || 1)}`, `${n.bani} monede${prima ? ' + o răsplată' : ''}`, () => alegeAliatii(n));
+          return buton2(`${n.nume} · ${valuri(lupta?.valuri?.length || 1)}`, prima ? t('{bani} monede + o răsplată', { bani: n.bani }) : t('{bani} monede', { bani: n.bani }), () => alegeAliatii(n));
         }),
-        buton('Pleacă', inchide),
+        buton(t('Pleacă'), inchide),
       );
     }
 
@@ -109,7 +112,7 @@ export function creeazaGroapa(parinte, joc) {
         });
         return [id, b, lipsa];
       });
-      const intra = buton(posibili.length ? 'Intră în Groapă' : 'Intru singur', () => incepe(n, alesi));
+      const intra = buton(posibili.length ? t('Intră în Groapă') : t('Intru singur'), () => incepe(n, alesi));
       const indemn = div('text-panou-groapa');
       function actualizeaza() {
         for (const [id, b, lipsa] of randuri) {
@@ -117,17 +120,17 @@ export function creeazaGroapa(parinte, joc) {
           b.disabled = !!lipsa || (!alesi.includes(id) && alesi.length >= max);
         }
         indemn.textContent = posibili.length
-          ? (t.aliati || 'Cine intră cu tine? Cel mult {max}.').replace('{max}', String(max)) + (alesi.length ? ` (${alesi.length}/${max})` : '')
-          : t.singur || 'N-am încă pe cine lua cu mine. Intru singur.';
+          ? (texte.aliati ? texte.aliati.replace('{max}', String(max)) : t('Cine intră cu tine? Cel mult {max}.', { max })) + (alesi.length ? ` (${alesi.length}/${max})` : '')
+          : texte.singur || t('N-am încă pe cine lua cu mine. Intru singur.');
       }
       actualizeaza();
-      panou.replaceChildren(div('titlu-meniu', `${loc?.nume || 'Groapa'} · ${n.nume}`), indemn, ...randuri.map(([, b]) => b), intra, buton('Înapoi', alegeNivelul));
+      panou.replaceChildren(div('titlu-meniu', `${loc?.nume || t('Groapa')} · ${n.nume}`), indemn, ...randuri.map(([, b]) => b), intra, buton(t('Înapoi'), alegeNivelul));
     }
 
     function incepe(n, alesi) {
       inchide();
       const def = joc.date.lupte.lupte[n.lupta];
-      if (!def) return joc.mesaj(`Lupta „${n.lupta}” nu există.`);
+      if (!def) return joc.mesaj(t('Lupta „{id}” nu există.', { id: n.lupta }));
       // O luptă pe seară (decis de autor), numărată de la intrare: nici după un refresh nu se poate lua de la capăt
       // ca să încerci altfel; lupta începută, da (o luptă începută pornește de la capăt)
       aplicaEfecte({ marcheaza: 'groapa' }, joc);

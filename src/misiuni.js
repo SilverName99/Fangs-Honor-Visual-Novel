@@ -1,6 +1,8 @@
 import { verifica } from './conditii.js';
 import { context } from './stare.js';
 import { aplicaEfecte } from './efecte.js';
+// Anunțul de pe ecran (misiune terminată) e în limba jocului; titlul misiunii vine deja tradus din date
+import { t } from './limba.js';
 
 // Misiunile (data/misiuni.json): pașii se bifează singuri, în ordine, când sunt îndeplinite.
 // Pasul la care a ajuns fiecare misiune stă în salvare (pasiMisiuni), ca un pas făcut să rămână făcut
@@ -29,9 +31,9 @@ export const listaMisiuni = (date) => date.misiuni?.misiuni || [];
 // Un text simplu sau o listă { conditii, text } (cu un text simplu la urmă, dacă vrei): primul potrivit stării de
 // acum. Așa sfatul din carte se schimbă după ce a ales Vale (Kaia îl așteaptă la noapte sau s-a dus singură), iar
 // îndemnul de la cules după misiunea de acum
-export function textPotrivit(t, stare) {
-  if (!Array.isArray(t)) return t;
-  const x = t.find((y) => typeof y === 'string' || verifica(y.conditii, context(stare)));
+export function textPotrivit(text, stare) {
+  if (!Array.isArray(text)) return text;
+  const x = text.find((y) => typeof y === 'string' || verifica(y.conditii, context(stare)));
   return typeof x === 'string' ? x : x?.text;
 }
 export const pasul = (stare, id) => stare.pasiMisiuni?.[id] ?? 0;
@@ -53,7 +55,7 @@ export function actualizeazaMisiuni(joc) {
     // Ziua în care s-a terminat: misiunea următoare a aceluiași personaj vine abia după o zi (decis de autor)
     (s.terminateLa ||= {})[m.id] = Math.floor(s.minute / 1440) + 1;
     aplicaEfecte(m.recompensa?.efecte, joc);
-    joc.mesaj(`Misiune terminată: ${m.titlu}`);
+    joc.mesaj(t('Misiune terminată: {titlu}', { titlu: m.titlu }));
     terminate.push(m.id);
   }
   return terminate;

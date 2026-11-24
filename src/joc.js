@@ -857,7 +857,16 @@ const joc = {
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
   // Butonul de ecran complet din HUD, ca să apară și peste cartea prologului (cerut de autor), în colțul dreapta-sus
-  butonEcranComplet: () => butonHud('ecran', '⤢', t('Ecran complet'), comutaEcranComplet),
+  // Cartea îl face o singură dată, când se deschide, iar limba se alege chiar din ea: eticheta lui urmează limba cât
+  // butonul e pe ecran, apoi ascultătorul se scoate singur
+  butonEcranComplet: () => {
+    const b = butonHud('ecran', '⤢', t('Ecran complet'), comutaEcranComplet);
+    const opreste = laSchimbareaLimbii(() => {
+      if (b.isConnected) b.title = t('Ecran complet');
+      else opreste();
+    });
+    return b;
+  },
   // Un dialog, iar după el ce urmează (gândul lui Vale la intrarea în Groapă, apoi panoul ei)
   dialogApoi: (d, dupa) => {
     dupaDialog = dupa;
