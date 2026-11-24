@@ -109,10 +109,16 @@ const efecte = {
   // După o luptă în Groapă (nivelul și rezultatul): banii, reputația, prima victorie, inelul mamei
   groapa: (v, joc) => joc.rezultatGroapa(v),
   plataTaxa: (v, joc) => joc.platesteTaxa(),
-  // Mama plătește taxa săptămânii cu banii lăsați de Vale, cât lipsește el („Drumul trezirii”)
-  taxaPrinMama: (v, joc) => joc.taxaPrinMama(),
+  // Mama plătește taxa săptămânii cu banii lăsați de Vale, cât lipsește el („Drumul trezirii”); cu un nume de stare
+  // („taxaPrinMama: "drum_taxa_mama"”), starea aceea devine „platita” doar dacă a plătit-o chiar ea, ca dialogul de la
+  // întoarcere să știe dacă are ce povesti
+  taxaPrinMama: (v, joc) => joc.taxaPrinMama(typeof v === 'string' ? v : null),
   // Pune o nevoie la o valoare fixă (de exemplu viața 10 după bătaie, foamea plină după masa de la Agnes)
   seteazaNevoi: (v, joc) => Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(0, Math.min(100, val)))),
+  // Ridică o nevoie cel puțin până la o valoare, fără s-o scadă (mama îi hrănește la plecare: cine a mâncat deja
+  // rămâne sătul, cine pleacă flămând nu mai leșină pe drum, unde leșinul ar bloca misiunea)
+  nevoiMinim: (v, joc) =>
+    Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(joc.stare.nevoi[k] ?? 0, Math.min(100, val)))),
   // Ține minte când s-a întâmplat ceva, pentru condiția „trecut” (unchiul lipsește 2 zile după bătaie)
   // Numărătorile: „contor: { vanatori: 1 }” adună, „contorZero: ["vanatori_dupa_refuz"]” o ia de la zero
   contor: (v, joc) => Object.entries(v).forEach(([k, n]) => ((joc.stare.contoare ||= {})[k] = (joc.stare.contoare[k] || 0) + n)),

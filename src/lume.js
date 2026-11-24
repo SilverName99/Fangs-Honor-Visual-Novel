@@ -622,7 +622,13 @@ export function imaginiCerute(date, scene) {
     const filme = [...new Set(Object.values(d.noduri || {}).map((n) => n.video).filter(Boolean))];
     if (!imagini.length && !filme.length) continue;
     grup = `Eveniment: ${d.grup || id}`;
-    filme.forEach((cale) => adauga(cale, `${d.grup || id}: filmulețul (MP4; fără el, visul merge doar cu imaginile)`, true));
+    // Și filmulețul poate sta la alt grup decât dialogul („grupGalerie” la nodul lui): visul din „Drumul trezirii”
+    // are grupul lui, „Al cincilea vis”, cu imaginile visului
+    filme.forEach((cale) => {
+      const g = Object.values(d.noduri).find((n) => n.video === cale && n.grupGalerie)?.grupGalerie;
+      grup = `Eveniment: ${g || d.grup || id}`;
+      adauga(cale, `${g || d.grup || id}: filmulețul (MP4; fără el, visul merge doar cu imaginile)`, true);
+    });
     // Un nod poate trimite imaginea lui la alt grup („grupGalerie”): dialogul Miriamei are scene din mai multe misiuni
     // (inelul, capa Kaiei), iar fiecare stă la misiunea ei
     imagini.forEach((cale, i) => {

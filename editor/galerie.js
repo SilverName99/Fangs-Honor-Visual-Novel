@@ -213,10 +213,11 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
         )
         .join('');
     // Visele (cerut de autor): fiecare vis în grupul lui, cu un buton care îl pornește în Testare, ca după somn
+    // Un vis din mijlocul unui dialog („visDinDialog”: al cincilea, la crăpătură) are grupul lui, scris la eveniment
     const vise = new Map(
       (comun.date.events?.evenimente || [])
-        .filter((ev) => ev.laTrezire && ev.dialog)
-        .map((ev) => [`Eveniment: ${comun.date.dialoguri?.[ev.dialog]?.grup || ev.dialog}`, ev]),
+        .filter((ev) => (ev.laTrezire || ev.visDinDialog) && ev.dialog)
+        .map((ev) => [`Eveniment: ${ev.visDinDialog?.grup || comun.date.dialoguri?.[ev.dialog]?.grup || ev.dialog}`, ev]),
     );
     const sectiuneGrup = (g) => {
       // Încărcate primele, apoi ce lipsește (obligatoriile înaintea opționalelor)
@@ -235,7 +236,7 @@ export function creeazaGalerie(container, comun, reincarcaImagini) {
       return `<details class="grup-galerie" data-grup="${esc(g)}" ${(inchiseImplicit.has(g) || totul) && !deschise.has(g) ? '' : 'open'}>
         <summary><b>${esc(g)}</b> <span class="${complet ? 'bine' : 'avertisment'}">${gataObl} / ${obl.length} obligatorii</span>
         <span class="sumar">· ${gataOpt} / ${lista.length - obl.length} opționale</span>
-        ${vis ? `<button class="btn principal porneste-vis" data-vis="${esc(vis.id)}" title="Deschide Testarea: Vale se culcă în camera lui, apoi vine visul (cu filmulețul, dacă e încărcat)">▶ Pornește visul</button>` : ''}</summary>
+        ${vis ? `<button class="btn principal porneste-vis" data-vis="${esc(vis.id)}" title="${vis.visDinDialog ? 'Deschide Testarea: visul pornește de la ultima poveste de la foc, chiar înainte să adoarmă Vale (cu filmulețul, dacă e încărcat)' : 'Deschide Testarea: Vale se culcă în camera lui, apoi vine visul (cu filmulețul, dacă e încărcat)'}">▶ Pornește visul</button>` : ''}</summary>
         <div class="grila">${carduri(lista)}</div></details>`;
     };
     const nefolosite = incarcate.filter((c) => !cerutSet.has(c));

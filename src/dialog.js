@@ -10,7 +10,7 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor, asteaptaFilmele }) {
   // Textul unei replici: un text simplu sau o listă { conditii, text } (cu un text simplu la urmă), ca sfaturile din carte:
   // primul potrivit stării de acum („Drumul trezirii”: unchiul bea apă sau din ploscă, după cum a fost „Ultima sticlă”)
   const textPotrivit = (t) => (Array.isArray(t) ? t.map((x) => (typeof x === 'string' ? { text: x } : x)).find((x) => verificaConditii(x.conditii))?.text ?? '' : t);
@@ -200,8 +200,23 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   // aplicat deja (și s-au salvat), deci nu se mai aplică o dată. „faraFilm”: aceeași replică, arătată din nou
   // fiindcă filmulețul ei lipsește (efectele s-au aplicat deja)
   function arataNod(idNod, reluat = false, faraFilm = false) {
+    // Cât se descarcă filmulețul visului, discuția stă pe loc (un clic sau o tastă nu sar peste așteptare)
+    if (activ?.asteaptaFilmul) return;
     const nod = idNod ? activ.dialog.noduri[idNod] : null;
     if (!nod) return inchide();
+    // „filmLa” (un dialog lung, cu visul spre capăt: „Drumul trezirii”): filmulețul s-a descărcat pe fundal cât au mers
+    // replicile de dinainte; la începutul visului (și la filmuleț, după un refresh în vis) discuția așteaptă, dacă mai
+    // trebuie, să fie gata, ca visul să nu se oprească la jumătate
+    if (activ.dialog.filmLa && asteaptaFilmele && (idNod === activ.dialog.filmLa || nod.video) && !activ.filmeAsteptate?.has(idNod)) {
+      const a = activ;
+      a.asteaptaFilmul = true;
+      return asteaptaFilmele(a.dialog, idNod, () => {
+        if (activ !== a) return;
+        a.asteaptaFilmul = false;
+        (a.filmeAsteptate ||= new Set()).add(idNod);
+        arataNod(idNod, reluat, faraFilm);
+      });
+    }
     activ.nod = nod;
     activ.dupaImagine = null;
     // O bucată de filmuleț care încă mergea se oprește pe cadrul ei
@@ -211,8 +226,13 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
     if (nod.trezire) {
       lasaFilmul();
-      fundal.replaceChildren();
-      el.classList.remove('cu-imagine', 'asteapta-imaginea', 'vis');
+      // Cu o imagine a ei (prima imagine de după vis: mâna lui Roderick, „Drumul trezirii”), imaginea visului rămâne
+      // până se vede cea nouă, ca între ele să nu fie o clipă de negru; altfel dispare pe loc
+      if (!nod.imagine) {
+        fundal.replaceChildren();
+        el.classList.remove('cu-imagine', 'asteapta-imaginea');
+      }
+      el.classList.remove('vis');
       activ.imagine = null;
       activ.imagineReluata = null;
     }
@@ -362,6 +382,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // Cât merge o bucată de filmuleț, Spațiu și Enter o sar, ca și clicul
     if (film?.bucata) return film.bucata.sari();
     if (el.classList.contains('asteapta-imaginea')) return;
+    // Cât se descarcă filmulețul visului (un refresh chiar la începutul visului: nicio replică arătată încă), nimic
+    if (activ?.asteaptaFilmul || !activ?.nod) return;
     if (activ && !activ.alegeri.length) arataNod(activ.nod.urmator ?? null);
   }
 

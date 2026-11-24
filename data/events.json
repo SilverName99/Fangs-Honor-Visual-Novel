@@ -2359,12 +2359,20 @@
       "grup": "Roderick: drumul trezirii",
       "dialog": "drumul_trezirii",
       "efecte": {
-        "taxaPrinMama": true,
+        "taxaPrinMama": "drum_taxa_mama",
         "stare": {
           "drumul_trezirii": "plecat"
+        },
+        "nevoiMinim": {
+          "foame": 80,
+          "sete": 80
         }
       },
-      "_nota": "Decis de autor: mama plătește taxa săptămânii cu banii lăsați de Vale (dacă nu era plătită), ca orcii să nu-l prindă dator cât lipsește șase zile."
+      "_nota": "Decis de autor: mama plătește taxa săptămânii cu banii lăsați de Vale (dacă nu era plătită), ca orcii să nu-l prindă dator cât lipsește șase zile; atunci pune starea „drum_taxa_mama”, ca la întoarcere s-o spună. Tot ea îi hrănește la plecare (ales de Claude: până la primul foc nu mănâncă nimic). „visDinDialog”: visul e în mijlocul dialogului (la crăpătură, nu după somnul din pat); din galerie, „▶ Pornește visul” îl pornește de la ultima poveste de la foc.",
+      "visDinDialog": {
+        "grup": "Al cincilea vis",
+        "nod": "p73"
+      }
     }
   ]
 }

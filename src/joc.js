@@ -13,7 +13,7 @@ import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog, poateReveni } from './evenimente.js';
 import * as salvare from './salvare.js';
 import { creeazaDialog } from './dialog.js';
-import { preincarcaFilm, progresFilme, filmeleDialogului } from './filme.js';
+import { preincarcaFilm, progresFilme, filmeleDialogului, filmeleDeLa, filmGata } from './filme.js';
 import { creeazaSecventa } from './secventa.js';
 import { creeazaDebug } from './debug.js';
 import { creeazaInventar } from './inventar.js';
@@ -344,13 +344,15 @@ function platesteTaxa() {
 }
 
 // „Drumul trezirii” (decis de autor): cât lipsește Vale șase zile, taxa săptămânii o plătește mama, cu banii lăsați de
-// el; fără anunț, pentru că o spune dialogul. Dacă era deja plătită, nu se mai ia nimic
-function taxaPrinMama() {
+// el; fără anunț, pentru că o spune dialogul. Dacă era deja plătită, nu se mai ia nimic. „semn”: starea pusă când a
+// plătit chiar ea (la întoarcere, mama povestește că i-a dat banii orcului pe fereastră)
+function taxaPrinMama(semn) {
   const taxa = stare.taxa;
   if (taxa.platita || stare.bani < sumaTaxa()) return;
   stare.bani -= sumaTaxa();
   taxa.platita = true;
   taxa.dubla = false;
+  if (semn) stare.stari[semn] = 'platita';
 }
 
 // În ziua taxei, de la ora colectorului, orcul vine la casa lui Vale (o singură dată pe zi)
@@ -586,9 +588,21 @@ function pornesteEveniment(id, fortat = false) {
 // apoi la jumătate ca să se mai încarce. Dacă durează, un ecran arată cât s-a descărcat (ca la pornirea jocului);
 // dacă e gata repede (sau era descărcat dinainte, în timpul somnului), ecranul nici nu apare
 let seDescarcaFilmul = false;
-function cuFilmele(idDialog, apoi) {
-  const filme = filmeleDialogului(dialoguri[idDialog]);
+function cuFilmele(idDialog, apoi, deLaNod) {
+  const d = dialoguri[idDialog];
+  // Un dialog lung, cu visul spre capăt („filmLa”: „Drumul trezirii”, cu vreo 75 de replici înainte de vis): filmulețul
+  // se descarcă pe fundal cât merg replicile de dinainte, iar discuția îl așteaptă abia la începutul visului, dacă nu e
+  // gata (dialog.js). După un refresh, doar dacă visul mai e înainte
+  if (d?.filmLa) {
+    filmeleDeLa(d, deLaNod).forEach(preincarcaFilm);
+    return apoi();
+  }
+  const filme = filmeleDialogului(d);
   if (!filme.length) return apoi();
+  ecranFilme(filme, apoi);
+}
+// Ecranul „Se pregătește visul... %”, până se descarcă filmulețele cerute; dacă sunt gata repede, nici nu apare
+function ecranFilme(filme, apoi) {
   seDescarcaFilmul = true;
   let ecran = null;
   let umplere = null;
@@ -630,7 +644,7 @@ function reiaDupaReincarcare() {
   if (r.miniJoc) return miniJocEveniment(r.miniJoc);
   if (r.furisare) return furisare(r.furisare);
   if (r.antrenament) return antrenament(r.antrenament);
-  if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }));
+  if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }), r.nod);
   // Replica unei misiuni a altcuiva, din meniul personajului (pașii „Steagului satului” la Roderick stau în dialogul
   // Miriamei): discuția continuă tot cu el, cu replicile misiunii adăugate, și își ține minte mai departe locul
   const alMisiunii = r.dialog && dialoguri[r.dialog] && Object.values(dialoguri).find((d) => d.noduri?.[r.nod]);
@@ -1091,6 +1105,12 @@ const dialog = creeazaDialog(ui, {
   laNod: (d, nod, imagine) => {
     stare.reluare = iduriDialog.has(d) ? { dialog: iduriDialog.get(d), nod, imagine } : d._eveniment ? { eveniment: d._eveniment, text: true } : null;
     salveaza();
+  },
+  // Visul din mijlocul unui dialog lung („filmLa”): discuția așteaptă filmulețul doar dacă nu s-a descărcat încă
+  asteaptaFilmele: (d, deLa, apoi) => {
+    const filme = filmeleDeLa(d, deLa).filter((c) => !filmGata(c));
+    if (!filme.length) return apoi();
+    ecranFilme(filme, apoi);
   },
   laImagine: (cale) => {
     stare.imaginiVazute ||= [];
@@ -1680,8 +1700,10 @@ addEventListener('keydown', (e) => {
 });
 
 // Din galerie (editor), „Pornește visul” (cerut de autor): jocul de test îl culcă pe Vale în camera lui și, după
-// imaginea somnului, pornește visul, ca după o noapte dormită; așa visele (și filmulețele lor) se văd oricând
-const visCerut = evenimente.find((e) => e.id === parametri.get('vis') && e.laTrezire);
+// imaginea somnului, pornește visul, ca după o noapte dormită; așa visele (și filmulețele lor) se văd oricând.
+// Un vis din mijlocul unui dialog („visDinDialog”: al cincilea, la crăpătură, în „Drumul trezirii”) pornește direct de
+// la replica dinaintea lui, fără pat
+const visCerut = evenimente.find((e) => e.id === parametri.get('vis') && (e.laTrezire || e.visDinDialog));
 function pornesteVisulCerut(ev) {
   // Un refresh al jocului de test nu mai pornește visul încă o dată
   const url = new URL(location.href);
@@ -1691,6 +1713,11 @@ function pornesteVisulCerut(ev) {
   stare.luptaInCurs = null;
   stare.scena = cfg.start.scena;
   afiseaza();
+  const dv = ev.visDinDialog;
+  if (dv && dialoguri[ev.dialog]?.noduri?.[dv.nod]) {
+    // Aceeași cale ca un refresh în mijlocul drumului: filmulețul pe fundal, așteptat la începutul visului
+    return cuFilmele(ev.dialog, () => dialog.porneste(dialoguri[ev.dialog], { delaNod: dv.nod, cuEfecte: true }), dv.nod);
+  }
   if (ev.dialog) filmeleDialogului(dialoguri[ev.dialog]).forEach(preincarcaFilm);
   const pat = lume.get(stare.scena)?.tinte?.find((t) => t.act?.tip === 'dormi')?.act;
   const v = (pat?.varianteImagine || []).find((x) => verifica(x.conditii, context(stare))) || pat;

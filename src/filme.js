@@ -48,3 +48,23 @@ export const filmLipsa = (cale) => gata.has(cale) && gata.get(cale) === null;
 // Cât s-a descărcat din toate filmulețele cerute, de la 0 la 1 (pentru ecranul de așteptare)
 export const progresFilme = (cai) => (cai.length ? cai.reduce((s, c) => s + (primit.get(c) || 0), 0) / cai.length : 1);
 export const filmeleDialogului = (dialog) => [...new Set(Object.values(dialog?.noduri || {}).map((n) => n.video).filter(Boolean))];
+// Descărcarea s-a încheiat (cu filmulețul sau fără el, dacă lipsește)
+export const filmGata = (cale) => gata.has(cale);
+// Filmulețele la care mai poate ajunge discuția de la o replică încolo („Drumul trezirii”: după un refresh pe drumul de
+// întoarcere, visul a trecut, deci filmulețul lui nu se mai descarcă degeaba)
+export function filmeleDeLa(dialog, deLa) {
+  const noduri = dialog?.noduri || {};
+  if (!deLa || !noduri[deLa]) return filmeleDialogului(dialog);
+  const vazute = new Set();
+  const filme = new Set();
+  const coada = [deLa];
+  while (coada.length) {
+    const id = coada.shift();
+    if (!id || vazute.has(id) || !noduri[id]) continue;
+    vazute.add(id);
+    const n = noduri[id];
+    if (n.video) filme.add(n.video);
+    coada.push(n.urmator, n.faraVideo, ...(n.alegeri || []).map((a) => a.spre));
+  }
+  return [...filme];
+}

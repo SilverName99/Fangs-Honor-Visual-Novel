@@ -1721,6 +1721,36 @@
             {
               "conditii": {
                 "misiune": {
+                  "roderick_drumul": "terminata"
+                }
+              },
+              "text": "Gardul peste care am plecat cu unchiul, șase zile, până la capătul hărții. Dincolo de el e drumul din vis. Și mă așteaptă.",
+              "text_en": "The fence Uncle and I crossed for six days, to the end of the map. Beyond it lies the road from my dream. And it’s waiting for me."
+            },
+            {
+              "conditii": {
+                "misiune": {
+                  "roderick_drumul": "inceputa"
+                },
+                "nu": {
+                  "existaStare": "drum_mama"
+                }
+              },
+              "text": "Unchiul a zis să vorbesc întâi cu mama. Fără ea nu plecăm nicăieri.",
+              "text_en": "Uncle said I should talk to Mother first. We’re not going anywhere until I do."
+            },
+            {
+              "conditii": {
+                "misiune": {
+                  "roderick_drumul": "inceputa"
+                }
+              },
+              "text": "Aici mă așteaptă unchiul, seara, de la nouă până la unsprezece.",
+              "text_en": "This is where Uncle waits for me in the evenings, from nine until eleven."
+            },
+            {
+              "conditii": {
+                "misiune": {
                   "roderick_locul": "terminata"
                 }
               },
@@ -1730,6 +1760,9 @@
             "Gardul e putred aici și destul de jos cât să-l sar dintr-un salt. Orcii nu păzesc locul ăsta. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
           ],
           "text_en": [
+            null,
+            null,
+            null,
             null,
             "The fence is rotten here, and low enough to clear in one jump. The orcs don’t guard this spot. I could get out of the village this way... but not alone. Not yet."
           ]
