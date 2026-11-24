@@ -598,7 +598,7 @@ Fiecare etapă trebuie să fie **jucabilă** și arătabilă înainte să încep
 - Imaginile le generează autorul și le încarcă din galeria editorului. Claude **nu** generează imagini.
 - Dacă o imagine nu se potrivește (poziție, scară), se reglează în editor, nu se regenerează.
 - **Sângele e permis** în imagini (decis de autor), unde scena o cere.
-- **Prompturile** (decis de autor; în engleză, câte unul într-un bloc, cu lista de atașat; **direct în chat, toate deodată, pentru misiunile discutate**, fără fișiere Word (decis de autor); aceleași și în documentul Claude Docs „Fangs&Honor: Prompturi pentru imagini”): **cât mai puține personaje într-o imagine**, mai ales la vise (cu cât sunt mai puține, cu atât imaginea iese mai bine; un singur personaj în prim-plan, ceilalți puțini și în spate); ce se vede în imaginile atașate (haine, steag, armă) nu se mai descrie, se scrie doar „same as reference image N” și se descrie poza și scena; fără detalii mici, departe în fundal; e mereu toamnă, niciodată iarnă.
+- **Prompturile** (decis de autor; în engleză, câte unul într-un bloc, cu lista de atașat; **direct în chat, toate deodată, pentru misiunile discutate**, fără fișiere Word și fără documente separate (decis de autor: documentul Claude Docs cu prompturi s-a șters, nu mai e nevoie de el)): **cât mai puține personaje într-o imagine**, mai ales la vise (cu cât sunt mai puține, cu atât imaginea iese mai bine; un singur personaj în prim-plan, ceilalți puțini și în spate); ce se vede în imaginile atașate (haine, steag, armă) nu se mai descrie, se scrie doar „same as reference image N” și se descrie poza și scena; fără detalii mici, departe în fundal; e mereu toamnă, niciodată iarnă.
 
 ## 19. Ce nu e decis (nu inventa)
 
