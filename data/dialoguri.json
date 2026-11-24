@@ -20715,6 +20715,10 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Unchiule... tu ai văzut multe cât ai fost soldat. Ceva ce nu se vede pe la noi?",
+        "imagine": "events/drum_foc_1_noapte.png",
+        "efecte": {
+          "panaLaOra": "22:00"
+        },
         "urmator": "p20"
       },
       "p20": {
