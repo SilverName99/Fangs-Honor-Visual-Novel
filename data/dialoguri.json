@@ -20612,12 +20612,25 @@
         "vorbitor": "soldat",
         "emotie": "suparat",
         "text": "Orcii. L-au ars, ca să nu mai fugă nimeni din sat pe aici.",
-        "urmator": "p13c"
+        "urmator": "p13c",
+        "imagine": "events/drum_pod_sfat.png"
       },
       "p13c": {
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "A rămas o bârnă. Una e destul, dacă nu te uiți în jos.",
+        "urmator": "p13d"
+      },
+      "p13d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă ne ținem de stâlpii arși? Sau căutăm un vad, mai la vale?",
+        "urmator": "p13e"
+      },
+      "p13e": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vadul e la o zi de mers, iar stâlpii ăștia se fărâmă sub mână. Bârna a ținut focul. O să ne țină și pe noi.",
         "urmator": "p14"
       },
       "p14": {
