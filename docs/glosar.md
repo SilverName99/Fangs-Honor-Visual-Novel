@@ -2,7 +2,9 @@
 
 Engleza jocului urmează engleza prologului („The Chronicle of Aldaria”, rescrisă de autor): propoziții clare, cu
 ritm, uneori o propoziție scurtă, singură, pentru greutate („The others… die.”), fără cuvinte pretențioase. Ortografia
-e cea americană (*center*, *toward*, *color*, *gray*). Termenii de mai jos sunt aceiași peste tot: în replici, în
+e cea americană (*center*, *toward*, *color*, *gray*); apostroful și ghilimelele sunt curbe, ca în prolog (’ “ ” ‘ ’):
+„the king’s son”, “Not now.”. Butoanele au litere mari la fiecare cuvânt („Sleep 2 Hours”, „Give Up”); replicile
+rămân propoziții obișnuite. Termenii de mai jos sunt aceiași peste tot: în replici, în
 carte, pe butoane. Un termen nou intră aici înainte să fie folosit (decis de autor: traducerea merge direct, iar
 glosarul se corectează la final, dacă e cazul).
 
@@ -121,10 +123,16 @@ Vale vorbește simplu și cald; gândurile lui sunt la persoana întâi, la prez
 | Atac, Apărare, Obiect, Schimbă locul, Schimbă arma, Fugi | Attack, Defend, Item, Move, Switch Weapon, Flee |
 | Victorie!, Înfrângere, Ai fugit | Victory!, Defeat, You fled |
 | valul 2 din 3 | wave 2 of 3 |
-| Masa regelui (tafl) | the King's Table |
+| Masa regelui (tafl) | the King’s Table |
 | atacatorii, apărătorii, regele, tronul | the attackers, the defenders, the king, the throne |
 | zarurile; „Mincinosule!” | dice; „Liar!” |
 | mini-jocurile | the mini-games |
+| sloturile: coif, armă primară, armă secundară, armură, jambiere, rucsac | Helm, Main Weapon, Secondary Weapon, Armor, Leggings, Backpack |
+| miza; „Pui” (la zaruri, la Masa regelui) | stake; “You bet” |
+| ecran complet | Fullscreen |
+| Aruncă ceva (la „N-ai loc pentru...”), Ia în inventar | Make Room, Take Out |
+| dimineața, amiaza, seara, noaptea | Morning, Midday, Evening, Night |
+| Renunț (la Joc nou) / Renunț (la partidă) | Cancel / Give Up |
 
 ## Obiectele
 
