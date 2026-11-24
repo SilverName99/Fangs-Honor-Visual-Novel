@@ -2246,6 +2246,150 @@
       }
     },
     {
+      "id": "roderick_drumul",
+      "titlu": "Drumul trezirii",
+      "dela": "soldat",
+      "dialog": "soldat",
+      "_nota": "Decis de autor: ultima misiune a lui Roderick (+1, ajunge la 10/10), nu se ratează; fără solzi găsiți (un dragon nu iese din lumea lui fără să fie legat de cineva); trei zile dus, trei întors; poveștile de la foc: luminile din mlaștină, cerbul alb, păsările de foc; al cincilea vis la crăpătură (un glas, poarta de piatră neagră cu un craniu în vârf, fără ochi); trezirea în mâna lui Roderick, deasupra prăpastiei (prima imagine după vis, văzută prin ochii lui Vale); în zori crăpătura a dispărut; mama, înainte și după, plătește taxa cu banii lăsați de Vale. Replicile, ciorne de Claude.",
+      "descriere": "CIORNĂ: Unchiul Roderick vrea să meargă pe drumul de pe harta prietenului lui, până la crăpătura din pământ, să vadă dacă solzul de pe hârtie era adevărat. Trei zile dus, trei înapoi, dincolo de zid. Drumul ăsta îl știu. L-am văzut în vis.",
+      "oferta": {
+        "_nota": "Decis de autor: doar după al patrulea vis (ca jucătorul să recunoască drumul). Ales de Claude: după „Seara celor 23” (făcută sau ratată) și „Antrenamentul”, oriunde e unchiul treaz (biserica, taverna).",
+        "text": "Unchiule, mă tot gândesc la harta soldatului.",
+        "nod": "drum_o1",
+        "conditii": {
+          "misiune": {
+            "roderick_antrenament": "terminata",
+            "roderick_hartii": "terminata"
+          },
+          "oricare": [
+            {
+              "misiune": {
+                "agnes_seara": "terminata"
+              }
+            },
+            {
+              "misiune": {
+                "agnes_seara": "ratata"
+              }
+            }
+          ],
+          "stare": {
+            "vis_4": "vazut"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Strâng proviziile pentru drum",
+          "numara": [
+            {
+              "obiect": "carne_gatita",
+              "n": 4,
+              "nume": "carne friptă"
+            },
+            {
+              "obiect": "apa",
+              "n": 4,
+              "nume": "sticle cu apă"
+            },
+            {
+              "obiect": "franghie",
+              "n": 1,
+              "nume": "frânghie"
+            }
+          ],
+          "sfat": "Carnea o frig acasă, la vatră, sau o schimb la Agnes; apa, de la fântână; frânghia, de la negustorul din piață.",
+          "indiciu": {
+            "text": "Ce iau pentru drum, unchiule?",
+            "nod": "drum_ind_provizii"
+          }
+        },
+        {
+          "text": "Îi spun mamei că plec șase zile",
+          "la": "miriam",
+          "gata": {
+            "existaStare": "drum_mama"
+          },
+          "sfat": "Mama e acasă: dimineața în bucătărie (până la 11), la prânz coase în camera ei, seara e iar în bucătărie (18–23).",
+          "predare": {
+            "text": "Mamă... trebuie să-ți spun ceva.",
+            "nod": "drum_m1",
+            "conditii": {
+              "oricare": [
+                {
+                  "loc": "casa/bucatarie"
+                },
+                {
+                  "loc": "casa/camera_mama"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "text": "Plec cu unchiul, seara, pe la gardul putred de la Margine",
+          "gata": {
+            "stare": {
+              "drumul_trezirii": "intors"
+            }
+          },
+          "sfat": [
+            {
+              "conditii": {
+                "nu": {
+                  "areCate": {
+                    "carne_gatita": 4,
+                    "apa": 4,
+                    "franghie": 1
+                  }
+                }
+              },
+              "text": "Îmi lipsesc provizii: 4 bucăți de carne friptă, 4 sticle cu apă și o frânghie."
+            },
+            {
+              "conditii": {
+                "taxaAcoperita": false
+              },
+              "text": "Îi las mamei banii de taxă: îmi trebuie cât e taxa săptămânii."
+            },
+            {
+              "conditii": {
+                "datorieBlanuri": true
+              },
+              "text": "Întâi scap de datoria de blănuri la orci: nu pot lipsi cât curge termenul."
+            },
+            "Seara (21–23), la gardul putred de la Margine. Lipsesc șase zile: întâi termin ce le-am promis altora."
+          ],
+          "predare": {
+            "text": "Sunt gata, unchiule.",
+            "nod": "drum_p1",
+            "conditii": {
+              "loc": "iesirea",
+              "areCate": {
+                "carne_gatita": 4,
+                "apa": 4,
+                "franghie": 1
+              },
+              "taxaAcoperita": true,
+              "datorieBlanuri": false
+            }
+          },
+          "indiciu": {
+            "text": "Despre plecare...",
+            "nod": "drum_ind_plecare"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea unchiului Roderick +1. Am mers amândoi până la capătul hărții. Ce-am văzut acolo rămâne între noi.",
+        "efecte": {
+          "relatie": {
+            "soldat": 1
+          }
+        }
+      }
+    },
+    {
       "id": "finn_eliberare",
       "titlu": "Eliberarea lui Finn",
       "titlu_en": "Freeing Finn",

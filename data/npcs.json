@@ -197,8 +197,21 @@
         "nume": "Roderick Lightfinder",
         "nume_en": "Roderick Lightfinder",
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă.",
-        "descriere_en": "My uncle, Father’s brother. He was a soldier once, and he still wears his old soldier’s clothes. Around midday he prays at the church for his brother, and in the afternoons and evenings I find him at the tavern."
+        "descriere": [
+          {
+            "conditii": {
+              "misiune": {
+                "roderick_drumul": "terminata"
+              }
+            },
+            "text": "Unchiul meu, fratele tatei. Am mers cu el șase zile, până la capătul hărții prietenului lui. Acolo, deasupra prăpastiei, nu mi-a dat drumul la mână. Ce-am văzut amândoi rămâne între noi."
+          },
+          "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă."
+        ],
+        "descriere_en": [
+          null,
+          "My uncle, Father’s brother. He was a soldier once, and he still wears his old soldier’s clothes. Around midday he prays at the church for his brother, and in the afternoons and evenings I find him at the tavern."
+        ]
       },
       "locuriSprite": [
         "taverna/parter",
@@ -290,6 +303,21 @@
             }
           },
           "ce": "cât e de adus steagul satului de pe câmp (misiunea „Steagul satului”), îl așteaptă pe Vale seara la gardul putred de la Marginea satului"
+        },
+        {
+          "de": "21:00",
+          "pana": "23:00",
+          "loc": "iesirea",
+          "conditii": {
+            "misiune": {
+              "roderick_drumul": "inceputa"
+            },
+            "existaStare": "drum_mama",
+            "nu": {
+              "existaStare": "drumul_trezirii"
+            }
+          },
+          "ce": "cât e misiunea „Drumul trezirii” (după ce i-a spus mamei), îl așteaptă pe Vale seara la gardul putred de la Marginea satului, ca să plece"
         },
         {
           "de": "18:00",

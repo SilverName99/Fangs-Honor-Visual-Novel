@@ -2350,6 +2350,21 @@
         }
       },
       "siPeLoc": true
+    },
+    {
+      "id": "drumul_trezirii",
+      "manual": true,
+      "repetare": "o_data",
+      "nume": "Roderick: drumul trezirii",
+      "grup": "Roderick: drumul trezirii",
+      "dialog": "drumul_trezirii",
+      "efecte": {
+        "taxaPrinMama": true,
+        "stare": {
+          "drumul_trezirii": "plecat"
+        }
+      },
+      "_nota": "Decis de autor: mama plătește taxa săptămânii cu banii lăsați de Vale (dacă nu era plătită), ca orcii să nu-l prindă dator cât lipsește șase zile."
     }
   ]
 }

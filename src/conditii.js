@@ -100,6 +100,8 @@ const tipuri = {
   // „inchiriat: taverna” = Vale are acum camera plătită (până la prânzul de după noaptea pentru care a plătit-o)
   // „taxaRatata: true” = Vale a rămas dator cel puțin o dată (paznicul îi aduce aminte)
   taxaRatata: (v, c) => ((c.taxa?.ratari || 0) > 0) === v,
+  // „datorieBlanuri: false” = orcii nu așteaptă blănuri de la Vale acum (cu termenul curgând, nu poate pleca departe)
+  datorieBlanuri: (v, c) => !!c.datorieBlanuri === v,
   inchiriat: (v, c) => (c.inchirieri?.[v] ?? -1) > (c.minute ?? 0),
 };
 

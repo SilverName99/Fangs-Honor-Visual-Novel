@@ -109,6 +109,8 @@ const efecte = {
   // După o luptă în Groapă (nivelul și rezultatul): banii, reputația, prima victorie, inelul mamei
   groapa: (v, joc) => joc.rezultatGroapa(v),
   plataTaxa: (v, joc) => joc.platesteTaxa(),
+  // Mama plătește taxa săptămânii cu banii lăsați de Vale, cât lipsește el („Drumul trezirii”)
+  taxaPrinMama: (v, joc) => joc.taxaPrinMama(),
   // Pune o nevoie la o valoare fixă (de exemplu viața 10 după bătaie, foamea plină după masa de la Agnes)
   seteazaNevoi: (v, joc) => Object.entries(v).forEach(([k, val]) => (joc.stare.nevoi[k] = Math.max(0, Math.min(100, val)))),
   // Ține minte când s-a întâmplat ceva, pentru condiția „trecut” (unchiul lipsește 2 zile după bătaie)

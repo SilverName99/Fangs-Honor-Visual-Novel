@@ -40,6 +40,10 @@ const CHEIE = salvare.cheieSalvare(parametri.has('test'));
 const cfg = date.config;
 const lume = construiesteLumea(date);
 registreazaConditiiPersonaje(date.npcs.personaje, registreazaConditie);
+// Taxa săptămânii: plătită sau, măcar, cu banii pentru ea la Vale („Drumul trezirii”: Vale lipsește șase zile, iar mama
+// plătește taxa cu banii lăsați de el, decis de autor). Din context, ca să meargă și pentru semnele de pe hartă
+registreazaConditie('taxaPlatita', (v, c) => !!c.taxa?.platita === v);
+registreazaConditie('taxaAcoperita', (v, c) => (!!c.taxa?.platita || (c.bani ?? 0) >= (cfg.taxa.suma + (c.taxa?.extra || 0)) * (c.taxa?.dubla ? 2 : 1)) === v);
 const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
 const evenimente = date.events?.evenimente || [];
 const dialoguri = date.dialoguri || {};
@@ -337,6 +341,16 @@ function platesteTaxa() {
   salveaza();
   actualizeazaHud();
   mesaj(t('Ai plătit taxa ({n} monede).', { n: sumaTaxa() }));
+}
+
+// „Drumul trezirii” (decis de autor): cât lipsește Vale șase zile, taxa săptămânii o plătește mama, cu banii lăsați de
+// el; fără anunț, pentru că o spune dialogul. Dacă era deja plătită, nu se mai ia nimic
+function taxaPrinMama() {
+  const taxa = stare.taxa;
+  if (taxa.platita || stare.bani < sumaTaxa()) return;
+  stare.bani -= sumaTaxa();
+  taxa.platita = true;
+  taxa.dubla = false;
 }
 
 // În ziua taxei, de la ora colectorului, orcul vine la casa lui Vale (o singură dată pe zi)
@@ -888,6 +902,7 @@ const joc = {
   vanatoareCu,
   luptaVanatoare,
   sumaTaxa,
+  taxaPrinMama,
   // Magazinul unui personaj (npcs.json, „magazin”), deschis după ce se închide dialogul
   // „hangita.schimburi”: al doilea magazin al cuiva („magazine” în npcs.json; Agnes: carnea friptă, decis de autor)
   deschideMagazin(cheie) {

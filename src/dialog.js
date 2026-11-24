@@ -11,6 +11,9 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
 export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor }) {
+  // Textul unei replici: un text simplu sau o listă { conditii, text } (cu un text simplu la urmă), ca sfaturile din carte:
+  // primul potrivit stării de acum („Drumul trezirii”: unchiul bea apă sau din ploscă, după cum a fost „Ultima sticlă”)
+  const textPotrivit = (t) => (Array.isArray(t) ? t.map((x) => (typeof x === 'string' ? { text: x } : x)).find((x) => verificaConditii(x.conditii))?.text ?? '' : t);
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -312,7 +315,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       );
     }
     nume.hidden = !nod.vorbitor;
-    text.textContent = nod.text || '';
+    text.textContent = textPotrivit(nod.text) || '';
     caseta.classList.toggle('gand', !!nod.gand);
 
     let vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));

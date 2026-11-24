@@ -919,6 +919,292 @@
         "vorbitor": "soldat",
         "emotie": "trist",
         "text": "La noapte, la biserică. Și dacă mă vezi că plec spre ușă... nu mă lăsa, băiete."
+      },
+      "drum_o1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și eu, băiete. Nopți întregi.",
+        "urmator": "drum_o2"
+      },
+      "drum_o2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Douăzeci de ierni am stat de strajă cu el. N-a mințit niciodată. Nici la bere, nici la zaruri, nici când l-ar fi costat.",
+        "urmator": "drum_o3"
+      },
+      "drum_o3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dacă solzul ăla e acolo, și dacă nu-l taie nicio sabie... ar fi primul lucru din satul ăsta pe care nu ni-l pot lua orcii.",
+        "urmator": "drum_o4"
+      },
+      "drum_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Drumul de pe hartă îl știu. Râul, poarta de piatră surpată, crăpătura din pământ. L-am văzut în vis. Pe acolo au plecat cei 23.",
+        "urmator": "drum_o5"
+      },
+      "drum_o5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Cât de departe e?",
+        "urmator": "drum_o6"
+      },
+      "drum_o6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "După semnele lui, trei zile până acolo. Trei înapoi. Ieșim pe la gardul putred de la Margine, seara, cum am ieșit atunci la copac. Orcii păzesc poarta, nu pădurea.",
+        "urmator": "drum_o7"
+      },
+      "drum_o7": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Șase zile departe de casă, băiete. Dormim pe jos și mâncăm ce ducem în spate. Vii?",
+        "alegeri": [
+          {
+            "text": "Vin, unchiule.",
+            "spre": "drum_o8",
+            "efecte": {
+              "misiune": {
+                "roderick_drumul": "inceputa"
+              }
+            }
+          },
+          {
+            "text": "Mai lasă-mă să mă gândesc.",
+            "spre": "drum_o_nu"
+          }
+        ]
+      },
+      "drum_o_nu": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Gândește-te. Harta nu fuge nicăieri. Dar nici noi nu întinerim."
+      },
+      "drum_o8": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Știam eu.",
+        "urmator": "drum_o9"
+      },
+      "drum_o9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pentru drum: patru bucăți de carne friptă, patru sticle cu apă și o frânghie bună, pentru râu. Pâinea o aduc eu.",
+        "urmator": "drum_o10"
+      },
+      "drum_o10": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și spune-i maică-tii. Șase zile nu se ascund. Nu de ea.",
+        "urmator": "drum_o11"
+      },
+      "drum_o11": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Când ești gata, vino seara la gardul putred. Te aștept acolo după ce se întunecă, de la nouă până la unsprezece."
+      },
+      "drum_ind_provizii": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Patru bucăți de carne friptă, patru sticle cu apă și o frânghie. Carnea o frigi acasă sau ți-o face Agnes. Frânghia o are negustorul din piață."
+      },
+      "drum_ind_plecare": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "nu": {
+                "areCate": {
+                  "carne_gatita": 4,
+                  "apa": 4,
+                  "franghie": 1
+                }
+              }
+            },
+            "text": "Fără provizii nu plecăm nicăieri, băiete. Patru bucăți de carne friptă, patru sticle cu apă și frânghia."
+          },
+          {
+            "conditii": {
+              "taxaAcoperita": false
+            },
+            "text": "Și banii de taxă, pentru maică-ta. Să nu stea orcii la ușa ei cât lipsim."
+          },
+          {
+            "conditii": {
+              "datorieBlanuri": true
+            },
+            "text": "Mai întâi scapă de datoria la orci. Blănurile alea nu așteaptă după noi."
+          },
+          {
+            "conditii": {
+              "nu": {
+                "loc": "iesirea"
+              }
+            },
+            "text": "Seara, după ce se întunecă, la gardul putred de la Margine. Acolo te aștept, de la nouă până la unsprezece."
+          },
+          "Când ești gata, spune. Și mai gândește-te dacă te așteaptă cineva în sat zilele astea. Șase zile e mult."
+        ]
+      },
+      "drum_p1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai tot? Carnea, apa, frânghia?",
+        "urmator": "drum_p2"
+      },
+      "drum_p2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Tot, unchiule.",
+        "urmator": "drum_p3"
+      },
+      "drum_p3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Atunci să mergem. Și uite cine a venit să ne petreacă.",
+        "alegeri": [
+          {
+            "text": "Să mergem.",
+            "inchide": true,
+            "efecte": {
+              "eveniment": "drumul_trezirii"
+            }
+          }
+        ]
+      },
+      "drum_m1": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Când începi așa, știu că nu-mi place ce urmează. Spune.",
+        "urmator": "drum_m2"
+      },
+      "drum_m2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Plec cu unchiul Roderick. Dincolo de gard, spre nord. Șase zile, dus și întors.",
+        "urmator": "drum_m3"
+      },
+      "drum_m3": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Dincolo de gard...",
+        "urmator": "drum_m4"
+      },
+      "drum_m4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mama lasă cârpa pe masă și se uită pe fereastră, spre Margine. Spre copacul mare.",
+        "urmator": "drum_m5"
+      },
+      "drum_m5": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Ultima dată când un Lightfinder a trecut gardul ăla, l-am primit înapoi pe umerii fratelui lui.",
+        "urmator": "drum_m6"
+      },
+      "drum_m6": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Știu, mamă.",
+        "urmator": "drum_m7"
+      },
+      "drum_m7": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "De ce? Și să nu-mi spui „la vânătoare”. Te cunosc de când erai cât un cățel.",
+        "urmator": "drum_m8"
+      },
+      "drum_m8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Prietenul unchiului a lăsat o hartă. Spre un loc unde a găsit ceva ce nu taie nicio sabie. Dacă e adevărat, ne-ar putea ajuta împotriva orcilor.",
+        "urmator": "drum_m9"
+      },
+      "drum_m9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Despre vise nu-i spun nimic. Mama a dormit destule nopți cu frica în piept.",
+        "urmator": "drum_m10"
+      },
+      "drum_m10": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Roderick...",
+        "urmator": "drum_m11"
+      },
+      "drum_m11": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Îi spune numele altfel decât înainte. Fără greutatea de atunci.",
+        "urmator": "drum_m12"
+      },
+      "drum_m12": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bine. Du-te.",
+        "urmator": "drum_m13"
+      },
+      "drum_m13": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Tatăl tău ar fi mers. Și eu l-aș fi lăsat, cu inima cât un purice. Așa că du-te.",
+        "urmator": "drum_m14"
+      },
+      "drum_m14": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Și taxa? Dacă vine colectorul cât lipsești?",
+        "alegeri": [
+          {
+            "text": "E plătită pe săptămâna asta, mamă.",
+            "spre": "drum_m15",
+            "conditii": {
+              "taxaPlatita": true
+            }
+          },
+          {
+            "text": "Îți las banii. Dacă vine, dă-i-i tu.",
+            "spre": "drum_m15",
+            "conditii": {
+              "taxaPlatita": false,
+              "taxaAcoperita": true
+            }
+          },
+          {
+            "text": "Strâng banii până plec și ți-i las ție.",
+            "spre": "drum_m15",
+            "conditii": {
+              "taxaAcoperita": false
+            }
+          }
+        ]
+      },
+      "drum_m15": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bine. Pe orcul ăla nu-l las să-mi treacă pragul, să știi. Îi dau banii pe fereastră.",
+        "urmator": "drum_m16"
+      },
+      "drum_m16": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Și în seara în care plecați vin și eu la gard. Vreau să-l văd pe Roderick în ochi.",
+        "efecte": {
+          "stare": {
+            "drum_mama": "da"
+          }
+        }
+      },
+      "r_dupa_drum": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Încă visez râpa aia, băiete. Dar nu mai e bătălia. E mâna ta în mâna mea. Așa mai merge."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -935,6 +1221,14 @@
         "conditii": {
           "stare": {
             "steag": "roderick"
+          }
+        }
+      },
+      {
+        "nod": "r_dupa_drum",
+        "conditii": {
+          "misiune": {
+            "roderick_drumul": "terminata"
           }
         }
       }
@@ -5141,6 +5435,11 @@
         "emotie": "normal",
         "text": "Morților le-am dat tot ce le-am putut da: lacrimile noastre. Cei rămași în urma lor au nevoie de pâine.",
         "urmator": "paine_o7"
+      },
+      "m_dupa_drum": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "De când v-ați întors, Roderick trece pe la noi aproape în fiecare seară. Să vadă dacă mai ești întreg, zice. Eu cred că vine pentru supă."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -5196,6 +5495,14 @@
         "conditii": {
           "misiune": {
             "miriam_nastere": "ratata"
+          }
+        }
+      },
+      {
+        "nod": "m_dupa_drum",
+        "conditii": {
+          "misiune": {
+            "roderick_drumul": "terminata"
           }
         }
       }
@@ -20149,6 +20456,1074 @@
           "timp": 120
         },
         "_nota": "Ales de Claude: două ore."
+      }
+    }
+  },
+  "drumul_trezirii": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Drumul trezirii” (decis de autor: trei zile dus, trei întors, cu poveștile lui Roderick la foc peste imagini-amintire; al cincilea vis la crăpătură; trezirea în mâna lui Roderick; crăpătura dispare în zori). Totul într-un singur dialog, ca să nu se vadă locul dintre scene; visul și amintirile au ceața (amintire), iar „trezire” o ia.",
+    "grup": "Roderick: drumul trezirii",
+    "partener": "soldat",
+    "start": "p1",
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Noaptea e rece și fără lună. Mama a venit cu noi până la gard, cu felinarul în mână.",
+        "imagine": "events/drum_plecare.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Roderick.",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Miriam.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "De la bătălie, unchiul n-a putut s-o privească în ochi. Acum o privește. Și nu-și mai mută privirea.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Pe Edwin mi l-ai adus în spate. Pe el mi-l aduci pe picioarele lui.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pe viața mea, Miriam.",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Nu pe viața ta. Pe a ta o vreau și pe ea înapoi.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă strânge în brațe atât de tare că mă dor coastele. Apoi pornește spre casă, cu felinarul, fără să se uite înapoi. Știu de ce. Dacă s-ar uita, ne-ar chema înapoi.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hai, băiete. Peste gard și nu te uita înapoi. Până dimineață trebuie să fim departe de zid.",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mergem toată noaptea prin pădure, pe poteci pe care doar unchiul le mai știe. Când se luminează, zidul satului nu se mai vede deloc.",
+        "imagine": "events/drum_padure.png",
+        "efecte": {
+          "panaLaOra": "06:00",
+          "seteazaNevoi": {
+            "stamina": 70
+          }
+        },
+        "urmator": "p11"
+      },
+      "p11": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "E prima dată de la bătălie când sunt dincolo de el. Aerul e același. Și totuși, respir altfel.",
+        "urmator": "p12"
+      },
+      "p12": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aici începe harta. De acum, ea ne duce.",
+        "urmator": "p13"
+      },
+      "p13": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "La prânz ajungem la râu. E lat și repede, de culoarea fierului.",
+        "imagine": "events/drum_rau.png",
+        "efecte": {
+          "panaLaOra": "12:00"
+        },
+        "urmator": "p14"
+      },
+      "p14": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Frânghia, băiete. O leg de fagul ăsta. Tu treci primul, eu țin.",
+        "urmator": "p15"
+      },
+      "p15": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Apa mă apucă de picioare ca o mână rece. Frânghia se întinde. Unchiul n-o slăbește nicio clipă.",
+        "urmator": "p16"
+      },
+      "p16": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Vezi? Nu te-a luat. Râurile n-au răbdare cu cei care se uită în jos.",
+        "urmator": "p17"
+      },
+      "p17": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Seara facem focul într-o vale mică, ferită de vânt. Carnea friptă de acasă are gust de duminică.",
+        "imagine": "events/drum_foc_1.png",
+        "efecte": {
+          "panaLaOra": "20:00",
+          "consuma": {
+            "carne_gatita": 1,
+            "apa": 1
+          },
+          "seteazaNevoi": {
+            "foame": 80,
+            "sete": 80
+          }
+        },
+        "urmator": "p18"
+      },
+      "p18": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "roderick_treaz": "da"
+              }
+            },
+            "text": "Unchiul bea apă din sticlă și se strâmbă, ca de leac. Dar n-o lasă din mână."
+          },
+          "Unchiul trage o dușcă din plosca lui. Una singură. Apoi o pune deoparte și nu se mai atinge de ea toată seara."
+        ],
+        "urmator": "p19"
+      },
+      "p19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... tu ai văzut multe cât ai fost soldat. Ceva ce nu se vede pe la noi?",
+        "urmator": "p20"
+      },
+      "p20": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Destule. Dar ți-o spun întâi pe cea de care mi-a fost frică.",
+        "urmator": "p21"
+      },
+      "p21": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Eram de vârsta ta. Ne-au trimis cu o patrulă prin mlaștinile din sud, după niște hoți de cai. Ceața s-a lăsat la apus și n-am mai văzut nici drumul, nici pe cel din fața mea.",
+        "imagine": "events/drum_mlastina_1.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p22"
+      },
+      "p22": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am mers ore întregi prin apa până la genunchi. Unul dintre noi a călcat strâmb și l-a tras mlaștina până la piept. L-am scos de păr.",
+        "amintire": true,
+        "urmator": "p23"
+      },
+      "p23": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pe la miezul nopții, n-am mai știut în ce parte e nordul. Și atunci le-am văzut.",
+        "amintire": true,
+        "urmator": "p24"
+      },
+      "p24": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Lumini mici, albastre, cât un pumn. Pluteau deasupra apei, una după alta, ca niște felinare duse de nimeni.",
+        "imagine": "events/drum_mlastina_2.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p25"
+      },
+      "p25": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bătrânii ziceau că luminile din mlaștină sunt sufletele înecaților și că te trag la fund. Comandantul ne-a strigat să nu ne uităm la ele.",
+        "amintire": true,
+        "urmator": "p26"
+      },
+      "p26": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Eu m-am uitat. N-aveam ce pierde. Și am văzut că nu ne trăgeau nicăieri. Ne așteptau.",
+        "amintire": true,
+        "urmator": "p27"
+      },
+      "p27": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mergeau o bucată, se opreau, ne așteptau. Am mers după ele toată noaptea. Și în zori eram pe drumul mare. Toți, cu tot cu cel scos de păr.",
+        "amintire": true,
+        "urmator": "p28"
+      },
+      "p28": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "N-am aflat niciodată ce erau. Dar de atunci știu un lucru, băiete. Nu tot ce strălucește în întuneric vrea să te omoare.",
+        "trezire": true,
+        "imagine": "events/drum_foc_1.png",
+        "urmator": "p29"
+      },
+      "p29": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Focul trosnește. Mă gândesc la lumina verde din vise. Și nu știu încă dacă trebuie să-mi fie frică de ea.",
+        "urmator": "p30"
+      },
+      "p30": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "A doua zi, după-amiaza, drumul vechi intră pe sub o poartă de piatră. Jumătate s-a surpat, iar mușchiul a acoperit restul.",
+        "imagine": "events/drum_poarta.png",
+        "efecte": {
+          "panaLaOra": "14:00",
+          "seteazaNevoi": {
+            "foame": 70,
+            "sete": 65,
+            "stamina": 80
+          }
+        },
+        "urmator": "p31"
+      },
+      "p31": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Mă opresc. Picioarele nu mai vor să meargă. Poarta asta am mai văzut-o.",
+        "urmator": "p32"
+      },
+      "p32": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "În vis. Cei 23 treceau pe sub ea, în șir, fără să îndoaie iarba. Și tata era ultimul.",
+        "urmator": "p33"
+      },
+      "p33": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ce-i, băiete? Ești alb ca varul.",
+        "urmator": "p34"
+      },
+      "p34": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... am mai fost aici. Nu cu picioarele. În vis.",
+        "urmator": "p35"
+      },
+      "p35": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "În vis.",
+        "urmator": "p36"
+      },
+      "p36": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Am visat cimitirul. Pe cei 23 ridicându-se din morminte, verzi, ca niște umbre. Au plecat spre nord, pe drumul ăsta. Pe sub poarta asta. Până la o crăpătură în pământ.",
+        "urmator": "p37"
+      },
+      "p37": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Tata a coborât ultimul. La margine s-a întors și mi-a zis: încă nu, Vale. Dar te așteaptă.",
+        "urmator": "p38"
+      },
+      "p38": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul nu râde. Se uită lung la poartă, apoi la mine, ca și cum m-ar vedea prima dată.",
+        "urmator": "p39"
+      },
+      "p39": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Nu știu ce să zic despre vise, băiete. Eu visez doar bătălia. În fiecare noapte.",
+        "urmator": "p40"
+      },
+      "p40": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dar dacă drumul ăsta l-ai văzut înainte să-l calci... atunci nu noi l-am găsit pe el. El ne-a găsit pe noi.",
+        "urmator": "p41"
+      },
+      "p41": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hai. Mai sunt două ceasuri de lumină.",
+        "urmator": "p42"
+      },
+      "p42": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Seara ne oprim între pietrele unei case de mult surpate. Nimeni nu mai știe cine a locuit aici. Poate nici nu mai contează.",
+        "imagine": "events/drum_foc_2.png",
+        "efecte": {
+          "panaLaOra": "20:00",
+          "consuma": {
+            "carne_gatita": 1,
+            "apa": 1
+          },
+          "seteazaNevoi": {
+            "foame": 80,
+            "sete": 80
+          }
+        },
+        "urmator": "p43"
+      },
+      "p43": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vrei încă una? Asta e mai frumoasă. Și n-o crede nimeni.",
+        "urmator": "p44"
+      },
+      "p44": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Spune.",
+        "urmator": "p45"
+      },
+      "p45": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ne trimiseseră la apus, la hotarul elfilor, să păzim un sat de tăietori de lemne. Elfii nu voiau tăietori acolo. Și elfii nu trimit vorbă înainte. Trimit săgeți.",
+        "imagine": "events/drum_cerb_1.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p46"
+      },
+      "p46": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Într-o dimineață, ne-au prins la marginea pădurii lor. Copaci cât turnurile, și noi, zece oameni cu scuturile ridicate. Săgețile cântau în ele ca ploaia pe acoperiș.",
+        "amintire": true,
+        "urmator": "p47"
+      },
+      "p47": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am crezut că acolo rămânem. Toți.",
+        "amintire": true,
+        "urmator": "p48"
+      },
+      "p48": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și atunci a ieșit dintre copaci. Un cerb alb. Mare cât un cal de război, cu coarnele ca niște ramuri. Iar pe ramuri avea frunze. Frunze de argint.",
+        "imagine": "events/drum_cerb_2.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p49"
+      },
+      "p49": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "S-a oprit între noi și pădure. Nu fugea. Se uita la noi. Și săgețile s-au oprit. Toate, deodată.",
+        "amintire": true,
+        "urmator": "p50"
+      },
+      "p50": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ne-am retras pas cu pas, cu fața la el. A stat acolo până n-am mai văzut pădurea. Nimeni n-a mai tras o săgeată.",
+        "amintire": true,
+        "urmator": "p51"
+      },
+      "p51": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Când am povestit la cazarmă, au râs de noi o lună întreagă. Dar noi zece n-am râs. Pădurea are ochi, băiete. Și uneori, ochii ăia te cruță.",
+        "trezire": true,
+        "imagine": "events/drum_foc_2.png",
+        "urmator": "p52"
+      },
+      "p52": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "De ce crezi că v-a cruțat?",
+        "urmator": "p53"
+      },
+      "p53": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Nu știu. Poate n-a vrut sânge pe iarba lui. Poate i-a fost milă de zece proști departe de casă.",
+        "urmator": "p54"
+      },
+      "p54": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Eu am crezut mereu că a fost pentru Edwin. Rămăsese acasă, cu tine mic. Zicea că se roagă pentru mine în fiecare seară. Fratele meu se ruga cât pentru doi.",
+        "urmator": "p55"
+      },
+      "p55": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul zâmbește în foc. Rar l-am văzut zâmbind când vorbește de tata.",
+        "urmator": "p56"
+      },
+      "p56": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "A treia zi, pe la prânz, pădurea se rărește și rămân doar stânci. Și între ele, piatra înaltă de pe a doua hârtie.",
+        "imagine": "events/drum_piatra.png",
+        "efecte": {
+          "panaLaOra": "12:00",
+          "seteazaNevoi": {
+            "foame": 70,
+            "sete": 65,
+            "stamina": 80
+          }
+        },
+        "urmator": "p57"
+      },
+      "p57": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "E mai înaltă decât doi oameni. Semnele de pe ea sunt aceleași, linie cu linie. Iar în stânca de lângă ea sunt urmele: patru șanțuri adânci, cât brațul meu.",
+        "urmator": "p58"
+      },
+      "p58": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Gheare. Doamne sfinte. Ce are gheare cât un plug?",
+        "urmator": "p59"
+      },
+      "p59": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ating semnele cu degetele. Piatra e rece. Și, o clipă, mi se pare că semnele de sub degetele mele sunt calde.",
+        "urmator": "p60"
+      },
+      "p60": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "La apus o găsim. Crăpătura. Pământul despicat între stânci, atât de adânc că nu i se vede fundul. Din ea urcă o ceață albă și un frig care nu e de pe lumea asta.",
+        "imagine": "events/drum_rapa.png",
+        "efecte": {
+          "panaLaOra": "19:00"
+        },
+        "urmator": "p61"
+      },
+      "p61": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Exact ca în vis. Fiecare piatră. Fiecare umbră.",
+        "urmator": "p62"
+      },
+      "p62": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Aici a găsit el solzul, scrie pe hartă. La margine.",
+        "urmator": "p63"
+      },
+      "p63": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Căutăm până se întunecă de tot, printre pietre, pe marginea râpei. Nimic. Nici urmă de solz. Doar frigul, care urcă din adânc ca o respirație.",
+        "urmator": "p64"
+      },
+      "p64": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ajunge. Nu căutăm pe întuneric pe marginea unei prăpăstii. Dormim departe de ea. Mâine mai vedem.",
+        "urmator": "p65"
+      },
+      "p65": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Facem focul la o aruncătură de băț de margine. De acolo, lumina palidă a râpei se vede ca o rană în întuneric.",
+        "imagine": "events/drum_foc_3.png",
+        "efecte": {
+          "panaLaOra": "21:00",
+          "consuma": {
+            "carne_gatita": 1,
+            "apa": 1
+          },
+          "seteazaNevoi": {
+            "foame": 80,
+            "sete": 80
+          }
+        },
+        "urmator": "p66"
+      },
+      "p66": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... spune-mi încă una. Altfel nu adorm.",
+        "urmator": "p67"
+      },
+      "p67": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bine. Ultima. Cea mai aproape de un dragon am fost vreodată.",
+        "urmator": "p68"
+      },
+      "p68": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ultimele mele luni de soldat le-am făcut într-un turn de pază, sus, în munții de la nord. Doar piatră, vânt și stele. Și liniștea aia care-ți intră în oase.",
+        "imagine": "events/drum_pasari_1.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p69"
+      },
+      "p69": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Într-o noapte, cel de lângă mine m-a trezit. Nu striga. Șoptea. Ca la biserică.",
+        "amintire": true,
+        "urmator": "p70"
+      },
+      "p70": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pe cer treceau păsări. Sute. Și ardeau, Vale. Ardeau ca scânteile care sar din foc, roșii și aurii, și lăsau dâre de lumină în urma lor.",
+        "imagine": "events/drum_pasari_2.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p71"
+      },
+      "p71": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Zburau spre nord, spre munții unde zice lumea că e poarta focului. N-au ars nimic. Niciun fir de iarbă. Doar noaptea, cât au trecut.",
+        "amintire": true,
+        "urmator": "p72"
+      },
+      "p72": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am stat până s-au dus toate. Apoi am stat până s-a făcut ziuă, cu ochii pe cerul gol. Mi-era frică să clipesc.",
+        "amintire": true,
+        "urmator": "p73"
+      },
+      "p73": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Douăzeci de ierni de strajă și n-am văzut niciun dragon. Dar în noaptea aia am înțeles de ce călăreții nu se mai întorc niciodată aceiași.",
+        "trezire": true,
+        "imagine": "events/drum_foc_3.png",
+        "urmator": "p74"
+      },
+      "p74": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul se culcă pe partea cealaltă a focului. Peste câteva clipe sforăie. Eu mă uit mult la lumina palidă din râpă, până când mi se închid ochii.",
+        "efecte": {
+          "panaLaOra": "23:30"
+        },
+        "urmator": "v1"
+      },
+      "v1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Cineva îmi spune numele. Nu tare. Ca și cum ar fi aici, lângă mine, de foarte mult timp.",
+        "imagine": "events/vis_5_1.png",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v2"
+      },
+      "v2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă ridic. Și mă văd. Dorm lângă foc, cu gura întredeschisă. Unchiul doarme cu mâna pe sabie.",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v3"
+      },
+      "v3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Nu mi-e frică. Și asta mă sperie cel mai tare.",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v4"
+      },
+      "v4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Plutesc spre margine. Ceața mă primește ca o apă caldă. Apoi pământul se termină sub mine și cobor.",
+        "imagine": "events/vis_5_2.png",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_5.mp4",
+        "faraVideo": "v5",
+        "urmator": "v5",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "_nota": "Filmulețul visului (opțional, ca la celelalte vise): coborârea în crăpătură, cu semnele de pe pereți aprinzându-se pe rând. Lipsește = visul merge direct la imaginea următoare."
+      },
+      "v5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pereții râpei trec pe lângă mine, tot mai sus. Pe ei sunt semnele de pe piatră, mii de semne. Se aprind palid când trec și se sting în urma mea.",
+        "imagine": "events/vis_5_3.png",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v6"
+      },
+      "v6": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Frigul nu mai e frig. E liniște. O liniște care ascultă.",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v7"
+      },
+      "v7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Jos de tot e o poartă. Un arc înalt de piatră neagră, plin de aceleași semne. În vârful lui, un craniu săpat în piatră se uită în jos, spre mine.",
+        "imagine": "events/vis_5_4.png",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v8"
+      },
+      "v8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Înăuntrul arcului nu e întuneric. E o ceață argintie, care curge încet, ca apa unui râu care nu se grăbește nicăieri.",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v9"
+      },
+      "v9": {
+        "vorbitor": "glasul",
+        "nume": "Glasul",
+        "faraPortret": true,
+        "amintire": true,
+        "text": "Lightfinder.",
+        "urmator": "v10"
+      },
+      "v10": {
+        "vorbitor": "glasul",
+        "nume": "Glasul",
+        "faraPortret": true,
+        "amintire": true,
+        "text": "Te-am simțit de mult. De când erai mic. Ca un foc mic, sub zăpadă.",
+        "urmator": "v11"
+      },
+      "v11": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Cine ești?",
+        "amintire": true,
+        "urmator": "v12"
+      },
+      "v12": {
+        "vorbitor": "glasul",
+        "nume": "Glasul",
+        "faraPortret": true,
+        "amintire": true,
+        "text": "Încă nu. Focul din tine doarme.",
+        "urmator": "v13"
+      },
+      "v13": {
+        "vorbitor": "glasul",
+        "nume": "Glasul",
+        "faraPortret": true,
+        "amintire": true,
+        "text": "Când vei împlini douăzeci și șase de ierni, te voi chema din nou. Și vei coborî până la capăt.",
+        "urmator": "v14"
+      },
+      "v14": {
+        "vorbitor": "glasul",
+        "nume": "Glasul",
+        "faraPortret": true,
+        "amintire": true,
+        "text": "Până atunci, oamenii tăi au nevoie de tine. Du-te acasă, Lightfinder.",
+        "urmator": "v15"
+      },
+      "v15": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ceața din arc se mișcă. Și, pentru o clipă, mi se pare că dincolo de ea respiră ceva uriaș. Ceva care așteaptă.",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "v16"
+      },
+      "v16": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Apoi pământul de sub mine se clatină și cad. Cad în sus, spre lumina focului...",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "urmator": "t1"
+      },
+      "t1": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Mă trezesc atârnând. Sub picioarele mele nu e nimic. Doar întuneric și frig.",
+        "trezire": true,
+        "imagine": "events/drum_mana.png",
+        "efecte": {
+          "panaLaOra": "03:00"
+        },
+        "urmator": "t2"
+      },
+      "t2": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Și o mână. Mâna unchiului, strânsă pe mâna mea.",
+        "urmator": "t3"
+      },
+      "t3": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Te țin! Te țin, băiete! Nu te mișca!",
+        "urmator": "t4"
+      },
+      "t4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă trage sus, cu un geamăt, peste pietrele de pe margine. Cădem amândoi pe spate, gâfâind, la doi pași de prăpastie.",
+        "urmator": "t5"
+      },
+      "t5": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Te-am văzut ridicându-te. Mergeai drept spre râpă, cu ochii deschiși, și vorbeai o limbă pe care n-am mai auzit-o în viața mea.",
+        "urmator": "t6"
+      },
+      "t6": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Am crezut că te pierd și pe tine. Ca pe el.",
+        "urmator": "t7"
+      },
+      "t7": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Unchiule...",
+        "urmator": "t8"
+      },
+      "t8": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Atunci am fugit, Vale. Mi-a poruncit să fug și am fugit. Și l-am lăsat acolo.",
+        "urmator": "t9"
+      },
+      "t9": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "De data asta n-am mai fugit.",
+        "urmator": "t10"
+      },
+      "t10": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "gand": true,
+        "text": "Îl strâng în brațe. Tremură tot, ca un copil. Sau poate tremur eu. Nu mai știu.",
+        "urmator": "t11"
+      },
+      "t11": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Nu mai dormim. Stăm lângă foc, umăr la umăr, fără o vorbă, până se luminează.",
+        "imagine": "events/drum_foc_3.png",
+        "urmator": "t12"
+      },
+      "t12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "În zori ne ducem la margine. Și margine nu mai e.",
+        "imagine": "events/drum_zori.png",
+        "efecte": {
+          "panaLaOra": "06:00",
+          "seteazaNevoi": {
+            "stamina": 55
+          }
+        },
+        "urmator": "t13"
+      },
+      "t13": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Unde aseară era râpa, acum e doar iarbă udă, albă de brumă, și o cicatrice lungă în pământ, ca o rană veche, de mult închisă. Piatra cu semne stă tot acolo. Singură.",
+        "urmator": "t14"
+      },
+      "t14": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Aseară era aici. Am văzut-o amândoi. Am stat pe marginea ei.",
+        "urmator": "t15"
+      },
+      "t15": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Era. Și o să mai fie. Când o să fie vremea.",
+        "urmator": "t16"
+      },
+      "t16": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ce-ai văzut acolo jos, băiete?",
+        "urmator": "t17"
+      },
+      "t17": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "O poartă. Și un glas. Mi-a zis să mă întorc acasă. Că oamenii mei au nevoie de mine.",
+        "urmator": "t18"
+      },
+      "t18": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și că o să mă cheme iar. Când împlinesc douăzeci și șase de ierni.",
+        "urmator": "t19"
+      },
+      "t19": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Douăzeci și șase...",
+        "urmator": "t20"
+      },
+      "t20": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul tace mult. Toată lumea știe ce se întâmplă cu unii oameni la douăzeci și șase de ani. Și ce nu se întâmplă cu cei mai mulți.",
+        "urmator": "t21"
+      },
+      "t21": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ascultă-mă bine. Ce-am văzut aici rămâne între noi. Nici maică-tii. Nici preotului. Până știm ce înseamnă.",
+        "urmator": "t22"
+      },
+      "t22": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Între noi, unchiule.",
+        "urmator": "t23"
+      },
+      "t23": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ne întoarcem pe același drum. Pe sub poarta de piatră, pe lângă casa surpată, prin vadul râului. Aproape nu vorbim. Nu e nevoie.",
+        "imagine": "events/drum_intoarcere.png",
+        "efecte": {
+          "panaLaOra": "18:00",
+          "seteazaNevoi": {
+            "foame": 65,
+            "sete": 60,
+            "stamina": 65
+          }
+        },
+        "urmator": "t24"
+      },
+      "t24": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "În prima seară de întoarcere, unchiul îmi dă bucata cea mai mare de carne și zice că n-are poftă. Minte prost. Ca tata.",
+        "imagine": "events/drum_foc_4.png",
+        "efecte": {
+          "panaLaOra": "20:00",
+          "consuma": {
+            "carne_gatita": 1,
+            "apa": 1
+          },
+          "seteazaNevoi": {
+            "foame": 80,
+            "sete": 80
+          }
+        },
+        "urmator": "t25"
+      },
+      "t25": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... cum era tata când erați mici?",
+        "urmator": "t26"
+      },
+      "t26": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Ca o veveriță cu prea mult curaj. Copacul mare de dincolo de gard era al nostru. Ne cățăram până în vârf, unde crengile se îndoiau sub noi.",
+        "imagine": "events/drum_copac.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "t27"
+      },
+      "t27": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Eu eram mai mic și mi-era frică. Edwin urca primul și-mi întindea mâna. Mereu mâna. Niciodată nu m-a lăsat să cad.",
+        "amintire": true,
+        "urmator": "t28"
+      },
+      "t28": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Primăvara, când copacul era alb de flori, stăteam acolo sus până ne striga mama de trei ori. Edwin zicea că de acolo se vede tot satul. Și că într-o zi o să-l păzească.",
+        "amintire": true,
+        "urmator": "t29"
+      },
+      "t29": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Și l-a păzit. Până la capăt.",
+        "trezire": true,
+        "imagine": "events/drum_foc_4.png",
+        "urmator": "t30"
+      },
+      "t30": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "gand": true,
+        "text": "Mă uit la mâna unchiului. E aceeași mână care m-a ținut deasupra prăpastiei. Ca mâna tatei, în copac.",
+        "urmator": "t31"
+      },
+      "t31": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hai, dormi. Mâine mai avem drum.",
+        "urmator": "t32"
+      },
+      "t32": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "A doua zi mergem până se întunecă. Seara, unchiul împarte ultimul colț de pâine în două, fără să-l cântărească.",
+        "efecte": {
+          "timp": 1440,
+          "seteazaNevoi": {
+            "foame": 70,
+            "sete": 70,
+            "stamina": 60
+          }
+        },
+        "urmator": "t33"
+      },
+      "t33": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Știi ce-o să zică maică-ta când ne vede?",
+        "urmator": "t34"
+      },
+      "t34": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Că suntem slabi ca niște ogari și că mirosim a fum.",
+        "urmator": "t35"
+      },
+      "t35": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Și o să aibă dreptate.",
+        "urmator": "t36"
+      },
+      "t36": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "A șasea zi, la căderea serii, trecem din nou gardul putred. Mama ne așteaptă în prag, cu felinarul aprins, de parcă n-ar fi plecat de acolo deloc.",
+        "imagine": "events/drum_acasa.png",
+        "efecte": {
+          "panaLaOra": "19:00",
+          "seteazaNevoi": {
+            "foame": 55,
+            "sete": 55,
+            "stamina": 35
+          }
+        },
+        "urmator": "t37"
+      },
+      "t37": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Vale...",
+        "urmator": "t38"
+      },
+      "t38": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă strânge în brațe, apoi se uită la unchiul, peste umărul meu.",
+        "urmator": "t39"
+      },
+      "t39": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Pe picioarele lui. Ți-ai ținut cuvântul, Roderick.",
+        "urmator": "t40"
+      },
+      "t40": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "L-am ținut, Miriam.",
+        "urmator": "t41"
+      },
+      "t41": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Despre râpă și despre glas nu spunem nimic. Doar că harta n-a dus nicăieri. Și, într-un fel, e chiar adevărul.",
+        "efecte": {
+          "stare": {
+            "drumul_trezirii": "intors"
+          },
+          "mergi": "casa"
+        }
       }
     }
   }
