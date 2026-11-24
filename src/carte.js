@@ -2,7 +2,11 @@ import { elementImagine } from './imagini.js';
 import { listaMisiuni, pasul, numaratori, textPotrivit, subpasGata } from './misiuni.js';
 // Textele cărții sunt în limba jocului; se cer la fiecare desenare, ca să urmeze limba aleasă (misiunile, numele și
 // descrierile vin deja traduse din date)
-import { t } from './limba.js';
+import { t, limbaJoc } from './limba.js';
+
+// În română, numele unui obiect în mijlocul propoziției se scrie cu literă mică („4/10 sunătoare”); în engleză nu, pentru
+// că acolo multe sunt nume proprii („St. John’s Wort”, „Bram’s Iron”)
+const micaInRomana = (nume) => (nume && limbaJoc() === 'ro' ? nume.toLowerCase() : nume);
 
 // Cartea personajelor: câte un personaj pe fiecare două pagini (stânga: nume, încredere, descriere; dreapta: schița lui).
 // Fonturile de scris de mână se importă în joc.js (editorul folosește doar numele fișierelor de aici).
@@ -105,7 +109,7 @@ export function creeazaCarte(parinte, joc) {
       // Cât a strâns: „(4/10)”, iar la mai multe obiecte deodată, fiecare cu numele lui („lemne 4/6, paie 1/3”)
       const num = facut ? [] : numaratori(p, s);
       const cate = (x) => `${Math.min(x.are, x.n)}/${x.n}`;
-      const cat = !num.length ? '' : num.length === 1 ? ` (${cate(num[0])})` : ` (${num.map((x) => `${x.nume || joc.date.items.obiecte[x.obiect]?.nume.toLowerCase() || x.obiect} ${cate(x)}`).join(', ')})`;
+      const cat = !num.length ? '' : num.length === 1 ? ` (${cate(num[0])})` : ` (${num.map((x) => `${x.nume || micaInRomana(joc.date.items.obiecte[x.obiect]?.nume) || x.obiect} ${cate(x)}`).join(', ')})`;
       // Textul pasului și sfatul pot depinde de ce a ales Vale (o listă { conditii, text }, ca la „Convoiul” Kaiei)
       pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${textPotrivit(p.text, s)}${cat}`));
       // Bucățile care se fac în orice ordine: fiecare pe rândul ei, bifată când e gata

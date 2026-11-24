@@ -1,6 +1,7 @@
 {
   "harta": {
     "nume": "Satul",
+    "nume_en": "The Village",
     "imagine": "map/sat_harta.png",
     "variante": [
       {
@@ -33,6 +34,7 @@
       "id": "marginea",
       "_nota": "Decis de autor: a doua hartă, ca cea a satului, cu mai puține locuri. Pe ambele hărți, trecerea dintr-una în alta e o zonă desenată în editor (fără piesă separată); pe harta satului apare după eliberarea lui Finn.",
       "nume": "Marginea satului",
+      "nume_en": "The Edge",
       "imagine": "map/marginea_harta.png",
       "variante": [
         {
@@ -58,6 +60,7 @@
     {
       "id": "casa",
       "nume": "Casa",
+      "nume_en": "Home",
       "piese": [
         {
           "id": "casa",
@@ -66,6 +69,7 @@
             {
               "imagine": "map/piese/casa_reparata_noapte.png",
               "nume": "reparată, noaptea",
+              "nume_en": "repaired, at night",
               "conditii": {
                 "stare": {
                   "acoperis": "reparat"
@@ -99,6 +103,7 @@
         {
           "imagine": "locations/casa_reparata_zona_noapte.png",
           "nume": "reparată, noaptea",
+          "nume_en": "repaired, at night",
           "conditii": {
             "stare": {
               "acoperis": "reparat"
@@ -286,6 +291,7 @@
     {
       "id": "fierar",
       "nume": "Fierăria",
+      "nume_en": "The Smithy",
       "piese": [
         {
           "id": "fierar",
@@ -307,6 +313,7 @@
         {
           "imagine": "locations/fierar_zona_cu_nicovala_noaptea.png",
           "nume": "cu nicovală, noaptea",
+          "nume_en": "with the anvil, at night",
           "conditii": {
             "moment": [
               "noaptea"
@@ -323,6 +330,7 @@
         {
           "imagine": "locations/fierar_zona_cu_nicovala.png",
           "nume": "cu nicovală (fierarul nu e afară)",
+          "nume_en": "with the anvil (the blacksmith isn’t outside)",
           "conditii": {
             "nu": {
               "personajIn": {
@@ -469,6 +477,7 @@
     {
       "id": "taverna",
       "nume": "Taverna",
+      "nume_en": "The Tavern",
       "piese": [
         {
           "id": "taverna",
@@ -477,6 +486,7 @@
             {
               "imagine": "map/piese/taverna_noapte_luminata.png",
               "nume": "noaptea, deschisă (geamuri luminate)",
+              "nume_en": "at night, open (lit windows)",
               "conditii": {
                 "moment": [
                   "noaptea"
@@ -511,6 +521,7 @@
         {
           "imagine": "locations/taverna_zona_noaptea_luminata.png",
           "nume": "noaptea, deschisă (geamuri luminate)",
+          "nume_en": "at night, open (lit windows)",
           "conditii": {
             "moment": [
               "noaptea"
@@ -532,6 +543,7 @@
         {
           "imagine": "locations/taverna_zona_noaptea.png",
           "nume": "noaptea",
+          "nume_en": "at night",
           "conditii": {
             "moment": [
               "noaptea"
@@ -798,11 +810,13 @@
     {
       "id": "piata",
       "nume": "Piața",
+      "nume_en": "The Market",
       "decor": [
         {
           "id": "negustor",
           "_nota": "Taraba negustorului: se vede, dar nu se apasă (negustorul vorbește doar când apeși pe hoțul legat). Id-ul „negustor” păstrează poziția aranjată în editor.",
           "nume": "Taraba negustorului (decor)",
+          "nume_en": "The Merchant’s Stall (decor)",
           "imagine": "sprites/negustor_piata.png",
           "apare": {
             "moment": [
@@ -821,6 +835,7 @@
             {
               "imagine": "map/piese/piata_noapte_fara_prizonier.png",
               "nume": "fără prizonier, noaptea",
+              "nume_en": "without the prisoner, at night",
               "conditii": {
                 "stare": {
                   "hot": "eliberat"
@@ -833,6 +848,7 @@
             {
               "imagine": "map/piese/piata_fara_prizonier.png",
               "nume": "fără prizonier",
+              "nume_en": "without the prisoner",
               "conditii": {
                 "stare": {
                   "hot": "eliberat"
@@ -857,7 +873,9 @@
           "id": "magazin",
           "tip": "magazin",
           "nume": "Cumpără / vinde",
+          "nume_en": "Buy / Sell",
           "titlu": "Marfa negustorului",
+          "titlu_en": "The Merchant’s Wares",
           "vinde": [
             "paine",
             "apa",
@@ -888,6 +906,7 @@
         {
           "imagine": "locations/piata_zona_noapte_fara_prizonier.png",
           "nume": "fără prizonier, noaptea",
+          "nume_en": "without the prisoner, at night",
           "conditii": {
             "stare": {
               "hot": "eliberat"
@@ -900,6 +919,7 @@
         {
           "imagine": "locations/piata_zona_fara_prizonier.png",
           "nume": "fără prizonier",
+          "nume_en": "without the prisoner",
           "conditii": {
             "stare": {
               "hot": "eliberat"
@@ -919,6 +939,7 @@
     {
       "id": "campuri",
       "nume": "Câmpurile",
+      "nume_en": "The Fields",
       "piese": [
         {
           "id": "culturi",
@@ -954,6 +975,7 @@
         {
           "imagine": "locations/campuri_zona_lucru.png",
           "nume": "cu sătenii la muncă (06–13)",
+          "nume_en": "with the villagers at work (06–13)",
           "conditii": {
             "ora": {
               "min": "06:00",
@@ -986,6 +1008,7 @@
     {
       "id": "moara",
       "nume": "Moara",
+      "nume_en": "The Mill",
       "piese": [
         {
           "id": "moara",
@@ -1025,12 +1048,14 @@
     {
       "id": "padure",
       "nume": "Pădurea",
+      "nume_en": "The Forest",
       "piese": [],
       "imagine": "locations/padure_zona.png",
       "variante": [
         {
           "imagine": "locations/padure_zona_noaptea.png",
           "nume": "noaptea",
+          "nume_en": "at night",
           "conditii": {
             "moment": [
               "noaptea"
@@ -1206,12 +1231,15 @@
           "id": "lemne",
           "tip": "obtine",
           "nume": "Adună lemne",
+          "nume_en": "Gather Wood",
           "titlu": "Aduni lemne",
+          "titlu_en": "Gathering Wood",
           "obiect": "lemn",
           "_nota": "Decis de autor: mini-jocul cercului, 3 lovituri; o oră = 1 lemn pe lovitură (0–3), două ore = 2 pe lovitură (0–6); cu mini-jocurile oprite, 2 și 4 lemne; cel mult de două ori pe zi.",
           "variante": [
             {
               "nume": "O oră (până la 3 lemne)",
+              "nume_en": "One Hour (up to 3 wood)",
               "minute": 60,
               "n": 2,
               "nPeLovitura": 1,
@@ -1219,6 +1247,7 @@
             },
             {
               "nume": "Două ore (până la 6 lemne)",
+              "nume_en": "Two Hours (up to 6 wood)",
               "minute": 120,
               "n": 4,
               "nPeLovitura": 2,
@@ -1227,21 +1256,27 @@
           ],
           "maxPeZi": 2,
           "mesajMaxPeZi": "Am cărat destul lemn pentru azi. Mâine din nou.",
+          "mesajMaxPeZi_en": "I’ve hauled enough wood for today. More tomorrow.",
           "sunet": "lemne",
           "stamina": 10,
           "imagine": "locations/munca_lemne.png",
           "text": "Aduni lemne...",
+          "text_en": "You gather wood...",
           "miniJoc": "cerc",
           "incercari": 3,
           "gandNimic": "Toporul a sărit de fiecare dată pe lângă. N-am adunat nimic ca lumea.",
-          "gandNoapte": "E beznă în pădure. Nu văd unde dau cu toporul. Mai bine mă întorc dimineață."
+          "gandNimic_en": "The axe glanced off every time. I haven’t gathered anything worth carrying.",
+          "gandNoapte": "E beznă în pădure. Nu văd unde dau cu toporul. Mai bine mă întorc dimineață.",
+          "gandNoapte_en": "It’s pitch-dark in the forest. I can’t see where I’m swinging the axe. I’d better come back in the morning."
         },
         {
           "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, iar orice floare culeasă rămâne în rucsac (decis de autor, pentru poțiunile Bătrânei Morwen). Cu mini-jocurile oprite: 2 fire de sunătoare, singur.",
           "id": "ierburi",
           "tip": "culege",
           "nume": "Caută ierburi (1 oră)",
+          "nume_en": "Search for Herbs (1 hour)",
           "titlu": "Culegi ierburi",
+          "titlu_en": "Picking Herbs",
           "intrebare": [
             {
               "conditii": {
@@ -1254,9 +1289,14 @@
                   }
                 }
               },
-              "text": "Bătrâna Morwen: două păpădii, două fire de piciorul-cocoșului și trei de mușețel, pentru alifia lui Ember. Culege cel mult 4."
+              "text": "Bătrâna Morwen: două păpădii, două fire de piciorul-cocoșului și trei de mușețel, pentru alifia lui Ember. Culege cel mult 4.",
+              "text_en": "Old Morwen: two dandelions, two stems of buttercup and three of chamomile, for Ember’s salve. Pick no more than 4."
             },
             "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4."
+          ],
+          "intrebare_en": [
+            null,
+            "Elian: small yellow flowers with five petals, clustered at the top of the stem; held up to the light, the leaves show tiny dots, like pinholes. Pick no more than 4."
           ],
           "plante": [
             {
@@ -1281,14 +1321,18 @@
           "stamina": 5,
           "maxPeZi": 2,
           "mesajMaxPeZi": "Roua s-a uscat. Mâine dimineață mai caut.",
+          "mesajMaxPeZi_en": "The dew has dried. I’ll look again tomorrow morning.",
           "ora": {
             "min": "05:00",
             "max": "09:59"
           },
           "gandOra": "Elian a zis că sunătoarea se culege dimineața, cât mai e roua pe ea. Revin mâine devreme.",
+          "gandOra_en": "Elian said St. John’s wort is picked in the morning, while the dew is still on it. I’ll come back early tomorrow.",
           "gandGresit": "Unele dintre ele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
+          "gandGresit_en": "Some of them didn’t look like what Elian described. I left them there.",
           "imagine": "locations/munca_ierburi.png",
           "text": "Cauți printre ierburile ude de rouă...",
+          "text_en": "You search among the dew-wet herbs...",
           "ascuns": {
             "conditii": {
               "oricare": [
@@ -1324,8 +1368,11 @@
           "id": "luminita",
           "tip": "culege",
           "nume": "Caută luminița-nopții (1 oră)",
+          "nume_en": "Search for Evening Primrose (1 hour)",
           "titlu": "Cauți luminița-nopții",
+          "titlu_en": "Searching for Evening Primrose",
           "intrebare": "Elian: flori galbene, mari cât o monedă, cu patru petale late, ca niște inimioare; se deschid doar la apus și miros ușor a lămâie. Culege cel mult 4.",
+          "intrebare_en": "Elian: yellow flowers the size of a coin, with four broad petals, like little hearts; they open only at sunset and smell faintly of lemon. Pick no more than 4.",
           "plante": [
             {
               "id": "luminita_noptii",
@@ -1349,14 +1396,18 @@
           "stamina": 5,
           "maxPeZi": 2,
           "mesajMaxPeZi": "S-a întunecat de tot. Mâine seară mai caut.",
+          "mesajMaxPeZi_en": "It’s completely dark now. I’ll look again tomorrow evening.",
           "ora": {
             "min": "18:00",
             "max": "22:59"
           },
           "gandOra": "Elian a zis că luminița-nopții își deschide florile doar la apus. Revin seara.",
+          "gandOra_en": "Elian said evening primrose opens its flowers only at sunset. I’ll come back in the evening.",
           "gandGresit": "Unele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
+          "gandGresit_en": "Some didn’t look like what Elian described. I left them there.",
           "imagine": "locations/munca_luminita.png",
           "text": "Cauți printre ierburi, în lumina apusului...",
+          "text_en": "You search among the herbs, in the glow of sunset...",
           "ascuns": {
             "conditii": {
               "oricare": [
@@ -1383,6 +1434,7 @@
     {
       "id": "poarta",
       "nume": "Poarta",
+      "nume_en": "The Gate",
       "piese": [
         {
           "id": "poarta",
@@ -1478,13 +1530,15 @@
               }
             ]
           },
-          "mesaj": "E noapte. Să mă duc acum la poartă, printre orci, n-ar fi deloc bine. Mai bine aștept până dimineață."
+          "mesaj": "E noapte. Să mă duc acum la poartă, printre orci, n-ar fi deloc bine. Mai bine aștept până dimineață.",
+          "mesaj_en": "It’s night. Walking up to the gate now, among the orcs, wouldn’t end well. I’d better wait until morning."
         }
       ]
     },
     {
       "id": "biserica",
       "nume": "Biserica",
+      "nume_en": "The Church",
       "piese": [
         {
           "id": "biserica",
@@ -1506,6 +1560,7 @@
         {
           "imagine": "locations/biserica_zona_noaptea.png",
           "nume": "noaptea",
+          "nume_en": "at night",
           "conditii": {
             "moment": [
               "noaptea"
@@ -1545,6 +1600,7 @@
     {
       "id": "casa_finn",
       "nume": "Casa lui Finn",
+      "nume_en": "Finn’s House",
       "harta": "marginea",
       "piese": [
         {
@@ -1639,6 +1695,7 @@
     {
       "id": "iesirea",
       "nume": "Ieșirea",
+      "nume_en": "The Old Fence",
       "harta": "marginea",
       "piese": [],
       "imagine": "locations/iesirea_zona.png",
@@ -1658,6 +1715,7 @@
           "id": "iesirea",
           "tip": "gand",
           "nume": "Gardul putred",
+          "nume_en": "The Rotten Fence",
           "_nota": "CIORNĂ. Decis de autor: gardul e putred și jos, ușor de sărit (fără gaură); pe aici îl scoate Roderick pe Vale (misiunea „Locul unde a căzut tata”). După ea, alt gând.",
           "text": [
             {
@@ -1666,9 +1724,14 @@
                   "roderick_locul": "terminata"
                 }
               },
-              "text": "Gardul pe care m-a ajutat unchiul să-l sar. Dincolo e câmpul, cu copacul lor. Și, mai departe, tot ce n-am văzut niciodată."
+              "text": "Gardul pe care m-a ajutat unchiul să-l sar. Dincolo e câmpul, cu copacul lor. Și, mai departe, tot ce n-am văzut niciodată.",
+              "text_en": "The fence Uncle helped me over. Beyond it lies the field, with their tree. And farther still, everything I’ve never seen."
             },
             "Gardul e putred aici și destul de jos cât să-l sar dintr-un salt. Orcii nu păzesc locul ăsta. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
+          ],
+          "text_en": [
+            null,
+            "The fence is rotten here, and low enough to clear in one jump. The orcs don’t guard this spot. I could get out of the village this way... but not alone. Not yet."
           ]
         }
       ],
@@ -1677,6 +1740,7 @@
     {
       "id": "contrabandist",
       "nume": "Contrabandistul",
+      "nume_en": "The Smuggler’s Shack",
       "harta": "marginea",
       "piese": [
         {
@@ -1759,6 +1823,7 @@
     {
       "id": "cimitir",
       "nume": "Cimitirul",
+      "nume_en": "The Graveyard",
       "harta": "marginea",
       "piese": [
         {
@@ -1793,14 +1858,17 @@
           "id": "mormant",
           "tip": "eveniment",
           "nume": "Mormântul tatălui",
+          "nume_en": "Father’s Grave",
           "eveniment": "mormant_tata",
-          "gandAltfel": "Am fost azi la tata. Mâine vin din nou."
+          "gandAltfel": "Am fost azi la tata. Mâine vin din nou.",
+          "gandAltfel_en": "I’ve already been to see Father today. I’ll come again tomorrow."
         }
       ]
     },
     {
       "id": "coliba",
       "nume": "Coliba ierbăresei",
+      "nume_en": "The Herbwoman’s Hut",
       "harta": "marginea",
       "piese": [
         {
@@ -1883,6 +1951,7 @@
     {
       "id": "antrenament",
       "nume": "Locul de antrenament",
+      "nume_en": "The Training Ground",
       "harta": "marginea",
       "_nota": "Decis de autor: locul unde Roderick îl antrenează pe Vale, pe harta Marginii (piesă nouă, pusă de autor pe un loc liber). Apare odată cu misiunea „Antrenamentul”; manechinul rămâne acolo după ea. Noaptea, imaginea de noapte (decis de autor), cu sau fără manechin.",
       "ascuns": {
@@ -1909,6 +1978,7 @@
             {
               "imagine": "map/piese/antrenament_manechin_noapte.png",
               "nume": "cu manechinul, noaptea",
+              "nume_en": "with the dummy, at night",
               "conditii": {
                 "stare": {
                   "manechin": "construit"
@@ -1942,6 +2012,7 @@
         {
           "imagine": "locations/antrenament_zona_manechin_noapte.png",
           "nume": "cu manechinul, noaptea",
+          "nume_en": "with the dummy, at night",
           "conditii": {
             "stare": {
               "manechin": "construit"

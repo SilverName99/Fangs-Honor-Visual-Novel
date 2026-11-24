@@ -55,7 +55,8 @@
     "foameDupa": 30,
     "seteDupa": 30,
     "pierdereBaniProcent": 0,
-    "text": "Totul se întunecă... Când deschizi ochii, ești în patul tău. Mama stă lângă tine, cu ochii roșii: te-a găsit căzut și te-a adus acasă. A trecut o jumătate de zi."
+    "text": "Totul se întunecă... Când deschizi ochii, ești în patul tău. Mama stă lângă tine, cu ochii roșii: te-a găsit căzut și te-a adus acasă. A trecut o jumătate de zi.",
+    "text_en": "Everything goes dark... When you open your eyes, you are in your own bed. Mother is sitting beside you, her eyes red: she found you collapsed and brought you home. Half a day has passed."
   },
   "inventar": {
     "_nota": "Sloturi fără rucsac; rucsacul dă capacitatea lui. Cufărul de acasă (TODO cifre).",
@@ -66,11 +67,14 @@
     "_nota": "Muncile de la câmpuri și de la moară: monede și stamina pe oră (TODO echilibru). „imagine”: arătată câteva secunde cât muncești (ca la vânătoare); „text”: ce scrie pe ea; „gandNoapte”: gândul lui Vale noaptea, când nu se poate lucra (decis de autor). Textele sunt ciorne. „miniJoc” (decis de autor): arat = semnul oprit în zona verde, muls = clic în ritm, moara = clic repede să umpli sacul; perfect = +50% monede, ratat de tot = jumătate; cu mini-jocurile oprite din Opțiuni, suma de pe oră.",
     "munca_arat": {
       "nume": "Arat",
+      "nume_en": "Plowing",
       "monedePeOra": 3,
       "staminaPeOra": 12,
       "imagine": "locations/munca_arat.png",
       "text": "Ari câmpul...",
+      "text_en": "You plow the field...",
       "gandNoapte": "E noapte. Nu ară nimeni pe întuneric, mă întorc mâine dimineață.",
+      "gandNoapte_en": "It’s night. No one plows in the dark. I’ll come back tomorrow morning.",
       "miniJoc": "arat",
       "bonus": [
         {
@@ -116,25 +120,32 @@
               ]
             }
           },
-          "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni."
+          "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni.",
+          "gand_en": "The farmer’s plow is broken. Without it, no one plows today."
         }
       ]
     },
     "munca_porci": {
       "nume": "Ferma de porci",
+      "nume_en": "The Pig Farm",
       "monedePeOra": 3,
       "staminaPeOra": 10,
       "imagine": "locations/munca_porci.png",
       "text": "Muncești la ferma de porci...",
-      "gandNoapte": "E noapte. Animalele dorm, mă întorc mâine."
+      "text_en": "You work at the pig farm...",
+      "gandNoapte": "E noapte. Animalele dorm, mă întorc mâine.",
+      "gandNoapte_en": "It’s night. The animals are asleep. I’ll come back tomorrow."
     },
     "munca_vaci": {
       "nume": "Ferma de vaci",
+      "nume_en": "The Cow Farm",
       "monedePeOra": 3,
       "staminaPeOra": 10,
       "imagine": "locations/munca_vaci.png",
       "text": "Îngrijești vacile...",
+      "text_en": "You tend the cows...",
       "gandNoapte": "E noapte. Vacile dorm, nu are rost să le deranjez. Revin mâine.",
+      "gandNoapte_en": "It’s night. The cows are asleep; no sense disturbing them. I’ll come back tomorrow.",
       "miniJoc": "muls",
       "bonus": [
         {
@@ -157,11 +168,14 @@
     },
     "munca_moara": {
       "nume": "Moara",
+      "nume_en": "The Mill",
       "monedePeOra": 4,
       "staminaPeOra": 14,
       "imagine": "locations/munca_moara.png",
       "text": "Cari saci de grâu la moară...",
+      "text_en": "You haul sacks of wheat at the mill...",
       "gandNoapte": "Moara stă noaptea. Revin mâine dimineață.",
+      "gandNoapte_en": "The mill stands idle at night. I’ll come back tomorrow morning.",
       "miniJoc": "moara",
       "bonus": [
         {
@@ -233,9 +247,13 @@
     "intervalZile": 7,
     "oraColector": "10:00",
     "textColector": "Deschide, sătene! Știi de ce am venit. Taxa, până la ultima monedă.",
+    "textColector_en": "Open up, villager! You know why I’m here. The tax, down to the last coin.",
     "textColectorPoarta": "Ia uite, a venit singur la poartă. Ai adus taxa, sau ai venit doar să te uiți la noi?",
+    "textColectorPoarta_en": "Well, look who came to the gate all on his own. Did you bring the tax, or did you just come to stare at us?",
     "textColectorPlatit": "Ai plătit săptămâna asta. Acum cară-te, până nu găsesc un motiv să-ți mai cer o dată.",
-    "textRatare": "N-ai plătit taxa. Colectorul pleacă mormăind ceva despre „data viitoare”. O să se întoarcă."
+    "textColectorPlatit_en": "You’ve paid for this week. Now get lost, before I find a reason to make you pay again.",
+    "textRatare": "N-ai plătit taxa. Colectorul pleacă mormăind ceva despre „data viitoare”. O să se întoarcă.",
+    "textRatare_en": "You didn’t pay the tax. The collector leaves, muttering something about “next time.” He’ll be back."
   },
   "lupta": {
     "_nota": "viteza: cât de repede se umple bara (staminaMax × viteza pe secundă). Cifre de pornire (TODO).",
@@ -282,12 +300,15 @@
     ],
     "note": {
       "vanatoare": "pe jos, cu glugă, fără Ember",
-      "mag": "doar vindecarea"
+      "vanatoare_en": "on foot, hooded, without Ember",
+      "mag": "doar vindecarea",
+      "mag_en": "healing only"
     },
     "niveluri": [
       {
         "id": "usor",
         "nume": "Ușor",
+        "nume_en": "Easy",
         "lupta": "groapa_usor",
         "bani": 10,
         "reputatie": 1,
@@ -298,6 +319,7 @@
       {
         "id": "mediu",
         "nume": "Mediu",
+        "nume_en": "Medium",
         "lupta": "groapa_mediu",
         "bani": 25,
         "reputatie": 2,
@@ -308,6 +330,7 @@
       {
         "id": "greu",
         "nume": "Greu",
+        "nume_en": "Hard",
         "lupta": "groapa_greu",
         "bani": 50,
         "reputatie": 3,
@@ -320,8 +343,11 @@
     "texte": {
       "_nota": "CIORNĂ (Claude).",
       "intro": "Torțele ard în jurul Groapei, iar orcii de pe margine bat cu pumnii în pari. Câte valuri înfrunți?",
+      "intro_en": "Torches burn around the Pit, and the orcs along its rim pound their fists against the stakes. How many waves will you face?",
       "aliati": "Cine intră cu tine? Cel mult {max}.",
-      "singur": "Încă nu intră nimeni cu mine. Poate dacă îi întreb pe cei care au încredere în mine..."
+      "aliati_en": "Who goes in with you? No more than {max}.",
+      "singur": "Încă nu intră nimeni cu mine. Poate dacă îi întreb pe cei care au încredere în mine...",
+      "singur_en": "No one is coming in with me yet. Maybe if I ask the ones who trust me..."
     },
     "inel": {
       "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): prima victorie în Groapă, oricare nivel, aduce verigheta înapoi.",
@@ -382,11 +408,13 @@
     "jucatori": [
       {
         "id": "paznic_orc_1",
-        "nume": "Paznic orc"
+        "nume": "Paznic orc",
+        "nume_en": "Orc Guard"
       },
       {
         "id": "paznic_orc_2",
-        "nume": "Al doilea paznic"
+        "nume": "Al doilea paznic",
+        "nume_en": "Second Guard"
       }
     ],
     "mize": [
@@ -430,12 +458,21 @@
     },
     "replici": {
       "oferta": "Ce vrei, pui de om? Știi să minți la zaruri? Pune banii pe masă și vedem.",
+      "oferta_en": "What do you want, human whelp? Think you can lie at dice? Put your money on the table and we’ll see.",
       "refuz": "Ajunge! Azi ne-ai luat destul. Cară-te până nu ne supărăm de-a binelea.",
+      "refuz_en": "Enough! You’ve taken plenty from us today. Get lost before we really get angry.",
       "faraBani": "Fără bani nu stai la masa noastră. Hai, valea!",
+      "faraBani_en": "No money, no seat at our table. Go on, off with you!",
       "licitatie": [
         "{licitatie}.",
         "Zic {licitatie}.",
         "{licitatie}. Hai, mai sus, dacă ai curaj.",
+        "Hrr... {licitatie}."
+      ],
+      "licitatie_en": [
+        null,
+        "I say {licitatie}.",
+        "{licitatie}. Come on, higher, if you dare.",
         "Hrr... {licitatie}."
       ],
       "mincinos": [
@@ -443,16 +480,31 @@
         "Mincinosule!",
         "Nu te cred. Arată!"
       ],
+      "mincinos_en": [
+        "You’re lying! Lift the cup!",
+        "Liar!",
+        "I don’t believe you. Show me!"
+      ],
       "castigaRunda": [
         "Ha! Știam eu.",
         "Mai ai multe de învățat."
+      ],
+      "castigaRunda_en": [
+        "Ha! I knew it.",
+        "You’ve still got a lot to learn."
       ],
       "pierdeRunda": [
         "Grrr...",
         "Noroc chior."
       ],
+      "pierdeRunda_en": [
+        "Grrr...",
+        "Blind luck."
+      ],
       "valeCastiga": "Hrr... noroc chior. Ia-ți lucrul și cară-te.",
-      "valePierde": "Banii tăi sunt acum ai noștri. Mai vino, puiule de om!"
+      "valeCastiga_en": "Hrr... blind luck. Take your prize and get lost.",
+      "valePierde": "Banii tăi sunt acum ai noștri. Mai vino, puiule de om!",
+      "valePierde_en": "Your money is ours now. Come again, human whelp!"
     }
   },
   "incredere": {
@@ -475,34 +527,48 @@
     "_nota": "Pedepsele orcilor când Vale le stă în cale. „sansaAlegi” = șansa ca orcii să fie binevoitori și să-l lase să-și aleagă pedeapsa; altfel o aleg ei. Texte CIORNĂ (Claude), cifre TODO echilibru.",
     "sansaAlegi": 0.35,
     "textAlegi": "Azi sunt bun la inimă, pui de om. Alege-ți singur pedeapsa.",
+    "textAlegi_en": "I’m feeling kind today, human whelp. Pick your own punishment.",
     "tipuri": {
       "biciuire": {
         "alegere": "Biciul.",
+        "alegere_en": "The whip.",
         "text": "Te leagă de stâlpul din piață și te biciuiesc în fața satului.",
+        "text_en": "They tie you to the post in the market and whip you in front of the whole village.",
         "viata": 25,
         "viataMinima": 5,
         "minute": 60
       },
       "taxa": {
         "alegere": "Taxa mai mare.",
+        "alegere_en": "A higher tax.",
         "text": "Țâfnosul ăsta plătește de-acum mai mult. Taxa ta crește cu 10.",
+        "text_en": "This mouthy one pays more from now on. Your tax goes up by 10.",
         "cresteCu": 10
       },
       "obiect": {
         "alegere": "Le dau un lucru de-al meu.",
+        "alegere_en": "I’ll give them something of mine.",
         "textAlege": "Ce ne dai? Și să fie ceva bun.",
-        "textIau": "Ia uite ce avem aici... {obiect}. E al nostru acum."
+        "textAlege_en": "What’ll you give us? And make it something good.",
+        "textIau": "Ia uite ce avem aici... {obiect}. E al nostru acum.",
+        "textIau_en": "Well, look what we have here... {obiect}. Ours now."
       },
       "blanuri": {
         "alegere": "Le aduc blăni de lup.",
+        "alegere_en": "I’ll bring them wolf pelts.",
         "text": "Trei blăni de lup. În trei zile, la colector. Altfel taxa ta se dublează.",
+        "text_en": "Three wolf pelts. Within three days, to the collector. Or your tax doubles.",
         "obiect": "blana_lup",
         "cate": 3,
         "numePlural": "blăni de lup",
+        "numePlural_en": "wolf pelts",
         "zile": 3,
         "textColector": "Ai adus blănurile pe care ni le datorezi?",
+        "textColector_en": "Did you bring the pelts you owe us?",
         "textPredat": "Bun băiat. De data asta.",
-        "textRatat": "N-ai adus blănurile la timp. Orcii îți dublează taxa următoare."
+        "textPredat_en": "Good boy. This time.",
+        "textRatat": "N-ai adus blănurile la timp. Orcii îți dublează taxa următoare.",
+        "textRatat_en": "You didn’t bring the pelts in time. The orcs will double your next tax."
       }
     }
   },
@@ -528,55 +594,102 @@
     },
     "texte": {
       "oferta": "Alege-ți tabăra și cât pui. Atacatorii mută primii.",
-      "faraBani": "N-ai destule monede nici pentru cea mai mică miză."
+      "oferta_en": "Choose your side and your stake. The attackers move first.",
+      "faraBani": "N-ai destule monede nici pentru cea mai mică miză.",
+      "faraBani_en": "You don’t have enough coins for even the smallest stake."
     },
     "reguli": "Regele stă pe tronul din mijloc, cu cei 12 apărători ai lui în jur. Cei 24 de atacatori pornesc de pe margini și mută primii.\n\nToate piesele merg în linie dreaptă, oricât, ca tura la șah, fără să sară peste altele. Tronul și cele patru colțuri sunt doar ale regelui: prin tronul gol pot trece toți, dar numai regele se oprește pe el.\n\nO piesă e luată când o prinzi între două piese ale tale, pe aceeași linie. Colțurile și tronul gol țin loc de o piesă dușmană. Între două piese dușmane poți intra fără grijă. Regele ajută și el la capturi.\n\nRegele e prins doar din toate cele patru părți (din trei, lângă tron); pe margine nu poate fi prins. Apărătorii câștigă dacă regele ajunge într-un colț. Atacatorii câștigă dacă îl prind sau dacă îi închid pe toți apărătorii într-un inel. Cine nu mai poate muta pierde. Aceeași poziție a treia oară, sau o partidă de peste 300 de mutări, înseamnă remiză.",
+    "reguli_en": "The king sits on the throne in the center, with his 12 defenders around him. The 24 attackers start from the edges and move first.\n\nAll pieces move in a straight line, any number of squares, like the rook in chess, without jumping over other pieces. The throne and the four corners belong to the king alone: any piece may pass through the empty throne, but only the king may stop on it.\n\nA piece is captured when you trap it between two of your own, in a straight line. The corners and the empty throne count as one of your pieces. You can safely move in between two enemy pieces. The king helps with captures, too.\n\nThe king is captured only when he is surrounded on all four sides (on three, when he is next to the throne); on the edge of the board, he cannot be captured. The defenders win if the king reaches a corner. The attackers win if they capture him or if they close a ring around all the defenders. Whoever can no longer move loses. The same position a third time, or a game of more than 300 moves, is a draw.",
     "replici": {
       "_nota": "CIORNĂ (Claude). Ce spune bătrânul la masă (în balon) și după partidă (dupa).",
       "euIncep": [
         "Încep eu. Atacatorii mută primii.",
         "Eu asediez, tu aperi. Să vedem cât ține regele tău."
       ],
+      "euIncep_en": [
+        "I’ll begin. The attackers move first.",
+        "I besiege, you defend. Let’s see how long your king holds out."
+      ],
       "tuIncepi": [
         "Tu începi, băiete. Atacatorii mută primii.",
         "Tu asediezi, eu țin regele. Hai, mută."
+      ],
+      "tuIncepi_en": [
+        "You begin, lad. The attackers move first.",
+        "You besiege, I guard the king. Go on, move."
       ],
       "valeIa": [
         "Hm. Bine văzut.",
         "Mi-ai luat-o. Bravo.",
         "Așa, băiete. Așa."
       ],
+      "valeIa_en": [
+        "Hm. Well spotted.",
+        "You took one of mine. Well done.",
+        "That’s it, lad. That’s it."
+      ],
       "batranIa": [
         "Una mai puțin.",
         "Ai lăsat-o singură.",
         "Ha! Asta te-a costat."
       ],
+      "batranIa_en": [
+        "One down.",
+        "You left it on its own.",
+        "Ha! That cost you."
+      ],
       "castig": [
         "Ei, uite! M-ai bătut.",
         "Bine jucat. Foarte bine."
+      ],
+      "castig_en": [
+        "Well, look at that! You beat me.",
+        "Well played. Very well played."
       ],
       "pierdere": [
         "Asediul e o meserie, băiete.",
         "Răbdare. Asta îți lipsește."
       ],
+      "pierdere_en": [
+        "Siege is a craft, lad.",
+        "Patience. That’s what you lack."
+      ],
       "remiza": [
         "Nici tu, nici eu.",
         "Remiză. Mai bine decât nimic."
+      ],
+      "remiza_en": [
+        "Neither you nor I.",
+        "A draw. Better than nothing."
       ],
       "dupa": {
         "castig": [
           "Ia-ți monedele, le-ai meritat. Mai stai? Vreau revanșa.",
           "Bine jucat, băiete. Încă una, dacă ai curaj."
         ],
+        "castig_en": [
+          "Take your coins. You’ve earned them. Will you stay? I want my revenge.",
+          "Well played, lad. One more, if you dare."
+        ],
         "pierdere": [
           "Nu te supăra, băiete. Și eu am pierdut ani de zile până am înțeles jocul.",
           "Mai vino. Fiecare partidă pierdută te învață ceva."
         ],
+        "pierdere_en": [
+          "Don’t take it hard, lad. I lost for years myself before I understood the game.",
+          "Come back again. Every game you lose teaches you something."
+        ],
         "remiza": [
           "Remiză. Poate data viitoare unul dintre noi o să aibă mai mult noroc."
         ],
+        "remiza_en": [
+          "A draw. Maybe next time one of us will have better luck."
+        ],
         "castigUltim": [
           "Ia-ți monedele, le-ai meritat. Pentru azi ajunge; vino mâine să-mi iau revanșa."
+        ],
+        "castigUltim_en": [
+          "Take your coins. You’ve earned them. That’s enough for today; come back tomorrow so I can have my revenge."
         ]
       }
     }

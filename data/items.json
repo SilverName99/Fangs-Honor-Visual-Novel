@@ -3,11 +3,13 @@
   "obiecte": {
     "monede": {
       "nume": "Monede",
+      "nume_en": "Coins",
       "tip": "bani",
       "_nota": "Banii lui Vale (stare.bani), arătați în rucsac ca o singură căsuță care ocupă un loc (decis de autor); obiectul e doar pentru iconiță."
     },
     "paine": {
       "nume": "Pâine",
+      "nume_en": "Bread",
       "tip": "consumabil",
       "stiva": 5,
       "pret": 2,
@@ -20,6 +22,7 @@
     },
     "bere": {
       "nume": "Bere",
+      "nume_en": "Ale",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 3,
@@ -33,6 +36,7 @@
     },
     "apa": {
       "nume": "Sticlă cu apă",
+      "nume_en": "Bottle of Water",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 1,
@@ -45,6 +49,7 @@
     },
     "pansament": {
       "nume": "Pansament",
+      "nume_en": "Bandage",
       "tip": "consumabil",
       "stiva": 5,
       "pret": 3,
@@ -59,6 +64,7 @@
     },
     "potiune_viata": {
       "nume": "Poțiune de viață",
+      "nume_en": "Health Potion",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 15,
@@ -73,6 +79,7 @@
     },
     "leac_otrava": {
       "nume": "Leac de otravă",
+      "nume_en": "Antidote",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 12,
@@ -82,10 +89,12 @@
       "efecte": {},
       "sunet": "baut",
       "descriere": "Oprește otrava (de exemplu balele acide ale șobolanilor).",
+      "descriere_en": "Stops poison (such as the rats’ acid spittle).",
       "_nota": "Decis de autor: îl face Bătrâna Morwen (ierbăreasa), doar la schimb, din flori (2 piciorul-cocoșului + 1 păpădie); ea nu vinde nimic. Prețul (la vânzare, la negustori): TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
     },
     "potiune_vigoare": {
       "nume": "Poțiune de vigoare",
+      "nume_en": "Vigor Potion",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 12,
@@ -97,10 +106,12 @@
       },
       "sunet": "baut",
       "descriere": "Un ceai amar și verde, care alungă oboseala. Reface stamina (+50).",
+      "descriere_en": "A bitter green tea that drives off weariness. Restores stamina (+50).",
       "_nota": "CIORNĂ (Claude), cerută de autor: una dintre cele 3 poțiuni noi ale Bătrânei Morwen, din flori. Cifrele: TODO echilibru."
     },
     "potiune_piatra": {
       "nume": "Pielea de piatră",
+      "nume_en": "Stoneskin Potion",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 18,
@@ -112,10 +123,12 @@
       "efecte": {},
       "sunet": "baut",
       "descriere": "Un elixir cenușiu, greu ca plumbul. În luptă, pielea se întărește: +15 armură până la sfârșitul luptei.",
+      "descriere_en": "A gray elixir, heavy as lead. In battle, your skin hardens: +15 armor until the battle ends.",
       "_nota": "CIORNĂ (Claude), cerută de autor: poțiune nouă a Bătrânei Morwen, din flori; doar în luptă. Cifrele: TODO echilibru."
     },
     "potiune_furie": {
       "nume": "Poțiunea furiei",
+      "nume_en": "Fury Potion",
       "tip": "consumabil",
       "stiva": 3,
       "pret": 18,
@@ -127,16 +140,19 @@
       "efecte": {},
       "sunet": "baut",
       "descriere": "Un elixir roșu, care arde pe gât. În luptă, loviturile sunt mai grele: +3 la atac până la sfârșitul luptei.",
+      "descriere_en": "A red elixir that burns on the way down. In battle, your blows hit harder: +3 attack until the battle ends.",
       "_nota": "CIORNĂ (Claude), cerută de autor: poțiune nouă a Bătrânei Morwen, din flori; doar în luptă. Cifrele: TODO echilibru."
     },
     "carne": {
       "nume": "Carne",
+      "nume_en": "Meat",
       "tip": "material",
       "stiva": 5,
       "pret": 4
     },
     "carne_gatita": {
       "nume": "Carne friptă",
+      "nume_en": "Roast Meat",
       "tip": "consumabil",
       "stiva": 5,
       "pret": 8,
@@ -147,36 +163,43 @@
         }
       },
       "descriere": "Carne friptă, caldă și sățioasă. Ține de foame mult mai bine decât pâinea.",
+      "descriere_en": "Roast meat, warm and filling. It keeps hunger at bay far better than bread.",
       "_nota": "Decis de autor: la Agnes, 2 bucăți de carne crudă → 1 friptă; acasă, în bucătărie, 1 → 1, o dată pe zi. Cât sătură: TODO echilibru (ales de Claude)."
     },
     "piele": {
       "nume": "Piele de mistreț",
+      "nume_en": "Boar Hide",
       "tip": "material",
       "stiva": 3,
       "pret": 6
     },
     "blana_lup": {
       "nume": "Blană de lup",
+      "nume_en": "Wolf Pelt",
       "tip": "material",
       "stiva": 3,
       "pret": 8
     },
     "lemn": {
       "nume": "Lemn",
+      "nume_en": "Wood",
       "tip": "material",
       "stiva": 10,
       "pret": 1
     },
     "sageti": {
       "nume": "Săgeți",
+      "nume_en": "Arrows",
       "tip": "material",
       "stiva": 20,
       "pret": 1,
       "descriere": "Săgeți pentru arc. Fiecare săgeată trasă în luptă se pierde.",
+      "descriere_en": "Arrows for a bow. Every arrow shot in battle is lost.",
       "_nota": "Decis de autor: arcul are nevoie de săgeți; în luptă, fiecare atac cu arcul consumă una. Jarek le vinde la prețul de aici, Bram mai scump („preturi” la magazinul lui)."
     },
     "sabie": {
       "nume": "Sabie",
+      "nume_en": "Sword",
       "tip": "echipament",
       "slot": "arma_primara",
       "tipArma": "sabie",
@@ -189,6 +212,7 @@
     },
     "sabie_mare": {
       "nume": "Sabie mare",
+      "nume_en": "Greatsword",
       "tip": "echipament",
       "slot": "arma_primara",
       "douaMaini": true,
@@ -203,6 +227,7 @@
     },
     "topor_mare": {
       "nume": "Topor mare",
+      "nume_en": "Greataxe",
       "tip": "echipament",
       "slot": "arma_primara",
       "douaMaini": true,
@@ -217,6 +242,7 @@
     },
     "arc": {
       "nume": "Arc",
+      "nume_en": "Bow",
       "tip": "echipament",
       "slot": "arma_primara",
       "douaMaini": true,
@@ -229,10 +255,12 @@
       },
       "pret": 35,
       "_notaSloturi": "Decis de autor: arcul ocupă un singur loc în rucsac (dar tot ține ambele mâini).",
-      "descriere": "Trage de la distanță. Are nevoie de săgeți: fiecare atac consumă una."
+      "descriere": "Trage de la distanță. Are nevoie de săgeți: fiecare atac consumă una.",
+      "descriere_en": "Shoots from a distance. Needs arrows: each attack uses one."
     },
     "scut_lemn": {
       "nume": "Scut de lemn",
+      "nume_en": "Wooden Shield",
       "tip": "echipament",
       "slot": "arma_secundara",
       "scut": true,
@@ -242,6 +270,7 @@
     },
     "gluga": {
       "nume": "Glugă de piele",
+      "nume_en": "Leather Hood",
       "tip": "echipament",
       "slot": "cap",
       "armura": 5,
@@ -249,6 +278,7 @@
     },
     "vesta_piele": {
       "nume": "Vestă de piele",
+      "nume_en": "Leather Vest",
       "tip": "echipament",
       "slot": "armura",
       "armura": 10,
@@ -256,6 +286,7 @@
     },
     "jambiere_piele": {
       "nume": "Jambiere de piele",
+      "nume_en": "Leather Leggings",
       "tip": "echipament",
       "slot": "jambiere",
       "armura": 5,
@@ -263,6 +294,7 @@
     },
     "rucsac_panza": {
       "nume": "Rucsac de pânză",
+      "nume_en": "Canvas Backpack",
       "tip": "echipament",
       "slot": "rucsac",
       "capacitate": 8,
@@ -270,6 +302,7 @@
     },
     "rucsac_piele": {
       "nume": "Rucsac de piele",
+      "nume_en": "Leather Backpack",
       "tip": "echipament",
       "slot": "rucsac",
       "capacitate": 16,
@@ -277,13 +310,16 @@
     },
     "cheie_fierar": {
       "nume": "Cheia cufărului lui Bram",
+      "nume_en": "Key to Bram’s Chest",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Cheia cufărului din camera lui Bram, grea și rece, cu dinții tociți. Mi-a dat-o și n-a mai vrut-o înapoi.",
+      "descriere_en": "The key to the chest in Bram’s room, heavy and cold, its teeth worn smooth. He gave it to me and wouldn’t take it back.",
       "_nota": "Decis de autor: e cheia cufărului din camera lui Bram, nu a camerei; o dă misiunea „Cufărul”. În cufăr: săbiile celor căzuți (douăzeci și două; a lui Edwin lipsește, e la Miriam)."
     },
     "fier_bram": {
       "nume": "Fierul lui Bram",
+      "nume_en": "Bram’s Iron",
       "tip": "poveste",
       "pret": 40,
       "_nota": "Fierul confiscat de colector (misiunea lui Bram). Prețul face miza la zaruri: jumătate, 20 de monede.",
@@ -291,141 +327,176 @@
     },
     "sunatoare": {
       "nume": "Sunătoare",
+      "nume_en": "St. John’s Wort",
       "tip": "material",
       "stiva": 10,
       "pret": 2,
       "_nota": "Planta de leac pentru Elian (misiunea elian_ierburi).",
-      "descriere": "Flori galbene, mărunte. Fratele Elian face pansamente din ele, iar Bătrâna Morwen, poțiuni."
+      "descriere": "Flori galbene, mărunte. Fratele Elian face pansamente din ele, iar Bătrâna Morwen, poțiuni.",
+      "descriere_en": "Small yellow flowers. Brother Elian makes bandages from them, and Old Morwen, potions."
     },
     "papadie": {
       "nume": "Păpădie",
+      "nume_en": "Dandelion",
       "tip": "material",
       "stiva": 10,
       "pret": 1,
       "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "piciorul_cocosului": {
       "nume": "Piciorul-cocoșului",
+      "nume_en": "Buttercup",
       "tip": "material",
       "stiva": 10,
       "pret": 1,
       "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "musetel": {
       "nume": "Mușețel",
+      "nume_en": "Chamomile",
       "tip": "material",
       "stiva": 10,
       "pret": 1,
       "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "hartii_vechi": {
       "nume": "Hârtii vechi",
+      "nume_en": "Old Papers",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Niște hârtii vechi, găsite sub patul fostului chiriaș de la tavernă. Apasă pe ele ca să le citești.",
+      "descriere_en": "Some old papers, found under the bed of the tavern’s former lodger. Click to read them.",
       "_nota": "Misiunea lui Agnes „Camera de sus”. Ce scrie pe ele: TODO (decis de autor: de hotărât).",
       "citeste": "hartii_citite"
     },
     "orz": {
       "nume": "Orz",
+      "nume_en": "Barley",
       "tip": "material",
       "stiva": 10,
       "pret": 1,
       "descriere": "Orz de la moară.",
+      "descriere_en": "Barley from the mill.",
       "_nota": "Decis de autor: după misiunea berii lui Agnes, munca la moară dă mereu orz (înainte era obiect de poveste, doar pentru bere)."
     },
     "miere": {
       "nume": "Miere",
+      "nume_en": "Honey",
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
       "descriere": "Miere de la fermier, de la stupul cel bun.",
+      "descriere_en": "Honey from the farmer, from the good hive.",
       "_nota": "Misiunea lui Agnes „Berea”: obiect de poveste, fără loc în rucsac, se numără."
     },
     "luminita_noptii": {
       "nume": "Luminiță-nopții",
+      "nume_en": "Evening Primrose",
       "tip": "material",
       "stiva": 10,
       "pret": 2,
       "descriere": "Flori galbene care se deschid doar la apus. Elian zice că alină tusea; Bătrâna Morwen face poțiuni din ele.",
+      "descriere_en": "Yellow flowers that open only at sunset. Elian says they ease a cough; Old Morwen makes potions from them.",
       "_nota": "Misiunea lui Finn „Mama lui Finn” (ciornă de Claude: luminița-nopții e numele popular al unei plante adevărate, care înflorește seara)."
     },
     "cheie_contrabandist": {
       "nume": "Cheia cocioabei",
+      "nume_en": "Key to the Shack",
       "tip": "poveste",
       "pret": 0,
       "descriere": "O cheie veche de fier, de la Finn. Deschide cocioaba contrabandistului, de la Marginea satului.",
+      "descriere_en": "An old iron key, from Finn. It opens the smuggler’s shack at the Edge.",
       "_nota": "Decis de autor: o dă Finn după misiunea „Mama lui Finn”."
     },
     "ceara": {
       "nume": "Faguri de ceară",
+      "nume_en": "Beeswax Combs",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Faguri de ceară curată, de la stupii fermierului. Din ei se pot turna lumânări.",
+      "descriere_en": "Combs of clean wax from the farmer’s hives. Candles can be poured from them.",
       "_nota": "Misiunea lui Roderick „Lumânările” (ciornă de Claude)."
     },
     "lumanari": {
       "nume": "Lumânări",
+      "nume_en": "Candles",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Douăzeci și trei de lumânări galbene, turnate de Fratele Elian. Câte una pentru fiecare om căzut în lupta cu orcii.",
+      "descriere_en": "Twenty-three yellow candles, poured by Brother Elian. One for each man who fell in the battle with the orcs.",
       "_nota": "Misiunea lui Roderick „Lumânările” (ciornă de Claude)."
     },
     "paie": {
       "nume": "Snop de paie",
+      "nume_en": "Sheaf of Straw",
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
       "descriere": "Paie de grâu, legate în snop. Pentru manechinul de antrenament.",
+      "descriere_en": "Wheat straw, bound into a sheaf. For the training dummy.",
       "_nota": "Misiunea lui Roderick „Antrenamentul”: câte unul la fiecare muncă la arat, cât e misiunea (ales de Claude, ca orzul la bere)."
     },
     "franghie": {
       "nume": "Frânghie",
+      "nume_en": "Rope",
       "tip": "material",
       "stiva": 5,
       "pret": 4,
       "descriere": "O frânghie groasă de cânepă. Bună de legat orice.",
+      "descriere_en": "A thick hemp rope. Good for tying anything.",
       "_nota": "Pentru manechinul lui Roderick; o vinde negustorul din piață (preț ales de Claude, TODO echilibru)."
     },
     "coif_tata": {
       "nume": "Coiful lui Edwin",
+      "nume_en": "Edwin’s Helm",
       "tip": "echipament",
       "slot": "cap",
       "armura": 8,
       "pret": 0,
       "descriere": "Coiful de oțel al tatei, cu apărătoare pentru nas și creasta albastră, decolorată. Mama l-a curățat și l-a uns, ca pe ceva de care nu te desparți.",
+      "descriere_en": "Father’s steel helm, with a nose guard and a faded blue crest. Mother cleaned and oiled it, the way you care for something you will never part with.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "platosa_tata_crapata": {
       "nume": "Platoșa crăpată a lui Edwin",
+      "nume_en": "Edwin’s Cracked Breastplate",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Platoșa tatei, crăpată pe mijloc de o lovitură de topor, chiar prin rombul auriu. Așa nu se poate purta. Poate o poate repara Bram.",
+      "descriere_en": "Father’s breastplate, cracked down the middle by an axe blow, right through the golden diamond. It can’t be worn like this. Maybe Bram can mend it.",
       "_nota": "Decis de autor: lovitura din al doilea vis; Miriam i-o dă lui Vale crăpată (misiunea ei specială, „Echipamentul tatălui”), iar Bram o repară în misiunea „Platoșa tatălui”; după reparație devine „platosa_tata”, pe care Bram i-o pune lui Vale pe umeri."
     },
     "platosa_tata": {
       "nume": "Platoșa lui Edwin",
+      "nume_en": "Edwin’s Breastplate",
       "tip": "echipament",
       "slot": "armura",
       "armura": 15,
       "pret": 0,
       "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Bram a închis crăpătura atât de bine, că nu se mai vede unde a fost lovită.",
+      "descriere_en": "Father’s breastplate, over a padded blue coat. Bram closed the crack so well that you can no longer see where it was struck.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită). Platoșa e întâi crăpată („platosa_tata_crapata”); asta e cea reparată de Bram."
     },
     "jambiere_tata": {
       "nume": "Jambierele lui Edwin",
+      "nume_en": "Edwin’s Leggings",
       "tip": "echipament",
       "slot": "jambiere",
       "armura": 8,
       "pret": 0,
       "descriere": "Jambierele de oțel ale tatei, cu apărători pentru genunchi.",
+      "descriere_en": "Father’s steel leggings, with knee guards.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "sabia_tata": {
       "nume": "Sabia lui Edwin",
+      "nume_en": "Edwin’s Sword",
       "tip": "echipament",
       "slot": "arma_primara",
       "tipArma": "sabie",
@@ -436,170 +507,215 @@
       },
       "pret": 0,
       "descriere": "Sabia tatei. Pe măciulie, un romb mic, auriu, ca pe steagul satului. Ciupită de luptă, dar lustruită de curând.",
+      "descriere_en": "Father’s sword. On the pommel, a small golden diamond, like the one on the village banner. Nicked in battle, but freshly polished.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
     },
     "capcane_orci": {
       "nume": "Capcanele orcilor",
+      "nume_en": "Orc Traps",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Capcane de fier din pădure, cu craniul Craniilor Sângerii bătut pe arc. Le-am desfăcut cu Kaia. Bram ar face ceva bun din fierul lor.",
+      "descriere_en": "Iron traps from the forest, with the skull of the Blood Skulls stamped on each spring. Kaia and I disarmed them. Bram would put their iron to good use.",
       "_nota": "Misiunea Kaiei „Capcanele” (decis de autor): duse la Bram, săgeți și încrederea lui; vândute colectorului, monede, dar Kaia află (−1)."
     },
     "alifie_ember": {
       "nume": "Alifia pentru Ember",
+      "nume_en": "Salve for Ember",
       "tip": "poveste",
       "pret": 0,
       "descriere": "O alifie verzuie de la Bătrâna Morwen, care miroase a mușețel și a fum. Pentru rana lui Ember.",
+      "descriere_en": "A greenish salve from Old Morwen, smelling of chamomile and smoke. For Ember’s wound.",
       "_nota": "Misiunea Kaiei „Rana lui Ember” (decis de autor)."
     },
     "papusa_lina": {
       "nume": "Păpușa Linei",
+      "nume_en": "Lina’s Doll",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Păpușa de cârpă a Linei, cu rochiță albastră și păr de lână. A făcut-o Marta, mama ei.",
+      "descriere_en": "Lina’s rag doll, with a little blue dress and woolen hair. Marta, her mother, made it.",
       "_nota": "Misiunea Miriamei „Păpușa Linei” (decis de autor). Un singur obiect, ruptă sau cusută: starea o ține misiunea."
     },
     "fier_vechi": {
       "nume": "Fier vechi",
+      "nume_en": "Scrap Iron",
       "tip": "material",
       "stiva": 5,
       "pret": 15,
       "descriere": "Bucăți de fier vechi: o potcoavă, un lanț rupt, o lamă tocită. Nu le-a numărat niciun orc.",
+      "descriere_en": "Pieces of scrap iron: a horseshoe, a broken chain, a dull blade. No orc has ever counted them.",
       "_nota": "Misiunea „Fierul plugului” (decis de autor): îl vinde Jarek, cu 15 monede."
     },
     "plugul_fermierului": {
       "nume": "Plugul fermierului",
+      "nume_en": "Farmer’s Plow",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Plugul fermierului, reparat de Bram: brăzdar nou, din fier vechi, și coarne noi, legate cu frânghie.",
+      "descriere_en": "The farmer’s plow, repaired by Bram: a new plowshare made of scrap iron, and new handles lashed on with rope.",
       "_nota": "Misiunea „Fierul plugului” (decis de autor)."
     },
     "cercuri_vechi": {
       "nume": "Cercuri vechi de butoi",
+      "nume_en": "Old Barrel Hoops",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Cercurile ruginite ale butoaielor lui Agnes, sărite de berea nouă. Bram le bate din nou: fierul vechi nu-l numără niciun orc.",
+      "descriere_en": "The rusty hoops from Agnes’s barrels, burst off by the new ale. Bram will forge them anew: no orc counts scrap iron.",
       "_nota": "Misiunea „Cercurile butoaielor” (decis de autor)."
     },
     "toiag_fara_cristal": {
       "nume": "Toiagul lui Bram",
+      "nume_en": "Bram’s Staff",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Oțel negru, bătut din douăzeci și două de săbii, cu dungi argintii încolăcite. În capul lui, un loc gol, în formă de romb. E pentru Fratele Elian.",
+      "descriere_en": "Black steel, forged from twenty-two swords, with silver streaks coiling around it. At its head, an empty, diamond-shaped hollow. It’s for Brother Elian.",
       "_nota": "Misiunea „Toiagul celor 23” (decis de autor): toiagul bătut de Bram, încă fără cristal."
     },
     "toiagul_celor_23": {
       "nume": "Toiagul celor 23",
+      "nume_en": "Staff of the Twenty-Three",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Oțelul a douăzeci și două de săbii și cristalul lui Elian, plutind în rombul din capul lui. L-am ascuns pe fundul cufărului de acasă, învelit într-o pânză veche, până în ziua cea mare. Atunci îl pot ridica o singură dată.",
+      "descriere_en": "The steel of twenty-two swords, with Elian’s crystal floating in the diamond at its head. I’ve hidden it at the bottom of the chest at home, wrapped in an old cloth, until the great day. On that day, I can raise it only once.",
       "_nota": "Decis de autor: doar în lupta finală (cu toate valurile ei), o singură dată și doar de Vale: golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații. E prima dată când Vale folosește magia luminii (indiciu pentru trezirea lui). Stă la obiectele de poveste, ca să nu se piardă sau să se vândă (în poveste, e în cufărul de acasă).",
       "luptaFinala": {
         "poza": "combat/vale_toiag.png",
         "pozaTata": "combat/vale_tata_toiag.png",
         "scut": "combat/scut_lumina.png",
-        "jurnal": "Vale ridică Toiagul celor 23. Cristalul se aprinde, dar lumina nu vine doar din el: vine și din mâinile lui Vale. Inamicii rămân orbiți, cu barele goale, iar fiecare aliat primește un scut de lumină."
+        "jurnal": "Vale ridică Toiagul celor 23. Cristalul se aprinde, dar lumina nu vine doar din el: vine și din mâinile lui Vale. Inamicii rămân orbiți, cu barele goale, iar fiecare aliat primește un scut de lumină.",
+        "jurnal_en": "Vale raises the Staff of the Twenty-Three. The crystal flares, but the light does not come from it alone: it comes from Vale’s hands, too. The enemies are left blinded, their stamina bars empty, and every ally receives a shield of light."
       }
     },
     "vrabia_linei": {
       "nume": "Vrabia Linei",
+      "nume_en": "Lina’s Sparrow",
       "tip": "poveste",
       "pret": 0,
       "descriere": "O vrabie cu o aripă ruptă, ghemuită în căciula mea. Lina zice că o cheamă Ciripel. Trebuie s-o duc la Fratele Elian.",
+      "descriere_en": "A sparrow with a broken wing, huddled in my cap. Lina says her name is Ciripel. I have to take her to Brother Elian.",
       "_nota": "Misiunea „Pasărea Linei” (decis de autor). Numele vrabiei e ciornă de Claude."
     },
     "inel_miriam": {
       "nume": "Verigheta mamei",
+      "nume_en": "Mother’s Wedding Ring",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Un inel subțire de aur, tocit pe margini. Tata i l-a pus mamei pe deget sub copacul mare.",
+      "descriere_en": "A thin gold ring, worn smooth at the edges. Father put it on Mother’s finger beneath the great tree.",
       "_nota": "Misiunea Miriamei „Inelul mamei” (decis de autor): colectorul o ia „pentru Groapă”; Vale o câștigă înapoi acolo. Iconița: items/inel_miriam.png."
     },
     "sfoara": {
       "nume": "Sfoară",
+      "nume_en": "Twine",
       "tip": "material",
       "stiva": 5,
       "pret": 2,
       "descriere": "Un ghem de sfoară de cânepă, subțire și tare.",
+      "descriere_en": "A ball of hemp twine, thin and strong.",
       "_nota": "Pentru capa Kaiei (misiunea Miriamei „Capa Kaiei”); o vinde negustorul din piață (preț ales de Claude, TODO echilibru)."
     },
     "capa_kaia": {
       "nume": "Capa Kaiei",
+      "nume_en": "Kaia’s Cloak",
       "tip": "poveste",
       "pret": 0,
       "descriere": "O capă subțire, cenușie, din blană de lup, strânsă în talie, cu glugă adâncă și o fâșie pentru față. Cusută de mama, pentru Kaia.",
+      "descriere_en": "A thin gray cloak made from wolf pelts, cinched at the waist, with a deep hood and a strip to cover the face. Sewn by Mother, for Kaia.",
       "_nota": "Misiunea Miriamei „Capa Kaiei” (decis de autor): deghizarea Kaiei pentru Groapă."
     },
     "faina": {
       "nume": "Făină",
+      "nume_en": "Flour",
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
       "descriere": "Făină albă, măcinată pe ascuns. Morarul le mai dă câte un pumn celor care cară saci la moară.",
+      "descriere_en": "White flour, ground in secret. The miller slips a handful now and then to those who haul sacks at the mill.",
       "_nota": "Misiunea Miriamei „Pâinea văduvelor” (decis de autor: făina vine de la moară). Obiect de poveste care se numără, ca mierea de la bere: 2 la fiecare muncă la moară cât e misiunea, până la 4 (ales de Claude, TODO echilibru)."
     },
     "steag_rupt": {
       "nume": "Steagul satului",
+      "nume_en": "Village Banner",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Steagul albastru al satului, adus de pe câmpul bătăliei. Rupt pe jumătate, înnegrit de ploi. Doar rombul auriu din mijloc strălucește ca nou.",
+      "descriere_en": "The blue village banner, brought back from the battlefield. Torn in half, blackened by the rains. Only the golden diamond at its center shines like new.",
       "_nota": "Misiunea „Steagul satului” (decis de autor): steagul luat de pe câmp, încă nereparat."
     },
     "steagul_satului": {
       "nume": "Steagul satului, cusut",
+      "nume_en": "Village Banner, Mended",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Steagul satului, spălat și cusut de mama. Cele două jumătăți sunt prinse la loc, iar unde lipsea pânza e un petic din rochia ei albastră. E pentru unchiul Roderick.",
+      "descriere_en": "The village banner, washed and mended by Mother. The two halves are sewn back together, and where cloth was missing, there is a patch from her blue dress. It’s for Uncle Roderick.",
       "_nota": "Misiunea „Steagul satului” (decis de autor): după ce îl coase Miriam, Vale i-l duce lui Roderick, care îl păstrează (în lupta finală luptă cu el în mână)."
     },
     "lapte": {
       "nume": "Lapte",
+      "nume_en": "Milk",
       "tip": "poveste",
       "numarabil": true,
       "pret": 0,
       "descriere": "Lapte proaspăt de la ferma de vaci. Pentru tortul Linei.",
+      "descriere_en": "Fresh milk from the cow farm. For Lina’s cake.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: laptele vine de la muls). Obiect de poveste care se numără, ca făina: 2 la o muncă la vaci cât e misiunea (ales de Claude)."
     },
     "panglica_lina": {
       "nume": "Panglică albastră",
+      "nume_en": "Blue Ribbon",
       "tip": "poveste",
       "pret": 0,
       "descriere": "O panglică de mătase albastră, de la negustor. Lina s-a uitat la ea o zi întreagă, în primăvară, fără s-o ceară.",
+      "descriere_en": "A blue silk ribbon from the merchant. Lina gazed at it for a whole day back in the spring, without ever asking for it.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: de la negustorul din piață). 5 monede (ales de Claude, TODO echilibru)."
     },
     "tort_lina": {
       "nume": "Tort cu miere",
+      "nume_en": "Honey Cake",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Tortul doamnei Agnes, cu miere și blat rumen. Pentru ziua Linei.",
+      "descriere_en": "Mistress Agnes’s cake, with honey and golden-brown layers. For Lina’s birthday.",
       "_nota": "Misiunea lui Finn „Ziua Linei” (decis de autor: îl face Agnes din 2 făină, 2 lapte și o miere)."
     },
     "arc_ned": {
       "nume": "Arcul lui Ned",
+      "nume_en": "Ned’s Bow",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Un arc de tisă, făcut de Kaia peste noapte, cu trei săgeți cu pene de gâscă. E pentru Ned, prietenul lui Finn.",
+      "descriere_en": "A yew bow, made by Kaia overnight, with three goose-feathered arrows. It’s for Ned, Finn’s friend.",
       "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor: arcul lui Ned, făcut de Kaia)."
     },
     "dinte_orc": {
       "nume": "Dinte de orc",
+      "nume_en": "Orc Tooth",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Un colț galben, lung cât degetul, luat de la un orc doborât în Groapă. Dovada pentru Wil.",
+      "descriere_en": "A yellow tusk, as long as a finger, taken from an orc felled in the Pit. Proof for Wil.",
       "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor: după o victorie în Groapă)."
     },
     "fluier": {
       "nume": "Fluierul lui Finn",
+      "nume_en": "Finn’s Whistle",
       "tip": "poveste",
       "pret": 0,
       "descriere": "Un fluier mic, cioplit de Finn dintr-un os de gâscă. În lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, iar Finn și prietenii lui trag cu arcul din umbră.",
+      "descriere_en": "A small whistle, carved by Finn from a goose bone. In the great battle, when too many come at once, I blow it, just once, and Finn and his friends shoot from the shadows.",
       "_nota": "Decis de autor: doar în lupta finală, doar Vale, o singură dată, pe valul ales: imaginea cu cei patru băieți și gândurile lui Vale, apoi toți inamicii valului sunt răniți cu 50% (ales de Claude: din viața întreagă, trecând de armură; TODO echilibru, „rana”). Se încearcă din F2, lupta de test, bifa „Ca în lupta finală”.",
       "luptaFinala": {
         "tip": "fluier",
         "dialog": "fluier_ambuscada",
         "rana": 0.5,
         "sunet": "fluier",
-        "jurnal": "Vale suflă în fluier. Din umbră, săgețile lui Finn, Tobin, Ned și Wil cad peste orci: fiecare pierde jumătate din viață."
+        "jurnal": "Vale suflă în fluier. Din umbră, săgețile lui Finn, Tobin, Ned și Wil cad peste orci: fiecare pierde jumătate din viață.",
+        "jurnal_en": "Vale blows the whistle. From the shadows, the arrows of Finn, Tobin, Ned and Wil rain down on the orcs: each of them loses half their health."
       }
     }
   }

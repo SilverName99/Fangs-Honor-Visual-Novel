@@ -4,31 +4,39 @@
     {
       "id": "acoperis",
       "titlu": "Acoperișul",
+      "titlu_en": "The Roof",
       "dela": "miriam",
       "descriere": "CIORNĂ: Plouă în casă, în colțul de lângă vatră. Mama vrea să peticim acoperișul până vin ploile mari. Îmi trebuie lemn bun din pădure.",
+      "descriere_en": "It rains inside the house, in the corner by the hearth. Mother wants us to patch the roof before the heavy rains come. I need good wood from the forest.",
       "pasi": [
         {
           "text": "Adun lemn din pădure",
+          "text_en": "I gather wood in the forest",
           "numara": {
             "obiect": "lemn",
             "n": 10
           },
           "sfat": "Lemnele se adună din pădure („Adună lemne”: o oră = 3, două ore = 6; de cel mult două ori pe zi).",
+          "sfat_en": "Wood is gathered in the forest (“Gather Wood”: one hour = 3, two hours = 6; no more than twice a day).",
           "indiciu": {
             "text": "N-am apucat încă să adun lemnele.",
+            "text_en": "I haven’t had time to gather the wood yet.",
             "nod": "acoperis_indiciu"
           }
         },
         {
           "text": "Îi duc lemnele mamei și repar acoperișul",
+          "text_en": "I take the wood to Mother and fix the roof",
           "gata": {
             "stare": {
               "acoperis": "reparat"
             }
           },
           "sfat": "Cu cele 10 lemne, vorbesc cu mama dimineața, în bucătărie, odihnit.",
+          "sfat_en": "With the 10 pieces of wood, I talk to Mother in the morning, in the kitchen, once I’m rested.",
           "predare": {
             "text": "Uite lemnele, mamă. Mă urc pe acoperiș.",
+            "text_en": "Here’s the wood, Mother. I’m going up on the roof.",
             "nod": "acoperis_predare",
             "conditii": {
               "areCate": {
@@ -49,6 +57,7 @@
           },
           "indiciu": {
             "text": "Despre acoperiș...",
+            "text_en": "About the roof...",
             "nod": [
               {
                 "nod": "acoperis_lipsa_lemn",
@@ -82,6 +91,7 @@
       "recompensa": {
         "_nota": "Decis de autor: încrederea Miriamei +1 și somnul de acasă mai odihnitor (factorRefacere la „Dormi” acasă, cu acoperișul reparat; +30% e ales de Claude, reglabil).",
         "text": "Mama are mai multă încredere în mine (+1), iar acasă dorm mai bine.",
+        "text_en": "Mother trusts me more (+1), and I sleep better at home.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -91,6 +101,7 @@
       "dialog": "miriam",
       "oferta": {
         "text": "Iar a plouat în casă",
+        "text_en": "It rained inside again",
         "nod": "acoperis",
         "conditii": {
           "stare": {
@@ -108,12 +119,15 @@
     {
       "id": "miriam_cina",
       "titlu": "Cina în familie",
+      "titlu_en": "A Family Supper",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": "CIORNĂ: Mama a găsit pe masă crenguța de la copacul de dincolo de gard. Vrea să-l cheme pe unchiul Roderick la cină. De șase luni n-a mai călcat pe la noi.",
+      "descriere_en": "On the table, Mother found the sprig from the tree beyond the fence. She wants to invite Uncle Roderick to supper. He hasn’t set foot in our house in six months.",
       "oferta": {
         "_nota": "Decis de autor: după „Locul unde a căzut tata”, dimineața, cât e Miriam în bucătărie.",
         "text": "Mamă... ai găsit crenguța?",
+        "text_en": "Mother... did you find the sprig?",
         "nod": "cina_o1",
         "conditii": {
           "misiune": {
@@ -129,13 +143,16 @@
       "pasi": [
         {
           "text": "Îl chem pe unchiul Roderick la cină",
+          "text_en": "I invite Uncle Roderick to supper",
           "la": "soldat",
           "gata": {
             "existaStare": "cina_invitat"
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Unchiule, mama te cheamă diseară la cină.",
+            "text_en": "Uncle, Mother is asking you to supper tonight.",
             "nod": [
               {
                 "nod": "cina_iv1",
@@ -159,12 +176,15 @@
         },
         {
           "text": "Seara, cina în familie",
+          "text_en": "In the evening, supper with the family",
           "gata": {
             "existaStare": "cina_facuta"
           },
           "sfat": "Seara (18–22), acasă, în bucătărie, cu mama.",
+          "sfat_en": "In the evening (18–22), at home, in the kitchen, with Mother.",
           "predare": {
             "text": "Mamă, vine unchiul?",
+            "text_en": "Mother, is Uncle coming?",
             "nod": "cina_s1",
             "conditii": {
               "loc": "casa/bucatarie",
@@ -176,6 +196,7 @@
           },
           "indiciu": {
             "text": "Despre cină...",
+            "text_en": "About supper...",
             "nod": "cina_ind"
           }
         }
@@ -183,6 +204,7 @@
       "recompensa": {
         "_nota": "Decis de autor: +1 la Miriam și +1 la Roderick.",
         "text": "Încrederea mamei +1 și a unchiului Roderick +1. Unchiul o să mă antreneze.",
+        "text_en": "Mother’s trust +1, and Uncle Roderick’s +1. Uncle is going to train me.",
         "efecte": {
           "relatie": {
             "miriam": 1,
@@ -194,6 +216,7 @@
     {
       "id": "miriam_papusa",
       "titlu": "Păpușa Linei",
+      "titlu_en": "Lina’s Doll",
       "dela": "sora_finn",
       "dialog": "sora_finn",
       "descriere": [
@@ -203,13 +226,19 @@
               "papusa": "refuzat"
             }
           },
-          "text": "CIORNĂ: Lina, sora mică a lui Finn, și-a rupt păpușa de cârpă cât se juca. Mi-a cerut ajutorul, dar i-am spus că n-am timp."
+          "text": "CIORNĂ: Lina, sora mică a lui Finn, și-a rupt păpușa de cârpă cât se juca. Mi-a cerut ajutorul, dar i-am spus că n-am timp.",
+          "text_en": "Lina, Finn’s little sister, tore her rag doll while she was playing. She asked me for help, but I told her I didn’t have time."
         },
         "CIORNĂ: Lina, sora mică a lui Finn, și-a rupt păpușa de cârpă cât se juca. I-a făcut-o mama ei, dar Marta n-are acum nici ac, nici ață: orcii au luat tot. I-am promis că o duc la mama mea, care coase cel mai frumos din sat."
+      ],
+      "descriere_en": [
+        null,
+        "Lina, Finn’s little sister, tore her rag doll while she was playing. Her mother made it for her, but Marta has neither needle nor thread now: the orcs took everything. I promised I’d take it to my mother, who sews more beautifully than anyone in the village."
       ],
       "oferta": {
         "_nota": "Decis de autor: misiunea a 3-a a Miriamei (+1 la ea), după „Mama lui Finn”, când Lina se joacă în fața casei (10–14).",
         "text": "Ce s-a întâmplat, Lina? De ce plângi?",
+        "text_en": "What’s wrong, Lina? Why are you crying?",
         "nod": "papusa_oferta",
         "conditii": {
           "misiune": {
@@ -221,13 +250,16 @@
       "pasi": [
         {
           "text": "Îi duc păpușa mamei",
+          "text_en": "I take the doll to Mother",
           "la": "miriam",
           "gata": {
             "existaStare": "papusa_la_miriam"
           },
           "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother sews at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, poți să cârpești păpușa asta?",
+            "text_en": "Mother, can you mend this doll?",
             "nod": "papusa_m1",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -239,18 +271,22 @@
           },
           "indiciu": {
             "text": "Despre păpușa Linei...",
+            "text_en": "About Lina’s doll...",
             "nod": "papusa_m_unde"
           }
         },
         {
           "text": "Iau păpușa de la mama, a doua zi",
+          "text_en": "I collect the doll from Mother the next day",
           "la": "miriam",
           "gata": {
             "existaStare": "papusa_cusuta"
           },
           "sfat": "Mama o coase mâine, la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother will mend it tomorrow, at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, ai cusut păpușa?",
+            "text_en": "Mother, have you mended the doll?",
             "nod": "papusa_m_gata",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -265,6 +301,7 @@
           },
           "indiciu": {
             "text": "Despre păpușa Linei...",
+            "text_en": "About Lina’s doll...",
             "nod": [
               {
                 "nod": "papusa_m_maine",
@@ -280,12 +317,15 @@
         },
         {
           "text": "Îi duc Linei păpușa cusută",
+          "text_en": "I take the mended doll to Lina",
           "gata": {
             "existaStare": "papusa_inapoi"
           },
           "sfat": "Lina e acasă dimineața și seara, în fața casei la amiază (10–14) și la Bătrâna Morwen după-amiaza (14–18).",
+          "sfat_en": "Lina is at home in the morning and in the evening, in front of the house at midday (10–14), and at Old Morwen’s in the afternoon (14–18).",
           "predare": {
             "text": "Uite-o, Lina. Ca nouă!",
+            "text_en": "Here she is, Lina. Good as new!",
             "nod": "papusa_l_gata",
             "conditii": {
               "areObiect": "papusa_lina"
@@ -295,6 +335,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1: s-a bucurat că a putut ajuta.",
+        "text_en": "Mother’s trust +1: she was glad she could help.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -306,11 +347,14 @@
     {
       "id": "bram_fier",
       "titlu": "Fierul lui Bram",
+      "titlu_en": "Bram’s Iron",
       "dela": "fierar",
       "dialog": "fierar",
       "descriere": "CIORNĂ: Orcul colector i-a găsit lui Bram fierul ascuns și l-a dus la poartă. Fără fier, Bram nu mai poate lucra. I-am promis că i-l aduc înapoi.",
+      "descriere_en": "The tax collector found the iron Bram had hidden and carried it off to the gate. Without iron, Bram can no longer work. I promised him I’d bring it back.",
       "oferta": {
         "text": "Am văzut ce s-a întâmplat cu fierul...",
+        "text_en": "I saw what happened to your iron...",
         "nod": "fier_oferta",
         "conditii": {
           "stare": {
@@ -321,25 +365,31 @@
       "pasi": [
         {
           "text": "Iau fierul înapoi de la colector, la poartă",
+          "text_en": "I get the iron back from the collector at the gate",
           "gata": {
             "areObiect": "fier_bram"
           },
           "sfat": "La poartă, colectorul: plătesc 60 de monede, îi bat pe paznici la zaruri (după-amiaza, 14–18) sau... mă bat cu el.",
+          "sfat_en": "The collector, at the gate: I can pay 60 coins, beat the guards at dice (in the afternoon, 14–18), or... fight him for it.",
           "indiciu": {
             "text": "Încă n-am luat fierul.",
+            "text_en": "I don’t have the iron yet.",
             "nod": "fier_indiciu"
           }
         },
         {
           "text": "Îi duc fierul lui Bram",
+          "text_en": "I take the iron to Bram",
           "gata": {
             "stare": {
               "magazin_bram": "deschis"
             }
           },
           "sfat": "Cu fierul, vorbesc cu Bram.",
+          "sfat_en": "With the iron, I talk to Bram.",
           "predare": {
             "text": "Ți-am adus fierul înapoi, Bram.",
+            "text_en": "I’ve brought your iron back, Bram.",
             "nod": "fier_predare",
             "conditii": {
               "areObiect": "fier_bram"
@@ -349,18 +399,22 @@
       ],
       "recompensa": {
         "_nota": "Decis de autor: bani, încredere +1 și magazinul lui Bram. Suma (15) e aleasă de Claude.",
-        "text": "15 monede, încrederea lui Bram +1 și magazinul lui deschis."
+        "text": "15 monede, încrederea lui Bram +1 și magazinul lui deschis.",
+        "text_en": "15 coins, Bram’s trust +1, and his shop open to me."
       }
     },
     {
       "id": "elian_ierburi",
       "titlu": "Ierburile lui Elian",
+      "titlu_en": "Elian’s Herbs",
       "dela": "mag",
       "dialog": "mag",
       "descriere": "CIORNĂ: Fratele Elian vrea să facă o alifie pentru răni, dar un preot care iese des din sat dă de bănuit. Îi caut eu patru fire de sunătoare în pădure: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au găurele mici. Se culege dimineața.",
+      "descriere_en": "Brother Elian wants to make a salve for wounds, but a priest who often leaves the village draws suspicion. So I’ll find him four stems of St. John’s wort in the forest: small yellow flowers with five petals, clustered at the top of the stem; held up to the light, the leaves show tiny holes. It’s picked in the morning.",
       "oferta": {
         "_nota": "Decis de autor: doar când Elian e afară (citește pe scările bisericii, 14–23), la o zi după prima discuție.",
         "text": "Ce citești, frate Elian?",
+        "text_en": "What are you reading, Brother Elian?",
         "nod": "ierburi_oferta",
         "conditii": {
           "loc": "biserica",
@@ -372,26 +426,32 @@
       "pasi": [
         {
           "text": "Culeg sunătoare din pădure",
+          "text_en": "I pick St. John’s wort in the forest",
           "numara": {
             "obiect": "sunatoare",
             "n": 4
           },
           "sfat": "Dimineața (5–10), în pădure: „Caută ierburi”. Culeg cel mult 4 plante odată, doar pe cele cu cinci petale în mănunchi.",
+          "sfat_en": "In the morning (5–10), in the forest: “Search for Herbs.” I can pick at most 4 plants at a time, and only the ones with clusters of five-petaled flowers.",
           "indiciu": {
             "text": "Cum arăta sunătoarea?",
+            "text_en": "What did St. John’s wort look like again?",
             "nod": "ierburi_indiciu"
           }
         },
         {
           "text": "Îi duc ierburile lui Elian",
+          "text_en": "I take the herbs to Elian",
           "gata": {
             "stare": {
               "ierburi_elian": "date"
             }
           },
           "sfat": "Cu cele 4 fire, vorbesc cu Elian.",
+          "sfat_en": "Once I have all 4 stems, I talk to Elian.",
           "predare": {
             "text": "Ți-am adus sunătoarea.",
+            "text_en": "I’ve brought you the St. John’s wort.",
             "nod": "ierburi_predare",
             "conditii": {
               "areCate": {
@@ -401,31 +461,38 @@
           },
           "indiciu": {
             "text": "Cum arăta sunătoarea?",
+            "text_en": "What did St. John’s wort look like again?",
             "nod": "ierburi_indiciu"
           }
         }
       ],
       "recompensa": {
-        "text": "Încrederea lui Elian +1 și două pansamente. Apoi, oricând: 3 fire de sunătoare = un pansament."
+        "text": "Încrederea lui Elian +1 și două pansamente. Apoi, oricând: 3 fire de sunătoare = un pansament.",
+        "text_en": "Elian’s trust +1 and two bandages. After that, any time: 3 stems of St. John’s wort = one bandage."
       }
     },
     {
       "id": "lupul_negru",
       "titlu": "Lupul negru",
+      "titlu_en": "The Black Wolf",
       "dela": "vanatoare",
       "dialog": "kaia_lup_negru",
       "descriere": "CIORNĂ: Kaia s-a întors! Lupii din pădure sunt mânați de un lup negru, mai mare decât oricare. Îl vânăm împreună.",
+      "descriere_en": "Kaia is back! The wolves in the forest are led by a black wolf, bigger than any of them. We’ll hunt him together.",
       "pasi": [
         {
           "text": "O întâlnesc pe Kaia la marginea pădurii (15–17) și vânăm lupul negru",
+          "text_en": "I meet Kaia at the edge of the forest (15–17) and we hunt the black wolf",
           "gata": {
             "stare": {
               "lup_negru": "ucis"
             }
           },
           "sfat": "După-amiaza, între 15 și 17, Kaia mă așteaptă la marginea pădurii.",
+          "sfat_en": "In the afternoon, between 15:00 and 17:00, Kaia will be waiting for me at the edge of the forest.",
           "predare": {
             "text": "Sunt gata. Hai după lupul negru.",
+            "text_en": "I’m ready. Let’s go after the black wolf.",
             "nod": "pregatit",
             "conditii": {
               "loc": "padure",
@@ -438,18 +505,22 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea Kaiei +1 și tabăra ei din pădure (locul de campare)."
+        "text": "Încrederea Kaiei +1 și tabăra ei din pădure (locul de campare).",
+        "text_en": "Kaia’s trust +1 and her camp in the forest (the Campsite)."
       }
     },
     {
       "id": "kaia_capcane",
       "titlu": "Capcanele",
+      "titlu_en": "The Traps",
       "dela": "vanatoare",
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Orcii au umplut pădurea cu capcane de fier, cu craniul lor pe ele. Prind tot ce mișcă, iar Ember a scăpat la un fir de păr. Kaia mi-a cerut să le desfacem împreună.",
+      "descriere_en": "The orcs have filled the forest with iron traps marked with their skull. They catch everything that moves, and Ember escaped one by a hair’s breadth. Kaia asked me to help her disarm them.",
       "oferta": {
         "_nota": "Decis de autor: după „Lupul negru”.",
         "text": "Ce s-a întâmplat, Kaia? Pari supărată.",
+        "text_en": "What happened, Kaia? You look upset.",
         "nod": "capcane_oferta",
         "conditii": {
           "misiune": {
@@ -460,14 +531,17 @@
       "pasi": [
         {
           "text": "Desfac capcanele orcilor împreună cu Kaia",
+          "text_en": "I disarm the orcs’ traps with Kaia",
           "gata": {
             "stare": {
               "kaia_capcane": "desfacute"
             }
           },
           "sfat": "Ziua, cât e Kaia la locul de campare (05–10 sau 14–18), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
+          "sfat_en": "During the day, while Kaia is at the Campsite (05–10 or 14–18), and when I’m well rested. The branch goes between the jaws, then I press down the spring, a little at a time: I’m allowed one slip.",
           "predare": {
             "text": "Sunt gata. Hai la capcane!",
+            "text_en": "I’m ready. On to the traps!",
             "nod": "capcane_pregatit",
             "conditii": {
               "moment": [
@@ -486,6 +560,7 @@
           },
           "indiciu": {
             "text": "Despre capcane...",
+            "text_en": "About the traps...",
             "nod": [
               {
                 "nod": "capcane_maine",
@@ -511,31 +586,38 @@
         },
         {
           "text": "Hotărăsc ce fac cu fierul capcanelor",
+          "text_en": "I decide what to do with the iron from the traps",
           "la": "fierar",
           "gata": {
             "existaStare": "capcane_duse"
           },
           "sfat": "Bram ar face ceva bun din fierul ăsta. Colectorul, la poartă, ar da bani pe el...",
+          "sfat_en": "Bram would make something good out of this iron. The collector at the gate would pay for it...",
           "predare": {
             "text": "Am niște capcane de fier pentru dumneata.",
+            "text_en": "I have some iron traps for you, Master Bram.",
             "nod": "capcane_predare"
           }
         }
       ],
       "recompensa": {
-        "text": "Încrederea Kaiei +1 pentru capcane și încă +1 dacă eliberez căprioara. Pe fierul capcanelor: săgeți de la Bram și încrederea lui, sau monede de la colector."
+        "text": "Încrederea Kaiei +1 pentru capcane și încă +1 dacă eliberez căprioara. Pe fierul capcanelor: săgeți de la Bram și încrederea lui, sau monede de la colector.",
+        "text_en": "Kaia’s trust +1 for the traps, and another +1 if I free the deer. For the iron from the traps: arrows from Bram and his trust, or coins from the collector."
       },
       "_nota": "Decis de autor: +1 Kaia după cele 5 capcane și încă +1 dacă eliberezi căprioara, fiecare urcă pe ecran pe loc (carnea = fără al doilea). Capcanele: la Bram = 10 săgeți și +1 Bram; la colector = 20 de monede (TODO echilibru), iar la următoarea discuție Kaia le-a găsit din nou armate: −1 Kaia, fără punctul lui Bram."
     },
     {
       "id": "kaia_ember",
       "titlu": "Rana lui Ember",
+      "titlu_en": "Ember’s Wound",
       "dela": "vanatoare",
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Un mistreț bătrân l-a sfâșiat pe Ember la coapsă. Kaia nu poate pleca de lângă el, iar rana trebuie unsă cu ceva bun, până nu se infectează. Bătrâna Morwen face cele mai bune alifii.",
+      "descriere_en": "An old boar gored Ember in the thigh. Kaia can’t leave his side, and the wound must be dressed with something good before it festers. Old Morwen makes the best salves.",
       "oferta": {
         "_nota": "Decis de autor: la cel puțin două zile după „Capcanele”, la locul de campare, unde Kaia stă lângă Ember rănit (un singur sprite, până la vindecare). Ales de Claude: și după eliberarea lui Finn (Bătrâna Morwen stă la Marginea satului).",
         "text": "Ce i s-a întâmplat lui Ember?",
+        "text_en": "What happened to Ember?",
         "nod": "ember_oferta",
         "conditii": {
           "stare": {
@@ -549,18 +631,22 @@
       "pasi": [
         {
           "text": "Merg la Bătrâna Morwen, la Marginea satului, după o alifie",
+          "text_en": "I go to Old Morwen at the Edge for a salve",
           "la": "ierbareasa",
           "gata": {
             "existaStare": "ember_alifie"
           },
           "sfat": "Coliba ei e la Marginea satului; Morwen e acolo ziua (06–23).",
+          "sfat_en": "Her hut is at the Edge; Morwen is there during the day (06–23).",
           "predare": {
             "text": "Bunico, am nevoie de o alifie pentru un tigru.",
+            "text_en": "Granny, I need a salve for a tiger.",
             "nod": "ember_cerere"
           }
         },
         {
           "text": "Culeg florile pentru alifie",
+          "text_en": "I pick the flowers for the salve",
           "la": "ierbareasa",
           "numara": [
             {
@@ -577,13 +663,16 @@
             }
           ],
           "sfat": "În pădure, la „Caută ierburi”, dimineața: două păpădii, două fire de piciorul-cocoșului și trei de mușețel.",
+          "sfat_en": "In the forest, at “Search for Herbs,” in the morning: two dandelions, two stems of buttercup and three of chamomile.",
           "indiciu": {
             "text": "Despre alifie...",
+            "text_en": "About the salve...",
             "nod": "ember_indiciu_flori"
           }
         },
         {
           "text": "Duc florile la Bătrâna Morwen",
+          "text_en": "I take the flowers to Old Morwen",
           "la": "ierbareasa",
           "gata": {
             "stare": {
@@ -591,8 +680,10 @@
             }
           },
           "sfat": "Cu florile în rucsac, la coliba ei, ziua.",
+          "sfat_en": "With the flowers in my backpack, I go to her hut during the day.",
           "predare": {
             "text": "Ți-am adus florile, bunico.",
+            "text_en": "I’ve brought you the flowers, Granny.",
             "nod": "ember_flori",
             "conditii": {
               "areCate": {
@@ -604,25 +695,30 @@
           },
           "indiciu": {
             "text": "Despre alifie...",
+            "text_en": "About the salve...",
             "nod": "ember_indiciu_flori"
           }
         },
         {
           "text": "Duc alifia la Kaia",
+          "text_en": "I take the salve to Kaia",
           "gata": {
             "stare": {
               "ember": "vindecat"
             }
           },
           "sfat": "Kaia nu pleacă de lângă Ember: e la locul de campare, zi și noapte.",
+          "sfat_en": "Kaia won’t leave Ember’s side: she’s at the Campsite, day and night.",
           "predare": {
             "text": "Am adus alifia de la Bătrâna Morwen.",
+            "text_en": "I’ve brought the salve from Old Morwen.",
             "nod": "ember_vindecare"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea Kaiei +1. Și povestea lui Ember.",
+        "text_en": "Kaia’s trust +1. And Ember’s story.",
         "efecte": {
           "relatie": {
             "vanatoare": 1
@@ -634,12 +730,15 @@
     {
       "id": "kaia_soim",
       "titlu": "Șoimul Străjerilor",
+      "titlu_en": "The Wardens’ Falcon",
       "dela": "vanatoare",
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Un șoim al Străjerilor i-a adus Kaiei o scrisoare de acasă: pădurile de departe au tăcut, iar animalele mor fără nicio rană și nu putrezesc. Ai ei o cheamă acasă. Kaia mi-a cerut două zile, să se gândească dacă pleacă sau rămâne.",
+      "descriere_en": "One of the Wardens’ falcons brought Kaia a letter from home: the distant forests have fallen silent, and animals are dying without a single wound. And they do not rot. Her people are calling her home. Kaia asked me for two days to think about whether to go or stay.",
       "oferta": {
         "_nota": "Decis de autor: după „Rana lui Ember” (K4 și K5 inversate: întâi șoimul, apoi wyvernii). Decis de autor: din ziua de după vindecare.",
         "text": "Pot să stau puțin cu tine la foc?",
+        "text_en": "Can I sit with you by the fire for a while?",
         "nod": "soim_oferta",
         "conditii": {
           "misiuneTerminata": {
@@ -650,6 +749,7 @@
       "pasi": [
         {
           "text": "Aștept hotărârea Kaiei",
+          "text_en": "I wait for Kaia’s decision",
           "gata": {
             "existaStare": "kaia_soim_hotarare"
           },
@@ -662,12 +762,18 @@
                   }
                 }
               },
-              "text": "Kaia mi-a cerut două zile și a plecat cu Ember în pădure, să se gândească."
+              "text": "Kaia mi-a cerut două zile și a plecat cu Ember în pădure, să se gândească.",
+              "text_en": "Kaia asked me for two days and went off into the forest with Ember to think it over."
             },
             "Au trecut cele două zile. Kaia ar trebui să fie iar la locul de campare."
           ],
+          "sfat_en": [
+            null,
+            "The two days have passed. Kaia should be back at the Campsite."
+          ],
           "predare": {
             "text": "Te-ai hotărât, Kaia?",
+            "text_en": "Have you decided, Kaia?",
             "nod": [
               {
                 "nod": "soim_r1",
@@ -693,6 +799,7 @@
       ],
       "recompensa": {
         "text": "Încrederea Kaiei +1, orice i-aș spune.",
+        "text_en": "Kaia’s trust +1, whatever I tell her.",
         "efecte": {
           "relatie": {
             "vanatoare": 1
@@ -704,12 +811,15 @@
     {
       "id": "kaia_wyverni",
       "titlu": "Convoiul",
+      "titlu_en": "The Convoy",
       "dela": "vanatoare",
       "dialog": "vanatoare",
       "descriere": "CIORNĂ: Kaia i-a auzit pe orci: la noapte trece pe drumul mare, spre capitală, un convoi cu niște cuști care, zic ei, o să întoarcă războiul. Kaia vrea să vadă cu ochii ei ce e în ele.",
+      "descriere_en": "Kaia overheard the orcs talking: tonight a convoy will travel the great road toward the capital, carrying cages that, they say, will turn the tide of the war. Kaia wants to see with her own eyes what’s inside them.",
       "oferta": {
         "_nota": "Decis de autor: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”).",
         "text": "Ești tăcută azi, Kaia. S-a întâmplat ceva?",
+        "text_en": "You’re quiet today, Kaia. Has something happened?",
         "nod": "wyv_oferta",
         "conditii": {
           "misiuneTerminata": {
@@ -720,6 +830,7 @@
       "pasi": [
         {
           "text": "Aflu ce e în cuștile orcilor",
+          "text_en": "I find out what’s in the orcs’ cages",
           "gata": {
             "existaStare": "kaia_wyverni_vazut"
           },
@@ -733,7 +844,8 @@
                   "cand": "dupa"
                 }
               },
-              "text": "Kaia s-a întors de la drumul mare. O găsesc la locul de campare."
+              "text": "Kaia s-a întors de la drumul mare. O găsesc la locul de campare.",
+              "text_en": "Kaia is back from the great road. I’ll find her at the Campsite."
             },
             {
               "conditii": {
@@ -749,7 +861,8 @@
                   }
                 }
               },
-              "text": "La noapte, după unsprezece, Kaia mă așteaptă la locul de campare. Până la trei; după aceea pleacă fără mine."
+              "text": "La noapte, după unsprezece, Kaia mă așteaptă la locul de campare. Până la trei; după aceea pleacă fără mine.",
+              "text_en": "Tonight, after eleven, Kaia will be waiting for me at the Campsite. Until three; after that, she’ll leave without me."
             },
             {
               "conditii": {
@@ -759,9 +872,16 @@
                   "pana": "05:00"
                 }
               },
-              "text": "Kaia s-a dus singură la drumul mare. Dimineață o întreb ce a văzut."
+              "text": "Kaia s-a dus singură la drumul mare. Dimineață o întreb ce a văzut.",
+              "text_en": "Kaia has gone to the great road alone. In the morning, I’ll ask her what she saw."
             },
             "La noapte, Kaia se duce singură la drumul mare. Mâine o întreb ce a văzut."
+          ],
+          "sfat_en": [
+            null,
+            null,
+            null,
+            "Tonight, Kaia is going to the great road alone. Tomorrow I’ll ask her what she saw."
           ],
           "predare": {
             "text": [
@@ -773,9 +893,14 @@
                     "pana": "03:00"
                   }
                 },
-                "text": "Sunt gata, Kaia. Mergem?"
+                "text": "Sunt gata, Kaia. Mergem?",
+                "text_en": "I’m ready, Kaia. Shall we go?"
               },
               "Ce-ai văzut la drumul mare, Kaia?"
+            ],
+            "text_en": [
+              null,
+              "What did you see out on the great road, Kaia?"
             ],
             "nod": [
               {
@@ -825,6 +950,7 @@
           },
           "indiciu": {
             "text": "Despre la noapte...",
+            "text_en": "About tonight...",
             "nod": [
               {
                 "nod": "wyv_indiciu_acc",
@@ -842,19 +968,23 @@
         }
       ],
       "recompensa": {
-        "text": "Încrederea Kaiei +1, dacă merg cu ea la drumul mare."
+        "text": "Încrederea Kaiei +1, dacă merg cu ea la drumul mare.",
+        "text_en": "Kaia’s trust +1, if I go with her to the great road."
       },
       "_nota": "Decis de autor: doar noaptea de după ce Kaia o propune. Acceptat: noaptea, când Vale ajunge la locul de campare, pornește direct (8 imagini), +1 la final. Refuzat: noaptea aceea Kaia lipsește, iar a doua zi îi povestește ce a văzut, fără +1. Decis de autor: Kaia îl așteaptă 23–03 (ca Finn la ladă); dacă Vale nu vine, pleacă singură, ca la refuz; povestea ei stă peste imaginea cu cuștile, cu ceața amintirilor."
     },
     {
       "id": "scandal",
       "titlu": "Scandalul din tavernă",
+      "titlu_en": "Trouble at the Tavern",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick n-a mai putut să stea deoparte.",
+      "descriere_en": "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick couldn’t stand by any longer.",
       "oferta": {
         "_nota": "Decis de autor: din ziua 3, în tavernă, cât e și Agnes acolo; textul arată că Roderick încă nu-l bagă în seamă pe Vale.",
         "text": "*Orcii fac multă dezordine și gălăgie...*",
+        "text_en": "*The orcs are making a mess and a racket...*",
         "nod": "scandal_start",
         "conditii": {
           "zi": {
@@ -870,24 +1000,29 @@
       "pasi": [
         {
           "text": "Scandalul din tavernă",
+          "text_en": "Trouble at the tavern",
           "gata": {
             "existaStare": "scandal_taverna"
           }
         }
       ],
       "recompensa": {
-        "text": "Dacă l-am ajutat pe Roderick, încrederea lui +1. Altfel, nimic (dar tot îl pot recruta mai târziu)."
+        "text": "Dacă l-am ajutat pe Roderick, încrederea lui +1. Altfel, nimic (dar tot îl pot recruta mai târziu).",
+        "text_en": "If I helped Roderick, his trust +1. Otherwise, nothing (but I can still recruit him later)."
       }
     },
     {
       "id": "agnes_camera",
       "titlu": "Camera de sus",
+      "titlu_en": "The Upstairs Room",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": "CIORNĂ: Camera de sus a tavernei a rămas cum a lăsat-o fostul chiriaș, un soldat căzut în lupta cu orcii. Agnes nu se îndură s-o golească. M-am oferit s-o fac eu, ca să o poată închiria din nou.",
+      "descriere_en": "The upstairs room at the tavern is still just as its former lodger left it. He was a soldier who fell fighting the orcs. Agnes can’t bring herself to clear it out. I offered to do it for her, so she can rent it out again.",
       "oferta": {
         "_nota": "Decis de autor: prima misiune a lui Agnes. Apare la câteva zile după prima discuție cu ea, cât e în tavernă.",
         "text": "Ce s-a întâmplat cu camera de sus?",
+        "text_en": "What happened to the upstairs room?",
         "nod": "camera_oferta",
         "conditii": {
           "loc": "taverna/parter",
@@ -900,17 +1035,21 @@
       "pasi": [
         {
           "text": "Golesc camera de sus",
+          "text_en": "I clear out the upstairs room",
           "gata": {
             "existaStare": "camera_golita"
           },
           "sfat": "Urc la etaj (cât e taverna deschisă, 9 dimineața – 2 noaptea) și strâng lucrurile fostului chiriaș.",
+          "sfat_en": "I go upstairs (while the tavern is open, 09:00 – 02:00) and gather up the former lodger’s things.",
           "indiciu": {
             "text": "Despre camera de sus...",
+            "text_en": "About the upstairs room...",
             "nod": "camera_indiciu"
           }
         },
         {
           "text": "Îi arăt lui Agnes ce am găsit",
+          "text_en": "I show Agnes what I found",
           "gata": {
             "stare": {
               "camera_taverna": "deschisa"
@@ -920,18 +1059,22 @@
       ],
       "recompensa": {
         "text": "Camera de sus se poate închiria.",
+        "text_en": "The upstairs room can be rented.",
         "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {
       "id": "roderick_hartii",
       "titlu": "Hârtiile soldatului",
+      "titlu_en": "The Soldier’s Papers",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: Agnes zice că unchiul Roderick l-a cunoscut pe soldatul din camera de sus. Poate el înțelege ce scrie pe hârtiile găsite acolo.",
+      "descriere_en": "Agnes says Uncle Roderick knew the soldier who stayed in the upstairs room. Maybe he can make out what’s written on the papers I found there.",
       "oferta": {
         "_nota": "Decis de autor: după ce Vale are hârtiile (după misiunea lui Agnes), Roderick are o misiune în care vorbesc despre ele; fără pauză; doar în tavernă (14–00), nu la biserică.",
         "text": "Unchiule, am găsit niște hârtii...",
+        "text_en": "Uncle, I found some papers...",
         "nod": "hartii_oferta",
         "conditii": {
           "areObiect": "hartii_vechi",
@@ -942,24 +1085,29 @@
       "pasi": [
         {
           "text": "Vorbesc cu unchiul Roderick despre hârtii",
+          "text_en": "I talk to Uncle Roderick about the papers",
           "gata": {
             "existaStare": "hartii_discutate"
           }
         }
       ],
       "recompensa": {
-        "text": "Acum știu ce caut: solzii de pe hârtii."
+        "text": "Acum știu ce caut: solzii de pe hârtii.",
+        "text_en": "Now I know what I’m looking for: the scales on the papers."
       }
     },
     {
       "id": "roderick_lumanari",
       "titlu": "Lumânările",
+      "titlu_en": "The Candles",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: În fiecare zi, unchiul Roderick aprinde la biserică câte o lumânare pentru fiecare om căzut în bătălia cu orcii. Douăzeci și trei. Orcii i-au luat toată ceara, iar el nu mai are ce să aprindă.",
+      "descriere_en": "Every day, Uncle Roderick lights a candle at the church for each man who fell in the battle with the orcs. Twenty-three. The orcs took all his wax, and now he has nothing left to light.",
       "oferta": {
         "_nota": "Decis de autor: după scandalul din tavernă, la biserică, cât se roagă Roderick (10–14); începutul e altfel dacă l-ai ajutat sau nu în scandal.",
         "text": "Unchiule... pot să stau puțin lângă tine?",
+        "text_en": "Uncle... can I stay here with you a while?",
         "nod": [
           {
             "nod": "lum_a1",
@@ -981,25 +1129,31 @@
       "pasi": [
         {
           "text": "Cer ceară de la fermier",
+          "text_en": "I ask the farmer for wax",
           "la": "fermier",
           "gata": {
             "existaStare": "lumanari_ceara"
           },
           "sfat": "Fermierul ține stupi. E la câmpuri dimineața (6–13).",
+          "sfat_en": "The farmer keeps beehives. He’s in the fields in the morning (6–13).",
           "predare": {
             "text": "Mai ai ceva ceară? E pentru lumânările lui Roderick.",
+            "text_en": "Do you have any wax left? It’s for Roderick’s candles.",
             "nod": "lum_f1"
           }
         },
         {
           "text": "Duc ceara la Fratele Elian",
+          "text_en": "I take the wax to Brother Elian",
           "la": "mag",
           "gata": {
             "existaStare": "lumanari_comandate"
           },
           "sfat": "Elian e la biserică: înăuntru până la 14, apoi pe scări, până seara.",
+          "sfat_en": "Elian is at the church: inside until 14:00, then on the steps outside until evening.",
           "predare": {
             "text": "Frate Elian, poți turna lumânări din ceara asta?",
+            "text_en": "Brother Elian, can you pour candles from this wax?",
             "nod": "lum_e1",
             "conditii": {
               "areObiect": "ceara",
@@ -1013,18 +1167,22 @@
           },
           "indiciu": {
             "text": "Frate Elian, am adus ceara.",
+            "text_en": "Brother Elian, I’ve brought the wax.",
             "nod": "lum_e_slujba"
           }
         },
         {
           "text": "Iau lumânările de la Elian, a doua zi",
+          "text_en": "I collect the candles from Elian the next day",
           "la": "mag",
           "gata": {
             "existaStare": "lumanari_gata"
           },
           "sfat": "Lumânările se răcesc peste noapte. Mâine sunt gata (nu în timpul slujbei de dimineață, 5–8).",
+          "sfat_en": "The candles cool overnight. They’ll be ready tomorrow (not during the morning service, 5–8).",
           "predare": {
             "text": "Sunt gata lumânările?",
+            "text_en": "Are the candles ready?",
             "nod": "lum_e6",
             "conditii": {
               "nu": {
@@ -1044,6 +1202,7 @@
           },
           "indiciu": {
             "text": "Sunt gata lumânările?",
+            "text_en": "Are the candles ready?",
             "nod": [
               {
                 "nod": "lum_e_slujba",
@@ -1062,12 +1221,15 @@
         },
         {
           "text": "Îi duc lumânările unchiului",
+          "text_en": "I take the candles to Uncle",
           "gata": {
             "existaStare": "lumanari_intalnire"
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Am adus lumânările, unchiule.",
+            "text_en": "I’ve brought the candles, Uncle.",
             "nod": [
               {
                 "nod": "lum_pb1",
@@ -1086,18 +1248,22 @@
         },
         {
           "text": "Seara, la biserică, aprind lumânările cu unchiul",
+          "text_en": "In the evening, at the church, I light the candles with Uncle",
           "gata": {
             "existaStare": "lumanari_aprinse"
           },
           "sfat": "Seara (18–23), merg la biserică: unchiul mă așteaptă acolo.",
+          "sfat_en": "In the evening (18–23), I go to the church: Uncle will be waiting for me there.",
           "indiciu": {
             "text": "Despre diseară...",
+            "text_en": "About tonight...",
             "nod": "lum_p_seara"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea unchiului Roderick +1. Și a acceptat să-mi arate unde a căzut tata.",
+        "text_en": "Uncle Roderick’s trust +1. And he’s agreed to show me where Father fell.",
         "efecte": {
           "relatie": {
             "soldat": 1
@@ -1108,12 +1274,15 @@
     {
       "id": "roderick_locul",
       "titlu": "Locul unde a căzut tata",
+      "titlu_en": "Where Father Fell",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: Unchiul Roderick a acceptat să-mi arate locul unde a căzut tata, dincolo de gardul putred de la Marginea satului. Nu pe la poartă: acolo nu ne-ar lăsa orcii nici să ne uităm.",
+      "descriere_en": "Uncle Roderick has agreed to show me the place where Father fell, beyond the rotten fence at the Edge. Not through the gate: the orcs there wouldn’t even let us look.",
       "oferta": {
         "_nota": "Decis de autor: după „Lumânările”, doar când Vale știe drumul spre Marginea satului (după eliberarea lui Finn); pe acolo îl scoate Roderick din sat.",
         "text": "Unchiule, știu drumul spre Marginea satului.",
+        "text_en": "Uncle, I know the way to the Edge.",
         "nod": "locul_o1",
         "conditii": {
           "misiune": {
@@ -1127,12 +1296,15 @@
       "pasi": [
         {
           "text": "Seara, mă întâlnesc cu unchiul la gardul putred de la Marginea satului",
+          "text_en": "In the evening, I meet Uncle by the rotten fence at the Edge",
           "gata": {
             "existaStare": "tata_locul"
           },
           "sfat": "Seara (19–23), la Ieșirea de la Marginea satului.",
+          "sfat_en": "In the evening (19–23), by the Old Fence at the Edge.",
           "predare": {
             "text": "Sunt gata, unchiule.",
+            "text_en": "I’m ready, Uncle.",
             "nod": "locul_s1",
             "conditii": {
               "loc": "iesirea"
@@ -1140,50 +1312,61 @@
           },
           "indiciu": {
             "text": "Despre diseară...",
+            "text_en": "About tonight...",
             "nod": "locul_ind"
           }
         }
       ],
       "recompensa": {
         "_nota": "Decis de autor: +1 încredere, dar se poate rata (⚠️): dacă Vale îl învinuiește pe Roderick, nu primește punctul (efectul stă la alegere, nu aici).",
-        "text": "Am văzut locul unde a căzut tata. Dacă nu l-am judecat pe unchiul, încrederea lui +1."
+        "text": "Am văzut locul unde a căzut tata. Dacă nu l-am judecat pe unchiul, încrederea lui +1.",
+        "text_en": "I’ve seen the place where Father fell. If I didn’t blame Uncle, his trust +1."
       }
     },
     {
       "id": "roderick_antrenament",
       "titlu": "Antrenamentul",
+      "titlu_en": "Training",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": "CIORNĂ: La cină, mama l-a convins pe unchiul Roderick să mă antreneze. Mai întâi facem un manechin de lovit, la locul lui ferit de la Marginea satului.",
+      "descriere_en": "At supper, Mother talked Uncle Roderick into training me. First, we’ll build a dummy to strike at, in his secluded corner of the Edge.",
       "_nota": "Decis de autor: pornește la sfârșitul cinei (fără ofertă); Roderick e la locul de antrenament 07–10 cât e misiunea; o dată pe zi, 3 zile, mini-jocul lemnelor peste imaginea pregătirii, cu imaginea loviturii la fiecare lovitură reușită. Decis de autor: fără o sabie de o mână la el (în rucsac sau echipată), Vale nu se poate antrena. Cerut de autor: cu materialele strânse, Roderick le vede întâi și îl cheamă pe Vale dimineața, 7–10, la locul de la Marginea.",
       "pasi": [
         {
           "text": "Adun ce trebuie pentru manechin",
+          "text_en": "I gather what I need for the dummy",
           "numara": [
             {
               "obiect": "lemn",
               "n": 6,
-              "nume": "lemne"
+              "nume": "lemne",
+              "nume_en": "wood"
             },
             {
               "obiect": "paie",
               "n": 3,
-              "nume": "paie"
+              "nume": "paie",
+              "nume_en": "straw"
             },
             {
               "obiect": "franghie",
               "n": 1,
-              "nume": "frânghie"
+              "nume": "frânghie",
+              "nume_en": "rope"
             }
           ],
           "sfat": "Lemnele, din pădure. Paiele, de la câmpul de grâu (un snop la fiecare arat). Frânghia, de la negustorul din piață.",
+          "sfat_en": "Wood from the forest. Straw from the wheat field (one sheaf each time I plow). Rope from the merchant at the market.",
           "indiciu": {
             "text": "Despre manechin...",
+            "text_en": "About the dummy...",
             "nod": "antr_ind"
           }
         },
         {
           "text": "Îi arăt unchiului ce am adunat",
+          "text_en": "I show Uncle what I’ve gathered",
           "_nota": "Cerut de autor: cu materialele strânse, Roderick le vede și îi spune lui Vale să vină cu ele dimineața (7–10) la locul de la Marginea. Dacă Vale îl găsește chiar acolo, la ora aceea, se apucă direct de construit.",
           "gata": {
             "stare": {
@@ -1191,8 +1374,10 @@
             }
           },
           "sfat": "Unchiul e dimineața (7–10) la locul de antrenament de la Marginea satului, între 10 și 14 la biserică, apoi la tavernă până la miezul nopții.",
+          "sfat_en": "Uncle is at the Training Ground at the Edge in the morning (7–10), at the church between 10:00 and 14:00, then at the tavern until midnight.",
           "predare": {
             "text": "Unchiule, am adunat tot ce trebuie pentru manechin!",
+            "text_en": "Uncle, I’ve gathered everything we need for the dummy!",
             "nod": [
               {
                 "nod": "antr_c1",
@@ -1214,19 +1399,23 @@
           },
           "indiciu": {
             "text": "Despre manechin...",
+            "text_en": "About the dummy...",
             "nod": "antr_ind"
           }
         },
         {
           "text": "Construiesc manechinul cu unchiul",
+          "text_en": "I build the dummy with Uncle",
           "gata": {
             "stare": {
               "manechin": "construit"
             }
           },
           "sfat": "Unchiul mă așteaptă dimineața (7–10) la locul de antrenament de la Marginea satului.",
+          "sfat_en": "Uncle will be waiting for me in the morning (7–10) at the Training Ground at the Edge.",
           "predare": {
             "text": "Am adus tot ce trebuie pentru manechin!",
+            "text_en": "I’ve brought everything we need for the dummy!",
             "nod": "antr_c1",
             "conditii": {
               "loc": "antrenament",
@@ -1239,6 +1428,7 @@
           },
           "indiciu": {
             "text": "Despre manechin...",
+            "text_en": "About the dummy...",
             "nod": [
               {
                 "nod": "antr_ind_loc",
@@ -1258,13 +1448,16 @@
         },
         {
           "text": "Mă antrenez cu unchiul, câte o dată pe zi",
+          "text_en": "I train with Uncle, once a day",
           "numara": {
             "contor": "antrenamente_roderick",
             "n": 3
           },
           "sfat": "Dimineața (7–10), la locul de antrenament, cu o sabie de o mână la mine (în rucsac sau în mână; Bram vinde). Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
+          "sfat_en": "In the morning (7–10), at the Training Ground, with a one-handed sword on me (in my backpack or in hand; Bram sells them). Training lasts 2 hours and takes 20 stamina; the day counts if I hit the dummy at least two out of three times.",
           "predare": {
             "text": "Să ne antrenăm, unchiule!",
+            "text_en": "Let’s train, Uncle!",
             "nod": "antr_s1",
             "conditii": {
               "loc": "antrenament",
@@ -1284,6 +1477,7 @@
           },
           "indiciu": {
             "text": "Despre antrenament...",
+            "text_en": "About training...",
             "nod": [
               {
                 "nod": "antr_azi",
@@ -1312,6 +1506,7 @@
       "recompensa": {
         "_nota": "+2 la atac: „bonusVale” în config.json (ales de Claude, TODO echilibru).",
         "text": "Încrederea unchiului Roderick +1. Lovesc mai bine: +2 la atac, pentru totdeauna.",
+        "text_en": "Uncle Roderick’s trust +1. I strike better: +2 to attack, for good.",
         "efecte": {
           "relatie": {
             "soldat": 1
@@ -1322,6 +1517,7 @@
     {
       "id": "roderick_sticla",
       "titlu": "Ultima sticlă",
+      "titlu_en": "The Last Bottle",
       "dela": "soldat",
       "dialog": "soldat",
       "descriere": [
@@ -1331,13 +1527,19 @@
               "sticla": "refuzat"
             }
           },
-          "text": "CIORNĂ: Unchiul Roderick vrea să se lase de băut, iar Fratele Elian mi-a cerut să stau cu el o noapte, cât e cea mai grea. Le-am spus că n-am timp. Unchiul s-a întors spre altar și n-a mai zis nimic."
+          "text": "CIORNĂ: Unchiul Roderick vrea să se lase de băut, iar Fratele Elian mi-a cerut să stau cu el o noapte, cât e cea mai grea. Le-am spus că n-am timp. Unchiul s-a întors spre altar și n-a mai zis nimic.",
+          "text_en": "Uncle Roderick wants to give up drinking, and Brother Elian asked me to sit with him through one night, the hardest one. I told them I had no time. Uncle turned back to the altar and said nothing more."
         },
         "CIORNĂ: De când poartă steagul satului, unchiul Roderick vrea să se lase de băut. Fratele Elian zice că primele nopți sunt cele mai grele: tremură, arde de febră, vede lucruri care nu sunt acolo. Unchiul nu vrea să-l vadă nimeni așa. Doar eu."
+      ],
+      "descriere_en": [
+        null,
+        "Now that he carries the village banner, Uncle Roderick wants to give up drinking. Brother Elian says the first nights are the hardest: he’ll shake, burn with fever, see things that aren’t there. Uncle doesn’t want anyone to see him like that. Only me."
       ],
       "oferta": {
         "_nota": "Decis de autor: misiunea lui Roderick și a lui Elian, care se poate rata (refuzul = −1 la amândoi). Ales de Claude: după „Steagul satului”, la biserică, cât sunt amândoi înăuntru (10–14).",
         "text": "Unchiule... Frate Elian... s-a întâmplat ceva?",
+        "text_en": "Uncle... Brother Elian... has something happened?",
         "nod": "sticla_o1",
         "conditii": {
           "misiune": {
@@ -1357,26 +1559,32 @@
       "pasi": [
         {
           "text": "Culeg trei fire de mușețel",
+          "text_en": "I pick three stems of chamomile",
           "la": "mag",
           "numara": {
             "obiect": "musetel",
             "n": 3
           },
           "sfat": "În pădure, la „Caută ierburi”, dimineața (5–10).",
+          "sfat_en": "In the forest, at “Search for Herbs,” in the morning (5–10).",
           "indiciu": {
             "text": "Ce fel de mușețel, Frate Elian?",
+            "text_en": "What does chamomile look like, Brother Elian?",
             "nod": "sticla_e_flori"
           }
         },
         {
           "text": "Îi duc mușețelul Fratelui Elian",
+          "text_en": "I take the chamomile to Brother Elian",
           "la": "mag",
           "gata": {
             "existaStare": "sticla_ceai"
           },
           "sfat": "Elian e la biserică: înăuntru până la 14, apoi pe scări, până seara.",
+          "sfat_en": "Elian is at the church: inside until 14:00, then on the steps outside until evening.",
           "predare": {
             "text": "Am adus mușețelul, Frate Elian.",
+            "text_en": "I’ve brought the chamomile, Brother Elian.",
             "nod": "sticla_e1",
             "conditii": {
               "areCate": {
@@ -1387,18 +1595,22 @@
         },
         {
           "text": "Noaptea, la biserică, stau cu unchiul",
+          "text_en": "At night, at the church, I sit up with Uncle",
           "gata": {
             "existaStare": "sticla_gata"
           },
           "sfat": "Noaptea (22–03), la biserică. Elian îl aduce pe unchiul de la tavernă.",
+          "sfat_en": "At night (22–03), at the church. Elian will fetch Uncle from the tavern.",
           "indiciu": {
             "text": "Despre la noapte...",
+            "text_en": "About tonight...",
             "nod": "sticla_ind_noapte"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea unchiului Roderick +1 și a Fratelui Elian +1. Unchiul și-a vărsat sticla în noroi.",
+        "text_en": "Uncle Roderick’s trust +1, and Brother Elian’s +1. Uncle poured his bottle out into the mud.",
         "efecte": {
           "relatie": {
             "soldat": 1,
@@ -1413,12 +1625,15 @@
     {
       "id": "agnes_pivnita",
       "titlu": "Pivnița",
+      "titlu_en": "The Cellar",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": "CIORNĂ: Agnes a auzit zgomote ciudate în pivniță, chiar la butoaiele cu berea nouă. A deschis ușa, ceva mare s-a mișcat în întuneric, iar ea a trântit ușa la loc. Am promis că cobor eu să văd ce e acolo.",
+      "descriere_en": "Agnes heard strange noises in the cellar, right by the barrels of new ale. She opened the door, something big moved in the dark, and she slammed the door shut again. I promised I’d go down myself and see what it is.",
       "oferta": {
         "_nota": "Decis de autor: a treia misiune a lui Agnes, după „Berea”: șobolanii au venit la butoaiele cu berea nouă. Decis de autor: doar 09–11, cât taverna e încă goală.",
         "text": "Doamna Agnes, sunteți albă ca varul...",
+        "text_en": "Mistress Agnes, you’re as white as a sheet...",
         "nod": "pivnita_oferta",
         "conditii": {
           "misiune": {
@@ -1435,30 +1650,37 @@
       "pasi": [
         {
           "text": "Cobor în pivniță și văd ce e acolo",
+          "text_en": "I go down into the cellar and see what’s there",
           "gata": {
             "existaStare": "sobolani_ucisi"
           },
           "sfat": "Ușa pivniței e în sala tavernei. Să iau o armă bună și câteva poțiuni de viață.",
+          "sfat_en": "The cellar door is in the taproom. I should take a good weapon and a few health potions.",
           "indiciu": {
             "text": "Despre pivniță...",
+            "text_en": "About the cellar...",
             "nod": "pivnita_indiciu"
           }
         }
       ],
       "recompensa": {
         "text": "Pivnița rămâne deschisă.",
+        "text_en": "The cellar stays open.",
         "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {
       "id": "bram_cercuri",
       "titlu": "Cercurile butoaielor",
+      "titlu_en": "The Barrel Hoops",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": "CIORNĂ: Berea nouă a lui Agnes a fermentat prea tare și a sărit cercurile ruginite ale butoaielor din pivniță. Agnes nu vrea să-l roage pe Bram, ca să nu aibă el necazuri cu orcii. Așa că îl rog eu. Din partea mea, nu dintr-a ei.",
+      "descriere_en": "Agnes’s new ale fermented too hard and burst the rusty hoops on the barrels in her cellar. She doesn’t want to ask Bram, for fear of getting him into trouble with the orcs. So I’m asking him instead. From me, not from her.",
       "oferta": {
         "_nota": "Decis de autor: după „Pivnița” (Agnes). Ales de Claude: și după ce i se deschide magazinul lui Bram („Fierul lui Bram”).",
         "text": "Doamna Agnes, de ce miroase toată taverna a bere?",
+        "text_en": "Mistress Agnes, why does the whole tavern smell of ale?",
         "nod": "cer_o1",
         "conditii": {
           "misiune": {
@@ -1470,36 +1692,45 @@
       "pasi": [
         {
           "text": "Îl rog pe Bram să facă cercuri noi",
+          "text_en": "I ask Bram to make new hoops",
           "la": "fierar",
           "gata": {
             "existaStare": "cercuri_bram"
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
             "text": "Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.",
+            "text_en": "Master Bram, Agnes needs new hoops for her barrels.",
             "nod": "cer_b1"
           }
         },
         {
           "text": "Iau cercurile vechi din pivnița lui Agnes",
+          "text_en": "I fetch the old hoops from Agnes’s cellar",
           "gata": {
             "existaStare": "cercuri_luate"
           },
           "sfat": "Pivnița e sub sala tavernei (09–02); cercurile stau lângă butoaie.",
+          "sfat_en": "The cellar is under the taproom (09–02); the hoops are by the barrels.",
           "indiciu": {
             "text": "Unde sunt cercurile vechi, doamna Agnes?",
+            "text_en": "Where are the old hoops, Mistress Agnes?",
             "nod": "cer_ind"
           }
         },
         {
           "text": "Duc cercurile vechi la Bram",
+          "text_en": "I take the old hoops to Bram",
           "la": "fierar",
           "gata": {
             "existaStare": "cercuri_seara"
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
             "text": "Uite cercurile vechi.",
+            "text_en": "Here are the old hoops.",
             "nod": "cer_predare",
             "conditii": {
               "areObiect": "cercuri_vechi"
@@ -1507,23 +1738,28 @@
           },
           "indiciu": {
             "text": "Despre cercuri...",
+            "text_en": "About the hoops...",
             "nod": "cer_b_ind"
           }
         },
         {
           "text": "Seara, în pivnița lui Agnes, cu Bram",
+          "text_en": "In the evening, in Agnes’s cellar, with Bram",
           "gata": {
             "existaStare": "cercuri_gata"
           },
           "sfat": "După ora 22 (cât e taverna deschisă, până la 2), cobor direct în pivnița lui Agnes, ferit de ochii din sală.",
+          "sfat_en": "After 22:00 (while the tavern is open, until 02:00), I go straight down to Agnes’s cellar, out of sight of the taproom.",
           "indiciu": {
             "text": "Despre diseară...",
+            "text_en": "About tonight...",
             "nod": "cer_seara"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -1535,6 +1771,7 @@
     {
       "id": "bram_cufar",
       "titlu": "Cufărul",
+      "titlu_en": "The Chest",
       "dela": "fierar",
       "dialog": "fierar",
       "descriere": [
@@ -1542,13 +1779,19 @@
           "conditii": {
             "existaStare": "cufar_vazut"
           },
-          "text": "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. În cufărul din camera lui, Bram ține săbiile celor căzuți primăvara trecută: douăzeci și două. Sabia tatei nu e printre ele. Bram nu le poate topi, nu le poate da orcilor și nici nu le mai poate ține acolo."
+          "text": "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. În cufărul din camera lui, Bram ține săbiile celor căzuți primăvara trecută: douăzeci și două. Sabia tatei nu e printre ele. Bram nu le poate topi, nu le poate da orcilor și nici nu le mai poate ține acolo.",
+          "text_en": "The tax collector saw the farmer’s new plow and threatened to turn Bram’s smithy upside down. In the chest in his room, Bram keeps the swords of those who fell last spring: twenty-two. Father’s sword isn’t among them. Bram can’t melt them down, he can’t give them to the orcs, and he can’t keep them there any longer."
         },
         "CIORNĂ: Colectorul a văzut plugul nou al fermierului și l-a amenințat pe Bram că-i întoarce fierăria pe dos. Bram mi-a dat cheia cufărului din camera lui și m-a rugat să mă uit înăuntru. El nu mai poate să-l deschidă."
+      ],
+      "descriere_en": [
+        null,
+        "The tax collector saw the farmer’s new plow and threatened to turn Bram’s smithy upside down. Bram gave me the key to the chest in his room and asked me to look inside. He can’t bring himself to open it anymore."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „Fierul plugului” (plugul reparat) și după misiunile lui Elian până la „Lumina din pădure”; Bram e îngândurat și pare supărat. Ales de Claude: doar la fierărie.",
         "text": "Ce vă frământă, domnule Bram?",
+        "text_en": "What’s troubling you, Master Bram?",
         "nod": "cuf_o1",
         "conditii": {
           "misiune": {
@@ -1581,29 +1824,36 @@
       "pasi": [
         {
           "text": "Deschid cufărul din camera lui Bram",
+          "text_en": "I open the chest in Bram’s room",
           "gata": {
             "existaStare": "cufar_vazut"
           },
           "sfat": "Camera lui Bram e sus: intru din magazin, cât lucrează el (06–12 și 14–22).",
+          "sfat_en": "Bram’s room is upstairs: I go up through the shop while he’s working (06–12 and 14–22).",
           "indiciu": {
             "text": "Despre cufăr...",
+            "text_en": "About the chest...",
             "nod": "cuf_ind"
           }
         },
         {
           "text": "Mă întorc la Bram",
+          "text_en": "I go back to Bram",
           "gata": {
             "existaStare": "cufar_spus"
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
             "text": "Am deschis cufărul, domnule Bram.",
+            "text_en": "I’ve opened the chest, Master Bram.",
             "nod": "cuf_p1"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -1615,6 +1865,7 @@
     {
       "id": "bram_platosa",
       "titlu": "Platoșa tatălui",
+      "titlu_en": "Father’s Breastplate",
       "dela": "fierar",
       "dialog": "fierar",
       "descriere": [
@@ -1622,13 +1873,19 @@
           "conditii": {
             "existaStare": "platosa_batuta"
           },
-          "text": "CIORNĂ: Am bătut platoșa tatei cu Bram, seara, cu ușa închisă. Crăpătura s-a închis de tot: nu se mai vede unde a fost lovită. Bram o ține peste noapte, să se răcească încet, și îi face curele noi."
+          "text": "CIORNĂ: Am bătut platoșa tatei cu Bram, seara, cu ușa închisă. Crăpătura s-a închis de tot: nu se mai vede unde a fost lovită. Bram o ține peste noapte, să se răcească încet, și îi face curele noi.",
+          "text_en": "Bram and I hammered Father’s breastplate in the evening, with the door shut. The crack has closed completely: you can no longer see where it was struck. Bram is keeping it overnight so it cools slowly, and he’s making new straps for it."
         },
         "CIORNĂ: Bram a bătut platoșa tatei cu mâna lui, acum mulți ani. O poate repara, dar îi trebuie fier vechi, călit, de la Jarek. Și vrea s-o batem împreună, seara, cu ușa închisă, ca să nu vadă orcii."
+      ],
+      "descriere_en": [
+        null,
+        "Bram forged Father’s breastplate with his own hands, many years ago. He can mend it, but he needs tempered scrap iron from Jarek. And he wants us to do the hammering together, in the evening, with the door shut, so the orcs won’t see."
       ],
       "oferta": {
         "_nota": "Decis de autor: după misiunea specială a Miriamei (Vale are platoșa crăpată). Ales de Claude: la fierărie, cât lucrează Bram.",
         "text": "Domnule Bram... ați putea repara platoșa tatei?",
+        "text_en": "Master Bram... could you mend my father’s breastplate?",
         "nod": "plat_o1",
         "conditii": {
           "areObiect": "platosa_tata_crapata",
@@ -1643,27 +1900,34 @@
       "pasi": [
         {
           "text": "Aduc 2 bucăți de fier vechi de la Jarek",
+          "text_en": "I fetch 2 pieces of scrap iron from Jarek",
           "numara": [
             {
               "obiect": "fier_vechi",
               "n": 2,
-              "nume": "fier vechi"
+              "nume": "fier vechi",
+              "nume_en": "scrap iron"
             }
           ],
           "sfat": "Jarek vinde fier vechi (15 monede bucata), în cocioaba lui de la Marginea satului: aștept pe scăunel, seara (18–02).",
+          "sfat_en": "Jarek sells scrap iron (15 coins apiece) in his shack at the Edge: I wait for him on the stool, in the evening (18–02).",
           "indiciu": {
             "text": "Despre platoșă...",
+            "text_en": "About the breastplate...",
             "nod": "plat_ind1"
           }
         },
         {
           "text": "Seara, bat platoșa cu Bram, în fierărie",
+          "text_en": "In the evening, I hammer the breastplate with Bram in the smithy",
           "gata": {
             "existaStare": "platosa_batuta"
           },
           "sfat": "Bram lucrează în fierărie seara (18–22).",
+          "sfat_en": "Bram works inside the smithy in the evening (18–22).",
           "predare": {
             "text": "Am adus fierul, domnule Bram.",
+            "text_en": "I’ve brought the iron, Master Bram.",
             "nod": "plat_f1",
             "conditii": {
               "loc": "fierar/interior",
@@ -1674,17 +1938,21 @@
           },
           "indiciu": {
             "text": "Despre platoșă...",
+            "text_en": "About the breastplate...",
             "nod": "plat_ind2"
           }
         },
         {
           "text": "Iau platoșa de la Bram, a doua zi",
+          "text_en": "I collect the breastplate from Bram the next day",
           "gata": {
             "existaStare": "platosa_gata"
           },
           "sfat": "Bram o ține peste noapte, să se răcească. A doua zi, la fierărie, cât lucrează el.",
+          "sfat_en": "Bram is keeping it overnight to let it cool. The next day, at the smithy, while he’s working.",
           "predare": {
             "text": "Domnule Bram, e gata platoșa?",
+            "text_en": "Master Bram, is the breastplate ready?",
             "nod": "plat_g1",
             "conditii": {
               "personajIn": {
@@ -1703,6 +1971,7 @@
           },
           "indiciu": {
             "text": "Despre platoșă...",
+            "text_en": "About the breastplate...",
             "nod": [
               {
                 "nod": "plat_m_maine",
@@ -1722,6 +1991,7 @@
       ],
       "recompensa": {
         "text": "Platoșa tatei, reparată, pe mine. Încrederea lui Bram +1.",
+        "text_en": "Father’s breastplate, mended, and I’m wearing it. Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -1733,12 +2003,15 @@
     {
       "id": "agnes_bere",
       "titlu": "Berea",
+      "titlu_en": "The Ale",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": "CIORNĂ: Orcii i-au golit lui Agnes toate butoaiele. Ar putea face bere nouă, ca pe vremuri, dar îi trebuie orz și miere.",
+      "descriere_en": "The orcs have drained every one of Agnes’s barrels. She could brew new ale, the way she used to, but she needs barley and honey.",
       "oferta": {
         "_nota": "Decis de autor: a doua misiune a lui Agnes, după „Camera de sus” (înaintea pivniței, ca jucătorul să aibă timp să se pregătească de șobolani).",
         "text": "Taverna miroase a apă cu spumă...",
+        "text_en": "The tavern smells of froth and water...",
         "nod": "bere_oferta",
         "conditii": {
           "misiune": {
@@ -1751,35 +2024,43 @@
       "pasi": [
         {
           "text": "Adun orz",
+          "text_en": "I collect barley",
           "numara": {
             "obiect": "orz",
             "n": 5
           },
           "sfat": "Cât muncesc la moară, primesc și orz (2 la fiecare muncă).",
+          "sfat_en": "Whenever I work at the mill, I get barley too (2 each time).",
           "indiciu": {
             "text": "Despre bere...",
+            "text_en": "About the ale...",
             "nod": "bere_indiciu"
           }
         },
         {
           "text": "Cumpăr miere de la fermier",
+          "text_en": "I buy honey from the farmer",
           "numara": {
             "obiect": "miere",
             "n": 2
           },
           "sfat": "Fermierul ține stupi. E la câmpuri dimineața (6–13). 5 monede bucata.",
+          "sfat_en": "The farmer keeps beehives. He’s in the fields in the morning (6–13). 5 coins apiece.",
           "indiciu": {
             "text": "Despre bere...",
+            "text_en": "About the ale...",
             "nod": "bere_indiciu"
           }
         },
         {
           "text": "Duc orzul și mierea la Agnes",
+          "text_en": "I take the barley and the honey to Agnes",
           "gata": {
             "existaStare": "bere_facuta"
           },
           "predare": {
             "text": "Am adus orzul și mierea!",
+            "text_en": "I’ve brought the barley and the honey!",
             "nod": "bere_predare",
             "conditii": {
               "loc": "taverna/parter",
@@ -1793,12 +2074,14 @@
       ],
       "recompensa": {
         "text": "Prima cană din berea nouă.",
+        "text_en": "The first mug of the new ale.",
         "_nota": "Decis de autor: Agnes nu are încredere (doar Bram, Finn, Elian, Kaia, Miriam și Roderick au)."
       }
     },
     {
       "id": "agnes_socoteala",
       "titlu": "Socoteala",
+      "titlu_en": "Settling Accounts",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": [
@@ -1808,13 +2091,19 @@
               "socoteala": "refuzat"
             }
           },
-          "text": "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes m-a rugat să vorbesc cu el, cu blândețe. I-am spus că nu mă bag între ei."
+          "text": "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes m-a rugat să vorbesc cu el, cu blândețe. I-am spus că nu mă bag între ei.",
+          "text_en": "Uncle Roderick has been running up a tab at the tavern ever since the battle. Agnes asked me to talk to him, gently. I told her I wouldn’t get between them."
         },
         "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes n-a vrut niciodată să-i ceară banii, dar orcii i-au mărit dările și nu mai face față. M-a rugat să vorbesc cu el, cu blândețe."
+      ],
+      "descriere_en": [
+        null,
+        "Uncle Roderick has been running up a tab at the tavern ever since the battle. Agnes never wanted to ask him for the money, but the orcs have raised her taxes and she can’t keep up anymore. She asked me to talk to him, gently."
       ],
       "oferta": {
         "_nota": "Decis de autor: a lui Agnes, dar punctul e al lui Roderick (se poate rata). Ales de Claude: după „Ultima sticlă” (făcută sau ratată).",
         "text": "Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva?",
+        "text_en": "Mistress Agnes, you look worried. Has something happened?",
         "nod": "soc_o1",
         "conditii": {
           "oricare": [
@@ -1834,30 +2123,37 @@
       "pasi": [
         {
           "text": "Vorbesc cu unchiul despre socoteală",
+          "text_en": "I talk to Uncle about the tab",
           "la": "soldat",
           "gata": {
             "existaStare": "soc_roderick"
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Unchiule... despre socoteala de la Agnes.",
+            "text_en": "Uncle... about the tab at Agnes’s.",
             "nod": "soc_r1"
           }
         },
         {
           "text": "A doua zi dimineață, muncesc cu unchiul la tavernă",
+          "text_en": "The next morning, I work with Uncle at the tavern",
           "gata": {
             "existaStare": "soc_gata"
           },
           "sfat": "Mâine dimineață (9–12), la tavernă: unchiul mă așteaptă acolo.",
+          "sfat_en": "Tomorrow morning (9–12), at the tavern: Uncle will be waiting for me there.",
           "indiciu": {
             "text": "Despre mâine...",
+            "text_en": "About tomorrow...",
             "nod": "soc_ind"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea unchiului Roderick +1. Agnes a șters socoteala de pe tablă.",
+        "text_en": "Uncle Roderick’s trust +1. Agnes wiped the slate clean.",
         "efecte": {
           "relatie": {
             "soldat": 1
@@ -1868,6 +2164,7 @@
     {
       "id": "agnes_seara",
       "titlu": "Seara celor 23",
+      "titlu_en": "An Evening for the Twenty-Three",
       "dela": "hangita",
       "dialog": "hangita",
       "descriere": [
@@ -1877,13 +2174,19 @@
               "seara_23": "refuzat"
             }
           },
-          "text": "CIORNĂ: Agnes voia o seară pentru cei douăzeci și trei, în tavernă, cu tot satul, iar unchiul să povestească bătălia. I-am spus să-l lase în pace."
+          "text": "CIORNĂ: Agnes voia o seară pentru cei douăzeci și trei, în tavernă, cu tot satul, iar unchiul să povestească bătălia. I-am spus să-l lase în pace.",
+          "text_en": "Agnes wanted an evening for the Twenty-Three, at the tavern, with the whole village, and for Uncle to tell the story of the battle. I told her to leave him in peace."
         },
         "CIORNĂ: Nimeni din sat nu i-a plâns împreună pe cei douăzeci și trei. Fiecare și-a plâns mortul lui, cu ușa închisă. Agnes vrea o seară pentru ei, în tavernă, cu tot satul. Dar trebuie să vorbească cineva care a fost acolo, iar acela e doar unchiul."
+      ],
+      "descriere_en": [
+        null,
+        "The village has never mourned the Twenty-Three together. Everyone mourned their own dead, behind closed doors. Agnes wants an evening for them, at the tavern, with the whole village. But someone who was there has to speak, and that can only be Uncle."
       ],
       "oferta": {
         "_nota": "Decis de autor: a doua misiune a lui Agnes cu Roderick, frumoasă și emoțională; punctul e al lui Roderick (se poate rata). Ales de Claude: după „Socoteala” (făcută sau ratată).",
         "text": "Doamna Agnes, la ce vă gândiți?",
+        "text_en": "Mistress Agnes, what’s on your mind?",
         "nod": "seara_o1",
         "conditii": {
           "oricare": [
@@ -1903,30 +2206,37 @@
       "pasi": [
         {
           "text": "Îl rog pe unchiul să povestească bătălia",
+          "text_en": "I ask Uncle to tell the story of the battle",
           "la": "soldat",
           "gata": {
             "existaStare": "seara_roderick"
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Unchiule... Agnes vrea o seară pentru cei douăzeci și trei.",
+            "text_en": "Uncle... Agnes wants an evening for the Twenty-Three.",
             "nod": "seara_r1"
           }
         },
         {
           "text": "Mâine seară, la tavernă, cu tot satul",
+          "text_en": "Tomorrow evening, at the tavern, with the whole village",
           "gata": {
             "existaStare": "seara_gata"
           },
           "sfat": "Mâine seară (19–23), la tavernă.",
+          "sfat_en": "Tomorrow evening (19–23), at the tavern.",
           "indiciu": {
             "text": "Despre mâine seară...",
+            "text_en": "About tomorrow evening...",
             "nod": "seara_ind"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea unchiului Roderick +1. Tot satul a ridicat cănile pentru cei douăzeci și trei.",
+        "text_en": "Uncle Roderick’s trust +1. The whole village raised their mugs to the Twenty-Three.",
         "efecte": {
           "relatie": {
             "soldat": 1
@@ -1938,21 +2248,26 @@
     {
       "id": "finn_eliberare",
       "titlu": "Eliberarea lui Finn",
+      "titlu_en": "Freeing Finn",
       "dela": "hot",
       "descriere": "CIORNĂ: Finn, hoțul legat la butucul din piață, a furat ca să-și hrănească mama bolnavă și sora mică. Nimeni nu-l crede. Eu îl cred. Negustorul îl lasă liber pentru 40 de monede.",
+      "descriere_en": "Finn, the thief locked in the stocks at the market, stole to feed his sick mother and his little sister. No one believes him. I do. The merchant will let him go for 40 coins.",
       "pasi": [
         {
           "text": "Plătesc negustorului 40 de monede",
+          "text_en": "I pay the merchant 40 coins",
           "gata": {
             "stare": {
               "hot": "eliberat"
             }
           },
-          "sfat": "Negustorul e la taraba din piață, ziua. Apăs pe Finn, la butuc."
+          "sfat": "Negustorul e la taraba din piață, ziua. Apăs pe Finn, la butuc.",
+          "sfat_en": "The merchant is at his stall in the market during the day. I click on Finn, at the stocks."
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1 și drumul spre Marginea satului.",
+        "text_en": "Finn’s trust +1, and the way to the Edge.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -1963,12 +2278,15 @@
     {
       "id": "finn_mancarea",
       "titlu": "Mâncarea",
+      "titlu_en": "Food",
       "dela": "hot",
       "dialog": "hot",
       "descriere": "CIORNĂ: Acasă la Finn nu e nimic de mâncare. Sora lui aproape a uitat cum miroase pâinea caldă. Le duc trei pâini și două bucăți de carne și gătim împreună.",
+      "descriere_en": "There’s nothing to eat at Finn’s house. His sister has almost forgotten what warm bread smells like. I’ll bring them three loaves and two pieces of meat, and we’ll cook together.",
       "oferta": {
         "_nota": "Decis de autor: odată cu „Mama lui Finn”, după eliberare.",
         "text": "Când ați mâncat ultima oară ceva cald?",
+        "text_en": "When did you last eat something warm?",
         "nod": "mancare_oferta",
         "conditii": {
           "misiune": {
@@ -1979,38 +2297,47 @@
       "pasi": [
         {
           "text": "Fac rost de 3 pâini",
+          "text_en": "I get hold of 3 loaves of bread",
           "numara": {
             "obiect": "paine",
             "n": 3
           },
           "sfat": "Pâine se găsește la negustorul din piață și la Agnes.",
+          "sfat_en": "The merchant at the market has bread, and so does Agnes.",
           "indiciu": {
             "text": "Despre mâncare...",
+            "text_en": "About the food...",
             "nod": "mancare_indiciu"
           }
         },
         {
           "text": "Fac rost de 2 bucăți de carne",
+          "text_en": "I get hold of 2 pieces of meat",
           "numara": {
             "obiect": "carne",
             "n": 2
           },
           "sfat": "Carnea vine de la vânătoare (lupi, mistreț).",
+          "sfat_en": "Meat comes from hunting (wolves, boar).",
           "indiciu": {
             "text": "Despre mâncare...",
+            "text_en": "About the food...",
             "nod": "mancare_indiciu"
           }
         },
         {
           "text": "Duc mâncarea la Finn",
+          "text_en": "I take the food to Finn",
           "gata": {
             "stare": {
               "finn_masa": "facuta"
             }
           },
           "sfat": "Cu pâinea și carnea, vorbesc cu Finn, acasă la el (06–08 sau 13–18).",
+          "sfat_en": "With the bread and the meat, I talk to Finn at his house (06–08 or 13–18).",
           "predare": {
             "text": "Am adus pâine și carne!",
+            "text_en": "I’ve brought bread and meat!",
             "nod": "mancare_predare",
             "conditii": {
               "areCate": {
@@ -2024,6 +2351,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1.",
+        "text_en": "Finn’s trust +1.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -2034,12 +2362,15 @@
     {
       "id": "finn_mama",
       "titlu": "Mama lui Finn",
+      "titlu_en": "Finn’s Mother",
       "dela": "hot",
       "dialog": "hot",
       "descriere": "CIORNĂ: Mama lui Finn tușește de luni de zile și slăbește pe zi ce trece. Fratele Elian se pricepe la plante; poate știe un leac.",
+      "descriere_en": "Finn’s mother has been coughing for months, growing weaker by the day. Brother Elian has a way with herbs; maybe he knows a cure.",
       "oferta": {
         "_nota": "Decis de autor: misiunea lui Finn (în locul „Bolnavului” lui Elian), odată cu „Mâncarea”; Elian e implicat și primește și el încredere.",
         "text": "Mama ta... de cât timp e bolnavă?",
+        "text_en": "Your mother... how long has she been ill?",
         "nod": "mama_oferta",
         "conditii": {
           "misiune": {
@@ -2050,31 +2381,38 @@
       "pasi": [
         {
           "text": "Vorbesc cu Fratele Elian despre mama lui Finn",
+          "text_en": "I talk to Brother Elian about Finn’s mother",
           "la": "mag",
           "gata": {
             "existaStare": "finn_mama_pas"
           },
           "sfat": "Elian e la biserică: ziua înăuntru, după-amiaza și seara pe scări.",
+          "sfat_en": "Elian is at the church: inside earlier in the day, out on the steps in the afternoon and evening.",
           "predare": {
             "text": "Frate Elian, am nevoie de ajutorul tău.",
+            "text_en": "Brother Elian, I need your help.",
             "nod": "mama_elian"
           }
         },
         {
           "text": "Culeg 3 flori de luminița-nopții",
+          "text_en": "I pick 3 evening primrose flowers",
           "numara": {
             "obiect": "luminita_noptii",
             "n": 3
           },
           "la": "mag",
           "sfat": "Seara (18–23), în pădure: „Caută luminița-nopții”.",
+          "sfat_en": "In the evening (18–23), in the forest: “Search for Evening Primrose.”",
           "indiciu": {
             "text": "Cum arăta luminița-nopții?",
+            "text_en": "What did evening primrose look like again?",
             "nod": "mama_indiciu"
           }
         },
         {
           "text": "Merg cu Elian, seara, la mama lui Finn",
+          "text_en": "In the evening, I go with Elian to see Finn’s mother",
           "la": "mag",
           "gata": {
             "stare": {
@@ -2082,8 +2420,10 @@
             }
           },
           "sfat": "Seara (18–23), cu florile, vorbesc cu Elian pe scările bisericii.",
+          "sfat_en": "In the evening (18–23), with the flowers, I talk to Elian on the church steps.",
           "predare": {
             "text": "Am adus luminița-nopții.",
+            "text_en": "I’ve brought the evening primrose.",
             "nod": "mama_predare",
             "conditii": {
               "areCate": {
@@ -2097,6 +2437,7 @@
           },
           "indiciu": {
             "text": "Am florile...",
+            "text_en": "I have the flowers...",
             "nod": [
               {
                 "nod": "mama_seara",
@@ -2115,6 +2456,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1, a lui Elian +1 și cheia cocioabei contrabandistului.",
+        "text_en": "Finn’s trust +1, Elian’s +1, and the key to the smuggler’s shack.",
         "efecte": {
           "relatie": {
             "hot": 1,
@@ -2126,6 +2468,7 @@
     {
       "id": "elian_carti",
       "titlu": "Cărțile",
+      "titlu_en": "The Books",
       "dela": "mag",
       "dialog": "elian_carti",
       "descriere": [
@@ -2135,13 +2478,19 @@
               "carti_elian": "refuzat"
             }
           },
-          "text": "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian m-a rugat să le ascund, dar l-am refuzat."
+          "text": "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian m-a rugat să le ascund, dar l-am refuzat.",
+          "text_en": "The tax collector came to the church for Elian’s books. Elian asked me to hide them, but I turned him down."
         },
         "CIORNĂ: Colectorul a venit la biserică după cărțile lui Elian. Elian mi le-a dat să le ascund și m-a pus să promit că nu ies, orice s-ar întâmpla."
+      ],
+      "descriere_en": [
+        null,
+        "The tax collector came to the church for Elian’s books. Elian gave them to me to hide and made me promise I wouldn’t come out, no matter what."
       ],
       "pasi": [
         {
           "text": "Ascund cărțile lui Elian de colector",
+          "text_en": "I hide Elian’s books from the collector",
           "gata": {
             "stare": {
               "carti_elian": "ascunse"
@@ -2151,6 +2500,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Elian +1.",
+        "text_en": "Elian’s trust +1.",
         "efecte": {
           "relatie": {
             "mag": 1
@@ -2163,6 +2513,7 @@
     {
       "id": "elian_pasarea",
       "titlu": "Pasărea Linei",
+      "titlu_en": "Lina’s Bird",
       "dela": "sora_finn",
       "dialog": "sora_finn",
       "descriere": [
@@ -2172,19 +2523,27 @@
               "pasarea": "refuzat"
             }
           },
-          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă și m-a rugat s-o duc la Fratele Elian. I-am spus că n-am timp."
+          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă și m-a rugat s-o duc la Fratele Elian. I-am spus că n-am timp.",
+          "text_en": "Lina found a sparrow with a broken wing under the fence and asked me to take it to Brother Elian. I told her I didn’t have time."
         },
         {
           "conditii": {
             "existaStare": "pasarea_vindecata"
           },
-          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă. Am dus-o la Fratele Elian. A ținut-o în palme, printre degetele lui a trecut o lumină, iar vrabia a zburat. „Era doar speriată”, zice el. Dar aripa îi fusese ruptă."
+          "text": "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă. Am dus-o la Fratele Elian. A ținut-o în palme, printre degetele lui a trecut o lumină, iar vrabia a zburat. „Era doar speriată”, zice el. Dar aripa îi fusese ruptă.",
+          "text_en": "Lina found a sparrow with a broken wing under the fence. I took the bird to Brother Elian. He held her in his cupped hands, a light passed between his fingers, and she flew away. “She was only frightened,” he says. But her wing had been broken."
         },
         "CIORNĂ: Lina a găsit sub gard o vrabie cu aripa ruptă, Ciripel. N-are voie să meargă singură până la biserică, așa că i-am promis că o duc eu la Fratele Elian."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "Lina found Ciripel, a sparrow with a broken wing, under the fence. She isn’t allowed to walk all the way to the church on her own, so I promised to take the sparrow to Brother Elian myself."
       ],
       "oferta": {
         "_nota": "Decis de autor: misiunea lui Elian (+1 la el), după „Cărțile”; de la Lina, când se joacă în fața casei (10–14). Ales de Claude: după „Păpușa Linei”, ca Lina să nu ceară două lucruri deodată.",
         "text": "Ce ai acolo, Lina?",
+        "text_en": "What have you got there, Lina?",
         "nod": "pasare_oferta",
         "conditii": {
           "loc": "casa_finn",
@@ -2222,13 +2581,16 @@
       "pasi": [
         {
           "text": "Duc vrabia la Fratele Elian",
+          "text_en": "I take the sparrow to Brother Elian",
           "la": "mag",
           "gata": {
             "existaStare": "pasarea_vindecata"
           },
           "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "sfat_en": "Brother Elian is at the church: inside in the morning, out on the steps in the afternoon (14–23).",
           "predare": {
             "text": "Frate Elian, Lina ți-a trimis o vrabie rănită.",
+            "text_en": "Brother Elian, Lina has sent you a wounded sparrow.",
             "nod": "pas_e1",
             "conditii": {
               "areObiect": "vrabia_linei"
@@ -2237,18 +2599,22 @@
         },
         {
           "text": "Îi spun Linei că vrabia a zburat",
+          "text_en": "I tell Lina her sparrow flew away",
           "gata": {
             "existaStare": "pasarea_spusa"
           },
           "sfat": "Lina e acasă dimineața și seara, în fața casei 10–14, la Bătrâna Morwen 14–18.",
+          "sfat_en": "Lina is at home in the morning and in the evening, in front of the house 10–14, and at Old Morwen’s 14–18.",
           "predare": {
             "text": "Lina, vrabia ta a zburat!",
+            "text_en": "Lina, your sparrow flew away!",
             "nod": "pasare_l1"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea Fratelui Elian +1.",
+        "text_en": "Brother Elian’s trust +1.",
         "efecte": {
           "relatie": {
             "mag": 1
@@ -2260,6 +2626,7 @@
     {
       "id": "elian_lumina",
       "titlu": "Lumina din pădure",
+      "titlu_en": "The Light in the Forest",
       "dela": "mag",
       "dialog": "mag",
       "descriere": [
@@ -2267,13 +2634,19 @@
           "conditii": {
             "existaStare": "lumina_padure"
           },
-          "text": "CIORNĂ: Seara, în pădure, m-au încercuit lupii. M-au mușcat, am căzut, apoi a venit o lumină orbitoare și lupii au fugit. M-am trezit la marginea pădurii, cu rănile închise, cu Fratele Elian lângă mine, într-un cerc de iarbă arsă. Zice că m-a găsit așa. Dar palmele încă îi luceau."
+          "text": "CIORNĂ: Seara, în pădure, m-au încercuit lupii. M-au mușcat, am căzut, apoi a venit o lumină orbitoare și lupii au fugit. M-am trezit la marginea pădurii, cu rănile închise, cu Fratele Elian lângă mine, într-un cerc de iarbă arsă. Zice că m-a găsit așa. Dar palmele încă îi luceau.",
+          "text_en": "That evening, in the forest, wolves surrounded me. They bit me and I fell. Then came a blinding light, and the wolves fled. I woke at the edge of the forest with my wounds closed and Brother Elian beside me, in a circle of burnt grass. He says he found me like that. But his palms were still glowing."
         },
         "CIORNĂ: Vine iarna, iar la Marginea copiii tușesc nopțile. Fratele Elian face din luminița-nopții un ceai care le alină tusea. Floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica. I-am promis trei flori."
+      ],
+      "descriere_en": [
+        null,
+        "Winter is on its way, and at the Edge the children cough through the nights. Brother Elian makes a tea from evening primrose that soothes their coughs. The flower opens only at sunset, in the forest, and he can’t leave the church. I promised him three flowers."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „Pasărea Linei” (oricum s-a terminat); nu se poate refuza.",
         "text": "Pari îngrijorat, frate Elian.",
+        "text_en": "You look worried, Brother Elian.",
         "nod": "lum_o1",
         "conditii": {
           "oricare": [
@@ -2293,29 +2666,36 @@
       "pasi": [
         {
           "text": "Seara, în pădure, culeg trei flori de luminița-nopții",
+          "text_en": "In the evening, in the forest, I pick three evening primrose flowers",
           "gata": {
             "existaStare": "lumina_padure"
           },
           "sfat": "Luminița-nopții se deschide la apus: seara (18–23), în pădure.",
+          "sfat_en": "Evening primrose opens at sunset: in the evening (18–23), in the forest.",
           "indiciu": {
             "text": "Despre luminița-nopții...",
+            "text_en": "About the evening primrose...",
             "nod": "lum_ind"
           }
         },
         {
           "text": "Îl întreb pe Fratele Elian ce s-a întâmplat în pădure",
+          "text_en": "I ask Brother Elian what happened in the forest",
           "gata": {
             "existaStare": "lumina_intrebat"
           },
           "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "sfat_en": "Brother Elian is at the church: inside in the morning, out on the steps in the afternoon (14–23).",
           "predare": {
             "text": "Frate Elian, ce s-a întâmplat în pădure?",
+            "text_en": "Brother Elian, what happened in the forest?",
             "nod": "lum_q1"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea Fratelui Elian +1.",
+        "text_en": "Brother Elian’s trust +1.",
         "efecte": {
           "relatie": {
             "mag": 1
@@ -2327,6 +2707,7 @@
     {
       "id": "elian_secret",
       "titlu": "Secretul lui Elian",
+      "titlu_en": "Elian’s Secret",
       "dela": "mag",
       "dialog": "mag",
       "descriere": [
@@ -2334,13 +2715,19 @@
           "conditii": {
             "existaStare": "elian_secret"
           },
-          "text": "CIORNĂ: Sub biserică e o încăpere ascunsă. Fratele Elian nu e un mag începător, ci un mag al Cercului Luminii, și are un cristal mic, din Inima Luminii. Când m-am aplecat să-l văd, cristalul a început să lucească. De ce l-a trimis Cercul aici, nu mi-a spus. Am promis să tac."
+          "text": "CIORNĂ: Sub biserică e o încăpere ascunsă. Fratele Elian nu e un mag începător, ci un mag al Cercului Luminii, și are un cristal mic, din Inima Luminii. Când m-am aplecat să-l văd, cristalul a început să lucească. De ce l-a trimis Cercul aici, nu mi-a spus. Am promis să tac.",
+          "text_en": "There’s a hidden chamber under the church. Brother Elian is no novice mage. He’s a mage of the Circle of Light, and he has a small crystal from the Heart of Light. When I leaned in to look at it, the crystal began to glow. Why the Circle sent him here, he didn’t say. I promised to keep quiet."
         },
         "CIORNĂ: Bram nu știe ce să facă cu săbiile celor căzuți. Fratele Elian zice că are o idee, dar că întâi trebuie să-mi arate ceva."
+      ],
+      "descriere_en": [
+        null,
+        "Bram doesn’t know what to do with the swords of the fallen. Brother Elian says he has an idea, but first he has to show me something."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „Cufărul”, cât Elian citește afară (14–23).",
         "text": "Frate Elian, am nevoie de un sfat.",
+        "text_en": "Brother Elian, I need some advice.",
         "nod": "sec_o1",
         "conditii": {
           "misiune": {
@@ -2356,6 +2743,7 @@
       "pasi": [
         {
           "text": "Îl urmez pe Elian în spatele bisericii",
+          "text_en": "I follow Elian behind the church",
           "gata": {
             "existaStare": "elian_secret"
           }
@@ -2363,6 +2751,7 @@
       ],
       "recompensa": {
         "text": "Încrederea Fratelui Elian +1.",
+        "text_en": "Brother Elian’s trust +1.",
         "efecte": {
           "relatie": {
             "mag": 1
@@ -2374,6 +2763,7 @@
     {
       "id": "elian_toiag",
       "titlu": "Toiagul celor 23",
+      "titlu_en": "The Staff of the Twenty-Three",
       "dela": "mag",
       "dialog": "mag",
       "descriere": [
@@ -2381,43 +2771,57 @@
           "conditii": {
             "existaStare": "toiag_primit"
           },
-          "text": "CIORNĂ: Din cele douăzeci și două de săbii, Bram a bătut un toiag, iar Elian i-a pus cristalul în cap. Apoi mi l-a dat mie. Zice că simte că o să am nevoie de el, că ceva mare se apropie. N-am înțeles de ce eu. L-am ascuns pe fundul cufărului de acasă, până în ziua aceea."
+          "text": "CIORNĂ: Din cele douăzeci și două de săbii, Bram a bătut un toiag, iar Elian i-a pus cristalul în cap. Apoi mi l-a dat mie. Zice că simte că o să am nevoie de el, că ceva mare se apropie. N-am înțeles de ce eu. L-am ascuns pe fundul cufărului de acasă, până în ziua aceea.",
+          "text_en": "From the twenty-two swords, Bram forged a staff, and Elian set the crystal in its head. Then he gave it to me. He says he feels I’ll need it, that something big is coming. I don’t understand why me. I’ve hidden it at the bottom of the chest at home, until that day comes."
         },
         "CIORNĂ: Fratele Elian are o idee: din săbiile celor căzuți, Bram să bată un toiag, iar el să-i pună cristalul în cap, ca să-i crească puterea, pentru ceva neprevăzut. Întâi Bram trebuie să jure că nu spune nimănui nimic."
+      ],
+      "descriere_en": [
+        null,
+        "Brother Elian has an idea: Bram would forge a staff from the swords of the fallen, and Elian would set the crystal in its head to make it more powerful, for something no one can foresee. First, Bram has to swear he won’t tell a soul."
       ],
       "pasi": [
         {
           "text": "Îl pun pe Bram să jure, apoi îi spun de Elian și de toiag",
+          "text_en": "I make Bram swear an oath, then tell him about Elian and the staff",
           "la": "fierar",
           "gata": {
             "existaStare": "toiag_jurat"
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
             "text": "Domnule Bram, trebuie să-mi jurați ceva.",
+            "text_en": "Master Bram, I need you to swear something to me.",
             "nod": "tg_b1"
           }
         },
         {
           "text": "Seara, la forjă, cu Bram",
+          "text_en": "In the evening, at the forge, with Bram",
           "la": "fierar",
           "gata": {
             "existaStare": "toiag_batut"
           },
           "sfat": "Seara, cât lucrează Bram înăuntru (18–22), intru în fierărie.",
+          "sfat_en": "In the evening, while Bram works inside (18–22), I go into the smithy.",
           "indiciu": {
             "text": "Despre toiag...",
+            "text_en": "About the staff...",
             "nod": "tg_b_ind"
           }
         },
         {
           "text": "Îi duc toiagul Fratelui Elian",
+          "text_en": "I take the staff to Brother Elian",
           "gata": {
             "existaStare": "toiag_primit"
           },
           "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
+          "sfat_en": "Brother Elian is at the church: inside in the morning, out on the steps in the afternoon (14–23).",
           "predare": {
             "text": "Frate Elian, toiagul e gata.",
+            "text_en": "Brother Elian, the staff is ready.",
             "nod": "tg_e1",
             "conditii": {
               "areObiect": "toiag_fara_cristal"
@@ -2427,6 +2831,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1 și a Fratelui Elian +1.",
+        "text_en": "Bram’s trust +1, and Brother Elian’s +1.",
         "efecte": {
           "relatie": {
             "fierar": 1,
@@ -2439,12 +2844,15 @@
     {
       "id": "finn_lada",
       "titlu": "Lada colectorului",
+      "titlu_en": "The Collector’s Strongbox",
       "dela": "hot",
       "dialog": "hot",
       "descriere": "CIORNĂ: Colectorul ține banii taxei într-o ladă, la poartă. Noaptea, cu Finn, ne furișăm până la ea și luăm înapoi ce e al satului.",
+      "descriere_en": "The collector keeps the tax money in a strongbox at the gate. At night, Finn and I will sneak up to it and take back what belongs to the village.",
       "oferta": {
         "_nota": "Decis de autor: după „Mâncarea” și „Mama lui Finn”.",
         "text": "Ce te frământă, Finn?",
+        "text_en": "What’s troubling you, Finn?",
         "nod": "lada_oferta",
         "conditii": {
           "misiune": {
@@ -2456,20 +2864,24 @@
       "pasi": [
         {
           "text": "Noaptea, mă furișez cu Finn până la lada colectorului",
+          "text_en": "At night, I sneak up to the collector’s strongbox with Finn",
           "gata": {
             "stare": {
               "finn_lada": "luata"
             }
           },
           "sfat": "După miezul nopții (23–03), Finn mă așteaptă în fața casei lui, cu sacul. Unde e lumină, nu calc.",
+          "sfat_en": "After midnight (23–03), Finn waits for me in front of his house, with the sack. I don’t step where the light falls.",
           "indiciu": {
             "text": "Despre ladă...",
+            "text_en": "About the strongbox...",
             "nod": "lada_indiciu"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1, o parte din bani și tot ce mi-au luat orcii.",
+        "text_en": "Finn’s trust +1, a share of the money, and everything the orcs took from me.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -2480,12 +2892,15 @@
     {
       "id": "bram_foale",
       "titlu": "Foalele stricate",
+      "titlu_en": "The Broken Bellows",
       "dela": "fierar",
       "dialog": "fierar",
       "descriere": "CIORNĂ: Foalele forjei lui Bram s-au rupt de tot. Fără ele, focul nu se încinge și Bram nu poate lucra. Îi trebuie trei piei groase de mistreț, iar orcii iau toate blănurile din sat.",
+      "descriere_en": "The bellows of Bram’s forge have torn right through. Without them, the fire won’t burn hot, and Bram can’t work. He needs three thick boar hides, and the orcs take every hide in the village.",
       "oferta": {
         "_nota": "Decis de autor: după „Fierul lui Bram”, înaintea cheii.",
         "text": "De ce e forja rece, domnule Bram?",
+        "text_en": "Why is the forge cold, Master Bram?",
         "nod": "foale_oferta",
         "conditii": {
           "misiune": {
@@ -2496,26 +2911,32 @@
       "pasi": [
         {
           "text": "Fac rost de 3 piei de mistreț",
+          "text_en": "I get hold of 3 boar hides",
           "numara": {
             "obiect": "piele",
             "n": 3
           },
           "sfat": "Mistreții umblă prin pădure (vânătoarea, „Adâncul pădurii”).",
+          "sfat_en": "Boars roam the forest (hunting, in “The Deep Forest”).",
           "indiciu": {
             "text": "Despre foale...",
+            "text_en": "About the bellows...",
             "nod": "foale_indiciu"
           }
         },
         {
           "text": "Duc pieile la Bram",
+          "text_en": "I take the hides to Bram",
           "gata": {
             "stare": {
               "foale_bram": "noi"
             }
           },
           "sfat": "Cu cele 3 piei, vorbesc cu Bram.",
+          "sfat_en": "With the 3 hides, I talk to Bram.",
           "predare": {
             "text": "Ți-am adus pieile de mistreț!",
+            "text_en": "I’ve brought you the boar hides!",
             "nod": "foale_predare",
             "conditii": {
               "areCate": {
@@ -2525,12 +2946,14 @@
           },
           "indiciu": {
             "text": "Despre foale...",
+            "text_en": "About the bellows...",
             "nod": "foale_indiciu"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -2541,12 +2964,15 @@
     {
       "id": "bram_forja",
       "titlu": "O zi la forjă",
+      "titlu_en": "A Day at the Forge",
       "dela": "fierar",
       "dialog": "bram_forja",
       "descriere": "CIORNĂ: Bram și-a ars mâna grăbindu-se cu topoarele orcilor. Colectorul le vrea diseară, iar dacă nu sunt gata, plătește tot satul. Am lucrat o zi întreagă la forjă în locul lui.",
+      "descriere_en": "Bram burned his hand rushing to finish the orcs’ axes. The tax collector wants them by tonight, and if they aren’t ready, the whole village pays. I worked a whole day at the forge in his place.",
       "pasi": [
         {
           "text": "Lucrez la forjă în locul lui Bram",
+          "text_en": "I work at the forge in Bram’s place",
           "gata": {
             "existaStare": "bram_forja"
           }
@@ -2554,6 +2980,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -2566,6 +2993,7 @@
     {
       "id": "fermier_plug",
       "titlu": "Fierul plugului",
+      "titlu_en": "Iron for the Plow",
       "dela": "fermier",
       "dialog": "fermier",
       "descriere": [
@@ -2575,13 +3003,19 @@
               "plug": "refuzat"
             }
           },
-          "text": "CIORNĂ: S-a rupt plugul fermierului: brăzdarul și coarnele. M-a rugat să vorbesc cu Bram, dar i-am spus că n-am timp."
+          "text": "CIORNĂ: S-a rupt plugul fermierului: brăzdarul și coarnele. M-a rugat să vorbesc cu Bram, dar i-am spus că n-am timp.",
+          "text_en": "The farmer’s plow has broken: the plowshare and the handles. He asked me to talk to Bram, but I told him I had no time."
         },
         "CIORNĂ: S-a rupt plugul fermierului: brăzdarul și coarnele. Fără el, nu ară nimeni, iar la primăvară satul n-are ce semăna. I-am promis că vorbesc eu cu Bram."
+      ],
+      "descriere_en": [
+        null,
+        "The farmer’s plow has broken: the plowshare and the handles. Without it, no one can plow, and come spring the village will have nothing to sow. I promised him I’d talk to Bram myself."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat.",
         "text": "Ce s-a întâmplat cu plugul?",
+        "text_en": "What happened to your plow?",
         "nod": "plug_oferta",
         "conditii": {
           "misiune": {
@@ -2612,18 +3046,22 @@
       "pasi": [
         {
           "text": "Îl rog pe Bram să repare plugul",
+          "text_en": "I ask Bram to repair the plow",
           "la": "fierar",
           "gata": {
             "existaStare": "plug_bram"
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
             "text": "Domnule Bram, poți repara plugul fermierului?",
+            "text_en": "Master Bram, can you repair the farmer’s plow?",
             "nod": "plug_b1"
           }
         },
         {
           "text": "Fac rost de 4 lemne, o frânghie și metal",
+          "text_en": "I get hold of 4 pieces of wood, a rope and some metal",
           "la": "fierar",
           "numara": [
             {
@@ -2637,7 +3075,8 @@
             {
               "obiect": "fier_vechi",
               "n": 1,
-              "nume": "metal"
+              "nume": "metal",
+              "nume_en": "metal"
             }
           ],
           "sfat": [
@@ -2645,24 +3084,33 @@
               "conditii": {
                 "existaStare": "metal_jarek"
               },
-              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Finn zice că Jarek are fier vechi, la cocioaba lui (18–02)."
+              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Finn zice că Jarek are fier vechi, la cocioaba lui (18–02).",
+              "text_en": "Wood from the forest; rope from the merchant at the market. Finn says Jarek has scrap iron at his shack (18–02)."
             },
             "Lemnele, din pădure; frânghia, de la negustorul din piață. Metal... nu știu încă de unde. Poate știe cineva."
           ],
+          "sfat_en": [
+            null,
+            "Wood from the forest; rope from the merchant at the market. Metal... I don’t know where to find it yet. Maybe someone knows."
+          ],
           "indiciu": {
             "text": "Despre plug...",
+            "text_en": "About the plow...",
             "nod": "plug_b_ind"
           }
         },
         {
           "text": "Duc totul la Bram",
+          "text_en": "I take everything to Bram",
           "la": "fierar",
           "gata": {
             "existaStare": "plug_gata"
           },
           "sfat": "Cu lemnele, frânghia și fierul, la Bram.",
+          "sfat_en": "With the wood, the rope and the iron, I go to Bram.",
           "predare": {
             "text": "Am adus tot ce trebuie pentru plug.",
+            "text_en": "I’ve brought everything you need for the plow.",
             "nod": "plug_predare",
             "conditii": {
               "areCate": {
@@ -2674,17 +3122,21 @@
           },
           "indiciu": {
             "text": "Despre plug...",
+            "text_en": "About the plow...",
             "nod": "plug_b_ind"
           }
         },
         {
           "text": "Îi duc plugul fermierului",
+          "text_en": "I take the plow to the farmer",
           "gata": {
             "existaStare": "plug_reparat"
           },
           "sfat": "Fermierul e la câmpuri dimineața (06–13).",
+          "sfat_en": "The farmer is in the fields in the morning (06–13).",
           "predare": {
             "text": "Uite plugul, reparat de Bram!",
+            "text_en": "Here’s your plow, repaired by Bram!",
             "nod": "plug_f1",
             "conditii": {
               "areObiect": "plugul_fermierului"
@@ -2692,12 +3144,14 @@
           },
           "indiciu": {
             "text": "Despre plug...",
+            "text_en": "About the plow...",
             "nod": "plug_ind"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
         "efecte": {
           "relatie": {
             "fierar": 1
@@ -2709,12 +3163,15 @@
     {
       "id": "miriam_inel",
       "titlu": "Inelul mamei",
+      "titlu_en": "Mother’s Ring",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": "CIORNĂ: Colectorul i-a luat mamei verigheta, „pentru Groapă”. Mama n-a scos-o de pe deget nici în ziua în care l-am îngropat pe tata. I-am promis că i-o aduc înapoi.",
+      "descriere_en": "The tax collector took Mother’s wedding ring, “for the Pit.” Mother never took it off her finger, not even on the day we buried Father. I promised her I’d bring it back.",
       "pasi": [
         {
           "text": "Vorbesc cu colectorul despre inel",
+          "text_en": "I talk to the collector about the ring",
           "la": "orc_colector",
           "gata": {
             "stare": {
@@ -2722,8 +3179,10 @@
             }
           },
           "sfat": "Colectorul stă dimineața la masa taxei (6–12), iar seara face de pază cu o torță (18–23).",
+          "sfat_en": "The collector sits at the tax table in the morning (6–12), and in the evening he stands guard with a torch (18–23).",
           "predare": {
             "text": "Am venit pentru inelul mamei mele.",
+            "text_en": "I’ve come for my mother’s ring.",
             "nod": "inel1",
             "conditii": {
               "loc": "poarta"
@@ -2732,17 +3191,21 @@
         },
         {
           "text": "Câștig o luptă în Groapă",
+          "text_en": "I win a fight in the Pit",
           "gata": {
             "existaStare": "inel_castigat"
           },
           "sfat": "Groapa e la poartă, seara (18–23): apăs pe poartă. Oricare nivel; o singură luptă pe seară.",
+          "sfat_en": "The Pit is at the gate, in the evening (18–23): I click on the gate. Any level will do; just one fight per evening.",
           "indiciu": {
             "text": "Despre inel...",
+            "text_en": "About the ring...",
             "nod": "inel_ind"
           }
         },
         {
           "text": "Îi duc mamei inelul",
+          "text_en": "I take the ring to Mother",
           "la": "miriam",
           "gata": {
             "stare": {
@@ -2750,8 +3213,10 @@
             }
           },
           "sfat": "Mama e dimineața și seara în bucătărie, la amiază în camera ei, după-amiaza în piață.",
+          "sfat_en": "Mother is in the kitchen in the morning and in the evening, in her room at midday, and at the market in the afternoon.",
           "predare": {
             "text": "Mamă... uite ce ți-am adus.",
+            "text_en": "Mother... look what I’ve brought you.",
             "nod": "inel_m1",
             "conditii": {
               "areObiect": "inel_miriam"
@@ -2761,6 +3226,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1.",
+        "text_en": "Mother’s trust +1.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -2773,12 +3239,15 @@
     {
       "id": "miriam_capa",
       "titlu": "Capa Kaiei",
+      "titlu_en": "Kaia’s Cloak",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": "CIORNĂ: Kaia ar lupta cu mine în Groapă, dar nu vrea ca orcii s-o recunoască. Mama i-a promis o capă subțire, cu glugă și o fâșie pentru față, dacă îi aduc blănile și sfoara.",
+      "descriere_en": "Kaia would fight beside me in the Pit, but she doesn’t want the orcs to recognize her. Mother has promised her a thin cloak, with a hood and a strip to cover her face, if I bring the pelts and the twine.",
       "oferta": {
         "_nota": "Decis de autor: după ce Kaia nu vrea să se arate orcilor și Vale îi propune o deghizare.",
         "text": "Mamă, mi-ai putea coase o capă?",
+        "text_en": "Mother, could you sew me a cloak?",
         "nod": "capa_o1",
         "conditii": {
           "stare": {
@@ -2789,32 +3258,40 @@
       "pasi": [
         {
           "text": "Adun 3 blăni de lup și un ghem de sfoară",
+          "text_en": "I collect 3 wolf pelts and a ball of twine",
           "numara": [
             {
               "obiect": "blana_lup",
               "n": 3,
-              "nume": "blăni de lup"
+              "nume": "blăni de lup",
+              "nume_en": "wolf pelts"
             },
             {
               "obiect": "sfoara",
               "n": 1,
-              "nume": "sfoară"
+              "nume": "sfoară",
+              "nume_en": "twine"
             }
           ],
           "sfat": "Blănile, de la vânătoarea de lupi. Sfoara, de la negustorul din piață.",
+          "sfat_en": "The pelts, from hunting wolves. The twine, from the merchant at the market.",
           "indiciu": {
             "text": "Despre capa Kaiei...",
+            "text_en": "About Kaia’s cloak...",
             "nod": "capa_ind"
           }
         },
         {
           "text": "Le duc mamei",
+          "text_en": "I take them to Mother",
           "gata": {
             "existaStare": "capa_la_miriam"
           },
           "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother sews at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, am adus blănile și sfoara.",
+            "text_en": "Mother, I’ve brought the pelts and the twine.",
             "nod": "capa_m1",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -2830,17 +3307,21 @@
           },
           "indiciu": {
             "text": "Despre capa Kaiei...",
+            "text_en": "About Kaia’s cloak...",
             "nod": "capa_ind2"
           }
         },
         {
           "text": "Iau capa de la mama, a doua zi",
+          "text_en": "I collect the cloak from Mother the next day",
           "gata": {
             "existaStare": "capa_cusuta"
           },
           "sfat": "Mama o coase a doua zi după ce îi duc blănile, la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother sews it the day after I bring her the pelts, at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, e gata capa?",
+            "text_en": "Mother, is the cloak ready?",
             "nod": "capa_g1",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -2855,6 +3336,7 @@
           },
           "indiciu": {
             "text": "Despre capa Kaiei...",
+            "text_en": "About Kaia’s cloak...",
             "nod": [
               {
                 "nod": "capa_m_maine",
@@ -2870,6 +3352,7 @@
         },
         {
           "text": "Îi duc capa Kaiei",
+          "text_en": "I take the cloak to Kaia",
           "la": "vanatoare",
           "gata": {
             "stare": {
@@ -2877,8 +3360,10 @@
             }
           },
           "sfat": "Kaia e la locul de campare dimineața (5–10) și după-amiaza (14–23).",
+          "sfat_en": "Kaia is at the Campsite in the morning (5–10) and in the afternoon (14–23).",
           "predare": {
             "text": "Kaia, ți-am adus ceva.",
+            "text_en": "Kaia, I’ve brought you something.",
             "nod": "capa_k1",
             "conditii": {
               "areObiect": "capa_kaia"
@@ -2888,6 +3373,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1: i-a făcut plăcere să coasă pentru fata cu tigrul. Kaia vine cu mine în Groapă.",
+        "text_en": "Mother’s trust +1: she enjoyed sewing for the girl with the tiger. Kaia will come with me into the Pit.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -2899,12 +3385,15 @@
     {
       "id": "miriam_paine",
       "titlu": "Pâinea văduvelor",
+      "titlu_en": "Bread for the Widows",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": "CIORNĂ: Mama vrea să coacă pâine pentru familiile celor douăzeci și trei căzuți în bătălie. Orcii au luat grâul, dar morarul le mai dă câte un pumn de făină celor care îi cară sacii.",
+      "descriere_en": "Mother wants to bake bread for the families of the Twenty-Three who fell in the battle. The orcs took the wheat, but the miller still slips a handful of flour now and then to those who haul his sacks.",
       "oferta": {
         "_nota": "Decis de autor: firul satului al Miriamei nu mai așteaptă după Roderick; din ziua 6 (ales de Claude), dimineața, cât e ea în bucătărie. Dacă Vale a făcut deja „Lumânările”, mama pomenește de ele.",
         "text": "Mamă, la ce te gândești?",
+        "text_en": "Mother, what are you thinking about?",
         "nod": [
           {
             "nod": "paine_o1",
@@ -2932,24 +3421,30 @@
       "pasi": [
         {
           "text": "Adun 4 măsuri de făină de la moară",
+          "text_en": "I collect 4 measures of flour from the mill",
           "numara": {
             "obiect": "faina",
             "n": 4
           },
           "sfat": "Cât muncesc la moară, morarul îmi dă și făină (2 la fiecare muncă).",
+          "sfat_en": "While I work at the mill, the miller gives me some flour too (2 each time I work).",
           "indiciu": {
             "text": "Despre pâine...",
+            "text_en": "About the bread...",
             "nod": "paine_ind"
           }
         },
         {
           "text": "Coc pâinea cu mama și o împart prin sat",
+          "text_en": "I bake the bread with Mother and hand it out around the village",
           "gata": {
             "existaStare": "paine_impartita"
           },
           "sfat": "Cu făina, dimineața, în bucătărie, cu mama.",
+          "sfat_en": "With the flour, in the morning, in the kitchen, with Mother.",
           "predare": {
             "text": "Mamă, am adus făina.",
+            "text_en": "Mother, I’ve brought the flour.",
             "nod": "paine_p1",
             "conditii": {
               "areCate": {
@@ -2964,6 +3459,7 @@
           },
           "indiciu": {
             "text": "Despre pâine...",
+            "text_en": "About the bread...",
             "nod": [
               {
                 "nod": "paine_ind",
@@ -2984,6 +3480,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1. Iar în sat, cineva a spus cu voce tare ce gândesc toți.",
+        "text_en": "Mother’s trust +1. And in the village, someone said out loud what everyone is thinking.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -2995,12 +3492,15 @@
     {
       "id": "miriam_visele",
       "titlu": "Vorbele din somn",
+      "titlu_en": "Words Spoken in Sleep",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": "CIORNĂ: Mama m-a auzit vorbind în somn, mai multe nopți la rând, într-o limbă pe care n-o știe nimeni. M-a luat de mână, ca pe un copil, și m-a dus la Fratele Elian.",
+      "descriere_en": "Mother heard me talking in my sleep, several nights in a row, in a language no one knows. She took me by the hand, as if I were a child, and led me to Brother Elian.",
       "oferta": {
         "_nota": "Decis de autor: după al doilea vis și la o zi după „Cina în familie” (ca să nu apară în aceeași dimineață cu ea), dimineața, cât e Miriam în bucătărie.",
         "text": "Mamă, de ce te uiți așa la mine?",
+        "text_en": "Mother, why are you looking at me like that?",
         "nod": "vise_o1",
         "conditii": {
           "stare": {
@@ -3019,6 +3519,7 @@
       "pasi": [
         {
           "text": "Merg cu mama la Fratele Elian",
+          "text_en": "I go to Brother Elian with Mother",
           "gata": {
             "existaStare": "visele_elian"
           }
@@ -3026,6 +3527,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1 și a Fratelui Elian +1. Elian mi-a dat un ceai pentru somn. Și nu mi-a spus tot ce știe.",
+        "text_en": "Mother’s trust +1, and Brother Elian’s +1. Elian gave me a tea to help me sleep. And he didn’t tell me everything he knows.",
         "efecte": {
           "relatie": {
             "miriam": 1,
@@ -3038,6 +3540,7 @@
     {
       "id": "miriam_steag",
       "titlu": "Steagul satului",
+      "titlu_en": "The Village Banner",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": [
@@ -3045,19 +3548,27 @@
           "conditii": {
             "existaStare": "steag_cusut"
           },
-          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick, iar mama l-a cusut. Vrea ca unchiul să-l poarte de acum. Zice că i-l dă ea, nu eu."
+          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick, iar mama l-a cusut. Vrea ca unchiul să-l poarte de acum. Zice că i-l dă ea, nu eu.",
+          "text_en": "Uncle Roderick and I brought the village banner back from the battlefield, and Mother has mended it. She wants Uncle to carry it from now on. She says it comes from her, not from me."
         },
         {
           "conditii": {
             "existaStare": "steag_luat"
           },
-          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick. Era tot acolo, înfipt lângă copac, rupt pe jumătate. Mama o să-l spele și o să-l coasă."
+          "text": "CIORNĂ: Am adus steagul satului de pe câmpul bătăliei, cu unchiul Roderick. Era tot acolo, înfipt lângă copac, rupt pe jumătate. Mama o să-l spele și o să-l coasă.",
+          "text_en": "Uncle Roderick and I brought the village banner back from the battlefield. It was still there, stuck in the ground by the tree, torn in half. Mother will wash it and mend it."
         },
         "CIORNĂ: Steagul satului, cel albastru cu rombul auriu, zace și acum pe câmpul bătăliei, lângă copacul mare. Mama l-a brodat cu mâna ei. Vrea să-l aduc acasă, dar nu singur: cu unchiul Roderick."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "The village banner, the blue one with the golden diamond, still lies on the battlefield, by the great tree. Mother embroidered it with her own hands. She wants me to bring it home, but not alone: with Uncle Roderick."
       ],
       "oferta": {
         "_nota": "Ales de Claude: după „Cina în familie” (la cină, Roderick i-a spus Miriamei că steagul e tot pe câmp), seara, cât e Miriam în bucătărie.",
         "text": "Mamă... te gândești la tata?",
+        "text_en": "Mother... are you thinking about Father?",
         "nod": "steag_o1",
         "conditii": {
           "misiune": {
@@ -3073,25 +3584,31 @@
       "pasi": [
         {
           "text": "Îi cer unchiului Roderick să vină cu mine",
+          "text_en": "I ask Uncle Roderick to come with me",
           "la": "soldat",
           "gata": {
             "existaStare": "steag_roderick_stie"
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Unchiule, mama vrea steagul de la copac.",
+            "text_en": "Uncle, Mother wants the banner from the tree.",
             "nod": "steag_r1"
           }
         },
         {
           "text": "Seara, mă întâlnesc cu unchiul la gardul putred de la Marginea satului",
+          "text_en": "In the evening, I meet Uncle by the rotten fence at the Edge",
           "la": "soldat",
           "gata": {
             "existaStare": "steag_luat"
           },
           "sfat": "Seara (19–23), la Ieșirea de la Marginea satului.",
+          "sfat_en": "In the evening (19–23), by the Old Fence at the Edge.",
           "predare": {
             "text": "Sunt gata, unchiule.",
+            "text_en": "I’m ready, Uncle.",
             "nod": "steag_g1",
             "conditii": {
               "loc": "iesirea"
@@ -3099,17 +3616,21 @@
           },
           "indiciu": {
             "text": "Despre steag...",
+            "text_en": "About the banner...",
             "nod": "steag_ind"
           }
         },
         {
           "text": "Îi duc steagul mamei",
+          "text_en": "I take the banner to Mother",
           "gata": {
             "existaStare": "steag_la_miriam"
           },
           "sfat": "Mama coase la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother sews at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, am adus steagul.",
+            "text_en": "Mother, I’ve brought the banner.",
             "nod": "steag_m1",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -3122,17 +3643,21 @@
           },
           "indiciu": {
             "text": "Despre steag...",
+            "text_en": "About the banner...",
             "nod": "steag_m_unde"
           }
         },
         {
           "text": "Iau steagul de la mama, a doua zi",
+          "text_en": "I collect the banner from Mother the next day",
           "gata": {
             "existaStare": "steag_cusut"
           },
           "sfat": "Mama îl coase a doua zi după ce i-l duc, la amiază (11–14), în camera ei.",
+          "sfat_en": "Mother mends it the day after I bring it to her, at midday (11–14), in her room.",
           "predare": {
             "text": "Mamă, e gata steagul?",
+            "text_en": "Mother, is the banner ready?",
             "nod": "steag_c1",
             "conditii": {
               "loc": "casa/camera_mama",
@@ -3147,6 +3672,7 @@
           },
           "indiciu": {
             "text": "Despre steag...",
+            "text_en": "About the banner...",
             "nod": [
               {
                 "nod": "steag_m_maine",
@@ -3162,6 +3688,7 @@
         },
         {
           "text": "Îi duc steagul unchiului Roderick",
+          "text_en": "I take the banner to Uncle Roderick",
           "la": "soldat",
           "gata": {
             "stare": {
@@ -3169,8 +3696,10 @@
             }
           },
           "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
+          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
           "predare": {
             "text": "Unchiule, mama ți-a trimis ceva.",
+            "text_en": "Uncle, Mother has sent you something.",
             "nod": "steag_d1",
             "conditii": {
               "areObiect": "steagul_satului"
@@ -3180,6 +3709,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1 și a unchiului Roderick +1. De acum, unchiul poartă steagul satului.",
+        "text_en": "Mother’s trust +1, and Uncle Roderick’s +1. From now on, Uncle carries the village banner.",
         "efecte": {
           "relatie": {
             "miriam": 1,
@@ -3192,6 +3722,7 @@
     {
       "id": "miriam_lemne",
       "titlu": "Lemne pentru iarnă",
+      "titlu_en": "Firewood for Winter",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": [
@@ -3201,7 +3732,8 @@
               "lemne_iarna": "refuzat"
             }
           },
-          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne. I-am spus că n-am timp."
+          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne. I-am spus că n-am timp.",
+          "text_en": "The long autumn rains are coming, and three widows have no dry firewood. Mother asked me to take five logs to each of them. I told her I didn’t have time."
         },
         {
           "conditii": {
@@ -3209,13 +3741,20 @@
               "lemne_iarna": "ratat"
             }
           },
-          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne, în trei zile. N-am apucat. Ploile au venit înaintea mea."
+          "text": "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc. Mama m-a rugat să le duc câte cinci lemne, în trei zile. N-am apucat. Ploile au venit înaintea mea.",
+          "text_en": "The long autumn rains were coming, and three widows had no dry firewood. Mother asked me to take five logs to each of them, within three days. I didn’t make it. The rains came before I did."
         },
         "CIORNĂ: Vin ploile lungi de toamnă, iar trei văduve n-au lemne uscate de foc: Hanna, care așteaptă un copil; Ilse, de la fântână; și Greta, cu cei doi copii. Mama m-a rugat să le duc câte cinci lemne, înainte de ploi. Am trei zile."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "The long autumn rains are coming, and three widows have no dry firewood: Hanna, who is expecting a child; Ilse, by the well; and Greta, with her two children. Mother asked me to take five logs to each of them before the rains. I have three days."
       ],
       "oferta": {
         "_nota": "Ales de Claude: la o zi după „Pâinea văduvelor”, dimineața, cât e Miriam în bucătărie.",
         "text": "Mamă, ți-e frig?",
+        "text_en": "Mother, are you cold?",
         "nod": "lemne_o1",
         "conditii": {
           "misiuneTerminata": {
@@ -3231,6 +3770,7 @@
       "pasi": [
         {
           "text": "Duc cinci lemne la Hanna",
+          "text_en": "I take five logs to Hanna",
           "gata": {
             "existaStare": "lemne_casa_1"
           },
@@ -3243,9 +3783,14 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat.",
+              "text_en": "The three days have passed. The rains have come. I’ll ask Mother how they managed."
             },
             "Strâng cinci lemne din pădure și merg cu ele la mama. Ea îmi spune unde să le duc."
+          ],
+          "sfat_en": [
+            null,
+            "I’ll gather five logs in the forest and bring them to Mother. She’ll tell me where to take them."
           ],
           "predare": {
             "text": [
@@ -3257,9 +3802,14 @@
                     }
                   }
                 },
-                "text": "Mamă... au venit ploile?"
+                "text": "Mamă... au venit ploile?",
+                "text_en": "Mother... have the rains come?"
               },
               "Am cinci lemne, mamă."
+            ],
+            "text_en": [
+              null,
+              "I’ve got five logs, Mother."
             ],
             "nod": [
               {
@@ -3303,6 +3853,7 @@
           },
           "indiciu": {
             "text": "Despre lemne...",
+            "text_en": "About the firewood...",
             "nod": [
               {
                 "nod": "lemne_ind_tarziu",
@@ -3323,6 +3874,7 @@
         },
         {
           "text": "Duc cinci lemne la Ilse, de la fântână",
+          "text_en": "I take five logs to Ilse, by the well",
           "gata": {
             "existaStare": "lemne_casa_2"
           },
@@ -3335,9 +3887,14 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat.",
+              "text_en": "The three days have passed. The rains have come. I’ll ask Mother how they managed."
             },
             "Încă cinci lemne din pădure, apoi la mama."
+          ],
+          "sfat_en": [
+            null,
+            "Five more logs from the forest, then back to Mother."
           ],
           "predare": {
             "text": [
@@ -3349,9 +3906,14 @@
                     }
                   }
                 },
-                "text": "Mamă... au venit ploile?"
+                "text": "Mamă... au venit ploile?",
+                "text_en": "Mother... have the rains come?"
               },
               "Am încă cinci, mamă."
+            ],
+            "text_en": [
+              null,
+              "I’ve got five more, Mother."
             ],
             "nod": [
               {
@@ -3395,6 +3957,7 @@
           },
           "indiciu": {
             "text": "Despre lemne...",
+            "text_en": "About the firewood...",
             "nod": [
               {
                 "nod": "lemne_ind_tarziu",
@@ -3415,6 +3978,7 @@
         },
         {
           "text": "Duc cinci lemne la Greta, cea cu doi copii",
+          "text_en": "I take five logs to Greta, the one with two children",
           "gata": {
             "existaStare": "lemne_casa_3"
           },
@@ -3427,9 +3991,14 @@
                   }
                 }
               },
-              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat."
+              "text": "Au trecut cele trei zile. Au venit ploile. O întreb pe mama cum s-au descurcat.",
+              "text_en": "The three days have passed. The rains have come. I’ll ask Mother how they managed."
             },
             "Ultimele cinci lemne, apoi la mama."
+          ],
+          "sfat_en": [
+            null,
+            "The last five logs, then back to Mother."
           ],
           "predare": {
             "text": [
@@ -3441,9 +4010,14 @@
                     }
                   }
                 },
-                "text": "Mamă... au venit ploile?"
+                "text": "Mamă... au venit ploile?",
+                "text_en": "Mother... have the rains come?"
               },
               "Ultimele cinci, mamă."
+            ],
+            "text_en": [
+              null,
+              "The last five, Mother."
             ],
             "nod": [
               {
@@ -3487,6 +4061,7 @@
           },
           "indiciu": {
             "text": "Despre lemne...",
+            "text_en": "About the firewood...",
             "nod": [
               {
                 "nod": "lemne_ind_tarziu",
@@ -3508,6 +4083,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1. Trei case au lemne uscate pentru zilele reci.",
+        "text_en": "Mother’s trust +1. Three homes have dry wood for the cold days.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -3519,6 +4095,7 @@
     {
       "id": "miriam_nastere",
       "titlu": "Noaptea nașterii",
+      "titlu_en": "The Night of the Birth",
       "dela": "miriam",
       "dialog": "miriam",
       "descriere": [
@@ -3528,7 +4105,8 @@
               "nastere": "gata"
             }
           },
-          "text": "CIORNĂ: Am adus-o pe Bătrâna Morwen la Hanna, noaptea, pe lângă orci. În zori s-a născut Owen, primul copil din Baum de la bătălie."
+          "text": "CIORNĂ: Am adus-o pe Bătrâna Morwen la Hanna, noaptea, pe lângă orci. În zori s-a născut Owen, primul copil din Baum de la bătălie.",
+          "text_en": "I brought Old Morwen to Hanna in the night, slipping past the orcs. At dawn, Owen was born: the first child in Baum since the battle."
         },
         {
           "conditii": {
@@ -3536,7 +4114,8 @@
               "nastere": "refuzat"
             }
           },
-          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună mai devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am vrut să ies pe întuneric. S-a dus ea, singură."
+          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună mai devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am vrut să ies pe întuneric. S-a dus ea, singură.",
+          "text_en": "Hanna, Owen’s widow, gave birth one night, a month early. Mother sent me for Old Morwen, but I didn’t want to go out in the dark. So she went herself, alone."
         },
         {
           "conditii": {
@@ -3544,13 +4123,21 @@
               "nastere": "ratat"
             }
           },
-          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună mai devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am adus-o la timp."
+          "text": "CIORNĂ: Hanna, văduva lui Owen, a născut într-o noapte, cu o lună mai devreme. Mama m-a trimis după Bătrâna Morwen, dar n-am adus-o la timp.",
+          "text_en": "Hanna, Owen’s widow, gave birth one night, a month early. Mother sent me for Old Morwen, but I didn’t bring her in time."
         },
         "CIORNĂ: Hanna, văduva lui Owen, naște în noaptea asta, cu o lună mai devreme. Mama s-a dus la ea și m-a trimis după Bătrâna Morwen, la Marginea satului. Trebuie s-o aduc până se luminează."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        null,
+        "Hanna, Owen’s widow, is giving birth tonight, a month early. Mother has gone to her and sent me to fetch Old Morwen from the Edge. I have to bring her before first light."
       ],
       "oferta": {
         "_nota": "Decis de autor: la 3–4 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată; ales de Claude: 3 zile), ca misiunile să nu vină grămadă, seara, cât e Miriam în bucătărie, până la 22; Marginea satului trebuie să fie deschisă (după eliberarea lui Finn).",
         "text": "Mamă? Ce s-a întâmplat?",
+        "text_en": "Mother? What’s happened?",
         "nod": "nastere_o1",
         "conditii": {
           "oricare": [
@@ -3595,6 +4182,7 @@
       "pasi": [
         {
           "text": "O aduc pe Bătrâna Morwen la Hanna, până se luminează",
+          "text_en": "I bring Old Morwen to Hanna before first light",
           "la": "ierbareasa",
           "gata": {
             "stare": {
@@ -3617,12 +4205,18 @@
                   "cand": "dupa"
                 }
               },
-              "text": "S-a luminat. Am ajuns prea târziu. O întreb pe mama sau pe bătrână cum a fost."
+              "text": "S-a luminat. Am ajuns prea târziu. O întreb pe mama sau pe bătrână cum a fost.",
+              "text_en": "Day has broken. I’m too late. I’ll ask Mother or the old woman how it went."
             },
             "Coliba Bătrânei Morwen e la Marginea satului. În noaptea asta bat la ușă și o trezesc, dacă trebuie. Până la 5 dimineața."
           ],
+          "sfat_en": [
+            null,
+            "Old Morwen’s hut is at the Edge. Tonight I’ll knock on her door and wake her if I have to. By 5 in the morning."
+          ],
           "predare": {
             "text": "Bunico, mama m-a trimis după dumneata!",
+            "text_en": "Granny, Mother sent me to fetch you!",
             "conditii": {
               "stare": {
                 "nastere": "acceptat"
@@ -3658,9 +4252,14 @@
                     "cand": "dupa"
                   }
                 },
-                "text": "Bunico... ce s-a întâmplat cu Hanna?"
+                "text": "Bunico... ce s-a întâmplat cu Hanna?",
+                "text_en": "Granny... what happened to Hanna?"
               },
               "Bunico..."
+            ],
+            "text_en": [
+              null,
+              "Granny..."
             ],
             "nod": [
               {
@@ -3689,6 +4288,7 @@
       ],
       "recompensa": {
         "text": "Încrederea mamei +1. Primul copil născut în Baum de la bătălie.",
+        "text_en": "Mother’s trust +1. The first child born in Baum since the battle.",
         "efecte": {
           "relatie": {
             "miriam": 1
@@ -3700,12 +4300,15 @@
     {
       "id": "miriam_tata",
       "titlu": "Echipamentul tatălui",
+      "titlu_en": "Father’s Gear",
       "dela": "miriam",
       "dialog": "miriam_tata",
       "descriere": "CIORNĂ: Mama a ținut ascuns sub patul ei, într-o ladă, echipamentul tatei: coiful, jambierele, sabia și platoșa, crăpată pe mijloc, chiar prin romb, ca în visul meu. Mi le-a dat. Coiful, jambierele și sabia sunt în cufărul din camera mea. Platoșa o duc la Bram.",
+      "descriere_en": "Mother kept Father’s gear hidden in a trunk under her bed: the helm, the leggings, the sword and the breastplate, cracked down the middle, right through the diamond, just as it was in my dream. She gave them to me. The helm, the leggings and the sword are in the chest in my room. I’ll take the breastplate to Bram.",
       "pasi": [
         {
           "text": "Primesc lucrurile tatei de la mama",
+          "text_en": "I receive Father’s things from Mother",
           "gata": {
             "existaStare": "tata_echipament"
           }
@@ -3713,6 +4316,7 @@
       ],
       "recompensa": {
         "text": "Coiful, jambierele și sabia tatei (în cufărul din camera mea) și platoșa lui, crăpată. Fără încredere în plus: e un dar, nu o misiune.",
+        "text_en": "Father’s helm, leggings and sword (in the chest in my room), and his cracked breastplate. No extra trust: it’s a gift, not a quest.",
         "efecte": {}
       },
       "ofertaEveniment": "miriam_tata_lada",
@@ -3721,6 +4325,7 @@
     {
       "id": "finn_lina",
       "titlu": "Ziua Linei",
+      "titlu_en": "Lina’s Birthday",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -3730,7 +4335,8 @@
               "lina_ziua": "da"
             }
           },
-          "text": "CIORNĂ: Lina a împlinit opt ani. Am adus panglica albastră de la negustor, iar doamna Agnes a făcut un tort cu miere. Am mâncat toți patru cu degetele."
+          "text": "CIORNĂ: Lina a împlinit opt ani. Am adus panglica albastră de la negustor, iar doamna Agnes a făcut un tort cu miere. Am mâncat toți patru cu degetele.",
+          "text_en": "Lina has turned eight. I brought the blue ribbon from the merchant, and Mistress Agnes baked a honey cake. All four of us ate it with our fingers."
         },
         {
           "conditii": {
@@ -3738,7 +4344,8 @@
               "lina": "refuzat"
             }
           },
-          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. I-am spus că n-am timp."
+          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. I-am spus că n-am timp.",
+          "text_en": "Finn asked me to help with Lina’s birthday: a ribbon and a cake. I told him I didn’t have time."
         },
         {
           "conditii": {
@@ -3746,13 +4353,21 @@
               "lina": "ratat"
             }
           },
-          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. N-am ajuns la timp. Lina s-a uitat toată seara la ușă."
+          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. N-am ajuns la timp. Lina s-a uitat toată seara la ușă.",
+          "text_en": "Finn asked me to help with Lina’s birthday: a ribbon and a cake. I didn’t make it in time. Lina watched the door all evening."
         },
         "CIORNĂ: Peste trei zile e ziua Linei. Finn vrea să-i dea panglica albastră de la negustor și un tort de la doamna Agnes, dar n-are bani și a promis că nu mai fură. În seara zilei ei, mă așteaptă în fața casei."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        null,
+        "Lina’s birthday is in three days. Finn wants to give her the blue ribbon from the merchant and a cake from Mistress Agnes, but he has no money, and he promised he wouldn’t steal anymore. On the evening of her birthday, he’ll be waiting for me in front of the house."
       ],
       "oferta": {
         "_nota": "Ales de Claude: la o zi după „Mama lui Finn” (cu mama vindecată, de la care știe toată casa).",
         "text": "Ce-i cu tine, Finn? Pari cu gândul în altă parte.",
+        "text_en": "What’s the matter, Finn? You seem far away.",
         "nod": "lina_o1",
         "conditii": {
           "misiuneTerminata": {
@@ -3763,6 +4378,7 @@
       "pasi": [
         {
           "text": "O rog pe doamna Agnes să facă un tort",
+          "text_en": "I ask Mistress Agnes to bake a cake",
           "la": "hangita",
           "gata": {
             "existaStare": "lina_tort"
@@ -3791,12 +4407,18 @@
                   }
                 ]
               },
-              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn.",
+              "text_en": "Lina’s birthday has passed. I have to talk to Finn."
             },
             "Doamna Agnes e la tavernă. Iar panglica o are negustorul: mă oprește el când intru în piață."
           ],
+          "sfat_en": [
+            null,
+            "Mistress Agnes is at the tavern. And the merchant has the ribbon: he’ll stop me himself when I walk into the market."
+          ],
           "predare": {
             "text": "Doamna Agnes, ați putea face un tort?",
+            "text_en": "Mistress Agnes, could you bake a cake?",
             "nod": "lina_a1",
             "conditii": {
               "nu": {
@@ -3840,6 +4462,7 @@
           },
           "indiciu": {
             "text": "Despre ziua Linei...",
+            "text_en": "About Lina’s birthday...",
             "nod": [
               {
                 "nod": "lina_a_tarziu",
@@ -3874,6 +4497,7 @@
         },
         {
           "text": "Îi duc doamnei Agnes 2 măsuri de făină, 2 căni de lapte și o măsură de miere",
+          "text_en": "I bring Mistress Agnes 2 measures of flour, 2 cups of milk and a measure of honey",
           "la": "hangita",
           "gata": {
             "stare": {
@@ -3904,12 +4528,18 @@
                   }
                 ]
               },
-              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn.",
+              "text_en": "Lina’s birthday has passed. I have to talk to Finn."
             },
             "Făina de la moară și laptele de la vaci (cât e misiunea, munca îmi dă și din ele), mierea de la fermier (5 monede)."
           ],
+          "sfat_en": [
+            null,
+            "Flour from the mill and milk from the cows (while the quest lasts, working there gets me some of each), honey from the farmer (5 coins)."
+          ],
           "predare": {
             "text": "Am adus tot pentru tort.",
+            "text_en": "I’ve brought everything for the cake.",
             "nod": "lina_b1",
             "conditii": {
               "areCate": {
@@ -3958,6 +4588,7 @@
           },
           "indiciu": {
             "text": "Ce trebuia pentru tort?",
+            "text_en": "What did you need for the cake again?",
             "nod": [
               {
                 "nod": "lina_a_tarziu",
@@ -4006,6 +4637,7 @@
         },
         {
           "text": "În seara zilei ei, cu panglica și cu tortul, la Finn, în fața casei",
+          "text_en": "On the evening of her birthday, I bring the ribbon and the cake to Finn, in front of his house",
           "la": "hot",
           "gata": {
             "stare": {
@@ -4036,7 +4668,8 @@
                   }
                 ]
               },
-              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn."
+              "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn.",
+              "text_en": "Lina’s birthday has passed. I have to talk to Finn."
             },
             {
               "conditii": {
@@ -4047,12 +4680,19 @@
                   }
                 }
               },
-              "text": "E azi! Diseară, după șase, Finn mă așteaptă în fața casei. Cu panglica și cu tortul."
+              "text": "E azi! Diseară, după șase, Finn mă așteaptă în fața casei. Cu panglica și cu tortul.",
+              "text_en": "It’s today! This evening, after six, Finn will be waiting for me in front of the house. With the ribbon and the cake."
             },
             "În seara zilei ei (a treia zi de când mi-a spus), după șase, Finn mă așteaptă în fața casei. Panglica o are negustorul: mă oprește când intru în piață."
           ],
+          "sfat_en": [
+            null,
+            null,
+            "On the evening of her birthday (the third day since he told me), after six, Finn waits for me in front of the house. The merchant has the ribbon: he’ll stop me when I walk into the market."
+          ],
           "predare": {
             "text": "Am tot, Finn. Panglica și tortul.",
+            "text_en": "I’ve got everything, Finn. The ribbon and the cake.",
             "nod": "lina_z0",
             "conditii": {
               "loc": "casa_finn",
@@ -4099,9 +4739,14 @@
                     }
                   ]
                 },
-                "text": "Finn... ziua Linei."
+                "text": "Finn... ziua Linei.",
+                "text_en": "Finn... Lina’s birthday."
               },
               "Despre ziua Linei..."
+            ],
+            "text_en": [
+              null,
+              "About Lina’s birthday..."
             ],
             "nod": [
               {
@@ -4153,6 +4798,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1. Lina a avut cea mai frumoasă zi.",
+        "text_en": "Finn’s trust +1. Lina had the most wonderful day.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -4164,6 +4810,7 @@
     {
       "id": "finn_datoria",
       "titlu": "Datoria la Jarek",
+      "titlu_en": "The Debt to Jarek",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -4173,7 +4820,8 @@
               "datoria_jarek": "platita"
             }
           },
-          "text": "CIORNĂ: Am sărit gardul cu Finn, noaptea, și i-am dus lui Jarek trei blăni de lup. Datoria lui Finn e plătită."
+          "text": "CIORNĂ: Am sărit gardul cu Finn, noaptea, și i-am dus lui Jarek trei blăni de lup. Datoria lui Finn e plătită.",
+          "text_en": "Finn and I jumped the fence at night and brought Jarek three wolf pelts. Finn’s debt is paid."
         },
         {
           "conditii": {
@@ -4181,7 +4829,8 @@
               "datoria": "refuzat"
             }
           },
-          "text": "CIORNĂ: Finn are o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. Mi-a cerut ajutorul, iar eu i-am spus să se descurce singur."
+          "text": "CIORNĂ: Finn are o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. Mi-a cerut ajutorul, iar eu i-am spus să se descurce singur.",
+          "text_en": "Finn is in Jarek’s debt: three pelts, lost the night the merchant caught him. He asked me for help, and I told him to fend for himself."
         },
         {
           "conditii": {
@@ -4189,13 +4838,21 @@
               "datoria": "ratat"
             }
           },
-          "text": "CIORNĂ: Finn avea o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. N-am ajuns la timp, iar Finn a plătit-o cu pielea lui."
+          "text": "CIORNĂ: Finn avea o datorie la Jarek: trei blăni, pierdute în noaptea în care l-a prins negustorul. N-am ajuns la timp, iar Finn a plătit-o cu pielea lui.",
+          "text_en": "Finn was in Jarek’s debt: three pelts, lost the night the merchant caught him. I didn’t make it in time, and Finn paid it off with his own hide."
         },
         "CIORNĂ: În noaptea în care l-a prins negustorul, Finn ducea în sac și trei blăni de-ale lui Jarek, pe care negustorul le-a vândut. Acum Jarek vrea trei blăni de lup înapoi, în cinci zile. I le ducem noaptea, peste gardul de la ieșire."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        null,
+        "The night the merchant caught him, Finn was also carrying three of Jarek’s pelts in his sack, and the merchant sold them. Now Jarek wants three wolf pelts back, within five days. We’ll take them to him at night, over the Old Fence."
       ],
       "oferta": {
         "_nota": "Ales de Claude: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată).",
         "text": "Finn, ce te apasă?",
+        "text_en": "Finn, what’s weighing on you?",
         "nod": "datoria_o1",
         "conditii": {
           "misiune": {
@@ -4218,6 +4875,7 @@
       "pasi": [
         {
           "text": "Îi aduc lui Finn 3 blăni de lup",
+          "text_en": "I bring Finn 3 wolf pelts",
           "gata": {
             "existaStare": "datoria_saci"
           },
@@ -4245,12 +4903,18 @@
                   }
                 ]
               },
-              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
+              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn.",
+              "text_en": "The five days are up. I have to talk to Finn."
             },
             "Blănile le iau de la lupi, la vânătoare, în pădure. Am cinci zile."
           ],
+          "sfat_en": [
+            null,
+            "I get the pelts from wolves, hunting in the forest. I have five days."
+          ],
           "predare": {
             "text": "Am blănile pentru Jarek.",
+            "text_en": "I’ve got the pelts for Jarek.",
             "nod": "datoria_b1",
             "conditii": {
               "areCate": {
@@ -4305,9 +4969,14 @@
                     }
                   ]
                 },
-                "text": "Finn... ce ai pe față?"
+                "text": "Finn... ce ai pe față?",
+                "text_en": "Finn... what happened to your face?"
               },
               "Despre Jarek..."
+            ],
+            "text_en": [
+              null,
+              "About Jarek..."
             ],
             "nod": [
               {
@@ -4343,6 +5012,7 @@
         },
         {
           "text": "Noaptea, la ieșire, îi ducem lui Jarek blănile",
+          "text_en": "At night, at the Old Fence, we take the pelts to Jarek",
           "gata": {
             "stare": {
               "datoria_jarek": "platita"
@@ -4372,12 +5042,18 @@
                   }
                 ]
               },
-              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn."
+              "text": "Au trecut cele cinci zile. Trebuie să vorbesc cu Finn.",
+              "text_en": "The five days are up. I have to talk to Finn."
             },
             "După unsprezece, la ieșirea de la Marginea satului. Finn mă așteaptă acolo în fiecare noapte."
           ],
+          "sfat_en": [
+            null,
+            "After eleven, at the Old Fence at the Edge. Finn waits for me there every night."
+          ],
           "predare": {
             "text": "Să mergem.",
+            "text_en": "Let’s go.",
             "nod": "datoria_j0",
             "conditii": {
               "loc": "iesirea",
@@ -4430,9 +5106,14 @@
                     }
                   ]
                 },
-                "text": "Finn... ce ai pe față?"
+                "text": "Finn... ce ai pe față?",
+                "text_en": "Finn... what happened to your face?"
               },
               "Despre Jarek..."
+            ],
+            "text_en": [
+              null,
+              "About Jarek..."
             ],
             "nod": [
               {
@@ -4469,6 +5150,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1. Nu mai datorează nimic nimănui.",
+        "text_en": "Finn’s trust +1. He no longer owes anyone anything.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -4480,6 +5162,7 @@
     {
       "id": "finn_cimitir",
       "titlu": "Noaptea de la cimitir",
+      "titlu_en": "The Night at the Graveyard",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -4487,13 +5170,19 @@
           "conditii": {
             "existaStare": "cimitir_gata"
           },
-          "text": "CIORNĂ: Noaptea, la cimitir, i-am prins cu Finn pe șobolani săpând la mormintele celor douăzeci și trei. Spuneau că Stăpânul-oaselor vrea morții. Am pus pământul la loc."
+          "text": "CIORNĂ: Noaptea, la cimitir, i-am prins cu Finn pe șobolani săpând la mormintele celor douăzeci și trei. Spuneau că Stăpânul-oaselor vrea morții. Am pus pământul la loc.",
+          "text_en": "At night, at the graveyard, Finn and I caught the rats digging at the graves of the Twenty-Three. They said the Bone-Master wants the dead. We put the earth back."
         },
         "CIORNĂ: Lina vede lumini noaptea la cimitir, iar Finn a găsit pământul răscolit pe mormintele celor douăzeci și trei. La noapte, după unsprezece, mergem să vedem cine sapă."
+      ],
+      "descriere_en": [
+        null,
+        "Lina sees lights at the graveyard at night, and Finn found the earth disturbed on the graves of the Twenty-Three. Tonight, after eleven, we’re going to see who’s digging."
       ],
       "oferta": {
         "_nota": "Decis de autor: doar după ce Vale a găsit hârtiile soldatului („Camera de sus”), Roderick s-a uitat peste ele („Hârtiile soldatului”) și pivnița e curățată de șobolani („Pivnița”). Ales de Claude: și după „Datoria la Jarek” (dusă la capăt de o zi, sau ratată).",
         "text": "Ce-i cu Lina? Pare obosită.",
+        "text_en": "What’s wrong with Lina? She looks tired.",
         "nod": "cimitir_o1",
         "conditii": {
           "misiune": {
@@ -4518,18 +5207,22 @@
       "pasi": [
         {
           "text": "La noapte, după unsprezece, la cimitir, cu Finn",
+          "text_en": "Tonight, after eleven, at the graveyard, with Finn",
           "gata": {
             "existaStare": "cimitir_gata"
           },
           "sfat": "Cimitirul e la Marginea satului. Finn mă așteaptă după gard, noaptea.",
+          "sfat_en": "The graveyard is at the Edge. Finn waits for me behind the fence, at night.",
           "indiciu": {
             "text": "Despre cimitir...",
+            "text_en": "About the graveyard...",
             "nod": "cimitir_ind"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1.",
+        "text_en": "Finn’s trust +1.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -4541,12 +5234,15 @@
     {
       "id": "finn_zaruri",
       "titlu": "Zarurile orcilor",
+      "titlu_en": "The Orcs’ Dice",
       "dela": "hot",
       "dialog": "hot",
       "descriere": "CIORNĂ: Finn m-a învățat un truc de la Jarek: la zaruri, cu soarele în spate, mă uit în lama toporului de pe masă și văd ce e sub paharul unui orc. O dată la fiecare partidă.",
+      "descriere_en": "Finn taught me one of Jarek’s tricks: at dice, with the sun at my back, I look into the blade of the axe on the table and see what’s under an orc’s cup. Once per game.",
       "oferta": {
         "_nota": "Decis de autor: de la 4/10 încredere cu Finn, când e acasă.",
         "text": "Ce meșterești acolo, Finn?",
+        "text_en": "What are you tinkering with there, Finn?",
         "nod": "zaruri_o1",
         "conditii": {
           "relatie": {
@@ -4560,6 +5256,7 @@
       "pasi": [
         {
           "text": "Învăț trucul lui Finn",
+          "text_en": "I learn Finn’s trick",
           "gata": {
             "stare": {
               "zaruri_hot": "da"
@@ -4568,13 +5265,15 @@
         }
       ],
       "recompensa": {
-        "text": "Trucul lui Finn: la zaruri, o dată la fiecare partidă, văd sub paharul unui orc. (Fără încredere.)"
+        "text": "Trucul lui Finn: la zaruri, o dată la fiecare partidă, văd sub paharul unui orc. (Fără încredere.)",
+        "text_en": "Finn’s trick: at dice, once per game, I can see under an orc’s cup. (No trust gained.)"
       },
       "_nota": "Decis de autor: puterea de la zaruri; o imagine; nu dă încredere."
     },
     {
       "id": "kaia_baza",
       "titlu": "Baza",
+      "titlu_en": "The Base",
       "dela": "vanatoare",
       "dialog": "vanatoare",
       "descriere": [
@@ -4582,13 +5281,19 @@
           "conditii": {
             "existaStare": "revolta"
           },
-          "text": "CIORNĂ: Seara, la foc, Kaia și cu mine am hotărât: ne ridicăm împotriva orcilor. Tabăra ei din pădure e de acum baza noastră. Aici o să-i strâng pe toți, pe rând."
+          "text": "CIORNĂ: Seara, la foc, Kaia și cu mine am hotărât: ne ridicăm împotriva orcilor. Tabăra ei din pădure e de acum baza noastră. Aici o să-i strâng pe toți, pe rând.",
+          "text_en": "One evening, by the fire, Kaia and I decided: we rise up against the orcs. Her camp in the forest is our base from now on. This is where I’ll gather everyone, one by one."
         },
         "CIORNĂ: Kaia are ceva de vorbit cu mine, la foc."
+      ],
+      "descriere_en": [
+        null,
+        "Kaia has something to talk to me about, by the fire."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „Convoiul”, seara, la foc.",
         "text": "Kaia... la ce te gândești?",
+        "text_en": "Kaia... what are you thinking about?",
         "nod": "baza_o1",
         "conditii": {
           "misiune": {
@@ -4604,6 +5309,7 @@
       "pasi": [
         {
           "text": "Stau de vorbă cu Kaia la foc",
+          "text_en": "I talk with Kaia by the fire",
           "gata": {
             "existaStare": "revolta"
           }
@@ -4611,6 +5317,7 @@
       ],
       "recompensa": {
         "text": "Încrederea Kaiei +1. Tabăra ei e de acum baza noastră.",
+        "text_en": "Kaia’s trust +1. Her camp is our base from now on.",
         "efecte": {
           "relatie": {
             "vanatoare": 1
@@ -4622,6 +5329,7 @@
     {
       "id": "finn_custi",
       "titlu": "Cuștile vânătorilor",
+      "titlu_en": "The Hunters’ Cages",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -4631,7 +5339,8 @@
               "finn_custi": "eliberate"
             }
           },
-          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Noaptea, cu Kaia și Finn, ne-am strecurat în tabăra lor. Lupoaica și-a dus puii acasă."
+          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Noaptea, cu Kaia și Finn, ne-am strecurat în tabăra lor. Lupoaica și-a dus puii acasă.",
+          "text_en": "The orc hunters were keeping a she-wolf and her pups in cages, raising them for the siege. At night, Kaia, Finn and I slipped into their camp. The she-wolf took her pups home."
         },
         {
           "conditii": {
@@ -4639,19 +5348,28 @@
               "finn_custi": "pierdut"
             }
           },
-          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Ne-au prins în tabăra lor și abia am scăpat cu viață. Cuștile au rămas închise."
+          "text": "CIORNĂ: Orcii vânători țineau o lupoaică și puii ei în cuști, ca să-i crească pentru asediu. Ne-au prins în tabăra lor și abia am scăpat cu viață. Cuștile au rămas închise.",
+          "text_en": "The orc hunters were keeping a she-wolf and her pups in cages, raising them for the siege. They caught us in their camp, and we barely escaped with our lives. The cages stayed shut."
         },
         {
           "conditii": {
             "existaStare": "finn_custi_plan"
           },
-          "text": "CIORNĂ: Kaia a aflat că orcii vânători țin în cuști o lupoaică și puii ei, ca să-i crească pentru asediu. Finn deschide orice lacăt. Noaptea, după unsprezece, ne strecurăm toți trei în tabăra lor."
+          "text": "CIORNĂ: Kaia a aflat că orcii vânători țin în cuști o lupoaică și puii ei, ca să-i crească pentru asediu. Finn deschide orice lacăt. Noaptea, după unsprezece, ne strecurăm toți trei în tabăra lor.",
+          "text_en": "Kaia found out that the orc hunters are keeping a she-wolf and her pups in cages, raising them for the siege. Finn can open any lock. At night, after eleven, the three of us will slip into their camp."
         },
         "CIORNĂ: Kaia și cu mine punem ceva la cale. I-am spus lui Finn doar atât, în șoaptă, și l-am chemat seara la locul de campare, să afle restul."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        null,
+        "Kaia and I are plotting something. I told Finn only that much, in a whisper, and asked him to come to the Campsite in the evening to hear the rest."
       ],
       "oferta": {
         "_nota": "Decis de autor: de la 5/10 încredere cu Finn și după „Baza” Kaiei; acasă, în șoaptă.",
         "text": "Finn... pot să-ți spun ceva? Dar încet.",
+        "text_en": "Finn... can I tell you something? Quietly, though.",
         "nod": "custi_o1",
         "conditii": {
           "relatie": {
@@ -4668,29 +5386,36 @@
       "pasi": [
         {
           "text": "Seara, îl duc pe Finn la locul de campare",
+          "text_en": "In the evening, I take Finn to the Campsite",
           "gata": {
             "existaStare": "finn_custi_plan"
           },
           "sfat": "Seara (18–23), la locul de campare din pădure. Finn vine cu mine.",
+          "sfat_en": "In the evening (18–23), at the Campsite in the forest. Finn comes with me.",
           "indiciu": {
             "text": "Despre diseară...",
+            "text_en": "About tonight...",
             "nod": "custi_ind1"
           }
         },
         {
           "text": "Noaptea, ne strecurăm toți trei în tabăra vânătorilor",
+          "text_en": "At night, the three of us slip into the hunters’ camp",
           "gata": {
             "existaStare": "finn_custi_gata"
           },
           "sfat": "Din noaptea de după, între 23 și 3, la locul de campare: Kaia și Finn mă așteaptă acolo. Unde bate lumina focului, nu călcăm.",
+          "sfat_en": "From the following night on, between 23:00 and 03:00, at the Campsite: Kaia and Finn wait for me there. We don’t step where the firelight falls.",
           "indiciu": {
             "text": "Despre cuști...",
+            "text_en": "About the cages...",
             "nod": "custi_ind2"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1 și a Kaiei +1, oricum s-ar termina.",
+        "text_en": "Finn’s trust +1, and Kaia’s +1, no matter how it ends.",
         "efecte": {
           "relatie": {
             "hot": 1,
@@ -4703,6 +5428,7 @@
     {
       "id": "finn_jarek",
       "titlu": "Ultima treabă pentru Jarek",
+      "titlu_en": "One Last Job for Jarek",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -4712,7 +5438,8 @@
               "finn_jarek": "gata"
             }
           },
-          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. Am mers amândoi la cocioaba lui, iar Finn și-a lăsat sculele pe masă: a terminat cu furtul."
+          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. Am mers amândoi la cocioaba lui, iar Finn și-a lăsat sculele pe masă: a terminat cu furtul.",
+          "text_en": "Jarek wanted Finn to empty the merchant’s cashbox. We went to his shack together, and Finn laid his tools down on the table: he’s done with stealing."
         },
         {
           "conditii": {
@@ -4720,7 +5447,8 @@
               "finn_jarek": "dat"
             }
           },
-          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A doua zi mi-a adus cincisprezece monede și nu s-a mai uitat în ochii mei."
+          "text": "CIORNĂ: Jarek voia ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A doua zi mi-a adus cincisprezece monede și nu s-a mai uitat în ochii mei.",
+          "text_en": "Jarek wanted Finn to empty the merchant’s cashbox. I told Finn we needed the money. The next day he brought me fifteen coins and couldn’t look me in the eye."
         },
         {
           "conditii": {
@@ -4728,13 +5456,21 @@
               "finn_jarek": "furt"
             }
           },
-          "text": "CIORNĂ: Jarek vrea ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A băgat biletul în sân și mi-a zis să las totul pe el."
+          "text": "CIORNĂ: Jarek vrea ca Finn să-i golească negustorului caseta cu bani. I-am zis lui Finn că avem nevoie de bani. A băgat biletul în sân și mi-a zis să las totul pe el.",
+          "text_en": "Jarek wants Finn to empty the merchant’s cashbox. I told Finn we need the money. He tucked the note inside his shirt and told me to leave everything to him."
         },
         "CIORNĂ: Jarek îi cere lui Finn o ultimă treabă: caseta cu bani a negustorului. I-am adus aminte lui Finn că a promis. La noapte mergem amândoi la Jarek, ca să-i spună în față."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        null,
+        "Jarek is asking Finn for one last job: the merchant’s cashbox. I reminded Finn of his promise. Tonight we’re both going to Jarek’s, so Finn can tell him to his face."
       ],
       "oferta": {
         "_nota": "Ales de Claude: după „Noaptea de la cimitir” și după „Datoria la Jarek” (dusă la capăt sau ratată), acasă.",
         "text": "Ce-i hârtia aia, Finn?",
+        "text_en": "What’s that paper, Finn?",
         "nod": "jarek_o1",
         "conditii": {
           "misiune": {
@@ -4764,9 +5500,14 @@
                   "finn_jarek": "furt"
                 }
               },
-              "text": "Finn se ocupă singur de treaba lui Jarek"
+              "text": "Finn se ocupă singur de treaba lui Jarek",
+              "text_en": "Finn handles Jarek’s job on his own"
             },
             "La noapte, mergem amândoi la cocioaba lui Jarek"
+          ],
+          "text_en": [
+            null,
+            "Tonight, the two of us go to Jarek’s shack"
           ],
           "gata": {
             "stare": {
@@ -4780,12 +5521,18 @@
                   "finn_jarek": "furt"
                 }
               },
-              "text": "Finn a zis că până mâine e gata. N-am ce face până atunci."
+              "text": "Finn a zis că până mâine e gata. N-am ce face până atunci.",
+              "text_en": "Finn said it would be done by tomorrow. There’s nothing for me to do until then."
             },
             "După unsprezece (23–03), Finn mă așteaptă în fața casei lui."
           ],
+          "sfat_en": [
+            null,
+            "After eleven (23–03), Finn waits for me in front of his house."
+          ],
           "indiciu": {
             "text": "Despre Jarek...",
+            "text_en": "About Jarek...",
             "nod": [
               {
                 "nod": "jarek_ind_furt",
@@ -4804,6 +5551,7 @@
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1, dacă îl țin de promisiune.",
+        "text_en": "Finn’s trust +1, if I hold him to his promise.",
         "efecte": {
           "relatie": {
             "hot": 1
@@ -4815,6 +5563,7 @@
     {
       "id": "finn_prieteni",
       "titlu": "Prietenii lui Finn",
+      "titlu_en": "Finn’s Friends",
       "dela": "hot",
       "dialog": "hot",
       "descriere": [
@@ -4822,7 +5571,8 @@
           "conditii": {
             "existaStare": "prieteni_fluier"
           },
-          "text": "CIORNĂ: Tobin, Ned și Wil, prietenii lui Finn din copilărie, sunt cu noi. Finn mi-a dat un fluier: în lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, și ei trag cu arcul din umbră."
+          "text": "CIORNĂ: Tobin, Ned și Wil, prietenii lui Finn din copilărie, sunt cu noi. Finn mi-a dat un fluier: în lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, și ei trag cu arcul din umbră.",
+          "text_en": "Tobin, Ned and Wil, Finn’s childhood friends, are with us. Finn gave me a whistle: in the great battle, when too many come at once, I blow it, just once, and they shoot from the shadows."
         },
         {
           "conditii": {
@@ -4830,13 +5580,20 @@
               "finn_prieteni": "inceputa"
             }
           },
-          "text": "CIORNĂ: Finn are trei prieteni din copilărie, de la Marginea satului: Tobin, Ned și Wil. Ne ajută în lupta cea mare, dar fiecare vrea ceva înainte."
+          "text": "CIORNĂ: Finn are trei prieteni din copilărie, de la Marginea satului: Tobin, Ned și Wil. Ne ajută în lupta cea mare, dar fiecare vrea ceva înainte.",
+          "text_en": "Finn has three childhood friends from the Edge: Tobin, Ned and Wil. They’ll help us in the great battle, but each of them wants something first."
         },
         "CIORNĂ: Finn vrea să vorbească cu trei prieteni de-ai lui."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "Finn wants to talk to three friends of his."
       ],
       "oferta": {
         "_nota": "Decis de autor: de la 8/10 încredere cu Finn; ales de Claude: și după „Cuștile vânătorilor”, ca Finn să știe de revoltă, și cu Groapa deschisă („Inelul mamei”), de unde vine dintele pentru Wil.",
         "text": "Finn, pari că pui ceva la cale.",
+        "text_en": "Finn, you look like you’re up to something.",
         "nod": "prieteni_o1",
         "conditii": {
           "relatie": {
@@ -4855,14 +5612,17 @@
       "pasi": [
         {
           "text": "Le aduc lui Finn ce au cerut prietenii lui",
+          "text_en": "I bring Finn what his friends asked for",
           "subpasi": [
             {
               "text": "Pentru Tobin: 3 bucăți de carne friptă și 3 pâini",
+              "text_en": "For Tobin: 3 pieces of roast meat and 3 loaves of bread",
               "gata": {
                 "existaStare": "prieteni_tobin"
               },
               "predare": {
                 "text": "Am carnea și pâinea pentru Tobin.",
+                "text_en": "I’ve got the meat and the bread for Tobin.",
                 "nod": "prieteni_tobin",
                 "conditii": {
                   "areCate": {
@@ -4874,12 +5634,14 @@
             },
             {
               "text": "Pentru Ned: un arc, cu 3 săgeți",
+              "text_en": "For Ned: a bow, with 3 arrows",
               "gata": {
                 "existaStare": "prieteni_ned"
               },
               "predare": [
                 {
                   "text": "Am arcul făcut de Kaia, pentru Ned.",
+                  "text_en": "I’ve got the bow Kaia made for Ned.",
                   "nod": "prieteni_ned_kaia",
                   "conditii": {
                     "areObiect": "arc_ned"
@@ -4888,6 +5650,7 @@
                 {
                   "_nota": "Decis de autor: sau un arc cumpărat (de la Jarek), cu 3 săgeți; nu cât face Kaia arcul.",
                   "text": "Am un arc și trei săgeți pentru Ned.",
+                  "text_en": "I’ve got a bow and three arrows for Ned.",
                   "nod": "prieteni_ned_arc",
                   "conditii": {
                     "areCate": {
@@ -4912,11 +5675,13 @@
             },
             {
               "text": "Pentru Wil: un dinte de orc din Groapă",
+              "text_en": "For Wil: an orc tooth from the Pit",
               "gata": {
                 "existaStare": "prieteni_wil"
               },
               "predare": {
                 "text": "Am dintele de orc pentru Wil.",
+                "text_en": "I’ve got the orc tooth for Wil.",
                 "nod": "prieteni_wil",
                 "conditii": {
                   "areObiect": "dinte_orc"
@@ -4925,24 +5690,29 @@
             }
           ],
           "sfat": "Carnea friptă o face Agnes, sau o frig acasă, pe vatră. Arcul îl cumpăr de la Jarek, cu trei săgeți, sau îl face Kaia din 4 lemne și o sfoară. Dintele îl iau de la un orc bătut în Groapă, seara.",
+          "sfat_en": "Agnes makes roast meat, or I can roast it myself at home, on the hearth. I can buy the bow from Jarek, with three arrows, or Kaia can make one from 4 pieces of wood and a ball of twine. I get the tooth from an orc I’ve beaten in the Pit, in the evening.",
           "indiciu": {
             "text": "Despre prietenii tăi...",
+            "text_en": "About your friends...",
             "nod": "prieteni_ind"
           }
         },
         {
           "text": "Finn are ceva pentru mine",
+          "text_en": "Finn has something for me",
           "gata": {
             "existaStare": "prieteni_fluier"
           },
           "predare": {
             "text": "Ce zic prietenii tăi, Finn?",
+            "text_en": "What do your friends say, Finn?",
             "nod": "prieteni_f1"
           }
         }
       ],
       "recompensa": {
         "text": "Încrederea lui Finn +1 și fluierul lui, pentru lupta cea mare.",
+        "text_en": "Finn’s trust +1, and his whistle, for the great battle.",
         "efecte": {
           "relatie": {
             "hot": 1

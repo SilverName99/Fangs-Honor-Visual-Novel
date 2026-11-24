@@ -4,6 +4,7 @@
     {
       "id": "lina_panglica",
       "nume": "Ziua Linei: negustorul",
+      "nume_en": "Lina’s Birthday: The Merchant",
       "repetare": "mereu",
       "dialog": "lina_panglica",
       "conditii": {
@@ -67,36 +68,44 @@
       "vorbitor": "negustor",
       "emotie": "normal",
       "text": "Hei, tinere! Mă ajuți să car sacii ăștia până la tarabă? Îți dau cinci monede, cinstit.",
+      "text_en": "Hey, young man! Help me carry these sacks to the stall, will you? I’ll give you five coins, honest.",
       "alegeri": [
         {
           "text": "Te ajut.",
+          "text_en": "I’ll help.",
           "efecte": {
             "eveniment": "negustor_saci_ajutor"
           }
         },
         {
           "text": "Altă dată.",
+          "text_en": "Another time.",
           "efecte": {}
         }
       ],
       "_nota": "CIORNĂ: negustorul îi cere lui Vale să-l ajute cu sacii; dacă îl ajută, urmează imaginea cu Vale cărând sacii (decis de autor, fără mini-joc), apoi plata.",
-      "nume": "Negustorul cere ajutor cu sacii"
+      "nume": "Negustorul cere ajutor cu sacii",
+      "nume_en": "The Merchant Asks for Help with the Sacks"
     },
     {
       "id": "negustor_saci_ajutor",
       "manual": true,
       "repetare": "mereu",
       "grup": "Piața: sacii negustorului",
+      "grup_en": "The Market: The Merchant’s Sacks",
       "nume": "Vale cară sacii negustorului",
+      "nume_en": "Vale Carries the Merchant’s Sacks",
       "imagini": [
         "events/negustor_saci.png"
       ],
       "vorbitor": "negustor",
       "emotie": "normal",
       "text": "Gata, toți la locul lor. Mulțumesc, tinere! Ține, cinci monede, cum am zis.",
+      "text_en": "There, every one in its place. Thank you, young man! Here, five coins, just as I said.",
       "alegeri": [
         {
           "text": "Cu plăcere.",
+          "text_en": "Glad to help.",
           "efecte": {
             "timp": 60,
             "bani": 5,
@@ -121,9 +130,11 @@
       "vorbitor": "miriam",
       "emotie": "normal",
       "text": "E o pâine caldă pe masă, abia am scos-o din cuptor. Mănâncă până nu se răcește, că altfel iar pleci cu burta goală.",
+      "text_en": "There’s a warm loaf on the table, just out of the oven. Eat it before it goes cold, or you’ll be off on an empty stomach again.",
       "alegeri": [
         {
           "text": "Mulțumesc, mamă.",
+          "text_en": "Thank you, Mother.",
           "efecte": {
             "timp": 15,
             "nevoi": {
@@ -149,17 +160,21 @@
       },
       "vorbitor": "betiv",
       "numeVorbitor": "Bețiv",
+      "numeVorbitor_en": "Drunkard",
       "emotie": "suparat",
       "text": "Ce te holbezi așa, mă? Ai ceva cu mine? Hai să vedem cine-i mai tare!",
+      "text_en": "What are you gawking at, eh? Got something against me? Come on, let’s see who’s the better man!",
       "alegeri": [
         {
           "text": "Hai, dacă ai curaj.",
+          "text_en": "Come on, then, if you dare.",
           "efecte": {
             "lupta": "bataie_taverna"
           }
         },
         {
           "text": "Las-o baltă, prietene. Du-te acasă.",
+          "text_en": "Let it go, friend. Go home.",
           "efecte": {}
         }
       ]
@@ -170,15 +185,19 @@
       "manual": true,
       "vorbitor": "betiv",
       "numeVorbitor": "Bețiv",
+      "numeVorbitor_en": "Drunkard",
       "emotie": "ranit",
       "text": "Gata, gata... ajunge! Mi-ai tras-o bine, băiete. Berea m-a făcut viteaz, nu eu.",
+      "text_en": "All right, all right... enough! You really let me have it, lad. That was the ale’s courage, not mine.",
       "alegeri": [
         {
           "text": "Du-te acasă și dormi.",
+          "text_en": "Go home and sleep it off.",
           "efecte": {}
         },
         {
           "text": "Data viitoare gândește-te de două ori.",
+          "text_en": "Next time, think twice.",
           "efecte": {}
         }
       ]
@@ -202,12 +221,15 @@
         "events/orci_colector_piata.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "orc_colector",
       "emotie": "rade",
       "text": "Colectorul înșfacă un sac de mere de pe taraba negustorului și pleacă fără să plătească. Negustorul tace, cu ochii în pământ.",
+      "text_en": "The tax collector snatches a sack of apples from the merchant’s stall and walks off without paying. The merchant says nothing, his eyes on the ground.",
       "alegeri": [
         {
           "text": "Pune sacul la loc!",
+          "text_en": "Put that sack back!",
           "efecte": {
             "reputatie": 2,
             "pedeapsa": "orc_colector"
@@ -215,6 +237,7 @@
         },
         {
           "text": "Plătesc eu marfa. (8 monede)",
+          "text_en": "I’ll pay for the goods. (8 coins)",
           "conditii": {
             "bani": {
               "min": 8
@@ -227,6 +250,7 @@
         },
         {
           "text": "Mă fac că nu văd.",
+          "text_en": "I look the other way.",
           "efecte": {
             "reputatie": -1
           }
@@ -253,12 +277,15 @@
         "events/orci_colector_taverna.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "orc_colector",
       "emotie": "rade",
       "text": "Colectorul se trântește la masă și îi cere lui Agnes bere. Pe gratis, ca de obicei. Agnes strânge din dinți.",
+      "text_en": "The tax collector throws himself down at a table and demands ale from Agnes. Free, as usual. Agnes grits her teeth.",
       "alegeri": [
         {
           "text": "Las-o în pace și plătește ca toată lumea.",
+          "text_en": "Leave her alone and pay like everyone else.",
           "efecte": {
             "reputatie": 2,
             "pedeapsa": "orc_colector"
@@ -266,6 +293,7 @@
         },
         {
           "text": "Pune berea pe socoteala mea. (3 monede)",
+          "text_en": "Put the ale on my tab. (3 coins)",
           "conditii": {
             "bani": {
               "min": 3
@@ -277,6 +305,7 @@
         },
         {
           "text": "Tac și-mi văd de-ale mele.",
+          "text_en": "I keep quiet and mind my own business.",
           "efecte": {
             "reputatie": -1
           }
@@ -314,12 +343,15 @@
         "events/orci_patrula_campuri.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "text_en": "An orc tips over the farmers’ baskets and walks off with a sack of wheat. The farmer tries to say something and gets a shove for his trouble.",
       "alegeri": [
         {
           "text": "Lasă grâul, nu e al tău!",
+          "text_en": "Leave the wheat, it’s not yours!",
           "efecte": {
             "stare": {
               "fermier_deblocat": "da"
@@ -329,6 +361,7 @@
         },
         {
           "text": "Îl ajut pe fermier să strângă ce a rămas.",
+          "text_en": "I help the farmer gather what’s left.",
           "efecte": {
             "timp": 30,
             "stare": {
@@ -338,6 +371,7 @@
         },
         {
           "text": "Plec mai departe.",
+          "text_en": "I walk on.",
           "efecte": {
             "reputatie": -1,
             "stare": {
@@ -366,12 +400,15 @@
         "events/orci_patrula_campuri.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "text_en": "An orc tips over the farmers’ baskets and walks off with a sack of wheat. The farmer tries to say something and gets a shove for his trouble.",
       "alegeri": [
         {
           "text": "Lasă grâul, nu e al tău!",
+          "text_en": "Leave the wheat, it’s not yours!",
           "efecte": {
             "stare": {
               "fermier_deblocat": "da"
@@ -381,6 +418,7 @@
         },
         {
           "text": "Îl ajut pe fermier să strângă ce a rămas.",
+          "text_en": "I help the farmer gather what’s left.",
           "efecte": {
             "timp": 30,
             "stare": {
@@ -390,6 +428,7 @@
         },
         {
           "text": "Plec mai departe.",
+          "text_en": "I walk on.",
           "efecte": {
             "reputatie": -1,
             "stare": {
@@ -418,24 +457,29 @@
         "events/orci_patrula_taraba.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Doi orci răstoarnă dintr-o lovitură taraba negustorului și râd de merele care se rostogolesc prin noroi.",
+      "text_en": "With a single blow, two orcs knock over the merchant’s stall and laugh at the apples rolling through the mud.",
       "alegeri": [
         {
           "text": "Luați-vă labele de pe taraba lui!",
+          "text_en": "Get your paws off his stall!",
           "efecte": {
             "lupta": "bataie_orc_taraba"
           }
         },
         {
           "text": "Ajut la strâns marfa.",
+          "text_en": "I help gather up his wares.",
           "efecte": {
             "timp": 30
           }
         },
         {
           "text": "Trec mai departe.",
+          "text_en": "I keep walking.",
           "efecte": {
             "reputatie": -1
           }
@@ -461,12 +505,15 @@
         "events/orci_patrula_casa.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "suparat",
       "text": "Un orc bate cu pumnul în ușa casei. „Deschide! Vreau să văd ce ascundeți acolo.”",
+      "text_en": "An orc pounds on the front door with his fist. “Open up! I want to see what you’re hiding in there.”",
       "alegeri": [
         {
           "text": "Îl las să caute.",
+          "text_en": "I let him search.",
           "efecte": {
             "pedeapsa": {
               "cine": "paznic_orc_1",
@@ -476,6 +523,7 @@
         },
         {
           "text": "Îi dau 5 monede să plece. (5 monede)",
+          "text_en": "I give him 5 coins to go away. (5 coins)",
           "conditii": {
             "bani": {
               "min": 5
@@ -487,6 +535,7 @@
         },
         {
           "text": "Îi închid ușa în nas.",
+          "text_en": "I shut the door in his face.",
           "efecte": {
             "reputatie": 1,
             "pedeapsa": "paznic_orc_1"
@@ -514,18 +563,22 @@
         "events/orci_patrula_fierar.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "rade",
       "text": "Un orc își trântește toporul ciobit pe nicovala lui Bram. „Ascute-l. Acum. Și pe gratis.” Bram strânge ciocanul în pumn, dar nu zice nimic.",
+      "text_en": "An orc slams his chipped axe down on Bram’s anvil. “Sharpen it. Now. And for free.” Bram tightens his grip on the hammer, but says nothing.",
       "alegeri": [
         {
           "text": "Plătește-i munca, sau pleacă!",
+          "text_en": "Pay him for his work, or get out!",
           "efecte": {
             "lupta": "bataie_orc_fierar"
           }
         },
         {
           "text": "Plătesc eu ascuțitul. (6 monede)",
+          "text_en": "I’ll pay for the sharpening. (6 coins)",
           "conditii": {
             "bani": {
               "min": 6
@@ -537,6 +590,7 @@
         },
         {
           "text": "Nu mă bag.",
+          "text_en": "I stay out of it.",
           "efecte": {
             "reputatie": -1
           }
@@ -583,12 +637,15 @@
         "events/orci_interdictie_noapte.png"
       ],
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
       "emotie": "suparat",
       "text": "O patrulă de orci te prinde pe drum în miez de noapte. „Ce cauți afară la ora asta, șobolane?”",
+      "text_en": "An orc patrol catches you on the road in the dead of night. “What are you doing out at this hour, rat?”",
       "alegeri": [
         {
           "text": "Plătesc amenda. (10 monede)",
+          "text_en": "I’ll pay the fine. (10 coins)",
           "conditii": {
             "bani": {
               "min": 10
@@ -600,19 +657,22 @@
         },
         {
           "text": "Fug!",
+          "text_en": "I run for it!",
           "efecte": {
             "laIntamplare": [
               {
                 "sansa": 0.5,
                 "efecte": {
                   "timp": 20,
-                  "mesaj": "Ai scăpat pe o ulicioară întunecată."
+                  "mesaj": "Ai scăpat pe o ulicioară întunecată.",
+                  "mesaj_en": "You got away down a dark lane."
                 }
               },
               {
                 "sansa": 0.5,
                 "efecte": {
                   "mesaj": "Te-au prins.",
+                  "mesaj_en": "They caught you.",
                   "pedeapsa": "paznic_orc_1"
                 }
               }
@@ -621,6 +681,7 @@
         },
         {
           "text": "Mă bat cu el.",
+          "text_en": "I fight him.",
           "efecte": {
             "lupta": "bataie_orc_noapte"
           }
@@ -631,14 +692,18 @@
       "id": "taverna_scandal",
       "manual": true,
       "grup": "Scandalul din tavernă",
+      "grup_en": "Trouble at the Tavern",
       "nume": "Scandalul: orcii intră în tavernă",
+      "nume_en": "Trouble at the Tavern: The Orcs Come In",
       "dialog": "taverna_scandal"
     },
     {
       "id": "taverna_scandal_victorie",
       "manual": true,
       "grup": "Scandalul din tavernă",
+      "grup_en": "Trouble at the Tavern",
       "nume": "Scandalul: victorie",
+      "nume_en": "Trouble at the Tavern: Victory",
       "dialog": "taverna_scandal_victorie",
       "efecte": {
         "stare": {
@@ -650,7 +715,9 @@
       "id": "taverna_scandal_infrangere",
       "manual": true,
       "grup": "Scandalul din tavernă",
+      "grup_en": "Trouble at the Tavern",
       "nume": "Scandalul: înfrângere",
+      "nume_en": "Trouble at the Tavern: Defeat",
       "efecte": {
         "seteazaNevoi": {
           "viata": 10
@@ -666,6 +733,7 @@
       "id": "intalnire_vanatoare",
       "manual": true,
       "nume": "Întâlnirea cu vânătoarea",
+      "nume_en": "Meeting the Huntress",
       "repetare": "o_data",
       "dialog": "vanatoare_intalnire",
       "_nota": "Nefolosit de când întâlnirea cu Kaia s-a schimbat (kaia_intalnire); rămâne ca ciornă."
@@ -674,7 +742,9 @@
       "id": "acoperis_reparat",
       "manual": true,
       "grup": "Misiunea acoperișului",
+      "grup_en": "The Roof Quest",
       "nume": "Vale repară acoperișul",
+      "nume_en": "Vale Repairs the Roof",
       "imagini": [
         "events/acoperis_reparat.png"
       ],
@@ -684,7 +754,9 @@
       "id": "bram_fier_confiscat",
       "_nota": "Decis de autor: din ziua 3, la o zi după prima discuție cu Bram, când e afară la nicovală. Două imagini, cu replici peste fiecare. Replicile sunt ciorne.",
       "nume": "Orcul îi ia fierul lui Bram",
+      "nume_en": "The Orc Seizes Bram’s Iron",
       "grup": "Misiunea lui Bram: fierul",
+      "grup_en": "Bram’s Quest: The Iron",
       "conditii": {
         "loc": "fierar",
         "personajIn": {
@@ -706,7 +778,9 @@
       "id": "poarta_fier",
       "_nota": "Decis de autor: cât e misiunea lui Bram în lucru și fierul e încă la orci, de fiecare dată când Vale vine la poartă. Replicile sunt ciorne.",
       "nume": "Fierul lui Bram, la poartă",
+      "nume_en": "Bram’s Iron, at the Gate",
       "grup": "Misiunea lui Bram: fierul",
+      "grup_en": "Bram’s Quest: The Iron",
       "conditii": {
         "loc": "poarta",
         "misiune": {
@@ -727,7 +801,9 @@
       "id": "poarta_oprit",
       "_nota": "Decis de autor: până termini misiunea fierului lui Bram, poarta e închisă tot timpul: orcul te oprește și te întoarce din drum. În timpul misiunii, ziua, fără fier, vine în loc „poarta_fier”. Taxa se plătește atunci doar când vine colectorul acasă.",
       "nume": "Poarta: orcul te întoarce din drum",
+      "nume_en": "The Gate: The Orc Turns You Back",
       "grup": "Misiunea lui Bram: fierul",
+      "grup_en": "Bram’s Quest: The Iron",
       "conditii": {
         "loc": "poarta",
         "nu": {
@@ -765,16 +841,20 @@
       "repetare": "o_data",
       "_nota": "Decis de autor: când Vale ia fierul înapoi (plată, zaruri sau bătaie), imaginea cu fierul primit și colectorul care îi spune că-l mai așteaptă la poartă; de acum poarta e deschisă. Replica e ciornă.",
       "nume": "Fierul lui Bram, luat înapoi",
+      "nume_en": "Bram’s Iron, Recovered",
       "grup": "Misiunea lui Bram: fierul",
+      "grup_en": "Bram’s Quest: The Iron",
       "imagini": [
         "events/poarta_fier_recuperat.png"
       ],
       "vorbitor": "orc_colector",
       "emotie": "rade",
       "text": "Ia-ți fierul, omule, și du-l la fierarul tău. Și să nu te pierzi... Te mai așteptăm pe la poartă: taxa, zarurile, ce mai ai tu de dat.",
+      "text_en": "Take your iron, human, and carry it to your blacksmith. And don’t be a stranger... We’ll be expecting you at the gate: the tax, the dice, whatever else you’ve got to give.",
       "alegeri": [
         {
           "text": "Mai vedem noi.",
+          "text_en": "We’ll see about that.",
           "efecte": {
             "stare": {
               "poarta_deschisa": "da"
@@ -787,7 +867,9 @@
       "id": "kaia_intalnire",
       "manual": true,
       "nume": "Kaia, față în față cu lupii",
+      "nume_en": "Kaia, Face to Face with the Wolves",
       "grup": "Kaia: întâlnirea",
+      "grup_en": "Kaia: The Meeting",
       "repetare": "mereu",
       "dialog": "kaia_intalnire"
     },
@@ -795,21 +877,27 @@
       "id": "kaia_dupa_victorie",
       "manual": true,
       "nume": "Kaia, după lupta câștigată",
+      "nume_en": "Kaia, After the Victory",
       "grup": "Kaia: întâlnirea",
+      "grup_en": "Kaia: The Meeting",
       "dialog": "kaia_dupa_victorie"
     },
     {
       "id": "kaia_dupa_infrangere",
       "manual": true,
       "nume": "Kaia, după lupta pierdută",
+      "nume_en": "Kaia, After the Defeat",
       "grup": "Kaia: întâlnirea",
+      "grup_en": "Kaia: The Meeting",
       "dialog": "kaia_dupa_infrangere"
     },
     {
       "id": "kaia_tabara",
       "manual": true,
       "nume": "Kaia îi arată tabăra",
+      "nume_en": "Kaia Shows Vale Her Camp",
       "grup": "Kaia: lupul negru",
+      "grup_en": "Kaia: The Black Wolf",
       "dialog": "kaia_tabara"
     },
     {
@@ -817,7 +905,9 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Lupul negru a scăpat",
+      "nume_en": "The Black Wolf Got Away",
       "grup": "Kaia: lupul negru",
+      "grup_en": "Kaia: The Black Wolf",
       "dialog": "kaia_lup_scapat"
     },
     {
@@ -826,16 +916,20 @@
       "repetare": "mereu",
       "_nota": "Decis de autor: o oră, cu imaginea Miriamei bandajându-l pe Vale în camera ei. Viața +30 (TODO echilibru). Replica e ciornă.",
       "nume": "Mama îl bandajează pe Vale",
+      "nume_en": "Mother Bandages Vale",
       "grup": "Miriam: bandajul",
+      "grup_en": "Miriam: The Bandage",
       "imagini": [
         "events/miriam_bandaj.png"
       ],
       "vorbitor": "miriam",
       "emotie": "normal",
       "text": "Gata. Strânge din dinți încă o zi și o să fie bine. Și nu mă mai speria așa, Vale.",
+      "text_en": "There. Grit your teeth for one more day, and you’ll be all right. And don’t scare me like that again, Vale.",
       "alegeri": [
         {
           "text": "Mulțumesc, mamă.",
+          "text_en": "Thank you, Mother.",
           "efecte": {
             "timp": 60,
             "nevoi": {
@@ -850,6 +944,7 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "După vânătoarea cu Kaia",
+      "nume_en": "After the Hunt with Kaia",
       "dialog": "kaia_dupa_vanatoare"
     },
     {
@@ -857,6 +952,7 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "După vânătoarea cu Kaia",
+      "nume_en": "After the Hunt with Kaia",
       "dialog": "kaia_dupa_vanatoare_infrangere"
     },
     {
@@ -864,7 +960,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Camera de sus",
+      "nume_en": "The Upstairs Room",
       "grup": "Misiunea lui Agnes: camera de sus",
+      "grup_en": "Agnes’s Quest: The Upstairs Room",
       "dialog": "camera_golita"
     },
     {
@@ -872,7 +970,9 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Primul vis",
+      "nume_en": "The First Dream",
       "grup": "Primul vis",
+      "grup_en": "The First Dream",
       "dialog": "vis_1",
       "conditii": {
         "stare": {
@@ -885,7 +985,9 @@
       "id": "roderick_lumanari",
       "repetare": "o_data",
       "nume": "Roderick: lumânările",
+      "nume_en": "Roderick: The Candles",
       "grup": "Roderick: lumânările",
+      "grup_en": "Roderick: The Candles",
       "efecte": {
         "timp": 60
       },
@@ -917,7 +1019,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Roderick: locul unde a căzut tata",
+      "nume_en": "Roderick: Where Father Fell",
       "grup": "Roderick: locul unde a căzut tata",
+      "grup_en": "Roderick: Where Father Fell",
       "efecte": {
         "panaLaOra": "23:30"
       },
@@ -929,7 +1033,9 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Al doilea vis",
+      "nume_en": "The Second Dream",
       "grup": "Al doilea vis",
+      "grup_en": "The Second Dream",
       "dialog": "vis_2",
       "conditii": {
         "stare": {
@@ -943,7 +1049,9 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Al treilea vis",
+      "nume_en": "The Third Dream",
       "grup": "Al treilea vis",
+      "grup_en": "The Third Dream",
       "dialog": "vis_3",
       "conditii": {
         "stare": {
@@ -958,7 +1066,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Miriam: cina în familie",
+      "nume_en": "Miriam: A Family Supper",
       "grup": "Miriam: cina în familie",
+      "grup_en": "Miriam: A Family Supper",
       "efecte": {
         "timp": 120
       },
@@ -970,7 +1080,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Roderick: manechinul",
+      "nume_en": "Roderick: The Training Dummy",
       "grup": "Roderick: antrenamentul",
+      "grup_en": "Roderick: Training",
       "efecte": {
         "timp": 180,
         "nevoi": {
@@ -985,7 +1097,9 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Antrenamentul cu Roderick",
+      "nume_en": "Training with Roderick",
       "grup": "Roderick: antrenamentul",
+      "grup_en": "Roderick: Training",
       "imagini": [
         "events/antrenament_pregatire.png",
         "events/antrenament_lovitura.png"
@@ -993,7 +1107,9 @@
       "_nota": "Decis de autor: prima imagine, Vale se pregătește să lovească manechinul (Roderick îl privește din spate); a doua, lovitura, arătată o clipă doar la o lovitură reușită din mini-jocul lemnelor. Pornește din efectul „antrenament”, nu cu pornesteEveniment.",
       "antrenament": {
         "titlu": "Antrenamentul cu Roderick",
+        "titlu_en": "Training with Roderick",
         "indemn": "Lovește manechinul când cercul care se strânge ajunge pe inelul auriu.",
+        "indemn_en": "Strike the dummy when the shrinking circle reaches the golden ring.",
         "sunet": "lupta_sabie",
         "reusiteMin": 2,
         "contor": "antrenamente_roderick",
@@ -1007,7 +1123,9 @@
     {
       "id": "pivnita_coborare",
       "nume": "Pivnița: coborârea",
+      "nume_en": "The Cellar: The Descent",
       "grup": "Misiunea lui Agnes: pivnița",
+      "grup_en": "Agnes’s Quest: The Cellar",
       "repetare": "mereu",
       "dialog": "pivnita_coborare",
       "conditii": {
@@ -1026,7 +1144,9 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Pivnița: victoria",
+      "nume_en": "The Cellar: Victory",
       "grup": "Misiunea lui Agnes: pivnița",
+      "grup_en": "Agnes’s Quest: The Cellar",
       "dialog": "pivnita_victorie"
     },
     {
@@ -1034,6 +1154,7 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Pivnița: înfrângerea",
+      "nume_en": "The Cellar: Defeat",
       "dialog": "pivnita_infrangere"
     },
     {
@@ -1041,7 +1162,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Berea",
+      "nume_en": "The Ale",
       "grup": "Misiunea lui Agnes: berea",
+      "grup_en": "Agnes’s Quest: The Ale",
       "dialog": "bere_gata"
     },
     {
@@ -1049,7 +1172,9 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Finn: discuția de la butuc",
+      "nume_en": "Finn: The Talk at the Stocks",
       "grup": "Finn: eliberarea",
+      "grup_en": "Finn: Set Free",
       "dialog": "finn_butuc"
     },
     {
@@ -1057,7 +1182,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: eliberarea",
+      "nume_en": "Finn: Set Free",
       "grup": "Finn: eliberarea",
+      "grup_en": "Finn: Set Free",
       "dialog": "finn_eliberat"
     },
     {
@@ -1067,6 +1194,7 @@
         "pauzaZile": 1
       },
       "nume": "Mormântul tatălui",
+      "nume_en": "Father’s Grave",
       "dialog": "mormant_tata",
       "_nota": "O dată pe zi (ales de Claude)."
     },
@@ -1075,7 +1203,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Fermierul îi mulțumește",
+      "nume_en": "The Farmer’s Thanks",
       "grup": "Orcii prin sat",
+      "grup_en": "Orcs in the Village",
       "dialog": "fermier_multumeste"
     },
     {
@@ -1083,6 +1213,7 @@
       "manual": true,
       "repetare": "mereu",
       "nume": "Așteptarea în cocioabă",
+      "nume_en": "Waiting in the Shack",
       "_nota": "Decis de autor: 30 de minute pe scăunel, apoi vine contrabandistul.",
       "efecte": {
         "timp": 30,
@@ -1098,7 +1229,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: masa",
+      "nume_en": "Finn: The Meal",
       "grup": "Finn: mâncarea",
+      "grup_en": "Finn: Food",
       "efecte": {
         "timp": 90
       },
@@ -1109,7 +1242,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: vindecarea mamei",
+      "nume_en": "Finn: Healing His Mother",
       "grup": "Finn: mama",
+      "grup_en": "Finn: His Mother",
       "efecte": {
         "timp": 120
       },
@@ -1118,7 +1253,9 @@
     {
       "id": "elian_carti",
       "nume": "Cărțile lui Elian",
+      "nume_en": "Elian’s Books",
       "grup": "Elian: cărțile",
+      "grup_en": "Elian: The Books",
       "_nota": "Decis de autor: după cel puțin 7 zile, următoarea dată când Elian citește afară. Ales de Claude: 14–18, cât colectorul e în rondul lui prin sat; și abia după ce l-ai cunoscut pe Elian.",
       "conditii": {
         "loc": "biserica",
@@ -1140,7 +1277,9 @@
     {
       "id": "finn_lada",
       "nume": "Lada colectorului",
+      "nume_en": "The Collector’s Strongbox",
       "grup": "Finn: lada colectorului",
+      "grup_en": "Finn: The Collector’s Strongbox",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1166,7 +1305,9 @@
     {
       "id": "bram_foale",
       "nume": "Foalele noi",
+      "nume_en": "The New Bellows",
       "grup": "Misiunea lui Bram: foalele",
+      "grup_en": "Bram’s Quest: The Bellows",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1177,7 +1318,9 @@
     {
       "id": "kaia_capcane",
       "nume": "Capcanele orcilor",
+      "nume_en": "The Orc Traps",
       "grup": "Kaia: capcanele",
+      "grup_en": "Kaia: The Traps",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1187,17 +1330,25 @@
       "miniJoc": {
         "imagine": "events/kaia_capcane_2.png",
         "titlu": "Capcanele orcilor",
+        "titlu_en": "The Orc Traps",
         "indemn": "Oprește semnul în zona verde, ca să apeși arcul capcanei fără să-ți scape. Ai voie să-ți scape o singură dată.",
+        "indemn_en": "Stop the marker in the green zone to hold down the trap’s spring without letting it slip. You may let it slip only once.",
         "reusite": 5,
         "ratari": 1,
         "sunetEsuat": "capcana",
         "texte": {
           "reusite": "Capcane desfăcute",
+          "reusite_en": "Traps disarmed",
           "ratari": "ți-a scăpat",
+          "ratari_en": "slips",
           "bine": "Desfăcută!",
+          "bine_en": "Disarmed!",
           "rau": "Ți-a scăpat!",
+          "rau_en": "It slipped!",
           "reusit": "Toate cinci, desfăcute!",
-          "esuat": "Capcana s-a închis!"
+          "reusit_en": "All five disarmed!",
+          "esuat": "Capcana s-a închis!",
+          "esuat_en": "The trap snapped shut!"
         }
       },
       "_nota": "Decis de autor: imagini cu replici peste ele. Pe a doua, jocul barei de la arat: 5 reușite, cel mult o ratare (a doua ratare: capcana se închide, Vale se zgârie, se încearcă iar a doua zi); după capcane, +1 Kaia, pe loc. Pe a treia, căprioara: eliberată = imaginea cu ea fugind și încă +1, sau carne = imaginea cu Kaia întoarsă, cu o lacrimă. Bara se așază în editor: Aranjare → Ecrane → „Mini-joc: Capcanele orcilor”."
@@ -1205,7 +1356,9 @@
     {
       "id": "kaia_ember",
       "nume": "Rana lui Ember",
+      "nume_en": "Ember’s Wound",
       "grup": "Kaia: rana lui Ember",
+      "grup_en": "Kaia: Ember’s Wound",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1217,7 +1370,9 @@
     {
       "id": "kaia_soim",
       "nume": "Șoimul Străjerilor",
+      "nume_en": "The Wardens’ Falcon",
       "grup": "Kaia: șoimul",
+      "grup_en": "Kaia: The Falcon",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1229,7 +1384,9 @@
     {
       "id": "kaia_wyverni_vesti",
       "nume": "Convoiul: ce au spus orcii",
+      "nume_en": "The Convoy: What the Orcs Said",
       "grup": "Kaia: convoiul",
+      "grup_en": "Kaia: The Convoy",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1241,7 +1398,9 @@
     {
       "id": "kaia_wyverni",
       "nume": "Convoiul",
+      "nume_en": "The Convoy",
       "grup": "Kaia: convoiul",
+      "grup_en": "Kaia: The Convoy",
       "repetare": "o_data",
       "conditii": {
         "loc": "padure/campsite",
@@ -1272,7 +1431,9 @@
     {
       "id": "kaia_wyverni_povestea",
       "nume": "Convoiul: povestea Kaiei",
+      "nume_en": "The Convoy: Kaia’s Story",
       "grup": "Kaia: convoiul",
+      "grup_en": "Kaia: The Convoy",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1284,7 +1445,9 @@
     {
       "id": "papusa_lina",
       "nume": "Păpușa Linei: s-a rupt",
+      "nume_en": "Lina’s Doll: Torn",
       "grup": "Păpușa Linei",
+      "grup_en": "Lina’s Doll",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1296,7 +1459,9 @@
     {
       "id": "miriam_papusa",
       "nume": "Păpușa Linei: Miriam o coase",
+      "nume_en": "Lina’s Doll: Miriam Mends It",
       "grup": "Păpușa Linei",
+      "grup_en": "Lina’s Doll",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1308,7 +1473,9 @@
     {
       "id": "papusa_lina_bucurie",
       "nume": "Păpușa Linei: înapoi la Lina",
+      "nume_en": "Lina’s Doll: Back to Lina",
       "grup": "Păpușa Linei",
+      "grup_en": "Lina’s Doll",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1320,7 +1487,9 @@
     {
       "id": "bram_forja",
       "nume": "O zi la forjă",
+      "nume_en": "A Day at the Forge",
       "grup": "Bram: o zi la forjă",
+      "grup_en": "Bram: A Day at the Forge",
       "_nota": "Decis de autor: după „Foalele stricate”, când Vale vine la fierărie și Bram lucrează afară. Ales de Claude: după-amiaza (14–18), ca ziua de muncă să se termine seara; ține 4 ore și ia 30 stamina. Fără eșec (decis de autor).",
       "conditii": {
         "loc": "fierar",
@@ -1350,28 +1519,38 @@
           "tip": "muls",
           "imagine": "events/bram_forja_2.png",
           "titlu": "Foalele",
+          "titlu_en": "The Bellows",
           "indemn": "Trage de foale în ritm, când cercul e cel mai mare: focul trebuie să respire ca un om.",
+          "indemn_en": "Work the bellows in rhythm, each time the circle is at its largest: the fire has to breathe like a man.",
           "texte": {
             "ritm": "Suflări bune",
+            "ritm_en": "Good breaths",
             "bine": "Bine!",
+            "bine_en": "Good!",
             "rau": "Prea repede",
-            "final": "Suflări bune"
+            "rau_en": "Too fast",
+            "final": "Suflări bune",
+            "final_en": "Good breaths"
           }
         },
         "ciocan": {
           "tip": "cerc",
           "imagine": "events/bram_forja_3.png",
           "titlu": "Ciocanul",
+          "titlu_en": "The Hammer",
           "incercari": 3,
           "sunet": "nicovala",
-          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: acolo unde îți arată Bram."
+          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: acolo unde îți arată Bram.",
+          "indemn_en": "Strike when the shrinking circle reaches the golden ring: right where Bram shows you."
         }
       }
     },
     {
       "id": "plug_bram",
       "nume": "Fierul plugului: la Bram",
+      "nume_en": "Iron for the Plow: At Bram’s",
       "grup": "Fierul plugului",
+      "grup_en": "Iron for the Plow",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1386,7 +1565,9 @@
     {
       "id": "plug_fermier",
       "nume": "Fierul plugului: plugul înapoi",
+      "nume_en": "Iron for the Plow: Returning the Plow",
       "grup": "Fierul plugului",
+      "grup_en": "Iron for the Plow",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1398,7 +1579,9 @@
     {
       "id": "cercuri_pivnita",
       "nume": "Cercurile butoaielor",
+      "nume_en": "The Barrel Hoops",
       "grup": "Cercurile butoaielor",
+      "grup_en": "The Barrel Hoops",
       "repetare": "o_data",
       "conditii": {
         "loc": "taverna/pivnita",
@@ -1431,7 +1614,9 @@
     {
       "id": "bram_cufar",
       "nume": "Cufărul lui Bram",
+      "nume_en": "Bram’s Chest",
       "grup": "Bram: cufărul",
+      "grup_en": "Bram: The Chest",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1443,7 +1628,9 @@
     {
       "id": "elian_secret",
       "nume": "Secretul lui Elian",
+      "nume_en": "Elian’s Secret",
       "grup": "Elian: secretul",
+      "grup_en": "Elian: The Secret",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1455,7 +1642,9 @@
     {
       "id": "toiag_forja",
       "nume": "Toiagul celor 23: forja",
+      "nume_en": "The Staff of the Twenty-Three: The Forge",
       "grup": "Toiagul celor 23",
+      "grup_en": "The Staff of the Twenty-Three",
       "repetare": "o_data",
       "conditii": {
         "loc": "fierar/interior",
@@ -1486,7 +1675,9 @@
     {
       "id": "toiag_cristal",
       "nume": "Toiagul celor 23: cristalul",
+      "nume_en": "The Staff of the Twenty-Three: The Crystal",
       "grup": "Toiagul celor 23",
+      "grup_en": "The Staff of the Twenty-Three",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1498,7 +1689,9 @@
     {
       "id": "pasarea_lina",
       "nume": "Pasărea Linei: vrabia rănită",
+      "nume_en": "Lina’s Bird: The Wounded Sparrow",
       "grup": "Elian: pasărea Linei",
+      "grup_en": "Elian: Lina’s Bird",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1510,7 +1703,9 @@
     {
       "id": "pasarea_elian",
       "nume": "Pasărea Linei: Elian",
+      "nume_en": "Lina’s Bird: Elian",
       "grup": "Elian: pasărea Linei",
+      "grup_en": "Elian: Lina’s Bird",
       "manual": true,
       "repetare": "mereu",
       "efecte": {
@@ -1522,7 +1717,9 @@
     {
       "id": "lumina_padure",
       "nume": "Lumina din pădure",
+      "nume_en": "The Light in the Forest",
       "grup": "Elian: lumina din pădure",
+      "grup_en": "Elian: The Light in the Forest",
       "repetare": "o_data",
       "conditii": {
         "loc": "padure",
@@ -1550,7 +1747,9 @@
       "id": "inel_colector",
       "_nota": "Decis de autor: misiunea Miriamei „Inelul mamei”, nu se poate refuza. Pornește când Vale intră dimineața în bucătărie, cât mama e acolo, după ce poarta s-a deschis (fierul lui Bram), din ziua 9 (aleasă de Claude, după ce încep evenimentele cu orci). Nu duminica: atunci e ziua taxei, iar colectorul vine oricum acasă.",
       "nume": "Inelul mamei: colectorul ia verigheta",
+      "nume_en": "Mother’s Ring: Taken by the Collector",
       "grup": "Misiunea Miriamei: inelul",
+      "grup_en": "Miriam’s Quest: The Ring",
       "conditii": {
         "loc": "casa/bucatarie",
         "personajIn": {
@@ -1581,7 +1780,9 @@
       "id": "inel_primit",
       "_nota": "Decis de autor: prima victorie în Groapă, cât e misiunea „Inelul mamei” (pornit din src/groapa.js, „inel” în config.json).",
       "nume": "Inelul mamei: colectorul aruncă inelul",
+      "nume_en": "Mother’s Ring: The Collector Tosses It Back",
       "grup": "Misiunea Miriamei: inelul",
+      "grup_en": "Miriam’s Quest: The Ring",
       "manual": true,
       "repetare": "o_data",
       "dialog": "inel_primit"
@@ -1589,7 +1790,9 @@
     {
       "id": "cercuri_pivnita_luate",
       "nume": "Cercurile butoaielor: cercurile vechi din pivniță",
+      "nume_en": "The Barrel Hoops: The Old Hoops from the Cellar",
       "grup": "Cercurile butoaielor",
+      "grup_en": "The Barrel Hoops",
       "manual": true,
       "repetare": "o_data",
       "dialog": "cercuri_pivnita_luate",
@@ -1600,7 +1803,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Miriam: pâinea văduvelor",
+      "nume_en": "Miriam: Bread for the Widows",
       "grup": "Pâinea văduvelor",
+      "grup_en": "Bread for the Widows",
       "efecte": {
         "timp": 240
       },
@@ -1612,7 +1817,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Miriam: vorbele din somn",
+      "nume_en": "Miriam: Words Spoken in Sleep",
       "grup": "Vorbele din somn",
+      "grup_en": "Words Spoken in Sleep",
       "efecte": {
         "timp": 60
       },
@@ -1624,7 +1831,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Roderick: steagul de pe câmp",
+      "nume_en": "Roderick: The Banner from the Field",
       "grup": "Steagul satului",
+      "grup_en": "The Village Banner",
       "efecte": {
         "timp": 90
       },
@@ -1636,7 +1845,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Lemne pentru iarnă: Hanna",
+      "nume_en": "Firewood for Winter: Hanna",
       "grup": "Lemne pentru iarnă",
+      "grup_en": "Firewood for Winter",
       "efecte": {
         "timp": 60
       },
@@ -1648,7 +1859,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Lemne pentru iarnă: Ilse",
+      "nume_en": "Firewood for Winter: Ilse",
       "grup": "Lemne pentru iarnă",
+      "grup_en": "Firewood for Winter",
       "efecte": {
         "timp": 60
       },
@@ -1660,7 +1873,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Lemne pentru iarnă: Greta",
+      "nume_en": "Firewood for Winter: Greta",
       "grup": "Lemne pentru iarnă",
+      "grup_en": "Firewood for Winter",
       "efecte": {
         "timp": 60
       },
@@ -1672,7 +1887,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Miriam: noaptea nașterii",
+      "nume_en": "Miriam: The Night of the Birth",
       "grup": "Noaptea nașterii",
+      "grup_en": "The Night of the Birth",
       "efecte": {
         "timp": 30
       },
@@ -1684,7 +1901,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: ziua Linei",
+      "nume_en": "Finn: Lina’s Birthday",
       "grup": "Finn: ziua Linei",
+      "grup_en": "Finn: Lina’s Birthday",
       "efecte": {
         "timp": 120
       },
@@ -1696,7 +1915,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: datoria la Jarek",
+      "nume_en": "Finn: The Debt to Jarek",
       "grup": "Finn: datoria la Jarek",
+      "grup_en": "Finn: The Debt to Jarek",
       "efecte": {
         "timp": 60
       },
@@ -1707,7 +1928,9 @@
       "id": "finn_cimitir_noapte",
       "repetare": "o_data",
       "nume": "Finn: noaptea de la cimitir",
+      "nume_en": "Finn: The Night at the Graveyard",
       "grup": "Finn: noaptea de la cimitir",
+      "grup_en": "Finn: The Night at the Graveyard",
       "efecte": {
         "timp": 30
       },
@@ -1731,7 +1954,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: după lupta de la cimitir",
+      "nume_en": "Finn: After the Fight at the Graveyard",
       "grup": "Finn: noaptea de la cimitir",
+      "grup_en": "Finn: The Night at the Graveyard",
       "efecte": {
         "timp": 60
       },
@@ -1743,7 +1968,9 @@
       "laTrezire": true,
       "repetare": "o_data",
       "nume": "Al patrulea vis",
+      "nume_en": "The Fourth Dream",
       "grup": "Al patrulea vis",
+      "grup_en": "The Fourth Dream",
       "dialog": "vis_4",
       "oreNoapte": 1,
       "conditii": {
@@ -1758,7 +1985,9 @@
       "manual": true,
       "repetare": "o_data",
       "nume": "Finn: zarurile orcilor",
+      "nume_en": "Finn: The Orcs’ Dice",
       "grup": "Finn: zarurile orcilor",
+      "grup_en": "Finn: The Orcs’ Dice",
       "efecte": {
         "timp": 30
       },
@@ -1768,7 +1997,9 @@
     {
       "id": "kaia_baza",
       "nume": "Baza",
+      "nume_en": "The Base",
       "grup": "Kaia: baza",
+      "grup_en": "Kaia: The Base",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1780,7 +2011,9 @@
     {
       "id": "finn_custi_tabara",
       "nume": "Cuștile vânătorilor: la foc",
+      "nume_en": "The Hunters’ Cages: By the Fire",
       "grup": "Finn: cuștile vânătorilor",
+      "grup_en": "Finn: The Hunters’ Cages",
       "repetare": "o_data",
       "siPeLoc": true,
       "conditii": {
@@ -1810,7 +2043,9 @@
     {
       "id": "finn_custi_noapte",
       "nume": "Cuștile vânătorilor",
+      "nume_en": "The Hunters’ Cages",
       "grup": "Finn: cuștile vânătorilor",
+      "grup_en": "Finn: The Hunters’ Cages",
       "repetare": "mereu",
       "siPeLoc": true,
       "conditii": {
@@ -1878,7 +2113,9 @@
     {
       "id": "finn_custi_dupa",
       "nume": "Cuștile vânătorilor: după luptă",
+      "nume_en": "The Hunters’ Cages: After the Fight",
       "grup": "Finn: cuștile vânătorilor",
+      "grup_en": "Finn: The Hunters’ Cages",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1890,7 +2127,9 @@
     {
       "id": "finn_jarek",
       "nume": "Ultima treabă pentru Jarek",
+      "nume_en": "One Last Job for Jarek",
       "grup": "Finn: ultima treabă pentru Jarek",
+      "grup_en": "Finn: One Last Job for Jarek",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1902,7 +2141,9 @@
     {
       "id": "finn_jarek_noapte",
       "nume": "Ultima treabă pentru Jarek: la cocioabă",
+      "nume_en": "One Last Job for Jarek: At the Shack",
       "grup": "Finn: ultima treabă pentru Jarek",
+      "grup_en": "Finn: One Last Job for Jarek",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1914,7 +2155,9 @@
     {
       "id": "finn_prieteni",
       "nume": "Prietenii lui Finn",
+      "nume_en": "Finn’s Friends",
       "grup": "Finn: prietenii lui Finn",
+      "grup_en": "Finn: His Friends",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1926,7 +2169,9 @@
     {
       "id": "finn_prieteni_fluier",
       "nume": "Prietenii lui Finn: fluierul",
+      "nume_en": "Finn’s Friends: The Whistle",
       "grup": "Finn: prietenii lui Finn",
+      "grup_en": "Finn: His Friends",
       "manual": true,
       "repetare": "o_data",
       "efecte": {
@@ -1938,7 +2183,9 @@
     {
       "id": "dinte_orc",
       "nume": "Dintele de orc",
+      "nume_en": "The Orc Tooth",
       "grup": "Finn: prietenii lui Finn",
+      "grup_en": "Finn: His Friends",
       "manual": true,
       "repetare": "o_data",
       "dialog": "dinte_orc",
@@ -1948,7 +2195,9 @@
       "id": "miriam_tata_lada",
       "_nota": "Decis de autor: misiunea specială a Miriamei, de la încredere 8/10; seara, la cină. Ales de Claude: doar după al doilea vis (crăpătura din vis), cât e mama în bucătărie (18–23); „!” deasupra mamei (ofertaEveniment), iar apăsarea pe ea o pornește.",
       "nume": "Echipamentul tatălui: lada mamei",
+      "nume_en": "Father’s Gear: Mother’s Trunk",
       "grup": "Miriam: echipamentul tatălui",
+      "grup_en": "Miriam: Father’s Gear",
       "conditii": {
         "loc": "casa/bucatarie",
         "personajIn": {
@@ -1979,7 +2228,9 @@
       "id": "bram_platosa_forja",
       "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; seara, cu ușa închisă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi, toate la sfârșitul discuției (nodul p8): un refresh în timpul mini-jocului nu consumă fierul, iar Bram nu se culcă la 22 în mijlocul scenei. „mereu”: după un refresh se poate relua; pornește doar din pasul 2 al misiunii, care dispare după.",
       "nume": "Platoșa tatălui: forja",
+      "nume_en": "Father’s Breastplate: The Forge",
       "grup": "Bram: platoșa tatălui",
+      "grup_en": "Bram: Father’s Breastplate",
       "manual": true,
       "repetare": "mereu",
       "dialog": "bram_platosa",
@@ -1988,9 +2239,11 @@
           "tip": "cerc",
           "imagine": "events/bram_platosa_1.png",
           "titlu": "Platoșa tatălui",
+          "titlu_en": "Father’s Breastplate",
           "incercari": 3,
           "sunet": "nicovala",
-          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: de-a lungul crăpăturii, unde ține Bram cleștele."
+          "indemn": "Lovește când cercul care se strânge ajunge pe inelul auriu: de-a lungul crăpăturii, unde ține Bram cleștele.",
+          "indemn_en": "Strike when the shrinking circle reaches the golden ring: along the crack, where Bram holds the tongs."
         }
       }
     },
@@ -1998,7 +2251,9 @@
       "id": "roderick_sticla",
       "repetare": "o_data",
       "nume": "Roderick: ultima sticlă",
+      "nume_en": "Roderick: The Last Bottle",
       "grup": "Roderick: ultima sticlă",
+      "grup_en": "Roderick: The Last Bottle",
       "dialog": "roderick_sticla",
       "_nota": "Ales de Claude: după ce i-a dus lui Elian mușețelul, când Vale ajunge noaptea (22–03) la biserică, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
       "conditii": {
@@ -2029,7 +2284,9 @@
       "id": "agnes_socoteala",
       "repetare": "o_data",
       "nume": "Agnes: socoteala",
+      "nume_en": "Agnes: Settling Accounts",
       "grup": "Agnes: socoteala",
+      "grup_en": "Agnes: Settling Accounts",
       "dialog": "agnes_socoteala",
       "_nota": "Ales de Claude: a doua zi după ce Roderick a aflat de socoteală, când Vale ajunge dimineața (9–12) la tavernă, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
       "conditii": {
@@ -2064,7 +2321,9 @@
       "id": "agnes_seara",
       "repetare": "o_data",
       "nume": "Agnes: seara celor 23",
+      "nume_en": "Agnes: An Evening for the Twenty-Three",
       "grup": "Agnes: seara celor 23",
+      "grup_en": "Agnes: An Evening for the Twenty-Three",
       "dialog": "agnes_seara",
       "_nota": "Ales de Claude: a doua zi după ce Roderick a acceptat, când Vale ajunge seara (19–23) la tavernă, pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc).",
       "conditii": {

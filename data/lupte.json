@@ -14,6 +14,7 @@
   "inamici": {
     "lup": {
       "nume": "Lup",
+      "nume_en": "Wolf",
       "viata": 30,
       "staminaMax": 115,
       "atac": {
@@ -28,6 +29,7 @@
     "lup_alfa": {
       "_nota": "TODO echilibru. Liderul haitei: folosește pozele lupului, întunecate (filtru) și puțin mai mari (marime, %).",
       "nume": "Lupul negru",
+      "nume_en": "The Black Wolf",
       "poze": "lup",
       "filtru": "brightness(0.35) saturate(0.3)",
       "marime": 120,
@@ -44,6 +46,7 @@
     },
     "orc_taverna": {
       "nume": "Orc",
+      "nume_en": "Orc",
       "poze": "paznic_orc_1",
       "viata": 28,
       "staminaMax": 85,
@@ -57,6 +60,7 @@
     },
     "betiv": {
       "nume": "Bețiv",
+      "nume_en": "Drunkard",
       "viata": 22,
       "staminaMax": 80,
       "atac": {
@@ -69,6 +73,7 @@
     },
     "mistret": {
       "nume": "Mistreț",
+      "nume_en": "Boar",
       "viata": 45,
       "staminaMax": 85,
       "atac": {
@@ -83,7 +88,9 @@
     "orc_colector": {
       "_nota": "TODO echilibru. Colectorul de taxe; mai greu decât paznicii, cu bâta. Pozele lui: combat/orc_colector_*.png.",
       "nume": "Orcul colector",
+      "nume_en": "The Tax Collector",
       "numeScurt": "Orc C.",
+      "numeScurt_en": "Collector",
       "viata": 45,
       "staminaMax": 80,
       "atac": {
@@ -97,7 +104,9 @@
     "colector_bata": {
       "_nota": "Colectorul în bătaia pentru fierul lui Bram: trișează, cu bâta, iar Vale are doar pumnii; nu se poate câștiga (decis de autor). Pozele colectorului.",
       "nume": "Orcul colector",
+      "nume_en": "The Tax Collector",
       "numeScurt": "Orc C.",
+      "numeScurt_en": "Collector",
       "poze": "orc_colector",
       "viata": 400,
       "staminaMax": 90,
@@ -111,7 +120,9 @@
     },
     "sobolan_gheare": {
       "nume": "Șobolan",
+      "nume_en": "Rat",
       "numeScurt": "Șobolan",
+      "numeScurt_en": "Rat",
       "viata": 22,
       "staminaMax": 120,
       "atac": {
@@ -125,7 +136,9 @@
     },
     "sobolan_scuipa": {
       "nume": "Șobolan scuipător",
+      "nume_en": "Spitting Rat",
       "numeScurt": "Șob. scuip.",
+      "numeScurt_en": "Spitter",
       "viata": 18,
       "staminaMax": 85,
       "atac": {
@@ -145,7 +158,9 @@
     "orc_zdrobitor": {
       "_nota": "Decis de autor: orc de aproape, uriaș, cu o măciucă grea și multă armură; lovește rar, dar tare. Cifre de pornire (TODO echilibru). Pozele: combat/orc_zdrobitor_*.png; fața din medalion: portraits/orc_zdrobitor_normal.png.",
       "nume": "Zdrobitorul",
+      "nume_en": "The Crusher",
       "numeScurt": "Zdrobitor",
+      "numeScurt_en": "Crusher",
       "viata": 70,
       "staminaMax": 60,
       "atac": {
@@ -155,12 +170,15 @@
         "sunet": "lupta_topor"
       },
       "armura": 20,
-      "grupGalerie": "Groapa (arena)"
+      "grupGalerie": "Groapa (arena)",
+      "grupGalerie_en": "The Pit (arena)"
     },
     "orc_aruncator": {
       "_nota": "Decis de autor: orc de la distanță, aruncă topoare mici; toporul zboară rotindu-se până în țintă și nu se mai întoarce (seIntoarce: false). Cifre de pornire (TODO echilibru).",
       "nume": "Aruncătorul",
+      "nume_en": "The Axe Thrower",
       "numeScurt": "Aruncător",
+      "numeScurt_en": "Thrower",
       "viata": 32,
       "staminaMax": 95,
       "atac": {
@@ -169,16 +187,20 @@
         "tip": "distanta",
         "proiectil": "combat/topor_aruncat.png",
         "numeProiectil": "toporul aruncat",
+        "numeProiectil_en": "the thrown axe",
         "seIntoarce": false,
         "sunet": "lupta_topor"
       },
       "armura": 4,
-      "grupGalerie": "Groapa (arena)"
+      "grupGalerie": "Groapa (arena)",
+      "grupGalerie_en": "The Pit (arena)"
     },
     "orc_toba": {
       "_nota": "Decis de autor: toboșarul e gras și nu atacă niciodată. La fiecare tură bate toba pentru un orc anume (întâi pentru cel care lovește cel mai tare dintre cei neîntăriți): orcul acela lovește mai tare (toba.atac) cât stă toboșarul în picioare. Stă în spate. Rămas fără niciun orc care să lovească, se prăbușește singur. Cifre de pornire (TODO echilibru).",
       "nume": "Toboșarul",
+      "nume_en": "The Drummer",
       "numeScurt": "Toboșar",
+      "numeScurt_en": "Drummer",
       "viata": 35,
       "staminaMax": 70,
       "toba": {
@@ -186,12 +208,15 @@
         "sunet": "toba"
       },
       "armura": 5,
-      "grupGalerie": "Groapa (arena)"
+      "grupGalerie": "Groapa (arena)",
+      "grupGalerie_en": "The Pit (arena)"
     },
     "orc_campion": {
       "_nota": "Campionul Groapei (ales de Claude): ultimul val al nivelului greu. Pozele Zdrobitorului, întunecate și roșiatice, cu 20% mai mari, ca lupul negru. Cifre de pornire (TODO echilibru).",
       "nume": "Campionul Groapei",
+      "nume_en": "The Champion of the Pit",
       "numeScurt": "Campion",
+      "numeScurt_en": "Champion",
       "poze": "orc_zdrobitor",
       "filtru": "brightness(0.6) sepia(0.6) saturate(1.8) hue-rotate(-25deg)",
       "marime": 120,
@@ -209,6 +234,7 @@
   "lupte": {
     "vanatoare_lupi_2": {
       "nume": "Vânătoare",
+      "nume_en": "The Hunt",
       "fundal": "padure.interior",
       "fuga": true,
       "inamici": [
@@ -225,6 +251,7 @@
       ],
       "victorie": {
         "text": "Ai doborât cei doi lupi.",
+        "text_en": "You brought down both wolves.",
         "efecte": {
           "obiect": [
             "carne",
@@ -239,6 +266,7 @@
       },
       "infrangere": {
         "text": "Lupii te-au mușcat zdravăn și au fugit în pădure. Te întorci șchiopătând.",
+        "text_en": "The wolves bit you badly and ran off into the trees. You limp back.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -246,6 +274,7 @@
     },
     "vanatoare_lupi_3": {
       "nume": "Vânătoare",
+      "nume_en": "The Hunt",
       "fundal": "padure.interior",
       "fuga": true,
       "inamici": [
@@ -267,6 +296,7 @@
       ],
       "victorie": {
         "text": "Ai doborât haita de lupi.",
+        "text_en": "You brought down the wolf pack.",
         "efecte": {
           "obiect": [
             "carne",
@@ -283,6 +313,7 @@
       },
       "infrangere": {
         "text": "Haita te-a încolțit. Ai scăpat cu greu, cățărându-te pe un trunchi căzut.",
+        "text_en": "The pack cornered you. You barely got away by scrambling onto a fallen trunk.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -290,6 +321,7 @@
     },
     "vanatoare_lupi_4": {
       "nume": "Vânătoare",
+      "nume_en": "The Hunt",
       "fundal": "padure.interior",
       "fuga": true,
       "inamici": [
@@ -316,6 +348,7 @@
       ],
       "victorie": {
         "text": "Ai doborât haita și pe lupul negru care o conducea.",
+        "text_en": "You brought down the pack, and the black wolf that led it.",
         "efecte": {
           "obiect": [
             "carne",
@@ -334,6 +367,7 @@
       },
       "infrangere": {
         "text": "Lupul negru te-a doborât, iar haita s-a strâns în jurul tău. Doar norocul te-a scos de acolo.",
+        "text_en": "The black wolf brought you down, and the pack closed in around you. Only luck got you out of there.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -341,6 +375,7 @@
     },
     "vanatoare_mistret": {
       "nume": "Vânătoare",
+      "nume_en": "The Hunt",
       "fundal": "padure.interior",
       "fuga": true,
       "inamici": [
@@ -352,6 +387,7 @@
       ],
       "victorie": {
         "text": "Ai doborât mistrețul.",
+        "text_en": "You brought down the boar.",
         "efecte": {
           "obiect": [
             "carne",
@@ -365,6 +401,7 @@
       },
       "infrangere": {
         "text": "Mistrețul te-a trântit cu colții și a dispărut în desiș.",
+        "text_en": "The boar knocked you down with its tusks and vanished into the thicket.",
         "efecte": {
           "eveniment": "intalnire_vanatoare"
         }
@@ -372,6 +409,7 @@
     },
     "scandal_taverna": {
       "nume": "Scandal în tavernă",
+      "nume_en": "Trouble at the Tavern",
       "fundal": "taverna.parter",
       "fuga": false,
       "aliati": [
@@ -395,12 +433,14 @@
       ],
       "victorie": {
         "text": "Orcii se împleticesc spre ieșire, ținându-se de coaste. Taverna izbucnește în urale.",
+        "text_en": "The orcs stagger toward the door, clutching their ribs. The tavern bursts into cheers.",
         "efecte": {
           "eveniment": "taverna_scandal_victorie"
         }
       },
       "infrangere": {
         "text": "Orcii te aruncă peste o masă și pleacă râzând, cu berea neplătită.",
+        "text_en": "The orcs throw you over a table and walk out laughing, their ale unpaid.",
         "efecte": {
           "eveniment": "taverna_scandal_infrangere"
         }
@@ -408,6 +448,7 @@
     },
     "bataie_taverna": {
       "nume": "Bătaie la tavernă",
+      "nume_en": "Tavern Brawl",
       "fundal": "taverna.parter",
       "fuga": false,
       "inamici": [
@@ -419,6 +460,7 @@
       ],
       "victorie": {
         "text": "Bețivii se potolesc și se întorc la cănile lor, mormăind.",
+        "text_en": "The drunkards settle down and go back to their tankards, grumbling.",
         "efecte": {
           "reputatie": 1,
           "eveniment": "betiv_dupa_lupta"
@@ -426,6 +468,7 @@
       },
       "infrangere": {
         "text": "Te trezești pe podeaua tavernei, cu un cucui cât un ou și gust de bere vărsată în gură.",
+        "text_en": "You wake up on the tavern floor with a lump the size of an egg and the taste of spilled ale in your mouth.",
         "efecte": {}
       },
       "doarVale": true,
@@ -435,6 +478,7 @@
     },
     "bataie_orc_taraba": {
       "nume": "Bătaie cu doi orci",
+      "nume_en": "Fight with Two Orcs",
       "fundal": "piata",
       "fuga": false,
       "inamici": [
@@ -451,12 +495,14 @@
       ],
       "victorie": {
         "text": "Orcii fug înjurând. Negustorul îți strânge mâna.",
+        "text_en": "The orcs run off, cursing. The merchant shakes your hand.",
         "efecte": {
           "reputatie": 3
         }
       },
       "infrangere": {
         "text": "Orcii te trântesc în noroi. Vin și alții să vadă ce s-a întâmplat.",
+        "text_en": "The orcs slam you down into the mud. More orcs come over to see what happened.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -464,6 +510,7 @@
     },
     "bataie_orc_noapte": {
       "nume": "Bătaie cu patrula",
+      "nume_en": "Fight with the Patrol",
       "fundal": "piata",
       "fuga": false,
       "inamici": [
@@ -475,12 +522,14 @@
       ],
       "victorie": {
         "text": "Orcul rămâne gemând în noroi, iar tu dispari în întuneric.",
+        "text_en": "The orc is left groaning in the mud, and you vanish into the dark.",
         "efecte": {
           "reputatie": 2
         }
       },
       "infrangere": {
         "text": "Patrula te prinde și te târăște până la poartă.",
+        "text_en": "The patrol catches you and drags you all the way to the gate.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -488,6 +537,7 @@
     },
     "bataie_orc_fierar": {
       "nume": "Bătaie cu un orc",
+      "nume_en": "Fight with an Orc",
       "fundal": "fierar",
       "fuga": false,
       "aliati": [
@@ -506,12 +556,14 @@
       ],
       "victorie": {
         "text": "Orcul își ia toporul și pleacă înjurând. Bram îți strânge mâna, cu palma plină de funingine: „N-o să uit asta.”",
+        "text_en": "The orc takes his axe and leaves, cursing. Bram shakes your hand, his palm black with soot: “I won’t forget this.”",
         "efecte": {
           "reputatie": 3
         }
       },
       "infrangere": {
         "text": "Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
+        "text_en": "The orc slams you both down beside the anvil. More orcs come over to see what happened.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -519,6 +571,7 @@
     },
     "bataie_colector_fier": {
       "nume": "Bătaie cu colectorul",
+      "nume_en": "Fight with the Tax Collector",
       "fundal": "poarta",
       "fuga": false,
       "faraArme": true,
@@ -531,6 +584,7 @@
       ],
       "victorie": {
         "text": "Colectorul se clatină și scapă bâta. Nici el nu-i vine să creadă. Fierul e al tău.",
+        "text_en": "The tax collector staggers and drops his club. Even he can’t believe it. The iron is yours.",
         "efecte": {
           "recupereaza": "fier_bram",
           "reputatie": 3
@@ -538,6 +592,7 @@
       },
       "infrangere": {
         "text": "„Pumni contra bâtă? Ce credeai, omule?” Colectorul râde, iar paznicii te aruncă afară de lângă poartă.",
+        "text_en": "“Fists against a club? What did you expect, human?” The tax collector laughs, and the guards toss you away from the gate.",
         "efecte": {
           "timp": 60,
           "mergi": "harta",
@@ -549,6 +604,7 @@
     },
     "kaia_lupi": {
       "nume": "Lupii și Kaia",
+      "nume_en": "Kaia and the Wolves",
       "fundal": "padure.interior",
       "fuga": false,
       "aliati": [
@@ -577,6 +633,7 @@
       ],
       "victorie": {
         "text": "Ultimul lup fuge schelălăind printre copaci.",
+        "text_en": "The last wolf runs off, yelping, through the trees.",
         "efecte": {
           "obiect": [
             "carne",
@@ -593,6 +650,7 @@
       },
       "infrangere": {
         "text": "Lupii vă dau ocol, apoi se retrag în desiș.",
+        "text_en": "The wolves circle the two of you, then retreat into the thicket.",
         "efecte": {
           "relatie": {
             "vanatoare": 1
@@ -603,6 +661,7 @@
     },
     "lupta_lup_negru": {
       "nume": "Lupul negru",
+      "nume_en": "The Black Wolf",
       "fundal": "padure.interior",
       "fuga": false,
       "aliati": [
@@ -631,6 +690,7 @@
       ],
       "victorie": {
         "text": "Lupul negru cade. Haita se risipește prin pădure.",
+        "text_en": "The black wolf falls. The pack scatters through the forest.",
         "efecte": {
           "obiect": [
             "blana_lup",
@@ -648,6 +708,7 @@
       },
       "infrangere": {
         "text": "Lupul negru vă scapă din nou, rânjind din umbră.",
+        "text_en": "The black wolf slips away from you again, grinning from the shadows.",
         "efecte": {
           "eveniment": "kaia_lup_scapat"
         }
@@ -656,6 +717,7 @@
     "bataie_orc_campuri": {
       "_nota": "Decis de autor: și pe câmpuri te poți bate cu orcul care ia grâul fermierilor. Textele sunt ciorne.",
       "nume": "Bătaie cu un orc",
+      "nume_en": "Fight with an Orc",
       "fundal": "campuri",
       "fuga": false,
       "inamici": [
@@ -667,12 +729,14 @@
       ],
       "victorie": {
         "text": "Orcul aruncă sacul în noroi și pleacă înjurând. Fermierul se uită la tine de parcă ai fi coborât din cer.",
+        "text_en": "The orc flings the sack into the mud and leaves, cursing. The farmer stares at you as if you’d come down from heaven.",
         "efecte": {
           "reputatie": 2
         }
       },
       "infrangere": {
         "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
+        "text_en": "The orc throws you down between the furrows. More orcs come over to see what happened.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -680,6 +744,7 @@
     },
     "taverna_sobolani": {
       "nume": "Pivnița tavernei",
+      "nume_en": "The Tavern Cellar",
       "fundal": "taverna.pivnita",
       "fuga": true,
       "inamici": [
@@ -701,18 +766,21 @@
       ],
       "victorie": {
         "text": "Ultimul șobolan nu se mai mișcă.",
+        "text_en": "The last rat lies still.",
         "efecte": {
           "eveniment": "pivnita_victorie"
         }
       },
       "infrangere": {
         "text": "Mușcăturile te ard ca focul. Te retragi pe trepte.",
+        "text_en": "The bites burn like fire. You retreat up the steps.",
         "efecte": {
           "eveniment": "pivnita_infrangere"
         }
       },
       "dupaFuga": {
         "text": "Urci treptele în fugă și trântești ușa în urma ta. Chițăitul lor se aude prin lemn: Ssss! Fuge om-lucru, fuge-fuge! Cobori din nou când ești pregătit.",
+        "text_en": "You run up the steps and slam the door behind you. Their squeaking carries through the wood: Ssss! Man-thing runs, runs-runs! You can go back down when you’re ready.",
         "efecte": {
           "mergi": "taverna.parter"
         }
@@ -721,6 +789,7 @@
     "bataie_orc_campuri_prima": {
       "_nota": "Decis de autor: prima bătaie cu orcul de pe câmpuri; după victorie, o imagine și un dialog cu fermierul (de atunci se poate vorbi cu el).",
       "nume": "Bătaie cu un orc",
+      "nume_en": "Fight with an Orc",
       "fundal": "campuri",
       "fuga": false,
       "inamici": [
@@ -732,6 +801,7 @@
       ],
       "victorie": {
         "text": "Orcul aruncă sacul în noroi și pleacă înjurând.",
+        "text_en": "The orc flings the sack into the mud and leaves, cursing.",
         "efecte": {
           "reputatie": 2,
           "eveniment": "fermier_multumeste"
@@ -739,6 +809,7 @@
       },
       "infrangere": {
         "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
+        "text_en": "The orc throws you down between the furrows. More orcs come over to see what happened.",
         "efecte": {
           "pedeapsa": "paznic_orc_1"
         }
@@ -747,6 +818,7 @@
     "groapa_usor": {
       "_nota": "Groapa (decisă de autor): nivelul ușor, un val; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Ușor",
+      "nume_en": "The Pit · Easy",
       "fundal": "poarta.arena",
       "varianta": "groapa",
       "fuga": false,
@@ -765,15 +837,18 @@
         ]
       ],
       "victorie": {
-        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul."
+        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul.",
+        "text_en": "The last orc falls into the mud. The orcs along the rim go quiet for a moment, then howl louder than before. Through the stakes of the gate, a few villagers have seen it all."
       },
       "infrangere": {
-        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor.",
+        "text_en": "You wake up in the mud, beyond the Pit’s fence. The orcs laugh and split their winnings."
       }
     },
     "groapa_mediu": {
       "_nota": "Groapa (decisă de autor): nivelul mediu, două valuri; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Mediu",
+      "nume_en": "The Pit · Medium",
       "fundal": "poarta.arena",
       "varianta": "groapa",
       "fuga": false,
@@ -804,15 +879,18 @@
         ]
       ],
       "victorie": {
-        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul."
+        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul.",
+        "text_en": "The last orc falls into the mud. The orcs along the rim go quiet for a moment, then howl louder than before. Through the stakes of the gate, a few villagers have seen it all."
       },
       "infrangere": {
-        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor.",
+        "text_en": "You wake up in the mud, beyond the Pit’s fence. The orcs laugh and split their winnings."
       }
     },
     "groapa_greu": {
       "_nota": "Groapa (decisă de autor): nivelul greu, trei valuri, cu Campionul Groapei la sfârșit; „valuri” = inamicii vin pe rând, iar între valuri aliații nu se refac. Fără fugă. Banii și restul le dă src/groapa.js („groapa” în config.json). Componența valurilor: aleasă de Claude (TODO echilibru).",
       "nume": "Groapa · Greu",
+      "nume_en": "The Pit · Hard",
       "fundal": "poarta.arena",
       "varianta": "groapa",
       "fuga": false,
@@ -875,15 +953,18 @@
         ]
       ],
       "victorie": {
-        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul."
+        "text": "Ultimul orc cade în noroi. Orcii de pe margine tac o clipă, apoi urlă mai tare ca înainte. Printre parii porții, câțiva săteni au văzut totul.",
+        "text_en": "The last orc falls into the mud. The orcs along the rim go quiet for a moment, then howl louder than before. Through the stakes of the gate, a few villagers have seen it all."
       },
       "infrangere": {
-        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor."
+        "text": "Te trezești în noroi, dincolo de gardul Groapei. Orcii râd și își împart banii pariurilor.",
+        "text_en": "You wake up in the mud, beyond the Pit’s fence. The orcs laugh and split their winnings."
       }
     },
     "cimitir_sobolani": {
       "_nota": "Decis de autor: Vale și Finn împotriva a patru șobolani, doi cu gheare și doi care scuipă, aceiași din prima imagine (misiunea lui Finn „Noaptea de la cimitir”). Nu se poate pierde: la înfrângere, Finn aruncă felinarul unui șobolan în iarba uscată și șobolanii fug (ales de Claude); misiunea merge mai departe la fel.",
       "nume": "Cimitirul",
+      "nume_en": "The Graveyard",
       "fundal": "cimitir",
       "fuga": false,
       "aliati": [
@@ -917,6 +998,7 @@
       ],
       "victorie": {
         "text": "Șobolanii se risipesc printre morminte.",
+        "text_en": "The rats scatter among the graves.",
         "efecte": {
           "stare": {
             "cimitir_lupta": "castigat"
@@ -926,6 +1008,7 @@
       },
       "infrangere": {
         "text": "Cazi între morminte. Lângă tine, Finn se ridică în genunchi.",
+        "text_en": "You fall among the graves. Beside you, Finn rises to his knees.",
         "efecte": {
           "stare": {
             "cimitir_lupta": "pierdut"
@@ -937,6 +1020,7 @@
     "custi_vanatori": {
       "_nota": "Decis de autor: Vale, Finn și Kaia (pe jos, fără Ember: pozele ei din Groapă) împotriva celor 5 orci din tabăra vânătorilor (ales de Claude: 3 orci și 2 aruncători). Fără fugă. Câștigată: cuștile se deschid; pierdută: fug toți trei. Încrederea vine oricum.",
       "nume": "Tabăra vânătorilor",
+      "nume_en": "The Hunters’ Camp",
       "fundal": "tabara_vanatori",
       "fuga": false,
       "doarVale": true,
@@ -982,6 +1066,7 @@
       ],
       "victorie": {
         "text": "Ultimul orc cade cu fața în cenușa focului.",
+        "text_en": "The last orc falls face-first into the ashes of the fire.",
         "efecte": {
           "stare": {
             "finn_custi_lupta": "castigat"
@@ -991,6 +1076,7 @@
       },
       "infrangere": {
         "text": "Orcii sunt prea mulți. Cineva strigă „Fugi!”.",
+        "text_en": "There are too many orcs. Someone shouts, “Run!”",
         "efecte": {
           "stare": {
             "finn_custi_lupta": "pierdut"
@@ -1003,6 +1089,7 @@
   "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)",
   "hartiNoi": {
     "_nota": "Hărți de luptă fără un loc al lor în sat (id → nume): imaginea locations/lupta_<id>.png, cu locurile luptătorilor mutate în editor.",
-    "tabara_vanatori": "Tabăra vânătorilor"
+    "tabara_vanatori": "Tabăra vânătorilor",
+    "tabara_vanatori_en": "The Hunters’ Camp"
   }
 }

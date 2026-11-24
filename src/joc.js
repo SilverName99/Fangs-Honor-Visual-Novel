@@ -459,7 +459,7 @@ function dialogPedeapsa(cine, tip) {
     if (t.id === 'obiect') {
       const obiecte = obiecteDePredat();
       const ales = obiecte[Math.floor(Math.random() * obiecte.length)];
-      noduri.obiect = nod(t.textIau.replace('{obiect}', inventar.def(ales).nume.toLowerCase()), { efecte: { pedeapsaAplicata: { id: 'obiect', obiect: ales } } });
+      noduri.obiect = nod(t.textIau.replace('{obiect}', (limbaJoc() === 'ro' ? inventar.def(ales).nume.toLowerCase() : inventar.def(ales).nume)), { efecte: { pedeapsaAplicata: { id: 'obiect', obiect: ales } } });
     }
   }
   dialog.porneste({ partener: cine, start, noduri });

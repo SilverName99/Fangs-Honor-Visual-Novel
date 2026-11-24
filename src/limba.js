@@ -26,7 +26,7 @@ const FISIERE_FARA_TEXT = new Set(['aranjare', 'prolog', 'sunete', 'texte_ui']);
 // Câmpuri tehnice, chiar dacă au spații (filtrele CSS) sau litere mari; „ce” = descrierea programului, doar în editor
 const CHEI_TEHNICE = new Set([
   'id', 'ce', 'filtru', 'imagine', 'imagini', 'imagineZi', 'sunet', 'sprite', 'poza', 'pozaTata', 'poze', 'fundal', 'loc',
-  'locuri', 'din', 'spre', 'urmator', 'nod', 'video', 'dialog', 'dialogTaxa', 'eveniment', 'lupta', 'vorbitor', 'emotie',
+  'din', 'spre', 'urmator', 'nod', 'video', 'dialog', 'dialogTaxa', 'eveniment', 'lupta', 'vorbitor', 'emotie',
   'partener', 'tip', 'slot', 'tipArma', 'sufix', 'harta', 'tinta', 'obiect', 'cale', 'personaj', 'cineRaspunde', 'semneDe',
   'proiectil', 'sageata', 'portret', 'varianta', 'joc', 'miniJoc', 'categorie', 'de', 'pana', 'la', 'marcaj', 'contor',
 ]);

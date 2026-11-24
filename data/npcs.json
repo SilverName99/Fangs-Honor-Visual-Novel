@@ -10,6 +10,7 @@
     {
       "id": "vale",
       "nume": "Vale",
+      "nume_en": "Vale",
       "locuriSprite": [],
       "stariExtra": [
         "trist",
@@ -19,10 +20,13 @@
     {
       "id": "miriam",
       "nume": "Miriam",
+      "nume_en": "Miriam",
       "carte": {
         "nume": "Miriam Lightfinder",
+        "nume_en": "Miriam Lightfinder",
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Coase la amiază, gătește seara și nu se culcă până nu mă știe acasă. În zilele de odihnă se roagă dis-de-dimineață la biserică."
+        "descriere": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Coase la amiază, gătește seara și nu se culcă până nu mă știe acasă. În zilele de odihnă se roagă dis-de-dimineață la biserică.",
+        "descriere_en": "My mother. Since Father died, she has kept this house standing with her own two hands. She sews at midday, cooks in the evening, and won’t go to bed until she knows I’m home. On days of rest, she prays at the church at first light."
       },
       "locuriSprite": [
         "casa/bucatarie",
@@ -137,9 +141,11 @@
         "piata": "miriam_piata"
       },
       "intrebareVorba": "Ce mai faci, mamă?",
+      "intrebareVorba_en": "How are you, Mother?",
       "magazin": {
         "_nota": "Decis de autor: Miriam coase piesele de piele cât stă la cusut (11–14, în camera ei), pe ecranul de schimb. Câte piei cere fiecare: TODO echilibru (ales de Claude).",
         "titlu": "Ce poate coase mama",
+        "titlu_en": "What Mother Can Sew",
         "schimburi": [
           {
             "da": {
@@ -186,10 +192,13 @@
     {
       "id": "soldat",
       "nume": "Roderick",
+      "nume_en": "Roderick",
       "carte": {
         "nume": "Roderick Lightfinder",
+        "nume_en": "Roderick Lightfinder",
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă."
+        "descriere": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă.",
+        "descriere_en": "My uncle, Father’s brother. He was a soldier once, and he still wears his old soldier’s clothes. Around midday he prays at the church for his brother, and in the afternoons and evenings I find him at the tavern."
       },
       "locuriSprite": [
         "taverna/parter",
@@ -210,6 +219,7 @@
           "steag": {
             "_nota": "Decis de autor: după misiunea „Steagul satului”, în lupta finală Roderick luptă cu steagul satului în mână (alte poze, combat/soldat_steag_*.png, aceeași pânză 2:3; fața din medalion rămâne a lui). Ales de Claude: cât stă el în picioare, ceilalți aliați lovesc cu +2 (TODO echilibru). Se vede din F2, lupta de test, bifa „Ca în lupta finală”.",
             "nume": "cu steagul satului",
+            "nume_en": "with the village banner",
             "poze": "soldat_steag",
             "portret": "soldat",
             "luptaFinala": true,
@@ -221,7 +231,8 @@
             "steag": {
               "atac": 2
             },
-            "grupGalerie": "Lupta finală"
+            "grupGalerie": "Lupta finală",
+            "grupGalerie_en": "The Final Battle"
           }
         }
       },
@@ -298,6 +309,7 @@
         }
       },
       "intrebareVorba": "Ce mai faci, unchiule?",
+      "intrebareVorba_en": "How are you, Uncle?",
       "stariExtra": [
         "trist",
         "zambet",
@@ -307,6 +319,7 @@
     {
       "id": "fierar",
       "nume": "Bram Emberforge",
+      "nume_en": "Bram Emberforge",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": [
@@ -316,7 +329,8 @@
                 "elian_toiag": "terminata"
               }
             },
-            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A strâns de pe câmp săbiile celor căzuți și le-a ținut ascunse lângă pat. Acum, din ele e un toiag, bătut seara, cu obloanele trase. Am jurat amândoi să tăcem."
+            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A strâns de pe câmp săbiile celor căzuți și le-a ținut ascunse lângă pat. Acum, din ele e un toiag, bătut seara, cu obloanele trase. Am jurat amândoi să tăcem.",
+            "text_en": "The village blacksmith. He says little, but what he does, he does thoroughly. He gathered the swords of the fallen from the field and kept them hidden by his bed. Now they are a staff, hammered out one evening behind closed shutters. We both swore to keep silent."
           },
           {
             "conditii": {
@@ -324,9 +338,15 @@
                 "bram_cufar": "terminata"
               }
             },
-            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A doua zi după bătălie a strâns de pe câmp săbiile celor căzuți: douăzeci și două. Le ține într-un cufăr, lângă pat. Sabia tatei nu e printre ele."
+            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A doua zi după bătălie a strâns de pe câmp săbiile celor căzuți: douăzeci și două. Le ține într-un cufăr, lângă pat. Sabia tatei nu e printre ele.",
+            "text_en": "The village blacksmith. He says little, but what he does, he does thoroughly. The day after the battle, he gathered the swords of the fallen from the field: twenty-two of them. He keeps them in a chest by his bed. Father’s sword is not among them."
           },
           "Fierarul satului. Lucrează de dimineața până seara, afară, la nicovală, iar orcii îi aduc topoarele să le ascută pe gratis. Vorbește puțin, dar ce face, face temeinic."
+        ],
+        "descriere_en": [
+          null,
+          null,
+          "The village blacksmith. He works outside at the anvil from morning till evening, and the orcs bring him their axes to sharpen for free. He says little, but what he does, he does thoroughly."
         ]
       },
       "locuriSprite": [
@@ -408,6 +428,7 @@
       ],
       "dialog": "fierar",
       "intrebareVorba": "Ce mai faceți, domnule Bram?",
+      "intrebareVorba_en": "How are you doing, Master Bram?",
       "stariExtra": [
         "inrosit",
         "trist"
@@ -416,9 +437,11 @@
     {
       "id": "hot",
       "nume": "Finn",
+      "nume_en": "Finn",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Finn, un tânăr de la marginea satului. A furat punga negustorului ca să-și hrănească mama bolnavă și sora mică. Nimeni nu l-a crezut. Eu da."
+        "descriere": "Finn, un tânăr de la marginea satului. A furat punga negustorului ca să-și hrănească mama bolnavă și sora mică. Nimeni nu l-a crezut. Eu da.",
+        "descriere_en": "Finn, a young man from the Edge. He stole the merchant’s purse to feed his sick mother and his little sister. No one believed him. I did."
       },
       "locuriSprite": [
         "piata",
@@ -609,9 +632,11 @@
     {
       "id": "vanatoare",
       "nume": "Kaia",
+      "nume_en": "Kaia",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Trece prin sat din când în când și toată lumea o știe. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns."
+        "descriere": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Trece prin sat din când în când și toată lumea o știe. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns.",
+        "descriere_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She passes through the village now and then, and everyone knows her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her campsite in the forest is our hiding place now."
       },
       "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la tabăra ei din pădure, care devine locul de campare, locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
@@ -636,11 +661,13 @@
           "groapa": {
             "_nota": "Decis de autor: în Groapă, Kaia vine pe jos, cu glugă, fără Ember (dacă orcii îl văd, îl vor în cușcă, ca pe bestiile din convoi). Pozele ei pe jos: combat/vanatoare_pejos_*.png (2:3); fața din medalion rămâne a ei. Viața, mai mică fără tigru: TODO echilibru.",
             "nume": "pe jos, cu glugă",
+            "nume_en": "on foot, hooded",
             "poze": "vanatoare_pejos",
             "portret": "vanatoare",
             "locuri": 1,
             "viata": 60,
-            "grupGalerie": "Groapa (arena)"
+            "grupGalerie": "Groapa (arena)",
+            "grupGalerie_en": "The Pit (arena)"
           }
         }
       },
@@ -765,6 +792,7 @@
         }
       ],
       "gandDoarme": "Doarme. Nu vreau s-o trezesc acum.",
+      "gandDoarme_en": "She’s asleep. I don’t want to wake her now.",
       "dialoguriPeLoc": {
         "padure": "kaia_lup_negru"
       },
@@ -776,6 +804,7 @@
     {
       "id": "tigru",
       "nume": "Ember",
+      "nume_en": "Ember",
       "_despre": "Tigrul cu colți de sabie al Kaiei. La campsite stă cu ea; 10–14 e plecat cu ea la vânătoare. Se vede, dar nu se apasă; nu are portrete (în luptă e în pozele Kaiei).",
       "locuriSprite": [
         "padure/campsite"
@@ -885,6 +914,7 @@
     {
       "id": "kaia_ember",
       "nume": "Kaia și Ember",
+      "nume_en": "Kaia and Ember",
       "_despre": "Decis de autor: misiunea Kaiei „Rana lui Ember”. Un singur sprite, Kaia lângă Ember rănit de un mistreț, la locul de campare, zi și noapte, de la două zile după „Capcanele” până la vindecare; atunci Kaia și Ember nu apar separat. Când îl apeși, răspunde Kaia (cineRaspunde), iar semnele misiunilor ei stau deasupra lui (semneDe). Îl aranjează autorul în editor (cu „Arată tot”).",
       "locuriSprite": [
         "padure/campsite"
@@ -919,7 +949,9 @@
     {
       "id": "mag",
       "nume": "Fratele Elian",
+      "nume_en": "Brother Elian",
       "numeScurt": "F. Elian",
+      "numeScurt_en": "Br. Elian",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": [
@@ -929,9 +961,14 @@
                 "elian_secret": "terminata"
               }
             },
-            "text": "Preotul satului și magul lui. Toți, și orcii, îl cred un mag mic, bun la lumânări și la răni ușoare. Eu am văzut lumina din palma lui, sub biserică, și cristalul din punga de la gât. Nu e un mag mic. De ce l-a trimis Cercul Luminii tocmai aici, nu mi-a spus încă."
+            "text": "Preotul satului și magul lui. Toți, și orcii, îl cred un mag mic, bun la lumânări și la răni ușoare. Eu am văzut lumina din palma lui, sub biserică, și cristalul din punga de la gât. Nu e un mag mic. De ce l-a trimis Cercul Luminii tocmai aici, nu mi-a spus încă.",
+            "text_en": "The village priest and its mage. Everyone, even the orcs, takes him for a minor mage, good for candles and light wounds. I have seen the light in his palm, beneath the church, and the crystal in the pouch around his neck. He is no minor mage. Why the Circle of Light sent him here, of all places, he hasn’t told me yet."
           },
           "Preotul satului și, ca în orice sat, magul lui: unul mic, zic oamenii, bun la lumânări și la răni ușoare. Tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Când e el prin preajmă, lumânările par să ardă mai frumos."
+        ],
+        "descriere_en": [
+          null,
+          "The village priest and, as in every village, its mage: a minor one, people say, good for candles and light wounds. Young for such a heavy robe. In the morning he lights the incense, by day he gazes at the altar, and in the afternoon he reads on the church steps. When he’s near, the candles seem to burn brighter."
         ]
       },
       "locuriSprite": [
@@ -968,6 +1005,7 @@
         }
       ],
       "gandDoarme": "Doarme. Nu vreau să-l trezesc acum.",
+      "gandDoarme_en": "He’s asleep. I don’t want to wake him now.",
       "lupta": {
         "_nota": "TODO echilibru. faraAtac: preotul nu atacă normal, doar cu puterile lui. scutLumina: aliatul ignoră următoarea lovitură; imaginea scutului se încarcă în galerie, la Luptă. poza: fiecare putere are poza ei de luptă (combat/mag_<poza>.png); până e încărcată, se folosește poza atac.",
         "viata": 45,
@@ -978,7 +1016,9 @@
           {
             "id": "vindecare",
             "nume": "Vindecare",
+            "nume_en": "Healing",
             "scurt": "+{min}–{max} viață unui aliat",
+            "scurt_en": "+{min}–{max} health to an ally",
             "tinta": "aliat",
             "min": 12,
             "max": 18,
@@ -988,7 +1028,9 @@
           {
             "id": "golesteBara",
             "nume": "Lumină orbitoare",
+            "nume_en": "Blinding Light",
             "scurt": "golește bara unui inamic",
+            "scurt_en": "empties an enemy’s stamina bar",
             "tinta": "inamic",
             "cost": 60,
             "poza": "goleste_bara"
@@ -996,7 +1038,9 @@
           {
             "id": "scutLumina",
             "nume": "Scut de lumină",
+            "nume_en": "Shield of Light",
             "scurt": "oprește următoarea lovitură",
+            "scurt_en": "stops the next blow",
             "tinta": "aliat",
             "cost": 40,
             "imagine": "combat/scut_lumina.png",
@@ -1007,10 +1051,12 @@
           "groapa": {
             "_nota": "Decis de autor: în Groapă, Elian vine ca vraci și folosește doar vindecarea, o lumină mică, de începător; celelalte puteri stau stinse, ca orcii să-l creadă în continuare un începător. Ciornă (motivul).",
             "nume": "în Groapă, doar cu vindecarea",
+            "nume_en": "in the Pit, healing only",
             "doarAbilitati": [
               "vindecare"
             ],
-            "motivBlocat": "Nu în fața lor, Vale. Aici sunt doar un preot începător."
+            "motivBlocat": "Nu în fața lor, Vale. Aici sunt doar un preot începător.",
+            "motivBlocat_en": "Not in front of them, Vale. Here, I am only a novice priest."
           }
         }
       },
@@ -1018,6 +1064,7 @@
       "magazin": {
         "_nota": "Decis de autor: după misiunea ierburilor, Elian face pansamente din sunătoare (3 → 1), pe ecranul magazinului.",
         "titlu": "Schimburile lui Elian",
+        "titlu_en": "Elian’s Trades",
         "schimburi": [
           {
             "da": {
@@ -1038,9 +1085,11 @@
     {
       "id": "hangita",
       "nume": "Agnes",
+      "nume_en": "Agnes",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti.",
+        "descriere_en": "The innkeeper. She keeps the tavern open from morning until past midnight and hears everything that’s said in the village. She can rent me the room upstairs, if I have the coin.",
         "faraIncredere": true
       },
       "locuriSprite": [
@@ -1077,6 +1126,7 @@
       ],
       "magazin": {
         "titlu": "Marfa Agnesei",
+        "titlu_en": "Agnes’s Wares",
         "vinde": [
           "paine",
           "bere",
@@ -1085,10 +1135,12 @@
         "cumpara": []
       },
       "intrebareVorba": "Ce mai faceți, doamna Agnes?",
+      "intrebareVorba_en": "How are you doing, Mistress Agnes?",
       "magazine": {
         "schimburi": {
           "_nota": "Decis de autor: Agnes face carne friptă din carne crudă (2 → 1), ca schimburile lui Elian.",
           "titlu": "Bucătăria Agnesei",
+          "titlu_en": "Agnes’s Kitchen",
           "schimburi": [
             {
               "da": {
@@ -1110,16 +1162,19 @@
     {
       "id": "negustor",
       "nume": "Negustorul",
+      "nume_en": "The Merchant",
       "_despre": "Fără sprite (decis): apare doar în dialog, când apeși pe hoțul legat (cineRaspunde la hot).",
       "stariPortret": [
         "normal"
       ],
       "dialog": "negustor",
-      "intrebareVorba": "Ce mai faceți?"
+      "intrebareVorba": "Ce mai faceți?",
+      "intrebareVorba_en": "How are you doing?"
     },
     {
       "id": "sobolan_gheare",
       "nume": "Șobolan",
+      "nume_en": "Rat",
       "_despre": "Decis de autor: șobolanii mutanți vorbesc (pivnița lui Agnes). Fără sprite: apar doar în dialog, peste imaginile pivniței, și în luptă. rade = rânjește zeflemitor.",
       "stariPortret": [
         "normal",
@@ -1132,14 +1187,17 @@
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii.",
         "nume": "Șobolanul cu gheare",
+        "nume_en": "The Clawed Rat",
         "faraIncredere": true,
         "dupaStare": "sobolani_vorbit",
-        "descriere": "Șobolanii din pivnița lui Agnes sunt cât niște câini, cu gheare lungi și negre, ca de cârtiță. Și vorbesc: repede, chițăit, repetând fiecare cuvânt. Își zic „cei-mulți, cei-care-ascultă” și jură că din adânc vine o teroare. Aș vrea să cred că-s bazaconii."
+        "descriere": "Șobolanii din pivnița lui Agnes sunt cât niște câini, cu gheare lungi și negre, ca de cârtiță. Și vorbesc: repede, chițăit, repetând fiecare cuvânt. Își zic „cei-mulți, cei-care-ascultă” și jură că din adânc vine o teroare. Aș vrea să cred că-s bazaconii.",
+        "descriere_en": "The rats in Agnes’s cellar are the size of dogs, with long black claws, like a mole’s. And they talk: fast, squeaking, repeating every word. They call themselves “the-many, the-ones-who-listen” and swear that a terror is coming from the depths. I’d like to believe it’s all nonsense."
       }
     },
     {
       "id": "sobolan_scuipa",
       "nume": "Șobolan scuipător",
+      "nume_en": "Spitting Rat",
       "_despre": "Decis de autor: șobolanul care scuipă bale acide vorbește și el. Fără sprite, ca celălalt.",
       "stariPortret": [
         "normal",
@@ -1152,18 +1210,22 @@
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii.",
         "nume": "Șobolanul scuipător",
+        "nume_en": "The Spitting Rat",
         "faraIncredere": true,
         "dupaStare": "sobolani_vorbit",
-        "descriere": "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge; fără leacul Bătrânei Morwen, otrava nu se oprește. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc."
+        "descriere": "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge; fără leacul Bătrânei Morwen, otrava nu se oprește. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc.",
+        "descriere_en": "It always stays behind the others, with its long neck and a swollen pouch under its jaw. It spits a yellowish slime that burns like fire and gets into the blood; without Old Morwen’s antidote, the poison won’t stop. It told me to think hard about whose side I’m on. I’m still thinking."
       }
     },
     {
       "id": "mama_finn",
       "nume": "Marta",
+      "nume_en": "Marta",
       "_despre": "Decis de autor: e bolnava pe care o vindecă Vale seara, în misiunea lui Elian „Bolnavul”. Stă în pat, lângă vatră.",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Marta, mama lui Finn. A fost bolnavă de mult, tușea n-o lăsa nici zi, nici noapte. L-a cunoscut pe tata.",
+        "descriere_en": "Marta, Finn’s mother. She was sick for a long time; her cough wouldn’t let her be, day or night. She knew my father.",
         "faraIncredere": true
       },
       "locuriSprite": [
@@ -1171,6 +1233,7 @@
       ],
       "dialog": "mama_finn",
       "intrebareVorba": "Ce mai faceți?",
+      "intrebareVorba_en": "How are you doing?",
       "program": [
         {
           "de": "06:00",
@@ -1193,9 +1256,11 @@
     {
       "id": "sora_finn",
       "nume": "Lina",
+      "nume_en": "Lina",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Lina, sora cea mică a lui Finn. Mereu flămândă, mereu cu o întrebare. Crede că fratele ei poate face orice.",
+        "descriere_en": "Lina, Finn’s little sister. Always hungry, always full of questions. She thinks her brother can do anything.",
         "faraIncredere": true
       },
       "locuriSprite": [
@@ -1255,14 +1320,17 @@
     {
       "id": "contrabandist",
       "nume": "Jarek",
+      "nume_en": "Jarek",
       "_despre": "Marginea satului. Decis de autor: se întâlnește cu Vale doar în cocioaba lui, seara, după jumătate de oră de așteptare; Finn lucrează în secret pentru el. Ce vinde e TODO (ciornă de Claude).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Jarek, contrabandistul de lângă gard. Face rost de lucruri care nu se găsesc în piață. Nu întreabă de unde am banii, iar eu nu-l întreb de unde are marfa.",
+        "descriere_en": "Jarek, the smuggler by the fence. He gets hold of things you won’t find at the market. He doesn’t ask where I get my money, and I don’t ask where he gets his goods.",
         "faraIncredere": true
       },
       "dialog": "contrabandist",
       "intrebareVorba": "Ce mai faci?",
+      "intrebareVorba_en": "How are you?",
       "program": [
         {
           "de": "18:00",
@@ -1279,6 +1347,7 @@
       "magazin": {
         "_nota": "TODO: ce vinde și ce schimbă contrabandistul (decide autorul). Decis de autor: unele lucruri nu se dau pe bani, ci la schimb. Ciornă de Claude.",
         "titlu": "Marfa contrabandistului",
+        "titlu_en": "The Smuggler’s Wares",
         "vinde": [
           "sageti",
           "arc",
@@ -1325,10 +1394,12 @@
     {
       "id": "ierbareasa",
       "nume": "Bătrâna Morwen",
+      "nume_en": "Old Morwen",
       "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; vinde și leacul de otravă (bun la șobolanii din pivniță).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Bătrâna Morwen trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă.",
+        "descriere_en": "Old Morwen lives alone in a hut at the Edge, among dried herbs. She makes potions and remedies for anyone who knocks at her door.",
         "faraIncredere": true
       },
       "locuriSprite": [
@@ -1336,6 +1407,7 @@
       ],
       "dialog": "ierbareasa",
       "intrebareVorba": "Ce mai faceți, bunico?",
+      "intrebareVorba_en": "How are you doing, Granny?",
       "program": [
         {
           "de": "23:00",
@@ -1373,6 +1445,7 @@
       ],
       "magazin": {
         "titlu": "Poțiunile bătrânei",
+        "titlu_en": "Old Morwen’s Potions",
         "_nota": "Decis de autor: Bătrâna Morwen nu vinde și nu cumpără nimic: face poțiunile doar din florile aduse de Vale, la schimb. Rețetele și cele 3 poțiuni noi (vigoare, pielea de piatră, furia) sunt ciorne de Claude, TODO echilibru.",
         "schimburi": [
           {
@@ -1426,10 +1499,12 @@
     {
       "id": "orc_colector",
       "nume": "Orcul colector",
+      "nume_en": "The Tax Collector",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor. faraIncredere: orcii n-au bara de încredere în carte.",
         "faraIncredere": true,
-        "descriere": "Orcul care strânge taxa de la fiecare casă, în fiecare săptămână. Dimineața stă la masa taxei, lângă poartă, iar seara face de pază cu o torță. După-amiaza dă târcoale prin sat și ia ce-i place."
+        "descriere": "Orcul care strânge taxa de la fiecare casă, în fiecare săptămână. Dimineața stă la masa taxei, lângă poartă, iar seara face de pază cu o torță. După-amiaza dă târcoale prin sat și ia ce-i place.",
+        "descriere_en": "The orc who collects the tax from every house, every week. In the morning he sits at the tax table by the gate, and in the evening he stands guard with a torch. In the afternoon he prowls the village and takes whatever he likes."
       },
       "locuriSprite": [
         "poarta"
@@ -1474,10 +1549,12 @@
     {
       "id": "paznic_orc_1",
       "nume": "Paznic orc",
+      "nume_en": "Orc Guard",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor. faraIncredere: orcii n-au bara de încredere în carte.",
         "faraIncredere": true,
-        "descriere": "Paznicul de la poartă. Ziua păzește ieșirea din sat, după-amiaza joacă zaruri cu celălalt paznic, iar seara își ascute toporul lângă foc. Noaptea doarme sprijinit de zid. Orcii ca el patrulează prin sat și iau ce vor."
+        "descriere": "Paznicul de la poartă. Ziua păzește ieșirea din sat, după-amiaza joacă zaruri cu celălalt paznic, iar seara își ascute toporul lângă foc. Noaptea doarme sprijinit de zid. Orcii ca el patrulează prin sat și iau ce vor.",
+        "descriere_en": "The guard at the gate. By day he watches the way out of the village, in the afternoon he plays dice with the other guard, and in the evening he sharpens his axe by the fire. At night he sleeps propped against the wall. Orcs like him patrol the village and take what they want."
       },
       "_despre": "Orcul normal (generic): paznicul de la poartă. Orice alt orc fără nume (de exemplu cei din scandalul de la tavernă) folosește portretele, sprite-ul și pozele lui de luptă.",
       "locuriSprite": [
@@ -1488,6 +1565,7 @@
       ],
       "dialog": "paznic_orc",
       "gandDoarme": "Doarme sprijinit de zid. Mai bine nu-l trezesc.",
+      "gandDoarme_en": "He’s asleep, propped against the wall. I’d better not wake him.",
       "program": [
         {
           "de": "06:00",
@@ -1529,6 +1607,7 @@
     {
       "id": "paznic_orc_2",
       "nume": "Paznic orc",
+      "nume_en": "Orc Guard",
       "_despre": "Al doilea paznic de la poartă: doar se vede (nu se apasă, fără portrete și fără poze de luptă). Vorbești doar cu primul paznic.",
       "locuriSprite": [
         "poarta"
@@ -1562,9 +1641,11 @@
     {
       "id": "fermier",
       "nume": "Fermierul",
+      "nume_en": "The Farmer",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Fermierul. Ară câmpul de grâu de la ivirea zorilor până la prânz, împreună cu ceilalți săteni. Orcii îi iau o parte din recoltă când le vine cheful.",
+        "descriere_en": "The farmer. He plows the wheat field from daybreak until noon, alongside the other villagers. The orcs take part of his harvest whenever they feel like it.",
         "faraIncredere": true
       },
       "_despre": "Fermierul cu care poți vorbi; va avea misiuni (TODO). Lucrează la câmpuri 06–13; ceilalți săteni la muncă sunt desenați în imaginea zonei pentru orele acelea (campuri_zona_lucru.png).",
@@ -1619,6 +1700,7 @@
       ],
       "_numeTODO": "Numele fermierului e TODO (nedecis).",
       "intrebareVorba": "Ce mai faceți?",
+      "intrebareVorba_en": "How are you doing?",
       "clicabil": {
         "_nota": "Decis de autor: nu se poate vorbi cu el până nu-l necăjesc orcii (orci_patrula_campuri_prima).",
         "conditii": {
@@ -1631,6 +1713,7 @@
     {
       "id": "batran",
       "nume": "Bătrânul Hagen",
+      "nume_en": "Old Hagen",
       "_despre": "Decis de autor: un om cu o tablă de „Masa regelui” (Fetlar Hnefatafl), afară, la o masă în fața tavernei (înăuntru n-avea loc), 11–22; sprite-ul îl așază autorul pe imaginea tavernei. CIORNĂ (Claude): numele și povestea lui (fost soldat în garnizoana din Altaris, a învățat jocul în armată).",
       "dialog": "batran",
       "locuriSprite": [
