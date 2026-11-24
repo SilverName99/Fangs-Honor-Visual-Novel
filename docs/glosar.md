@@ -143,3 +143,23 @@ Vale vorbește simplu și cald; gândurile lui sunt la persoana întâi, la prez
 | verigheta mamei | Mother's wedding ring |
 | hârtiile soldatului | the soldier's papers |
 | solzul (de dragon) | the (dragon) scale |
+
+## Vocile (cum vorbesc în engleză)
+
+- **Vale**: tânăr, simplu, cald, cu umor blând; gândurile lui sunt scurte, la persoana întâi și la prezent („The tree is in bloom. I can't breathe.”). Mamei îi spune „Mother”, unchiului „Uncle”, lui Bram „Master Bram”, lui Agnes „Mistress Agnes”.
+- **Miriam**: caldă, obosită, grijulie, cu încăpățânare blândă; îi spune lui Vale „Vale”, „my dear”, „my boy”; pomenește de Edwin cu durere liniștită („your father”).
+- **Roderick**: soldat bătrân, aspru, scurt, cu glume amare și vinovăție; îi spune lui Vale „lad” (= „băiete”); despre Edwin: „your father”, „my brother”.
+- **Bram**: vorbește puțin, practic, ca fierul („Speak quickly. Iron doesn't wait.”); se încurcă și se înroșește când e vorba de Agnes.
+- **Agnes**: hangiță vorbăreață, caldă, cu umor obosit; îi spune lui Vale „Vale”, „love” sau „lad” rar.
+- **Fratele Elian**: tânăr, blând, atent la cuvinte, cu frază mai așezată și imagini de lumină; ascunde mai mult decât spune.
+- **Kaia**: directă, cu propoziții scurte, a pădurii; ironică, mândră, caldă doar cu Ember și, încet-încet, cu Vale.
+- **Finn**: isteț, repezit, cu glume de stradă și orgoliu rănit; tandru cu Lina și cu mama lui.
+- **Lina**: copil mic: propoziții scurte, entuziasm, întrebări.
+- **Marta**: blândă, slăbită, recunoscătoare.
+- **Jarek**: contrabandist uscat, ironic, care cântărește oamenii; îi spune lui Vale „boy” (= „băiete”).
+- **Bătrâna Morwen**: bătrână aspră și înțeleaptă, cu vorbe de leac; îi spune lui Vale „boy”; Vale îi spune „Granny”.
+- **Bătrânul Hagen**: fost soldat, răbdător, cu proverbe de tablă și de război; îi spune lui Vale „lad” sau „Lightfinder”.
+- **Fermierul, negustorul**: oameni simpli; negustorul e zgârcit și grăbit.
+- **Orcii**: scurt, aspru, batjocoritor; „pui de om” = „human whelp”; mormăie „Hrr...”; fără gramatică stricată (doar brutalitate).
+- **Șobolanii**: repede și nervos, repetă cuvintele cu cratimă („yes-yes!”, „quick-quick!”, „tear-tear!”), oamenii sunt „man-things”, un om e „man-thing”, ei sunt „the-many”, morții vii „dead-things”, Narco e „the Bone-Master”; șuieră „Ssss!”.
+- **Sătenii fără portret** (văduvele, bătrânii): simplu, sărac în cuvinte, cu demnitate.

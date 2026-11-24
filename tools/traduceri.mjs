@@ -1,5 +1,7 @@
 // Ce mai e de tradus în engleză (rulează: node tools/traduceri.mjs; cu --detalii, lista întreagă).
 // - textele din date (data/*.json) fără perechea „_en” (vezi src/limba.js);
+// - textele românești schimbate după ce au fost traduse (engleza poate fi veche): amprenta românei de la traducere
+//   stă în tools/traduceri.lock.json; după ce ai pus engleza nouă, „node tools/traduceri.mjs --amprente” le reface;
 // - cheile t('...') din cod (src/) fără traducere în data/texte_ui.json, și traducerile pe care nu le mai folosește
 //   nimeni (textul românesc din cod s-a schimbat);
 // - ce a schimbat autorul în editor (data/aranjare/texte.json) peste o replică schimbată între timp în date.
@@ -7,6 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { colecteazaTexte } from '../src/limba.js';
+import { createHash } from 'crypto';
 
 const R = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const detalii = process.argv.includes('--detalii');
@@ -24,6 +27,21 @@ for (const x of lipsa) peFisier[x.cale.split('/')[0]] = (peFisier[x.cale.split('
 console.log(`Date: ${texte.length - lipsa.length} din ${texte.length} texte au engleza.`);
 for (const [f, n] of Object.entries(peFisier)) console.log(`  ${f}: ${n} fără engleză`);
 if (detalii) for (const x of lipsa) console.log(`    ${x.cale}: ${x.ro.slice(0, 90)}`);
+
+// Amprenta românei la momentul traducerii: dacă româna se schimbă, engleza de lângă ea trebuie revăzută
+const amprenta = (ro) => createHash('sha1').update(ro).digest('hex').slice(0, 10);
+const LOCK = path.join(R, 'tools/traduceri.lock.json');
+if (process.argv.includes('--amprente')) {
+  const a = Object.fromEntries(texte.filter((x) => x.en).map((x) => [x.cale, amprenta(x.ro)]));
+  fs.writeFileSync(LOCK, JSON.stringify(a, null, 0).replace(/,"/g, ',\n"') + '\n');
+  console.log(`Amprente refăcute: ${Object.keys(a).length} texte traduse.`);
+}
+const amprente = fs.existsSync(LOCK) ? JSON.parse(fs.readFileSync(LOCK, 'utf8')) : {};
+const vechi = texte.filter((x) => x.en && amprente[x.cale] && amprente[x.cale] !== amprenta(x.ro));
+const faraAmprenta = texte.filter((x) => x.en && !amprente[x.cale]);
+if (vechi.length) console.log(`  ${vechi.length} texte cu româna schimbată după traducere (engleza poate fi veche):`);
+for (const x of vechi.slice(0, detalii ? Infinity : 30)) console.log(`    ${x.cale}: ${x.ro.slice(0, 70)}`);
+if (faraAmprenta.length) console.log(`  ${faraAmprenta.length} texte traduse fără amprentă (după ce le verifici: --amprente).`);
 
 // ---------- codul ----------
 const chei = new Map();
