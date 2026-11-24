@@ -1,0 +1,4 @@
+{
+  "_nota": "Textele din cod (butoane, mesaje, panouri), în engleză: cheia e textul românesc din t('...') din src/, valoarea e traducerea. „{nume}” se înlocuiește în joc cu valoarea dată. Scrie Claude; ce schimbă autorul în tab-ul „Traduceri” stă în data/aranjare/texte.json, cu întâietate.",
+  "texte": {}
+}

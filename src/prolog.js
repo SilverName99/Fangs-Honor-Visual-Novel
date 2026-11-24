@@ -1,4 +1,5 @@
 import { elementImagine, urlImagine } from './imagini.js';
+import { limbaJoc, seteazaLimba } from './limba.js';
 
 // Prologul din joc (cerut de autor): la „Joc nou” se deschide o carte, „Cronica Aldariei”, cu cele 7 capitole din
 // data/prolog.json, iar pe pagina de după ultimul capitol, harta Aldenorului (decis de autor). Aceeași carte ca a
@@ -10,7 +11,7 @@ import { elementImagine, urlImagine } from './imagini.js';
 // încarcă imaginile, masa e un fundal întunecat și coperta e din CSS (piele, chenar auriu); titlul îl scrie jocul, în
 // limba aleasă, ca să nu-l strice AI-ul.
 
-const CHEIE_LIMBA = 'joc-prolog-limba';
+// Limba aleasă aici e și limba jocului (decis de autor): o ține minte limba.js, sub aceeași cheie ca înainte
 const LIMBI = {
   ro: { capitol: 'Capitolul', alta: 'English', sari: 'Sari peste', incepe: 'Începe povestea', inchide: 'Închide', deschide: 'Apasă pe carte ca s-o deschizi', fara: '🔇 Fără muzică', cu: '🔊 Pornește muzica' },
   en: { capitol: 'Chapter', alta: 'Română', sari: 'Skip', incepe: 'Begin the story', inchide: 'Close', deschide: 'Click the book to open it', fara: '🔇 Mute music', cu: '🔊 Play music' },
@@ -38,22 +39,9 @@ function imagineOptionala(cale, clasa, laIncarcare) {
   return img;
 }
 
-function limbaSalvata() {
-  try {
-    const l = localStorage.getItem(CHEIE_LIMBA);
-    if (LIMBI[l]) return l;
-  } catch {
-    // fără acces la browser: româna
-  }
-  return 'ro';
-}
-function salveazaLimba(l) {
-  try {
-    localStorage.setItem(CHEIE_LIMBA, l);
-  } catch {
-    // nu se ține minte, dar merge
-  }
-}
+const limbaSalvata = () => limbaJoc();
+// Schimbă și limba jocului: datele și interfața se rescriu pe loc (limba.js), cartea se reface aici
+const salveazaLimba = (l) => seteazaLimba(l);
 
 export function creeazaPrologul(parinte, joc) {
   let el = null;
@@ -382,6 +370,8 @@ export function creeazaPrologul(parinte, joc) {
   // „recitire”: deschis din galerie, doar ca să fie citit; altfel e începutul unui joc nou, iar „laFinal” pornește jocul
   async function deschide(opt = {}) {
     if (el) return;
+    // Limba poate fi schimbată între timp din Opțiuni: cartea se deschide în limba jocului de acum
+    limba = limbaSalvata();
     recitire = !!opt.recitire;
     laFinal = opt.laFinal || null;
     inchisa = true;

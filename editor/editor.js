@@ -2,6 +2,7 @@ import '../src/stil.css';
 import './editor.css';
 import { api } from './api.js';
 import { normalizeaza } from '../src/date.js';
+import { pregatesteDate } from '../src/limba.js';
 import { construiesteLumea } from '../src/lume.js';
 import { creeazaGalerie } from './galerie.js';
 import { arataMisiunile } from './misiuni.js';
@@ -12,8 +13,10 @@ import { creeazaInterfata } from './interfata.js';
 // Editorul citește datele de la server (nu din bundle), ca să vadă imediat ce s-a salvat
 const brut = await api('date');
 const date = normalizeaza(Object.entries(brut).flatMap(([k, v]) => (k === 'aranjare' ? Object.entries(v).map(([id, a]) => [`aranjare/${id}`, a]) : [[k, v]])));
+// Editorul e în română; perechile română / engleză (cheile „_en” din date) le folosește tab-ul „Traduceri”
+const texte = pregatesteDate(date, { doarRomana: true });
 const lume = construiesteLumea(date);
-const comun = { date, lume, imagini: new Map() };
+const comun = { date, lume, texte, imagini: new Map() };
 
 async function reincarcaImagini() {
   // cale -> data modificării; data intră în URL, ca o imagine înlocuită să se vadă imediat

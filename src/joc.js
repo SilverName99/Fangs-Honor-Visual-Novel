@@ -22,6 +22,7 @@ import { creeazaEcranMagazin } from './ecranMagazin.js';
 import { creeazaSunet, volumeSunet, seteazaVolum } from './sunet.js';
 import { creeazaCarte } from './carte.js';
 import { creeazaPrologul } from './prolog.js';
+import { t, LIMBI, limbaJoc, seteazaLimba, laSchimbareaLimbii } from './limba.js';
 import { actualizeazaMisiuni, optiuniMisiuni, semnPersonaj, evenimentOferit } from './misiuni.js';
 import { creeazaZaruri } from './zaruri.js';
 import { creeazaTafl } from './tafl.js';
@@ -1321,7 +1322,18 @@ function deschideMeniul() {
         arataOptiunile();
       }),
     );
-    continut.append(randViteza, ...randuriSunet, randMut, randCursor, randSemne, randMini, randEcran);
+    // Limba (decis de autor): aceeași cu cea aleasă în cartea prologului; se schimbă pe loc, fără să pierzi nimic
+    const randLimba = div('rand-optiune');
+    const alegeriLimba = div('alegeri-optiune');
+    for (const [l, nume] of Object.entries(LIMBI))
+      alegeriLimba.append(
+        buton(nume, `buton-mic-meniu${l === limbaJoc() ? ' ales' : ''}`, () => {
+          seteazaLimba(l);
+          arataOptiunile();
+        }),
+      );
+    randLimba.append(div('nume-optiune', 'Limba / Language'), alegeriLimba);
+    continut.append(randLimba, randViteza, ...randuriSunet, randMut, randCursor, randSemne, randMini, randEcran);
     panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
   }
 
@@ -1655,6 +1667,15 @@ function pornesteVisulCerut(ev) {
 }
 
 afiseaza();
+// Limba schimbată (din Opțiuni sau din cartea prologului): textele din date sunt deja rescrise (limba.js), dar lumea
+// ține numele locurilor și ale acțiunilor copiate la pornire, deci se reface (în același Map, pe care îl țin și alții),
+// apoi se redesenează ecranul de acum
+laSchimbareaLimbii(() => {
+  const noua = construiesteLumea(date);
+  lume.clear();
+  for (const [k, v] of noua) lume.set(k, v);
+  afiseaza();
+});
 if (visCerut) pornesteVisulCerut(visCerut);
 else reiaDupaReincarcare();
 if (stare.prolog === 'deschis' && !visCerut) deschidePrologul();
