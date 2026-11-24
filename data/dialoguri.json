@@ -20709,90 +20709,227 @@
           },
           "Unchiul trage o dușcă din plosca lui. Una singură. Apoi o pune deoparte și nu se mai atinge de ea toată seara."
         ],
-        "urmator": "p19"
+        "urmator": "sa1"
       },
-      "p19": {
+      "sa1": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Unchiule... tu ai văzut multe cât ai fost soldat. Ceva ce nu se vede pe la noi?",
+        "text": "Unchiule... povestește-mi despre tine. Despre viața ta. Și despre tata, când erați mici. Nu mi-a povestit nimeni niciodată.",
         "imagine": "events/drum_foc_1_noapte.png",
         "efecte": {
           "panaLaOra": "22:00"
         },
-        "urmator": "p20"
+        "urmator": "sa2"
       },
-      "p20": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Destule. Dar ți-o spun întâi pe cea de care mi-a fost frică.",
-        "urmator": "p21"
-      },
-      "p21": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Eram de vârsta ta. Ne-au trimis cu o patrulă prin mlaștinile din sud, după niște hoți de cai. Ceața s-a lăsat la apus și n-am mai văzut nici drumul, nici pe cel din fața mea.",
-        "imagine": "events/drum_mlastina_1.png",
-        "amintire": true,
-        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
-        "urmator": "p22"
-      },
-      "p22": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Am mers ore întregi cu apa până la genunchi. Unul dintre noi a călcat strâmb și l-a tras mlaștina până la piept. L-am scos de păr.",
-        "amintire": true,
-        "urmator": "p23"
-      },
-      "p23": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Pe la miezul nopții, n-am mai știut în ce parte e nordul. Și atunci le-am văzut.",
-        "amintire": true,
-        "urmator": "p24"
-      },
-      "p24": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Lumini mici, albastre, cât un pumn. Pluteau deasupra apei, una după alta, ca niște felinare duse de nimeni.",
-        "imagine": "events/drum_mlastina_2.png",
-        "amintire": true,
-        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
-        "urmator": "p25"
-      },
-      "p25": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Bătrânii ziceau că luminile din mlaștină sunt sufletele înecaților și că te trag la fund. Comandantul ne-a strigat să nu ne uităm la ele.",
-        "amintire": true,
-        "urmator": "p26"
-      },
-      "p26": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Eu m-am uitat. N-aveam ce pierde. Și am văzut că nu ne trăgeau nicăieri. Ne așteptau.",
-        "amintire": true,
-        "urmator": "p27"
-      },
-      "p27": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Mergeau o bucată, se opreau, ne așteptau. Am mers după ele toată noaptea. Și în zori eram pe drumul mare. Toți, cu tot cu cel scos de păr.",
-        "amintire": true,
-        "urmator": "p28"
-      },
-      "p28": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "N-am aflat niciodată ce erau. Dar de atunci știu un lucru, băiete. Nu tot ce strălucește în întuneric vrea să te omoare.",
-        "trezire": true,
-        "imagine": "events/drum_foc_1.png",
-        "urmator": "p29"
-      },
-      "p29": {
+      "sa2": {
         "vorbitor": "vale",
         "emotie": "normal",
+        "text": "Până acum câțiva ani, unchiul venea doar vara, câteva zile, și apoi pleca iar. Tata zicea doar: „E la strajă.” Și nici după ce s-a întors n-am stat vreodată de vorbă cu adevărat. Acum tata nu mai e, ca să-l întreb.",
         "gand": true,
-        "text": "Focul trosnește. Mă gândesc la lumina verde din visul cu cimitirul. Și nu știu încă dacă trebuie să-mi fie frică de ea.",
+        "urmator": "sa3"
+      },
+      "sa3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Despre mine...",
+        "urmator": "sa4"
+      },
+      "sa4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Bine. Dar e o poveste lungă, băiete. Și începe chiar la copacul pe lângă care am trecut azi-noapte.",
+        "urmator": "sa5"
+      },
+      "sa5": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Eram doi pui de om și un copac. Edwin urca primul, mereu, și striga din vârf că vede până la munți. Eu cădeam de pe creanga de jos, iar el cobora după mine și râdea.",
+        "imagine": "events/drum_amintire_copac.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "sa6"
+      },
+      "sa6": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Acolo ne ascundeam de tata când spărgeam ceva. Și tot acolo am jurat, cu sânge din degete, că nu ne despărțim niciodată. Aveam opt și zece ani. Ce știam noi.",
+        "amintire": true,
+        "urmator": "sa7"
+      },
+      "sa7": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Vara munceam la câmp cu tata, de la răsărit la apus. Edwin ținea plugul, eu mânam boii. Edwin cânta prost și tare, iar boii mergeau mai repede, de frică.",
+        "imagine": "events/drum_amintire_camp.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "sa8"
+      },
+      "sa8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dar pământul nostru era mic. Destul pentru o familie. Nu pentru doi flăcăi care se făceau bărbați.",
+        "amintire": true,
+        "urmator": "sa9"
+      },
+      "sa9": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Apoi a venit anul fără ploaie. Grâul s-a uscat în spic. Iarna aia am mâncat coajă de copac fiartă cu sare, și mama ne dădea porția ei, zicând că n-are poftă.",
+        "amintire": true,
+        "urmator": "sa10"
+      },
+      "sa10": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Primăvara, tata m-a dus la garnizoana din munți, la Straja Hotarelor. Aveam paisprezece ani. Edwin, cel mare, rămânea la pământ. Așa e legea la noi: pământul e al celui mare.",
+        "imagine": "events/drum_amintire_plecare.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "sa11"
+      },
+      "sa11": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Mama a plâns în prag și n-a vrut să iasă din casă. Edwin a alergat după căruță până la marginea satului, desculț, și a strigat ceva. N-am auzit ce. Roțile făceau prea mult zgomot.",
+        "amintire": true,
+        "urmator": "sa12"
+      },
+      "sa12": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și n-ai aflat niciodată ce strigase?",
+        "amintire": true,
+        "urmator": "sa13"
+      },
+      "sa13": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "Ba da. Peste patru ani, când am venit prima dată acasă. Mi-a spus singur, fără să-l întreb. „Te aștept în copac.” Atât strigase.",
+        "amintire": true,
+        "urmator": "sa14"
+      },
+      "sa14": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Unchiul tace. Focul trosnește. Abia acum îmi dau seama că mi-am ținut răsuflarea.",
+        "gand": true,
+        "amintire": true,
+        "urmator": "sa15"
+      },
+      "sa15": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Straja Hotarelor nu e oaste de cântece, băiete. Nu e armata regelui, cu steaguri de mătase, și nici Ordinul Flăcării, cu dragonii lui. Suntem câțiva oameni prin turnuri de piatră, la marginea regatului, cu ochii pe stepă.",
+        "imagine": "events/drum_amintire_straja.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "sa16"
+      },
+      "sa16": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Primii doi ani am cărat apă, am hrănit caii și am curățat armele altora. În prima noapte am plâns în coama unui cal, să nu mă audă nimeni. Calul n-a spus nimănui.",
+        "amintire": true,
+        "urmator": "sa17"
+      },
+      "sa17": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "La șaisprezece ani am jurat și am primit sabia. Tot atunci l-am cunoscut pe el, prietenul meu, cel cu hârtiile. Un slăbănog care nu știa să țină sulița, dar vedea un călăreț pe stepă înaintea tuturor.",
+        "amintire": true,
+        "urmator": "sa18"
+      },
+      "sa18": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Douăzeci de ierni am stat de strajă. Am păzit drumuri, am prins hoți de cai, am îngropat oameni buni. Dragoni n-am văzut. Până la hotare ajung doar poveștile despre ei.",
+        "amintire": true,
+        "urmator": "sa19"
+      },
+      "sa19": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și tata?",
+        "amintire": true,
+        "urmator": "sa20"
+      },
+      "sa20": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Tatăl tău s-a însurat cu maică-ta sub copacul nostru. Eu eram de strajă. Te-ai născut tu. Eu eram de strajă. A murit mama noastră. Eu eram tot de strajă.",
+        "amintire": true,
+        "urmator": "sa21"
+      },
+      "sa21": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Veneam vara, câteva zile. Tu te ascundeai după fusta maică-tii și-mi spuneai „unchiule” ca unui străin. Și aveai dreptate.",
+        "amintire": true,
+        "urmator": "sa22"
+      },
+      "sa22": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Acum zece ani a început războiul. Pe noi, cei de la hotare, ne-au risipit prin oastea cea mare și ne-au purtat prin toate noroaiele regatului. Acum trei ani am cerut să plec acasă. Prietenul meu n-avea pe nimeni, așa că a venit cu mine.",
+        "imagine": "events/drum_amintire_intoarcere.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "sa23"
+      },
+      "sa23": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Când am ajuns, Edwin stătea în copac. Bărbat în toată firea, cu fire albe în barbă, cocoțat pe creanga de jos. M-a văzut venind pe drum și a zis doar: „Ți-a luat ceva timp.”",
+        "amintire": true,
+        "urmator": "sa24"
+      },
+      "sa24": {
+        "vorbitor": "soldat",
+        "emotie": "plange",
+        "text": "Trei ani. Atât am mai avut cu el. Și i-am irosit pe jumătate la Agnes, crezând că avem timp.",
+        "amintire": true,
+        "urmator": "sa25"
+      },
+      "sa25": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Focul s-a făcut mic. Unchiul se uită în el ca într-o fântână.",
+        "gand": true,
+        "trezire": true,
+        "imagine": "events/drum_foc_1_final.png",
+        "urmator": "sa26"
+      },
+      "sa26": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Asta e viața mea, băiete. Am plecat de acasă de două ori. O dată la paisprezece ani, cu căruța. Și o dată sub copac, când mi-a strigat să fug.",
+        "urmator": "sa27"
+      },
+      "sa27": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și de amândouă ori te-ai întors.",
+        "urmator": "sa28"
+      },
+      "sa28": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "...Da. M-am întors.",
+        "urmator": "sa29"
+      },
+      "sa29": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hai, dormi. Mâine e drum lung, iar eu am vorbit cât într-un an.",
+        "urmator": "sa30"
+      },
+      "sa30": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiul se culcă cu spatele la un fag, cu sabia lângă el. Eu stau mult cu ochii la stele. Râul vorbește întruna, ca un om care nu poate să tacă. Mă gândesc la tata, desculț, alergând după o căruță.",
+        "gand": true,
+        "imagine": "events/drum_somn_1.png",
         "urmator": "p30"
       },
       "p30": {
