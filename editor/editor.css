@@ -948,3 +948,36 @@ svg.editor-zone.desen {
   padding: 2px 6px;
   border-radius: 4px;
 }
+
+/* ---------- Tab-ul „Traduceri”: româna și engleza alăturate, pe căsuțe ---------- */
+#traduceri.activ { overflow: auto; }
+.traduceri { max-width: 1400px; margin: 0 auto; padding: 16px 20px 60px; }
+.cap-traduceri { position: sticky; top: 0; z-index: 2; background: #1b1d23; padding: 10px 0 6px; border-bottom: 1px solid #3a3e4a; }
+.cauta-traduceri { width: 100%; padding: 8px 10px; font-size: 15px; }
+.filtre-traduceri { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.categorie-traduceri { margin: 26px 0 10px; color: #f0dca0; font-size: 19px; }
+.casute-traduceri { display: flex; flex-direction: column; gap: 6px; }
+.casuta-traducere { background: #22252d; border: 1px solid #3a3e4a; border-radius: 6px; }
+.casuta-traducere > summary { cursor: pointer; padding: 9px 14px; display: flex; justify-content: space-between; gap: 12px; list-style: none; }
+.casuta-traducere > summary::-webkit-details-marker { display: none; }
+.casuta-traducere > summary:hover { background: #2a2e38; }
+.casuta-traducere[open] > summary { border-bottom: 1px solid #3a3e4a; background: #2c3040; }
+.nume-casuta-traducere { color: #f0dca0; font-weight: 600; }
+.numar-traducere { font-size: 13px; color: #9c9; white-space: nowrap; }
+.numar-traducere.incomplet { color: #e0a060; }
+.texte-casuta { padding: 6px 12px 12px; }
+.grup-rezultat { margin: 16px 0 2px; font-size: 13px; color: #f0dca0; }
+.rand-traducere { border-left: 3px solid #3a3e4a; padding: 8px 10px; margin: 8px 0; background: #1f2128; }
+.rand-traducere.fara-en { border-left-color: #b06040; }
+.rand-traducere.schimbat { border-left-color: #d4b050; }
+.rand-traducere.depasit { border-left-color: #d04040; }
+.context-traducere { font-size: 12px; color: #9aa; margin-bottom: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.context-traducere b { color: #ddd; }
+.eticheta-traducere { background: #4a3f1c; color: #f0dca0; border-radius: 3px; padding: 1px 6px; }
+.eticheta-traducere.rosie { background: #5a2020; color: #fcc; }
+.eticheta-traducere.gri { background: #3a3e4a; color: #ccc; }
+.campuri-traducere { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.campuri-traducere label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: #9aa; }
+.campuri-traducere textarea { width: 100%; box-sizing: border-box; resize: vertical; font: 14px/1.45 Georgia, serif; padding: 6px 8px; background: #15171c; color: #eee; border: 1px solid #3a3e4a; border-radius: 4px; }
+.butoane-traducere { display: flex; gap: 8px; margin-top: 6px; }
+.butoane-traducere:empty { display: none; }

@@ -7,6 +7,7 @@ import { construiesteLumea } from '../src/lume.js';
 import { creeazaGalerie } from './galerie.js';
 import { arataMisiunile } from './misiuni.js';
 import { arataPrologul } from './prolog.js';
+import { creeazaTraduceri } from './traduceri.js';
 import { creeazaAranjare } from './aranjare.js';
 import { creeazaInterfata } from './interfata.js';
 
@@ -33,6 +34,7 @@ document.addEventListener('deschide-aranjare', (e) => {
   aranjare.deschideScena(e.detail);
 });
 const interfata = creeazaInterfata(document.getElementById('interfata'), comun, reincarcaImagini, verificaSincronizarea);
+const traduceri = creeazaTraduceri(document.getElementById('traduceri'), comun, verificaSincronizarea);
 
 const cadru = document.getElementById('cadru-test');
 let prologDesenat = false;
@@ -52,6 +54,7 @@ for (const b of document.querySelectorAll('.taburi button')) {
       prologDesenat = true;
     }
     if (b.dataset.tab === 'interfata') interfata.arata();
+    if (b.dataset.tab === 'traduceri') traduceri.arata();
     // Jocul de test se încarcă abia când e deschis tab-ul, ca să pornească mereu de la ultima variantă
     if (b.dataset.tab === 'testare') incarcaTestul();
   };
