@@ -8,7 +8,7 @@ import { preincarca, elementImagine, incarcaToate } from './imagini.js';
 import { VITEZE, viteza, seteazaViteza } from './viteza.js';
 import { elementLaPunct } from './lovire.js';
 import { stareNoua, context, avanseaza as avanseazaStare, costTimp, ziua, formatOra } from './stare.js';
-import { inMinute, NUME_ZILE } from './timp.js';
+import { inMinute } from './timp.js';
 import { aplicaEfecte } from './efecte.js';
 import { alegeEveniment, noteazaEveniment, caDialog, poateReveni } from './evenimente.js';
 import * as salvare from './salvare.js';
@@ -43,12 +43,16 @@ registreazaConditiiPersonaje(date.npcs.personaje, registreazaConditie);
 const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
 const evenimente = date.events?.evenimente || [];
 const dialoguri = date.dialoguri || {};
-const MOMENTE = { dimineata: 'Dimineața', amiaza: 'Amiaza', seara: 'Seara', noaptea: 'Noaptea' };
+// Numele zilelor, ale momentelor și ale nevoilor se traduc la fiecare desenare: cu t() chemat o singură dată, la
+// pornire, HUD-ul ar rămâne în limba de atunci după ce jucătorul o schimbă din Opțiuni. Cheile stau scrise întregi,
+// ca să le găsească scriptul de verificare a traducerilor (tools/traduceri.mjs)
+const numeZi = (zi) => ({ luni: t('Luni'), marti: t('Marți'), miercuri: t('Miercuri'), joi: t('Joi'), vineri: t('Vineri'), sambata: t('Sâmbătă'), duminica: t('Duminică') })[zi];
+const numeMoment = (m) => ({ dimineata: t('Dimineața'), amiaza: t('Amiaza'), seara: t('Seara'), noaptea: t('Noaptea') })[m];
 const NEVOI = [
-  ['viata', 'Viață'],
-  ['stamina', 'Stamina'],
-  ['foame', 'Foame'],
-  ['sete', 'Sete'],
+  ['viata', () => t('Viață')],
+  ['stamina', () => t('Stamina')],
+  ['foame', () => t('Foame')],
+  ['sete', () => t('Sete')],
 ];
 
 const div = (clasa, text) => Object.assign(document.createElement('div'), { className: clasa, textContent: text ?? '' });
@@ -145,14 +149,14 @@ function mesaj(text) {
 function anunt(text) {
   const fundal = div('acoperitor');
   const panou = div('panou-anunt');
-  panou.append(div('text-anunt', text), buton('Continuă', 'buton-mic-meniu', () => fundal.remove()));
+  panou.append(div('text-anunt', text), buton(t('Continuă'), 'buton-mic-meniu', () => fundal.remove()));
   fundal.append(panou);
   ui.append(fundal);
 }
 
 // Întrebarea „ești sigur?” în stilul jocului, pe panoul mic, nu fereastra browserului (decis de autor: aceea
 // scoate jocul din ecranul complet și nu se potrivește cu restul). Întoarce o promisiune: da / nu
-function intreaba(text, da = 'Da', nu = 'Nu') {
+function intreaba(text, da = t('Da'), nu = t('Nu')) {
   return new Promise((raspunde) => {
     const fundal = div('acoperitor intrebare');
     const panou = div('panou-anunt');
@@ -220,9 +224,9 @@ function actualizeazaHud() {
   else if (terminate.length) arataCastiguri(castiguri);
   castiguri = [];
   const ctx = context(stare);
-  ceasHud.textContent = `${NUME_ZILE[ctx.ziSaptamana]}, ziua ${ziua(stare)} · ${formatOra(stare)} · ${MOMENTE[ctx.moment]}`;
+  ceasHud.textContent = t('{zi}, ziua {n} · {ora} · {moment}', { zi: numeZi(ctx.ziSaptamana), n: ziua(stare), ora: formatOra(stare), moment: numeMoment(ctx.moment) });
   const bani = div('rand-monede');
-  bani.append(iconita('monede', '🪙'), Object.assign(div('bani-hud', String(stare.bani)), { title: 'Monede' }), div('despartitor'), div('taxa-hud', textTaxa()));
+  bani.append(iconita('monede', '🪙'), Object.assign(div('bani-hud', String(stare.bani)), { title: t('Monede') }), div('despartitor'), div('taxa-hud', textTaxa()));
   const d = stare.datorieBlanuri;
   // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
   const zileTaxa = stare.taxa.zi - ziua(stare);
@@ -235,7 +239,7 @@ function actualizeazaHud() {
   const aliati = aliatiGroapa(joc).map((id) => {
     const p = personaje.get(id);
     const x = div('buton buton-hud aliat-hud');
-    x.title = `${p?.nume || id} vine cu tine în Groapă`;
+    x.title = t('{nume} vine cu tine în Groapă', { nume: p?.nume || id });
     // „x” din colț (decis de autor): îl scoate; ca să vină din nou, trebuie întrebat din nou (o întrebare scurtă în
     // meniul lui, cât e „scos”, în dialoguri.json)
     const scoate = buton('×', 'scoate-aliat', (e) => {
@@ -244,7 +248,7 @@ function actualizeazaHud() {
       salveaza();
       actualizeazaHud();
     });
-    scoate.title = `Scoate-l pe ${p?.nume || id}`;
+    scoate.title = t('Scoate-l pe {nume}', { nume: p?.nume || id });
     x.append(elementImagine([`portraits/${id}_normal.png`], { clasa: 'fata-aliat-hud', raport: 1, eticheta: p?.nume || id }), scoate);
     return x;
   });
@@ -261,19 +265,22 @@ function actualizeazaHud() {
       const cale = div('cale');
       cale.append(umplere);
       // Numele și cifra stau peste bară, ca bara să fie lungă
-      rand.append(cale, div('eticheta', eticheta), div('valoare', String(v)));
+      rand.append(cale, div('eticheta', eticheta()), div('valoare', String(v)));
       return rand;
     }),
     bani,
     // Datoria de blăni (pedeapsa orcilor) are rândul ei, ca să nu se piardă printre celelalte
-    ...(d ? [div('datorie-hud', `Orcii vor ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural} până în ziua ${d.panaLaZiua}`)] : []),
+    ...(d ? [div('datorie-hud', t('Orcii vor {n} {obiecte} până în ziua {zi}', { n: d.cate, obiecte: cfg.pedepse.tipuri.blanuri.numePlural, zi: d.panaLaZiua }))] : []),
   );
 }
 
 function textTaxa() {
-  if (stare.taxa.platita) return 'Taxa e plătită';
+  if (stare.taxa.platita) return t('Taxa e plătită');
   const zile = stare.taxa.zi - ziua(stare);
-  return zile <= 0 ? `Taxa (${sumaTaxa()}) e azi!` : `Taxa peste ${zile} ${zile === 1 ? 'zi' : 'zile'}${stare.taxa.dubla ? ' (dublă!)' : ''}`;
+  if (zile <= 0) return t('Taxa ({suma}) e azi!', { suma: sumaTaxa() });
+  // Propoziții întregi (nu bucăți lipite), ca engleza să-și poată pune singură cuvintele în ordinea ei
+  if (zile === 1) return stare.taxa.dubla ? t('Taxa peste {n} zi (dublă!)', { n: zile }) : t('Taxa peste {n} zi', { n: zile });
+  return stare.taxa.dubla ? t('Taxa peste {n} zile (dublă!)', { n: zile }) : t('Taxa peste {n} zile', { n: zile });
 }
 
 // ---------- timp, nevoi, leșin ----------
@@ -320,16 +327,16 @@ function verificaTaxa() {
 }
 
 function platesteTaxa() {
-  const t = stare.taxa;
-  if (t.platita) return mesaj('Taxa e deja plătită pentru săptămâna asta.');
-  if (stare.bani < sumaTaxa()) return mesaj(`Îți trebuie ${sumaTaxa()} monede.`);
+  const taxa = stare.taxa;
+  if (taxa.platita) return mesaj(t('Taxa e deja plătită pentru săptămâna asta.'));
+  if (stare.bani < sumaTaxa()) return mesaj(t('Îți trebuie {n} monede.', { n: sumaTaxa() }));
   stare.bani -= sumaTaxa();
   sunet.efect('monede');
-  t.platita = true;
-  t.dubla = false;
+  taxa.platita = true;
+  taxa.dubla = false;
   salveaza();
   actualizeazaHud();
-  mesaj(`Ai plătit taxa (${sumaTaxa()} monede).`);
+  mesaj(t('Ai plătit taxa ({n} monede).', { n: sumaTaxa() }));
 }
 
 // În ziua taxei, de la ora colectorului, orcul vine la casa lui Vale (o singură dată pe zi)
@@ -360,8 +367,8 @@ function dialogTaxa(text) {
           emotie: 'normal',
           text: cfg.pedepse.tipuri.blanuri.textColector,
           alegeri: [
-            { text: `Predă ${d.cate} ${cfg.pedepse.tipuri.blanuri.numePlural}`, efecte: { predaBlanuri: true }, spre: 'gata' },
-            { text: 'Nu acum.', spre: null },
+            { text: t('Predă {n} {obiecte}', { n: d.cate, obiecte: cfg.pedepse.tipuri.blanuri.numePlural }), efecte: { predaBlanuri: true }, spre: 'gata' },
+            { text: t('Nu acum.'), spre: null },
           ],
         },
         gata: { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.pedepse.tipuri.blanuri.textPredat },
@@ -381,15 +388,15 @@ function dialogTaxa(text) {
     ...(extra?.optiuni || []).filter((o) => verifica(o.conditii, ctx)).map(({ text, spre, efecte }) => ({ text, spre, efecte })),
   ];
   const nod = stare.taxa.platita
-    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit, ...(optiuni.length ? { alegeri: [...optiuni, { text: 'Plec.', spre: null }] } : {}) }
+    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit, ...(optiuni.length ? { alegeri: [...optiuni, { text: t('Plec.'), spre: null }] } : {}) }
     : {
         vorbitor: 'orc_colector',
         emotie: 'normal',
         text,
         alegeri: [
-          { text: `Plătește (${sumaTaxa()} monede)`, conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
+          { text: t('Plătește ({n} monede)', { n: sumaTaxa() }), conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
           ...optiuni,
-          { text: 'Nu am bani acum.', spre: null },
+          { text: t('Nu am bani acum.'), spre: null },
         ],
       };
   dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { ...noduriMisiuni, ...(extra?.noduri || {}), c: nod } });
@@ -574,7 +581,7 @@ function cuFilmele(idDialog, apoi) {
   let text = null;
   const arata = setTimeout(() => {
     ecran = div('ecran-incarcare');
-    text = div('text-incarcare', 'Se pregătește visul...');
+    text = div('text-incarcare', t('Se pregătește visul...'));
     const bara = div('bara-incarcare');
     umplere = div('umplere-incarcare');
     bara.append(umplere);
@@ -585,7 +592,7 @@ function cuFilmele(idDialog, apoi) {
     if (!ecran) return;
     const p = progresFilme(filme);
     umplere.style.width = `${p * 100}%`;
-    text.textContent = `Se pregătește visul... ${Math.round(p * 100)}%`;
+    text.textContent = t('Se pregătește visul... {procent}%', { procent: Math.round(p * 100) });
   }, 100);
   Promise.all(filme.map(preincarcaFilm)).then(() => {
     clearTimeout(arata);
@@ -716,7 +723,7 @@ function activeaza(tinta, ctx) {
   const lacat = [].concat(tinta.incuiat || []).find((l) => !verifica(l.conditii, ctx));
   if (lacat) {
     if (tinta.spre) sunet.efect('usa_incuiata');
-    return gand(lacat.mesaj || 'E încuiat.');
+    return gand(lacat.mesaj || t('E încuiat.'));
   }
   if (tinta.act) return actiuni.executa(tinta.act);
   if (tinta.vanatoare) return vaneaza(tinta.vanatoare);
@@ -775,7 +782,7 @@ function vaneaza(v, cuCine = null) {
       dupaDialog = () => joc.pornesteLupta(lupta);
       dialog.porneste(dialoguri[i.dialog]);
     },
-    { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' },
+    { automat: (v.secunde ?? 3) * 1000, text: v.text || t('Cauți urme de vânat...') },
   );
 }
 // Vânătoarea de la locul de vânătoare al pădurii, cu un personaj alături (efectul „vanatoareCu”)
@@ -793,7 +800,7 @@ function luptaVanatoare(id) {
     if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
     salveaza();
     afiseaza();
-    secventa.arata([loc?.imagine].filter(Boolean), () => joc.pornesteLupta(id), { automat: (v.secunde ?? 3) * 1000, text: v.text || 'Cauți urme de vânat...' });
+    secventa.arata([loc?.imagine].filter(Boolean), () => joc.pornesteLupta(id), { automat: (v.secunde ?? 3) * 1000, text: v.text || t('Cauți urme de vânat...') });
   };
 }
 // Ce urmează după ce se închide dialogul curent (de exemplu lupta cu Kaia după discuția de la vânătoare)
@@ -850,7 +857,7 @@ const joc = {
   // Gândul lui Vale (dialog cu portretul lui), ca la ușile închise
   gand,
   // Butonul de ecran complet din HUD, ca să apară și peste cartea prologului (cerut de autor), în colțul dreapta-sus
-  butonEcranComplet: () => butonHud('ecran', '⤢', 'Ecran complet', comutaEcranComplet),
+  butonEcranComplet: () => butonHud('ecran', '⤢', t('Ecran complet'), comutaEcranComplet),
   // Un dialog, iar după el ce urmează (gândul lui Vale la intrarea în Groapă, apoi panoul ei)
   dialogApoi: (d, dupa) => {
     dupaDialog = dupa;
@@ -878,7 +885,7 @@ const joc = {
     const [id, al] = cheie.split('.');
     const p = personaje.get(id);
     const m = al ? p?.magazine?.[al] : p?.magazin;
-    if (!m) return mesaj(`${p?.nume || id} nu are magazin.`);
+    if (!m) return mesaj(t('{nume} nu are magazin.', { nume: p?.nume || id }));
     setTimeout(() => actiuni.executa({ tip: 'magazin', nume: `${p.nume}`, ...m }), 0);
   },
   salveaza,
@@ -1088,14 +1095,14 @@ const dialog = creeazaDialog(ui, {
       const din = noi.length ? noi : replici;
       const x = din[Math.floor(Math.random() * din.length)];
       // „Ce mai faci?” (decis de autor); cei mai în vârstă primesc forma de respect, din npcs.json („intrebareVorba”)
-      alegeri.push({ text: personaje.get(id)?.intrebareVorba || 'Ce mai faci?', spre: x.nod, efecte: { auzit: `${id}/${x.nod}` } });
+      alegeri.push({ text: personaje.get(id)?.intrebareVorba || t('Ce mai faci?'), spre: x.nod, efecte: { auzit: `${id}/${x.nod}` } });
     }
     for (const { alegere, dialog: idDialog } of optiuniMisiuni(joc, id)) {
       Object.assign(noduri, dialoguri[idDialog]?.noduri);
       alegeri.push(alegere);
     }
     alegeri.push(...(d.optiuni || principal.optiuni || []).filter((a) => verifica(a.conditii, ctx)));
-    alegeri.push({ text: 'La revedere.', inchide: true });
+    alegeri.push({ text: t('La revedere.'), inchide: true });
     return { alegeri, noduri };
   },
   laFinal: (d) => {
@@ -1144,9 +1151,9 @@ function inventarPlin(id, n) {
   const fundal = div('acoperitor');
   const panou = div('panou-anunt');
   panou.append(
-    div('text-anunt', `N-ai loc pentru: ${inventar.def(id).nume}${n > 1 ? ` ×${n}` : ''}.`),
-    buton('Aruncă ceva', 'buton-mic-meniu', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
-    buton('Lasă-l', 'buton-mic-meniu', () => fundal.remove()),
+    div('text-anunt', n > 1 ? t('N-ai loc pentru: {obiect} ×{n}.', { obiect: inventar.def(id).nume, n }) : t('N-ai loc pentru: {obiect}.', { obiect: inventar.def(id).nume })),
+    buton(t('Aruncă ceva'), 'buton-mic-meniu', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
+    buton(t('Lasă-l'), 'buton-mic-meniu', () => fundal.remove()),
   );
   fundal.append(panou);
   ui.append(fundal);
@@ -1173,34 +1180,34 @@ function deschideMeniul() {
   const arataMeniul = () => {
     const grila = div('grila-meniu');
     grila.append(
-      optiune('continua', '🚪', 'Continuă', inchide),
-      optiune('salveaza', '🪶', 'Salvează', () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
-      optiune('incarca', '📜', 'Încarcă', async () => {
+      optiune('continua', '🚪', t('Continuă'), inchide),
+      optiune('salveaza', '🪶', t('Salvează'), () => salvare.exporta(stare, `fangs-vn-salvare-ziua-${ziua(stare)}.json`)),
+      optiune('incarca', '📜', t('Încarcă'), async () => {
         try {
           stare = await salvare.importa();
           joc.uitaInainteDeMisiuni();
           salveaza();
           inchide();
           afiseaza();
-          mesaj('Salvarea a fost încărcată.');
+          mesaj(t('Salvarea a fost încărcată.'));
         } catch (e) {
           mesaj(e.message);
         }
       }),
-      optiune('joc_nou', '🌅', 'Joc nou', () => {
-        intreaba('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).', 'Joc nou', 'Renunț').then((da) => {
+      optiune('joc_nou', '🌅', t('Joc nou'), () => {
+        intreaba(t('Începi un joc nou? Progresul de acum se pierde (dacă nu l-ai salvat într-un fișier).'), t('Joc nou'), t('Renunț')).then((da) => {
           if (!da) return;
           inchide();
           joc.jocNou();
         });
       }),
-      optiune('galerie', '🖼', 'Galerie', arataGaleria),
-      optiune('optiuni', '⚙', 'Opțiuni', arataOptiunile),
+      optiune('galerie', '🖼', t('Galerie'), arataGaleria),
+      optiune('optiuni', '⚙', t('Opțiuni'), arataOptiunile),
     );
-    panou.replaceChildren(div('titlu-meniu-nou', 'Meniu'), grila);
+    panou.replaceChildren(div('titlu-meniu-nou', t('Meniu')), grila);
   };
   // Butoanele mici din Galerie și Opțiuni folosesc același pergament ca butoanele mari ale meniului
-  const butonInapoi = () => buton('← Înapoi', 'buton-mic-meniu inapoi-meniu', arataMeniul);
+  const butonInapoi = () => buton(t('← Înapoi'), 'buton-mic-meniu inapoi-meniu', arataMeniul);
 
   // Galeria: ilustrațiile evenimentelor pe care Vale le-a văzut deja, pe eveniment; un clic le arată mari
   function arataGaleria() {
@@ -1220,12 +1227,12 @@ function deschideMeniul() {
     const continut = div('continut-meniu galerie-meniu');
     // Prologul se poate reciti oricând de aici (cerut de autor), fără să strice grila de 6 butoane a meniului
     continut.append(
-      buton('📜 Cronica Aldariei (prologul)', 'buton-mic-meniu recitire-prolog', () => {
+      buton(t('📜 Cronica Aldariei (prologul)'), 'buton-mic-meniu recitire-prolog', () => {
         inchide();
         prologul.deschide({ recitire: true });
       }),
     );
-    if (!grupuri.size) continut.append(div('gol-meniu', 'Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.'));
+    if (!grupuri.size) continut.append(div('gol-meniu', t('Încă n-ai văzut nicio ilustrație. Le găsești aici pe măsură ce trăiești povestea.')));
     for (const [nume, imagini] of grupuri) {
       const grup = div('grup-galerie');
       grup.append(div('nume-grup-galerie', nume));
@@ -1243,7 +1250,7 @@ function deschideMeniul() {
       grup.append(rand);
       continut.append(grup);
     }
-    panou.replaceChildren(div('titlu-meniu-nou', 'Galerie'), continut, butonInapoi());
+    panou.replaceChildren(div('titlu-meniu-nou', t('Galerie')), continut, butonInapoi());
   }
 
   // Opțiunile: viteza animațiilor, sunetul (volume separate) și ecranul complet
@@ -1251,10 +1258,10 @@ function deschideMeniul() {
     const continut = div('continut-meniu optiuni-meniu');
     const v = volumeSunet();
     const randuriSunet = [
-      ['general', 'Volumul general'],
-      ['ambianta', 'Sunetul locurilor'],
-      ['efecte', 'Efectele'],
-      ['muzica', 'Muzica'],
+      ['general', t('Volumul general')],
+      ['ambianta', t('Sunetul locurilor')],
+      ['efecte', t('Efectele')],
+      ['muzica', t('Muzica')],
     ].map(([cheie, nume]) => {
       const r = div('rand-optiune');
       const glisor = Object.assign(document.createElement('input'), { type: 'range', min: 0, max: 100, value: Math.round(v[cheie] * 100), className: 'glisor-sunet' });
@@ -1270,14 +1277,14 @@ function deschideMeniul() {
     });
     const randMut = div('rand-optiune');
     randMut.append(
-      div('nume-optiune', 'Fără sunet'),
-      buton(v.mut ? 'Pornește sunetul' : 'Oprește tot', 'buton-mic-meniu', () => {
+      div('nume-optiune', t('Fără sunet')),
+      buton(v.mut ? t('Pornește sunetul') : t('Oprește tot'), 'buton-mic-meniu', () => {
         seteazaVolum('mut', !v.mut);
         arataOptiunile();
       }),
     );
     const randViteza = div('rand-optiune');
-    randViteza.append(div('nume-optiune', 'Viteza animațiilor (luptă, zaruri, Masa regelui)'));
+    randViteza.append(div('nume-optiune', t('Viteza animațiilor (luptă, zaruri, Masa regelui)')));
     const alegeri = div('alegeri-optiune');
     for (const x of VITEZE) {
       const b = buton(`×${x}`, `buton-mic-meniu${x === viteza() ? ' ales' : ''}`, () => {
@@ -1289,8 +1296,8 @@ function deschideMeniul() {
     randViteza.append(alegeri);
     const randEcran = div('rand-optiune');
     randEcran.append(
-      div('nume-optiune', 'Ecran complet'),
-      buton(document.fullscreenElement ? 'Ieși din ecran complet' : 'Pornește', 'buton-mic-meniu', () => {
+      div('nume-optiune', t('Ecran complet')),
+      buton(document.fullscreenElement ? t('Ieși din ecran complet') : t('Pornește'), 'buton-mic-meniu', () => {
         comutaEcranComplet();
         setTimeout(arataOptiunile, 300);
       }),
@@ -1304,11 +1311,11 @@ function deschideMeniul() {
       umpleCursor();
       seteazaMarimeCursor(Number(glisorCursor.value));
     };
-    randCursor.append(div('nume-optiune', 'Mărimea cursorului'), glisorCursor);
+    randCursor.append(div('nume-optiune', t('Mărimea cursorului')), glisorCursor);
     const randSemne = div('rand-optiune');
     randSemne.append(
-      div('nume-optiune', 'Semnele misiunilor (! și ?)'),
-      buton(semneMisiuniPornite() ? 'Oprește-le' : 'Pornește-le', 'buton-mic-meniu', () => {
+      div('nume-optiune', t('Semnele misiunilor (! și ?)')),
+      buton(semneMisiuniPornite() ? t('Oprește-le') : t('Pornește-le'), 'buton-mic-meniu', () => {
         seteazaSemneMisiuni(!semneMisiuniPornite());
         afiseaza();
         arataOptiunile();
@@ -1316,8 +1323,8 @@ function deschideMeniul() {
     );
     const randMini = div('rand-optiune');
     randMini.append(
-      div('nume-optiune', 'Mini-jocurile (muncă, lemne, ierburi)'),
-      buton(miniJocuriPornite() ? 'Oprește-le' : 'Pornește-le', 'buton-mic-meniu', () => {
+      div('nume-optiune', t('Mini-jocurile (muncă, lemne, ierburi)')),
+      buton(miniJocuriPornite() ? t('Oprește-le') : t('Pornește-le'), 'buton-mic-meniu', () => {
         seteazaMiniJocuri(!miniJocuriPornite());
         arataOptiunile();
       }),
@@ -1334,7 +1341,7 @@ function deschideMeniul() {
       );
     randLimba.append(div('nume-optiune', 'Limba / Language'), alegeriLimba);
     continut.append(randLimba, randViteza, ...randuriSunet, randMut, randCursor, randSemne, randMini, randEcran);
-    panou.replaceChildren(div('titlu-meniu-nou', 'Opțiuni'), continut, butonInapoi());
+    panou.replaceChildren(div('titlu-meniu-nou', t('Opțiuni')), continut, butonInapoi());
   }
 
   arataMeniul();
@@ -1379,7 +1386,7 @@ stratLume.addEventListener('click', (ev) => interactivLa(ev)?.clic());
 function comutaEcranComplet() {
   // Browserul cere ca ecranul complet să pornească dintr-un click; F11 merge și el
   if (document.fullscreenElement) document.exitFullscreen?.();
-  else document.documentElement.requestFullscreen?.().catch(() => mesaj('Browserul nu permite ecran complet aici. Încearcă F11.'));
+  else document.documentElement.requestFullscreen?.().catch(() => mesaj(t('Browserul nu permite ecran complet aici. Încearcă F11.')));
 }
 document.addEventListener('fullscreenchange', () => afiseaza());
 
@@ -1477,13 +1484,13 @@ function esteClicabil(p, ctx) {
 // Lacătele sunt aceleași ca la intrare; „mesajIesire” la lacăt e gândul de la ieșire (altfel, cel de la intrare)
 function scoateDacaSeInchide(d, ctx) {
   if (d.tip !== 'loc' || !d.parinte || dialog.activ() || secventa.activa()) return;
-  const t = lume.get(d.parinte)?.tinte.find((x) => x.spre === d.id);
-  const lacat = [].concat(t?.incuiat || []).find((l) => !verifica(l.conditii, ctx));
+  const tinta = lume.get(d.parinte)?.tinte.find((x) => x.spre === d.id);
+  const lacat = [].concat(tinta?.incuiat || []).find((l) => !verifica(l.conditii, ctx));
   if (!lacat) return;
   setTimeout(() => {
     if (stare.scena !== d.id || dialog.activ()) return;
     mergi(d.parinte, { faraTimp: true });
-    gand(lacat.mesajIesire || lacat.mesaj || 'Trebuie să plec de aici.');
+    gand(lacat.mesajIesire || lacat.mesaj || t('Trebuie să plec de aici.'));
   }, 0);
 }
 
@@ -1589,16 +1596,16 @@ function afiseaza() {
   baraActiuni.replaceChildren(...actiuniFaraZona.map(({ t, clic }) => buton(t.nume, '', clic)));
 
   butoaneHud.replaceChildren(
-    butonHud('inventar', '🎒', 'Inventar', () => ecranInventar.deschide({ cufar: false })),
+    butonHud('inventar', '🎒', t('Inventar'), () => ecranInventar.deschide({ cufar: false })),
     // Cartea se deschide la misiuni; „Personaje” de lângă „Închide” trece la cartea personajelor
-    butonHud('personaje', '📖', 'Cartea (misiuni, personaje)', () => carte.deschide()),
-    butonHud('meniu', '☰', 'Meniu', deschideMeniul),
-    butonHud('ecran', '⤢', document.fullscreenElement ? 'Ieși' : 'Ecran complet', comutaEcranComplet),
+    butonHud('personaje', '📖', t('Cartea (misiuni, personaje)'), () => carte.deschide()),
+    butonHud('meniu', '☰', t('Meniu'), deschideMeniul),
+    butonHud('ecran', '⤢', document.fullscreenElement ? t('Ieși') : t('Ecran complet'), comutaEcranComplet),
   );
   inapoi.replaceChildren();
   if (d.parinte) {
     const b = buton('', 'placuta-hud', () => mergi(d.parinte));
-    b.append(iconita('inapoi', '↩'), div('', 'Înapoi'));
+    b.append(iconita('inapoi', '↩'), div('', t('Înapoi')));
     inapoi.append(b);
   }
   // Doar numele locului, fără iconiță (decis de autor)
@@ -1607,7 +1614,7 @@ function afiseaza() {
   // Locurile fără zonă desenată primesc butoane, altfel ar fi de neatins până le desenează autorul
   navigare.replaceChildren();
   if (faraZona.length) {
-    navigare.append(div('eticheta', 'Fără zonă desenată încă:'));
+    navigare.append(div('eticheta', t('Fără zonă desenată încă:')));
     for (const { t, clic } of faraZona) navigare.append(buton(t.nume, '', clic));
   }
 
@@ -1666,11 +1673,18 @@ function pornesteVisulCerut(ev) {
   secventa.arata([v?.imagine].filter(Boolean), () => pornesteEveniment(ev.id, true), { automat: 2500, text: pat?.text || '' });
 }
 
+// Titlul paginii (fila browserului, fereastra din .exe) urmează limba jocului. În index.html rămâne cel românesc, care
+// se vede doar cât se încarcă scriptul
+const puneTitlulPaginii = () => {
+  document.title = t('Fangs&Honor: Recuperarea satului');
+};
+puneTitlulPaginii();
 afiseaza();
 // Limba schimbată (din Opțiuni sau din cartea prologului): textele din date sunt deja rescrise (limba.js), dar lumea
 // ține numele locurilor și ale acțiunilor copiate la pornire, deci se reface (în același Map, pe care îl țin și alții),
 // apoi se redesenează ecranul de acum
 laSchimbareaLimbii(() => {
+  puneTitlulPaginii();
   const noua = construiesteLumea(date);
   lume.clear();
   for (const [k, v] of noua) lume.set(k, v);
@@ -1699,12 +1713,12 @@ if (date.config.incarcareLaPornire) {
     const umplere = div('umplere-incarcare');
     const bara = div('bara-incarcare');
     bara.append(umplere);
-    const text = div('text-incarcare', 'Se pregătesc imaginile...');
+    const text = div('text-incarcare', t('Se pregătesc imaginile...'));
     ecran.append(text, bara);
     ui.append(ecran);
     incarcaToate(ordine, (facute, total) => {
       umplere.style.width = `${(facute / total) * 100}%`;
-      text.textContent = `Se pregătesc imaginile... ${Math.round((facute / total) * 100)}%`;
+      text.textContent = t('Se pregătesc imaginile... {procent}%', { procent: Math.round((facute / total) * 100) });
     }).then(() => {
       ecran.classList.add('gata');
       setTimeout(() => ecran.remove(), 400);
