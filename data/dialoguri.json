@@ -20544,6 +20544,7 @@
         "emotie": "normal",
         "gand": true,
         "text": "Mă strânge în brațe atât de tare că mă dor coastele. Apoi pornește spre casă, cu felinarul sub șal, și nu întoarce capul. Știu de ce. Dacă l-ar întoarce, ne-ar chema înapoi.",
+        "imagine": "events/drum_imbratisare.png",
         "urmator": "p9"
       },
       "p9": {
