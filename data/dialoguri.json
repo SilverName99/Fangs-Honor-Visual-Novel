@@ -20804,7 +20804,7 @@
       },
       "sa13": {
         "vorbitor": "soldat",
-        "emotie": "plange",
+        "emotie": "trist",
         "text": "Ba da. Peste patru ani, când am venit prima dată acasă. Mi-a spus singur, fără să-l întreb. „Te aștept în copac.” Atât strigase.",
         "amintire": true,
         "urmator": "sa14"
@@ -20886,7 +20886,7 @@
       },
       "sa24": {
         "vorbitor": "soldat",
-        "emotie": "plange",
+        "emotie": "trist",
         "text": "Trei ani. Atât am mai avut cu el. Și i-am irosit pe jumătate la Agnes, crezând că avem timp.",
         "amintire": true,
         "urmator": "sa25"
@@ -20894,10 +20894,17 @@
       "sa25": {
         "vorbitor": "vale",
         "emotie": "trist",
-        "text": "Focul s-a făcut mic. Unchiul se uită în el ca într-o fântână.",
+        "text": "Focul s-a făcut mic. Unchiul nu plânge. O vreme nu mai spune nimic, doar se uită în jar.",
         "gand": true,
         "trezire": true,
         "imagine": "events/drum_foc_1_final.png",
+        "urmator": "sa25b"
+      },
+      "sa25b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Și totuși, pentru prima dată, nu mai pare un om care se uită mereu înapoi. Parcă și-a lăsat trecutul acolo unde îi e locul, lângă copac. E aici, cu mine, la foc. Și pare că așteaptă ceva de la ziua de mâine.",
         "urmator": "sa26"
       },
       "sa26": {
