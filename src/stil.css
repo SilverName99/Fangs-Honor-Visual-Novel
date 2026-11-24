@@ -3133,6 +3133,50 @@ svg.zone {
 .sageti-lupta.gol .numar-sageti {
   color: #ff6b5a;
 }
+/* Harta soldatului, lângă ochi („Drumul trezirii”, cerut de autor) */
+.dialog > .buton-harta {
+  position: absolute;
+  left: 130px;
+  bottom: 30px;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0.7;
+  transition: opacity 0.15s, filter 0.15s;
+}
+.dialog > .buton-harta:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 200, 80, 0.8));
+}
+.dialog > .buton-harta .icon-hud {
+  width: 100%;
+  height: 100%;
+  font-size: 54px;
+  line-height: 84px;
+}
+.dialog.fara-caseta > .buton-harta {
+  visibility: hidden;
+}
+.dialog > .harta-dialog {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+}
+.harta-dialog .imagine-harta-dialog {
+  position: absolute;
+  inset: 4%;
+}
+.harta-dialog .imagine-harta-dialog img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 /* Ochiul din dialog (cerut de autor): în colțul stânga-jos; ascunde chenarul, portretele și umbra de peste scenă */
 .dialog > .buton-ochi {
   position: absolute;

@@ -20567,21 +20567,22 @@
         "emotie": "normal",
         "gand": true,
         "text": "Trecem pe lângă copacul mare. Unchiul îi atinge scoarța din mers, fără să se oprească. Abia în pădure aprinde felinarul, cu fitilul mic.",
-        "imagine": "events/drum_padure.png",
+        "imagine": "events/drum_copac_noapte.png",
         "urmator": "p10b"
       },
       "p10b": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Mergem toată noaptea, pe poteci pe care doar el le mai știe. Când se luminează, zidul satului nu se mai vede deloc.",
+        "text": "Ocolim satul prin spate, departe de poartă, pe poteci pe care doar el le mai știe. Când se crapă de ziuă, suntem în mijlocul pădurii, iar zidul nu se mai vede deloc.",
         "efecte": {
           "panaLaOra": "06:00",
           "seteazaNevoi": {
             "stamina": 70
           }
         },
-        "urmator": "p11"
+        "urmator": "p11",
+        "imagine": "events/drum_padure.png"
       },
       "p11": {
         "vorbitor": "vale",
@@ -20600,37 +20601,50 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "La prânz ajungem la râu. E lat și repede, de culoarea fierului.",
+        "text": "La prânz ajungem la pod. Sau la ce-a mai rămas din el: la mijloc, scândurile s-au dus, iar pe stâlpi sunt urme negre de foc.",
         "imagine": "events/drum_rau.png",
         "efecte": {
           "panaLaOra": "12:00"
         },
+        "urmator": "p13b"
+      },
+      "p13b": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Orcii. L-au ars, ca să nu mai fugă nimeni din sat pe aici.",
+        "urmator": "p13c"
+      },
+      "p13c": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "A rămas o bârnă. Una e destul, dacă nu te uiți în jos.",
         "urmator": "p14"
       },
       "p14": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Frânghia, băiete. O leg de fagul ăsta. Tu treci primul, eu țin.",
+        "text": "Frânghia, băiete. Ne legăm unul de altul. Eu trec primul, tu calci doar unde calc eu.",
         "urmator": "p15"
       },
       "p15": {
         "vorbitor": "vale",
         "emotie": "speriat",
         "gand": true,
-        "text": "Apa mă apucă de picioare ca o mână rece. Frânghia se întinde. Unchiul n-o slăbește nicio clipă.",
-        "urmator": "p16"
+        "text": "La jumătate, piciorul îmi alunecă pe lemnul ars. Cad într-un genunchi, cu un picior în apă, care mă apucă de gleznă ca o mână rece. Frânghia se întinde. Unchiul n-o slăbește nicio clipă.",
+        "urmator": "p16",
+        "imagine": "events/drum_pod.png"
       },
       "p16": {
         "vorbitor": "soldat",
         "emotie": "zambet",
-        "text": "Vezi? Nu te-a luat. Râurile n-au răbdare cu cei care se uită în jos.",
+        "text": "Vezi? Nu te-a luat. Râurile n-au răbdare cu cei care se uită în jos. Hai, încă zece pași.",
         "urmator": "p17"
       },
       "p17": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Seara facem focul într-o vale mică, ferită de vânt. Carnea friptă de acasă are gust de duminică.",
+        "text": "Seara ne retragem în pădurea de lângă pod și facem focul între fagi, ferit de drum. Carnea friptă de acasă are gust de duminică.",
         "imagine": "events/drum_foc_1.png",
         "efecte": {
           "panaLaOra": "20:00",
@@ -21539,7 +21553,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "A șasea zi trecem din nou râul. Acum țin eu frânghia, iar unchiul trece primul. La căderea serii sărim gardul putred. Acasă, mama ne așteaptă în prag, cu felinarul aprins, de parcă n-ar fi plecat de acolo deloc.",
+        "text": "A șasea zi trecem iar bârna podului ars. Acum eu țin frânghia, iar unchiul trece primul. La căderea serii sărim gardul putred. Acasă, mama ne așteaptă în prag, cu felinarul aprins, de parcă n-ar fi plecat de acolo deloc.",
         "imagine": "events/drum_acasa.png",
         "efecte": {
           "panaLaOra": "19:00",
@@ -21605,6 +21619,7 @@
         }
       }
     },
-    "filmLa": "v1"
+    "filmLa": "v1",
+    "harta": "events/hartie_3.png"
   }
 }

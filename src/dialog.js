@@ -50,7 +50,27 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   // Un clic oriunde sare bucata de filmuleț care merge (decis de autor: nimeni nu e obligat să-l vadă din nou);
   // nu și clicul care tocmai a pornit-o (cel de pe chenar, care a trecut la replica ei)
   el.addEventListener('click', (e) => film?.bucata && e.timeStamp > film.bucata.start && film.bucata.sari());
-  el.append(fundal, stanga, dreapta, caseta, ochi);
+  // Harta (cerut de autor, „Drumul trezirii”): un dialog cu „harta” are lângă ochi un buton care arată pe tot ecranul
+  // harta soldatului, ca jucătorul să vadă oricând pe unde sunt; un clic oriunde o închide, fără să treacă mai departe
+  const butonHarta = Object.assign(document.createElement('button'), { className: 'buton-harta', hidden: true });
+  butonHarta.append(Object.assign(div('icon-hud icon-harta'), { textContent: '🗺' }));
+  let hartaDeschisa = null;
+  const inchideHarta = () => {
+    hartaDeschisa?.remove();
+    hartaDeschisa = null;
+  };
+  butonHarta.onclick = (e) => {
+    e.stopPropagation();
+    if (hartaDeschisa) return inchideHarta();
+    hartaDeschisa = div('harta-dialog');
+    hartaDeschisa.append(elementImagine([activ.dialog.harta], { clasa: 'imagine-harta-dialog', fundal: true }));
+    hartaDeschisa.onclick = (ev) => {
+      ev.stopPropagation();
+      inchideHarta();
+    };
+    el.append(hartaDeschisa);
+  };
+  el.append(fundal, stanga, dreapta, caseta, ochi, butonHarta);
   parinte.append(el);
 
   // Portretele se refolosesc: un portret deja încărcat nu mai clipește la fiecare replică
@@ -377,6 +397,8 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   }
 
   function continua() {
+    // Cu harta deschisă, Spațiul sau Enter doar o închid
+    if (hartaDeschisa) return inchideHarta();
     // Cu dialogul ascuns (ochiul), prima apăsare doar îl arată înapoi, nu sare peste replică
     if (ascuns()) return el.classList.remove('ascuns-text');
     // Cât merge o bucată de filmuleț, Spațiu și Enter o sar, ca și clicul
@@ -389,6 +411,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
 
   function inchide() {
     if (!activ) return;
+    inchideHarta();
     lasaFilmul();
     el.hidden = true;
     fundal.replaceChildren();
@@ -418,6 +441,9 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       activ = { dialog, original: dialog, emotiePartener: 'normal', alegeri: [], imagineReluata: imagine };
       el.hidden = false;
       ochi.setAttribute('aria-label', t('Ascunde dialogul'));
+      butonHarta.hidden = !dialog.harta;
+      butonHarta.setAttribute('aria-label', t('Harta'));
+      inchideHarta();
       // Visele (decis de autor): ceață pe marginile ecranului, ca să se vadă că e un vis
       el.classList.toggle('vis', !!dialog.vis);
       parinte.classList.add('in-dialog');
