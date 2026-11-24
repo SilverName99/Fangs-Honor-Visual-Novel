@@ -20545,6 +20545,15 @@
         "gand": true,
         "text": "Mă strânge în brațe atât de tare că mă dor coastele. Apoi pornește spre casă, cu felinarul sub șal, și nu întoarce capul. Știu de ce. Dacă l-ar întoarce, ne-ar chema înapoi.",
         "imagine": "events/drum_imbratisare.png",
+        "urmator": "p8b"
+      },
+      "p8b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul ia de după gard doi saci de drum, pregătiți de cu ziuă, și două mantii groase, cu glugă. Carnea, apa și frânghia intră în sacul meu. Mantia miroase a fum și a ploaie.",
+        "imagine": "events/drum_mantii.png",
+        "_nota": "Cerut de autor: după ce pleacă mama, își pun mantiile și iau sacii de lângă gard (pregătiți de drum).",
         "urmator": "p9"
       },
       "p9": {
