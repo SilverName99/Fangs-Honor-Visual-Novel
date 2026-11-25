@@ -7238,7 +7238,15 @@
       "groapa_e3": {
         "vorbitor": "mag",
         "emotie": "trist",
-        "text": "Pot veni ca vraci. Dar numai atât, Vale. Acolo sunt doar un preot începător, care leagă răni și se roagă.",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "elian_secret"
+            },
+            "text": "Pot veni ca vraci. Dar numai atât, Vale. Acolo sunt doar un preot începător, care leagă răni și se roagă."
+          },
+          "Pot veni ca vraci. Leg răni și mă rog, Vale. Altceva nu știu să fac."
+        ],
         "urmator": "groapa_e4"
       },
       "groapa_e4": {

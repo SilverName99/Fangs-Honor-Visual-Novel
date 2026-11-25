@@ -538,7 +538,11 @@ export function creeazaLupta(parinte, joc) {
     const dinArmura = Math.min(tinta.armura, d);
     tinta.armura -= dinArmura;
     tinta.viata -= d - dinArmura;
-    if (dinArmura && tinta.armura === 0) jurnal(t('Armura lui {nume} s-a dus!', { nume: tinta.nume }));
+    if (dinArmura && tinta.armura === 0) {
+      jurnal(t('Armura lui {nume} s-a dus!', { nume: tinta.nume }));
+      // Rândul acesta rămâne în jurnal: atacul nu-l mai acoperă cu „X îl lovește pe Y”
+      if (L) L.armuraSparta = true;
+    }
     numar(tinta, `−${d}`, dinArmura === d ? 'armura' : '');
     // Se aude doar ce se întâmplă (decis de autor): arma, iar în scut când ținta se apără; fără un impact în plus
     if (tinta.apara) joc.sunet.efect('lupta_scut');
@@ -790,10 +794,12 @@ export function creeazaLupta(parinte, joc) {
       );
       sursa.bara = 0;
     } else if (actiune.tip === 'atac') {
+      // Un semn, nu o căutare în textul jurnalului (care nu mai mergea, iar în engleză nu mersese niciodată)
+      L.armuraSparta = false;
       const d = await loveste(sursa, actiune.tinta);
       if (!L) return;
       if (!d) jurnal(t('Scutul de lumină al lui {nume} oprește lovitura.', { nume: actiune.tinta.nume }));
-      else if (!L.elJurnal.textContent.includes('crăpat')) jurnal(t('{sursa} îl lovește pe {tinta}: {daune} daune.', { sursa: sursa.nume, tinta: actiune.tinta.nume, daune: d }));
+      else if (!L.armuraSparta) jurnal(t('{sursa} îl lovește pe {tinta}: {daune} daune.', { sursa: sursa.nume, tinta: actiune.tinta.nume, daune: d }));
       // „ricoseu: 3”: arma (glaive-ul vânătoarei) sare la încă doi inamici aleși la întâmplare
       if (sursa.atac.ricoseu > 1) {
         const altii = vii(sursa.tabara === 'aliat' ? 'inamic' : 'aliat').filter((x) => x !== actiune.tinta);
@@ -1211,6 +1217,12 @@ export function creeazaLupta(parinte, joc) {
     if (!v) return lupta;
     const x = { ...lupta, ...v };
     if (v.doarAbilitati) x.abilitatiBlocate = (lupta.abilitati || []).map((a) => a.id).filter((id) => !v.doarAbilitati.includes(id));
+    // „ascundeBlocate” (decis de autor: Elian în Groapă, până la „Secretul lui Elian”): puterile de care Vale încă nu
+    // știe nici nu apar pe tablă, stinse; altfel jucătorul le vedea înainte de trapa din spatele bisericii
+    if (v.doarAbilitati && v.ascundeBlocate && verifica(v.ascundeBlocate, context(joc.stare))) {
+      x.abilitati = (lupta.abilitati || []).filter((a) => v.doarAbilitati.includes(a.id));
+      x.abilitatiBlocate = [];
+    }
     return x;
   }
 

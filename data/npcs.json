@@ -1077,12 +1077,17 @@
         ],
         "variante": {
           "groapa": {
-            "_nota": "Decis de autor: în Groapă, Elian vine ca vraci și folosește doar vindecarea, o lumină mică, de începător; celelalte puteri stau stinse, ca orcii să-l creadă în continuare un începător. Ciornă (motivul).",
+            "_nota": "Decis de autor: în Groapă, Elian vine ca vraci și folosește doar vindecarea, o lumină mică, de începător; celelalte puteri stau stinse, ca orcii să-l creadă în continuare un începător. Ciornă (motivul). Decis de autor: până la „Secretul lui Elian” (ascundeBlocate), pe tablă e doar „Vindecare”, fără butoanele stinse.",
             "nume": "în Groapă, doar cu vindecarea",
             "nume_en": "in the Pit, healing only",
             "doarAbilitati": [
               "vindecare"
             ],
+            "ascundeBlocate": {
+              "nu": {
+                "existaStare": "elian_secret"
+              }
+            },
             "motivBlocat": "Nu în fața lor, Vale. Aici sunt doar un preot începător.",
             "motivBlocat_en": "Not in front of them, Vale. Here, I am only a novice priest."
           }
