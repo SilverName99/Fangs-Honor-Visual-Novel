@@ -536,7 +536,11 @@ function verificaEvenimente() {
 // se împlinesc condițiile pe loc (trece de ora 22 cât stă în pivniță), nu doar când ajunge. Se verifică după fiecare
 // redesenare a scenei, deci și după ce trece timpul; cât e deschis altceva (o discuție, imagini, o luptă), așteaptă
 function verificaEvenimentePeLoc() {
-  if (dialog.activ() || secventa.activa() || stare.luptaInCurs) return;
+  // Un mini-joc pornit dintr-o discuție (furișatul la cuști) nu e un dialog, iar condițiile evenimentului sunt încă
+  // îndeplinite: fără verificarea „reluare”, evenimentul pornea încă o dată în spatele lui (de două ori timpul și
+  // stamina, iar un refresh relua evenimentul, nu furișatul). tineMinteMiniJocul pune reluarea înainte ca verificarea
+  // programată de afiseaza să ruleze
+  if (dialog.activ() || secventa.activa() || stare.luptaInCurs || stare.reluare?.furisare || stare.reluare?.miniJoc || stare.reluare?.antrenament) return;
   const ev = alegeEveniment(evenimente.filter((e) => e.siPeLoc), stare, context(stare), cfg.categoriiEvenimente);
   if (ev) pornesteEveniment(ev.id);
 }
@@ -642,10 +646,12 @@ function reiaDupaReincarcare() {
   if (stare.luptaInCurs) return joc.pornesteLupta(stare.luptaInCurs);
   const r = stare.reluare;
   if (!r) return;
-  stare.reluare = null;
+  // Un mini-joc își păstrează reluarea până o pune din nou el (la pornirea lui): altfel verificarea evenimentelor de
+  // pe loc, programată de afiseaza la pornire, vedea reluarea goală și pornea încă o dată evenimentul din spatele lui
   if (r.miniJoc) return miniJocEveniment(r.miniJoc);
   if (r.furisare) return furisare(r.furisare);
   if (r.antrenament) return antrenament(r.antrenament);
+  stare.reluare = null;
   // Acasă colectorul „bate din nou” (colectorZi e deja pus, deci altfel nu mai venea în ziua aceea)
   if (r.taxa) return dialogTaxa(r.taxa === 'acasa' ? cfg.taxa.textColector : cfg.taxa.textColectorPoarta, r.taxa);
   if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }), r.nod);
@@ -806,6 +812,10 @@ function vaneaza(v, cuCine = null) {
     const cu = (parte, eveniment) => ({ ...parte, efecte: { ...(parte?.efecte || {}), eveniment } });
     lupta = { ...lupta, victorie: cu(def.victorie, v.dupaCuInsotitor.victorie), infrangere: { ...def.infrangere, efecte: { eveniment: v.dupaCuInsotitor.infrangere } } };
   }
+  // Lupta e hotărâtă: se ține minte de acum, nu abia când pornește, ca un refresh în imaginea de 3 secunde sau în
+  // discuția cu Kaia să n-o piardă (timpul și vânătoarea s-au numărat deja)
+  stare.luptaInCurs = lupta;
+  salveaza();
   secventa.arata(
     [v.imagine],
     () => {
@@ -830,6 +840,8 @@ function luptaVanatoare(id) {
   const v = loc?.vanatoare || {};
   dupaDialog = () => {
     if (avanseaza(costTimp(stare, v.minute ?? 60, cfg.nevoi))) return;
+    // Ca la vânătoarea obișnuită: lupta se ține minte de când e hotărâtă, ca un refresh în imagine să n-o piardă
+    stare.luptaInCurs = id;
     salveaza();
     afiseaza();
     secventa.arata([loc?.imagine].filter(Boolean), () => joc.pornesteLupta(id), { automat: (v.secunde ?? 3) * 1000, text: v.text || t('Cauți urme de vânat...') });
