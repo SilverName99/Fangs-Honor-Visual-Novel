@@ -3742,7 +3742,20 @@
       "multumesc": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Știam eu că pot conta pe tine. Tatăl tău zicea că lemnul bun e la marginea pădurii, unde bate soarele."
+        "text": [
+          {
+            "conditii": {
+              "nu": {
+                "areLaEl": [
+                  "rucsac_panza",
+                  "rucsac_piele"
+                ]
+              }
+            },
+            "text": "Știam eu că pot conta pe tine. Ia-ți rucsacul din cufăr, că-n brațe nu cari zece lemne. Tatăl tău zicea că lemnul bun e la marginea pădurii, unde bate soarele."
+          },
+          "Știam eu că pot conta pe tine. Tatăl tău zicea că lemnul bun e la marginea pădurii, unde bate soarele."
+        ]
       },
       "suparata": {
         "vorbitor": "miriam",
@@ -9727,6 +9740,7 @@
         "gand": true,
         "emotie": "speriat",
         "text": "Mă trezesc ud de sudoare, cu mâinile încă strânse. Doar un vis. Nu?",
+        "trezire": true,
         "efecte": {
           "stare": {
             "vis_1": "vazut"
@@ -16128,7 +16142,7 @@
     }
   },
   "vis_3": {
-    "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Decis de autor: pe a doua imagine, Vale văzut de sus, se uită în jos, acoperit de umbra unui dragon (se vede doar umbra). Ales de Claude: wyvernul se teme de ceva de deasupra lui Vale; Vale nu ridică ochii, dar simte ochiul din al doilea vis. Căldura din piept rămâne ca în primul vis.",
+    "_nota": "CIORNĂ (Claude). Al treilea vis (decis de autor): după „Convoiul”, la primul somn de după; întâi wyvernul din cușcă, apoi ceva legat de dragoni, peste 2 imagini, cu ceață. Decis de autor: pe a doua imagine, Vale văzut de sus, se uită în jos, acoperit de umbra unui dragon (se vede doar umbra). Ales de Claude: wyvernul se teme de ceva de deasupra lui Vale; Vale nu ridică ochii, dar simte că îl privește; ochiul auriu și căldura „iar” apar doar dacă visele 2 și 1 au fost înainte (textele merg în orice ordine).",
     "grup": "Al treilea vis",
     "partener": null,
     "vis": true,
@@ -16204,7 +16218,17 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu ridic ochii. Nu pot. Dar știu că e acolo, deasupra mea. Și știu că mă privește, cu ochiul acela auriu din visul de dinainte.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "vis_2": "vazut"
+              }
+            },
+            "text": "Nu ridic ochii. Nu pot. Dar știu că e acolo, deasupra mea. Și știu că mă privește, cu ochiul acela auriu din visul cu copacul înflorit."
+          },
+          "Nu ridic ochii. Nu pot. Dar știu că e acolo, deasupra mea. Și știu că mă privește."
+        ],
         "urmator": "w10"
       },
       "w10": {
@@ -16218,7 +16242,17 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "În piept mi se aprinde iar căldura aceea, ca un al doilea foc.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "vis_1": "vazut"
+              }
+            },
+            "text": "În piept mi se aprinde iar căldura aceea, ca un al doilea foc."
+          },
+          "În piept mi se aprinde o căldură ciudată, ca un al doilea foc."
+        ],
         "urmator": "w12"
       },
       "w12": {
@@ -17415,7 +17449,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mai bine mă duc la ea. Măcar la masa de dimineață să nu stea singură."
+        "text": "Mai bine mă duc la ea. Măcar la masa de dimineață să nu stea singură.",
+        "urmator": "i6"
+      },
+      "i6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și să nu uit rucsacul din cufăr. Dacă ies azi după ceva, cu mâinile goale nu car nimic."
       }
     }
   },
@@ -18262,7 +18303,17 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Iar ultimul care se ridică... e tata. Nu după față. După platoșa crăpată pe mijloc, ca în celălalt vis.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "vis_2": "vazut"
+              }
+            },
+            "text": "Iar ultimul care se ridică... e tata. Nu după față. După platoșa crăpată pe mijloc, ca în visul cu copacul înflorit."
+          },
+          "Iar ultimul care se ridică... e tata. Nu după față. După platoșa lui, crăpată pe mijloc, chiar prin romb."
+        ],
         "urmator": "v6"
       },
       "v6": {
@@ -18285,7 +18336,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Trecem de gard, de copacul mare, de râu, de pădure, de o poartă de piatră surpată. Iarba nu se îndoaie sub pașii lor. Drumul ăsta îl știu. E drumul de pe harta soldatului.",
+        "text": "Trecem de gard, de copacul mare, prin pădure, peste râu, pe sub o poartă de piatră surpată. Iarba nu se îndoaie sub pașii lor. Drumul ăsta îl știu. E drumul de pe harta soldatului.",
         "urmator": "v9"
       },
       "v9": {

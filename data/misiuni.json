@@ -16,8 +16,25 @@
             "obiect": "lemn",
             "n": 10
           },
-          "sfat": "Lemnele se adună din pădure („Adună lemne”: o oră = 3, două ore = 6; de cel mult două ori pe zi).",
-          "sfat_en": "Wood is gathered in the forest (“Gather Wood”: one hour = 3, two hours = 6; no more than twice a day).",
+          "sfat": [
+            {
+              "conditii": {
+                "nu": {
+                  "areLaEl": [
+                    "rucsac_panza",
+                    "rucsac_piele"
+                  ]
+                }
+              },
+              "text": "Întâi îmi iau rucsacul din cufărul din camera mea: în brațe nu car zece lemne. Lemnele se adună din pădure („Adună lemne”: o oră, până la 3; două ore, până la 6; de cel mult două ori pe zi).",
+              "text_en": "First I take my backpack from the chest in my room: I can’t carry ten logs in my arms. Wood is gathered in the forest (“Gather Wood”: one hour, up to 3; two hours, up to 6; no more than twice a day)."
+            },
+            "Lemnele se adună din pădure („Adună lemne”: o oră, până la 3; două ore, până la 6; de cel mult două ori pe zi)."
+          ],
+          "sfat_en": [
+            null,
+            "Wood is gathered in the forest (“Gather Wood”: one hour, up to 3; two hours, up to 6; no more than twice a day)."
+          ],
           "indiciu": {
             "text": "N-am apucat încă să adun lemnele.",
             "text_en": "I haven’t had time to gather the wood yet.",
