@@ -20968,6 +20968,23 @@
         },
         "urmator": "z5b"
       },
+      "z5b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ține-te aproape. Pe dealurile astea, pădurea aude mai bine decât noi.",
+        "urmator": "z5c"
+      },
+      "z5c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pe la mijlocul dimineții, unchiul se oprește deodată, cu mâna ridicată. La marginea drumului, pe frunzele ruginii, zace ceva alb.",
+        "imagine": "events/drum_ciuta.png",
+        "efecte": {
+          "panaLaOra": "10:00"
+        },
+        "urmator": "z6"
+      },
       "z6": {
         "vorbitor": "soldat",
         "emotie": "speriat",
@@ -20980,6 +20997,13 @@
         "gand": true,
         "text": "E o ciută de rouă. Albă-argintie, zveltă, iar în loc de coarne are pe frunte două pene lungi de os, străvezii ca gheața. Bunicul zicea că noaptea blana lor lucește ca luna prin ceață. Eu n-am văzut niciodată una, nici măcar de departe.",
         "urmator": "z7b"
+      },
+      "z7b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Din coastă îi iese o săgeată neagră. Penele îi sunt ciufulite, legate strâmb, cum ar lega un copil.",
+        "urmator": "z8"
       },
       "z8": {
         "vorbitor": "vale",
@@ -21006,6 +21030,24 @@
           }
         ],
         "urmator": "z8b"
+      },
+      "z8b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vânătorii lor. Pe ciutele astea le vânează pentru blană. Uită-te la sânge: vine dinspre copaci. N-au doborât-o aici. A fugit cu săgeata în ea până a căzut.",
+        "urmator": "z8c"
+      },
+      "z8c": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Și cine a tras în ea...",
+        "urmator": "z8d"
+      },
+      "z8d": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...îi caută urma. Dacă vin, vin pe sânge, drept aici. Nu mișca.",
+        "urmator": "z9"
       },
       "z9": {
         "vorbitor": "vale",
@@ -22015,48 +22057,6 @@
           },
           "mergi": "casa"
         }
-      },
-      "z5b": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Ține-te aproape. Pe dealurile astea, pădurea aude mai bine decât noi.",
-        "urmator": "z5c"
-      },
-      "z5c": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "gand": true,
-        "text": "Pe la mijlocul dimineții, unchiul se oprește deodată, cu mâna ridicată. La marginea drumului, pe frunzele ruginii, zace ceva alb.",
-        "imagine": "events/drum_ciuta.png",
-        "efecte": {
-          "panaLaOra": "10:00"
-        },
-        "urmator": "z6"
-      },
-      "z7b": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "gand": true,
-        "text": "Din coastă îi iese o săgeată neagră. Penele îi sunt ciufulite, legate strâmb, cum ar lega un copil.",
-        "urmator": "z8"
-      },
-      "z8b": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Vânătorii lor. Pe ciutele astea le vânează pentru blană. Uită-te la sânge: vine dinspre copaci. N-au doborât-o aici. A fugit cu săgeata în ea până a căzut.",
-        "urmator": "z8c"
-      },
-      "z8c": {
-        "vorbitor": "vale",
-        "emotie": "speriat",
-        "text": "Și cine a tras în ea...",
-        "urmator": "z8d"
-      },
-      "z8d": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "...îi caută urma. Dacă vin, vin pe sânge, drept aici. Nu mișca.",
-        "urmator": "z9"
       }
     },
     "filmLa": "v1",
