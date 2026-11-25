@@ -142,7 +142,7 @@
       "descriere": "CIORNĂ: Mama a găsit pe masă crenguța de la copacul de dincolo de gard. Vrea să-l cheme pe unchiul Roderick la cină. De șase luni n-a mai călcat pe la noi.",
       "descriere_en": "On the table, Mother found the sprig from the tree beyond the fence. She wants to invite Uncle Roderick to supper. He hasn’t set foot in our house in six months.",
       "oferta": {
-        "_nota": "Decis de autor: după „Locul unde a căzut tata”, dimineața, cât e Miriam în bucătărie.",
+        "_nota": "Decis de autor: după „Locul unde a căzut tata”, dimineața, cât e Miriam în bucătărie. Ales de Claude: nu în dimineața în care colectorul i-a luat verigheta.",
         "text": "Mamă... ai găsit crenguța?",
         "text_en": "Mother... did you find the sprig?",
         "nod": "cina_o1",
@@ -154,6 +154,9 @@
           "ora": {
             "min": "05:00",
             "max": "10:59"
+          },
+          "nu": {
+            "marcatAzi": "inel_luat"
           }
         }
       },
@@ -2747,7 +2750,7 @@
         "Lina found Ciripel, a sparrow with a broken wing, under the fence. She isn’t allowed to walk all the way to the church on her own, so I promised to take the sparrow to Brother Elian myself."
       ],
       "oferta": {
-        "_nota": "Decis de autor: misiunea lui Elian (+1 la el), după „Cărțile”; de la Lina, când se joacă în fața casei (10–14). Ales de Claude: după „Păpușa Linei”, ca Lina să nu ceară două lucruri deodată.",
+        "_nota": "Decis de autor: misiunea lui Elian (+1 la el), după „Cărțile”; de la Lina, când se joacă în fața casei (10–14). Ales de Claude: după „Păpușa Linei”, ca Lina să nu ceară două lucruri deodată; nu în ziua păpușii (dusă sau refuzată), ales de Claude.",
         "text": "Ce ai acolo, Lina?",
         "text_en": "What have you got there, Lina?",
         "nod": "pasare_oferta",
@@ -2779,6 +2782,19 @@
                 "nu": {
                   "existaStare": "papusa"
                 }
+              },
+              {
+                "marcatAzi": "papusa_refuz"
+              },
+              {
+                "misiune": {
+                  "miriam_papusa": "terminata"
+                },
+                "nu": {
+                  "misiuneTerminata": {
+                    "miriam_papusa": 1
+                  }
+                }
               }
             ]
           }
@@ -2795,8 +2811,8 @@
           "sfat": "Fratele Elian e la biserică: dimineața înăuntru, după-amiaza pe scări (14–23).",
           "sfat_en": "Brother Elian is at the church: inside in the morning, out on the steps in the afternoon (14–23).",
           "predare": {
-            "text": "Frate Elian, Lina ți-a trimis o vrabie rănită.",
-            "text_en": "Brother Elian, Lina has sent you a wounded sparrow.",
+            "text": "Frate Elian, Lina ți-a trimis o vrabie rănită. O cheamă Ciripel.",
+            "text_en": "Brother Elian, Lina has sent you a wounded sparrow. Her name is Ciripel.",
             "nod": "pas_e1",
             "conditii": {
               "areObiect": "vrabia_linei"
@@ -3772,7 +3788,7 @@
         "The village banner, the blue one with the golden diamond, still lies on the battlefield, by the great tree. Mother embroidered it with her own hands. She wants me to bring it home, but not alone: with Uncle Roderick."
       ],
       "oferta": {
-        "_nota": "Ales de Claude: după „Cina în familie” (la cină, Roderick i-a spus Miriamei că steagul e tot pe câmp), seara, cât e Miriam în bucătărie.",
+        "_nota": "Ales de Claude: după „Cina în familie” (Vale l-a văzut la copac, în „Locul unde a căzut tata”; steagul de luptă e altul decât cel de la biserică), seara, cât e Miriam în bucătărie.",
         "text": "Mamă... te gândești la tata?",
         "text_en": "Mother... are you thinking about Father?",
         "nod": "steag_o1",
@@ -4341,7 +4357,7 @@
         "Hanna, Owen’s widow, is giving birth tonight, a month early. Mother has gone to her and sent me to fetch Old Morwen from the Edge. I have to bring her before first light."
       ],
       "oferta": {
-        "_nota": "Decis de autor: la 3–4 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată; ales de Claude: 3 zile), ca misiunile să nu vină grămadă, seara, cât e Miriam în bucătărie, până la 22; Marginea satului trebuie să fie deschisă (după eliberarea lui Finn).",
+        "_nota": "Decis de autor: la 3–4 zile după „Lemne pentru iarnă” (dusă la capăt sau ratată; ales de Claude: 3 zile), ca misiunile să nu vină grămadă, seara, cât e Miriam în bucătărie, până la 22; Marginea satului trebuie să fie deschisă (după eliberarea lui Finn); nu cât unchiul e chemat la cină și nici în seara cinei (ales de Claude).",
         "text": "Mamă? Ce s-a întâmplat?",
         "text_en": "Mother? What’s happened?",
         "nod": "nastere_o1",
@@ -4382,6 +4398,21 @@
           "ora": {
             "min": "18:00",
             "max": "21:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "stare": {
+                  "cina_invitat": "da"
+                },
+                "nu": {
+                  "existaStare": "cina_facuta"
+                }
+              },
+              {
+                "marcatAzi": "cina_familie"
+              }
+            ]
           }
         }
       },

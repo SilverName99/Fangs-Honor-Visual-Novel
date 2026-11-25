@@ -3620,6 +3620,20 @@
     "partener": "miriam",
     "start": [
       {
+        "nod": "ingrijorata_camera",
+        "conditii": {
+          "nevoie": {
+            "viata": {
+              "max": 59
+            }
+          },
+          "nu": {
+            "marcatAzi": "bandaj_miriam"
+          },
+          "loc": "casa/camera_mama"
+        }
+      },
+      {
         "_nota": "Decis de autor: când Vale e rănit, o dată pe zi, mama se îngrijorează și îi oferă să-l bandajeze (prag: sub 60 viață, ales de Claude).",
         "nod": "ingrijorata",
         "conditii": {
@@ -3631,14 +3645,7 @@
           "nu": {
             "marcatAzi": "bandaj_miriam"
           },
-          "oricare": [
-            {
-              "loc": "casa/bucatarie"
-            },
-            {
-              "loc": "casa/camera_mama"
-            }
-          ]
+          "loc": "casa/bucatarie"
         }
       },
       {
@@ -3698,7 +3705,22 @@
             "max": "21:59"
           },
           "nu": {
-            "existaStare": "nastere"
+            "oricare": [
+              {
+                "existaStare": "nastere"
+              },
+              {
+                "stare": {
+                  "cina_invitat": "da"
+                },
+                "nu": {
+                  "existaStare": "cina_facuta"
+                }
+              },
+              {
+                "marcatAzi": "cina_familie"
+              }
+            ]
           }
         }
       },
@@ -3707,6 +3729,9 @@
         "conditii": {
           "ora": {
             "min": "18:00"
+          },
+          "nu": {
+            "marcatAzi": "cina_familie"
           }
         }
       },
@@ -3775,7 +3800,7 @@
       "d3": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Când erai mic, te ascundeai sub masa asta de fiecare dată când tuna. Acum abia mai încapi pe ușă."
+        "text": "Când erai mic, te ascundeai sub masa din bucătărie de fiecare dată când tuna. Acum abia mai încapi pe ușă."
       },
       "cina": {
         "vorbitor": "miriam",
@@ -3857,7 +3882,53 @@
       "ingrijorata": {
         "vorbitor": "miriam",
         "emotie": "speriat",
-        "text": "Vale! Doamne, ce-ai pățit? Ești numai vânătăi și zgârieturi. Vino încoace, în camera mea, să te bandajez.",
+        "text": [
+          {
+            "conditii": {
+              "trecut": {
+                "bandaj_miriam": {
+                  "subZile": 2
+                }
+              }
+            },
+            "text": "Iar, Vale? Iar te întorci așa? Vino încoace, în camera mea, să te bandajez. Și de data asta stai cuminte."
+          },
+          "Vale! Doamne, ce-ai pățit? Ești numai vânătăi și zgârieturi. Vino încoace, în camera mea, să te bandajez."
+        ],
+        "alegeri": [
+          {
+            "text": "Bine, mamă.",
+            "inchide": true,
+            "efecte": {
+              "marcheaza": "bandaj_miriam",
+              "eveniment": "miriam_bandaj"
+            }
+          },
+          {
+            "text": "Nu-i nimic, mamă. Mă descurc.",
+            "spre": "ingrijorata_refuz",
+            "efecte": {
+              "marcheaza": "bandaj_miriam"
+            }
+          }
+        ]
+      },
+      "ingrijorata_camera": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": [
+          {
+            "conditii": {
+              "trecut": {
+                "bandaj_miriam": {
+                  "subZile": 2
+                }
+              }
+            },
+            "text": "Iar, Vale? Iar vii așa la mine? Stai aici, pe pat. Și de data asta stai cuminte cât te leg."
+          },
+          "Vale! Doamne, ce-ai pățit? Ești numai vânătăi și zgârieturi. Stai aici, pe pat, să te bandajez."
+        ],
         "alegeri": [
           {
             "text": "Bine, mamă.",
@@ -3995,7 +4066,7 @@
       "cina_da": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Pun fasolea la înmuiat. Și scot fața de masă cea bună."
+        "text": "Scot fasolea pe care am ascuns-o de orci, pentru zile mari. Și fața de masă cea bună."
       },
       "cina_nu": {
         "vorbitor": "miriam",
@@ -4085,7 +4156,17 @@
       "cina_ind": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Diseară, după ce se întunecă. Am pus deja fasolea la fiert. Dacă întârzie, mi-l aduci de ureche."
+        "text": [
+          {
+            "conditii": {
+              "ora": {
+                "min": "22:00"
+              }
+            },
+            "text": "S-a făcut prea târziu, Vale. Mâine seară, atunci. Fasolea mai așteaptă o zi."
+          },
+          "Diseară, după ce se întunecă. Am pus deja fasolea la fiert. Dacă întârzie, mi-l aduci de ureche."
+        ]
       },
       "cina_ib1": {
         "vorbitor": "vale",
@@ -4645,7 +4726,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama spală vasele de la cină. Se oprește cu mâinile în apă și se uită pe fereastră, spre gardul Marginii.",
+        "text": "Mama stă la fereastră, cu lingura de lemn uitată în mână, și se uită afară, spre gardul Marginii.",
         "_nota": "CIORNĂ (Claude). Misiunea Miriamei „Steagul satului” (decis de autor: steagul satului zace pe câmpul bătăliei; Roderick și Vale îl aduc noaptea, Miriam îl coase, iar Roderick îl ține de atunci și luptă cu el în lupta finală; +1 la Miriam și la Roderick).",
         "urmator": "steag_o2"
       },
@@ -4664,25 +4745,25 @@
       "steag_o4": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Steagul satului? Cel albastru, cu rombul?",
+        "text": "Steagul satului? Cel pe care l-au dus ai noștri la copac?",
         "urmator": "steag_o5"
       },
       "steag_o5": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Femeile satului l-am cusut aici, la masa asta, în iarna dinaintea bătăliei. Rombul l-am brodat eu, cu firul de aur din salba mamei mele.",
+        "text": "Ăla. Nu cel de la biserică: pe ăsta l-am cusut noi, femeile, aici, la masa asta, în iarna dinaintea bătăliei, ca să-l ducă bărbații cu ei. Rombul l-am brodat eu, cu firul de aur din salba mamei mele.",
         "urmator": "steag_o6"
       },
       "steag_o6": {
         "vorbitor": "miriam",
         "emotie": "trist",
-        "text": "Roderick mi-a spus la cină că e tot acolo. Înfipt în pământ, lângă copac, rupt pe jumătate.",
+        "text": "Nu s-a mai întors nici el.",
         "urmator": "steag_o7"
       },
       "steag_o7": {
         "vorbitor": "vale",
         "emotie": "trist",
-        "text": "L-am văzut. Când m-a dus unchiul acolo.",
+        "text": "E tot acolo, mamă. L-am văzut când m-a dus unchiul: înfipt în pământ, lângă copac, rupt pe jumătate.",
         "urmator": "steag_o8"
       },
       "steag_o8": {
@@ -4986,7 +5067,7 @@
       "lemne_o4": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Noi avem destule, Vale. Mă gândesc la alții.",
+        "text": "Noi ne descurcăm, Vale: te am pe tine. Mă gândesc la cele care nu mai au pe nimeni.",
         "urmator": "lemne_o5"
       },
       "lemne_o5": {
@@ -12238,6 +12319,19 @@
               },
               {
                 "existaStare": "pasarea"
+              },
+              {
+                "marcatAzi": "papusa_refuz"
+              },
+              {
+                "misiune": {
+                  "miriam_papusa": "terminata"
+                },
+                "nu": {
+                  "misiuneTerminata": {
+                    "miriam_papusa": 1
+                  }
+                }
               }
             ]
           }
@@ -12388,7 +12482,7 @@
       "papusa_astept": {
         "vorbitor": "sora_finn",
         "emotie": "normal",
-        "text": "A cusut-o mama ta? Nu încă? Bine... Încă aștept. Dar spune-i că dorm cu ea în fiecare noapte, să nu-i fie frică singură acolo.",
+        "text": "A cusut-o mama ta? Nu încă? Bine... Încă aștept. Dar spune-i păpușii că îi țin locul pe pernă în fiecare seară, să nu-i fie frică singură acolo.",
         "_nota": "Decis de autor: cât păpușa e la Miriam, Lina îi spune lui Vale că încă așteaptă."
       },
       "papusa_l_gata": {
@@ -14766,13 +14860,14 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Bună seara, Miriam.",
-        "urmator": "c3"
+        "urmator": "c3_1"
       },
       "c3": {
         "vorbitor": "miriam",
         "emotie": "normal",
         "text": "Bună seara, Roderick.",
-        "urmator": "c3_1"
+        "urmator": "c3_1",
+        "_nota": "Nelegat (ales de Claude): primul cuvânt al mamei e chiar „Roderick.” (c3_3). Rămâne pentru salvările oprite aici."
       },
       "c3_1": {
         "vorbitor": "vale",
@@ -14810,7 +14905,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "zambet",
-        "text": "Colțul gurii mamei tremură. Aproape un zâmbet. Primul pe care i-l văd de la primăvară încoace.",
+        "text": "Colțul gurii mamei tremură. Aproape un zâmbet. Primul pentru el, de la primăvară încoace.",
         "urmator": "c3_7"
       },
       "c3_7": {
@@ -14830,7 +14925,17 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mâncăm o vreme în tăcere. Pe masă, într-o cană cu apă, stă crenguța cu frunze aurii. Unchiul tot se uită la ea.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "inel": "luat"
+              }
+            },
+            "text": "Mâncăm o vreme în tăcere. Pe masă, într-o cană cu apă, stă crenguța cu frunze aurii. Mama își tot freacă degetul gol, acolo unde a stat verigheta. Unchiul vede și nu spune nimic. Doar strânge lingura până i se albesc degetele."
+          },
+          "Mâncăm o vreme în tăcere. Pe masă, într-o cană cu apă, stă crenguța cu frunze aurii. Unchiul tot se uită la ea."
+        ],
         "imagine": "events/miriam_cina_2.png",
         "urmator": "c5"
       },
@@ -14956,7 +15061,8 @@
           },
           "misiune": {
             "roderick_antrenament": "inceputa"
-          }
+          },
+          "marcheaza": "cina_familie"
         }
       }
     }
@@ -16702,7 +16808,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Când ajung în bucătăria de afară, colectorul e deja acolo, sub streașină, aplecat ca să nu dea cu capul de grinzi. Mama ține o mână strânsă la piept.",
+        "text": "Când intru în bucătărie, colectorul e deja acolo, în prag, aplecat ca să nu dea cu capul de grindă. Mama ține o mână strânsă la piept.",
         "urmator": "a2"
       },
       "a2": {
@@ -16813,7 +16919,8 @@
           },
           "stare": {
             "inel": "luat"
-          }
+          },
+          "marcheaza": "inel_luat"
         }
       }
     }
@@ -17400,7 +17507,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Acasă, ascund sacul sub pat. Mâine i-l duc mamei.",
+        "text": "Acasă, mama doarme deja. Ascund sacul sub pat. Mâine, la lumina zilei, i-l dau.",
         "efecte": {
           "obiect": "steag_rupt",
           "stare": {
@@ -19964,7 +20071,17 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Coiful cu creasta albastră. Jambierele. Sabia cu rombul auriu pe măciulie. Le știu. Le purta tata în dimineața aceea de primăvară, când a plecat spre copac.",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "bram_cufar": "terminata"
+              }
+            },
+            "text": "Coiful cu creasta albastră. Jambierele. Sabia cu rombul auriu pe măciulie: sabia pe care Bram a căutat-o prin iarbă până s-a luminat. A fost aici tot timpul. Le purta tata în dimineața aceea de primăvară, când a plecat spre copac."
+          },
+          "Coiful cu creasta albastră. Jambierele. Sabia cu rombul auriu pe măciulie. Le știu. Le purta tata în dimineața aceea de primăvară, când a plecat spre copac."
+        ],
         "urmator": "t8"
       },
       "t8": {
@@ -20002,7 +20119,17 @@
       "t13": {
         "vorbitor": "miriam",
         "emotie": "normal",
-        "text": "Acum te văd cum pleci în fiecare zi: în pădure, la poartă, în Groapa aia. Dacă tot pleci, măcar să ai pe tine fierul tatălui tău.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "groapa": "deschisa"
+              }
+            },
+            "text": "Acum te văd cum pleci în fiecare zi: în pădure, la poartă, în Groapa aia. Dacă tot pleci, măcar să ai pe tine fierul tatălui tău."
+          },
+          "Acum te văd cum pleci în fiecare zi: în pădure, printre lupi, printre orci. Dacă tot pleci, măcar să ai pe tine fierul tatălui tău."
+        ],
         "urmator": "t14"
       },
       "t14": {

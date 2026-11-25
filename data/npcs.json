@@ -1312,6 +1312,15 @@
         {
           "de": "10:00",
           "pana": "14:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "marcatAzi": "papusa_refuz"
+          },
+          "ce": "după refuzul păpușii a intrat în casă, supărată (ales de Claude)"
+        },
+        {
+          "de": "10:00",
+          "pana": "14:00",
           "loc": "casa_finn",
           "ce": "afară, în fața casei, se joacă (decis de autor)"
         },

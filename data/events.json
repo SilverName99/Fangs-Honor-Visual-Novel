@@ -1870,10 +1870,10 @@
       "grup": "Steagul satului",
       "grup_en": "The Village Banner",
       "efecte": {
-        "timp": 90
+        "panaLaOra": "23:30"
       },
       "dialog": "roderick_steag",
-      "_nota": "Decis de autor: seara, Roderick și Vale aduc steagul satului de pe câmpul bătăliei. Ales de Claude: o oră și jumătate; Vale ajunge apoi în camera lui."
+      "_nota": "Decis de autor: seara, Roderick și Vale aduc steagul satului de pe câmpul bătăliei. Ales de Claude: se întorc pe la 23:30 (Roderick e la gard 19–23); Vale ajunge în camera lui, cu mama deja culcată."
     },
     {
       "id": "lemne_iarna_1",
