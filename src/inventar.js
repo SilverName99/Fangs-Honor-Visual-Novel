@@ -169,8 +169,9 @@ export function creeazaInventar(date, getStare) {
       scoateDin(s.inventar, id, n);
     },
     // Un dar care nu are voie să se piardă (echipamentul tatei, de la mama) merge direct în cufărul de acasă: cu
-    // rucsacul plin, „Lasă-l” l-ar fi aruncat pentru totdeauna. Întoarce câte n-au încăput
-    adaugaInCufar: (id, n = 1) => adaugaIn(getStare().cufar, cfg.cufar, id, n),
+    // rucsacul plin, „Lasă-l” l-ar fi aruncat pentru totdeauna. Întoarce câte n-au încăput; „pesteLimita”: cu cufărul
+    // plin intră peste limită
+    adaugaInCufar: (id, n = 1, pesteLimita = false) => adaugaIn(getStare().cufar, pesteLimita ? Infinity : cfg.cufar, id, n),
     // Bram îi pune platoșa pe umeri (decis de autor): se echipează pe loc, fără să treacă prin rucsac. Ce era pe slot
     // trece în rucsac, iar dacă nu încape, în cufărul de acasă, ca să nu se piardă. Întoarce unde a ajuns fiecare;
     // „rest” = ce n-a încăput nicăieri, pe care efectul îl dă mai departe ca pe un obiect primit („N-ai loc pentru...”)

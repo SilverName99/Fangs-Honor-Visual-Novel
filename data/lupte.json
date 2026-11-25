@@ -504,7 +504,10 @@
         "text": "Orcii te trântesc în noroi. Vin și alții să vadă ce s-a întâmplat.",
         "text_en": "The orcs slam you down into the mud. More orcs come over to see what happened.",
         "efecte": {
-          "pedeapsa": "paznic_orc_1"
+          "pedeapsa": {
+            "cine": "paznic_orc_1",
+            "nume": "Orc"
+          }
         }
       }
     },
@@ -531,7 +534,10 @@
         "text": "Patrula te prinde și te târăște până la poartă.",
         "text_en": "The patrol catches you and drags you all the way to the gate.",
         "efecte": {
-          "pedeapsa": "paznic_orc_1"
+          "pedeapsa": {
+            "cine": "paznic_orc_1",
+            "nume": "Orc"
+          }
         }
       }
     },
@@ -565,7 +571,10 @@
         "text": "Orcul vă trântește pe amândoi lângă nicovală. Vin și alții să vadă ce s-a întâmplat.",
         "text_en": "The orc slams you both down beside the anvil. More orcs come over to see what happened.",
         "efecte": {
-          "pedeapsa": "paznic_orc_1"
+          "pedeapsa": {
+            "cine": "paznic_orc_1",
+            "nume": "Orc"
+          }
         }
       }
     },
@@ -738,7 +747,10 @@
         "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
         "text_en": "The orc throws you down between the furrows. More orcs come over to see what happened.",
         "efecte": {
-          "pedeapsa": "paznic_orc_1"
+          "pedeapsa": {
+            "cine": "paznic_orc_1",
+            "nume": "Orc"
+          }
         }
       }
     },
@@ -811,7 +823,10 @@
         "text": "Orcul te trântește între brazde. Vin și alții să vadă ce s-a întâmplat.",
         "text_en": "The orc throws you down between the furrows. More orcs come over to see what happened.",
         "efecte": {
-          "pedeapsa": "paznic_orc_1"
+          "pedeapsa": {
+            "cine": "paznic_orc_1",
+            "nume": "Orc"
+          }
         }
       }
     },

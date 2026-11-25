@@ -1,5 +1,5 @@
 {
-  "_nota": "Obiectele jocului. Cifrele (prețuri, daune, armură) sunt valori de pornire, de echilibrat (TODO). Iconița: assets/items/<id>.png. armura = câte puncte adaugă piesa la bara gri de armură din luptă (se golește înaintea vieții). sloturi = câte locuri ocupă în inventar (implicit 1).",
+  "_nota": "Obiectele jocului. Cifrele (prețuri, daune, armură) sunt valori de pornire, de echilibrat (TODO). Iconița: assets/items/<id>.png. armura = câte puncte adaugă piesa la bara gri de armură din luptă (se golește înaintea vieții). sloturi = câte locuri ocupă în inventar (implicit 1). faraConfiscare = orcii nu le pot lua la pedeapsă (darul mamei: lucrurile tatei).",
   "obiecte": {
     "monede": {
       "nume": "Monede",
@@ -459,6 +459,7 @@
       "slot": "cap",
       "armura": 8,
       "pret": 0,
+      "faraConfiscare": true,
       "descriere": "Coiful de oțel al tatei, cu apărătoare pentru nas și creasta albastră, decolorată. Mama l-a curățat și l-a uns, ca pe ceva de care nu te desparți.",
       "descriere_en": "Father’s steel helm, with a nose guard and a faded blue crest. Mother cleaned and oiled it, the way you care for something you will never part with.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
@@ -479,6 +480,7 @@
       "slot": "armura",
       "armura": 15,
       "pret": 0,
+      "faraConfiscare": true,
       "descriere": "Platoșa tatei, peste o haină căptușită, albastră. Bram a închis crăpătura atât de bine, că nu se mai vede unde a fost lovită.",
       "descriere_en": "Father’s breastplate, over a padded blue coat. Bram closed the crack so well that you can no longer see where it was struck.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită). Platoșa e întâi crăpată („platosa_tata_crapata”); asta e cea reparată de Bram."
@@ -490,6 +492,7 @@
       "slot": "jambiere",
       "armura": 8,
       "pret": 0,
+      "faraConfiscare": true,
       "descriere": "Jambierele de oțel ale tatei, cu apărători pentru genunchi.",
       "descriere_en": "Father’s steel leggings, with knee guards.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."
@@ -506,6 +509,7 @@
         "tip": "apropiat"
       },
       "pret": 0,
+      "faraConfiscare": true,
       "descriere": "Sabia tatei. Pe măciulie, un romb mic, auriu, ca pe steagul satului. Ciupită de luptă, dar lustruită de curând.",
       "descriere_en": "Father’s sword. On the pommel, a small golden diamond, like the one on the village banner. Nicked in battle, but freshly polished.",
       "_nota": "Decis de autor: echipamentul tatălui lui Vale (Edwin), ascuns de Miriam; Vale îl primește la misiunea specială a Miriamei, „Echipamentul tatălui” (de la încredere 8/10). Cifrele: TODO echilibru (alese de Claude, puțin peste piesele de piele și sabia obișnuită)."

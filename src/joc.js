@@ -424,12 +424,20 @@ function dialogTaxa(text, unde = 'poarta') {
 // Când Vale le stă în cale, orcii îl pedepsesc. Dacă azi „sunt binevoitori” (o șansă), îl lasă să-și aleagă
 // pedeapsa; altfel o aleg ei, la întâmplare dintre cele care se pot aplica acum (config.json, „pedepse”)
 function obiecteDePredat() {
-  return [...new Set(stare.inventar.map((x) => x.id))].filter((id) => inventar.def(id).tip !== 'poveste');
+  // Darul mamei (fierul tatei) nu-l iau orcii: dacă în rucsac nu e altceva, pedeapsa „obiect” iese din listă, ca la
+  // rucsacul gol (altfel se pierdea fără o vorbă și se recâștiga la zaruri pe 2 monede)
+  return [...new Set(stare.inventar.map((x) => x.id))].filter((id) => inventar.def(id).tip !== 'poveste' && !inventar.def(id).faraConfiscare);
 }
 
 function pedepsePosibile() {
+  const z = ziua(stare);
+  const tx = stare.taxa;
+  // Cât poarta e închisă (fierul lui Bram nerecuperat), blănurile se predau doar acasă, la vizita din ziua taxei:
+  // pedeapsa cu blănuri se dă doar dacă vizita aceea mai vine în termen (altfel taxa se dubla sigur)
+  const poartaInchisa = stare.misiuni.bram_fier !== 'terminata' && stare.stari.poarta_deschisa !== 'da';
+  const vineAcasa = tx.zi >= z && tx.zi - z <= cfg.pedepse.tipuri.blanuri.zile && !tx.platita && tx.colectorZi !== tx.zi;
   return Object.entries(cfg.pedepse.tipuri)
-    .filter(([id]) => (id !== 'obiect' || obiecteDePredat().length) && (id !== 'blanuri' || !stare.datorieBlanuri))
+    .filter(([id]) => (id !== 'obiect' || obiecteDePredat().length) && (id !== 'blanuri' || (!stare.datorieBlanuri && (!poartaInchisa || vineAcasa))))
     .map(([id, t]) => ({ id, ...t }));
 }
 
@@ -450,10 +458,14 @@ function aplicaPedeapsa(id, obiect) {
   actualizeazaHud();
 }
 
-function dialogPedeapsa(cine, tip) {
+// „nume”: orcul fără nume propriu din patrule vorbește ca „Orc” (cu portretele paznicului)
+function dialogPedeapsa(cine, tip, nume) {
   const p = cfg.pedepse;
   const posibile = pedepsePosibile();
   const nod = (text, extra = {}) => ({ vorbitor: cine, emotie: 'suparat', text, ...extra });
+  // Orcul care scotocește prin casă și nu găsește nimic de luat pleacă; Vale l-a lăsat să caute, deci nu e pedepsit
+  // altfel, la întâmplare
+  if (tip === 'obiect' && !obiecteDePredat().length) return dialog.porneste({ partener: cine, numePartener: nume, start: 'nimic', noduri: { nimic: nod(p.tipuri.obiect.textNimic, { emotie: 'rade' }) } });
   const noduri = {};
   // Noduri pentru fiecare pedeapsă: textul ei; „obiect” cere să alegi ce predai
   for (const t of posibile) {
@@ -463,7 +475,11 @@ function dialogPedeapsa(cine, tip) {
           .slice(0, 8)
           .map((id) => ({ text: inventar.def(id).nume, efecte: { pedeapsaAplicata: { id: 'obiect', obiect: id } }, spre: null })),
       });
-    } else noduri[t.id] = nod(t.text, { efecte: { pedeapsaAplicata: { id: t.id } } });
+    } else {
+      // „gand”: ce pățește Vale se spune în gândul lui, după vorbele orcului (biciul), nu în gura orcului
+      noduri[t.id] = nod(t.text, { efecte: { pedeapsaAplicata: { id: t.id } }, ...(t.gand ? { urmator: `${t.id}_gand` } : {}) });
+      if (t.gand) noduri[`${t.id}_gand`] = { vorbitor: 'vale', gand: true, emotie: 'ranit', text: t.gand };
+    }
   }
   let start;
   if (!tip && Math.random() < p.sansaAlegi) {
@@ -480,16 +496,16 @@ function dialogPedeapsa(cine, tip) {
       noduri.obiect = nod(t.textIau.replace('{obiect}', (limbaJoc() === 'ro' ? inventar.def(ales).nume.toLowerCase() : inventar.def(ales).nume)), { efecte: { pedeapsaAplicata: { id: 'obiect', obiect: ales } } });
     }
   }
-  dialog.porneste({ partener: cine, start, noduri });
+  dialog.porneste({ partener: cine, numePartener: nume, start, noduri });
 }
 
 // Pornită dintr-un efect (o alegere din dialog sau o luptă pierdută): așteaptă să se închidă ce e pe ecran
 function pedeapsa(cine) {
   const incearca = () => {
     if (dialog.activ() || secventa.activa() || lupta.activa()) return setTimeout(incearca, 150);
-    // Valoarea efectului: true / id-ul orcului / { cine, tip }
+    // Valoarea efectului: true / id-ul orcului / { cine, tip, nume }
     const o = typeof cine === 'object' && cine ? cine : { cine };
-    dialogPedeapsa(o.cine === true || !o.cine ? 'paznic_orc_1' : o.cine, o.tip);
+    dialogPedeapsa(o.cine === true || !o.cine ? 'paznic_orc_1' : o.cine, o.tip, o.nume);
   };
   setTimeout(incearca, 0);
 }
@@ -1500,10 +1516,11 @@ function puneSemneMisiuni(d, r, ctx, prezenti) {
     Object.assign(s.style, { left, top });
     stratSemne.append(s);
   };
-  // Personajele din scena de acum
-  for (const [id, { semn }] of semne) {
+  // Personajele din scena de acum. Cine încă nu se poate apăsa (fermierul, până la prima patrulă) nu primește semnul
+  // deasupra lui; semnele de pe hartă și de pe uși rămân, ca să-l ducă pe jucător acolo
+  for (const [id, { semn, p }] of semne) {
     const el = prezenti.has(id) && r.obiecte.get(id);
-    if (el?.isConnected) pune(el.parentElement, el.style.left, `calc(${el.style.top} - ${el.style.height})`, semn);
+    if (el?.isConnected && esteClicabil(p, ctx)) pune(el.parentElement, el.style.left, `calc(${el.style.top} - ${el.style.height})`, semn);
   }
   // Clădirile de pe hartă și ușile din zone: unde e acum cineva cu un semn (cel mai important câștigă)
   const ordine = { gata: 3, nou: 2, lucru: 1 };

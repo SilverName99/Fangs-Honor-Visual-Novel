@@ -224,8 +224,10 @@
       "grup_en": "Orcs in the Village",
       "vorbitor": "orc_colector",
       "emotie": "rade",
-      "text": "Colectorul înșfacă un sac de mere de pe taraba negustorului și pleacă fără să plătească. Negustorul tace, cu ochii în pământ.",
-      "text_en": "The tax collector snatches a sack of apples from the merchant’s stall and walks off without paying. The merchant says nothing, his eyes on the ground.",
+      "gand": "Colectorul înșfacă un sac de mere de pe taraba negustorului. Negustorul tace, cu ochii în pământ.",
+      "gand_en": "The tax collector snatches a sack of apples from the merchant’s stall. The merchant says nothing, his eyes on the ground.",
+      "text": "Ce te uiți așa, sătene? Tot ce crește în satul ăsta e al nostru. Și merele.",
+      "text_en": "What are you staring at, villager? Everything that grows in this village is ours. Apples too.",
       "alegeri": [
         {
           "text": "Pune sacul la loc!",
@@ -280,8 +282,10 @@
       "grup_en": "Orcs in the Village",
       "vorbitor": "orc_colector",
       "emotie": "rade",
-      "text": "Colectorul se trântește la masă și îi cere lui Agnes bere. Pe gratis, ca de obicei. Agnes strânge din dinți.",
-      "text_en": "The tax collector throws himself down at a table and demands ale from Agnes. Free, as usual. Agnes grits her teeth.",
+      "gand": "Colectorul se trântește la masă și bate cu pumnul în ea. Agnes strânge din dinți.",
+      "gand_en": "The tax collector throws himself down at a table and pounds on it with his fist. Agnes grits her teeth.",
+      "text": "Bere, femeie! Pe gratis, ca de obicei. Și plină până la buză.",
+      "text_en": "Ale, woman! Free, as usual. And full to the brim.",
       "alegeri": [
         {
           "text": "Las-o în pace și plătește ca toată lumea.",
@@ -314,7 +318,7 @@
     },
     {
       "id": "orci_patrula_campuri_prima",
-      "_nota": "Decis de autor: prima dată când orcii îi necăjesc pe fermieri vine sigur și devreme (din ziua 3, 80% la fiecare intrare pe câmpuri, 06–13, cât e și fermierul acolo), ca fermierul să devină cel cu care se poate vorbi; după el, evenimentul obișnuit din categoria orci. Cât e în lucru misiunea berii (îți trebuie mierea de la fermier), patrula vine sigur la prima intrare 06–13 (ales de Claude).",
+      "_nota": "Decis de autor: prima dată când orcii îi necăjesc pe fermieri vine sigur și devreme (din ziua 3, 80% la fiecare intrare pe câmpuri, 06–13, cât e și fermierul acolo), ca fermierul să devină cel cu care se poate vorbi; după el, evenimentul obișnuit din categoria orci. Cât e în lucru misiunea berii (îți trebuie mierea de la fermier), patrula vine sigur la prima intrare 06–13 (ales de Claude), la fel și cât e în lucru „Lumânările” (ceara de la fermier).",
       "conditii": {
         "loc": "campuri",
         "ora": {
@@ -335,6 +339,11 @@
             "misiune": {
               "agnes_bere": "inceputa"
             }
+          },
+          {
+            "misiune": {
+              "roderick_lumanari": "inceputa"
+            }
           }
         ]
       },
@@ -345,9 +354,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "rade",
-      "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
-      "text_en": "An orc tips over the farmers’ baskets and walks off with a sack of wheat. The farmer tries to say something and gets a shove for his trouble.",
+      "gand": "Un orc răstoarnă coșurile fermierilor și își aruncă în spinare un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "gand_en": "An orc tips over the farmers’ baskets and slings a sack of wheat over his shoulder. The farmer tries to say something and gets a shove for his trouble.",
+      "text": "Ce te holbezi, pui de om? Grâul e al nostru. Tot grâul.",
+      "text_en": "What are you gawking at, human whelp? The wheat is ours. All of it.",
       "alegeri": [
         {
           "text": "Lasă grâul, nu e al tău!",
@@ -402,9 +415,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "rade",
-      "text": "Un orc răstoarnă coșurile fermierilor și pleacă cu un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
-      "text_en": "An orc tips over the farmers’ baskets and walks off with a sack of wheat. The farmer tries to say something and gets a shove for his trouble.",
+      "gand": "Un orc răstoarnă coșurile fermierilor și își aruncă în spinare un sac de grâu. Fermierul încearcă să spună ceva și primește un ghiont.",
+      "gand_en": "An orc tips over the farmers’ baskets and slings a sack of wheat over his shoulder. The farmer tries to say something and gets a shove for his trouble.",
+      "text": "Ce te holbezi, pui de om? Grâul e al nostru. Tot grâul.",
+      "text_en": "What are you gawking at, human whelp? The wheat is ours. All of it.",
       "alegeri": [
         {
           "text": "Lasă grâul, nu e al tău!",
@@ -459,9 +476,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "rade",
-      "text": "Doi orci răstoarnă dintr-o lovitură taraba negustorului și râd de merele care se rostogolesc prin noroi.",
-      "text_en": "With a single blow, two orcs knock over the merchant’s stall and laugh at the apples rolling through the mud.",
+      "gand": "Doi orci răstoarnă dintr-o lovitură taraba negustorului și râd de merele care se rostogolesc prin noroi.",
+      "gand_en": "With a single blow, two orcs knock over the merchant’s stall and laugh at the apples rolling through the mud.",
+      "text": "Hrr! Uite-le cum fug! Prinde-le, negustorule, prinde-le!",
+      "text_en": "Hrr! Look at them roll! Catch them, merchant, catch them!",
       "alegeri": [
         {
           "text": "Luați-vă labele de pe taraba lui!",
@@ -507,9 +528,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "suparat",
-      "text": "Un orc bate cu pumnul în ușa casei. „Deschide! Vreau să văd ce ascundeți acolo.”",
-      "text_en": "An orc pounds on the front door with his fist. “Open up! I want to see what you’re hiding in there.”",
+      "gand": "Un orc bate cu pumnul în ușa casei.",
+      "gand_en": "An orc pounds on the front door with his fist.",
+      "text": "Deschide! Vreau să văd ce ascundeți acolo.",
+      "text_en": "Open up! I want to see what you’re hiding in there.",
       "alegeri": [
         {
           "text": "Îl las să caute.",
@@ -517,7 +542,8 @@
           "efecte": {
             "pedeapsa": {
               "cine": "paznic_orc_1",
-              "tip": "obiect"
+              "tip": "obiect",
+              "nume": "Orc"
             }
           }
         },
@@ -538,7 +564,10 @@
           "text_en": "I shut the door in his face.",
           "efecte": {
             "reputatie": 1,
-            "pedeapsa": "paznic_orc_1"
+            "pedeapsa": {
+              "cine": "paznic_orc_1",
+              "nume": "Orc"
+            }
           }
         }
       ]
@@ -565,9 +594,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "rade",
-      "text": "Un orc își trântește toporul ciobit pe nicovala lui Bram. „Ascute-l. Acum. Și pe gratis.” Bram strânge ciocanul în pumn, dar nu zice nimic.",
-      "text_en": "An orc slams his chipped axe down on Bram’s anvil. “Sharpen it. Now. And for free.” Bram tightens his grip on the hammer, but says nothing.",
+      "gand": "Un orc își trântește toporul ciobit pe nicovala lui Bram. Bram strânge ciocanul în pumn, dar nu zice nimic.",
+      "gand_en": "An orc slams his chipped axe down on Bram’s anvil. Bram tightens his grip on the hammer, but says nothing.",
+      "text": "Ascute-l. Acum. Și pe gratis.",
+      "text_en": "Sharpen it. Now. And for free.",
       "alegeri": [
         {
           "text": "Plătește-i munca, sau pleacă!",
@@ -625,7 +658,11 @@
             "loc": "padure"
           },
           {
-            "loc": "taverna"
+            "loc": "taverna",
+            "ora": {
+              "min": "02:00",
+              "max": "04:59"
+            }
           }
         ],
         "sansa": 0.35
@@ -639,9 +676,13 @@
       "grup": "Orcii prin sat",
       "grup_en": "Orcs in the Village",
       "vorbitor": "paznic_orc_1",
+      "numeVorbitor": "Orc",
+      "numeVorbitor_en": "Orc",
       "emotie": "suparat",
-      "text": "O patrulă de orci te prinde pe drum în miez de noapte. „Ce cauți afară la ora asta, șobolane?”",
-      "text_en": "An orc patrol catches you on the road in the dead of night. “What are you doing out at this hour, rat?”",
+      "gand": "O patrulă de orci mă prinde pe drum, în miez de noapte. Unul îmi bagă torța în ochi.",
+      "gand_en": "An orc patrol catches me on the road in the dead of night. One of them shoves a torch in my face.",
+      "text": "Ce cauți afară la ora asta, șobolane?",
+      "text_en": "What are you doing out at this hour, rat?",
       "alegeri": [
         {
           "text": "Plătesc amenda. (10 monede)",
@@ -664,8 +705,8 @@
                 "sansa": 0.5,
                 "efecte": {
                   "timp": 20,
-                  "mesaj": "Ai scăpat pe o ulicioară întunecată.",
-                  "mesaj_en": "You got away down a dark lane."
+                  "mesaj": "Ai scăpat în întuneric.",
+                  "mesaj_en": "You got away into the dark."
                 }
               },
               {
@@ -673,7 +714,10 @@
                 "efecte": {
                   "mesaj": "Te-au prins.",
                   "mesaj_en": "They caught you.",
-                  "pedeapsa": "paznic_orc_1"
+                  "pedeapsa": {
+                    "cine": "paznic_orc_1",
+                    "nume": "Orc"
+                  }
                 }
               }
             ]

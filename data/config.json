@@ -534,8 +534,10 @@
       "biciuire": {
         "alegere": "Biciul.",
         "alegere_en": "The whip.",
-        "text": "Te leagă de stâlpul din piață și te biciuiesc în fața satului.",
-        "text_en": "They tie you to the post in the market and whip you in front of the whole village.",
+        "text": "La stâlp cu tine! Să vadă tot satul ce pățesc țâfnoșii.",
+        "text_en": "To the post with you! Let the whole village see what happens to the mouthy ones.",
+        "gand": "Mă târăsc până la stâlpul din piață și mă biciuiesc în fața satului. Număr loviturile, ca să nu strig.",
+        "gand_en": "They drag me to the post in the market and whip me in front of the whole village. I count the lashes so I won’t cry out.",
         "viata": 25,
         "viataMinima": 5,
         "minute": 60
@@ -553,7 +555,9 @@
         "textAlege": "Ce ne dai? Și să fie ceva bun.",
         "textAlege_en": "What’ll you give us? And make it something good.",
         "textIau": "Ia uite ce avem aici... {obiect}. E al nostru acum.",
-        "textIau_en": "Well, look what we have here... {obiect}. Ours now."
+        "textIau_en": "Well, look what we have here... {obiect}. Ours now.",
+        "textNimic": "Hrr. Nimic. Nici șoarecii n-au ce fura de la voi.",
+        "textNimic_en": "Hrr. Nothing. Even the mice can’t find anything to steal here."
       },
       "blanuri": {
         "alegere": "Le aduc blăni de lup.",

@@ -759,7 +759,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ### ✅ Lumânările
 - **Pornește** (decis de autor): după scandal, **la biserică, cât se roagă Roderick (10–14)**: „Unchiule... pot să stau puțin lângă tine? !”. Începutul e altfel după cum l-ai ajutat sau nu în scandal (cald: „mi-ai ținut spatele”; rece: „Ai venit să vezi dacă mai respir?”), apoi Vale îl întreabă cum a murit tata. Roderick nu poate răspunde; îi arată cioturile celor 23 de lumânări pe care le aprinde în fiecare zi pentru cei căzuți. Orcii i-au luat toată ceara.
-- **Pasul 1:** faguri de ceară de la **fermier** (la câmpuri, 6–13). Fermierul i-a ascuns sub grajd; pentru cei căzuți îi dă pe degeaba (Tobin, fiul morarului, a arat cu el).
+- **Pasul 1:** faguri de ceară de la **fermier** (la câmpuri, 6–13; cât e pasul cu ceara, prima patrulă de la câmpuri vine sigur, ca fermierul să se poată apăsa). Fermierul i-a ascuns sub grajd; pentru cei căzuți îi dă pe degeaba (Tobin, fiul morarului, a arat cu el).
 - **Pasul 2:** ceara la **Elian** („poți turna lumânări?”); Elian ține fagurii în palme și ceara parcă se înmoaie singură (încă un semn că e mag).
 - **Pasul 3:** **a doua zi**, lumânările de la Elian (în aceeași zi: „Încă se răcesc în tipare”). Decis de autor: nu în timpul slujbei de dimineață (05–08), nici ceara, nici lumânările.
 - **Pasul 4:** la Roderick (biserică sau tavernă), „Am adus lumânările, unchiule.” → „Diseară, la biserică.” (decis de autor).

@@ -65,18 +65,14 @@ export function noteazaEveniment(stare, ev, zi) {
 
 // Un eveniment se arată cu aceeași interfață ca dialogul: un singur nod, cu alegeri care închid dialogul
 export function caDialog(ev) {
+  const e = { vorbitor: ev.vorbitor, emotie: ev.emotie, text: ev.text, alegeri: (ev.alegeri || []).map((a) => ({ ...a, spre: null })) };
+  if (!ev.gand) return { partener: ev.vorbitor, numePartener: ev.numeVorbitor, start: 'e', noduri: { e: { ...e, efecte: ev.efecte } } };
+  // „gand”: narațiunea scenei nu e replica orcului; întâi ce vede Vale, apoi orcul, cu vorbele lui și alegerile.
+  // Efectele evenimentului se aplică la primul nod (după un refresh în gând, reluarea sare direct la alegeri)
   return {
     partener: ev.vorbitor,
     numePartener: ev.numeVorbitor,
-    start: 'e',
-    noduri: {
-      e: {
-        vorbitor: ev.vorbitor,
-        emotie: ev.emotie,
-        text: ev.text,
-        efecte: ev.efecte,
-        alegeri: (ev.alegeri || []).map((a) => ({ ...a, spre: null })),
-      },
-    },
+    start: 'g',
+    noduri: { g: { vorbitor: 'vale', gand: true, emotie: 'normal', text: ev.gand, efecte: ev.efecte, urmator: 'e' }, e },
   };
 }

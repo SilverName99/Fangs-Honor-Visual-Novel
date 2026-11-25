@@ -43,9 +43,11 @@ const efecte = {
   // nu în rucsac, unde un rucsac plin l-ar fi lăsat pe jos; doar dacă și cufărul e plin, încearcă rucsacul
   obiectCufar: (v, joc) =>
     perObiect(v).forEach(([id, n]) => {
+      // Un dar care nu are voie să se piardă: cu cufărul plin intră peste limită (foaia arată 41/40 până faci loc),
+      // nu la panoul „N-ai loc”, unde „Lasă-l” sau un refresh l-ar arunca pentru totdeauna
       const rest = joc.inventar.adaugaInCufar(id, n);
-      if (n - rest > 0) joc.inregistreazaCastig?.({ tip: 'obiect', id, n: n - rest });
-      if (rest > 0) efecte.obiect({ [id]: rest }, joc);
+      if (rest > 0) joc.inventar.adaugaInCufar(id, rest, true);
+      joc.inregistreazaCastig?.({ tip: 'obiect', id, n });
     }),
   // Bram îi pune lui Vale platoșa pe umeri (decis de autor): se echipează pe loc; ce purta înainte merge în rucsac
   // sau, dacă nu încape, în cufărul de acasă (spus pe ecran, ca să știe unde s-o caute)
