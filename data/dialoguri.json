@@ -20960,44 +20960,64 @@
       "z5": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Pe la mijlocul dimineții, poteca începe să urce spre dealuri. Și deodată unchiul se oprește, cu mâna ridicată.",
         "gand": true,
-        "imagine": "events/drum_urme.png",
+        "text": "Pornim. Poteca se afundă printre stejari bătrâni și începe să urce spre dealuri. Ceața rămâne în urmă, la râu, ca o apă albă între trunchiuri.",
+        "imagine": "events/drum_urcus.png",
         "efecte": {
-          "panaLaOra": "10:00"
+          "panaLaOra": "08:00"
         },
-        "urmator": "z6"
+        "urmator": "z5b"
       },
       "z6": {
         "vorbitor": "soldat",
         "emotie": "speriat",
-        "text": "Jos. Acum.",
+        "text": "Jos. În tufe. Acum.",
         "urmator": "z7"
       },
       "z7": {
         "vorbitor": "vale",
         "emotie": "speriat",
-        "text": "În noroiul potecii sunt urme de cizme mari, cu ținte în talpă. Proaspete. Iar mai încolo, un lup mort, cu o săgeată neagră înfiptă în coastă.",
         "gand": true,
-        "urmator": "z8"
+        "text": "E un spinar. Cât un vițel, cu blana lungă și încâlcită și un șir de țepi de os de-a lungul spinării. Bunicul zicea că pe vremea lui coborau iarna până la gardurile satului. Eu n-am văzut niciodată unul de aproape.",
+        "urmator": "z7b"
       },
       "z8": {
-        "vorbitor": "soldat",
+        "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Vânători de-ai orcilor. Doi, poate trei. Au trecut în zori, spre răsărit. Spre stepă.",
-        "urmator": "z9"
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "finn_custi": "terminata"
+              }
+            },
+            "text": "Așa erau și săgețile din tabăra vânătorilor de lângă drumul mare. Kaia le smulgea din stâlpii cuștilor și le rupea în genunchi."
+          },
+          {
+            "conditii": {
+              "stare": {
+                "cunoscut_vanatoare": "da"
+              }
+            },
+            "text": "Kaia mi-a spus de penele astea. Orcii le iau de la ciori și le leagă cum apucă. Zice că după ele îi recunoaște în pădure, mai repede decât după urme."
+          },
+          {
+            "text": "Penele... niciun om nu și-ar strica așa o săgeată. Nici cel mai prost arcaș din sat."
+          }
+        ],
+        "urmator": "z8b"
       },
       "z9": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Stăm în tufe până mi se înțepenesc genunchii. Unchiul ascultă pădurea cum ascultă alții o rugăciune. Nu vine nimeni.",
         "gand": true,
+        "text": "Stăm în tufe până mi se înțepenesc genunchii. Pe drum nu e nicio urmă: au venit prin pădure și tot prin pădure au rămas. Unchiul ascultă pădurea cum ascultă alții o rugăciune. Nu vine nimeni.",
         "urmator": "z10"
       },
       "z10": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Pe aici n-au ce căuta. Decât dacă duc ceva cuiva. De-acum, fără vorbă. Și calci unde calc eu.",
+        "text": "Au lăsat-o baltă. Orcii nu se încurcă cu ce nu le iese din prima. Pe aici n-au ce căuta... decât dacă duc ceva cuiva. De-acum, fără vorbă. Și calci unde calc eu.",
         "urmator": "p30"
       },
       "p30": {
@@ -21995,6 +22015,48 @@
           },
           "mergi": "casa"
         }
+      },
+      "z5b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ține-te aproape. Pe dealurile astea, pădurea aude mai bine decât noi.",
+        "urmator": "z5c"
+      },
+      "z5c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pe la mijlocul dimineții, unchiul se oprește deodată, cu mâna ridicată. La marginea drumului zace ceva mare și cenușiu.",
+        "imagine": "events/drum_spinar.png",
+        "efecte": {
+          "panaLaOra": "10:00"
+        },
+        "urmator": "z6"
+      },
+      "z7b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Din coastă îi iese o săgeată neagră. Penele îi sunt ciufulite, legate strâmb, cum ar lega un copil.",
+        "urmator": "z8"
+      },
+      "z8b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vânătorii lor. Uită-te la sânge: vine dinspre copaci. N-au omorât spinarul aici. A fugit cu săgeata în el până a căzut.",
+        "urmator": "z8c"
+      },
+      "z8c": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Și cine a tras în el...",
+        "urmator": "z8d"
+      },
+      "z8d": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "...îi caută urma. Dacă vin, vin pe sânge, drept aici. Nu mișca.",
+        "urmator": "z9"
       }
     },
     "filmLa": "v1",
