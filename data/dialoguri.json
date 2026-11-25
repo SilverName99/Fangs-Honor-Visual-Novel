@@ -5421,6 +5421,11 @@
         "vorbitor": "miriam",
         "emotie": "zambet",
         "text": "De când v-ați întors, Roderick trece pe la noi în fiecare dimineață, în drum spre biserică. Să vadă dacă mai ești întreg, zice. Eu cred că vine pentru pâinea caldă."
+      },
+      "d_taxa_ratata": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "A bătut colectorul la ușă și n-am avut ce să-i dăm, Vale. S-a uitat prin casă de parcă ar fi numărat ce ne-a mai rămas."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -5484,6 +5489,17 @@
         "conditii": {
           "misiune": {
             "roderick_drumul": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor: a doua zi după o taxă ratată, mama pomenește vizita colectorului. Ciornă de Claude.",
+        "nod": "d_taxa_ratata",
+        "conditii": {
+          "trecut": {
+            "taxa_ratata": {
+              "subZile": 2
+            }
           }
         }
       }

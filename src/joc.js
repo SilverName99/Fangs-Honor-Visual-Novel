@@ -325,6 +325,8 @@ function verificaTaxa() {
   while (ziua(stare) > t.zi) {
     if (!t.platita) {
       t.ratari++;
+      // Ținut minte pentru vorbele de după (decis de autor): mama pomenește vizita, colectorul îl numește „datornic”
+      (stare.marcaje ||= {}).taxa_ratata = stare.minute;
       anuntLaLiber(cfg.taxa.textRatare);
     }
     t.zi += cfg.taxa.intervalZile;
@@ -373,7 +375,9 @@ function verificaColectorul() {
   // Doar acasă la Vale („casa” și locurile ei), nu și la casa lui Finn („casa_finn”), care începe la fel
   const acasa = stare.scena === 'casa' || stare.scena.startsWith('casa.');
   if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !acasa) return false;
-  if (ctx.minuteZi < inMinute(cfg.taxa.oraColector)) return false;
+  // Decis de autor: doar de la ora colectorului până la 23:00; noaptea el doarme în altă parte (programul lui), deci
+  // cine ajunge acasă mai târziu ratează taxa
+  if (ctx.minuteZi < inMinute(cfg.taxa.oraColector) || ctx.minuteZi >= inMinute(cfg.taxa.oraColectorPana || '23:00')) return false;
   t.colectorZi = ctx.zi;
   dialogTaxa(cfg.taxa.textColector, 'acasa');
   return true;
@@ -406,16 +410,23 @@ function dialogTaxa(text, unde = 'poarta') {
     : [
         { text: t('Plătește ({n} monede)', { n: sumaTaxa() }), conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
         ...optiuni,
-        { text: t('Nu am bani acum.'), spre: null },
+        // Decis de autor: la o taxă ratată, deocamdată doar vorbe; colectorul pleacă amenințând, nu fără o vorbă
+        { text: t('Nu am bani acum.'), spre: 'taxa_fara' },
       ];
+  // La poartă, prima dată după o taxă ratată, colectorul îl ia în râs („datornicul”); doar vorbă, fără efect
+  const ratataLa = stare.marcaje?.taxa_ratata;
+  const datornic = unde === 'poarta' && !platita && ratataLa != null && (stare.marcaje.taxa_datornic ?? -1) < ratataLa;
   const ox = (emotie, txt, alegeri) => ({ vorbitor: 'orc_colector', emotie, text: txt, ...(alegeri ? { alegeri } : {}) });
   // Nodurile din cod au nume unice („taxa_”): altfel reluarea le confunda cu nodurile altor dialoguri
   const noduri = {
     taxa_c: platita
       ? ox('rade', blanuri.length ? tb.textColector : cfg.taxa.textColectorPlatit, blanuri.length || optiuni.length ? [...blanuri, ...plata] : null)
-      : ox('normal', text, [...blanuri, ...plata]),
+      : datornic
+        ? { ...ox('rade', cfg.taxa.textDatornic, [...blanuri, ...plata]), efecte: { marcheaza: 'taxa_datornic' } }
+        : ox('normal', text, [...blanuri, ...plata]),
     taxa_blanuri: { ...ox('rade', tb.textPredat), ...(platita && !optiuni.length ? {} : { urmator: 'taxa_dupa' }) },
     taxa_dupa: ox('normal', platita ? cfg.taxa.textColectorPlatit : cfg.taxa.textDupaBlanuri, plata),
+    taxa_fara: ox('suparat', cfg.taxa.textFaraBani),
   };
   dialog.porneste({ partener: 'orc_colector', start: 'taxa_c', _taxa: unde, noduri: { ...noduriMisiuni, ...(extra?.noduri || {}), ...noduri } });
 }
@@ -435,7 +446,8 @@ function pedepsePosibile() {
   // Cât poarta e închisă (fierul lui Bram nerecuperat), blănurile se predau doar acasă, la vizita din ziua taxei:
   // pedeapsa cu blănuri se dă doar dacă vizita aceea mai vine în termen (altfel taxa se dubla sigur)
   const poartaInchisa = stare.misiuni.bram_fier !== 'terminata' && stare.stari.poarta_deschisa !== 'da';
-  const vineAcasa = tx.zi >= z && tx.zi - z <= cfg.pedepse.tipuri.blanuri.zile && !tx.platita && tx.colectorZi !== tx.zi;
+  const preaTarziu = tx.zi === z && context(stare).minuteZi >= inMinute(cfg.taxa.oraColectorPana || '23:00');
+  const vineAcasa = tx.zi >= z && tx.zi - z <= cfg.pedepse.tipuri.blanuri.zile && !tx.platita && tx.colectorZi !== tx.zi && !preaTarziu;
   return Object.entries(cfg.pedepse.tipuri)
     .filter(([id]) => (id !== 'obiect' || obiecteDePredat().length) && (id !== 'blanuri' || (!stare.datorieBlanuri && (!poartaInchisa || vineAcasa))))
     .map(([id, t]) => ({ id, ...t }));

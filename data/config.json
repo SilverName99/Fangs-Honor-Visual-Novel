@@ -246,6 +246,8 @@
     "suma": 50,
     "intervalZile": 7,
     "oraColector": "10:00",
+    "oraColectorPana": "23:00",
+    "_notaOraColector": "Decis de autor: acasă, în ziua taxei, colectorul vine de la oraColector până la oraColectorPana (după programul lui, 23–06 doarme în altă parte, deci vizita de acasă nu mai vine noaptea). Mama îl avertizează pe Vale din prima zi.",
     "textColector": "Deschide, sătene! Știi de ce am venit. Taxa, până la ultima monedă.",
     "textColector_en": "Open up, villager! You know why I’m here. The tax, down to the last coin.",
     "textColectorPoarta": "Ia uite, a venit singur la poartă. Ai adus taxa, sau ai venit doar să te uiți la noi?",
@@ -254,8 +256,13 @@
     "textColectorPlatit_en": "You’ve paid for this week. Now get lost, before I find a reason to make you pay again.",
     "textDupaBlanuri": "Și acum, taxa. Până la ultima monedă.",
     "textDupaBlanuri_en": "And now, the tax. Down to the last coin.",
+    "textFaraBani": "Fără bani? Hrr. Colectorul ține minte, sătene. Data viitoare nu plec cu mâna goală.",
+    "textFaraBani_en": "No coin? Hrr. The collector remembers, villager. Next time I won’t leave empty-handed.",
+    "textDatornic": "Ia uite, datornicul. Data viitoare plătești dublu sau lași ceva în loc.",
+    "textDatornic_en": "Well, look, the debtor. Next time you pay double, or you leave something behind.",
     "textRatare": "N-ai plătit taxa. Colectorul a plecat mormăind ceva despre „data viitoare”. O să se întoarcă.",
-    "textRatare_en": "You didn’t pay the tax. The collector left, muttering something about “next time.” He’ll be back."
+    "textRatare_en": "You didn’t pay the tax. The collector left, muttering something about “next time.” He’ll be back.",
+    "_notaRatare": "Decis de autor: la o taxă ratată, deocamdată doar replici (ciorne de Claude): colectorul amenință la „Nu am bani acum.” (textFaraBani), mama pomenește vizita a doua zi, iar la poartă, prima dată după ratare, îl numește „datornic” (textDatornic). Treptele ratărilor rămân TODO."
   },
   "lupta": {
     "_nota": "viteza: cât de repede se umple bara (staminaMax × viteza pe secundă). Cifre de pornire (TODO).",
