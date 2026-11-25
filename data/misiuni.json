@@ -5842,8 +5842,8 @@
                   "text_en": "I’ve got a bow and three arrows for Ned.",
                   "nod": "prieteni_ned_arc",
                   "conditii": {
+                    "areLaEl": "arc",
                     "areCate": {
-                      "arc": 1,
                       "sageti": 3
                     },
                     "nu": {

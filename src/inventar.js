@@ -166,7 +166,13 @@ export function creeazaInventar(date, getStare) {
         return;
       }
       if (i >= 0) return s.poveste.splice(i, 1);
-      scoateDin(s.inventar, id, n);
+      const rest = scoateDin(s.inventar, id, n);
+      // Ce nu e în rucsac se ia din mână: arcul dat lui Ned poate fi chiar cel echipat (o armă cu două mâini stă doar
+      // în „arma_primara”)
+      if (rest > 0) {
+        const slot = Object.keys(s.echipat).find((sl) => s.echipat[sl] === id);
+        if (slot) delete s.echipat[slot];
+      }
     },
     // Un dar care nu are voie să se piardă (echipamentul tatei, de la mama) merge direct în cufărul de acasă: cu
     // rucsacul plin, „Lasă-l” l-ar fi aruncat pentru totdeauna. Întoarce câte n-au încăput; „pesteLimita”: cu cufărul
