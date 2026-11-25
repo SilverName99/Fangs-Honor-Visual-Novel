@@ -111,20 +111,25 @@ export function creeazaActiuni(parinte, joc) {
       const ore = [1, 2, 4].map((h) =>
         cuBaraStamina(buton(eticheta(h), async () => {
           inchide();
-          if (joc.avanseaza(h * 60)) return;
-          schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
+          // Ora, stamina și banii se iau abia la sfârșitul mini-jocului sau al imaginii: un refresh la mijloc nu ia
+          // nimic (salvarea e cea de dinainte de muncă). Leșinul oprește, ca înainte
+          const munceste = (bani) => {
+            if (joc.avanseaza(h * 60)) return false;
+            schimbaNevoie(s, 'stamina', -h * m.staminaPeOra);
+            s.bani += bani;
+            return true;
+          };
           // Cu mini-jocul (decis de autor): perfect = +50%, ratat de tot = jumătate; oprit din Opțiuni = cât era
           if (cuJoc) {
             joc.salveaza();
             setTimeout(() => joc.sunet.efect('munca'), 150);
             const scor = await mini[m.miniJoc]({ imagine: m.imagine, titlu: m.nume });
             const bani = Math.round(h * m.monedePeOra * (0.5 + scor));
-            s.bani += bani;
+            if (!munceste(bani)) return;
             return joc.dupaActiune('', [{ tip: 'bani', n: bani }, ...bonusMunca(m)]);
           }
-          s.bani += h * m.monedePeOra;
           // Întâi imaginea cu Vale la muncă (cu sunetul muncii), apoi ce a câștigat
-          cuImagine(m, () => joc.dupaActiune('', [{ tip: 'bani', n: h * m.monedePeOra }, ...bonusMunca(m)]), 'munca');
+          cuImagine(m, () => munceste(h * m.monedePeOra) && joc.dupaActiune('', [{ tip: 'bani', n: h * m.monedePeOra }, ...bonusMunca(m)]), 'munca');
         }, s.nevoi.stamina < h * m.staminaPeOra), () => -h * m.staminaPeOra),
       );
       return [info, ...ore];
@@ -203,15 +208,21 @@ export function creeazaActiuni(parinte, joc) {
         ),
       );
     }
-    if (a.maxPeZi) folosiriAzi(a).n++;
-    if (joc.avanseaza(a.minute || 0)) return;
-    if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
+    // Încercarea zilei, timpul și stamina se iau abia la sfârșitul mini-jocului sau al imaginii: un refresh la mijloc
+    // nu ia nimic (salvarea e cea de dinainte). Întoarce false dacă Vale a leșinat
+    const facut = () => {
+      if (a.maxPeZi) folosiriAzi(a).n++;
+      if (joc.avanseaza(a.minute || 0)) return false;
+      if (a.stamina) schimbaNevoie(joc.stare, 'stamina', -a.stamina);
+      return true;
+    };
     // Lemnele cu mini-jocul cercului (decis de autor): fiecare lovitură reușită aduce „nPeLovitura” lemne;
     // cu mini-jocurile oprite din Opțiuni, „n” (cât la o lovitură din două, cam)
     if (a.miniJoc && miniJocuriPornite()) {
       joc.salveaza();
       setTimeout(() => a.sunet && joc.sunet.efect(a.sunet), 150);
       return mini[a.miniJoc]({ imagine: a.imagine, titlu: a.titlu || a.nume, incercari: a.incercari }).then((lovituri) => {
+        if (!facut()) return;
         const n = lovituri * (a.nPeLovitura || 1);
         joc.dupaActiune('', [{ tip: 'obiect', id: a.obiect, n: n && joc.primeste(a.obiect, n) }]);
         if (!n && a.gandNimic) joc.gand(a.gandNimic);
@@ -221,6 +232,7 @@ export function creeazaActiuni(parinte, joc) {
     cuImagine(
       a,
       () => {
+        if (!facut()) return;
         joc.dupaActiune('', [{ tip: 'obiect', id: a.obiect, n: joc.primeste(a.obiect, a.n || 1) }]);
       },
       a.sunet,
@@ -307,17 +319,21 @@ export function creeazaActiuni(parinte, joc) {
     if (a.ora && !verifica({ ora: a.ora }, context(s))) return joc.gand(a.gandOra || t('Nu e momentul potrivit.'));
     if (a.stamina && prea_obosit()) return joc.gand(t('Sunt prea obosit. Trebuie să mă odihnesc întâi.'));
     if (a.maxPeZi && folosiriAzi(a).n >= a.maxPeZi) return joc.gand(a.mesajMaxPeZi || t('Destul pentru azi. Mâine din nou.'));
-    if (a.maxPeZi) folosiriAzi(a).n++;
-    if (joc.avanseaza(a.minute || 60)) return;
-    if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+    // Ca la lemne: încercarea zilei, ora și stamina se iau abia la sfârșit, ca un refresh la mijloc să nu le ia
+    const facut = () => {
+      if (a.maxPeZi) folosiriAzi(a).n++;
+      if (joc.avanseaza(a.minute || 60)) return false;
+      if (a.stamina) schimbaNevoie(s, 'stamina', -a.stamina);
+      return true;
+    };
     const buna = a.plante.find((p) => p.corecta).id;
     const primeste = (n) => joc.dupaActiune('', [{ tip: 'obiect', id: buna, n: n && joc.primeste(buna, n) }]);
     if (!miniJocuriPornite()) {
       // Cu mini-jocurile oprite, Vale culege singur ce-i trebuie: întâi florile cerute acum de o misiune (alifia
       // pentru Ember: păpădie, piciorul-cocoșului, mușețel), altfel planta bună, ca până acum
       const cerute = floriCerute(a, buna);
-      if (cerute.length) return cuImagine(a, () => joc.dupaActiune('', cerute.map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) }))), a.sunet);
-      return cuImagine(a, () => primeste(a.nFaraJoc ?? 2), a.sunet);
+      if (cerute.length) return cuImagine(a, () => facut() && joc.dupaActiune('', cerute.map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) }))), a.sunet);
+      return cuImagine(a, () => facut() && primeste(a.nFaraJoc ?? 2), a.sunet);
     }
     joc.salveaza();
     if (a.sunet) setTimeout(() => joc.sunet.efect(a.sunet), 150);
@@ -326,6 +342,7 @@ export function creeazaActiuni(parinte, joc) {
     // „intrebare” poate fi și o listă { conditii, text }: îndemnul potrivit misiunii de acum (florile pentru alifia
     // lui Ember, nu sunătoarea lui Elian)
     mini.culege({ ...a, intrebare: textPotrivit(a.intrebare, joc.stare) }).then(({ culese }) => {
+      if (!facut()) return;
       const numar = {};
       for (const id of culese) numar[id] = (numar[id] || 0) + (id === buna ? a.nPeCorecta || 1 : 1);
       joc.dupaActiune('', Object.entries(numar).map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) })));
