@@ -20978,7 +20978,7 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "gand": true,
-        "text": "E un spinar. Cât un vițel, cu blana lungă și încâlcită și un șir de țepi de os de-a lungul spinării. Bunicul zicea că pe vremea lui coborau iarna până la gardurile satului. Eu n-am văzut niciodată unul de aproape.",
+        "text": "E o ciută de rouă. Albă-argintie, zveltă, iar în loc de coarne are pe frunte două pene lungi de os, străvezii ca gheața. Bunicul zicea că noaptea blana lor lucește ca luna prin ceață. Eu n-am văzut niciodată una, nici măcar de departe.",
         "urmator": "z7b"
       },
       "z8": {
@@ -22026,8 +22026,8 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Pe la mijlocul dimineții, unchiul se oprește deodată, cu mâna ridicată. La marginea drumului zace ceva mare și cenușiu.",
-        "imagine": "events/drum_spinar.png",
+        "text": "Pe la mijlocul dimineții, unchiul se oprește deodată, cu mâna ridicată. La marginea drumului, pe frunzele ruginii, zace ceva alb.",
+        "imagine": "events/drum_ciuta.png",
         "efecte": {
           "panaLaOra": "10:00"
         },
@@ -22043,13 +22043,13 @@
       "z8b": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Vânătorii lor. Uită-te la sânge: vine dinspre copaci. N-au omorât spinarul aici. A fugit cu săgeata în el până a căzut.",
+        "text": "Vânătorii lor. Pe ciutele astea le vânează pentru blană. Uită-te la sânge: vine dinspre copaci. N-au doborât-o aici. A fugit cu săgeata în ea până a căzut.",
         "urmator": "z8c"
       },
       "z8c": {
         "vorbitor": "vale",
         "emotie": "speriat",
-        "text": "Și cine a tras în el...",
+        "text": "Și cine a tras în ea...",
         "urmator": "z8d"
       },
       "z8d": {
