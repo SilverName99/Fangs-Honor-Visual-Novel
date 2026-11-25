@@ -64,6 +64,26 @@ const migrari = {
     for (let r = n; r > 0; r -= 10) stive.push({ id: 'orz', n: Math.min(10, r) });
     return { ...s, poveste, povesteNumar, cufar: [...(s.cufar || []), ...stive], versiuneSalvare: 5 };
   },
+  // Vechea întâlnire cu Kaia (pornită din greșeală de o vânătoare pierdută) a lăsat tabăra deschisă și pe Kaia în carte
+  // înainte de întâlnirea adevărată; le scoatem, ca firul ei să pornească de la capăt. „kaia_intalnita” se pune doar la
+  // întâlnirea nouă, deci se schimbă doar salvările cu întâlnirea veche și fără cea nouă
+  5: (s) => {
+    const st = s.stari || {};
+    if (st.cunoscut_vanatoare !== 'da' || st.kaia_intalnita === 'da') return { ...s, versiuneSalvare: 6 };
+    const stari = { ...st };
+    delete stari.cunoscut_vanatoare;
+    const cunoscutLa = { ...(s.cunoscutLa || {}) };
+    delete cunoscutLa.vanatoare;
+    return {
+      ...s,
+      stari,
+      cunoscutLa,
+      cunoscuti: (s.cunoscuti || []).filter((id) => id !== 'vanatoare'),
+      deblocate: (s.deblocate || []).filter((x) => x !== 'padure/campsite'),
+      scena: s.scena === 'padure.campsite' ? 'padure' : s.scena,
+      versiuneSalvare: 6,
+    };
+  },
 };
 
 export function cheieSalvare(test) {

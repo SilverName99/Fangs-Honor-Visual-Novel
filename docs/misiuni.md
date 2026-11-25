@@ -585,7 +585,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ## Kaia (vânătoarea)
 
 ### ✅ Întâlnirea cu Kaia (nu e misiune)
-- **Pornește:** prima vânătoare câștigată deblochează întâlnirea. Din **ziua 4**, la următoarea vânătoare, în locul vânatului obișnuit:
+- **Pornește:** prima vânătoare câștigată deblochează întâlnirea (o vânătoare obișnuită pierdută nu pornește nimic, doar textul înfrângerii; tabăra rămâne ascunsă până după lupul negru, iar Kaia intră în carte după lupta alături de ea). Din **ziua 4**, la următoarea vânătoare, în locul vânatului obișnuit:
   - **prima imagine:** Vale o vede pe Kaia, călare pe tigru, față în față cu 3 lupi care o înconjoară; încă nu se luptă, se pândesc (decis de autor). Vale se gândește ce să facă.
     - **„Nu e lupta mea. Plec.”**: nu se întâmplă nimic. Vale trebuie să mai vâneze o dată singur, iar la vânătoarea de după o poate întâlni din nou.
     - **„O ajut!”**: urmează a doua imagine.

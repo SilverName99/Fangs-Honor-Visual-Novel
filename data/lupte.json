@@ -44,6 +44,23 @@
       "armura": 8,
       "sunet": "lup"
     },
+    "lup_mare": {
+      "_nota": "Liderul haitei la vânătoarea obișnuită (decis de autor: lupul negru, lup_alfa, e doar al misiunii Kaiei). Pozele lupului, puțin mai mari, nu negre. TODO echilibru.",
+      "nume": "Lupul cel mare",
+      "nume_en": "The Great Wolf",
+      "poze": "lup",
+      "marime": 115,
+      "viata": 45,
+      "staminaMax": 112,
+      "atac": {
+        "min": 5,
+        "max": 9,
+        "tip": "apropiat",
+        "sunet": "lupta_muscatura"
+      },
+      "armura": 5,
+      "sunet": "lup"
+    },
     "orc_taverna": {
       "nume": "Orc",
       "nume_en": "Orc",
@@ -266,10 +283,7 @@
       },
       "infrangere": {
         "text": "Lupii te-au mușcat zdravăn și au fugit în pădure. Te întorci șchiopătând.",
-        "text_en": "The wolves bit you badly and ran off into the trees. You limp back.",
-        "efecte": {
-          "eveniment": "intalnire_vanatoare"
-        }
+        "text_en": "The wolves bit you badly and ran off into the trees. You limp back."
       }
     },
     "vanatoare_lupi_3": {
@@ -313,10 +327,7 @@
       },
       "infrangere": {
         "text": "Haita te-a încolțit. Ai scăpat cu greu, cățărându-te pe un trunchi căzut.",
-        "text_en": "The pack cornered you. You barely got away by scrambling onto a fallen trunk.",
-        "efecte": {
-          "eveniment": "intalnire_vanatoare"
-        }
+        "text_en": "The pack cornered you. You barely got away by scrambling onto a fallen trunk."
       }
     },
     "vanatoare_lupi_4": {
@@ -326,7 +337,7 @@
       "fuga": true,
       "inamici": [
         {
-          "id": "lup_alfa",
+          "id": "lup_mare",
           "linie": 1,
           "rand": "fata"
         },
@@ -347,8 +358,8 @@
         }
       ],
       "victorie": {
-        "text": "Ai doborât haita și pe lupul negru care o conducea.",
-        "text_en": "You brought down the pack, and the black wolf that led it.",
+        "text": "Ai doborât haita și pe lupul cel mare care o conducea.",
+        "text_en": "You brought down the pack, and the great wolf that led it.",
         "efecte": {
           "obiect": [
             "carne",
@@ -366,11 +377,8 @@
         }
       },
       "infrangere": {
-        "text": "Lupul negru te-a doborât, iar haita s-a strâns în jurul tău. Doar norocul te-a scos de acolo.",
-        "text_en": "The black wolf brought you down, and the pack closed in around you. Only luck got you out of there.",
-        "efecte": {
-          "eveniment": "intalnire_vanatoare"
-        }
+        "text": "Lupul cel mare te-a doborât, iar haita s-a strâns în jurul tău. Doar norocul te-a scos de acolo.",
+        "text_en": "The great wolf brought you down, and the pack closed in around you. Only luck got you out of there."
       }
     },
     "vanatoare_mistret": {
@@ -401,10 +409,7 @@
       },
       "infrangere": {
         "text": "Mistrețul te-a trântit cu colții și a dispărut în desiș.",
-        "text_en": "The boar knocked you down with its tusks and vanished into the thicket.",
-        "efecte": {
-          "eveniment": "intalnire_vanatoare"
-        }
+        "text_en": "The boar knocked you down with its tusks and vanished into the thicket."
       }
     },
     "scandal_taverna": {

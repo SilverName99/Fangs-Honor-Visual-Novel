@@ -1129,7 +1129,7 @@
                 }
               }
             },
-            "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru cu lupul negru, 25% mistrețul.",
+            "_nota": "Șansele (TODO echilibru) se împart între lupte după „sansa”: 35% doi lupi, 25% trei, 15% patru, conduși de lupul cel mare (decis de autor: lupul negru e doar al misiunii Kaiei), 25% mistrețul.",
             "intalnire": {
               "_nota": "Decis de autor: Kaia se întâlnește abia din ziua 4, după o vânătoare câștigată; dacă Vale o lasă singură, trebuie să mai vâneze o dată înainte să o mai găsească.",
               "eveniment": "kaia_intalnire",

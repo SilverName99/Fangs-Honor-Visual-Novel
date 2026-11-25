@@ -2041,54 +2041,6 @@
       }
     ]
   },
-  "vanatoare_intalnire": {
-    "partener": "vanatoare",
-    "start": "a",
-    "noduri": {
-      "a": {
-        "vorbitor": "vanatoare",
-        "emotie": "normal",
-        "text": "Liniște... Nu te întoarce brusc. Nu-i place când oamenii se mișcă repede.",
-        "urmator": "b"
-      },
-      "b": {
-        "vorbitor": "vale",
-        "emotie": "speriat",
-        "text": "Kaia? Kaia de la hotar? Credeam că n-o să te mai văd niciodată.",
-        "urmator": "c"
-      },
-      "c": {
-        "vorbitor": "vanatoare",
-        "emotie": "normal",
-        "text": "Am văzut fum deasupra satului acum câteva luni. Am venit cât de repede am putut, dar drumurile sunt pline de orci. Ce s-a întâmplat, Vale?",
-        "urmator": "d"
-      },
-      "d": {
-        "vorbitor": "vale",
-        "emotie": "trist",
-        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
-        "urmator": "e"
-      },
-      "e": {
-        "vorbitor": "vanatoare",
-        "emotie": "trist",
-        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
-        "urmator": "f"
-      },
-      "f": {
-        "vorbitor": "vanatoare",
-        "emotie": "normal",
-        "text": "Vino cu mine. Am un loc în pădure unde orcii nu ajung. Acolo putem vorbi în liniște.",
-        "efecte": {
-          "deblocheaza": "padure/campsite",
-          "stare": {
-            "cunoscut_vanatoare": "da"
-          },
-          "mergi": "padure.campsite"
-        }
-      }
-    }
-  },
   "vanatoare": {
     "partener": "vanatoare",
     "start": [

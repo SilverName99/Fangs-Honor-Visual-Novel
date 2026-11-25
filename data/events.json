@@ -774,15 +774,6 @@
       "dialog": "taverna_scandal_infrangere"
     },
     {
-      "id": "intalnire_vanatoare",
-      "manual": true,
-      "nume": "Întâlnirea cu vânătoarea",
-      "nume_en": "Meeting the Huntress",
-      "repetare": "o_data",
-      "dialog": "vanatoare_intalnire",
-      "_nota": "Nefolosit de când întâlnirea cu Kaia s-a schimbat (kaia_intalnire); rămâne ca ciornă."
-    },
-    {
       "id": "acoperis_reparat",
       "manual": true,
       "grup": "Misiunea acoperișului",
