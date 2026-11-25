@@ -696,6 +696,12 @@
         ],
         "castigUltim_en": [
           "Take your coins. You’ve earned them. That’s enough for today; come back tomorrow so I can have my revenge."
+        ],
+        "castigTarziu": [
+          "Ia-ți monedele, le-ai meritat. Revanșa mi-o iau mâine; acum se face târziu."
+        ],
+        "castigTarziu_en": [
+          "Take your coins. You’ve earned them. I’ll have my revenge tomorrow; it’s getting late now."
         ]
       }
     }

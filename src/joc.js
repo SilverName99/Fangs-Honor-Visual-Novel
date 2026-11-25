@@ -1057,7 +1057,10 @@ const joc = {
     if (avanseaza(minute)) return;
     salveaza();
     afiseaza();
-    const lista = [].concat(date.config.jocTafl?.replici?.dupa?.[cheieReplica] || date.config.jocTafl?.replici?.dupa?.[rezultat] || []);
+    // După 21:00 bătrânul nu mai începe o partidă (startul „tarziu”), deci nu cere o revanșă pe care s-o refuze la
+    // clicul următor; ora e cea de după partidă
+    const cheie = cheieReplica === 'castig' && context(stare).minuteZi >= inMinute('21:00') ? 'castigTarziu' : cheieReplica;
+    const lista = [].concat(date.config.jocTafl?.replici?.dupa?.[cheie] || date.config.jocTafl?.replici?.dupa?.[rezultat] || []);
     if (lista.length) joc.replica('batran', rezultat === 'castig' ? 'normal' : 'zambet', lista[Math.floor(Math.random() * lista.length)]);
   },
   dupaLupta(efecte, minute) {
