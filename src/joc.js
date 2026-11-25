@@ -158,6 +158,15 @@ function anunt(text) {
   ui.append(fundal);
 }
 
+// Anunțurile care vin din trecerea timpului (taxa ratată la miezul nopții, blănurile neaduse) așteaptă să se termine
+// ce e pe ecran: somnul, visul (și pasul dintre imaginea somnului și vis), o discuție, o luptă; altfel stăteau peste
+// vis și îi opreau clicurile
+let visDeAratat = false;
+function anuntLaLiber(text) {
+  const incearca = () => (dialog.activ() || secventa.activa() || lupta.activa() || seDescarcaFilmul || visDeAratat ? setTimeout(incearca, 300) : anunt(text));
+  setTimeout(incearca, 0);
+}
+
 // Întrebarea „ești sigur?” în stilul jocului, pe panoul mic, nu fereastra browserului (decis de autor: aceea
 // scoate jocul din ecranul complet și nu se potrivește cu restul). Întoarce o promisiune: da / nu
 function intreaba(text, da = t('Da'), nu = t('Nu')) {
@@ -316,7 +325,7 @@ function verificaTaxa() {
   while (ziua(stare) > t.zi) {
     if (!t.platita) {
       t.ratari++;
-      anunt(cfg.taxa.textRatare);
+      anuntLaLiber(cfg.taxa.textRatare);
     }
     t.zi += cfg.taxa.intervalZile;
     t.platita = false;
@@ -326,21 +335,23 @@ function verificaTaxa() {
   if (d && ziua(stare) > d.panaLaZiua) {
     stare.datorieBlanuri = null;
     t.dubla = true;
-    anunt(cfg.pedepse.tipuri.blanuri.textRatat);
+    anuntLaLiber(cfg.pedepse.tipuri.blanuri.textRatat);
   }
 }
 
 function platesteTaxa() {
   const taxa = stare.taxa;
+  // Suma de dinainte de plată: după plată taxa nu mai e dublă, iar mesajul arăta suma simplă
+  const suma = sumaTaxa();
   if (taxa.platita) return mesaj(t('Taxa e deja plătită pentru săptămâna asta.'));
-  if (stare.bani < sumaTaxa()) return mesaj(t('Îți trebuie {n} monede.', { n: sumaTaxa() }));
-  stare.bani -= sumaTaxa();
+  if (stare.bani < suma) return mesaj(t('Îți trebuie {n} monede.', { n: suma }));
+  stare.bani -= suma;
   sunet.efect('monede');
   taxa.platita = true;
   taxa.dubla = false;
   salveaza();
   actualizeazaHud();
-  mesaj(t('Ai plătit taxa ({n} monede).', { n: sumaTaxa() }));
+  mesaj(t('Ai plătit taxa ({n} monede).', { n: suma }));
 }
 
 // „Drumul trezirii” (decis de autor): cât lipsește Vale șase zile, taxa săptămânii o plătește mama, cu banii lăsați de
@@ -364,33 +375,14 @@ function verificaColectorul() {
   if (t.platita || t.colectorZi === ctx.zi || ctx.zi !== t.zi || !acasa) return false;
   if (ctx.minuteZi < inMinute(cfg.taxa.oraColector)) return false;
   t.colectorZi = ctx.zi;
-  dialogTaxa(cfg.taxa.textColector);
+  dialogTaxa(cfg.taxa.textColector, 'acasa');
   return true;
 }
 
 // Discuția cu colectorul: acasă (în ziua taxei) și la poartă (când îl apeși). Suma se scrie din cod,
-// pentru că poate crește (de exemplu după bătaia din tavernă)
-function dialogTaxa(text) {
-  // Dacă orcii așteaptă blănurile și Vale le are, colectorul le ia întâi
-  const d = stare.datorieBlanuri;
-  if (d && inventar.numar(stare.inventar, d.obiect) >= d.cate) {
-    return dialog.porneste({
-      partener: 'orc_colector',
-      start: 'b',
-      noduri: {
-        b: {
-          vorbitor: 'orc_colector',
-          emotie: 'normal',
-          text: cfg.pedepse.tipuri.blanuri.textColector,
-          alegeri: [
-            { text: t('Predă {n} {obiecte}', { n: d.cate, obiecte: cfg.pedepse.tipuri.blanuri.numePlural }), efecte: { predaBlanuri: true }, spre: 'gata' },
-            { text: t('Nu acum.'), spre: null },
-          ],
-        },
-        gata: { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.pedepse.tipuri.blanuri.textPredat },
-      },
-    });
-  }
+// pentru că poate crește (de exemplu după bătaia din tavernă). „unde” (acasa / poarta) se ține minte la reluare:
+// după un refresh, discuția taxei se redeschide de la capăt, cu textul locului
+function dialogTaxa(text, unde = 'poarta') {
   // Ce mai poate face Vale la colector, scris în date (dialogul „orc_colector”: opțiunile, cu condiții, și nodurile
   // lor): de exemplu să-i vândă capcanele desfăcute cu Kaia (decis de autor). Lângă plata taxei, nu în locul ei
   const extra = dialoguri.orc_colector;
@@ -403,19 +395,29 @@ function dialogTaxa(text) {
     ...misiuni.map((x) => x.alegere),
     ...(extra?.optiuni || []).filter((o) => verifica(o.conditii, ctx)).map(({ text, spre, efecte }) => ({ text, spre, efecte })),
   ];
-  const nod = stare.taxa.platita
-    ? { vorbitor: 'orc_colector', emotie: 'rade', text: cfg.taxa.textColectorPlatit, ...(optiuni.length ? { alegeri: [...optiuni, { text: t('Plec.'), spre: null }] } : {}) }
-    : {
-        vorbitor: 'orc_colector',
-        emotie: 'normal',
-        text,
-        alegeri: [
-          { text: t('Plătește ({n} monede)', { n: sumaTaxa() }), conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
-          ...optiuni,
-          { text: t('Nu am bani acum.'), spre: null },
-        ],
-      };
-  dialog.porneste({ partener: 'orc_colector', start: 'c', noduri: { ...noduriMisiuni, ...(extra?.noduri || {}), c: nod } });
+  const d = stare.datorieBlanuri;
+  const tb = cfg.pedepse.tipuri.blanuri;
+  // Blănurile datorate se predau în aceeași vizită, lângă taxă, nu în locul ei (acasă colectorul pleca fără taxă și
+  // nu mai venea în ziua aceea)
+  const blanuri = d && inventar.numar(stare.inventar, d.obiect) >= d.cate ? [{ text: t('Predă {n} {obiecte}', { n: d.cate, obiecte: tb.numePlural }), efecte: { predaBlanuri: true }, spre: 'taxa_blanuri' }] : [];
+  const platita = stare.taxa.platita;
+  const plata = platita
+    ? [...optiuni, { text: t('Plec.'), spre: null }]
+    : [
+        { text: t('Plătește ({n} monede)', { n: sumaTaxa() }), conditii: { bani: { min: sumaTaxa() } }, efecte: { plataTaxa: true }, spre: null },
+        ...optiuni,
+        { text: t('Nu am bani acum.'), spre: null },
+      ];
+  const ox = (emotie, txt, alegeri) => ({ vorbitor: 'orc_colector', emotie, text: txt, ...(alegeri ? { alegeri } : {}) });
+  // Nodurile din cod au nume unice („taxa_”): altfel reluarea le confunda cu nodurile altor dialoguri
+  const noduri = {
+    taxa_c: platita
+      ? ox('rade', blanuri.length ? tb.textColector : cfg.taxa.textColectorPlatit, blanuri.length || optiuni.length ? [...blanuri, ...plata] : null)
+      : ox('normal', text, [...blanuri, ...plata]),
+    taxa_blanuri: { ...ox('rade', tb.textPredat), ...(platita && !optiuni.length ? {} : { urmator: 'taxa_dupa' }) },
+    taxa_dupa: ox('normal', platita ? cfg.taxa.textColectorPlatit : cfg.taxa.textDupaBlanuri, plata),
+  };
+  dialog.porneste({ partener: 'orc_colector', start: 'taxa_c', _taxa: unde, noduri: { ...noduriMisiuni, ...(extra?.noduri || {}), ...noduri } });
 }
 
 // ---------- pedepsele orcilor ----------
@@ -644,6 +646,8 @@ function reiaDupaReincarcare() {
   if (r.miniJoc) return miniJocEveniment(r.miniJoc);
   if (r.furisare) return furisare(r.furisare);
   if (r.antrenament) return antrenament(r.antrenament);
+  // Acasă colectorul „bate din nou” (colectorZi e deja pus, deci altfel nu mai venea în ziua aceea)
+  if (r.taxa) return dialogTaxa(r.taxa === 'acasa' ? cfg.taxa.textColector : cfg.taxa.textColectorPoarta, r.taxa);
   if (r.dialog && dialoguri[r.dialog]?.noduri?.[r.nod]) return cuFilmele(r.dialog, () => dialog.porneste(dialoguri[r.dialog], { delaNod: r.nod, imagine: r.imagine }), r.nod);
   // Replica unei misiuni a altcuiva, din meniul personajului (pașii „Steagului satului” la Roderick stau în dialogul
   // Miriamei): discuția continuă tot cu el, cu replicile misiunii adăugate, și își ține minte mai departe locul
@@ -862,7 +866,7 @@ function vorbesteCu(id, idDialog) {
   const oferit = evenimentOferit(joc, id);
   if (oferit) return pornesteEveniment(oferit.id);
   // Colectorul de la poartă nu are un dialog scris: cere taxa
-  if (p?.dialogTaxa) return dialogTaxa(cfg.taxa.textColectorPoarta);
+  if (p?.dialogTaxa) return dialogTaxa(cfg.taxa.textColectorPoarta, 'poarta');
   deCunoscut = [...new Set([apasat, id])];
   // Un personaj poate avea alt dialog în funcție de locul unde îl găsești (Miriam în piață)
   const d = dialoguri[p?.dialoguriPeLoc?.[context(stare).loc] ?? p?.dialog];
@@ -965,7 +969,13 @@ const joc = {
   // cere mai puțin („oreNoapte” la eveniment): după convoiul Kaiei, Vale se culcă abia spre dimineață
   dupaSomn(minuteNoapte = 0) {
     const vis = visulDupaSomn(minuteNoapte);
-    if (vis) setTimeout(() => pornesteEveniment(vis.id), 0);
+    if (!vis) return;
+    // Între imaginea somnului și vis e un pas în care nu e nimic pe ecran: anunțurile așteaptă și atunci
+    visDeAratat = true;
+    setTimeout(() => {
+      visDeAratat = false;
+      pornesteEveniment(vis.id);
+    }, 0);
   },
   // Cât se vede imaginea somnului, filmulețul visului care urmează se descarcă deja (decis de autor: visul nu are
   // voie să se oprească la jumătate); de obicei e gata până se trezește Vale
@@ -1103,7 +1113,17 @@ const dialog = creeazaDialog(ui, {
   // Orcii au rama roșie (ca inamicii din luptă), ceilalți pe cea aurie
   tabaraVorbitor: (id) => (/orc|sobolan/.test(id) ? 'inamic' : 'aliat'),
   laNod: (d, nod, imagine) => {
-    stare.reluare = iduriDialog.has(d) ? { dialog: iduriDialog.get(d), nod, imagine } : d._eveniment ? { eveniment: d._eveniment, text: true } : null;
+    // Discuția taxei (făcută din cod): pe nodurile ei se redeschide de la capăt; pe un nod din date (inelul mamei,
+    // capcanele vândute) continuă din dialogul „orc_colector”
+    stare.reluare = d._taxa
+      ? String(nod).startsWith('taxa_')
+        ? { taxa: d._taxa }
+        : { dialog: 'orc_colector', nod, imagine }
+      : iduriDialog.has(d)
+        ? { dialog: iduriDialog.get(d), nod, imagine }
+        : d._eveniment
+          ? { eveniment: d._eveniment, text: true }
+          : null;
     salveaza();
   },
   // Visul din mijlocul unui dialog lung („filmLa”): discuția așteaptă filmulețul doar dacă nu s-a descărcat încă

@@ -252,8 +252,10 @@
     "textColectorPoarta_en": "Well, look who came to the gate all on his own. Did you bring the tax, or did you just come to stare at us?",
     "textColectorPlatit": "Ai plătit săptămâna asta. Acum cară-te, până nu găsesc un motiv să-ți mai cer o dată.",
     "textColectorPlatit_en": "You’ve paid for this week. Now get lost, before I find a reason to make you pay again.",
-    "textRatare": "N-ai plătit taxa. Colectorul pleacă mormăind ceva despre „data viitoare”. O să se întoarcă.",
-    "textRatare_en": "You didn’t pay the tax. The collector leaves, muttering something about “next time.” He’ll be back."
+    "textDupaBlanuri": "Și acum, taxa. Până la ultima monedă.",
+    "textDupaBlanuri_en": "And now, the tax. Down to the last coin.",
+    "textRatare": "N-ai plătit taxa. Colectorul a plecat mormăind ceva despre „data viitoare”. O să se întoarcă.",
+    "textRatare_en": "You didn’t pay the tax. The collector left, muttering something about “next time.” He’ll be back."
   },
   "lupta": {
     "_nota": "viteza: cât de repede se umple bara (staminaMax × viteza pe secundă). Cifre de pornire (TODO).",
