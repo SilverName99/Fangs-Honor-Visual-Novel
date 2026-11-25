@@ -20937,13 +20937,88 @@
         "text": "Unchiul se culcă cu spatele la un fag, cu sabia lângă el. Eu stau mult cu ochii la stele. Râul vorbește întruna, ca un om care nu poate să tacă. Mă gândesc la tata, desculț, alergând după o căruță.",
         "gand": true,
         "imagine": "events/drum_somn_1.png",
+        "urmator": "z1"
+      },
+      "z1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mă trezesc în ceață. Râul a vorbit toată noaptea și încă n-a obosit. Unchiul e deja în picioare, cu fața udă de la apă, și ațâță focul cu un băț.",
+        "gand": true,
+        "imagine": "events/drum_zori_rau.png",
+        "efecte": {
+          "panaLaOra": "06:30",
+          "seteazaNevoi": {
+            "stamina": 85
+          }
+        },
+        "urmator": "z2"
+      },
+      "z2": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Ai dormit ca un bolovan. Am ținut eu de strajă. Obișnuință veche: la Strajă, cine adoarme pe zid nu se mai trezește.",
+        "urmator": "z3"
+      },
+      "z3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și tu? Ai dormit măcar un ceas?",
+        "urmator": "z4"
+      },
+      "z4": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Cu un ochi. Ajunge. Mănâncă ceva, umple sticlele și pornim. Azi urcăm.",
+        "urmator": "z5"
+      },
+      "z5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pe la mijlocul dimineții, poteca începe să urce spre dealuri. Și deodată unchiul se oprește, cu mâna ridicată.",
+        "gand": true,
+        "imagine": "events/drum_urme.png",
+        "efecte": {
+          "panaLaOra": "10:00"
+        },
+        "urmator": "z6"
+      },
+      "z6": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Jos. Acum.",
+        "urmator": "z7"
+      },
+      "z7": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "În noroiul potecii sunt urme de cizme mari, cu ținte în talpă. Proaspete. Iar mai încolo, un lup mort, cu o săgeată neagră înfiptă în coastă.",
+        "gand": true,
+        "urmator": "z8"
+      },
+      "z8": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vânători de-ai orcilor. Doi, poate trei. Au trecut în zori, spre răsărit. Spre stepă.",
+        "urmator": "z9"
+      },
+      "z9": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Stăm în tufe până mi se înțepenesc genunchii. Unchiul ascultă pădurea cum ascultă alții o rugăciune. Nu vine nimeni.",
+        "gand": true,
+        "urmator": "z10"
+      },
+      "z10": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Pe aici n-au ce căuta. Decât dacă duc ceva cuiva. De-acum, fără vorbă. Și calci unde calc eu.",
         "urmator": "p30"
       },
       "p30": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "A doua zi, după-amiaza, drumul vechi intră pe sub o poartă de piatră. Jumătate s-a surpat, iar mușchiul a acoperit restul.",
+        "text": "După-amiaza, drumul vechi intră pe sub o poartă de piatră. Jumătate s-a surpat, iar mușchiul a acoperit restul.",
         "imagine": "events/drum_poarta.png",
         "efecte": {
           "panaLaOra": "14:00",
@@ -21034,7 +21109,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Seara ne oprim între pietrele unei case de mult surpate. Nimeni nu mai știe cine a locuit aici. Poate nici nu mai contează.",
+        "text": "Seara ne facem focul chiar lângă poartă, între zidurile surpate ale unei case vechi. Cine a ridicat aici piatră peste piatră, atât de departe de orice sat? Nimeni nu mai știe.",
         "imagine": "events/drum_foc_2.png",
         "efecte": {
           "panaLaOra": "20:00",
@@ -21047,97 +21122,231 @@
             "sete": 80
           }
         },
-        "urmator": "p43"
+        "urmator": "tt1"
       },
-      "p43": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Vrei încă una? Asta e mai frumoasă. Și n-o crede nimeni.",
-        "urmator": "p44"
-      },
-      "p44": {
+      "tt1": {
         "vorbitor": "vale",
-        "emotie": "zambet",
-        "text": "Spune.",
-        "urmator": "p45"
+        "emotie": "normal",
+        "text": "Unchiule... aseară mi-ai povestit cum ai ajuns la Strajă. Dar ce-ai văzut acolo, în douăzeci de ierni?",
+        "urmator": "tt2"
       },
-      "p45": {
+      "tt2": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Ne trimiseseră la apus, la hotarul elfilor, să păzim un sat de tăietori de lemne. Elfii nu voiau tăietori acolo. Și elfii nu trimit vorbă înainte. Trimit săgeți.",
-        "imagine": "events/drum_cerb_1.png",
+        "text": "Multe. Cele mai multe, nimic. Vânt, ploaie și stepa, roșie până unde se termină pământul.",
+        "urmator": "tt3"
+      },
+      "tt3": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dar a fost o dimineață... N-am povestit-o nimănui. Nici lui Edwin. Poate pentru că nici acum nu știu ce-am văzut.",
+        "urmator": "tt4"
+      },
+      "tt4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiul pune o creangă pe foc și așteaptă să se aprindă. Abia apoi începe.",
+        "gand": true,
+        "urmator": "tt5"
+      },
+      "tt5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Eram de pază la poarta garnizoanei, cu prietenul meu, cel cu hârtiile. Se lumina de ziuă. Și din ceața de pe drum a ieșit un cal. Singur, cu frâul târându-se prin noroi.",
+        "imagine": "events/drum_turn_1.png",
         "amintire": true,
         "grupGalerie": "Roderick: drumul trezirii (amintirile)",
-        "urmator": "p46"
+        "urmator": "tt6"
       },
-      "p46": {
+      "tt6": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Într-o dimineață, ne-au prins la marginea pădurii lor. Copaci cât turnurile, și noi, zece oameni cu scuturile ridicate. Săgețile cântau în ele ca ploaia pe acoperiș.",
+        "text": "L-am recunoscut după pata albă din frunte. Era de la garnizoana de pe culmea vecină, la o jumătate de ceas de mers călare. Tremura tot. Și nu voia să se uite înapoi, pe drumul pe care venise.",
         "amintire": true,
-        "urmator": "p47"
+        "urmator": "tt7"
       },
-      "p47": {
+      "tt7": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Am crezut că acolo rămânem. Toți.",
-        "amintire": true,
-        "urmator": "p48"
-      },
-      "p48": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Și atunci a ieșit dintre copaci. Un cerb alb. Mare cât un cal de război, cu coarnele ca niște ramuri. Iar pe ramuri avea frunze. Frunze de argint.",
-        "imagine": "events/drum_cerb_2.png",
+        "text": "L-am trezit pe sergent. Un om bătrân, care văzuse tot ce se putea vedea la hotare. S-a uitat la cal și n-a mai zis nimic. Doar și-a pus coiful și și-a luat sabia.",
+        "imagine": "events/drum_turn_2.png",
         "amintire": true,
         "grupGalerie": "Roderick: drumul trezirii (amintirile)",
-        "urmator": "p49"
+        "urmator": "tt8"
       },
-      "p49": {
+      "tt8": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "S-a oprit între noi și pădure. Nu fugea. Se uita la noi. Și săgețile s-au oprit. Toate, deodată.",
+        "text": "Eram vreo cincisprezece acolo. Ceilalți au rămas pe ziduri, cu ochii pe drum. Am plecat noi trei.",
         "amintire": true,
-        "urmator": "p50"
+        "urmator": "tt9"
       },
-      "p50": {
+      "tt9": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Ne-am retras pas cu pas, cu fața la el. A stat acolo până n-am mai văzut pădurea. Nimeni n-a mai tras o săgeată.",
+        "text": "Am mers pe drumul de creastă, în pas, fără o vorbă. Era o dimineață liniștită. Prea liniștită. Nicio pasăre. Nici vântul de pe stepă nu mai bătea.",
+        "imagine": "events/drum_turn_3.png",
         "amintire": true,
-        "urmator": "p51"
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "tt10"
       },
-      "p51": {
+      "tt10": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Când am povestit la cazarmă, au râs de noi o lună întreagă. Dar noi zece n-am râs. Pădurea are ochi, băiete. Și uneori, ochii ăia te cruță.",
+        "text": "Poarta garnizoanei era deschisă. Și la poartă, cei doi de pază. Stăteau rezemați de stâlpi, cu sulițele în mână. Cu ochii deschiși. Morți.",
+        "imagine": "events/drum_turn_4.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "tt11"
+      },
+      "tt11": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Cum... morți?",
+        "amintire": true,
+        "urmator": "tt12"
+      },
+      "tt12": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Fără nicio rană, băiete. Nici sânge, nici o zgârietură. Și mirosul... Nu era mirosul morții, pe ăla îl știam. Era pucioasă și fier. Ca o fierărie în care a ars ceva ce nu trebuia să ardă.",
+        "amintire": true,
+        "urmator": "tt13"
+      },
+      "tt13": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Sergentul a zis că rămâne lângă ei, să se uite mai bine. Mâinile îi tremurau, dar vocea nu. Pe noi doi ne-a trimis înăuntru.",
+        "imagine": "events/drum_turn_5.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "tt14"
+      },
+      "tt14": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am intrat în curte cu săbiile scoase, deși nu știam în cine să dăm.",
+        "imagine": "events/drum_turn_6.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "tt15"
+      },
+      "tt15": {
+        "vorbitor": "soldat",
+        "emotie": "speriat",
+        "text": "Și am văzut.",
+        "imagine": "events/drum_turn_7.png",
+        "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "tt16"
+      },
+      "tt16": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Unchiul tace. Focul trosnește, iar eu îmi dau seama că strâng pumnii.",
+        "gand": true,
         "trezire": true,
-        "imagine": "events/drum_foc_2.png",
-        "urmator": "p52"
+        "imagine": "events/drum_foc_2_noapte.png",
+        "efecte": {
+          "panaLaOra": "22:30"
+        },
+        "urmator": "tt17"
       },
-      "p52": {
+      "tt17": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "De ce crezi că v-a cruțat?",
-        "urmator": "p53"
+        "text": "Ce ați văzut, unchiule?",
+        "urmator": "tt18"
       },
-      "p53": {
+      "tt18": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Nu știu. Poate n-a vrut sânge pe iarba lui. Poate i-a fost milă de zece proști departe de casă.",
-        "urmator": "p54"
+        "text": "Toți erau acolo. Paisprezece oameni, fiecare la locul lui. Unul la masă, cu lingura la gură. Unul pe scară, cu o găleată de apă. Unul în grajd, cu peria în mână, lângă calul lui. Și caii, morți și ei, în picioare. Toți cu ochii deschiși.",
+        "urmator": "tt19"
       },
-      "p54": {
+      "tt19": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Și toți se uitau în aceeași parte. Spre răsărit. Spre stepă. Ca și cum ar fi venit ceva de acolo și i-ar fi oprit pe toți deodată din ce făceau.",
+        "urmator": "tt20"
+      },
+      "tt20": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am stat acolo trei zile, până au venit alții de la garnizoana mare. Trei zile, și nu s-au atins de ei nici ciorile, nici muștele. Nu putrezeau. Pielea li se făcuse doar ca ceara.",
+        "urmator": "tt21"
+      },
+      "tt21": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Eu am crezut mereu că a fost pentru Edwin. Rămăsese acasă, cu tine mic. Zicea că se roagă pentru mine în fiecare seară. Fratele meu se ruga cât pentru doi.",
-        "urmator": "p55"
+        "text": "Până la urmă i-am ars, cu garnizoana cu tot. Așa a poruncit căpitanul. Și fumul ăla mirosea tot a pucioasă și a fier.",
+        "urmator": "tt22"
       },
-      "p55": {
+      "tt22": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "N-a aflat nimeni ce s-a întâmplat. Au zis că a fost o boală din stepă. Dar boala nu oprește un om cu lingura la gură.",
+        "urmator": "tt23"
+      },
+      "tt23": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Peste un an a început războiul.",
+        "urmator": "tt24"
+      },
+      "tt24": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "kaia_soim": "terminata"
+              }
+            },
+            "text": "Mă trec fiorii. Scrisoarea Kaiei... animale moarte, fără nicio rană, care nu putrezesc. Departe, în pădurile Străjerilor. Același lucru. Și se apropie."
+          },
+          "Mă trec fiorii, deși focul arde chiar lângă mine."
+        ],
+        "gand": true,
+        "urmator": "tt25"
+      },
+      "tt25": {
         "vorbitor": "vale",
         "emotie": "normal",
+        "text": "Și n-ai mai văzut niciodată așa ceva?",
+        "urmator": "tt26"
+      },
+      "tt26": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Niciodată. Și mă rog în fiecare zi să nu mai văd.",
+        "urmator": "tt27"
+      },
+      "tt27": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Culcă-te, băiete. Și la noapte stau eu de strajă.",
+        "imagine": "events/drum_somn_2.png",
+        "urmator": "tt28"
+      },
+      "tt28": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și aseară ai stat.",
+        "urmator": "tt29"
+      },
+      "tt29": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Și mâine o să stau. Pentru unele lucruri nu-ți trebuie somn. Îți trebuie doar să știi că cel de lângă tine doarme liniștit.",
+        "urmator": "tt30"
+      },
+      "tt30": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Adorm cu spatele la zidul vechi, cu fața spre foc. Ultimul lucru pe care îl văd e unchiul, cu sabia pe genunchi, uitându-se spre răsărit.",
         "gand": true,
-        "text": "Unchiul zâmbește în foc. Tata se ruga pentru el în fiecare seară. Acum el se roagă pentru tata, în fiecare zi.",
         "urmator": "p56"
       },
       "p56": {
