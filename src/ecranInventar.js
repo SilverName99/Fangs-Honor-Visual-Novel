@@ -421,17 +421,20 @@ export function creeazaEcranInventar(parinte, joc) {
         return;
       }
       c.append(capFoaie(t('Rucsac'), inv.ocupate(s.inventar) + 1, inv.capacitateRucsac()));
-      if (optiuni.deLuat) {
-        const { id, n } = optiuni.deLuat;
+      // Ce n-a încăput (lista e chiar „deLuat” din salvare): câte un rând pe obiect, fiecare cu „Ia-l” și „Lasă-l”;
+      // ce rămâne nehotărât revine în panoul „N-ai loc” la închidere
+      const deLuat = optiuni.deLuat || [];
+      for (const x of [...deLuat]) {
+        const scoate = () => deLuat.splice(deLuat.indexOf(x), 1);
         const b = div('de-luat');
-        b.append(div('', n > 1 ? t('N-ai loc pentru: {obiect} ×{n}. Aruncă sau mută ceva, apoi ia-l.', { obiect: inv.def(id).nume, n }) : t('N-ai loc pentru: {obiect}. Aruncă sau mută ceva, apoi ia-l.', { obiect: inv.def(id).nume })));
+        b.append(div('', x.n > 1 ? t('N-ai loc pentru: {obiect} ×{n}. Aruncă sau mută ceva, apoi ia-l.', { obiect: inv.def(x.id).nume, n: x.n }) : t('N-ai loc pentru: {obiect}. Aruncă sau mută ceva, apoi ia-l.', { obiect: inv.def(x.id).nume })));
         const ia = buton(t('Ia-l'), () => {
-          const rest = inv.adauga(id, n);
-          optiuni.deLuat = rest ? { id, n: rest } : null;
-          ruleaza(rest ? t('Tot nu e loc.') : null);
+          x.n = inv.adauga(x.id, x.n);
+          if (!x.n) scoate();
+          ruleaza(x.n ? t('Tot nu e loc.') : null);
         }, 'buton-mic-meniu');
-        ia.disabled = !inv.incape(id, 1);
-        b.append(ia, buton(t('Lasă-l'), () => ((optiuni.deLuat = null), arata()), 'buton-mic-meniu'));
+        ia.disabled = !inv.incape(x.id, 1);
+        b.append(ia, buton(t('Lasă-l'), () => (scoate(), joc.salveaza(), arata()), 'buton-mic-meniu'));
         c.append(b);
       }
       c.append(grila(s.inventar, inv.capacitate(), 'inventar'), detaliiObiect(s));

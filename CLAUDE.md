@@ -407,7 +407,7 @@ Tipuri pentru cele ~10 evenimente de pornire: cereri de ajutor, oferte de muncă
 - **Echipamentul purtat nu ocupă sloturi.**
 - **Obiectele de poveste** (chei, scrisori) stau pe o pagină separată, fără limită, și nu se pot pierde.
 - **Cufărul de acasă:** un depozit mare (~40 de sloturi, `TODO`).
-- **Inventar plin:** apare mesajul „N-ai loc pentru X”, cu butoanele *Aruncă ceva* și *Lasă-l*.
+- **Inventar plin:** apare mesajul „N-ai loc pentru X”, cu butoanele *Aruncă ceva* și *Lasă-l* (*Lasă-le*): un singur panou pentru tot ce n-a încăput, după ce se închide discuția sau lupta, ținut minte în salvare (`deLuat`); în inventar, câte un rând pe obiect. Darurile care nu au voie să se piardă (echipamentul tatei) intră în cufăr și peste limită.
 - **Rucsac mai mic:** se poate echipa doar dacă încap obiectele. Altfel apare mesajul „Golește mai întâi N sloturi”.
 
 ### Ecranul de inventar și echipament (decis, după designul autorului)

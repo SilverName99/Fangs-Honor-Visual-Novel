@@ -985,6 +985,7 @@ const joc = {
   dupaInventar() {
     salveaza();
     afiseaza();
+    arataDeLuat();
   },
   intreaba,
   inregistreazaCastig,
@@ -1239,16 +1240,60 @@ const actiuni = creeazaActiuni(ui, joc);
 const lupta = creeazaLupta(ui, joc);
 const groapa = creeazaGroapa(ui, joc);
 
+// Ce n-a încăput în rucsac: un singur panou pentru tot (prada venea câte o bucată, cu câte un panou, peste discuția
+// Kaiei), arătat abia după ce se închide ce e pe ecran și ținut minte în salvare („deLuat”), ca un refresh să nu-l
+// arunce în locul jucătorului
 function inventarPlin(id, n) {
+  stare.deLuat ||= [];
+  const x = stare.deLuat.find((y) => y.id === id);
+  if (x) x.n += n;
+  else stare.deLuat.push({ id, n });
+  salveaza();
+  arataDeLuat();
+}
+
+let panouDeLuat = null;
+let asteaptaDeLuat = null;
+function textDeLuat() {
+  const lista = stare.deLuat.map((x) => (x.n > 1 ? `${inventar.def(x.id).nume} ×${x.n}` : inventar.def(x.id).nume)).join(', ');
+  return t('N-ai loc pentru: {obiect}.', { obiect: lista });
+}
+function arataDeLuat() {
+  if (!stare.deLuat?.length) return;
+  // Panoul e deja pe ecran: doar se scrie din nou, cu tot ce s-a adunat între timp
+  if (panouDeLuat) {
+    panouDeLuat.text.textContent = textDeLuat();
+    panouDeLuat.lasa.textContent = stare.deLuat.length > 1 || stare.deLuat[0].n > 1 ? t('Lasă-le') : t('Lasă-l');
+    return;
+  }
+  // Așteaptă să se închidă discuția, imaginile, lupta, inventarul sau un mini-joc (un singur ceas, oricâte bucăți vin)
+  const ocupat = dialog.activ() || secventa.activa() || lupta.activa() || ecranInventar.deschis() || stare.reluare?.miniJoc || stare.reluare?.furisare || stare.reluare?.antrenament;
+  if (ocupat) {
+    if (!asteaptaDeLuat) asteaptaDeLuat = setTimeout(() => ((asteaptaDeLuat = null), arataDeLuat()), 300);
+    return;
+  }
   const fundal = div('acoperitor');
   const panou = div('panou-anunt');
+  const text = div('text-anunt');
+  const inchide = () => {
+    fundal.remove();
+    panouDeLuat = null;
+  };
+  const lasa = buton('', 'buton-mic-meniu', () => {
+    stare.deLuat = [];
+    salveaza();
+    inchide();
+  });
   panou.append(
-    div('text-anunt', n > 1 ? t('N-ai loc pentru: {obiect} ×{n}.', { obiect: inventar.def(id).nume, n }) : t('N-ai loc pentru: {obiect}.', { obiect: inventar.def(id).nume })),
-    buton(t('Aruncă ceva'), 'buton-mic-meniu', () => (fundal.remove(), ecranInventar.deschide({ deLuat: { id, n }, cufar: stare.scena === 'casa.camera_vale' }))),
-    buton(t('Lasă-l'), 'buton-mic-meniu', () => fundal.remove()),
+    text,
+    // Lista e chiar „stare.deLuat”: ce rămâne nehotărât în inventar revine în panou la închiderea lui (dupaInventar)
+    buton(t('Aruncă ceva'), 'buton-mic-meniu', () => (inchide(), ecranInventar.deschide({ deLuat: stare.deLuat, cufar: stare.scena === 'casa.camera_vale' }))),
+    lasa,
   );
   fundal.append(panou);
   ui.append(fundal);
+  panouDeLuat = { text, lasa };
+  arataDeLuat();
 }
 
 // ---------- meniul ----------
@@ -1792,6 +1837,8 @@ laSchimbareaLimbii(() => {
 });
 if (visCerut) pornesteVisulCerut(visCerut);
 else reiaDupaReincarcare();
+// Ce n-a încăput în rucsac înainte de refresh: panoul revine (după lupta sau discuția reluată)
+arataDeLuat();
 if (stare.prolog === 'deschis' && !visCerut) deschidePrologul();
 // La un vis pornit din galerie, panoul debug rămâne închis (s-ar vedea peste filmuleț); se deschide cu F2
 if (parametri.has('debug') && !visCerut) debug.comuta();
