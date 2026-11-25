@@ -123,7 +123,9 @@ export function creeazaCarte(parinte, joc) {
     pag.append(pasi);
     if (st === 'terminata') pag.append(div('stare-misiune', t('Gata!')));
     if (st === 'ratata') pag.append(div('stare-misiune ratata', t('Ratată.')));
-    if (m.recompensa?.text) pag.append(div('recompensa-misiune', t('Recompensă: {text}', { text: m.recompensa.text })));
+    // O misiune ratată nu dă nimic: rândul „Recompensă” spunea lucruri care nu s-au întâmplat (sticla vărsată în noroi,
+    // cea mai frumoasă zi a Linei)
+    if (m.recompensa?.text && st !== 'ratata') pag.append(div('recompensa-misiune', t('Recompensă: {text}', { text: m.recompensa.text })));
     return cadru;
   }
 

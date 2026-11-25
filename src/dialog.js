@@ -363,6 +363,11 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (!vizibile.length && !nod.urmator) laCapatulRamurii?.();
     // La capătul unei ramuri (fără alegeri și fără continuare), meniul personajului apare direct sub replică
     if (activ.dialog.meniu && !vizibile.length && !nod.urmator && !nod.sfarsit) vizibile = meniu();
+    puneAlegeri(vizibile);
+  }
+
+  // Alegerile de sub replică (și meniul, pus din nou sub aceeași replică după un refresh scurt)
+  function puneAlegeri(vizibile) {
     alegeri.replaceChildren(
       ...vizibile.map((a, i) => {
         const b = document.createElement('button');
@@ -381,18 +386,38 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     mai.hidden = vizibile.length > 0;
   }
 
-  // Opțiunile meniului; nodurile misiunilor (din alte dialoguri) se adaugă la dialogul de acum
+  // Opțiunile meniului; nodurile misiunilor (din alte dialoguri) se adaugă la dialogul de acum.
+  // Alegerile se marchează „dinMeniu”, ca o ramură nouă să știe că vine din meniu (vezi alege)
   function meniu() {
     const { alegeri: lista, noduri } = optiuniMeniu(activ.dialog);
     activ.dialog = { ...activ.dialog, noduri: { ...noduri, ...activ.dialog.noduri } };
-    return lista;
+    return lista.map((a) => ({ ...a, dinMeniu: true }));
   }
+
+  // Efectele care deschid alt ecran sau mută scena: după ele discuția trebuie să se închidă, nu să pună meniul la loc
+  const EFECTE_CU_ECRAN = ['eveniment', 'lupta', 'luptaVanatoare', 'vanatoareCu', 'mergi', 'miniJoc', 'magazin', 'furisare', 'antrenament', 'zaruri', 'tafl', 'groapa', 'pedeapsa'];
 
   function alege(a) {
     laEfecte(a.efecte);
     if (!activ) return;
     // „inchide”: alegerea încheie discuția (La revedere, sau ceva care pornește după dialog: un eveniment, o luptă)
     if (a.inchide) return inchide();
+    // Un refuz scurt dintr-un dialog cu meniu („Poate altă dată.”, fără „spre”): meniul reapare sub aceeași replică,
+    // ca la capătul oricărei ramuri (altfel discuția se închidea brusc); „spre: null” scris anume închide discuția
+    // (Cumpără, Schimburi). Doar dacă alegerea n-a deschis alt ecran (o luptă, un eveniment), care cere discuția închisă
+    if (!('spre' in a) && activ.dialog.meniu && !Object.keys(a.efecte || {}).some((k) => EFECTE_CU_ECRAN.includes(k))) {
+      laCapatulRamurii?.();
+      return puneAlegeri(meniu());
+    }
+    // O alegere din meniu pornește altă ramură: imaginea celei de dinainte (capa cusută de mama) nu rămâne
+    // în spatele lui „Ce mai faci?”
+    if (a.dinMeniu && activ.imagine && !activ.dialog.noduri[a.spre]?.imagine) {
+      fundal.replaceChildren();
+      el.classList.remove('cu-imagine', 'asteapta-imaginea');
+      lasaFilmul();
+      activ.imagine = null;
+      activ.imagineReluata = null;
+    }
     arataNod(a.spre ?? null);
   }
 
