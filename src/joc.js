@@ -1264,7 +1264,10 @@ function inventarPlin(id, n) {
   if (x) x.n += n;
   else stare.deLuat.push({ id, n });
   salveaza();
-  arataDeLuat();
+  // Puțin mai târziu, nu pe loc: efectele care au adus obiectul pot porni chiar acum o discuție sau imagini (după lupta
+  // alături de Kaia vine discuția ei), iar panoul trebuie să aștepte după ele, nu să stea peste
+  if (panouDeLuat) arataDeLuat();
+  else if (!asteaptaDeLuat) asteaptaDeLuat = setTimeout(() => ((asteaptaDeLuat = null), arataDeLuat()), 300);
 }
 
 let panouDeLuat = null;
