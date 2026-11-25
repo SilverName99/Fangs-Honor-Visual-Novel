@@ -64,9 +64,9 @@ export function iconita(inv, id) {
   return el;
 }
 
-// În descriere, nevoile se scriu cu id-ul lor („foame +25”, „viata +40”): în română rămân exact cum se văd acum, iar
-// engleza are cuvântul ei; t() se cheamă la fiecare desenare, ca să urmeze limba aleasă în Opțiuni
-const numeNevoie = (k) => ({ viata: t('viata'), stamina: t('stamina'), foame: t('foame'), sete: t('sete') })[k] ?? k;
+// În descriere, nevoile se scriu cu numele lor din bare („Viață +15”, nu id-ul „viata +15”, fără diacritice); t() se
+// cheamă la fiecare desenare, ca să urmeze limba aleasă în Opțiuni
+const numeNevoie = (k) => ({ viata: t('Viață'), stamina: t('Stamina'), foame: t('Foame'), sete: t('Sete') })[k] ?? k;
 
 // Descrierea scurtă a unui obiect: ce face și cât valorează
 export function descriere(inv, id) {
