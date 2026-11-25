@@ -1620,15 +1620,22 @@ function esteClicabil(p, ctx) {
 // Un loc care se închide cât stă Vale în el (Bram se culcă sau pleacă, taverna închide, mama se culcă): Vale iese
 // afară, cu un gând (decis de autor: după foalele lui Bram, terminate seara în magazin, la noapte ieși din fierărie).
 // Lacătele sunt aceleași ca la intrare; „mesajIesire” la lacăt e gândul de la ieșire (altfel, cel de la intrare)
+// Un loc în care se intră din altul (camera lui Bram, din magazin; pivnița, din sala tavernei) se închide și odată
+// cu acela: se urcă din locul de acum spre zonă, iar Vale iese din cel mai de sus loc închis, cu gândul lacătului lui
+// (altfel rămânea în camera lui Bram după ce Bram închidea fierăria la prânz)
 function scoateDacaSeInchide(d, ctx) {
   if (d.tip !== 'loc' || !d.parinte || dialog.activ() || secventa.activa()) return;
-  const tinta = lume.get(d.parinte)?.tinte.find((x) => x.spre === d.id);
-  const lacat = [].concat(tinta?.incuiat || []).find((l) => !verifica(l.conditii, ctx));
-  if (!lacat) return;
+  let iese = null;
+  for (let x = d; x?.tip === 'loc' && x.parinte; x = lume.get(x.parinte)) {
+    const tinta = lume.get(x.parinte)?.tinte.find((y) => y.spre === x.id);
+    const lacat = [].concat(tinta?.incuiat || []).find((l) => !verifica(l.conditii, ctx));
+    if (lacat) iese = { loc: x, lacat };
+  }
+  if (!iese) return;
   setTimeout(() => {
     if (stare.scena !== d.id || dialog.activ()) return;
-    mergi(d.parinte, { faraTimp: true });
-    gand(lacat.mesajIesire || lacat.mesaj || t('Trebuie să plec de aici.'));
+    mergi(iese.loc.parinte, { faraTimp: true });
+    gand(iese.lacat.mesajIesire || iese.lacat.mesaj || t('Trebuie să plec de aici.'));
   }, 0);
 }
 
