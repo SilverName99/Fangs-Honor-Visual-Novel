@@ -25871,7 +25871,8 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Mă trage sus, cu un geamăt, peste pietrele de pe margine. Cădem amândoi pe spate, gâfâind, la doi pași de prăpastie.",
+        "text": "Mă trage sus, cu un geamăt, peste pietrele de pe margine. Ne prăbușim amândoi în fund, la doi pași de prăpastie, cu capul pe spate, și stăm așa, gâfâind, fără să ne putem mișca.",
+        "imagine": "events/drum_dupa_mana.png",
         "urmator": "t5"
       },
       "t5": {
@@ -25913,32 +25914,52 @@
       },
       "t11": {
         "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Unchiule... mâine mai coborâm?",
+        "urmator": "t11b"
+      },
+      "t11b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Mâine, pe lumină, vedem. Acum dormim. Și eu dorm cu mâna pe mâneca ta, băiete.",
+        "urmator": "t11c"
+      },
+      "t11c": {
+        "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Nu mai dormim. Stăm lângă foc, umăr la umăr, fără o vorbă, până se luminează.",
-        "imagine": "events/drum_foc_3.png",
+        "text": "Ne culcăm lângă jar, umăr la umăr. Îi simt mâna pe mânecă până adorm.",
         "urmator": "t12"
       },
       "t12": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "În zori ne ducem la margine. Și margine nu mai e.",
-        "imagine": "events/drum_zori.png",
+        "text": "Ne trezim deodată, amândoi, ca și cum ne-ar fi strigat cineva. E lumină. Ne uităm unul la altul, ca doi oameni care nu știu încă dacă n-au visat totul.",
+        "imagine": "events/drum_trezire_rapa.png",
         "efecte": {
-          "panaLaOra": "06:00",
+          "panaLaOra": "07:00",
           "seteazaNevoi": {
-            "stamina": 55
+            "stamina": 70
           }
         },
+        "urmator": "t12b"
+      },
+      "t12b": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "gand": true,
+        "text": "Ne uităm spre margine. Și margine nu mai e.",
+        "imagine": "events/drum_fara_rapa.png",
         "urmator": "t13"
       },
       "t13": {
         "vorbitor": "vale",
         "emotie": "speriat",
         "gand": true,
-        "text": "Unde aseară era râpa, acum e doar iarbă udă, albă de brumă, și o dungă lungă de pământ, ca o rană de mult închisă. Stâncile din jur stau neclintite, ca și cum între ele n-ar fi fost niciodată nimic.",
-        "urmator": "t14"
+        "text": "Ne apropiem. Unde aseară era râpa, acum e doar iarbă udă, albă de brumă, și o dungă lungă de pământ, ca o rană de mult închisă. Stâncile din jur stau neclintite, ca și cum între ele n-ar fi fost niciodată nimic.",
+        "urmator": "t14",
+        "imagine": "events/drum_locul_rapei.png"
       },
       "t14": {
         "vorbitor": "soldat",
@@ -25974,13 +25995,22 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Douăzeci și șase...",
-        "urmator": "t20"
+        "urmator": "t20",
+        "imagine": "events/drum_privire.png"
       },
       "t20": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
         "text": "Unchiul tace mult. Toată lumea știe ce li se întâmplă unora la douăzeci și șase de ani. Celor mai mulți, nimic.",
+        "urmator": "t20b"
+      },
+      "t20b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ne întoarcem la locul unde am dormit. Unchiul strânge sacii fără grabă, apoi se oprește și se uită la mine.",
+        "imagine": "events/drum_hotarare.png",
         "urmator": "t21"
       },
       "t21": {
@@ -25993,6 +26023,12 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Între noi, unchiule.",
+        "urmator": "t22b"
+      },
+      "t22b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Hai acasă, băiete. Maică-ta numără zilele.",
         "urmator": "t23"
       },
       "t23": {
