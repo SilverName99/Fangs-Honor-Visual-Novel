@@ -262,6 +262,8 @@
       "carte": {
         "nume": "Roderick Lightfinder",
         "nume_en": "Roderick Lightfinder",
+        "_notaStart": "Decis de autor (P27): unchiul e în carte de la început, ca mama (familie), cu o descriere rece până la scandal; misiunile lui tot după prima discuție vin.",
+        "dinStart": true,
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": [
           {
@@ -270,13 +272,54 @@
                 "roderick_drumul": "terminata"
               }
             },
-            "text": "Unchiul meu, fratele tatei. Am mers cu el șase zile, până la capătul hărții prietenului lui. Acolo, deasupra prăpastiei, nu mi-a dat drumul la mână. Ce-am văzut amândoi rămâne între noi. Pe la prânz e tot la biserică, iar după-amiaza și seara, la tavernă."
+            "text": "Unchiul meu, fratele tatei. Am mers cu el șase zile, până la capătul hărții prietenului lui. Acolo, deasupra prăpastiei, nu mi-a dat drumul la mână. Ce-am văzut amândoi rămâne între noi. Pe la prânz e tot la biserică, iar după-amiaza și seara, la tavernă.",
+            "text_en": "My uncle, Father’s brother. I walked with him for six days, to the end of his friend’s map. There, above the chasm, he didn’t let go of my hand. What we both saw stays between us. Around midday he’s still at the church, and in the afternoons and evenings, at the tavern."
           },
-          "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi de soldat. Pe la prânz se roagă la biserică pentru fratele lui, iar după-amiaza și seara îl găsesc la tavernă."
+          {
+            "conditii": {
+              "stare": {
+                "roderick_treaz": "da"
+              }
+            },
+            "text": "Unchiul meu, fratele tatei. Am stat cu el o noapte întreagă în biserică, iar în zori și-a vărsat ultima sticlă în noroi. Mâinile încă îi tremură uneori, dar acum se uită oamenilor în ochi. Și mamei. Ziua se roagă pentru tata; seara stă tot la tavernă, dar acum cu o cană de ceai.",
+            "text_en": "My uncle, Father’s brother. I spent a whole night with him in the church, and at dawn he poured his last bottle into the mud. His hands still shake sometimes, but now he looks people in the eye. Mother too. By day he prays for Father; in the evenings he still sits at the tavern, but now with a cup of tea."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "roderick_locul": "terminata"
+              }
+            },
+            "text": "Unchiul meu, fratele tatei, în hainele lui vechi de soldat. M-a dus peste gard, la copacul lor, și mi-a spus cum a căzut tata: i-a poruncit să fugă, „Ai grijă de Miriam și de băiat.” A ascultat, iar de atunci duce fuga asta în spate, ca pe un sac de pietre. Pe la prânz se roagă la biserică, după-amiaza și seara îl găsesc la tavernă.",
+            "text_en": "My uncle, Father’s brother, in his old soldier’s clothes. He took me over the fence, to their tree, and told me how Father fell: Father ordered him to run, “Look after Miriam and the boy.” He obeyed, and ever since he has carried that flight on his back like a sack of stones. Around midday he prays at the church; in the afternoons and evenings I find him at the tavern."
+          },
+          {
+            "conditii": {
+              "stare": {
+                "scandal_taverna": "ajutat"
+              }
+            },
+            "text": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi. Când orcii s-au luat de Agnes, am sărit lângă el; de atunci se uită la mine, nu prin mine. Pe la prânz se roagă la biserică, după-amiaza și seara îl găsesc la tavernă.",
+            "text_en": "My uncle, Father’s brother. He was a soldier once, and he still wears his old clothes. When the orcs went after Agnes, I jumped in beside him; since then he looks at me, not through me. Around midday he prays at the church; in the afternoons and evenings I find him at the tavern."
+          },
+          {
+            "conditii": {
+              "stare": {
+                "scandal_taverna": "refuzat"
+              }
+            },
+            "text": "Unchiul meu, fratele tatei. Fost soldat, poartă și acum hainele lui vechi. Când orcii s-au luat de Agnes, el a sărit singur, iar eu am rămas pe scaun. Pe la prânz se roagă la biserică, după-amiaza și seara îl găsesc la tavernă.",
+            "text_en": "My uncle, Father’s brother. He was a soldier once, and he still wears his old clothes. When the orcs went after Agnes, he jumped in alone, and I stayed in my seat. Around midday he prays at the church; in the afternoons and evenings I find him at the tavern."
+          },
+          "Unchiul meu, fratele tatei, în hainele lui vechi de soldat. De la bătălie stă la tavernă și nu se uită în ochii nimănui. Nici într-ai mei."
         ],
         "descriere_en": [
           null,
-          "My uncle, Father’s brother. He was a soldier once, and he still wears his old soldier’s clothes. Around midday he prays at the church for his brother, and in the afternoons and evenings I find him at the tavern."
+          null,
+          null,
+          null,
+          null,
+          "My uncle, Father’s brother, in his old soldier’s clothes. Since the battle he sits at the tavern and won’t look anyone in the eye. Not even me."
         ]
       },
       "locuriSprite": [

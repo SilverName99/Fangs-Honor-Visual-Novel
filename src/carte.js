@@ -19,12 +19,18 @@ export const fisierCarte = (id) => `ui/carte_${id}.png`;
 export function personajeCunoscute(date, stare) {
   const din = date.npcs.personaje.filter((p) => p.carte);
   // „dupaStare”: cine nu se cunoaște dintr-o discuție obișnuită intră în carte după o întâmplare (șobolanii din pivniță)
+  // „dinStart” (decis de autor: unchiul Roderick, familie): e în carte de la început, imediat după mama, fără să fie
+  // „cunoscut” (misiunile lui tot după prima discuție vin)
   const cunoscut = (p) =>
-    stare.cunoscuti?.includes(p.id) || stare.stari?.[`cunoscut_${p.id}`] === 'da' || (p.carte.dupaStare && stare.stari?.[p.carte.dupaStare] != null);
+    p.carte.dinStart ||
+    stare.cunoscuti?.includes(p.id) ||
+    stare.stari?.[`cunoscut_${p.id}`] === 'da' ||
+    (p.carte.dupaStare && stare.stari?.[p.carte.dupaStare] != null);
   // Orcii stau mereu la sfârșitul cărții (decis de autor): colectorul penultimul, paznicul ultimul
   const LA_URMA = ['orc_colector', 'paznic_orc_1'];
   const ordine = (p) => {
     if (LA_URMA.includes(p.id)) return 1e6 + LA_URMA.indexOf(p.id);
+    if (p.carte.dinStart) return 0.5;
     const i = stare.cunoscuti?.indexOf(p.id) ?? -1;
     return i < 0 ? 1e5 : i;
   };

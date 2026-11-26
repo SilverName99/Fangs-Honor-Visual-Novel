@@ -1028,8 +1028,32 @@
       "titlu_en": "Trouble at the Tavern",
       "dela": "soldat",
       "dialog": "soldat",
-      "descriere": "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick n-a mai putut să stea deoparte.",
-      "descriere_en": "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick couldn’t stand by any longer.",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "scandal_taverna": "ajutat"
+            }
+          },
+          "text": "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick s-a ridicat primul. Eu am sărit lângă el.",
+          "text_en": "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick stood up first. I jumped in beside him."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "scandal_taverna": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick s-a ridicat singur. Eu am rămas pe scaun.",
+          "text_en": "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick stood up alone. I stayed in my seat."
+        },
+        "CIORNĂ: Orcii au făcut scandal în tavernă și s-au luat de Agnes. Unchiul Roderick n-a mai putut să stea deoparte."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick couldn’t stand by any longer."
+      ],
       "oferta": {
         "_nota": "Decis de autor: din ziua 3, în tavernă, cât e și Agnes acolo; textul arată că Roderick încă nu-l bagă în seamă pe Vale.",
         "text": "(Orcii fac multă dezordine și gălăgie...)",

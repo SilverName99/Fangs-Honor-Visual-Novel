@@ -132,6 +132,19 @@
         }
       },
       {
+        "_nota": "Decis de autor (P30): după „Ultima sticlă”, în tavernă, Vale vede că unchiul are ceai în cană, nu bere.",
+        "conditii": {
+          "loc": "taverna/parter",
+          "stare": {
+            "roderick_treaz": "da"
+          }
+        },
+        "aleator": [
+          "salut_ceai1",
+          "salut_ceai2"
+        ]
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -174,6 +187,23 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "A, Vale. Trage un scaun, dacă tot ai venit."
+      },
+      "salut_ceai1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe masa unchiului, în locul cănii de bere, aburește o cană de ceai. Miroase a mușețel.",
+        "urmator": "salut_ceai1b"
+      },
+      "salut_ceai1b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ceaiul lui Elian. Are gust de iarbă udă, dar mă ține treaz. Stai jos, băiete."
+      },
+      "salut_ceai2": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Vale. Trage un scaun. Din ceai nu-ți dau: Elian mi-l face numărat, pe zile."
       },
       "salut_gard": {
         "vorbitor": "soldat",
@@ -444,9 +474,15 @@
             }
           },
           {
-            "text": "Altă dată, unchiule."
+            "text": "Altă dată, unchiule.",
+            "spre": "lum_c10_nu"
           }
         ]
+      },
+      "lum_c10_nu": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Altă dată. Lumânările nu fug nicăieri. Nici morții."
       },
       "lum_da": {
         "vorbitor": "soldat",
@@ -614,9 +650,15 @@
             }
           },
           {
-            "text": "Nu sunt încă pregătit."
+            "text": "Nu sunt încă pregătit.",
+            "spre": "locul_o3_nu"
           }
         ]
+      },
+      "locul_o3_nu": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Nici eu n-am fost, șase luni. Când ești, spune-mi."
       },
       "locul_da": {
         "vorbitor": "soldat",
@@ -1416,8 +1458,28 @@
       "r_treaz": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Treaz. Agnes îmi pune apă în cană și se uită la ea ca la o minune. Nopțile încă sunt lungi. Dar le duc.",
+        "text": "Treaz. Agnes îmi toarnă în cană ceaiul lui Elian și se uită la ea ca la o minune. Nopțile încă sunt lungi. Dar le duc.",
         "_nota": "CIORNĂ (Claude): după „Ultima sticlă”."
+      },
+      "r_cina": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Maică-ta m-a pus să-mi agăț vesta în cuiul lui Edwin. Nu știam că-mi lipsea atât de tare un cui."
+      },
+      "r_sticla_nu": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Încă beau, băiete. Dar acum număr cănile. Elian zice că e un început."
+      },
+      "r_seara": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "M-a oprit morarul pe drum. Mi-a strâns mâna și n-a zis nimic. Șase luni nu-mi spusese nici bună ziua."
+      },
+      "r_opt": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Șase luni nu m-am putut uita în ochii nimănui. Acum pot. Cu ajutorul tău."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -1498,6 +1560,41 @@
             "roderick_drumul": "terminata"
           }
         }
+      },
+      {
+        "nod": "r_cina",
+        "conditii": {
+          "misiune": {
+            "miriam_cina": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "r_sticla_nu",
+        "conditii": {
+          "stare": {
+            "sticla": "refuzat"
+          }
+        }
+      },
+      {
+        "nod": "r_seara",
+        "conditii": {
+          "misiune": {
+            "agnes_seara": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "r_opt",
+        "conditii": {
+          "relatie": {
+            "soldat": {
+              "min": 8
+            }
+          }
+        },
+        "_nota": "Decis de autor (P16): o replică la 8/10, pragul recrutării."
       }
     ],
     "optiuni": [
@@ -22664,7 +22761,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Odată, unchiul nu putea s-o privească în ochi. Acum o privește drept. Și nu-și mai mută privirea.",
+        "text": "La cină se uita mai mult în strachină. Acum o privește drept în ochi. Și nu-și mai mută privirea.",
         "urmator": "p5"
       },
       "p5": {
