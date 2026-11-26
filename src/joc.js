@@ -243,7 +243,7 @@ function actualizeazaHud() {
   const d = stare.datorieBlanuri;
   // Cu panoul închis, butonul arată totuși când ceva e grav (o nevoie scăzută sau taxa de azi)
   const zileTaxa = stare.taxa.zi - ziua(stare);
-  const grav = NEVOI.some(([cheie]) => stare.nevoi[cheie] < cfg.nevoi.prag) || (!stare.taxa.platita && zileTaxa <= 0);
+  const grav = NEVOI.some(([cheie]) => stare.nevoi[cheie] < cfg.nevoi.prag) || (!stare.taxa.platita && zileTaxa <= 0 && !taxaFaraPlata());
   const b = butonHud('vale', '👤', 'Vale', comutaPanoul);
   b.classList.toggle('apasat', panouDeschis);
   b.classList.toggle('avertizare', grav && !panouDeschis);
@@ -287,9 +287,20 @@ function actualizeazaHud() {
   );
 }
 
+// Azi nu mai e unde plăti taxa (decis de autor, P85): poarta e încă închisă (fierul lui Bram), iar colectorul a fost
+// deja acasă (Vale n-a avut bani) sau a trecut ora până la care vine (23:00). Atunci „e azi!” și pulsul roșu cereau
+// ceva imposibil; cu poarta deschisă, taxa se mai poate plăti la poartă, deci rămân
+function taxaFaraPlata() {
+  const tx = stare.taxa;
+  const poartaInchisa = stare.misiuni.bram_fier !== 'terminata' && stare.stari.poarta_deschisa !== 'da';
+  if (tx.platita || !poartaInchisa || tx.zi !== ziua(stare)) return false;
+  return tx.colectorZi === tx.zi || context(stare).minuteZi >= inMinute(cfg.taxa.oraColectorPana || '23:00');
+}
+
 function textTaxa() {
   if (stare.taxa.platita) return t('Taxa e plătită');
   const zile = stare.taxa.zi - ziua(stare);
+  if (zile <= 0 && taxaFaraPlata()) return t('Taxa n-a fost plătită');
   if (zile <= 0) return t('Taxa ({suma}) e azi!', { suma: sumaTaxa() });
   // Propoziții întregi (nu bucăți lipite), ca engleza să-și poată pune singură cuvintele în ordinea ei
   if (zile === 1) return stare.taxa.dubla ? t('Taxa peste {n} zi (dublă!)', { n: zile }) : t('Taxa peste {n} zi', { n: zile });
@@ -1644,6 +1655,12 @@ function esteClicabil(p, ctx) {
   return true;
 }
 
+// „clicabil: { conditii, gand }”: cât nu se poate vorbi cu el, un clic pe el dă doar gândul lui Vale (fermierul,
+// până la prima patrulă, decis de autor). Altfel clicul trecea prin el, la zona de sub el (aratul), și părea o greșeală
+function gandNeclicabil(p, ctx) {
+  return !esteClicabil(p, ctx) && typeof p?.clicabil?.gand === 'string' ? p.clicabil.gand : null;
+}
+
 // Un loc care se închide cât stă Vale în el (Bram se culcă sau pleacă, taverna închide, mama se culcă): Vale iese
 // afară, cu un gând (decis de autor: după foalele lui Bram, terminate seara în magazin, la noapte ieși din fierărie).
 // Lacătele sunt aceleași ca la intrare; „mesajIesire” la lacăt e gândul de la ieșire (altfel, cel de la intrare)
@@ -1696,12 +1713,19 @@ function afiseaza() {
     const poligon = r.poligoane.get(t.id);
     if (t.personaj) {
       // Zona unui personaj contează doar cât timp el e în scenă (și cât se poate vorbi cu el)
-      if (!prezenti.has(t.personaj) || !esteClicabil(personaje.get(t.personaj), ctx)) {
+      const gandP = gandNeclicabil(personaje.get(t.personaj), ctx);
+      if (!prezenti.has(t.personaj) || (!esteClicabil(personaje.get(t.personaj), ctx) && !gandP)) {
         poligon?.remove();
         continue;
       }
       if (!poligon) continue;
       cuZona.add(t.personaj);
+      if (gandP) {
+        poligon.classList.add('vizibila');
+        legaEvidentiere(poligon, [poligon], 'evidentiat-poligon');
+        poligon.addEventListener('click', () => gand(gandP));
+        continue;
+      }
     }
     if (t.ascuns && !verifica(t.ascuns.conditii, ctx)) {
       poligon?.remove();
@@ -1737,7 +1761,8 @@ function afiseaza() {
       continue;
     }
     // Cu zonă desenată, strălucirea și click-ul vin din zonă; fără ea, personajul răspunde pe forma lui
-    if (cuZona.has(o.id) || !esteClicabil(personaje.get(o.id), ctx)) {
+    const gandP = gandNeclicabil(personaje.get(o.id), ctx);
+    if (cuZona.has(o.id) || (!esteClicabil(personaje.get(o.id), ctx) && !gandP)) {
       el.classList.add('cu-zona');
       continue;
     }
@@ -1755,7 +1780,7 @@ function afiseaza() {
       p.setAttribute('filter', 'url(#contur-moale)');
       if (r.masca) p.setAttribute('mask', `url(#${r.masca})`);
       legaEvidentiere(p, [p], 'evidentiat-poligon');
-      p.addEventListener('click', () => vorbesteCu(o.id));
+      p.addEventListener('click', () => (gandP ? gand(gandP) : vorbesteCu(o.id)));
       r.svg.append(p);
       el.zonaAuto = p;
     };

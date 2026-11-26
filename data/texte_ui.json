@@ -275,6 +275,7 @@
     "Taxa ({suma}) e azi!": "Tax ({suma}) is due today!",
     "Taxa e deja plătită pentru săptămâna asta.": "The tax is already paid for this week.",
     "Taxa e plătită": "Tax paid",
+    "Taxa n-a fost plătită": "Tax not paid",
     "Taxa peste {n} zi": "Tax due in {n} day",
     "Taxa peste {n} zi (dublă!)": "Tax due in {n} day (double!)",
     "Taxa peste {n} zile": "Tax due in {n} days",

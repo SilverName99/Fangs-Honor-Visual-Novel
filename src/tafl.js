@@ -249,6 +249,9 @@ export function creeazaTafl(parinte, joc) {
 
   function incepe(miza) {
     joc.stare.bani -= miza;
+    // Miza se salvează pe loc, ca la zaruri (decis de autor, P87): un refresh în timpul partidei o pierde, ca o
+    // partidă abandonată, în loc s-o dea înapoi
+    joc.salveaza();
     joc.actualizeazaHud();
     s.miza = miza;
     s.p = partidaNoua();

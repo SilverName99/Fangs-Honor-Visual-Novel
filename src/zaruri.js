@@ -159,6 +159,9 @@ export function creeazaZaruri(parinte, joc) {
 
   function incepe(oferta) {
     joc.stare.bani -= oferta.miza;
+    // Miza se salvează pe loc (decis de autor, P87): partida nu se salvează, deci altfel un refresh în timpul ei
+    // dădea banii înapoi (cine pierdea își recupera miza). Un refresh contează acum ca o partidă abandonată
+    joc.salveaza();
     joc.actualizeazaHud();
     const n = cfg().zaruri;
     s = {
