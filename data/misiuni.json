@@ -793,8 +793,22 @@
       "titlu_en": "The Wardens’ Falcon",
       "dela": "vanatoare",
       "dialog": "vanatoare",
-      "descriere": "CIORNĂ: Un șoim al Străjerilor i-a adus Kaiei o scrisoare de acasă: pădurile de departe au tăcut, iar animalele mor fără nicio rană și nu putrezesc. Ai ei o cheamă acasă. Kaia mi-a cerut două zile, să se gândească dacă pleacă sau rămâne.",
-      "descriere_en": "One of the Wardens’ falcons brought Kaia a letter from home: the distant forests have fallen silent, and animals are dying without a single wound. And they do not rot. Her people are calling her home. Kaia asked me for two days to think about whether to go or stay.",
+      "descriere": [
+        {
+          "conditii": {
+            "misiune": {
+              "kaia_soim": "terminata"
+            }
+          },
+          "text": "Un șoim i-a adus Kaiei o scrisoare de acasă. Ai ei au chemat-o. A stat două zile departe și s-a întors.",
+          "text_en": "A falcon brought Kaia a letter from home. Her people called her back. She spent two days away, and then she returned."
+        },
+        "CIORNĂ: Un șoim al Străjerilor i-a adus Kaiei o scrisoare de acasă: pădurile de departe au tăcut, iar animalele mor fără nicio rană și nu putrezesc. Ai ei o cheamă acasă. Kaia mi-a cerut două zile, să se gândească dacă pleacă sau rămâne."
+      ],
+      "descriere_en": [
+        null,
+        "One of the Wardens’ falcons brought Kaia a letter from home: the distant forests have fallen silent, and animals are dying without a single wound. And they do not rot. Her people are calling her home. Kaia asked me for two days to think about whether to go or stay."
+      ],
       "oferta": {
         "_nota": "Decis de autor: după „Rana lui Ember” (K4 și K5 inversate: întâi șoimul, apoi wyvernii). Decis de autor: din ziua de după vindecare.",
         "text": "Pot să stau puțin cu tine la foc?",
@@ -877,8 +891,32 @@
       "titlu_en": "The Convoy",
       "dela": "vanatoare",
       "dialog": "vanatoare",
-      "descriere": "CIORNĂ: Kaia i-a auzit pe orci: la noapte trece pe drumul mare, spre capitală, un convoi cu niște cuști care, zic ei, o să întoarcă războiul. Kaia vrea să vadă cu ochii ei ce e în ele.",
-      "descriere_en": "Kaia overheard the orcs talking: tonight a convoy will travel the great road toward the capital, carrying cages that, they say, will turn the tide of the war. Kaia wants to see with her own eyes what’s inside them.",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "kaia_wyverni_vazut": "impreuna"
+            }
+          },
+          "text": "Am văzut convoiul, cu Kaia, de pe deal. Fiarele din cuști stăteau liniștite. Nu știu dacă erau dragoni. Știu ce am simțit.",
+          "text_en": "Kaia and I watched the convoy from the hill. The beasts in the cages were calm. I don’t know if they were dragons. I know what I felt."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "kaia_wyverni_vazut": "povestit"
+            }
+          },
+          "text": "Kaia a văzut singură convoiul. Mi-a povestit a doua zi.",
+          "text_en": "Kaia saw the convoy alone. She told me about it the next day."
+        },
+        "CIORNĂ: Kaia i-a auzit pe orci: la noapte trece pe drumul mare, spre capitală, un convoi cu niște cuști care, zic ei, o să întoarcă războiul. Kaia vrea să vadă cu ochii ei ce e în ele."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "Kaia overheard the orcs talking: tonight a convoy will travel the great road toward the capital, carrying cages that, they say, will turn the tide of the war. Kaia wants to see with her own eyes what’s inside them."
+      ],
       "oferta": {
         "_nota": "Decis de autor: la o zi după ce Kaia a hotărât să rămână („Șoimul Străjerilor”).",
         "text": "Ești tăcută azi, Kaia. S-a întâmplat ceva?",

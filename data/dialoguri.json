@@ -2629,6 +2629,23 @@
         }
       },
       {
+        "_nota": "Decis de autor (P51): la câteva zile după „Cuștile vânătorilor” pierdută, Kaia se împacă, o singură dată.",
+        "nod": "custi_imp1",
+        "conditii": {
+          "stare": {
+            "finn_custi": "pierdut"
+          },
+          "trecut": {
+            "finn_custi_final": {
+              "pesteZile": 3
+            }
+          },
+          "nuStare": {
+            "custi_impacare": "da"
+          }
+        }
+      },
+      {
         "_nota": "Decis de autor: după ce Vale a vândut capcanele colectorului, Kaia le găsește din nou armate cel mai devreme a doua zi (după ce dă de ele în pădure), la prima discuție de atunci (−1).",
         "nod": "capcane_aflat",
         "conditii": {
@@ -3456,6 +3473,46 @@
         "emotie": "normal",
         "text": "Ember mișcă o ureche când își aude numele, dar nu deschide ochii."
       },
+      "k_cerc_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Eu, bine. Dar am găsit ceva ciudat la marginea pădurii, dinspre sat: iarba arsă într-un cerc. Perfect rotund. Fulgerul nu arde așa. Nici focul.",
+        "_nota": "CIORNĂ (Claude), P50.",
+        "urmator": "k_cerc_b"
+      },
+      "k_cerc_b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Lupii ocolesc locul ăla de departe. Nici Ember nu vrea să calce acolo.",
+        "urmator": "k_cerc_c"
+      },
+      "k_cerc_c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Știu ce a ars-o. Și tac.",
+        "efecte": {
+          "stare": {
+            "kaia_cerc": "da"
+          }
+        }
+      },
+      "k_soim_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Mă tot gândesc la pădurile de acasă, tăcute. Apoi aud o bufniță aici, la noi, și mă liniștesc.",
+        "_nota": "CIORNĂ (Claude), P53."
+      },
+      "k_convoi_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ember se uită spre drumul mare de câteva ori pe zi. Ca și cum ar număra nopțile."
+      },
+      "k_lupoaica_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Uneori mă uit spre miazănoapte, pe unde a luat-o lupoaica, cu puii după ea. Bine a făcut că nu s-a uitat înapoi."
+      },
       "custi_k_bine1": {
         "vorbitor": "vanatoare",
         "emotie": "zambet",
@@ -3518,6 +3575,42 @@
         "efecte": {
           "stare": {
             "custi_salut_kaia": "da"
+          }
+        }
+      },
+      "custi_imp1": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Am fost la locul unde stăteau cuștile. Orcii le-au dus de acolo. N-a rămas decât pământul bătătorit și niște smocuri de blană.",
+        "_nota": "CIORNĂ (Claude), P51.",
+        "urmator": "custi_imp2"
+      },
+      "custi_imp2": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Îmi pare rău, Kaia. Am încercat.",
+        "urmator": "custi_imp3"
+      },
+      "custi_imp3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Știu. Și Finn a avut dreptate, deși mi-ar fi plăcut să n-aibă. Satul vine întâi. Lupoaica ar fi făcut la fel pentru puii ei.",
+        "urmator": "custi_imp4"
+      },
+      "custi_imp4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Spune-i hoțului tău că nu-i mai port pică. Dar să nu-mi mai zică „niște animale”.",
+        "urmator": "custi_imp5"
+      },
+      "custi_imp5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Ember își freacă botul de genunchiul ei. Pentru prima oară de zile întregi, Kaia îl scarpină după urechi.",
+        "efecte": {
+          "stare": {
+            "custi_impacare": "da"
           }
         }
       },
@@ -3683,6 +3776,41 @@
             "misiune": {
               "kaia_ember": "terminata"
             }
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P50): după „Lumina din pădure”, o singură dată: Kaia a găsit cercul ars; Vale tace, ca să păstreze taina lui Elian.",
+        "nod": "k_cerc_a",
+        "conditii": {
+          "existaStare": "lumina_padure",
+          "nuStare": {
+            "kaia_cerc": "da"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P53): după „Șoimul Străjerilor”.",
+        "nod": "k_soim_a",
+        "conditii": {
+          "misiune": {
+            "kaia_soim": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P53): după „Convoiul”.",
+        "nod": "k_convoi_a",
+        "conditii": {
+          "existaStare": "kaia_wyverni_vazut"
+        }
+      },
+      {
+        "_nota": "Decis de autor (P53): după „Cuștile vânătorilor”, cu lupoaica scăpată.",
+        "nod": "k_lupoaica_a",
+        "conditii": {
+          "stare": {
+            "finn_custi": "eliberate"
           }
         }
       },
@@ -9890,7 +10018,7 @@
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "zambet",
-        "text": "Nu te-ai prostit, Vale. Lupta nu ți-a uitat-o mâna.",
+        "text": "Tot știi să te bați, Vale. Mâna nu ți-a uitat lupta.",
         "urmator": "b"
       },
       "b": {
@@ -9909,6 +10037,19 @@
         "vorbitor": "vanatoare",
         "emotie": "trist",
         "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Într-o zi o să-ți spun de unde știu.",
+        "urmator": "d2"
+      },
+      "d2": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Și mama ta? Mai ține găleata aia lângă ușă?",
+        "urmator": "d3",
+        "_nota": "CIORNĂ (Claude). Decis de autor (P57): un moment mic de căldură, care pregătește „Capa Kaiei”."
+      },
+      "d3": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "O ține. Doar că acum n-o mai umple nimeni pentru Ember.",
         "urmator": "e"
       },
       "e": {
@@ -10014,9 +10155,55 @@
         "text": "Ai luptat bine, Vale. Vino cu mine: am un loc în pădure unde orcii nu ajung. Acolo putem vorbi în liniște.",
         "efecte": {
           "deblocheaza": "padure/campsite",
-          "mergi": "padure.campsite",
-          "marcheaza": "tabara_aratata"
-        }
+          "mergi": "padure.campsite"
+        },
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Un foc mic, ascuns sub o stâncă. Blăni întinse pe crengi la uscat, un arc fără coardă, oase curățate de cuțit. Ember se culcă lângă foc ca acasă.",
+        "imagine": "events/kaia_tabara.png",
+        "_nota": "CIORNĂ (Claude). Decis de autor (P52): prima venire în tabără, peste o imagine; discuția promisă de Kaia („Acolo putem vorbi în liniște”).",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Aici n-au ajuns orcii niciodată. Vântul bate dinspre ei, iar Ember îi miroase de la o milă.",
+        "urmator": "e"
+      },
+      "e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și de atunci? De ce n-ai mai venit în sat, Kaia?",
+        "urmator": "f"
+      },
+      "f": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Să fac ce? Să plătesc și eu taxa? Am venit când am văzut fumul, dar până să ajung, se terminase. După aceea, satul era al lor.",
+        "urmator": "g"
+      },
+      "g": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Locul ăsta e și al tău acum. Când ai nevoie să nu te găsească nimeni, vino aici.",
+        "urmator": "h"
+      },
+      "h": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pentru prima oară de la primăvară, stau lângă un foc fără să ascult după pași de orci.",
+        "efecte": {
+          "marcheaza": "tabara_aratata",
+          "stare": {
+            "kaia_tabara_salut": "da"
+          }
+        },
+        "_nota": "Discuția promisă s-a făcut aici: salutul „tabara_salut” nu mai vine după ea."
       }
     }
   },
@@ -10404,7 +10591,19 @@
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "zambet",
-        "text": "Nu-i rău, Vale. Ai ținut pasul. Și n-ai călcat pe nicio cracă... aproape.",
+        "text": [
+          {
+            "conditii": {
+              "nevoie": {
+                "viata": {
+                  "max": 30
+                }
+              }
+            },
+            "text": "Sângerezi, Vale. Stai jos lângă foc, să-ți leg rana. ...Dar ai ținut pasul."
+          },
+          "Nu-i rău, Vale. Ai ținut pasul. Și n-ai călcat pe nicio cracă... aproape."
+        ],
         "urmator": "b"
       },
       "b": {
@@ -12796,6 +12995,43 @@
         }
       },
       {
+        "_nota": "Decis de autor (P59): dacă Vale a refuzat datoria, după cele 5 zile Finn apare o dată bătut, ca la ratare (doar în zilele de după).",
+        "nod": "datoria_rf1",
+        "conditii": {
+          "stare": {
+            "datoria": "refuzat"
+          },
+          "oricare": [
+            {
+              "zileDeLa": {
+                "datoria_jarek": {
+                  "min": 6
+                }
+              }
+            },
+            {
+              "zileDeLa": {
+                "datoria_jarek": {
+                  "min": 5,
+                  "max": 5
+                }
+              },
+              "ora": {
+                "min": "03:00"
+              }
+            }
+          ],
+          "zileDeLa": {
+            "datoria_jarek": {
+              "max": 9
+            }
+          },
+          "nuStare": {
+            "datoria_refuz_vazut": "da"
+          }
+        }
+      },
+      {
         "_nota": "Misiunea „Ultima treabă pentru Jarek”: a doua zi după „Avem nevoie de bani” (decis de autor).",
         "nod": "jarek_bani1",
         "conditii": {
@@ -13878,6 +14114,43 @@
         },
         "_nota": "Ratată după ce Vale adusese blănile, dar n-a venit noaptea la ieșire în cele cinci zile."
       },
+      "datoria_rf1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Finn are buza spartă și un ochi vânăt.",
+        "_nota": "CIORNĂ (Claude), P59.",
+        "urmator": "datoria_rf2"
+      },
+      "datoria_rf2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Finn... ce ai pe față?",
+        "urmator": "datoria_rf3"
+      },
+      "datoria_rf3": {
+        "vorbitor": "hot",
+        "emotie": "ranit",
+        "text": "Nimic. Am făcut rost de blăni cum am putut și am dus singur sacul. Patrula m-a văzut dincolo de gard.",
+        "urmator": "datoria_rf4"
+      },
+      "datoria_rf4": {
+        "vorbitor": "hot",
+        "emotie": "ranit",
+        "text": "Nu te uita așa. Nu era treaba ta.",
+        "urmator": "datoria_rf5"
+      },
+      "datoria_rf5": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "gand": true,
+        "text": "Avea dreptate. Nu era treaba mea. Și totuși.",
+        "efecte": {
+          "stare": {
+            "datoria_refuz_vazut": "da"
+          }
+        }
+      },
       "custi_o1": {
         "vorbitor": "vale",
         "gand": true,
@@ -14086,6 +14359,12 @@
         "emotie": "zambet",
         "text": "Seara stau acasă acum. Mama zice că nu mă mai recunoaște. Lina zice că am devenit plictisitor. Amândouă zâmbesc când o zic.",
         "_nota": "„Ce mai faci?”, după ce Finn s-a lăsat de Jarek."
+      },
+      "f_arc_ned": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Ned mă învață să trag cu arcul tău. Zice că am mâna bună pentru lacăte și proastă pentru săgeți. Ieri am nimerit o varză. Ținteam în gard.",
+        "_nota": "CIORNĂ (Claude), P60."
       },
       "prieteni_o1": {
         "vorbitor": "hot",
@@ -14388,6 +14667,13 @@
           "misiune": {
             "finn_jarek": "terminata"
           }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P60): pregătește ambuscada de la fluier.",
+        "nod": "f_arc_ned",
+        "conditii": {
+          "existaStare": "prieteni_ned"
         }
       },
       {
