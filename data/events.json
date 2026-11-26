@@ -1706,7 +1706,8 @@
         }
       },
       "dialog": "toiag_forja",
-      "_nota": "Ales de Claude: seara, cât lucrează Bram înăuntru (18–22), când intră Vale în fierărie după jurământ; 3 ore, 20 stamina; fără mini-joc (foalele și ciocanul au fost la „O zi la forjă”)."
+      "_nota": "Ales de Claude: seara, cât lucrează Bram înăuntru (18–22), când intră Vale în fierărie după jurământ; 3 ore, 20 stamina; fără mini-joc (foalele și ciocanul au fost la „O zi la forjă”). Pornește și dacă Vale e deja în magazin (jurământul făcut seara, înăuntru: siPeLoc).",
+      "siPeLoc": true
     },
     {
       "id": "toiag_cristal",

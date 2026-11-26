@@ -408,8 +408,8 @@
           "sfat": "Cu fierul, vorbesc cu Bram.",
           "sfat_en": "With the iron, I talk to Bram.",
           "predare": {
-            "text": "Ți-am adus fierul înapoi, Bram.",
-            "text_en": "I’ve brought your iron back, Bram.",
+            "text": "V-am adus fierul înapoi, domnule Bram.",
+            "text_en": "I’ve brought your iron back, Master Bram.",
             "nod": "fier_predare",
             "conditii": {
               "areObiect": "fier_bram"
@@ -614,9 +614,17 @@
           "sfat": "Bram ar face ceva bun din fierul ăsta. Colectorul, la poartă, ar da bani pe el...",
           "sfat_en": "Bram would make something good out of this iron. The collector at the gate would pay for it...",
           "predare": {
-            "text": "Am niște capcane de fier pentru dumneata.",
+            "text": "Am niște capcane de fier pentru dumneavoastră.",
             "text_en": "I have some iron traps for you, Master Bram.",
-            "nod": "capcane_predare"
+            "nod": "capcane_predare",
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            }
           }
         }
       ],
@@ -1167,7 +1175,7 @@
           "sfat": "Fermierul ține stupi. E la câmpuri dimineața (6–13).",
           "sfat_en": "The farmer keeps beehives. He’s in the fields in the morning (6–13).",
           "predare": {
-            "text": "Mai ai ceva ceară? E pentru lumânările lui Roderick.",
+            "text": "Mai aveți ceva ceară? E pentru lumânările lui Roderick.",
             "text_en": "Do you have any wax left? It’s for Roderick’s candles.",
             "nod": "lum_f1"
           }
@@ -1734,15 +1742,16 @@
       "descriere": "CIORNĂ: Berea nouă a lui Agnes a fermentat prea tare și a sărit cercurile ruginite ale butoaielor din pivniță. Agnes nu vrea să-l roage pe Bram, ca să nu aibă el necazuri cu orcii. Așa că îl rog eu. Din partea mea, nu dintr-a ei.",
       "descriere_en": "Agnes’s new ale fermented too hard and burst the rusty hoops on the barrels in her cellar. She doesn’t want to ask Bram, for fear of getting him into trouble with the orcs. So I’m asking him instead. From me, not from her.",
       "oferta": {
-        "_nota": "Decis de autor: după „Pivnița” (Agnes). Ales de Claude: și după ce i se deschide magazinul lui Bram („Fierul lui Bram”).",
+        "_nota": "Decis de autor: după „Pivnița”. Ales de Claude: după „Foalele stricate” (forja rece) și doar în sala tavernei.",
         "text": "Doamna Agnes, de ce miroase toată taverna a bere?",
         "text_en": "Mistress Agnes, why does the whole tavern smell of ale?",
         "nod": "cer_o1",
         "conditii": {
           "misiune": {
             "agnes_pivnita": "terminata",
-            "bram_fier": "terminata"
-          }
+            "bram_foale": "terminata"
+          },
+          "loc": "taverna/parter"
         }
       },
       "pasi": [
@@ -1758,7 +1767,15 @@
           "predare": {
             "text": "Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.",
             "text_en": "Master Bram, Agnes needs new hoops for her barrels.",
-            "nod": "cer_b1"
+            "nod": "cer_b1",
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            }
           }
         },
         {
@@ -1785,17 +1802,33 @@
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
           "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
-            "text": "Uite cercurile vechi.",
+            "text": "Uitați cercurile vechi.",
             "text_en": "Here are the old hoops.",
             "nod": "cer_predare",
             "conditii": {
-              "areObiect": "cercuri_vechi"
+              "areObiect": "cercuri_vechi",
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
             }
           },
           "indiciu": {
             "text": "Despre cercuri...",
             "text_en": "About the hoops...",
-            "nod": "cer_b_ind"
+            "nod": [
+              {
+                "nod": "cer_aici",
+                "conditii": {
+                  "areObiect": "cercuri_vechi"
+                }
+              },
+              {
+                "nod": "cer_b_ind"
+              }
+            ]
           }
         },
         {
@@ -1804,8 +1837,8 @@
           "gata": {
             "existaStare": "cercuri_gata"
           },
-          "sfat": "După ora 22 (cât e taverna deschisă, până la 2), cobor direct în pivnița lui Agnes, ferit de ochii din sală.",
-          "sfat_en": "After 22:00 (while the tavern is open, until 02:00), I go straight down to Agnes’s cellar, out of sight of the taproom.",
+          "sfat": "După ora 22 (cât e taverna deschisă, până la 2), trec prin sală fără să mă opresc și cobor direct în pivnița lui Agnes.",
+          "sfat_en": "After 22:00 (while the tavern is open, until 02:00), I cross the taproom without stopping and go straight down to Agnes’s cellar.",
           "indiciu": {
             "text": "Despre diseară...",
             "text_en": "About tonight...",
@@ -1900,10 +1933,33 @@
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
           "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
+          "indiciu": {
+            "text": "Despre cufăr...",
+            "text_en": "About the chest...",
+            "nod": "cuf_aici"
+          },
           "predare": {
             "text": "Am deschis cufărul, domnule Bram.",
             "text_en": "I’ve opened the chest, Master Bram.",
-            "nod": "cuf_p1"
+            "nod": [
+              {
+                "nod": "cuf_p1t",
+                "conditii": {
+                  "existaStare": "tata_echipament"
+                }
+              },
+              {
+                "nod": "cuf_p1"
+              }
+            ],
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            }
           }
         }
       ],
@@ -1965,8 +2021,20 @@
               "nume_en": "scrap iron"
             }
           ],
-          "sfat": "Jarek vinde fier vechi (15 monede bucata), în cocioaba lui de la Marginea satului: aștept pe scăunel, seara (18–02).",
-          "sfat_en": "Jarek sells scrap iron (15 coins apiece) in his shack at the Edge: I wait for him on the stool, in the evening (18–02).",
+          "sfat": [
+            {
+              "conditii": {
+                "areObiect": "cheie_contrabandist"
+              },
+              "text": "Jarek vinde fier vechi (15 monede bucata), în cocioaba lui de la Marginea satului: aștept pe scăunel, seara (18–02).",
+              "text_en": "Jarek sells scrap iron (15 coins apiece) in his shack at the Edge: I wait for him on the stool, in the evening (18–02)."
+            },
+            "Jarek vinde fier vechi (15 monede bucata), dar cocioaba lui de la Marginea satului e încuiată. Finn îi știe pe toți de acolo; poate mă ajută să intru."
+          ],
+          "sfat_en": [
+            null,
+            "Jarek sells scrap iron (15 coins apiece), but his shack at the Edge is locked. Finn knows everyone out there; maybe he can help me get in."
+          ],
           "indiciu": {
             "text": "Despre platoșă...",
             "text_en": "About the breastplate...",
@@ -1989,13 +2057,38 @@
               "loc": "fierar/interior",
               "areCate": {
                 "fier_vechi": 2
+              },
+              "misiune": {
+                "bram_foale": "terminata"
               }
             }
           },
           "indiciu": {
             "text": "Despre platoșă...",
             "text_en": "About the breastplate...",
-            "nod": "plat_ind2"
+            "nod": [
+              {
+                "nod": "plat_ind_usa",
+                "conditii": {
+                  "nuStare": {
+                    "magazin_bram": "deschis"
+                  }
+                }
+              },
+              {
+                "nod": "plat_ind_foale",
+                "conditii": {
+                  "nu": {
+                    "misiune": {
+                      "bram_foale": "terminata"
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "plat_ind2"
+              }
+            ]
           }
         },
         {
@@ -3176,10 +3269,23 @@
           },
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
           "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
+          "indiciu": {
+            "text": "Domnule Bram, trebuie să vorbim.",
+            "text_en": "Master Bram, we need to talk.",
+            "nod": "tg_b_aici"
+          },
           "predare": {
             "text": "Domnule Bram, trebuie să-mi jurați ceva.",
             "text_en": "Master Bram, I need you to swear something to me.",
-            "nod": "tg_b1"
+            "nod": "tg_b1",
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            }
           }
         },
         {
@@ -3284,13 +3390,19 @@
       "descriere": "CIORNĂ: Foalele forjei lui Bram s-au rupt de tot. Fără ele, focul nu se încinge și Bram nu poate lucra. Îi trebuie trei piei groase de mistreț, iar orcii iau toate blănurile din sat.",
       "descriere_en": "The bellows of Bram’s forge have torn right through. Without them, the fire won’t burn hot, and Bram can’t work. He needs three thick boar hides, and the orcs take every hide in the village.",
       "oferta": {
-        "_nota": "Decis de autor: după „Fierul lui Bram”, înaintea cheii.",
+        "_nota": "Decis de autor: după „Fierul lui Bram”, înaintea cheii. Ales de Claude: doar la fierărie, unde se vede forja rece.",
         "text": "De ce e forja rece, domnule Bram?",
         "text_en": "Why is the forge cold, Master Bram?",
         "nod": "foale_oferta",
         "conditii": {
           "misiune": {
             "bram_fier": "terminata"
+          },
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
           }
         }
       },
@@ -3321,19 +3433,37 @@
           "sfat": "Cu cele 3 piei, vorbesc cu Bram.",
           "sfat_en": "With the 3 hides, I talk to Bram.",
           "predare": {
-            "text": "Ți-am adus pieile de mistreț!",
+            "text": "V-am adus pieile de mistreț!",
             "text_en": "I’ve brought you the boar hides!",
             "nod": "foale_predare",
             "conditii": {
               "areCate": {
                 "piele": 3
+              },
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
               }
             }
           },
           "indiciu": {
             "text": "Despre foale...",
             "text_en": "About the bellows...",
-            "nod": "foale_indiciu"
+            "nod": [
+              {
+                "nod": "foale_aici",
+                "conditii": {
+                  "areCate": {
+                    "piele": 3
+                  }
+                }
+              },
+              {
+                "nod": "foale_indiciu"
+              }
+            ]
           }
         }
       ],
@@ -3353,8 +3483,8 @@
       "titlu_en": "A Day at the Forge",
       "dela": "fierar",
       "dialog": "bram_forja",
-      "descriere": "CIORNĂ: Bram și-a ars mâna grăbindu-se cu topoarele orcilor. Colectorul le vrea diseară, iar dacă nu sunt gata, plătește tot satul. Am lucrat o zi întreagă la forjă în locul lui.",
-      "descriere_en": "Bram burned his hand rushing to finish the orcs’ axes. The tax collector wants them by tonight, and if they aren’t ready, the whole village pays. I worked a whole day at the forge in his place.",
+      "descriere": "CIORNĂ: Bram și-a ars mâna grăbindu-se cu topoarele orcilor. Colectorul le vrea diseară, iar dacă nu sunt gata, plătește tot satul. Am lucrat până seara la forjă în locul lui.",
+      "descriere_en": "Bram burned his hand rushing to finish the orcs’ axes. The tax collector wants them by tonight, and if they aren’t ready, the whole village pays. I worked at the forge in his place until evening.",
       "pasi": [
         {
           "text": "Lucrez la forjă în locul lui Bram",
@@ -3440,7 +3570,7 @@
           "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
           "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
           "predare": {
-            "text": "Domnule Bram, poți repara plugul fermierului?",
+            "text": "Domnule Bram, puteți repara plugul fermierului?",
             "text_en": "Master Bram, can you repair the farmer’s plow?",
             "nod": "plug_b1"
           }
@@ -3468,14 +3598,23 @@
           "sfat": [
             {
               "conditii": {
+                "existaStare": "metal_jarek",
+                "areObiect": "cheie_contrabandist"
+              },
+              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Fier vechi are Jarek, în cocioaba lui de la Marginea satului: aștept pe scăunel, seara (18–02).",
+              "text_en": "Wood from the forest; rope from the merchant at the market. Jarek has scrap iron, in his shack at the Edge: I wait for him on the stool, in the evening (18–02)."
+            },
+            {
+              "conditii": {
                 "existaStare": "metal_jarek"
               },
-              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Finn zice că Jarek are fier vechi, la cocioaba lui (18–02).",
-              "text_en": "Wood from the forest; rope from the merchant at the market. Finn says Jarek has scrap iron at his shack (18–02)."
+              "text": "Lemnele, din pădure; frânghia, de la negustorul din piață. Fier vechi are Jarek, dar cocioaba lui de la Marginea satului e încuiată. Poate Finn mă ajută să intru.",
+              "text_en": "Wood from the forest; rope from the merchant at the market. Jarek has scrap iron, but his shack at the Edge is locked. Maybe Finn can help me get in."
             },
             "Lemnele, din pădure; frânghia, de la negustorul din piață. Metal... nu știu încă de unde. Poate știe cineva."
           ],
           "sfat_en": [
+            null,
             null,
             "Wood from the forest; rope from the merchant at the market. Metal... I don’t know where to find it yet. Maybe someone knows."
           ],
@@ -3503,13 +3642,33 @@
                 "lemn": 4,
                 "franghie": 1,
                 "fier_vechi": 1
+              },
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
               }
             }
           },
           "indiciu": {
             "text": "Despre plug...",
             "text_en": "About the plow...",
-            "nod": "plug_b_ind"
+            "nod": [
+              {
+                "nod": "plug_aici",
+                "conditii": {
+                  "areCate": {
+                    "lemn": 4,
+                    "franghie": 1,
+                    "fier_vechi": 1
+                  }
+                }
+              },
+              {
+                "nod": "plug_b_ind"
+              }
+            ]
           }
         },
         {
@@ -3521,7 +3680,7 @@
           "sfat": "Fermierul e la câmpuri dimineața (06–13).",
           "sfat_en": "The farmer is in the fields in the morning (06–13).",
           "predare": {
-            "text": "Uite plugul, reparat de Bram!",
+            "text": "Uitați plugul, reparat de Bram!",
             "text_en": "Here’s your plow, repaired by Bram!",
             "nod": "plug_f1",
             "conditii": {

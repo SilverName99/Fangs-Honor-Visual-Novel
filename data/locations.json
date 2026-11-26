@@ -362,10 +362,9 @@
                 "sageti"
               ],
               "cumpara": [
-                "piele",
                 "blana_lup"
               ],
-              "_nota": "Decis de autor: piesele de piele (gluga, vesta, jambierele, rucsacul) nu le mai vinde Bram; le coase Miriam din piei.",
+              "_nota": "Decis de autor: piesele de piele (gluga, vesta, jambierele, rucsacul) nu le mai vinde Bram; le coase Miriam din piei. Ales de Claude: Bram nu cumpără piei de mistreț (îi trebuie pentru foale și nu le are nimeni de vânzare); le cumpără negustorul din piață.",
               "preturi": {
                 "sageti": 2
               },
@@ -373,6 +372,24 @@
             }
           ],
           "incuiat": [
+            {
+              "_nota": "Ales de Claude: de când i-a luat colectorul fierul, alt gând la ușă.",
+              "conditii": {
+                "oricare": [
+                  {
+                    "stare": {
+                      "magazin_bram": "deschis"
+                    }
+                  },
+                  {
+                    "nu": {
+                      "existaStare": "fier_confiscat"
+                    }
+                  }
+                ]
+              },
+              "mesaj": "Ușa fierăriei e zăvorâtă. De când i-a luat colectorul fierul, Bram nu mai primește pe nimeni înăuntru."
+            },
             {
               "conditii": {
                 "stare": {
@@ -386,7 +403,7 @@
               "conditii": {
                 "nuDoarme": "fierar"
               },
-              "mesaj": "E noapte și la fierărie nu arde nicio lumină. Bram doarme de mult. Mă întorc mâine.",
+              "mesaj": "La fierărie nu mai arde nicio lumină: Bram s-a culcat. Revin după ce se luminează.",
               "mesajIesire": "Bram stinge focul din forjă și mă conduce la ușă: „E noapte, băiete. Mâine.”"
             },
             {
@@ -1861,12 +1878,41 @@
           "id": "interior",
           "nume": "Cocioaba",
           "imagine": "locations/contrabandist_interior.png",
-          "incuiat": {
-            "conditii": {
-              "areObiect": "cheie_contrabandist"
+          "incuiat": [
+            {
+              "_nota": "Ales de Claude: cât îi trebuie metal (plugul, platoșa) și n-are cheia, gândul îl trimite la Finn.",
+              "conditii": {
+                "oricare": [
+                  {
+                    "areObiect": "cheie_contrabandist"
+                  },
+                  {
+                    "nu": {
+                      "oricare": [
+                        {
+                          "misiune": {
+                            "fermier_plug": "inceputa"
+                          }
+                        },
+                        {
+                          "misiune": {
+                            "bram_platosa": "inceputa"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "mesaj": "Un lacăt greu atârnă pe ușă. Fără cheie nu intru. Finn îi știe pe toți de la Margine; poate știe și cum se intră la Jarek."
             },
-            "mesaj": "Un lacăt greu atârnă pe ușă. Fără cheie nu intru."
-          },
+            {
+              "conditii": {
+                "areObiect": "cheie_contrabandist"
+              },
+              "mesaj": "Un lacăt greu atârnă pe ușă. Fără cheie nu intru."
+            }
+          ],
           "laPlecare": {
             "stare": {
               "contrabandist_aici": "nu"

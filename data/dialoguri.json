@@ -412,7 +412,7 @@
       "lum_f1": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Mai ai ceva ceară de la stupi? E pentru lumânările lui Roderick. Pentru cei căzuți.",
+        "text": "Mai aveți ceva ceară de la stupi? E pentru lumânările lui Roderick. Pentru cei căzuți.",
         "_nota": "CIORNĂ (Claude). „Lumânările”, la fermier.",
         "urmator": "lum_f2"
       },
@@ -1473,6 +1473,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -1614,7 +1617,7 @@
         },
         "alegeri": [
           {
-            "text": "Bună, Agnes. Am auzit că tot la tine e cea mai bună pâine din sat.",
+            "text": "Doamna Agnes! Am auzit că tot la dumneavoastră e cea mai bună pâine din sat.",
             "spre": "prezentare_final"
           },
           {
@@ -1729,7 +1732,7 @@
         "text": "Și camera mi-ar prinde bine. Cu taxa asta, fiecare monedă contează.",
         "alegeri": [
           {
-            "text": "Las-o pe mine, doamna Agnes. O golesc eu.",
+            "text": "Lăsați-o pe mine, doamna Agnes. O golesc eu.",
             "spre": "co_da",
             "efecte": {
               "misiune": {
@@ -1828,7 +1831,7 @@
       "bo4": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Cât îți trebuie?",
+        "text": "Cât vă trebuie?",
         "urmator": "bo5"
       },
       "bo5": {
@@ -1837,7 +1840,7 @@
         "text": "Cinci măsuri de orz și două de miere. Orzul l-ai găsi la moară, dacă pui umărul la treabă. Iar mierea... fermierul ține stupi, dar nu dă nimic pe gratis.",
         "alegeri": [
           {
-            "text": "Ți le aduc eu.",
+            "text": "Vi le aduc eu.",
             "spre": "bo_da",
             "efecte": {
               "misiune": {
@@ -1868,7 +1871,7 @@
       "bere_predare": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Am adus orzul și mierea, doamna Agnes. Cinci și două, cum ai zis.",
+        "text": "Am adus orzul și mierea, doamna Agnes. Cinci și două, cum ați zis.",
         "urmator": "bp2"
       },
       "bp2": {
@@ -1979,14 +1982,14 @@
       "cer_seara": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "Diseară, Vale. Dar nu pe aici, prin sală: sunt prea mulți ochi la mesele mele, și nu toți sunt prieteni.",
+        "text": "Diseară, Vale. Dar nu te opri prin sală: sunt prea mulți ochi la mesele mele, și nu toți sunt prieteni.",
         "urmator": "cer_seara2",
         "_nota": "Decis de autor: să se ferească de prea mulți ochi și să vină direct în pivniță, după ora 22. Ciornă (Claude)."
       },
       "a_dupa_cercuri": {
         "vorbitor": "hangita",
         "emotie": "inrosit",
-        "text": "Bram a trecut azi la prânz. A mâncat de două ori. Cred că i-a plăcut berea."
+        "text": "De când cu cercurile, Bram cere de două ori la prânz. Cred că-i place berea."
       },
       "cer_ind2": {
         "vorbitor": "hangita",
@@ -1996,7 +1999,7 @@
       "cer_seara2": {
         "vorbitor": "hangita",
         "emotie": "inrosit",
-        "text": "Vino direct în pivniță, după ora 22, când vine și Bram. Las ușa deschisă. Și pun deoparte o cană din berea nouă... pentru el."
+        "text": "Treci pe lângă tejghea fără să te uiți la nimeni și coboară direct în pivniță, după ora 22, când vine și Bram. Las ușa deschisă. Și pun deoparte o cană din berea nouă... pentru el."
       },
       "barfa_grau": {
         "vorbitor": "hangita",
@@ -2348,6 +2351,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -2370,8 +2376,8 @@
       {
         "nod": "a_dupa_cercuri",
         "conditii": {
-          "misiune": {
-            "bram_cercuri": "terminata"
+          "misiuneTerminata": {
+            "bram_cercuri": 1
           }
         }
       }
@@ -3385,6 +3391,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -3721,6 +3730,26 @@
           }
         }
       },
+      {
+        "nod": "plug_vede",
+        "conditii": {
+          "existaStare": "plug_gata",
+          "nu": {
+            "existaStare": "plug_reparat"
+          }
+        }
+      },
+      {
+        "nod": "plug_ind",
+        "conditii": {
+          "stare": {
+            "plug": "acceptat"
+          },
+          "nu": {
+            "existaStare": "plug_gata"
+          }
+        }
+      },
       "a"
     ],
     "noduri": {
@@ -3740,6 +3769,11 @@
         "text": "Muncim, ca de obicei. Pământul nu întreabă cine stăpânește satul.",
         "urmator": "f_camp_b"
       },
+      "f_plug": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Ce să muncim fără plug? Strângem pietrele de pe brazdă și ne uităm la cer."
+      },
       "f_camp_b": {
         "vorbitor": "vale",
         "emotie": "normal",
@@ -3757,10 +3791,15 @@
         "text": "Vezi ce-a rămas din plugul meu?",
         "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat."
       },
+      "plug_vede": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Ce cari acolo, băiete? Nu-mi spune că e..."
+      },
       "plug_oferta": {
         "vorbitor": "fermier",
         "emotie": "suparat",
-        "text": "Treizeci de ani l-a tras tata, apoi eu. Azi s-a rupt brăzdarul într-o piatră, iar coarnele au crăpat odată cu el.",
+        "text": "Treizeci de ani l-a tras tata, apoi eu. S-a rupt brăzdarul într-o piatră, iar coarnele au crăpat odată cu el.",
         "urmator": "plug_o2"
       },
       "plug_o2": {
@@ -3794,7 +3833,7 @@
             }
           },
           {
-            "text": "Nu pot acum. Vorbește dumneata cu el.",
+            "text": "Nu pot acum. Vorbiți dumneavoastră cu el.",
             "spre": "plug_nu",
             "efecte": {
               "misiune": {
@@ -3812,7 +3851,7 @@
       "plug_da": {
         "vorbitor": "fermier",
         "emotie": "normal",
-        "text": "Să te țină Dumnezeu, băiete. Spune-i că plătesc cum pot: cu grâu, la toamnă."
+        "text": "Să te țină Dumnezeu, băiete. Spune-i că plătesc cum pot: cu grâu, la vară, după seceriș."
       },
       "plug_nu": {
         "vorbitor": "fermier",
@@ -3846,7 +3885,7 @@
         "text": "Ăsta e plugul meu? ... E mai bun decât era!",
         "alegeri": [
           {
-            "text": "Încearcă-l.",
+            "text": "Încercați-l.",
             "inchide": true,
             "efecte": {
               "eveniment": "plug_fermier"
@@ -3869,13 +3908,68 @@
     "meniu": true,
     "vorbeste": [
       {
-        "nod": "f_camp_a"
+        "nod": "f_plug",
+        "conditii": {
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "stare": {
+            "fermier_deblocat": "da"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "plug_reparat"
+              },
+              {
+                "stare": {
+                  "plug": "refuzat"
+                },
+                "trecut": {
+                  "plug_refuz": {
+                    "pesteZile": 2
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nod": "f_camp_a",
+        "conditii": {
+          "nu": {
+            "misiune": {
+              "bram_forja": "terminata"
+            },
+            "stare": {
+              "fermier_deblocat": "da"
+            },
+            "nu": {
+              "oricare": [
+                {
+                  "existaStare": "plug_reparat"
+                },
+                {
+                  "stare": {
+                    "plug": "refuzat"
+                  },
+                  "trecut": {
+                    "plug_refuz": {
+                      "pesteZile": 2
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
       }
     ],
     "optiuni": [
       {
         "_nota": "Decis de autor: mierea pentru berea lui Agnes, de la fermier, 5 monede bucata.",
-        "text": "Îmi vinzi două măsuri de miere? (10 monede)",
+        "text": "Îmi vindeți două măsuri de miere? (10 monede)",
         "conditii": {
           "misiune": {
             "agnes_bere": "inceputa"
@@ -3900,7 +3994,7 @@
       },
       {
         "_nota": "Decis de autor: mierea pentru tortul Linei, de la fermier (5 monede, ca la bere).",
-        "text": "Îmi vinzi o măsură de miere? E pentru tortul Linei. (5 monede)",
+        "text": "Îmi vindeți o măsură de miere? E pentru tortul Linei. (5 monede)",
         "spre": "miere_lina",
         "conditii": {
           "misiune": {
@@ -3945,6 +4039,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -5963,6 +6060,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -6063,7 +6163,7 @@
         },
         "alegeri": [
           {
-            "text": "Și n-ai uitat nici acum?",
+            "text": "Și n-ați uitat nici acum?",
             "spre": "prezentare_final"
           }
         ]
@@ -6102,7 +6202,7 @@
       "f_orci_b": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Și cum îi suporți pe orci?",
+        "text": "Și cum îi suportați pe orci?",
         "urmator": "orci"
       },
       "fier_oferta": {
@@ -6115,7 +6215,7 @@
       "fier_oferta_b": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Te pot ajuta. De unde fac rost de fier?",
+        "text": "Vă pot ajuta. De unde fac rost de fier?",
         "urmator": "fier_oferta_c"
       },
       "fier_oferta_c": {
@@ -6124,7 +6224,7 @@
         "text": "Mi l-a luat colectorul și-l ține la poartă. Dacă ai vreo cale să-l iei înapoi... Dar ai grijă, băiete. Cu orcii nu te joci.",
         "alegeri": [
           {
-            "text": "Îl aduc înapoi, Bram.",
+            "text": "Îl aduc înapoi, domnule Bram.",
             "spre": "fier_accept",
             "efecte": {
               "misiune": {
@@ -6179,7 +6279,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Forja e rece. Pentru prima oară de când îl știu, la fierăria lui Bram nu se aude ciocanul.",
+        "text": "Bram trage de foale, să încingă jarul pentru fierul lui. Foalele șuieră a gol, iar jarul abia mocnește.",
         "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Foalele stricate” (decis de autor: 3 piei de mistreț, înaintea cheii).",
         "urmator": "foale_oferta2"
       },
@@ -6198,7 +6298,7 @@
       "foale_oferta4": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Și nu poți pune piele nouă?",
+        "text": "Și nu puteți pune piele nouă?",
         "urmator": "foale_oferta5"
       },
       "foale_oferta5": {
@@ -6213,7 +6313,7 @@
         "text": "Fără foale, focul nu se încinge. Fără foc, fierul e doar o bucată de piatră. Iar eu sunt doar un om cu un ciocan și nimic de bătut.",
         "alegeri": [
           {
-            "text": "Îți aduc eu pieile, domnule Bram.",
+            "text": "Vă aduc eu pieile, domnule Bram.",
             "spre": "foale_da",
             "efecte": {
               "misiune": {
@@ -6222,7 +6322,8 @@
             }
           },
           {
-            "text": "Mistreții nu se lasă prinși ușor..."
+            "text": "Mistreții nu se lasă prinși ușor...",
+            "spre": "foale_nu"
           }
         ]
       },
@@ -6231,15 +6332,25 @@
         "emotie": "normal",
         "text": "Tu? Ha! Bine, băiete. Adu-mi trei piei de mistreț și-ți arăt cum cântă o forjă adevărată."
       },
+      "foale_nu": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu se lasă. Nici foalele nu se cârpesc singure. Când dai de unul, știi unde mă găsești."
+      },
       "foale_indiciu": {
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Trei piei de mistreț. Mistreții umblă prin pădure; dacă dai de unul la vânătoare, ai grijă la colți. Și nu-mi aduce blană de lup, că aia arde ca paiele."
       },
+      "foale_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Le-ai adus? Bun. Dar foalele nu le cos aici, băiete. Vino cu ele la fierărie."
+      },
       "foale_predare": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Domnule Bram, uite: trei piei de mistreț. Groase, cum ai zis.",
+        "text": "Domnule Bram, uitați: trei piei de mistreț. Groase, cum ați zis.",
         "urmator": "foale_predare2"
       },
       "foale_predare2": {
@@ -6291,7 +6402,7 @@
       "capcane_predare": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Domnule Bram, am ceva pentru dumneata. Capcane de fier, din pădure. Le-am desfăcut cu Kaia, vânătoarea.",
+        "text": "Domnule Bram, am ceva pentru dumneavoastră. Capcane de fier, din pădure. Le-am desfăcut cu Kaia, vânătoarea.",
         "urmator": "capcane_predare2",
         "_nota": "CIORNĂ (Claude): misiunea Kaiei „Capcanele”, fierul dus la Bram (decis de autor: săgeți și +1 Bram)."
       },
@@ -6360,7 +6471,7 @@
       "plug_b3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Metal? Dumneata ești fierarul.",
+        "text": "Metal? Dumneavoastră sunteți fierarul.",
         "urmator": "plug_b4"
       },
       "plug_b4": {
@@ -6372,7 +6483,7 @@
       "plug_b5": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Fă rost de fier de undeva unde nu se uită ei. Eu nu știu de unde. Dar tu cunoști mai mulți oameni decât mine în ultima vreme.",
+        "text": "Fă rost de fier de undeva unde nu se uită ei. Fier vechi, pe care nu l-a numărat niciun orc. Tu cunoști mai mulți oameni decât mine în ultima vreme.",
         "efecte": {
           "stare": {
             "plug_bram": "cerut"
@@ -6383,6 +6494,11 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Patru lemne, o frânghie și metal pe care să nu-l știe orcii. Restul îl fac eu."
+      },
+      "plug_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ai tot? Atunci adu-le la fierărie. Plugul nu-l repar aici."
       },
       "plug_predare": {
         "vorbitor": "fierar",
@@ -6425,7 +6541,7 @@
       "cer_b3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Nu. Adică... mi-a zis să nu-ți spun că m-a trimis.",
+        "text": "Nu. Adică... mi-a zis să nu vă spun că m-a trimis.",
         "urmator": "cer_b4"
       },
       "cer_b4": {
@@ -6467,6 +6583,11 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Cercurile vechi, băiete. Din pivnița lui Agnes. Fără ele, n-am din ce le face."
+      },
+      "cer_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu aici, băiete. Adu-le la fierărie."
       },
       "cer_predare": {
         "vorbitor": "fierar",
@@ -6605,6 +6726,11 @@
         "emotie": "normal",
         "text": "Cufărul de lângă pat, sus. Cheia o ai. Eu rămân aici."
       },
+      "cuf_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu aici, băiete. Despre cufăr vorbim la fierărie."
+      },
       "cuf_p1": {
         "vorbitor": "fierar",
         "emotie": "trist",
@@ -6639,7 +6765,7 @@
         "vorbitor": "fierar",
         "emotie": "trist",
         "text": "Știu. Am căutat-o până s-a luminat de-a binelea. Am răscolit cu mâinile toată iarba din jurul copacului. Nimic.",
-        "_nota": "Ales de Claude: sabia lui Edwin lipsește din cufăr pentru că e la Miriam (echipamentul lui Edwin, decis de autor); indiciu pentru misiunea ei de la 8/10.",
+        "_nota": "Ales de Claude: sabia lui Edwin lipsește din cufăr pentru că e la Miriam (echipamentul lui Edwin, decis de autor); indiciu pentru misiunea ei de la 8/10. Dacă mama i-a dat deja echipamentul (tata_echipament), Vale știe unde e sabia și i-o spune lui Bram: ramura cuf_p1t–cuf_p5t (ales de Claude).",
         "urmator": "cuf_p7"
       },
       "cuf_p7": {
@@ -6658,8 +6784,44 @@
       "cuf_p9": {
         "vorbitor": "fierar",
         "emotie": "trist",
-        "text": "Nu le pot topi. Ar fi ca și cum i-aș îngropa a doua oară. Nu le pot da orcilor, să-și bată din ele topoare. Și nu le mai pot ține sub patul meu, cu colectorul la ușă.",
+        "text": "Nu le pot topi. Ar fi ca și cum i-aș îngropa a doua oară. Nu le pot da orcilor, să-și bată din ele topoare. Și nu le mai pot ține lângă patul meu, cu colectorul la ușă.",
         "urmator": "cuf_p10"
+      },
+      "cuf_p1t": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Le-ai văzut.",
+        "urmator": "cuf_p2t"
+      },
+      "cuf_p2t": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Douăzeci și două de săbii, domnule Bram. A tatei nu e printre ele: a adus-o unchiul acasă, odată cu tata, iar mama a ținut-o ascunsă tot timpul, cu lucrurile lui.",
+        "urmator": "cuf_p3t"
+      },
+      "cuf_p3t": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "La Miriam... Am căutat-o până s-a luminat de-a binelea. Am răscolit cu mâinile toată iarba din jurul copacului. Credeam că au luat-o orcii.",
+        "urmator": "cuf_p4t"
+      },
+      "cuf_p4t": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram închide ochii o clipă. Ceva din el se descleștează, ca o mână care a ținut prea mult cleștele.",
+        "urmator": "cuf_p5t"
+      },
+      "cuf_p5t": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Bine. Măcar una a ajuns acasă. Pe celelalte le-am strâns a doua zi după bătălie, înainte să răsară soarele, și le-am cărat câte patru odată, până aici.",
+        "efecte": {
+          "stare": {
+            "sabia_spusa_bram": "da"
+          }
+        },
+        "urmator": "cuf_p9"
       },
       "cuf_p10": {
         "vorbitor": "fierar",
@@ -6755,7 +6917,7 @@
       "tg_b10": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Bine, băiete. Îl bat. Dar nu ziua, sub ochii orcilor. Vino seara, când lucrez înăuntru, cu obloanele trase, și stai tu la foale. Ai mai stat o dată și n-ai stricat nimic.",
+        "text": "Bine, băiete. Îl bat. Dar nu sub ochii orcilor: doar seara, înăuntru, cu obloanele trase. Iar tu stai la foale. Ai mai stat o dată și n-ai stricat nimic.",
         "urmator": "tg_b11"
       },
       "tg_b11": {
@@ -6773,10 +6935,15 @@
         "emotie": "normal",
         "text": "Seara, băiete, cât lucrez înăuntru, de la șase la zece. Cu cheia. Și cu mâinile odihnite."
       },
+      "tg_b_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu aici, băiete. Ce ai de spus, spune-mi la fierărie, lângă nicovală."
+      },
       "b_dupa_toiag": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Uneori mă trezesc noaptea și urc să mă uit în cufăr. E gol. Și parcă mi-e mai ușor."
+        "text": "Uneori mă trezesc noaptea și deschid cufărul de lângă pat. E gol. Și parcă mi-e mai ușor."
       },
       "groapa_b1": {
         "vorbitor": "vale",
@@ -6895,8 +7062,13 @@
       "plat_o9": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Jarek are. Știi tu unde. Și nu-i spune pentru ce.",
-        "urmator": "plat_o10"
+        "text": "Jarek are, la Marginea satului. Și nu-i spune pentru ce.",
+        "urmator": "plat_o10",
+        "efecte": {
+          "stare": {
+            "metal_jarek": "bram"
+          }
+        }
       },
       "plat_o10": {
         "vorbitor": "fierar",
@@ -6933,6 +7105,16 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Seara, după ce închid ușa. Cu fierul. Te aștept."
+      },
+      "plat_ind_usa": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Seara nu primesc pe nimeni înăuntru, băiete. Nu încă."
+      },
+      "plat_ind_foale": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cu foalele astea moarte nu încing nici o potcoavă, darămite platoșa lui Edwin. Întâi pieile de mistreț."
       },
       "plat_f1": {
         "vorbitor": "vale",
@@ -7148,6 +7330,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -7180,6 +7365,21 @@
           }
         },
         "spre": "groapa_din_nou_b"
+      },
+      {
+        "text": "Despre diseară, domnule Bram...",
+        "spre": "cer_b_ind_seara",
+        "conditii": {
+          "misiune": {
+            "bram_cercuri": "inceputa"
+          },
+          "stare": {
+            "cercuri_seara": "da"
+          },
+          "nu": {
+            "existaStare": "cercuri_gata"
+          }
+        }
       }
     ]
   },
@@ -7782,6 +7982,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -7852,7 +8055,7 @@
             }
           },
           {
-            "text": "Cât vrei ca să-l eliberezi?",
+            "text": "Cât vreți ca să-l eliberați?",
             "spre": "pret",
             "conditii": {
               "misiune": {
@@ -8021,7 +8224,18 @@
       "d": {
         "vorbitor": "orc_colector",
         "emotie": "rade",
-        "text": "Trei căi ai, omule. Plătești 60 de monede. Sau îi bați pe băieții mei la zaruri, după-amiaza. Sau ți-l iei cu pumnii... de la mine.",
+        "text": [
+          {
+            "conditii": {
+              "ora": {
+                "min": "14:00",
+                "max": "17:59"
+              }
+            },
+            "text": "Trei căi ai, omule. Plătești 60 de monede. Sau îi bați pe băieții mei la zaruri, chiar acum, dacă ai bani de pus pe masă. Sau ți-l iei cu pumnii... de la mine."
+          },
+          "Trei căi ai, omule. Plătești 60 de monede. Sau îi bați pe băieții mei la zaruri, după-amiaza. Sau ți-l iei cu pumnii... de la mine."
+        ],
         "alegeri": [
           {
             "text": "Plătesc. (60 de monede)",
@@ -8042,12 +8256,28 @@
               "ora": {
                 "min": "14:00",
                 "max": "17:59"
+              },
+              "bani": {
+                "min": 20
               }
             },
             "efecte": {
               "zaruri": true
             },
             "inchide": true
+          },
+          {
+            "text": "Joc zaruri cu paznicii.",
+            "conditii": {
+              "ora": {
+                "min": "14:00",
+                "max": "17:59"
+              },
+              "bani": {
+                "max": 19
+              }
+            },
+            "spre": "zaruri_fara_bani"
           },
           {
             "text": "Joc zaruri cu paznicii.",
@@ -8073,6 +8303,14 @@
             "spre": "gandeste"
           }
         ]
+      },
+      "zaruri_fara_bani": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Fără bani nu stai la masa noastră, pui de om. Pentru fierul fierarului se pun douăzeci de monede. Hai, valea!",
+        "efecte": {
+          "mergi": "harta"
+        }
       },
       "zaruri_nu": {
         "vorbitor": "orc_colector",
@@ -11426,13 +11664,23 @@
       "metal_hot": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Metal? ...Jarek are. Fier vechi, lame rupte, potcoave, tot ce adună de pe drumuri. Doar să nu-i spui că te-am trimis eu.",
+        "text": "Metal? ...Jarek are. Fier vechi, lame rupte, potcoave, tot ce adună de pe drumuri. Ai cheia: seara, stai pe scăunel și așteaptă. Spune-i că te-am trimis eu.",
         "efecte": {
           "stare": {
             "metal_jarek": "aflat"
           }
         },
         "_nota": "Decis de autor: singurul care îl trimite pe Vale la Jarek."
+      },
+      "metal_hot_lacat": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Metal? ...Jarek are, contrabandistul de lângă gard. Doar că la Jarek nu intră oricine, Vale. Lasă-mă să mă gândesc cum.",
+        "efecte": {
+          "stare": {
+            "metal_jarek": "lacat"
+          }
+        }
       },
       "lina_o1": {
         "vorbitor": "hot",
@@ -12454,6 +12702,37 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
+              }
+            ]
+          },
+          "areObiect": "cheie_contrabandist"
+        }
+      },
+      {
+        "_nota": "Ales de Claude: fără cheia cocioabei, Finn nu-l trimite încă la Jarek (nu se dă de gol că lucrează pentru el).",
+        "text": "De unde pot face rost de niște metal?",
+        "spre": "metal_hot_lacat",
+        "conditii": {
+          "misiune": {
+            "fermier_plug": "inceputa"
+          },
+          "existaStare": "plug_bram",
+          "nu": {
+            "oricare": [
+              {
+                "areObiect": "fier_vechi"
+              },
+              {
+                "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
+              },
+              {
+                "areObiect": "cheie_contrabandist"
               }
             ]
           }
@@ -12585,6 +12864,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -12951,6 +13233,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -13333,6 +13618,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -13613,6 +13901,9 @@
               },
               {
                 "existaStare": "plug_gata"
+              },
+              {
+                "existaStare": "metal_jarek"
               }
             ]
           }
@@ -13679,7 +13970,7 @@
       "c": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Grâul e al tău. Nu al lor.",
+        "text": "Grâul e al dumneavoastră. Nu al lor.",
         "urmator": "d"
       },
       "d": {
@@ -13697,7 +13988,7 @@
       "f": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Eu sunt. Te-a lovit?",
+        "text": "Eu sunt. V-a lovit?",
         "urmator": "g"
       },
       "g": {
@@ -14576,7 +14867,7 @@
       "a4": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Unde ai învățat să coși așa?",
+        "text": "Unde ați învățat să coaseți așa?",
         "urmator": "a5"
       },
       "a5": {
@@ -15693,7 +15984,7 @@
       "f3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Arată-mi mâna.",
+        "text": "Arătați-mi mâna.",
         "urmator": "f4"
       },
       "f4": {
@@ -15718,13 +16009,13 @@
       "f7": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Spune-mi ce să fac, domnule Bram.",
+        "text": "Spuneți-mi ce să fac, domnule Bram.",
         "urmator": "f8"
       },
       "f8": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Tu? ...Bine. Ai mai stat o dată la foalele mele. Azi stai o zi întreagă.",
+        "text": "Tu? ...Bine. Ai mai stat o dată la foalele mele. Azi stai până seara.",
         "alegeri": [
           {
             "text": "Trag de foale.",
@@ -15918,7 +16209,7 @@
       "pf2": {
         "vorbitor": "fermier",
         "emotie": "normal",
-        "text": "Spune-i lui Bram că la toamnă îi umplu un sac cu grâu, orice ar zice orcii.",
+        "text": "Spune-i lui Bram că la vară, după seceriș, îi umplu un sac cu grâu, orice ar zice orcii.",
         "urmator": "pf3"
       },
       "pf3": {
@@ -15998,7 +16289,7 @@
       "d3": {
         "vorbitor": "hangita",
         "emotie": "zambet",
-        "text": "Prima cană din berea nouă. Pentru cel care mi-a salvat butoaiele.",
+        "text": "Prima cană din butoaiele salvate. Pentru cel care mi le-a salvat.",
         "urmator": "d4"
       },
       "d4": {
@@ -16086,7 +16377,15 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "trist",
-        "text": "Caut printre ele sabia lui, cu rombul auriu pe gardă. O caut o dată, de două ori, apoi a treia oară, cu mâinile, prin toate. Nu e aici.",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "tata_echipament"
+            },
+            "text": "Mâna mea tot caută printre ele sabia lui, cu rombul auriu pe măciulie. Apoi îmi amintesc: n-a ajuns niciodată aici. Unchiul a adus-o acasă odată cu tata, iar mama a ținut-o în lada de sub pat."
+          },
+          "Caut printre ele sabia lui, cu rombul auriu pe măciulie. O caut o dată, de două ori, apoi a treia oară, cu mâinile, prin toate. Nu e aici."
+        ],
         "urmator": "c8"
       },
       "c8": {
@@ -17410,7 +17709,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "zambet",
-        "text": "Cineva le-a pus frumos unul într-altul și le-a legat cu o sfoară. Care va să zică, „s-au strâns singure”.",
+        "text": "Cineva le-a pus frumos unul într-altul și le-a legat cu o sfoară, să le pot lua dintr-o mișcare. Agnes, sigur. Doar că n-o să recunoască niciodată.",
         "urmator": "c3"
       },
       "c3": {
@@ -20569,7 +20868,7 @@
       "p7": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Nici nu-ți dai seama că a fost crăpată.",
+        "text": "Nici nu se mai cunoaște că a fost crăpată.",
         "urmator": "p8"
       },
       "p8": {
