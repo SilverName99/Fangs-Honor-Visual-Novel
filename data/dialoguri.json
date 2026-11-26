@@ -2198,6 +2198,27 @@
         "emotie": "inrosit",
         "text": "De când cu cercurile, Bram cere de două ori la prânz. Cred că-i place berea."
       },
+      "a_dupa_scandal": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "De seara aia, orcii nu mai râd așa tare la mesele mele. Iar eu nu mai tresar la fiecare ușă trântită.",
+        "_nota": "CIORNĂ (Claude), P75."
+      },
+      "a_dupa_bere": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Oamenii stau mai mult seara de când e berea nouă. Sau poate de când miroase iar a ceva bun aici."
+      },
+      "a_dupa_pivnita": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Am pus un clopoțel la ușa pivniței. Dacă mai aud zgârieturi, sun și vii tu. Glumesc. Doar pe jumătate."
+      },
+      "a_dupa_seara": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Văduvele vin acum o dată pe săptămână și stau împreună la masa din colț. Nu beau nimic. Zic doar că aici nu sunt singure."
+      },
       "cer_ind2": {
         "vorbitor": "hangita",
         "emotie": "inrosit",
@@ -2218,6 +2239,13 @@
         "vorbitor": "hangita",
         "emotie": "trist",
         "text": "Vino mai aproape, Vale. Nu vreau să audă nimeni.",
+        "urmator": "soc_o2"
+      },
+      "soc_o1_treaz": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Vino mai aproape, Vale. Nu vreau să audă nimeni. Unchiul tău nu mai bea. Stă în colțul lui cu o cană de apă și se uită la tabla aia. Mi se rupe inima.",
+        "_nota": "Decis de autor (P76): după „Ultima sticlă” dusă la capăt.",
         "urmator": "soc_o2"
       },
       "soc_o2": {
@@ -2355,13 +2383,24 @@
       "seara_o1": {
         "vorbitor": "hangita",
         "emotie": "trist",
-        "text": "Știi ce-mi lipsește cel mai mult, Vale? Cântecele.",
-        "urmator": "seara_o2"
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "agnes_bere": "terminata"
+              }
+            },
+            "text": "Berea am făcut-o, Vale. Dar știi ce-mi lipsește cu adevărat? Cântecele."
+          },
+          "Știi ce-mi lipsește cu adevărat, Vale? Cântecele."
+        ],
+        "urmator": "seara_o2",
+        "_nota": "Decis de autor (P77): o trimitere la „Berea”, care începea la fel."
       },
       "seara_o2": {
         "vorbitor": "hangita",
         "emotie": "normal",
-        "text": "Înainte de orci, taverna asta cânta în fiecare seară. Acum oamenii beau în tăcere și pleacă acasă înainte să se întunece.",
+        "text": "Înainte de orci, taverna asta cânta în fiecare seară. Acum oamenii beau în tăcere și pleacă acasă devreme.",
         "urmator": "seara_o3"
       },
       "seara_o3": {
@@ -2579,6 +2618,42 @@
       },
       {
         "nod": "h_dragoni"
+      },
+      {
+        "_nota": "Decis de autor (P75): după scandal, dacă Vale a ajutat.",
+        "nod": "a_dupa_scandal",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "ajutat"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P75): după „Berea”.",
+        "nod": "a_dupa_bere",
+        "conditii": {
+          "misiune": {
+            "agnes_bere": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P75): după „Pivnița”.",
+        "nod": "a_dupa_pivnita",
+        "conditii": {
+          "misiune": {
+            "agnes_pivnita": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P75): după „Seara celor 23”; despre văduve în general (nu se bate cu micul Owen).",
+        "nod": "a_dupa_seara",
+        "conditii": {
+          "misiune": {
+            "agnes_seara": "terminata"
+          }
+        }
       },
       {
         "nod": "a_dupa_cercuri",
@@ -4060,11 +4135,57 @@
         }
       },
       {
+        "_nota": "Decis de autor (P86): seara, cu Groapa deschisă, în locul lui „Du-te la culcare”.",
+        "nod": "seara_groapa",
+        "conditii": {
+          "moment": [
+            "seara"
+          ],
+          "stare": {
+            "groapa": "deschisa"
+          },
+          "sansa": 0.5
+        }
+      },
+      {
         "nod": "seara",
         "conditii": {
           "moment": [
             "seara"
           ],
+          "nuStare": {
+            "groapa": "deschisa"
+          },
+          "sansa": 0.5
+        }
+      },
+      {
+        "_nota": "Decis de autor (P86): după ce Vale l-a doborât pe Campionul Groapei.",
+        "nod": "groapa_campion",
+        "conditii": {
+          "stare": {
+            "groapa_greu": "castigat"
+          },
+          "sansa": 0.4
+        }
+      },
+      {
+        "_nota": "Decis de autor (P86): după verigheta câștigată înapoi.",
+        "nod": "groapa_inel",
+        "conditii": {
+          "existaStare": "inel_castigat",
+          "sansa": 0.4
+        }
+      },
+      {
+        "_nota": "Decis de autor (P86): după o victorie în Groapă.",
+        "nod": "groapa_victorie",
+        "conditii": {
+          "contor": {
+            "groapa_victorii": {
+              "min": 1
+            }
+          },
           "sansa": 0.5
         }
       },
@@ -4146,6 +4267,27 @@
         "vorbitor": "paznic_orc_1",
         "emotie": "suparat",
         "text": "Ce cauți la poartă la ora asta? Du-te la culcare, până nu te culc eu."
+      },
+      "seara_groapa": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Iar ai venit să sângerezi pentru noi? Groapa e după poartă. Băieții pariază deja.",
+        "_nota": "CIORNĂ (Claude), P86."
+      },
+      "groapa_victorie": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Hrr. Tu ești ăla din Groapă. Am pierdut două monede pe tine. Data viitoare pun pe tine, pui de om."
+      },
+      "groapa_inel": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "rade",
+        "text": "Colectorul tot se uită la degete, să vadă dacă nu i-a mai rămas vreun inel. Băieții râd de el de atunci."
+      },
+      "groapa_campion": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "normal",
+        "text": "Ai doborât Campionul. La noi, cine face asta primește un nume. Tu încă n-ai unul. Încă."
       },
       "dupa_scandal_ajutat": {
         "vorbitor": "paznic_orc_1",
@@ -4254,6 +4396,15 @@
           },
           "nu": {
             "existaStare": "plug_gata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P81): după „Plec mai departe.” la prima patrulă, un salut mai rece, o singură dată.",
+        "nod": "lasat",
+        "conditii": {
+          "stare": {
+            "fermier_lasat": "da"
           }
         }
       },
@@ -4410,6 +4561,29 @@
         "emotie": "normal",
         "text": "Pentru tortul surioarei lui Finn? Atunci ia de la stupul cel bun. Și să-i spui că e și de la mine.",
         "_nota": "CIORNĂ (Claude): misiunea lui Finn „Ziua Linei”."
+      },
+      "lasat": {
+        "vorbitor": "fermier",
+        "emotie": "suparat",
+        "text": "Ai trecut pe lângă noi, atunci. Bine că măcar acum te uiți.",
+        "_nota": "CIORNĂ (Claude), P81.",
+        "efecte": {
+          "stare": {
+            "fermier_lasat": "spus"
+          }
+        }
+      },
+      "f_cana": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Mi-a trimis Agnes cana promisă. Din mierea mea, zice. Cea mai bună bere din Baum, și nu doar pentru că e și a mea.",
+        "_nota": "CIORNĂ (Claude), P74."
+      },
+      "f_dator_bram": {
+        "vorbitor": "fermier",
+        "emotie": "normal",
+        "text": "Plugul ară mai bine ca nou. Bram zice că l-a făcut pe datoria satului. Eu zic că satul îi e dator lui Bram.",
+        "_nota": "CIORNĂ (Claude), P82."
       }
     },
     "meniu": true,
@@ -4478,6 +4652,29 @@
               "fermier": 1
             }
           }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P74): după „Berea”, cana promisă.",
+        "nod": "f_cana",
+        "conditii": {
+          "misiune": {
+            "agnes_bere": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P82): după plug (reparat cu Vale sau de Bram singur).",
+        "nod": "f_dator_bram",
+        "conditii": {
+          "oricare": [
+            {
+              "existaStare": "plug_reparat"
+            },
+            {
+              "existaStare": "plug_spus"
+            }
+          ]
         }
       }
     ],
@@ -12634,6 +12831,19 @@
         "vorbitor": "hangita",
         "emotie": "zambet",
         "text": "Mai încet cu mierea, Vale! Bere facem, nu turtă dulce.",
+        "urmator": "b2"
+      },
+      "b2": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Tata zicea că berea bună se face cu mâini liniștite. Ale mele n-au mai fost liniștite de la primăvară.",
+        "_nota": "Decis de autor (P74).",
+        "urmator": "b3"
+      },
+      "b3": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Azi sunt.",
         "urmator": "c"
       },
       "c": {
@@ -18963,6 +19173,17 @@
           "stare": {
             "cercuri_gata": "da"
           }
+        },
+        "urmator": "d8"
+      },
+      "d8": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "gand": true,
+        "text": "Urc scara cu cana goală. În urma mea, în pivniță, Agnes râde, iar Bram spune ceva încet, cu o voce pe care nu i-o știam. Trag ușa încet după mine.",
+        "_nota": "Decis de autor (P73): gândul de încheiere; Vale urcă în sală.",
+        "efecte": {
+          "mergi": "taverna.parter"
         }
       }
     }
@@ -23327,7 +23548,8 @@
         "aleator": [
           "v1",
           "v2",
-          "v3"
+          "v3",
+          "v4"
         ]
       }
     ],
@@ -23440,6 +23662,25 @@
         "vorbitor": "batran",
         "emotie": "zambet",
         "text": "Ha! Așa vorbea și căpitanul meu. A murit sărac.",
+        "urmator": "nivel"
+      },
+      "v4": {
+        "vorbitor": "batran",
+        "emotie": "normal",
+        "text": "Tatăl tău stătea pe scăunelul ăla când avea cât tine de jumătate. Pierdea și se încrunta, pierdea și se încrunta. Până într-o zi.",
+        "_nota": "Decis de autor (P80): o amintire despre Edwin copil.",
+        "urmator": "v4b"
+      },
+      "v4b": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Nu știam asta.",
+        "urmator": "v4c"
+      },
+      "v4c": {
+        "vorbitor": "batran",
+        "emotie": "zambet",
+        "text": "Răbdarea vine greu la Lightfinderi. Dar vine. Hai, așază piesele.",
         "urmator": "nivel"
       },
       "nivel": {
@@ -25890,6 +26131,35 @@
               }
             }
           }
+        ]
+      }
+    }
+  },
+  "negustor_caseta": {
+    "_nota": "CIORNĂ (Claude). Decis de autor (P83): a doua zi după „Avem nevoie de bani.” („Ultima treabă pentru Jarek”), negustorul îl oprește pe Vale în piață, o singură dată: i-a dispărut caseta.",
+    "partener": "negustor",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "negustor",
+        "emotie": "normal",
+        "text": "Lightfinder! Mi-a dispărut caseta. Toată agoniseala dintr-o săptămână, într-o singură zi de târg. Dacă afli cine, spune-mi. Orcii n-au fost: ei iau ziua, în fața mea.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "finn_jarek": "dat"
+              }
+            },
+            "text": "Dau din cap și trec mai departe. Cele cincisprezece monede îmi atârnă în pungă ca o piatră."
+          },
+          "Dau din cap și trec mai departe. Îmi răsună în cap vorba lui Finn: „Tu nici nu trebuie să știi cum.”"
         ]
       }
     }

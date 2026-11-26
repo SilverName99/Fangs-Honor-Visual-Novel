@@ -2088,12 +2088,14 @@
       "intrebareVorba": "Ce mai faceți?",
       "intrebareVorba_en": "How are you doing?",
       "clicabil": {
-        "_nota": "Decis de autor: nu se poate vorbi cu el până nu-l necăjesc orcii (orci_patrula_campuri_prima).",
+        "_nota": "Decis de autor: nu se poate vorbi cu el până nu-l necăjesc orcii (orci_patrula_campuri_prima). Până atunci, un clic pe el dă doar gândul lui Vale (decis de autor, P81), nu aratul de sub el.",
         "conditii": {
           "stare": {
             "fermier_deblocat": "da"
           }
-        }
+        },
+        "gand": "Fermierul nici nu ridică ochii din brazdă.",
+        "gand_en": "The farmer doesn’t even look up from the furrow."
       }
     },
     {

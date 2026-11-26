@@ -53,6 +53,39 @@
       "_nota": "Decis de autor: cât e misiunea lui Finn „Ziua Linei” (până la ziua ei) și Vale n-are panglica, negustorul îl oprește de fiecare dată când intră în piață. Stă primul în listă, ca să aibă întâietate față de sacii negustorului; după ziua Linei rămâne doar misiunea lui obișnuită, cu sacii."
     },
     {
+      "id": "negustor_caseta",
+      "nume": "Caseta negustorului",
+      "nume_en": "The Merchant’s Strongbox",
+      "repetare": "o_data",
+      "dialog": "negustor_caseta",
+      "conditii": {
+        "loc": "piata",
+        "moment": [
+          "dimineata",
+          "amiaza"
+        ],
+        "zileDeLa": {
+          "finn_jarek_furt": {
+            "min": 1,
+            "max": 4
+          }
+        },
+        "oricare": [
+          {
+            "stare": {
+              "finn_jarek": "furt"
+            }
+          },
+          {
+            "stare": {
+              "finn_jarek": "dat"
+            }
+          }
+        ]
+      },
+      "_nota": "Decis de autor (P83): o singură dată, în zilele de după furt (stare „furt”: Finn n-a adus încă banii; „dat”: i-a adus)."
+    },
+    {
       "id": "test_saci_piata",
       "conditii": {
         "loc": "piata",
@@ -376,7 +409,8 @@
           "efecte": {
             "reputatie": -1,
             "stare": {
-              "fermier_deblocat": "da"
+              "fermier_deblocat": "da",
+              "fermier_lasat": "da"
             }
           }
         }

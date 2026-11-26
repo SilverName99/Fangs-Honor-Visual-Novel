@@ -2410,7 +2410,19 @@
         "_nota": "Decis de autor: a lui Agnes, dar punctul e al lui Roderick (se poate rata). Ales de Claude: după „Ultima sticlă” (făcută sau ratată). Doar în sală: tabla neagră e în spatele tejghelei, iar 12–16 Agnes servește afară.",
         "text": "Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva?",
         "text_en": "Mistress Agnes, you look worried. Has something happened?",
-        "nod": "soc_o1",
+        "nod": [
+          {
+            "nod": "soc_o1_treaz",
+            "conditii": {
+              "stare": {
+                "roderick_treaz": "da"
+              }
+            }
+          },
+          {
+            "nod": "soc_o1"
+          }
+        ],
         "conditii": {
           "oricare": [
             {
