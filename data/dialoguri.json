@@ -1882,9 +1882,15 @@
             }
           },
           {
-            "text": "Poate altă dată."
+            "text": "Poate altă dată.",
+            "spre": "co6_nu"
           }
         ]
+      },
+      "co6_nu": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Bine. Camera a așteptat de la bătălie; mai poate aștepta."
       },
       "co_da": {
         "vorbitor": "hangita",
@@ -1936,9 +1942,15 @@
             }
           },
           {
-            "text": "Poate altă dată."
+            "text": "Poate altă dată.",
+            "spre": "po5_nu"
           }
         ]
+      },
+      "po5_nu": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Atunci nici eu nu cobor. Să roadă ce-or vrea."
       },
       "po_da": {
         "vorbitor": "hangita",
@@ -1990,9 +2002,15 @@
             }
           },
           {
-            "text": "Poate altă dată."
+            "text": "Poate altă dată.",
+            "spre": "bo5_nu"
           }
         ]
+      },
+      "bo5_nu": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Las’, că oamenii s-au obișnuit cu apa cu spumă."
       },
       "bo_da": {
         "vorbitor": "hangita",
@@ -2761,9 +2779,15 @@
             }
           },
           {
-            "text": "Poate altă dată."
+            "text": "Poate altă dată.",
+            "spre": "vanam_nu"
           }
         ]
+      },
+      "vanam_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Atunci vânez singură. Ember nu se supără. Prea tare."
       },
       "k_padure_a": {
         "vorbitor": "vanatoare",
@@ -3356,9 +3380,15 @@
             }
           },
           {
-            "text": "Altă dată, Kaia."
+            "text": "Altă dată, Kaia.",
+            "spre": "baza_o2_nu"
           }
         ]
+      },
+      "baza_o2_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bine. Focul o să fie aici și mâine."
       },
       "k_baza_a": {
         "vorbitor": "vanatoare",
@@ -3515,6 +3545,11 @@
         "emotie": "normal",
         "text": "Un arc? Pentru cine?",
         "urmator": "arc_k1"
+      },
+      "k_opt": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Ember îți păstrează locul lângă foc. Nici mie nu mi-l păstrează."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -3599,6 +3634,17 @@
           "nu": {
             "misiune": {
               "kaia_ember": "terminata"
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P16): o replică la 8/10.",
+        "nod": "k_opt",
+        "conditii": {
+          "relatie": {
+            "vanatoare": {
+              "min": 8
             }
           }
         }
@@ -7799,6 +7845,11 @@
         "emotie": "plange",
         "text": "Bram mi-a spus că o să fie gata. Stau aici de cu noapte. Voiam să fiu prima care te vede cu ea pe tine.",
         "urmator": "plat_m4"
+      },
+      "b_opt": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ți-am pus deoparte un ciocan. Cine bate fierul lângă mine are dreptul la el."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -7847,6 +7898,17 @@
         "conditii": {
           "misiune": {
             "elian_toiag": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P16): o replică la 8/10.",
+        "nod": "b_opt",
+        "conditii": {
+          "relatie": {
+            "fierar": {
+              "min": 8
+            }
           }
         }
       }
@@ -8469,6 +8531,11 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Doar ca vraci. Înțeleg."
+      },
+      "e_opt": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Lumânările ard altfel când intri tu. Nu-i spune nimănui că am zis asta."
       }
     },
     "meniu": true,
@@ -8579,6 +8646,20 @@
         "conditii": {
           "misiune": {
             "elian_lumina": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P16): o replică la 8/10. Ales de Claude: și după „Vorbele din somn”, ca Elian să nu spună mai mult decât bănuiește.",
+        "nod": "e_opt",
+        "conditii": {
+          "relatie": {
+            "mag": {
+              "min": 8
+            }
+          },
+          "misiune": {
+            "miriam_visele": "terminata"
           }
         }
       }
@@ -12145,9 +12226,15 @@
             }
           },
           {
-            "text": "Mai întâi să văd ce pot face."
+            "text": "Mai întâi să văd ce pot face.",
+            "spre": "refuz_ok"
           }
         ]
+      },
+      "refuz_ok": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Înțeleg. Nu-i nimic, Vale."
       },
       "mancare_da": {
         "vorbitor": "sora_finn",
@@ -12247,9 +12334,15 @@
             }
           },
           {
-            "text": "Mai întâi să mă gândesc."
+            "text": "Mai întâi să mă gândesc.",
+            "spre": "mama_oferta6_nu"
           }
         ]
+      },
+      "mama_oferta6_nu": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Bine. Dar nu sta prea mult pe gânduri. Mama nu mai poate aștepta mult."
       },
       "mama_da": {
         "vorbitor": "hot",
@@ -12426,7 +12519,8 @@
             }
           },
           {
-            "text": "E prea periculos, Finn."
+            "text": "E prea periculos, Finn.",
+            "spre": "refuz_ok"
           }
         ]
       },
@@ -13128,7 +13222,8 @@
             }
           },
           {
-            "text": "Mai bine altă dată."
+            "text": "Mai bine altă dată.",
+            "spre": "refuz_ok"
           }
         ]
       },
@@ -13333,7 +13428,8 @@
             }
           },
           {
-            "text": "Mai târziu, Finn."
+            "text": "Mai târziu, Finn.",
+            "spre": "refuz_ok"
           }
         ]
       },
@@ -13439,6 +13535,11 @@
         "vorbitor": "hot",
         "emotie": "zambet",
         "text": "Wil o să-l poarte la gât, să știi. Și o să le spună tuturor că l-a smuls el, cu mâna lui."
+      },
+      "f_opt": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Lina zice că ești fratele ei mai mare. Eu n-am contrazis-o. Haha!"
       }
     },
     "vorbeste": [
@@ -13589,6 +13690,17 @@
         "conditii": {
           "misiune": {
             "finn_jarek": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P16): o replică la 8/10.",
+        "nod": "f_opt",
+        "conditii": {
+          "relatie": {
+            "hot": {
+              "min": 8
+            }
           }
         }
       }

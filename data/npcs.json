@@ -487,6 +487,15 @@
           {
             "conditii": {
               "misiune": {
+                "bram_platosa": "terminata"
+              }
+            },
+            "text": "Fierarul satului. Vorbește puțin, dar ce face, face temeinic. A bătut platoșa tatei de două ori: o dată singur, pentru el, și o dată cu mine, pentru mine. Când mi-a strâns curelele pe umeri, n-a zis decât: „Arăți ca el.”",
+            "text_en": "The village blacksmith. He says little, but what he does, he does thoroughly. He has hammered Father’s breastplate twice: once alone, for him, and once with me, for me. When he buckled the straps on my shoulders, all he said was: “You look like him.”"
+          },
+          {
+            "conditii": {
+              "misiune": {
                 "elian_toiag": "terminata"
               }
             },
@@ -505,6 +514,7 @@
           "Fierarul satului. Lucrează de dimineața până seara, afară, la nicovală, iar orcii îi aduc topoarele să le ascută pe gratis. Vorbește puțin, dar ce face, face temeinic."
         ],
         "descriere_en": [
+          null,
           null,
           null,
           "The village blacksmith. He works outside at the anvil from morning till evening, and the orcs bring him their axes to sharpen for free. He says little, but what he does, he does thoroughly."
@@ -604,6 +614,43 @@
         "descriere": [
           {
             "conditii": {
+              "misiune": {
+                "finn_prieteni": "terminata",
+                "finn_jarek": "terminata"
+              }
+            },
+            "text": "Finn, de la Marginea satului. A furat ca să-și hrănească mama și sora; acum s-a lăsat și de treburile cu Jarek. Și-a lăsat sculele pe masa lui, iar seara stă acasă, cu Lina. Mi-a dat un fluier. Zice că, atunci când o să suflu în el, o să afle orcii ce înseamnă Marginea satului.",
+            "text_en": "Finn, from the Edge of the village. He stole to feed his mother and his sister; now he has quit his jobs for Jarek too. He left his tools on Jarek’s table, and in the evenings he stays home, with Lina. He gave me a whistle. He says that when I blow it, the orcs will learn what the Edge of the village means."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "finn_prieteni": "terminata"
+              }
+            },
+            "text": "Finn, de la Marginea satului. A furat ca să-și hrănească mama și sora. Acum mama lui doarme nopțile, iar Finn râde mai des. Mi-a dat un fluier. Zice că, atunci când o să suflu în el, o să afle orcii ce înseamnă Marginea satului.",
+            "text_en": "Finn, from the Edge of the village. He stole to feed his mother and his sister. Now his mother sleeps through the night, and Finn laughs more often. He gave me a whistle. He says that when I blow it, the orcs will learn what the Edge of the village means."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "finn_jarek": "terminata"
+              }
+            },
+            "text": "Finn, de la Marginea satului. A furat ca să-și hrănească mama și sora; acum s-a lăsat și de treburile cu Jarek. Și-a lăsat sculele pe masa lui, iar seara stă acasă, cu Lina.",
+            "text_en": "Finn, from the Edge of the village. He stole to feed his mother and his sister; now he has quit his jobs for Jarek too. He left his tools on Jarek’s table, and in the evenings he stays home, with Lina."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "finn_mama": "terminata"
+              }
+            },
+            "text": "Finn, de la Marginea satului. A furat ca să-și hrănească mama și sora. Acum mama lui doarme nopțile, iar Finn râde mai des.",
+            "text_en": "Finn, from the Edge of the village. He stole to feed his mother and his sister. Now his mother sleeps through the night, and Finn laughs more often."
+          },
+          {
+            "conditii": {
               "oricare": [
                 {
                   "misiune": {
@@ -623,6 +670,10 @@
           "Hoțul legat la butucul din piață. Negustorul zice că i-a furat o pungă. Oamenii trec pe lângă el fără să se uite; unii scuipă."
         ],
         "descriere_en": [
+          null,
+          null,
+          null,
+          null,
           null,
           "The thief locked in the stocks at the market. The merchant says he stole a purse from him. People walk past without looking at him; some spit."
         ]
@@ -848,8 +899,17 @@
             "conditii": {
               "existaStare": "revolta"
             },
-            "text": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Tabăra ei din pădure e acum baza noastră.",
-            "text_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her camp in the forest is our base now."
+            "text": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Ai ei au chemat-o acasă, cu un șoim, iar ea a rămas. Tabăra ei din pădure e acum baza noastră.",
+            "text_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her people called her home, with a falcon, and she stayed. Her camp in the forest is our base now."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "kaia_soim": "terminata"
+              }
+            },
+            "text": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns. Ai ei au chemat-o acasă, cu un șoim. A rămas. Pentru pădurea noastră și, cred, puțin și pentru noi.",
+            "text_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her campsite in the forest is our hiding place now. Her people called her home, with a falcon. She stayed. For our forest and, I think, a little for us too."
           },
           {
             "conditii": {
@@ -861,6 +921,7 @@
           "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei."
         ],
         "descriere_en": [
+          null,
           null,
           null,
           "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand."
@@ -1203,9 +1264,19 @@
             "text": "Preotul satului și magul lui. Toți, și orcii, îl cred un mag mic, bun la lumânări și la răni ușoare. Eu am văzut lumina din palma lui, sub biserică, și cristalul din punga de la gât. Nu e un mag mic. De ce l-a trimis Cercul Luminii tocmai aici, nu mi-a spus încă.",
             "text_en": "The village priest and its mage. Everyone, even the orcs, takes him for a minor mage, good for candles and light wounds. I have seen the light in his palm, beneath the church, and the crystal in the pouch around his neck. He is no minor mage. Why the Circle of Light sent him here, of all places, he hasn’t told me yet."
           },
+          {
+            "conditii": {
+              "misiune": {
+                "elian_lumina": "terminata"
+              }
+            },
+            "text": "Preotul satului și magul lui: unul mic, zic oamenii. Dar în pădure m-am trezit lângă el, cu rănile închise, într-un cerc de iarbă arsă, iar palmele încă îi luceau sub mâneci. Zice că m-a găsit așa. Nu-l mai cred chiar pe tot.",
+            "text_en": "The village priest and its mage: a minor one, people say. But in the forest I woke beside him with my wounds closed, in a ring of burnt grass, and his palms were still glowing under his sleeves. He says he found me like that. I don’t quite believe all of it anymore."
+          },
           "Preotul satului și, ca în orice sat, magul lui: unul mic, zic oamenii, bun la lumânări și la răni ușoare. Tânăr pentru o haină atât de grea. Dimineața aprinde tămâia, ziua privește altarul, iar după-amiaza citește pe treptele bisericii. Când e el prin preajmă, lumânările par să ardă mai frumos."
         ],
         "descriere_en": [
+          null,
           null,
           "The village priest and, as in every village, its mage: a minor one, people say, good for candles and light wounds. Young for such a heavy robe. In the morning he lights the incense, by day he gazes at the altar, and in the afternoon he reads on the church steps. When he’s near, the candles seem to burn brighter."
         ]
