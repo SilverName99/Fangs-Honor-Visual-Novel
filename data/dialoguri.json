@@ -25393,13 +25393,76 @@
         "emotie": "normal",
         "text": "Adorm cu spatele la zidul vechi, cu fața spre foc. Ultimul lucru pe care îl văd e unchiul, cu sabia pe genunchi, uitându-se spre răsărit.",
         "gand": true,
+        "urmator": "d3a"
+      },
+      "d3a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă trezește frigul. Ceața stă joasă între zidurile surpate, iar dincolo de ele poarta de piatră iese din ea ca un os. Unchiul e deja în picioare, cu fața spre răsărit. Ascultă.",
+        "imagine": "events/drum_zori_poarta.png",
+        "efecte": {
+          "panaLaOra": "06:30",
+          "seteazaNevoi": {
+            "stamina": 85,
+            "foame": 75,
+            "sete": 70
+          }
+        },
+        "urmator": "d3b"
+      },
+      "d3b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Nimic. Nici păsări. De aseară n-am auzit o singură pasăre.",
+        "urmator": "d3c"
+      },
+      "d3c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mai e mult?",
+        "urmator": "d3d"
+      },
+      "d3d": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De aici încolo nu mai e drum, băiete. E doar hârtia lui.",
+        "urmator": "d3e"
+      },
+      "d3e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Pădurea se rărește cu fiecare ceas. Fagii lasă locul unor pini strâmbi, apoi pinii lasă locul pietrei. Urcăm cu harta în mâna unchiului, pe unde n-a mai călcat nimeni de mult.",
+        "imagine": "events/drum_stanci.png",
+        "efecte": {
+          "panaLaOra": "09:30"
+        },
+        "urmator": "d3f"
+      },
+      "d3f": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "A urcat singur pe aici. Fără frânghie, fără nimeni să-i țină spatele. Încăpățânat ca un catâr.",
+        "urmator": "d3g"
+      },
+      "d3g": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ca tine.",
+        "urmator": "d3h"
+      },
+      "d3h": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Ca toți proștii de la Strajă. De-aia ne-am înțeles.",
         "urmator": "p56"
       },
       "p56": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "A treia zi, pe la prânz, pădurea se rărește și rămân doar stânci. Și între ele, piatra înaltă de pe a doua hârtie.",
+        "text": "Pe la prânz, sus, între stânci, o vedem: piatra înaltă de pe a doua hârtie. Stă singură, ca un om care așteaptă pe cineva.",
         "imagine": "events/drum_piatra.png",
         "efecte": {
           "panaLaOra": "12:00",
@@ -25416,7 +25479,8 @@
         "emotie": "normal",
         "gand": true,
         "text": "E mai înaltă decât doi oameni. Semnele de pe ea sunt aceleași, linie cu linie. Iar în stânca de lângă ea sunt urmele: patru șanțuri adânci, cât brațul meu.",
-        "urmator": "p58"
+        "urmator": "p58",
+        "imagine": "events/drum_piatra_gheare.png"
       },
       "p58": {
         "vorbitor": "soldat",
@@ -25460,7 +25524,8 @@
         "emotie": "normal",
         "gand": true,
         "text": "Căutăm până se întunecă de tot, printre pietre, pe marginea râpei. Nici urmă de solz. Poate că nici n-avea cum: un dragon nu iese din lumea lui decât legat de un om. Dar atunci ale cui sunt ghearele de pe stâncă?",
-        "urmator": "p64"
+        "urmator": "p64",
+        "imagine": "events/drum_cautare.png"
       },
       "p64": {
         "vorbitor": "soldat",
@@ -25513,7 +25578,9 @@
         "emotie": "normal",
         "text": "Într-o noapte, m-a trezit prietenul meu, cel cu hârtiile. Nu striga. Șoptea. Ca la biserică.",
         "amintire": true,
-        "urmator": "p70"
+        "urmator": "p70",
+        "imagine": "events/drum_pasari_trezire.png",
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)"
       },
       "p70": {
         "vorbitor": "soldat",
@@ -25536,21 +25603,55 @@
         "emotie": "normal",
         "text": "Am stat până s-au dus toate. Apoi am stat până s-a făcut ziuă, cu ochii pe cerul gol. Mi-era frică să clipesc.",
         "amintire": true,
-        "urmator": "p73"
+        "urmator": "p73",
+        "imagine": "events/drum_pasari_zori.png",
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)"
       },
       "p73": {
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Douăzeci de ierni de strajă și n-am văzut niciun dragon. Dar în noaptea aia am înțeles de ce călăreții nu se mai întorc niciodată aceiași.",
         "trezire": true,
-        "imagine": "events/drum_foc_3.png",
+        "imagine": "events/drum_foc_3_noapte.png",
+        "urmator": "p73b"
+      },
+      "p73b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă uit la el peste foc. Păsări care ard și nu ard nimic. Care zboară noaptea, toate odată, spre poarta focului.",
+        "urmator": "p73c"
+      },
+      "p73c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Unchiule... și dacă n-erau păsări? Dacă erau ei? Călăreții de la Caldrath?",
+        "urmator": "p73d"
+      },
+      "p73d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Unchiul nu răspunde. Se uită mult în jar, cum se uita atunci la cer.",
+        "urmator": "p73e"
+      },
+      "p73e": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Zburau prea sus ca să văd altceva decât focul. Dar dacă erau ei... atunci am fost mai aproape decât am crezut. Și ceva mare se întâmpla în noaptea aia, de-i trimiteau pe toți odată.",
+        "urmator": "p73f"
+      },
+      "p73f": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Culcă-te, băiete. Stau eu de strajă.",
         "urmator": "p74"
       },
       "p74": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Unchiul se culcă pe partea cealaltă a focului. Peste câteva clipe sforăie. Eu mă uit mult la lumina palidă din râpă, până când mi se închid ochii.",
+        "text": "Unchiul își pune sabia pe genunchi, ca în celelalte nopți. Dar după trei nopți fără somn, capul îi cade în piept înainte să se facă focul jar. Eu mă uit mult la lumina palidă din râpă, până când mi se închid ochii.",
         "efecte": {
           "panaLaOra": "23:30"
         },
