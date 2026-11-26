@@ -25706,7 +25706,8 @@
         "text": "Mă ridic. Focul s-a făcut jar. Unchiul doarme cu mâna pe sabie și nu se mișcă.",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
-        "urmator": "v3"
+        "urmator": "v3",
+        "imagine": "events/vis_5_unchi.png"
       },
       "v3": {
         "vorbitor": "vale",
@@ -25725,15 +25726,7 @@
         "imagine": "events/vis_5_2.png",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
-        "urmator": "film"
-      },
-      "film": {
-        "video": "events/vis_5.mp4",
-        "faraVideo": "v5",
-        "urmator": "v5",
-        "amintire": true,
-        "grupGalerie": "Al cincilea vis",
-        "_nota": "Filmulețul visului (opțional, ca la celelalte vise): coborârea în crăpătură, cu semnele de pe pereți aprinzându-se pe rând. Lipsește = visul merge direct la imaginea următoare."
+        "urmator": "v5"
       },
       "v5": {
         "vorbitor": "vale",
@@ -25828,22 +25821,31 @@
         "text": "Ceața din arc se mișcă. Și, pentru o clipă, mi se pare că dincolo de ea respiră ceva uriaș. Ceva care așteaptă.",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
-        "urmator": "v16"
+        "urmator": "v16",
+        "imagine": "events/vis_5_5.png"
       },
       "v16": {
         "vorbitor": "vale",
-        "emotie": "speriat",
+        "emotie": "normal",
         "gand": true,
-        "text": "Apoi pământul de sub mine se clatină și cad. Cad în sus, spre lumina focului...",
+        "text": "Semnele de pe arc se aprind unul câte unul, de jos până la craniu. Ceața argintie se dă în lături, ca o perdea. Poarta se deschide. Și eu fac un pas spre ea.",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
-        "urmator": "t1"
+        "urmator": "film"
+      },
+      "film": {
+        "video": "events/vis_5.mp4",
+        "faraVideo": "t1",
+        "urmator": "t1",
+        "amintire": true,
+        "grupGalerie": "Al cincilea vis",
+        "_nota": "Filmulețul visului (decis de autor, opțional): Vale în fața porții, semnele se aprind, poarta începe să se deschidă, iar în ultima clipă e smuls înapoi: Roderick l-a prins de mânecă. Lipsește = visul trece direct la trezire."
       },
       "t1": {
         "vorbitor": "vale",
         "emotie": "speriat",
         "gand": true,
-        "text": "Mă trezesc atârnând. Sub picioarele mele nu e nimic. Doar ceața albă și frigul din adânc.",
+        "text": "O smucitură de mânecă. Poarta dispare. Mă trezesc atârnând: sub picioarele mele nu e nimic, doar ceața albă și frigul din adânc.",
         "trezire": true,
         "imagine": "events/drum_mana.png",
         "efecte": {
@@ -25856,7 +25858,7 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "gand": true,
-        "text": "Și o mână. Mâna unchiului, strânsă pe mâna mea.",
+        "text": "Și o mână. Mâna unchiului, care m-a prins de mânecă și acum îmi strânge mâna.",
         "urmator": "t3"
       },
       "t3": {
