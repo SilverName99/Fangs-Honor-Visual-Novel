@@ -512,9 +512,32 @@
       "nume": "Finn",
       "nume_en": "Finn",
       "carte": {
-        "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Finn, un tânăr de la marginea satului. A furat punga negustorului ca să-și hrănească mama bolnavă și sora mică. Nimeni nu l-a crezut. Eu da.",
-        "descriere_en": "Finn, a young man from the Edge. He stole the merchant’s purse to feed his sick mother and his little sister. No one believed him. I did."
+        "_nota": "CIORNĂ (Claude), de revăzut de autor Descrierea crește cu ce află Vale (ales de Claude).",
+        "descriere": [
+          {
+            "conditii": {
+              "oricare": [
+                {
+                  "misiune": {
+                    "finn_eliberare": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "finn_eliberare": "terminata"
+                  }
+                }
+              ]
+            },
+            "text": "Finn, un tânăr de la marginea satului. A furat punga negustorului ca să-și hrănească mama bolnavă și sora mică. Nimeni nu l-a crezut. Eu da.",
+            "text_en": "Finn, a young man from the Edge. He stole the merchant’s purse to feed his sick mother and his little sister. No one believed him. I did."
+          },
+          "Hoțul legat la butucul din piață. Negustorul zice că i-a furat o pungă. Oamenii trec pe lângă el fără să se uite; unii scuipă."
+        ],
+        "descriere_en": [
+          null,
+          "The thief locked in the stocks at the market. The merchant says he stole a purse from him. People walk past without looking at him; some spit."
+        ]
       },
       "locuriSprite": [
         "piata",
@@ -731,9 +754,29 @@
       "nume": "Kaia",
       "nume_en": "Kaia",
       "carte": {
-        "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Trece prin sat din când în când și toată lumea o știe. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns.",
-        "descriere_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She passes through the village now and then, and everyone knows her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her campsite in the forest is our hiding place now."
+        "_nota": "CIORNĂ (Claude), de revăzut de autor Descrierea crește cu ce află Vale (ales de Claude).",
+        "descriere": [
+          {
+            "conditii": {
+              "existaStare": "revolta"
+            },
+            "text": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Tabăra ei din pădure e acum baza noastră.",
+            "text_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her camp in the forest is our base now."
+          },
+          {
+            "conditii": {
+              "deblocat": "padure/campsite"
+            },
+            "text": "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei. Locul ei de campare din pădure e acum locul nostru ascuns.",
+            "text_en": "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand. Her campsite in the forest is our hiding place now."
+          },
+          "Vânătoarea de la hotar, din Străjerii Sălbăticiei, oamenii care se înțeleg cu animalele. Venea pe vremuri prin sat, din când în când, și toată lumea o știa. Călărește un tigru cu colți de sabie, pe Ember, iar glaive-ul ei ricoșează din țintă în țintă și se întoarce în mâna ei."
+        ],
+        "descriere_en": [
+          null,
+          null,
+          "The Huntress from the borderlands, one of the Wild Wardens, the people who have a way with animals. She used to pass through the village now and then, and everyone knew her. She rides a saber-toothed tiger, Ember, and her glaive ricochets from target to target and returns to her hand."
+        ]
       },
       "_despre": "Vânătoarea (Huntress în Fangs&Honor), călare pe un tigru. Vânătoare crescută în pădurile de la hotar, cu lame care se întorc în mână. Glaive-ul ei ricoșează din țintă în țintă, până la trei deodată, antrenată împotriva grupurilor strânse. În luptă ține două locuri (față și spate, pe aceeași linie). Era o prietenă bună a sătenilor (venea rar prin sat). S-a strecurat prin pădure și îl găsește pe Vale la vânătoare; el o recunoaște, își povestesc ce s-a întâmplat, apoi ea îl duce la tabăra ei din pădure, care devine locul de campare, locul ascuns al grupului. Recrutarea: TODO.",
       "locuriSprite": [
@@ -1224,9 +1267,23 @@
       "nume": "Agnes",
       "nume_en": "Agnes",
       "carte": {
-        "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti.",
-        "descriere_en": "The innkeeper. She keeps the tavern open from morning until past midnight and hears everything that’s said in the village. She can rent me the room upstairs, if I have the coin.",
+        "_nota": "CIORNĂ (Claude), de revăzut de autor Descrierea crește cu ce află Vale (ales de Claude).",
+        "descriere": [
+          {
+            "conditii": {
+              "stare": {
+                "camera_taverna": "deschisa"
+              }
+            },
+            "text": "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat. Îmi poate închiria camera de sus, dacă am cu ce plăti.",
+            "text_en": "The innkeeper. She keeps the tavern open from morning until past midnight and hears everything that’s said in the village. She can rent me the room upstairs, if I have the coin."
+          },
+          "Hangița. Ține taverna deschisă de dimineața până după miezul nopții și aude tot ce se vorbește în sat."
+        ],
+        "descriere_en": [
+          null,
+          "The innkeeper. She keeps the tavern open from morning until past midnight and hears everything that’s said in the village."
+        ],
         "faraIncredere": true
       },
       "locuriSprite": [
@@ -1345,13 +1402,27 @@
         "rade"
       ],
       "carte": {
-        "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii.",
+        "_nota": "CIORNĂ (Claude), de revăzut de autor. Intră în carte după prima coborâre în pivniță (dupaStare); fără bara de încredere, ca orcii. Descrierea crește cu ce află Vale (ales de Claude).",
         "nume": "Șobolanul scuipător",
         "nume_en": "The Spitting Rat",
         "faraIncredere": true,
         "dupaStare": "sobolani_vorbit",
-        "descriere": "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge; fără leacul Bătrânei Morwen, otrava nu se oprește. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc.",
-        "descriere_en": "It always stays behind the others, with its long neck and a swollen pouch under its jaw. It spits a yellowish slime that burns like fire and gets into the blood; without Old Morwen’s antidote, the poison won’t stop. It told me to think hard about whose side I’m on. I’m still thinking."
+        "descriere": [
+          {
+            "conditii": {
+              "stare": {
+                "cunoscut_ierbareasa": "da"
+              }
+            },
+            "text": "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge; leacul Bătrânei Morwen le oprește pe loc. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc.",
+            "text_en": "It always stays behind the others, with its long neck and a swollen pouch under its jaw. It spits a yellowish slime that burns like fire and gets into the blood; Old Morwen’s antidote stops it at once. It told me to think hard about whose side I’m on. I’m still thinking."
+          },
+          "Stă mereu în spatele celorlalți, cu gâtul lung și o pungă umflată sub falcă. Scuipă bale gălbui care ard ca focul și intră în sânge. Mi-a spus să mă gândesc bine de partea cui stau. Încă mă gândesc."
+        ],
+        "descriere_en": [
+          null,
+          "It always stays behind the others, with its long neck and a swollen pouch under its jaw. It spits a yellowish slime that burns like fire and gets into the blood. It told me to think hard about whose side I’m on. I’m still thinking."
+        ]
       }
     },
     {

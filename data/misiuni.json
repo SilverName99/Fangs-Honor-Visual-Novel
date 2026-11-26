@@ -3776,8 +3776,8 @@
               "groapa": "deschisa"
             }
           },
-          "sfat": "Colectorul stă dimineața la masa taxei (6–12), iar seara face de pază cu o torță (18–23).",
-          "sfat_en": "The collector sits at the tax table in the morning (6–12), and in the evening he stands guard with a torch (18–23).",
+          "sfat": "Colectorul stă dimineața și la prânz la masa taxei (6–14), iar seara face de pază cu o torță (18–23).",
+          "sfat_en": "The collector sits at the tax table in the morning and over lunch (6–14), and in the evening he stands guard with a torch (18–23).",
           "predare": {
             "text": "Am venit pentru inelul mamei mele.",
             "text_en": "I’ve come for my mother’s ring.",

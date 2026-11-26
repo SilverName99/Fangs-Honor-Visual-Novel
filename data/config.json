@@ -573,7 +573,7 @@
     }
   },
   "incredere": {
-    "_nota": "Încrederea fiecărui personaj (relatie în efecte și condiții), de la 0 la max; se vede în cartea personajelor. La max apare misiunea de recrutare (TODO).",
+    "_nota": "Încrederea fiecărui personaj (relatie în efecte și condiții), de la 0 la max; se vede în cartea personajelor. De la 8 apare misiunea de recrutare (TODO; decis de autor: recrutarea de la 8/10).",
     "max": 10
   },
   "ceasRapid": true,
