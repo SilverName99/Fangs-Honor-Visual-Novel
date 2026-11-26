@@ -75,7 +75,7 @@ glosarul se corectează la final, dacă e cazul).
 | șobolanii | the rats | vorbesc repede și repetă: „yes-yes”, „man-thing”, „Ssss!” |
 | Stăpânul-oaselor | the Bone-Master | cum îi spun șobolanii lui Narco |
 | văduvele Hanna, Ilse, Greta | Hanna, Ilse, Greta, the widows | |
-| Pip, Ned, Wil (prietenii lui Finn) | la fel | |
+| Pip, Ned, Wil (prietenii lui Finn; Wil e fratele mai mic al lui Tobin) | la fel | |
 | Tobin (fiul morarului, unul dintre cei 23) | la fel | |
 
 Orcii vorbesc scurt, aspru, batjocoritor: „pui de om” = „human whelp”, „Hrr...” rămâne, „cară-te” = „get lost”.

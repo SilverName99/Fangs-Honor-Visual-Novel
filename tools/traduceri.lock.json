@@ -88,6 +88,7 @@
 "config/jocTafl/replici/dupa/castigUltim/0":"01a353466c",
 "config/jocTafl/replici/dupa/castigTarziu/0":"995f2f8e68",
 "events/evenimente/#lina_panglica/nume":"0f1654a693",
+"events/evenimente/#negustor_caseta/nume":"b84ed292b3",
 "events/evenimente/#test_saci_piata/text":"fb4dd8528b",
 "events/evenimente/#test_saci_piata/alegeri/0/text":"a523e5addc",
 "events/evenimente/#test_saci_piata/alegeri/1/text":"30a42517ad",
@@ -1274,7 +1275,7 @@
 "misiuni/misiuni/#finn_prieteni/titlu":"7631b84b67",
 "misiuni/misiuni/#finn_prieteni/descriere/2":"807c8f3026",
 "misiuni/misiuni/#finn_prieteni/descriere/0/text":"48378f3484",
-"misiuni/misiuni/#finn_prieteni/descriere/1/text":"371ba26860",
+"misiuni/misiuni/#finn_prieteni/descriere/1/text":"6c57c09d59",
 "misiuni/misiuni/#finn_prieteni/oferta/text":"d7771bb18d",
 "misiuni/misiuni/#finn_prieteni/pasi/0/text":"7cb2aa141d",
 "misiuni/misiuni/#finn_prieteni/pasi/0/subpasi/0/text":"8f6526811a",
@@ -1385,4 +1386,5 @@
 "npcs/personaje/#fermier/nume":"abb900e022",
 "npcs/personaje/#fermier/carte/descriere":"7ade0eb56b",
 "npcs/personaje/#fermier/intrebareVorba":"58d99a736e",
+"npcs/personaje/#fermier/clicabil/gand":"5e60f9b665",
 "npcs/personaje/#batran/nume":"1cba16ceda"}
