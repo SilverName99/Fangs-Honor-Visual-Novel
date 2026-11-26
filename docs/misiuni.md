@@ -107,7 +107,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 3. ✅ **Păpușa Linei**: după „Mama lui Finn”, la Lina, când se joacă în fața casei (10–14): „Ce s-a întâmplat, Lina? De ce plângi? !”.
 4. ✅ **Inelul mamei**: pornește singură (nu se poate refuza), din ziua 9, după „Fierul lui Bram”, dimineața (7–11), când intri în bucătărie și mama e acolo (nu duminica, ziua taxei). Deschide **Groapa**.
 5. ✅ **Capa Kaiei**: după ce Kaia nu vrea să vină în Groapă fără deghizare, la mama: „Mamă, mi-ai putea coase o capă? !”.
-6. ✅ **Pâinea văduvelor**: din ziua 6 (nu mai așteaptă după Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”.
+6. ✅ **Pâinea văduvelor**: din ziua 7 (decis de autor, ca misiunile primelor zile să nu vină grămadă; nu mai așteaptă după Roderick), dimineața (5–11), cât mama e în bucătărie: „Mamă, la ce te gândești? !”.
 7. ✅ **Vorbele din somn** (+1 și la Elian): după al doilea vis și la o zi după „Cina în familie”, dimineața (5–11), cât mama e în bucătărie: „Mamă, de ce te uiți așa la mine? !”.
 8. ✅ **Steagul satului** (+1 și la Roderick): după „Cina în familie”, seara (18–23), cât mama e în bucătărie: „Mamă... te gândești la tata? !”.
 9. ✅⚠️ **Lemne pentru iarnă**: la o zi după „Pâinea văduvelor”, dimineața (5–11), cât mama e în bucătărie: „Mamă, ți-e frig? !”. Se ratează dacă refuzi sau dacă treci de cele 3 zile.
@@ -116,10 +116,10 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 **Bram (fierarul)**
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
-2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram?”.
-3. ✅ **O zi la forjă**: pornește singură, după „Foalele stricate”, când vii la fierărie și Bram lucrează afară, după-amiaza (14–18); „!” deasupra lui Bram și a fierăriei.
-4. ✅ **Fierul plugului** (a fermierului, +1 la Bram): după „O zi la forjă”, la fermier: „Ce s-a întâmplat cu plugul? !”.
-5. ✅ **Cercurile butoaielor** (a lui Agnes, +1 la Bram): după „Pivnița” și după „Fierul lui Bram”, la Agnes: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
+2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram, la fierărie: „De ce e forja rece, domnule Bram?”.
+3. ✅ **O zi la forjă**: pornește singură, de a doua zi după „Foalele stricate” (decis de autor), când vii la fierărie și Bram lucrează afară, după-amiaza (14–18); „!” deasupra lui Bram și a fierăriei.
+4. ✅ **Fierul plugului** (a fermierului, +1 la Bram): după „O zi la forjă” și după cheia cocioabei lui Jarek (decis de autor: de la Finn, în „Mama lui Finn”), la o zi după prima discuție cu fermierul, la fermier: „Ce s-a întâmplat cu plugul? !”.
+5. ✅ **Cercurile butoaielor** (a lui Agnes, +1 la Bram): după „Pivnița” și după „Foalele stricate”, la Agnes, în sala tavernei: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
 6. ✅ **Cufărul**: după ce plugul fermierului e reparat (la „Fierul plugului” acceptat, imediat; refuzat, după cele 2 zile) și după „Lumina din pădure” (Elian, decis de autor), la fierărie: Bram e îngândurat → „Ce vă frământă, domnule Bram? !”.
 7. ✅ **Toiagul celor 23** (a lui Elian, +1 la Bram și la Elian): pornește singură, la sfârșitul „Secretului lui Elian”.
 8. ✅ **Platoșa tatălui**: după misiunea specială a Miriamei, cu platoșa crăpată la tine, la fierărie, cât lucrează Bram: „Domnule Bram... ați putea repara platoșa tatei? !”.
@@ -160,14 +160,14 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 **Agnes (hangița)**
 1. ✅ **Camera de sus**: la 2 zile după prima discuție cu Agnes, în tavernă, cât e ea acolo.
 2. ✅ **Berea**: imediat după „Camera de sus”.
-3. ✅ **Pivnița**: după „Berea”, doar 09–11, cât taverna e goală.
-4. ✅ **Cercurile butoaielor** (+1 la Bram): după „Pivnița” și după „Fierul lui Bram”, în tavernă: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
-5. ✅⚠️ **Socoteala** (+1 la Roderick; se poate rata): după „Ultima sticlă” (Roderick, făcută sau ratată): „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”.
+3. ✅ **Pivnița**: după „Berea”, doar 09–11, cât taverna e goală. În afara ferestrei, de la o zi după „Berea”, Agnes îl cheamă: „vino mâine dimineață, devreme...”.
+4. ✅ **Cercurile butoaielor** (+1 la Bram): după „Pivnița” și după „Foalele stricate” (Bram), în sala tavernei: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
+5. ✅⚠️ **Socoteala** (+1 la Roderick; se poate rata): după „Ultima sticlă” (Roderick, făcută sau ratată), în sala tavernei: „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”.
 6. ✅⚠️ **Seara celor 23** (+1 la Roderick; se poate rata): după „Socoteala” (făcută sau ratată): „Doamna Agnes, la ce vă gândiți? !”.
 
 **Fermierul**
 1. ✅ **Patrula de orci** (deblocarea lui): din ziua 3, dimineața, la câmpuri. Abia după ea poți vorbi cu el.
-2. ✅ **Fierul plugului** (+1 la Bram): după „O zi la forjă” (Bram), fermierul are plugul rupt (06–13, la câmpuri): „Ce s-a întâmplat cu plugul? !”.
+2. ✅ **Fierul plugului** (+1 la Bram): după „O zi la forjă” (Bram), după cheia cocioabei lui Jarek (decis de autor) și la o zi după prima discuție cu el, fermierul are plugul rupt (06–13, la câmpuri): „Ce s-a întâmplat cu plugul? !”.
 3. 💡 Celelalte misiuni ale lui: de discutat.
 
 **Finn (hoțul)**
@@ -194,12 +194,12 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 |---|---|---|
 | **Miriam** | ✅ Acoperișul · ✅ Cina în familie · ✅⚠️ Păpușa Linei (doar dacă duci păpușa la mama) · ✅ Inelul mamei · ✅ Capa Kaiei · ✅ Pâinea văduvelor · ✅ Vorbele din somn · ✅ Steagul satului · ✅⚠️ Lemne pentru iarnă (refuz sau 3 zile trecute) · ✅⚠️ Noaptea nașterii (refuz sau bătrâna neadusă până la 5) · (de la 8/10, misiunea specială, echipamentul tatălui, fără încredere) | 10 / 10 |
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · ✅⚠️ Ultima sticlă (doar dacă accepți) · ✅⚠️ Socoteala (a lui Agnes, doar dacă accepți) · ✅⚠️ Seara celor 23 (a lui Agnes, doar dacă accepți) · ✅ Drumul trezirii (Hârtiile soldatului nu dau, decis) | 10 / 10 |
-| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · ✅ Platoșa tatălui · 💡 încă 1 | 9 / 10 |
+| **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · ✅ Platoșa tatălui (doar dacă Miriam a ajuns la 8/10) · 💡 încă 1 | 9 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · ✅⚠️ Ultima sticlă (a lui Roderick, doar dacă accepți) · 💡 încă 1 | 9 / 10 |
 | **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · ✅ Cuștile vânătorilor (+1 oricum s-ar termina lupta, decis de autor) · ✅⚠️ Ultima treabă pentru Jarek (doar „Nu, Finn. Ai promis.”) · ✅ Prietenii lui Finn (de la 8/10) | 10 / 10 |
 
-**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Echipamentul tatălui și platoșa au venit mai devreme (cerut de autor), înaintea celorlalte. Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek). **Roderick** e gata: 10 puncte posibile, dintre care 5 ⚠️ (Scandalul, Locul unde a căzut tata, Ultima sticlă, Socoteala, Seara celor 23).
+**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Echipamentul tatălui și platoșa au venit mai devreme (cerut de autor), înaintea celorlalte. Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek). **Roderick** e gata: 10 puncte posibile, dintre care 5 ⚠️ (Scandalul, Locul unde a căzut tata, Ultima sticlă, Socoteala, Seara celor 23). Rămâne așa (decis de autor; la „Seara celor 23” refuzul costă punctul, iar oferta nu revine): dacă ratezi cel mult 2, se mai poate recruta; dacă ratezi 3, nu. Scandalul refuzat, singur, nu-l pierde. **Bram și Miriam** (decis de autor, voit): cu cele 3 ⚠️ ale Miriamei ratate, mama nu ajunge la 8/10, deci nu vin nici echipamentul tatălui, nici „Platoșa tatălui”: amândoi pierd câte un punct, iar Bram are atunci 8 puncte posibile până la al 10-lea (💡); Bram are 2 ⚠️ (Capcanele, Plugul).
 
 ---
 
@@ -406,11 +406,11 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
   - un paznic îi face semn să plece, iar Vale se gândește că nu pleacă fără fier;
   - colectorul râde și dă **trei căi**:
     - **plătești 60 de monede**;
-    - **câștigi la zaruri** de la paznici (doar 14–18). Fierul e miza orcilor, iar Vale pune 20 de monede;
+    - **câștigi la zaruri** de la paznici (doar 14–18). Fierul e miza orcilor, iar Vale pune 20 de monede; fără ele, paznicul îl trimite înapoi pe hartă;
     - **te bați cu colectorul**: el trișează (cu bâta, 400 viață), iar Vale are doar pumnii. Nu se poate câștiga, doar iei bătaie. Data următoare, colectorul își bate joc de Vale că s-a întors, apoi îi dă iar de ales.
 - **Când iei fierul înapoi** (oricare cale): o imagine cu fierul primit, iar colectorul îi spune lui Vale că-l mai așteaptă pe la poartă. De acum poarta e deschisă, ziua și noaptea.
-- **Pasul 2:** duci fierul la Bram: „Ți-am adus fierul înapoi, Bram. ?”.
-- **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă.
+- **Pasul 2:** duci fierul la Bram: „V-am adus fierul înapoi, domnule Bram. ?”.
+- **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă (de când i-a luat colectorul fierul, gândul lui Vale de la ușă o spune).
 - **Poarta e închisă până termini misiunea** (decis de autor): înainte de misiune sau cu fierul deja la tine, orcul te oprește (prima imagine de la poartă) și te întoarce pe hartă. Noaptea (23–06) Vale nici nu ajunge acolo: doar se gândește că n-ar fi bine. Taxa se plătește atunci doar când vine colectorul acasă.
 - **Legături:** folosește jocul de zaruri de la poartă.
 
@@ -419,26 +419,26 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Dacă ești în ziua 1 sau 2, apasă „Ziua următoare” până ajungi în ziua 3. Apoi timp „Dimineață” (07:00, zi lucrătoare).
 2. De pe **hartă**, mergi la fierărie: rulează cele două imagini cu replici. (Sau: Eveniment `bram_fier_confiscat` → Pornește.)
-3. Vorbește cu Bram → „Am văzut ce s-a întâmplat cu fierul... !” → „Îl aduc înapoi, Bram.”
+3. Vorbește cu Bram → „Am văzut ce s-a întâmplat cu fierul... !” → „Îl aduc înapoi, domnule Bram.”
 4. Încearcă ușa fierăriei: e zăvorâtă. (Înainte de pasul 3, încearcă și poarta: orcul te întoarce pe hartă.)
 5. De pe **hartă**, mergi la poartă: imaginea 1 → „Vreau să vorbesc cu colectorul” → imaginea 2 cu cele trei căi. Încearcă-le pe rând (după fiecare, ieși și intră iar la poartă):
    - **Plătesc:** pune 60 de monede din F2;
-   - **Zaruri:** ora 14–18 (de exemplu „Amiază” + 2 × „+1 oră”). Miza orcilor e „Fierul lui Bram”;
+   - **Zaruri:** ora 14–18 (de exemplu „Amiază” + 2 × „+1 oră”), cu cel puțin 20 de monede (fără ele, paznicul te trimite pe hartă). Miza orcilor e „Fierul lui Bram”;
    - **Mă bat:** lupta cu pumnii contra colectorului; pierzi.
    - După „Nu acum”, „Mă mai gândesc” sau o bătaie pierdută, Vale ajunge înapoi pe hartă: paznicul nu-l lasă la poartă cât e misiunea în lucru.
-6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „Ți-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
+6. Cu fierul (îl vezi la Obiecte de poveste), vorbește cu Bram → „V-am adus fierul înapoi” → 15 monede, încredere +1. Ușa magazinului se deschide (când Bram e acasă).
 
 ### ✅ Foalele stricate
-- **Pornește:** imediat după „Fierul lui Bram”, la Bram: „De ce e forja rece, domnule Bram? !”. Pielea foalelor a crăpat de tot, iar orcii iau toate blănurile din sat la taxă → „Îți aduc eu pieile, domnule Bram.”
+- **Pornește:** imediat după „Fierul lui Bram”, la Bram, la fierărie (Bram trage de foale, iar foalele șuieră a gol): „De ce e forja rece, domnule Bram? !”. Pielea foalelor a crăpat de tot, iar orcii iau toate blănurile din sat la taxă → „Vă aduc eu pieile, domnule Bram.” („Mistreții nu se lasă prinși ușor...” = Bram îi răspunde, iar meniul revine.)
 - **Pasul 1:** 3 piei de mistreț (de la vânătoare: mistrețul apare în 25% din vânători). Indicația: „Despre foale...”.
-- **Pasul 2:** la Bram, „Ți-am adus pieile de mistreț! ?” → „Hai să le facem.” Peste 2 imagini (decis de autor): Bram și Vale cos pielea pe rama veche, apoi Vale trage de foale, focul se încinge, Bram bate fierul și râde; îi spune lui Vale că tatăl lui stătea exact acolo, la foale. Trec 2 ore.
+- **Pasul 2:** la Bram, la fierărie, „V-am adus pieile de mistreț! ?” (în altă parte, Bram îl trimite la fierărie) → „Hai să le facem.” Peste 2 imagini (decis de autor): Bram și Vale cos pielea pe rama veche, apoi Vale trage de foale, focul se încinge, Bram bate fierul și râde; îi spune lui Vale că tatăl lui stătea exact acolo, la foale. Trec 2 ore.
 - **Recompensa:** încrederea lui Bram +1 (alta, `TODO` dacă vrei).
 - **Imagini:** `events/bram_foale_1.png`, `bram_foale_2.png` (galeria: „Misiunea lui Bram: foalele”).
 
-**Cum verifici:** după „Fierul lui Bram”, cu 3 piei de mistreț (F2 → Obiect), la Bram: „De ce e forja rece...” → „Îți aduc eu pieile” → „Ți-am adus pieile de mistreț!” → „Hai să le facem” → cele 2 imagini → Bram 2/10.
+**Cum verifici:** după „Fierul lui Bram”, cu 3 piei de mistreț (F2 → Obiect), la Bram: „De ce e forja rece...” → „Vă aduc eu pieile” → „V-am adus pieile de mistreț!” → „Hai să le facem” → cele 2 imagini → Bram 2/10.
 
 ### ✅ O zi la forjă
-- **Pornește singură** (decis de autor): după „Foalele stricate”, când vii la fierărie și Bram lucrează afară, după-amiaza (14–18, ales de Claude). Semnul „!” stă deasupra lui Bram și a fierăriei cât evenimentul ar porni la sosire. Bram și-a ars mâna pentru că se grăbea: orcii i-au dat foarte mult de lucru (douăzeci de topoare, le vor diseară, altfel plătește tot satul). Vale lucrează în locul lui și îl ajută să termine la timp.
+- **Pornește singură** (decis de autor): de a doua zi după „Foalele stricate” (decis de autor: nu chiar în după-amiaza în care forja a reînviat), când vii la fierărie și Bram lucrează afară, după-amiaza (14–18, ales de Claude). Semnul „!” stă deasupra lui Bram și a fierăriei cât evenimentul ar porni la sosire. Bram și-a ars mâna pentru că se grăbea: orcii i-au dat foarte mult de lucru (douăzeci de topoare, le vor diseară, altfel plătește tot satul). Vale lucrează în locul lui și îl ajută să termine la timp.
 - **Peste 4 imagini, cu 2 mini-jocuri** (fără eșec, decis de autor):
   - **foalele**: în ritm, ca la muls;
   - **ciocanul**: pe inel, ca la lemne, 3 lovituri, cu sunetul `nicovala`.
@@ -447,32 +447,32 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/bram_forja_1.png` … `bram_forja_4.png` (galeria: „Bram: o zi la forjă”); sunetul `sunete/efecte/nicovala.mp3`.
 - **De aranjat în editor:** Aranjare → Ecrane → „Mini-joc: Foalele” și „Mini-joc: Ciocanul”.
 
-**Cum verifici:** după „Foalele stricate”, între 14:00 și 17:59, intră de pe **hartă** la fierărie, cu Bram afară: pornește singură.
+**Cum verifici:** a doua zi după „Foalele stricate”, între 14:00 și 17:59, intră de pe **hartă** la fierărie, cu Bram afară: pornește singură (în ziua foalelor, nu).
 
 ### ✅ Cufărul
 - **Pornește** (decis de autor: Bram e îngândurat și pare supărat): după „Fierul plugului”, când plugul fermierului e reparat (dacă ai acceptat, imediat; dacă ai refuzat, după cele 2 zile), și după „Lumina din pădure” (misiunile lui Elian, decis de autor). Doar la fierărie (ales de Claude). Bram ține ciocanul în poală și se uită în gol (salutul de dinaintea meniului) → „Ce vă frământă, domnule Bram? !”.
 - **Ce s-a întâmplat** (ales de Claude): colectorul a văzut plugul nou al fermierului și bănuiește că Bram ascunde fier; a zis că vine într-o zi să-i întoarcă fierăria pe dos. „Ce o să găsească?” pornește misiunea; „Nu vreau să știu” o lasă în meniu.
 - Bram îi dă lui Vale **cheia cufărului** (`cheie_fierar`, obiect de poveste) și îl roagă să urce și să-l deschidă: el nu mai poate.
-- **Pasul 1:** în camera lui Bram (sus, din magazin, cât lucrează Bram), un clic pe cufăr → imaginea cu cufărul deschis și **săbiile celor căzuți** (decis de autor: unele rupte, altele ciobite). Vale le numără: douăzeci și două. Caută sabia tatei, cu rombul auriu pe gardă: nu e acolo (ales de Claude: e la Miriam, cu echipamentul lui Edwin).
-- **Pasul 2:** înapoi la Bram, „Am deschis cufărul, domnule Bram.” → le-a strâns de pe câmp a doua zi după bătălie, câte patru odată; sabia lui Edwin n-a găsit-o. Nu le poate topi, nu le poate da orcilor și nici nu le mai poate ține acolo; nu știe ce să facă (decis de autor). Vale se gândește la Fratele Elian.
+- **Pasul 1:** în camera lui Bram (sus, din magazin, cât lucrează Bram), un clic pe cufăr → imaginea cu cufărul deschis și **săbiile celor căzuți** (decis de autor: unele rupte, altele ciobite). Vale le numără: douăzeci și două. Caută sabia tatei, cu rombul auriu pe măciulie: nu e acolo (ales de Claude: e la Miriam, cu echipamentul lui Edwin). Dacă mama i-a dat deja echipamentul, Vale își amintește că sabia e acasă.
+- **Pasul 2:** înapoi la Bram, „Am deschis cufărul, domnule Bram.” → le-a strâns de pe câmp a doua zi după bătălie, câte patru odată; sabia lui Edwin n-a găsit-o. Nu le poate topi, nu le poate da orcilor și nici nu le mai poate ține acolo; nu știe ce să facă (decis de autor). Vale se gândește la Fratele Elian. Doar la fierărie (în altă parte: „Despre cufăr vorbim la fierărie.”). Dacă Vale știe de la mama unde e sabia, îi spune lui Bram, iar lui Bram i se ia o piatră de pe inimă (ales de Claude).
 - **Recompensa:** încrederea lui Bram +1. Apoi Elian are „!” („Secretul lui Elian”).
 - **Cufărul, după:** gândul lui Vale se schimbă (săbiile dorm pe pânza lor; după toiag, cufărul e gol).
 - **Imagini:** `events/bram_cufar.png` (cufărul deschis, cu săbiile; galeria: „Bram: cufărul”), `items/cheie_fierar.png`. **De desenat în editor:** zona „Cufărul lui Bram”, pe cufărul din imaginea camerei.
 
-**Cum verifici:** după „Fierul plugului” (F2: misiunea terminată și stările `plug_reparat`, `fermier_deblocat`), la fierărie, ziua: Bram îngândurat → „Ce vă frământă” → „Ce o să găsească” → sus, în camera lui, cufărul → înapoi la Bram → „Am deschis cufărul”.
+**Cum verifici:** după „Fierul plugului” (F2: misiunea terminată și stările `plug_reparat`, `fermier_deblocat`), la fierărie, ziua: Bram îngândurat → „Ce vă frământă” → „Ce o să găsească” → sus, în camera lui, cufărul → înapoi la Bram → „Am deschis cufărul”. Cu „Echipamentul tatălui” făcut (F2: starea `tata_echipament`), Vale își amintește la cufăr că sabia e acasă și îi spune lui Bram.
 
 ### ✅ Toiagul celor 23 (a lui Elian)
 - Vine după „Cufărul” și „Secretul lui Elian”; Bram bate toiagul din săbii. +1 la Bram și la Elian. Pe larg, la Elian.
 
 ### ✅ Platoșa tatălui
 - **Pornește** (decis de autor: după misiunea specială a Miriamei): cu platoșa crăpată la tine, la fierărie, cât lucrează Bram (afară ziua, înăuntru seara): „Domnule Bram... ați putea repara platoșa tatei? !”. Bram o recunoaște: **a bătut-o el, pentru Edwin** (ales de Claude; „Tatăl tău venea aici în fiecare primăvară să-i ascut sabia”). „Aduc fierul.” pornește misiunea; „Mai târziu.” o lasă în meniu.
-- **Pasul 1:** **2 bucăți de fier vechi** (ales de Claude: fier călit, care a mai ținut la lovituri), de la Jarek (15 monede bucata, în cocioaba lui, seara, pe scăunel).
-- **Pasul 2** (decis de autor): **seara, în fierărie** (18–22), cu fierul: „Am adus fierul, domnule Bram.” → „Pun drugul.” (ușa închisă, ca să nu vadă orcii) → **peste o imagine**, Bram ține platoșa cu cleștele, iar Vale lovește cu ciocanul: **mini-jocul ciocanului** din „O zi la forjă” (fără eșec). Crăpătura se închide de tot: nu se mai vede unde a fost lovită (decis de autor). 3 ore, 20 stamina și fierul se iau abia la ultima replică (ales de Claude: un refresh în timpul mini-jocului nu pierde fierul, iar forja se poate relua); Bram ține platoșa peste noapte. „A doua zi” începe la 5 dimineața, deci și o forjă trecută de miezul nopții dă platoșa în dimineața următoare.
-- **Pasul 3** (decis de autor): **a doua zi**, la fierărie, cât lucrează Bram: „Domnule Bram, e gata platoșa?” → **peste o imagine**, Bram i-o pune pe umeri și strânge curelele: **„Arăți ca el.”**. Platoșa (`platosa_tata`) se **echipează pe loc** (efectul `imbraca`); ce purta Vale înainte trece în rucsac sau, dacă nu încape, în cufărul de acasă (mesaj pe ecran); cu amândouă pline, apare panoul „N-ai loc pentru...”, ca la orice obiect primit. **Apoi** (decis de autor): Vale iese din fierărie, iar mama îl așteaptă lângă gard **de cu noapte** (decis de autor: nu din întâmplare), ca să-l vadă cu platoșa; își duce mâinile la gură, **peste o imagine**, apoi îl îmbrățișează și plânge, **peste încă o imagine** (mai de aproape): „Stau aici de cu noapte. Voiam să fiu prima care te vede cu ea pe tine.” Abia atunci se termină misiunea, iar Vale rămâne în fața fierăriei.
+- **Pasul 1:** **2 bucăți de fier vechi** (ales de Claude: fier călit, care a mai ținut la lovituri), de la Jarek (15 monede bucata, în cocioaba lui, seara, pe scăunel). Bram îl numește pe Jarek; fără cheia de la Finn, cocioaba e încuiată, iar gândul de la lacăt și sfatul din carte îl trimit la Finn.
+- **Pasul 2** (decis de autor): **oricând îl găsești pe Bram la fierărie** (afară ziua, înăuntru seara; abia după „Foalele stricate”), cu fierul: „Am adus fierul, domnule Bram.” → „Hai înăuntru și pune drugul la ușă.” → „Pun drugul.” (ușa zăvorâtă, ca să nu vadă orcii) → **peste o imagine**, Bram ține platoșa cu cleștele, iar Vale lovește cu ciocanul: **mini-jocul ciocanului** din „O zi la forjă” (fără eșec). Crăpătura se închide de tot: nu se mai vede unde a fost lovită (decis de autor). 3 ore, 20 stamina și fierul se iau abia la ultima replică (ales de Claude: un refresh în timpul mini-jocului nu pierde fierul, iar forja se poate relua); Bram ține platoșa peste noapte. „A doua zi” începe la 5 dimineața, deci și o forjă trecută de miezul nopții dă platoșa în dimineața următoare.
+- **Pasul 3** (decis de autor): reparația ține peste noapte; **a doua zi dimineață** (până la 12, cât lucrează Bram afară: de la 6, sâmbăta și duminica de la 8), la fierărie: „Domnule Bram, e gata platoșa?” (după-amiaza: „Mâine dimineață, băiete. Platoșa se pune la lumina zilei.”) → **peste o imagine**, Bram i-o pune pe umeri și strânge curelele: **„Arăți ca el.”**. Platoșa (`platosa_tata`) se **echipează pe loc** (efectul `imbraca`); ce purta Vale înainte trece în rucsac sau, dacă nu încape, în cufărul de acasă (mesaj pe ecran); cu amândouă pline, apare panoul „N-ai loc pentru...”, ca la orice obiect primit. **Apoi** (decis de autor): Vale iese din fierărie, iar mama îl așteaptă în fața fierăriei, lângă gard, **de cu noapte** (decis de autor: nu din întâmplare; în diminețile de după forjă, până ia platoșa, mama nu e acasă), ca să-l vadă cu platoșa; își duce mâinile la gură, **peste o imagine**, apoi îl îmbrățișează și plânge, **peste încă o imagine** (mai de aproape): „Bram mi-a spus că o să fie gata. Stau aici de cu noapte. Voiam să fiu prima care te vede cu ea pe tine.” Abia atunci se termină misiunea, iar Vale rămâne în fața fierăriei.
 - **Recompensa:** încrederea lui Bram **+1**.
-- **Imagini:** `events/bram_platosa_1.png` (la nicovală, seara: Bram ține platoșa cu cleștele, Vale lovește; și sub mini-jocul ciocanului), `events/bram_platosa_2.png` (Bram îi pune platoșa pe umeri), `events/platosa_miriam_1.png` (Vale iese din fierărie, mama îl așteaptă lângă gard, cu mâinile la gură), `events/platosa_miriam_2.png` (îmbrățișarea, mama plânge); galeria: „Bram: platoșa tatălui”. Inelul mini-jocului se pune pe imagine în editor, la Aranjare → Ecrane → „Mini-joc: Platoșa tatălui”. Iconițele: `items/platosa_tata_crapata.png`, `items/platosa_tata.png`. **Pozele de luptă** (decis de autor): cu tot echipamentul tatei pe el (coiful, platoșa reparată, jambierele și sabia, fără scut; ales de Claude: doar cu toate patru), Vale are setul lui, `combat/vale_tata_idle/atac/aparare/lovit/cazut.png` (galeria „Luptă”; cât lipsesc, se folosesc cele cu sabie); se încearcă din F2 → Testare luptă → arma „tot echipamentul tatălui”.
+- **Imagini:** `events/bram_platosa_1.png` (la nicovală, cu ușa zăvorâtă: Bram ține platoșa cu cleștele, Vale lovește; și sub mini-jocul ciocanului), `events/bram_platosa_2.png` (Bram îi pune platoșa pe umeri), `events/platosa_miriam_1.png` (Vale iese din fierărie, mama îl așteaptă lângă gard, cu mâinile la gură), `events/platosa_miriam_2.png` (îmbrățișarea, mama plânge); galeria: „Bram: platoșa tatălui”. Inelul mini-jocului se pune pe imagine în editor, la Aranjare → Ecrane → „Mini-joc: Platoșa tatălui”. Iconițele: `items/platosa_tata_crapata.png`, `items/platosa_tata.png`. **Pozele de luptă** (decis de autor): cu tot echipamentul tatei pe el (coiful, platoșa reparată, jambierele și sabia, fără scut; ales de Claude: doar cu toate patru), Vale are setul lui, `combat/vale_tata_idle/atac/aparare/lovit/cazut.png` (galeria „Luptă”; cât lipsesc, se folosesc cele cu sabie); se încearcă din F2 → Testare luptă → arma „tot echipamentul tatălui”.
 
-**Cum verifici:** după „Echipamentul tatălui” (sau F2: obiectul `platosa_tata_crapata`), la fierărie, ziua: „ați putea repara platoșa tatei?” → „Aduc fierul.”. Cumpără 2 fier vechi de la Jarek. Seara (18–22), în fierărie: „Am adus fierul” → „Pun drugul.” → „Iau ciocanul.”. A doua zi, la Bram: „e gata platoșa?” → platoșa pe tine, +1 la Bram.
+**Cum verifici:** după „Echipamentul tatălui” (sau F2: obiectul `platosa_tata_crapata`), la fierărie, ziua: „ați putea repara platoșa tatei?” → „Aduc fierul.”. Cumpără 2 fier vechi de la Jarek. La Bram (ziua, afară, sau seara, în fierărie): „Am adus fierul” → „Pun drugul.” → „Iau ciocanul.”. Dormi peste noapte. A doua zi dimineață, acasă, mama nu e în bucătărie; la Bram: „e gata platoșa?” → platoșa pe tine, apoi mama în fața fierăriei, +1 la Bram. (După-amiaza, Bram te trimite pe dimineață.)
 
 ---
 
@@ -531,8 +531,8 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici:** după „Cărțile” și „Păpușa Linei”, la Marginea satului, 10–14, la Lina, în fața casei → „Ce ai acolo, Lina?” → „Arată-mi” → „I-o duc eu” → Elian → Lina. Pentru refuz: F2 → „Resetează”, apoi „N-am timp acum”; a doua zi, Lina îți spune ce s-a întâmplat.
 
 ### ✅ Lumina din pădure (+1)
-- **Pornește** (decis de autor: **nu se poate refuza**): după „Pasărea Linei” (dusă sau refuzată), la Elian: „Pari îngrijorat, frate Elian. !” → vine iarna, la Marginea copiii tușesc, iar din luminița-nopții face un ceai; floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica → „Ți le aduc diseară, frate Elian.” (singura alegere).
-- **Pasul 1:** seara (18–23), când Vale ajunge în pădure, pornește singură, peste 6 imagini (ales de Claude: fără luptă, ca să nu se poată pierde):
+- **Pornește** (decis de autor: **nu se poate refuza**): după „Pasărea Linei” (dusă sau refuzată), la Elian: „Pari îngrijorat, frate Elian. !” → vine iarna, la Marginea copiii tușesc, iar din luminița-nopții face un ceai; floarea se deschide doar la apus, în pădure, iar pe el orcii nu trebuie să-l vadă în pădure după apus → „Ți le aduc diseară, frate Elian.” (singura alegere).
+- **Pasul 1:** seara (18–23), când Vale ajunge în pădure (sau e deja acolo când trece de 18:00: după lemne, o vânătoare sau cules, `siPeLoc`), pornește singură, peste 6 imagini (ales de Claude: fără luptă, ca să nu se poată pierde):
   1. la apus, Vale culege trei flori;
   2. (decis de autor, ca atacul să nu vină prea brusc) se face întuneric și e prea liniște; lupii se arată printre copaci și îi dau târcoale, iar Vale îi simte și vrea să se uite în spate; când se uită, în întuneric se aprind ochi;
   3. lupii îl încercuiesc, îl mușcă, Vale cade; strigă, dar nu-l aude nimeni, și își dă seama că sunt prea mulți, că nu mai are scăpare (decis de autor: o scenă tensionată, cu suspans);
@@ -547,11 +547,12 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici:** după „Pasărea Linei”, la Elian → „Pari îngrijorat” → „Ți le aduc diseară”. De pe hartă, în pădure, la 19:00 (la 17:40 nu pornește) → cele 6 imagini → Elian → „ce s-a întâmplat în pădure?” → +1. Abia acum Bram are „Ce vă frământă, domnule Bram? !”.
 
 ### ✅ Secretul lui Elian
-- **Pornește** (decis de autor): după „Cufărul” (Bram), cât Elian citește afară, pe scări (14–23): „Frate Elian, am nevoie de un sfat. !”. Vale îi spune de cele douăzeci și două de săbii. Elian are o singură idee, dar întâi trebuie să-i arate ceva: „Vreau.” pornește misiunea; „Nu încă” o lasă în meniu.
+- **Pornește** (decis de autor): după „Cufărul” (Bram), cât Elian citește afară, pe scări (14–23): „Frate Elian, am nevoie de un sfat. !”. Vale îi spune de cele douăzeci și două de săbii. Elian are o singură idee, dar întâi trebuie să-i arate ceva: „Vreau.” pornește misiunea; „Nu încă” o lasă în meniu, iar data viitoare Elian întreabă doar „Și? Vrei să vezi?”.
 - **Peste 3 imagini** (ales de Claude: imagini, nu un loc nou pe hartă):
   1. în spatele bisericii, Elian dă la o parte crengi, frunze și iarbă: o **trapă ascunsă** (decis de autor). Dacă în „Cărțile” Vale s-a ascuns cu ele, își amintește că s-a ghemuit chiar acolo; dacă a refuzat, că pe acolo a fugit Elian;
   2. jos, o **încăpere strâmtă**, luminată de lumina care îi iese lui Elian direct din palme (decis de autor); pe raft, cărțile cu soarele cu raze frânte;
   3. Elian arată **cristalul** (mic, auriu, în romb, ca pe steagul satului).
+- **Lumina din pădure** (ales de Claude): Vale o recunoaște (razele, iarba arsă; dacă a văzut-o, și vrabia Linei); Elian își cere iertare că l-a mințit: el l-a trimis în pădure și a venit după el. La sfârșit, Vale promite pe numele tatei că nu spune nimănui, doar lui Bram, după jurământ.
 - **Ce spune Elian** (decis de autor: doar o parte): e mag al Cercului Luminii, nu un începător; își ascunde puterea, pentru că un mag puternic într-un sat ocupat e un mag mort și satul plătește pentru el; „Un om singur nu eliberează un sat. Un sat se eliberează singur.” **De ce l-a trimis Cercul aici nu spune** (trezirea rămâne secret).
 - **Indiciul** (ales de Claude): când Vale se apleacă, cristalul începe să lucească ușor, auriu (decis de autor: puterile lui Vale abia se trezesc, deci lumina e slabă). Elian își strânge degetele peste el și tace: „Se mai întâmplă. Uneori.”
 - **Ideea lui:** din oțelul săbiilor, Bram să bată un toiag (un toiag de preot nu-l numără niciun orc), iar el să-i pună cristalul în cap, „pentru ceva neprevăzut”. Vale îi poate spune lui Bram, dar numai după ce Bram jură să tacă.
@@ -566,8 +567,8 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ### ✅ Toiagul celor 23 (+1 la Bram și la Elian)
 - **Pornește singură**, la sfârșitul „Secretului lui Elian”.
-- **Pasul 1** (decis de autor): la Bram, „Domnule Bram, trebuie să-mi jurați ceva.” → Bram jură pe nicovala tatălui lui; Vale îi spune că Elian e mag adevărat, cu un cristal, și ideea toiagului, ca să-i crească puterea, pentru ceva neprevăzut. Bram îl bate seara, cu obloanele trase.
-- **Pasul 2:** seara, cât lucrează Bram înăuntru (18–22), intri în fierărie → peste 3 imagini, coboară săbiile din cufăr, Vale stă la foale, Bram bate toiagul (oțel negru cu dungi argintii, cu un loc gol în romb). 3 ore, 20 stamina (ales de Claude; fără mini-joc, au fost la „O zi la forjă”). Primești „Toiagul lui Bram”.
+- **Pasul 1** (decis de autor): la Bram, la fierărie (în altă parte: „Nu aici, băiete.”), „Domnule Bram, trebuie să-mi jurați ceva.” → Bram jură pe nicovala tatălui lui; Vale îi spune că Elian e mag adevărat, cu un cristal, și ideea toiagului, ca să-i crească puterea, pentru ceva neprevăzut. Bram îl bate seara, cu obloanele trase.
+- **Pasul 2:** seara, cât lucrează Bram înăuntru (18–22), intri în fierărie (sau ești deja acolo, dacă ai jurat seara, în magazin: `siPeLoc`) → peste 3 imagini, coboară săbiile din cufăr, Vale stă la foale, Bram bate toiagul (oțel negru cu dungi argintii, cu un loc gol în romb). 3 ore, 20 stamina (ales de Claude; fără mini-joc, au fost la „O zi la forjă”). Primești „Toiagul lui Bram”.
 - **Pasul 3:** la Elian (oriunde e treaz), „Frate Elian, toiagul e gata.” → „Nu aici. Vino.” → peste 2 imagini, sub biserică, Elian pune cristalul în capul toiagului și i-l dă lui Vale: are încredere în el și simte că o să aibă nevoie de el, că ceva mare se apropie (decis de autor). Vale nu înțelege de ce el (decis de autor). Cristalul lucește iar în mâinile lui, auriu, ceva mai tare decât prima dată, iar palmele lui Vale lucesc și ele, abia văzut (indiciu, ales de Claude; lumina rămâne slabă, puterile lui abia se trezesc, decis de autor). „Douăzeci și două de săbii, pentru douăzeci și trei de oameni. Iar pentru al douăzeci și treilea, îl ține acum în mână fiul lui.”
 - **Unde stă toiagul** (decis de autor: în cufărul lui Vale, pentru lupta finală): în joc, la **obiectele de poveste**, ca să nu se piardă sau să se vândă; în descriere, Vale spune că l-a ascuns pe fundul cufărului de acasă.
 - **În lupta finală** (decis de autor): la „Obiect”, doar Vale, **o singură dată** (cu toate valurile): **golește bara tuturor inamicilor și pune scutul de lumină pe toți aliații**. O lumină albă-aurie umple câmpul de luptă; e prima dată când Vale folosește magia luminii (în jurnal: lumina nu vine doar din cristal, ci și din mâinile lui).
@@ -576,7 +577,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici**
 1. După „Secretul lui Elian”, la Bram → „trebuie să-mi jurați ceva”.
-2. Seara (18–22), de pe zona fierăriei → Magazinul → cele 3 imagini. (La 17:30, cu Bram afară, nu pornește.)
+2. Seara (18–22), de pe zona fierăriei → Magazinul → cele 3 imagini. (La 17:30, cu Bram afară, nu pornește. Jurământul făcut seara, în magazin, o pornește pe loc.)
 3. La Elian → „toiagul e gata” → „Te urmez” → cele 2 imagini → +1 Bram, +1 Elian; toiagul e la Obiecte de poveste.
 4. **Toiagul în luptă:** F2 → Testare luptă → bifa „Ca în lupta finală” → câțiva inamici → Pornește. La rândul lui Vale: Obiect → Toiagul celor 23. Barele inamicilor se golesc, fiecare aliat primește scutul; la tura următoare, toiagul nu mai e.
 
@@ -636,7 +637,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
      - **„E carne bună. O iau.”**: o imagine nouă, Kaia întoarsă cu spatele, cu o lacrimă pe obraz, iar Vale aplecat în fundal (căprioara nu se vede); 3 carne, fără al doilea punct (Kaia: „Fierul orcilor a prins-o, iar tu i-ai terminat treaba.”).
   - Vale primește **Capcanele orcilor** (obiect de poveste). Trec 3 ore în total, −15 stamina.
 - **Pasul 2: ce faci cu fierul capcanelor** (decis de autor):
-  - **la Bram** (oricând îl găsești, ? auriu): „Am niște capcane de fier pentru dumneata.” → Bram le topește pentru vârfuri de săgeți, îi dă lui Vale **10 săgeți** din cele gata și îi trimite vorbă Kaiei că-i mulțumește. **Încrederea lui Bram +1.**
+  - **la Bram** (oricând îl găsești, ? auriu): „Am niște capcane de fier pentru dumneavoastră.” (la fierărie) → Bram le topește pentru vârfuri de săgeți, îi dă lui Vale **10 săgeți** din cele gata și îi trimite vorbă Kaiei că-i mulțumește. **Încrederea lui Bram +1.**
   - **la colector** (la poartă sau când vine acasă după taxă, lângă plata taxei): „Am găsit niște capcane de-ale voastre în pădure.” („le-am găsit așa, dezarmate”) → **20 de monede**. Bram nu primește punctul. **La următoarea discuție cu Kaia**, ea le-a găsit din nou în pădure, armate, cu linia ei pe arc: **încrederea Kaiei −1** (urcă pe ecran cu roșu).
 - **Recompensa:** încrederea Kaiei +1 (capcanele) și încă +1 (căprioara eliberată); săgeți și încrederea lui Bram, sau monede de la colector (cifrele, `TODO` echilibru, alese de Claude).
 
@@ -649,7 +650,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 2. Vorbește cu Kaia → „Ce s-a întâmplat, Kaia? Pari supărată. !” → „Le desfacem împreună.” → în meniu apare „Sunt gata. Hai la capcane! ?” → „Să mergem.”.
 3. Imaginea 1 cu replici → imaginea 2 → „Apăs arcul.” → mini-jocul. Ratează de două ori: capcana se închide, −10 viață; la Kaia, „Despre capcane...” spune „Azi nu mai”. Apasă „Ziua următoare” și încearcă din nou.
 4. Câștigă (5 reușite, cel mult o ratare) → „Toate cinci, desfăcute.” și +1 Kaia urcă pe ecran → imaginea 3, căprioara → „O eliberăm.” → imaginea cu ea fugind, iar la „Eu țin minte sigur.” urcă al doilea +1 → la final, Capcanele orcilor.
-5. Calea lui Bram: vorbește cu Bram → „Am niște capcane de fier pentru dumneata. ?” → 10 săgeți, +1 Bram, misiunea terminată.
+5. Calea lui Bram: vorbește cu Bram → „Am niște capcane de fier pentru dumneavoastră. ?” → 10 săgeți, +1 Bram, misiunea terminată.
 6. Calea colectorului (F2 → „Resetează” la misiune, apoi refă pașii 2–4): la poartă, apasă pe colector → „Am găsit niște capcane de-ale voastre în pădure.” → 20 de monede. Apoi la Kaia: ea începe cu „Am fost la izvor, Vale...” și pierzi 1 încredere (−1, cu roșu). A doua oară vorbește normal.
 7. Încearcă și „E carne bună. O iau.”: 3 carne, fără încredere.
 
@@ -770,7 +771,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici**
 1. F2: „Toți cunoscuți de 3 zile”, apoi starea `scandal_taverna` = `ajutat` (sau `refuzat`, pentru celălalt început); Mergi la biserică (interior), ora 11:00 → Roderick → „Unchiule... pot să stau puțin lângă tine?” → „Ți le aduc eu.”
-2. Fermierul (dacă nu e deblocat: starea `fermier_deblocat` = `da`), dimineața, la câmpuri → „Mai ai ceva ceară?”.
+2. Fermierul (dacă nu e deblocat: starea `fermier_deblocat` = `da`), dimineața, la câmpuri → „Mai aveți ceva ceară?”.
 3. Elian → „Frate Elian, poți turna lumânări...” → încă o dată în aceeași zi („Încă se răcesc”) → „Ziua următoare” → „Sunt gata lumânările?”.
 4. Roderick → „Am adus lumânările” → „Diseară, la biserică.” → seara (19:00), mergi de pe hartă la biserică → cele 2 imagini pornesc singure. Elian la 06:00: „Acum e slujba de dimineață”.
 
@@ -849,8 +850,8 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ## Agnes (hangița)
 
 ### ✅ Camera de sus (prima misiune a lui Agnes)
-- **Pornește:** la câteva zile după prima discuție cu Agnes, în tavernă, cât e ea acolo: „Ce s-a întâmplat cu camera de sus? !”. Agnes povestește de fostul chiriaș, un soldat căzut în ziua în care a căzut și tatăl lui Vale. „Las-o pe mine, doamna Agnes. O golesc eu.”
-- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Până strângi lucrurile, camera arată ca în `agnes_camera_1.png` (plină de lucrurile soldatului; decis de autor). Acolo, cât e taverna deschisă (9 dimineața – 2 noaptea): „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena, peste 3 imagini (decis de autor):
+- **Pornește:** la câteva zile după prima discuție cu Agnes, în tavernă, cât e ea acolo: „Ce s-a întâmplat cu camera de sus? !”. Agnes povestește de fostul chiriaș, un soldat căzut în ziua în care a căzut și tatăl lui Vale. „Lăsați-o pe mine, doamna Agnes. O golesc eu.”
+- **Pasul 1:** ușa camerei de sus apare în zona tavernei (cât e misiunea în lucru, se intră fără chirie). Până strângi lucrurile, camera arată ca în `agnes_camera_1.png` (plină de lucrurile soldatului; decis de autor). Acolo, dimineața (9–10:30) sau de la 14:30 până la 00:30, ca strânsul să se termine cu Agnes la tejghea: „Strânge lucrurile chiriașului” (1 oră și jumătate, −10 stamina), apoi scena, peste 3 imagini (decis de autor):
   1. camera cu lucrurile soldatului prin ea; Vale se apucă de strâns;
   2. camera curată, Vale aproape a terminat și vede ceva sub pat: un rucsac cu niște hârtii vechi (nu le citește);
   3. jos, în tavernă: Vale îi arată lui Agnes ce a găsit; ea nu înțelege ce sunt și îl trimite la Roderick. Vale rămâne în sala tavernei.
@@ -859,19 +860,19 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Imagini:** `events/agnes_camera_1.png` (camera cu lucrurile soldatului, fără Vale), `events/agnes_camera_2.png` (camera curată, Vale vede rucsacul sub pat), `events/agnes_camera_3.png` (jos, la tejghea, Agnes se uită la hârtii), `events/hartie_1.png`, `hartie_2.png`, `hartie_3.png` (fiecare hârtie de aproape, la citit).
 
 **Cum verifici**
-1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Las-o pe mine”.
+1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Lăsați-o pe mine”.
 2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → cele 3 imagini; la final ești în sala tavernei, cu încredere +1 la Agnes și „Închiriază o cameră” la ea.
 3. Inventar (I) → semnul „Obiecte de poveste” → Hârtii vechi → citești hârtiile.
 
 ### ✅ Berea
 - **Pornește:** după „Camera de sus” (decis de autor: înaintea pivniței, ca jucătorul să aibă timp să-și facă rost de o armă și de poțiuni), la Agnes: „Taverna miroase a apă cu spumă... !”. Orcii i-au golit butoaiele; ar face bere nouă, dar îi trebuie **5 orz** și **2 miere**.
-- **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect de poveste, fără loc în rucsac, se numără.
-- **Mierea:** la fermier, „Îmi vinzi două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 06 și 13, cât e și fermierul acolo (din ziua 3).
-- **Predarea:** la Agnes, „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată după-amiaza, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană.
+- **Orzul:** cât e misiunea în lucru, fiecare muncă la moară dă și **2 orz** (până la 5). Obiect obișnuit (stivă de 10), ocupă loc în rucsac.
+- **Mierea:** la fermier, „Îmi vindeți două măsuri de miere? (10 monede)”. Cu fermierul se poate vorbi abia după prima patrulă de orci de pe câmpuri; cât e misiunea berii în lucru, patrula vine sigur la prima intrare pe câmpuri, între 06 și 13, cât e și fermierul acolo (din ziua 3).
+- **Predarea:** la Agnes, dimineața (9–12), „Am adus orzul și mierea!” → scena peste 2 imagini: fac bere în pivniță toată ziua, apoi seara (19:00) taverna e plină și Agnes îi dă prima cană. După-amiaza și seara, Agnes îl trimite pe dimineață („Despre bere...”).
 - **Recompensa:** o bere. (Agnes n-are încredere, decis de autor.)
 - **Imagini:** `events/agnes_bere_1.png` (Agnes și Vale fac bere în pivniță), `agnes_bere_2.png` (seara, taverna plină și veselă); iconițele `items/orz.png` și `items/miere.png`.
 
-**Cum verifici:** după „Camera de sus”, la Agnes → „apă cu spumă” → „Ți le aduc eu”. Moara de 3 ori (2+2+1 orz), fermierul (6–13, la câmpuri) → miere, apoi Agnes → „Am adus orzul și mierea!”.
+**Cum verifici:** după „Camera de sus”, la Agnes → „apă cu spumă” → „Vi le aduc eu”. Moara de 3 ori (2+2+1 orz), fermierul (6–13, la câmpuri) → miere, apoi Agnes, dimineața (9–12) → „Am adus orzul și mierea!”.
 
 ### ✅ Pivnița
 - **Pornește:** după „Berea”, la Agnes, în tavernă, **doar 09–11**, cât taverna e încă goală (decis de autor): „Doamna Agnes, sunteți albă ca varul... !”. A auzit zgârieturi în pivniță, la butoaiele cu berea nouă (șobolanii au venit după ea), a deschis ușa, ceva mare s-a mișcat în întuneric și a trântit-o. „Cobor eu să văd ce e acolo.”
@@ -885,32 +886,32 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici:** după „Berea”, la Agnes, între 9 și 11 → „sunteți albă ca varul” → „Cobor eu”. În sala tavernei, ușa „Pivnița” → coborârea → lupta → victoria.
 
 ### ✅ Cercurile butoaielor (+1 la Bram)
-- **Pornește** (decis de autor): după „Pivnița” (ales de Claude: și după „Fierul lui Bram”, când e deschis magazinul lui), la Agnes: „Doamna Agnes, de ce miroase toată taverna a bere? !”. Berea nouă a fermentat prea tare și a sărit cercurile ruginite ale butoaielor.
+- **Pornește** (decis de autor): după „Pivnița” (ales de Claude: și după „Foalele stricate”, cu forja caldă din nou), la Agnes, în sala tavernei: „Doamna Agnes, de ce miroase toată taverna a bere? !”. Berea nouă a fermentat prea tare și a sărit cercurile ruginite ale butoaielor.
 - **De ce nu-l roagă ea pe Bram** (decis de autor: nu-i datorează nimic; motivul, ales de Claude): orcii îi numără fierul lui Bram și nu vrea să aibă el necazuri din cauza ei. În taină, Bram îi place (decis de autor).
-- **Pasul 1:** la Bram, „Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.” → Bram se încurcă (îi place de Agnes); fierul vechi nu-l numără orcii: îi trebuie cercurile vechi.
-- **Pasul 2** (decis de autor): cercurile vechi le iei **din pivniță**, de lângă butoaie: zona „Cercurile vechi”, o desenezi tu în pivniță, la Aranjare (până atunci e un buton jos); apare după ce l-ai rugat pe Bram și dispare după ce le-ai luat. Vale se gândește puțin („s-au strâns singure”) și le ia pe umăr. La Agnes, „Unde sunt cercurile vechi, doamna Agnes?” te trimite în pivniță.
-- **Pasul 3:** la Bram, „Uite cercurile vechi.” → le bate din nou; seara vine în pivniță.
-- **Pasul 4:** la Agnes, „Despre diseară...”: să se ferească de ochii din sală și să vină **direct în pivniță, după ora 22** (decis de autor). Seara, după 22 (cât e taverna deschisă, până la 2), cobori în pivniță (sau ești deja acolo când trece de 22) → peste 2 imagini, Bram și Vale pun cercurile, iar Agnes îi aduce lui Bram prima cană din berea nouă. **Bram se înroșește** (portretul nou `fierar_inrosit.png`).
+- **Pasul 1:** la Bram, la fierărie, „Domnule Bram, Agnes are nevoie de cercuri noi pentru butoaie.” → Bram se încurcă (îi place de Agnes); fierul vechi nu-l numără orcii: îi trebuie cercurile vechi.
+- **Pasul 2** (decis de autor): cercurile vechi le iei **din pivniță**, de lângă butoaie: zona „Cercurile vechi”, o desenezi tu în pivniță, la Aranjare (până atunci e un buton jos); apare după ce l-ai rugat pe Bram și dispare după ce le-ai luat. Vale vede că cineva le-a legat frumos cu o sfoară (Agnes, sigur, deși n-o să recunoască) și le ia pe umăr. La Agnes, „Unde sunt cercurile vechi, doamna Agnes?” te trimite în pivniță.
+- **Pasul 3:** la Bram, la fierărie, „Uitați cercurile vechi.” → le bate din nou; seara vine în pivniță (la Bram, „Despre diseară, domnule Bram...”).
+- **Pasul 4:** la Agnes, „Despre diseară...”: să treacă prin sală fără să se oprească și să coboare **direct în pivniță, după ora 22** (decis de autor). Seara, după 22 (cât e taverna deschisă, până la 2), cobori în pivniță (sau ești deja acolo când trece de 22) → peste 2 imagini, Bram și Vale pun cercurile, iar Agnes îi aduce lui Bram prima cană din butoaiele salvate. **Bram se înroșește** (portretul nou `fierar_inrosit.png`).
 - **Recompensa:** încrederea lui Bram +1 (Agnes n-are încredere).
 - **Imagini:** `events/cercuri_pivnita_1.png`, `cercuri_pivnita_2.png`, `items/cercuri_vechi.png`, `portraits/fierar_inrosit.png` (galeria: „Cercurile butoaielor”).
 
 **Cum verifici:** după „Pivnița”, în tavernă → Agnes → „de ce miroase...” → Bram → pivnița, zona „Cercurile vechi” → Bram → seara, după 22, ușa „Pivnița”.
 
 ### ✅⚠️ Socoteala (+1 la Roderick; se poate rata)
-- **Pornește** (decis de autor: a lui Agnes, dar punctul e al lui Roderick; ales de Claude: după „Ultima sticlă”, făcută sau ratată): la Agnes: „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”. Pe tabla neagră din spatele tejghelei sunt șase luni de căni ale lui Roderick, pe datorie; Agnes nu i-a cerut niciodată nimic, dar orcii i-au mărit dările. Te roagă să vorbești tu cu el, cu blândețe. Alegi „Vorbesc eu cu el, doamna Agnes.” sau „Nu mă bag între voi, doamna Agnes.” (**refuzul = ratată, fără +1**).
-- **Pașii:** vorbești cu Roderick („Unchiule... despre socoteala de la Agnes.”): rușinat, vrea să-și muncească datoria; **a doua zi dimineață (9–12), la tavernă**, pornește direct, **peste 2 imagini** (ciornă de Claude): (1) în spatele tavernei, Roderick despică lemne, iar Vale le stivuiește; (2) înăuntru, Agnes șterge tabla de cretă: „Suntem chit, Roderick Lightfinder.” Trei ore de muncă (−20 stamina), apoi Agnes îi hrănește (+30 foame) (ales de Claude).
+- **Pornește** (decis de autor: a lui Agnes, dar punctul e al lui Roderick; ales de Claude: după „Ultima sticlă”, făcută sau ratată): la Agnes: „Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva? !”. Doar în sala tavernei (ales de Claude). Pe tabla neagră din spatele tejghelei sunt șase luni de căni ale lui Roderick, pe datorie; Agnes nu i-a cerut niciodată nimic, dar orcii i-au mărit dările. Te roagă să vorbești tu cu el, cu blândețe. Alegi „Vorbesc eu cu el, doamna Agnes.” sau „Nu mă bag între voi, doamna Agnes.” (**refuzul = ratată, fără +1**).
+- **Pașii:** vorbești cu Roderick în tavernă (14–00), cu tabla în fața ochilor („Unchiule... despre socoteala de la Agnes.”): rușinat, vrea să-și muncească datoria (Agnes nu i-a dat nicio listă: lucrurile le-a văzut el de la masa lui); **a doua zi dimineață (9–12), la tavernă**, „?” e la Roderick, care te așteaptă în spatele tavernei (în dimineața aceea nu e la biserică); pornește direct, **peste 2 imagini** (ciornă de Claude): (1) în spatele tavernei, Roderick despică lemne, iar Vale le stivuiește; (2) înăuntru, Agnes șterge tabla de cretă: „Suntem chit, Roderick Lightfinder.” Trei ore de muncă (−20 stamina), apoi Agnes îi hrănește (+30 foame) (ales de Claude).
 - **Recompensa:** încrederea lui Roderick **+1**.
 - **Imagini:** `events/roderick_socoteala_1.png`, `_2.png` (galeria: „Agnes: socoteala”).
 
-**Cum verifici:** cu „Ultima sticlă” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „arătați îngrijorată?” → „Vorbesc eu cu el” → Roderick → „despre socoteala” → „Ziua următoare” → ora 10:00 → Taverna → cele 2 imagini.
+**Cum verifici:** cu „Ultima sticlă” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „arătați îngrijorată?” → „Vorbesc eu cu el” → Roderick, în sală → „despre socoteala” → „Ziua următoare” → ora 10:00 → Taverna → cele 2 imagini.
 
 ### ✅⚠️ Seara celor 23 (+1 la Roderick; se poate rata)
 - **Pornește** (decis de autor: a doua a lui Agnes cu Roderick, frumoasă și emoțională; ales de Claude: după „Socoteala”, făcută sau ratată): la Agnes: „Doamna Agnes, la ce vă gândiți? !”. Pe cei douăzeci și trei nu i-a plâns nimeni împreună; Agnes vrea o seară pentru ei, în tavernă, cu tot satul, dar trebuie să vorbească cineva care a fost acolo: doar Roderick. Alegi „O să-l rog, doamna Agnes.” sau „Lăsați-l, doamna Agnes. Încă îl doare.” (**refuzul = ratată, fără +1**).
-- **Pașii:** îl rogi pe Roderick: întâi nu poate, apoi acceptă, dacă Vale stă lângă el; **a doua zi seara (19–23), la tavernă**, pornește direct (și dacă Vale e deja acolo), **peste 3 imagini** (ciornă de Claude): (1) taverna plină, o lumânare pe fiecare masă, Roderick se ridică lângă foc; (2) Roderick povestește bătălia: copacul înflorit, Owen care a căzut primul (Hanna, văduva lui, e în sală), cuvintele lui Edwin, „Fugi în sat. Ai grijă de Miriam și de băiat.”, apoi spune cele douăzeci și trei de nume; (3) Bătrânul Hagen ridică cana: „Pentru cei douăzeci și trei.”, iar toată taverna se ridică; un sătean: „Încă mai sunt bărbați în satul ăsta, Roderick.” (o scânteie de revoltă). Două ore.
+- **Pașii:** îl rogi pe Roderick: întâi nu poate, apoi acceptă, dacă Vale stă lângă el; apoi îi spui lui Agnes („unchiul a zis da”), iar ea cheamă satul, văduvele primele; **a doua zi seara (19–23), la tavernă**, pornește direct (și dacă Vale e deja acolo), **peste 3 imagini** (ciornă de Claude): (1) taverna plină, o lumânare pe fiecare masă, Roderick se ridică lângă foc; (2) Roderick povestește bătălia: copacul înflorit, Owen care a căzut primul (Hanna, văduva lui, e în sală), cuvintele lui Edwin, „Fugi în sat. Ai grijă de Miriam și de băiat.”, apoi spune cele douăzeci și trei de nume; (3) Bătrânul Hagen ridică cana: „Pentru cei douăzeci și trei.”, iar toată taverna se ridică; un sătean: „Încă mai sunt bărbați în satul ăsta, Roderick.” (o scânteie de revoltă). Două ore.
 - **Recompensa:** încrederea lui Roderick **+1**, reputația +2 (ales de Claude).
 - **Imagini:** `events/roderick_seara_1.png`, `_2.png`, `_3.png` (galeria: „Agnes: seara celor 23”). Sătenii n-au portret (`faraPortret`), ca la „Pâinea văduvelor”.
 
-**Cum verifici:** cu „Socoteala” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „la ce vă gândiți?” → „O să-l rog” → Roderick → „Agnes vrea o seară” → „Ziua următoare” → ora 20:00 → Taverna → cele 3 imagini.
+**Cum verifici:** cu „Socoteala” terminată sau ratată, ora 17:00 → Taverna → Sala → Agnes → „la ce vă gândiți?” → „O să-l rog” → Roderick → „Agnes vrea o seară” → Agnes („Despre mâine seară...”) → „Ziua următoare” → ora 20:00 → Taverna → cele 3 imagini.
 
 ---
 
@@ -930,17 +931,17 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 3. După alegere, fermierul se poate apăsa.
 
 ### ✅ Fierul plugului (+1 la Bram)
-- **Pornește** (decis de autor): după „O zi la forjă” (Bram), fermierul apare cu un sprite nou, cu plugul rupt (`sprites/fermier_campuri_plug.png`), iar la câmp nu mai ară nimeni (gândul lui Vale la „Ară”). La fermier: „Ce s-a întâmplat cu plugul? !”.
+- **Pornește** (decis de autor): după „O zi la forjă” (Bram) și abia după ce Vale are cheia cocioabei lui Jarek (decis de autor: de la Finn, în „Mama lui Finn”; fierul îl are doar Jarek), la o zi după prima discuție cu fermierul (decis de autor), fermierul apare cu un sprite nou, cu plugul rupt (`sprites/fermier_campuri_plug.png`), iar la câmp nu mai ară nimeni (gândul lui Vale la „Ară”). La fermier: „Ce s-a întâmplat cu plugul? !”.
   - **refuzi:** după 2 zile plugul e reparat; fermierul spune că a vorbit el cu Bram și s-a descurcat. Fără încredere la Bram (⚠️).
   - **accepți:** misiunea pornește.
-- **Pasul 1:** la Bram, „Domnule Bram, poți repara plugul fermierului?” → îi trebuie **4 lemne, o frânghie și metal** (fierul lui îl numără orcii).
-- **Pasul 2:** strângi lucrurile. De atunci, **toți** au întrebarea „De unde pot face rost de niște metal?” (decis de autor); doar **Finn** îl trimite la Jarek. Jarek vinde **fier vechi** (15 monede, decis de autor). Poți merge și direct la Jarek.
-- **Pasul 3:** la Bram, „Am adus tot ce trebuie pentru plug.” → Bram repară plugul cu Vale, peste o imagine (2 ore, 15 stamina, ales de Claude).
-- **Pasul 4:** la fermier, „Uite plugul, reparat de Bram!” → peste o imagine, fermierul ară din nou.
+- **Pasul 1:** la Bram, „Domnule Bram, puteți repara plugul fermierului?” → îi trebuie **4 lemne, o frânghie și metal** (fierul lui îl numără orcii).
+- **Pasul 2:** strângi lucrurile. De atunci, **toți** au întrebarea „De unde pot face rost de niște metal?” (decis de autor); doar **Finn** îl trimite la Jarek (Bram îl numește pe Jarek doar la platoșă). Jarek vinde **fier vechi** (15 monede, decis de autor). Poți merge și direct la Jarek.
+- **Pasul 3:** la Bram, la fierărie, „Am adus tot ce trebuie pentru plug.” → Bram repară plugul cu Vale, peste o imagine (2 ore, 15 stamina, ales de Claude).
+- **Pasul 4:** la fermier, „Uitați plugul, reparat de Bram!” → peste o imagine, fermierul ară din nou.
 - **Recompensa:** încrederea lui Bram +1.
 - **Imagini:** `sprites/fermier_campuri_plug.png`, `events/plug_bram.png`, `events/plug_fermier.png`, iconițele `items/fier_vechi.png` și `items/plugul_fermierului.png` (galeria: „Fierul plugului”).
 
-**Cum verifici:** după „O zi la forjă”, dimineața, la câmpuri: fermierul cu plugul rupt → „Ce s-a întâmplat cu plugul?”. Încearcă „Ară” (gândul). Acceptă → Bram → întrebarea despre metal la câțiva (doar Finn zice de Jarek) → Jarek (18–02), fier vechi → Bram → fermierul. Pentru refuz: F2 → „Resetează”, refuză, apoi de două ori „Ziua următoare”.
+**Cum verifici:** după „O zi la forjă”, cu cheia lui Jarek (F2: obiectul `cheie_contrabandist`), dimineața, la câmpuri: fermierul cu plugul rupt → „Ce s-a întâmplat cu plugul?”. Încearcă „Ară” (gândul). Acceptă → Bram → întrebarea despre metal la câțiva (doar Finn zice de Jarek) → Jarek (18–02), fier vechi → Bram → fermierul. Pentru refuz: F2 → „Resetează”, refuză, apoi de două ori „Ziua următoare”.
 
 ---
 
@@ -948,7 +949,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ### ✅ Eliberarea
 - **Pornește** (decis de autor): în piață, apeși pe Finn, legat la butuc; răspunde negustorul. „Pot să vorbesc cu el?” → discuția de la butuc, peste o imagine: Finn spune că a furat ca să-și hrănească **mama bolnavă și sora mică**; nimeni nu-l crede, dar Vale îl crede → misiunea pornește („Așteaptă-mă. Mă întorc cu banii.”).
-- **Pasul:** negustorul cere 40 de monede (`TODO` suma); „Cât vrei ca să-l eliberezi?” apare abia după discuția cu Finn.
+- **Pasul:** negustorul cere 40 de monede (`TODO` suma); „Cât vreți ca să-l eliberați?” apare abia după discuția cu Finn.
 - **Eliberarea**, peste 3 imagini: Vale îl dezleagă de la butuc; Finn îl duce pe drumul din spatele gardurilor spre marginea satului (Vale îl știe de copil, dar de când au venit orcii n-a mai avut ce căuta pe acolo; decis de autor); casa lui Finn: sora îi sare în brațe, mama, bolnavă, în pat, îl cunoscuse pe tatăl lui Vale. La final Vale rămâne în casa lui Finn.
 - **Recompensa:** încrederea lui Finn +1 și **drumul spre Marginea satului**, **a doua hartă** (decis de autor: ca cea a satului, cu mai puține locuri). Trecerea dintr-o hartă în alta e o zonă desenată în editor pe fiecare hartă (decis de autor: fără piesă separată); „Înapoi” de pe Marginea satului duce tot în sat.
 - **Marginea satului** (`harti` în `locations.json`, zonele cu `"harta": "marginea"`):
@@ -959,7 +960,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
   - **Coliba ierbăresei** (zona + interiorul): **Bătrâna Morwen** (decis de autor), 06–23; **nu vinde nimic** (decis de autor): „Schimburi” deschide schimburile, poțiunile și **leacul de otravă** din florile aduse de Vale; noaptea doarme.
 - **Imagini:** `events/finn_butuc.png`, `finn_eliberat_1.png`, `finn_eliberat_2.png`, `finn_eliberat_3.png`; harta `map/marginea_harta.png` (+ `_noapte`); piesele `map/piese/casa_finn.png`, `contrabandist.png`, `cimitir.png`, `coliba.png` (+ `_noapte`); scenele `locations/casa_finn_zona.png`, `casa_finn_interior.png`, `casa_finn_interior_bolnava.png`, `casa_finn_interior_bolnava_seara.png`, `iesirea_zona.png`, `contrabandist_zona.png`, `contrabandist_interior.png`, `cimitir_zona.png`, `coliba_zona.png`, `coliba_interior.png` (zonele și cu `_noapte`); sprite-urile `sprites/hot_casa_finn_interior.png`, `hot_campuri.png`, `sora_finn_casa_finn.png`, `sora_finn_coliba_interior.png`, `mama_finn_casa_finn_interior.png`, `sora_finn_casa_finn_interior.png`, `contrabandist_contrabandist_interior.png`, `ierbareasa_coliba_interior.png`; portretele `portraits/mama_finn_*`, `sora_finn_*`, `contrabandist_*`, `ierbareasa_*`; schițele din carte `ui/carte_<id>.png`.
 
-**Cum verifici:** în piață, ziua, cu 40 de monede: apasă pe Finn → „Pot să vorbesc cu el?” → discuția → „Așteaptă-mă”. Apasă din nou → „Cât vrei...” → „Plătesc” → cele 3 imagini → ești în casa lui Finn. Pe harta satului apare zona spre Marginea satului (desenată în editor; până atunci, un buton jos).
+**Cum verifici:** în piață, ziua, cu 40 de monede: apasă pe Finn → „Pot să vorbesc cu el?” → discuția → „Așteaptă-mă”. Apasă din nou → „Cât vreți...” → „Plătesc” → cele 3 imagini → ești în casa lui Finn. Pe harta satului apare zona spre Marginea satului (desenată în editor; până atunci, un buton jos).
 
 ### ✅ Mâncarea
 - **Pornește** (decis de autor: odată cu „Mama lui Finn”, imediat după eliberare): la Finn, acasă, „Când ați mâncat ultima oară ceva cald?” → „Atunci vin cu ele.”
