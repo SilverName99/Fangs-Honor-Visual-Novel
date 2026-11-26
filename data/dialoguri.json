@@ -25493,6 +25493,30 @@
         "emotie": "normal",
         "gand": true,
         "text": "Ating semnele cu degetele. Piatra e rece. Și, o clipă, mi se pare că semnele de sub degetele mele sunt calde.",
+        "urmator": "p59b"
+      },
+      "p59b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Urcăm mai departe, pe după piatră, unde arată săgeata de pe hartă. Cu cât urcăm, cu atât aerul se face mai rece, deși soarele încă bate în stânci. Nu se mai aude nimic. Nici vânt, nici păsări. Doar pașii noștri și pietrele care se rostogolesc în urmă.",
+        "imagine": "events/drum_spre_rapa.png",
+        "efecte": {
+          "panaLaOra": "16:30"
+        },
+        "urmator": "p59c"
+      },
+      "p59c": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Simți? Frigul ăsta nu vine din cer, băiete. Vine de sub noi.",
+        "urmator": "p59d"
+      },
+      "p59d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Nu-i răspund. Picioarele mele știu drumul înaintea mea. Ca în vis.",
         "urmator": "p60"
       },
       "p60": {
