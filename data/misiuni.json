@@ -3411,8 +3411,8 @@
               "finn_lada": "luata"
             }
           },
-          "sfat": "După miezul nopții (23–03), Finn mă așteaptă în fața casei lui, cu sacul. Unde e lumină, nu calc.",
-          "sfat_en": "After midnight (23–03), Finn waits for me in front of his house, with the sack. I don’t step where the light falls.",
+          "sfat": "Noaptea, după unsprezece (23–03), Finn mă așteaptă în fața casei lui, cu sacul. Unde e lumină, nu calc.",
+          "sfat_en": "At night, after eleven (23–03), Finn waits for me in front of his house, with the sack. I don’t step where the light falls.",
           "indiciu": {
             "text": "Despre ladă...",
             "text_en": "About the strongbox...",
@@ -5038,13 +5038,16 @@
         "Lina’s birthday is in three days. Finn wants to give her the blue ribbon from the merchant and a cake from Mistress Agnes, but he has no money, and he promised he wouldn’t steal anymore. On the evening of her birthday, he’ll be waiting for me in front of the house."
       ],
       "oferta": {
-        "_nota": "Ales de Claude: la o zi după „Mama lui Finn” (cu mama vindecată, de la care știe toată casa).",
+        "_nota": "Ales de Claude: la o zi după „Mama lui Finn” (cu mama vindecată, de la care știe toată casa). Și după „Mâncarea”: Lina vorbește de masă la petrecere (ales de Claude).",
         "text": "Ce-i cu tine, Finn? Pari cu gândul în altă parte.",
         "text_en": "What’s the matter, Finn? You seem far away.",
         "nod": "lina_o1",
         "conditii": {
           "misiuneTerminata": {
             "finn_mama": 1
+          },
+          "misiune": {
+            "finn_mancarea": "terminata"
           }
         }
       },
@@ -5083,9 +5086,17 @@
               "text": "Ziua Linei a trecut. Trebuie să vorbesc cu Finn.",
               "text_en": "Lina’s birthday has passed. I have to talk to Finn."
             },
+            {
+              "conditii": {
+                "areObiect": "panglica_lina"
+              },
+              "text": "Doamna Agnes e la tavernă. Panglica o am deja.",
+              "text_en": "Mistress Agnes is at the tavern. I already have the ribbon."
+            },
             "Doamna Agnes e la tavernă. Iar panglica o are negustorul: mă oprește el când intru în piață."
           ],
           "sfat_en": [
+            null,
             null,
             "Mistress Agnes is at the tavern. And the merchant has the ribbon: he’ll stop me himself when I walk into the market."
           ],
@@ -5356,9 +5367,17 @@
               "text": "E azi! Diseară, după șase, Finn mă așteaptă în fața casei. Cu panglica și cu tortul.",
               "text_en": "It’s today! This evening, after six, Finn will be waiting for me in front of the house. With the ribbon and the cake."
             },
+            {
+              "conditii": {
+                "areObiect": "panglica_lina"
+              },
+              "text": "În seara zilei ei (a treia zi de când mi-a spus), după șase, Finn mă așteaptă în fața casei. Panglica o am.",
+              "text_en": "On the evening of her birthday (the third day since he told me), after six, Finn waits for me in front of the house. I have the ribbon."
+            },
             "În seara zilei ei (a treia zi de când mi-a spus), după șase, Finn mă așteaptă în fața casei. Panglica o are negustorul: mă oprește când intru în piață."
           ],
           "sfat_en": [
+            null,
             null,
             null,
             "On the evening of her birthday (the third day since he told me), after six, Finn waits for me in front of the house. The merchant has the ribbon: he’ll stop me when I walk into the market."

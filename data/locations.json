@@ -1719,11 +1719,13 @@
           },
           "variante": [
             {
-              "_nota": "Decis de autor: cât e Marta bolnavă, e desenată în imagine, în pat; seara cu focul aprins în vatră.",
+              "_nota": "Decis de autor: cât e Marta bolnavă, e desenată în imagine, în pat; seara cu focul aprins în vatră. În seara vindecării ea doarme încă în pat; de a doua zi e sprite (ales de Claude).",
               "imagine": "locations/casa_finn_interior_bolnava_seara.png",
               "conditii": {
-                "nuStare": {
-                  "mama_finn": "vindecata"
+                "nu": {
+                  "misiuneTerminata": {
+                    "finn_mama": 1
+                  }
                 },
                 "moment": [
                   "seara"
@@ -1733,8 +1735,10 @@
             {
               "imagine": "locations/casa_finn_interior_bolnava.png",
               "conditii": {
-                "nuStare": {
-                  "mama_finn": "vindecata"
+                "nu": {
+                  "misiuneTerminata": {
+                    "finn_mama": 1
+                  }
                 }
               }
             }
@@ -1746,6 +1750,15 @@
               "nume": "Marta (bolnavă, în pat)",
               "_nota": "Decis de autor: cât e bolnavă, nu se vorbește cu ea; Vale doar se gândește (zona se desenează pe ea, în editor). Ciornă de Claude.",
               "text": [
+                {
+                  "conditii": {
+                    "stare": {
+                      "mama_finn": "vindecata"
+                    }
+                  },
+                  "text": "Doarme. Pentru prima oară, fără să tușească.",
+                  "text_en": "She’s asleep. For the first time, without coughing."
+                },
                 "Doarme. Respiră greu, cu un hârâit în piept. Mai bine n-o trezesc.",
                 "Tușește prin somn. Cineva i-a pus o cârpă udă pe frunte.",
                 "E palidă ca varul. Mâinile îi tremură pe pătură, chiar și în somn."
@@ -1753,11 +1766,19 @@
               "ascuns": {
                 "_nota": "Zona patului se vede doar cât e Marta bolnavă (ascuns = se vede doar cu condițiile îndeplinite).",
                 "conditii": {
-                  "nuStare": {
-                    "mama_finn": "vindecata"
+                  "nu": {
+                    "misiuneTerminata": {
+                      "finn_mama": 1
+                    }
                   }
                 }
-              }
+              },
+              "text_en": [
+                null,
+                "She’s asleep, breathing heavily, with a rattle in her chest. Better not to wake her.",
+                "She coughs in her sleep. Someone has put a wet cloth on her forehead.",
+                "She’s as pale as chalk. Her hands tremble on the blanket, even in her sleep."
+              ]
             }
           ]
         }
@@ -1925,21 +1946,38 @@
               "nume": "Scăunelul (aștepți 30 de minute)",
               "_nota": "Decis de autor: contrabandistul vine doar după ce se asigură că Vale n-a fost urmărit; doar 18–02. Ascuns cât e el aici.",
               "eveniment": "contrabandist_asteptare",
-              "cand": {
-                "oricare": [
-                  {
-                    "ora": {
-                      "min": "18:00"
+              "cand": [
+                {
+                  "conditii": {
+                    "nu": {
+                      "ora": {
+                        "min": "02:00",
+                        "max": "05:59"
+                      }
                     }
                   },
-                  {
-                    "ora": {
-                      "max": "01:59"
-                    }
-                  }
-                ]
-              },
-              "gandCand": "Ziua nu vine nimeni aici. Finn a zis: seara, după ce se lasă întunericul, și până după miezul nopții.",
+                  "gand": "E prea târziu. La ora asta Jarek nu mai vine; revin mâine seară.",
+                  "gand_en": "It’s too late. Jarek won’t come at this hour; I’ll come back tomorrow evening."
+                },
+                {
+                  "conditii": {
+                    "oricare": [
+                      {
+                        "ora": {
+                          "min": "18:00"
+                        }
+                      },
+                      {
+                        "ora": {
+                          "max": "01:59"
+                        }
+                      }
+                    ]
+                  },
+                  "gand": "Ziua nu vine nimeni aici. Finn a zis: seara, după ce se lasă întunericul, și până după miezul nopții.",
+                  "gand_en": "No one comes here during the day. Finn said: in the evening, after dark, until past midnight."
+                }
+              ],
               "ascuns": {
                 "conditii": {
                   "nuStare": {

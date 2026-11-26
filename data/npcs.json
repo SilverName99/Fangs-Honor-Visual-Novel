@@ -1379,9 +1379,12 @@
           "conditii": {
             "stare": {
               "mama_finn": "vindecata"
+            },
+            "misiuneTerminata": {
+              "finn_mama": 1
             }
           },
-          "ce": "după vindecare, pe un scaun lângă vatră, cu un șal; cât e bolnavă e desenată în imaginea casei (decis de autor)"
+          "ce": "de a doua zi după vindecare (în seara vindecării doarme încă în pat), pe un scaun lângă vatră, cu un șal; cât e bolnavă e desenată în imaginea casei (decis de autor)"
         },
         {
           "de": "23:00",
@@ -1440,8 +1443,10 @@
           "loc": "casa_finn/interior",
           "sprite": "mama_bolnava",
           "conditii": {
-            "nuStare": {
-              "mama_finn": "vindecata"
+            "nu": {
+              "misiuneTerminata": {
+                "finn_mama": 1
+              }
             }
           },
           "ce": "acasă, cât e Marta bolnavă (decis de autor: alt sprite, pentru că în pat stă mama ei)"
@@ -1480,14 +1485,14 @@
       "program": [
         {
           "de": "18:00",
-          "pana": "02:00",
+          "pana": "03:00",
           "loc": "contrabandist/interior",
           "conditii": {
             "stare": {
               "contrabandist_aici": "da"
             }
           },
-          "ce": "vine după ce Vale așteaptă pe scăunel (decis de autor); pleacă odată cu el"
+          "ce": "vine după ce Vale așteaptă pe scăunel (decis de autor); pleacă odată cu el; cine se așază la 01:59 îl găsește, deci rămâne până la 3 (ales de Claude)"
         }
       ],
       "magazin": {
@@ -1780,7 +1785,7 @@
         {
           "de": "18:00",
           "pana": "06:00",
-          "ce": "plecat (noaptea stă colectorul de pază, cu torța)"
+          "ce": "plecat (seara, 18–23, colectorul e de pază, cu torța; noaptea, doar paznicul, care doarme)"
         }
       ]
     },

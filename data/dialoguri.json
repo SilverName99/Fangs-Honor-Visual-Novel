@@ -11299,7 +11299,7 @@
       "f": {
         "vorbitor": "hot",
         "emotie": "trist",
-        "text": "...Mama e bolnavă. Tușește de o lună și nu mai doarme nopțile. Iar sora mea mică... de trei zile n-am mai avut ce pune pe masă.",
+        "text": "...Mama e bolnavă. Tușește de luni de zile și nu mai doarme nopțile. Iar sora mea mică... de trei zile n-am mai avut ce pune pe masă.",
         "urmator": "g"
       },
       "g": {
@@ -11620,6 +11620,11 @@
         "emotie": "normal",
         "text": "Caut de lucru. Dar cine vrea un hoț? Măcar acum nu mai stau la butuc."
       },
+      "f_lucru2": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Fermierul m-a luat cu ziua, la câmp. Zice că un băiat care fură ca să-și hrănească mama nu e hoț, e doar flămând. Plătește puțin, dar plătește. Și nu mai stau la butuc."
+      },
       "f_margine": {
         "vorbitor": "hot",
         "emotie": "normal",
@@ -11755,7 +11760,7 @@
       "mama_oferta": {
         "vorbitor": "hot",
         "emotie": "trist",
-        "text": "De la începutul iernii. Întâi a fost doar o tuse. Apoi febra, seara, în fiecare seară.",
+        "text": "De astă-iarnă. Întâi a fost doar o tuse. Apoi febra, seara, în fiecare seară.",
         "_nota": "CIORNĂ (Claude). Misiunea „Mama lui Finn” (decis de autor: în locul „Bolnavului” lui Elian).",
         "urmator": "mama_oferta2"
       },
@@ -11914,12 +11919,12 @@
       "f_masa": {
         "vorbitor": "hot",
         "emotie": "zambet",
-        "text": "Sora mea încă vorbește de masa aia. Zice că a fost cea mai bună zi de când au venit orcii."
+        "text": "Sora mea încă vorbește de masa aia. Zice că a fost cea mai bună masă de când au venit orcii."
       },
       "f_mama": {
         "vorbitor": "hot",
         "emotie": "zambet",
-        "text": "Mama a dormit toată noaptea. Prima oară de la începutul iernii. Nu știu cum să-i mulțumesc preotului."
+        "text": "Mama a dormit toată noaptea. Prima oară de astă-iarnă. Nu știu cum să-i mulțumesc preotului."
       },
       "f_contrabandist": {
         "vorbitor": "hot",
@@ -11954,7 +11959,7 @@
       "lada_oferta4": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Noaptea colectorul pleacă. Paznicul doarme sprijinit de zid. Rămâne doar unul, care se plimbă de colo-colo cu o torță. Dacă știi pe unde să calci, ajungi la ladă fără să te vadă.",
+        "text": "Noaptea colectorul pleacă. Paznicul doarme sprijinit de zid. Doar patrula mai trece din când în când, cu o torță. Dacă știi pe unde să calci, ajungi la ladă fără să te vadă.",
         "urmator": "lada_oferta5"
       },
       "lada_oferta5": {
@@ -11985,12 +11990,12 @@
       "lada_da": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Atunci după miezul nopții, în fața casei mele. Sacul îl aduc eu. Tu adu-ți curajul."
+        "text": "Atunci după unsprezece, în fața casei mele. Sacul îl aduc eu. Tu adu-ți curajul."
       },
       "lada_indiciu": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "După miezul nopții, în fața casei mele. Mergem pe poteca de lângă zid până la poartă. Și calcă unde calc eu."
+        "text": "După unsprezece, în fața casei mele. Mergem pe poteca de lângă zid până la poartă. Și calcă unde calc eu."
       },
       "f_lada": {
         "vorbitor": "hot",
@@ -12181,8 +12186,30 @@
           },
           "stare": {
             "lina": "ratat"
+          },
+          "consuma": {
+            "tort_lina": 1
           }
-        }
+        },
+        "alegeri": [
+          {
+            "text": "(Îi las lui Finn panglica.)",
+            "conditii": {
+              "areObiect": "panglica_lina"
+            },
+            "efecte": {
+              "consuma": {
+                "panglica_lina": 1
+              }
+            },
+            "spre": "lina_r5"
+          }
+        ]
+      },
+      "lina_r5": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "O s-o poarte. Chiar dacă a venit mai târziu."
       },
       "lina_a1": {
         "vorbitor": "vale",
@@ -12325,7 +12352,7 @@
       "datoria_o6": {
         "vorbitor": "hot",
         "emotie": "zambet",
-        "text": "Când le ai, vino la mine. I le ducem lui Jarek noaptea, pe la ieșire. El nu intră în sat."
+        "text": "Când le ai, vino la mine. I le ducem lui Jarek noaptea, pe la ieșire: marfa asta nu trece prin cocioaba lui, o ia de dincolo de gard."
       },
       "datoria_o_nu": {
         "vorbitor": "hot",
@@ -12388,7 +12415,7 @@
       },
       "datoria_r1": {
         "vorbitor": "hot",
-        "emotie": "trist",
+        "emotie": "ranit",
         "text": "Nimic. M-am lovit.",
         "urmator": "datoria_r2"
       },
@@ -12401,13 +12428,13 @@
       },
       "datoria_r3": {
         "vorbitor": "hot",
-        "emotie": "trist",
+        "emotie": "ranit",
         "text": "Jarek a așteptat cinci zile, apoi a vândut datoria orcilor. Ei știu să ceară.",
         "urmator": "datoria_r4"
       },
       "datoria_r4": {
         "vorbitor": "hot",
-        "emotie": "trist",
+        "emotie": "ranit",
         "text": "E plătită acum. Altfel.",
         "efecte": {
           "misiune": {
@@ -12534,7 +12561,7 @@
       },
       "datoria_rs1": {
         "vorbitor": "hot",
-        "emotie": "trist",
+        "emotie": "ranit",
         "text": "Nimic. M-am lovit.",
         "urmator": "datoria_rs2"
       },
@@ -12547,13 +12574,13 @@
       },
       "datoria_rs3": {
         "vorbitor": "hot",
-        "emotie": "trist",
-        "text": "Te-am așteptat la ieșire până în ultima noapte. Apoi am dus singur sacul. Pe drumul înapoi m-au prins paznicii la gard.",
+        "emotie": "ranit",
+        "text": "Te-am așteptat la ieșire până în ultima noapte. Apoi am dus singur sacul. Pe drumul înapoi, dincolo de gard, m-a prins o patrulă de orci.",
         "urmator": "datoria_rs4"
       },
       "datoria_rs4": {
         "vorbitor": "hot",
-        "emotie": "trist",
+        "emotie": "ranit",
         "text": "Jarek și-a luat blănile. Eu mi-am luat bătaia. Suntem chit.",
         "efecte": {
           "misiune": {
@@ -12921,7 +12948,22 @@
     },
     "vorbeste": [
       {
-        "nod": "f_lucru"
+        "nod": "f_lucru",
+        "conditii": {
+          "nu": {
+            "misiuneTerminata": {
+              "finn_eliberare": 1
+            }
+          }
+        }
+      },
+      {
+        "nod": "f_lucru2",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_eliberare": 1
+          }
+        }
       },
       {
         "nod": "f_margine"
@@ -13141,6 +13183,14 @@
     "meniu": true,
     "start": [
       {
+        "nod": "salut3",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_mama": 7
+          }
+        }
+      },
+      {
         "nod": "salut2",
         "conditii": {
           "stare": {
@@ -13175,10 +13225,20 @@
         "emotie": "normal",
         "text": "Vale! Uite, m-am ridicat din pat! Elian zice că încă o săptămână de ceai și mă ridic de tot."
       },
+      "salut3": {
+        "vorbitor": "mama_finn",
+        "emotie": "zambet",
+        "text": "Vale! Intră. Azi am fost până la fântână și înapoi, fără să mă opresc o dată."
+      },
       "m_bine": {
         "vorbitor": "mama_finn",
         "emotie": "normal",
         "text": "Tusea s-a dus aproape de tot. Am uitat cum e să respiri fără să te doară."
+      },
+      "m_bine2": {
+        "vorbitor": "mama_finn",
+        "emotie": "zambet",
+        "text": "Am terminat ceaiul lui Elian. Tusea s-a dus de tot. Uneori mă trezesc noaptea și ascult, să văd dacă se întoarce. Nu se întoarce."
       },
       "metal_mama_finn": {
         "vorbitor": "mama_finn",
@@ -13203,6 +13263,19 @@
         "conditii": {
           "stare": {
             "mama_finn": "vindecata"
+          },
+          "nu": {
+            "misiuneTerminata": {
+              "finn_mama": 7
+            }
+          }
+        }
+      },
+      {
+        "nod": "m_bine2",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_mama": 7
           }
         }
       }
@@ -13856,6 +13929,18 @@
     "meniu": true,
     "start": [
       {
+        "_nota": "Ales de Claude: Vale l-a cunoscut pe Jarek la gard („Datoria la Jarek”), deci în cocioabă nu mai e o prezentare de la zero.",
+        "nod": "prezentare_gard",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_contrabandist": "da"
+          },
+          "stare": {
+            "datoria_jarek": "platita"
+          }
+        }
+      },
+      {
         "nod": "prezentare",
         "conditii": {
           "nuStare": {
@@ -13939,6 +14024,28 @@
         "vorbitor": "contrabandist",
         "emotie": "normal",
         "text": "O singură regulă, Lightfinder: n-ai fost aici. Nu m-ai văzut. Iar dacă vii cu cineva în spate, cocioaba asta o să fie goală până la sfârșitul lumii. Mi se spune Jarek. Atât îți trebuie să știi.",
+        "efecte": {
+          "stare": {
+            "cunoscut_contrabandist": "da"
+          }
+        }
+      },
+      "prezentare_gard": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Stau pe scăunel și aștept. O jumătate de oră... apoi ușa din spate scârțâie.",
+        "efecte": {
+          "stare": {
+            "contrabandist_tocmai": "nu"
+          }
+        },
+        "urmator": "prezentare_gard2"
+      },
+      "prezentare_gard2": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Lightfinder. Deci Finn ți-a dat și cheia. Aici e o singură regulă: n-ai fost aici. Nu m-ai văzut. Ce-ți trebuie?",
         "efecte": {
           "stare": {
             "cunoscut_contrabandist": "da"
@@ -14427,7 +14534,18 @@
     "_nota": "CIORNĂ (Claude). Misiunea „Mâncarea” (decis de autor: două imagini, Vale gătește carnea la ceaun, apoi mănâncă toți patru, mama mai greu, din pat).",
     "grup": "Finn: mâncarea",
     "partener": "hot",
-    "start": "a",
+    "start": [
+      {
+        "_nota": "Decis de autor: dacă Marta s-a vindecat înainte de masă, aceeași imagine, dar ea s-a ridicat de curând din pat.",
+        "nod": "a_v",
+        "conditii": {
+          "stare": {
+            "mama_finn": "vindecata"
+          }
+        }
+      },
+      "a"
+    ],
     "noduri": {
       "a": {
         "vorbitor": "vale",
@@ -14454,6 +14572,46 @@
         "emotie": "zambet",
         "text": "Uite-o. Parcă-i bucătar la castel.",
         "urmator": "a5"
+      },
+      "a_v": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pun ceaunul pe vatră. Carnea sfârâie, iar casa se umple de un miros pe care, se pare, nimeni de aici nu-l mai simțise de mult.",
+        "imagine": "events/finn_masa_1.png",
+        "urmator": "a2_v"
+      },
+      "a2_v": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Pot să mestec eu? Pot? Promit că nu-l răstorn!",
+        "urmator": "a3_v"
+      },
+      "a3_v": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Ține lingura cu amândouă mâinile. Așa. Încet, să nu se prindă de fund.",
+        "urmator": "a4_v"
+      },
+      "a4_v": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Uite-o. Parcă-i bucătar la castel.",
+        "urmator": "a5v"
+      },
+      "a5v": {
+        "vorbitor": "mama_finn",
+        "emotie": "normal",
+        "text": "Miroase a carne adevărată. Am uitat cum miroase.",
+        "urmator": "a6v"
+      },
+      "a6v": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Rup pâinea în bucăți mari. Marta s-a ridicat de curând din pat, dar până fierbe carnea obosește și se întinde iar. Finn îi pune o pernă la spate. Mănâncă încet, dar mănâncă, și o dată chiar râde.",
+        "imagine": "events/finn_masa_2.png",
+        "urmator": "a7"
       },
       "a5": {
         "vorbitor": "mama_finn",
@@ -15079,7 +15237,7 @@
       "a3": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Până la ea avem după ce să ne ascundem: lemnele de lângă casă, căruța stricată din mijloc, butoaiele de lângă palisadă. Dar cel cu torța se plimbă de colo-colo. Unde bate lumina, nu călcăm.",
+        "text": "Până la ea avem după ce să ne ascundem: lemnele de lângă casă, căruța stricată din mijloc, butoaiele de lângă palisadă. Dar patrula trece pe aici din când în când, cu torța. Unde bate lumina, nu călcăm.",
         "urmator": "a4"
       },
       "a4": {
@@ -15180,7 +15338,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Bag totul în sac: punguțe cu monede, un cuțit, o pereche de cizme... și câteva lucruri pe care le recunosc. Sunt ale mele.",
+        "text": "Bag totul în sac: punguțe cu monede, un cuțit, o pereche de cizme, un ceaun ciobit... tot ce au luat orcii de la oameni, la pedepse.",
         "urmator": "d4"
       },
       "d4": {
@@ -19099,7 +19257,7 @@
       "z13": {
         "vorbitor": "mama_finn",
         "emotie": "normal",
-        "text": "Tatăl tău venea și el la noi cu mâinile pline, Vale. Nu-l mai văzusem pe Finn râzând de mult.",
+        "text": "Tatăl tău venea și el la noi cu mâinile pline, Vale. Nu-l mai văzusem pe Finn râzând așa, din tot sufletul.",
         "urmator": "z14"
       },
       "z14": {
@@ -19215,7 +19373,7 @@
       "j2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Încet! Paznicii au urechi de lup.",
+        "text": "Încet! Pe drumul de dincolo mai trece câte o patrulă.",
         "urmator": "j3"
       },
       "j3": {
@@ -19236,7 +19394,7 @@
       "j5": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "Lightfinder. Deci tu ești prietenul de care-mi tot vorbește Finn.",
+        "text": "Lightfinder. Finn tot vorbește de tine. Acum văd de ce.",
         "urmator": "j6"
       },
       "j6": {
@@ -20443,7 +20601,7 @@
       "j5": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Zice că e ultima. Că după asta mă lasă în pace și nu-i mai datorez nimic, niciodată.",
+        "text": "Zice că e ultima. Că după asta mă lasă în pace, să-mi văd de viața mea.",
         "urmator": "j6"
       },
       "j6": {
@@ -20506,7 +20664,7 @@
       "j_nu2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Dar lui Jarek nu-i spui „nu” pe o hârtie. Nu după tot ce-a făcut pentru noi.",
+        "text": "Dar lui Jarek nu-i spui „nu” pe o hârtie. Nu după iarna trecută.",
         "urmator": "j_nu3"
       },
       "j_nu3": {
@@ -20595,7 +20753,7 @@
       "n8": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Știu. Și îți mulțumesc. Dar i-am promis Linei. Și lui.",
+        "text": "Știu. Pentru iarna aia îți mulțumesc. Dar i-am promis Linei. Și lui.",
         "urmator": "n9"
       },
       "n9": {

@@ -1968,6 +1968,7 @@
     {
       "id": "finn_cimitir_noapte",
       "repetare": "o_data",
+      "siPeLoc": true,
       "nume": "Finn: noaptea de la cimitir",
       "nume_en": "Finn: The Night at the Graveyard",
       "grup": "Finn: noaptea de la cimitir",
@@ -1988,7 +1989,7 @@
           "existaStare": "cimitir_gata"
         }
       },
-      "_nota": "Decis de autor: noaptea, când Vale ajunge la cimitir, pornește singură (Finn e deja după zid)."
+      "_nota": "Decis de autor: noaptea, când Vale ajunge la cimitir, pornește singură (Finn e deja după zid). Pornește și dacă Vale e deja acolo când se face noapte (siPeLoc, ales de Claude)."
     },
     {
       "id": "finn_cimitir_dupa",
