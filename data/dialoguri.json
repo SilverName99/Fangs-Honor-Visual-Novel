@@ -25596,7 +25596,7 @@
       "p68": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Ultimele mele luni de soldat le-am făcut într-un turn de pază, sus, în munții de la nord. Doar piatră, vânt și stele. Și liniștea aia care-ți intră în oase.",
+        "text": "Era în ultima mea toamnă la Strajă. Stăteam de strajă la poarta garnizoanei, noaptea, cu sulița în mână și cu ochii pe drumul gol. Nori grei, nicio stea. Doar torța și liniștea aia care-ți intră în oase.",
         "imagine": "events/drum_pasari_1.png",
         "amintire": true,
         "grupGalerie": "Roderick: drumul trezirii (amintirile)",
@@ -25605,17 +25605,17 @@
       "p69": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Într-o noapte, m-a trezit prietenul meu, cel cu hârtiile. Nu striga. Șoptea. Ca la biserică.",
+        "text": "Și deodată vine în fugă prietenul meu, cel cu hârtiile. Alb la față. Nu striga. Șoptea, ca la biserică: „Rod. Vino sus. Repede. Trebuie să vezi asta.”",
+        "imagine": "events/drum_pasari_2.png",
         "amintire": true,
-        "urmator": "p70",
-        "imagine": "events/drum_pasari_trezire.png",
-        "grupGalerie": "Roderick: drumul trezirii (amintirile)"
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p70"
       },
       "p70": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Pe cer treceau păsări. Sute. Și ardeau, Vale. Ardeau ca scânteile care sar din foc, roșii și aurii, și lăsau dâre de lumină în urma lor.",
-        "imagine": "events/drum_pasari_2.png",
+        "text": "Am urcat în turn câte două trepte. Sus bătea vântul, iar norii stăteau atât de jos că parcă îi puteai atinge cu vârful suliței.",
+        "imagine": "events/drum_pasari_3.png",
         "amintire": true,
         "grupGalerie": "Roderick: drumul trezirii (amintirile)",
         "urmator": "p71"
@@ -25623,54 +25623,55 @@
       "p71": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Zburau spre nord, spre munții unde zice lumea că e poarta focului. N-au ars nimic. Niciun fir de iarbă. Doar noaptea, cât au trecut.",
+        "text": "Și atunci am văzut. Norii se aprindeau pe dinăuntru. Roșu, apoi auriu, ca o fierărie mare dincolo de cer.",
+        "imagine": "events/drum_pasari_4.png",
         "amintire": true,
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
         "urmator": "p72"
       },
       "p72": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Am stat până s-au dus toate. Apoi am stat până s-a făcut ziuă, cu ochii pe cerul gol. Mi-era frică să clipesc.",
+        "text": "Prin nori treceau umbre cu aripi. Mari, Vale. Mai mari decât orice pasăre. Zeci, una după alta, și lăsau în urmă dâre de lumină, ca scânteile care sar din foc. Zburau spre nord, spre munții unde zice lumea că e poarta focului.",
+        "imagine": "events/drum_pasari_5.png",
         "amintire": true,
-        "urmator": "p73",
-        "imagine": "events/drum_pasari_zori.png",
-        "grupGalerie": "Roderick: drumul trezirii (amintirile)"
+        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
+        "urmator": "p72b"
+      },
+      "p72b": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "N-au ars nimic. Niciun fir de iarbă, nicio scândură. Am stat pe zid până s-au dus toate, apoi până s-a făcut ziuă, cu ochii pe cerul gol. Mi-era frică să clipesc.",
+        "amintire": true,
+        "urmator": "p73"
       },
       "p73": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Douăzeci de ierni de strajă și n-am văzut niciun dragon. Dar în noaptea aia am înțeles de ce călăreții nu se mai întorc niciodată aceiași.",
+        "text": "Ani de zile mi-am zis că erau păsări de foc, din poveștile bunicii. Dar acum... după hârtiile lui, după tot ce-ai visat tu...",
         "trezire": true,
         "imagine": "events/drum_foc_3_noapte.png",
         "urmator": "p73b"
       },
       "p73b": {
-        "vorbitor": "vale",
+        "vorbitor": "soldat",
         "emotie": "normal",
-        "gand": true,
-        "text": "Mă uit la el peste foc. Păsări care ard și nu ard nimic. Care zboară noaptea, toate odată, spre poarta focului.",
+        "text": "Cred că erau ei, băiete. Călăreții de la Caldrath. Ordinul Flăcării, pe dragonii lor. Zburau sus, deasupra norilor, ca să nu-i vadă nimeni de jos.",
         "urmator": "p73c"
       },
       "p73c": {
         "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Unchiule... și dacă n-erau păsări? Dacă erau ei? Călăreții de la Caldrath?",
+        "emotie": "speriat",
+        "text": "Toți odată? De ce?",
         "urmator": "p73d"
       },
       "p73d": {
-        "vorbitor": "vale",
+        "vorbitor": "soldat",
         "emotie": "normal",
-        "gand": true,
-        "text": "Unchiul nu răspunde. Se uită mult în jar, cum se uita atunci la cer.",
+        "text": "Nu știu. Dar ceva mare se întâmpla în noaptea aia, undeva departe, de-i trimiteau pe toți odată. Douăzeci de ierni de strajă și n-am văzut niciun dragon de aproape. Și totuși, atunci am fost mai aproape decât am crezut.",
         "urmator": "p73e"
       },
       "p73e": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Zburau prea sus ca să văd altceva decât focul. Dar dacă erau ei... atunci am fost mai aproape decât am crezut. Și ceva mare se întâmpla în noaptea aia, de-i trimiteau pe toți odată.",
-        "urmator": "p73f"
-      },
-      "p73f": {
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Culcă-te, băiete. Stau eu de strajă.",
@@ -25684,7 +25685,8 @@
         "efecte": {
           "panaLaOra": "23:30"
         },
-        "urmator": "v1"
+        "urmator": "v1",
+        "imagine": "events/drum_somn_3.png"
       },
       "v1": {
         "vorbitor": "vale",
