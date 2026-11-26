@@ -88,8 +88,8 @@
       "vindecaOtrava": true,
       "efecte": {},
       "sunet": "baut",
-      "descriere": "Oprește otrava (de exemplu balele acide ale șobolanilor).",
-      "descriere_en": "Stops poison (such as the rats’ acid spittle).",
+      "descriere": "Oprește otrava din sânge: de la mușcături, bale sau venin.",
+      "descriere_en": "Stops poison in the blood: from bites, spittle or venom.",
       "_nota": "Decis de autor: îl face Bătrâna Morwen (ierbăreasa), doar la schimb, din flori (2 piciorul-cocoșului + 1 păpădie); ea nu vinde nimic. Prețul (la vânzare, la negustori): TODO echilibru. vindecaOtrava = în luptă scoate otrava de pe țintă."
     },
     "potiune_vigoare": {
@@ -332,8 +332,8 @@
       "stiva": 10,
       "pret": 2,
       "_nota": "Planta de leac pentru Elian (misiunea elian_ierburi).",
-      "descriere": "Flori galbene, mărunte. Fratele Elian face pansamente din ele, iar Bătrâna Morwen, poțiuni.",
-      "descriere_en": "Small yellow flowers. Brother Elian makes bandages from them, and Old Morwen, potions."
+      "descriere": "Flori galbene, mărunte. Fratele Elian face pansamente din ele, iar Bătrâna Morwen, ierbăreasa de la Marginea satului, poțiuni.",
+      "descriere_en": "Small yellow flowers. Brother Elian makes bandages from them, and Old Morwen, the herbwoman at the Edge, potions."
     },
     "papadie": {
       "nume": "Păpădie",
@@ -341,8 +341,8 @@
       "tip": "material",
       "stiva": 10,
       "pret": 1,
-      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
-      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen, ierbăreasa de la Marginea satului, face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen, the herbwoman at the Edge, makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "piciorul_cocosului": {
@@ -351,8 +351,8 @@
       "tip": "material",
       "stiva": 10,
       "pret": 1,
-      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
-      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen, ierbăreasa de la Marginea satului, face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen, the herbwoman at the Edge, makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "musetel": {
@@ -361,8 +361,8 @@
       "tip": "material",
       "stiva": 10,
       "pret": 1,
-      "descriere": "O floare culeasă din pădure. Bătrâna Morwen face poțiuni din ea.",
-      "descriere_en": "A flower picked in the forest. Old Morwen makes potions from it.",
+      "descriere": "O floare culeasă din pădure. Bătrâna Morwen, ierbăreasa de la Marginea satului, face poțiuni din ea.",
+      "descriere_en": "A flower picked in the forest. Old Morwen, the herbwoman at the Edge, makes potions from it.",
       "_nota": "Decis de autor: orice floare culeasă rămâne în rucsac, pentru poțiunile Bătrânei Morwen."
     },
     "hartii_vechi": {

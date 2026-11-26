@@ -13823,7 +13823,12 @@
       "i_leac": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Bale de șobolan? Ard ca focul și intră în sânge. Leacul meu le oprește pe loc. Adu-mi doi piciorul-cocoșului și o păpădie, și ți-l fac. Nu știi niciodată ce te așteaptă prin pivnițe."
+        "text": "Am și leac de otravă, flăcăule: pentru orice arde în sânge, mușcătură de șarpe sau de altă jivină. Oprește otrava pe loc. Adu-mi două fire de piciorul-cocoșului și o păpădie, și ți-l fac."
+      },
+      "i_leac2": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Am auzit de șobolanii din pivnița lui Agnes. Balele lor ard ca focul și intră în sânge. Leacul meu le oprește pe loc: adu-mi două fire de piciorul-cocoșului și o păpădie, și ți-l fac."
       },
       "i_ierburi": {
         "vorbitor": "ierbareasa",
@@ -13833,7 +13838,7 @@
       "i_lina": {
         "vorbitor": "ierbareasa",
         "emotie": "normal",
-        "text": "Fetița lui Finn vine în fiecare după-amiază. Sortează ierburi și pune întrebări cât zece. Îi dau ceai pentru maică-sa. E un schimb bun."
+        "text": "Surioara lui Finn vine în fiecare după-amiază. Sortează ierburi și pune întrebări cât zece. Eu îi dau ceaiuri pentru maică-sa. E un schimb bun."
       },
       "i_flori": {
         "vorbitor": "ierbareasa",
@@ -13970,7 +13975,18 @@
         "nod": "i_flori"
       },
       {
-        "nod": "i_leac"
+        "nod": "i_leac",
+        "conditii": {
+          "nu": {
+            "existaStare": "sobolani_vorbit"
+          }
+        }
+      },
+      {
+        "nod": "i_leac2",
+        "conditii": {
+          "existaStare": "sobolani_vorbit"
+        }
       },
       {
         "nod": "i_ierburi"
@@ -14561,7 +14577,18 @@
           },
           "misiune": {
             "elian_carti": "ratata"
-          }
+          },
+          "marcheaza": "carti_refuz"
+        },
+        "urmator": "r3"
+      },
+      "r3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă dau la o parte, lângă gard. Colectorul trece pe lângă mine fără să mă bage în seamă și urcă treptele bisericii. Mai bine nu stau să văd ce caută.",
+        "efecte": {
+          "mergi": "harta"
         }
       },
       "b": {
@@ -14731,14 +14758,14 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Ce fel de cărți păzește un preot cu atâta încăpățânare? Ce scrie în ele, de prețuiesc mai mult decât propria lui piele? Și semnul acela de pe copertă... soarele cu raze frânte.",
+        "text": "Ce fel de cărți păzește magul nostru cel mic cu atâta încăpățânare? Ce scrie în ele, de prețuiesc mai mult decât propria lui piele? Și semnul acela de pe copertă... soarele cu raze frânte.",
         "urmator": "b26"
       },
       "b26": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Poate că Fratele Elian nu e doar un preot care citește pe scări. Sau poate văd eu fantome ziua-n amiaza mare.",
+        "text": "Poate că Fratele Elian nu e chiar magul mic despre care vorbește tot satul. Sau poate văd eu fantome ziua-n amiaza mare.",
         "efecte": {
           "stare": {
             "carti_elian": "ascunse"

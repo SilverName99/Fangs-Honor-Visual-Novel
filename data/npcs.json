@@ -1050,6 +1050,30 @@
       ],
       "program": [
         {
+          "de": "14:00",
+          "pana": "18:00",
+          "loc": "biserica/interior",
+          "conditii": {
+            "misiune": {
+              "elian_carti": "terminata"
+            },
+            "nu": {
+              "misiuneTerminata": {
+                "elian_carti": 1
+              }
+            }
+          },
+          "ce": "în ziua „Cărților”, în biserică (după bâtă nu mai stă pe scări)"
+        },
+        {
+          "de": "14:00",
+          "pana": "18:00",
+          "conditii": {
+            "marcatAzi": "carti_refuz"
+          },
+          "ce": "în ziua „Cărților” refuzate, plecat (a fugit cu cărțile)"
+        },
+        {
           "de": "05:00",
           "pana": "08:00",
           "loc": "biserica/interior",
@@ -1482,7 +1506,7 @@
       "id": "ierbareasa",
       "nume": "Bătrâna Morwen",
       "nume_en": "Old Morwen",
-      "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; vinde și leacul de otravă (bun la șobolanii din pivniță).",
+      "_despre": "Decis de autor: bătrâna cu poțiuni de la Marginea satului; nu vinde nimic: face poțiunile și leacul doar la schimb. Ales de Claude: 05–23 în colibă, ca lacătul ușii (deschis de la 05:00).",
       "carte": {
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
         "descriere": "Bătrâna Morwen trăiește singură într-o colibă de la marginea satului, printre ierburi uscate. Face poțiuni și leacuri pentru oricine bate la ușă.",
@@ -1493,7 +1517,7 @@
         "coliba/interior"
       ],
       "dialog": "ierbareasa",
-      "intrebareVorba": "Ce mai faceți, bunico?",
+      "intrebareVorba": "Ce mai faci, bunico?",
       "intrebareVorba_en": "How are you doing, Granny?",
       "program": [
         {
@@ -1519,14 +1543,14 @@
           "ce": "în noaptea nașterii, Vale o trezește și o duce la Hanna (misiunea „Noaptea nașterii”); altfel doarme"
         },
         {
-          "de": "06:00",
+          "de": "05:00",
           "pana": "23:00",
           "loc": "coliba/interior",
           "ce": "printre ierburi"
         },
         {
           "de": "23:00",
-          "pana": "06:00",
+          "pana": "05:00",
           "ce": "doarme (coliba e încuiată noaptea)"
         }
       ],
