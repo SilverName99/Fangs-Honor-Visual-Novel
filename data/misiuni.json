@@ -1059,8 +1059,8 @@
           "gata": {
             "existaStare": "camera_golita"
           },
-          "sfat": "Urc la etaj (cât e taverna deschisă, 9 dimineața – 2 noaptea) și strâng lucrurile fostului chiriaș.",
-          "sfat_en": "I go upstairs (while the tavern is open, 09:00 – 02:00) and gather up the former lodger’s things.",
+          "sfat": "Urc la etaj și strâng lucrurile fostului chiriaș: o oră și jumătate, apoi cobor la Agnes, la tejghea. Deci dimineața (9–10:30) sau de la 14:30 până la 00:30.",
+          "sfat_en": "I go upstairs and gather up the former lodger’s things: an hour and a half, then I go down to Agnes at the counter. So in the morning (09:00–10:30), or from 14:30 until 00:30.",
           "indiciu": {
             "text": "Despre camera de sus...",
             "text_en": "About the upstairs room...",
@@ -2085,8 +2085,25 @@
             "obiect": "orz",
             "n": 5
           },
-          "sfat": "Cât muncesc la moară, primesc și orz (2 la fiecare muncă).",
-          "sfat_en": "Whenever I work at the mill, I get barley too (2 each time).",
+          "sfat": [
+            {
+              "conditii": {
+                "nu": {
+                  "areLaEl": [
+                    "rucsac_panza",
+                    "rucsac_piele"
+                  ]
+                }
+              },
+              "text": "Cât muncesc la moară, primesc și orz (2 la fiecare muncă). Fără rucsac n-am unde să-l pun: rucsacul e în cufărul din camera mea.",
+              "text_en": "Whenever I work at the mill, I get barley too (2 each time). Without a backpack I’ve nowhere to put it: the backpack is in the chest in my room."
+            },
+            "Cât muncesc la moară, primesc și orz (2 la fiecare muncă)."
+          ],
+          "sfat_en": [
+            null,
+            "Whenever I work at the mill, I get barley too (2 each time)."
+          ],
           "indiciu": {
             "text": "Despre bere...",
             "text_en": "About the ale...",
@@ -2114,6 +2131,26 @@
           "gata": {
             "existaStare": "bere_facuta"
           },
+          "sfat": "Agnes pune berea la fiert doar dimineața (9–12), ca să aibă toată ziua înainte.",
+          "sfat_en": "Agnes only sets the ale brewing in the morning (9–12), so she has the whole day ahead of her.",
+          "indiciu": {
+            "text": "Despre bere...",
+            "text_en": "About the ale...",
+            "nod": [
+              {
+                "nod": "bere_dimineata",
+                "conditii": {
+                  "areCate": {
+                    "orz": 5,
+                    "miere": 2
+                  }
+                }
+              },
+              {
+                "nod": "bere_indiciu"
+              }
+            ]
+          },
           "predare": {
             "text": "Am adus orzul și mierea!",
             "text_en": "I’ve brought the barley and the honey!",
@@ -2123,6 +2160,10 @@
               "areCate": {
                 "orz": 5,
                 "miere": 2
+              },
+              "ora": {
+                "min": "09:00",
+                "max": "11:59"
               }
             }
           }
@@ -2147,17 +2188,17 @@
               "socoteala": "refuzat"
             }
           },
-          "text": "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes m-a rugat să vorbesc cu el, cu blândețe. I-am spus că nu mă bag între ei.",
-          "text_en": "Uncle Roderick has been running up a tab at the tavern ever since the battle. Agnes asked me to talk to him, gently. I told her I wouldn’t get between them."
+          "text": "CIORNĂ: Unchiul Roderick a băut pe datorie la tavernă de la bătălie încoace. Agnes m-a rugat să vorbesc cu el, cu blândețe. I-am spus că nu mă bag între ei.",
+          "text_en": "Ever since the battle, Uncle Roderick has run up a tab at the tavern. Agnes asked me to talk to him, gently. I told her I wouldn’t get between them."
         },
-        "CIORNĂ: Unchiul Roderick bea pe datorie la tavernă de la bătălie încoace. Agnes n-a vrut niciodată să-i ceară banii, dar orcii i-au mărit dările și nu mai face față. M-a rugat să vorbesc cu el, cu blândețe."
+        "CIORNĂ: Unchiul Roderick a băut pe datorie la tavernă de la bătălie încoace. Agnes n-a vrut niciodată să-i ceară banii, dar orcii i-au mărit dările și nu mai face față. M-a rugat să vorbesc cu el, cu blândețe."
       ],
       "descriere_en": [
         null,
-        "Uncle Roderick has been running up a tab at the tavern ever since the battle. Agnes never wanted to ask him for the money, but the orcs have raised her taxes and she can’t keep up anymore. She asked me to talk to him, gently."
+        "Ever since the battle, Uncle Roderick has run up a tab at the tavern. Agnes never wanted to ask him for the money, but the orcs have raised her taxes and she can’t keep up anymore. She asked me to talk to him, gently."
       ],
       "oferta": {
-        "_nota": "Decis de autor: a lui Agnes, dar punctul e al lui Roderick (se poate rata). Ales de Claude: după „Ultima sticlă” (făcută sau ratată).",
+        "_nota": "Decis de autor: a lui Agnes, dar punctul e al lui Roderick (se poate rata). Ales de Claude: după „Ultima sticlă” (făcută sau ratată). Doar în sală: tabla neagră e în spatele tejghelei, iar 12–16 Agnes servește afară.",
         "text": "Doamna Agnes, arătați îngrijorată. S-a întâmplat ceva?",
         "text_en": "Mistress Agnes, you look worried. Has something happened?",
         "nod": "soc_o1",
@@ -2173,7 +2214,8 @@
                 "roderick_sticla": "ratata"
               }
             }
-          ]
+          ],
+          "loc": "taverna/parter"
         }
       },
       "pasi": [
@@ -2184,26 +2226,58 @@
           "gata": {
             "existaStare": "soc_roderick"
           },
-          "sfat": "Unchiul e la biserică la prânz (10–14) și în tavernă după-amiaza și seara.",
-          "sfat_en": "Uncle is at the church around midday (10–14), and at the tavern in the afternoons and evenings.",
+          "sfat": "Unchiul e în tavernă după-amiaza și seara (14–00); acolo, cu tabla în fața ochilor.",
+          "sfat_en": "Uncle is at the tavern in the afternoons and evenings (14–00); best there, with the slate right in front of him.",
           "predare": {
             "text": "Unchiule... despre socoteala de la Agnes.",
             "text_en": "Uncle... about the tab at Agnes’s.",
-            "nod": "soc_r1"
+            "nod": "soc_r1",
+            "conditii": {
+              "loc": "taverna/parter"
+            }
           }
         },
         {
           "text": "A doua zi dimineață, muncesc cu unchiul la tavernă",
           "text_en": "The next morning, I work with Uncle at the tavern",
+          "la": "soldat",
           "gata": {
             "existaStare": "soc_gata"
           },
-          "sfat": "Mâine dimineață (9–12), la tavernă: unchiul mă așteaptă acolo.",
-          "sfat_en": "Tomorrow morning (9–12), at the tavern: Uncle will be waiting for me there.",
+          "sfat": [
+            {
+              "conditii": {
+                "marcatAzi": {
+                  "id": "soc_roderick",
+                  "deLa": "05:00"
+                }
+              },
+              "text": "Mâine dimineață (9–12), la tavernă: unchiul mă așteaptă acolo.",
+              "text_en": "Tomorrow morning (9–12), at the tavern: Uncle will be waiting for me there."
+            },
+            "Dimineața (9–12), la tavernă: unchiul mă așteaptă în spate, la lemne."
+          ],
+          "sfat_en": [
+            null,
+            "In the morning (9–12), at the tavern: Uncle is waiting for me out back, by the woodpile."
+          ],
           "indiciu": {
             "text": "Despre mâine...",
             "text_en": "About tomorrow...",
-            "nod": "soc_ind"
+            "nod": [
+              {
+                "nod": "soc_ind",
+                "conditii": {
+                  "marcatAzi": {
+                    "id": "soc_roderick",
+                    "deLa": "05:00"
+                  }
+                }
+              },
+              {
+                "nod": "soc_ind2"
+              }
+            ]
           }
         }
       ],
@@ -2276,17 +2350,71 @@
           }
         },
         {
-          "text": "Mâine seară, la tavernă, cu tot satul",
-          "text_en": "Tomorrow evening, at the tavern, with the whole village",
+          "text": [
+            {
+              "conditii": {
+                "marcatAzi": "seara_roderick"
+              },
+              "text": "Mâine seară, la tavernă, cu tot satul",
+              "text_en": "Tomorrow evening, at the tavern, with the whole village"
+            },
+            "Seara, la tavernă, cu tot satul"
+          ],
+          "text_en": [
+            null,
+            "In the evening, at the tavern, with the whole village"
+          ],
           "gata": {
             "existaStare": "seara_gata"
           },
-          "sfat": "Mâine seară (19–23), la tavernă.",
-          "sfat_en": "Tomorrow evening (19–23), at the tavern.",
+          "sfat": [
+            {
+              "conditii": {
+                "marcatAzi": "seara_roderick"
+              },
+              "text": "Mâine seară (19–23), la tavernă.",
+              "text_en": "Tomorrow evening (19–23), at the tavern."
+            },
+            "Seara (19–23), la tavernă."
+          ],
+          "sfat_en": [
+            null,
+            "In the evening (19–23), at the tavern."
+          ],
           "indiciu": {
-            "text": "Despre mâine seară...",
-            "text_en": "About tomorrow evening...",
-            "nod": "seara_ind"
+            "text": [
+              {
+                "conditii": {
+                  "marcatAzi": "seara_roderick"
+                },
+                "text": "Despre mâine seară...",
+                "text_en": "About tomorrow evening..."
+              },
+              "Despre seara pentru cei 23..."
+            ],
+            "text_en": [
+              null,
+              "About the evening for the Twenty-Three..."
+            ],
+            "nod": [
+              {
+                "nod": "seara_ind_a1",
+                "conditii": {
+                  "nuStare": {
+                    "seara_agnes": "stie"
+                  }
+                }
+              },
+              {
+                "nod": "seara_ind_a3",
+                "conditii": {
+                  "marcatAzi": "seara_roderick"
+                }
+              },
+              {
+                "nod": "seara_ind_a4"
+              }
+            ]
           }
         }
       ],

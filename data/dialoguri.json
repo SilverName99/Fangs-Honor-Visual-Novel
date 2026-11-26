@@ -798,7 +798,7 @@
       "groapa_r4": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Ultima dată când am stat umăr la umăr cu un Lightfinder, am fugit când mi s-a cerut.",
+        "text": "Ultima dată când am stat umăr la umăr cu Edwin, am fugit când mi s-a cerut.",
         "urmator": "groapa_r5"
       },
       "groapa_r5": {
@@ -1512,10 +1512,86 @@
     "partener": "hangita",
     "start": [
       {
+        "nod": "prez_dupa_ajutor",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_hangita": "da"
+          },
+          "stare": {
+            "scandal_taverna": "ajutat"
+          }
+        }
+      },
+      {
+        "nod": "prez_dupa_refuz",
+        "conditii": {
+          "nuStare": {
+            "cunoscut_hangita": "da"
+          },
+          "stare": {
+            "scandal_taverna": "refuzat"
+          }
+        }
+      },
+      {
         "nod": "prezentare",
         "conditii": {
           "nuStare": {
             "cunoscut_hangita": "da"
+          }
+        }
+      },
+      {
+        "nod": "salut_scandal_ajutat",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "ajutat"
+          },
+          "trecut": {
+            "scandal_zi": {
+              "subZile": 1
+            }
+          }
+        }
+      },
+      {
+        "nod": "salut_scandal_refuzat",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "refuzat"
+          },
+          "trecut": {
+            "scandal_zi": {
+              "subZile": 1
+            }
+          }
+        }
+      },
+      {
+        "nod": "salut_pivnita",
+        "conditii": {
+          "misiuneTerminata": {
+            "agnes_bere": 1
+          },
+          "nu": {
+            "oricare": [
+              {
+                "misiune": {
+                  "agnes_pivnita": "inceputa"
+                }
+              },
+              {
+                "misiune": {
+                  "agnes_pivnita": "terminata"
+                }
+              },
+              {
+                "ora": {
+                  "min": "09:00",
+                  "max": "10:59"
+                }
+              }
+            ]
           }
         }
       },
@@ -1549,6 +1625,41 @@
             "spre": null
           }
         ]
+      },
+      "prez_dupa_ajutor": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Vale Lightfinder. După ce-ai făcut pentru mine, aici n-ai nevoie de poftire. Stai jos. Ce-ți aduc?",
+        "efecte": {
+          "stare": {
+            "cunoscut_hangita": "da"
+          }
+        }
+      },
+      "prez_dupa_refuz": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Vale. Te-am văzut atunci, cum ai rămas pe scaun... Lasă. Nu te judec. Stai jos. Măcar acum e liniște.",
+        "efecte": {
+          "stare": {
+            "cunoscut_hangita": "da"
+          }
+        }
+      },
+      "salut_scandal_ajutat": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Încă îmi tremură mâinile, Vale. Dar tu și unchiul tău... Stai jos. Ce-ți aduc?"
+      },
+      "salut_scandal_refuzat": {
+        "vorbitor": "hangita",
+        "emotie": "trist",
+        "text": "Încă strâng cioburi, Vale. Pe Roderick nu l-am putut opri să plece... Lasă. Ce-ți aduc?"
+      },
+      "salut_pivnita": {
+        "vorbitor": "hangita",
+        "emotie": "speriat",
+        "text": "Vale... vino mâine dimineață, devreme, cât taverna e goală. Am ceva să-ți spun, dar nu cu lumea în jur."
       },
       "camera": {
         "vorbitor": "hangita",
@@ -1657,7 +1768,7 @@
       "po3": {
         "vorbitor": "hangita",
         "emotie": "speriat",
-        "text": "Azi-noapte am auzit ceva în pivniță. Zgârieturi. Ceva care roade butoaiele cu berea noastră, Vale. Berea pe care am făcut-o împreună.",
+        "text": "Nopțile astea aud ceva în pivniță. Zgârieturi. Ceva care roade butoaiele cu berea noastră, Vale. Berea pe care am făcut-o împreună.",
         "urmator": "po4"
       },
       "po4": {
@@ -1749,6 +1860,11 @@
         "emotie": "normal",
         "text": "Cinci măsuri de orz de la moară și două de miere de la fermier. Nu uita, că eu am și uitat cum miroase berea bună."
       },
+      "bere_dimineata": {
+        "vorbitor": "hangita",
+        "emotie": "zambet",
+        "text": "Ia te uită, le-ai adus pe toate! Dar berea se pune la fiert de dimineață, Vale, cu toată ziua înainte. Vino între nouă și prânz și facem bere ca lumea."
+      },
       "bere_predare": {
         "vorbitor": "vale",
         "emotie": "normal",
@@ -1761,7 +1877,7 @@
         "text": "Ia te uită! Hai jos în pivniță, că azi facem bere ca lumea.",
         "alegeri": [
           {
-            "text": "Să mergem.",
+            "text": "Să mergem. (Ține toată ziua, până seara.)",
             "inchide": true,
             "efecte": {
               "consuma": {
@@ -2021,6 +2137,11 @@
         "emotie": "normal",
         "text": "Mâine dimineață, la tavernă, între nouă și prânz. Adu-ți mâinile, băiete."
       },
+      "soc_ind2": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Dimineața, la tavernă, între nouă și prânz. Te aștept în spate, la lemne."
+      },
       "seara_o1": {
         "vorbitor": "hangita",
         "emotie": "trist",
@@ -2114,7 +2235,7 @@
       "seara_r4": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Hanna nu știe nici azi cum a căzut Owen. Nici Ilse, nici Greta. Doar tu știi.",
+        "text": "Hanna, nevasta lui Owen, nu știe nici azi cum a căzut el. Nici Ilse, nici Greta, nici celelalte văduve. Doar tu știi.",
         "urmator": "seara_r5"
       },
       "seara_r5": {
@@ -2147,10 +2268,31 @@
           "marcheaza": "seara_roderick"
         }
       },
-      "seara_ind": {
-        "vorbitor": "soldat",
-        "emotie": "trist",
-        "text": "Mâine seară, la tavernă. Și stai lângă mine, băiete."
+      "seara_ind_a1": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Doamna Agnes... unchiul a zis da. O să vorbească.",
+        "urmator": "seara_ind_a2"
+      },
+      "seara_ind_a2": {
+        "vorbitor": "hangita",
+        "emotie": "plange",
+        "text": "A zis da... Atunci chem tot satul. Văduvele primele. Și pun câte o lumânare pe fiecare masă.",
+        "efecte": {
+          "stare": {
+            "seara_agnes": "stie"
+          }
+        }
+      },
+      "seara_ind_a3": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Mâine seară, Vale. Eu chem satul și pun lumânările. Tu doar stai lângă el."
+      },
+      "seara_ind_a4": {
+        "vorbitor": "hangita",
+        "emotie": "normal",
+        "text": "Seara, Vale, când se umple taverna. Eu chem satul și pun lumânările. Tu doar stai lângă el."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -8297,7 +8439,8 @@
           },
           "relatie": {
             "soldat": 1
-          }
+          },
+          "marcheaza": "scandal_zi"
         },
         "urmator": "ajuta2"
       },
@@ -8324,7 +8467,8 @@
         "efecte": {
           "stare": {
             "scandal_taverna": "refuzat"
-          }
+          },
+          "marcheaza": "scandal_zi"
         },
         "urmator": "r2"
       },
@@ -10495,11 +10639,8 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Toată după-amiaza o petrecem în pivniță. Agnes fierbe, amestecă și numără, iar eu car apă și ridic butoaie.",
+        "text": "Toată ziua o petrecem în pivniță. Agnes fierbe, amestecă și numără, iar eu car apă și ridic butoaie.",
         "imagine": "events/agnes_bere_1.png",
-        "efecte": {
-          "timp": 180
-        },
         "urmator": "b"
       },
       "b": {
@@ -10523,6 +10664,9 @@
         "imagine": "events/agnes_bere_2.png",
         "urmator": "e",
         "efecte": {
+          "stare": {
+            "bere_facuta": "da"
+          },
           "panaLaOra": "19:00"
         }
       },
@@ -20614,14 +20758,24 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Unchiul e deja în spatele tavernei când ajung. Și-a suflecat mânecile și a scos toporul din șopron. Pare treaz, pentru prima oară la ora asta.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "roderick_treaz": "da"
+              }
+            },
+            "text": "Unchiul e deja în spatele tavernei când ajung. Și-a suflecat mânecile și a scos toporul din șopron. E bărbierit și are ochii limpezi: de când și-a vărsat sticla în noroi, n-a mai pus gura pe băutură."
+          },
+          "Unchiul e deja în spatele tavernei când ajung. Și-a suflecat mânecile și a scos toporul din șopron. Are ochii roșii, dar mâna nu-i tremură."
+        ],
         "imagine": "events/roderick_socoteala_1.png",
         "urmator": "c2"
       },
       "c2": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Lemne pentru o săptămână, butoaiele din pivniță sus, banca ruptă de la fereastră. Asta e lista lui Agnes. Și o facem până la prânz.",
+        "text": "Lemne pentru o săptămână, butoaiele din pivniță sus, banca ruptă de la fereastră. Le-am văzut șase luni de la masa mea și n-am mișcat un deget. Le facem până la prânz.",
         "urmator": "c3"
       },
       "c3": {
@@ -20748,7 +20902,7 @@
       "v5": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Era primăvară. Copacul cel mare înflorise. Eram douăzeci și patru. Douăzeci și patru de bărbați cu săbii vechi și furci, în fața unei hoarde.",
+        "text": "Era primăvară. Copacul cel mare înflorise. Eram douăzeci și patru. Douăzeci și patru de bărbați cu săbii vechi, scoase din poduri și din lăzi, în fața unei hoarde.",
         "imagine": "events/roderick_seara_2.png",
         "urmator": "v6"
       },

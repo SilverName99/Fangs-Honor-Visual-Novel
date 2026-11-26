@@ -253,6 +253,30 @@
       "dialog": "soldat",
       "program": [
         {
+          "de": "09:00",
+          "pana": "12:00",
+          "conditii": {
+            "misiune": {
+              "agnes_socoteala": "inceputa"
+            },
+            "existaStare": "soc_roderick",
+            "nu": {
+              "oricare": [
+                {
+                  "marcatAzi": {
+                    "id": "soc_roderick",
+                    "deLa": "05:00"
+                  }
+                },
+                {
+                  "existaStare": "soc_gata"
+                }
+              ]
+            }
+          },
+          "ce": "„Socoteala”: din dimineața de după, îl așteaptă pe Vale în spatele tavernei, la lemne (fără loc: nu e la biserică și nu se vede)"
+        },
+        {
           "de": "07:00",
           "pana": "10:00",
           "loc": "antrenament",
