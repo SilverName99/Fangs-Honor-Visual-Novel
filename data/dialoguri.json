@@ -9432,7 +9432,7 @@
       "vise_5b": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Am visat o poartă. Un arc de piatră neagră, plin de semne, iar în vârf un chip săpat: jumătate om, jumătate craniu. Și dincolo de el, o ceață argintie.",
+        "text": "Am visat o poartă. Un arc de piatră neagră, plin de semne, cu un craniu săpat în vârf. Și dincolo de el, o ceață argintie.",
         "urmator": "vise_5c"
       },
       "vise_5c": {
@@ -25752,7 +25752,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Jos de tot e o poartă. Un arc înalt de piatră neagră, plin de aceleași semne. În vârful lui e săpat un chip uriaș: pe o jumătate, fața unui om cu ochii închiși; pe cealaltă, craniul gol. Se uită în jos, spre mine.",
+        "text": "Jos de tot e o poartă. Un arc înalt de piatră neagră, plin de aceleași semne. În vârful lui, un craniu săpat în piatră se uită în jos, spre mine.",
         "imagine": "events/vis_5_4.png",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
@@ -25828,7 +25828,7 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "Semnele de pe arc se aprind unul câte unul, de jos până la chipul din vârf. Ceața argintie se dă în lături, ca o perdea. Poarta se deschide. Și eu fac un pas spre ea.",
+        "text": "Semnele de pe arc se aprind unul câte unul, de jos până la craniu. Ceața argintie se dă în lături, ca o perdea. Poarta se deschide. Și eu fac un pas spre ea.",
         "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "film"
