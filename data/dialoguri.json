@@ -2,7 +2,23 @@
   "_nota": "Dialogurile sunt CIORNĂ scrisă de Claude (cerută de autor); autorul spune ce schimbă. start poate fi o listă: primul nod ale cărui condiții sunt îndeplinite (prima întâlnire = prezentare); „aleator” alege o replică la întâmplare.",
   "miriam_piata": {
     "partener": "miriam",
-    "start": "vale",
+    "start": [
+      {
+        "_nota": "Decis de autor (P22): rănit (sub 60 viață), în piață, mama îl ia acasă, în camera ei, și îl bandajează acolo (ca la biserică); o dată pe zi.",
+        "nod": "ingrijorata_piata",
+        "conditii": {
+          "nevoie": {
+            "viata": {
+              "max": 59
+            }
+          },
+          "nu": {
+            "marcatAzi": "bandaj_miriam"
+          }
+        }
+      },
+      "vale"
+    ],
     "noduri": {
       "vale": {
         "vorbitor": "vale",
@@ -14,6 +30,34 @@
         "vorbitor": "miriam",
         "emotie": "zambet",
         "text": "Negustorul cere de două ori cât valorează cartofii ăștia. Dar încă n-a aflat cât de încăpățânată pot să fiu."
+      },
+      "ingrijorata_piata": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Vale! Doamne, ce-ai pățit? Lasă cartofii, că nu fug nicăieri. Hai acasă, acum, să te bandajez.",
+        "alegeri": [
+          {
+            "text": "Bine, mamă.",
+            "inchide": true,
+            "efecte": {
+              "marcheaza": "bandaj_miriam",
+              "mergi": "casa.camera_mama",
+              "eveniment": "miriam_bandaj"
+            }
+          },
+          {
+            "text": "Nu-i nimic, mamă. Mă descurc.",
+            "spre": "ingrijorata_refuz",
+            "efecte": {
+              "marcheaza": "bandaj_miriam"
+            }
+          }
+        ]
+      },
+      "ingrijorata_refuz": {
+        "vorbitor": "miriam",
+        "emotie": "suparat",
+        "text": "Încăpățânat ca tatăl tău... Măcar ai grijă de tine, mă auzi?"
       }
     },
     "meniu": true
@@ -4392,6 +4436,27 @@
         "emotie": "zambet",
         "text": "Stai jos, cina e aproape gata. Nu e mult, dar e caldă. Și e a noastră."
       },
+      "cina_masa": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama pune două străchini pe masă. Ciorbă de fasole, cu o coajă de pâine înmuiată în ea. Mâncăm fără grabă, cu focul trosnind lângă noi.",
+        "imagine": "events/miriam_cina_seara.png",
+        "grupGalerie": "Miriam: cina de seară",
+        "efecte": {
+          "marcheaza": "cina_mama",
+          "timp": 30,
+          "nevoi": {
+            "foame": 20
+          }
+        },
+        "urmator": "cina_masa2"
+      },
+      "cina_masa2": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Așa. Măcar seara să te știu sătul. Ziua oricum nu te văd."
+      },
       "salut1": {
         "vorbitor": "miriam",
         "emotie": "normal",
@@ -4434,9 +4499,6 @@
               "timp": 240,
               "nevoi": {
                 "stamina": -30
-              },
-              "stare": {
-                "acoperis": "reparat"
               },
               "eveniment": "acoperis_reparat"
             }
@@ -4573,9 +4635,15 @@
             }
           },
           {
-            "text": "Altă dată, mamă."
+            "text": "Altă dată, mamă.",
+            "spre": "coase_nu"
           }
         ]
+      },
+      "coase_nu": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Bine. Dar nu umbla prin frig doar în cămașă, mă auzi?"
       },
       "cina_o1": {
         "vorbitor": "miriam",
@@ -6115,6 +6183,78 @@
         "vorbitor": "miriam",
         "emotie": "trist",
         "text": "A bătut colectorul la ușă și n-am avut ce să-i dăm, Vale. S-a uitat prin casă de parcă ar fi numărat ce ne-a mai rămas."
+      },
+      "m_acoperis": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Când plouă acum, nu mai picură nimic lângă vatră. Tatăl tău bătea cuiele strâmb. Tu le-ai bătut drept."
+      },
+      "m_cina": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Roderick trece acum pe sub fereastră și se oprește să mă salute. Șase luni a trecut pe partea cealaltă a uliței."
+      },
+      "m_antrenament": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Roderick zice că ții sabia ca un țăran, dar lovești ca un Lightfinder. Să nu-i spui că ți-am zis."
+      },
+      "m_inel": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Mă tot uit la inel. Parcă strălucește altfel de când l-ai adus tu înapoi."
+      },
+      "m_steag": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Peticul din rochia mea albastră e acum în steagul lui Roderick. Așa merg și eu cu voi, oriunde v-ați duce."
+      },
+      "m_lada": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Uneori trag lada de sub pat și mă uit în ea. E goală. Apoi te văd plecând cu fierul lui, și nu mai e goală deloc."
+      },
+      "m_vis4": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Iar ai vorbit în somn. Altfel decât înainte. Parcă îi răspundeai cuiva."
+      },
+      "m_scandal_da": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Tot satul zice că ai sărit lângă Roderick în tavernă. Să nu-mi mai faci asemenea spaime. Dar... bine ai făcut."
+      },
+      "m_scandal_nu": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Am auzit ce-a fost la tavernă. Nu te judec, Vale. Doar nu-l mai lăsa singur data viitoare."
+      },
+      "m_finn": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Am auzit că ai plătit pentru băiatul ăla de la butuc. Patruzeci de monede, cu taxa la ușă... Ai inima tatălui tău. Și buzunarul lui."
+      },
+      "m_taxa": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Colectorul a trecut iar pe uliță și s-a uitat lung la casa noastră. Data viitoare dă-mi mie banii de taxă, să-i țin eu."
+      },
+      "m_dunga": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Ce-i dunga asta roz de pe brațul tău? Până acum n-o aveai.",
+        "urmator": "m_dunga2"
+      },
+      "m_opt": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Ai privirea lui, Vale. Te uiți ca el când te gândești... doar că tu te întorci acasă."
+      },
+      "m_dunga2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian a zis să nu-i spun de lupi. Mama se uită la mine mai mult decât ar trebui."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = salutul; vorbeste = replicile din „Vorbește” (cele noi primele); misiunile Miriamei apar singure în meniu (data/misiuni.json); la capătul unei ramuri meniul reapare.",
@@ -6191,9 +6331,143 @@
             }
           }
         }
+      },
+      {
+        "nod": "m_acoperis",
+        "conditii": {
+          "stare": {
+            "acoperis": "reparat"
+          }
+        }
+      },
+      {
+        "nod": "m_cina",
+        "conditii": {
+          "misiune": {
+            "miriam_cina": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "m_antrenament",
+        "conditii": {
+          "misiune": {
+            "roderick_antrenament": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "m_inel",
+        "conditii": {
+          "stare": {
+            "inel": "inapoi"
+          }
+        }
+      },
+      {
+        "nod": "m_steag",
+        "conditii": {
+          "stare": {
+            "steag": "roderick"
+          }
+        }
+      },
+      {
+        "nod": "m_lada",
+        "conditii": {
+          "existaStare": "tata_echipament"
+        }
+      },
+      {
+        "nod": "m_vis4",
+        "conditii": {
+          "stare": {
+            "vis_4": "vazut"
+          },
+          "misiune": {
+            "miriam_visele": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "m_scandal_da",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "ajutat"
+          }
+        }
+      },
+      {
+        "nod": "m_scandal_nu",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "refuzat"
+          }
+        }
+      },
+      {
+        "nod": "m_finn",
+        "conditii": {
+          "misiune": {
+            "finn_eliberare": "terminata"
+          }
+        }
+      },
+      {
+        "nod": "m_taxa",
+        "conditii": {
+          "taxaRatata": true
+        }
+      },
+      {
+        "nod": "m_dunga",
+        "conditii": {
+          "misiune": {
+            "elian_lumina": "terminata"
+          },
+          "nu": {
+            "misiuneTerminata": {
+              "elian_lumina": 3
+            }
+          }
+        },
+        "_nota": "Ales de Claude: doar în primele zile după „Lumina din pădure”, cât dunga e proaspătă."
+      },
+      {
+        "nod": "m_opt",
+        "conditii": {
+          "relatie": {
+            "miriam": {
+              "min": 8
+            }
+          }
+        },
+        "_nota": "Decis de autor (P16): o replică la 8/10, pragul echipamentului tatălui."
       }
     ],
     "optiuni": [
+      {
+        "_nota": "Decis de autor (P17): seara, în bucătărie, Vale mănâncă cu mama: +20 foame, 30 de minute, o dată pe zi; peste o imagine.",
+        "text": "Mănânc cu tine, mamă.",
+        "spre": "cina_masa",
+        "conditii": {
+          "loc": "casa/bucatarie",
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "marcatAzi": "cina_mama"
+              },
+              {
+                "marcatAzi": "cina_familie"
+              }
+            ]
+          }
+        }
+      },
       {
         "_nota": "Decis de autor: cât coase (11–14, în camera ei), Miriam face piesele de piele din piei. Replica e ciornă.",
         "text": "Mamă, mi-ai putea coase ceva din piei?",
@@ -8364,14 +8638,37 @@
     }
   },
   "miriam_acoperis_gata": {
-    "_nota": "CIORNĂ: după imaginea cu reparația. Recompensa misiunii e TODO.",
+    "_nota": "CIORNĂ (Claude): după imaginea cu reparația. Decis de autor (P21): mama pomenește de Edwin; acoperișul devine „reparat” abia la mulțumire, ca „Misiune terminată” să urce aici, nu peste imagine.",
     "partener": "miriam",
     "start": "a",
     "noduri": {
       "a": {
         "vorbitor": "miriam",
         "emotie": "zambet",
-        "text": "Am auzit ciocanul toată ziua... Nu mai picură nimic lângă vatră. În noaptea asta dormim fără găleată lângă pat. Mulțumesc, Vale."
+        "text": "Nu mai picură nimic lângă vatră. Am ținut cuiele până mi-au amorțit degetele.",
+        "efecte": {
+          "stare": {
+            "acoperis": "reparat"
+          }
+        },
+        "urmator": "b"
+      },
+      "b": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Tatăl tău urca pe acoperiș în fiecare toamnă, înainte de ploi. Eu îi țineam cuiele și mă certam cu el că se apleacă prea tare.",
+        "urmator": "c"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Azi te-ai certat cu mine.",
+        "urmator": "d"
+      },
+      "d": {
+        "vorbitor": "miriam",
+        "emotie": "zambet",
+        "text": "Și o să mă cert și la anul. În noaptea asta dormim fără găleată lângă pat. Mulțumesc, Vale."
       }
     }
   },
@@ -18698,8 +18995,15 @@
       },
       "p6": {
         "vorbitor": "miriam",
-        "emotie": "normal",
-        "text": "Douăzeci și trei de pâini. Câte una pentru fiecare casă. Unde n-a mai rămas nimeni, o dăm vecinilor.",
+        "emotie": "trist",
+        "text": "Douăzeci și trei de pâini. Douăzeci și două pentru casele lor (unde n-a mai rămas nimeni, o dăm vecinilor)... și una pentru noi, pe masă, lângă locul tatei.",
+        "urmator": "p6b"
+      },
+      "p6b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Nu mă gândisem. Și casa noastră e una dintre cele douăzeci și trei.",
         "urmator": "p7"
       },
       "p7": {
@@ -18984,6 +19288,13 @@
         "gand": true,
         "emotie": "normal",
         "text": "Zâmbește. Dar ochii nu-i zâmbesc. Se uită la mine cum se uită un om la un cer de vară care începe să se întunece.",
+        "urmator": "v18"
+      },
+      "v18": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama a plecat deja acasă, să pună de-o supă. Eu mai rămân puțin.",
         "efecte": {
           "stare": {
             "visele_elian": "da"
@@ -19181,8 +19492,8 @@
       },
       "h6": {
         "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "O să fie și pătuț. Într-o zi.",
+        "emotie": "trist",
+        "text": "Îmi pare rău, Hanna. Măcar de lemne să nu mai duci grija până trec ploile.",
         "urmator": "h7"
       },
       "h7": {
@@ -22121,7 +22432,7 @@
     }
   },
   "agnes_seara": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Agnes „Seara celor 23”: seara, în taverna plină, peste 3 imagini. Roderick povestește bătălia și spune numele celor căzuți.",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Agnes „Seara celor 23”: seara, în taverna plină, peste 3 imagini. Roderick povestește bătălia și spune numele celor căzuți. Decis de autor (P20): și mama e acolo, în primul rând; Roderick spune ultimul numele lui Edwin; cu „Noaptea nașterii” dusă la capăt, Hanna îl ține în brațe pe micul Owen.",
     "grup": "Agnes: seara celor 23",
     "partener": "soldat",
     "start": "v1",
@@ -22132,6 +22443,23 @@
         "emotie": "normal",
         "text": "Taverna e plină cum n-am mai văzut-o de la venirea orcilor. Văduvele stau în față, apoi fermierul, Bram, morarul, Bătrânul Hagen. Nimeni nu bea. Pe fiecare masă arde câte o lumânare.",
         "imagine": "events/roderick_seara_1.png",
+        "urmator": "v1b"
+      },
+      "v1b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "miriam_nastere": "terminata"
+              }
+            },
+            "text": "Mama stă în primul rând, lângă Hanna, cu mâinile strânse în poală, ca la biserică. Hanna ține în brațe un copil înfășat: micul Owen."
+          },
+          "Mama stă în primul rând, lângă Hanna, cu mâinile strânse în poală, ca la biserică."
+        ],
         "urmator": "v2"
       },
       "v2": {
@@ -22172,6 +22500,31 @@
         "faraPortret": true,
         "emotie": "normal",
         "text": "Ăsta era Owen al meu...",
+        "urmator": [
+          {
+            "nod": "v7b",
+            "conditii": {
+              "misiune": {
+                "miriam_nastere": "terminata"
+              }
+            }
+          },
+          "v8"
+        ]
+      },
+      "v7b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Hanna strânge la piept copilul înfășat. Îl ridică puțin, ca să-l vadă toți.",
+        "urmator": "v7c"
+      },
+      "v7c": {
+        "vorbitor": "satean",
+        "emotie": "normal",
+        "text": "Și Owen ăsta mic o să-i știe numele. Îl învăț eu.",
+        "nume": "Hanna",
+        "faraPortret": true,
         "urmator": "v8"
       },
       "v8": {
@@ -22184,6 +22537,13 @@
         "vorbitor": "soldat",
         "emotie": "plange",
         "text": "Edwin m-a prins de umăr și mi-a zis: „Fugi în sat. Ai grijă de Miriam și de băiat.” Și eu am fugit. De atunci am crezut că am fugit de frică.",
+        "urmator": "v9b"
+      },
+      "v9b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Unchiul se uită spre mama când spune asta, iar ea nu-și ferește ochii. Dă din cap, o singură dată, ca și cum i-ar răspunde tatei.",
         "urmator": "v10"
       },
       "v10": {
@@ -22203,7 +22563,20 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Și le spune. Pe toate. Douăzeci și trei de nume, încet, unul după altul. La fiecare nume, cineva din sală își lasă capul în jos.",
+        "text": "Și le spune. Douăzeci și două de nume, încet, unul după altul. La fiecare, cineva din sală își lasă capul în jos.",
+        "urmator": "v12b"
+      },
+      "v12b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "La ultimul se oprește și se uită la mine. De data asta nu-i tremură vocea.",
+        "urmator": "v12c"
+      },
+      "v12c": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Edwin Lightfinder. Fratele meu.",
         "urmator": "v13"
       },
       "v13": {
@@ -22224,6 +22597,12 @@
         "vorbitor": "hangita",
         "emotie": "plange",
         "text": "Pentru cei douăzeci și trei.",
+        "urmator": "v15b"
+      },
+      "v15b": {
+        "vorbitor": "miriam",
+        "emotie": "plange",
+        "text": "Pentru Edwin. Și pentru tine, Roderick. Că ai venit acasă.",
         "urmator": "v16"
       },
       "v16": {
@@ -23852,6 +24231,68 @@
         "gand": true,
         "emotie": "trist",
         "text": "Focul e rece. Kaia nu s-a întors încă. Nici urmele lui Ember nu-s proaspete."
+      }
+    }
+  },
+  "miriam_dimineata": {
+    "_nota": "CIORNĂ (Claude). Decis de autor (P14): prima dimineață, imediat după coșmarul de la început; pregătește „Vorbele din somn” („te-am auzit prin perete”).",
+    "grup": "Miriam: prima dimineață",
+    "partener": "miriam",
+    "start": "m1",
+    "noduri": {
+      "m1": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Iar n-ai dormit, așa-i? Te-am auzit prin perete. Îl strigai.",
+        "imagine": "events/micul_dejun.png",
+        "urmator": "m2"
+      },
+      "m2": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Același vis, mamă. Clopotul, ușa... În vis nu pot să-l strig. Se vede că-l strig în somn.",
+        "urmator": "m3"
+      },
+      "m3": {
+        "vorbitor": "miriam",
+        "emotie": "trist",
+        "text": "Și eu îl visez. Doar că în visul meu se întoarce.",
+        "urmator": "m4"
+      },
+      "m4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama îmi pune în față pâinea abia scoasă din cuptor și se uită la mine cum mănânc, ca și cum asta ar ține loc de vorbă.",
+        "urmator": "m5"
+      },
+      "m5": {
+        "vorbitor": "miriam",
+        "emotie": "normal",
+        "text": "Duminică trece colectorul pe la noi. Cincizeci de monede, Vale. Fermierul caută brațe la câmp până la prânz, iar morarul plătește mai bine, dacă ai spate pentru saci.",
+        "urmator": "m6"
+      },
+      "m6": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Și să fii acasă când bate la ușă. Vine după ora zece și umblă până se lasă noaptea; după unsprezece nu mai vine, dar atunci ne trece la datornici. Nu vreau să-i deschid singură.",
+        "urmator": "m7"
+      },
+      "m7": {
+        "vorbitor": "miriam",
+        "emotie": "speriat",
+        "text": "Iar noaptea nu umbla pe ulițe. Patrulele iau amendă.",
+        "alegeri": [
+          {
+            "text": "Mulțumesc, mamă.",
+            "efecte": {
+              "timp": 15,
+              "nevoi": {
+                "foame": 30
+              }
+            }
+          }
+        ]
       }
     }
   }

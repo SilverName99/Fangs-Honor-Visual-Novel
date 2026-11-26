@@ -25,8 +25,53 @@
         "nume": "Miriam Lightfinder",
         "nume_en": "Miriam Lightfinder",
         "_nota": "CIORNĂ (Claude), de revăzut de autor",
-        "descriere": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Coase la amiază, gătește seara și nu se culcă până nu mă știe acasă. În zilele de odihnă se roagă dis-de-dimineață la biserică.",
-        "descriere_en": "My mother. Since Father died, she has kept this house standing with her own two hands. She sews at midday, cooks in the evening, and won’t go to bed until she knows I’m home. On days of rest, she prays at the church at first light."
+        "descriere": [
+          {
+            "conditii": {
+              "existaStare": "tata_echipament"
+            },
+            "text": "Mama mea. Șase luni a ținut sub pat, într-o ladă de zestre, fierul tatei, ca orcii să nu-l găsească. Mi l-a dat când a văzut că plec oricum. De atunci se uită după mine până dispar după colțul uliței.",
+            "text_en": "My mother. For six months she kept Father’s steel hidden under her bed, in her dowry chest, so the orcs wouldn’t find it. She gave it to me when she saw I’d be going anyway. Since then she watches me until I disappear around the corner of the lane."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "miriam_cina": "terminata"
+              },
+              "stare": {
+                "inel": "inapoi"
+              }
+            },
+            "text": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. L-a iertat pe unchiul Roderick la masa noastră, cu crenguța de la copac într-o cană cu apă. Verigheta e iar pe degetul ei: o răsucește când crede că n-o vede nimeni.",
+            "text_en": "My mother. Since Father died, she has kept this house standing with her own two hands. She forgave Uncle Roderick at our table, with the sprig from the tree in a cup of water. Her wedding ring is back on her finger: she turns it when she thinks no one is looking."
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "miriam_cina": "terminata"
+              }
+            },
+            "text": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. L-a iertat pe unchiul Roderick la masa noastră, cu crenguța de la copac într-o cană cu apă. Coase la amiază, gătește seara și se roagă la biserică în zilele de odihnă.",
+            "text_en": "My mother. Since Father died, she has kept this house standing with her own two hands. She forgave Uncle Roderick at our table, with the sprig from the tree in a cup of water. She sews at midday, cooks in the evening, and prays at the church on days of rest."
+          },
+          {
+            "conditii": {
+              "stare": {
+                "inel": "inapoi"
+              }
+            },
+            "text": "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Verigheta e iar pe degetul ei. O răsucește când crede că n-o vede nimeni.",
+            "text_en": "My mother. Since Father died, she has kept this house standing with her own two hands. Her wedding ring is back on her finger. She turns it when she thinks no one is looking."
+          },
+          "Mama mea. De când a murit tata, ține casa asta în picioare cu mâinile ei. Coase la amiază, gătește seara și nu se culcă până nu mă știe acasă. În zilele de odihnă se roagă dis-de-dimineață la biserică."
+        ],
+        "descriere_en": [
+          null,
+          null,
+          null,
+          null,
+          "My mother. Since Father died, she has kept this house standing with her own two hands. She sews at midday, cooks in the evening, and won’t go to bed until she knows I’m home. On days of rest, she prays at the church at first light."
+        ]
       },
       "locuriSprite": [
         "casa/bucatarie",

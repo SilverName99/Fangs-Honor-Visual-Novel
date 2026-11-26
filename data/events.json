@@ -127,22 +127,10 @@
         "prezent": "miriam"
       },
       "repetare": "o_data",
-      "vorbitor": "miriam",
-      "emotie": "normal",
-      "text": "E o pâine caldă pe masă, abia am scos-o din cuptor. Mănâncă până nu se răcește, că altfel iar pleci cu burta goală.",
-      "text_en": "There’s a warm loaf on the table, just out of the oven. Eat it before it goes cold, or you’ll be off on an empty stomach again.",
-      "alegeri": [
-        {
-          "text": "Mulțumesc, mamă.",
-          "text_en": "Thank you, Mother.",
-          "efecte": {
-            "timp": 15,
-            "nevoi": {
-              "foame": 30
-            }
-          }
-        }
-      ]
+      "nume": "Prima dimineață cu mama",
+      "nume_en": "The First Morning with Mother",
+      "_nota": "Decis de autor (P14): după coșmar, masa de dimineață cu mama, peste o imagine; mama îi spune de taxa de duminică (acasă, de la 10 până la 23, decis de autor), de unde se câștigă bani și de patrulele de noapte.",
+      "dialog": "miriam_dimineata"
     },
     {
       "id": "test_betiv_taverna",
