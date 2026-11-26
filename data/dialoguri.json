@@ -24474,7 +24474,7 @@
     }
   },
   "drumul_trezirii": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Drumul trezirii” (decis de autor: trei zile dus, trei întors, cu poveștile lui Roderick la foc peste imagini-amintire; al cincilea vis la crăpătură; trezirea în mâna lui Roderick; crăpătura dispare în zori). Totul într-un singur dialog, ca să nu se vadă locul dintre scene; visul și amintirile au ceața (amintire), iar „trezire” o ia.",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Drumul trezirii” (decis de autor: trei zile dus, trei întors, cu poveștile lui Roderick la foc peste imagini-amintire; al cincilea vis la crăpătură; trezirea în mâna lui Roderick; crăpătura dispare în zori). Totul într-un singur dialog, ca să nu se vadă locul dintre scene; amintirile au ceața (amintire), iar „trezire” o ia; visul nu (decis de autor: să pară real).",
     "grup": "Roderick: drumul trezirii",
     "partener": "soldat",
     "start": "p1",
@@ -25694,7 +25694,6 @@
         "gand": true,
         "text": "Cineva îmi spune numele. Nu tare. Ca și cum ar fi aici, lângă mine, de foarte mult timp.",
         "imagine": "events/vis_5_1.png",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v2",
         "faraPartener": true
@@ -25704,7 +25703,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Mă ridic. Focul s-a făcut jar. Unchiul doarme cu mâna pe sabie și nu se mișcă.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v3",
         "imagine": "events/vis_5_unchi.png"
@@ -25714,7 +25712,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Nu mi-e frică. Și asta mă sperie cel mai tare.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v4"
       },
@@ -25724,7 +25721,6 @@
         "gand": true,
         "text": "Plutesc spre margine. Ceața mă primește ca o apă caldă. Apoi pământul se termină sub mine și cobor.",
         "imagine": "events/vis_5_2.png",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v5"
       },
@@ -25734,7 +25730,6 @@
         "gand": true,
         "text": "Pereții râpei trec pe lângă mine, tot mai sus. Pe ei sunt semnele de pe piatră, mii de semne. Se aprind palid când trec și se sting în urma mea.",
         "imagine": "events/vis_5_3.png",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v6",
         "trecere": 1000
@@ -25744,7 +25739,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Frigul nu mai e frig. E liniște. O liniște care ascultă.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v7"
       },
@@ -25754,7 +25748,6 @@
         "gand": true,
         "text": "Jos de tot e o poartă. Un arc înalt de piatră neagră, plin de aceleași semne. În vârful lui, un craniu săpat în piatră se uită în jos, spre mine.",
         "imagine": "events/vis_5_4.png",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v8"
       },
@@ -25763,7 +25756,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Înăuntrul arcului nu e întuneric. E o ceață argintie, care curge încet, ca apa unui râu care nu se grăbește nicăieri.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v9"
       },
@@ -25771,7 +25763,6 @@
         "vorbitor": "glasul",
         "nume": "Glasul",
         "faraPortret": true,
-        "amintire": true,
         "text": "Lightfinder.",
         "urmator": "v10"
       },
@@ -25779,7 +25770,6 @@
         "vorbitor": "glasul",
         "nume": "Glasul",
         "faraPortret": true,
-        "amintire": true,
         "text": "Te-am simțit de mult... Ca un foc mic, sub zăpadă.",
         "urmator": "v11"
       },
@@ -25787,14 +25777,12 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "text": "Cine ești?",
-        "amintire": true,
         "urmator": "v12"
       },
       "v12": {
         "vorbitor": "glasul",
         "nume": "Glasul",
         "faraPortret": true,
-        "amintire": true,
         "text": "Încă nu. Focul din tine doarme.",
         "urmator": "v13"
       },
@@ -25802,7 +25790,6 @@
         "vorbitor": "glasul",
         "nume": "Glasul",
         "faraPortret": true,
-        "amintire": true,
         "text": "Când vei împlini douăzeci și șase de ierni, te voi chema din nou. Și vei coborî până la capăt.",
         "urmator": "v14"
       },
@@ -25810,7 +25797,6 @@
         "vorbitor": "glasul",
         "nume": "Glasul",
         "faraPortret": true,
-        "amintire": true,
         "text": "Până atunci, oamenii tăi au nevoie de tine. Du-te acasă, Lightfinder.",
         "urmator": "v15"
       },
@@ -25819,7 +25805,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Ceața din arc se mișcă. Și, pentru o clipă, mi se pare că dincolo de ea respiră ceva uriaș. Ceva care așteaptă.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "v16",
         "imagine": "events/vis_5_5.png"
@@ -25829,7 +25814,6 @@
         "emotie": "normal",
         "gand": true,
         "text": "Semnele de pe arc se aprind unul câte unul, de jos până la craniu. Ceața argintie se dă în lături, ca o perdea. Poarta se deschide. Și eu fac un pas spre ea.",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "urmator": "film"
       },
@@ -25837,7 +25821,6 @@
         "video": "events/vis_5.mp4",
         "faraVideo": "t1",
         "urmator": "t1",
-        "amintire": true,
         "grupGalerie": "Al cincilea vis",
         "_nota": "Filmulețul visului (decis de autor, opțional): Vale în fața porții, semnele se aprind, poarta începe să se deschidă, iar în ultima clipă e smuls înapoi: Roderick l-a prins de mânecă. Lipsește = visul trece direct la trezire."
       },
