@@ -1985,14 +1985,14 @@
           "conditii": {
             "existaStare": "platosa_batuta"
           },
-          "text": "CIORNĂ: Am bătut platoșa tatei cu Bram, seara, cu ușa închisă. Crăpătura s-a închis de tot: nu se mai vede unde a fost lovită. Bram o ține peste noapte, să se răcească încet, și îi face curele noi.",
-          "text_en": "Bram and I hammered Father’s breastplate in the evening, with the door shut. The crack has closed completely: you can no longer see where it was struck. Bram is keeping it overnight so it cools slowly, and he’s making new straps for it."
+          "text": "CIORNĂ: Am bătut platoșa tatei cu Bram, cu ușa zăvorâtă. Crăpătura s-a închis de tot: nu se mai vede unde a fost lovită. Bram o ține peste noapte, să se răcească încet, și îi face curele noi. Mâine dimineață mi-o dă.",
+          "text_en": "Bram and I hammered Father’s breastplate with the door barred. The crack has closed completely: you can no longer see where it was struck. Bram is keeping it overnight so it cools slowly, and he’s making new straps for it. He’ll give it to me tomorrow morning."
         },
-        "CIORNĂ: Bram a bătut platoșa tatei cu mâna lui, acum mulți ani. O poate repara, dar îi trebuie fier vechi, călit, de la Jarek. Și vrea s-o batem împreună, seara, cu ușa închisă, ca să nu vadă orcii."
+        "CIORNĂ: Bram a bătut platoșa tatei cu mâna lui, acum mulți ani. O poate repara, dar îi trebuie fier vechi, călit, de la Jarek. Și vrea s-o batem împreună, cu ușa zăvorâtă, ca să nu vadă orcii."
       ],
       "descriere_en": [
         null,
-        "Bram forged Father’s breastplate with his own hands, many years ago. He can mend it, but he needs tempered scrap iron from Jarek. And he wants us to do the hammering together, in the evening, with the door shut, so the orcs won’t see."
+        "Bram forged Father’s breastplate with his own hands, many years ago. He can mend it, but he needs tempered scrap iron from Jarek. And he wants us to do the hammering together, with the door barred, so the orcs won’t see."
       ],
       "oferta": {
         "_nota": "Decis de autor: după misiunea specială a Miriamei (Vale are platoșa crăpată). Ales de Claude: la fierărie, cât lucrează Bram.",
@@ -2042,19 +2042,24 @@
           }
         },
         {
-          "text": "Seara, bat platoșa cu Bram, în fierărie",
-          "text_en": "In the evening, I hammer the breastplate with Bram in the smithy",
+          "text": "Bat platoșa cu Bram, în fierărie",
+          "text_en": "I hammer the breastplate with Bram in the smithy",
           "gata": {
             "existaStare": "platosa_batuta"
           },
-          "sfat": "Bram lucrează în fierărie seara (18–22).",
-          "sfat_en": "Bram works inside the smithy in the evening (18–22).",
+          "sfat": "Bram e la fierărie: afară ziua (6–12 și 14–18), înăuntru seara (18–22). O batem cu ușa zăvorâtă, iar el o ține peste noapte.",
+          "sfat_en": "Bram is at the smithy: outside during the day (6–12 and 14–18), inside in the evening (18–22). We hammer it with the door barred, and he keeps it overnight.",
           "predare": {
             "text": "Am adus fierul, domnule Bram.",
             "text_en": "I’ve brought the iron, Master Bram.",
             "nod": "plat_f1",
             "conditii": {
-              "loc": "fierar/interior",
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              },
               "areCate": {
                 "fier_vechi": 2
               },
@@ -2092,13 +2097,13 @@
           }
         },
         {
-          "text": "Iau platoșa de la Bram, a doua zi",
-          "text_en": "I collect the breastplate from Bram the next day",
+          "text": "Iau platoșa de la Bram, a doua zi dimineață",
+          "text_en": "I collect the breastplate from Bram the next morning",
           "gata": {
             "existaStare": "platosa_gata"
           },
-          "sfat": "Bram o ține peste noapte, să se răcească. A doua zi, la fierărie, cât lucrează el.",
-          "sfat_en": "Bram is keeping it overnight to let it cool. The next day, at the smithy, while he’s working.",
+          "sfat": "A doua zi dimineață, la fierărie (Bram lucrează afară de la 6, sâmbăta și duminica de la 8, până la 12).",
+          "sfat_en": "The next morning, at the smithy (Bram works outside from 6, from 8 on Saturdays and Sundays, until 12).",
           "predare": {
             "text": "Domnule Bram, e gata platoșa?",
             "text_en": "Master Bram, is the breastplate ready?",
@@ -2115,6 +2120,9 @@
                   "id": "platosa_data",
                   "deLa": "05:00"
                 }
+              },
+              "ora": {
+                "max": "11:59"
               }
             }
           },
@@ -2128,6 +2136,14 @@
                   "marcatAzi": {
                     "id": "platosa_data",
                     "deLa": "05:00"
+                  }
+                }
+              },
+              {
+                "nod": "plat_m_dimineata",
+                "conditii": {
+                  "ora": {
+                    "min": "12:00"
                   }
                 }
               },
@@ -2147,7 +2163,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, apoi seara lucrează cu Bram la forjă (mini-jocul ciocanului, peste o imagine); a doua zi Bram îi pune platoșa pe umeri, la fierărie: „Arăți ca el.” (o imagine); +1 Bram. Ales de Claude: 2 bucăți de fier vechi; platoșa se echipează pe loc (efectul imbraca)."
+      "_nota": "Decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, apoi, oricând îl găsește pe Bram la fierărie, o bate cu el la nicovală, cu ușa zăvorâtă (mini-jocul ciocanului, peste o imagine); reparația ține peste noapte; a doua zi dimineață Bram îi pune platoșa pe umeri, la fierărie: „Arăți ca el.” (o imagine), iar Miriam îl așteaptă în fața fierăriei de cu noapte (2 imagini); +1 Bram. Ales de Claude: 2 bucăți de fier vechi; platoșa se echipează pe loc (efectul imbraca); dimineața = până la 12, cât lucrează Bram afară."
     },
     {
       "id": "agnes_bere",
@@ -3539,7 +3555,7 @@
         "The farmer’s plow has broken: the plowshare and the handles. Without it, no one can plow, and come spring the village will have nothing to sow. I promised him I’d talk to Bram myself."
       ],
       "oferta": {
-        "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat.",
+        "_nota": "Decis de autor: după „O zi la forjă”, fermierul are un sprite nou, cu plugul stricat. Decis de autor: plugul se rupe abia după ce Vale are cheia cocioabei lui Jarek (de la Finn, „Mama lui Finn”), singurul de la care se ia fierul, și (decis de autor, ca misiunile să nu vină grămadă) abia la o zi după ce l-a cunoscut pe fermier.",
         "text": "Ce s-a întâmplat cu plugul?",
         "text_en": "What happened to your plow?",
         "nod": "plug_oferta",
@@ -3566,6 +3582,10 @@
                 }
               }
             ]
+          },
+          "areObiect": "cheie_contrabandist",
+          "cunoscutDeZile": {
+            "fermier": 1
           }
         }
       },
@@ -3713,7 +3733,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: după „O zi la forjă”, plugul fermierului e rupt (sprite nou, aratul oprit). Refuzi: după două zile se repară singur, fără +1. Accepți: Bram cere 4 lemne, o frânghie și metal; „De unde pot face rost de niște metal?” apare la toți, doar Finn zice de Jarek (fier vechi, 15 monede); Bram repară plugul (o imagine), Vale i-l duce fermierului (o imagine); +1 Bram."
+      "_nota": "Decis de autor: după „O zi la forjă” și după cheia cocioabei lui Jarek, plugul fermierului e rupt (sprite nou, aratul oprit). Refuzi: după două zile se repară singur, fără +1. Accepți: Bram cere 4 lemne, o frânghie și metal; „De unde pot face rost de niște metal?” apare la toți, doar Finn zice de Jarek (fier vechi, 15 monede); Bram repară plugul (o imagine), Vale i-l duce fermierului (o imagine); +1 Bram."
     },
     {
       "id": "miriam_inel",
@@ -3946,7 +3966,7 @@
       "descriere": "CIORNĂ: Mama vrea să coacă pâine pentru familiile celor douăzeci și trei căzuți în bătălie. Orcii au luat grâul, dar morarul le mai dă câte un pumn de făină celor care îi cară sacii.",
       "descriere_en": "Mother wants to bake bread for the families of the Twenty-Three who fell in the battle. The orcs took the wheat, but the miller still slips a handful of flour now and then to those who haul his sacks.",
       "oferta": {
-        "_nota": "Decis de autor: firul satului al Miriamei nu mai așteaptă după Roderick; din ziua 6 (ales de Claude), dimineața, cât e ea în bucătărie. Dacă Vale a făcut deja „Lumânările”, mama pomenește de ele.",
+        "_nota": "Decis de autor: firul satului al Miriamei nu mai așteaptă după Roderick; din ziua 7 (decis de autor, ca misiunile primelor zile să nu vină grămadă), dimineața, cât e ea în bucătărie. Dacă Vale a făcut deja „Lumânările”, mama pomenește de ele.",
         "text": "Mamă, la ce te gândești?",
         "text_en": "Mother, what are you thinking about?",
         "nod": [
@@ -3964,7 +3984,7 @@
         ],
         "conditii": {
           "zi": {
-            "min": 6
+            "min": 7
           },
           "loc": "casa/bucatarie",
           "ora": {

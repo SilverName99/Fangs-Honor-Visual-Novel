@@ -37,6 +37,27 @@
       "dialog": "miriam",
       "program": [
         {
+          "de": "05:00",
+          "pana": "12:00",
+          "conditii": {
+            "existaStare": "platosa_batuta",
+            "nu": {
+              "oricare": [
+                {
+                  "existaStare": "platosa_gata"
+                },
+                {
+                  "marcatAzi": {
+                    "id": "platosa_data",
+                    "deLa": "05:00"
+                  }
+                }
+              ]
+            }
+          },
+          "ce": "„Platoșa tatălui”: în diminețile de după, îl așteaptă pe Vale lângă gardul fierăriei (nu se vede; decis de autor)"
+        },
+        {
           "de": "18:00",
           "pana": "07:00",
           "conditii": {
@@ -1748,6 +1769,10 @@
                   }
                 }
               ]
+            },
+            "areObiect": "cheie_contrabandist",
+            "cunoscutDeZile": {
+              "fermier": 1
             }
           },
           "ce": "cu plugul stricat (misiunea „Fierul plugului”, decis de autor)"

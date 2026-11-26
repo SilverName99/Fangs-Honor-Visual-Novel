@@ -3727,6 +3727,10 @@
                 "existaStare": "plug_reparat"
               }
             ]
+          },
+          "areObiect": "cheie_contrabandist",
+          "cunoscutDeZile": {
+            "fermier": 1
           }
         }
       },
@@ -3932,6 +3936,10 @@
                 }
               }
             ]
+          },
+          "areObiect": "cheie_contrabandist",
+          "cunoscutDeZile": {
+            "fermier": 1
           }
         }
       },
@@ -3961,6 +3969,10 @@
                   }
                 }
               ]
+            },
+            "areObiect": "cheie_contrabandist",
+            "cunoscutDeZile": {
+              "fermier": 1
             }
           }
         }
@@ -7013,7 +7025,7 @@
         "gand": true,
         "emotie": "normal",
         "text": "Pun platoșa pe nicovală. Bram se oprește cu ciocanul în aer.",
-        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui” (decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, seara lucrează cu Bram la forjă, mini-jocul ciocanului, peste o imagine; a doua zi Bram îi pune platoșa pe umeri: „Arăți ca el.”, peste o imagine; +1 Bram). Ales de Claude: 2 bucăți de fier vechi; Bram a bătut platoșa pentru Edwin.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui” (decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, oricând îl găsește pe Bram la fierărie lucrează cu el la forjă, mini-jocul ciocanului, peste o imagine; reparația ține peste noapte, iar a doua zi dimineață Bram îi pune platoșa pe umeri: „Arăți ca el.”, peste o imagine; +1 Bram). Ales de Claude: 2 bucăți de fier vechi; Bram a bătut platoșa pentru Edwin.",
         "urmator": "plat_o2"
       },
       "plat_o2": {
@@ -7073,7 +7085,7 @@
       "plat_o10": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Când le ai, vino seara, după ce închid ușa. O platoșă pe nicovala mea, ziua, la vedere... orcii ar întreba repede pentru cine e.",
+        "text": "Când le ai, vino oricând mă găsești la forjă. O batem înăuntru, cu drugul la ușă: o platoșă pe nicovala mea, la vedere... orcii ar întreba repede pentru cine e. Apoi o las peste noapte să se răcească.",
         "urmator": "plat_o11"
       },
       "plat_o11": {
@@ -7099,17 +7111,17 @@
       "plat_ind1": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Două bucăți de fier vechi, de la Jarek. Și seara, nu ziua."
+        "text": "Două bucăți de fier vechi, de la Jarek. Apoi vii la mine și o batem cu ușa zăvorâtă."
       },
       "plat_ind2": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Seara, după ce închid ușa. Cu fierul. Te aștept."
+        "text": "Cu fierul, băiete. Când îl ai, zăvorâm ușa și ne apucăm."
       },
       "plat_ind_usa": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Seara nu primesc pe nimeni înăuntru, băiete. Nu încă."
+        "text": "Nu încă, băiete. Deocamdată nu primesc pe nimeni înăuntru."
       },
       "plat_ind_foale": {
         "vorbitor": "fierar",
@@ -7125,7 +7137,7 @@
       "plat_f2": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Bun. Pune drugul la ușă.",
+        "text": "Bun. Hai înăuntru și pune drugul la ușă.",
         "alegeri": [
           {
             "text": "Pun drugul.",
@@ -7139,12 +7151,17 @@
       "plat_ind3": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "E la mine, în fierărie, pe un cui. Treci pe acolo."
+        "text": "E la mine, în fierărie, pe un cui. Treci dimineață pe acolo."
       },
       "plat_m_maine": {
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Mâine, ți-am zis. Fierul se răcește încet, altfel crapă din nou."
+      },
+      "plat_m_dimineata": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Mâine dimineață, băiete. Platoșa se pune la lumina zilei."
       },
       "plat_g1": {
         "vorbitor": "vale",
@@ -7259,7 +7276,7 @@
       "plat_m3b": {
         "vorbitor": "miriam",
         "emotie": "plange",
-        "text": "Stau aici de cu noapte. Voiam să fiu prima care te vede cu ea pe tine.",
+        "text": "Bram mi-a spus că o să fie gata. Stau aici de cu noapte. Voiam să fiu prima care te vede cu ea pe tine.",
         "urmator": "plat_m4"
       }
     },
@@ -20940,7 +20957,7 @@
     }
   },
   "bram_platosa": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: forja de seară, pornită de evenimentul bram_platosa_forja.",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: forja (oricând e Bram la fierărie, cu ușa zăvorâtă), pornită de evenimentul bram_platosa_forja.",
     "grup": "Bram: platoșa tatălui",
     "partener": "fierar",
     "start": "p1",
@@ -20951,7 +20968,7 @@
         "emotie": "normal",
         "text": "Bram pune platoșa în jar până se înroșește crăpătura. Apoi o întinde pe nicovală, o ține cu cleștele și pune lângă ea cele două bucăți de fier vechi, albe de căldură.",
         "imagine": "events/bram_platosa_1.png",
-        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: seara, în fierărie, Vale bate platoșa cu ciocanul (mini-jocul ciocanului din „O zi la forjă”, peste imaginea lui; fără eșec).",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Platoșa tatălui”: în fierărie, cu ușa zăvorâtă, Vale bate platoșa cu ciocanul (mini-jocul ciocanului din „O zi la forjă”, peste imaginea lui; fără eșec).",
         "urmator": "p2"
       },
       "p2": {
@@ -21012,7 +21029,7 @@
       "p8": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Las-o la mine peste noapte. Trebuie să se răcească încet, altfel crapă din nou. Și îi mai fac curelele. Vino mâine.",
+        "text": "Las-o la mine peste noapte. Trebuie să se răcească încet, altfel crapă din nou. Și îi mai fac curelele. Vino mâine dimineață.",
         "efecte": {
           "marcheaza": "platosa_data",
           "daObiect": "platosa_tata_crapata",

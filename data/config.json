@@ -122,6 +122,10 @@
             },
             "nuStare": {
               "manechin": "construit"
+            },
+            "areObiect": "cheie_contrabandist",
+            "cunoscutDeZile": {
+              "fermier": 1
             }
           },
           "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni. Paie găsesc și la grajd, la vaci.",
@@ -152,6 +156,10 @@
                   }
                 }
               ]
+            },
+            "areObiect": "cheie_contrabandist",
+            "cunoscutDeZile": {
+              "fermier": 1
             }
           },
           "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni.",

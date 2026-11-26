@@ -1526,7 +1526,7 @@
       "nume_en": "A Day at the Forge",
       "grup": "Bram: o zi la forjă",
       "grup_en": "Bram: A Day at the Forge",
-      "_nota": "Decis de autor: după „Foalele stricate”, când Vale vine la fierărie și Bram lucrează afară. Ales de Claude: după-amiaza (14–18), ca ziua de muncă să se termine seara; ține 4 ore și ia 30 stamina. Fără eșec (decis de autor).",
+      "_nota": "Decis de autor: după „Foalele stricate”, când Vale vine la fierărie și Bram lucrează afară. Ales de Claude: după-amiaza (14–18), ca ziua de muncă să se termine seara; ține 4 ore și ia 30 stamina. Fără eșec (decis de autor). Decis de autor: de a doua zi după foale (nu chiar în după-amiaza în care forja a reînviat).",
       "conditii": {
         "loc": "fierar",
         "personajIn": {
@@ -1540,6 +1540,9 @@
         "ora": {
           "min": "14:00",
           "max": "17:59"
+        },
+        "misiuneTerminata": {
+          "bram_foale": 1
         }
       },
       "repetare": "o_data",
@@ -2264,7 +2267,7 @@
     },
     {
       "id": "bram_platosa_forja",
-      "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; seara, cu ușa închisă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi, toate la sfârșitul discuției (nodul p8): un refresh în timpul mini-jocului nu consumă fierul, iar Bram nu se culcă la 22 în mijlocul scenei. „mereu”: după un refresh se poate relua; pornește doar din pasul 2 al misiunii, care dispare după.",
+      "_nota": "Decis de autor: misiunea lui Bram „Platoșa tatălui”; oricând e Bram la fierărie (decis de autor), cu ușa zăvorâtă, Vale bate platoșa cu ciocanul (mini-jocul din „O zi la forjă”). Ales de Claude: 3 ore, 20 stamina, cele 2 bucăți de fier vechi, toate la sfârșitul discuției (nodul p8): un refresh în timpul mini-jocului nu consumă fierul, iar Bram nu se culcă la 22 în mijlocul scenei. „mereu”: după un refresh se poate relua; pornește doar din pasul 2 al misiunii, care dispare după.",
       "nume": "Platoșa tatălui: forja",
       "nume_en": "Father’s Breastplate: The Forge",
       "grup": "Bram: platoșa tatălui",
