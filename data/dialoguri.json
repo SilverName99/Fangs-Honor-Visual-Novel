@@ -25540,21 +25540,26 @@
       "p62": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Aici a găsit el solzul, scrie pe hartă. La margine.",
+        "text": "Aici se oprește harta lui. A coborât acolo, legat cu frânghia, până la o poliță de piatră. De acolo a adus solzul.",
         "urmator": "p63"
       },
       "p63": {
         "vorbitor": "vale",
-        "emotie": "normal",
-        "gand": true,
-        "text": "Căutăm până se întunecă de tot, printre pietre, pe marginea râpei. Nici urmă de solz. Poate că nici n-avea cum: un dragon nu iese din lumea lui decât legat de un om. Dar atunci ale cui sunt ghearele de pe stâncă?",
-        "urmator": "p64",
-        "imagine": "events/drum_cautare.png"
+        "emotie": "speriat",
+        "text": "Coborâm?",
+        "urmator": "p64"
       },
       "p64": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Ajunge. Nu căutăm pe întuneric pe marginea unei prăpăstii. Dormim departe de ea. Mâine mai vedem.",
+        "text": "Nu pe întuneric. Nu în ceva căruia nu-i vezi fundul. Mâine, la lumina zilei, legați amândoi cu frânghia ta. Acum facem focul departe de margine și dormim.",
+        "urmator": "p64b"
+      },
+      "p64b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă mai uit o dată în ceață înainte să plecăm de la margine. O clipă mi se pare că și ceva de jos se uită la mine.",
         "urmator": "p65"
       },
       "p65": {
