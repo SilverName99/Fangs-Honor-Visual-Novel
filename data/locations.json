@@ -164,7 +164,12 @@
                   },
                   "factor": 1.3
                 }
-              ]
+              ],
+              "viataNoapte": {
+                "_nota": "Decis de autor (P13): o noapte dormită acasă (cel puțin 4 ore din 23–05) închide puțin rănile. Cifra, aleasă de Claude (TODO echilibru).",
+                "viata": 10,
+                "oreNoapte": 4
+              }
             },
             {
               "id": "cufar",
@@ -1116,6 +1121,9 @@
             "secunde": 3,
             "text": "Cauți urme de vânat...",
             "gandNoapte": "Noaptea, în pădure, eu aș fi vânatul. Mai bine aștept să se lumineze.",
+            "_notaFaraArma": "Decis de autor (P4): prima vânătoare fără nicio armă (nici în mână, nici în rucsac), înainte de luptă, un gând că poate fugi; o singură dată (src/joc.js, vaneaza).",
+            "gandFaraArma": "Cu mâinile goale... Dacă dau de lupi, fug. Nu sunt erou de baladă.",
+            "gandFaraArma_en": "Bare-handed... If I run into wolves, I run. I’m no hero from a ballad.",
             "insotitor": {
               "personaj": "vanatoare",
               "sansa": 0.1,
@@ -1808,7 +1816,7 @@
           "tip": "gand",
           "nume": "Gardul putred",
           "nume_en": "The Rotten Fence",
-          "_nota": "CIORNĂ. Decis de autor: gardul e putred și jos, ușor de sărit (fără gaură); pe aici îl scoate Roderick pe Vale (misiunea „Locul unde a căzut tata”). După ea, alt gând.",
+          "_nota": "CIORNĂ. Decis de autor: gardul e putred și jos, ușor de sărit (fără gaură); pe aici îl scoate Roderick pe Vale (misiunea „Locul unde a căzut tata”). După ea, alt gând. După „Datoria la Jarek”, alt gând (decis de autor, P9).",
           "text": [
             {
               "conditii": {
@@ -1849,9 +1857,19 @@
               "text": "Gardul pe care m-a ajutat unchiul să-l sar. Dincolo e câmpul, cu copacul lor. Și, mai departe, tot ce n-am văzut niciodată.",
               "text_en": "The fence Uncle helped me over. Beyond it lies the field, with their tree. And farther still, everything I’ve never seen."
             },
+            {
+              "conditii": {
+                "stare": {
+                  "datoria_jarek": "platita"
+                }
+              },
+              "text": "Gardul peste care am sărit cu Finn, noaptea, cu sacul lui Jarek. Orcii nu păzesc locul ăsta. Jarek, da.",
+              "text_en": "The fence Finn and I jumped one night, with Jarek’s sack. The orcs don’t guard this place. Jarek does."
+            },
             "Gardul e putred aici și destul de jos cât să-l sar dintr-un salt. Orcii nu păzesc locul ăsta. Pe aici aș putea ieși din sat... dar nu singur. Nu încă."
           ],
           "text_en": [
+            null,
             null,
             null,
             null,

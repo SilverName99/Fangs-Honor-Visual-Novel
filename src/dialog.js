@@ -14,6 +14,13 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
   // Textul unei replici: un text simplu sau o listă { conditii, text } (cu un text simplu la urmă), ca sfaturile din carte:
   // primul potrivit stării de acum („Drumul trezirii”: unchiul bea apă sau din ploscă, după cum a fost „Ultima sticlă”)
   const textPotrivit = (t) => (Array.isArray(t) ? t.map((x) => (typeof x === 'string' ? { text: x } : x)).find((x) => verificaConditii(x.conditii))?.text ?? '' : t);
+  // Replica următoare: un id sau, ca „start”, o listă de { conditii, nod } cu un id simplu la urmă: prima potrivită
+  // stării de acum (la mormântul tatei, Vale pomenește o singură dată fiecare întâmplare mare, apoi vorbele de mereu)
+  const urmatorul = (nod) => {
+    if (!Array.isArray(nod?.urmator)) return nod?.urmator ?? null;
+    const x = nod.urmator.find((u) => typeof u === 'string' || verificaConditii(u.conditii));
+    return (typeof x === 'string' ? x : x?.nod) ?? null;
+  };
   const el = div('dialog');
   el.hidden = true;
   const stanga = div('loc-portret stanga');
@@ -171,14 +178,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
       dupa?.();
       // O bucată fără text (filmulețul de la începutul visului, ultima bucată) trece singură mai departe, după ce
       // ultimul ei cadru mai stă puțin pe ecran („tine”, ms)
-      if (!nod.text && activ?.nod === nod) setTimeout(() => activ?.nod === nod && arataNod(nod.urmator ?? null), nod.tine || 0);
+      if (!nod.text && activ?.nod === nod) setTimeout(() => activ?.nod === nod && arataNod(urmatorul(nod)), nod.tine || 0);
     };
     // Clicul (sau Spațiu, Enter): o bucată cu „pana” sare la capătul ei; una până la sfârșit, peste tot ce a rămas
     bucata.sari = () => {
       if (f.bucata !== bucata) return;
       if (nod.pana != null) return ajuns();
       opresteFilmul();
-      arataNod(nod.urmator ?? null);
+      arataNod(urmatorul(nod));
     };
     const porneste = () => {
       if (f.bucata !== bucata) return;
@@ -242,7 +249,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // O bucată de filmuleț care încă mergea se oprește pe cadrul ei
     opresteFilmul();
     const cuFilm = !!nod.video && !filmeLipsa.has(nod.video) && !filmLipsa(nod.video);
-    if (nod.video && !cuFilm && !nod.imagine && !nod.text) return arataNod(nod.faraVideo ?? nod.urmator ?? null, reluat);
+    if (nod.video && !cuFilm && !nod.imagine && !nod.text) return arataNod(nod.faraVideo ?? urmatorul(nod), reluat);
     // „trezire” (visele, decis de autor): Vale se trezește; imaginea visului și ceața dispar, rămâne locul unde a dormit
     if (nod.trezire) {
       lasaFilmul();
@@ -287,7 +294,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     // portrete, apoi discuția trece singură mai departe; ceasul pornește abia când se vede imaginea
     el.classList.toggle('fara-caseta', !!nod.durata || (cuFilm && !nod.text));
     if (nod.durata) {
-      const porneste = () => setTimeout(() => activ?.nod === nod && arataNod(nod.urmator ?? null), nod.durata);
+      const porneste = () => setTimeout(() => activ?.nod === nod && arataNod(urmatorul(nod)), nod.durata);
       if (el.classList.contains('asteapta-imaginea')) activ.dupaImagine = porneste;
       else porneste();
     }
@@ -321,7 +328,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
           activ.emotiePartener = n.emotie || 'normal';
           break;
         }
-        id = Object.keys(activ.dialog.noduri).find((k) => activ.dialog.noduri[k].urmator === id);
+        id = Object.keys(activ.dialog.noduri).find((k) => [].concat(activ.dialog.noduri[k].urmator).some((x) => (x?.nod ?? x) === id));
       }
     }
     // „faraPartener”: de la replica asta, în dreapta nu mai stă nimeni (Vale pleacă de acasă cu pâinea), până vorbește altcineva
@@ -431,7 +438,7 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     if (el.classList.contains('asteapta-imaginea')) return;
     // Cât se descarcă filmulețul visului (un refresh chiar la începutul visului: nicio replică arătată încă), nimic
     if (activ?.asteaptaFilmul || !activ?.nod) return;
-    if (activ && !activ.alegeri.length) arataNod(activ.nod.urmator ?? null);
+    if (activ && !activ.alegeri.length) arataNod(urmatorul(activ.nod));
   }
 
   function inchide() {

@@ -62,10 +62,14 @@ export function creeazaGroapa(parinte, joc) {
   // câte 2-3 replici), apoi panoul. Alt gând decât data trecută, ca să nu pară că se repetă
   function deschide(loc) {
     const d = cfg().ganduri && joc.date.dialoguri?.[cfg().ganduri];
-    const toate = [].concat(d?.start || []).find((x) => x?.aleator)?.aleator || [];
-    if (!toate.length) return arataPanoul(loc);
+    const start = [].concat(d?.start || []);
+    const toate = start.find((x) => x?.aleator)?.aleator || [];
+    // Un gând cu condiții, înaintea listei (decis de autor: cât verigheta mamei e încă de câștigat, Vale o vede la
+    // brâul colectorului); tot nu de două ori la rând, ca regula gândurilor să rămână (ales de Claude)
+    const anume = start.find((x) => x?.nod && x.nod !== joc.stare.stari?.groapa_gand && verifica(x.conditii, context(joc.stare)))?.nod;
+    if (!toate.length && !anume) return arataPanoul(loc);
     const altele = toate.filter((x) => x !== joc.stare.stari?.groapa_gand);
-    const nod = (altele.length ? altele : toate)[Math.floor(Math.random() * (altele.length || toate.length))];
+    const nod = anume || (altele.length ? altele : toate)[Math.floor(Math.random() * (altele.length || toate.length))];
     aplicaEfecte({ stare: { groapa_gand: nod } }, joc);
     joc.dialogApoi({ ...d, start: nod }, () => arataPanoul(loc));
   }

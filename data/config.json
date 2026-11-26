@@ -407,8 +407,8 @@
     ],
     "texte": {
       "_nota": "CIORNĂ (Claude).",
-      "intro": "Torțele ard în jurul Groapei, iar orcii de pe margine bat cu pumnii în pari. Câte valuri înfrunți?",
-      "intro_en": "Torches burn around the Pit, and the orcs along its rim pound their fists against the stakes. How many waves will you face?",
+      "intro": "Torțele ard în jurul Groapei. Câte valuri înfrunți?",
+      "intro_en": "The torches burn around the Pit. How many waves will you face?",
       "aliati": "Cine intră cu tine? Cel mult {max}.",
       "aliati_en": "Who goes in with you? No more than {max}.",
       "singur": "Încă nu intră nimeni cu mine. Poate dacă îi întreb pe cei care au încredere în mine...",

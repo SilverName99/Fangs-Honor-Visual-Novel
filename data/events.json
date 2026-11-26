@@ -1465,6 +1465,25 @@
       "_nota": "Decis de autor: noaptea de după ce a acceptat, când Vale ajunge la locul de campare, pornește direct; 8 imagini. Decis de autor: Kaia îl așteaptă 23–03; drumul ține 4 ore și ia 20 stamina. Dacă Vale e deja acolo când se face 23, îl pornește din meniul Kaiei („Sunt gata, Kaia. Mergem?”)."
     },
     {
+      "id": "kaia_tabara_goala",
+      "nume": "Tabăra goală",
+      "nume_en": "The Empty Camp",
+      "_nota": "Decis de autor (P7): gândul lui Vale la locul de campare, cât Kaia e plecată cu Ember după șoim (aceleași condiții ca în programul ei); o dată pe zi.",
+      "conditii": {
+        "loc": "padure/campsite",
+        "existaStare": "kaia_soim",
+        "trecut": {
+          "kaia_soim_ales": {
+            "subZile": 2
+          }
+        }
+      },
+      "repetare": {
+        "pauzaZile": 1
+      },
+      "dialog": "kaia_tabara_goala"
+    },
+    {
       "id": "kaia_wyverni_povestea",
       "nume": "Convoiul: povestea Kaiei",
       "nume_en": "The Convoy: Kaia’s Story",

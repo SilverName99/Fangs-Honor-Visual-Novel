@@ -64,7 +64,7 @@ export function filmeleDeLa(dialog, deLa) {
     vazute.add(id);
     const n = noduri[id];
     if (n.video) filme.add(n.video);
-    coada.push(n.urmator, n.faraVideo, ...(n.alegeri || []).map((a) => a.spre));
+    coada.push(...[].concat(n.urmator).map((x) => x?.nod ?? x), n.faraVideo, ...(n.alegeri || []).map((a) => a.spre));
   }
   return [...filme];
 }

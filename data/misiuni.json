@@ -5029,9 +5029,19 @@
           "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. N-am ajuns la timp. Lina s-a uitat toată seara la ușă.",
           "text_en": "Finn asked me to help with Lina’s birthday: a ribbon and a cake. I didn’t make it in time. Lina watched the door all evening."
         },
+        {
+          "conditii": {
+            "stare": {
+              "lina": "fara_tort"
+            }
+          },
+          "text": "CIORNĂ: Finn m-a rugat să-l ajut cu ziua Linei: o panglică și un tort. Tortul n-a mai fost gata. Am venit totuși, iar Marta a făcut o turtă din ce aveau.",
+          "text_en": "Finn asked me to help with Lina’s birthday: a ribbon and a cake. The cake never got made. I came anyway, and Marta baked a flatbread from what they had."
+        },
         "CIORNĂ: Peste trei zile e ziua Linei. Finn vrea să-i dea panglica albastră de la negustor și un tort de la doamna Agnes, dar n-are bani și a promis că nu mai fură. În seara zilei ei, mă așteaptă în fața casei."
       ],
       "descriere_en": [
+        null,
         null,
         null,
         null,

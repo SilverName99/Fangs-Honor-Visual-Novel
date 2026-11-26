@@ -159,6 +159,10 @@ export function creeazaActiuni(parinte, joc) {
       let minuteNoapte = 0;
       for (let k = 0; k < minute; k += 15) if (momentZi((acum + k) % MINUTE_ZI) === 'noaptea') minuteNoapte += Math.min(15, minute - k);
       const deZi = minuteNoapte === 0;
+      // „viataNoapte” (decis de autor): o noapte dormită acasă închide puțin rănile, ca un jucător rănit să nu stea
+      // zile întregi doar cu bandajul mamei; cât e „o noapte” se spune la acțiune (orele din 23–05)
+      const vn = a.viataNoapte;
+      if (vn && minuteNoapte >= (vn.oreNoapte ?? cfg.somn.oreNoaptePentruVis ?? 4) * 60) schimbaNevoie(s, 'viata', vn.viata);
       // Filmulețul visului care urmează (dacă vine unul) se descarcă cât se vede imaginea somnului
       if (minuteNoapte > 0) joc.pregatesteVisul?.(minuteNoapte);
       cuImagine({ ...a, imagine: (deZi && (v.imagineZi || a.imagineZi)) || v.imagine || a.imagine }, () => {

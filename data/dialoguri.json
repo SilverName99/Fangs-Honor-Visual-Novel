@@ -10451,6 +10451,48 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Nu pot. Sunt prea mulți.",
+        "alegeri": [
+          {
+            "text": "Mă apropii, să văd mai bine.",
+            "spre": "t29a"
+          },
+          {
+            "text": "Rămân aici, cu tine.",
+            "spre": "t29c"
+          }
+        ],
+        "_nota": "Decis de autor (P10): o alegere mică, fără urmări; dacă Vale rămâne pe deal, Kaia coboară totuși spre drum, iar Vale vine după ea (imaginile sunt cu ei aproape de drum)."
+      },
+      "t29a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cobor pe burtă, printre tufe, până aproape de marginea drumului. Kaia se strecoară lângă mine fără niciun zgomot.",
+        "urmator": "t29b"
+      },
+      "t29b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Destul. Încă un pas și te vede torța.",
+        "urmator": "t30"
+      },
+      "t29c": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Bine. Tu rămâi aici. Eu cobor mai aproape: vreau să văd ce duc.",
+        "urmator": "t29d"
+      },
+      "t29d": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Și dispare în iarbă, la vale. Rezist cât să număr până la zece. Apoi mă târăsc după ea, pe burtă, până o găsesc lipită de pământ, la marginea drumului.",
+        "urmator": "t29e"
+      },
+      "t29e": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Știam că vii. Acum lipește-te de pământ.",
         "urmator": "t30"
       },
       "t30": {
@@ -10719,6 +10761,13 @@
         "gand": true,
         "emotie": "normal",
         "text": "Și o căldură în piept, ca un al doilea foc, care nu e al meu. Sau poate că e.",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sub palme, ceva tare și cald, cu marginile netede, ca solzul de pe hârtia soldatului. Doar că acesta e mult mai mare. Și respiră.",
         "urmator": "d"
       },
       "d": {
@@ -12211,6 +12260,53 @@
         "emotie": "trist",
         "text": "O s-o poarte. Chiar dacă a venit mai târziu."
       },
+      "lina_ft1": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Nu-i nimic. Ai venit. Pentru ea, asta contează.",
+        "urmator": "lina_ft2"
+      },
+      "lina_ft2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Intrăm. Marta a făcut o turtă din ce aveau, iar Lina o împarte în patru, cu grijă, ca pe ceva scump.",
+        "urmator": "lina_ft3"
+      },
+      "lina_ft3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": [
+          {
+            "conditii": {
+              "areObiect": "panglica_lina"
+            },
+            "text": "Îi dau panglica. Lina și-o leagă în păr pe loc și nu mai vrea s-o scoată. Finn se uită la ea și zâmbește. Eu mă uit la turtă și mă gândesc la tortul care n-a fost."
+          },
+          "Lina nu mă întreabă nimic. Doar se uită o clipă la mâinile mele goale, apoi la Finn, și zâmbește oricum. Asta doare mai tare decât orice ceartă."
+        ],
+        "urmator": "lina_ft4"
+      },
+      "lina_ft4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Când se întunecă de-a binelea, Finn mă conduce până la poartă. Nu-mi spune nimic. Doar mă bate o dată pe umăr.",
+        "efecte": {
+          "misiune": {
+            "finn_lina": "ratata"
+          },
+          "stare": {
+            "lina": "fara_tort"
+          },
+          "consuma": {
+            "panglica_lina": 1
+          },
+          "marcheaza": "finn_acasa_seara",
+          "timp": 60
+        }
+      },
       "lina_a1": {
         "vorbitor": "vale",
         "emotie": "normal",
@@ -12534,6 +12630,11 @@
         "emotie": "trist",
         "text": "Lina zice că a fost cea mai frumoasă zi. Eu știu că s-a uitat toată seara la ușă.",
         "_nota": "CIORNĂ (Claude): după „Ziua Linei”, ratată."
+      },
+      "f_lina_ft": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Lina zice că turta mamei a fost mai bună decât orice tort. Eu zic că a fost bună pentru că ai stat cu noi la masă."
       },
       "f_datoria_da": {
         "vorbitor": "hot",
@@ -13031,7 +13132,18 @@
                 "min": "23:00"
               }
             }
-          ]
+          ],
+          "nuStare": {
+            "lina": "fara_tort"
+          }
+        }
+      },
+      {
+        "nod": "f_lina_ft",
+        "conditii": {
+          "stare": {
+            "lina": "fara_tort"
+          }
         }
       },
       {
@@ -13172,6 +13284,30 @@
             "stare": {
               "lina_tort": "gata"
             }
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P8): în seara zilei, fără tort, Vale i-o spune cinstit lui Finn; intră totuși, iar misiunea e ratată (fără +1, ales de Claude).",
+        "text": "N-am reușit cu tortul, Finn. Îmi pare rău.",
+        "spre": "lina_ft1",
+        "conditii": {
+          "loc": "casa_finn",
+          "misiune": {
+            "finn_lina": "inceputa"
+          },
+          "zileDeLa": {
+            "ziua_linei": {
+              "min": 3,
+              "max": 3
+            }
+          },
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "areObiect": "tort_lina"
           }
         }
       }
@@ -14425,7 +14561,7 @@
     ]
   },
   "mormant_tata": {
-    "_nota": "CIORNĂ (Claude). La mormântul tatălui, în cimitirul de la Marginea satului; o dată pe zi.",
+    "_nota": "CIORNĂ (Claude). La mormântul tatălui, în cimitirul de la Marginea satului; o dată pe zi. Decis de autor (P2): după „b”, prima vizită (o dată) și câte un ecou după întâmplările mari, fiecare o singură dată (urmator cu condiții), apoi vorbele de mereu („c”).",
     "partener": null,
     "start": "a",
     "noduri": {
@@ -14441,7 +14577,139 @@
         "gand": true,
         "emotie": "trist",
         "text": "Smulg iarba de pe mormânt și mă așez lângă el.",
+        "urmator": [
+          {
+            "nod": "prima",
+            "conditii": {
+              "nu": {
+                "existaStare": "mormant_vizitat"
+              }
+            }
+          },
+          {
+            "nod": "e_cimitir",
+            "conditii": {
+              "stare": {
+                "cimitir_gata": "da"
+              },
+              "nu": {
+                "existaStare": "mormant_cimitir"
+              }
+            }
+          },
+          {
+            "nod": "e_inel",
+            "conditii": {
+              "stare": {
+                "inel": "inapoi"
+              },
+              "nu": {
+                "existaStare": "mormant_inel"
+              }
+            }
+          },
+          {
+            "nod": "e_steag",
+            "conditii": {
+              "stare": {
+                "steag": "roderick"
+              },
+              "nu": {
+                "existaStare": "mormant_steag"
+              }
+            }
+          },
+          {
+            "nod": "e_platosa",
+            "conditii": {
+              "stare": {
+                "platosa_gata": "da"
+              },
+              "nu": {
+                "existaStare": "mormant_platosa"
+              }
+            }
+          },
+          {
+            "nod": "e_owen",
+            "conditii": {
+              "stare": {
+                "nastere": "gata"
+              },
+              "nu": {
+                "existaStare": "mormant_owen"
+              }
+            }
+          },
+          "c"
+        ]
+      },
+      "prima": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "N-am mai venit aici de la înmormântare. Atunci abia mă țineam pe picioare, iar mama și mai puțin.",
+        "efecte": {
+          "stare": {
+            "mormant_vizitat": "da"
+          }
+        },
         "urmator": "c"
+      },
+      "e_cimitir": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Pământul de pe mormânt e încă afânat, acolo unde l-am pus la loc cu mâinile. N-o să-i las să te ia, tată. Nici pe tine, nici pe ceilalți douăzeci și doi.",
+        "efecte": {
+          "stare": {
+            "mormant_cimitir": "da"
+          }
+        },
+        "urmator": "d"
+      },
+      "e_inel": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Tată... mama poartă iar inelul tău. L-am luat înapoi din Groapă.",
+        "efecte": {
+          "stare": {
+            "mormant_inel": "da"
+          }
+        },
+        "urmator": "d"
+      },
+      "e_steag": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Steagul e acasă, tată. Mama l-a cusut, iar unchiul nu-l mai lasă jos.",
+        "efecte": {
+          "stare": {
+            "mormant_steag": "da"
+          }
+        },
+        "urmator": "d"
+      },
+      "e_platosa": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Port platoșa ta, tată. Bram zice că arăt ca tine. Eu zic că încă nu.",
+        "efecte": {
+          "stare": {
+            "mormant_platosa": "da"
+          }
+        },
+        "urmator": "d"
+      },
+      "e_owen": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "La Hanna s-a născut un băiat. Îl cheamă Owen, ca pe tatăl lui.",
+        "efecte": {
+          "stare": {
+            "mormant_owen": "da"
+          }
+        },
+        "urmator": "d"
       },
       "c": {
         "vorbitor": "vale",
@@ -17183,7 +17451,7 @@
       "s20": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Și de ce te-a trimis Cercul tocmai aici? În satul ăsta nu e nimic.",
+        "text": "Toată lumea știe că magii puternici rămân la capitală, lângă Inima Luminii. Atunci de ce te-a trimis Cercul tocmai aici? În satul ăsta nu e nimic.",
         "urmator": "s21"
       },
       "s21": {
@@ -18043,6 +18311,13 @@
         "gand": true,
         "emotie": "normal",
         "text": "Le am încă în pumn, strivite. Trei. Elian le ia cu grijă, de parcă în pădure n-ar fi fost nimic altceva în noaptea asta.",
+        "urmator": "l19b"
+      },
+      "l19b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Mă ridic. Picioarele încă îmi tremură. Vreau să-i mulțumesc, dar nu știu pentru ce, dacă el zice că n-a fost nimic.",
         "urmator": "l20"
       },
       "l20": {
@@ -18242,6 +18517,18 @@
     "faraGalerie": true,
     "start": [
       {
+        "_nota": "Decis de autor (P1): cât verigheta mamei e încă de câștigat, la intrare Vale o vede la colector, în locul unui gând la întâmplare (nu de două ori la rând, ales de Claude; src/groapa.js).",
+        "nod": "i1",
+        "conditii": {
+          "misiune": {
+            "miriam_inel": "inceputa"
+          },
+          "nu": {
+            "existaStare": "inel_castigat"
+          }
+        }
+      },
+      {
         "aleator": [
           "a1",
           "b1",
@@ -18312,6 +18599,27 @@
         "gand": true,
         "emotie": "zambet",
         "text": "Atunci să le dau un motiv să zâmbească."
+      },
+      "i1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Sus, pe margine, colectorul își răsucește între degete verigheta mamei. Mă vede și o ridică spre mine, la lumina torțelor, ca pe o momeală.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "i2"
+      },
+      "i2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "suparat",
+        "text": "Mama n-a scos-o de pe deget nici la înmormântare. Pentru el e doar un ban de pariu.",
+        "urmator": "i3"
+      },
+      "i3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "O dată. Trebuie să câștig doar o dată."
       }
     }
   },
@@ -19941,6 +20249,13 @@
         "vorbitor": "vanatoare",
         "emotie": "zambet",
         "text": "Asta voiam să aud. Și voiam s-o aud de la tine, nu de la mine.",
+        "urmator": "b9b"
+      },
+      "b9b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Tata n-a așteptat să vină regele. A luat sabia și s-a dus la copac. Abia acum înțeleg de ce.",
         "urmator": "b10"
       },
       "b10": {
@@ -23526,5 +23841,18 @@
     },
     "filmLa": "v1",
     "harta": "events/hartie_3.png"
+  },
+  "kaia_tabara_goala": {
+    "_nota": "CIORNĂ (Claude). Decis de autor (P7): cât lipsește Kaia după „Șoimul Străjerilor” (două zile), la sosirea la locul de campare, un gând al lui Vale; o dată pe zi.",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Focul e rece. Kaia nu s-a întors încă. Nici urmele lui Ember nu-s proaspete."
+      }
+    }
   }
 }

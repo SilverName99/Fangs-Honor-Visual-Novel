@@ -843,10 +843,19 @@ function vaneaza(v, cuCine = null) {
   // Lupta e hotărâtă: se ține minte de acum, nu abia când pornește, ca un refresh în imaginea de 3 secunde sau în
   // discuția cu Kaia să n-o piardă (timpul și vânătoarea s-au numărat deja)
   stare.luptaInCurs = lupta;
+  // Prima vânătoare fără nicio armă, nici în mână, nici în rucsac (decis de autor): înainte de luptă, un gând că
+  // poate fugi, ca o înfrângere cu pumnii contra lupilor să nu vină pe neașteptate; o singură dată în tot jocul
+  const areArma = stare.echipat?.arma_primara || stare.inventar.some((x) => inventar.def(x.id)?.slot === 'arma_primara');
+  const gandFaraArma = !cuInsotitor && !areArma && v.gandFaraArma && stare.marcaje?.vanatoare_fara_arma == null;
+  if (gandFaraArma) aplicaEfecte({ marcheaza: 'vanatoare_fara_arma' }, joc);
   salveaza();
   secventa.arata(
     [v.imagine],
     () => {
+      if (gandFaraArma) {
+        dupaDialog = () => joc.pornesteLupta(lupta);
+        return gand(v.gandFaraArma);
+      }
       if (!cuInsotitor || !dialoguri[i.dialog]) return joc.pornesteLupta(lupta);
       // Întâi discuția dintre ei, apoi lupta împreună
       dupaDialog = () => joc.pornesteLupta(lupta);
