@@ -31,10 +31,33 @@
         }
       },
       {
+        "_nota": "Înainte de scandal, cu hârtiile soldatului la Vale (Agnes îl trimite cu ele la Roderick): unchiul tot nu-l vede.",
+        "nod": "ignora_hartii",
+        "conditii": {
+          "nu": {
+            "existaStare": "scandal_taverna"
+          },
+          "areObiect": "hartii_vechi",
+          "loc": "taverna/parter"
+        }
+      },
+      {
         "nod": "ignora",
         "conditii": {
           "nu": {
             "existaStare": "scandal_taverna"
+          }
+        }
+      },
+      {
+        "_nota": "După refuzul din scandal, prima discuție e rece (ales de Claude).",
+        "nod": "prezentare_refuzat",
+        "conditii": {
+          "stare": {
+            "scandal_taverna": "refuzat"
+          },
+          "nuStare": {
+            "cunoscut_soldat": "da"
           }
         }
       },
@@ -50,6 +73,18 @@
         "nod": "salut_gard",
         "conditii": {
           "loc": "iesirea"
+        }
+      },
+      {
+        "nod": "salut_biserica",
+        "conditii": {
+          "loc": "biserica/interior"
+        }
+      },
+      {
+        "nod": "salut_antrenament",
+        "conditii": {
+          "loc": "antrenament"
         }
       },
       {
@@ -71,7 +106,7 @@
         "text": "Vale. Ia te uită... băiatul fratelui meu, crescut cât ușa. Stai jos, dacă nu te sperie mirosul de bere și de soldat bătrân.",
         "alegeri": [
           {
-            "text": "Bună, unchiule Roderick. Mama întreabă de tine. Zice că nu mai treci pe la noi.",
+            "text": "Mama întreabă de tine, unchiule. Zice că nu mai treci pe la noi.",
             "spre": "prezentare_final"
           }
         ]
@@ -212,7 +247,7 @@
       "ho10": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Drumul ăsta, însă, trece dincolo de zid. Iar pe acolo nu iese nimeni fără să-l vadă orcii. Mai trebuie să mă gândesc.",
+        "text": "Drumul ăsta, însă, trece dincolo de zid. Știu eu un loc pe unde nu se uită orcii... dar până la crăpătura aia sunt zile de mers, prin păduri pe care nu le mai știe nimeni. Mai trebuie să mă gândesc.",
         "urmator": "ho11"
       },
       "ho11": {
@@ -265,6 +300,14 @@
         "emotie": "normal",
         "text": "Unchiul stă în genunchi în fața altarului. Pe obraz are încă vânătaia de la tavernă, gălbuie pe margini.",
         "_nota": "CIORNĂ (Claude). „Lumânările”, începutul dacă Vale nu l-a ajutat în scandal.",
+        "urmator": "lum_b2"
+      },
+      "lum_b1t": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul stă în genunchi în fața altarului. Vânătaia de la tavernă i-a trecut de mult. Rușinea mea, nu.",
+        "_nota": "CIORNĂ (Claude): ca lum_b1, după mai mult de o săptămână de la scandal (vânătaia nu mai e).",
         "urmator": "lum_b2"
       },
       "lum_b2": {
@@ -463,7 +506,7 @@
       "lum_e7": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Spune-i lui Roderick că biserica e deschisă oricând. Și că lumina nu se stinge doar pentru că a încetat cineva să creadă în ea.",
+        "text": "Și Roderick să știe că biserica e deschisă oricând. Lumina nu se stinge doar pentru că a încetat cineva să creadă în ea.",
         "efecte": {
           "obiect": "lumanari",
           "stare": {
@@ -570,7 +613,7 @@
       "antr_ind": {
         "vorbitor": "soldat",
         "emotie": "normal",
-        "text": "Pentru manechin: șase lemne, pentru stâlp și pentru brațe, trei snopi de paie pentru trup și o frânghie bună, să le țină laolaltă. Paie găsești la câmpul de grâu, frânghie la negustorul din piață. Și fă-ți rost de o sabie de-adevăratelea, de o mână. Fără ea nu ne antrenăm.",
+        "text": "Pentru manechin: șase lemne, pentru stâlp și pentru brațe, trei snopi de paie pentru trup și o frânghie bună, să le țină laolaltă. Paie găsești la câmpuri, la arat sau la grajd; frânghie, la negustorul din piață. Și fă-ți rost de o sabie de-adevăratelea, de o mână. Fără ea nu ne antrenăm.",
         "_nota": "CIORNĂ (Claude). Misiunea lui Roderick „Antrenamentul”."
       },
       "antr_v1": {
@@ -696,7 +739,17 @@
       "antr_fara_sabie": {
         "vorbitor": "soldat",
         "emotie": "suparat",
-        "text": "Cu ce vrei să lovești, băiete, cu pumnii? Adu-ți o sabie de o mână, una adevărată. Bram are în fierărie. Fără sabie, nu ne antrenăm.",
+        "text": [
+          {
+            "conditii": {
+              "nuStare": {
+                "magazin_bram": "deschis"
+              }
+            },
+            "text": "Cu ce vrei să lovești, băiete, cu pumnii? Adu-ți o sabie de o mână, una adevărată. Bram are, dar de când i-au luat orcii fierul nu mai deschide nimănui. Ajută-l întâi pe el. Fără sabie, nu ne antrenăm."
+          },
+          "Cu ce vrei să lovești, băiete, cu pumnii? Adu-ți o sabie de o mână, una adevărată. Bram are în fierărie. Fără sabie, nu ne antrenăm."
+        ],
         "_nota": "Decis de autor: antrenamentul cere o sabie de o mână la Vale (în rucsac sau echipată)."
       },
       "lum_pb2": {
@@ -802,7 +855,7 @@
       "sticla_o3": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "De când îmi bate steagul ăla pe umăr, mă uit în cana de bere și mi-e rușine. Edwin n-ar fi purtat steagul satului cu o mână care tremură.",
+        "text": "De când mi l-a dat Miriam, steagul stă deasupra patului meu. Seara mă uit la el, apoi în cana de bere, și mi-e rușine. Edwin n-ar fi purtat steagul satului cu o mână care tremură.",
         "urmator": "sticla_o4"
       },
       "sticla_o4": {
@@ -877,7 +930,7 @@
       "sticla_da2": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Adu-mi mușețelul, Vale: îl găsești în pădure, unde ai cules și sunătoarea. Când e ceaiul gata, stăm toți trei de veghe."
+        "text": "Adu-mi mușețelul, Vale: îl găsești în pădure, dimineața, printre ierburile ude de rouă. Când e ceaiul gata, stăm toți trei de veghe."
       },
       "sticla_nu1": {
         "vorbitor": "soldat",
@@ -900,7 +953,7 @@
       "sticla_e_flori": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Mușețel, Vale: floarea mică, albă, cu mijlocul galben, care miroase a fân. Trei fire ajung. Îl găsești în pădure, dimineața, unde ai cules și sunătoarea."
+        "text": "Mușețel, Vale: floarea mică, albă, cu mijlocul galben, care miroase a fân. Trei fire ajung. Îl găsești în pădure, dimineața, printre ierburile ude de rouă."
       },
       "sticla_e1": {
         "vorbitor": "vale",
@@ -925,6 +978,33 @@
           "stare": {
             "sticla_ceai": "da"
           }
+        }
+      },
+      "sticla_e1_tarziu": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am adus mușețelul, Frate Elian. Trei fire.",
+        "_nota": "Ales de Claude: mușețelul adus seara târziu (de la 21:30); Elian face ceaiul pe loc și îl aduce pe Roderick în jumătate de oră, ca noaptea să pornească după 22:00, cu Roderick chiar adus.",
+        "urmator": "sticla_e2_tarziu"
+      },
+      "sticla_e2_tarziu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "E bun. Îl fierb cu încă ceva, din rezerva mea. Ceva amar, care ține febra în frâu.",
+        "urmator": "sticla_e3_tarziu"
+      },
+      "sticla_e3_tarziu": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Atunci chiar acum, Vale. Stai aici, pe scări: mă duc după Roderick, înainte să-și comande a doua cană.",
+        "efecte": {
+          "consuma": {
+            "musetel": 3
+          },
+          "stare": {
+            "sticla_ceai": "da"
+          },
+          "timp": 30
         }
       },
       "sticla_ind_noapte": {
@@ -1234,6 +1314,66 @@
         "vorbitor": "soldat",
         "emotie": "normal",
         "text": "Încă visez râpa aia, băiete. Dar nu mai e bătălia. E mâna ta în mâna mea. Așa mai merge."
+      },
+      "ignora_hartii": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul Roderick nici nu ridică ochii din cană. Hârtiile soldatului mă ard în buzunar, dar acum nu m-ar asculta.",
+        "_nota": "CIORNĂ (Claude)."
+      },
+      "prezentare_refuzat": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "efecte": {
+          "stare": {
+            "cunoscut_soldat": "da"
+          }
+        },
+        "text": "Vale. Am zis că rănile mi le ling singur. Și asta fac.",
+        "alegeri": [
+          {
+            "text": "Mama întreabă de tine, unchiule. Zice că nu mai treci pe la noi.",
+            "spre": "prezentare_final"
+          }
+        ],
+        "_nota": "CIORNĂ (Claude): prima discuție după refuzul din scandal."
+      },
+      "salut_biserica": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vale. Stai lângă mine, dacă vrei. Doar nu tare.",
+        "_nota": "CIORNĂ (Claude)."
+      },
+      "salut_antrenament": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ai venit. Bine. Încălzește-te, că manechinul nu se bate singur.",
+        "_nota": "CIORNĂ (Claude)."
+      },
+      "r_lumanari": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Le aprind în fiecare zi, pe toate douăzeci și trei. Iar la ultima îi spun numele cu voce tare. Tu m-ai învățat asta.",
+        "_nota": "CIORNĂ (Claude): după „Lumânările”."
+      },
+      "r_copac": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Mai ușor, băiete. De când am fost acolo, la copac, parcă am lăsat jos, între rădăcini, un sac pe care l-am cărat șase luni.",
+        "_nota": "CIORNĂ (Claude): după „Locul unde a căzut tata”, dacă Vale l-a consolat."
+      },
+      "r_copac_v": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Mă tot gândesc la ce mi-ai spus acolo, la copac. Doare. Dar doare mai cinstit decât tăcerea de până atunci.",
+        "_nota": "CIORNĂ (Claude): după „Locul unde a căzut tata”, dacă Vale l-a învinuit."
+      },
+      "r_treaz": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Treaz. Agnes îmi pune apă în cană și se uită la ea ca la o minune. Nopțile încă sunt lungi. Dar le duc.",
+        "_nota": "CIORNĂ (Claude): după „Ultima sticlă”."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -1242,7 +1382,61 @@
       {
         "nod": "r_tata_a",
         "conditii": {
-          "existaStare": "scandal_taverna"
+          "existaStare": "scandal_taverna",
+          "nu": {
+            "misiune": {
+              "roderick_lumanari": "terminata"
+            }
+          }
+        }
+      },
+      {
+        "nod": "r_lumanari",
+        "conditii": {
+          "misiune": {
+            "roderick_lumanari": "terminata"
+          },
+          "nu": {
+            "misiune": {
+              "roderick_locul": "terminata"
+            }
+          }
+        }
+      },
+      {
+        "nod": "r_copac",
+        "conditii": {
+          "misiune": {
+            "roderick_locul": "terminata"
+          },
+          "stare": {
+            "locul_alegere": "consolat"
+          },
+          "nuStare": {
+            "roderick_treaz": "da"
+          }
+        }
+      },
+      {
+        "nod": "r_copac_v",
+        "conditii": {
+          "misiune": {
+            "roderick_locul": "terminata"
+          },
+          "stare": {
+            "locul_alegere": "invinuit"
+          },
+          "nuStare": {
+            "roderick_treaz": "da"
+          }
+        }
+      },
+      {
+        "nod": "r_treaz",
+        "conditii": {
+          "stare": {
+            "roderick_treaz": "da"
+          }
         }
       },
       {
@@ -1710,7 +1904,7 @@
       "soc_o3": {
         "vorbitor": "hangita",
         "emotie": "trist",
-        "text": "Liniile alea sunt ale unchiului tău. Un an întreg de căni. N-am vrut niciodată să-i cer nimic, după ce a adus... după tot ce s-a întâmplat.",
+        "text": "Liniile alea sunt ale unchiului tău. Șase luni de căni. N-am vrut niciodată să-i cer nimic, după ce a adus... după tot ce s-a întâmplat.",
         "urmator": "soc_o4"
       },
       "soc_o4": {
@@ -1796,7 +1990,7 @@
       "soc_r5": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Și eu am stat aici un an și am băut din puțul ei.",
+        "text": "Și eu am stat aici șase luni și am băut din puțul ei.",
         "urmator": "soc_r6"
       },
       "soc_r6": {
@@ -8026,7 +8220,7 @@
       "i3": {
         "vorbitor": "hangita",
         "emotie": "speriat",
-        "text": "Vin imediat... Vă rog, e ultimul butoi din pivniță. Până la târg nu mai primesc altul.",
+        "text": "Vin imediat... Vă rog, butoiul ăsta e pentru oamenii din sat.",
         "urmator": "i4"
       },
       "i4": {
@@ -8040,7 +8234,7 @@
         "vorbitor": "paznic_orc_1",
         "nume": "Orc",
         "emotie": "rade",
-        "text": "Ultimul? Atunci vino tu încoace, să ni-l torni frumos. Hai, nu fi sfioasă.",
+        "text": "Pentru oamenii din sat? Noi suntem satul acum. Vino tu încoace, să ni-l torni frumos. Hai, nu fi sfioasă.",
         "urmator": "i6"
       },
       "i6": {
@@ -8179,7 +8373,7 @@
       "ref_e": {
         "vorbitor": "soldat",
         "emotie": "ranit",
-        "text": "Nu-ți cer socoteală, băiete. Erau doi, mari cât ușa, și tu n-ai nici sabie, nici armură. Poate ai făcut bine.",
+        "text": "Nu-ți cer socoteală, băiete. Erau doi, mari cât ușa, iar tu ești tot ce i-a mai rămas maică-tii. Poate ai făcut bine.",
         "urmator": "ref_f"
       },
       "ref_f": {
@@ -9993,7 +10187,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pe a treia, o hartă. Satul nostru, zidul, apoi un drum prin pădure, peste un râu și pe lângă niște ruine, până la o râpă adâncă, o crăpătură în pământ, însemnată cu un X.",
+        "text": "Pe a treia, o hartă. Satul nostru, gardul, apoi un drum prin pădure, peste un râu și pe lângă niște ruine, până la o râpă adâncă, o crăpătură în pământ, însemnată cu un X.",
         "imagine": "events/hartie_3.png",
         "urmator": "g"
       },
@@ -14316,7 +14510,7 @@
       "l3": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Hal. A ținut poarta până n-a mai putut ridica scutul. Avea vârsta ta, iar taică-su încă îl așteaptă pe bancă.",
+        "text": "Hal. A ținut scutul în linie până n-a mai putut să-l ridice. Avea vârsta ta, iar taică-su încă îl așteaptă pe bancă.",
         "urmator": "l4"
       },
       "l4": {
@@ -14334,7 +14528,7 @@
       "l6": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Atunci Tobin primește două. Le merită.",
+        "text": "Atunci lumânarea lui Tobin o aprind din partea amândurora. O merită.",
         "urmator": "l7"
       },
       "l7": {
@@ -14353,7 +14547,7 @@
       "l9": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Și soldatul din camera de sus a lui Agnes. Nu vorbea mult. Dar când vorbea, tăceam toți și ascultam.",
+        "text": "Și soldatul din camera de sus a lui Agnes. Nu vorbea mult. Doar la bere, despre un solz găsit departe, și atunci râdeam de el. Acum aș da orice să-l mai aud o dată.",
         "urmator": "l10"
       },
       "l10": {
@@ -14429,6 +14623,7 @@
           "stare": {
             "lumanari_aprinse": "da"
           },
+          "daObiect": "lumanari",
           "mergi": "biserica.interior"
         }
       }
@@ -20271,7 +20466,7 @@
       "s2": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Ar trebui să fiu acolo acum. La a treia cană. Așa trec nopțile de un an încoace.",
+        "text": "Ar trebui să fiu acolo acum. La a treia cană. Așa trec nopțile de la primăvară încoace.",
         "urmator": "s3"
       },
       "s3": {
@@ -20368,7 +20563,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Când se crapă de ziuă, ieșim pe scările bisericii. Unchiul scoate din haină o sticlă plată, pe jumătate plină. O poartă la el de un an.",
+        "text": "Când se crapă de ziuă, ieșim pe scările bisericii. Unchiul scoate din haină o sticlă plată, pe jumătate plină. O poartă la el din ziua bătăliei.",
         "imagine": "events/roderick_sticla_3.png",
         "urmator": "s18"
       },
@@ -20477,7 +20672,7 @@
       "c10": {
         "vorbitor": "soldat",
         "emotie": "trist",
-        "text": "Trebuia să-mi ceri, Agnes. Eu trebuia să văd. Un an întreg n-am văzut nimic, decât fundul cănii.",
+        "text": "Trebuia să-mi ceri, Agnes. Eu trebuia să văd. Șase luni n-am văzut nimic, decât fundul cănii.",
         "urmator": "c11"
       },
       "c11": {
@@ -20580,7 +20775,7 @@
       "v9": {
         "vorbitor": "soldat",
         "emotie": "plange",
-        "text": "Edwin m-a prins de umăr și mi-a zis: „Fugi în sat. Ai grijă de Miriam și de băiat.” Și eu am fugit. Toată viața am crezut că am fugit de frică.",
+        "text": "Edwin m-a prins de umăr și mi-a zis: „Fugi în sat. Ai grijă de Miriam și de băiat.” Și eu am fugit. De atunci am crezut că am fugit de frică.",
         "urmator": "v10"
       },
       "v10": {

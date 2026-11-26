@@ -1027,7 +1027,7 @@
         "timp": 60
       },
       "dialog": "roderick_lumanari",
-      "_nota": "Decis de autor: după ce i-a dus lumânările, Roderick îl cheamă seara la biserică; când Vale ajunge acolo seara (18–23), pornește direct prima imagine.",
+      "_nota": "Decis de autor: după ce i-a dus lumânările, Roderick îl cheamă seara la biserică; când Vale ajunge acolo seara (18–23), pornește direct prima imagine. Pornește și dacă Vale e deja acolo când vine ora (siPeLoc, ales de Claude).",
       "conditii": {
         "oricare": [
           {
@@ -1047,7 +1047,8 @@
         "misiune": {
           "roderick_lumanari": "inceputa"
         }
-      }
+      },
+      "siPeLoc": true
     },
     {
       "id": "roderick_locul",

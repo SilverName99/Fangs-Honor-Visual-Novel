@@ -1003,8 +1003,8 @@
       "descriere_en": "The orcs made trouble at the tavern and went after Agnes. Uncle Roderick couldn’t stand by any longer.",
       "oferta": {
         "_nota": "Decis de autor: din ziua 3, în tavernă, cât e și Agnes acolo; textul arată că Roderick încă nu-l bagă în seamă pe Vale.",
-        "text": "*Orcii fac multă dezordine și gălăgie...*",
-        "text_en": "*The orcs are making a mess and a racket...*",
+        "text": "(Orcii fac multă dezordine și gălăgie...)",
+        "text_en": "(The orcs are making a mess and a racket...)",
         "nod": "scandal_start",
         "conditii": {
           "zi": {
@@ -1112,8 +1112,8 @@
         }
       ],
       "recompensa": {
-        "text": "Acum știu ce caut: solzii de pe hârtii.",
-        "text_en": "Now I know what I’m looking for: the scales on the papers."
+        "text": "Prietenul unchiului credea că solzul de pe hârtii e de dragon. Unchiul râdea de el pe vremuri; acum nu mai râde. Drumul de pe hartă trece dincolo de zid, iar unchiul mai trebuie să se gândească.",
+        "text_en": "Uncle’s friend believed the scale on the papers came from a dragon. Uncle used to laugh at him; he doesn’t laugh anymore. The road on the map runs beyond the wall, and Uncle still has to think it over."
       }
     },
     {
@@ -1138,7 +1138,17 @@
             }
           },
           {
-            "nod": "lum_b1"
+            "nod": "lum_b1",
+            "conditii": {
+              "trecut": {
+                "soldat_ranit": {
+                  "subZile": 7
+                }
+              }
+            }
+          },
+          {
+            "nod": "lum_b1t"
           }
         ],
         "conditii": {
@@ -1376,8 +1386,8 @@
               "nume_en": "rope"
             }
           ],
-          "sfat": "Lemnele, din pădure. Paiele, de la câmpul de grâu (un snop la fiecare arat). Frânghia, de la negustorul din piață.",
-          "sfat_en": "Wood from the forest. Straw from the wheat field (one sheaf each time I plow). Rope from the merchant at the market.",
+          "sfat": "Lemnele, din pădure. Paiele, de la câmpuri: un snop la arat sau la ferma de vaci. Frânghia, de la negustorul din piață.",
+          "sfat_en": "Wood from the forest. Straw from the fields: one sheaf each time I plow or tend the cows. Rope from the merchant at the market.",
           "indiciu": {
             "text": "Despre manechin...",
             "text_en": "About the dummy...",
@@ -1473,8 +1483,22 @@
             "contor": "antrenamente_roderick",
             "n": 3
           },
-          "sfat": "Dimineața (7–10), la locul de antrenament, cu o sabie de o mână la mine (în rucsac sau în mână; Bram vinde). Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
-          "sfat_en": "In the morning (7–10), at the Training Ground, with a one-handed sword on me (in my backpack or in hand; Bram sells them). Training lasts 2 hours and takes 20 stamina; the day counts if I hit the dummy at least two out of three times.",
+          "sfat": [
+            {
+              "conditii": {
+                "nuStare": {
+                  "magazin_bram": "deschis"
+                }
+              },
+              "text": "Dimineața (7–10), la locul de antrenament, cu o sabie de o mână la mine (în rucsac sau în mână). Săbii are Bram, dar fierăria lui e zăvorâtă de când i-au luat orcii fierul: întâi îl ajut pe el. Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei.",
+              "text_en": "In the morning (7–10), at the Training Ground, with a one-handed sword on me (in my backpack or in hand). Bram has swords, but his smithy has been bolted shut since the orcs took his iron: I have to help him first. Training lasts 2 hours and takes 20 stamina; the day counts if I hit the dummy at least two out of three times."
+            },
+            "Dimineața (7–10), la locul de antrenament, cu o sabie de o mână la mine (în rucsac sau în mână; Bram vinde). Antrenamentul ține 2 ore și cere 20 de stamina; ziua contează dacă lovesc manechinul măcar de două ori din trei."
+          ],
+          "sfat_en": [
+            null,
+            "In the morning (7–10), at the Training Ground, with a one-handed sword on me (in my backpack or in hand; Bram sells them). Training lasts 2 hours and takes 20 stamina; the day counts if I hit the dummy at least two out of three times."
+          ],
           "predare": {
             "text": "Să ne antrenăm, unchiule!",
             "text_en": "Let’s train, Uncle!",
@@ -1557,7 +1581,7 @@
         "Now that he carries the village banner, Uncle Roderick wants to give up drinking. Brother Elian says the first nights are the hardest: he’ll shake, burn with fever, see things that aren’t there. Uncle doesn’t want anyone to see him like that. Only me."
       ],
       "oferta": {
-        "_nota": "Decis de autor: misiunea lui Roderick și a lui Elian, care se poate rata (refuzul = −1 la amândoi). Ales de Claude: după „Steagul satului”, la biserică, cât sunt amândoi înăuntru (10–14).",
+        "_nota": "Decis de autor: misiunea lui Roderick și a lui Elian, care se poate rata (refuzul = ratată, fără +1 la amândoi). Ales de Claude: după „Steagul satului”, la biserică, cât sunt amândoi înăuntru (10–14).",
         "text": "Unchiule... Frate Elian... s-a întâmplat ceva?",
         "text_en": "Uncle... Brother Elian... has something happened?",
         "nod": "sticla_o1",
@@ -1605,7 +1629,19 @@
           "predare": {
             "text": "Am adus mușețelul, Frate Elian.",
             "text_en": "I’ve brought the chamomile, Brother Elian.",
-            "nod": "sticla_e1",
+            "nod": [
+              {
+                "nod": "sticla_e1_tarziu",
+                "conditii": {
+                  "ora": {
+                    "min": "21:30"
+                  }
+                }
+              },
+              {
+                "nod": "sticla_e1"
+              }
+            ],
             "conditii": {
               "areCate": {
                 "musetel": 3

@@ -94,6 +94,40 @@
       ],
       "blocat": [
         {
+          "_nota": "Ales de Claude: cât e rupt plugul și Vale strânge paie pentru manechin, gândul îl trimite la grajd.",
+          "conditii": {
+            "misiune": {
+              "bram_forja": "terminata",
+              "roderick_antrenament": "inceputa"
+            },
+            "stare": {
+              "fermier_deblocat": "da"
+            },
+            "nu": {
+              "oricare": [
+                {
+                  "existaStare": "plug_reparat"
+                },
+                {
+                  "stare": {
+                    "plug": "refuzat"
+                  },
+                  "trecut": {
+                    "plug_refuz": {
+                      "pesteZile": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "nuStare": {
+              "manechin": "construit"
+            }
+          },
+          "gand": "Plugul fermierului e rupt. Fără el, azi nu ară nimeni. Paie găsesc și la grajd, la vaci.",
+          "gand_en": "The farmer’s plow is broken. Without it, no one plows today. I can still find straw at the cow barn."
+        },
+        {
           "_nota": "Decis de autor: cât e rupt plugul fermierului, nu ară nimeni.",
           "conditii": {
             "misiune": {
@@ -161,6 +195,20 @@
               "stare": {
                 "lina_tort": "gata"
               }
+            }
+          }
+        },
+        {
+          "_nota": "Misiunea lui Roderick „Antrenamentul”: un snop de paie și de la grajd, ca paiele să nu depindă de plugul fermierului (cât e rupt, nu ară nimeni). Ales de Claude, TODO echilibru.",
+          "obiect": "paie",
+          "n": 1,
+          "max": 3,
+          "conditii": {
+            "misiune": {
+              "roderick_antrenament": "inceputa"
+            },
+            "nuStare": {
+              "manechin": "construit"
             }
           }
         }

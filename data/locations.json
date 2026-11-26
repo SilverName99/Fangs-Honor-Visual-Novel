@@ -1270,7 +1270,7 @@
           "gandNoapte_en": "It’s pitch-dark in the forest. I can’t see where I’m swinging the axe. I’d better come back in the morning."
         },
         {
-          "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, iar orice floare culeasă rămâne în rucsac (decis de autor, pentru poțiunile Bătrânei Morwen). Cu mini-jocurile oprite: 2 fire de sunătoare, singur.",
+          "_nota": "Misiunea lui Elian (ciornă): apare de când e misiunea începută și rămâne și după; apare și cu „Rana lui Ember” sau „Ultima sticlă” (mușețelul pentru ceaiul lui Elian, ales de Claude); doar dimineața. Mini-jocul (decis de autor): 13 plante (4 sunătoare, câte 3 din celelalte), la întâmplare în zona desenată în editor; culegi cel mult 4, iar orice floare culeasă rămâne în rucsac (decis de autor, pentru poțiunile Bătrânei Morwen). Cu mini-jocurile oprite: 2 fire de sunătoare, singur.",
           "id": "ierburi",
           "tip": "culege",
           "nume": "Caută ierburi (1 oră)",
@@ -1292,11 +1292,52 @@
               "text": "Bătrâna Morwen: două păpădii, două fire de piciorul-cocoșului și trei de mușețel, pentru alifia lui Ember. Culege cel mult 4.",
               "text_en": "Old Morwen: two dandelions, two stems of buttercup and three of chamomile, for Ember’s salve. Pick no more than 4."
             },
-            "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4."
+            {
+              "conditii": {
+                "misiune": {
+                  "roderick_sticla": "inceputa"
+                },
+                "nu": {
+                  "oricare": [
+                    {
+                      "misiune": {
+                        "elian_ierburi": "inceputa"
+                      }
+                    },
+                    {
+                      "existaStare": "sticla_ceai"
+                    }
+                  ]
+                }
+              },
+              "text": "Elian: mușețel, floarea mică, albă, cu mijlocul galben, care miroase a fân. Trei fire ajung. Culege cel mult 4.",
+              "text_en": "Elian: chamomile, the small white flower with the yellow centre that smells of hay. Three stems will do. Pick no more than 4."
+            },
+            {
+              "conditii": {
+                "oricare": [
+                  {
+                    "misiune": {
+                      "elian_ierburi": "inceputa"
+                    }
+                  },
+                  {
+                    "misiune": {
+                      "elian_ierburi": "terminata"
+                    }
+                  }
+                ]
+              },
+              "text": "Elian: flori galbene, mici, cu cinci petale, în mănunchi în vârful tulpinii; frunzele, ținute în lumină, au puncte mici, ca niște găurele de ac. Culege cel mult 4.",
+              "text_en": "Elian: small yellow flowers with five petals, clustered at the top of the stem; held up to the light, the leaves show tiny dots, like pinholes. Pick no more than 4."
+            },
+            "Flori de câmp, ude de rouă. Culege cel mult 4."
           ],
           "intrebare_en": [
             null,
-            "Elian: small yellow flowers with five petals, clustered at the top of the stem; held up to the light, the leaves show tiny dots, like pinholes. Pick no more than 4."
+            null,
+            null,
+            "Wildflowers, wet with dew. Pick no more than 4."
           ],
           "plante": [
             {
@@ -1326,10 +1367,8 @@
             "min": "05:00",
             "max": "09:59"
           },
-          "gandOra": "Elian a zis că sunătoarea se culege dimineața, cât mai e roua pe ea. Revin mâine devreme.",
-          "gandOra_en": "Elian said St. John’s wort is picked in the morning, while the dew is still on it. I’ll come back early tomorrow.",
-          "gandGresit": "Unele dintre ele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
-          "gandGresit_en": "Some of them didn’t look like what Elian described. I left them there.",
+          "gandOra": "Florile se culeg dimineața, cât mai e roua pe ele. Revin mâine devreme.",
+          "gandOra_en": "Flowers are picked in the morning, while the dew is still on them. I’ll come back early tomorrow.",
           "imagine": "locations/munca_ierburi.png",
           "text": "Cauți printre ierburile ude de rouă...",
           "text_en": "You search among the dew-wet herbs...",
@@ -1354,6 +1393,16 @@
                 {
                   "misiune": {
                     "kaia_ember": "terminata"
+                  }
+                },
+                {
+                  "misiune": {
+                    "roderick_sticla": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "roderick_sticla": "terminata"
                   }
                 }
               ]
@@ -1403,8 +1452,6 @@
           },
           "gandOra": "Elian a zis că luminița-nopții își deschide florile doar la apus. Revin seara.",
           "gandOra_en": "Elian said evening primrose opens its flowers only at sunset. I’ll come back in the evening.",
-          "gandGresit": "Unele nu semănau cu ce mi-a descris Elian. Le-am lăsat acolo.",
-          "gandGresit_en": "Some didn’t look like what Elian described. I left them there.",
           "imagine": "locations/munca_luminita.png",
           "text": "Cauți printre ierburi, în lumina apusului...",
           "text_en": "You search among the herbs, in the glow of sunset...",
