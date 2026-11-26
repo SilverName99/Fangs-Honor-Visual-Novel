@@ -2794,7 +2794,8 @@
         "conditii": {
           "misiune": {
             "finn_eliberare": "terminata"
-          }
+          },
+          "loc": "casa_finn/interior"
         }
       },
       "pasi": [
@@ -2878,7 +2879,8 @@
         "conditii": {
           "misiune": {
             "finn_eliberare": "terminata"
-          }
+          },
+          "loc": "casa_finn/interior"
         }
       },
       "pasi": [
@@ -6242,8 +6244,8 @@
           "conditii": {
             "existaStare": "prieteni_fluier"
           },
-          "text": "CIORNĂ: Tobin, Ned și Wil, prietenii lui Finn din copilărie, sunt cu noi. Finn mi-a dat un fluier: în lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, și ei trag cu arcul din umbră.",
-          "text_en": "Tobin, Ned and Wil, Finn’s childhood friends, are with us. Finn gave me a whistle: in the great battle, when too many come at once, I blow it, just once, and they shoot from the shadows."
+          "text": "CIORNĂ: Pip, Ned și Wil, prietenii lui Finn din copilărie, sunt cu noi. Finn mi-a dat un fluier: în lupta cea mare, când vin prea mulți deodată, suflu în el, o singură dată, și ei trag cu arcul din umbră.",
+          "text_en": "Pip, Ned and Wil, Finn’s childhood friends, are with us. Finn gave me a whistle: in the great battle, when too many come at once, I blow it, just once, and they shoot from the shadows."
         },
         {
           "conditii": {
@@ -6251,8 +6253,8 @@
               "finn_prieteni": "inceputa"
             }
           },
-          "text": "CIORNĂ: Finn are trei prieteni din copilărie, de la Marginea satului: Tobin, Ned și Wil. Ne ajută în lupta cea mare, dar fiecare vrea ceva înainte.",
-          "text_en": "Finn has three childhood friends from the Edge: Tobin, Ned and Wil. They’ll help us in the great battle, but each of them wants something first."
+          "text": "CIORNĂ: Finn are trei prieteni din copilărie, de la Marginea satului: Pip, Ned și Wil. Ne ajută în lupta cea mare, dar fiecare vrea ceva înainte.",
+          "text_en": "Finn has three childhood friends from the Edge: Pip, Ned and Wil. They’ll help us in the great battle, but each of them wants something first."
         },
         "CIORNĂ: Finn vrea să vorbească cu trei prieteni de-ai lui."
       ],
@@ -6286,14 +6288,14 @@
           "text_en": "I bring Finn what his friends asked for",
           "subpasi": [
             {
-              "text": "Pentru Tobin: 3 bucăți de carne friptă și 3 pâini",
-              "text_en": "For Tobin: 3 pieces of roast meat and 3 loaves of bread",
+              "text": "Pentru Pip: 3 bucăți de carne friptă și 3 pâini",
+              "text_en": "For Pip: 3 pieces of roast meat and 3 loaves of bread",
               "gata": {
                 "existaStare": "prieteni_tobin"
               },
               "predare": {
-                "text": "Am carnea și pâinea pentru Tobin.",
-                "text_en": "I’ve got the meat and the bread for Tobin.",
+                "text": "Am carnea și pâinea pentru Pip.",
+                "text_en": "I’ve got the meat and the bread for Pip.",
                 "nod": "prieteni_tobin",
                 "conditii": {
                   "areCate": {
@@ -6390,7 +6392,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: pentru lupta finală, de la 8/10. Finn vorbește cu trei prieteni din copilărie (puțin mai mici decât el), care ajută doar dacă primește fiecare ceva (ciorne de Claude: Tobin, carne friptă și pâine; Ned, un arc, de la Kaia sau cumpărat, cu 3 săgeți; Wil, un dinte de orc, după o victorie în Groapă, oricare nivel). Apoi Finn îi dă lui Vale fluierul (2 imagini)."
+      "_nota": "Decis de autor: pentru lupta finală, de la 8/10. Finn vorbește cu trei prieteni din copilărie (puțin mai mici decât el), care ajută doar dacă primește fiecare ceva (ciorne de Claude: Pip, carne friptă și pâine; Ned, un arc, de la Kaia sau cumpărat, cu 3 săgeți; Wil, un dinte de orc, după o victorie în Groapă, oricare nivel). Apoi Finn îi dă lui Vale fluierul (2 imagini)."
     }
   ]
 }

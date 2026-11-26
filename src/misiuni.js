@@ -16,7 +16,7 @@ export const cateAre = (stare, id) => (stare.inventar || []).filter((x) => x.id 
 export const numaratori = (p, stare) =>
   [].concat(p.numara || []).map((x) => ({ ...x, are: x.contor ? stare.contoare?.[x.contor] || 0 : cateAre(stare, x.obiect) }));
 
-// „subpasi” la un pas: bucăți care se fac în orice ordine (prietenii lui Finn: carnea pentru Tobin, arcul pentru Ned,
+// „subpasi” la un pas: bucăți care se fac în orice ordine (prietenii lui Finn: carnea pentru Pip, arcul pentru Ned,
 // dintele pentru Wil); cartea le arată pe toate, bifate pe rând, iar pasul e gata când sunt gata toate
 export const subpasGata = (sp, stare) => verifica(sp.gata, context(stare));
 

@@ -11471,7 +11471,8 @@
         "emotie": "normal",
         "text": "Vale... dacă ai vreodată nevoie de cineva care să intre unde nu-l cheamă nimeni, mă găsești aici. La Marginea satului.",
         "efecte": {
-          "mergi": "casa_finn.interior"
+          "mergi": "casa_finn.interior",
+          "marcheaza": "finn_scapat"
         }
       }
     }
@@ -11635,7 +11636,15 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mă uit la sora lui. E slabă ca un vrej. Și mama lor, în pat, are nevoie de ceva mai mult decât de varză.",
+        "text": [
+          {
+            "conditii": {
+              "prezent": "sora_finn"
+            },
+            "text": "Mă uit la sora lui. E slabă ca un vrej. Și mama lor, în pat, are nevoie de ceva mai mult decât de varză."
+          },
+          "Mă gândesc la sora lui, slabă ca un vrej. Și la mama lor, în pat, care are nevoie de ceva mai mult decât de varză."
+        ],
         "urmator": "mancare_oferta3"
       },
       "mancare_oferta3": {
@@ -11668,6 +11677,23 @@
               "misiune": {
                 "finn_mancarea": "inceputa"
               }
+            },
+            "conditii": {
+              "prezent": "sora_finn"
+            }
+          },
+          {
+            "text": "Atunci vin cu ele.",
+            "spre": "mancare_da2",
+            "efecte": {
+              "misiune": {
+                "finn_mancarea": "inceputa"
+              }
+            },
+            "conditii": {
+              "nu": {
+                "prezent": "sora_finn"
+              }
             }
           },
           {
@@ -11679,6 +11705,11 @@
         "vorbitor": "sora_finn",
         "emotie": "zambet",
         "text": "Carne? Carne adevărată?! Finn, ai auzit?"
+      },
+      "mancare_da2": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Carne adevărată? Când o să audă Lina, n-o mai ține nimeni locului."
       },
       "mancare_indiciu": {
         "vorbitor": "hot",
@@ -12752,7 +12783,7 @@
       "prieteni_o2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Eu știu câțiva. Tobin, Ned și Wil. Am crescut împreună la Marginea satului. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
+        "text": "Eu știu câțiva. Pip, Ned și Wil. Am crescut împreună la Marginea satului. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
         "urmator": "prieteni_o3"
       },
       "prieteni_o3": {
@@ -12787,7 +12818,7 @@
       "prieteni_ind": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Carne friptă și pâine pentru Tobin, câte trei. Un arc pentru Ned, cu măcar trei săgeți. Și un dinte de orc pentru Wil, din Groapă. Mie mi le aduci; eu le duc."
+        "text": "Carne friptă și pâine pentru Pip, câte trei. Un arc pentru Ned, cu măcar trei săgeți. Și un dinte de orc pentru Wil, din Groapă. Mie mi le aduci; eu le duc."
       },
       "prieteni_f1": {
         "vorbitor": "hot",
@@ -13343,11 +13374,31 @@
         }
       },
       {
+        "_nota": "După „Ultima treabă pentru Jarek”: prima seară în care Vale îl găsește pe Finn acasă, o singură dată.",
+        "nod": "salut_seara",
+        "conditii": {
+          "misiune": {
+            "finn_jarek": "terminata"
+          },
+          "prezent": "hot",
+          "ora": {
+            "min": "18:00",
+            "max": "22:59"
+          },
+          "nuStare": {
+            "lina_finn_acasa": "da"
+          }
+        }
+      },
+      {
         "nod": "salut_plecat",
         "conditii": {
           "ora": {
             "min": "18:00",
             "max": "22:59"
+          },
+          "nu": {
+            "prezent": "hot"
           }
         }
       },
@@ -13389,6 +13440,16 @@
         "emotie": "normal",
         "text": "Finn a plecat cu treburi. Nu-mi spune niciodată unde. Zice că e mai bine să nu știu.",
         "_nota": "CIORNĂ (Claude). Seara, cât Finn e plecat (decis de autor)."
+      },
+      "salut_seara": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Finn e acasă! Acum stă seara cu noi. Mama zice că e un miracol. Eu zic că s-a făcut plictisitor.",
+        "efecte": {
+          "stare": {
+            "lina_finn_acasa": "da"
+          }
+        }
       },
       "salut_coliba": {
         "vorbitor": "sora_finn",
@@ -14430,14 +14491,15 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "zambet",
-        "text": "Pentru o seară, la marginea satului nu mai sunt orci. Doar un ceaun gol și o fetiță care adoarme cu capul pe masă.",
+        "text": "Pentru câteva ceasuri, la marginea satului nu mai sunt orci. Doar un ceaun gol și o fetiță care adoarme cu capul pe masă, sătulă.",
         "efecte": {
           "stare": {
             "finn_masa": "facuta"
           },
           "nevoi": {
             "foame": 40
-          }
+          },
+          "marcheaza": "finn_acasa_seara"
         }
       }
     }
@@ -14674,7 +14736,7 @@
       "a36": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Acolo. Lina crede că muncesc la vreun fermier. Mama... mama știe. Nu zice nimic, dar știe.",
+        "text": "Acolo. Lina nu știe. Îi spun doar că am treburi. Mama... mama știe. Nu zice nimic, dar știe.",
         "urmator": "a37"
       },
       "a37": {
@@ -14711,7 +14773,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Cheia e rece și grea. O vâr în buzunar. Pe drumul spre casă, mă uit de două ori peste umăr.",
+        "text": "Cheia e rece și grea. O vâr în buzunar. Finn intră în casă, iar eu mai rămân o clipă în întuneric, cu mâna pe buzunar.",
         "efecte": {
           "stare": {
             "mama_finn": "vindecata"
@@ -14719,7 +14781,8 @@
           "obiect": [
             "cheie_contrabandist"
           ],
-          "mergi": "casa_finn"
+          "mergi": "casa_finn",
+          "marcheaza": "finn_acasa_seara"
         },
         "_nota": "La final Vale e afară, la casa lui Finn (unde îi dă cheia)."
       }
@@ -19059,7 +19122,8 @@
           "stare": {
             "lina_ziua": "da"
           },
-          "mergi": "casa_finn"
+          "mergi": "casa_finn",
+          "marcheaza": "finn_acasa_seara"
         }
       }
     }
@@ -20579,7 +20643,7 @@
     }
   },
   "finn_prieteni": {
-    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn” (decis de autor): Finn vorbește cu trei prieteni din copilărie, puțin mai mici decât el; fiecare vrea ceva. Numele (Tobin, Ned, Wil) și ce cer sunt ciorne de Claude (decis de autor: Ned, un arc, de la Kaia sau cumpărat; Wil, un dinte de orc din Groapă). Fără portrete: doar numele, ca sătenii. O imagine.",
+    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn” (decis de autor): Finn vorbește cu trei prieteni din copilărie, puțin mai mici decât el; fiecare vrea ceva. Numele (Pip, Ned, Wil) și ce cer sunt ciorne de Claude (decis de autor: Ned, un arc, de la Kaia sau cumpărat; Wil, un dinte de orc din Groapă). Fără portrete: doar numele, ca sătenii. O imagine.",
     "grup": "Finn: prietenii lui Finn",
     "partener": "hot",
     "start": "p1",
@@ -20600,7 +20664,7 @@
       },
       "p3": {
         "vorbitor": "satean",
-        "nume": "Tobin",
+        "nume": "Pip",
         "faraPortret": true,
         "emotie": "normal",
         "text": "Cel care te-a scos de la butuc? Mama zice că e un prost cu inimă bună.",
@@ -20636,7 +20700,7 @@
       },
       "p8": {
         "vorbitor": "satean",
-        "nume": "Tobin",
+        "nume": "Pip",
         "faraPortret": true,
         "emotie": "normal",
         "text": "Eu vreau mâncare. Nu pentru mine. Am patru frați mai mici, iar de când au venit orcii mâncăm o dată pe zi, când mâncăm. Trei bucăți de carne friptă și trei pâini. Atunci te ascult.",
@@ -20668,7 +20732,7 @@
       "p12": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Carne și pâine pentru Tobin. Un arc pentru Ned. Un dinte de orc pentru Wil. Le aduc.",
+        "text": "Carne și pâine pentru Pip. Un arc pentru Ned. Un dinte de orc pentru Wil. Le aduc.",
         "urmator": "p13"
       },
       "p13": {
@@ -20693,13 +20757,13 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Finn mă duce în spatele șopronului. Tobin, Ned și Wil stau pe gard, cu picioarele atârnând. Ned își ține arcul în brațe ca pe un pui de pisică.",
+        "text": "Finn mă duce în spatele șopronului. Pip, Ned și Wil stau pe gard, cu picioarele atârnând. Ned își ține arcul în brațe ca pe un pui de pisică.",
         "imagine": "events/finn_prieteni_2.png",
         "urmator": "p2"
       },
       "p2": {
         "vorbitor": "satean",
-        "nume": "Tobin",
+        "nume": "Pip",
         "faraPortret": true,
         "emotie": "normal",
         "text": "Frații mei au mâncat carne trei zile la rând. Mama a plâns. Bine. Te ascult.",
@@ -20762,7 +20826,7 @@
       },
       "p11": {
         "vorbitor": "satean",
-        "nume": "Tobin",
+        "nume": "Pip",
         "faraPortret": true,
         "emotie": "normal",
         "text": "Pe Finn l-au prins.",
@@ -20822,7 +20886,7 @@
     }
   },
   "fluier_ambuscada": {
-    "_nota": "CIORNĂ (Claude). Decis de autor: în lupta finală, când Vale suflă în fluierul lui Finn, peste luptă apare imaginea cu cei patru băieți (Finn, Tobin, Ned, Wil, în haine rupte, cu glugi, trăgând cu arcul), cu gândurile lui Vale; apoi toți orcii valului sunt răniți cu 50% (src/lupta.js).",
+    "_nota": "CIORNĂ (Claude). Decis de autor: în lupta finală, când Vale suflă în fluierul lui Finn, peste luptă apare imaginea cu cei patru băieți (Finn, Pip, Ned, Wil, în haine rupte, cu glugi, trăgând cu arcul), cu gândurile lui Vale; apoi toți orcii valului sunt răniți cu 50% (src/lupta.js).",
     "grup": "Lupta finală: fluierul",
     "partener": null,
     "start": "f1",
@@ -20846,7 +20910,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Finn, Tobin, Ned și Wil. Patru băieți zdrențăroși de la Marginea satului, cu arcuri strâmbe și săgeți cu pene de gâscă.",
+        "text": "Finn, Pip, Ned și Wil. Patru băieți zdrențăroși de la Marginea satului, cu arcuri strâmbe și săgeți cu pene de gâscă.",
         "urmator": "f4"
       },
       "f4": {

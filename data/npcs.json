@@ -548,6 +548,18 @@
           "ce": "legat la butucul din piață"
         },
         {
+          "de": "05:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "marcatAzi": "finn_scapat"
+          },
+          "ce": "ziua eliberării: rămâne acasă, cu mama și sora lui (ales de Claude)"
+        },
+        {
           "de": "06:00",
           "pana": "08:00",
           "loc": "casa_finn/interior",
@@ -608,6 +620,18 @@
             }
           },
           "ce": "după ce s-a lăsat de Jarek („Ultima treabă pentru Jarek”), seara stă acasă (ales de Claude)"
+        },
+        {
+          "de": "18:00",
+          "pana": "23:00",
+          "loc": "casa_finn/interior",
+          "conditii": {
+            "marcatAzi": {
+              "id": "finn_acasa_seara",
+              "deLa": "05:00"
+            }
+          },
+          "ce": "seara unei misiuni făcute la el acasă (vindecarea, ziua Linei, masa): nu mai pleacă la Jarek (ales de Claude)"
         },
         {
           "de": "18:00",
