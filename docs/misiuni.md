@@ -118,7 +118,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 1. ✅ **Fierul lui Bram**: din ziua 3, la o zi după prima discuție cu Bram, când vii la fierărie și el lucrează afară. Mai întâi vezi cum îi ia colectorul fierul, apoi vorbești cu Bram.
 2. ✅ **Foalele stricate**: imediat după „Fierul lui Bram”, la Bram, la fierărie: „De ce e forja rece, domnule Bram?”.
 3. ✅ **O zi la forjă**: pornește singură, de a doua zi după „Foalele stricate” (decis de autor), când vii la fierărie și Bram lucrează afară, după-amiaza (14–18); „!” deasupra lui Bram și a fierăriei.
-4. ✅ **Fierul plugului** (a fermierului, +1 la Bram): după „O zi la forjă” și după cheia cocioabei lui Jarek (decis de autor: de la Finn, în „Mama lui Finn”), la o zi după prima discuție cu fermierul, la fermier: „Ce s-a întâmplat cu plugul? !”.
+4. ✅⚠️ **Fierul plugului** (a fermierului, +1 la Bram; se poate rata): după „O zi la forjă” și după cheia cocioabei lui Jarek (decis de autor: de la Finn, în „Mama lui Finn”), la o zi după prima discuție cu fermierul, la fermier: „Ce s-a întâmplat cu plugul? !”.
 5. ✅ **Cercurile butoaielor** (a lui Agnes, +1 la Bram): după „Pivnița” și după „Foalele stricate”, la Agnes, în sala tavernei: „Doamna Agnes, de ce miroase toată taverna a bere? !”.
 6. ✅ **Cufărul**: după ce plugul fermierului e reparat (la „Fierul plugului” acceptat, imediat; refuzat, după cele 2 zile) și după „Lumina din pădure” (Elian, decis de autor), la fierărie: Bram e îngândurat → „Ce vă frământă, domnule Bram? !”.
 7. ✅ **Toiagul celor 23** (a lui Elian, +1 la Bram și la Elian): pornește singură, la sfârșitul „Secretului lui Elian”.
@@ -126,7 +126,7 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 **Fratele Elian (preotul)**
 1. ✅ **Ierburile lui Elian**: la o zi după prima discuție, când Elian citește afară, pe scările bisericii (14–23): „Ce citești, frate Elian?”.
-2. ✅ **Cărțile**: pornește singură, din ziua 8, când mergi la biserică între 14 și 18 și Elian e afară (semnul „!” pe biserică).
+2. ✅⚠️ **Cărțile** (se poate rata): pornește singură, din ziua 8 și la cel puțin o zi după ce l-ai cunoscut pe Elian, când mergi la biserică între 14 și 18 și Elian e afară (semnul „!” pe biserică).
 3. ✅ **Pasărea Linei** (de la Lina, se poate refuza): după „Cărțile” și după „Păpușa Linei”, cel mai devreme a doua zi (dusă sau refuzată), la Lina, în fața casei (10–14): „Ce ai acolo, Lina? !”.
 4. ✅ **Lumina din pădure** (nu se poate refuza): după „Pasărea Linei”, la Elian: „Pari îngrijorat, frate Elian. !”. Apoi, seara, în pădure.
 5. ✅ **Secretul lui Elian**: după „Cufărul” (Bram), cât Elian citește afară (14–23): „Frate Elian, am nevoie de un sfat. !”.
@@ -167,20 +167,20 @@ Pe scurt, ce trebuie făcut ca să apară fiecare misiune (✅ făcută · 📝 
 
 **Fermierul**
 1. ✅ **Patrula de orci** (deblocarea lui): din ziua 3, dimineața, la câmpuri. Abia după ea poți vorbi cu el.
-2. ✅ **Fierul plugului** (+1 la Bram): după „O zi la forjă” (Bram), după cheia cocioabei lui Jarek (decis de autor) și la o zi după prima discuție cu el, fermierul are plugul rupt (06–13, la câmpuri): „Ce s-a întâmplat cu plugul? !”.
+2. ✅⚠️ **Fierul plugului** (+1 la Bram; se poate rata): după „O zi la forjă” (Bram), după cheia cocioabei lui Jarek (decis de autor) și la o zi după prima discuție cu el, fermierul are plugul rupt (06–13, la câmpuri): „Ce s-a întâmplat cu plugul? !”.
 3. 💡 Celelalte misiuni ale lui: de discutat.
 
 **Finn (hoțul)**
 1. ✅ **Eliberarea**: în piață, apeși pe Finn, legat la butuc → „Pot să vorbesc cu el?”.
 2. ✅ **Mâncarea** și ✅ **Mama lui Finn**: amândouă deodată, imediat după eliberare, la Finn acasă.
-3. ✅ **Lada colectorului**: după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?”. Apoi, după miezul nopții, Finn te așteaptă în fața casei.
-4. ✅⚠️ **Ziua Linei**: la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. Se ratează dacă refuzi sau dacă trece ziua Linei.
+3. ✅ **Lada colectorului**: după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?”. Apoi, după unsprezece (23–03), Finn te așteaptă în fața casei.
+4. ✅⚠️ **Ziua Linei**: după „Mâncarea” și la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. Se ratează dacă refuzi sau dacă trece ziua Linei.
 5. ✅⚠️ **Datoria la Jarek**: după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată), la Finn: „Finn, ce te apasă? !”. Se ratează dacă refuzi sau dacă trec cele 5 zile.
 6. ✅ **Noaptea de la cimitir** (nu se ratează; după ea, **al patrulea vis**): după „Camera de sus”, „Hârtiile soldatului” și „Pivnița”, și după „Datoria la Jarek” (dusă la capăt de o zi, sau ratată), la Finn: „Ce-i cu Lina? Pare obosită. !”.
 7. ✅ **Zarurile orcilor** (fără încredere): de la 4/10 încredere cu Finn, acasă: „Ce meșterești acolo, Finn? !”.
 8. ✅ **Cuștile vânătorilor** (+1 și la Kaia): de la 5/10 încredere cu Finn și după „Baza” (Kaia), acasă: „Finn... pot să-ți spun ceva? Dar încet. !”. Seara, la locul de campare; noaptea de după, pe furiș.
 9. ✅⚠️ **Ultima treabă pentru Jarek**: după „Noaptea de la cimitir” și după „Datoria la Jarek” (dusă la capăt sau ratată), acasă: „Ce-i hârtia aia, Finn? !”. Se ratează dacă alegi „Avem nevoie de bani.”.
-10. ✅ **Prietenii lui Finn** (pentru lupta finală, fluierul): de la 8/10 încredere cu Finn și după „Cuștile vânătorilor”: „Finn, pari că pui ceva la cale. !”.
+10. ✅ **Prietenii lui Finn** (pentru lupta finală, fluierul): de la 8/10 încredere cu Finn, după „Cuștile vânătorilor” și cu Groapa deschisă („Inelul mamei”), pentru dintele lui Wil: „Finn, pari că pui ceva la cale. !”.
 
 ---
 
@@ -196,10 +196,10 @@ Semne: ✅ făcut · 📝 plănuit · 💡 de găsit · ⚠️ se poate rata.
 | **Roderick** | ✅⚠️ Scandalul (doar dacă îl ajuți) · ✅ Lumânările · ✅⚠️ Locul unde a căzut tata (doar dacă îl consolezi) · ✅ Cina în familie · ✅ Antrenamentul · ✅ Steagul satului (a Miriamei) · ✅⚠️ Ultima sticlă (doar dacă accepți) · ✅⚠️ Socoteala (a lui Agnes, doar dacă accepți) · ✅⚠️ Seara celor 23 (a lui Agnes, doar dacă accepți) · ✅ Drumul trezirii (Hârtiile soldatului nu dau, decis) | 10 / 10 |
 | **Bram** | ✅ Fierul lui Bram · ✅ Foalele stricate · ✅⚠️ Capcanele (doar dacă îi duci lui fierul capcanelor Kaiei, nu colectorului) · ✅ O zi la forjă · ✅⚠️ Fierul plugului (doar dacă accepți) · ✅ Cercurile butoaielor · ✅ Cufărul · ✅ Toiagul celor 23 · ✅ Platoșa tatălui (doar dacă Miriam a ajuns la 8/10) · 💡 încă 1 | 9 / 10 |
 | **Elian** | ✅ Ierburile · ✅ Mama lui Finn (Elian ajută) · ✅⚠️ Cărțile (doar dacă iei cărțile) · ✅⚠️ Pasărea Linei (doar dacă duci vrabia) · ✅ Lumina din pădure · ✅ Secretul lui Elian · ✅ Toiagul celor 23 · ✅ Vorbele din somn (a Miriamei) · ✅⚠️ Ultima sticlă (a lui Roderick, doar dacă accepți) · 💡 încă 1 | 9 / 10 |
-| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅⚠️ Lupul negru (doar la victorie) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
+| **Kaia** | ✅ Întâlnirea (o ajuți; dacă pleci, o mai găsești după altă vânătoare) · ✅ Lupul negru (după o înfrângere se reîncearcă a doua zi, 15–17; nu se ratează) · ✅ Capcanele (+1 pentru cele cinci capcane desfăcute) · ✅⚠️ și încă +1 doar dacă eliberezi căprioara; **−1** dacă vinzi capcanele colectorului · ✅ Rana lui Ember · ✅ Șoimul Străjerilor (orice i-ai spune) · ✅⚠️ Convoiul (doar dacă mergi cu ea) · ✅ Baza · ✅ Cuștile vânătorilor (a lui Finn, +1 oricum s-ar termina lupta) · 💡 încă 1 | 9 / 10 |
 | **Finn** | ✅ Eliberarea · ✅ Mâncarea · ✅ Mama lui Finn · ✅ Lada colectorului (se reîncearcă, nu se ratează) · ✅⚠️ Ziua Linei (refuz sau ziua trecută) · ✅⚠️ Datoria la Jarek (refuz sau 5 zile trecute) · ✅ Noaptea de la cimitir · (Zarurile orcilor, fără încredere, decis de autor) · ✅ Cuștile vânătorilor (+1 oricum s-ar termina lupta, decis de autor) · ✅⚠️ Ultima treabă pentru Jarek (doar „Nu, Finn. Ai promis.”) · ✅ Prietenii lui Finn (de la 8/10) | 10 / 10 |
 
-**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Echipamentul tatălui și platoșa au venit mai devreme (cerut de autor), înaintea celorlalte. Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek). **Roderick** e gata: 10 puncte posibile, dintre care 5 ⚠️ (Scandalul, Locul unde a căzut tata, Ultima sticlă, Socoteala, Seara celor 23). Rămâne așa (decis de autor; la „Seara celor 23” refuzul costă punctul, iar oferta nu revine): dacă ratezi cel mult 2, se mai poate recruta; dacă ratezi 3, nu. Scandalul refuzat, singur, nu-l pierde. **Bram și Miriam** (decis de autor, voit): cu cele 3 ⚠️ ale Miriamei ratate, mama nu ajunge la 8/10, deci nu vin nici echipamentul tatălui, nici „Platoșa tatălui”: amândoi pierd câte un punct, iar Bram are atunci 8 puncte posibile până la al 10-lea (💡); Bram are 2 ⚠️ (Capcanele, Plugul). **Kaia** (decis de autor): mai are o misiune de făcut, încă nescrisă (al 10-lea punct, 💡), care se va putea rata (⚠️).
+**Ordinea** (decis de autor): întâi misiunile obișnuite, până când fiecare dintre cei 6 are 10 puncte posibile, dintre care cel puțin 3 se pot rata (⚠️); abia apoi misiunile speciale (echipamentul tatălui, platoșa, recrutarea). Echipamentul tatălui și platoșa au venit mai devreme (cerut de autor), înaintea celorlalte. Miriam e gata: 10 puncte posibile, dintre care 3 ⚠️ (Păpușa Linei, Lemne pentru iarnă, Noaptea nașterii). **Finn** e gata: 10 puncte posibile, dintre care 3 ⚠️ (Ziua Linei, Datoria la Jarek, Ultima treabă pentru Jarek). La Finn se poate rata doar unul (decis de autor: pragul rămâne la 8): „Prietenii lui Finn” (fluierul) e chiar al 10-lea punct, deci cu două ratate Finn rămâne la 7, iar „Prietenii” nu mai vin. **Roderick** e gata: 10 puncte posibile, dintre care 5 ⚠️ (Scandalul, Locul unde a căzut tata, Ultima sticlă, Socoteala, Seara celor 23). Rămâne așa (decis de autor; la „Seara celor 23” refuzul costă punctul, iar oferta nu revine): dacă ratezi cel mult 2, se mai poate recruta; dacă ratezi 3, nu. Scandalul refuzat, singur, nu-l pierde. **Bram și Miriam** (decis de autor, voit): cu cele 3 ⚠️ ale Miriamei ratate, mama nu ajunge la 8/10, deci nu vin nici echipamentul tatălui, nici „Platoșa tatălui”: amândoi pierd câte un punct, iar Bram are atunci 8 puncte posibile până la al 10-lea (💡); Bram are 2 ⚠️ (Capcanele, Plugul). **Kaia** (decis de autor): are acum 2 ⚠️ (căprioara, convoiul), plus −1 dacă vinzi capcanele colectorului; mai are o misiune de făcut, încă nescrisă (al 10-lea punct, 💡), care se va putea rata: a treia ⚠️.
 
 ---
 
@@ -295,7 +295,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 ### ✅ Inelul mamei
 - **Pornește singură** (decis de autor: nu se poate refuza): din **ziua 9**, după „Fierul lui Bram” (poarta trebuie să fie deschisă), **dimineața (7–11), când intri în bucătărie și mama e acolo** (ziua și condițiile, alese de Claude). Cât ar porni, **„!” deasupra mamei**, a ușii bucătăriei și a casei de pe hartă (decis de autor; `ofertaEveniment`, ca la cărțile lui Elian). Peste o imagine: colectorul stă în prag și strânge „pentru Groapă” câte ceva de la fiecare casă; mama nu mai are nimic, așa că îi ia **verigheta**, de pe deget. Singura alegere: „Ți-l aduc înapoi, mamă.”
-- **Pasul 1:** la **colector**, la poartă (dimineața la masa taxei, 6–12, sau seara cu torța, 18–23), cu **„?” auriu deasupra lui** și a porții de pe hartă (decis de autor; pasul e „la” colector), „Am venit pentru inelul mamei mele.” (lângă plata taxei). Colectorul îi spune de **Groapă**: o câștigi o dată acolo, oricât de greu alegi, și ți-o aruncă înapoi; poți aduce doi de-ai tăi, iar popa vostru poate coborî să vă oblojească. De acum **Groapa apare pe poartă** și rămâne.
+- **Pasul 1:** la **colector**, la poartă (dimineața și la prânz la masa taxei, 6–14, sau seara cu torța, 18–23), cu **„?” auriu deasupra lui** și a porții de pe hartă (decis de autor; pasul e „la” colector), „Am venit pentru inelul mamei mele.” (lângă plata taxei). Colectorul îi spune de **Groapă**: o câștigi o dată acolo, oricât de greu alegi, și ți-o aruncă înapoi; poți aduce doi de-ai tăi, iar popa vostru poate coborî să vă oblojească. De acum **Groapa apare pe poartă** și rămâne.
 - **Pasul 2:** o victorie în Groapă, **oricare nivel** (decis de autor). După luptă, peste o imagine, colectorul îi aruncă inelul: „Ce e al Groapei se câștigă în Groapă.”
 - **Pasul 3:** la mama, oriunde e: „Mamă... uite ce ți-am adus.” Peste o imagine, Vale îi pune verigheta în palmă; mama povestește cum i-a pus-o Edwin pe deget, sub copacul mare.
 - **Recompensa:** încrederea mamei **+1**.
@@ -400,7 +400,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ## Bram Emberforge (fierarul)
 
 ### ✅ Fierul lui Bram
-- **Pornește:** din ziua 3, la cel puțin o zi după prima discuție cu Bram, când Vale vine la fierărie și Bram lucrează afară (luni–vineri 06–12 și 14–18). Rulează două imagini, cu replici peste ele: colectorul găsește fierul ascuns, apoi pleacă cu el. Fierul ajunge la orci.
+- **Pornește:** din ziua 3, la cel puțin o zi după prima discuție cu Bram, când Vale vine la fierărie și Bram lucrează afară (cât lucrează afară: luni–vineri 06–12, sâmbăta și duminica 08–12, și zilnic 14–18). Rulează două imagini, cu replici peste ele: colectorul găsește fierul ascuns, apoi pleacă cu el. Fierul ajunge la orci.
 - **Oferta:** la Bram, „Am văzut ce s-a întâmplat cu fierul... !”.
 - **Pasul 1: iei fierul înapoi de la poartă.** De fiecare dată când Vale vine la poartă (06–23), cât e misiunea în lucru:
   - un paznic îi face semn să plece, iar Vale se gândește că nu pleacă fără fier;
@@ -411,7 +411,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Când iei fierul înapoi** (oricare cale): o imagine cu fierul primit, iar colectorul îi spune lui Vale că-l mai așteaptă pe la poartă. De acum poarta e deschisă, ziua și noaptea.
 - **Pasul 2:** duci fierul la Bram: „V-am adus fierul înapoi, domnule Bram. ?”.
 - **Recompensa:** 15 monede, încrederea lui Bram +1 și **magazinul lui deschis**. Până atunci, ușa fierăriei e zăvorâtă (de când i-a luat colectorul fierul, gândul lui Vale de la ușă o spune).
-- **Poarta e închisă până termini misiunea** (decis de autor): înainte de misiune sau cu fierul deja la tine, orcul te oprește (prima imagine de la poartă) și te întoarce pe hartă. Noaptea (23–06) Vale nici nu ajunge acolo: doar se gândește că n-ar fi bine. Taxa se plătește atunci doar când vine colectorul acasă.
+- **Poarta e închisă până iei fierul înapoi** (decis de autor): înainte de misiune, orcul te oprește (prima imagine de la poartă) și te întoarce pe hartă; după ce iei fierul, poarta rămâne deschisă. Noaptea (23–06) Vale nici nu ajunge acolo: doar se gândește că n-ar fi bine. Taxa se plătește atunci doar când vine colectorul acasă.
 - **Legături:** folosește jocul de zaruri de la poartă.
 
 **Imagini:** `events/bram_fier_1.png`, `events/bram_fier_2.png`, `events/poarta_fier_1.png`, `events/poarta_fier_2.png`, `events/poarta_fier_recuperat.png`.
@@ -508,7 +508,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ### ➡️ Bolnavul
 - A devenit misiunea lui Finn **„Mama lui Finn”** (decis de autor; Elian e foarte implicat și primește și el încredere +1). Vezi la Finn.
 
-### ✅ Cărțile
+### ✅⚠️ Cărțile (se poate rata)
 - **Pornește singură** (decis de autor): după cel puțin 7 zile (din ziua 8), următoarea dată când mergi la biserică și Elian citește afară. Ales de Claude: doar 14–18 (cât colectorul își face rondul prin sat) și abia după ce l-ai cunoscut pe Elian. **Semnul „!”** (decis de autor, ca să nu te ia prin surprindere): deasupra lui Elian și a bisericii de pe hartă, cât evenimentul ar porni când ajungi acolo (`ofertaEveniment` la misiune).
 - **Imaginile** (decis de autor): (1) Elian vine agitat, cu 3 cărți în brațe; (2) te roagă să le iei și să te ascunzi după biserică, orice s-ar întâmpla. Alegi:
   - **le iei** (misiunea pornește): (3) din spatele bisericii, colectorul vorbește cu Elian, se aude doar ce strigă el; (4) colectorul îl lovește pe Elian cu bâta în stomac; (5) Elian în genunchi, colectorul pleacă; (6) mergi la Elian: îți mulțumește, își ia cărțile și intră în biserică. **Încrederea lui Elian +1.** După scenă, în ziua aceea Elian nu mai iese pe scări: până la 18 e în biserică (ales de Claude).
@@ -518,7 +518,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici:** din ziua 8, 14:00–17:59, intră pe imaginea bisericii (Elian e afară) → evenimentul pornește singur. Pentru a doua variantă: F2 → „Resetează” la misiune (sau joc nou).
 
-### ✅ Pasărea Linei (de la Lina, +1 la Elian)
+### ✅⚠️ Pasărea Linei (de la Lina, +1 la Elian; se poate rata)
 - **Pornește** (decis de autor): după „Cărțile” (oricum s-a terminat), la Lina, când se joacă în fața casei (10–14). Ales de Claude: și după „Păpușa Linei”, cel mai devreme a doua zi (dusă sau refuzată), ca Lina să nu ceară două lucruri deodată. Lina îl cheamă („Vino repede! Adică... încet. Dar repede!”) → „Ce ai acolo, Lina? !” → „Arată-mi.”
 - **Peste o imagine:** Lina ține în palme o vrabie cu aripa ruptă (o cheamă Ciripel, ciornă de Claude). N-are voie să meargă singură până la biserică.
   - **o duci** (misiunea pornește): vrabia ajunge în căciula lui Vale (obiect de poveste);
@@ -861,7 +861,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 
 **Cum verifici**
 1. F2 → „Toți cunoscuți de 3 zile”. Timp 10:00, sala tavernei, vorbește cu Agnes → „Ce s-a întâmplat cu camera de sus?” → „Lăsați-o pe mine”.
-2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → cele 3 imagini; la final ești în sala tavernei, cu încredere +1 la Agnes și „Închiriază o cameră” la ea.
+2. Înapoi la zona tavernei → ușa de sus → „Strânge lucrurile chiriașului” → cele 3 imagini; la final ești în sala tavernei, iar la Agnes apare „Închiriază o cameră”.
 3. Inventar (I) → semnul „Obiecte de poveste” → Hârtii vechi → citești hârtiile.
 
 ### ✅ Berea
@@ -879,7 +879,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Pivnița** e un loc nou (`taverna/pivnita`), cu ușa doar din sala tavernei; apare cu misiunea și rămâne deschisă după ea.
 - **Muzica** (decis de autor): fără melodie specială; în pivniță se aude muzica tavernei de sus, înfundată.
 - **La intrare** (cât e misiunea în lucru), peste 2 imagini: Vale coboară cu torța, apoi lumina îi arată pe cei 3 șobolani. **Șobolanii vorbesc** (decis de autor): îi spun despre o teroare care se apropie, de partea căreia stă clanul lor (morții care nu mai stau în morminte; sună a bazaconii), și că trebuie să se gândească bine de partea cui stă. La a doua coborâre (după o înfrângere), doar câteva replici. Apoi **lupta**: doi șobolani cu gheare (în față) și unul care scuipă bale acide (în spate, de la distanță, **otrăvește**: 3 viață la fiecare tură a țintei, 3 ture, trece de armură).
-- **Victorie:** peste 2 imagini: șobolanii răpuși; Vale nu găsește pe unde au intrat, nicio gaură (decis de autor: gaura a fost scoasă din imagini), își spune că au fost bazaconii și nu-i spune lui Agnes că vorbeau; sus, Agnes cu un făcăleț în mâini, ușurată. Încredere +1.
+- **Victorie:** peste 2 imagini: șobolanii răpuși; Vale nu găsește pe unde au intrat, nicio gaură (decis de autor: gaura a fost scoasă din imagini), își spune că au fost bazaconii și nu-i spune lui Agnes că vorbeau; sus, Agnes cu un făcăleț în mâini, ușurată.
 - **Înfrângere:** fără imagine, în sala tavernei: Vale urcă rănit (10 viață), Agnes se sperie și îl trimite să se lege la răni și să mănânce. **Fugă:** Vale urcă în sala tavernei, fără discuție. În ambele cazuri misiunea rămâne în lucru și poate coborî din nou (atunci șobolanii spun doar câteva replici).
 - **Imagini:** `locations/taverna_pivnita.png` (pivnița), `locations/lupta_taverna_pivnita.png` (harta de luptă), `events/pivnita_1.png` (coborârea cu torța), `pivnita_2.png` (cei 3 șobolani), `pivnita_3.png` (după luptă), `pivnita_4.png` (sus, Agnes); pozele de luptă `combat/sobolan_gheare_*.png` și `combat/sobolan_scuipa_*.png` (câte 5); portretele `portraits/sobolan_gheare_<stare>.png` și `portraits/sobolan_scuipa_<stare>.png` (`normal`, `suparat`, `ranit`, `rade`; fața din `normal` apare și în medalionul din luptă).
 
@@ -930,7 +930,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 2. Ziua 3, 06:00: de pe **hartă**, mergi la câmpuri (de câteva ori, dacă nu vine din prima): patrula de orci.
 3. După alegere, fermierul se poate apăsa.
 
-### ✅ Fierul plugului (+1 la Bram)
+### ✅⚠️ Fierul plugului (+1 la Bram; se poate rata)
 - **Pornește** (decis de autor): după „O zi la forjă” (Bram) și abia după ce Vale are cheia cocioabei lui Jarek (decis de autor: de la Finn, în „Mama lui Finn”; fierul îl are doar Jarek), la o zi după prima discuție cu fermierul (decis de autor), fermierul apare cu un sprite nou, cu plugul rupt (`sprites/fermier_campuri_plug.png`), iar la câmp nu mai ară nimeni (gândul lui Vale la „Ară”). La fermier: „Ce s-a întâmplat cu plugul? !”.
   - **refuzi:** după 2 zile plugul e reparat; fermierul spune că a vorbit el cu Bram și s-a descurcat. Fără încredere la Bram (⚠️).
   - **accepți:** misiunea pornește.
@@ -965,7 +965,7 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 ### ✅ Mâncarea
 - **Pornește** (decis de autor: odată cu „Mama lui Finn”, imediat după eliberare): doar acasă la Finn (06–08, 13–18), „Când ați mâncat ultima oară ceva cald?” → „Atunci vin cu ele.”
 - **Pașii:** 3 pâini (negustorul, Agnes), 2 bucăți de carne (vânătoare), apoi la Finn „Am adus pâine și carne!” → „Hai să gătim.”
-- **Masa**, peste 2 imagini (decis de autor): Vale gătește carnea la ceaun, cu sora lui Finn la lingură; apoi mănâncă toți patru, mama mai greu, din pat. Trec 90 de minute; Vale se satură și el (foame +40).
+- **Masa**, peste 2 imagini (decis de autor): Vale gătește carnea la ceaun, cu sora lui Finn la lingură; apoi mănâncă toți patru, mama mai greu, din pat. Dacă Marta s-a vindecat înainte de masă, aceeași imagine, dar replicile spun că s-a ridicat de curând și, până fierbe carnea, obosește și se întinde iar (decis de autor). Trec 90 de minute; Vale se satură și el (foame +40).
 - **Recompensa:** încrederea lui Finn +1. După ea, Finn și sora lui au replici noi în „Ce mai faci?”.
 - **Imagini:** `events/finn_masa_1.png`, `finn_masa_2.png` (galeria: „Finn: mâncarea”).
 
@@ -977,14 +977,14 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 - **Pasul 2:** 3 flori, **seara (18–23)**, în pădure: „Caută luminița-nopții (1 oră)”, mini-jocul culesului (13 plante: 4 luminițe, câte 3 din celelalte; zona plantelor se desenează în editor, la Aranjare → Ecrane → „Culesul”, ca la sunătoare). Apare de la discuția cu Elian și rămâne și după misiune (decis de autor: luminița intră în poțiunile Bătrânei Morwen); orice floare culeasă rămâne în rucsac. Indicația o dă Elian („Cum arăta luminița-nopții?”).
 - **Pasul 3:** cu florile, **seara**, la Elian (pe scările bisericii): „Am adus luminița-nopții.” → „Hai la Finn.” (ziua, Elian îl trimite să vină după apus).
 - **Vindecarea**, peste 4 imagini (decis de autor): Finn îi așteaptă pe Vale și Elian la capătul potecii și intră toți trei în casă; Elian face ceaiul la vatra lui Finn, cu Lina la ajutor; mama îl bea, Elian se roagă cu mâna pe fruntea ei (Vale crede o clipă că lumina lumânării s-a făcut mai albă, un mic semn pentru secretul lui Elian); afară, Finn îi spune că lucrează în secret pentru contrabandist și îi dă **cheia cocioabei**. Trec 2 ore; Vale rămâne afară, la casa lui Finn.
-- **Recompensa:** încrederea lui Finn +1, a lui Elian +1 și cheia (`cheie_contrabandist`, la obiectele de poveste). Mama lui Finn are replici noi (s-a vindecat).
+- **Recompensa:** încrederea lui Finn +1, a lui Elian +1 și cheia (`cheie_contrabandist`, la obiectele de poveste). Mama lui Finn are replici noi (s-a vindecat): în seara vindecării doarme încă în pat, de a doua zi stă lângă vatră, iar după o săptămână are alt salut (ales de Claude).
 - **Imagini** (decis de autor: 4): `events/finn_vindecare_1.png` (cei trei ajung la casă, noaptea), `_2.png` (ceaiul), `_3.png` (Marta bea, Elian se roagă), `_4.png` (cheia, afară) (galeria: „Finn: mama”); planta `items/luminita_noptii.png`; imaginea culesului `locations/munca_luminita.png`; cheia `items/cheie_contrabandist.png`.
 
-**Cum verifici:** pornește misiunea la Finn; la Elian, „Frate Elian, am nevoie...”; seara, în pădure, „Caută luminița-nopții” (sau F2 → Obiect: 3 Luminiță-nopții); seara la Elian, „Am adus luminița-nopții” → „Hai la Finn” → cele 3 imagini → cheia în inventar, la obiectele de poveste. Apoi, la Marginea satului, cocioaba se deschide; înăuntru, seara (18–02), „Scăunelul” → 30 de minute → contrabandistul și marfa lui.
+**Cum verifici:** pornește misiunea la Finn; la Elian, „Frate Elian, am nevoie...”; seara, în pădure, „Caută luminița-nopții” (sau F2 → Obiect: 3 Luminiță-nopții); seara la Elian, „Am adus luminița-nopții” → „Hai la Finn” → cele 4 imagini → cheia în inventar, la obiectele de poveste. Apoi, la Marginea satului, cocioaba se deschide; înăuntru, seara (18–02), „Scăunelul” → 30 de minute → contrabandistul și marfa lui. După 2 (până la 6), Vale se gândește că e prea târziu; Jarek, venit înainte, rămâne până la 3. Dacă Vale l-a cunoscut deja la gard („Datoria la Jarek”), Jarek nu se mai prezintă de la zero (ales de Claude).
 
 ### ✅ Lada colectorului
-- **Pornește** (decis de autor): după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?” → „Sunt cu tine.” Colectorul ține banii taxei într-o ladă, la poartă; noaptea pleacă, paznicul doarme, rămâne doar un orc cu o torță.
-- **Pasul:** după miezul nopții (23–03, ales de Claude), **Finn te așteaptă în fața casei lui, cu sacul** (decis de autor: sprite-ul `sprites/hot_casa_finn.png`, pe imaginea casei de afară); apeși pe el → „Să mergem.” În noaptea de după o încercare ratată îți spune „Mâine noapte”.
+- **Pornește** (decis de autor): după „Mâncarea” și „Mama lui Finn”, la Finn: „Ce te frământă, Finn?” → „Sunt cu tine.” Colectorul ține banii taxei într-o ladă, la poartă; noaptea pleacă, paznicul doarme, doar patrula mai trece din când în când, cu o torță.
+- **Pasul:** după unsprezece (23–03, ales de Claude), **Finn te așteaptă în fața casei lui, cu sacul** (decis de autor: sprite-ul `sprites/hot_casa_finn.png`, pe imaginea casei de afară); apeși pe el → „Să mergem.” În noaptea de după o încercare ratată îți spune „Mâine noapte”.
 - **Imaginile** (decis de autor): (1) vă apropiați de poartă; (2), (3), (4) **furișatul**, din ascunzătoare în ascunzătoare, toate văzute încă din prima imagine (decis de autor): lemnele de lângă casă / căruța stricată, apoi butoaiele de lângă palisadă / căruța, apoi, din spatele butoaielor (orcul cu torța s-a dus la cel de la foc), pe după taraba cu lada, prin umbră / drept prin noroi, pe lângă căruță; pe fiecare imagine sunt două locuri, unul sigur, celălalt îl alertează pe orc (le desenezi tu în editor, la Aranjare → Ecrane → „Furișatul: Lada colectorului (1/2/3)”, zonele „Pe aici e sigur” și „Pe aici te vede orcul”; arată la fel, deci jucătorul alege după ce vede în imagine, de exemplu lumina torței); (5) Finn deschide lada și puneți totul în sac; (6) plecați cu sacul.
 - **Greșit** la oricare pas: imaginea fugii (`finn_lada_esec.png`), orcul se uită din depărtare; încerci din nou abia noaptea următoare.
 - **Recompensa:** încrederea lui Finn +1, 30 de monede (`TODO` echilibru) și **tot ce au luat orcii la pedepse** (afară de fierul lui Bram, care are drumul lui). Jumătate din bani îi împarte Finn oamenilor de la margine.
@@ -994,16 +994,16 @@ Nu sunt misiuni, dar le folosești peste tot (decis de autor):
 **Cum verifici:** cu misiunea pornită, la 23:30, pe imaginea casei lui Finn → apasă pe Finn → „Să mergem.” Alege o dată locul greșit (vezi fuga; imediat după, Vale zice „Mâine noapte”), apoi în noaptea următoare pe cele sigure → +1, monedele și lucrurile confiscate.
 
 ### ✅⚠️ Ziua Linei (se poate rata)
-- **Pornește** (ales de Claude): la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. **Peste 3 zile e ziua Linei** (decis de autor; face 8 ani, ciornă). În primăvară, înainte de orci, Finn a luat-o la piață, iar ea s-a uitat o zi întreagă la o panglică albastră. Finn vrea să-i dea panglica albastră de la negustor și un tort de la Agnes, dar a promis că nu mai fură și n-are bani. „Te ajut, Finn.” pornește misiunea; „N-am timp de așa ceva.” o **ratează** pe loc.
+- **Pornește** (ales de Claude): după „Mâncarea” (Lina vorbește de masă la petrecere) și la o zi după „Mama lui Finn”, la Finn: „Ce-i cu tine, Finn? Pari cu gândul în altă parte. !”. **Peste 3 zile e ziua Linei** (decis de autor; face 8 ani, ciornă). În primăvară, înainte de orci, Finn a luat-o la piață, iar ea s-a uitat o zi întreagă la o panglică albastră. Finn vrea să-i dea panglica albastră de la negustor și un tort de la Agnes, dar a promis că nu mai fură și n-are bani. „Te ajut, Finn.” pornește misiunea; „N-am timp de așa ceva.” o **ratează** pe loc.
 - **Panglica** (decis de autor: în piață nu se vorbește direct cu negustorul): de cum ai misiunea, **negustorul te oprește de fiecare dată când intri în piață** (ziua și seara), până cumperi panglica sau trece ziua Linei: „Aveți o panglică pentru o fetiță?” → 5 monede (ales de Claude) → „O iau.”, sau „Nu, mulțumesc.”, și te oprește data viitoare. După ziua Linei rămân doar sacii lui obișnuiți.
 - **Tortul** (decis de autor), la Agnes: „Doamna Agnes, ați putea face un tort?”. Agnes e încântată și cere **2 măsuri de făină** (moara), **2 căni de lapte** (vacile) și **o măsură de miere** (fermierul, 5 monede). Cât e misiunea, munca la moară dă și 2 făină, iar mulsul 2 lapte (ales de Claude). Cu toate: „Am adus tot pentru tort.” → o oră → tortul. În seara zilei Linei, după 21:30, Agnes nu mai începe tortul („Până se coace un tort, fata doarme demult.”, ales de Claude).
 - **Seara zilei** (decis de autor: în a treia zi de după discuție), **după 18 (până la 23), Finn te așteaptă în fața casei lui**, cu alt sprite: „Am tot, Finn. Panglica și tortul.” → „Intrăm.” → **peste 3 imagini**: Vale și Finn în fața ușii; înăuntru, Marta bucuroasă (știa de surpriză) și Lina, uimită; apoi toți patru la masă, Lina cu panglica în păr. Trec două ore; Vale iese în fața casei.
-- **Ratată** dacă refuzi sau dacă trece seara zilei ei fără daruri: la Finn, „Finn... ziua Linei.” → „I-am cântat... Dar s-a uitat toată seara la ușă.”
+- **Ratată** dacă refuzi sau dacă trece seara zilei ei fără daruri: la Finn, „Finn... ziua Linei.” → „I-am cântat... Dar s-a uitat toată seara la ușă.” Tortul s-a stricat, iar panglica, dacă o ai, i-o lași lui Finn (ales de Claude).
 - **Recompensa:** încrederea lui Finn **+1**.
 - **Imagini:** `events/lina_ziua_1.png`, `_2.png`, `_3.png` (galeria: „Finn: ziua Linei”); sprite-ul `sprites/hot_casa_finn_ziua.png` (Finn în fața casei, cu mâinile goale); iconițele `items/panglica_lina.png`, `items/tort_lina.png`, `items/lapte.png`.
 
 **Cum verifici**
-1. Termină „Mama lui Finn”, apoi „Ziua următoare”. La Finn: „Ce-i cu tine, Finn?” → „Te ajut, Finn.”.
+1. Termină „Mâncarea” și „Mama lui Finn”, apoi „Ziua următoare”. La Finn: „Ce-i cu tine, Finn?” → „Te ajut, Finn.”.
 2. Intră în piață de pe hartă: te oprește negustorul → „Aveți o panglică...” → „O iau.”. Intră din nou: nu te mai oprește.
 3. La Agnes: „Doamna Agnes, ați putea face un tort?” → F2 → Obiect: 2 Făină, 2 Lapte, 1 Miere → „Am adus tot pentru tort.”.
 4. „Ziua următoare” de 3 ori, „Seară”, Marginea satului → casa lui Finn (afară) → Finn → „Am tot, Finn.” → „Intrăm.” → cele 3 imagini → +1.
@@ -1015,7 +1015,7 @@ Din F2 → Misiuni, „Pornește” nu ajunge aici (și nici la „Datoria la Ja
 - **Pornește** (ales de Claude): după „Lada colectorului” și după „Ziua Linei” (dusă la capăt de o zi, sau ratată), la Finn: „Finn, ce te apasă? !”. În noaptea în care l-a prins negustorul, Finn ducea în sac și 3 blăni de-ale lui Jarek, pe care negustorul le-a luat și le-a vândut (ales de Claude); acum Jarek vrea **3 blăni de lup** înapoi, **în 5 zile** (decis de autor; zile din calendar, cu tot cu a cincea noapte, până la 3 dimineața). „Te ajut. Aduc eu blănile.” pornește misiunea; „Descurcă-te singur, Finn.” o **ratează** pe loc.
 - **Pasul 1:** cu 3 blăni de lup, la Finn: „Am blănile pentru Jarek.”.
 - **Pasul 2** (decis de autor): **în fiecare noapte (23–03), Finn te așteaptă la Ieșire** (sprite nou, `sprites/hot_iesirea.png`, pe imaginea de noapte): „Să mergem.” → „Sar gardul.” → **peste 2 imagini**: sar gardul putred și, mai încolo, pe lângă gard, îi dau lui Jarek sacul. Trece o oră.
-- **Ratată** dacă refuzi sau dacă trec cele 5 zile: la Finn, „Finn... ce ai pe față?”: buza spartă, un ochi vânăt. Fără blăni, Jarek a vândut datoria orcilor; cu blănile date, dar fără Vale la ieșire, Finn a dus singur sacul și l-au prins paznicii la gard (ales de Claude).
+- **Ratată** dacă refuzi sau dacă trec cele 5 zile: la Finn, „Finn... ce ai pe față?”: buza spartă, un ochi vânăt. Fără blăni, Jarek a vândut datoria orcilor; cu blănile date, dar fără Vale la ieșire, Finn a dus singur sacul și l-a prins o patrulă, dincolo de gard (ales de Claude); Finn vorbește cu portretul rănit (`portraits/hot_ranit.png`, până atunci `normal`).
 - **Recompensa:** încrederea lui Finn **+1**.
 - **Imagini:** `events/datoria_jarek_1.png` (gardul, noaptea), `events/datoria_jarek_2.png` (Jarek, mai încolo, lângă gard) (galeria: „Finn: datoria la Jarek”); sprite-ul `sprites/hot_iesirea.png`.
 
