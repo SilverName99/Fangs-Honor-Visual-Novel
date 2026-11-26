@@ -2229,7 +2229,32 @@
         }
       ],
       "locuri": [],
-      "actiuni": []
+      "actiuni": [
+        {
+          "id": "manechin",
+          "tip": "gand",
+          "nume": "Manechinul",
+          "nume_en": "The Training Dummy",
+          "_nota": "CIORNĂ (Claude). Decis de autor (P31): după „Antrenamentul”, manechinul se poate apăsa; Vale doar se gândește. Zona se desenează în editor, pe manechin (până atunci apare ca buton).",
+          "text": [
+            "Manechinul nostru. Paiele îi ies pe unde l-am ciopârțit. Unchiul zice că un soldat odihnit lovește o dată, dar bine.",
+            "Brațul stâng tot atârnă de o singură sfoară. Nu-l leg la loc: unchiul zice că un dușman adevărat nu-ți stă frumos în față.",
+            "Pe stâlp se văd crestăturile de la sabie, una lângă alta. Primele, strâmbe. Ultimele, aproape drepte."
+          ],
+          "text_en": [
+            "Our dummy. Straw sticks out wherever I hacked at it. Uncle says a rested soldier strikes once, but strikes well.",
+            "The left arm still hangs by a single cord. I don’t tie it back: Uncle says a real enemy won’t stand nicely in front of you.",
+            "The post is full of sword notches, one beside the other. The first ones crooked. The last ones almost straight."
+          ],
+          "ascuns": {
+            "conditii": {
+              "misiune": {
+                "roderick_antrenament": "terminata"
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }
