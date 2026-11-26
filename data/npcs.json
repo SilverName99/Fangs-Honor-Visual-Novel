@@ -825,6 +825,9 @@
           "conditii": {
             "misiune": {
               "lupul_negru": "inceputa"
+            },
+            "nu": {
+              "marcatAzi": "lup_negru_scapat"
             }
           },
           "ce": "o așteaptă pe Vale la marginea pădurii, cât e misiunea lupului negru (decis de autor)"
@@ -956,6 +959,14 @@
             }
           },
           "ce": "rănit de un mistreț: e în sprite-ul „kaia_ember”, cu Kaia, până la vindecare (decis de autor)"
+        },
+        {
+          "de": "05:00",
+          "pana": "10:00",
+          "conditii": {
+            "marcatAzi": "kaia_plecata"
+          },
+          "ce": "plecat cu Kaia în pădure, după vânătoarea împreună"
         },
         {
           "de": "05:00",

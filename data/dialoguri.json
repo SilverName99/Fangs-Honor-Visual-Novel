@@ -2422,7 +2422,7 @@
         }
       },
       {
-        "_nota": "Decis de autor: după ce Vale a vândut capcanele colectorului, la următoarea discuție Kaia le-a găsit din nou armate (−1).",
+        "_nota": "Decis de autor: după ce Vale a vândut capcanele colectorului, Kaia le găsește din nou armate cel mai devreme a doua zi (după ce dă de ele în pădure), la prima discuție de atunci (−1).",
         "nod": "capcane_aflat",
         "conditii": {
           "stare": {
@@ -2430,6 +2430,12 @@
           },
           "nuStare": {
             "kaia_capcane_aflat": "da"
+          },
+          "nu": {
+            "marcatAzi": {
+              "id": "capcane_vandute",
+              "deLa": "05:00"
+            }
           }
         }
       },
@@ -2530,6 +2536,16 @@
         }
       },
       {
+        "_nota": "După „Lupul negru”, în tabără: discuția promisă („Acolo putem vorbi în liniște”), o singură dată.",
+        "nod": "tabara_salut",
+        "conditii": {
+          "marcatAzi": "tabara_aratata",
+          "nuStare": {
+            "kaia_tabara_salut": "da"
+          }
+        }
+      },
+      {
         "aleator": [
           "a",
           "salut2"
@@ -2541,6 +2557,16 @@
         "vorbitor": "vanatoare",
         "emotie": "normal",
         "text": "Ai venit tot singur? Bine. Cu cât știu mai puțini de locul ăsta, cu atât mai bine."
+      },
+      "tabara_salut": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Aici nu ne aude nimeni, Vale. Stai jos lângă foc.",
+        "efecte": {
+          "stare": {
+            "kaia_tabara_salut": "da"
+          }
+        }
       },
       "vanat": {
         "vorbitor": "vanatoare",
@@ -2704,7 +2730,7 @@
       "capcane_seara": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Nu pe întuneric. Fierul ăla se vede greu și ziua. Vino dimineața sau după-amiază, înainte să se lase seara."
+        "text": "E prea târziu azi: până le desfacem pe toate, se lasă întunericul. Vino dimineața sau după-amiază devreme, până în trei."
       },
       "capcane_obosit": {
         "vorbitor": "vanatoare",
@@ -3105,7 +3131,15 @@
       "groapa_k4": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "Iar pe Ember l-ar vrea în cușcă, ca pe bestiile din convoi. Nu.",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "kaia_wyverni_vazut"
+            },
+            "text": "Iar pe Ember l-ar vrea în cușcă, ca pe bestiile din convoi. Nu."
+          },
+          "Iar pe Ember l-ar vrea în cușcă. Orcii pun în lanțuri tot ce e mai puternic decât ei. Nu."
+        ],
         "urmator": "groapa_k5"
       },
       "groapa_k5": {
@@ -3190,6 +3224,18 @@
         "emotie": "normal",
         "text": "Am mai tăiat niște bușteni pentru foc. Dacă o să ne strângem aici mai mulți, trebuie să aibă unde să stea.",
         "_nota": "„Ce mai faci?”, după „Baza”."
+      },
+      "k_rana_a": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Nu bine, Vale. Ember n-a mâncat nimic de când l-a rănit mistrețul. Bea apă și doarme.",
+        "urmator": "k_rana_b"
+      },
+      "k_rana_b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ember mișcă o ureche când își aude numele, dar nu deschide ochii."
       },
       "custi_k_bine1": {
         "vorbitor": "vanatoare",
@@ -3334,18 +3380,86 @@
     "meniu": true,
     "vorbeste": [
       {
-        "nod": "k_vanat_a"
+        "nod": "k_vanat_a",
+        "conditii": {
+          "nu": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
+          }
+        }
       },
       {
-        "nod": "k_orci_a"
+        "nod": "k_orci_a",
+        "conditii": {
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "revolta"
+              },
+              {
+                "stare": {
+                  "hot": "eliberat"
+                },
+                "misiuneTerminata": {
+                  "kaia_capcane": 2
+                },
+                "nu": {
+                  "misiune": {
+                    "kaia_ember": "terminata"
+                  }
+                }
+              }
+            ]
+          }
+        }
       },
       {
-        "nod": "k_padure_a"
+        "nod": "k_padure_a",
+        "conditii": {
+          "nu": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
+          }
+        }
       },
       {
         "nod": "k_baza_a",
         "conditii": {
           "existaStare": "revolta"
+        }
+      },
+      {
+        "nod": "k_rana_a",
+        "conditii": {
+          "stare": {
+            "hot": "eliberat"
+          },
+          "misiuneTerminata": {
+            "kaia_capcane": 2
+          },
+          "nu": {
+            "misiune": {
+              "kaia_ember": "terminata"
+            }
+          }
         }
       }
     ],
@@ -3418,6 +3532,19 @@
               },
               {
                 "existaStare": "kaia_capa"
+              },
+              {
+                "stare": {
+                  "hot": "eliberat"
+                },
+                "misiuneTerminata": {
+                  "kaia_capcane": 2
+                },
+                "nu": {
+                  "misiune": {
+                    "kaia_ember": "terminata"
+                  }
+                }
               }
             ]
           }
@@ -3430,6 +3557,19 @@
         "conditii": {
           "stare": {
             "groapa_aliat_vanatoare": "scos"
+          },
+          "nu": {
+            "stare": {
+              "hot": "eliberat"
+            },
+            "misiuneTerminata": {
+              "kaia_capcane": 2
+            },
+            "nu": {
+              "misiune": {
+                "kaia_ember": "terminata"
+              }
+            }
           }
         },
         "spre": "groapa_din_nou_k"
@@ -4976,6 +5116,16 @@
             "groapa_aliat_vanatoare": "da"
           }
         }
+      },
+      "capa_k_rana": {
+        "vorbitor": "vanatoare",
+        "emotie": "trist",
+        "text": "Mai târziu, Vale. Acum nu plec de lângă el."
+      },
+      "capa_k_lipsa": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Ce capă, Vale? N-o văd la tine."
       },
       "paine_o1": {
         "vorbitor": "vale",
@@ -8456,8 +8606,18 @@
   "kaia_intalnire": {
     "_nota": "CIORNĂ. Peste prima imagine (decis de autor): Kaia, călare pe tigru, față în față cu trei lupi care o înconjoară, încă fără luptă (se pândesc); peste a doua: Vale vine lângă ea, se recunosc și se pregătesc de luptă.",
     "grup": "Kaia: întâlnirea",
-    "partener": "vanatoare",
-    "start": "a",
+    "partener": null,
+    "start": [
+      {
+        "nod": "a_iar",
+        "conditii": {
+          "stare": {
+            "kaia_refuz": "da"
+          }
+        }
+      },
+      "a"
+    ],
     "noduri": {
       "a": {
         "imagine": "events/kaia_intalnire_1.png",
@@ -8482,6 +8642,29 @@
           }
         ]
       },
+      "a_iar": {
+        "imagine": "events/kaia_intalnire_1.png",
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "trist",
+        "text": "Iar ea. Fata cu tigrul, încolțită de lupi, ca data trecută. Data trecută am plecat și am auzit urletele tot drumul până acasă.",
+        "alegeri": [
+          {
+            "text": "O ajut!",
+            "spre": "b_iar"
+          },
+          {
+            "text": "Nu e lupta mea. Plec.",
+            "inchide": true,
+            "efecte": {
+              "stare": {
+                "kaia_refuz": "da"
+              },
+              "contorZero": "vanatori_dupa_refuz"
+            }
+          }
+        ]
+      },
       "b": {
         "vorbitor": "vanatoare",
         "emotie": "speriat",
@@ -8493,6 +8676,19 @@
         "vorbitor": "vale",
         "emotie": "speriat",
         "text": "Kaia? Kaia de la hotar? Credeam că n-o să te mai văd niciodată!",
+        "urmator": "d"
+      },
+      "b_iar": {
+        "vorbitor": "vanatoare",
+        "emotie": "suparat",
+        "text": "Vale?! Tu ești? ...Data trecută te-am văzut plecând printre copaci.",
+        "imagine": "events/kaia_intalnire_2.png",
+        "urmator": "c_iar"
+      },
+      "c_iar": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "N-am știut că ești tu, Kaia. Iartă-mă.",
         "urmator": "d"
       },
       "d": {
@@ -8534,19 +8730,19 @@
       "c": {
         "vorbitor": "vale",
         "emotie": "trist",
-        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
+        "text": "Au venit primăvara. Bărbații satului i-au așteptat la copacul mare, dincolo de gard. Douăzeci și trei n-au mai venit acasă. Tata a fost unul dintre ei. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
+        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Într-o zi o să-ți spun de unde știu.",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino mâine după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
+        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
         "efecte": {
           "stare": {
             "cunoscut_vanatoare": "da"
@@ -8578,19 +8774,19 @@
       "c": {
         "vorbitor": "vale",
         "emotie": "trist",
-        "text": "Au venit într-o noapte. Tata a murit apărând satul. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
+        "text": "Au venit primăvara. Bărbații satului i-au așteptat la copacul mare, dincolo de gard. Douăzeci și trei n-au mai venit acasă. Tata a fost unul dintre ei. De atunci ne lasă să trăim doar dacă plătim. În fiecare săptămână.",
         "urmator": "d"
       },
       "d": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Pe vremuri, nu toată lumea deschidea ușa unei fete cu un tigru după ea. El o deschidea.",
+        "text": "Îmi pare rău pentru tatăl tău. Era un om bun. Într-o zi o să-ți spun de unde știu.",
         "urmator": "e"
       },
       "e": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino mâine după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
+        "text": "Lupii ăștia nu vin singuri. Îi mână un lup negru, mai mare decât oricare. Vino după-amiază, între trei și cinci, la marginea pădurii. Îl vânăm împreună.",
         "efecte": {
           "stare": {
             "cunoscut_vanatoare": "da"
@@ -8646,7 +8842,8 @@
         "text": "Ai luptat bine, Vale. Vino cu mine: am un loc în pădure unde orcii nu ajung. Acolo putem vorbi în liniște.",
         "efecte": {
           "deblocheaza": "padure/campsite",
-          "mergi": "padure.campsite"
+          "mergi": "padure.campsite",
+          "marcheaza": "tabara_aratata"
         }
       }
     }
@@ -8658,7 +8855,10 @@
       "a": {
         "vorbitor": "vanatoare",
         "emotie": "suparat",
-        "text": "Ne-a scăpat. Data viitoare nu. Mâine, aceeași oră, la marginea pădurii."
+        "text": "Ne-a scăpat. Data viitoare nu. Mâine, aceeași oră, la marginea pădurii.",
+        "efecte": {
+          "marcheaza": "lup_negru_scapat"
+        }
       }
     }
   },
@@ -9509,7 +9709,7 @@
       "b3": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "L-am așteptat pe mama lui trei zile, ascunsă după un trunchi căzut. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
+        "text": "Am așteptat-o pe mama lui trei zile, ascunsă după un trunchi căzut. N-a mai venit. În pădurea mare, un tigru nu moare de bătrânețe.",
         "amintire": true,
         "urmator": "b4"
       },
@@ -9593,7 +9793,26 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "trist",
-        "text": "Tata nu mi-a povestit niciodată despre asta.",
+        "text": [
+          {
+            "conditii": {
+              "oricare": [
+                {
+                  "misiune": {
+                    "miriam_capa": "inceputa"
+                  }
+                },
+                {
+                  "misiune": {
+                    "miriam_capa": "terminata"
+                  }
+                }
+              ]
+            },
+            "text": "Mama mi-a povestit de găleata cu apă. Tata, niciodată. Nu era omul care să se laude cu așa ceva."
+          },
+          "Tata nu mi-a povestit niciodată despre asta."
+        ],
         "urmator": "d2"
       },
       "d2": {
@@ -10375,7 +10594,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Când ajungem înapoi la locul de campare, focul e de mult rece. Mă întind lângă el, dar nu pot să dorm. De câte ori închid ochii, văd aripile alea izbindu-se de gratii.",
+        "text": "Când ajungem înapoi la locul de campare, focul e de mult rece. Mă întind lângă el, dar nu pot să dorm. De câte ori închid ochii, văd fiara aia din cușcă, liniștită în lanțuri, urmărind torțele, ca și cum ar ști încotro merge.",
         "efecte": {
           "relatie": {
             "vanatoare": 1
@@ -16020,7 +16239,8 @@
           "bani": 20,
           "stare": {
             "capcane_duse": "colector"
-          }
+          },
+          "marcheaza": "capcane_vandute"
         },
         "_nota": "TODO echilibru: 20 de monede (ales de Claude)."
       },
@@ -17193,7 +17413,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Fiarele din cuști tremurau, ca Ember. De ce s-ar teme un dragon de alt dragon?"
+        "text": "În vis, fiara din cușcă tremura, ca Ember. De ce s-ar teme un dragon de alt dragon?"
       }
     }
   },
@@ -19455,7 +19675,7 @@
       "b2": {
         "vorbitor": "vanatoare",
         "emotie": "trist",
-        "text": "Mă tot gândesc la cuștile alea, Vale. La cum se zbăteau bestiile înăuntru.",
+        "text": "Mă tot gândesc la cuștile alea, Vale. La cât de liniștite stăteau bestiile înăuntru. Ca niște câini care știu unde-i duce stăpânul.",
         "urmator": "b3"
       },
       "b3": {
@@ -19561,13 +19781,23 @@
       "b19": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Bram ar veni. Știu că ar veni. Unchiul meu... poate, dacă lasă băutura. Și Fratele Elian are mai mult curaj decât pare.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "roderick_treaz": "da"
+              }
+            },
+            "text": "Bram ar veni. Știu că ar veni. Unchiul meu, de când și-a vărsat sticla în noroi, ar sta lângă mine oriunde. Și Fratele Elian are mai mult curaj decât pare."
+          },
+          "Bram ar veni. Știu că ar veni. Unchiul meu... poate, dacă lasă băutura. Și Fratele Elian are mai mult curaj decât pare."
+        ],
         "urmator": "b20"
       },
       "b20": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Și mai e cineva. Un băiat de la Marginea satului. Finn. Deschide orice lacăt.",
+        "text": "Și mai e cineva. Un băiat de la Marginea satului, Finn. Mi-a zis că, dacă am vreodată nevoie de cineva care să intre unde nu-l cheamă nimeni, știu unde să-l găsesc.",
         "urmator": "b21"
       },
       "b21": {
@@ -19668,7 +19898,7 @@
       "t9": {
         "vorbitor": "vanatoare",
         "emotie": "normal",
-        "text": "Și ăsta e hoțul tău? Cel care deschide lacăte?",
+        "text": "Și ăsta e hoțul tău? Cel care intră unde nu-l cheamă nimeni?",
         "urmator": "t10"
       },
       "t10": {
@@ -19718,6 +19948,12 @@
         "vorbitor": "vanatoare",
         "emotie": "zambet",
         "text": "Atunci ai venit exact când trebuia.",
+        "urmator": "t17b"
+      },
+      "t17b": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu ne trebuie o armată, Finn. Ne trebuie câțiva oameni care nu mai au ce pierde. Și unul care deschide lacăte.",
         "urmator": "t18"
       },
       "t18": {

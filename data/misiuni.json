@@ -508,8 +508,20 @@
               "lup_negru": "ucis"
             }
           },
-          "sfat": "După-amiaza, între 15 și 17, Kaia mă așteaptă la marginea pădurii.",
-          "sfat_en": "In the afternoon, between 15:00 and 17:00, Kaia will be waiting for me at the edge of the forest.",
+          "sfat": [
+            {
+              "conditii": {
+                "marcatAzi": "lup_negru_scapat"
+              },
+              "text": "Lupul negru ne-a scăpat. Mâine, între 15 și 17, Kaia mă așteaptă iar la marginea pădurii.",
+              "text_en": "The black wolf got away from us. Tomorrow, between 15:00 and 17:00, Kaia will be waiting for me at the edge of the forest again."
+            },
+            "După-amiaza, între 15 și 17, Kaia mă așteaptă la marginea pădurii."
+          ],
+          "sfat_en": [
+            null,
+            "In the afternoon, between 15:00 and 17:00, Kaia will be waiting for me at the edge of the forest."
+          ],
           "predare": {
             "text": "Sunt gata. Hai după lupul negru.",
             "text_en": "I’m ready. Let’s go after the black wolf.",
@@ -519,6 +531,9 @@
               "ora": {
                 "min": "15:00",
                 "max": "16:59"
+              },
+              "nu": {
+                "marcatAzi": "lup_negru_scapat"
               }
             }
           }
@@ -557,17 +572,17 @@
               "kaia_capcane": "desfacute"
             }
           },
-          "sfat": "Ziua, cât e Kaia la locul de campare (05–10 sau 14–18), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
-          "sfat_en": "During the day, while Kaia is at the Campsite (05–10 or 14–18), and when I’m well rested. The branch goes between the jaws, then I press down the spring, a little at a time: I’m allowed one slip.",
+          "sfat": "Ziua, cât e Kaia la locul de campare: dimineața (05–10) sau după-amiaza devreme (14–15), și odihnit. Creanga între fălci, apoi arcul, câte puțin: o dată am voie să-mi scape.",
+          "sfat_en": "During the day, while Kaia is at the Campsite: in the morning (05–10) or early in the afternoon (14–15), and when I’m well rested. The branch goes between the jaws, then I press down the spring, a little at a time: I’m allowed one slip.",
           "predare": {
             "text": "Sunt gata. Hai la capcane!",
             "text_en": "I’m ready. On to the traps!",
             "nod": "capcane_pregatit",
             "conditii": {
-              "moment": [
-                "dimineata",
-                "amiaza"
-              ],
+              "ora": {
+                "min": "05:00",
+                "max": "15:00"
+              },
               "nevoie": {
                 "stamina": {
                   "min": 30
@@ -771,6 +786,9 @@
         "conditii": {
           "misiuneTerminata": {
             "kaia_ember": 1
+          },
+          "ora": {
+            "max": "17:59"
           }
         }
       },
@@ -852,6 +870,9 @@
         "conditii": {
           "misiuneTerminata": {
             "kaia_soim": 1
+          },
+          "ora": {
+            "max": "22:29"
           }
         }
       },
@@ -3934,15 +3955,75 @@
               "groapa_aliat_vanatoare": "da"
             }
           },
-          "sfat": "Kaia e la locul de campare dimineața (5–10) și după-amiaza (14–23).",
-          "sfat_en": "Kaia is at the Campsite in the morning (5–10) and in the afternoon (14–23).",
+          "sfat": [
+            {
+              "conditii": {
+                "stare": {
+                  "hot": "eliberat"
+                },
+                "misiuneTerminata": {
+                  "kaia_capcane": 2
+                },
+                "nu": {
+                  "misiune": {
+                    "kaia_ember": "terminata"
+                  }
+                }
+              },
+              "text": "Kaia nu pleacă de lângă Ember cât e rănit. I-o duc după ce se vindecă.",
+              "text_en": "Kaia won’t leave Ember’s side while he’s wounded. I’ll bring it to her once he has healed."
+            },
+            "Kaia e la locul de campare dimineața (5–10) și după-amiaza (14–23)."
+          ],
+          "sfat_en": [
+            null,
+            "Kaia is at the Campsite in the morning (5–10) and in the afternoon (14–23)."
+          ],
           "predare": {
             "text": "Kaia, ți-am adus ceva.",
             "text_en": "Kaia, I’ve brought you something.",
             "nod": "capa_k1",
             "conditii": {
-              "areObiect": "capa_kaia"
+              "areObiect": "capa_kaia",
+              "nu": {
+                "stare": {
+                  "hot": "eliberat"
+                },
+                "misiuneTerminata": {
+                  "kaia_capcane": 2
+                },
+                "nu": {
+                  "misiune": {
+                    "kaia_ember": "terminata"
+                  }
+                }
+              }
             }
+          },
+          "indiciu": {
+            "text": "Despre capă...",
+            "text_en": "About the cloak...",
+            "nod": [
+              {
+                "nod": "capa_k_rana",
+                "conditii": {
+                  "stare": {
+                    "hot": "eliberat"
+                  },
+                  "misiuneTerminata": {
+                    "kaia_capcane": 2
+                  },
+                  "nu": {
+                    "misiune": {
+                      "kaia_ember": "terminata"
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "capa_k_lipsa"
+              }
+            ]
           }
         }
       ],
