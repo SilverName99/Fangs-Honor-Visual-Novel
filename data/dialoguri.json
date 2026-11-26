@@ -12871,7 +12871,32 @@
         "vorbitor": "sora_finn",
         "emotie": "normal",
         "text": "Ai adus ceva de mâncare?",
-        "urmator": "n"
+        "urmator": "n",
+        "alegeri": [
+          {
+            "_nota": "Decis de autor (P69): doar cu o pâine în rucsac.",
+            "text": "(Îi dau o pâine.)",
+            "conditii": {
+              "areLaEl": "paine"
+            },
+            "efecte": {
+              "consuma": {
+                "paine": 1
+              },
+              "stare": {
+                "lina_paine": "da"
+              }
+            },
+            "spre": "m_p1"
+          },
+          {
+            "text": "(Tac.)",
+            "conditii": {
+              "areLaEl": "paine"
+            },
+            "spre": "n"
+          }
+        ]
       },
       "n": {
         "vorbitor": "hot",
@@ -12879,11 +12904,41 @@
         "text": "Nu acum, micuțo. Îți promit că o să găsesc ceva.",
         "urmator": "o"
       },
+      "m_p1": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "E toată a mea?",
+        "urmator": "m_p2"
+      },
+      "m_p2": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Mulțumesc, Vale. N-o să uit.",
+        "urmator": "o"
+      },
       "o": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Casa e goală. Niciun miros de pâine, niciun foc adevărat în vatră. Iar tusea femeii nu-mi place deloc.",
+        "text": [
+          {
+            "conditii": {
+              "stare": {
+                "lina_paine": "da"
+              }
+            },
+            "text": "Lina rupe pâinea în trei și duce întâi bucata cea mare la patul mamei ei. Altfel, casa e goală: niciun foc adevărat în vatră. Iar tusea femeii nu-mi place deloc."
+          },
+          "Casa e goală. Niciun miros de pâine, niciun foc adevărat în vatră. Iar tusea femeii nu-mi place deloc."
+        ],
+        "urmator": "o2"
+      },
+      "o2": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "gand": true,
+        "text": "Finn îngenunchează la vatră și suflă în cenușă până se aprinde o flacără. Lina se lipește de el. Prima oară de zile întregi, în casa asta e cald.",
+        "_nota": "CIORNĂ (Claude), P63.",
         "urmator": "p"
       },
       "p": {
@@ -13044,6 +13099,21 @@
           "zileDeLa": {
             "finn_jarek_furt": {
               "min": 1
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P62): câteva zile după „Avem nevoie de bani.”, la câmpuri, Finn nu mai zice „muncesc cinstit”: un salut tăcut.",
+        "nod": "salut_campuri_furt",
+        "conditii": {
+          "loc": "campuri",
+          "misiune": {
+            "finn_jarek": "ratata"
+          },
+          "trecut": {
+            "finn_jarek_furt": {
+              "subZile": 4
             }
           }
         }
@@ -13405,6 +13475,13 @@
         "emotie": "zambet",
         "text": "Vale! Uite-mă, muncesc cinstit. Fermierul zice că sap ca doi. Plătește ca pentru unul, dar e un început.",
         "_nota": "CIORNĂ (Claude). La câmpuri, 08–13."
+      },
+      "salut_campuri_furt": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Finn mă vede și își pleacă privirea în brazdă. Nu zice nimic. Nici eu.",
+        "_nota": "CIORNĂ (Claude), P62."
       },
       "lada_oferta": {
         "vorbitor": "hot",
@@ -14360,6 +14437,12 @@
         "text": "Seara stau acasă acum. Mama zice că nu mă mai recunoaște. Lina zice că am devenit plictisitor. Amândouă zâmbesc când o zic.",
         "_nota": "„Ce mai faci?”, după ce Finn s-a lăsat de Jarek."
       },
+      "f_revolta": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Nu-i spun nimic mamei. Dacă află, mă leagă de pat, cum a stat ea toată iarna. Dar dacă îi scoatem pe orci din sat, Vale... n-o să mai trebuiască să fur niciodată.",
+        "_nota": "CIORNĂ (Claude), P61."
+      },
       "f_arc_ned": {
         "vorbitor": "hot",
         "emotie": "zambet",
@@ -14376,7 +14459,14 @@
       "prieteni_o2": {
         "vorbitor": "hot",
         "emotie": "normal",
-        "text": "Eu știu câțiva. Pip, Ned și Wil. Am crescut împreună la Marginea satului. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
+        "text": "Eu știu câțiva. Pip, Ned și Wil. Cu Pip și cu Ned am crescut aici, la Marginea satului. Sunt mai mici decât mine cu un an-doi, dar aleargă mai repede decât orice orc și se cațără pe orice zid.",
+        "urmator": "prieteni_o2b"
+      },
+      "prieteni_o2b": {
+        "vorbitor": "hot",
+        "emotie": "trist",
+        "text": "Wil e băiatul cel mic al morarului. Fratele lui Tobin, care a ținut steagul la copac. De când a plecat Tobin și nu s-a mai întors, Wil n-a mai râs.",
+        "_nota": "Decis de autor (P72): Wil e fratele mai mic al lui Tobin, unul dintre cei 23.",
         "urmator": "prieteni_o3"
       },
       "prieteni_o3": {
@@ -14662,6 +14752,24 @@
         }
       },
       {
+        "_nota": "Decis de autor (P61): după „Cuștile vânătorilor”, Finn știe de revoltă.",
+        "nod": "f_revolta",
+        "conditii": {
+          "oricare": [
+            {
+              "stare": {
+                "finn_custi": "eliberate"
+              }
+            },
+            {
+              "stare": {
+                "finn_custi": "pierdut"
+              }
+            }
+          ]
+        }
+      },
+      {
         "nod": "f_jarek",
         "conditii": {
           "misiune": {
@@ -14869,6 +14977,22 @@
         "vorbitor": "mama_finn",
         "emotie": "normal",
         "text": "Întreabă-l pe Finn. Fiul meu știe de unde se găsește orice. Prea bine știe."
+      },
+      "m_seara": {
+        "vorbitor": "mama_finn",
+        "emotie": "zambet",
+        "text": "Într-o seară, Finn a venit acasă cu mâinile goale și a stat cu noi până a adormit Lina. N-am întrebat nimic. Am pus doar încă o lingură pe masă.",
+        "_nota": "CIORNĂ (Claude), P70."
+      },
+      "m_pumn": {
+        "vorbitor": "mama_finn",
+        "emotie": "trist",
+        "text": "Finn zice că a căzut pe întuneric. Eu am crescut un băiat, Vale. Știu cum arată o căzătură și cum arată un pumn."
+      },
+      "m_panglica": {
+        "vorbitor": "mama_finn",
+        "emotie": "zambet",
+        "text": "Lina doarme cu panglica pe încheietură. Zice că, dacă o lasă pe masă, i-o fură visele."
       }
     },
     "vorbeste": [
@@ -14902,6 +15026,56 @@
           "misiuneTerminata": {
             "finn_mama": 7
           }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P70): după „Ultima treabă pentru Jarek” dusă la capăt.",
+        "nod": "m_seara",
+        "conditii": {
+          "misiune": {
+            "finn_jarek": "terminata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P70): câteva zile după „Datoria la Jarek”, ratată sau refuzată (Finn a venit bătut).",
+        "nod": "m_pumn",
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "finn_datoria": "ratata"
+              }
+            },
+            {
+              "stare": {
+                "datoria": "refuzat"
+              }
+            }
+          ],
+          "zileDeLa": {
+            "datoria_jarek": {
+              "min": 7
+            }
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P70): după ziua Linei (cu tort sau doar cu panglica).",
+        "nod": "m_panglica",
+        "conditii": {
+          "oricare": [
+            {
+              "misiune": {
+                "finn_lina": "terminata"
+              }
+            },
+            {
+              "stare": {
+                "lina": "fara_tort"
+              }
+            }
+          ]
         }
       }
     ],
@@ -15281,6 +15455,24 @@
             "pasarea_spusa": "da"
           }
         }
+      },
+      "s_luminite": {
+        "vorbitor": "sora_finn",
+        "emotie": "speriat",
+        "text": "Noaptea, la cimitir, se văd luminițe. Verzi. Mama zice că-s licurici. Dar licuricii nu stau pe morminte, Vale.",
+        "_nota": "CIORNĂ (Claude), P67."
+      },
+      "s_luminite_dupa": {
+        "vorbitor": "sora_finn",
+        "emotie": "normal",
+        "text": "Luminițele de la cimitir nu mai vin. Finn zice că erau felinarele paznicului. Dar paznicul n-are felinare verzi, Vale. Voi le-ați alungat, nu-i așa?",
+        "urmator": "s_luminite_dupa2"
+      },
+      "s_luminite_dupa2": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "gand": true,
+        "text": "Nu-i răspund. Îi ciufulesc părul, iar Lina zâmbește, ca și cum i-aș fi spus da."
       }
     },
     "vorbeste": [
@@ -15300,6 +15492,24 @@
         "conditii": {
           "stare": {
             "finn_masa": "facuta"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P67): cât e „Noaptea de la cimitir”.",
+        "nod": "s_luminite",
+        "conditii": {
+          "misiune": {
+            "finn_cimitir": "inceputa"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P67): după „Noaptea de la cimitir”.",
+        "nod": "s_luminite_dupa",
+        "conditii": {
+          "misiune": {
+            "finn_cimitir": "terminata"
           }
         }
       }
@@ -15592,12 +15802,44 @@
       "salut1": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "Mai vrei ceva, Lightfinder? Nu stau mult."
+        "text": "Mai vrei ceva, Lightfinder? Nu stau mult.",
+        "urmator": [
+          {
+            "conditii": {
+              "misiune": {
+                "finn_jarek": "terminata"
+              },
+              "stare": {
+                "finn_jarek": "gata"
+              },
+              "nuStare": {
+                "jarek_finn_spus": "da"
+              }
+            },
+            "nod": "c_finn_lasat"
+          }
+        ]
       },
       "salut2": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "Iar tu? Bine. Banii n-au miros."
+        "text": "Iar tu? Bine. Banii n-au miros.",
+        "urmator": [
+          {
+            "conditii": {
+              "misiune": {
+                "finn_jarek": "terminata"
+              },
+              "stare": {
+                "finn_jarek": "gata"
+              },
+              "nuStare": {
+                "jarek_finn_spus": "da"
+              }
+            },
+            "nod": "c_finn_lasat"
+          }
+        ]
       },
       "c_marfa": {
         "vorbitor": "contrabandist",
@@ -15692,12 +15934,39 @@
       "vine2": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
-        "text": "Singur, ca de obicei. Bine. Ce-ți trebuie azi?"
+        "text": "Singur, ca de obicei. Bine. Ce-ți trebuie azi?",
+        "urmator": [
+          {
+            "conditii": {
+              "misiune": {
+                "finn_jarek": "terminata"
+              },
+              "stare": {
+                "finn_jarek": "gata"
+              },
+              "nuStare": {
+                "jarek_finn_spus": "da"
+              }
+            },
+            "nod": "c_finn_lasat"
+          }
+        ]
       },
       "c_finn": {
         "vorbitor": "contrabandist",
         "emotie": "normal",
         "text": "Finn e un puști bun. Prea bun pentru meseria asta. Dacă te-a adus la mine, înseamnă că ai făcut ceva ce n-a făcut nimeni pentru el."
+      },
+      "c_finn_lasat": {
+        "vorbitor": "contrabandist",
+        "emotie": "normal",
+        "text": "Finn nu mai trece pe la mine. Bine face. Să nu-i spui că am zis asta.",
+        "_nota": "Decis de autor (P66): o singură dată, după „Ultima treabă pentru Jarek” dusă la capăt.",
+        "efecte": {
+          "stare": {
+            "jarek_finn_spus": "da"
+          }
+        }
       },
       "metal_contrabandist": {
         "vorbitor": "contrabandist",
@@ -15980,6 +16249,32 @@
           }
         },
         "_nota": "CIORNĂ (Claude). „Noaptea nașterii”: seara, bătrâna e trează."
+      },
+      "i_marta": {
+        "vorbitor": "ierbareasa",
+        "emotie": "normal",
+        "text": "Am auzit că Marta s-a ridicat din pat. Cu luminița-nopții și un ceai, zice fata. O iarnă întreagă i-am fiert eu ceaiuri, flăcăule. În toată viața mea n-am văzut o tuse ca aia plecând într-o noapte.",
+        "_nota": "CIORNĂ (Claude), P78.",
+        "urmator": "i_marta2"
+      },
+      "i_marta2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Mă gândesc la flacăra lumânării, care s-a făcut albă pentru o clipă, sub mâna lui Elian. Nu zic nimic."
+      },
+      "i_edwin": {
+        "vorbitor": "ierbareasa",
+        "emotie": "zambet",
+        "text": "Tatăl tău venea la mine cu pumnii juliți și zicea că s-a lovit de o ușă. Ușa avea de obicei nume de flăcău, unul care se legase de cineva mai slab. „Pune ceva pe ele, bunico, să nu vadă Miriam.” Miriam vedea oricum.",
+        "_nota": "CIORNĂ (Claude), P79 (unite cele două variante).",
+        "urmator": "i_edwin2"
+      },
+      "i_edwin2": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "gand": true,
+        "text": "Nu-mi vine să cred. Și totuși, îl văd."
       }
     },
     "vorbeste": [
@@ -16013,6 +16308,19 @@
             "miriam_nastere": "terminata"
           }
         }
+      },
+      {
+        "_nota": "Decis de autor (P78): după „Mama lui Finn”; un indiciu despre puterea lui Elian.",
+        "nod": "i_marta",
+        "conditii": {
+          "stare": {
+            "mama_finn": "vindecata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor (P79): o amintire despre Edwin.",
+        "nod": "i_edwin"
       }
     ],
     "optiuni": [
@@ -21124,6 +21432,19 @@
         "vorbitor": "sora_finn",
         "emotie": "zambet",
         "text": "E cel mai bun tort din toată lumea!",
+        "urmator": "z12b"
+      },
+      "z12b": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Tortul e de la doamna Agnes. Mierea, de la fermier. Mi-au zis să-ți spun la mulți ani din partea lor.",
+        "_nota": "Decis de autor (P68).",
+        "urmator": "z12c"
+      },
+      "z12c": {
+        "vorbitor": "sora_finn",
+        "emotie": "zambet",
+        "text": "Atunci le duci tu câte o floare de la mine. Una mare! Nu... două mari!",
         "urmator": "z13"
       },
       "z13": {
@@ -22680,7 +23001,7 @@
     }
   },
   "finn_prieteni": {
-    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn” (decis de autor): Finn vorbește cu trei prieteni din copilărie, puțin mai mici decât el; fiecare vrea ceva. Numele (Pip, Ned, Wil) și ce cer sunt ciorne de Claude (decis de autor: Ned, un arc, de la Kaia sau cumpărat; Wil, un dinte de orc din Groapă). Fără portrete: doar numele, ca sătenii. O imagine.",
+    "_nota": "CIORNĂ (Claude). „Prietenii lui Finn” (decis de autor): Finn vorbește cu trei prieteni din copilărie, puțin mai mici decât el; fiecare vrea ceva. Numele (Pip, Ned, Wil) și ce cer sunt ciorne de Claude (decis de autor, P72: Wil e fratele mai mic al lui Tobin, fiul morarului) (decis de autor: Ned, un arc, de la Kaia sau cumpărat; Wil, un dinte de orc din Groapă). Fără portrete: doar numele, ca sătenii. O imagine.",
     "grup": "Finn: prietenii lui Finn",
     "partener": "hot",
     "start": "p1",
@@ -22756,7 +23077,15 @@
         "nume": "Wil",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Eu nu vreau nimic de mâncat. Vreau să văd că nu ești doar gură. Bate un orc în Groapă și adu-mi un dinte de-al lui. Atunci te cred.",
+        "text": "Eu nu vreau mâncare. Tobin a mințit că are optsprezece ani, ca să-l ia cu ei la copac. Eu n-am nevoie să mint. Bate un orc în Groapă și adu-mi un dinte de-al lui. Atunci trag primul.",
+        "urmator": "p10b",
+        "_nota": "Decis de autor (P72): Wil, fratele mai mic al lui Tobin; dintele de orc e răzbunarea pentru frate."
+      },
+      "p10b": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "gand": true,
+        "text": "Tobin. Fiul morarului, cel mai tânăr dintre cei douăzeci și trei. Wil are aceiași ochi.",
         "urmator": "p11"
       },
       "p11": {
@@ -22819,7 +23148,7 @@
         "nume": "Wil",
         "faraPortret": true,
         "emotie": "normal",
-        "text": "Și dintele e adevărat. L-am mușcat, să văd. E adevărat.",
+        "text": "Și dintele e adevărat. L-am mușcat, să văd. E adevărat. Când începe, eu trag primul. I-am promis lui Tobin.",
         "urmator": "p5"
       },
       "p5": {
@@ -22947,7 +23276,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Finn, Pip, Ned și Wil. Patru băieți zdrențăroși de la Marginea satului, cu arcuri strâmbe și săgeți cu pene de gâscă.",
+        "text": "Finn, Pip, Ned și Wil. Patru băieți zdrențăroși, cu arcuri strâmbe. Doar unul e drept și nou: al lui Ned. Wil trage primul, cum a promis.",
         "urmator": "f4"
       },
       "f4": {
@@ -22963,7 +23292,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Nu mai sunt nicăieri. Doar săgețile înfipte în scuturi și în carne arată că au fost acolo."
+        "text": "Nu mai sunt nicăieri. Doar săgețile înfipte în scuturi și în carne arată că au fost acolo. Și, o clipă, mi se pare că-l aud pe Finn râzând, undeva pe un acoperiș."
       }
     }
   },

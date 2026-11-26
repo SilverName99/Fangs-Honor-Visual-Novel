@@ -864,7 +864,8 @@
               "finn_jarek": "promis"
             }
           },
-          "ce": "cât e misiunea „Ultima treabă pentru Jarek” (după „Ai promis”), îl așteaptă pe Vale în fața casei, ca să meargă împreună la Jarek"
+          "ce": "cât e misiunea „Ultima treabă pentru Jarek” (după „Ai promis”), îl așteaptă pe Vale în fața casei, ca să meargă împreună la Jarek (ales de Claude, P64: cu sprite-ul de zi, fără sacul de la ladă: merge să spună „nu”, nu la furat)",
+          "sprite": "ziua"
         },
         {
           "de": "23:00",
