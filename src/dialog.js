@@ -366,10 +366,13 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
     caseta.classList.toggle('gand', !!nod.gand);
 
     let vizibile = (nod.alegeri || []).filter((a) => verificaConditii(a.conditii));
-    // Ultima replică a unei ramuri: acum urcă pe ecran ce a primit Vale, dacă tocmai a terminat o misiune
-    if (!vizibile.length && !nod.urmator) laCapatulRamurii?.();
+    // Ultima replică a unei ramuri: acum urcă pe ecran ce a primit Vale, dacă tocmai a terminat o misiune.
+    // Un „urmator” cu condiții din care nu se potrivește niciuna e tot capăt de ramură (Bram trage zăvorul doar la
+    // fierărie): altfel discuția se închidea, fără meniu
+    const capat = !vizibile.length && !urmatorul(nod);
+    if (capat) laCapatulRamurii?.();
     // La capătul unei ramuri (fără alegeri și fără continuare), meniul personajului apare direct sub replică
-    if (activ.dialog.meniu && !vizibile.length && !nod.urmator && !nod.sfarsit) vizibile = meniu();
+    if (activ.dialog.meniu && capat && !nod.sfarsit) vizibile = meniu();
     puneAlegeri(vizibile);
   }
 

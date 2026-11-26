@@ -6728,6 +6728,24 @@
         }
       },
       {
+        "_nota": "Decis de autor (P33): o dată, după toiag, la fierărie: Bram întreabă ce a zis Elian de oțel.",
+        "nod": "otel_b1",
+        "conditii": {
+          "stare": {
+            "otel_spus": "da"
+          },
+          "nuStare": {
+            "otel_raspuns": "da"
+          },
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          }
+        }
+      },
+      {
         "nod": "cuf_salut",
         "conditii": {
           "misiune": {
@@ -6770,6 +6788,49 @@
             ]
           }
         }
+      },
+      {
+        "_nota": "Decis de autor (P36): de la 8/10, la fierărie (după „O zi la forjă”: „Știi deja cum”).",
+        "conditii": {
+          "relatie": {
+            "fierar": {
+              "min": 8
+            }
+          },
+          "misiune": {
+            "bram_forja": "terminata"
+          },
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          }
+        },
+        "aleator": [
+          "salut_cald",
+          "salut_8"
+        ]
+      },
+      {
+        "_nota": "Decis de autor (P36): de la 5/10, la fierărie, tonul se încălzește.",
+        "conditii": {
+          "relatie": {
+            "fierar": {
+              "min": 5
+            }
+          },
+          "personajIn": {
+            "fierar": [
+              "fierar",
+              "fierar/interior"
+            ]
+          }
+        },
+        "aleator": [
+          "salut_cald",
+          "salut1"
+        ]
       },
       {
         "aleator": [
@@ -6819,6 +6880,17 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Vale. Dacă ai venit după ceva, spune. Dacă nu, ține-te departe de foc."
+      },
+      "salut_cald": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "Vale! Vino încoace, băiete, că focul e aprins. Pentru tine e mereu aprins.",
+        "_nota": "CIORNĂ (Claude), P36."
+      },
+      "salut_8": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "A venit fiul lui Edwin. Stai la foale, dacă tot ești aici. Știi deja cum."
       },
       "f_orci_a": {
         "vorbitor": "fierar",
@@ -6885,7 +6957,7 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Fierul meu! Cum l-ai luat de la ei? Nu, nu-mi spune. Mai bine nu știu.",
-        "urmator": "fier_predare_b",
+        "urmator": "fier_predare_a",
         "efecte": {
           "daObiect": "fier_bram",
           "bani": 15,
@@ -6897,10 +6969,38 @@
           }
         }
       },
+      "fier_predare_a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Bram ține fierul în brațe ca pe un copil găsit și îl numără din ochi, bucată cu bucată.",
+        "urmator": "fier_predare_b",
+        "_nota": "CIORNĂ (Claude), P40."
+      },
       "fier_predare_b": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Ia banii ăștia. Și de azi încolo ușa mea e deschisă pentru tine. Intră când vrei: am și marfă de vândut."
+        "text": "Ia banii ăștia. Și de azi încolo ușa mea e deschisă pentru tine. Intră când vrei: am și marfă de vândut.",
+        "urmator": [
+          {
+            "conditii": {
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            },
+            "nod": "fier_predare_c"
+          }
+        ]
+      },
+      "fier_predare_c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Bram trage zăvorul. Dinăuntru vine miros de cărbune și de ulei. De când au venit orcii, nu mulți au mai intrat aici.",
+        "_nota": "Doar la fierărie (la tavernă n-are ce zăvor să tragă)."
       },
       "foale_oferta": {
         "vorbitor": "vale",
@@ -7219,7 +7319,17 @@
       "cer_predare": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Bune. Ruginite, dar bune. Le bat azi, să se răcească până diseară.",
+        "text": [
+          {
+            "conditii": {
+              "ora": {
+                "min": "18:00"
+              }
+            },
+            "text": "Bune. Ruginite, dar bune. Le bat acum, cât e focul încins."
+          },
+          "Bune. Ruginite, dar bune. Le bat azi, să se răcească până diseară."
+        ],
         "urmator": "cer_p2"
       },
       "cer_p2": {
@@ -7672,7 +7782,51 @@
         "vorbitor": "fierar",
         "emotie": "suparat",
         "text": "Și uite ce-au făcut din ea.",
-        "urmator": "plat_o7"
+        "urmator": [
+          {
+            "conditii": {
+              "misiune": {
+                "bram_cufar": "terminata"
+              },
+              "nuStare": {
+                "sabia_spusa_bram": "da"
+              }
+            },
+            "nod": "plat_s1"
+          },
+          "plat_o7"
+        ]
+      },
+      "plat_s1": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "Și sabia lui, domnule Bram... era tot la mama. N-au luat-o orcii.",
+        "urmator": "plat_s2",
+        "_nota": "CIORNĂ (Claude). Decis de autor (P34): în ordinea „cufărul, apoi lada”, Vale îi spune lui Bram la platoșă unde a fost sabia."
+      },
+      "plat_s2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Bram rămâne cu degetul pe crăpătură. Umerii lui mari se lasă încet.",
+        "urmator": "plat_s3"
+      },
+      "plat_s3": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Am scormonit iarba o dimineață întreagă după ea. Și ea era acasă, la Miriam.",
+        "urmator": "plat_s4"
+      },
+      "plat_s4": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Bine. Mâinile ei au păzit-o mai bine decât ale mele.",
+        "urmator": "plat_o7",
+        "efecte": {
+          "stare": {
+            "sabia_spusa_bram": "da"
+          }
+        }
       },
       "plat_o7": {
         "vorbitor": "vale",
@@ -7825,7 +7979,7 @@
       "plat_g7": {
         "vorbitor": "fierar",
         "emotie": "normal",
-        "text": "Nu-mi mulțumi. Ai grijă de ea. Și ea o să aibă grijă de tine.",
+        "text": "Nu-mi mulțumi mie. Poart-o drept, cum o purta el.",
         "urmator": "plat_m1"
       },
       "plat_da": {
@@ -7898,6 +8052,36 @@
         "vorbitor": "fierar",
         "emotie": "normal",
         "text": "Ți-am pus deoparte un ciocan. Cine bate fierul lângă mine are dreptul la el."
+      },
+      "otel_b1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "L-a primit Fratele Elian? ...Zi-mi drept, băiete. A fost bun oțelul?",
+        "urmator": "otel_b2",
+        "_nota": "CIORNĂ (Claude), P33."
+      },
+      "otel_b2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "A zis că îi simte pe toți. Pe toți douăzeci și doi.",
+        "urmator": "otel_b3"
+      },
+      "otel_b3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Bram întoarce capul spre foc. Îl aud cum înghite.",
+        "urmator": "otel_b4"
+      },
+      "otel_b4": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Atunci n-am stricat nimic.",
+        "efecte": {
+          "stare": {
+            "otel_raspuns": "da"
+          }
+        }
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -18214,12 +18398,24 @@
         "emotie": "normal",
         "text": "Sub biserică, în încăperea strâmtă, Elian desface pânza și ține toiagul în lumina care îi iese din palme. Își trece degetele peste oțel, încet, ca peste o carte pe care o citește cu mâna.",
         "imagine": "events/toiag_cristal_1.png",
-        "urmator": "k2"
+        "urmator": "k1b"
+      },
+      "k1b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Bram zice că oțelul e bun. Că l-au ținut în mână oameni buni.",
+        "urmator": "k2",
+        "efecte": {
+          "stare": {
+            "otel_spus": "da"
+          }
+        },
+        "_nota": "CIORNĂ (Claude). Decis de autor (P33): Vale îi duce lui Elian vorbele lui Bram, apoi îi duce lui Bram răspunsul."
       },
       "k2": {
         "vorbitor": "mag",
         "emotie": "trist",
-        "text": "Oțelul e bun. Îi simt pe toți, Vale. Douăzeci și doi.",
+        "text": "Știu. Îi simt pe toți, Vale. Douăzeci și doi.",
         "urmator": "k3"
       },
       "k3": {
