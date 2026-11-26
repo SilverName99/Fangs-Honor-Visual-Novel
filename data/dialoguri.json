@@ -7422,7 +7422,7 @@
       "prezentare_final": {
         "vorbitor": "mag",
         "emotie": "zambet",
-        "text": "Știu. Se roagă pentru tatăl tău. Și pentru tine, cred. Spune-i că lumânarea ei arde mereu cel mai frumos."
+        "text": "Știu. Se roagă pentru tatăl tău. Și pentru tine, cred. Spune-i că rugăciunea ei luminează biserica mai frumos decât orice lumânare."
       },
       "lumina": {
         "vorbitor": "mag",
@@ -7452,7 +7452,7 @@
       "e_lumina_a": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Bine, slavă cerului. Lumânările ard, doar oamenii vin tot mai rar.",
+        "text": "Bine, slavă cerului. Lumânări n-avem mai deloc, iar oamenii vin tot mai rar.",
         "urmator": "e_lumina_b"
       },
       "e_lumina_b": {
@@ -7559,6 +7559,11 @@
         "emotie": "zambet",
         "text": "Burta încă mă doare când râd. Dar cărțile sunt la locul lor. Și asta contează."
       },
+      "e_carti_vindecat": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Cărțile sunt la locul lor, Vale. Iar burta nu mă mai doare nici când râd."
+      },
       "e_carti_nu": {
         "vorbitor": "mag",
         "emotie": "normal",
@@ -7570,6 +7575,11 @@
         "text": "Ca orice mag de sat, Vale: aprind lumânări, leg răni și binecuvântez semănăturile.",
         "urmator": "e_mag_b",
         "_nota": "CIORNĂ (Claude), după lumea nouă (decis de autor: sătenii știu de dragoni, de magie și de cristal, dar n-au văzut niciodată un dragon)."
+      },
+      "e_mag_dupa": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Ca orice mag de sat, Vale: aprind lumânări, leg răni. Și tac. Mai ales tac."
       },
       "e_mag_b": {
         "vorbitor": "vale",
@@ -7611,7 +7621,7 @@
       "sec_o3": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Bram are în cufăr douăzeci și două de săbii. Ale celor căzuți primăvara trecută. Le-a strâns de pe câmp a doua zi după bătălie.",
+        "text": "Bram are în cufăr douăzeci și două de săbii. Ale celor căzuți primăvara trecută. Le-a strâns de pe câmp a doua zi după bătălie. A tatei nu e printre ele.",
         "urmator": "sec_o4"
       },
       "sec_o4": {
@@ -7643,13 +7653,13 @@
       "sec_o8": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Am o idee, Vale. Una singură. Dar ca s-o înțelegi, trebuie să-ți arăt ceva ce n-a mai văzut nimeni din satul ăsta.",
+        "text": "Am o idee, Vale. Una singură. Dar ca s-o înțelegi, trebuie să-ți arăt ceva ce n-am arătat nimănui din satul ăsta.",
         "urmator": "sec_o9"
       },
       "sec_o9": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Și după ce vezi, nu mai poți să nu fi văzut. Te întreb o dată, și numai o dată: vrei să vezi?",
+        "text": "Și după ce vezi, nu mai poți să nu fi văzut. Gândește-te bine: vrei să vezi?",
         "alegeri": [
           {
             "text": "Vreau.",
@@ -7670,7 +7680,39 @@
       "sec_nu": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Înțeleg. Cartea mea nu pleacă nicăieri. Nici eu."
+        "text": "Înțeleg. Cartea mea nu pleacă nicăieri. Nici eu.",
+        "efecte": {
+          "stare": {
+            "secret_amanat": "da"
+          }
+        }
+      },
+      "sec_din_nou": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "M-am gândit la ce mi-ai spus, frate Elian.",
+        "urmator": "sec_din_nou2"
+      },
+      "sec_din_nou2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Și? Vrei să vezi?",
+        "alegeri": [
+          {
+            "text": "Vreau.",
+            "inchide": true,
+            "efecte": {
+              "misiune": {
+                "elian_secret": "inceputa"
+              },
+              "eveniment": "elian_secret"
+            }
+          },
+          {
+            "text": "Nu încă, frate Elian.",
+            "spre": "sec_nu"
+          }
+        ]
       },
       "e_dupa_secret": {
         "vorbitor": "mag",
@@ -7681,6 +7723,11 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Întâi Bram, Vale. Și jurământul lui."
+      },
+      "tg_e_jurat": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Bram a jurat? Atunci lasă-l să lucreze. Oțelul bun nu se grăbește."
       },
       "tg_e1": {
         "vorbitor": "vale",
@@ -7738,7 +7785,7 @@
       "lum_o3": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Floarea se deschide doar la apus, în pădure. Iar eu nu pot lăsa biserica seara: orcii se uită la mine mai atent decât crezi.",
+        "text": "Floarea se deschide doar la apus, în pădure. La o bolnavă, un preot mai trece neîntrebat. Dar în pădure, după apus? Orcii s-ar întreba ce caut acolo. Se uită la mine mai atent decât crezi.",
         "urmator": "lum_o4"
       },
       "lum_o4": {
@@ -7889,7 +7936,18 @@
     "meniu": true,
     "vorbeste": [
       {
-        "nod": "e_mag_a"
+        "nod": "e_mag_a",
+        "conditii": {
+          "nu": {
+            "existaStare": "lumina_padure"
+          }
+        }
+      },
+      {
+        "nod": "e_mag_dupa",
+        "conditii": {
+          "existaStare": "elian_secret"
+        }
       },
       {
         "nod": "e_lumina_a"
@@ -7905,6 +7963,22 @@
         "conditii": {
           "stare": {
             "carti_elian": "ascunse"
+          },
+          "nu": {
+            "misiuneTerminata": {
+              "elian_carti": 4
+            }
+          }
+        }
+      },
+      {
+        "nod": "e_carti_vindecat",
+        "conditii": {
+          "stare": {
+            "carti_elian": "ascunse"
+          },
+          "misiuneTerminata": {
+            "elian_carti": 4
           }
         }
       },
@@ -7930,6 +8004,25 @@
           "misiune": {
             "elian_toiag": "inceputa"
           },
+          "nu": {
+            "oricare": [
+              {
+                "existaStare": "toiag_batut"
+              },
+              {
+                "existaStare": "toiag_jurat"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nod": "tg_e_jurat",
+        "conditii": {
+          "misiune": {
+            "elian_toiag": "inceputa"
+          },
+          "existaStare": "toiag_jurat",
           "nu": {
             "existaStare": "toiag_batut"
           }
@@ -16506,6 +16599,45 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Lumină, Vale. Doar lumină.",
+        "urmator": "s10a"
+      },
+      "s10a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "pasarea_vindecata"
+            },
+            "text": "Am mai văzut-o. În pădure, în noaptea cu lupii: razele acelea și iarba arsă în jurul nostru. Și înainte, între degetele tale, când a zburat vrabia Linei."
+          },
+          "Am mai văzut-o. În pădure, în noaptea cu lupii. Razele acelea... și iarba arsă în jurul nostru."
+        ],
+        "urmator": "s10b"
+      },
+      "s10b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian nu se uită la mine. Se uită la palmele lui, ca la ceva ce nu e de tot al lui.",
+        "urmator": "s10c"
+      },
+      "s10c": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Eu te-am trimis în pădure. Când s-a lăsat noaptea, am venit după tine. Am ajuns în ultima clipă. Iartă-mă că te-am mințit, Vale.",
+        "urmator": "s10d"
+      },
+      "s10d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Mi-ai salvat viața. Și apoi mi-ai spus că n-a fost nimic.",
+        "urmator": "s10e"
+      },
+      "s10e": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pentru că un lucru văzut de doi nu mai e o taină. Iar de taina asta atârnă tot satul.",
         "urmator": "s11"
       },
       "s11": {
@@ -16665,6 +16797,12 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Spune-i lui Bram. Doar lui. Dar întâi pune-l să jure că nu suflă o vorbă despre ce ai văzut aici. Nici lui Agnes, nici lui Roderick. Nici mamei tale.",
+        "urmator": "s35b"
+      },
+      "s35b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nimănui altcuiva, frate Elian. Doar lui Bram, și numai după ce jură. Jur pe numele tatei.",
         "urmator": "s36"
       },
       "s36": {
@@ -17212,7 +17350,7 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Soarele apune când ajung în pădure. Luminița-nopții își deschide florile galbene, una câte una, în iarba de sub stejari, ca niște lumânări mici.",
+        "text": "Soarele apune peste pădure. Luminița-nopții își deschide florile galbene, una câte una, în iarba de sub stejari, ca niște lumânări mici.",
         "imagine": "events/lumina_padure_1.png",
         "urmator": "l2"
       },

@@ -3113,14 +3113,14 @@
           "conditii": {
             "existaStare": "lumina_padure"
           },
-          "text": "CIORNĂ: Seara, în pădure, m-au încercuit lupii. M-au mușcat, am căzut, apoi a venit o lumină orbitoare și lupii au fugit. M-am trezit la marginea pădurii, cu rănile închise, cu Fratele Elian lângă mine, într-un cerc de iarbă arsă. Zice că m-a găsit așa. Dar palmele încă îi luceau.",
-          "text_en": "That evening, in the forest, wolves surrounded me. They bit me and I fell. Then came a blinding light, and the wolves fled. I woke at the edge of the forest with my wounds closed and Brother Elian beside me, in a circle of burnt grass. He says he found me like that. But his palms were still glowing."
+          "text": "CIORNĂ: Seara, în pădure, m-au încercuit lupii. M-au mușcat, am căzut, iar printre gene am văzut niște raze albe-aurii, fierbinți, și lupii au fugit schelălăind. M-am trezit la marginea pădurii, cu rănile închise, cu Fratele Elian lângă mine, într-un cerc de iarbă arsă. Zice că m-a găsit așa. Dar palmele încă îi luceau.",
+          "text_en": "That evening, in the forest, wolves surrounded me. They bit me and I fell, and through my lashes I saw thin white-gold rays, hot as fire, and the wolves fled yelping. I woke at the edge of the forest with my wounds closed and Brother Elian beside me, in a circle of burnt grass. He says he found me like that. But his palms were still glowing."
         },
-        "CIORNĂ: Vine iarna, iar la Marginea copiii tușesc nopțile. Fratele Elian face din luminița-nopții un ceai care le alină tusea. Floarea se deschide doar la apus, în pădure, și el nu poate lăsa biserica. I-am promis trei flori."
+        "CIORNĂ: Vine iarna, iar la Marginea copiii tușesc nopțile. Fratele Elian face din luminița-nopții un ceai care le alină tusea. Floarea se deschide doar la apus, în pădure, iar pe el orcii nu trebuie să-l vadă în pădure după apus. I-am promis trei flori."
       ],
       "descriere_en": [
         null,
-        "Winter is on its way, and at the Edge the children cough through the nights. Brother Elian makes a tea from evening primrose that soothes their coughs. The flower opens only at sunset, in the forest, and he can’t leave the church. I promised him three flowers."
+        "Winter is on its way, and at the Edge the children cough through the nights. Brother Elian makes a tea from evening primrose that soothes their coughs. The flower opens only at sunset, in the forest, and the orcs mustn’t see him in the forest after dark. I promised him three flowers."
       ],
       "oferta": {
         "_nota": "Decis de autor: după „Pasărea Linei” (oricum s-a terminat); nu se poate refuza.",
@@ -3181,7 +3181,7 @@
           }
         }
       },
-      "_nota": "Decis de autor: Elian îi cere luminița-nopții; seara, în pădure, lupii, o lumină orbitoare, trezirea cu Elian lângă el, mâinile ascunse, iarba arsă în cerc; nu se poate refuza; +1 Elian. După ea apare „Cufărul” lui Bram."
+      "_nota": "Decis de autor: Elian îi cere luminița-nopții; seara, în pădure, lupii, raze arzătoare, abia văzute, trezirea cu Elian lângă el, mâinile ascunse, iarba arsă în cerc; nu se poate refuza; +1 Elian. După ea apare „Cufărul” lui Bram."
     },
     {
       "id": "elian_secret",
@@ -3207,7 +3207,17 @@
         "_nota": "Decis de autor: după „Cufărul”, cât Elian citește afară (14–23).",
         "text": "Frate Elian, am nevoie de un sfat.",
         "text_en": "Brother Elian, I need some advice.",
-        "nod": "sec_o1",
+        "nod": [
+          {
+            "nod": "sec_din_nou",
+            "conditii": {
+              "existaStare": "secret_amanat"
+            }
+          },
+          {
+            "nod": "sec_o1"
+          }
+        ],
         "conditii": {
           "misiune": {
             "bram_cufar": "terminata"

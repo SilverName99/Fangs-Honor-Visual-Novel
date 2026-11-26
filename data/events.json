@@ -1778,7 +1778,8 @@
         }
       },
       "dialog": "lumina_padure",
-      "_nota": "Decis de autor: seara, în pădure, lupii, lumina, trezirea cu Elian. Ales de Claude: pornește când ajunge Vale în pădure seara (18–23), cât e misiunea; 20 stamina; fără luptă. Decis de autor: după ea, Vale e noaptea în fața casei (ora 00:30, aleasă de Claude: pornind între 18 și 23, e mereu noaptea de după)."
+      "_nota": "Decis de autor: seara, în pădure, lupii, lumina, trezirea cu Elian. Ales de Claude: pornește când ajunge Vale în pădure seara (18–23), cât e misiunea; 20 stamina; fără luptă. Decis de autor: după ea, Vale e noaptea în fața casei (ora 00:30, aleasă de Claude: pornind între 18 și 23, e mereu noaptea de după). Pornește și dacă Vale e deja în pădure când trece de 18:00 (după „Adună lemne”, o vânătoare sau „Caută luminița-nopții”: siPeLoc).",
+      "siPeLoc": true
     },
     {
       "id": "inel_colector",
