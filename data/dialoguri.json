@@ -8228,6 +8228,18 @@
         }
       },
       {
+        "_nota": "Decis de autor (P47): după „Cărțile” refuzate, o dată, un salut care arată că ține minte.",
+        "nod": "salut_refuz",
+        "conditii": {
+          "stare": {
+            "carti_elian": "refuzat"
+          },
+          "nuStare": {
+            "elian_salut_refuz": "da"
+          }
+        }
+      },
+      {
         "aleator": [
           "salut1",
           "salut2"
@@ -8280,6 +8292,17 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Pace ție, Vale. Intră, aici e loc pentru toată lumea."
+      },
+      "salut_refuz": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Pace ție, Vale. Cărțile sunt bine. Nu te mai gândi la ele.",
+        "efecte": {
+          "stare": {
+            "elian_salut_refuz": "da"
+          }
+        },
+        "_nota": "CIORNĂ (Claude), P47."
       },
       "e_lumina_a": {
         "vorbitor": "mag",
@@ -8670,7 +8693,14 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "text": "Lupii nu fug de un fulger. Și rănile nu se închid singure peste noapte.",
-        "urmator": "lum_q5"
+        "urmator": "lum_q4b"
+      },
+      "lum_q4b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și mi-ai spus că, în pădure, după apus, orcii s-ar întreba ce cauți acolo. Totuși, erai acolo. Cu mâinile ascunse în mâneci.",
+        "urmator": "lum_q5",
+        "_nota": "CIORNĂ (Claude), P45."
       },
       "lum_q5": {
         "vorbitor": "vale",
@@ -8699,6 +8729,17 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Ceaiul a ajuns la Marginea. Copiii dorm. Tu ai grijă pe unde umbli noaptea."
+      },
+      "e_marta": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Am trecut ieri pe la Marta. S-a ridicat de pe scaun să mă primească. Iar Lina mi-a arătat cum ține lingura, ca pe o sabie.",
+        "_nota": "CIORNĂ (Claude), P46."
+      },
+      "e_roderick": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Roderick vine în fiecare zi la altar și nu mai miroase a bere. Se roagă altfel acum, Vale. Ca un om care crede că e auzit."
       },
       "groapa_e1": {
         "vorbitor": "vale",
@@ -8768,6 +8809,361 @@
         "vorbitor": "mag",
         "emotie": "zambet",
         "text": "Lumânările ard altfel când intri tu. Nu-i spune nimănui că am zis asta."
+      },
+      "vise_e0": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Spune, Vale. Încet. Bine că ai venit întâi la mine."
+          },
+          "Spune, Vale. Visele grele se duc mai ușor când le spui cuiva."
+        ],
+        "urmator": [
+          {
+            "conditii": {
+              "stare": {
+                "vis_1": "vazut"
+              },
+              "nuStare": {
+                "vis_1_elian": "da"
+              }
+            },
+            "nod": "vise_1a"
+          },
+          {
+            "conditii": {
+              "stare": {
+                "vis_2": "vazut"
+              },
+              "nuStare": {
+                "vis_2_elian": "da"
+              },
+              "nu": {
+                "existaStare": "visele_elian"
+              }
+            },
+            "nod": "vise_2a"
+          },
+          {
+            "conditii": {
+              "stare": {
+                "vis_3": "vazut"
+              },
+              "nuStare": {
+                "vis_3_elian": "da"
+              }
+            },
+            "nod": "vise_3a"
+          },
+          {
+            "conditii": {
+              "stare": {
+                "vis_4": "vazut"
+              },
+              "nuStare": {
+                "vis_4_elian": "da"
+              }
+            },
+            "nod": "vise_4a"
+          },
+          {
+            "conditii": {
+              "misiune": {
+                "roderick_drumul": "terminata"
+              },
+              "nuStare": {
+                "vis_5_elian": "da"
+              }
+            },
+            "nod": "vise_5a"
+          }
+        ],
+        "_nota": "CIORNĂ (Claude), P41: visele spuse lui Elian, primul nespus încă."
+      },
+      "vise_1a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am visat că zbor. Adică nu eu: ceva uriaș zbura, iar eu eram pe el. Îi simțeam inima bătând prin palme, ca o tobă de război.",
+        "urmator": "vise_1b"
+      },
+      "vise_1b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Sub mâini aveam ceva tare și cald, neted ca un solz. Iar în piept, o căldură, ca un al doilea foc. Care nu era al meu.",
+        "urmator": "vise_1c"
+      },
+      "vise_1c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Mâna lui Elian se duce iar la piept, sub haină. De data asta n-o mai ascunde."
+          },
+          "Elian mă ascultă fără să clipească. Mâna i se duce încet la piept, sub haină, și rămâne acolo."
+        ],
+        "urmator": "vise_1d"
+      },
+      "vise_1d": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Și căldura aceea... o mai simți și acum, treaz?",
+        "urmator": "vise_1e"
+      },
+      "vise_1e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Doar când m-am trezit. Câteva clipe. Apoi s-a dus.",
+        "urmator": "vise_1f"
+      },
+      "vise_1f": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Bea ceaiul seara, cum ți-am zis. Și dacă se întoarce, vino."
+          },
+          "Visele cu zbor sunt vechi cât lumea, Vale. Le visează copiii și soldații întorși acasă: sufletul vrea să scape de jos, de unde doare."
+        ],
+        "urmator": "vise_1g"
+      },
+      "vise_1g": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Vorbește blând, ca la slujbă. Dar se uită la mâinile mele mai mult decât ar trebui pentru un vis cu vânt.",
+        "efecte": {
+          "stare": {
+            "vis_1_elian": "da"
+          }
+        }
+      },
+      "vise_2a": {
+        "vorbitor": "vale",
+        "emotie": "trist",
+        "text": "L-am visat pe tata. Bătălia de la copac, cu florile căzând peste ei ca zăpada. L-am văzut cum cade.",
+        "urmator": "vise_2b"
+      },
+      "vise_2b": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Visele cu cei pe care i-am pierdut sunt cele mai grele, Vale. Nu le poți opri. Poți doar să nu le duci singur.",
+        "urmator": "vise_2c"
+      },
+      "vise_2c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "La sfârșit, în locul ochiului lui s-a deschis altul. Uriaș, auriu, cu pupila tăiată ca de șarpe. Și se uita la mine.",
+        "urmator": "vise_2d"
+      },
+      "vise_2d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Elian tace. Mâna i se duce încet la piept, sub haină, și rămâne acolo, strânsă.",
+        "urmator": "vise_2e"
+      },
+      "vise_2e": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Mintea pune ce poate peste o durere mare. Roagă-te pentru tatăl tău înainte de culcare. Și dacă visul se întoarce... spune-mi.",
+        "efecte": {
+          "stare": {
+            "vis_2_elian": "da"
+          }
+        }
+      },
+      "vise_3a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am visat drumul mare, noaptea. Torțe înfipte în pământ și o cușcă, cu o fiară înăuntru.",
+        "urmator": "vise_3b"
+      },
+      "vise_3b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Apoi a venit o umbră. Umbra unor aripi, peste tot drumul. Fiara din cușcă tremura de ea.",
+        "urmator": "vise_3c"
+      },
+      "vise_3c": {
+        "vorbitor": "mag",
+        "emotie": "speriat",
+        "text": "...Și tu?",
+        "urmator": "vise_3d"
+      },
+      "vise_3d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Eu nu.",
+        "urmator": "vise_3e"
+      },
+      "vise_3e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Elian se face alb la față, ca atunci, cu mama."
+          },
+          "Elian se face alb la față, ca peretele din spatele lui."
+        ],
+        "urmator": "vise_3f"
+      },
+      "vise_3f": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Bea ceaiul, Vale. Și nu spune nimănui."
+          },
+          "Nu spune nimănui, Vale. Oamenii se sperie ușor de ce nu înțeleg."
+        ],
+        "efecte": {
+          "stare": {
+            "vis_3_elian": "da"
+          }
+        }
+      },
+      "vise_4a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am visat cimitirul. Pe tata și pe ceilalți, toți douăzeci și trei. Se ridicau din morminte și plecau spre o crăpătură în pământ.",
+        "urmator": "vise_4b"
+      },
+      "vise_4b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "La margine, tata s-a întors și mi-a vorbit într-o limbă veche. Și l-am înțeles.",
+        "urmator": "vise_4c"
+      },
+      "vise_4c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Elian nu spune nimic. Își împreunează mâinile atât de strâns, că i se albesc degetele.",
+        "urmator": "vise_4d"
+      },
+      "vise_4d": {
+        "vorbitor": "mag",
+        "emotie": "speriat",
+        "text": "Ce ți-a spus?",
+        "urmator": "vise_4e"
+      },
+      "vise_4e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "„Încă nu, Vale. Dar te așteaptă.”",
+        "urmator": "vise_4f"
+      },
+      "vise_4f": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "Bine că ai venit întâi la mine. Dacă visul se mai întoarce, vino. Oricând. Chiar și noaptea."
+          },
+          "Dacă visul se mai întoarce, vino la mine. Oricând. Chiar și noaptea."
+        ],
+        "efecte": {
+          "stare": {
+            "vis_4_elian": "da"
+          }
+        }
+      },
+      "vise_5a": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "visele_elian"
+            },
+            "text": "I-am promis unchiului că tac. Dar și lui Elian i-am promis că vin întâi la el. Îi spun visul. Doar visul."
+          },
+          "I-am promis unchiului că tac. Îi spun doar visul. Nu și unde l-am visat."
+        ],
+        "urmator": "vise_5b"
+      },
+      "vise_5b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Am visat o poartă. Un arc de piatră neagră, plin de semne, cu un craniu săpat în vârf. Și dincolo de el, o ceață argintie.",
+        "urmator": "vise_5c"
+      },
+      "vise_5c": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Elian ridică încet capul. Nu mai clipește.",
+        "urmator": "vise_5d"
+      },
+      "vise_5d": {
+        "vorbitor": "mag",
+        "emotie": "speriat",
+        "text": "Ai mai văzut-o vreodată? Treaz, vreau să zic. Într-o carte, pe vreun zid?",
+        "urmator": "vise_5e"
+      },
+      "vise_5e": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Niciodată. Și un glas m-a strigat pe nume. Mi-a zis să mă întorc acasă, că oamenii mei au nevoie de mine.",
+        "urmator": "vise_5f"
+      },
+      "vise_5f": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Restul nu i-l spun. Nici râpa, nici drumul, nici ce va fi la douăzeci și șase de ierni.",
+        "urmator": "vise_5g"
+      },
+      "vise_5g": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Atât?",
+        "urmator": "vise_5h"
+      },
+      "vise_5h": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Atât.",
+        "urmator": "vise_5i"
+      },
+      "vise_5i": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Elian se uită lung la mine. Știe că nu i-am spus tot. Și nu mă întreabă.",
+        "urmator": "vise_5j"
+      },
+      "vise_5j": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Bine. Ce nu poți spune, nu spune. Dar nu purta singur ce ți-a spus glasul, Vale. Când o să poți, ușa bisericii e deschisă.",
+        "efecte": {
+          "stare": {
+            "vis_5_elian": "da"
+          }
+        }
       }
     },
     "meniu": true,
@@ -8882,6 +9278,23 @@
         }
       },
       {
+        "_nota": "Decis de autor (P46).",
+        "nod": "e_marta",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_mama": 1
+          }
+        }
+      },
+      {
+        "nod": "e_roderick",
+        "conditii": {
+          "stare": {
+            "roderick_treaz": "da"
+          }
+        }
+      },
+      {
         "_nota": "Decis de autor (P16): o replică la 8/10. Ales de Claude: și după „Vorbele din somn”, ca Elian să nu spună mai mult decât bănuiește.",
         "nod": "e_opt",
         "conditii": {
@@ -8909,6 +9322,58 @@
           "magazin": "mag"
         },
         "spre": null
+      },
+      {
+        "_nota": "Cerut de autor (P41): după fiecare vis (1–5), Vale poate merge la Elian să-i povestească visul, câte o dată; Elian ascultă și pălește tot mai tare, fără să spună nimic despre trezire. Visul al doilea, doar înainte de „Vorbele din somn” (acolo i-l spune oricum). Al cincilea (după „Drumul trezirii”): Vale îi spune doar visul, nu și drumul, cum i-a promis unchiului. Replicile sunt ciorne (Claude).",
+        "text": "Frate Elian... am avut un vis.",
+        "conditii": {
+          "oricare": [
+            {
+              "stare": {
+                "vis_1": "vazut"
+              },
+              "nuStare": {
+                "vis_1_elian": "da"
+              }
+            },
+            {
+              "stare": {
+                "vis_2": "vazut"
+              },
+              "nuStare": {
+                "vis_2_elian": "da"
+              },
+              "nu": {
+                "existaStare": "visele_elian"
+              }
+            },
+            {
+              "stare": {
+                "vis_3": "vazut"
+              },
+              "nuStare": {
+                "vis_3_elian": "da"
+              }
+            },
+            {
+              "stare": {
+                "vis_4": "vazut"
+              },
+              "nuStare": {
+                "vis_4_elian": "da"
+              }
+            },
+            {
+              "misiune": {
+                "roderick_drumul": "terminata"
+              },
+              "nuStare": {
+                "vis_5_elian": "da"
+              }
+            }
+          ]
+        },
+        "spre": "vise_e0"
       },
       {
         "_nota": "Decis de autor: misiunea „Fierul plugului”, cât Vale caută metal; doar Finn îl trimite la Jarek.",
@@ -18496,6 +18961,26 @@
         "gand": true,
         "emotie": "normal",
         "text": "Nu înțeleg. Nu înțeleg nimic. Dar strâng toiagul în mână și dau din cap.",
+        "urmator": "k14b"
+      },
+      "k14b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și tu? Mi-ai spus că, cu el, lumina ta e de zece ori mai puternică.",
+        "urmator": "k14c",
+        "_nota": "CIORNĂ (Claude), P44."
+      },
+      "k14c": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Atunci o să am grijă să n-am nevoie de ea. Un preot începător n-are nevoie de cristale, Vale.",
+        "urmator": "k14d"
+      },
+      "k14d": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "Glumește. Dar mâna i-a rămas o clipă întinsă spre toiag, ca după un lucru drag pe care tocmai l-a dat.",
         "urmator": "k15"
       },
       "k15": {
@@ -18652,7 +19137,12 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "În vis, fiara din cușcă tremura, ca Ember. De ce s-ar teme un dragon de alt dragon?"
+        "text": "În vis, fiara din cușcă tremura, ca Ember. De ce s-ar teme un dragon de alt dragon?",
+        "efecte": {
+          "stare": {
+            "vis_3": "vazut"
+          }
+        }
       }
     }
   },
@@ -19658,7 +20148,15 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Elian tace. Mâna i se duce încet la piept, sub haină, și rămâne acolo, strânsă.",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "vis_2_elian"
+            },
+            "text": "Elian tace. Mâna i se duce iar la piept, sub haină, ca atunci când i-am spus de ochi."
+          },
+          "Elian tace. Mâna i se duce încet la piept, sub haină, și rămâne acolo, strânsă."
+        ],
         "urmator": "v5"
       },
       "v5": {
@@ -19702,13 +20200,29 @@
       "v11": {
         "vorbitor": "mag",
         "emotie": "normal",
-        "text": "Vale. Ce vezi în visele acelea?",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "vis_2_elian"
+            },
+            "text": "Vale. Ochiul de care mi-ai spus... îl mai vezi?"
+          },
+          "Vale. Ce vezi în visele acelea?"
+        ],
         "urmator": "v12"
       },
       "v12": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": "Pe tata. Bătălia de la copac. Iar la sfârșit... un ochi. Uriaș, cu pupila tăiată, ca de șarpe. Nu era al lui.",
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "vis_2_elian"
+            },
+            "text": "În fiecare noapte. La sfârșit, după tata. Uriaș, cu pupila tăiată, ca de șarpe. Și nu-i al lui."
+          },
+          "Pe tata. Bătălia de la copac. Iar la sfârșit... un ochi. Uriaș, cu pupila tăiată, ca de șarpe. Nu era al lui."
+        ],
         "urmator": "v13"
       },
       "v13": {
@@ -22693,7 +23207,23 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "Bea încet, Roderick. N-o să-ți ia durerea, dar o face destul de mică încât s-o poți duce.",
-        "urmator": "s13"
+        "urmator": "s12b"
+      },
+      "s12b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": [
+          {
+            "conditii": {
+              "existaStare": "elian_secret"
+            },
+            "text": "Când Elian îi pune palma pe frunte, sub degetele lui licărește ceva, abia văzut. Lumina de sub biserică. Unchiul nu deschide ochii, dar respiră mai rar."
+          },
+          "Elian îi pune palma pe frunte și stă așa multă vreme. Unchiul respiră mai rar."
+        ],
+        "urmator": "s13",
+        "_nota": "CIORNĂ (Claude). Decis de autor (P42): cine știe taina lui Elian vede că nu-l ajută doar cu ceai; lumina rămâne abia văzută."
       },
       "s13": {
         "vorbitor": "vale",

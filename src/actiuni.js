@@ -293,11 +293,12 @@ export function creeazaActiuni(parinte, joc) {
     );
   }
 
-  // Florile (altele decât planta bună) pe care le cere acum pasul unei misiuni în lucru („numara”), câte mai lipsesc,
-  // cel mult „maxCulese” la o căutare
+  // Florile pe care le cere acum pasul unei misiuni în lucru („numara”), câte mai lipsesc, cel mult „maxCulese” la o
+  // căutare. Și planta bună (decis de autor, P49): „Mama lui Finn” cere 3 luminițe, iar cu 2 pe cules trebuiau două
+  // culesuri; cerută de o misiune, Vale o culege cât îi lipsește, dar nu mai puțin decât „nFaraJoc”, ca înainte
   function floriCerute(a, buna) {
     const s = joc.stare;
-    const ids = new Set(a.plante.map((p) => p.id).filter((id) => id !== buna));
+    const ids = new Set(a.plante.map((p) => p.id));
     const lipsa = new Map();
     for (const m of listaMisiuni(joc.date)) {
       const p = s.misiuni[m.id] === 'inceputa' && m.pasi[pasul(s, m.id)];
@@ -307,7 +308,7 @@ export function creeazaActiuni(parinte, joc) {
     let loc = a.maxCulese || 4;
     const rez = [];
     for (const [id, n] of lipsa) {
-      const ia = Math.min(n, loc);
+      const ia = Math.min(id === buna ? Math.max(n, a.nFaraJoc ?? 2) : n, loc);
       if (ia > 0) rez.push([id, ia]);
       loc -= ia;
     }
@@ -333,8 +334,8 @@ export function creeazaActiuni(parinte, joc) {
     const buna = a.plante.find((p) => p.corecta).id;
     const primeste = (n) => joc.dupaActiune('', [{ tip: 'obiect', id: buna, n: n && joc.primeste(buna, n) }]);
     if (!miniJocuriPornite()) {
-      // Cu mini-jocurile oprite, Vale culege singur ce-i trebuie: întâi florile cerute acum de o misiune (alifia
-      // pentru Ember: păpădie, piciorul-cocoșului, mușețel), altfel planta bună, ca până acum
+      // Cu mini-jocurile oprite, Vale culege singur ce-i trebuie: florile cerute acum de o misiune (alifia pentru
+      // Ember: păpădie, piciorul-cocoșului, mușețel; luminițele pentru Marta), altfel planta bună, ca până acum
       const cerute = floriCerute(a, buna);
       if (cerute.length) return cuImagine(a, () => facut() && joc.dupaActiune('', cerute.map(([id, n]) => ({ tip: 'obiect', id, n: joc.primeste(id, n) }))), a.sunet);
       return cuImagine(a, () => facut() && primeste(a.nFaraJoc ?? 2), a.sunet);

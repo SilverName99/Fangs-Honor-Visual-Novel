@@ -451,8 +451,25 @@
             "obiect": "sunatoare",
             "n": 4
           },
-          "sfat": "Dimineața (5–10), în pădure: „Caută ierburi”. Culeg cel mult 4 plante odată, doar pe cele cu cinci petale în mănunchi.",
-          "sfat_en": "In the morning (5–10), in the forest: “Search for Herbs.” I can pick at most 4 plants at a time, and only the ones with clusters of five-petaled flowers.",
+          "sfat": [
+            {
+              "conditii": {
+                "nu": {
+                  "areLaEl": [
+                    "rucsac_panza",
+                    "rucsac_piele"
+                  ]
+                }
+              },
+              "text": "Dimineața (5–10), în pădure: „Caută ierburi”. Culeg cel mult 4 plante odată, doar pe cele cu cinci petale în mănunchi. (Florile cer loc în rucsac; rucsacul de pânză e în cufărul de acasă.)",
+              "text_en": "In the morning (5–10), in the forest: “Search for Herbs.” I can pick at most 4 plants at a time, and only the ones with clusters of five-petaled flowers. (Flowers need room in a backpack; the canvas backpack is in the chest at home.)"
+            },
+            "Dimineața (5–10), în pădure: „Caută ierburi”. Culeg cel mult 4 plante odată, doar pe cele cu cinci petale în mănunchi."
+          ],
+          "sfat_en": [
+            null,
+            "In the morning (5–10), in the forest: “Search for Herbs.” I can pick at most 4 plants at a time, and only the ones with clusters of five-petaled flowers."
+          ],
           "indiciu": {
             "text": "Cum arăta sunătoarea?",
             "text_en": "What did St. John’s wort look like again?",
