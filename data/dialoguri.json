@@ -26907,7 +26907,7 @@
     }
   },
   "elian_cimitir": {
-    "_nota": "CIORNĂ (Claude). Misiunea lui Elian „Lumina de la cimitir” (decis de autor): noaptea, la cimitir, peste 5 imagini: Vale stă de pază; Elian citește dintr-o carte, iar mâinile i se luminează; lumina crește (destulă, nu foarte multă) și mormintele încep să radieze; Elian închide cartea, împăcat; vine la Vale și îi spune că totul e în regulă. Ales de Claude: la mormântul lui Edwin, cristalul lui Elian pâlpâie, iar Elian tace (indiciu); replicile se schimbă după ce știe Vale (lumina din pădure, secretul lui Elian).",
+    "_nota": "CIORNĂ (Claude). Misiunea lui Elian „Lumina de la cimitir” (decis de autor): noaptea, la cimitir, peste 5 imagini: Vale stă de pază; Elian citește dintr-o carte, iar mâinile i se luminează; lumina crește (destulă, nu foarte multă) și mormintele încep să radieze; Elian închide cartea, împăcat; vine la Vale și îi spune că totul e în regulă. Decis de autor: fără cristalul lui Elian; la mormântul lui Edwin lumina e cea mai puternică. Replicile se schimbă după ce știe Vale (lumina din pădure, secretul lui Elian).",
     "grup": "Elian: lumina de la cimitir",
     "partener": "mag",
     "start": "c1",
@@ -26997,24 +26997,6 @@
         "gand": true,
         "emotie": "normal",
         "text": "Al treilea de la poartă e al tatei. Acolo, lumina e cea mai puternică.",
-        "urmator": "c12"
-      },
-      "c12": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": [
-          {
-            "conditii": {
-              "misiune": {
-                "elian_secret": "terminata"
-              }
-            },
-            "text": "La gâtul lui Elian, sub rasă, pâlpâie cristalul. Se aprinde și se stinge de trei ori, exact când lumina trece peste mormântul tatei."
-          },
-          "La gâtul lui Elian, sub rasă, pâlpâie ceva mic, ca un ciob de sticlă. Se aprinde și se stinge de trei ori, exact când lumina trece peste mormântul tatei."
-        ],
-        "_nota": "Ales de Claude: indiciu, ca în „Secretul lui Elian”, unde cristalul se aprinde lângă Vale.",
         "urmator": "c13"
       },
       "c13": {
@@ -27055,30 +27037,7 @@
       "c18": {
         "vorbitor": "vale",
         "emotie": "normal",
-        "text": [
-          {
-            "conditii": {
-              "misiune": {
-                "elian_secret": "terminata"
-              }
-            },
-            "text": "Frate Elian... cristalul. A pâlpâit la mormântul tatei. L-am văzut."
-          },
-          "Frate Elian... la gâtul tău a pâlpâit ceva. La mormântul tatei. L-am văzut."
-        ],
-        "urmator": "c19"
-      },
-      "c19": {
-        "vorbitor": "mag",
-        "emotie": "normal",
-        "text": "Ai văzut bine.",
-        "urmator": "c20"
-      },
-      "c20": {
-        "vorbitor": "vale",
-        "gand": true,
-        "emotie": "normal",
-        "text": "Aștept să mai spună ceva. Nu spune. Își strânge rasa la gât, peste lumina care s-a stins.",
+        "text": "La mormântul tatei, lumina a fost cea mai puternică. Am văzut.",
         "urmator": "c21"
       },
       "c21": {
