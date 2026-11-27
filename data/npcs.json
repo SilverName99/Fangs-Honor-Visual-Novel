@@ -326,7 +326,8 @@
         "taverna/parter",
         "biserica/interior",
         "iesirea",
-        "antrenament"
+        "antrenament",
+        "padure/campsite"
       ],
       "lupta": {
         "viata": 75,
@@ -361,6 +362,19 @@
       "_despre": "Roderick Lightfinder, fratele lui Edwin (tatăl lui Vale), unchiul. Fost soldat; a luptat lângă Edwin în bătălia cu orcii și a supraviețuit pentru că Edwin i-a poruncit să fugă în sat („Ai grijă de Miriam și de băiat.”, decis de autor). Se poate recruta de la 8/10 încredere (cum anume: TODO).",
       "dialog": "soldat",
       "program": [
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "padure/campsite",
+          "conditii": {
+            "noapteaDupa": {
+              "marcaj": "chemat_soldat",
+              "de": "23:00",
+              "pana": "05:00"
+            }
+          },
+          "ce": "chemat de Vale la locul de campare (misiunea „Revolta”, decis de autor): vine în noaptea de după invitație, 23–05, la foc (ales de Claude: marcajul „chemat_soldat” îl pune invitația din misiunea „Revolta”, încă de făcut)"
+        },
         {
           "de": "09:00",
           "pana": "12:00",
@@ -524,7 +538,8 @@
         "fierar",
         "fierar/interior",
         "taverna/parter",
-        "biserica/interior"
+        "biserica/interior",
+        "padure/campsite"
       ],
       "lupta": {
         "viata": 110,
@@ -538,6 +553,19 @@
         "armura": 30
       },
       "program": [
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "padure/campsite",
+          "conditii": {
+            "noapteaDupa": {
+              "marcaj": "chemat_fierar",
+              "de": "23:00",
+              "pana": "05:00"
+            }
+          },
+          "ce": "chemat de Vale la locul de campare (misiunea „Revolta”, decis de autor): vine în noaptea de după invitație, 23–05, la foc (ales de Claude: marcajul „chemat_fierar” îl pune invitația din misiunea „Revolta”, încă de făcut)"
+        },
         {
           "de": "05:00",
           "pana": "08:00",
@@ -683,7 +711,8 @@
         "casa_finn/interior",
         "campuri",
         "casa_finn",
-        "iesirea"
+        "iesirea",
+        "padure/campsite"
       ],
       "_rol": "Tânărul hoț (Finn). Luptă doar alături de Vale, în misiunile lui (decis de autor: are toate pozele de luptă); în lupta finală nu luptă, ci face o ambuscadă la un val mare (TODO).",
       "cineRaspunde": {
@@ -698,6 +727,19 @@
       "_numeNota": "Decis de autor: hoțul din piață se numește Finn.",
       "dialog": "hot",
       "program": [
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "padure/campsite",
+          "conditii": {
+            "noapteaDupa": {
+              "marcaj": "chemat_hot",
+              "de": "23:00",
+              "pana": "05:00"
+            }
+          },
+          "ce": "chemat de Vale la locul de campare (misiunea „Revolta”, decis de autor): vine în noaptea de după invitație, 23–05, la foc (ales de Claude: marcajul „chemat_hot” îl pune invitația din misiunea „Revolta”, încă de făcut)"
+        },
         {
           "de": "05:00",
           "pana": "23:00",
@@ -963,6 +1005,50 @@
       },
       "dialog": "vanatoare",
       "program": [
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "padure/campsite",
+          "sprite": "noapte",
+          "conditii": {
+            "oricare": [
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_fierar",
+                  "de": "23:00",
+                  "pana": "05:00"
+                }
+              },
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_mag",
+                  "de": "23:00",
+                  "pana": "05:00"
+                }
+              },
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_soldat",
+                  "de": "23:00",
+                  "pana": "05:00"
+                }
+              },
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_hot",
+                  "de": "23:00",
+                  "pana": "05:00"
+                }
+              },
+              {
+                "stare": {
+                  "adunare": "acum"
+                }
+              }
+            ]
+          },
+          "ce": "trează, la foc, cât e chemat cineva la locul de campare sau e adunarea secretă (misiunea „Revolta”, decis de autor)"
+        },
         {
           "de": "23:00",
           "pana": "03:00",
@@ -1296,9 +1382,23 @@
       },
       "locuriSprite": [
         "biserica/interior",
-        "biserica"
+        "biserica",
+        "padure/campsite"
       ],
       "program": [
+        {
+          "de": "23:00",
+          "pana": "05:00",
+          "loc": "padure/campsite",
+          "conditii": {
+            "noapteaDupa": {
+              "marcaj": "chemat_mag",
+              "de": "23:00",
+              "pana": "05:00"
+            }
+          },
+          "ce": "chemat de Vale la locul de campare (misiunea „Revolta”, decis de autor): vine în noaptea de după invitație, 23–05, la foc (ales de Claude: marcajul „chemat_mag” îl pune invitația din misiunea „Revolta”, încă de făcut)"
+        },
         {
           "de": "14:00",
           "pana": "18:00",

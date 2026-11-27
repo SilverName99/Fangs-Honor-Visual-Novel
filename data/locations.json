@@ -1206,8 +1206,47 @@
           "imagine": "locations/padure_campsite.png",
           "variante": [
             {
+              "imagine": "locations/padure_campsite_foc.png",
+              "nume": "noaptea, cu oameni la foc (focul aprins)",
+              "conditii": {
+                "moment": [
+                  "noaptea"
+                ],
+                "oricare": [
+                  {
+                    "noapteaDupa": {
+                      "marcaj": "chemat_fierar",
+                      "de": "23:00",
+                      "pana": "05:00"
+                    }
+                  },
+                  {
+                    "noapteaDupa": {
+                      "marcaj": "chemat_mag",
+                      "de": "23:00",
+                      "pana": "05:00"
+                    }
+                  },
+                  {
+                    "noapteaDupa": {
+                      "marcaj": "chemat_soldat",
+                      "de": "23:00",
+                      "pana": "05:00"
+                    }
+                  },
+                  {
+                    "noapteaDupa": {
+                      "marcaj": "chemat_hot",
+                      "de": "23:00",
+                      "pana": "05:00"
+                    }
+                  }
+                ]
+              }
+            },
+            {
               "imagine": "locations/padure_campsite_seara.png",
-              "nume": "noaptea (foc aprins)",
+              "nume": "noaptea (Kaia doarme, focul stins)",
               "umbrire": "usoara",
               "conditii": {
                 "moment": [
@@ -1216,7 +1255,7 @@
               }
             },
             {
-              "imagine": "locations/padure_campsite_seara.png",
+              "imagine": "locations/padure_campsite_foc.png",
               "nume": "adunarea secretă",
               "conditii": {
                 "stare": {

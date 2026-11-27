@@ -185,7 +185,7 @@ Piața e o singură scenă (decis): personajele (`sprites/<id>_piata.png`) și a
 | `taverna_parter` | de bază 09–12; `_pranz`; `_dupa_amiaza`; `_plin` (plină de oameni) | 12–14 / 14–18 / 18–02 |
 | `taverna_zona` | `_noaptea_luminata` (geamuri luminate), `_noaptea` | 23–02 (deschisă) / 02–05 |
 | piesa `taverna` (harta) | `_noapte_luminata` (geamuri luminate), `_noapte` | 23–02 (deschisă) / 02–05 |
-| `padure_campsite` | `_seara` (foc aprins; seara rămâne imaginea de bază cu filtrul portocaliu) | noaptea (23–05) și adunarea secretă |
+| `padure_campsite` | `_foc` (focul aprins, decis de autor); `_seara` (noaptea, Kaia doarme, focul stins; seara rămâne imaginea de bază cu filtrul portocaliu) | noaptea cu oameni chemați la foc și adunarea secretă / noaptea (23–05) |
 | `biserica_zona` | `_noaptea` | noaptea (23–05) |
 | `biserica_interior` | `_dimineata`, `_noaptea` | 05–08 / noaptea (23–05) |
 | `sat_harta` | `_noapte` | noaptea |
