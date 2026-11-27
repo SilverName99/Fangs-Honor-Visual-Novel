@@ -67,9 +67,13 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function locScena() {
     return idScena.replace('.', '/');
   }
+  // Personajele ascunse anume din panou (cerut de autor: cu „Arată tot” apar și cele din alte misiuni, de exemplu Kaia
+  // lângă Ember rănit peste noaptea cu oamenii la foc); ținut minte doar cât e editorul deschis, pe scenă
+  const ascunse = new Set();
+  const eAscuns = (idPers) => ascunse.has(`${idScena}:${idPers}`);
   const prezent = (idPers) => {
     const p = personaje.get(idPers);
-    return !!p && undeEste(p, context()) === locScena() && (tot || verifica(p.apare, context()));
+    return !!p && !eAscuns(idPers) && undeEste(p, context()) === locScena() && (tot || verifica(p.apare, context()));
   };
   // Cheile sub care se salvează poziția și zona: cu „@cina” când e activă o variantă cu nume
   const ko = (id) => id + sufixVarianta(descriere(), id, context());
@@ -557,8 +561,9 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
             const varianta = ko(o.id) !== o.id ? ` <span class="sumar">(${esc(ko(o.id).split('@')[1])})</span>` : '';
             return `<div class="rand ${sel ? 'selectat' : ''} ${absent ? 'absent' : ''}" data-obiect="${esc(o.id)}">
               <span class="nume">${aranjat ? '✓' : '<span class="avertisment">○</span>'} ${esc(o.tip === 'piesa' ? o.id : o.nume)}${varianta}
-              ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${candEAici(personaje.get(o.id))}${absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
-              ${o.tip === 'sprite' && absent && oraLui(personaje.get(o.id)) ? '<button class="btn la-ora" title="Mută ziua și ora editorului când e el aici">La ora lui</button>' : ''}
+              ${o.tip === 'sprite' ? `<br><span class="sumar">aici: ${candEAici(personaje.get(o.id))}${eAscuns(o.id) ? ' · ascuns' : absent ? ' · nu e aici la ora aleasă' : ''}</span>` : ''}</span>
+              ${o.tip === 'sprite' && absent && !eAscuns(o.id) && oraLui(personaje.get(o.id)) ? '<button class="btn la-ora" title="Mută ziua și ora editorului când e el aici">La ora lui</button>' : ''}
+              ${o.tip === 'sprite' && (!absent || eAscuns(o.id)) ? `<button class="btn ascunde" title="Îl ascunde doar aici, în editor, ca să nu încurce (în joc nu schimbă nimic)">${eAscuns(o.id) ? 'Arată' : 'Ascunde'}</button>` : ''}
             </div>${
               sel && !absent
                 ? `<div class="numeric">
@@ -579,7 +584,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
           ? ''
           : alLui
             ? `<div class="sumar">Prim-planul fundalului <b>${esc(kf)}</b> (doar al lui). <button class="btn de-baza">Folosește-l pe cel de bază</button></div>`
-            : `<div class="sumar">Fundalul <b>${esc(kf)}</b> folosește prim-planul de bază. Ce desenezi acum devine prim-planul lui.</div>`;
+            : `<div class="sumar">Fundalul <b>${esc(kf)}</b> folosește deocamdată prim-planul de bază (cel de pe imagine). <button class="btn de-la-zero">Prim-plan nou, doar pentru fundalul ăsta</button></div>`;
         html += `<h3>Prim-plan</h3>
           <div class="sumar">Conturează ce trebuie să stea <b>în fața</b> personajelor (de exemplu zidul fântânii). Bucata aceea din fundal se pune peste ele, ca să pară în spatele ei.</div>
           ${despre}
@@ -640,6 +645,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         if (m?.length && !m.includes(context().moment)) vedere.ora = PRIMA_ORA[m[0]] ?? vedere.ora;
         arataScena();
       };
+    // Fundalul primește lista lui, goală: prim-planurile de bază nu mai apar pe el, iar cele desenate de acum sunt doar ale lui
+    elPanou.querySelector('.de-la-zero')?.addEventListener('click', () => {
+      const k = cheieFundal(descriereVazuta(), context());
+      if (!k) return;
+      retine();
+      (lucru.primPlanVariante ||= {})[k] = [];
+      marcheaza();
+      arataScena();
+    });
     elPanou.querySelector('.de-baza')?.addEventListener('click', () => {
       const k = cheieFundal(descriereVazuta(), context());
       if (!k || !confirm('Fundalul acesta revine la prim-planul de bază (cel desenat pentru el se șterge). Sigur?')) return;
@@ -655,6 +669,15 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       } catch {}
       arataScena();
     };
+    for (const b of elPanou.querySelectorAll('.ascunde')) {
+      b.onclick = (e) => {
+        e.stopPropagation();
+        const cheie = `${idScena}:${b.closest('[data-obiect]').dataset.obiect}`;
+        if (ascunse.has(cheie)) ascunse.delete(cheie);
+        else ascunse.add(cheie);
+        arataScena();
+      };
+    }
     for (const b of elPanou.querySelectorAll('.la-ora')) {
       b.onclick = (e) => {
         e.stopPropagation();
