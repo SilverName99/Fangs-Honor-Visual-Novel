@@ -2266,6 +2266,114 @@
       "_nota": "Decis de autor: după misiunea specială a Miriamei; Vale aduce fier vechi de la Jarek, apoi, oricând îl găsește pe Bram la fierărie, o bate cu el la nicovală, cu ușa zăvorâtă (mini-jocul ciocanului, peste o imagine); reparația ține peste noapte; a doua zi dimineață Bram îi pune platoșa pe umeri, la fierărie: „Arăți ca el.” (o imagine), iar Miriam îl așteaptă în fața fierăriei de cu noapte (2 imagini); +1 Bram. Ales de Claude: 2 bucăți de fier vechi; platoșa se echipează pe loc (efectul imbraca); dimineața = până la 12, cât lucrează Bram afară."
     },
     {
+      "id": "bram_ciocan",
+      "titlu": "Ciocanul neamului",
+      "titlu_en": "The Family Hammer",
+      "dela": "fierar",
+      "dialog": "fierar",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "ciocan_dat"
+          },
+          "text": "CIORNĂ: Ciocanul neamului Emberforge e iar pe nicovala lui Bram. L-am câștigat în Groapă, pe greu, de la colector. Bram l-a primit de la tatăl lui, la douăzeci și doi de ani.",
+          "text_en": "The Emberforge family hammer is back on Bram’s anvil. I won it in the Pit, on Hard, from the collector. Bram received it from his father when he was twenty-two."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "ciocan": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Colectorul i-a luat lui Bram ciocanul neamului lui, iar acum orcii îl țin drept premiu în Groapă, pe nivelul greu. I-am spus lui Bram că e prea greu pentru mine.",
+          "text_en": "The collector took Bram’s family hammer, and now the orcs keep it as a prize in the Pit, on the Hard level. I told Bram it was too much for me."
+        },
+        "CIORNĂ: În ziua în care au intrat orcii în sat, colectorul i-a luat lui Bram ciocanul neamului Emberforge, dat din tată în fiu de generații. Acum atârnă lângă Groapă: premiul pentru cine câștigă pe nivelul greu. I-am promis lui Bram că i-l aduc înapoi."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "On the day the orcs entered the village, the collector took the Emberforge family hammer from Bram, handed down from father to son for generations. Now it hangs beside the Pit: the prize for whoever wins on the Hard level. I promised Bram I’d bring it back."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: cu Groapa deschisă. Ales de Claude: și după prima victorie în Groapă (verigheta mamei câștigată), ca Bram să fi auzit că Vale iese de acolo pe picioarele lui. Refuzul o ratează (⚠️, ca la „Fierul plugului”).",
+        "text": "Domnule Bram, de ce vă uitați așa la ciocan?",
+        "text_en": "Master Bram, why are you looking at that hammer like that?",
+        "nod": "ciocan_o1",
+        "conditii": {
+          "stare": {
+            "groapa": "deschisa"
+          },
+          "existaStare": "inel_castigat"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Câștig ciocanul neamului în Groapă, pe nivelul greu",
+          "text_en": "I win the family hammer in the Pit, on the Hard level",
+          "gata": {
+            "existaStare": "ciocan_castigat"
+          },
+          "sfat": "Seara (18–23), în Groapa de dincolo de poartă, pe nivelul greu: trei valuri, cu Campionul la urmă. Înainte să intru, îl strig pe colector și pariez pe ciocan. Cel mult doi aliați.",
+          "sfat_en": "In the evening (18–23), in the Pit beyond the gate, on the Hard level: three waves, with the Champion last. Before I go in, I call out to the collector and bet on the hammer. Two allies at most.",
+          "indiciu": {
+            "text": "Despre ciocan...",
+            "text_en": "About the hammer...",
+            "nod": "ciocan_ind"
+          }
+        },
+        {
+          "text": "Îi duc ciocanul lui Bram",
+          "text_en": "I take the hammer to Bram",
+          "la": "fierar",
+          "gata": {
+            "existaStare": "ciocan_dat"
+          },
+          "sfat": "Bram e la fierărie: afară ziua, înăuntru seara (18–22).",
+          "sfat_en": "Bram is at the smithy: outside during the day, inside in the evening (18–22).",
+          "predare": {
+            "text": "Domnule Bram, uitați ce v-am adus.",
+            "text_en": "Master Bram, look what I’ve brought you.",
+            "nod": "ciocan_p1",
+            "conditii": {
+              "areObiect": "ciocan_emberforge",
+              "personajIn": {
+                "fierar": [
+                  "fierar",
+                  "fierar/interior"
+                ]
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre ciocan...",
+            "text_en": "About the hammer...",
+            "nod": [
+              {
+                "nod": "ciocan_aici",
+                "conditii": {
+                  "areObiect": "ciocan_emberforge"
+                }
+              },
+              {
+                "nod": "ciocan_ind"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea lui Bram +1.",
+        "text_en": "Bram’s trust +1.",
+        "efecte": {
+          "relatie": {
+            "fierar": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: colectorul i-a luat lui Bram ciocanul neamului Emberforge (dat din tată în fiu, cu numele săpat pe coadă) la ocuparea satului; orcii îl țin premiu în Groapă, pe greu. Refuzul = ratată (⚠️). Accepți: pe nivelul greu, înainte de luptă, Vale pariază pe ciocan cu colectorul, peste o imagine (prima dată toată discuția, apoi doar câteva replici; „inainteDeLupta” în config.json); după victoria pe greu, ciocanul („dupaVictorie” cu „nivel”); la Bram, la fierărie, povestea lui, peste 2 imagini-amintire; +1 Bram."
+    },
+    {
       "id": "agnes_bere",
       "titlu": "Berea",
       "titlu_en": "The Ale",

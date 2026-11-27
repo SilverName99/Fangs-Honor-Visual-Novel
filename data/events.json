@@ -2275,6 +2275,17 @@
       "_nota": "Decis de autor: după o victorie în Groapă, cât e misiunea „Prietenii lui Finn” (pornit din src/groapa.js, „dupaVictorie” în config.json)."
     },
     {
+      "id": "ciocan_castigat",
+      "nume": "Ciocanul neamului",
+      "nume_en": "The Family Hammer",
+      "grup": "Bram: ciocanul neamului",
+      "grup_en": "Bram: The Family Hammer",
+      "manual": true,
+      "repetare": "o_data",
+      "dialog": "ciocan_castigat",
+      "_nota": "Decis de autor: după o victorie pe nivelul greu, cât e misiunea lui Bram „Ciocanul neamului” (pornit din src/groapa.js, „dupaVictorie” în config.json)."
+    },
+    {
       "id": "miriam_tata_lada",
       "_nota": "Decis de autor: misiunea specială a Miriamei, de la încredere 8/10; seara, la cină. Ales de Claude: doar după al doilea vis (crăpătura din vis), cât e mama în bucătărie (18–23); „!” deasupra mamei (ofertaEveniment), iar apăsarea pe ea o pornește.",
       "nume": "Echipamentul tatălui: lada mamei",

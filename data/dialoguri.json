@@ -8407,6 +8407,277 @@
             "otel_raspuns": "da"
           }
         }
+      },
+      "ciocan_o1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ăsta? E de împrumut, băiete. Mi l-a lăsat un fierar din satul de peste deal, care n-a mai apucat să-l ceară înapoi. Coada îi joacă în mână ca un dinte stricat.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Ciocanul neamului” (decis de autor: colectorul i-a luat ciocanul neamului Emberforge, iar orcii îl țin premiu în Groapă, pe greu; refuzul o ratează). Fierarul de peste deal e ciornă.",
+        "urmator": "ciocan_o2"
+      },
+      "ciocan_o2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și ciocanul dumneavoastră?",
+        "urmator": "ciocan_o3"
+      },
+      "ciocan_o3": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Al meu... nu e al meu. E al neamului. Emberforge. L-a ținut în mână străbunicul străbunicului meu, iar de atunci a trecut din tată în fiu, de la o nicovală la alta. Pe coadă e săpat numele, de mâna primului dintre noi.",
+        "urmator": "ciocan_o4"
+      },
+      "ciocan_o4": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "În ziua în care au intrat orcii în sat, colectorul a trecut pe la fiecare casă cu un sac. Când a ajuns aici, a pus mâna pe ciocan și l-a cântărit. A zis că un ciocan bun e și o măciucă bună.",
+        "urmator": "ciocan_o5"
+      },
+      "ciocan_o5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îmi amintesc ziua aceea. Orcii scotoceau prin case, iar noi stăteam în prag și ne uitam, cu mâinile goale.",
+        "urmator": "ciocan_o6"
+      },
+      "ciocan_o6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Credeam că l-au topit, ca pe restul. Dar azi-dimineață, când i-am dus colectorului topoarele ascuțite, l-am văzut. Atârnă de un par, lângă Groapă, cu o cârpă roșie legată de coadă.",
+        "urmator": "ciocan_o7"
+      },
+      "ciocan_o7": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "E premiul lor. Pentru cine câștigă pe greu, zic. Doar că nimeni nu câștigă pe greu.",
+        "urmator": "ciocan_o8"
+      },
+      "ciocan_o8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram strânge ciocanul de împrumut până i se albesc degetele. Apoi îl pune jos, ușor, de parcă i-ar fi rușine de el.",
+        "urmator": "ciocan_o9"
+      },
+      "ciocan_o9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Am auzit că tu ai ieșit din Groapă pe picioarele tale, băiete. Tot satul vorbește. Iar acolo orcii pariază pe orice: pe bani, pe dinți... pe ciocane.",
+        "urmator": "ciocan_o10"
+      },
+      "ciocan_o10": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Vreți să-l câștig pentru dumneavoastră?",
+        "urmator": "ciocan_o11"
+      },
+      "ciocan_o11": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Nu-ți cer asta. Pe greu vin trei valuri, iar la urmă Campionul lor. Te-am văzut crescând, Vale. Nu vreau să te văd cărat de acolo pe o scândură.",
+        "urmator": "ciocan_o12"
+      },
+      "ciocan_o12": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Dar dacă tot intri acolo, seara... Eu n-o să-ți spun nu.",
+        "alegeri": [
+          {
+            "text": "Vi-l aduc înapoi, domnule Bram.",
+            "spre": "ciocan_da",
+            "efecte": {
+              "misiune": {
+                "bram_ciocan": "inceputa"
+              },
+              "stare": {
+                "ciocan": "acceptat"
+              }
+            }
+          },
+          {
+            "text": "Aveți dreptate. Pe greu nu pot încă.",
+            "spre": "ciocan_nu",
+            "efecte": {
+              "misiune": {
+                "bram_ciocan": "ratata"
+              },
+              "stare": {
+                "ciocan": "refuzat"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: refuzul ratează misiunea (⚠️), ca la „Fierul plugului”; oferta nu mai revine."
+      },
+      "ciocan_da": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "...Atunci ascultă. Înainte să cobori, strigă-l pe colector și pune pariul: ciocanul neamului Emberforge. Orcii țin la un pariu mai mult decât la o lege. Fără pariu, îți dau doar bani.",
+        "urmator": "ciocan_da2"
+      },
+      "ciocan_da2": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "Și nu intra singur. Ia pe cine ai. Pe mine, dacă vrei: aș da orice să-l văd pe colector cum mi-l dă înapoi cu mâna lui.",
+        "urmator": "ciocan_da3"
+      },
+      "ciocan_da3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pe greu. Trei valuri și Campionul. Dacă tot mă bat cu ei, măcar să fie pentru ceva care contează."
+      },
+      "ciocan_nu": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Așa e bine. Un ciocan se mai face. Un om, nu.",
+        "urmator": "ciocan_nu2"
+      },
+      "ciocan_nu2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram se întoarce la nicovală și lovește cu ciocanul de împrumut. Sună strâmb, ca un clopot crăpat."
+      },
+      "ciocan_ind": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Seara, în Groapă, pe greu. Și strigă-l pe colector înainte să cobori: ciocanul neamului Emberforge. Fără pariu, orcii îți dau doar bani."
+      },
+      "ciocan_aici": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Ce ții acolo, înfășurat în cârpă? ...Nu aici, băiete. Vino la fierărie, la nicovală. Acolo îi e locul."
+      },
+      "ciocan_p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Scot ciocanul din cârpă și îl pun pe nicovală. Bram se oprește cu ciocanul de împrumut ridicat deasupra capului.",
+        "_nota": "CIORNĂ (Claude). Predarea ciocanului; povestea lui Bram, peste 2 imagini-amintire (decis de autor: la 22 de ani, de la tatăl lui).",
+        "urmator": "ciocan_p2"
+      },
+      "ciocan_p2": {
+        "vorbitor": "fierar",
+        "emotie": "speriat",
+        "text": "Asta e...",
+        "urmator": "ciocan_p3"
+      },
+      "ciocan_p3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lasă ciocanul de împrumut să-i cadă din mână. Îl ia pe al lui încet, cu amândouă mâinile, ca pe un prunc, și își trece degetul mare peste literele de pe coadă.",
+        "urmator": "ciocan_p4"
+      },
+      "ciocan_p4": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "E-M-B-E-R-F-O-R-G-E. Le-am pipăit în fiecare dimineață, timp de treizeci de ani. Le-aș recunoaște și pe întuneric.",
+        "urmator": "ciocan_p5"
+      },
+      "ciocan_p5": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Colectorul mi l-a aruncat la picioare, în noroi. L-am spălat la fântână.",
+        "urmator": "ciocan_p6"
+      },
+      "ciocan_p6": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Pe greu... Ai luptat pe greu, pentru ciocanul unui fierar bătrân.",
+        "urmator": "ciocan_p7"
+      },
+      "ciocan_p7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Când l-ați primit, domnule Bram?",
+        "urmator": "ciocan_p8"
+      },
+      "ciocan_p8": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "La douăzeci și doi de ani. Într-o seară de toamnă, ca cele de acum. Tata a stins forja, s-a șters pe mâini de șorț și m-a chemat la nicovală.",
+        "urmator": "ciocan_p9"
+      },
+      "ciocan_p9": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "„Ia-l, Bram.” Atât a zis la început. De parcă mi-ar fi dat o lingură.",
+        "imagine": "events/bram_ciocan_amintire_1.png",
+        "amintire": true,
+        "grupGalerie": "Bram: ciocanul neamului",
+        "_nota": "Decis de autor: tatăl, cu barbă, îi dă ciocanul lui Bram tânăr, fără barbă. Ziua, șorțul și vorbele tatălui sunt ciorne de Claude.",
+        "urmator": "ciocan_p10"
+      },
+      "ciocan_p10": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "Eu n-aveam încă barbă, doar câteva fire pe bărbie, de care râdea tot satul. Iar ciocanul era mai greu decât îl țineam minte. Mult mai greu.",
+        "amintire": true,
+        "urmator": "ciocan_p11"
+      },
+      "ciocan_p11": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "„Fierul nu ține minte cine l-a bătut”, mi-a zis. „Dar ciocanul ține. Ține minte fiecare mână din neamul nostru. De azi o ține minte și pe a ta.”",
+        "amintire": true,
+        "urmator": "ciocan_p12"
+      },
+      "ciocan_p12": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Mi-am plecat fruntea. Nu știam ce altceva să fac. El mi-a pus mâna pe ceafă, grea și fierbinte de la foc, și a stat așa o vreme.",
+        "imagine": "events/bram_ciocan_amintire_2.png",
+        "amintire": true,
+        "grupGalerie": "Bram: ciocanul neamului",
+        "_nota": "Decis de autor: Bram își pleacă fruntea, iar tatăl e mândru de el.",
+        "urmator": "ciocan_p13"
+      },
+      "ciocan_p13": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "N-a zis că e mândru de mine. Un Emberforge nu spune așa ceva. Dar a doua zi s-a lăudat la toată taverna cu prima mea potcoavă. Una strâmbă.",
+        "amintire": true,
+        "urmator": "ciocan_p14"
+      },
+      "ciocan_p14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Bram tace. Lângă nicovală, focul trosnește, iar ciocanul neamului lucește în mâinile lui, ca și cum l-ar fi încălzit doar ținându-l.",
+        "trezire": true,
+        "urmator": "ciocan_p15"
+      },
+      "ciocan_p15": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "Credeam că eu sunt ultimul din neam care l-a ținut în mână. Că o să-l văd la brâul unui orc până la moarte.",
+        "urmator": "ciocan_p16"
+      },
+      "ciocan_p16": {
+        "vorbitor": "vale",
+        "emotie": "zambet",
+        "text": "Acum e iar unde îi e locul.",
+        "urmator": "ciocan_p17"
+      },
+      "ciocan_p17": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "Mulțumesc, Vale. Mâine bat primul fier cu el. Și o să sune ca pe vremuri, să-l audă tot satul. Și colectorul.",
+        "efecte": {
+          "stare": {
+            "ciocan_dat": "da"
+          },
+          "daObiect": "ciocan_emberforge"
+        },
+        "urmator": "ciocan_p18"
+      },
+      "ciocan_p18": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Bram se întoarce la nicovală și lovește o dată, de probă. Sunetul e curat, ca un clopot."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -26257,6 +26528,145 @@
           },
           "Dau din cap și trec mai departe. Îmi răsună în cap vorba lui Finn: „Tu nici nu trebuie să știi cum.”"
         ]
+      }
+    }
+  },
+  "groapa_ciocan_pariu": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Bram „Ciocanul neamului” (decis de autor): pe nivelul greu, înainte de luptă, Vale îl strigă pe colector și pariază pe ciocanul neamului lui Bram; prima dată toată discuția, apoi (după o înfrângere) doar câteva replici. Pornit din src/groapa.js („inainteDeLupta” în config.json); după el, lupta.",
+    "grup": "Bram: ciocanul neamului",
+    "partener": "orc_colector",
+    "start": [
+      {
+        "nod": "s1",
+        "conditii": {
+          "existaStare": "ciocan_pariu"
+        }
+      },
+      {
+        "nod": "p1"
+      }
+    ],
+    "noduri": {
+      "p1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Lângă gardul Groapei, colectorul își numără monedele pariurilor. Deasupra lui, legat de un par cu o cârpă roșie, atârnă un ciocan cu coada lucioasă. Ciocanul lui Bram.",
+        "imagine": "events/groapa_ciocan_pariu.png",
+        "urmator": "p2"
+      },
+      "p2": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Colectorule! Pariez pe ciocanul ăla!",
+        "urmator": "p3"
+      },
+      "p3": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Hă! Omulețul vrea o jucărie. Ăsta-i ciocanul fierarului vostru, ăla lat în spate, care ne ascute topoarele pe gratis.",
+        "urmator": "p4"
+      },
+      "p4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "E al neamului Emberforge. Intru pe greu. Dacă ies în picioare, e al meu.",
+        "urmator": "p5"
+      },
+      "p5": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Pe greu? Trei valuri, omulețule, iar la urmă Campionul. Ultimul om care a intrat pe greu a ieșit în două găleți.",
+        "urmator": "p6"
+      },
+      "p6": {
+        "vorbitor": "orc_colector",
+        "emotie": "normal",
+        "text": "Și dacă pierzi? Tu ce pui?",
+        "urmator": "p7"
+      },
+      "p7": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Dacă pierd, ai de ce să râzi toată toamna.",
+        "urmator": "p8"
+      },
+      "p8": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Oricum râd. Dar fie! Pariul e pariu.",
+        "urmator": "p9"
+      },
+      "p9": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Băieți! Ciocanul fierarului, pe omuleț! Cine pune pe Campion?",
+        "urmator": "p10"
+      },
+      "p10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Orcii de pe margine urlă și bat cu pumnii în pari. Monedele zornăie din palmă în palmă. Strâng mânerul armei și cobor în noroi.",
+        "efecte": {
+          "stare": {
+            "ciocan_pariu": "da"
+          }
+        }
+      },
+      "s1": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Iar tu, omulețule? Tot după ciocanul fierarului?",
+        "imagine": "events/groapa_ciocan_pariu.png",
+        "urmator": "s2"
+      },
+      "s2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Tot. Același pariu.",
+        "urmator": "s3"
+      },
+      "s3": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Bine. Îmi place să câștig de două ori din aceeași prostie."
+      }
+    }
+  },
+  "ciocan_castigat": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: după victoria pe greu, cât e misiunea lui Bram „Ciocanul neamului”, colectorul îi aruncă lui Vale ciocanul; un gând scurt, peste imaginea Groapei (fără galerie), ca la dintele de orc.",
+    "grup": "Bram: ciocanul neamului",
+    "partener": null,
+    "faraGalerie": true,
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ultimul orc cade în noroi. Colectorul scuipă, mormăie ceva în limba lor, apoi smulge ciocanul de pe par și mi-l aruncă la picioare. Pariul e pariu.",
+        "imagine": "locations/poarta_arena.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Îl ridic. E mai greu decât pare, iar pe coadă, sub noroi, se văd literele săpate: EMBERFORGE.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "zambet",
+        "text": "Domnul Bram o să-l recunoască din ușă.",
+        "efecte": {
+          "obiect": "ciocan_emberforge",
+          "stare": {
+            "ciocan_castigat": "da"
+          }
+        }
       }
     }
   }

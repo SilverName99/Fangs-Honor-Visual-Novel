@@ -435,6 +435,24 @@
     "ganduri": "groapa_ganduri",
     "dupaVictorie": [
       {
+        "_nota": "Misiunea lui Bram „Ciocanul neamului” (decis de autor): după o victorie pe nivelul greu („nivel”), cu pariul făcut, colectorul îi aruncă lui Vale ciocanul. Un singur eveniment pe seară: verigheta mamei vine întâi, iar dintele lui Wil, după ciocan (src/groapa.js).",
+        "nivel": "greu",
+        "conditii": {
+          "misiune": {
+            "bram_ciocan": "inceputa"
+          },
+          "stare": {
+            "ciocan_pariu": "da"
+          },
+          "nu": {
+            "existaStare": "ciocan_castigat"
+          }
+        },
+        "efecte": {
+          "eveniment": "ciocan_castigat"
+        }
+      },
+      {
         "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor): după o victorie în Groapă, oricare nivel (ales de Claude), Vale ia un dinte de orc, dovada pentru Wil. Nu în aceeași seară în care câștigă verigheta mamei.",
         "conditii": {
           "misiune": {
@@ -462,6 +480,21 @@
         "efecte": {
           "eveniment": "dinte_orc"
         }
+      }
+    ],
+    "inainteDeLupta": [
+      {
+        "_nota": "Misiunea lui Bram „Ciocanul neamului” (decis de autor): pe nivelul greu, înainte de luptă, Vale pariază cu colectorul pe ciocan, peste o imagine; prima dată toată discuția, apoi doar câteva replici. Seara se numără abia după discuție (src/groapa.js).",
+        "nivel": "greu",
+        "conditii": {
+          "misiune": {
+            "bram_ciocan": "inceputa"
+          },
+          "nu": {
+            "existaStare": "ciocan_castigat"
+          }
+        },
+        "dialog": "groapa_ciocan_pariu"
       }
     ]
   },

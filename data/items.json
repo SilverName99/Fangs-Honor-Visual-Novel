@@ -705,6 +705,15 @@
       "descriere_en": "A yellow tusk, as long as a finger, taken from an orc felled in the Pit. Proof for Wil.",
       "_nota": "Misiunea lui Finn „Prietenii lui Finn” (decis de autor: după o victorie în Groapă)."
     },
+    "ciocan_emberforge": {
+      "nume": "Ciocanul neamului Emberforge",
+      "nume_en": "The Emberforge Family Hammer",
+      "tip": "poveste",
+      "pret": 0,
+      "descriere": "Un ciocan de fierar, greu, cu coada lustruită de atâtea palme. Pe ea e săpat numele EMBERFORGE. A trecut din tată în fiu, de generații. Colectorul i l-a luat lui Bram, iar eu l-am câștigat înapoi în Groapă.",
+      "descriere_en": "A heavy smith’s hammer, its handle polished by so many palms. The name EMBERFORGE is carved into it. It has passed from father to son for generations. The collector took it from Bram, and I won it back in the Pit.",
+      "_nota": "Misiunea lui Bram „Ciocanul neamului” (decis de autor: câștigat în Groapă, pe nivelul greu). Iconița: items/ciocan_emberforge.png."
+    },
     "fluier": {
       "nume": "Fluierul lui Finn",
       "nume_en": "Finn’s Whistle",

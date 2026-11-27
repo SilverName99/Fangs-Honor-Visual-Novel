@@ -135,24 +135,33 @@ export function creeazaGroapa(parinte, joc) {
       inchide();
       const def = joc.date.lupte.lupte[n.lupta];
       if (!def) return joc.mesaj(t('Lupta „{id}” nu există.', { id: n.lupta }));
-      // O luptă pe seară (decis de autor), numărată de la intrare: nici după un refresh nu se poate lua de la capăt
-      // ca să încerci altfel; lupta începută, da (o luptă începută pornește de la capăt)
-      aplicaEfecte({ marcheaza: 'groapa' }, joc);
       const cu = (parte, rezultat) => ({ ...parte, efecte: { ...(parte?.efecte || {}), groapa: { nivel: n.id, rezultat } } });
-      joc.pornesteLupta({
-        ...def,
-        id: n.lupta,
-        aliatiAlesi: alesi,
-        victorie: cu(def.victorie, 'victorie'),
-        infrangere: cu(def.infrangere, 'infrangere'),
-      });
+      const lupta = () => {
+        // O luptă pe seară (decis de autor), numărată de la intrare: nici după un refresh nu se poate lua de la capăt
+        // ca să încerci altfel; lupta începută, da (o luptă începută pornește de la capăt)
+        aplicaEfecte({ marcheaza: 'groapa' }, joc);
+        joc.pornesteLupta({
+          ...def,
+          id: n.lupta,
+          aliatiAlesi: alesi,
+          victorie: cu(def.victorie, 'victorie'),
+          infrangere: cu(def.infrangere, 'infrangere'),
+        });
+      };
+      // O discuție înainte de luptă, pe un nivel anume, cât o cere o misiune („inainteDeLupta” în config.json: Vale
+      // pariază pe ciocanul neamului lui Bram, pe nivelul greu). Seara se numără abia după ea: un refresh în timpul
+      // discuției n-o pierde, iar Vale poate intra din nou și alege iar
+      const inainte = (cfg().inainteDeLupta || []).find((x) => x.nivel === n.id && joc.date.dialoguri?.[x.dialog] && verifica(x.conditii, context(joc.stare)));
+      if (inainte) return joc.dialogApoi(joc.date.dialoguri[inainte.dialog], lupta);
+      lupta();
     }
 
     alegeNivelul();
   }
 
   // După luptă (efectul „groapa”): banii nivelului, reputația (satul se uită de după gard), răsplata primei victorii
-  // pe fiecare nivel și, cât e misiunea „Inelul mamei”, inelul (decis de autor: prima victorie, oricare nivel)
+  // pe fiecare nivel și, cât e misiunea „Inelul mamei”, inelul (decis de autor: prima victorie, oricare nivel);
+  // apoi ce mai cer misiunile (dintele de orc, ciocanul lui Bram)
   function rezultat({ nivel: id, rezultat: r }) {
     const n = nivel(id);
     if (!n) return;
@@ -162,9 +171,19 @@ export function creeazaGroapa(parinte, joc) {
     aplicaEfecte({ bani: n.bani || 0, reputatie: n.reputatie || 0, contor: { groapa_victorii: 1 }, stare: { [`groapa_${id}`]: 'castigat' }, ...(prima && n.primaData ? { obiect: n.primaData } : {}) }, joc);
     // „inel” (verigheta mamei) și „dupaVictorie” (ce mai cer misiunile: dintele de orc pentru Wil, prietenul lui Finn).
     // Condițiile se verifică toate înainte, ca o victorie să nu dea deodată două lucruri care se bat cap în cap
+    // „nivel” la o intrare: doar după o victorie pe nivelul acela (ciocanul lui Bram, doar pe greu)
     const ctx = context(s);
-    const deDat = [cfg().inel, ...(cfg().dupaVictorie || [])].filter((x) => x && verifica(x.conditii, ctx));
-    for (const x of deDat) aplicaEfecte(x.efecte, joc);
+    const deDat = [cfg().inel, ...(cfg().dupaVictorie || [])].filter((x) => x && (!x.nivel || x.nivel === id) && verifica(x.conditii, ctx));
+    // Un singur eveniment pe seară: un al doilea n-ar mai porni cât ține discuția primului (s-ar pierde), așa că
+    // așteaptă victoria următoare; ordinea din config.json spune care vine întâi
+    let cuEveniment = false;
+    for (const x of deDat) {
+      if (x.efecte?.eveniment) {
+        if (cuEveniment) continue;
+        cuEveniment = true;
+      }
+      aplicaEfecte(x.efecte, joc);
+    }
   }
 
   return { deschide, rezultat };
