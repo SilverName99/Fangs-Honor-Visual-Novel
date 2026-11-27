@@ -26042,109 +26042,52 @@
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "În prima seară de întoarcere, unchiul îmi dă bucata cea mai mare de carne și zice că n-are poftă. Minte prost. Ca tata.",
-        "imagine": "events/drum_foc_4.png",
+        "text": "A doua zi coborâm dealurile prin ploaia rece de toamnă și trecem iar pe sub poarta de piatră. Despre râpă nu mai vorbim. Parcă drumul înapoi e mai scurt.",
+        "imagine": "events/drum_intoarcere_ploaie.png",
         "efecte": {
-          "panaLaOra": "20:00",
+          "panaLaOra": "16:00",
           "consuma": {
             "carne_gatita": 1,
             "apa": 1
           },
-          "seteazaNevoi": {
-            "foame": 80,
-            "sete": 80
-          }
-        },
-        "urmator": "t25"
-      },
-      "t25": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "text": "Unchiule... cum era tata când erați mici?",
-        "urmator": "t26"
-      },
-      "t26": {
-        "vorbitor": "soldat",
-        "emotie": "zambet",
-        "text": "Ca o veveriță cu prea mult curaj. Ți-am arătat creanga de jos a copacului mare: de acolo porneam. Edwin nu se oprea până în vârf, unde crengile se îndoiau sub el.",
-        "imagine": "events/drum_copac.png",
-        "amintire": true,
-        "grupGalerie": "Roderick: drumul trezirii (amintirile)",
-        "urmator": "t27"
-      },
-      "t27": {
-        "vorbitor": "soldat",
-        "emotie": "zambet",
-        "text": "Eu eram mai mic și cădeam mereu. Edwin râdea, cobora după mine și-mi întindea mâna. Mereu mâna. Și urcam iar.",
-        "amintire": true,
-        "urmator": "t28"
-      },
-      "t28": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Primăvara, când copacul era alb de flori, stăteam acolo sus până ne striga mama de trei ori. Edwin zicea că de acolo se vede tot satul. Și că într-o zi o să-l păzească.",
-        "amintire": true,
-        "urmator": "t29"
-      },
-      "t29": {
-        "vorbitor": "soldat",
-        "emotie": "trist",
-        "text": "Și l-a păzit. De sub copacul ăla. Până la capăt.",
-        "trezire": true,
-        "imagine": "events/drum_foc_4.png",
-        "urmator": "t30"
-      },
-      "t30": {
-        "vorbitor": "vale",
-        "emotie": "trist",
-        "gand": true,
-        "text": "Mă uit la mâna unchiului. Tata îl ridica de jos, după ce cădea. El m-a prins înainte să cad.",
-        "urmator": "t31"
-      },
-      "t31": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Hai, dormi. Mâine mai avem drum.",
-        "urmator": "t32"
-      },
-      "t32": {
-        "vorbitor": "vale",
-        "emotie": "normal",
-        "gand": true,
-        "text": "A doua zi trecem pe sub poarta de piatră și mergem până se întunecă. Seara, unchiul împarte ultimul colț de pâine în două, fără să-l cântărească.",
-        "efecte": {
-          "timp": 1440,
           "seteazaNevoi": {
             "foame": 70,
             "sete": 70,
             "stamina": 60
           }
         },
-        "urmator": "t33"
+        "urmator": "t24b"
       },
-      "t33": {
-        "vorbitor": "soldat",
-        "emotie": "normal",
-        "text": "Știi ce-o să zică maică-ta când ne vede?",
-        "urmator": "t34"
-      },
-      "t34": {
+      "t24b": {
         "vorbitor": "vale",
-        "emotie": "zambet",
-        "text": "Că suntem slabi ca niște ogari și că mirosim a fum.",
-        "urmator": "t35"
+        "emotie": "normal",
+        "gand": true,
+        "text": "Serile facem focuri mici și dormim fără vise. Unchiul îmi dă mereu bucata cea mai mare de carne și zice că n-are poftă. Minte prost. Ca tata.",
+        "urmator": "t25"
       },
-      "t35": {
-        "vorbitor": "soldat",
-        "emotie": "zambet",
-        "text": "Și o să aibă dreptate.",
+      "t25": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "A șasea zi ajungem iar la podul ars. De data asta eu leg frânghia și o țin, iar unchiul trece primul pe bârnă.",
+        "imagine": "events/drum_pod_intors.png",
+        "efecte": {
+          "panaLaOra": "14:00"
+        },
+        "urmator": "t25b"
+      },
+      "t25b": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "gand": true,
+        "text": "La plecare el m-a ținut pe mine. Acum îl țin eu.",
         "urmator": "t36"
       },
       "t36": {
         "vorbitor": "vale",
         "emotie": "normal",
         "gand": true,
-        "text": "A șasea zi trecem iar bârna podului ars. Acum eu țin frânghia, iar unchiul trece primul. La căderea serii sărim gardul putred. Acasă, mama ne așteaptă în prag, cu felinarul aprins, de parcă n-ar fi plecat de acolo deloc.",
+        "text": "La căderea serii sărim gardul putred. Acasă, mama ne așteaptă în prag, cu felinarul aprins, de parcă n-ar fi plecat de acolo deloc.",
         "imagine": "events/drum_acasa.png",
         "efecte": {
           "panaLaOra": "19:00",
