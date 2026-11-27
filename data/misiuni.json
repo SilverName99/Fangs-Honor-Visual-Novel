@@ -6796,6 +6796,319 @@
         }
       },
       "_nota": "Decis de autor: pentru lupta finală, de la 8/10. Finn vorbește cu trei prieteni din copilărie (puțin mai mici decât el), care ajută doar dacă primește fiecare ceva (ciorne de Claude: Pip, carne friptă și pâine; Ned, un arc, de la Kaia sau cumpărat, cu 3 săgeți; Wil, un dinte de orc, după o victorie în Groapă, oricare nivel; decis de autor, P72: Wil e fratele mai mic al lui Tobin, fiul morarului, unul dintre cei 23). Apoi Finn îi dă lui Vale fluierul (2 imagini)."
+    },
+    {
+      "id": "kaia_revolta",
+      "titlu": "Revolta",
+      "titlu_en": "The Uprising",
+      "dela": "vanatoare",
+      "dialog": "revolta",
+      "descriere": [
+        {
+          "conditii": {
+            "stare": {
+              "revolta": "pornita"
+            }
+          },
+          "text": "CIORNĂ: Am stat toată noaptea la foc, cu cei care au venit. În zori am pornit spre sat. Nu mai e cale de întoarcere.",
+          "text_en": "We sat by the fire all night, with those who came. At dawn we set out for the village. There is no turning back now."
+        },
+        "CIORNĂ: Kaia zice că nu ne trebuie o armată, ci câțiva oameni buni. Le spun de revoltă celor în care am încredere, îi chem la foc, noaptea, iar când sunt destui, pornim."
+      ],
+      "descriere_en": [
+        null,
+        "Kaia says we don’t need an army, just a few good people. I tell those I trust about the uprising, call them to the fire at night, and when there are enough of us, we begin."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: misiunea Kaiei, după „Baza”, la locul de campare.",
+        "text": "Kaia... cum îi strângem pe ceilalți?",
+        "text_en": "Kaia... how do we gather the others?",
+        "nod": "ro1",
+        "conditii": {
+          "misiune": {
+            "kaia_baza": "terminata"
+          },
+          "loc": "padure/campsite"
+        }
+      },
+      "pasi": [
+        {
+          "text": "Le spun de revoltă celor în care am încredere și îi chem la foc, noaptea",
+          "text_en": "I tell those I trust about the uprising and call them to the fire, at night",
+          "la": "vanatoare",
+          "subpasiOptionale": true,
+          "subpasi": [
+            {
+              "text": "Domnul Bram: îi spun de revoltă",
+              "text_en": "Mr. Bram: I tell him about the uprising",
+              "la": "fierar",
+              "gata": {
+                "existaStare": "revolta_fierar"
+              },
+              "_nota": "Decis de autor: de la 8/10 încredere; cine nu mai poate ajunge la 8/10 (prea multe puncte ratate) apare scris și tăiat.",
+              "ratat": {
+                "cateDin": {
+                  "min": 3,
+                  "lista": [
+                    {
+                      "misiune": {
+                        "bram_ciocan": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "fermier_plug": "ratata"
+                      }
+                    },
+                    {
+                      "stare": {
+                        "capcane_duse": "colector"
+                      }
+                    },
+                    {
+                      "cateDin": {
+                        "min": 3,
+                        "lista": [
+                          {
+                            "misiune": {
+                              "miriam_papusa": "ratata"
+                            }
+                          },
+                          {
+                            "misiune": {
+                              "miriam_lemne": "ratata"
+                            }
+                          },
+                          {
+                            "misiune": {
+                              "miriam_nastere": "ratata"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "predare": {
+                "text": "Domnule Bram... trebuie să vă spun ceva. Dar rămâne între noi.",
+                "text_en": "Mr. Bram... I need to tell you something. But it stays between us.",
+                "nod": "rb1",
+                "conditii": {
+                  "relatie": {
+                    "fierar": {
+                      "min": 8
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "text": "Fratele Elian: îi spun de revoltă",
+              "text_en": "Brother Elian: I tell him about the uprising",
+              "la": "mag",
+              "gata": {
+                "existaStare": "revolta_mag"
+              },
+              "_nota": "Decis de autor: de la 8/10 încredere; cine nu mai poate ajunge la 8/10 (prea multe puncte ratate) apare scris și tăiat.",
+              "ratat": {
+                "cateDin": {
+                  "min": 3,
+                  "lista": [
+                    {
+                      "misiune": {
+                        "elian_carti": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "elian_pasarea": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "roderick_sticla": "ratata"
+                      }
+                    }
+                  ]
+                }
+              },
+              "predare": {
+                "text": "Frate Elian, am nevoie de sfatul tău. Și de mai mult de atât.",
+                "text_en": "Brother Elian, I need your advice. And more than that.",
+                "nod": "re1",
+                "conditii": {
+                  "relatie": {
+                    "mag": {
+                      "min": 8
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "text": "Unchiul Roderick: îi spun de revoltă",
+              "text_en": "Uncle Roderick: I tell him about the uprising",
+              "la": "soldat",
+              "gata": {
+                "existaStare": "revolta_soldat"
+              },
+              "_nota": "Decis de autor: de la 8/10 încredere; cine nu mai poate ajunge la 8/10 (prea multe puncte ratate) apare scris și tăiat.",
+              "ratat": {
+                "cateDin": {
+                  "min": 3,
+                  "lista": [
+                    {
+                      "stare": {
+                        "scandal_taverna": "refuzat"
+                      }
+                    },
+                    {
+                      "stare": {
+                        "locul_alegere": "invinuit"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "roderick_sticla": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "agnes_socoteala": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "agnes_seara": "ratata"
+                      }
+                    }
+                  ]
+                }
+              },
+              "predare": {
+                "text": "Unchiule. Trebuie să vorbim. Despre orci.",
+                "text_en": "Uncle. We need to talk. About the orcs.",
+                "nod": "rr1",
+                "conditii": {
+                  "relatie": {
+                    "soldat": {
+                      "min": 8
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "text": "Finn: îi spun de revoltă",
+              "text_en": "Finn: I tell him about the uprising",
+              "la": "hot",
+              "gata": {
+                "existaStare": "revolta_hot"
+              },
+              "_nota": "Decis de autor: de la 8/10 încredere; cine nu mai poate ajunge la 8/10 (prea multe puncte ratate) apare scris și tăiat. La Finn, două ratate ajung: „Prietenii lui Finn” cere 8/10 și e chiar al zecelea punct.",
+              "ratat": {
+                "cateDin": {
+                  "min": 2,
+                  "lista": [
+                    {
+                      "misiune": {
+                        "finn_lina": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "finn_datoria": "ratata"
+                      }
+                    },
+                    {
+                      "misiune": {
+                        "finn_jarek": "ratata"
+                      }
+                    }
+                  ]
+                }
+              },
+              "predare": {
+                "text": "Finn. Ce-a fost la cuști... a sosit vremea.",
+                "text_en": "Finn. What happened at the cages... the time has come.",
+                "nod": "rf1",
+                "conditii": {
+                  "relatie": {
+                    "hot": {
+                      "min": 8
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "gata": {
+            "stare": {
+              "revolta": "pornita"
+            }
+          },
+          "sfat": "Le pot spune de la 8/10 încredere. Îi chem ziua, iar ei vin la noapte (23–05) la locul de campare. Când e acolo măcar încă unul care luptă (domnul Bram, fratele Elian sau unchiul), vorbesc cu Kaia.",
+          "sfat_en": "I can tell them once their trust reaches 8/10. I invite them during the day, and they come that night (23–05) to the Campsite. When at least one more fighter is there (Mr. Bram, Brother Elian or my uncle), I talk to Kaia.",
+          "predare": {
+            "text": "Kaia... a venit vremea?",
+            "text_en": "Kaia... is it time?",
+            "nod": "rn1",
+            "conditii": {
+              "loc": "padure/campsite",
+              "moment": [
+                "noaptea"
+              ],
+              "oricare": [
+                {
+                  "noapteaDupa": {
+                    "marcaj": "chemat_fierar",
+                    "de": "23:00",
+                    "pana": "05:00"
+                  }
+                },
+                {
+                  "noapteaDupa": {
+                    "marcaj": "chemat_mag",
+                    "de": "23:00",
+                    "pana": "05:00"
+                  }
+                },
+                {
+                  "noapteaDupa": {
+                    "marcaj": "chemat_soldat",
+                    "de": "23:00",
+                    "pana": "05:00"
+                  }
+                }
+              ]
+            }
+          },
+          "indiciu": {
+            "text": "Despre revoltă...",
+            "text_en": "About the uprising...",
+            "nod": [
+              {
+                "nod": "rev_doar_finn",
+                "conditii": {
+                  "loc": "padure/campsite",
+                  "moment": [
+                    "noaptea"
+                  ]
+                }
+              },
+              {
+                "nod": "rev_ind"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Satul se ridică împotriva orcilor.",
+        "text_en": "The village rises against the orcs."
+      },
+      "_nota": "Decis de autor (planul în docs/misiuni.md, „Revolta”): de la Kaia, după „Baza”. Bucățile (Bram, Elian, Roderick, Finn) se bifează când îi spui de revoltă, de la 8/10; cine nu mai poate ajunge la 8/10 apare tăiat. Invitația pune „chemat_<id>”, iar el vine noaptea de după (23–05) la foc. Kaia, noaptea, cu măcar încă unul care luptă (ales de Claude: Finn nu luptă, deci nu ajunge singur): „Pornim revolta?”. Da = fără întoarcere: imaginile, zorii, cuvântul; „revolta: pornita”. Lupta finală și finalurile: TODO, de discutat."
     }
   ]
 }

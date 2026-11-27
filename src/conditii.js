@@ -77,8 +77,13 @@ const tipuri = {
     let start = Math.floor(la / 1440) * 1440 + de;
     if (start < la) start += 1440;
     const sfarsit = start + ((inMinute(v.pana || '05:00') - de + 1440) % 1440 || 1440);
+    // "pana" = noaptea n-a trecut încă (urmează sau e acum): invitația la foc nu se mai cere încă o dată până atunci
+    if (v.cand === 'pana') return c.minute < sfarsit;
     return v.cand === 'dupa' ? c.minute >= sfarsit : c.minute >= start && c.minute < sfarsit;
   },
+  // „cateDin: { min: 3, lista: [ ... ] }” = cel puțin atâtea dintre condițiile din listă sunt îndeplinite. Așa se
+  // socotește cine nu mai poate ajunge la 8/10 (misiunea „Revolta”): fiecare condiție e un punct de încredere ratat
+  cateDin: (v, c) => (v.lista || []).filter((cond) => verifica(cond, c)).length >= (v.min ?? 1),
   // „zileDeLa: { ziua_linei: { min: 3, max: 3 } }” = câte zile din calendar au trecut de la marcaj, oricât de devreme
   // sau de târziu în zi s-a întâmplat (decis de autor: Finn spune „în 3 zile e ziua Linei”, deci a treia zi de după,
   // nu după 72 de ore). Fără marcaj, condiția nu e îndeplinită

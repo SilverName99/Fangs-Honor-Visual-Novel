@@ -1163,6 +1163,21 @@ Din F2 → Misiuni, „Pornește” nu ajunge aici (și nici la „Datoria la Ja
 
 ## Revolta: recrutarea și lupta finală 📝
 
+**Făcut** (bucățile 1 și 2, decis de autor; replicile sunt ciorne de Claude, dialogul `revolta`, misiunea `kaia_revolta`):
+- **Oferta:** la locul de campare, după „Baza”, „Kaia... cum îi strângem pe ceilalți?”; Kaia: nu deodată și nu pe oricine; „Tu, eu și încă unul care ține o armă în mână”. Nu se refuză.
+- **În carte:** un pas cu patru bucăți (Bram, Elian, Roderick, Finn), care se fac în orice ordine (`subpasiOptionale`: pasul nu le așteaptă pe toate), fiecare la personajul ei (`la` la bucată). **Cine nu mai poate ajunge la 8/10 apare scris și tăiat, cu ✗** (`ratat` la bucată, condiția `cateDin`: cel puțin 3 puncte ratate; ales de Claude, după tabelul „Încrederea”): Bram = Ciocanul neamului, Fierul plugului, fierul capcanelor dus colectorului, Platoșa (pierdută când Miriam a ratat toate 3); Elian = Cărțile, Pasărea Linei, Ultima sticlă; Roderick = Scandalul refuzat, „Locul” fără consolare, Ultima sticlă, Socoteala, Seara celor 23; Finn = **două** dintre Ziua Linei, Datoria la Jarek, Ultima treabă (al zecelea punct, „Prietenii”, cere 8/10).
+- **Le spui de revoltă de la 8/10:** „?” auriu deasupra lui; fiecare reacționează în felul lui și acceptă (stările `revolta_<id>: da`). Finn: „Știam eu. De la cuști încoace...”.
+- **Invitația:** apoi, ziua (05–23), în meniul lui („Domnule Bram... veniți la noapte la locul de campare?”); pune marcajul `chemat_<id>`, iar el vine noaptea de după, 23–05 (ales de Claude: noaptea care urmează; invitația nu mai apare până trece noaptea aceea, nici după ce a pornit revolta).
+- **La foc** (dialogurile `foc_<id>`, `dialoguriPeLoc` la `padure/campsite`): prima dată o discuție de 3 replici, apoi o replică la întâmplare din două. Kaia, trează: „Au venit, Vale. Stai cu noi la foc.”
+- **„Kaia... a venit vremea?”** (noaptea, la foc, ? auriu) doar cu măcar încă unul care luptă: Bram, Elian sau Roderick (ales de Claude: Finn nu luptă, deci singur nu ajunge; atunci Kaia: „poarta nu se deschide cu un lacăt”). Gândurile lui Vale arată cine e de față; „Pornim revolta?” → „Da. Pornim.” → „Gândește-te bine...” → „Sunt sigur, Kaia.” („Nu încă” / „Lasă-mă să mă mai gândesc” = mai așteptăm).
+- **Fără cale de întoarcere,** peste imagini: focul; câte o imagine pentru fiecare de față, cu o replică (cine nu e acolo nu are imaginea lui; așa se ține minte cine luptă la poartă: `revolta_foc_<id>: da`); Kaia; Vale ultimul (două replici); zorii (05:30); Roderick, dacă are steagul, pleacă după „mândria satului”; Vale și Kaia vorbesc grupului; „Pornim spre sat, prin ceața dimineții.” Starea `revolta: pornita`, marcajul `revolta_pornita` (dimineața de la care se va relua după o înfrângere).
+- **Imagini** (galeria „Revolta: noaptea hotărârii”): `events/revolta_foc.png`, `revolta_bram.png`, `revolta_elian.png`, `revolta_roderick.png`, `revolta_finn.png`, `revolta_kaia.png`, `revolta_vale.png`, `revolta_zori.png`, `revolta_cuvant.png`.
+- **Cum verifici:** F2 → Misiuni: „Baza” terminată; Vale → încrederea lui Bram 8. La locul de campare, ziua, Kaia → „cum îi strângem”. La fierărie, Bram → „trebuie să vă spun ceva” → invitația. Ora 23:30 → Locuri → locul de campare: Bram la foc, Kaia trează → „a venit vremea?”.
+
+**De discutat** (bucățile 3 și 4): lupta finală (valurile, cine e la urmă) și finalurile (victoria, cu câte o imagine de bucurie pentru fiecare; pierderea când nu mai poate fi recrutat nimeni).
+
+**Planul de la început:**
+
 Decis de autor (planul; se face după ce fiecare dintre cei 6 are 10 puncte posibile):
 
 - **Misiunea „Revolta”** (de la Kaia, după „Baza”), în carte: un pas cu câte o bucată pentru fiecare (Bram, Elian, Roderick, Finn), bifată când i-ai spus de revoltă; **cine nu mai poate ajunge la 8/10 apare cu un rând scris și tăiat**. Ultimul pas: noaptea, la locul de campare, vorbești cu Kaia.

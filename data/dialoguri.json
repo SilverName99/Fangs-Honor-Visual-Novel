@@ -1510,6 +1510,15 @@
             "roderick_convoi": "da"
           }
         }
+      },
+      "rev_inv_1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Vin. Și nu beau nimic înainte. Ai cuvântul meu.",
+        "efecte": {
+          "marcheaza": "chemat_soldat"
+        },
+        "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): invitația, ziua; vine în noaptea de după, 23–05, la locul de campare (marcajul „chemat_<id>”)."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure. Decis de autor: până la scandalul din tavernă, Roderick nu-l bagă în seamă pe Vale; scandalul pornește din misiunea lui (oferta „*Orcii fac multă dezordine și gălăgie...*”), din ziua 3.",
@@ -1697,6 +1706,37 @@
           }
         },
         "spre": "groapa_din_nou_r"
+      },
+      {
+        "_nota": "Decis de autor: după ce i-ai spus de revoltă, îl chemi ziua, iar el vine la noapte la locul de campare. Nu se mai cere până trece noaptea aceea; nu după ce a pornit revolta.",
+        "text": "Unchiule, la noapte, la locul de campare. Vii?",
+        "spre": "rev_inv_1",
+        "conditii": {
+          "stare": {
+            "revolta_soldat": "da"
+          },
+          "ora": {
+            "min": "05:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_soldat",
+                  "de": "23:00",
+                  "pana": "05:00",
+                  "cand": "pana"
+                }
+              },
+              {
+                "stare": {
+                  "revolta": "pornita"
+                }
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -2845,6 +2885,16 @@
         }
       },
       {
+        "_nota": "„Revolta”: noaptea, trează, cu oameni chemați la foc (decis de autor).",
+        "nod": "foc_salut",
+        "conditii": {
+          "loc": "padure/campsite",
+          "moment": [
+            "noaptea"
+          ]
+        }
+      },
+      {
         "aleator": [
           "a",
           "salut2"
@@ -3902,6 +3952,12 @@
         "vorbitor": "vanatoare",
         "emotie": "normal",
         "text": "Abia îți ții ochii deschiși. Cu brațele moi nu tragi coarda nici până la piept. Odihnește-te întâi."
+      },
+      "foc_salut": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Au venit, Vale. Stai cu noi la foc.",
+        "_nota": "CIORNĂ (Claude). „Revolta”: noaptea, trează, cu oameni chemați la foc."
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -8814,6 +8870,27 @@
         "gand": true,
         "emotie": "zambet",
         "text": "Bram se întoarce la nicovală și lovește o dată, de probă. Sunetul e curat, ca un clopot."
+      },
+      "rev_inv_1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "La noapte. În pădure. Cu tigrul ăla.",
+        "urmator": "rev_inv_2",
+        "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): invitația, ziua; vine în noaptea de după, 23–05, la locul de campare (marcajul „chemat_<id>”)."
+      },
+      "rev_inv_2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ember nu mușcă. De obicei.",
+        "urmator": "rev_inv_3"
+      },
+      "rev_inv_3": {
+        "vorbitor": "fierar",
+        "emotie": "zambet",
+        "text": "Bine. Vin după ce închid forja. Dar dacă mă mănâncă, tu-i spui lui Agnes.",
+        "efecte": {
+          "marcheaza": "chemat_fierar"
+        }
       }
     },
     "_nota": "CIORNĂ. Meniu de discuție (meniu: true): start = prezentarea (prima dată), apoi salutul; vorbeste = replicile din „Ce mai faci?” (cele noi primele); optiuni = opțiunile lui din meniu; misiunile apar singure.",
@@ -8942,6 +9019,37 @@
           },
           "nu": {
             "existaStare": "cercuri_gata"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor: după ce i-ai spus de revoltă, îl chemi ziua, iar el vine la noapte la locul de campare. Nu se mai cere până trece noaptea aceea; nu după ce a pornit revolta.",
+        "text": "Domnule Bram... veniți la noapte la locul de campare?",
+        "spre": "rev_inv_1",
+        "conditii": {
+          "stare": {
+            "revolta_fierar": "da"
+          },
+          "ora": {
+            "min": "05:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_fierar",
+                  "de": "23:00",
+                  "pana": "05:00",
+                  "cand": "pana"
+                }
+              },
+              {
+                "stare": {
+                  "revolta": "pornita"
+                }
+              }
+            ]
           }
         }
       }
@@ -9973,6 +10081,21 @@
         "vorbitor": "mag",
         "emotie": "normal",
         "text": "La noapte, după unsprezece, la cimitirul de la Marginea. Te aștept acolo. Și vino fără felinar."
+      },
+      "rev_inv_1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am să spun că mă duc să mă rog pentru un bolnav de la marginea satului.",
+        "urmator": "rev_inv_2",
+        "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): invitația, ziua; vine în noaptea de după, 23–05, la locul de campare (marcajul „chemat_<id>”)."
+      },
+      "rev_inv_2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nu e chiar o minciună. Satul ăsta e bolnav de mult.",
+        "efecte": {
+          "marcheaza": "chemat_mag"
+        }
       }
     },
     "meniu": true,
@@ -10235,6 +10358,37 @@
           }
         },
         "spre": "groapa_din_nou_e"
+      },
+      {
+        "_nota": "Decis de autor: după ce i-ai spus de revoltă, îl chemi ziua, iar el vine la noapte la locul de campare. Nu se mai cere până trece noaptea aceea; nu după ce a pornit revolta.",
+        "text": "Frate Elian, vino la noapte la locul de campare.",
+        "spre": "rev_inv_1",
+        "conditii": {
+          "stare": {
+            "revolta_mag": "da"
+          },
+          "ora": {
+            "min": "05:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_mag",
+                  "de": "23:00",
+                  "pana": "05:00",
+                  "cand": "pana"
+                }
+              },
+              {
+                "stare": {
+                  "revolta": "pornita"
+                }
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -15300,6 +15454,27 @@
         "vorbitor": "hot",
         "emotie": "zambet",
         "text": "Lina zice că ești fratele ei mai mare. Eu n-am contrazis-o. Haha!"
+      },
+      "rev_inv_1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lângă tigru? Noaptea?",
+        "urmator": "rev_inv_2",
+        "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): invitația, ziua; vine în noaptea de după, 23–05, la locul de campare (marcajul „chemat_<id>”)."
+      },
+      "rev_inv_2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Lângă mine.",
+        "urmator": "rev_inv_3"
+      },
+      "rev_inv_3": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "...Bine. Dar stau lângă tine.",
+        "efecte": {
+          "marcheaza": "chemat_hot"
+        }
       }
     },
     "vorbeste": [
@@ -15599,6 +15774,37 @@
           },
           "nu": {
             "areObiect": "tort_lina"
+          }
+        }
+      },
+      {
+        "_nota": "Decis de autor: după ce i-ai spus de revoltă, îl chemi ziua, iar el vine la noapte la locul de campare. Nu se mai cere până trece noaptea aceea; nu după ce a pornit revolta.",
+        "text": "Finn, vii la noapte la locul de campare?",
+        "spre": "rev_inv_1",
+        "conditii": {
+          "stare": {
+            "revolta_hot": "da"
+          },
+          "ora": {
+            "min": "05:00",
+            "max": "22:59"
+          },
+          "nu": {
+            "oricare": [
+              {
+                "noapteaDupa": {
+                  "marcaj": "chemat_hot",
+                  "de": "23:00",
+                  "pana": "05:00",
+                  "cand": "pana"
+                }
+              },
+              {
+                "stare": {
+                  "revolta": "pornita"
+                }
+              }
+            ]
           }
         }
       }
@@ -27172,6 +27378,909 @@
         "gand": true,
         "emotie": "zambet",
         "text": "Ember se ridică, se întinde și vine să-mi miroasă arcul. Pufnește o dată, mulțumit. Cred că am trecut și de el."
+      }
+    }
+  },
+  "revolta": {
+    "_nota": "CIORNĂ (Claude). Misiunea Kaiei „Revolta” (decis de autor, planul în docs/misiuni.md): oferta, ce răspunde fiecare când află de revoltă (de la 8/10), noaptea hotărârii la foc. Nodurile intră în dialogul celui cu care vorbește Vale (Kaia, Bram, Elian, Roderick, Finn).",
+    "grup": "Revolta: noaptea hotărârii",
+    "partener": "vanatoare",
+    "start": "rn1",
+    "noduri": {
+      "ro1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Nu deodată. Și nu pe oricine.",
+        "urmator": "ro2",
+        "_nota": "CIORNĂ (Claude). Misiunea „Revolta” (decis de autor): oferta, la locul de campare."
+      },
+      "ro2": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Un singur om care vorbește la tavernă și orcii ne prind pe toți înainte să ridicăm o sabie. Tu îi știi pe oamenii din sat, Vale. Eu nu.",
+        "urmator": "ro3"
+      },
+      "ro3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la fiecare, pe rând. Domnul Bram. Fratele Elian. Unchiul. Finn.",
+        "urmator": "ro4"
+      },
+      "ro4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Când știi că ți-ai pune viața în mâinile unuia dintre ei, spune-i. Doar atunci. Pe ceilalți îi lași în pace.",
+        "urmator": "ro5"
+      },
+      "ro5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și apoi?",
+        "urmator": "ro6"
+      },
+      "ro6": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Apoi îi chemi aici, la foc. Noaptea. Orcii dorm, iar pădurea nu vorbește.",
+        "urmator": "ro7"
+      },
+      "ro7": {
+        "vorbitor": "vanatoare",
+        "emotie": "zambet",
+        "text": "Iar când sunt destui la foc, mă întrebi. Și pornim.",
+        "urmator": "ro8"
+      },
+      "ro8": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Câți sunt destui?",
+        "urmator": "ro9"
+      },
+      "ro9": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Tu, eu și încă unul care ține o armă în mână. Mai puțini... și nu mai e o revoltă. E o înmormântare.",
+        "efecte": {
+          "misiune": {
+            "kaia_revolta": "inceputa"
+          }
+        }
+      },
+      "rev_ind": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Spune-le celor în care ai încredere. Apoi cheamă-i aici, noaptea. Eu nu dorm când vine cineva la foc."
+      },
+      "rev_doar_finn": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Finn e curajos, Vale. Dar poarta nu se deschide cu un lacăt. Ne mai trebuie unul care ține o armă în mână."
+      },
+      "rb1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Între noi? Băiete, la forja mea vine tot satul. Zidurile au urechi.",
+        "urmator": "rb2",
+        "_nota": "CIORNĂ (Claude). „Revolta”: Vale îi spune lui Bram (de la 8/10)."
+      },
+      "rb2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă uit spre ușă. E închisă.",
+        "urmator": "rb3"
+      },
+      "rb3": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia și cu mine vrem să scoatem orcii din sat. Nu să-i păcălim. Să-i scoatem.",
+        "urmator": "rb4"
+      },
+      "rb4": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Știi ce-mi ceri? Un fierar cu ciocanul lui, contra unei tabere întregi de orci?",
+        "urmator": "rb5"
+      },
+      "rb5": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Nu vă cer nimic, domnule Bram. Vă spun doar. Dacă vreți să veniți, vă chem. Dacă nu, n-am fost aici.",
+        "urmator": "rb6"
+      },
+      "rb6": {
+        "vorbitor": "fierar",
+        "emotie": "trist",
+        "text": "...Zece ani am bătut fier pentru ei. Zece ani mi-am plecat capul când trecea colectorul pe lângă forjă.",
+        "urmator": "rb7"
+      },
+      "rb7": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Cheamă-mă. Vin.",
+        "urmator": "rb8",
+        "efecte": {
+          "stare": {
+            "revolta_fierar": "da"
+          }
+        }
+      },
+      "rb8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mâna lui îmi strânge umărul. Grea ca o nicovală."
+      },
+      "re1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Sfatul meu îl ai oricând, Vale. Ce s-a întâmplat?",
+        "urmator": "re2",
+        "_nota": "CIORNĂ (Claude). „Revolta”: Vale îi spune lui Elian (de la 8/10)."
+      },
+      "re2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Kaia și cu mine vrem să ridicăm satul împotriva orcilor. Și am nevoie de tine lângă noi.",
+        "urmator": "re3"
+      },
+      "re3": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Cercul m-a trimis aici să am grijă de oameni. Nu să-i duc la luptă.",
+        "urmator": "re4"
+      },
+      "re4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și dacă lupta e singurul fel în care mai poți avea grijă de ei?",
+        "urmator": "re5"
+      },
+      "re5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "...Atunci lumina trebuie să fie acolo unde e întunericul cel mai mare. Așa scrie în cărțile mele. N-am crezut că o să trebuiască s-o fac și eu.",
+        "urmator": "re6"
+      },
+      "re6": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Cheamă-mă când e vremea. O să vin.",
+        "efecte": {
+          "stare": {
+            "revolta_mag": "da"
+          }
+        }
+      },
+      "rr1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Despre orci. Tot satul vorbește despre orci, Vale. Dar în șoaptă.",
+        "urmator": "rr2",
+        "_nota": "CIORNĂ (Claude). „Revolta”: Vale îi spune lui Roderick (de la 8/10)."
+      },
+      "rr2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Eu nu vreau să vorbesc despre ei, unchiule. Vreau să-i scot din sat. Kaia, eu... și cine mai vine.",
+        "urmator": "rr3"
+      },
+      "rr3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Ultima dată când a zis cineva asta, a fost fratele meu. Și l-am adus acasă în spate.",
+        "urmator": "rr4"
+      },
+      "rr4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Știu. De-aia trebuia să afli de la mine.",
+        "urmator": "rr5"
+      },
+      "rr5": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Edwin m-a trimis acasă să am grijă de voi. Am avut grijă prost. Dar am avut.",
+        "urmator": "rr6"
+      },
+      "rr6": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "De data asta nu mă mai trimite nimeni acasă. Cheamă-mă și vin.",
+        "efecte": {
+          "stare": {
+            "revolta_soldat": "da"
+          }
+        }
+      },
+      "rf1": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Știam eu. De la cuști încoace te uiți la poartă cum mă uit eu la un lacăt.",
+        "urmator": "rf2",
+        "_nota": "CIORNĂ (Claude). „Revolta”: Vale îi spune lui Finn (de la 8/10; Finn știe din „Cuștile vânătorilor”)."
+      },
+      "rf2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și? Ești cu noi?",
+        "urmator": "rf3"
+      },
+      "rf3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Am zis-o atunci, la foc: eu deschid orice lacăt. Doar că la poartă n-o să mă vadă nimeni. Acolo sunt eu cel mai bun.",
+        "urmator": "rf4"
+      },
+      "rf4": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Cheamă-mă când vă strângeți. Vin. Chiar dacă tigrul ăla se uită la mine tot timpul.",
+        "efecte": {
+          "stare": {
+            "revolta_hot": "da"
+          }
+        }
+      },
+      "rn1": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Uită-te în jurul focului, Vale.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_fierar",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_fierar"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_mag",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_mag"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_hot"
+          },
+          "rn3"
+        ],
+        "_nota": "CIORNĂ (Claude). „Revolta”: noaptea, la foc; cei de față se văd în gândurile lui Vale."
+      },
+      "rg_fierar": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Domnul Bram stă pe o buturugă prea mică pentru el, cu brațele încrucișate, și se uită în foc ca la o forjă.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_mag",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_mag"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_hot"
+          },
+          "rn3"
+        ]
+      },
+      "rg_mag": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fratele Elian ține palmele întinse spre flăcări. Buzele i se mișcă încet. Se roagă, sau poate doar numără stelele.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_hot"
+          },
+          "rn3"
+        ]
+      },
+      "rg_soldat": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Unchiul stă puțin mai departe, cu spatele la un copac. Ca un soldat de strajă. Ca acum douăzeci de ani.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rg_hot"
+          },
+          "rn3"
+        ]
+      },
+      "rg_hot": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Finn stă cât mai departe de Ember. Tigrul se uită la el fără să clipească.",
+        "urmator": [
+          "rn3"
+        ]
+      },
+      "rn3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Au venit pentru tine, Vale. Nu pentru mine.",
+        "urmator": "rn4"
+      },
+      "rn4": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Pornim revolta?",
+        "alegeri": [
+          {
+            "text": "Da. Pornim.",
+            "spre": "rn5"
+          },
+          {
+            "text": "Nu încă.",
+            "spre": "rn_nu"
+          }
+        ]
+      },
+      "rn5": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Gândește-te bine. Dacă spui da, mâine în zori suntem la poartă. Nu mai e cale de întoarcere. Iar dacă pierdem, satul plătește pentru noi.",
+        "alegeri": [
+          {
+            "text": "Sunt sigur, Kaia.",
+            "spre": "rv1"
+          },
+          {
+            "text": "Lasă-mă să mă mai gândesc.",
+            "spre": "rn_nu"
+          }
+        ]
+      },
+      "rn_nu": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Atunci mai așteptăm. Focul ăsta nu se stinge într-o noapte."
+      },
+      "rv1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Kaia aruncă o mână de vreascuri pe foc. Flăcările se ridică, iar scânteile urcă printre crengi, spre cer. Nimeni nu mai vorbește.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_fierar",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_fierar"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_mag",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_mag"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_hot"
+          },
+          "rv_kaia"
+        ],
+        "imagine": "events/revolta_foc.png",
+        "_nota": "Decis de autor: „Da” = fără cale de întoarcere; câte o imagine pentru fiecare de față (cine nu e acolo nu are imaginea lui), Vale ultimul. Replicile: CIORNĂ (Claude)."
+      },
+      "rv_fierar": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Am bătut potcoave, pluguri și cuie pentru orci zece ani. Să nu zică nimeni că Bram Emberforge nu știe să bată și altceva.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_mag",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_mag"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_hot"
+          },
+          "rv_kaia"
+        ],
+        "imagine": "events/revolta_bram.png",
+        "efecte": {
+          "stare": {
+            "revolta_foc_fierar": "da"
+          }
+        }
+      },
+      "rv_mag": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Cercul Luminii m-a trimis aici să am grijă de oamenii ăștia. Nu mi-a spus cum. Cred că de-acum știu.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_soldat",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_soldat"
+          },
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_hot"
+          },
+          "rv_kaia"
+        ],
+        "imagine": "events/revolta_elian.png",
+        "efecte": {
+          "stare": {
+            "revolta_foc_mag": "da"
+          }
+        }
+      },
+      "rv_soldat": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Ultima dată când am stat în fața orcilor, am fugit. Fratele meu mi-a poruncit. De data asta nu mai fuge nimeni.",
+        "urmator": [
+          {
+            "conditii": {
+              "noapteaDupa": {
+                "marcaj": "chemat_hot",
+                "de": "23:00",
+                "pana": "05:00"
+              }
+            },
+            "nod": "rv_hot"
+          },
+          "rv_kaia"
+        ],
+        "imagine": "events/revolta_roderick.png",
+        "efecte": {
+          "stare": {
+            "revolta_foc_soldat": "da"
+          }
+        }
+      },
+      "rv_hot": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Eu nu știu să țin o sabie, Vale. Dar știu să fiu acolo unde nu se uită nimeni. O să fiu acolo.",
+        "urmator": [
+          "rv_kaia"
+        ],
+        "imagine": "events/revolta_finn.png",
+        "efecte": {
+          "stare": {
+            "revolta_foc_hot": "da"
+          }
+        }
+      },
+      "rv_kaia": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Pădurea asta m-a crescut. Orcii o ard bucată cu bucată. Mâine îi trimitem înapoi de unde au venit.",
+        "urmator": "rv_vale",
+        "imagine": "events/revolta_kaia.png"
+      },
+      "rv_vale": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Tata a murit la copacul mare, apărând satul ăsta. Douăzeci și trei de oameni au murit cu el. Mâine terminăm ce-au început ei.",
+        "urmator": "rv_vale2",
+        "imagine": "events/revolta_vale.png"
+      },
+      "rv_vale2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nimeni nu răspunde. Dar văd în ochii lor că nici nu e nevoie.",
+        "urmator": "rz1",
+        "imagine": "events/revolta_vale.png"
+      },
+      "rz1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Nu mai doarme nimeni. Când cerul se albește printre copaci, din foc a rămas doar jarul.",
+        "urmator": [
+          {
+            "conditii": {
+              "stare": {
+                "steag": "roderick",
+                "revolta_foc_soldat": "da"
+              }
+            },
+            "nod": "rz_steag"
+          },
+          "rz2"
+        ],
+        "imagine": "events/revolta_zori.png",
+        "efecte": {
+          "panaLaOra": "05:30"
+        }
+      },
+      "rz_steag": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Luați-o înainte. Vă prind din urmă la marginea satului. Mă duc după mândria satului.",
+        "urmator": "rz_steag2",
+        "imagine": "events/revolta_zori.png",
+        "_nota": "Decis de autor: Roderick vine la foc fără steag; dacă l-a primit, în zori se duce după el, iar când începe lupta apare cu el."
+      },
+      "rz_steag2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Știu ce vrea să spună. Steagul lui tata, cusut de mama.",
+        "urmator": "rz2",
+        "imagine": "events/revolta_zori.png"
+      },
+      "rz2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ascultați-mă. Orcii sunt mai mulți decât noi. Dar ei luptă pentru o taxă. Noi luptăm pentru casele noastre.",
+        "urmator": "rz3",
+        "imagine": "events/revolta_cuvant.png",
+        "_nota": "Decis de autor: în zori, Vale și Kaia vorbesc grupului."
+      },
+      "rz3": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Rămâneți aproape unul de altul. Cine cade e ridicat. Nimeni nu rămâne în urmă.",
+        "urmator": "rz4",
+        "imagine": "events/revolta_cuvant.png"
+      },
+      "rz4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pornim spre sat, prin ceața dimineții.",
+        "imagine": "events/revolta_cuvant.png",
+        "efecte": {
+          "stare": {
+            "revolta": "pornita"
+          },
+          "marcheaza": "revolta_pornita"
+        },
+        "_nota": "TODO (bucata 3, de discutat cu autorul): de aici pornește lupta finală, la poartă, cu cei „revolta_foc_<id>: da” (Finn ajută cu fluierul). Marcajul „revolta_pornita” e dimineața de la care se va relua după o înfrângere.",
+        "sfarsit": true
+      }
+    }
+  },
+  "foc_fierar": {
+    "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): noaptea, chemat la locul de campare, are 2–3 replici acolo; prima dată discuția întreagă, apoi una scurtă, la întâmplare.",
+    "partener": "fierar",
+    "start": [
+      {
+        "nod": "a1",
+        "conditii": {
+          "nuStare": {
+            "foc_fierar": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "b1",
+          "c1"
+        ]
+      }
+    ],
+    "noduri": {
+      "a1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Vale. Tigrul ăla se uită la mine ca la o halcă de carne.",
+        "urmator": "a2",
+        "efecte": {
+          "stare": {
+            "foc_fierar": "da"
+          }
+        }
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ember nu mănâncă fierari, domnule Bram.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Hm. Mi-am adus ciocanul, oricum."
+      },
+      "b1": {
+        "vorbitor": "fierar",
+        "emotie": "normal",
+        "text": "Focul ăsta e prea mic. La forjă ți-aș face unul ca lumea."
+      },
+      "c1": {
+        "vorbitor": "fierar",
+        "emotie": "suparat",
+        "text": "Zece ani am bătut oțel pentru ei. Acum o să-l bat pe ei."
+      }
+    }
+  },
+  "foc_mag": {
+    "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): noaptea, chemat la locul de campare, are 2–3 replici acolo; prima dată discuția întreagă, apoi una scurtă, la întâmplare.",
+    "partener": "mag",
+    "start": [
+      {
+        "nod": "a1",
+        "conditii": {
+          "nuStare": {
+            "foc_mag": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "b1",
+          "c1"
+        ]
+      }
+    ],
+    "noduri": {
+      "a1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "E liniște aici. Pădurea are rugăciunile ei, Vale.",
+        "urmator": "a2",
+        "efecte": {
+          "stare": {
+            "foc_mag": "da"
+          }
+        }
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ție nu-ți e frică, frate Elian?",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ba da. Dar mi-e mai frică de ce se întâmplă dacă nu facem nimic."
+      },
+      "b1": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Kaia vorbește cu tigrul ca un preot cu altarul. Fără cuvinte."
+      },
+      "c1": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am adus pansamente. Mai multe decât o să ne trebuiască, sper."
+      }
+    }
+  },
+  "foc_soldat": {
+    "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): noaptea, chemat la locul de campare, are 2–3 replici acolo; prima dată discuția întreagă, apoi una scurtă, la întâmplare.",
+    "partener": "soldat",
+    "start": [
+      {
+        "nod": "a1",
+        "conditii": {
+          "nuStare": {
+            "foc_soldat": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "b1",
+          "c1"
+        ]
+      }
+    ],
+    "noduri": {
+      "a1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Edwin ar fi râs de noi, să știi. Ascunși în pădure, ca niște copii.",
+        "urmator": "a2",
+        "efecte": {
+          "stare": {
+            "foc_soldat": "da"
+          }
+        }
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Și el se ascundea?",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "soldat",
+        "emotie": "trist",
+        "text": "Cu mine, după copacul mare. Ultima dată... nu ne-am mai ascuns."
+      },
+      "b1": {
+        "vorbitor": "soldat",
+        "emotie": "normal",
+        "text": "Am stat de strajă douăzeci de ierni. Nopțile astea le recunosc. Sunt nopțile de dinainte."
+      },
+      "c1": {
+        "vorbitor": "soldat",
+        "emotie": "zambet",
+        "text": "Nu-ți face griji pentru mine. Ceaiul lui Elian e mai tare decât berea lui Agnes."
+      }
+    }
+  },
+  "foc_hot": {
+    "_nota": "CIORNĂ (Claude). „Revolta” (decis de autor): noaptea, chemat la locul de campare, are 2–3 replici acolo; prima dată discuția întreagă, apoi una scurtă, la întâmplare.",
+    "partener": "hot",
+    "start": [
+      {
+        "nod": "a1",
+        "conditii": {
+          "nuStare": {
+            "foc_hot": "da"
+          }
+        }
+      },
+      {
+        "aleator": [
+          "b1",
+          "c1"
+        ]
+      }
+    ],
+    "noduri": {
+      "a1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Tigrul ăla, Vale... jur că mă urmărește cu ochii.",
+        "urmator": "a2",
+        "efecte": {
+          "stare": {
+            "foc_hot": "da"
+          }
+        }
+      },
+      "a2": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Îi placi, Finn.",
+        "urmator": "a3"
+      },
+      "a3": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Așa zicea și Jarek despre câinii lui."
+      },
+      "b1": {
+        "vorbitor": "hot",
+        "emotie": "zambet",
+        "text": "Dacă mama află că stau noaptea în pădure, nu mai am nevoie de orci."
+      },
+      "c1": {
+        "vorbitor": "hot",
+        "emotie": "normal",
+        "text": "Lina m-a întrebat unde plec. I-am zis că la o întâlnire. Nu e chiar o minciună."
       }
     }
   }

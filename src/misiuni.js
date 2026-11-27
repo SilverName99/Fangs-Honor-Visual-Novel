@@ -19,10 +19,14 @@ export const numaratori = (p, stare) =>
 // „subpasi” la un pas: bucăți care se fac în orice ordine (prietenii lui Finn: carnea pentru Pip, arcul pentru Ned,
 // dintele pentru Wil); cartea le arată pe toate, bifate pe rând, iar pasul e gata când sunt gata toate
 export const subpasGata = (sp, stare) => verifica(sp.gata, context(stare));
+// „ratat” la o bucată: nu se mai poate face (misiunea „Revolta”: cine nu mai poate ajunge la 8/10 încredere); în
+// carte apare scris și tăiat, iar predarea ei nu mai apare în meniu
+export const subpasRatat = (sp, stare) => !!sp.ratat && !subpasGata(sp, stare) && verifica(sp.ratat, context(stare));
 
 export function pasGata(p, stare) {
   if (numaratori(p, stare).some((x) => x.are < x.n)) return false;
-  if ((p.subpasi || []).some((sp) => !subpasGata(sp, stare))) return false;
+  // „subpasiOptionale”: bucățile se văd în carte, dar pasul nu le așteaptă pe toate (la revoltă e destul încă unul)
+  if (!p.subpasiOptionale && (p.subpasi || []).some((sp) => !subpasGata(sp, stare))) return false;
   return verifica(p.gata, context(stare));
 }
 
@@ -86,14 +90,16 @@ export function optiuniMisiuni(joc, idPersonaj, loc) {
     }
     if (st !== 'inceputa') continue;
     const p = m.pasi[pasul(s, m.id)];
-    if (!p || (p.la || m.dela) !== idPersonaj) continue;
+    if (!p) continue;
     // Bucățile pasului care se fac în orice ordine au fiecare predarea ei (una sau mai multe căi: arcul lui Ned, de la
-    // Kaia sau cumpărat), cu ? auriu cât se poate preda acum
+    // Kaia sau cumpărat), cu ? auriu cât se poate preda acum. O bucată poate fi la alt personaj („la” la bucată: la
+    // revoltă, câte una la Bram, Elian, Roderick și Finn)
     for (const sp of p.subpasi || []) {
-      if (subpasGata(sp, s)) continue;
+      if ((sp.la || p.la || m.dela) !== idPersonaj || subpasGata(sp, s) || subpasRatat(sp, s)) continue;
       for (const pr of [].concat(sp.predare || []))
         if (verifica(pr.conditii, ctx)) rez.push({ alegere: { text: textPotrivit(pr.text, s), spre: alegeNod(pr.nod, ctx), semn: 'gata' }, dialog });
     }
+    if ((p.la || m.dela) !== idPersonaj) continue;
     const gata = p.predare && verifica(p.predare.conditii, ctx);
     // Și textul opțiunii poate depinde de stare (la „Convoiul” Kaiei: „Mergem?” noaptea, „Ce-ai văzut?” a doua zi)
     if (gata) rez.push({ alegere: { text: textPotrivit(p.predare.text, s), spre: alegeNod(p.predare.nod, ctx), semn: 'gata' }, dialog });

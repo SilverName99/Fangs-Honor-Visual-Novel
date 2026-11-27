@@ -1,5 +1,5 @@
 import { elementImagine } from './imagini.js';
-import { listaMisiuni, pasul, numaratori, textPotrivit, subpasGata } from './misiuni.js';
+import { listaMisiuni, pasul, numaratori, textPotrivit, subpasGata, subpasRatat } from './misiuni.js';
 // Textele cărții sunt în limba jocului; se cer la fiecare desenare, ca să urmeze limba aleasă (misiunile, numele și
 // descrierile vin deja traduse din date)
 import { t, limbaJoc } from './limba.js';
@@ -119,9 +119,11 @@ export function creeazaCarte(parinte, joc) {
       // Textul pasului și sfatul pot depinde de ce a ales Vale (o listă { conditii, text }, ca la „Convoiul” Kaiei)
       pasi.append(div(`pas-misiune${facut ? ' facut' : ' acum'}`, `${facut ? '✓' : '▸'} ${textPotrivit(p.text, s)}${cat}`));
       // Bucățile care se fac în orice ordine: fiecare pe rândul ei, bifată când e gata
+      // Una care nu se mai poate face (cine nu mai poate ajunge la 8/10, la revoltă) e scrisă și tăiată, cu ✗
       if (!facut) for (const sp of p.subpasi || []) {
         const gata = subpasGata(sp, s);
-        pasi.append(div(`subpas-misiune${gata ? ' facut' : ''}`, `${gata ? '✓' : '·'} ${textPotrivit(sp.text, s)}`));
+        const ratat = subpasRatat(sp, s);
+        pasi.append(div(`subpas-misiune${gata ? ' facut' : ratat ? ' ratat' : ''}`, `${gata ? '✓' : ratat ? '✗' : '·'} ${textPotrivit(sp.text, s)}`));
       }
       const sfat = !facut && textPotrivit(p.sfat, s);
       if (sfat) pasi.append(div('sfat-misiune', sfat));

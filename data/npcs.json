@@ -489,7 +489,10 @@
         "trist",
         "zambet",
         "plange"
-      ]
+      ],
+      "dialoguriPeLoc": {
+        "padure/campsite": "foc_soldat"
+      }
     },
     {
       "id": "fierar",
@@ -631,7 +634,10 @@
       "stariExtra": [
         "inrosit",
         "trist"
-      ]
+      ],
+      "dialoguriPeLoc": {
+        "padure/campsite": "foc_fierar"
+      }
     },
     {
       "id": "hot",
@@ -929,6 +935,9 @@
           "tip": "apropiat"
         },
         "armura": 0
+      },
+      "dialoguriPeLoc": {
+        "padure/campsite": "foc_hot"
       }
     },
     {
@@ -1545,7 +1554,10 @@
       "stariExtra": [
         "trist",
         "zambet"
-      ]
+      ],
+      "dialoguriPeLoc": {
+        "padure/campsite": "foc_mag"
+      }
     },
     {
       "id": "hangita",
