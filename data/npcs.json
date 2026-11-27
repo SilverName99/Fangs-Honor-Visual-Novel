@@ -1333,6 +1333,19 @@
         {
           "de": "23:00",
           "pana": "05:00",
+          "conditii": {
+            "misiune": {
+              "elian_cimitir": "inceputa"
+            },
+            "nu": {
+              "existaStare": "elian_cimitir_gata"
+            }
+          },
+          "ce": "cât e misiunea „Lumina de la cimitir”, noaptea e la cimitirul de la Marginea și îl așteaptă pe Vale (fără sprite: evenimentul pornește singur; ales de Claude)"
+        },
+        {
+          "de": "23:00",
+          "pana": "05:00",
           "loc": "biserica/interior",
           "doarme": true,
           "sprite": "doarme",

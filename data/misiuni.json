@@ -3582,6 +3582,64 @@
       "_nota": "Decis de autor: Vale îl pune pe Bram să jure că tace despre Elian și îi spune ideea toiagului; Bram îl bate; Elian pune cristalul și i-l dă lui Vale, care îl păstrează în cufăr pentru lupta finală; +1 Bram și +1 Elian. Pornește singură, la sfârșitul „Secretului lui Elian”."
     },
     {
+      "id": "elian_cimitir",
+      "titlu": "Lumina de la cimitir",
+      "titlu_en": "The Light at the Graveyard",
+      "dela": "mag",
+      "dialog": "mag",
+      "descriere": [
+        {
+          "conditii": {
+            "existaStare": "elian_cimitir_gata"
+          },
+          "text": "CIORNĂ: Noaptea, la cimitir, am stat de pază cât Fratele Elian a citit dintr-o carte veche. Din palmele lui a ieșit lumină, iar mormintele celor 23 au strălucit în ceață. Acum morții dorm din nou. La mormântul tatei, ceva i-a pâlpâit la gât.",
+          "text_en": "At night, at the graveyard, I stood guard while Brother Elian read from an old book. Light came out of his palms, and the graves of the 23 shone in the mist. Now the dead sleep again. At Father’s grave, something flickered at his throat."
+        },
+        "CIORNĂ: Fratele Elian zice că șobolanii au lăsat ceva rău în pământul celor 23, ceva ce nu se vede cu ochii. Vrea să facă ceva pentru ei, noaptea, la cimitir, și are nevoie de cineva care să stea de pază."
+      ],
+      "descriere_en": [
+        null,
+        "Brother Elian says the rats left something evil in the earth of the 23, something you can’t see with your eyes. He wants to do something for them, at night, at the graveyard, and he needs someone to stand guard."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după misiunea lui Finn „Noaptea de la cimitir”; nu se poate refuza. Ales de Claude: la o zi după ea, ca misiunile să nu vină grămadă (și al patrulea vis să vină întâi).",
+        "text": "Frate Elian, arăți obosit.",
+        "text_en": "Brother Elian, you look tired.",
+        "nod": "cim_o1",
+        "conditii": {
+          "misiuneTerminata": {
+            "finn_cimitir": 1
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Noaptea, după unsprezece, merg la cimitir",
+          "text_en": "At night, after eleven, I go to the graveyard",
+          "gata": {
+            "existaStare": "elian_cimitir_gata"
+          },
+          "sfat": "Cimitirul e la Marginea satului. Fratele Elian mă așteaptă acolo noaptea (23–05).",
+          "sfat_en": "The graveyard is at the Edge. Brother Elian waits for me there at night (23–05).",
+          "indiciu": {
+            "text": "Despre cimitir...",
+            "text_en": "About the graveyard...",
+            "nod": "cim_ind"
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Fratelui Elian +1.",
+        "text_en": "Brother Elian’s trust +1.",
+        "efecte": {
+          "relatie": {
+            "mag": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: după „Noaptea de la cimitir” (Finn), Elian simte ceva rău la mormintele celor 23; noaptea, la cimitir, Vale stă de pază, iar Elian citește dintr-o carte, cu lumină din palme, peste 5 imagini; nu se poate refuza; +1 Elian. Ales de Claude: la mormântul lui Edwin, cristalul lui Elian pâlpâie (indiciu); cât e misiunea, Elian lipsește noaptea din biserică (e la cimitir)."
+    },
+    {
       "id": "finn_lada",
       "titlu": "Lada colectorului",
       "titlu_en": "The Collector’s Strongbox",

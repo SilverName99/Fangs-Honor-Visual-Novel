@@ -2033,6 +2033,32 @@
       "_nota": "Decis de autor: noaptea, când Vale ajunge la cimitir, pornește singură (Finn e deja după zid). Pornește și dacă Vale e deja acolo când se face noapte (siPeLoc, ales de Claude)."
     },
     {
+      "id": "elian_cimitir_noapte",
+      "repetare": "o_data",
+      "siPeLoc": true,
+      "nume": "Elian: lumina de la cimitir",
+      "nume_en": "Elian: The Light at the Graveyard",
+      "grup": "Elian: lumina de la cimitir",
+      "grup_en": "Elian: The Light at the Graveyard",
+      "efecte": {
+        "timp": 60
+      },
+      "dialog": "elian_cimitir",
+      "conditii": {
+        "loc": "cimitir",
+        "moment": [
+          "noaptea"
+        ],
+        "misiune": {
+          "elian_cimitir": "inceputa"
+        },
+        "nu": {
+          "existaStare": "elian_cimitir_gata"
+        }
+      },
+      "_nota": "Decis de autor: noaptea, când Vale ajunge la cimitir, pornește direct, ca la lumânările lui Roderick (siPeLoc: și dacă Vale e deja acolo când se face noapte). Ales de Claude: o oră. Noaptea, la Marginea, nu e interdicția orcilor."
+    },
+    {
       "id": "finn_cimitir_dupa",
       "manual": true,
       "repetare": "o_data",

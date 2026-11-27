@@ -9760,6 +9760,83 @@
             "vis_5_elian": "da"
           }
         }
+      },
+      "cim_o1": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Se vede? De două nopți nu dorm, Vale.",
+        "_nota": "CIORNĂ (Claude). Misiunea lui Elian „Lumina de la cimitir” (decis de autor: după „Noaptea de la cimitir”; nu se poate refuza).",
+        "urmator": "cim_o2"
+      },
+      "cim_o2": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lina i-a spus Bătrânei Morwen de luminițele verzi de la cimitir. Iar Morwen mi-a spus mie. Felinarele paznicului de noapte, nu?",
+        "urmator": "cim_o3"
+      },
+      "cim_o3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Se uită drept în ochii mei. Știe deja. Nu are rost să-l mint.",
+        "urmator": "cim_o4"
+      },
+      "cim_o4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Erau șobolani, frate Elian. Ca cei din pivnița lui Agnes. Săpau la mormintele celor 23. Ziceau că „Stăpânul-oaselor vrea morții”.",
+        "urmator": "cim_o5"
+      },
+      "cim_o5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Am fost acolo a doua zi, la prima oră. Pământul l-ați pus bine la loc, tu și Finn. Dar ce au lăsat ei în el nu se vede cu ochii.",
+        "urmator": "cim_o6"
+      },
+      "cim_o6": {
+        "vorbitor": "mag",
+        "emotie": "trist",
+        "text": "Bale, Vale. Și, sub bale, altceva. Un frig vechi, care nu e de la toamnă. Morții nu se odihnesc într-un pământ ca ăsta.",
+        "urmator": "cim_o7"
+      },
+      "cim_o7": {
+        "vorbitor": "vale",
+        "emotie": "speriat",
+        "text": "Și ce putem face?",
+        "urmator": "cim_o8"
+      },
+      "cim_o8": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Eu pot face ceva. Dar nu ziua, cu orcii pe drum. Și nu singur: cineva trebuie să stea de pază cât mă rog.",
+        "urmator": "cim_o9"
+      },
+      "cim_o9": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece, ne vedem la cimitir. Vii?",
+        "alegeri": [
+          {
+            "text": "Vin, frate Elian.",
+            "spre": "cim_da",
+            "efecte": {
+              "misiune": {
+                "elian_cimitir": "inceputa"
+              }
+            }
+          }
+        ],
+        "_nota": "Decis de autor: nu se poate refuza (un singur răspuns)."
+      },
+      "cim_da": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Mulțumesc. Vino fără felinar. Lumina o aduc eu."
+      },
+      "cim_ind": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "La noapte, după unsprezece, la cimitirul de la Marginea. Te aștept acolo. Și vino fără felinar."
       }
     },
     "meniu": true,
@@ -16919,6 +16996,17 @@
               }
             }
           },
+          {
+            "nod": "e_lumina",
+            "conditii": {
+              "stare": {
+                "elian_cimitir_gata": "da"
+              },
+              "nu": {
+                "existaStare": "mormant_lumina"
+              }
+            }
+          },
           "c"
         ]
       },
@@ -17003,6 +17091,18 @@
         "efecte": {
           "timp": 20
         }
+      },
+      "e_lumina": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Pământul de pe mormânt nu mai e rece sub palma mea. Fratele Elian zice că acum dormiți liniștiți. Eu îl cred, tată.",
+        "efecte": {
+          "stare": {
+            "mormant_lumina": "da"
+          }
+        },
+        "urmator": "d",
+        "_nota": "CIORNĂ (Claude): ecoul misiunii lui Elian „Lumina de la cimitir”, o singură dată."
       }
     }
   },
@@ -26665,6 +26765,206 @@
           "obiect": "ciocan_emberforge",
           "stare": {
             "ciocan_castigat": "da"
+          }
+        }
+      }
+    }
+  },
+  "elian_cimitir": {
+    "_nota": "CIORNĂ (Claude). Misiunea lui Elian „Lumina de la cimitir” (decis de autor): noaptea, la cimitir, peste 5 imagini: Vale stă de pază; Elian citește dintr-o carte, iar mâinile i se luminează; lumina crește (destulă, nu foarte multă) și mormintele încep să radieze; Elian închide cartea, împăcat; vine la Vale și îi spune că totul e în regulă. Ales de Claude: la mormântul lui Edwin, cristalul lui Elian pâlpâie, iar Elian tace (indiciu); replicile se schimbă după ce știe Vale (lumina din pădure, secretul lui Elian).",
+    "grup": "Elian: lumina de la cimitir",
+    "partener": "mag",
+    "start": "c1",
+    "noduri": {
+      "c1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Cimitirul doarme sub ceață. Mă sprijin de gardul putred, cu ochii pe drum: dacă vine cineva, trebuie să-l văd eu primul.",
+        "imagine": "events/elian_cimitir_1.png",
+        "urmator": "c2"
+      },
+      "c2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Fratele Elian trece printre morminte fără felinar, de parcă ar vedea pe întuneric. Se oprește în mijlocul celor douăzeci și trei.",
+        "urmator": "c3"
+      },
+      "c3": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Stai de pază, Vale. Orice s-ar întâmpla, nu te apropia până nu te chem.",
+        "urmator": "c4"
+      },
+      "c4": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": "Ce-o să se întâmple, frate Elian?",
+        "urmator": "c5"
+      },
+      "c5": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Nimic rău, dacă vrea Cel de Sus. Doar o rugăciune. Una mai veche decât biserica noastră.",
+        "urmator": "c6"
+      },
+      "c6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Scoate de sub rasă o carte mică, legată în piele, și citește încet, într-o limbă pe care n-o înțeleg. Nu e limba slujbei.",
+        "imagine": "events/elian_cimitir_2.png",
+        "urmator": "c7"
+      },
+      "c7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mâinile lui, pe filele cărții, încep să lumineze. Întâi ca jarul sub cenușă, apoi tot mai alb.",
+        "urmator": "c8"
+      },
+      "c8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "speriat",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "elian_lumina": "terminata"
+              }
+            },
+            "text": "Am mai văzut lumina asta. În pădure, printre gene, când lupii au fugit schelălăind. Atunci n-am fost sigur. Acum sunt."
+          },
+          "N-am mai văzut așa ceva niciodată. Lumina nu arde: o simt pe obraz, caldă, ca soarele de dimineață."
+        ],
+        "urmator": "c9"
+      },
+      "c9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Din carte și din palmele lui iese tot mai multă lumină. Nu orbitoare: blândă, ca o zi senină de toamnă. Și, unul câte unul, mormintele încep să lumineze și ele.",
+        "imagine": "events/elian_cimitir_3.png",
+        "urmator": "c10"
+      },
+      "c10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pământul răscolit de șobolani se netezește, ca și cum l-ar fi mângâiat cineva. Cele douăzeci și trei de morminte strălucesc în ceață, ca lumânările unchiului pe treapta altarului.",
+        "urmator": "c11"
+      },
+      "c11": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Al treilea de la poartă e al tatei. Acolo, lumina e cea mai puternică.",
+        "urmator": "c12"
+      },
+      "c12": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "elian_secret": "terminata"
+              }
+            },
+            "text": "La gâtul lui Elian, sub rasă, pâlpâie cristalul. Se aprinde și se stinge de trei ori, exact când lumina trece peste mormântul tatei."
+          },
+          "La gâtul lui Elian, sub rasă, pâlpâie ceva mic, ca un ciob de sticlă. Se aprinde și se stinge de trei ori, exact când lumina trece peste mormântul tatei."
+        ],
+        "_nota": "Ales de Claude: indiciu, ca în „Secretul lui Elian”, unde cristalul se aprinde lângă Vale.",
+        "urmator": "c13"
+      },
+      "c13": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Elian se oprește din citit și se uită lung la mormântul tatei. Apoi întoarce încă o filă și citește mai departe.",
+        "urmator": "c14"
+      },
+      "c14": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Închide cartea. Lumina se stinge încet, ca o lumânare la sfârșitul slujbei. Pe chipul lui nu mai e nicio grijă: doar oboseală și liniște.",
+        "imagine": "events/elian_cimitir_4.png",
+        "urmator": "c15"
+      },
+      "c15": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Gata.",
+        "urmator": "c16"
+      },
+      "c16": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Vine spre mine, pe cărarea dintre morminte. Pașii lui nu fac niciun zgomot în iarba udă.",
+        "imagine": "events/elian_cimitir_5.png",
+        "urmator": "c17"
+      },
+      "c17": {
+        "vorbitor": "mag",
+        "emotie": "zambet",
+        "text": "Totul e în regulă acum, Vale. Ce era rău în pământul ăsta a plecat. Morții dorm din nou.",
+        "urmator": "c18"
+      },
+      "c18": {
+        "vorbitor": "vale",
+        "emotie": "normal",
+        "text": [
+          {
+            "conditii": {
+              "misiune": {
+                "elian_secret": "terminata"
+              }
+            },
+            "text": "Frate Elian... cristalul. A pâlpâit la mormântul tatei. L-am văzut."
+          },
+          "Frate Elian... la gâtul tău a pâlpâit ceva. La mormântul tatei. L-am văzut."
+        ],
+        "urmator": "c19"
+      },
+      "c19": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Ai văzut bine.",
+        "urmator": "c20"
+      },
+      "c20": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Aștept să mai spună ceva. Nu spune. Își strânge rasa la gât, peste lumina care s-a stins.",
+        "urmator": "c21"
+      },
+      "c21": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Lumina se uită uneori după cei pe care i-a iubit, Vale. Tatăl tău a fost un om bun.",
+        "urmator": "c22"
+      },
+      "c22": {
+        "vorbitor": "mag",
+        "emotie": "normal",
+        "text": "Du-te acasă și dormi. Și niciun cuvânt nimănui despre noaptea asta. Nici mamei tale.",
+        "urmator": "c23"
+      },
+      "c23": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Până la poarta cimitirului, Elian se mai uită o dată înapoi, spre mormântul tatei. Apoi pleacă spre biserică, fără să se mai întoarcă.",
+        "efecte": {
+          "stare": {
+            "elian_cimitir_gata": "da"
           }
         }
       }
