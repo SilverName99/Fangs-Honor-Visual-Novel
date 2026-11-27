@@ -91,6 +91,11 @@ Ce a decis autorul despre lumea mai mare a jocului. E referință: în Actul 1 a
 - **Elian i-a dat toiagul lui Vale** (decis de autor): are încredere în el și simte că ceva mare se apropie. Vale nu înțelege de ce el. Îl ține ascuns în cufărul de acasă, până în ziua cea mare.
 - **În lupta finală** (decis de autor): Vale îl ridică o singură dată; lumina orbește toți orcii și pune un scut de lumină pe fiecare aliat. E **prima dată când Vale folosește magia luminii**: un alt indiciu pentru trezirea lui.
 - Bram a jurat pe nicovala tatălui lui că nu spune nimănui despre Elian (ciornă de Claude).
+
+## Neamul Emberforge și ciocanul (decis de autor)
+
+- **Bram Emberforge** vine dintr-un neam vechi de fierari. **Ciocanul neamului** a trecut din tată în fiu de generații, de la o nicovală la alta, cu numele EMBERFORGE săpat pe coadă de mâna primului dintre ei (decis de autor; „străbunicul străbunicului”, ciornă de Claude). Bram l-a primit de la tatăl lui la **22 de ani** (decis de autor), într-o seară de toamnă: „Fierul nu ține minte cine l-a bătut. Dar ciocanul ține.” (ciornă de Claude).
+- În ziua în care orcii au intrat în sat, colectorul i l-a luat („un ciocan bun e și o măciucă bună”); orcii l-au ținut apoi premiu în Groapă, pentru cine câștigă pe greu, iar Vale i l-a câștigat înapoi (misiunea lui Bram „Ciocanul neamului”). Până atunci, Bram a lucrat cu un ciocan de împrumut (ciornă de Claude).
 - L-a trimis **Cercul Luminii, la cererea Ordinului Flăcării** (decis de autor).
 
 ## Narco (decis de autor)
