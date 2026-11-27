@@ -133,7 +133,9 @@ function incredereDin(sectiune) {
     const c = l.trim().replace(/^\||\|$/g, '').split('|').map((x) => x.trim());
     const n = c[0]?.match(/^\*\*([^*]+)\*\*$/);
     if (!n || c.length < 3) continue;
-    const x = c[2].match(/(\d+)\s*\/\s*10/);
+    // „x / 10” stă în ultima coloană („Acum”); se caută de la coadă, pentru că tabelul a primit coloane noi
+    // (de exemplu „Posibile · ⚠️ · minim”), iar textul surselor poate pomeni și el „8/10”
+    const x = c.slice(2).reverse().map((v) => v.match(/^(\d+)\s*\/\s*10$/)).find(Boolean);
     harta[primulCuvant(n[1])] = { surse: c[1], acum: x ? +x[1] : null };
   }
   return harta;
