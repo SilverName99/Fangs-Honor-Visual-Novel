@@ -1179,6 +1179,34 @@
       }
     },
     {
+      "id": "antrenament_arc",
+      "manual": true,
+      "repetare": "mereu",
+      "nume": "Arcul cu Kaia",
+      "nume_en": "Archery with Kaia",
+      "grup": "Kaia: arcul",
+      "grup_en": "Kaia: The Bow",
+      "imagini": [
+        "events/arc_pregatire.png",
+        "events/arc_lovitura.png"
+      ],
+      "_nota": "Decis de autor: prima imagine, Vale ochește copacul-țintă, cu Kaia lângă el; a doua, săgeata înfiptă în copac, arătată o clipă doar la o lovitură reușită din mini-jocul lemnelor (ca la antrenamentul cu Roderick). Pornește din efectul „antrenament”, nu cu pornesteEveniment.",
+      "antrenament": {
+        "titlu": "Arcul cu Kaia",
+        "titlu_en": "Archery with Kaia",
+        "indemn": "Trage când cercul care se strânge ajunge pe inelul auriu.",
+        "indemn_en": "Loose the arrow when the shrinking circle reaches the golden ring.",
+        "sunet": "lupta_arc",
+        "reusiteMin": 2,
+        "contor": "antrenamente_arc",
+        "marcaj": "antrenament_arc",
+        "minute": 60,
+        "stamina": 20,
+        "stareRezultat": "arc_rezultat",
+        "dialog": "kaia_arc_dupa"
+      }
+    },
+    {
       "id": "pivnita_coborare",
       "nume": "Pivnița: coborârea",
       "nume_en": "The Cellar: The Descent",

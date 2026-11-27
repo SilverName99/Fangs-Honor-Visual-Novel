@@ -258,6 +258,25 @@
       "descriere": "Trage de la distanță. Are nevoie de săgeți: fiecare atac consumă una.",
       "descriere_en": "Shoots from a distance. Needs arrows: each attack uses one."
     },
+    "arc_kaia": {
+      "nume": "Arcul Kaiei",
+      "nume_en": "Kaia’s Bow",
+      "tip": "echipament",
+      "slot": "arma_primara",
+      "douaMaini": true,
+      "tipArma": "arc",
+      "atac": {
+        "min": 10,
+        "max": 14,
+        "tip": "distanta",
+        "sageata": "combat/sageata.png"
+      },
+      "pret": 0,
+      "faraConfiscare": true,
+      "descriere": "Un arc de tisă, făcut de Kaia pentru mine, după trei dimineți de tras în copacul de lângă tabără. Pe mâner a cioplit un colț mic, ca cel de la gâtul ei. Are nevoie de săgeți: fiecare atac consumă una.",
+      "descriere_en": "A yew bow Kaia made for me, after three mornings of shooting at the tree beside her camp. On the grip she carved a small fang, like the one at her throat. Needs arrows: each attack uses one.",
+      "_nota": "Misiunea Kaiei „Arcul” (ales de Claude: puțin mai bun decât arcul obișnuit, TODO echilibru; nu se confiscă, e darul ei). Iconița: items/arc_kaia.png."
+    },
     "scut_lemn": {
       "nume": "Scut de lemn",
       "nume_en": "Wooden Shield",

@@ -1061,6 +1061,18 @@
           "de": "05:00",
           "pana": "10:00",
           "loc": "padure/campsite",
+          "sprite": "arc",
+          "conditii": {
+            "misiune": {
+              "kaia_arc": "inceputa"
+            }
+          },
+          "ce": "cât e misiunea „Arcul”, dimineața, cu arcul, lângă copacul-țintă de la tabără (decis de autor)"
+        },
+        {
+          "de": "05:00",
+          "pana": "10:00",
+          "loc": "padure/campsite",
           "ce": "dimineața la campsite"
         },
         {

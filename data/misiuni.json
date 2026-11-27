@@ -6286,6 +6286,123 @@
       "_nota": "Decis de autor: misiune nouă a Kaiei, după „Convoiul”, care nu se ratează: hotărăsc revolta, iar tabăra ei devine baza (starea „revolta: hotarata”). 2 imagini."
     },
     {
+      "id": "kaia_arc",
+      "titlu": "Arcul",
+      "titlu_en": "The Bow",
+      "dela": "vanatoare",
+      "dialog": "vanatoare",
+      "descriere": [
+        {
+          "conditii": {
+            "misiune": {
+              "kaia_arc": "terminata"
+            }
+          },
+          "text": "CIORNĂ: Trei dimineți am tras cu arcul Kaiei în copacul de lângă tabără. La sfârșit mi-a dat un arc făcut de ea, cu un colț cioplit pe mâner.",
+          "text_en": "For three mornings I shot Kaia’s bow at the tree beside the camp. At the end she gave me a bow she’d made herself, with a fang carved on the grip."
+        },
+        {
+          "conditii": {
+            "stare": {
+              "kaia_arc": "refuzat"
+            }
+          },
+          "text": "CIORNĂ: Kaia voia să mă învețe să trag cu arcul, dimineața, la tabără. I-am spus că mie îmi ajunge sabia.",
+          "text_en": "Kaia wanted to teach me to shoot a bow, in the mornings, at the camp. I told her my sword was enough for me."
+        },
+        "CIORNĂ: Kaia zice că în revoltă nu-mi ajunge sabia: un orc lovit de departe nu mai ajunge să lovească. Mă învață să trag cu arcul, dimineața, la tabără, trei zile."
+      ],
+      "descriere_en": [
+        null,
+        null,
+        "Kaia says a sword won’t be enough in the uprising: an orc struck from afar never gets to strike back. She’s teaching me to shoot a bow, in the mornings, at the camp, for three days."
+      ],
+      "oferta": {
+        "_nota": "Decis de autor: după „Baza”, dimineața (05–10), la locul de campare. Ales de Claude: refuzul o ratează (⚠️), ca Kaia să aibă cel puțin 3 puncte care se pot rata.",
+        "text": "Kaia, de ce te uiți așa la mine?",
+        "text_en": "Kaia, why are you looking at me like that?",
+        "nod": "arc_o1",
+        "conditii": {
+          "misiune": {
+            "kaia_baza": "terminata"
+          },
+          "loc": "padure/campsite",
+          "ora": {
+            "min": "05:00",
+            "max": "09:59"
+          }
+        }
+      },
+      "pasi": [
+        {
+          "text": "Trag cu arcul cu Kaia, câte o dată pe zi",
+          "text_en": "I practise with the bow with Kaia, once a day",
+          "numara": {
+            "contor": "antrenamente_arc",
+            "n": 3
+          },
+          "sfat": "Dimineața (05–10), la locul de campare. Arcul mi-l împrumută Kaia. Ține o oră și cere 20 de stamina; ziua contează dacă nimeresc copacul măcar de două ori din trei.",
+          "sfat_en": "In the morning (05–10), at the Campsite. Kaia lends me her bow. It takes an hour and 20 stamina; the day counts if I hit the tree at least two times out of three.",
+          "predare": {
+            "text": "Tragem cu arcul?",
+            "text_en": "Shall we practise with the bow?",
+            "nod": "arc_s1",
+            "conditii": {
+              "loc": "padure/campsite",
+              "ora": {
+                "min": "05:00",
+                "max": "09:59"
+              },
+              "nu": {
+                "marcatAzi": "antrenament_arc"
+              },
+              "nevoie": {
+                "stamina": {
+                  "min": 20
+                }
+              }
+            }
+          },
+          "indiciu": {
+            "text": "Despre arc...",
+            "text_en": "About the bow...",
+            "nod": [
+              {
+                "nod": "arc_azi",
+                "conditii": {
+                  "marcatAzi": "antrenament_arc"
+                }
+              },
+              {
+                "nod": "arc_dimineata",
+                "conditii": {
+                  "nu": {
+                    "ora": {
+                      "min": "05:00",
+                      "max": "09:59"
+                    }
+                  }
+                }
+              },
+              {
+                "nod": "arc_obosit"
+              }
+            ]
+          }
+        }
+      ],
+      "recompensa": {
+        "text": "Încrederea Kaiei +1 și un arc făcut de ea, cu săgeți.",
+        "text_en": "Kaia’s trust +1, and a bow she made herself, with arrows.",
+        "efecte": {
+          "relatie": {
+            "vanatoare": 1
+          }
+        }
+      },
+      "_nota": "Decis de autor: după „Baza”, Kaia îl învață pe Vale să tragă cu arcul: 3 dimineți (o dată pe zi, 05–10), la locul de campare, mini-jocul lemnelor peste imaginea în care Vale ochește copacul (Kaia lângă el), cu imaginea săgeții înfipte la fiecare lovitură reușită (evenimentul „antrenament_arc”, ca antrenamentul cu Roderick); cât e misiunea, dimineața Kaia are alt sprite, cu arcul. La sfârșit îi dă un arc făcut de ea și săgeți; +1 Kaia. Ales de Claude: refuzul o ratează (⚠️); arcul îl împrumută Kaia (fără condiție de armă); 10 săgeți; o oră și 20 stamina; ziua se pune cu măcar 2 din 3."
+    },
+    {
       "id": "finn_custi",
       "titlu": "Cuștile vânătorilor",
       "titlu_en": "The Hunters’ Cages",
