@@ -86,6 +86,21 @@ export function sufixZona(descriere, tinta, context) {
   return v ? `@${v.nume}` : '';
 }
 
+// Un fundal anume poate avea prim-planul lui (decis de autor: la locul de campare, cu focul aprins și oamenii la foc,
+// alte bucăți stau în fața personajelor decât ziua). Cheia e numele imaginii variantei care se vede acum, nu numele
+// variantei, ca două variante cu aceeași imagine (nopțile cu oameni chemați și adunarea secretă) să-l împartă
+export function cheieFundal(descriere, context) {
+  const v = (descriere?.variante || []).find((x) => x.imagine && verifica(x.conditii, context));
+  return v ? v.imagine.split('/').pop().replace(/\.png$/, '') : null;
+}
+
+// Prim-planul fundalului de acum: al variantei, dacă are unul („primPlanVariante”, chiar gol = fără prim-plan),
+// altfel cel de bază
+export function primPlanActiv(descriere, aranjare, context) {
+  const k = cheieFundal(descriere, context);
+  return (k && aranjare?.primPlanVariante?.[k]) || aranjare?.primPlan || [];
+}
+
 export function pozitie(aranjare, obiect, index, sufix = '') {
   return (sufix && aranjare?.obiecte?.[obiect.id + sufix]) || aranjare?.obiecte?.[obiect.id] || obiect.implicit || pozitieImplicita(index, obiect.tip);
 }
@@ -112,7 +127,8 @@ export function randeaza(strat, descriere, aranjare, context) {
 
   // Prim-planul: bucăți din fundal (de exemplu zidul fântânii) desenate din nou PESTE personaje,
   // ca acestea să pară în spatele lor. Nu se taie nimic din sprite-uri, deci merge oriunde ar fi mutate.
-  for (const poligon of aranjare?.primPlan || []) {
+  const listaPrimPlan = primPlanActiv(descriere, aranjare, context);
+  for (const poligon of listaPrimPlan) {
     if (poligon.length < 3) continue;
     const pp = elementImagine(candidati(descriere.imagine, descriere.variante, context), { clasa: 'fundal prim-plan', fundal: true });
     pp.style.clipPath = `polygon(${poligon.map(([x, y]) => `${x * 100}% ${y * 100}%`).join(', ')})`;
@@ -164,7 +180,7 @@ export function randeaza(strat, descriere, aranjare, context) {
   // Strălucirea personajelor se oprește la prim-plan: dacă Agnes stă după tejghea, conturul ei nu trece peste tejghea.
   // Doar la personaje, pentru că ele sunt cele din spatele prim-planului; ușile și acțiunile se văd întregi
   let masca = null;
-  const primPlan = (aranjare?.primPlan || []).filter((p) => p.length >= 3);
+  const primPlan = listaPrimPlan.filter((p) => p.length >= 3);
   if (primPlan.length) {
     masca = `fara-prim-plan-${++numarMasca}`;
     svg.querySelector('defs').insertAdjacentHTML(

@@ -5,7 +5,7 @@ import { verifica, registreazaConditie } from '../src/conditii.js';
 import { ZILE, NUME_ZILE, momentZi } from '../src/timp.js';
 
 const MOMENTE = { dimineata: 'Dimineața', amiaza: 'Amiaza', seara: 'Seara', noaptea: 'Noaptea' };
-import { creeazaEcran, randeaza, aplicaMoment, sufixVarianta, sufixZona, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
+import { creeazaEcran, randeaza, aplicaMoment, sufixVarianta, sufixZona, cheieFundal, primPlanActiv, aplicaPozitie, pozitie, pozitieImplicita, puncteSvg, punctNormalizat, LATIME, INALTIME } from '../src/scena.js';
 
 const SVG = 'http://www.w3.org/2000/svg';
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -49,7 +49,9 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     tot = localStorage.getItem(CHEIE_TOT) === 'da';
   } catch {}
   // „fortat”: intervalul din program ales cu un clic în panou (id personaj → al câtelea interval); se uită la schimbarea orei
-  const vedere = { zi: 'luni', ora: 12, fortat: {} };
+  // „fundal”: imaginea de fundal aleasă în panou (null = cea din joc la ora arătată, „__baza” = cea de bază), ca un
+  // fundal care cere o stare (focul aprins la locul de campare, când sunt oameni chemați) să poată fi aranjat dinainte
+  const vedere = { zi: 'luni', ora: 12, fortat: {}, fundal: null };
   const personaje = new Map(date.npcs.personaje.map((p) => [p.id, p]));
   const context = () => {
     const minuteZi = vedere.ora * 60;
@@ -104,11 +106,29 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   }
 
   const descriere = () => lume.get(idScena);
+  // Descrierea cu fundalul ales în panou: varianta aleasă rămâne doar cu condiția de moment (ca tenta de noapte să
+  // nu se pună peste o imagine de noapte), restul variantelor de fundal nu se mai văd
+  function descriereVazuta() {
+    const d = descriere();
+    if (!vedere.fundal || !d) return d;
+    if (vedere.fundal === '__baza') return { ...d, variante: [] };
+    const v = (d.variante || []).find((x) => x.imagine === vedere.fundal);
+    return v ? { ...d, variante: [{ ...v, conditii: v.conditii?.moment ? { moment: v.conditii.moment } : {} }] } : d;
+  }
+  // Lista de prim-plan pe care o arată și o schimbă editorul acum: a fundalului ales, dacă are una, altfel cea de bază
+  const primPlanVazut = () => primPlanActiv(descriereVazuta(), lucru, context());
+  // Unde se adaugă un prim-plan nou: la fundalul variantei care se vede (își face lista lui), altfel la cel de bază
+  function listaDeDesenat() {
+    const k = cheieFundal(descriereVazuta(), context());
+    if (!k) return lucru.primPlan;
+    lucru.primPlanVariante ||= {};
+    return (lucru.primPlanVariante[k] ||= []);
+  }
 
   function copieDeLucru(id) {
     if (modificate.has(id)) return modificate.get(id);
     const a = structuredClone(date.aranjare[id] || {});
-    return { zone: a.zone || {}, obiecte: a.obiecte || {}, primPlan: a.primPlan || [] };
+    return { zone: a.zone || {}, obiecte: a.obiecte || {}, primPlan: a.primPlan || [], ...(a.primPlanVariante ? { primPlanVariante: a.primPlanVariante } : {}) };
   }
 
   // Istoric pentru Ctrl+Z, per scenă: o copie a aranjării înainte de fiecare modificare.
@@ -186,6 +206,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     if (desen) desen = null;
     idScena = id;
     vedere.fortat = {};
+    vedere.fundal = null;
     lucru = copieDeLucru(id);
     selectie = null;
     arataScena();
@@ -194,7 +215,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
 
   // ---------- scena: obiecte trase cu mouse-ul ----------
   function arataScena() {
-    const d = descriere();
+    const d = descriereVazuta();
     const ctx = context();
     const r = randeaza(strat, d, lucru, ctx);
     aplicaMoment(strat, r, d, ctx);
@@ -327,7 +348,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
     suprapunere.classList.toggle('desen', !!desen);
     const d = descriere();
 
-    lucru.primPlan.forEach((poligon, i) => {
+    primPlanVazut().forEach((poligon, i) => {
       suprapunere.append(element('polygon', { points: puncteSvg(poligon), class: 'ez-primplan' }));
       const cx = poligon.reduce((s2, q) => s2 + q[0], 0) / poligon.length;
       const cy = poligon.reduce((s2, q) => s2 + q[1], 0) / poligon.length;
@@ -433,7 +454,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
   function terminaDesenul() {
     if (desen.puncte.length >= 3) {
       retine();
-      if (desen.id === PRIM_PLAN) lucru.primPlan.push(desen.puncte);
+      if (desen.id === PRIM_PLAN) listaDeDesenat().push(desen.puncte);
       else lucru.zone[kz(desen.id)] = desen.puncte;
       marcheaza();
       if (desen.id === PRIM_PLAN) {
@@ -490,6 +511,17 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         <span class="sumar">${MOMENTE[context().moment]}</span>
       </div>
       <label class="arata-tot" title="Personajele, decorul și orele care apar abia după o misiune sau o stare se văd oricum, ca să le poți aranja"><input type="checkbox" class="tot" ${tot ? 'checked' : ''}> Arată tot (și ce apare abia după misiuni)</label>`;
+    // Fundalul: doar la scenele cu imagini diferite după stare sau oră (o imagine apare o singură dată în listă)
+    const imaginiFundal = [];
+    for (const v of d.variante || []) if (v.imagine && !imaginiFundal.some((x) => x.imagine === v.imagine)) imaginiFundal.push(v);
+    if (imaginiFundal.length && d.tip !== 'lupta') {
+      html += `<div class="ora-editor" title="Ce imagine de fundal arată editorul. Fiecare fundal poate avea prim-planul lui."><span class="sumar">Fundal:</span>
+        <select class="fundal-ed">
+          <option value="" ${!vedere.fundal ? 'selected' : ''}>cum e în joc la ora asta</option>
+          <option value="__baza" ${vedere.fundal === '__baza' ? 'selected' : ''}>de bază (${esc(d.imagine.split('/').pop())})</option>
+          ${imaginiFundal.map((v) => `<option value="${esc(v.imagine)}" ${vedere.fundal === v.imagine ? 'selected' : ''}>${esc(v.nume || v.imagine.split('/').pop())}</option>`).join('')}
+        </select></div>`;
+    }
 
     if (desen) {
       const t = desen.id === PRIM_PLAN ? { nume: 'prim-plan (ce stă în fața personajelor)' } : d.tinte.find((x) => x.id === desen.id);
@@ -541,9 +573,17 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       }
       // Un ecran poate cere și el prim-plan (buturuga de la masa de zaruri, care taie orcii)
       if (d.tip !== 'lupta' && (d.tip !== 'ecran' || d.primPlan)) {
+        const kf = cheieFundal(descriereVazuta(), context());
+        const alLui = kf && lucru.primPlanVariante?.[kf];
+        const despre = !kf
+          ? ''
+          : alLui
+            ? `<div class="sumar">Prim-planul fundalului <b>${esc(kf)}</b> (doar al lui). <button class="btn de-baza">Folosește-l pe cel de bază</button></div>`
+            : `<div class="sumar">Fundalul <b>${esc(kf)}</b> folosește prim-planul de bază. Ce desenezi acum devine prim-planul lui.</div>`;
         html += `<h3>Prim-plan</h3>
           <div class="sumar">Conturează ce trebuie să stea <b>în fața</b> personajelor (de exemplu zidul fântânii). Bucata aceea din fundal se pune peste ele, ca să pară în spatele ei.</div>
-          ${lucru.primPlan
+          ${despre}
+          ${(alLui || (kf ? [] : lucru.primPlan))
             .map((_, i) => `<div class="rand" data-primplan="${i}"><span class="nume">✓ Prim-plan ${i + 1}</span><button class="btn pericol sterge-primplan">✕</button></div>`)
             .join('')}
           <div class="salvare"><button class="btn adauga-primplan">+ Desenează prim-plan</button></div>`;
@@ -589,6 +629,25 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
         arataScena();
       };
     }
+    // Un fundal ales cu o condiție de moment (noaptea) mută și ora editorului acolo, ca imaginea să se vadă cum e în joc
+    const PRIMA_ORA = { dimineata: 5, amiaza: 12, seara: 18, noaptea: 23 };
+    const elFundal = elPanou.querySelector('.fundal-ed');
+    if (elFundal)
+      elFundal.onchange = (e) => {
+        vedere.fundal = e.target.value || null;
+        const v = (descriere().variante || []).find((x) => x.imagine === vedere.fundal);
+        const m = v?.conditii?.moment;
+        if (m?.length && !m.includes(context().moment)) vedere.ora = PRIMA_ORA[m[0]] ?? vedere.ora;
+        arataScena();
+      };
+    elPanou.querySelector('.de-baza')?.addEventListener('click', () => {
+      const k = cheieFundal(descriereVazuta(), context());
+      if (!k || !confirm('Fundalul acesta revine la prim-planul de bază (cel desenat pentru el se șterge). Sigur?')) return;
+      retine();
+      delete lucru.primPlanVariante[k];
+      marcheaza();
+      arataScena();
+    });
     elPanou.querySelector('.tot').onchange = (e) => {
       tot = e.target.checked;
       try {
@@ -631,7 +690,7 @@ export function creeazaAranjare(container, comun, dupaSalvare) {
       r.querySelector('.sterge-primplan').onclick = () => {
         if (!confirm('Ștergi acest prim-plan?')) return;
         retine();
-        lucru.primPlan.splice(Number(r.dataset.primplan), 1);
+        listaDeDesenat().splice(Number(r.dataset.primplan), 1);
         marcheaza();
         arataScena();
       };
