@@ -28111,50 +28111,50 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pădurea e tăcută. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
+        "text": "Satul rămâne în urma noastră, încă adormit sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
         "urmator": "fa_d2",
-        "imagine": "events/finala_padure.png",
-        "_nota": "CIORNĂ (Claude). Decis de autor: gândurile lui Vale pe drum, cu tot ce a dus până aici; pădurea în spate (semi-close-up), apoi satul în spate (close-up), apoi peste umărul lui, la poartă; „_a” = aceleași noduri, cu imaginile în care poartă armura tatei."
+        "imagine": "events/finala_sat.png",
+        "_nota": "CIORNĂ (Claude). Decis de autor: gândurile lui Vale pe drum, cu tot ce a dus până aici; întâi satul în spate (close-up), apoi pădurea în spate (semi-close-up; cerut de autor: în ordinea asta), apoi peste umărul lui, la poartă; „_a” = aceleași noduri, cu imaginile în care poartă armura tatei."
       },
       "fa_d2": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
+        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
         "urmator": "fa_d3",
-        "imagine": "events/finala_padure.png"
+        "imagine": "events/finala_sat.png"
       },
       "fa_d3": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
+        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
         "urmator": "fa_d4",
-        "imagine": "events/finala_padure.png"
+        "imagine": "events/finala_sat.png"
       },
       "fa_d4": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
+        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
         "urmator": "fa_d5",
-        "imagine": "events/finala_padure.png"
+        "imagine": "events/finala_sat.png"
       },
       "fa_d5": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Ies dintre copaci. Satul doarme încă sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
+        "text": "Drumul spre poartă trece pe sub copaci. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
         "urmator": "fa_d6",
-        "imagine": "events/finala_sat.png"
+        "imagine": "events/finala_padure.png"
       },
       "fa_d6": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
+        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
         "urmator": "fa_d7",
-        "imagine": "events/finala_sat.png"
+        "imagine": "events/finala_padure.png"
       },
       "fa_d7": {
         "vorbitor": "vale",
@@ -28162,7 +28162,7 @@
         "emotie": "normal",
         "text": "Mă gândesc la vise. La glasul care mă strigă pe nume din întuneric. Nu știu ce vrea de la mine. Știu doar că azi nu mi-e frică de el.",
         "urmator": "fa_d8",
-        "imagine": "events/finala_sat.png"
+        "imagine": "events/finala_padure.png"
       },
       "fa_d8": {
         "vorbitor": "vale",
@@ -28170,7 +28170,7 @@
         "emotie": "normal",
         "text": "Mi-e frică de altceva. Că o să cadă cineva lângă mine și n-o să apuc să-l ridic.",
         "urmator": "fa_d9",
-        "imagine": "events/finala_sat.png"
+        "imagine": "events/finala_padure.png"
       },
       "fa_d9": {
         "vorbitor": "vale",
@@ -28178,7 +28178,7 @@
         "emotie": "normal",
         "text": "Respir adânc. Nu mai e cale de întoarcere. Și, pentru prima dată, nici nu vreau să mă întorc.",
         "urmator": "fa_d10",
-        "imagine": "events/finala_sat.png"
+        "imagine": "events/finala_padure.png"
       },
       "fa_d10": {
         "vorbitor": "vale",
@@ -28208,49 +28208,49 @@
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Pădurea e tăcută. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
+        "text": "Satul rămâne în urma noastră, încă adormit sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
         "urmator": "fa_d2_a",
-        "imagine": "events/finala_padure_armura.png"
+        "imagine": "events/finala_sat_armura.png"
       },
       "fa_d2_a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
+        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
         "urmator": "fa_d3_a",
-        "imagine": "events/finala_padure_armura.png"
+        "imagine": "events/finala_sat_armura.png"
       },
       "fa_d3_a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
+        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
         "urmator": "fa_d4_a",
-        "imagine": "events/finala_padure_armura.png"
+        "imagine": "events/finala_sat_armura.png"
       },
       "fa_d4_a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
+        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
         "urmator": "fa_d5_a",
-        "imagine": "events/finala_padure_armura.png"
+        "imagine": "events/finala_sat_armura.png"
       },
       "fa_d5_a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Ies dintre copaci. Satul doarme încă sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
+        "text": "Drumul spre poartă trece pe sub copaci. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
         "urmator": "fa_d6_a",
-        "imagine": "events/finala_sat_armura.png"
+        "imagine": "events/finala_padure_armura.png"
       },
       "fa_d6_a": {
         "vorbitor": "vale",
         "gand": true,
         "emotie": "normal",
-        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
+        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
         "urmator": "fa_d7_a",
-        "imagine": "events/finala_sat_armura.png"
+        "imagine": "events/finala_padure_armura.png"
       },
       "fa_d7_a": {
         "vorbitor": "vale",
@@ -28258,7 +28258,7 @@
         "emotie": "normal",
         "text": "Mă gândesc la vise. La glasul care mă strigă pe nume din întuneric. Nu știu ce vrea de la mine. Știu doar că azi nu mi-e frică de el.",
         "urmator": "fa_d8_a",
-        "imagine": "events/finala_sat_armura.png"
+        "imagine": "events/finala_padure_armura.png"
       },
       "fa_d8_a": {
         "vorbitor": "vale",
@@ -28266,7 +28266,7 @@
         "emotie": "normal",
         "text": "Mi-e frică de altceva. Că o să cadă cineva lângă mine și n-o să apuc să-l ridic.",
         "urmator": "fa_d9_a",
-        "imagine": "events/finala_sat_armura.png"
+        "imagine": "events/finala_padure_armura.png"
       },
       "fa_d9_a": {
         "vorbitor": "vale",
@@ -28274,7 +28274,7 @@
         "emotie": "normal",
         "text": "Respir adânc. Nu mai e cale de întoarcere. Și, pentru prima dată, nici nu vreau să mă întorc.",
         "urmator": "fa_d10_a",
-        "imagine": "events/finala_sat_armura.png"
+        "imagine": "events/finala_padure_armura.png"
       },
       "fa_d10_a": {
         "vorbitor": "vale",
