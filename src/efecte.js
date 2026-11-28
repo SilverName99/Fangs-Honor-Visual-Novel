@@ -58,6 +58,20 @@ const efecte = {
     // Rucsacul și cufărul pline: panoul obișnuit „N-ai loc pentru...”, ca jucătorul să aleagă, nu să piardă piesa pe ascuns
     unde.rest.forEach((id) => joc.primeste(id, 1));
   },
+  // Vale se îmbracă cu ce are, oriunde ar fi (rucsac sau cufăr): în zorii revoltei, tot echipamentul tatei (decis de
+  // autor). Piesa se scoate de unde era, ca să nu rămână și acolo; ce era pe slot trece în rucsac sau în cufăr
+  imbracaTot: (v, joc) => {
+    const s = joc.stare;
+    for (const id of [].concat(v)) {
+      if (Object.values(s.echipat).includes(id)) continue;
+      const din = [s.inventar, s.cufar].find((l) => l.some((x) => x.id === id));
+      if (!din) continue;
+      const i = din.findIndex((x) => x.id === id);
+      if (--din[i].n <= 0) din.splice(i, 1);
+      const unde = joc.inventar.imbraca(id);
+      unde.rest.forEach((x) => joc.primeste(x, 1));
+    }
+  },
   // Orcii iau un lucru (fierul lui Bram): stă la ei, iar la zaruri e primul pus pe masă (se poate câștiga înapoi)
   confisca: (v, joc) => [].concat(v).forEach((id) => joc.stare.confiscate.includes(id) || joc.stare.confiscate.unshift(id)),
   // Lucrul confiscat ajunge înapoi la Vale (plătit, câștigat), deci nu mai e la orci

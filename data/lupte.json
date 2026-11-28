@@ -1104,6 +1104,229 @@
           "eveniment": "finn_custi_dupa"
         }
       }
+    },
+    "lupta_finala": {
+      "_nota": "Decis de autor: lupta finală, la poartă, în zori, cu cei care au fost la foc în noaptea revoltei (Kaia oricum), în 5 valuri, cu o imagine înainte de valurile 2–5 („inainteDeVal”: discuții peste luptă). Fără fugă. Toiagul celor 23 și fluierul lui Finn merg aici (finala). Roderick vine cu steagul dacă l-a primit (varianta lui „steag”). Victoria și înfrângerea: TODO, de discutat (deocamdată, la înfrângere lupta se reia).",
+      "nume": "Lupta pentru Baum",
+      "nume_en": "The Battle for Baum",
+      "fundal": "poarta",
+      "fuga": false,
+      "finala": true,
+      "aliati": [
+        {
+          "id": "vanatoare",
+          "linie": 0,
+          "rand": "fata"
+        },
+        {
+          "id": "fierar",
+          "linie": 2,
+          "rand": "fata",
+          "conditii": {
+            "stare": {
+              "revolta_foc_fierar": "da"
+            }
+          }
+        },
+        {
+          "id": "soldat",
+          "linie": 1,
+          "rand": "spate",
+          "conditii": {
+            "stare": {
+              "revolta_foc_soldat": "da"
+            }
+          }
+        },
+        {
+          "id": "mag",
+          "linie": 2,
+          "rand": "spate",
+          "conditii": {
+            "stare": {
+              "revolta_foc_mag": "da"
+            }
+          }
+        }
+      ],
+      "valuri": [
+        [
+          {
+            "id": "orc_taverna",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 1,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 0,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_taverna",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "sobolan_gheare",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 0,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 2,
+            "rand": "spate"
+          },
+          {
+            "id": "sobolan_scuipa",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_zdrobitor",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_zdrobitor",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 0,
+            "rand": "spate"
+          },
+          {
+            "id": "sobolan_scuipa",
+            "linie": 2,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_zdrobitor",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_zdrobitor",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "sobolan_gheare",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "sobolan_scuipa",
+            "linie": 0,
+            "rand": "spate"
+          },
+          {
+            "id": "sobolan_scuipa",
+            "linie": 2,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ],
+        [
+          {
+            "id": "orc_colector",
+            "linie": 1,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_zdrobitor",
+            "linie": 0,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_taverna",
+            "linie": 2,
+            "rand": "fata"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 0,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_aruncator",
+            "linie": 2,
+            "rand": "spate"
+          },
+          {
+            "id": "orc_toba",
+            "linie": 1,
+            "rand": "spate"
+          }
+        ]
+      ],
+      "inainteDeVal": {
+        "1": "finala_sobolani_1",
+        "2": "finala_intariri_1",
+        "3": "finala_intariri_2",
+        "4": "finala_colector"
+      },
+      "victorie": {
+        "text": "Ultimul orc cade. Pentru o clipă, la poartă e liniște. (TODO: finalul, de discutat cu autorul.)",
+        "text_en": "The last orc falls. For a moment, the gate is silent. (TODO: the ending.)",
+        "efecte": {
+          "stare": {
+            "lupta_finala": "castigata"
+          }
+        }
+      },
+      "infrangere": {
+        "text": "Cazi în noroiul de la poartă. (TODO: înfrângerea, cu cele două imagini și alegerea; deocamdată lupta se reia.)",
+        "text_en": "You fall into the mud by the gate. (TODO: the defeat; for now the battle restarts.)",
+        "efecte": {
+          "seteazaNevoi": {
+            "viata": 100,
+            "stamina": 100
+          },
+          "lupta": "lupta_finala"
+        }
+      }
     }
   },
   "_notaSunet": "sunet = strigătul inamicului când atacă (data/sunete.json, efecte); atac.sunet = sunetul loviturii (implicit: sabie, arc la distanță)",

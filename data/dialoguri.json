@@ -28063,8 +28063,294 @@
           },
           "marcheaza": "revolta_pornita"
         },
-        "_nota": "TODO (bucata 3, de discutat cu autorul): de aici pornește lupta finală, la poartă, cu cei „revolta_foc_<id>: da” (Finn ajută cu fluierul). Marcajul „revolta_pornita” e dimineața de la care se va relua după o înfrângere.",
-        "sfarsit": true
+        "_nota": "Decis de autor: de aici, drumul spre poartă (imaginile cu Vale, cu sau fără echipamentul tatei), cornul, Roderick cu steagul (dacă l-a primit) și lupta finală. Marcajul „revolta_pornita” e dimineața de la care se va relua după o înfrângere.",
+        "urmator": [
+          {
+            "conditii": {
+              "areObiecte": [
+                "coif_tata",
+                "platosa_tata",
+                "jambiere_tata",
+                "sabia_tata"
+              ]
+            },
+            "nod": "fa_armura"
+          },
+          "fa_d1"
+        ]
+      },
+      "fa_armura": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Înainte să plecăm, desfac sacul. Coiful tatei. Platoșa pe care am bătut-o cu domnul Bram la nicovală. Jambierele. Sabia.",
+        "urmator": "fa_armura2",
+        "imagine": "events/finala_armura.png",
+        "efecte": {
+          "imbracaTot": [
+            "coif_tata",
+            "platosa_tata",
+            "jambiere_tata",
+            "sabia_tata"
+          ],
+          "stare": {
+            "revolta_armura": "da"
+          }
+        },
+        "_nota": "CIORNĂ (Claude). Decis de autor: dacă Vale are tot echipamentul tatei, se îmbracă cu el la locul de campare (efectul „imbracaTot”, din rucsac sau din cufăr); de aici imaginile drumului sunt cele „_armura”."
+      },
+      "fa_armura2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Curelele se strâng pe mine ca o îmbrățișare. Tata le-a purtat ultima dată la copacul mare.",
+        "urmator": "fa_d1_a",
+        "imagine": "events/finala_armura.png"
+      },
+      "fa_d1": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pădurea e tăcută. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
+        "urmator": "fa_d2",
+        "imagine": "events/finala_padure.png",
+        "_nota": "CIORNĂ (Claude). Decis de autor: gândurile lui Vale pe drum, cu tot ce a dus până aici; pădurea în spate (semi-close-up), apoi satul în spate (close-up), apoi peste umărul lui, la poartă; „_a” = aceleași noduri, cu imaginile în care poartă armura tatei."
+      },
+      "fa_d2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
+        "urmator": "fa_d3",
+        "imagine": "events/finala_padure.png"
+      },
+      "fa_d3": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
+        "urmator": "fa_d4",
+        "imagine": "events/finala_padure.png"
+      },
+      "fa_d4": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
+        "urmator": "fa_d5",
+        "imagine": "events/finala_padure.png"
+      },
+      "fa_d5": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ies dintre copaci. Satul doarme încă sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
+        "urmator": "fa_d6",
+        "imagine": "events/finala_sat.png"
+      },
+      "fa_d6": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
+        "urmator": "fa_d7",
+        "imagine": "events/finala_sat.png"
+      },
+      "fa_d7": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la vise. La glasul care mă strigă pe nume din întuneric. Nu știu ce vrea de la mine. Știu doar că azi nu mi-e frică de el.",
+        "urmator": "fa_d8",
+        "imagine": "events/finala_sat.png"
+      },
+      "fa_d8": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mi-e frică de altceva. Că o să cadă cineva lângă mine și n-o să apuc să-l ridic.",
+        "urmator": "fa_d9",
+        "imagine": "events/finala_sat.png"
+      },
+      "fa_d9": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Respir adânc. Nu mai e cale de întoarcere. Și, pentru prima dată, nici nu vreau să mă întorc.",
+        "urmator": "fa_d10",
+        "imagine": "events/finala_sat.png"
+      },
+      "fa_d10": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Poarta iese din ceață. Lemnul ud, parii ascuțiți, focul pe jumătate stins al paznicilor.",
+        "urmator": "fa_orc",
+        "imagine": "events/finala_poarta.png"
+      },
+      "fa_orc": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Hei! Cine-i acolo?!",
+        "urmator": "fa_orc2",
+        "nume": "Orc",
+        "imagine": "events/finala_poarta.png"
+      },
+      "fa_orc2": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne-a văzut.",
+        "urmator": "fa_corn",
+        "imagine": "events/finala_poarta.png"
+      },
+      "fa_d1_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pădurea e tăcută. Nici păsările nu cântă încă. Doar pașii noștri, pe frunzele ude.",
+        "urmator": "fa_d2_a",
+        "imagine": "events/finala_padure_armura.png"
+      },
+      "fa_d2_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Acum câteva luni eram un băiat care căra saci la moară și număra monedele pentru taxă. Mă uitam în pământ când trecea colectorul.",
+        "urmator": "fa_d3_a",
+        "imagine": "events/finala_padure_armura.png"
+      },
+      "fa_d3_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mama zicea că orcii sunt ca vremea: nu-i poți opri, doar aștepți să treacă. Dar ei n-au trecut. Au rămas.",
+        "urmator": "fa_d4_a",
+        "imagine": "events/finala_padure_armura.png"
+      },
+      "fa_d4_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Tata nu s-a uitat în pământ. A luat sabia și s-a dus la copacul mare. Douăzeci și trei de oameni s-au dus cu el.",
+        "urmator": "fa_d5_a",
+        "imagine": "events/finala_padure_armura.png"
+      },
+      "fa_d5_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ies dintre copaci. Satul doarme încă sub ceață: acoperișul nostru, coșul fierăriei, clopotnița.",
+        "urmator": "fa_d6_a",
+        "imagine": "events/finala_sat_armura.png"
+      },
+      "fa_d6_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la mama, care poate se trezește acum și vede patul meu gol. Nu i-am spus nimic. Dacă i-aș fi spus, n-aș mai fi plecat.",
+        "urmator": "fa_d7_a",
+        "imagine": "events/finala_sat_armura.png"
+      },
+      "fa_d7_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mă gândesc la vise. La glasul care mă strigă pe nume din întuneric. Nu știu ce vrea de la mine. Știu doar că azi nu mi-e frică de el.",
+        "urmator": "fa_d8_a",
+        "imagine": "events/finala_sat_armura.png"
+      },
+      "fa_d8_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Mi-e frică de altceva. Că o să cadă cineva lângă mine și n-o să apuc să-l ridic.",
+        "urmator": "fa_d9_a",
+        "imagine": "events/finala_sat_armura.png"
+      },
+      "fa_d9_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Respir adânc. Nu mai e cale de întoarcere. Și, pentru prima dată, nici nu vreau să mă întorc.",
+        "urmator": "fa_d10_a",
+        "imagine": "events/finala_sat_armura.png"
+      },
+      "fa_d10_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Poarta iese din ceață. Lemnul ud, parii ascuțiți, focul pe jumătate stins al paznicilor.",
+        "urmator": "fa_orc_a",
+        "imagine": "events/finala_poarta_armura.png"
+      },
+      "fa_orc_a": {
+        "vorbitor": "paznic_orc_1",
+        "emotie": "suparat",
+        "text": "Hei! Cine-i acolo?!",
+        "urmator": "fa_orc2_a",
+        "nume": "Orc",
+        "imagine": "events/finala_poarta_armura.png"
+      },
+      "fa_orc2_a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Ne-a văzut.",
+        "urmator": "fa_corn",
+        "imagine": "events/finala_poarta_armura.png"
+      },
+      "fa_corn": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Orcul duce cornul la gură. Sunetul se rostogolește peste sat, greu și urât. Din tabăra de dincolo de zid răspund urlete.",
+        "urmator": [
+          {
+            "conditii": {
+              "stare": {
+                "steag": "roderick",
+                "revolta_foc_soldat": "da"
+              }
+            },
+            "nod": "fa_steag"
+          },
+          "fa_start"
+        ],
+        "imagine": "events/finala_corn.png",
+        "efecte": {
+          "panaLaOra": "06:00"
+        }
+      },
+      "fa_steag": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Din spatele nostru se aude un strigăt. Unchiul aleargă spre poartă, cu steagul satului ridicat deasupra capului.",
+        "urmator": "fa_steag2",
+        "imagine": "events/finala_steag.png",
+        "_nota": "Decis de autor: doar dacă Roderick are steagul și a fost la foc; o singură imagine, cu el alergând spre poartă."
+      },
+      "fa_steag2": {
+        "vorbitor": "soldat",
+        "emotie": "suparat",
+        "text": "Pentru Baum! Pentru cei douăzeci și trei!",
+        "urmator": "fa_start",
+        "imagine": "events/finala_steag.png"
+      },
+      "fa_start": {
+        "vorbitor": "vanatoare",
+        "emotie": "normal",
+        "text": "Acum, Vale!",
+        "alegeri": [
+          {
+            "text": "(La luptă!)",
+            "inchide": true,
+            "efecte": {
+              "lupta": "lupta_finala"
+            }
+          }
+        ]
       }
     }
   },
@@ -28281,6 +28567,118 @@
         "vorbitor": "hot",
         "emotie": "normal",
         "text": "Lina m-a întrebat unde plec. I-am zis că la o întâlnire. Nu e chiar o minciună."
+      }
+    }
+  },
+  "finala_sobolani_1": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: lupta finală, înainte de valul 2: șobolanii ies din pământ (2 cu gheare, unul care scuipă).",
+    "grup": "Lupta finală: între valuri",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Pământul de lângă zid se umflă și crapă. Din el ies șobolani cât câinii, cu ochii roșii.",
+        "urmator": "b",
+        "imagine": "events/finala_sobolani_1.png"
+      },
+      "b": {
+        "vorbitor": "sobolan_scuipa",
+        "emotie": "rade",
+        "text": "Om-lucru! Om-lucru vine la noi, da-da! Stăpânul-oaselor vrea satul, vrea-vrea! Ssss!",
+        "urmator": "c",
+        "imagine": "events/finala_sobolani_1.png"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Deci au venit și ei. Alături de orci.",
+        "imagine": "events/finala_sobolani_1.png"
+      }
+    }
+  },
+  "finala_intariri_1": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: lupta finală, înainte de valul 3: vin în fugă un orc, unul cu topoare și un zdrobitor.",
+    "grup": "Lupta finală: între valuri",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Din tabăra de dincolo de zid vin alții, în fugă. Un orc cu toporul, unul cu topoare la brâu și o namilă cu o măciucă cât un trunchi.",
+        "urmator": "b",
+        "imagine": "events/finala_intariri_1.png"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Strâng mânerul armei. Încă unul. Și încă unul.",
+        "imagine": "events/finala_intariri_1.png"
+      }
+    }
+  },
+  "finala_intariri_2": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: lupta finală, înainte de valul 4: încă doi șobolani din pământ și doi orci în fugă.",
+    "grup": "Lupta finală: între valuri",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Iar pământul. Iar șobolanii. Și încă doi orci care aleargă spre noi, urlând.",
+        "urmator": "b",
+        "imagine": "events/finala_intariri_2.png"
+      },
+      "b": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Brațele îmi tremură. Dar în spatele meu e satul.",
+        "imagine": "events/finala_intariri_2.png"
+      }
+    }
+  },
+  "finala_colector": {
+    "_nota": "CIORNĂ (Claude). Decis de autor: lupta finală, înainte de ultimul val: colectorul vine singur, furios, iar apoi intră cu ai lui.",
+    "grup": "Lupta finală: între valuri",
+    "partener": null,
+    "start": "a",
+    "noduri": {
+      "a": {
+        "vorbitor": "vale",
+        "gand": true,
+        "emotie": "normal",
+        "text": "Prin poarta deschisă iese colectorul. Singur. Cu bâta în mână și cu fața strâmbată de furie.",
+        "urmator": "b",
+        "imagine": "events/finala_colector.png"
+      },
+      "b": {
+        "vorbitor": "orc_colector",
+        "emotie": "suparat",
+        "text": "Omulețule! Ani de zile v-am lăsat satul în viață. Și așa îmi mulțumești?",
+        "urmator": "c",
+        "imagine": "events/finala_colector.png"
+      },
+      "c": {
+        "vorbitor": "vale",
+        "emotie": "suparat",
+        "text": "Satul nu era al tău, ca să ni-l lași.",
+        "urmator": "d",
+        "imagine": "events/finala_colector.png"
+      },
+      "d": {
+        "vorbitor": "orc_colector",
+        "emotie": "rade",
+        "text": "Atunci o să-l iau înapoi. Bucată cu bucată.",
+        "imagine": "events/finala_colector.png"
       }
     }
   }

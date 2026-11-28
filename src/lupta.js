@@ -639,6 +639,14 @@ export function creeazaLupta(parinte, joc) {
   // (viața, armura și bara nu se refac între valuri, ca un vraci în echipă să conteze)
   async function valulUrmator() {
     L.pauza = true;
+    // „inainteDeVal”: o discuție peste luptă înainte să intre valul acela (lupta finală, decis de autor: șobolanii care
+    // ies din pământ, orcii care vin în fugă, colectorul), cu imaginea ei; după un refresh lupta pornește oricum de la capăt
+    const d = L.def.inainteDeVal?.[L.val + 1];
+    if (d) {
+      const lupta = L;
+      await discutieInLupta(d);
+      if (!L || L !== lupta) return;
+    }
     L.val += 1;
     const total = L.def.valuri.length;
     const anunt = div('val-lupta', t('Valul {n} din {total}', { n: L.val + 1, total }));
@@ -1288,8 +1296,10 @@ export function creeazaLupta(parinte, joc) {
     };
     for (const f of aliati) asaza(f, s.formatie[f.id]);
     // Aliații de o singură luptă (unchiul în scandalul din tavernă) nu intră în grup și nu-și salvează locul
+    // „conditii” la un aliat: vine doar dacă s-a întâmplat ceva (lupta finală: doar cine a fost la foc în noaptea revoltei)
     for (const x of def.aliati || []) {
       if (aliati.some((f) => f.id === x.id)) continue;
+      if (x.conditii && !def.test && !verifica(x.conditii, context(s))) continue;
       const r = recrut(x.id, x.varianta);
       if (!r) continue;
       const f = { ...r, temporar: true };
