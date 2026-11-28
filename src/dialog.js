@@ -10,7 +10,7 @@ const div = (clasa) => Object.assign(document.createElement('div'), { className:
 // Același ecran arată și evenimentele (un singur nod cu alegeri).
 // Meniul de discuție (decis de autor): un dialog cu „meniu: true” nu se închide la capătul unei ramuri; sub ultima
 // replică apar opțiunile personajului (Vorbește, misiunile cu semnul lor, La revedere), date de „optiuniMeniu”
-export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor, asteaptaFilmele }) {
+export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaConditii, laEfecte, laFinal, optiuniMeniu, laCapatulRamurii, laImagine, laNod, tabaraVorbitor, asteaptaFilmele, laSunet }) {
   // Textul unei replici: un text simplu sau o listă { conditii, text } (cu un text simplu la urmă), ca sfaturile din carte:
   // primul potrivit stării de acum („Drumul trezirii”: unchiul bea apă sau din ploscă, după cum a fost „Ultima sticlă”)
   const textPotrivit = (t) => (Array.isArray(t) ? t.map((x) => (typeof x === 'string' ? { text: x } : x)).find((x) => verificaConditii(x.conditii))?.text ?? '' : t);
@@ -307,6 +307,14 @@ export function creeazaDialog(parinte, { numeVorbitor, emotieVale, verificaCondi
         const inainte = activ.dupaImagine;
         activ.dupaImagine = () => (inainte?.(), laCapatulRamurii?.());
       } else laCapatulRamurii?.();
+    }
+    // „sunet” la replică: un efect scurt chiar atunci (cornul paznicului din lupta finală, cerut de autor), odată cu
+    // imaginea ei, dacă încă se încarcă; nu și la reluarea după un refresh
+    if (nod.sunet && !reluat) {
+      if (el.classList.contains('asteapta-imaginea')) {
+        const inainte = activ.dupaImagine;
+        activ.dupaImagine = () => (inainte?.(), laSunet?.(nod.sunet));
+      } else laSunet?.(nod.sunet);
     }
     // Jocul ține minte unde a rămas discuția, ca la un refresh să continue de aici (nu să se piardă o misiune)
     laNod?.(activ.original, idNod, activ.imagine);

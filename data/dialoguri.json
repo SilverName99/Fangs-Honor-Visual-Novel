@@ -28320,7 +28320,8 @@
         "imagine": "events/finala_corn.png",
         "efecte": {
           "panaLaOra": "06:00"
-        }
+        },
+        "sunet": "corn"
       },
       "fa_steag": {
         "vorbitor": "vale",

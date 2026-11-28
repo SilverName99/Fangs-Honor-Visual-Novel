@@ -1173,6 +1173,8 @@ const joc = {
 // reîncarcă în mijlocul ei): salvarea ține minte discuția, evenimentul sau lupta în curs
 const iduriDialog = new Map(Object.entries(dialoguri).map(([id, d]) => [d, id]));
 const dialog = creeazaDialog(ui, {
+  // Efectul scurt al unei replici („sunet” la nod: cornul de la poartă)
+  laSunet: (id) => sunet.efect(id),
   laCapatulRamurii: arataCastigurileAsteptate,
   // Orcii au rama roșie (ca inamicii din luptă), ceilalți pe cea aurie
   tabaraVorbitor: (id) => (/orc|sobolan/.test(id) ? 'inamic' : 'aliat'),

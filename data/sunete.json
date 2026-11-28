@@ -389,7 +389,8 @@
     "lupta_val": "Un val nou de inamici (Groapa, lupta finală): un corn de război scurt",
     "fluier": "Fluierul lui Finn, un fluierat subțire, ca al unei păsări de noapte (lupta finală)",
     "tafl_piesa": "O piesă de lemn pusă pe tablă (Masa regelui, la fiecare mutare)",
-    "tafl_captura": "O piesă luată de pe tablă (Masa regelui, la o captură)"
+    "tafl_captura": "O piesă luată de pe tablă (Masa regelui, la o captură)",
+    "corn": "Cornul de război al paznicului de la poartă, lung și grav (lupta finală, când e văzut grupul; cerut de autor)"
   },
   "muzica": {
     "meniu": "Meniul: temă liniștită, medievală",
